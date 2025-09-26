@@ -26,7 +26,14 @@ jobs:
         run: flutter pub get
 
       - name: 🔍 Verify Format
-        run: dart format --set-exit-if-changed .
+        run: |
+          dart format .
+          if [ -n "$(git diff --name-only)" ]; then
+            echo "Code formatting issues found. Please run 'dart format .' locally and commit the changes."
+            git diff
+            exit 1
+          fi
+          echo "Code formatting is correct."
 
       - name: 🛠️ Analyze Code
         run: flutter analyze
