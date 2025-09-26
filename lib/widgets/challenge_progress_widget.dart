@@ -60,7 +60,7 @@ class ChallengeProgressWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            
+
             // 진행 바
             LinearProgressIndicator(
               value: percentage,
@@ -70,7 +70,7 @@ class ChallengeProgressWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            
+
             // 진행 상태 텍스트
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -97,7 +97,9 @@ class ChallengeProgressWidget extends StatelessWidget {
     // 실제 챌린지 진행률 사용
     final recordValue = challenge.currentProgress;
     final target = challenge.targetValue ?? 50;
-    final progressPercentage = target > 0 ? (recordValue / target).clamp(0.0, 1.0) : 0.0;
+    final progressPercentage = target > 0
+        ? (recordValue / target).clamp(0.0, 1.0)
+        : 0.0;
 
     return Card(
       margin: const EdgeInsets.all(16),
@@ -119,7 +121,7 @@ class ChallengeProgressWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            
+
             // 현재 기록
             Container(
               padding: const EdgeInsets.all(12),
@@ -144,9 +146,9 @@ class ChallengeProgressWidget extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             const SizedBox(height: 16),
-            
+
             // 목표까지 남은 개수
             if (recordValue < target)
               Container(
@@ -162,9 +164,9 @@ class ChallengeProgressWidget extends StatelessWidget {
                     Expanded(
                       child: Text(
                         '${target - recordValue}개 더 하면 달성!',
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: Colors.blue,
-                        ),
+                        style: Theme.of(
+                          context,
+                        ).textTheme.bodyMedium?.copyWith(color: Colors.blue),
                       ),
                     ),
                   ],
@@ -203,7 +205,7 @@ class ChallengeProgressWidget extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            
+
             // 진행 바
             LinearProgressIndicator(
               value: percentage,
@@ -213,7 +215,7 @@ class ChallengeProgressWidget extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            
+
             // 진행 상태
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -230,16 +232,16 @@ class ChallengeProgressWidget extends StatelessWidget {
                 ),
               ],
             ),
-            
+
             const SizedBox(height: 12),
-            
+
             // 남은 개수
             if (remaining > 0)
               Text(
                 AppLocalizations.of(context)!.remainingToTarget(remaining),
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                  color: Colors.grey[600],
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodySmall?.copyWith(color: Colors.grey[600]),
               ),
           ],
         ),
@@ -261,13 +263,14 @@ class ChallengeProgressWidget extends StatelessWidget {
           children: [
             Text(
               challenge.title ?? AppLocalizations.of(context)!.sprintChallenge,
-              style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+              style: Theme.of(
+                context,
+              ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Text(
-              challenge.description ?? AppLocalizations.of(context)!.shortTermIntensiveChallenge,
+              challenge.description ??
+                  AppLocalizations.of(context)!.shortTermIntensiveChallenge,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 16),
@@ -317,7 +320,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                 const Icon(Icons.event, color: Colors.purple),
                 const SizedBox(width: 8),
                 Text(
-                  challenge.title ?? AppLocalizations.of(context)!.eventChallenge,
+                  challenge.title ??
+                      AppLocalizations.of(context)!.eventChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -326,7 +330,8 @@ class ChallengeProgressWidget extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(
-              challenge.description ?? AppLocalizations.of(context)!.specialEventChallenge,
+              challenge.description ??
+                  AppLocalizations.of(context)!.specialEventChallenge,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 16),
@@ -343,8 +348,8 @@ class ChallengeProgressWidget extends StatelessWidget {
               children: [
                 Text(
                   percentage >= 1.0
-                    ? AppLocalizations.of(context)!.challengeCompleted
-                    : AppLocalizations.of(context)!.challengeInProgress,
+                      ? AppLocalizations.of(context)!.challengeCompleted
+                      : AppLocalizations.of(context)!.challengeInProgress,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Text(
@@ -360,4 +365,4 @@ class ChallengeProgressWidget extends StatelessWidget {
       ),
     );
   }
-} 
+}

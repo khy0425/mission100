@@ -22,7 +22,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
   final _formGuideService = PushupFormGuideService();
   final _encouragementService = ChadEncouragementService();
   late PushupFormGuideData _guideData;
-  
+
   // 인터랙티브 요소들을 위한 상태 변수
   final PageController _stepPageController = PageController();
   int _currentStepIndex = 0;
@@ -33,10 +33,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this);
-    
+
     // 기본 데이터로 초기화 (로딩 중에도 화면이 표시되도록)
     _guideData = _formGuideService.getFormGuideData();
-    
+
     // 화면 로드 후 언어별 데이터 로드 및 격려 메시지 표시
     WidgetsBinding.instance.addPostFrameCallback((_) {
       _loadData();
@@ -47,7 +47,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
   /// 현재 언어에 따라 폼 가이드 데이터를 로드
   Future<void> _loadData() async {
     try {
-      final languageSpecificData = await _formGuideService.loadFormGuideData(context);
+      final languageSpecificData = await _formGuideService.loadFormGuideData(
+        context,
+      );
       if (mounted) {
         setState(() {
           _guideData = languageSpecificData;
@@ -88,12 +90,17 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
           labelColor: const Color(0xFF4DABF7),
           unselectedLabelColor: Colors.grey,
           indicatorColor: const Color(0xFF4DABF7),
-          labelStyle: const TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+          labelStyle: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
+          ),
           unselectedLabelStyle: const TextStyle(fontSize: 12),
           tabs: [
             Semantics(
               label: AccessibilityUtils.createTabLabel(
-                title: AppLocalizations.of(context)!.stepByStepGuide.replaceAll('\n', ' '),
+                title: AppLocalizations.of(
+                  context,
+                )!.stepByStepGuide.replaceAll('\n', ' '),
                 position: 1,
                 total: 4,
                 isSelected: _tabController.index == 0,
@@ -102,7 +109,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
             ),
             Semantics(
               label: AccessibilityUtils.createTabLabel(
-                title: AppLocalizations.of(context)!.commonMistakes.replaceAll('\n', ' '),
+                title: AppLocalizations.of(
+                  context,
+                )!.commonMistakes.replaceAll('\n', ' '),
                 position: 2,
                 total: 4,
                 isSelected: _tabController.index == 1,
@@ -111,16 +120,22 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
             ),
             Semantics(
               label: AccessibilityUtils.createTabLabel(
-                title: AppLocalizations.of(context)!.variationExercises.replaceAll('\n', ' '),
+                title: AppLocalizations.of(
+                  context,
+                )!.variationExercises.replaceAll('\n', ' '),
                 position: 3,
                 total: 4,
                 isSelected: _tabController.index == 2,
               ),
-              child: Tab(text: AppLocalizations.of(context)!.variationExercises),
+              child: Tab(
+                text: AppLocalizations.of(context)!.variationExercises,
+              ),
             ),
             Semantics(
               label: AccessibilityUtils.createTabLabel(
-                title: AppLocalizations.of(context)!.improvementTips.replaceAll('\n', ' '),
+                title: AppLocalizations.of(
+                  context,
+                )!.improvementTips.replaceAll('\n', ' '),
                 position: 4,
                 total: 4,
                 isSelected: _tabController.index == 3,
@@ -169,9 +184,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                   Icons.fitness_center,
                   const Color(0xFF4DABF7),
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // 뷰 모드 전환 버튼들
                 Row(
                   children: [
@@ -185,12 +200,13 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                           hint: '단계별 가이드를 목록 형태로 표시합니다',
                         ),
                         child: ElevatedButton.icon(
-                          onPressed: () => setState(() => _isStepViewMode = false),
+                          onPressed: () =>
+                              setState(() => _isStepViewMode = false),
                           icon: const Icon(Icons.list, size: 18),
                           label: Text(AppLocalizations.of(context)!.listView),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: !_isStepViewMode 
-                                ? const Color(0xFF4DABF7) 
+                            backgroundColor: !_isStepViewMode
+                                ? const Color(0xFF4DABF7)
                                 : Colors.grey,
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(vertical: 12),
@@ -209,12 +225,13 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                           hint: '단계별 가이드를 스와이프 형태로 표시합니다',
                         ),
                         child: ElevatedButton.icon(
-                          onPressed: () => setState(() => _isStepViewMode = true),
+                          onPressed: () =>
+                              setState(() => _isStepViewMode = true),
                           icon: const Icon(Icons.swipe, size: 18),
                           label: Text(AppLocalizations.of(context)!.swipeView),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: _isStepViewMode 
-                                ? const Color(0xFF4DABF7) 
+                            backgroundColor: _isStepViewMode
+                                ? const Color(0xFF4DABF7)
                                 : Colors.grey,
                             foregroundColor: Colors.white,
                             padding: const EdgeInsets.symmetric(vertical: 12),
@@ -237,7 +254,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                         style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0xFF51CF66),
                           foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 12,
+                            horizontal: 16,
+                          ),
                         ),
                       ),
                     ),
@@ -246,10 +266,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
               ],
             ),
           ),
-          
+
           // 컨텐츠 영역
           Expanded(
-            child: _isStepViewMode 
+            child: _isStepViewMode
                 ? _buildSwipeableStepsView()
                 : _buildListStepsView(),
           ),
@@ -279,7 +299,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
             // 실수 목록
             ...List.generate(_guideData.commonMistakes.length, (index) {
               final mistake = _guideData.commonMistakes[index];
-              return _buildCommonMistakeCard(mistake, index == _guideData.commonMistakes.length - 1);
+              return _buildCommonMistakeCard(
+                mistake,
+                index == _guideData.commonMistakes.length - 1,
+              );
             }),
 
             const SizedBox(height: 80), // 광고 공간 확보
@@ -338,7 +361,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
             // 개선 팁들
             ...List.generate(_guideData.improvementTips.length, (index) {
               final tip = _guideData.improvementTips[index];
-              return _buildImprovementTipCard(tip, index == _guideData.improvementTips.length - 1);
+              return _buildImprovementTipCard(
+                tip,
+                index == _guideData.improvementTips.length - 1,
+              );
             }),
 
             const SizedBox(height: 80), // 광고 공간 확보
@@ -348,7 +374,12 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
     );
   }
 
-  Widget _buildSectionHeader(String title, String subtitle, IconData icon, Color color) {
+  Widget _buildSectionHeader(
+    String title,
+    String subtitle,
+    IconData icon,
+    Color color,
+  ) {
     return Semantics(
       header: true,
       label: '$title. $subtitle',
@@ -379,10 +410,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
             const SizedBox(height: 8),
             Text(
               subtitle,
-              style: const TextStyle(
-                color: Colors.white70,
-                fontSize: 14,
-              ),
+              style: const TextStyle(color: Colors.white70, fontSize: 14),
               textAlign: TextAlign.center,
             ),
           ],
@@ -393,7 +421,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
   // 나머지 메서드들은 다음 단계에서 추가하겠습니다
   Widget _buildCommonMistakeCard(CommonMistake mistake, bool isLast) {
-    final severityColor = Color(PushupFormGuideService.getSeverityColor(mistake.severity));
+    final severityColor = Color(
+      PushupFormGuideService.getSeverityColor(mistake.severity),
+    );
     final corrections = mistake.corrections.join(', ');
 
     return Semantics(
@@ -440,7 +470,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                     Semantics(
                       label: '심각도 ${mistake.severity}',
                       child: Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 8,
+                          vertical: 4,
+                        ),
                         decoration: BoxDecoration(
                           color: severityColor.withValues(alpha: 0.2),
                           borderRadius: BorderRadius.circular(12),
@@ -517,31 +550,33 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                   ),
                 ),
                 const SizedBox(height: 8),
-                ...mistake.corrections.map((correction) => Padding(
-                  padding: const EdgeInsets.only(bottom: 4),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        '✓ ',
-                        style: TextStyle(
-                          color: Color(0xFF51CF66),
-                          fontSize: 14,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          correction,
-                          style: const TextStyle(
-                            color: Colors.white70,
+                ...mistake.corrections.map(
+                  (correction) => Padding(
+                    padding: const EdgeInsets.only(bottom: 4),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          '✓ ',
+                          style: TextStyle(
+                            color: Color(0xFF51CF66),
                             fontSize: 14,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                    ],
+                        Expanded(
+                          child: Text(
+                            correction,
+                            style: const TextStyle(
+                              color: Colors.white70,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                )),
+                ),
               ],
             ),
           ),
@@ -552,9 +587,11 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
   List<Widget> _buildVariationsByDifficulty() {
     final groupedVariations = <String, List<PushupVariation>>{};
-    
+
     for (final variation in _guideData.variations) {
-      groupedVariations.putIfAbsent(variation.difficulty, () => []).add(variation);
+      groupedVariations
+          .putIfAbsent(variation.difficulty, () => [])
+          .add(variation);
     }
 
     final difficulties = ['beginner', 'intermediate', 'advanced'];
@@ -568,7 +605,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
       final variations = groupedVariations[difficulty] ?? [];
       if (variations.isEmpty) return <Widget>[];
 
-      final difficultyColor = Color(PushupFormGuideService.getDifficultyColor(difficulty));
+      final difficultyColor = Color(
+        PushupFormGuideService.getDifficultyColor(difficulty),
+      );
 
       return [
         // 난이도 제목
@@ -599,7 +638,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
   }
 
   Widget _buildVariationCard(PushupVariation variation) {
-    final difficultyColor = Color(PushupFormGuideService.getDifficultyColor(variation.difficulty));
+    final difficultyColor = Color(
+      PushupFormGuideService.getDifficultyColor(variation.difficulty),
+    );
 
     return Container(
       margin: const EdgeInsets.only(bottom: 12),
@@ -628,7 +669,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                     ),
                   ),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
                       color: difficultyColor.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12),
@@ -674,30 +718,32 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                 ),
               ),
               const SizedBox(height: 4),
-              ...variation.instructions.map((instruction) => Padding(
-                padding: const EdgeInsets.only(bottom: 2),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      '• ',
-                      style: TextStyle(
-                        color: Color(0xFF4DABF7),
-                        fontSize: 12,
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        instruction,
-                        style: const TextStyle(
-                          color: Colors.white70,
+              ...variation.instructions.map(
+                (instruction) => Padding(
+                  padding: const EdgeInsets.only(bottom: 2),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        '• ',
+                        style: TextStyle(
+                          color: Color(0xFF4DABF7),
                           fontSize: 12,
                         ),
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: Text(
+                          instruction,
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              )),
+              ),
 
               const SizedBox(height: 8),
 
@@ -711,30 +757,32 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                 ),
               ),
               const SizedBox(height: 4),
-              ...variation.benefits.map((benefit) => Padding(
-                padding: const EdgeInsets.only(bottom: 2),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      '✓ ',
-                      style: TextStyle(
-                        color: Color(0xFF51CF66),
-                        fontSize: 12,
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        benefit,
-                        style: const TextStyle(
-                          color: Colors.white70,
+              ...variation.benefits.map(
+                (benefit) => Padding(
+                  padding: const EdgeInsets.only(bottom: 2),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        '✓ ',
+                        style: TextStyle(
+                          color: Color(0xFF51CF66),
                           fontSize: 12,
                         ),
                       ),
-                    ),
-                  ],
+                      Expanded(
+                        child: Text(
+                          benefit,
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              )),
+              ),
             ],
           ),
         ),
@@ -745,12 +793,15 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
   Widget _buildImprovementTipCard(ImprovementTip tip, bool isLast) {
     final categoryColors = {
       AppLocalizations.of(context)!.breathingTechnique: const Color(0xFF4DABF7),
-      AppLocalizations.of(context)!.strengthImprovement: const Color(0xFF51CF66),
+      AppLocalizations.of(context)!.strengthImprovement: const Color(
+        0xFF51CF66,
+      ),
       AppLocalizations.of(context)!.recovery: const Color(0xFFFFD43B),
       AppLocalizations.of(context)!.motivation: const Color(0xFFFF6B6B),
     };
 
-    final categoryColor = categoryColors[tip.category] ?? const Color(0xFF4DABF7);
+    final categoryColor =
+        categoryColors[tip.category] ?? const Color(0xFF4DABF7);
 
     return Container(
       margin: EdgeInsets.only(bottom: isLast ? 0 : 16),
@@ -769,7 +820,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
               Row(
                 children: [
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 8,
+                      vertical: 4,
+                    ),
                     decoration: BoxDecoration(
                       color: categoryColor.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(12),
@@ -821,30 +875,29 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                 ),
               ),
               const SizedBox(height: 8),
-              ...tip.actionItems.map((item) => Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      '💡 ',
-                      style: TextStyle(
-                        color: categoryColor,
-                        fontSize: 14,
+              ...tip.actionItems.map(
+                (item) => Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '💡 ',
+                        style: TextStyle(color: categoryColor, fontSize: 14),
                       ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        item,
-                        style: const TextStyle(
-                          color: Colors.white70,
-                          fontSize: 14,
+                      Expanded(
+                        child: Text(
+                          item,
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontSize: 14,
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              )),
+              ),
             ],
           ),
         ),
@@ -894,10 +947,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                     ),
                     Text(
                       '좌우로 스와이프하세요',
-                      style: TextStyle(
-                        color: Colors.grey[400],
-                        fontSize: 12,
-                      ),
+                      style: TextStyle(color: Colors.grey[400], fontSize: 12),
                     ),
                   ],
                 ),
@@ -905,9 +955,12 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                 Semantics(
                   excludeSemantics: true,
                   child: LinearProgressIndicator(
-                    value: (_currentStepIndex + 1) / (_guideData.formSteps.length),
+                    value:
+                        (_currentStepIndex + 1) / (_guideData.formSteps.length),
                     backgroundColor: Colors.grey.withValues(alpha: 0.3),
-                    valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF4DABF7)),
+                    valueColor: const AlwaysStoppedAnimation<Color>(
+                      Color(0xFF4DABF7),
+                    ),
                   ),
                 ),
               ],
@@ -940,12 +993,14 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
   Widget _buildExpandableFormStepCard(FormStep step, int index) {
     final isExpanded = _expandedCards[index] ?? false;
-    
+
     return Semantics(
       label: AccessibilityUtils.createCardLabel(
         title: '단계 ${index + 1}: ${step.title}',
         content: step.description,
-        additionalInfo: isExpanded ? AppLocalizations.of(context)!.expanded : AppLocalizations.of(context)!.collapsedTapToExpand,
+        additionalInfo: isExpanded
+            ? AppLocalizations.of(context)!.expanded
+            : AppLocalizations.of(context)!.collapsedTapToExpand,
       ),
       child: Container(
         margin: const EdgeInsets.only(bottom: 16),
@@ -961,7 +1016,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
               setState(() {
                 _expandedCards[index] = !isExpanded;
               });
-              AccessibilityUtils.provideFeedback(HapticFeedbackType.selectionClick);
+              AccessibilityUtils.provideFeedback(
+                HapticFeedbackType.selectionClick,
+              );
             },
             child: AnimatedContainer(
               duration: const Duration(milliseconds: 300),
@@ -1011,7 +1068,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
                   if (isExpanded) ...[
                     const SizedBox(height: 16),
-                    
+
                     // 설명
                     Text(
                       step.description,
@@ -1040,31 +1097,33 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                         ),
                       ),
                       const SizedBox(height: 8),
-                      ...step.keyPoints.map((point) => Padding(
-                        padding: const EdgeInsets.only(bottom: 4),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              '• ',
-                              style: TextStyle(
-                                color: Color(0xFF4DABF7),
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            Expanded(
-                              child: Text(
-                                point,
-                                style: const TextStyle(
-                                  color: Colors.white70,
+                      ...step.keyPoints.map(
+                        (point) => Padding(
+                          padding: const EdgeInsets.only(bottom: 4),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                '• ',
+                                style: TextStyle(
+                                  color: Color(0xFF4DABF7),
                                   fontSize: 14,
+                                  fontWeight: FontWeight.bold,
                                 ),
                               ),
-                            ),
-                          ],
+                              Expanded(
+                                child: Text(
+                                  point,
+                                  style: const TextStyle(
+                                    color: Colors.white70,
+                                    fontSize: 14,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      )),
+                      ),
                     ],
                   ],
                 ],
@@ -1154,31 +1213,33 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                   ),
                 ),
                 const SizedBox(height: 12),
-                ...step.keyPoints.map((point) => Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        '• ',
-                        style: TextStyle(
-                          color: Color(0xFF4DABF7),
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Expanded(
-                        child: Text(
-                          point,
-                          style: const TextStyle(
-                            color: Colors.white70,
+                ...step.keyPoints.map(
+                  (point) => Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          '• ',
+                          style: TextStyle(
+                            color: Color(0xFF4DABF7),
                             fontSize: 16,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                    ],
+                        Expanded(
+                          child: Text(
+                            point,
+                            style: const TextStyle(
+                              color: Colors.white70,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                )),
+                ),
               ],
             ],
           ),
@@ -1201,7 +1262,8 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
               showControls: true,
             ),
           ),
-          if (step.videoDescription != null && step.videoDescription!.isNotEmpty) ...[
+          if (step.videoDescription != null &&
+              step.videoDescription!.isNotEmpty) ...[
             const SizedBox(height: 8),
             Text(
               step.videoDescription!,
@@ -1295,18 +1357,11 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
         child: const Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.image,
-              color: Color(0xFF4DABF7),
-              size: 48,
-            ),
+            Icon(Icons.image, color: Color(0xFF4DABF7), size: 48),
             SizedBox(height: 8),
             Text(
               '자세 이미지',
-              style: TextStyle(
-                color: Color(0xFF4DABF7),
-                fontSize: 14,
-              ),
+              style: TextStyle(color: Color(0xFF4DABF7), fontSize: 14),
             ),
           ],
         ),
@@ -1343,18 +1398,11 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
-                        fallbackIcon,
-                        color: borderColor,
-                        size: 24,
-                      ),
+                      Icon(fallbackIcon, color: borderColor, size: 24),
                       const SizedBox(height: 4),
                       Text(
                         fallbackText,
-                        style: TextStyle(
-                          color: borderColor,
-                          fontSize: 10,
-                        ),
+                        style: TextStyle(color: borderColor, fontSize: 10),
                       ),
                     ],
                   ),
@@ -1380,18 +1428,11 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              fallbackIcon,
-              color: borderColor,
-              size: 24,
-            ),
+            Icon(fallbackIcon, color: borderColor, size: 24),
             const SizedBox(height: 4),
             Text(
               fallbackText,
-              style: TextStyle(
-                color: borderColor,
-                fontSize: 10,
-              ),
+              style: TextStyle(color: borderColor, fontSize: 10),
             ),
           ],
         ),
@@ -1399,9 +1440,14 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
     );
   }
 
-  Widget _buildVariationImage(PushupVariation variation, Color difficultyColor) {
+  Widget _buildVariationImage(
+    PushupVariation variation,
+    Color difficultyColor,
+  ) {
     // 니 푸시업의 경우 슬라이드쇼 사용
-    if (variation.name.toLowerCase().contains('knee') || variation.name.contains('니') || variation.name.contains('무릎')) {
+    if (variation.name.toLowerCase().contains('knee') ||
+        variation.name.contains('니') ||
+        variation.name.contains('무릎')) {
       final kneeStepImages = [
         'assets/images/pushup_forms/knee/knee_step1.jpg',
         'assets/images/pushup_forms/knee/knee_step2.jpg',
@@ -1420,7 +1466,8 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
     }
 
     // 이미지가 있고 placeholder가 아니면 실제 이미지 표시
-    if (variation.imagePath.isNotEmpty && !variation.imagePath.contains('placeholder')) {
+    if (variation.imagePath.isNotEmpty &&
+        !variation.imagePath.contains('placeholder')) {
       return Semantics(
         label: '${variation.name} 시연 이미지',
         child: Container(
@@ -1449,10 +1496,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                       const SizedBox(height: 4),
                       Text(
                         '이미지 로드 실패',
-                        style: TextStyle(
-                          color: difficultyColor,
-                          fontSize: 12,
-                        ),
+                        style: TextStyle(color: difficultyColor, fontSize: 12),
                       ),
                     ],
                   ),
@@ -1478,18 +1522,11 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.fitness_center,
-              color: difficultyColor,
-              size: 32,
-            ),
+            Icon(Icons.fitness_center, color: difficultyColor, size: 32),
             const SizedBox(height: 4),
             Text(
               '운동 이미지',
-              style: TextStyle(
-                color: difficultyColor,
-                fontSize: 12,
-              ),
+              style: TextStyle(color: difficultyColor, fontSize: 12),
             ),
           ],
         ),
@@ -1523,7 +1560,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
   void _showQuizResult(QuizResult result) {
     final isPassed = result.scorePercentage >= 70;
-    
+
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
@@ -1539,14 +1576,18 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
           children: [
             Icon(
               isPassed ? Icons.check_circle : Icons.cancel,
-              color: isPassed ? const Color(0xFF51CF66) : const Color(0xFFFF6B6B),
+              color: isPassed
+                  ? const Color(0xFF51CF66)
+                  : const Color(0xFFFF6B6B),
               size: 32,
             ),
             const SizedBox(width: 12),
             Text(
               isPassed ? '퀴즈 통과!' : '다시 도전!',
               style: TextStyle(
-                color: isPassed ? const Color(0xFF51CF66) : const Color(0xFFFF6B6B),
+                color: isPassed
+                    ? const Color(0xFF51CF66)
+                    : const Color(0xFFFF6B6B),
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -1567,13 +1608,10 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
             ),
             const SizedBox(height: 8),
             Text(
-              isPassed 
+              isPassed
                   ? '축하합니다! 푸시업 폼에 대해 잘 이해하고 계시네요! 💪'
                   : '70% 이상 맞춰야 통과입니다. 가이드를 다시 읽어보고 도전해보세요! 📚',
-              style: const TextStyle(
-                color: Colors.white70,
-                fontSize: 14,
-              ),
+              style: const TextStyle(color: Colors.white70, fontSize: 14),
             ),
           ],
         ),
@@ -1594,10 +1632,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
     return Container(
       height: adHeight,
       color: const Color(0xFF0D0D0D),
-      child: const SafeArea(
-        top: false,
-        child: AdBannerWidget(),
-      ),
+      child: const SafeArea(top: false, child: AdBannerWidget()),
     );
   }
 }
@@ -1607,10 +1642,7 @@ class _QuizDialog extends StatefulWidget {
   final List<QuizQuestion> questions;
   final void Function(QuizResult) onCompleted;
 
-  const _QuizDialog({
-    required this.questions,
-    required this.onCompleted,
-  });
+  const _QuizDialog({required this.questions, required this.onCompleted});
 
   @override
   State<_QuizDialog> createState() => _QuizDialogState();
@@ -1651,11 +1683,7 @@ class _QuizDialogState extends State<_QuizDialog> {
             // 헤더
             Row(
               children: [
-                const Icon(
-                  Icons.quiz,
-                  color: Color(0xFF4DABF7),
-                  size: 24,
-                ),
+                const Icon(Icons.quiz, color: Color(0xFF4DABF7), size: 24),
                 const SizedBox(width: 8),
                 const Text(
                   '푸시업 폼 퀴즈',
@@ -1668,10 +1696,7 @@ class _QuizDialogState extends State<_QuizDialog> {
                 const Spacer(),
                 Text(
                   '${_currentQuestionIndex + 1}/${widget.questions.length}',
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
-                  ),
+                  style: const TextStyle(color: Colors.white70, fontSize: 14),
                 ),
               ],
             ),
@@ -1687,7 +1712,9 @@ class _QuizDialogState extends State<_QuizDialog> {
               child: LinearProgressIndicator(
                 value: progress,
                 backgroundColor: Colors.grey.withValues(alpha: 0.3),
-                valueColor: const AlwaysStoppedAnimation<Color>(Color(0xFF4DABF7)),
+                valueColor: const AlwaysStoppedAnimation<Color>(
+                  Color(0xFF4DABF7),
+                ),
               ),
             ),
 
@@ -1707,14 +1734,17 @@ class _QuizDialogState extends State<_QuizDialog> {
 
             // 선택지들
             ...List.generate(currentQuestion.options.length, (index) {
-              final isSelected = _selectedAnswers[_currentQuestionIndex] == index;
-              
+              final isSelected =
+                  _selectedAnswers[_currentQuestionIndex] == index;
+
               return Semantics(
                 button: true,
                 label: AccessibilityUtils.createButtonLabel(
                   action: AppLocalizations.of(context)!.select,
                   target: currentQuestion.options[index],
-                  state: isSelected ? AppLocalizations.of(context)!.selected : null,
+                  state: isSelected
+                      ? AppLocalizations.of(context)!.selected
+                      : null,
                 ),
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 8),
@@ -1724,18 +1754,20 @@ class _QuizDialogState extends State<_QuizDialog> {
                       setState(() {
                         _selectedAnswers[_currentQuestionIndex] = index;
                       });
-                      AccessibilityUtils.provideFeedback(HapticFeedbackType.selectionClick);
+                      AccessibilityUtils.provideFeedback(
+                        HapticFeedbackType.selectionClick,
+                      );
                     },
                     child: Container(
                       width: double.infinity,
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: isSelected 
+                        color: isSelected
                             ? const Color(0xFF4DABF7).withValues(alpha: 0.2)
                             : const Color(0xFF2A2A2A),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(
-                          color: isSelected 
+                          color: isSelected
                               ? const Color(0xFF4DABF7)
                               : Colors.grey.withValues(alpha: 0.3),
                           width: 1,
@@ -1748,22 +1780,22 @@ class _QuizDialogState extends State<_QuizDialog> {
                             height: 20,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: isSelected 
+                              color: isSelected
                                   ? const Color(0xFF4DABF7)
                                   : Colors.transparent,
                               border: Border.all(
-                                color: isSelected 
+                                color: isSelected
                                     ? const Color(0xFF4DABF7)
                                     : Colors.grey,
                                 width: 2,
                               ),
                             ),
                             child: isSelected
-                                                                 ? const Icon(
-                                     Icons.check,
-                                     color: Colors.white,
-                                     size: 12,
-                                   )
+                                ? const Icon(
+                                    Icons.check,
+                                    color: Colors.white,
+                                    size: 12,
+                                  )
                                 : null,
                           ),
                           const SizedBox(width: 12),
@@ -1771,7 +1803,9 @@ class _QuizDialogState extends State<_QuizDialog> {
                             child: Text(
                               currentQuestion.options[index],
                               style: TextStyle(
-                                color: isSelected ? Colors.white : Colors.white70,
+                                color: isSelected
+                                    ? Colors.white
+                                    : Colors.white70,
                                 fontSize: 14,
                               ),
                             ),
@@ -1803,14 +1837,15 @@ class _QuizDialogState extends State<_QuizDialog> {
                       ),
                     ),
                   ),
-                
+
                 if (_currentQuestionIndex > 0) const SizedBox(width: 12),
-                
+
                 Expanded(
                   child: ElevatedButton(
                     onPressed: _selectedAnswers[_currentQuestionIndex] != null
                         ? () {
-                            if (_currentQuestionIndex < widget.questions.length - 1) {
+                            if (_currentQuestionIndex <
+                                widget.questions.length - 1) {
                               // 다음 질문으로
                               setState(() {
                                 _currentQuestionIndex++;
@@ -1845,7 +1880,8 @@ class _QuizDialogState extends State<_QuizDialog> {
     // 정답 확인
     int correctAnswers = 0;
     for (int i = 0; i < widget.questions.length; i++) {
-      final isCorrect = _selectedAnswers[i] == widget.questions[i].correctAnswerIndex;
+      final isCorrect =
+          _selectedAnswers[i] == widget.questions[i].correctAnswerIndex;
       _answerResults[i] = isCorrect;
       if (isCorrect) correctAnswers++;
     }
@@ -1864,4 +1900,4 @@ class _QuizDialogState extends State<_QuizDialog> {
     // 결과 콜백 호출
     widget.onCompleted(result);
   }
-} 
+}

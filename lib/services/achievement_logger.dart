@@ -9,56 +9,54 @@ import '../models/achievement.dart';
 enum LogLevel { debug, info, warning, error, critical }
 
 // 로그 카테고리
-enum LogCategory { 
-  achievement, 
-  performance, 
-  database, 
-  cache, 
-  notification, 
-  ui, 
-  analytics 
+enum LogCategory {
+  achievement,
+  performance,
+  database,
+  cache,
+  notification,
+  ui,
+  analytics,
 }
 
 /// 업적 시스템 전용 로거
 /// 업적 달성, 진행률 변경, 성능 이슈 등을 상세히 기록
 class AchievementLogger {
-  
   // 설정
   static LogLevel _currentLogLevel = LogLevel.info;
   static bool _isFileLoggingEnabled = true;
   static bool _isAnalyticsEnabled = true;
   static const int _maxLogFileSize = 5 * 1024 * 1024; // 5MB
   static const int _maxLogFiles = 5;
-  
+
   // 로그 파일
   static File? _logFile;
   static final List<String> _memoryBuffer = [];
   static const int _maxMemoryBuffer = 1000;
-  
+
   // 분석 데이터
   static final Map<String, int> _achievementEvents = {};
   static final Map<String, int> _errorCounts = {};
   static final Map<String, double> _performanceMetrics = {};
-  
+
   /// 로거 초기화
   static Future<void> initialize() async {
     try {
       // 로그 디렉토리 생성
       await _initializeLogFile();
-      
+
       // 기존 로그 데이터 로드
       await _loadLogAnalytics();
-      
+
       // 로그 로테이션 확인
       await _checkLogRotation();
-      
+
       await log(
-        LogLevel.info, 
-        LogCategory.achievement, 
+        LogLevel.info,
+        LogCategory.achievement,
         'AchievementLogger 초기화 완료',
         metadata: {'version': '1.0.0'},
       );
-      
     } catch (e) {
       debugPrint('❌ AchievementLogger 초기화 실패: $e');
     }
@@ -77,7 +75,7 @@ class AchievementLogger {
   }) async {
     // 로그 레벨 필터링
     if (level.index < _currentLogLevel.index) return;
-    
+
     try {
       final logEntry = _createLogEntry(
         level,
@@ -89,23 +87,22 @@ class AchievementLogger {
         userId: userId,
         achievementId: achievementId,
       );
-      
+
       // 콘솔 출력
       _printToConsole(level, category, message, error);
-      
+
       // 메모리 버퍼에 추가
       _addToMemoryBuffer(logEntry);
-      
+
       // 파일에 기록
       if (_isFileLoggingEnabled) {
         await _writeToFile(logEntry);
       }
-      
+
       // 분석 데이터 업데이트
       if (_isAnalyticsEnabled) {
         _updateAnalytics(level, category, message, achievementId);
       }
-      
     } catch (e) {
       debugPrint('❌ 로그 기록 실패: $e');
     }
@@ -144,8 +141,11 @@ class AchievementLogger {
     String? trigger,
     String? userId,
   }) async {
-    final progressPercent = (newValue / achievement.targetValue * 100).clamp(0, 100);
-    
+    final progressPercent = (newValue / achievement.targetValue * 100).clamp(
+      0,
+      100,
+    );
+
     await log(
       LogLevel.debug,
       LogCategory.achievement,
@@ -413,9 +413,9 @@ class AchievementLogger {
     final emoji = _getEmojiForLevel(level);
     final timestamp = DateTime.now().toString().substring(11, 19);
     final categoryStr = category.toString().split('.').last.toUpperCase();
-    
+
     debugPrint('$emoji [$timestamp][$categoryStr] $message');
-    
+
     if (error != null) {
       debugPrint('   Error: $error');
     }
@@ -424,18 +424,23 @@ class AchievementLogger {
   /// 레벨별 이모지
   static String _getEmojiForLevel(LogLevel level) {
     switch (level) {
-      case LogLevel.debug: return '🐛';
-      case LogLevel.info: return 'ℹ️';
-      case LogLevel.warning: return '⚠️';
-      case LogLevel.error: return '❌';
-      case LogLevel.critical: return '🚨';
+      case LogLevel.debug:
+        return '🐛';
+      case LogLevel.info:
+        return 'ℹ️';
+      case LogLevel.warning:
+        return '⚠️';
+      case LogLevel.error:
+        return '❌';
+      case LogLevel.critical:
+        return '🚨';
     }
   }
 
   /// 메모리 버퍼에 추가
   static void _addToMemoryBuffer(Map<String, dynamic> logEntry) {
     _memoryBuffer.add(jsonEncode(logEntry));
-    
+
     // 버퍼 크기 제한
     while (_memoryBuffer.length > _maxMemoryBuffer) {
       _memoryBuffer.removeAt(0);
@@ -446,16 +451,15 @@ class AchievementLogger {
   static Future<void> _writeToFile(Map<String, dynamic> logEntry) async {
     try {
       if (_logFile == null) return;
-      
+
       final jsonLine = '${jsonEncode(logEntry)}\n';
       await _logFile!.writeAsString(jsonLine, mode: FileMode.append);
-      
+
       // 파일 크기 확인
       final fileSize = await _logFile!.length();
       if (fileSize > _maxLogFileSize) {
         await _rotateLogFile();
       }
-      
     } catch (e) {
       debugPrint('❌ 로그 파일 쓰기 실패: $e');
     }
@@ -468,15 +472,16 @@ class AchievementLogger {
     String message,
     String? achievementId,
   ) {
-    final key = '${category.toString().split('.').last}_${level.toString().split('.').last}';
+    final key =
+        '${category.toString().split('.').last}_${level.toString().split('.').last}';
     _achievementEvents[key] = (_achievementEvents[key] ?? 0) + 1;
-    
+
     if (level == LogLevel.error || level == LogLevel.critical) {
       _errorCounts[message] = (_errorCounts[message] ?? 0) + 1;
     }
-    
+
     if (achievementId != null) {
-      _achievementEvents['achievement_$achievementId'] = 
+      _achievementEvents['achievement_$achievementId'] =
           (_achievementEvents['achievement_$achievementId'] ?? 0) + 1;
     }
   }
@@ -486,14 +491,13 @@ class AchievementLogger {
     try {
       final directory = await getApplicationDocumentsDirectory();
       final logDir = Directory('${directory.path}/logs');
-      
+
       if (!await logDir.exists()) {
         await logDir.create(recursive: true);
       }
-      
+
       final today = DateTime.now().toString().substring(0, 10);
       _logFile = File('${logDir.path}/achievements_$today.log');
-      
     } catch (e) {
       debugPrint('❌ 로그 파일 초기화 실패: $e');
       _isFileLoggingEnabled = false;
@@ -504,19 +508,18 @@ class AchievementLogger {
   static Future<void> _rotateLogFile() async {
     try {
       if (_logFile == null) return;
-      
+
       final directory = _logFile!.parent;
       final timestamp = DateTime.now().millisecondsSinceEpoch;
       final rotatedName = '${_logFile!.path}.$timestamp.old';
-      
+
       await _logFile!.rename(rotatedName);
-      
+
       // 새 로그 파일 생성
       await _initializeLogFile();
-      
+
       // 오래된 로그 파일 정리
       await _cleanupOldLogFiles(directory);
-      
     } catch (e) {
       debugPrint('❌ 로그 로테이션 실패: $e');
     }
@@ -541,20 +544,26 @@ class AchievementLogger {
     try {
       final files = await directory.list().toList();
       final logFiles = files
-          .where((f) => f is File && f.path.contains('achievements_') && f.path.endsWith('.old'))
+          .where(
+            (f) =>
+                f is File &&
+                f.path.contains('achievements_') &&
+                f.path.endsWith('.old'),
+          )
           .cast<File>()
           .toList();
-      
+
       if (logFiles.length > _maxLogFiles) {
         // 생성 시간 순으로 정렬
-        logFiles.sort((a, b) => a.statSync().modified.compareTo(b.statSync().modified));
-        
+        logFiles.sort(
+          (a, b) => a.statSync().modified.compareTo(b.statSync().modified),
+        );
+
         // 오래된 파일 삭제
         for (int i = 0; i < logFiles.length - _maxLogFiles; i++) {
           await logFiles[i].delete();
         }
       }
-      
     } catch (e) {
       debugPrint('❌ 오래된 로그 파일 정리 실패: $e');
     }
@@ -564,19 +573,18 @@ class AchievementLogger {
   static Future<void> _loadLogAnalytics() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       final eventsJson = prefs.getString('achievement_log_events');
       if (eventsJson != null) {
         final events = Map<String, dynamic>.from(jsonDecode(eventsJson));
         _achievementEvents.addAll(events.cast<String, int>());
       }
-      
+
       final errorsJson = prefs.getString('achievement_log_errors');
       if (errorsJson != null) {
         final errors = Map<String, dynamic>.from(jsonDecode(errorsJson));
         _errorCounts.addAll(errors.cast<String, int>());
       }
-      
     } catch (e) {
       debugPrint('❌ 로그 분석 데이터 로드 실패: $e');
     }
@@ -586,10 +594,12 @@ class AchievementLogger {
   static Future<void> saveAnalytics() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
-      await prefs.setString('achievement_log_events', jsonEncode(_achievementEvents));
+
+      await prefs.setString(
+        'achievement_log_events',
+        jsonEncode(_achievementEvents),
+      );
       await prefs.setString('achievement_log_errors', jsonEncode(_errorCounts));
-      
     } catch (e) {
       debugPrint('❌ 로그 분석 데이터 저장 실패: $e');
     }
@@ -597,15 +607,23 @@ class AchievementLogger {
 
   /// 분석 리포트 생성
   static Map<String, dynamic> generateAnalyticsReport() {
-    final totalEvents = _achievementEvents.values.fold(0, (sum, count) => sum + count);
-    final totalErrors = _errorCounts.values.fold(0, (sum, count) => sum + count);
-    
+    final totalEvents = _achievementEvents.values.fold(
+      0,
+      (sum, count) => sum + count,
+    );
+    final totalErrors = _errorCounts.values.fold(
+      0,
+      (sum, count) => sum + count,
+    );
+
     return {
       'timestamp': DateTime.now().toIso8601String(),
       'summary': {
         'totalEvents': totalEvents,
         'totalErrors': totalErrors,
-        'errorRate': totalEvents > 0 ? (totalErrors / totalEvents * 100).toStringAsFixed(2) : '0.00',
+        'errorRate': totalEvents > 0
+            ? (totalErrors / totalEvents * 100).toStringAsFixed(2)
+            : '0.00',
       },
       'events': _achievementEvents,
       'errors': _errorCounts,
@@ -638,11 +656,11 @@ class AchievementLogger {
         return <String, dynamic>{'error': 'Failed to parse log: $e'};
       }
     }).toList();
-    
+
     if (limit != null && limit < logs.length) {
       return logs.sublist(logs.length - limit);
     }
-    
+
     return logs;
   }
 
@@ -652,4 +670,4 @@ class AchievementLogger {
     _errorCounts.clear();
     _performanceMetrics.clear();
   }
-} 
+}

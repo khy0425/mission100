@@ -56,9 +56,15 @@ class ThemeConfig {
 
   factory ThemeConfig.fromJson(Map<String, dynamic> json) {
     return ThemeConfig(
-      primaryColor: Color(int.parse(json['primary_color'].toString().replaceFirst('#', '0xFF'))),
-      secondaryColor: Color(int.parse(json['secondary_color'].toString().replaceFirst('#', '0xFF'))),
-      accentColor: Color(int.parse(json['accent_color'].toString().replaceFirst('#', '0xFF'))),
+      primaryColor: Color(
+        int.parse(json['primary_color'].toString().replaceFirst('#', '0xFF')),
+      ),
+      secondaryColor: Color(
+        int.parse(json['secondary_color'].toString().replaceFirst('#', '0xFF')),
+      ),
+      accentColor: Color(
+        int.parse(json['accent_color'].toString().replaceFirst('#', '0xFF')),
+      ),
       fontFamily: json['font_family'] ?? 'Roboto',
       isDarkMode: json['is_dark_mode'] ?? false,
     );
@@ -66,9 +72,12 @@ class ThemeConfig {
 
   Map<String, dynamic> toJson() {
     return {
-      'primary_color': '#${primaryColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
-      'secondary_color': '#${secondaryColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
-      'accent_color': '#${accentColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
+      'primary_color':
+          '#${primaryColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
+      'secondary_color':
+          '#${secondaryColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
+      'accent_color':
+          '#${accentColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
       'font_family': fontFamily,
       'is_dark_mode': isDarkMode,
     };
@@ -138,7 +147,9 @@ class PaymentConfig {
     return PaymentConfig(
       subscriptionEnabled: json['subscription_enabled'] ?? false,
       oneTimePurchaseEnabled: json['one_time_purchase_enabled'] ?? false,
-      subscriptionProductIds: List<String>.from(json['subscription_product_ids'] ?? []),
+      subscriptionProductIds: List<String>.from(
+        json['subscription_product_ids'] ?? [],
+      ),
       oneTimeProductIds: List<String>.from(json['one_time_product_ids'] ?? []),
     );
   }

@@ -33,20 +33,20 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
     _selectedDay = DateTime.now();
     _selectedEvents = ValueNotifier(_getEventsForDay(_selectedDay!));
-    
+
     // 데이터베이스 상태 확인
     _checkDatabaseStatus();
-    
+
     _loadWorkoutHistory();
     _createCalendarBannerAd();
-    
+
     // 알림 서비스 초기화
     NotificationService.initialize();
-    
+
     // 운동 기록 저장 시 달력 즉시 업데이트 (즉시 등록)
     WorkoutHistoryService.addOnWorkoutSavedCallback(_onWorkoutSaved);
     debugPrint('📅 달력 화면: 운동 기록 콜백 등록 완료');
-    
+
     // 업적 달성 시 달력 데이터 새로고침을 위한 콜백 설정
     WidgetsBinding.instance.addPostFrameCallback((_) {
       AchievementService.setOnStatsUpdated(() {
@@ -61,10 +61,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
   void dispose() {
     _selectedEvents.dispose();
     _calendarBannerAd?.dispose();
-    
+
     // 콜백 제거하여 메모리 누수 방지
     WorkoutHistoryService.removeOnWorkoutSavedCallback(_onWorkoutSaved);
-    
+
     super.dispose();
   }
 
@@ -73,25 +73,30 @@ class _CalendarScreenState extends State<CalendarScreen> {
       debugPrint('📅 [CalendarScreen] 운동 기록 로딩 시작...');
       final history = await WorkoutHistoryService.getAllWorkouts();
       debugPrint('📅 [CalendarScreen] 로드된 운동 기록 수: ${history.length}개');
-      
+
       // 로드된 데이터 상세 로그
       for (int i = 0; i < history.length && i < 5; i++) {
         final workout = history[i];
-        debugPrint('📅 [CalendarScreen] 운동 기록 ${i + 1}: ${workout.date} - ${workout.workoutTitle} (${workout.totalReps}회, ${(workout.completionRate * 100).toStringAsFixed(1)}%)');
+        debugPrint(
+          '📅 [CalendarScreen] 운동 기록 ${i + 1}: ${workout.date} - ${workout.workoutTitle} (${workout.totalReps}회, ${(workout.completionRate * 100).toStringAsFixed(1)}%)',
+        );
       }
       if (history.length > 5) {
         debugPrint('📅 [CalendarScreen] ... 및 ${history.length - 5}개 더');
       }
-      
+
       setState(() {
         _workoutHistory = history;
         _organizeWorkoutEvents();
         _isLoading = false;
       });
-      
-      debugPrint('📅 [CalendarScreen] 조직화된 이벤트 날짜 수: ${_workoutEvents.keys.length}개');
-      debugPrint('📅 [CalendarScreen] 이벤트 날짜들: ${_workoutEvents.keys.take(10).toList()}');
-      
+
+      debugPrint(
+        '📅 [CalendarScreen] 조직화된 이벤트 날짜 수: ${_workoutEvents.keys.length}개',
+      );
+      debugPrint(
+        '📅 [CalendarScreen] 이벤트 날짜들: ${_workoutEvents.keys.take(10).toList()}',
+      );
     } catch (e) {
       setState(() {
         _isLoading = false;
@@ -103,46 +108,57 @@ class _CalendarScreenState extends State<CalendarScreen> {
   void _organizeWorkoutEvents() {
     _workoutEvents.clear();
     debugPrint('📅 [CalendarScreen] 이벤트 조직화 시작...');
-    
+
     for (final workout in _workoutHistory) {
       final date = DateTime(
         workout.date.year,
         workout.date.month,
         workout.date.day,
       );
-      
-      debugPrint('📅 [CalendarScreen] 원본 날짜: ${workout.date} -> 정규화된 날짜: $date');
-      
+
+      debugPrint(
+        '📅 [CalendarScreen] 원본 날짜: ${workout.date} -> 정규화된 날짜: $date',
+      );
+
       if (_workoutEvents[date] != null) {
         _workoutEvents[date]!.add(workout);
-        debugPrint('📅 [CalendarScreen] 기존 날짜에 추가: $date (총 ${_workoutEvents[date]!.length}개)');
+        debugPrint(
+          '📅 [CalendarScreen] 기존 날짜에 추가: $date (총 ${_workoutEvents[date]!.length}개)',
+        );
       } else {
         _workoutEvents[date] = [workout];
         debugPrint('📅 [CalendarScreen] 새 날짜 추가: $date');
       }
     }
-    
-    debugPrint('📅 [CalendarScreen] 이벤트 조직화 완료. 총 ${_workoutEvents.length}개 날짜에 운동 기록 존재');
+
+    debugPrint(
+      '📅 [CalendarScreen] 이벤트 조직화 완료. 총 ${_workoutEvents.length}개 날짜에 운동 기록 존재',
+    );
   }
 
   List<WorkoutHistory> _getEventsForDay(DateTime day) {
     final normalizedDay = DateTime(day.year, day.month, day.day);
     final events = _workoutEvents[normalizedDay] ?? [];
-    
+
     // 오늘과 며칠 전의 데이터만 로그 출력 (너무 많은 로그 방지)
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
     final daysDiff = today.difference(normalizedDay).inDays.abs();
-    
-    if (daysDiff <= 7) {  // 일주일 이내의 날짜만 로그
-      debugPrint('📅 [CalendarScreen] _getEventsForDay($day) -> 정규화: $normalizedDay, 이벤트 수: ${events.length}');
+
+    if (daysDiff <= 7) {
+      // 일주일 이내의 날짜만 로그
+      debugPrint(
+        '📅 [CalendarScreen] _getEventsForDay($day) -> 정규화: $normalizedDay, 이벤트 수: ${events.length}',
+      );
       if (events.isNotEmpty) {
         for (final event in events) {
-          debugPrint('  📋 이벤트: ${event.workoutTitle} (${event.totalReps}회, ${(event.completionRate * 100).toStringAsFixed(1)}%)');
+          debugPrint(
+            '  📋 이벤트: ${event.workoutTitle} (${event.totalReps}회, ${(event.completionRate * 100).toStringAsFixed(1)}%)',
+          );
         }
       }
     }
-    
+
     return events;
   }
 
@@ -158,7 +174,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
     for (final date in sortedDates) {
       final daysDiff = currentDate.difference(date).inDays;
-      
+
       if (daysDiff == streak) {
         streak++;
       } else {
@@ -171,12 +187,15 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
   Color _getDayColor(DateTime day) {
     final events = _getEventsForDay(day);
-    
+
     // 오늘과 며칠 전의 데이터만 로그 출력
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
-    final daysDiff = today.difference(DateTime(day.year, day.month, day.day)).inDays.abs();
-    
+    final daysDiff = today
+        .difference(DateTime(day.year, day.month, day.day))
+        .inDays
+        .abs();
+
     if (events.isEmpty) {
       if (daysDiff <= 7) {
         debugPrint('📅 [CalendarScreen] _getDayColor($day): 이벤트 없음 -> 투명');
@@ -186,13 +205,15 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
     // 개별 세트 완료도를 체크하여 정확한 완료율 계산
     double totalCompletionRate = 0.0;
-    
+
     for (final event in events) {
       // 개별 세트들이 모두 목표를 달성했는지 확인
       bool allSetsCompleted = true;
       if (event.completedReps.isNotEmpty && event.targetReps.isNotEmpty) {
         for (int i = 0; i < event.completedReps.length; i++) {
-          final targetRep = i < event.targetReps.length ? event.targetReps[i] : 0;
+          final targetRep = i < event.targetReps.length
+              ? event.targetReps[i]
+              : 0;
           final completedRep = event.completedReps[i];
           if (completedRep < targetRep) {
             allSetsCompleted = false;
@@ -200,23 +221,28 @@ class _CalendarScreenState extends State<CalendarScreen> {
           }
         }
       }
-      
+
       // 모든 세트를 완료했다면 실제 완료율 계산 (100% 이상 가능)
       if (allSetsCompleted) {
         final totalTarget = event.targetReps.fold(0, (sum, reps) => sum + reps);
-        final totalCompleted = event.completedReps.fold(0, (sum, reps) => sum + reps);
-        totalCompletionRate += totalTarget > 0 ? totalCompleted / totalTarget : 1.0;
+        final totalCompleted = event.completedReps.fold(
+          0,
+          (sum, reps) => sum + reps,
+        );
+        totalCompletionRate += totalTarget > 0
+            ? totalCompleted / totalTarget
+            : 1.0;
       } else {
         // 개별 세트 중 하나라도 목표에 못 미쳤다면 기존 로직 사용
         totalCompletionRate += event.completionRate;
       }
     }
-    
+
     final avgCompletionRate = totalCompletionRate / events.length;
-    
+
     Color resultColor;
     String colorName;
-    
+
     if (avgCompletionRate >= 1.0) {
       resultColor = Colors.green.shade400; // 완벽 완료 (모든 세트 목표 달성)
       colorName = '초록색 (완벽)';
@@ -230,11 +256,13 @@ class _CalendarScreenState extends State<CalendarScreen> {
       resultColor = Colors.red.shade400; // 부족 (50% 미만)
       colorName = '빨간색 (부족)';
     }
-    
+
     if (daysDiff <= 7) {
-      debugPrint('📅 [CalendarScreen] _getDayColor($day): 평균 완료율 ${(avgCompletionRate * 100).toStringAsFixed(1)}% -> $colorName');
+      debugPrint(
+        '📅 [CalendarScreen] _getDayColor($day): 평균 완료율 ${(avgCompletionRate * 100).toStringAsFixed(1)}% -> $colorName',
+      );
     }
-    
+
     return resultColor;
   }
 
@@ -264,7 +292,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
               children: [
                 // 스트릭 정보 카드
                 _buildStreakInfoCard(),
-                
+
                 // 달력
                 Expanded(
                   child: SingleChildScrollView(
@@ -351,10 +379,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
         ),
         Text(
           label,
-          style: TextStyle(
-            fontSize: 12,
-            color: Colors.grey[600],
-          ),
+          style: TextStyle(fontSize: 12, color: Colors.grey[600]),
           textAlign: TextAlign.center,
         ),
       ],
@@ -417,9 +442,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
               color: Colors.blue,
               borderRadius: BorderRadius.all(Radius.circular(12.0)),
             ),
-            formatButtonTextStyle: TextStyle(
-              color: Colors.white,
-            ),
+            formatButtonTextStyle: TextStyle(color: Colors.white),
           ),
           calendarStyle: const CalendarStyle(
             outsideDaysVisible: false,
@@ -431,18 +454,22 @@ class _CalendarScreenState extends State<CalendarScreen> {
     );
   }
 
-  Widget _buildCalendarDay(DateTime day, bool isSelected, {bool isToday = false}) {
+  Widget _buildCalendarDay(
+    DateTime day,
+    bool isSelected, {
+    bool isToday = false,
+  }) {
     final events = _getEventsForDay(day);
     final dayColor = _getDayColor(day);
-    
+
     return Container(
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: isSelected 
+        color: isSelected
             ? Colors.blue.shade600
-            : isToday 
-                ? Colors.blue.shade100
-                : dayColor,
+            : isToday
+            ? Colors.blue.shade100
+            : dayColor,
         shape: BoxShape.circle,
         border: isToday && !isSelected
             ? Border.all(color: Colors.blue.shade600, width: 2)
@@ -458,8 +485,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 color: isSelected || dayColor != Colors.transparent
                     ? Colors.white
                     : isToday
-                        ? Colors.blue.shade600
-                        : Colors.black,
+                    ? Colors.blue.shade600
+                    : Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -482,9 +509,9 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
   Widget _buildSelectedDayInfo() {
     if (_selectedDay == null) return const SizedBox.shrink();
-    
+
     final events = _getEventsForDay(_selectedDay!);
-    
+
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16),
       elevation: 4,
@@ -496,19 +523,13 @@ class _CalendarScreenState extends State<CalendarScreen> {
           children: [
             Text(
               '${_selectedDay!.year}년 ${_selectedDay!.month}월 ${_selectedDay!.day}일',
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
             if (events.isEmpty)
               Text(
                 AppLocalizations.of(context)!.noWorkoutThisDay,
-                style: TextStyle(
-                  color: Colors.grey[600],
-                  fontSize: 14,
-                ),
+                style: TextStyle(color: Colors.grey[600], fontSize: 14),
               )
             else
               ...events.map((event) => _buildWorkoutEventTile(event)),
@@ -531,10 +552,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
             color: workout.completionRate >= 1.0
                 ? Colors.green
                 : workout.completionRate >= 0.8
-                    ? Colors.blue
-                    : workout.completionRate >= 0.5
-                        ? Colors.orange
-                        : Colors.red,
+                ? Colors.blue
+                : workout.completionRate >= 0.5
+                ? Colors.orange
+                : Colors.red,
           ),
         ),
       ),
@@ -554,10 +575,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 const SizedBox(height: 4),
                 Text(
                   '${workout.totalReps}개 (${(workout.completionRate * 100).toInt()}%)',
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    fontSize: 12,
-                  ),
+                  style: TextStyle(color: Colors.grey[600], fontSize: 12),
                 ),
               ],
             ),
@@ -566,13 +584,13 @@ class _CalendarScreenState extends State<CalendarScreen> {
             workout.completionRate >= 1.0
                 ? Icons.check_circle
                 : workout.completionRate >= 0.8
-                    ? Icons.check_circle_outline
-                    : Icons.radio_button_unchecked,
+                ? Icons.check_circle_outline
+                : Icons.radio_button_unchecked,
             color: workout.completionRate >= 1.0
                 ? Colors.green
                 : workout.completionRate >= 0.8
-                    ? Colors.blue
-                    : Colors.grey,
+                ? Colors.blue
+                : Colors.grey,
           ),
         ],
       ),
@@ -591,19 +609,28 @@ class _CalendarScreenState extends State<CalendarScreen> {
           children: [
             Text(
               AppLocalizations.of(context)!.legend,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildLegendItem(Colors.green.shade400, AppLocalizations.of(context)!.perfect),
-                _buildLegendItem(Colors.blue.shade400, AppLocalizations.of(context)!.good),
-                _buildLegendItem(Colors.orange.shade400, AppLocalizations.of(context)!.okay),
-                _buildLegendItem(Colors.red.shade400, AppLocalizations.of(context)!.poor),
+                _buildLegendItem(
+                  Colors.green.shade400,
+                  AppLocalizations.of(context)!.perfect,
+                ),
+                _buildLegendItem(
+                  Colors.blue.shade400,
+                  AppLocalizations.of(context)!.good,
+                ),
+                _buildLegendItem(
+                  Colors.orange.shade400,
+                  AppLocalizations.of(context)!.okay,
+                ),
+                _buildLegendItem(
+                  Colors.red.shade400,
+                  AppLocalizations.of(context)!.poor,
+                ),
               ],
             ),
           ],
@@ -618,16 +645,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
         Container(
           width: 20,
           height: 20,
-          decoration: BoxDecoration(
-            color: color,
-            shape: BoxShape.circle,
-          ),
+          decoration: BoxDecoration(color: color, shape: BoxShape.circle),
         ),
         const SizedBox(height: 4),
-        Text(
-          label,
-          style: const TextStyle(fontSize: 12),
-        ),
+        Text(label, style: const TextStyle(fontSize: 12)),
       ],
     );
   }
@@ -682,29 +703,33 @@ class _CalendarScreenState extends State<CalendarScreen> {
   void _onWorkoutSaved() {
     if (mounted) {
       debugPrint('📅 달력 화면: 운동 기록 저장 감지, 데이터 새로고침 시작');
-      
+
       // 즉시 UI 업데이트 시작
       setState(() {
         _isLoading = true;
       });
-      
+
       // 비동기로 데이터 로드
-      _loadWorkoutHistory().then((_) {
-        debugPrint('📅 달력 화면: 데이터 새로고침 완료');
-        
-        // 선택된 날짜의 이벤트도 업데이트
-        if (_selectedDay != null) {
-          _selectedEvents.value = _getEventsForDay(_selectedDay!);
-          debugPrint('📅 선택된 날짜(${_selectedDay}) 이벤트 업데이트: ${_selectedEvents.value.length}개');
-        }
-      }).catchError((e) {
-        debugPrint('❌ 달력 화면: 데이터 새로고침 실패: $e');
-        if (mounted) {
-          setState(() {
-            _isLoading = false;
+      _loadWorkoutHistory()
+          .then((_) {
+            debugPrint('📅 달력 화면: 데이터 새로고침 완료');
+
+            // 선택된 날짜의 이벤트도 업데이트
+            if (_selectedDay != null) {
+              _selectedEvents.value = _getEventsForDay(_selectedDay!);
+              debugPrint(
+                '📅 선택된 날짜(${_selectedDay}) 이벤트 업데이트: ${_selectedEvents.value.length}개',
+              );
+            }
+          })
+          .catchError((e) {
+            debugPrint('❌ 달력 화면: 데이터 새로고침 실패: $e');
+            if (mounted) {
+              setState(() {
+                _isLoading = false;
+              });
+            }
           });
-        }
-      });
     } else {
       debugPrint('⚠️ 달력 화면: mounted가 false이므로 콜백 무시');
     }
@@ -714,28 +739,34 @@ class _CalendarScreenState extends State<CalendarScreen> {
   Future<void> _checkDatabaseStatus() async {
     try {
       debugPrint('🔍 [CalendarScreen] 데이터베이스 상태 확인 시작...');
-      
+
       // 전체 운동 기록 수 확인
       final allWorkouts = await WorkoutHistoryService.getAllWorkouts();
       debugPrint('🔍 [CalendarScreen] 총 운동 기록 수: ${allWorkouts.length}개');
-      
+
       // 통계 정보 확인
       final stats = await WorkoutHistoryService.getStatistics();
       debugPrint('🔍 [CalendarScreen] 통계 정보: $stats');
-      
+
       // 최근 5개 운동 기록 상세 확인
       if (allWorkouts.isNotEmpty) {
         debugPrint('🔍 [CalendarScreen] 최근 운동 기록들:');
         for (int i = 0; i < allWorkouts.length && i < 5; i++) {
           final workout = allWorkouts[i];
-          debugPrint('  📋 ${i + 1}: ${workout.date.toIso8601String()} - ${workout.workoutTitle}');
-          debugPrint('      목표: ${workout.targetReps}, 완료: ${workout.completedReps}');
-          debugPrint('      총 ${workout.totalReps}회, 완료율: ${(workout.completionRate * 100).toStringAsFixed(1)}%');
+          debugPrint(
+            '  📋 ${i + 1}: ${workout.date.toIso8601String()} - ${workout.workoutTitle}',
+          );
+          debugPrint(
+            '      목표: ${workout.targetReps}, 완료: ${workout.completedReps}',
+          );
+          debugPrint(
+            '      총 ${workout.totalReps}회, 완료율: ${(workout.completionRate * 100).toStringAsFixed(1)}%',
+          );
         }
       } else {
         debugPrint('🔍 [CalendarScreen] ⚠️ 운동 기록이 없습니다!');
       }
-      
+
       debugPrint('🔍 [CalendarScreen] 데이터베이스 상태 확인 완료');
     } catch (e) {
       debugPrint('❌ [CalendarScreen] 데이터베이스 상태 확인 실패: $e');

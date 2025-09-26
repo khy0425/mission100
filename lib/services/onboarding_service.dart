@@ -25,7 +25,8 @@ class OnboardingService extends ChangeNotifier {
 
   /// 현재 스텝
   OnboardingStep? get currentStep {
-    if (_progress.currentStepIndex >= 0 && _progress.currentStepIndex < _steps.length) {
+    if (_progress.currentStepIndex >= 0 &&
+        _progress.currentStepIndex < _steps.length) {
       return _steps[_progress.currentStepIndex];
     }
     return null;
@@ -83,7 +84,8 @@ class OnboardingService extends ChangeNotifier {
       const OnboardingStep(
         type: OnboardingStepType.welcome,
         title: 'Mission 100에 오신 것을 환영합니다!',
-        description: '6주 동안 100개의 푸시업을 목표로 하는 여정을 시작해보세요.\n체계적인 프로그램으로 당신의 한계를 뛰어넘어보세요!',
+        description:
+            '6주 동안 100개의 푸시업을 목표로 하는 여정을 시작해보세요.\n체계적인 프로그램으로 당신의 한계를 뛰어넘어보세요!',
         imagePath: 'assets/images/기본차드.jpg',
         buttonText: '시작하기',
         canSkip: false,
@@ -91,7 +93,8 @@ class OnboardingService extends ChangeNotifier {
       const OnboardingStep(
         type: OnboardingStepType.programIntroduction,
         title: '6주 프로그램 소개',
-        description: '과학적으로 설계된 6주 프로그램으로 점진적으로 실력을 향상시킵니다.\n\n• 1주차: 기초 체력 다지기\n• 2-3주차: 근력 강화\n• 4-5주차: 지구력 향상\n• 6주차: 목표 달성',
+        description:
+            '과학적으로 설계된 6주 프로그램으로 점진적으로 실력을 향상시킵니다.\n\n• 1주차: 기초 체력 다지기\n• 2-3주차: 근력 강화\n• 4-5주차: 지구력 향상\n• 6주차: 목표 달성',
         imagePath: 'assets/images/정면차드.jpg',
         buttonText: '다음',
         canSkip: true,
@@ -99,7 +102,8 @@ class OnboardingService extends ChangeNotifier {
       const OnboardingStep(
         type: OnboardingStepType.chadEvolution,
         title: 'Chad 진화 시스템',
-        description: '운동을 완료할 때마다 Chad가 진화합니다!\n\n🏃‍♂️ Rookie Chad → 💪 Giga Chad → 👑 Legendary Chad\n\n각 단계마다 새로운 Chad 이미지와 업적을 해제하세요!',
+        description:
+            '운동을 완료할 때마다 Chad가 진화합니다!\n\n🏃‍♂️ Rookie Chad → 💪 Giga Chad → 👑 Legendary Chad\n\n각 단계마다 새로운 Chad 이미지와 업적을 해제하세요!',
         imagePath: 'assets/images/더블차드.jpg',
         buttonText: '멋져요!',
         canSkip: true,
@@ -107,7 +111,8 @@ class OnboardingService extends ChangeNotifier {
       const OnboardingStep(
         type: OnboardingStepType.initialTest,
         title: '초기 실력 테스트',
-        description: '현재 실력을 측정하여 맞춤형 프로그램을 제공합니다.\n\n• 최대한 많은 푸시업을 해보세요\n• 정확한 자세로 실시하세요\n• 결과에 따라 프로그램이 조정됩니다',
+        description:
+            '현재 실력을 측정하여 맞춤형 프로그램을 제공합니다.\n\n• 최대한 많은 푸시업을 해보세요\n• 정확한 자세로 실시하세요\n• 결과에 따라 프로그램이 조정됩니다',
         imagePath: 'assets/images/썬글차드.jpg',
         buttonText: '테스트 시작',
         canSkip: false,
@@ -121,7 +126,7 @@ class OnboardingService extends ChangeNotifier {
   Future<void> _loadProgress() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // 온보딩 완료 여부 확인 (이전 버전 호환성)
       final isCompleted = prefs.getBool(_onboardingCompletedKey) ?? false;
       if (isCompleted) {
@@ -154,11 +159,11 @@ class OnboardingService extends ChangeNotifier {
   Future<void> _saveProgress() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // 상세 진행 상태 저장
       final progressJson = jsonEncode(_progress.toJson());
       await prefs.setString(_onboardingProgressKey, progressJson);
-      
+
       // 완료 여부 저장 (이전 버전 호환성)
       await prefs.setBool(_onboardingCompletedKey, _progress.isCompleted);
     } catch (e) {
@@ -225,7 +230,7 @@ class OnboardingService extends ChangeNotifier {
   /// 온보딩 완료
   Future<void> completeOnboarding() async {
     debugPrint('🎯 온보딩 완료 처리 시작...');
-    
+
     _progress = _progress.copyWith(
       status: OnboardingStatus.completed,
       currentStepIndex: _steps.length,
@@ -233,7 +238,7 @@ class OnboardingService extends ChangeNotifier {
     );
 
     await _saveProgress();
-    
+
     // 추가로 간단한 완료 플래그도 저장 (안전장치)
     try {
       final prefs = await SharedPreferences.getInstance();
@@ -243,7 +248,7 @@ class OnboardingService extends ChangeNotifier {
     } catch (e) {
       debugPrint('❌ 온보딩 완료 상태 저장 오류: $e');
     }
-    
+
     notifyListeners();
     debugPrint('🎯 온보딩 완료 처리 끝');
   }
@@ -277,13 +282,14 @@ class OnboardingService extends ChangeNotifier {
   static Future<bool> isOnboardingCompleted() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // 주요 완료 플래그 확인
       final isCompleted = prefs.getBool(_onboardingCompletedKey) ?? false;
-      
+
       // 추가 안전장치 플래그 확인
-      final isDefinitelyCompleted = prefs.getBool('onboarding_definitely_completed') ?? false;
-      
+      final isDefinitelyCompleted =
+          prefs.getBool('onboarding_definitely_completed') ?? false;
+
       // 상세 진행 상태에서도 확인
       bool isCompletedFromProgress = false;
       try {
@@ -296,11 +302,14 @@ class OnboardingService extends ChangeNotifier {
       } catch (e) {
         debugPrint('온보딩 진행 상태 확인 중 오류: $e');
       }
-      
+
       // 어느 하나라도 완료로 표시되어 있으면 완료로 처리
-      final result = isCompleted || isDefinitelyCompleted || isCompletedFromProgress;
-      debugPrint('온보딩 완료 상태: $result (주요:$isCompleted, 안전장치:$isDefinitelyCompleted, 진행상태:$isCompletedFromProgress)');
-      
+      final result =
+          isCompleted || isDefinitelyCompleted || isCompletedFromProgress;
+      debugPrint(
+        '온보딩 완료 상태: $result (주요:$isCompleted, 안전장치:$isDefinitelyCompleted, 진행상태:$isCompletedFromProgress)',
+      );
+
       return result;
     } catch (e) {
       debugPrint('온보딩 완료 여부 확인 오류: $e');
@@ -323,4 +332,4 @@ class OnboardingService extends ChangeNotifier {
   void dispose() {
     super.dispose();
   }
-} 
+}

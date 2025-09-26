@@ -52,9 +52,9 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
         backgroundColor: const Color(0xFF0D0D0D),
         foregroundColor: Colors.white,
         title: Text(
-          Localizations.localeOf(context).languageCode == 'ko' 
-            ? '차드 푸시업 도장' 
-            : AppLocalizations.of(context)!.pushupTutorialTitle,
+          Localizations.localeOf(context).languageCode == 'ko'
+              ? '차드 푸시업 도장'
+              : AppLocalizations.of(context)!.pushupTutorialTitle,
           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -77,7 +77,10 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                       decoration: BoxDecoration(
                         color: const Color(0xFF1A1A1A),
                         borderRadius: BorderRadius.circular(12),
-                        border: Border.all(color: const Color(0xFF4DABF7), width: 2),
+                        border: Border.all(
+                          color: const Color(0xFF4DABF7),
+                          width: 2,
+                        ),
                       ),
                       child: Column(
                         children: [
@@ -88,9 +91,11 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            Localizations.localeOf(context).languageCode == 'ko' 
-                              ? '진짜 차드들은 자세부터 다르다! 💪' 
-                              : AppLocalizations.of(context)!.pushupTutorialSubtitle,
+                            Localizations.localeOf(context).languageCode == 'ko'
+                                ? '진짜 차드들은 자세부터 다르다! 💪'
+                                : AppLocalizations.of(
+                                    context,
+                                  )!.pushupTutorialSubtitle,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -185,12 +190,14 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
           _encouragementService.showEncouragementSnackBar(context, message);
 
           // 상세 화면으로 이동
-          Navigator.of(context).push(
-            MaterialPageRoute<void>(
-              builder: (context) =>
-                  PushupTutorialDetailScreen(pushupType: pushup),
-            ),
-          ).then((_) => setState(() {})); // 돌아올 때 상태 새로고침
+          Navigator.of(context)
+              .push(
+                MaterialPageRoute<void>(
+                  builder: (context) =>
+                      PushupTutorialDetailScreen(pushupType: pushup),
+                ),
+              )
+              .then((_) => setState(() {})); // 돌아올 때 상태 새로고침
         },
         borderRadius: BorderRadius.circular(12),
         child: FutureBuilder<bool>(
@@ -205,8 +212,8 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
                   color: isCompleted
-                    ? Colors.green.withValues(alpha: 0.5)
-                    : difficultyColor.withValues(alpha: 0.3),
+                      ? Colors.green.withValues(alpha: 0.5)
+                      : difficultyColor.withValues(alpha: 0.3),
                   width: isCompleted ? 2 : 1,
                 ),
               ),
@@ -218,8 +225,8 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                     height: 50,
                     decoration: BoxDecoration(
                       color: isCompleted
-                        ? Colors.green.withValues(alpha: 0.2)
-                        : difficultyColor.withValues(alpha: 0.2),
+                          ? Colors.green.withValues(alpha: 0.2)
+                          : difficultyColor.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: Icon(
@@ -250,7 +257,10 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                             ),
                             if (isCompleted)
                               Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 2,
+                                ),
                                 decoration: BoxDecoration(
                                   color: Colors.green,
                                   borderRadius: BorderRadius.circular(12),
@@ -269,7 +279,10 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                         const SizedBox(height: 4),
                         Text(
                           _getPushupDescription(pushup),
-                          style: const TextStyle(color: Color(0xFFB0B0B0), fontSize: 14),
+                          style: const TextStyle(
+                            color: Color(0xFFB0B0B0),
+                            fontSize: 14,
+                          ),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
                         ),
@@ -390,8 +403,8 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
         return AppLocalizations.of(context)!.pushupOneArmDesc;
       default:
         return Localizations.localeOf(context).languageCode == 'ko'
-          ? '차드를 위한 특별한 푸시업' 
-          : 'Special pushup for chads';
+            ? '차드를 위한 특별한 푸시업'
+            : 'Special pushup for chads';
     }
   }
 
@@ -426,10 +439,7 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
           ),
         ),
       ),
-      child: const AdBannerWidget(
-        adSize: AdSize.banner,
-        showOnError: true,
-      ),
+      child: const AdBannerWidget(adSize: AdSize.banner, showOnError: true),
     );
 
     // 광고가 로드되지 않은 경우 반응형 플레이스홀더

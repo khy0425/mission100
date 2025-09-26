@@ -10,21 +10,20 @@ import 'notification_service.dart';
 /// 업적 전용 알림 서비스
 /// 업적 달성, 진행률 업데이트, 특별 이벤트 등에 대한 알림을 관리
 class AchievementNotificationService {
-  
   // 업적 알림 ID 범위: 5000 ~ 5999
   static const int _baseNotificationId = 5000;
   static const int _progressNotificationId = 5500;
   static const int _specialEventNotificationId = 5800;
-  
+
   // 알림 채널 정보
   static const String _channelId = 'achievement_notifications';
   static String _channelName = '업적 알림';
   static String _channelDescription = '업적 달성 및 진행률 알림';
-  
+
   // 업적 달성 알림 표시 제한 (스팸 방지)
   static DateTime? _lastNotificationTime;
   static const Duration _minimumNotificationInterval = Duration(seconds: 3);
-  
+
   /// 알림 서비스 초기화 (컨텍스트 필요)
   static Future<void> initialize({BuildContext? context}) async {
     // 기본 NotificationService 초기화
@@ -42,7 +41,7 @@ class AchievementNotificationService {
 
     debugPrint('🏆 업적 알림 서비스 초기화 완료');
   }
-  
+
   /// 업적 전용 알림 채널 생성
   static Future<void> _createAchievementNotificationChannel() async {
     const AndroidNotificationChannel channel = AndroidNotificationChannel(
@@ -54,19 +53,21 @@ class AchievementNotificationService {
       enableVibration: true,
       showBadge: true,
     );
-    
-    final FlutterLocalNotificationsPlugin notifications = 
+
+    final FlutterLocalNotificationsPlugin notifications =
         FlutterLocalNotificationsPlugin();
-        
-    final android = notifications.resolvePlatformSpecificImplementation<
-        AndroidFlutterLocalNotificationsPlugin>();
-        
+
+    final android = notifications
+        .resolvePlatformSpecificImplementation<
+          AndroidFlutterLocalNotificationsPlugin
+        >();
+
     if (android != null) {
       await android.createNotificationChannel(channel);
       debugPrint('📱 업적 알림 채널 생성 완료');
     }
   }
-  
+
   /// 업적 달성 알림 발송
   static Future<void> sendAchievementUnlockedNotification(
     Achievement achievement, {
@@ -78,9 +79,10 @@ class AchievementNotificationService {
         debugPrint('⏭️ 업적 알림 제한: 너무 빈번한 알림 방지');
         return;
       }
-      
-      final notificationId = _baseNotificationId + achievement.id.hashCode % 500;
-      
+
+      final notificationId =
+          _baseNotificationId + achievement.id.hashCode % 500;
+
       // 희귀도별 사운드 및 진동 패턴
       final androidDetails = AndroidNotificationDetails(
         _channelId,
@@ -101,7 +103,7 @@ class AchievementNotificationService {
         when: DateTime.now().millisecondsSinceEpoch,
         showWhen: true,
       );
-      
+
       const iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: true,
@@ -109,12 +111,12 @@ class AchievementNotificationService {
         sound: 'achievement_unlock.wav',
         categoryIdentifier: 'ACHIEVEMENT_CATEGORY',
       );
-      
+
       const notificationDetails = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );
-      
+
       // 알림 페이로드 (업적 상세 정보)
       final payload = json.encode({
         'type': 'achievement_unlocked',
@@ -123,7 +125,7 @@ class AchievementNotificationService {
         'xpReward': achievement.xpReward,
         'timestamp': DateTime.now().toIso8601String(),
       });
-      
+
       await NotificationService.showNotification(
         id: notificationId,
         title: _buildNotificationTitle(achievement),
@@ -131,16 +133,17 @@ class AchievementNotificationService {
         payload: payload,
         notificationDetails: notificationDetails,
       );
-      
+
       _lastNotificationTime = DateTime.now();
-      
-      debugPrint('🏆 업적 달성 알림 발송: ${achievement.titleKey} (${achievement.rarity})');
-      
+
+      debugPrint(
+        '🏆 업적 달성 알림 발송: ${achievement.titleKey} (${achievement.rarity})',
+      );
     } catch (e) {
       debugPrint('❌ 업적 달성 알림 발송 실패: $e');
     }
   }
-  
+
   /// 업적 진행률 알림 발송 (주요 마일스톤)
   static Future<void> sendProgressMilestoneNotification(
     Achievement achievement,
@@ -151,9 +154,10 @@ class AchievementNotificationService {
       // 마일스톤 체크
       final milestone = _findReachedMilestone(progressPercentage, milestones);
       if (milestone == null) return;
-      
-      final notificationId = _progressNotificationId + achievement.id.hashCode % 300;
-      
+
+      final notificationId =
+          _progressNotificationId + achievement.id.hashCode % 300;
+
       const androidDetails = AndroidNotificationDetails(
         _channelId,
         _channelName,
@@ -167,19 +171,19 @@ class AchievementNotificationService {
         autoCancel: true,
         ongoing: false,
       );
-      
+
       const iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: false,
         presentSound: true,
         sound: 'progress_milestone.wav',
       );
-      
+
       const notificationDetails = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );
-      
+
       final payload = json.encode({
         'type': 'progress_milestone',
         'achievementId': achievement.id,
@@ -187,7 +191,7 @@ class AchievementNotificationService {
         'progress': progressPercentage,
         'timestamp': DateTime.now().toIso8601String(),
       });
-      
+
       await NotificationService.showNotification(
         id: notificationId,
         title: '📈 업적 진행률 ${milestone}% 달성!',
@@ -195,28 +199,27 @@ class AchievementNotificationService {
         payload: payload,
         notificationDetails: notificationDetails,
       );
-      
+
       debugPrint('📈 업적 진행률 알림 발송: ${achievement.titleKey} (${milestone}%)');
-      
     } catch (e) {
       debugPrint('❌ 업적 진행률 알림 발송 실패: $e');
     }
   }
-  
+
   /// 업적 연쇄 달성 알림 (여러 업적 동시 달성)
   static Future<void> sendAchievementComboNotification(
     List<Achievement> achievements,
   ) async {
     try {
       if (achievements.isEmpty) return;
-      
+
       final notificationId = _specialEventNotificationId + 1;
-      
+
       // 가장 높은 희귀도를 기준으로 알림 스타일 결정
       final highestRarity = achievements
           .map((a) => a.rarity)
           .reduce((a, b) => a.index > b.index ? a : b);
-      
+
       const androidDetails = AndroidNotificationDetails(
         _channelId,
         _channelName,
@@ -239,7 +242,7 @@ class AchievementNotificationService {
         visibility: NotificationVisibility.public,
         autoCancel: true,
       );
-      
+
       const iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: true,
@@ -247,12 +250,12 @@ class AchievementNotificationService {
         sound: 'achievement_combo.wav',
         categoryIdentifier: 'ACHIEVEMENT_COMBO_CATEGORY',
       );
-      
+
       const notificationDetails = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );
-      
+
       final payload = json.encode({
         'type': 'achievement_combo',
         'achievementIds': achievements.map((a) => a.id).toList(),
@@ -260,7 +263,7 @@ class AchievementNotificationService {
         'highestRarity': highestRarity.toString(),
         'timestamp': DateTime.now().toIso8601String(),
       });
-      
+
       await NotificationService.showNotification(
         id: notificationId,
         title: '🏆 업적 연쇄 달성!',
@@ -268,14 +271,13 @@ class AchievementNotificationService {
         payload: payload,
         notificationDetails: notificationDetails,
       );
-      
+
       debugPrint('🔥 업적 연쇄 달성 알림 발송: ${achievements.length}개');
-      
     } catch (e) {
       debugPrint('❌ 업적 연쇄 달성 알림 발송 실패: $e');
     }
   }
-  
+
   /// 특별 이벤트 알림 (희귀 업적, 전체 업적 완료 등)
   static Future<void> sendSpecialEventNotification({
     required String title,
@@ -284,9 +286,10 @@ class AchievementNotificationService {
     Map<String, dynamic>? extraData,
   }) async {
     try {
-      final notificationId = _specialEventNotificationId + 
+      final notificationId =
+          _specialEventNotificationId +
           (extraData?['eventId']?.hashCode ?? 0) % 100;
-      
+
       const androidDetails = AndroidNotificationDetails(
         _channelId,
         _channelName,
@@ -296,7 +299,16 @@ class AchievementNotificationService {
         playSound: true,
         sound: RawResourceAndroidNotificationSound('special_event'),
         enableVibration: true,
-        vibrationPattern: Int64List.fromList([0, 300, 100, 300, 100, 300, 100, 1000]),
+        vibrationPattern: Int64List.fromList([
+          0,
+          300,
+          100,
+          300,
+          100,
+          300,
+          100,
+          1000,
+        ]),
         color: Color(0xFFFFD700), // 골드 색상
         largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
         styleInformation: BigTextStyleInformation(
@@ -310,7 +322,7 @@ class AchievementNotificationService {
         visibility: NotificationVisibility.public,
         autoCancel: true,
       );
-      
+
       const iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: true,
@@ -319,12 +331,12 @@ class AchievementNotificationService {
         subtitle: subtitle,
         categoryIdentifier: 'SPECIAL_EVENT_CATEGORY',
       );
-      
+
       const notificationDetails = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );
-      
+
       final payload = json.encode({
         'type': 'special_event',
         'eventTitle': title,
@@ -332,7 +344,7 @@ class AchievementNotificationService {
         'timestamp': DateTime.now().toIso8601String(),
         ...?extraData,
       });
-      
+
       await NotificationService.showNotification(
         id: notificationId,
         title: title,
@@ -340,24 +352,25 @@ class AchievementNotificationService {
         payload: payload,
         notificationDetails: notificationDetails,
       );
-      
+
       debugPrint('⭐ 특별 이벤트 알림 발송: $title');
-      
     } catch (e) {
       debugPrint('❌ 특별 이벤트 알림 발송 실패: $e');
     }
   }
-  
+
   // === Helper Methods ===
-  
+
   /// 알림 제한 확인 (스팸 방지)
   static bool _shouldThrottleNotification() {
     if (_lastNotificationTime == null) return false;
-    
-    final timeSinceLastNotification = DateTime.now().difference(_lastNotificationTime!);
+
+    final timeSinceLastNotification = DateTime.now().difference(
+      _lastNotificationTime!,
+    );
     return timeSinceLastNotification < _minimumNotificationInterval;
   }
-  
+
   /// 희귀도별 중요도 설정
   static Importance _getImportanceByRarity(AchievementRarity rarity) {
     switch (rarity) {
@@ -371,7 +384,7 @@ class AchievementNotificationService {
         return Importance.low;
     }
   }
-  
+
   /// 희귀도별 우선순위 설정
   static Priority _getPriorityByRarity(AchievementRarity rarity) {
     switch (rarity) {
@@ -385,12 +398,16 @@ class AchievementNotificationService {
         return Priority.low;
     }
   }
-  
+
   /// 희귀도별 사운드 설정
-  static RawResourceAndroidNotificationSound? _getSoundByRarity(AchievementRarity rarity) {
+  static RawResourceAndroidNotificationSound? _getSoundByRarity(
+    AchievementRarity rarity,
+  ) {
     switch (rarity) {
       case AchievementRarity.legendary:
-        return const RawResourceAndroidNotificationSound('achievement_legendary');
+        return const RawResourceAndroidNotificationSound(
+          'achievement_legendary',
+        );
       case AchievementRarity.epic:
         return const RawResourceAndroidNotificationSound('achievement_epic');
       case AchievementRarity.rare:
@@ -399,7 +416,7 @@ class AchievementNotificationService {
         return const RawResourceAndroidNotificationSound('achievement_common');
     }
   }
-  
+
   /// 희귀도별 진동 패턴 설정
   static Int64List _getVibrationPattern(AchievementRarity rarity) {
     switch (rarity) {
@@ -413,7 +430,7 @@ class AchievementNotificationService {
         return Int64List.fromList([0, 200, 100, 200]);
     }
   }
-  
+
   /// 희귀도별 색상 설정
   static Color _getColorByRarity(AchievementRarity rarity) {
     switch (rarity) {
@@ -427,7 +444,7 @@ class AchievementNotificationService {
         return const Color(0xFF9E9E9E); // 회색
     }
   }
-  
+
   /// 알림 제목 생성
   static String _buildNotificationTitle(Achievement achievement) {
     switch (achievement.rarity) {
@@ -441,19 +458,21 @@ class AchievementNotificationService {
         return '🎯 업적 달성!';
     }
   }
-  
+
   /// 알림 본문 생성
   static String _buildNotificationBody(Achievement achievement) {
-    final xpText = achievement.xpReward > 0 ? ' (+${achievement.xpReward} XP)' : '';
+    final xpText = achievement.xpReward > 0
+        ? ' (+${achievement.xpReward} XP)'
+        : '';
     return '${achievement.titleKey}을(를) 달성했습니다!$xpText';
   }
-  
+
   /// 알림 스타일 설정
   static BigTextStyleInformation _buildBigTextStyle(Achievement achievement) {
-    final motivationText = achievement.motivationKey.isNotEmpty 
-        ? '\n\n💪 ${achievement.motivationKey}' 
+    final motivationText = achievement.motivationKey.isNotEmpty
+        ? '\n\n💪 ${achievement.motivationKey}'
         : '';
-    
+
     return BigTextStyleInformation(
       '${achievement.descriptionKey}$motivationText',
       htmlFormatBigText: false,
@@ -462,43 +481,49 @@ class AchievementNotificationService {
       summaryText: '업적 시스템',
     );
   }
-  
+
   /// 진행률 마일스톤 확인
-  static int? _findReachedMilestone(double progressPercentage, List<int> milestones) {
+  static int? _findReachedMilestone(
+    double progressPercentage,
+    List<int> milestones,
+  ) {
     for (final milestone in milestones.reversed) {
-      if (progressPercentage >= milestone && progressPercentage < milestone + 5) {
+      if (progressPercentage >= milestone &&
+          progressPercentage < milestone + 5) {
         return milestone;
       }
     }
     return null;
   }
-  
+
   /// 모든 업적 알림 취소
   static Future<void> cancelAllAchievementNotifications() async {
     try {
       final notifications = FlutterLocalNotificationsPlugin();
-      
+
       // 업적 알림 ID 범위의 모든 알림 취소
       for (int i = _baseNotificationId; i < _baseNotificationId + 1000; i++) {
         await notifications.cancel(i);
       }
-      
+
       debugPrint('🔕 모든 업적 알림 취소 완료');
     } catch (e) {
       debugPrint('❌ 업적 알림 취소 실패: $e');
     }
   }
-  
+
   /// 특정 업적 알림 취소
-  static Future<void> cancelAchievementNotification(String achievementId) async {
+  static Future<void> cancelAchievementNotification(
+    String achievementId,
+  ) async {
     try {
       final notificationId = _baseNotificationId + achievementId.hashCode % 500;
       final notifications = FlutterLocalNotificationsPlugin();
       await notifications.cancel(notificationId);
-      
+
       debugPrint('🔕 업적 알림 취소: $achievementId');
     } catch (e) {
       debugPrint('❌ 업적 알림 취소 실패: $e');
     }
   }
-} 
+}

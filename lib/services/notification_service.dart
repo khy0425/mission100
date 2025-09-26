@@ -24,7 +24,9 @@ class NotificationService {
   static bool _isInitialized = false;
 
   // Android 12+ SCHEDULE_EXACT_ALARM 권한 확인을 위한 MethodChannel
-  static const MethodChannel _channel = MethodChannel('com.misson100.notification_permissions');
+  static const MethodChannel _channel = MethodChannel(
+    'com.misson100.notification_permissions',
+  );
 
   /// Android 12+에서 SCHEDULE_EXACT_ALARM 권한이 있는지 확인
   static Future<bool> canScheduleExactAlarms() async {
@@ -33,7 +35,9 @@ class NotificationService {
     }
 
     try {
-      final bool? canSchedule = await _channel.invokeMethod('canScheduleExactAlarms');
+      final bool? canSchedule = await _channel.invokeMethod(
+        'canScheduleExactAlarms',
+      );
       debugPrint('🔔 SCHEDULE_EXACT_ALARM 권한 상태: $canSchedule');
       return canSchedule ?? false;
     } on PlatformException catch (e) {
@@ -51,7 +55,9 @@ class NotificationService {
 
     try {
       debugPrint('🔔 SCHEDULE_EXACT_ALARM 권한 요청 시작...');
-      final bool? granted = await _channel.invokeMethod('requestExactAlarmPermission');
+      final bool? granted = await _channel.invokeMethod(
+        'requestExactAlarmPermission',
+      );
       debugPrint('🔔 SCHEDULE_EXACT_ALARM 권한 요청 결과: $granted');
 
       // 설정 화면으로 이동한 후 충분한 시간 대기
@@ -152,10 +158,10 @@ class NotificationService {
     // iOS 초기화 설정
     const DarwinInitializationSettings iosSettings =
         DarwinInitializationSettings(
-      requestAlertPermission: true,
-      requestBadgePermission: true,
-      requestSoundPermission: true,
-    );
+          requestAlertPermission: true,
+          requestBadgePermission: true,
+          requestSoundPermission: true,
+        );
 
     const InitializationSettings initSettings = InitializationSettings(
       android: androidSettings,
@@ -218,19 +224,29 @@ class NotificationService {
                     children: [
                       Row(
                         children: [
-                          const Icon(Icons.notifications, color: Colors.blue, size: 20),
+                          const Icon(
+                            Icons.notifications,
+                            color: Colors.blue,
+                            size: 20,
+                          ),
                           const SizedBox(width: 8),
                           Expanded(
                             child: Text(
-                              AppLocalizations.of(context)!.workoutNotificationPermission,
-                              style: const TextStyle(fontWeight: FontWeight.bold),
+                              AppLocalizations.of(
+                                context,
+                              )!.workoutNotificationPermission,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ],
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 28),
-                        child: Text(AppLocalizations.of(context)!.dailyWorkoutAlarm),
+                        child: Text(
+                          AppLocalizations.of(context)!.dailyWorkoutAlarm,
+                        ),
                       ),
                       const SizedBox(height: 12),
                     ],
@@ -245,10 +261,7 @@ class NotificationService {
                   ),
                   child: const Text(
                     '💡 기본 알림만으로도 CHAD 될 수 있다!\n하지만 LEGENDARY CHAD는 모든 권한 허용! DOMINATION! 🚀',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.blue,
-                    ),
+                    style: TextStyle(fontSize: 14, color: Colors.blue),
                   ),
                 ),
               ],
@@ -268,7 +281,9 @@ class NotificationService {
                 backgroundColor: Color(0xFF4DABF7),
                 foregroundColor: Colors.white,
               ),
-              child: Text(AppLocalizations.of(context)!.enableChadNotifications),
+              child: Text(
+                AppLocalizations.of(context)!.enableChadNotifications,
+              ),
             ),
           ],
         );
@@ -308,15 +323,16 @@ class NotificationService {
       } else if (defaultTargetPlatform == TargetPlatform.iOS) {
         // iOS - flutter_local_notifications 사용
         final granted = await _notifications
-            .resolvePlatformSpecificImplementation<IOSFlutterLocalNotificationsPlugin>()
-            ?.requestPermissions(
-              alert: true,
-              badge: true,
-              sound: true,
-            );
+            .resolvePlatformSpecificImplementation<
+              IOSFlutterLocalNotificationsPlugin
+            >()
+            ?.requestPermissions(alert: true, badge: true, sound: true);
 
         final prefs = await SharedPreferences.getInstance();
-        await prefs.setBool('notification_permission_granted', granted ?? false);
+        await prefs.setBool(
+          'notification_permission_granted',
+          granted ?? false,
+        );
 
         debugPrint('🍎 iOS 기본 알림 권한: $granted');
         return granted ?? false;
@@ -398,8 +414,10 @@ class NotificationService {
     await initialize();
 
     if (defaultTargetPlatform == TargetPlatform.android) {
-      final androidPlugin = _notifications.resolvePlatformSpecificImplementation<
-          AndroidFlutterLocalNotificationsPlugin>();
+      final androidPlugin = _notifications
+          .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin
+          >();
 
       if (androidPlugin != null) {
         // Android에서는 권한 상태를 직접 확인하기 어려우므로
@@ -479,7 +497,9 @@ class NotificationService {
     final selectedDays = activeDays ?? {1, 2, 3, 4, 5}; // 기본: 월-금
     final now = DateTime.now();
 
-    debugPrint('🔔 요일별 운동 알림 설정 시작: ${selectedDays.map(_getWeekdayName).join(', ')} ${time.hour}:${time.minute.toString().padLeft(2, '0')}');
+    debugPrint(
+      '🔔 요일별 운동 알림 설정 시작: ${selectedDays.map(_getWeekdayName).join(', ')} ${time.hour}:${time.minute.toString().padLeft(2, '0')}',
+    );
 
     // 다음 30일간의 알림을 스케줄링 (충분히 긴 기간)
     int scheduledCount = 0;
@@ -543,19 +563,30 @@ class NotificationService {
     await prefs.setInt('notification_hour', time.hour);
     await prefs.setInt('notification_minute', time.minute);
     await prefs.setBool('daily_notification_enabled', true);
-    await prefs.setStringList('active_workout_days', selectedDays.map((e) => e.toString()).toList());
+    await prefs.setStringList(
+      'active_workout_days',
+      selectedDays.map((e) => e.toString()).toList(),
+    );
 
     final dayNames = selectedDays.map(_getWeekdayName).join(', ');
-    debugPrint('✅ 요일별 운동 알림 설정 완료: $dayNames ${time.hour}:${time.minute.toString().padLeft(2, '0')} ($scheduledCount개 알림 예약)');
+    debugPrint(
+      '✅ 요일별 운동 알림 설정 완료: $dayNames ${time.hour}:${time.minute.toString().padLeft(2, '0')} ($scheduledCount개 알림 예약)',
+    );
   }
 
   /// 25일 후 자동 갱신을 위한 알림 설정
-  static Future<void> _scheduleReminderRenewal(TimeOfDay time, Set<int> activeDays) async {
-    final renewalDate = DateTime.now().add(const Duration(days: 25)); // 25일 후 갱신
+  static Future<void> _scheduleReminderRenewal(
+    TimeOfDay time,
+    Set<int> activeDays,
+  ) async {
+    final renewalDate = DateTime.now().add(
+      const Duration(days: 25),
+    ); // 25일 후 갱신
     final renewalNotificationId = 9999;
 
     // 갱신용 데이터를 페이로드에 포함
-    final payload = 'renewal|${time.hour}|${time.minute}|${activeDays.join(',')}';
+    final payload =
+        'renewal|${time.hour}|${time.minute}|${activeDays.join(',')}';
 
     await _safeScheduleNotification(
       id: renewalNotificationId,
@@ -641,7 +672,8 @@ class NotificationService {
       '🏖️ 휴식은 약함이 아니라 전략이다! CHAD의 지혜! 🧠',
     ];
 
-    final randomMessage = restMessages[DateTime.now().millisecond % restMessages.length];
+    final randomMessage =
+        restMessages[DateTime.now().millisecond % restMessages.length];
 
     await _safeScheduleNotification(
       id: 4, // 휴식일 알림 ID
@@ -681,20 +713,25 @@ class NotificationService {
     await initialize();
 
     String title = '🔥 WORKOUT DEMOLISHED! 만삣삐! 🔥';
-    String body = '$totalReps REPS DESTROYED! ${(completionRate * 100).toInt()}% DOMINATION! FXXK YEAH!';
+    String body =
+        '$totalReps REPS DESTROYED! ${(completionRate * 100).toInt()}% DOMINATION! FXXK YEAH!';
 
     if (completionRate >= 1.0) {
       title = '🚀 PERFECT EXECUTION! LEGENDARY CHAD! 🚀';
-      body = '100% TARGET ANNIHILATED! TRUE GIGACHAD CONFIRMED! ULTRA BEAST MODE ACTIVATED! 만삣삐! 💀💪';
+      body =
+          '100% TARGET ANNIHILATED! TRUE GIGACHAD CONFIRMED! ULTRA BEAST MODE ACTIVATED! 만삣삐! 💀💪';
     } else if (completionRate >= 0.8) {
       title = '⚡ EXCELLENT DESTRUCTION! RISING CHAD! ⚡';
-      body = '목표의 ${(completionRate * 100).toInt()}% 파괴! CHAD의 길을 걷고 있다! KEEP GRINDING! 🔥💪';
+      body =
+          '목표의 ${(completionRate * 100).toInt()}% 파괴! CHAD의 길을 걷고 있다! KEEP GRINDING! 🔥💪';
     } else if (completionRate >= 0.6) {
       title = '💪 SOLID EFFORT! FUTURE CHAD! 💪';
-      body = '${(completionRate * 100).toInt()}% 달성! 아직 갈 길이 멀지만 CHAD의 DNA가 깨어나고 있다! 🌱';
+      body =
+          '${(completionRate * 100).toInt()}% 달성! 아직 갈 길이 멀지만 CHAD의 DNA가 깨어나고 있다! 🌱';
     } else {
       title = '😤 CHAD JOURNEY BEGINS! 💥';
-      body = '${(completionRate * 100).toInt()}% 완료! 모든 LEGENDARY CHAD도 여기서 시작했다! NEVER GIVE UP! 🔥';
+      body =
+          '${(completionRate * 100).toInt()}% 완료! 모든 LEGENDARY CHAD도 여기서 시작했다! NEVER GIVE UP! 🔥';
     }
 
     await _safeScheduleNotification(
@@ -762,32 +799,38 @@ class NotificationService {
 
       // Android 알림 채널 생성
       if (defaultTargetPlatform == TargetPlatform.android) {
-        const AndroidNotificationChannel workoutChannel = AndroidNotificationChannel(
-          'workout_reminders',
-          'Workout Reminders',
-          description: 'Notifications for workout reminders',
-          importance: Importance.high,
-          playSound: true,
-        );
+        const AndroidNotificationChannel workoutChannel =
+            AndroidNotificationChannel(
+              'workout_reminders',
+              'Workout Reminders',
+              description: 'Notifications for workout reminders',
+              importance: Importance.high,
+              playSound: true,
+            );
 
-        const AndroidNotificationChannel achievementChannel = AndroidNotificationChannel(
-          'achievements',
-          'Achievements',
-          description: 'Notifications for unlocked achievements',
-          importance: Importance.high,
-          playSound: true,
-        );
+        const AndroidNotificationChannel achievementChannel =
+            AndroidNotificationChannel(
+              'achievements',
+              'Achievements',
+              description: 'Notifications for unlocked achievements',
+              importance: Importance.high,
+              playSound: true,
+            );
 
-        const AndroidNotificationChannel chadEvolutionChannel = AndroidNotificationChannel(
-          'chad_evolution',
-          'Chad Evolution',
-          description: 'Notifications for Chad evolution',
-          importance: Importance.high,
-          playSound: true,
-        );
+        const AndroidNotificationChannel chadEvolutionChannel =
+            AndroidNotificationChannel(
+              'chad_evolution',
+              'Chad Evolution',
+              description: 'Notifications for Chad evolution',
+              importance: Importance.high,
+              playSound: true,
+            );
 
         final AndroidFlutterLocalNotificationsPlugin? androidPlugin =
-            _notifications.resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>();
+            _notifications
+                .resolvePlatformSpecificImplementation<
+                  AndroidFlutterLocalNotificationsPlugin
+                >();
 
         if (androidPlugin != null) {
           await androidPlugin.createNotificationChannel(workoutChannel);
@@ -855,7 +898,10 @@ class NotificationService {
   }
 
   /// CHAD 진화 알림
-  static Future<void> showChadEvolutionNotification(String level, String message) async {
+  static Future<void> showChadEvolutionNotification(
+    String level,
+    String message,
+  ) async {
     await _safeScheduleNotification(
       id: 5,
       title: '💪 CHAD EVOLUTION! $level 💪',
@@ -880,7 +926,10 @@ class NotificationService {
   }
 
   /// CHAD 진화 미리보기 알림
-  static Future<void> showChadEvolutionPreview(String nextLevel, String requirement) async {
+  static Future<void> showChadEvolutionPreview(
+    String nextLevel,
+    String requirement,
+  ) async {
     await _safeScheduleNotification(
       id: 6,
       title: '👀 NEXT CHAD LEVEL PREVIEW! 👀',
@@ -963,7 +1012,8 @@ class NotificationService {
   /// 대기 중인 알림 확인
   static Future<void> checkPendingNotifications() async {
     try {
-      final pendingNotifications = await _notifications.pendingNotificationRequests();
+      final pendingNotifications = await _notifications
+          .pendingNotificationRequests();
       debugPrint('📋 대기 중인 알림: ${pendingNotifications.length}개');
     } catch (e) {
       debugPrint('❌ 대기 중인 알림 확인 실패: $e');
@@ -971,10 +1021,17 @@ class NotificationService {
   }
 
   /// 운동 알림 스케줄링 (호환성 메소드 - 매개변수 없음)
-  static Future<void> scheduleWorkoutReminder([TimeOfDay? time, Set<int>? activeDays]) async {
-    final reminderTime = time ?? const TimeOfDay(hour: 18, minute: 0); // 기본값: 오후 6시
+  static Future<void> scheduleWorkoutReminder([
+    TimeOfDay? time,
+    Set<int>? activeDays,
+  ]) async {
+    final reminderTime =
+        time ?? const TimeOfDay(hour: 18, minute: 0); // 기본값: 오후 6시
     final selectedDays = activeDays ?? {1, 2, 3, 4, 5}; // 기본값: 월-금
-    await scheduleDailyWorkoutReminder(time: reminderTime, activeDays: selectedDays);
+    await scheduleDailyWorkoutReminder(
+      time: reminderTime,
+      activeDays: selectedDays,
+    );
   }
 
   /// 운동 알림 취소

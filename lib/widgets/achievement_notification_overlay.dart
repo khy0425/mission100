@@ -15,10 +15,12 @@ class AchievementNotificationOverlay extends StatefulWidget {
   });
 
   @override
-  State<AchievementNotificationOverlay> createState() => _AchievementNotificationOverlayState();
+  State<AchievementNotificationOverlay> createState() =>
+      _AchievementNotificationOverlayState();
 }
 
-class _AchievementNotificationOverlayState extends State<AchievementNotificationOverlay>
+class _AchievementNotificationOverlayState
+    extends State<AchievementNotificationOverlay>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<Offset> _slideAnimation;
@@ -35,18 +37,12 @@ class _AchievementNotificationOverlayState extends State<AchievementNotification
     _slideAnimation = Tween<Offset>(
       begin: const Offset(0, -1),
       end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.elasticOut,
-    ));
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.elasticOut));
 
     _fadeAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _controller,
-      curve: Curves.easeInOut,
-    ));
+    ).animate(CurvedAnimation(parent: _controller, curve: Curves.easeInOut));
 
     // 애니메이션 시작
     _controller.forward();
@@ -152,9 +148,12 @@ class _AchievementNotificationOverlayState extends State<AchievementNotification
                               Row(
                                 children: [
                                   Text(
-                                    Localizations.localeOf(context).languageCode == 'ko'
-                                      ? '🎉 업적 달성!'
-                                      : '🎉 Achievement!',
+                                    Localizations.localeOf(
+                                              context,
+                                            ).languageCode ==
+                                            'ko'
+                                        ? '🎉 업적 달성!'
+                                        : '🎉 Achievement!',
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 12,
@@ -233,4 +232,4 @@ class _AchievementNotificationOverlayState extends State<AchievementNotification
       ),
     );
   }
-} 
+}

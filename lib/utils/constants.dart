@@ -182,72 +182,72 @@ class ResponsiveHelper {
   static bool isTablet(BuildContext context) {
     return MediaQuery.of(context).size.width > 600;
   }
-  
+
   static bool isLargeTablet(BuildContext context) {
     return MediaQuery.of(context).size.width > 900;
   }
-  
+
   static double getHorizontalPadding(BuildContext context) {
     if (isLargeTablet(context)) return 60.0;
     if (isTablet(context)) return 40.0;
     return 20.0;
   }
-  
+
   static double getVerticalPadding(BuildContext context) {
     if (isLargeTablet(context)) return 40.0;
     if (isTablet(context)) return 24.0;
     return 16.0;
   }
-  
+
   static double getCardPadding(BuildContext context) {
     if (isLargeTablet(context)) return 32.0;
     if (isTablet(context)) return 24.0;
     return 16.0;
   }
-  
+
   static double getTitleFontSize(BuildContext context) {
     if (isLargeTablet(context)) return 32.0;
     if (isTablet(context)) return 28.0;
     return 24.0;
   }
-  
+
   static double getSubtitleFontSize(BuildContext context) {
     if (isLargeTablet(context)) return 18.0;
     if (isTablet(context)) return 16.0;
     return 14.0;
   }
-  
+
   static double getBodyFontSize(BuildContext context) {
     if (isLargeTablet(context)) return 16.0;
     if (isTablet(context)) return 15.0;
     return 14.0;
   }
-  
+
   static double getButtonHeight(BuildContext context) {
     if (isLargeTablet(context)) return 60.0;
     if (isTablet(context)) return 56.0;
     return 52.0;
   }
-  
+
   static double getIconSize(BuildContext context) {
     if (isLargeTablet(context)) return 32.0;
     if (isTablet(context)) return 28.0;
     return 24.0;
   }
-  
+
   static double getImageSize(BuildContext context) {
     if (isLargeTablet(context)) return 200.0;
     if (isTablet(context)) return 160.0;
     return 120.0;
   }
-  
+
   static EdgeInsets getPagePadding(BuildContext context) {
     return EdgeInsets.symmetric(
       horizontal: getHorizontalPadding(context),
       vertical: getVerticalPadding(context),
     );
   }
-  
+
   static EdgeInsets getCardMargin(BuildContext context) {
     if (isLargeTablet(context)) {
       return const EdgeInsets.symmetric(horizontal: 40.0, vertical: 16.0);

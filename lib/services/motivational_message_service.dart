@@ -34,7 +34,8 @@ class MotivationalMessage {
 
 /// Chad 스타일 동기부여 메시지 서비스
 class MotivationalMessageService {
-  static final MotivationalMessageService _instance = MotivationalMessageService._internal();
+  static final MotivationalMessageService _instance =
+      MotivationalMessageService._internal();
   factory MotivationalMessageService() => _instance;
   MotivationalMessageService._internal();
 
@@ -276,7 +277,10 @@ class MotivationalMessageService {
   }
 
   /// 레벨에 맞는 메시지 필터링
-  List<MotivationalMessage> _filterByLevel(List<MotivationalMessage> messages, int userLevel) {
+  List<MotivationalMessage> _filterByLevel(
+    List<MotivationalMessage> messages,
+    int userLevel,
+  ) {
     return messages.where((msg) {
       if (msg.minLevel > userLevel) return false;
       if (msg.maxLevel != -1 && msg.maxLevel < userLevel) return false;
@@ -285,7 +289,9 @@ class MotivationalMessageService {
   }
 
   /// 가중치를 고려한 랜덤 메시지 선택
-  MotivationalMessage _selectWeightedRandom(List<MotivationalMessage> messages) {
+  MotivationalMessage _selectWeightedRandom(
+    List<MotivationalMessage> messages,
+  ) {
     if (messages.isEmpty) {
       return const MotivationalMessage(
         message: '차드가 되는 여정을 계속하자! 💪',
@@ -295,7 +301,7 @@ class MotivationalMessageService {
 
     int totalWeight = messages.fold(0, (sum, msg) => sum + msg.weight);
     int randomValue = _random.nextInt(totalWeight);
-    
+
     int currentWeight = 0;
     for (var message in messages) {
       currentWeight += message.weight;
@@ -303,7 +309,7 @@ class MotivationalMessageService {
         return message;
       }
     }
-    
+
     return messages.last;
   }
 
@@ -444,4 +450,4 @@ class MotivationalMessageService {
     }
     return counts;
   }
-} 
+}

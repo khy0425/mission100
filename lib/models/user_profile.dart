@@ -77,9 +77,9 @@ class UserProfile {
       startDate: startDate ?? this.startDate,
       chadLevel: chadLevel ?? this.chadLevel,
       reminderEnabled: reminderEnabled ?? this.reminderEnabled,
-      reminderTime: reminderTimeOfDay != null 
-        ? '${reminderTimeOfDay.hour.toString().padLeft(2, '0')}:${reminderTimeOfDay.minute.toString().padLeft(2, '0')}'
-        : (reminderTime ?? this.reminderTime),
+      reminderTime: reminderTimeOfDay != null
+          ? '${reminderTimeOfDay.hour.toString().padLeft(2, '0')}:${reminderTimeOfDay.minute.toString().padLeft(2, '0')}'
+          : (reminderTime ?? this.reminderTime),
       workoutDays: workoutDays ?? this.workoutDays,
     );
   }

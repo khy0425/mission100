@@ -125,4 +125,4 @@ class PushupFormGuideData {
     required this.improvementTips,
     this.quizQuestions = const [],
   });
-} 
+}

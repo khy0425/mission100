@@ -80,17 +80,15 @@ class RepCounterWidget extends StatelessWidget {
               ),
 
               // 구분선
-              Container(
-                height: 40,
-                width: 2,
-                color: Colors.grey[300],
-              ),
+              Container(height: 40, width: 2, color: Colors.grey[300]),
 
               // 현재 횟수
               Column(
                 children: [
                   Text(
-                    isSetCompleted ? AppLocalizations.of(context)!.completed : AppLocalizations.of(context)!.current,
+                    isSetCompleted
+                        ? AppLocalizations.of(context)!.completed
+                        : AppLocalizations.of(context)!.current,
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: _getPerformanceColor(),
                       fontWeight: FontWeight.bold,
@@ -208,11 +206,14 @@ class RepCounterWidget extends StatelessWidget {
 
                           // 횟수 변경 후 자동으로 세트 완료 처리
                           if (currentReps - 1 > 0) {
-                            Future.delayed(const Duration(milliseconds: 300), () {
-                              if (!isSetCompleted) {
-                                onSetCompleted();
-                              }
-                            });
+                            Future.delayed(
+                              const Duration(milliseconds: 300),
+                              () {
+                                if (!isSetCompleted) {
+                                  onSetCompleted();
+                                }
+                              },
+                            );
                           }
                         }
                       : null,

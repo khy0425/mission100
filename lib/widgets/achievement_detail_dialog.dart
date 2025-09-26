@@ -7,10 +7,7 @@ import 'achievement_progress_bar.dart';
 class AchievementDetailDialog extends StatelessWidget {
   final Achievement achievement;
 
-  const AchievementDetailDialog({
-    super.key,
-    required this.achievement,
-  });
+  const AchievementDetailDialog({super.key, required this.achievement});
 
   Color _getRarityColor() {
     return achievement.getRarityColor();
@@ -54,7 +51,7 @@ class AchievementDetailDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final rarityColor = _getRarityColor();
-    
+
     return Dialog(
       backgroundColor: Colors.transparent,
       child: Container(
@@ -62,10 +59,7 @@ class AchievementDetailDialog extends StatelessWidget {
         decoration: BoxDecoration(
           color: theme.cardColor,
           borderRadius: BorderRadius.circular(AppConstants.radiusL),
-          border: Border.all(
-            color: rarityColor.withOpacity(0.5),
-            width: 2,
-          ),
+          border: Border.all(color: rarityColor.withOpacity(0.5), width: 2),
           boxShadow: [
             BoxShadow(
               color: rarityColor.withOpacity(0.3),
@@ -113,7 +107,9 @@ class AchievementDetailDialog extends StatelessWidget {
                               end: Alignment.bottomRight,
                             )
                           : null,
-                      color: achievement.isCompleted ? null : rarityColor.withOpacity(0.3),
+                      color: achievement.isCompleted
+                          ? null
+                          : rarityColor.withOpacity(0.3),
                       boxShadow: achievement.isCompleted
                           ? [
                               BoxShadow(
@@ -125,14 +121,18 @@ class AchievementDetailDialog extends StatelessWidget {
                           : null,
                     ),
                     child: Icon(
-                      achievement.isCompleted ? Icons.emoji_events : Icons.lock_outline,
-                      color: achievement.isCompleted ? Colors.white : rarityColor,
+                      achievement.isCompleted
+                          ? Icons.emoji_events
+                          : Icons.lock_outline,
+                      color: achievement.isCompleted
+                          ? Colors.white
+                          : rarityColor,
                       size: 40,
                     ),
                   ),
-                  
+
                   const SizedBox(height: AppConstants.paddingM),
-                  
+
                   // 업적 제목
                   Text(
                     achievement.getTitle(context),
@@ -142,22 +142,25 @@ class AchievementDetailDialog extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  
+
                   const SizedBox(height: AppConstants.paddingS),
-                  
+
                   // 희귀도 및 타입 배지
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       _buildBadge(_getRarityText(context), rarityColor),
                       const SizedBox(width: AppConstants.paddingS),
-                      _buildBadge(_getTypeText(context), theme.colorScheme.primary),
+                      _buildBadge(
+                        _getTypeText(context),
+                        theme.colorScheme.primary,
+                      ),
                     ],
                   ),
                 ],
               ),
             ),
-            
+
             // 본문
             Padding(
               padding: const EdgeInsets.all(AppConstants.paddingL),
@@ -176,9 +179,9 @@ class AchievementDetailDialog extends StatelessWidget {
                     achievement.getDescription(context),
                     style: theme.textTheme.bodyMedium,
                   ),
-                  
+
                   const SizedBox(height: AppConstants.paddingM),
-                  
+
                   // 진행도 (미완료 업적만)
                   if (!achievement.isCompleted) ...[
                     Text(
@@ -195,11 +198,14 @@ class AchievementDetailDialog extends StatelessWidget {
                     ),
                     const SizedBox(height: AppConstants.paddingM),
                   ],
-                  
+
                   // 완료 정보 (완료된 업적만)
-                  if (achievement.isCompleted && achievement.unlockedAt != null) ...[
+                  if (achievement.isCompleted &&
+                      achievement.unlockedAt != null) ...[
                     Text(
-                      Localizations.localeOf(context).languageCode == 'ko' ? '완료 정보' : 'Completion Info',
+                      Localizations.localeOf(context).languageCode == 'ko'
+                          ? '완료 정보'
+                          : 'Completion Info',
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -210,7 +216,9 @@ class AchievementDetailDialog extends StatelessWidget {
                       padding: const EdgeInsets.all(AppConstants.paddingM),
                       decoration: BoxDecoration(
                         color: rarityColor.withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(AppConstants.radiusM),
+                        borderRadius: BorderRadius.circular(
+                          AppConstants.radiusM,
+                        ),
                         border: Border.all(
                           color: rarityColor.withOpacity(0.3),
                           width: 1,
@@ -228,9 +236,10 @@ class AchievementDetailDialog extends StatelessWidget {
                               ),
                               const SizedBox(width: AppConstants.paddingS),
                               Text(
-                                Localizations.localeOf(context).languageCode == 'ko'
-                                  ? '완료일: ${_formatDate(achievement.unlockedAt!)}'
-                                  : 'Completed: ${_formatDate(achievement.unlockedAt!)}',
+                                Localizations.localeOf(context).languageCode ==
+                                        'ko'
+                                    ? '완료일: ${_formatDate(achievement.unlockedAt!)}'
+                                    : 'Completed: ${_formatDate(achievement.unlockedAt!)}',
                                 style: theme.textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -240,11 +249,7 @@ class AchievementDetailDialog extends StatelessWidget {
                           const SizedBox(height: AppConstants.paddingS / 2),
                           Row(
                             children: [
-                              Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                                size: 20,
-                              ),
+                              Icon(Icons.star, color: Colors.amber, size: 20),
                               const SizedBox(width: AppConstants.paddingS),
                               Text(
                                 '${AppLocalizations.of(context)!.earnedXp}: ${achievement.xpReward}',
@@ -259,7 +264,7 @@ class AchievementDetailDialog extends StatelessWidget {
                     ),
                     const SizedBox(height: AppConstants.paddingM),
                   ],
-                  
+
                   // 동기부여 메시지
                   if (achievement.getMotivation(context).isNotEmpty) ...[
                     Text(
@@ -273,8 +278,12 @@ class AchievementDetailDialog extends StatelessWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.all(AppConstants.paddingM),
                       decoration: BoxDecoration(
-                        color: theme.colorScheme.primaryContainer.withOpacity(0.3),
-                        borderRadius: BorderRadius.circular(AppConstants.radiusM),
+                        color: theme.colorScheme.primaryContainer.withOpacity(
+                          0.3,
+                        ),
+                        borderRadius: BorderRadius.circular(
+                          AppConstants.radiusM,
+                        ),
                         border: Border.all(
                           color: theme.colorScheme.primary.withOpacity(0.3),
                           width: 1,
@@ -293,7 +302,7 @@ class AchievementDetailDialog extends StatelessWidget {
                 ],
               ),
             ),
-            
+
             // 하단 버튼
             Padding(
               padding: const EdgeInsets.all(AppConstants.paddingL),
@@ -304,7 +313,9 @@ class AchievementDetailDialog extends StatelessWidget {
                   style: ElevatedButton.styleFrom(
                     backgroundColor: rarityColor,
                     foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: AppConstants.paddingM),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: AppConstants.paddingM,
+                    ),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(AppConstants.radiusM),
                     ),
@@ -334,10 +345,7 @@ class AchievementDetailDialog extends StatelessWidget {
       decoration: BoxDecoration(
         color: color.withOpacity(0.2),
         borderRadius: BorderRadius.circular(AppConstants.radiusS),
-        border: Border.all(
-          color: color,
-          width: 1,
-        ),
+        border: Border.all(color: color, width: 1),
       ),
       child: Text(
         text,
@@ -353,4 +361,4 @@ class AchievementDetailDialog extends StatelessWidget {
   String _formatDate(DateTime date) {
     return '${date.year}년 ${date.month}월 ${date.day}일';
   }
-} 
+}

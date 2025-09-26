@@ -91,11 +91,13 @@ class WorkoutProgramService {
 
     final week = weekIndex + 1; // 1-based week
     debugPrint('📊 최종 주차: $week, 운동일: $workoutDay');
-    
+
     final workout = getWorkoutForDay(userProfile.level, week, workoutDay);
 
     if (workout == null) {
-      debugPrint('❌ 워크아웃 데이터가 null (레벨: ${userProfile.level}, 주차: $week, 일차: $workoutDay)');
+      debugPrint(
+        '❌ 워크아웃 데이터가 null (레벨: ${userProfile.level}, 주차: $week, 일차: $workoutDay)',
+      );
       return null;
     }
 

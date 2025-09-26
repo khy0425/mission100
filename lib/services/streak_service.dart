@@ -26,8 +26,17 @@ class StreakService {
   static const String _lastRecoveryDateKey = 'last_recovery_date';
 
   // 마일스톤 임계값
-  static const List<int> _milestoneThresholds = [3, 7, 14, 30, 50, 100, 200, 365];
-  
+  static const List<int> _milestoneThresholds = [
+    3,
+    7,
+    14,
+    30,
+    50,
+    100,
+    200,
+    365,
+  ];
+
   // 복구 설정
   static const int _maxRecoveryCredits = 3;
   static const int _gracePeriodDays = 2;
@@ -38,11 +47,11 @@ class StreakService {
 
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // 저장된 스트릭 데이터 로드
       _currentStreak = prefs.getInt(_currentStreakKey) ?? 0;
       _longestStreak = prefs.getInt(_longestStreakKey) ?? 0;
-      
+
       final lastWorkoutDateString = prefs.getString(_lastWorkoutDateKey);
       if (lastWorkoutDateString != null) {
         _lastWorkoutDate = DateTime.parse(lastWorkoutDateString);
@@ -60,7 +69,9 @@ class StreakService {
       }
 
       _isInitialized = true;
-      debugPrint('StreakService 초기화 완료: 현재 스트릭 $_currentStreak일, 최고 스트릭 $_longestStreak일');
+      debugPrint(
+        'StreakService 초기화 완료: 현재 스트릭 $_currentStreak일, 최고 스트릭 $_longestStreak일',
+      );
     } catch (e) {
       debugPrint('StreakService 초기화 오류: $e');
       // 기본값으로 초기화
@@ -101,7 +112,9 @@ class StreakService {
         _lastWorkoutDate!.day,
       );
 
-      final daysDifference = normalizedWorkoutDate.difference(normalizedLastDate).inDays;
+      final daysDifference = normalizedWorkoutDate
+          .difference(normalizedLastDate)
+          .inDays;
 
       if (daysDifference == 0) {
         // 같은 날 운동 - 스트릭 유지
@@ -111,15 +124,15 @@ class StreakService {
         // 연속된 날 운동 - 스트릭 증가
         _currentStreak++;
         _lastWorkoutDate = normalizedWorkoutDate;
-        
+
         // 최고 스트릭 업데이트
         if (_currentStreak > _longestStreak) {
           _longestStreak = _currentStreak;
         }
-        
+
         await _saveStreakData();
         debugPrint('연속 운동 완료: 스트릭 $_currentStreak일 (최고: $_longestStreak일)');
-        
+
         // 마일스톤 체크
         await _checkMilestones();
       } else {
@@ -171,7 +184,9 @@ class StreakService {
       _lastWorkoutDate!.day,
     );
 
-    final daysSinceLastWorkout = normalizedToday.difference(normalizedLastDate).inDays;
+    final daysSinceLastWorkout = normalizedToday
+        .difference(normalizedLastDate)
+        .inDays;
 
     // 마지막 운동이 어제였다면 오늘 운동해야 스트릭 유지
     return daysSinceLastWorkout == 1;
@@ -184,7 +199,7 @@ class StreakService {
     final isAtRisk = await isStreakAtRisk();
     final today = DateTime.now();
     final normalizedToday = DateTime(today.year, today.month, today.day);
-    
+
     bool isActive = false;
     int daysSinceLastWorkout = 0;
 
@@ -194,7 +209,9 @@ class StreakService {
         _lastWorkoutDate!.month,
         _lastWorkoutDate!.day,
       );
-      daysSinceLastWorkout = normalizedToday.difference(normalizedLastDate).inDays;
+      daysSinceLastWorkout = normalizedToday
+          .difference(normalizedLastDate)
+          .inDays;
       isActive = daysSinceLastWorkout <= 1; // 오늘 또는 어제 운동했으면 활성
     }
 
@@ -212,21 +229,30 @@ class StreakService {
   Future<void> _saveStreakData() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       await prefs.setInt(_currentStreakKey, _currentStreak);
       await prefs.setInt(_longestStreakKey, _longestStreak);
-      
+
       if (_lastWorkoutDate != null) {
-        await prefs.setString(_lastWorkoutDateKey, _lastWorkoutDate!.toIso8601String());
+        await prefs.setString(
+          _lastWorkoutDateKey,
+          _lastWorkoutDate!.toIso8601String(),
+        );
       } else {
         await prefs.remove(_lastWorkoutDateKey);
       }
 
-      await prefs.setStringList(_unlockedMilestonesKey, _unlockedMilestones.map((e) => e.toString()).toList());
+      await prefs.setStringList(
+        _unlockedMilestonesKey,
+        _unlockedMilestones.map((e) => e.toString()).toList(),
+      );
       await prefs.setInt(_recoveryCreditsKey, _recoveryCredits);
-      
+
       if (_lastRecoveryDate != null) {
-        await prefs.setString(_lastRecoveryDateKey, _lastRecoveryDate!.toIso8601String());
+        await prefs.setString(
+          _lastRecoveryDateKey,
+          _lastRecoveryDate!.toIso8601String(),
+        );
       } else {
         await prefs.remove(_lastRecoveryDateKey);
       }
@@ -263,11 +289,12 @@ class StreakService {
   /// 마일스톤 체크
   Future<void> _checkMilestones() async {
     for (final threshold in _milestoneThresholds) {
-      if (_currentStreak >= threshold && !_unlockedMilestones.contains(threshold)) {
+      if (_currentStreak >= threshold &&
+          !_unlockedMilestones.contains(threshold)) {
         _unlockedMilestones.add(threshold);
         await _saveStreakData();
         debugPrint('스트릭 마일스톤 달성: $threshold일');
-        
+
         // 마일스톤 달성 알림 (추후 구현)
         // await _notifyMilestoneAchieved(threshold);
       }
@@ -283,23 +310,23 @@ class StreakService {
   /// 다음 마일스톤까지 남은 일수
   Future<int?> getDaysToNextMilestone() async {
     await initialize();
-    
+
     for (final threshold in _milestoneThresholds) {
       if (_currentStreak < threshold) {
         return threshold - _currentStreak;
       }
     }
-    
+
     return null; // 모든 마일스톤 달성
   }
 
   /// 마일스톤 진행률 (0.0 ~ 1.0)
   Future<double> getMilestoneProgress() async {
     await initialize();
-    
+
     int? nextMilestone;
     int? previousMilestone;
-    
+
     for (final threshold in _milestoneThresholds) {
       if (_currentStreak < threshold) {
         nextMilestone = threshold;
@@ -307,15 +334,15 @@ class StreakService {
       }
       previousMilestone = threshold;
     }
-    
+
     if (nextMilestone == null) {
       return 1.0; // 모든 마일스톤 달성
     }
-    
+
     final start = previousMilestone ?? 0;
     final range = nextMilestone - start;
     final progress = (_currentStreak - start) / range;
-    
+
     return progress.clamp(0.0, 1.0);
   }
 
@@ -391,11 +418,11 @@ class StreakService {
   /// 스트릭 복구 가능 여부 확인
   Future<bool> canRecoverStreak() async {
     await initialize();
-    
+
     if (_recoveryCredits <= 0 || _lastWorkoutDate == null) {
       return false;
     }
-    
+
     final today = DateTime.now();
     final normalizedToday = DateTime(today.year, today.month, today.day);
     final normalizedLastDate = DateTime(
@@ -403,9 +430,11 @@ class StreakService {
       _lastWorkoutDate!.month,
       _lastWorkoutDate!.day,
     );
-    
-    final daysSinceLastWorkout = normalizedToday.difference(normalizedLastDate).inDays;
-    
+
+    final daysSinceLastWorkout = normalizedToday
+        .difference(normalizedLastDate)
+        .inDays;
+
     // 유예 기간 내에서만 복구 가능
     return daysSinceLastWorkout > 1 && daysSinceLastWorkout <= _gracePeriodDays;
   }
@@ -413,23 +442,27 @@ class StreakService {
   /// 스트릭 복구 실행
   Future<bool> recoverStreak() async {
     await initialize();
-    
+
     if (!await canRecoverStreak()) {
       return false;
     }
-    
+
     try {
       // 복구 크레딧 사용
       _recoveryCredits--;
       _lastRecoveryDate = DateTime.now();
-      
+
       // 마지막 운동 날짜를 어제로 설정하여 스트릭 유지
       final yesterday = DateTime.now().subtract(const Duration(days: 1));
-      _lastWorkoutDate = DateTime(yesterday.year, yesterday.month, yesterday.day);
-      
+      _lastWorkoutDate = DateTime(
+        yesterday.year,
+        yesterday.month,
+        yesterday.day,
+      );
+
       await _saveStreakData();
       debugPrint('스트릭 복구 완료: 남은 크레딧 $_recoveryCredits개');
-      
+
       return true;
     } catch (e) {
       debugPrint('스트릭 복구 오류: $e');
@@ -440,7 +473,7 @@ class StreakService {
   /// 복구 크레딧 추가 (마일스톤 달성 시)
   Future<void> addRecoveryCredit() async {
     await initialize();
-    
+
     if (_recoveryCredits < _maxRecoveryCredits) {
       _recoveryCredits++;
       await _saveStreakData();
@@ -451,10 +484,10 @@ class StreakService {
   /// 복구 상태 정보 가져오기
   Future<Map<String, dynamic>> getRecoveryStatus() async {
     await initialize();
-    
+
     final canRecover = await canRecoverStreak();
     int? daysUntilExpiry;
-    
+
     if (_lastWorkoutDate != null) {
       final today = DateTime.now();
       final normalizedToday = DateTime(today.year, today.month, today.day);
@@ -463,14 +496,17 @@ class StreakService {
         _lastWorkoutDate!.month,
         _lastWorkoutDate!.day,
       );
-      
-      final daysSinceLastWorkout = normalizedToday.difference(normalizedLastDate).inDays;
-      
-      if (daysSinceLastWorkout > 1 && daysSinceLastWorkout <= _gracePeriodDays) {
+
+      final daysSinceLastWorkout = normalizedToday
+          .difference(normalizedLastDate)
+          .inDays;
+
+      if (daysSinceLastWorkout > 1 &&
+          daysSinceLastWorkout <= _gracePeriodDays) {
         daysUntilExpiry = _gracePeriodDays - daysSinceLastWorkout + 1;
       }
     }
-    
+
     return {
       'canRecover': canRecover,
       'recoveryCredits': _recoveryCredits,
@@ -480,4 +516,4 @@ class StreakService {
       'lastRecoveryDate': _lastRecoveryDate?.toIso8601String(),
     };
   }
-} 
+}

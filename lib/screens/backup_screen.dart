@@ -16,7 +16,7 @@ class BackupScreen extends StatefulWidget {
 class _BackupScreenState extends State<BackupScreen> {
   final DataBackupService _backupService = DataBackupService();
   final BackupScheduler _scheduler = BackupScheduler();
-  
+
   BackupStatus? _backupStatus;
   bool _isLoading = false;
   bool _isCreatingBackup = false;
@@ -31,12 +31,14 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 백업 상태 로드
   Future<void> _loadBackupStatus() async {
     setState(() => _isLoading = true);
-    
+
     try {
       final status = await _scheduler.getBackupStatus();
       setState(() => _backupStatus = status);
     } catch (e) {
-      _showErrorSnackBar(AppLocalizations.of(context)!.backupStatusLoadFailed(e.toString()));
+      _showErrorSnackBar(
+        AppLocalizations.of(context)!.backupStatusLoadFailed(e.toString()),
+      );
     } finally {
       setState(() => _isLoading = false);
     }
@@ -45,18 +47,26 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 수동 백업 생성
   Future<void> _createManualBackup() async {
     setState(() => _isCreatingBackup = true);
-    
+
     try {
       final result = await _scheduler.performManualBackup();
-      
+
       if (result.success) {
-        _showSuccessSnackBar(AppLocalizations.of(context)!.backupCreatedSuccessfully);
+        _showSuccessSnackBar(
+          AppLocalizations.of(context)!.backupCreatedSuccessfully,
+        );
         await _loadBackupStatus();
       } else {
-        _showErrorSnackBar(AppLocalizations.of(context)!.backupCreationFailed(result.error ?? ''));
+        _showErrorSnackBar(
+          AppLocalizations.of(
+            context,
+          )!.backupCreationFailed(result.error ?? ''),
+        );
       }
     } catch (e) {
-      _showErrorSnackBar(AppLocalizations.of(context)!.backupCreationError(e.toString()));
+      _showErrorSnackBar(
+        AppLocalizations.of(context)!.backupCreationError(e.toString()),
+      );
     } finally {
       setState(() => _isCreatingBackup = false);
     }
@@ -66,23 +76,31 @@ class _BackupScreenState extends State<BackupScreen> {
   Future<void> _createEncryptedBackup() async {
     final password = await _showPasswordDialog('백업 암호화');
     if (password == null || password.isEmpty) return;
-    
+
     setState(() => _isCreatingBackup = true);
-    
+
     try {
       final result = await _scheduler.performManualBackup(
         password: password,
         encrypt: true,
       );
-      
+
       if (result.success) {
-        _showSuccessSnackBar(AppLocalizations.of(context)!.encryptedBackupCreated);
+        _showSuccessSnackBar(
+          AppLocalizations.of(context)!.encryptedBackupCreated,
+        );
         await _loadBackupStatus();
       } else {
-        _showErrorSnackBar(AppLocalizations.of(context)!.encryptedBackupFailed(result.error ?? ''));
+        _showErrorSnackBar(
+          AppLocalizations.of(
+            context,
+          )!.encryptedBackupFailed(result.error ?? ''),
+        );
       }
     } catch (e) {
-      _showErrorSnackBar(AppLocalizations.of(context)!.encryptedBackupError(e.toString()));
+      _showErrorSnackBar(
+        AppLocalizations.of(context)!.encryptedBackupError(e.toString()),
+      );
     } finally {
       setState(() => _isCreatingBackup = false);
     }
@@ -91,17 +109,21 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 백업 파일로 내보내기
   Future<void> _exportBackup() async {
     setState(() => _isCreatingBackup = true);
-    
+
     try {
       final filePath = await _backupService.exportBackupToFile(
         context: context,
       );
-      
+
       if (filePath != null) {
-        _showSuccessSnackBar(AppLocalizations.of(context)!.backupFileSaved(filePath));
+        _showSuccessSnackBar(
+          AppLocalizations.of(context)!.backupFileSaved(filePath),
+        );
       }
     } catch (e) {
-      _showErrorSnackBar(AppLocalizations.of(context)!.backupExportFailed(e.toString()));
+      _showErrorSnackBar(
+        AppLocalizations.of(context)!.backupExportFailed(e.toString()),
+      );
     } finally {
       setState(() => _isCreatingBackup = false);
     }
@@ -110,21 +132,23 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 백업 복원
   Future<void> _restoreBackup() async {
     setState(() => _isRestoringBackup = true);
-    
+
     try {
       final context = this.context; // BuildContext를 미리 캡처
-      final success = await _backupService.restoreFromBackup(
-        context: context,
-      );
-      
+      final success = await _backupService.restoreFromBackup(context: context);
+
       if (success) {
-        _showSuccessSnackBar(AppLocalizations.of(context)!.backupRestoredSuccessfully);
+        _showSuccessSnackBar(
+          AppLocalizations.of(context)!.backupRestoredSuccessfully,
+        );
         await _loadBackupStatus();
       } else {
         _showErrorSnackBar(AppLocalizations.of(context)!.backupRestoreFailed);
       }
     } catch (e) {
-      _showErrorSnackBar(AppLocalizations.of(context)!.backupRestoreError(e.toString()));
+      _showErrorSnackBar(
+        AppLocalizations.of(context)!.backupRestoreError(e.toString()),
+      );
     } finally {
       if (mounted) setState(() => _isRestoringBackup = false);
     }
@@ -133,15 +157,11 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 자동 백업 설정 토글
   Future<void> _toggleAutoBackup(bool enabled) async {
     try {
-      await _scheduler.updateBackupSettings(
-        autoBackupEnabled: enabled,
-      );
-      
+      await _scheduler.updateBackupSettings(autoBackupEnabled: enabled);
+
       await _loadBackupStatus();
-      
-      _showSuccessSnackBar(
-        enabled ? '자동 백업이 활성화되었습니다' : '자동 백업이 비활성화되었습니다',
-      );
+
+      _showSuccessSnackBar(enabled ? '자동 백업이 활성화되었습니다' : '자동 백업이 비활성화되었습니다');
     } catch (e) {
       _showErrorSnackBar('설정 변경 실패: $e');
     }
@@ -151,7 +171,7 @@ class _BackupScreenState extends State<BackupScreen> {
   Future<void> _changeBackupFrequency() async {
     final frequency = await _showFrequencyDialog();
     if (frequency == null) return;
-    
+
     try {
       await _scheduler.updateBackupSettings(frequency: frequency);
       await _loadBackupStatus();
@@ -183,9 +203,7 @@ class _BackupScreenState extends State<BackupScreen> {
 
   Widget _buildBackupContent() {
     if (_backupStatus == null) {
-      return Center(
-        child: Text(AppLocalizations.of(context).errorLoadingData),
-      );
+      return Center(child: Text(AppLocalizations.of(context).errorLoadingData));
     }
 
     return SingleChildScrollView(
@@ -208,7 +226,7 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 백업 상태 카드
   Widget _buildStatusCard() {
     final status = _backupStatus!;
-    
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -218,23 +236,22 @@ class _BackupScreenState extends State<BackupScreen> {
             Row(
               children: [
                 Icon(
-                  status.autoBackupEnabled ? Icons.backup : Icons.backup_outlined,
+                  status.autoBackupEnabled
+                      ? Icons.backup
+                      : Icons.backup_outlined,
                   color: status.autoBackupEnabled ? Colors.green : Colors.grey,
                 ),
                 const SizedBox(width: 8),
                 const Text(
                   '백업 상태',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             const SizedBox(height: 12),
             _buildStatusRow(
-              AppLocalizations.of(context)!.status, 
-              status.statusText
+              AppLocalizations.of(context)!.status,
+              status.statusText,
             ),
             if (status.lastBackupTime != null)
               _buildStatusRow(
@@ -242,19 +259,13 @@ class _BackupScreenState extends State<BackupScreen> {
                 _formatDateTime(status.lastBackupTime!),
               ),
             if (status.nextBackupTime != null)
-              _buildStatusRow(
-                '다음 백업',
-                _formatDateTime(status.nextBackupTime!),
-              ),
-            _buildStatusRow(
-              '백업 빈도',
-              _getFrequencyText(status.frequency),
-            ),
+              _buildStatusRow('다음 백업', _formatDateTime(status.nextBackupTime!)),
+            _buildStatusRow('백업 빈도', _getFrequencyText(status.frequency)),
             _buildStatusRow(
               AppLocalizations.of(context)!.encryption,
-              status.encryptionEnabled 
-                ? AppLocalizations.of(context)!.enabled
-                : AppLocalizations.of(context)!.disabled,
+              status.encryptionEnabled
+                  ? AppLocalizations.of(context)!.enabled
+                  : AppLocalizations.of(context)!.disabled,
             ),
             if (status.failureCount > 0)
               _buildStatusRow(
@@ -274,10 +285,7 @@ class _BackupScreenState extends State<BackupScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(
-            label,
-            style: const TextStyle(fontWeight: FontWeight.w500),
-          ),
+          Text(label, style: const TextStyle(fontWeight: FontWeight.w500)),
           Text(
             value,
             style: TextStyle(
@@ -300,10 +308,7 @@ class _BackupScreenState extends State<BackupScreen> {
           children: [
             const Text(
               '백업 작업',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             Row(
@@ -328,7 +333,9 @@ class _BackupScreenState extends State<BackupScreen> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: ElevatedButton.icon(
-                    onPressed: _isCreatingBackup ? null : _createEncryptedBackup,
+                    onPressed: _isCreatingBackup
+                        ? null
+                        : _createEncryptedBackup,
                     icon: const Icon(Icons.lock),
                     label: Text(AppLocalizations.of(context)!.encryptedBackup),
                     style: ElevatedButton.styleFrom(
@@ -382,7 +389,7 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 설정 카드
   Widget _buildSettingsCard() {
     final status = _backupStatus!;
-    
+
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -391,15 +398,14 @@ class _BackupScreenState extends State<BackupScreen> {
           children: [
             const Text(
               '백업 설정',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             SwitchListTile(
               title: Text(AppLocalizations.of(context)!.autoBackup),
-              subtitle: Text(AppLocalizations.of(context)!.autoBackupDescription),
+              subtitle: Text(
+                AppLocalizations.of(context)!.autoBackupDescription,
+              ),
               value: status.autoBackupEnabled,
               onChanged: _toggleAutoBackup,
             ),
@@ -425,10 +431,7 @@ class _BackupScreenState extends State<BackupScreen> {
           children: [
             const Text(
               '백업 히스토리',
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             if (_backupStatus!.lastBackupTime != null)
@@ -438,8 +441,8 @@ class _BackupScreenState extends State<BackupScreen> {
                 subtitle: Text(_formatDateTime(_backupStatus!.lastBackupTime!)),
                 trailing: Text(
                   Localizations.localeOf(context).languageCode == 'ko'
-                    ? '성공'
-                    : 'Success',
+                      ? '성공'
+                      : 'Success',
                 ),
               )
             else
@@ -457,7 +460,7 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 비밀번호 입력 다이얼로그
   Future<String?> _showPasswordDialog(String title) async {
     final controller = TextEditingController();
-    
+
     return showDialog<String>(
       context: context,
       builder: (context) => AlertDialog(
@@ -467,11 +470,11 @@ class _BackupScreenState extends State<BackupScreen> {
           obscureText: true,
           decoration: InputDecoration(
             labelText: Localizations.localeOf(context).languageCode == 'ko'
-              ? '비밀번호'
-              : 'Password',
+                ? '비밀번호'
+                : 'Password',
             hintText: Localizations.localeOf(context).languageCode == 'ko'
-              ? '백업 암호화에 사용할 비밀번호를 입력하세요'
-              : 'Enter password for backup encryption',
+                ? '백업 암호화에 사용할 비밀번호를 입력하세요'
+                : 'Enter password for backup encryption',
           ),
         ),
         actions: [
@@ -507,7 +510,7 @@ class _BackupScreenState extends State<BackupScreen> {
         ],
       ),
     );
-    
+
     return result ?? false;
   }
 
@@ -553,20 +556,14 @@ class _BackupScreenState extends State<BackupScreen> {
   /// 성공 스낵바
   void _showSuccessSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Colors.green,
-      ),
+      SnackBar(content: Text(message), backgroundColor: Colors.green),
     );
   }
 
   /// 오류 스낵바
   void _showErrorSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        backgroundColor: Colors.red,
-      ),
+      SnackBar(content: Text(message), backgroundColor: Colors.red),
     );
   }
-} 
+}

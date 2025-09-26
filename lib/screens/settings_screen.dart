@@ -23,7 +23,8 @@ class SettingsScreen extends StatefulWidget {
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
-class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObserver {
+class _SettingsScreenState extends State<SettingsScreen>
+    with WidgetsBindingObserver {
   // 설정 화면 전용 배너 광고
   BannerAd? _settingsBannerAd;
 
@@ -91,7 +92,10 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
     final prefs = await SharedPreferences.getInstance();
 
     // 난이도 서비스에서 현재 설정 가져오기
-    final difficultyService = Provider.of<DifficultyService>(context, listen: false);
+    final difficultyService = Provider.of<DifficultyService>(
+      context,
+      listen: false,
+    );
     final difficulty = difficultyService.currentDifficulty;
 
     // 현재 언어 설정 가져오기
@@ -106,13 +110,18 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
     final currentLocale = await locale;
 
     setState(() {
-      _achievementNotifications = prefs.getBool('achievement_notifications') ?? true;
+      _achievementNotifications =
+          prefs.getBool('achievement_notifications') ?? true;
       _workoutReminders = prefs.getBool('workout_reminders') ?? true;
       _pushNotifications = prefs.getBool('push_notifications') ?? true;
-      _chadEvolutionNotifications = prefs.getBool('chad_evolution_notifications') ?? true;
-      _chadEvolutionPreviewNotifications = prefs.getBool('chad_evolution_preview_notifications') ?? true;
-      _chadEvolutionEncouragementNotifications = prefs.getBool('chad_evolution_encouragement_notifications') ?? true;
-      _workoutDaysOnlyNotifications = prefs.getBool('workout_days_only_notifications') ?? true;
+      _chadEvolutionNotifications =
+          prefs.getBool('chad_evolution_notifications') ?? true;
+      _chadEvolutionPreviewNotifications =
+          prefs.getBool('chad_evolution_preview_notifications') ?? true;
+      _chadEvolutionEncouragementNotifications =
+          prefs.getBool('chad_evolution_encouragement_notifications') ?? true;
+      _workoutDaysOnlyNotifications =
+          prefs.getBool('workout_days_only_notifications') ?? true;
       _currentDifficulty = difficulty;
       _currentLocale = currentLocale;
       _reminderTime = TimeOfDay(hour: hour, minute: minute);
@@ -156,7 +165,8 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
   /// 리마인더 시간 저장
   Future<void> _saveReminderTime(TimeOfDay time) async {
     final prefs = await SharedPreferences.getInstance();
-    final timeString = '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
+    final timeString =
+        '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
     await prefs.setString('reminder_time', timeString);
 
     setState(() {
@@ -170,7 +180,11 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.reminderTimeChanged(time.format(context))),
+            content: Text(
+              AppLocalizations.of(
+                context,
+              )!.reminderTimeChanged(time.format(context)),
+            ),
             backgroundColor: const Color(AppColors.primaryColor),
             duration: const Duration(seconds: 2),
           ),
@@ -189,8 +203,7 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
     return Scaffold(
       backgroundColor: isDark ? Colors.black : Colors.white,
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.settings,
-        ),
+        title: Text(AppLocalizations.of(context)!.settings),
         backgroundColor: isDark ? Colors.grey[900] : Colors.blue,
         foregroundColor: Colors.white,
       ),
@@ -232,16 +245,12 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
               AppLocalizations.of(context)!.notificationsSettings,
               [
                 SwitchListTile(
-                  title: Text(
-                    AppLocalizations.of(context)!.pushNotifications,
-                  ),
+                  title: Text(AppLocalizations.of(context)!.pushNotifications),
                   value: _pushNotifications,
                   onChanged: _onPushNotificationsChanged,
                 ),
                 SwitchListTile(
-                  title: Text(
-                    AppLocalizations.of(context)!.workoutReminders,
-                  ),
+                  title: Text(AppLocalizations.of(context)!.workoutReminders),
                   value: _workoutReminders,
                   onChanged: _onWorkoutRemindersChanged,
                 ),
@@ -257,9 +266,7 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
               AppLocalizations.of(context)!.appearance,
               [
                 ListTile(
-                  title: Text(
-                    AppLocalizations.of(context)!.darkMode,
-                  ),
+                  title: Text(AppLocalizations.of(context)!.darkMode),
                   trailing: Switch(
                     value: isDark,
                     onChanged: (value) {
@@ -275,9 +282,7 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
                   ),
                 ),
                 ListTile(
-                  title: Text(
-                    AppLocalizations.of(context)!.languageSettings,
-                  ),
+                  title: Text(AppLocalizations.of(context)!.languageSettings),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () {
                     ScaffoldMessenger.of(context).showSnackBar(
@@ -301,9 +306,7 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
               AppLocalizations.of(context)!.aboutApp,
               [
                 ListTile(
-                  title: Text(
-                    AppLocalizations.of(context)!.version,
-                  ),
+                  title: Text(AppLocalizations.of(context)!.version),
                   subtitle: Text(AppLocalizations.of(context)!.appVersion),
                 ),
                 ListTile(
@@ -320,7 +323,12 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
     );
   }
 
-  Widget _buildSimpleSettingsCard(BuildContext context, IconData icon, String title, List<Widget> children) {
+  Widget _buildSimpleSettingsCard(
+    BuildContext context,
+    IconData icon,
+    String title,
+    List<Widget> children,
+  ) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
@@ -384,22 +392,22 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
       padding: const EdgeInsets.all(AppConstants.paddingL),
       decoration: BoxDecoration(
         gradient: isDark
-          ? LinearGradient(
-              colors: [
-                Color(AppColors.chadGradient[0]),
-                Color(AppColors.chadGradient[1]),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            )
-          : LinearGradient(
-              colors: [
-                const Color(0xFF2196F3), // 밝은 파란색
-                const Color(0xFF1976D2), // 진한 파란색
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+            ? LinearGradient(
+                colors: [
+                  Color(AppColors.chadGradient[0]),
+                  Color(AppColors.chadGradient[1]),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              )
+            : LinearGradient(
+                colors: [
+                  const Color(0xFF2196F3), // 밝은 파란색
+                  const Color(0xFF1976D2), // 진한 파란색
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
         boxShadow: [
           BoxShadow(
@@ -455,9 +463,7 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
           ),
           const SizedBox(height: 8),
           SwitchListTile(
-            title: Text(
-              AppLocalizations.of(context)!.pushNotifications,
-            ),
+            title: Text(AppLocalizations.of(context)!.pushNotifications),
             value: _pushNotifications,
             onChanged: _onPushNotificationsChanged,
           ),
@@ -602,7 +608,9 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
   // 알림 설정 콜백 메서드들
   void _onPushNotificationsChanged(bool value) async {
     if (value) {
-      final granted = await NotificationService.showPermissionRequestDialog(context);
+      final granted = await NotificationService.showPermissionRequestDialog(
+        context,
+      );
       if (granted) {
         setState(() => _pushNotifications = true);
         await _saveBoolSetting('push_notifications', true);
@@ -626,21 +634,30 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
   void _onChadEvolutionNotificationsChanged(bool value) async {
     setState(() => _chadEvolutionNotifications = value);
     await _saveBoolSetting('chad_evolution_notifications', value);
-    final chadService = Provider.of<ChadEvolutionService>(context, listen: false);
+    final chadService = Provider.of<ChadEvolutionService>(
+      context,
+      listen: false,
+    );
     await chadService.setChadEvolutionNotificationEnabled(value);
   }
 
   void _onChadEvolutionPreviewNotificationsChanged(bool value) async {
     setState(() => _chadEvolutionPreviewNotifications = value);
     await _saveBoolSetting('chad_evolution_preview_notifications', value);
-    final chadService = Provider.of<ChadEvolutionService>(context, listen: false);
+    final chadService = Provider.of<ChadEvolutionService>(
+      context,
+      listen: false,
+    );
     await chadService.setChadEvolutionPreviewNotificationEnabled(value);
   }
 
   void _onChadEvolutionEncouragementNotificationsChanged(bool value) async {
     setState(() => _chadEvolutionEncouragementNotifications = value);
     await _saveBoolSetting('chad_evolution_encouragement_notifications', value);
-    final chadService = Provider.of<ChadEvolutionService>(context, listen: false);
+    final chadService = Provider.of<ChadEvolutionService>(
+      context,
+      listen: false,
+    );
     await chadService.setChadEvolutionEncouragementNotificationEnabled(value);
   }
 
@@ -655,7 +672,9 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
 
   void _showPermissionRequestDialog() async {
     try {
-      final granted = await NotificationService.showPermissionRequestDialog(context);
+      final granted = await NotificationService.showPermissionRequestDialog(
+        context,
+      );
 
       if (granted) {
         setState(() {
@@ -671,7 +690,7 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
                   const Icon(Icons.check_circle, color: Colors.white),
                   const SizedBox(width: 8),
                   Text(
-                    AppLocalizations.of(context)!.notificationPermissionGranted
+                    AppLocalizations.of(context)!.notificationPermissionGranted,
                   ),
                 ],
               ),
@@ -694,30 +713,40 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(
-          AppLocalizations.of(context)!.languageSettings
-        ),
+        title: Text(AppLocalizations.of(context)!.languageSettings),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(AppLocalizations.of(context)!.selectLanguage),
             const SizedBox(height: 16),
             ListTile(
-              leading: Text(AppLocalizations.of(context)!.koreanFlag, style: const TextStyle(fontSize: 24)),
+              leading: Text(
+                AppLocalizations.of(context)!.koreanFlag,
+                style: const TextStyle(fontSize: 24),
+              ),
               title: Text(AppLocalizations.of(context)!.korean),
               subtitle: Text(AppLocalizations.of(context)!.koreanLanguage),
               trailing: _currentLocale.languageCode == 'ko'
-                ? const Icon(Icons.check, color: Color(AppColors.primaryColor))
-                : null,
+                  ? const Icon(
+                      Icons.check,
+                      color: Color(AppColors.primaryColor),
+                    )
+                  : null,
               onTap: () => _changeLanguage(LocaleService.koreanLocale),
             ),
             ListTile(
-              leading: Text(AppLocalizations.of(context)!.englishFlag, style: const TextStyle(fontSize: 24)),
+              leading: Text(
+                AppLocalizations.of(context)!.englishFlag,
+                style: const TextStyle(fontSize: 24),
+              ),
               title: Text(AppLocalizations.of(context)!.englishLanguage),
               subtitle: Text(AppLocalizations.of(context)!.english),
               trailing: _currentLocale.languageCode == 'en'
-                ? const Icon(Icons.check, color: Color(AppColors.primaryColor))
-                : null,
+                  ? const Icon(
+                      Icons.check,
+                      color: Color(AppColors.primaryColor),
+                    )
+                  : null,
               onTap: () => _changeLanguage(LocaleService.englishLocale),
             ),
           ],
@@ -751,7 +780,9 @@ class _SettingsScreenState extends State<SettingsScreen> with WidgetsBindingObse
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            AppLocalizations.of(context)!.languageChanged(LocaleService.getLocaleName(newLocale)),
+            AppLocalizations.of(
+              context,
+            )!.languageChanged(LocaleService.getLocaleName(newLocale)),
           ),
           duration: const Duration(seconds: 2),
           backgroundColor: const Color(AppColors.primaryColor),

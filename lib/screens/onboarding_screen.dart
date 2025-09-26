@@ -21,7 +21,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   late AnimationController _slideAnimationController;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
-  
+
   // 이미지 미리 로딩을 위한 리스트
   final List<String> _imagePaths = [
     'assets/images/기본차드.jpg',
@@ -30,58 +30,57 @@ class _OnboardingScreenState extends State<OnboardingScreen>
     'assets/images/수면모자차드.jpg',
     'assets/images/썬글차드.jpg',
   ];
-  
+
   bool _imagesLoaded = false;
 
   @override
   void initState() {
     super.initState();
     _pageController = PageController();
-    
+
     _initializeAnimations();
     _preloadImages();
   }
-  
+
   void _initializeAnimations() {
     // 애니메이션 컨트롤러 초기화 - 지속시간 최적화
     _fadeAnimationController = AnimationController(
       duration: const Duration(milliseconds: 400), // 800ms -> 400ms로 단축
       vsync: this,
     );
-    
+
     _slideAnimationController = AnimationController(
       duration: const Duration(milliseconds: 300), // 600ms -> 300ms로 단축
       vsync: this,
     );
-    
-    _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _fadeAnimationController,
-      curve: Curves.easeInOut,
-    ));
-    
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0.3, 0),
-      end: Offset.zero,
-    ).animate(CurvedAnimation(
-      parent: _slideAnimationController,
-      curve: Curves.easeOutCubic,
-    ));
-    
+
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _fadeAnimationController,
+        curve: Curves.easeInOut,
+      ),
+    );
+
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(0.3, 0), end: Offset.zero).animate(
+          CurvedAnimation(
+            parent: _slideAnimationController,
+            curve: Curves.easeOutCubic,
+          ),
+        );
+
     // 애니메이션 시작
     _fadeAnimationController.forward();
     _slideAnimationController.forward();
   }
-  
+
   Future<void> _preloadImages() async {
     try {
       // 모든 이미지를 병렬로 미리 로딩
-      await Future.wait(_imagePaths.map((path) => 
-        precacheImage(AssetImage(path), context)
-      ));
-      
+      await Future.wait(
+        _imagePaths.map((path) => precacheImage(AssetImage(path), context)),
+      );
+
       if (mounted) {
         setState(() {
           _imagesLoaded = true;
@@ -118,7 +117,7 @@ class _OnboardingScreenState extends State<OnboardingScreen>
         ),
       );
     }
-    
+
     return Consumer<OnboardingService>(
       builder: (context, onboardingService, child) {
         if (onboardingService.isCompleted) {
@@ -191,21 +190,23 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   Future<void> _animateToNextStep(OnboardingService onboardingService) async {
     // 페이드 아웃 애니메이션
     await _fadeAnimationController.reverse();
-    
+
     // 다음 스텝으로 이동
     await onboardingService.nextStep();
-    
+
     // 페이드 인 애니메이션
     await _fadeAnimationController.forward();
   }
 
-  Future<void> _animateToPreviousStep(OnboardingService onboardingService) async {
+  Future<void> _animateToPreviousStep(
+    OnboardingService onboardingService,
+  ) async {
     // 페이드 아웃 애니메이션
     await _fadeAnimationController.reverse();
-    
+
     // 이전 스텝으로 이동
     await onboardingService.previousStep();
-    
+
     // 페이드 인 애니메이션
     await _fadeAnimationController.forward();
   }
@@ -235,14 +236,8 @@ class _WelcomeStepWidget extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: isDark
-              ? [
-                  const Color(0xFF0D0D0D),
-                  const Color(0xFF1A1A1A),
-                ]
-              : [
-                  const Color(0xFFF8F9FA),
-                  const Color(0xFFE9ECEF),
-                ],
+              ? [const Color(0xFF0D0D0D), const Color(0xFF1A1A1A)]
+              : [const Color(0xFFF8F9FA), const Color(0xFFE9ECEF)],
         ),
       ),
       child: SafeArea(
@@ -266,9 +261,9 @@ class _WelcomeStepWidget extends StatelessWidget {
                       )
                     : const SizedBox(height: 48),
               ),
-              
+
               const Spacer(),
-              
+
               // Chad 이미지 - 최적화된 이미지 위젯
               _OptimizedImageWidget(
                 imagePath: step.imagePath ?? 'assets/images/기본차드.jpg',
@@ -276,9 +271,9 @@ class _WelcomeStepWidget extends StatelessWidget {
                 height: 200,
                 shadowColor: const Color(0xFF4DABF7),
               ),
-              
+
               const SizedBox(height: 40),
-              
+
               // 제목
               Text(
                 step.title,
@@ -289,9 +284,9 @@ class _WelcomeStepWidget extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // 설명
               Text(
                 step.description,
@@ -302,22 +297,24 @@ class _WelcomeStepWidget extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const Spacer(),
-              
+
               // 진행률 표시
               _ProgressIndicatorWidget(onboardingService: onboardingService),
-              
+
               const SizedBox(height: 20),
-              
+
               // 시작 버튼
               _ActionButtonWidget(
                 onPressed: onNext,
                 backgroundColor: const Color(0xFF4DABF7),
-                text: step.buttonText ?? AppLocalizations.of(context)!.getStartedButton,
+                text:
+                    step.buttonText ??
+                    AppLocalizations.of(context)!.getStartedButton,
                 foregroundColor: Colors.white,
               ),
-              
+
               const SizedBox(height: 20),
             ],
           ),
@@ -351,14 +348,8 @@ class _ProgramIntroductionStepWidget extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: isDark
-              ? [
-                  const Color(0xFF0D0D0D),
-                  const Color(0xFF1A1A1A),
-                ]
-              : [
-                  const Color(0xFFF8F9FA),
-                  const Color(0xFFE9ECEF),
-                ],
+              ? [const Color(0xFF0D0D0D), const Color(0xFF1A1A1A)]
+              : [const Color(0xFFF8F9FA), const Color(0xFFE9ECEF)],
         ),
       ),
       child: SafeArea(
@@ -372,9 +363,9 @@ class _ProgramIntroductionStepWidget extends StatelessWidget {
                 canSkip: step.canSkip,
                 onSkip: () => onboardingService.skipOnboarding(),
               ),
-              
+
               const Spacer(),
-              
+
               // Chad 이미지
               _OptimizedImageWidget(
                 imagePath: step.imagePath ?? 'assets/images/정면차드.jpg',
@@ -382,9 +373,9 @@ class _ProgramIntroductionStepWidget extends StatelessWidget {
                 height: 160,
                 shadowColor: const Color(0xFF51CF66),
               ),
-              
+
               const SizedBox(height: 32),
-              
+
               // 제목
               Text(
                 step.title,
@@ -395,31 +386,32 @@ class _ProgramIntroductionStepWidget extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // 설명
               _DescriptionContainerWidget(
                 description: step.description,
                 borderColor: const Color(0xFF51CF66),
                 isDark: isDark,
               ),
-              
+
               const Spacer(),
-              
+
               // 진행률 표시
               _ProgressIndicatorWidget(onboardingService: onboardingService),
-              
+
               const SizedBox(height: 20),
-              
+
               // 다음 버튼
               _ActionButtonWidget(
                 onPressed: onNext,
                 backgroundColor: const Color(0xFF51CF66),
-                text: step.buttonText ?? AppLocalizations.of(context)!.nextButton,
+                text:
+                    step.buttonText ?? AppLocalizations.of(context)!.nextButton,
                 foregroundColor: Colors.white,
               ),
-              
+
               const SizedBox(height: 20),
             ],
           ),
@@ -453,14 +445,8 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: isDark
-              ? [
-                  const Color(0xFF0D0D0D),
-                  const Color(0xFF1A1A1A),
-                ]
-              : [
-                  const Color(0xFFF8F9FA),
-                  const Color(0xFFE9ECEF),
-                ],
+              ? [const Color(0xFF0D0D0D), const Color(0xFF1A1A1A)]
+              : [const Color(0xFFF8F9FA), const Color(0xFFE9ECEF)],
         ),
       ),
       child: SafeArea(
@@ -474,9 +460,9 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
                 canSkip: step.canSkip,
                 onSkip: () => onboardingService.skipOnboarding(),
               ),
-              
+
               const Spacer(),
-              
+
               // Chad 진화 이미지들
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -487,14 +473,22 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
                     height: 60,
                     shadowColor: const Color(0xFFFFD43B),
                   ),
-                  const Icon(Icons.arrow_forward, color: Color(0xFFFFD43B), size: 24),
+                  const Icon(
+                    Icons.arrow_forward,
+                    color: Color(0xFFFFD43B),
+                    size: 24,
+                  ),
                   _OptimizedImageWidget(
                     imagePath: 'assets/images/더블차드.jpg',
                     width: 80,
                     height: 80,
                     shadowColor: const Color(0xFFFFD43B),
                   ),
-                  const Icon(Icons.arrow_forward, color: Color(0xFFFFD43B), size: 24),
+                  const Icon(
+                    Icons.arrow_forward,
+                    color: Color(0xFFFFD43B),
+                    size: 24,
+                  ),
                   _OptimizedImageWidget(
                     imagePath: 'assets/images/수면모자차드.jpg',
                     width: 100,
@@ -503,9 +497,9 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
                   ),
                 ],
               ),
-              
+
               const SizedBox(height: 32),
-              
+
               // 제목
               Text(
                 step.title,
@@ -516,33 +510,35 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // 설명
               _DescriptionContainerWidget(
                 description: step.description,
                 borderColor: const Color(0xFFFFD43B),
                 isDark: isDark,
               ),
-              
+
               const Spacer(),
-              
+
               // 진행률 표시
               _ProgressIndicatorWidget(onboardingService: onboardingService),
-              
+
               const SizedBox(height: 20),
-              
+
               // 다음 버튼
               _ActionButtonWidget(
                 onPressed: onNext,
                 backgroundColor: const Color(0xFFFFD43B),
-                text: step.buttonText ?? (Localizations.localeOf(context).languageCode == 'ko'
-                  ? '멋져요!'
-                  : 'Awesome!'),
+                text:
+                    step.buttonText ??
+                    (Localizations.localeOf(context).languageCode == 'ko'
+                        ? '멋져요!'
+                        : 'Awesome!'),
                 foregroundColor: Colors.black,
               ),
-              
+
               const SizedBox(height: 20),
             ],
           ),
@@ -574,14 +570,8 @@ class _InitialTestStepWidget extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: isDark
-              ? [
-                  const Color(0xFF0D0D0D),
-                  const Color(0xFF1A1A1A),
-                ]
-              : [
-                  const Color(0xFFF8F9FA),
-                  const Color(0xFFE9ECEF),
-                ],
+              ? [const Color(0xFF0D0D0D), const Color(0xFF1A1A1A)]
+              : [const Color(0xFFF8F9FA), const Color(0xFFE9ECEF)],
         ),
       ),
       child: SafeArea(
@@ -600,9 +590,9 @@ class _InitialTestStepWidget extends StatelessWidget {
                   const SizedBox(width: 48), // 테스트는 스킵 불가
                 ],
               ),
-              
+
               const Spacer(),
-              
+
               // Chad 이미지
               _OptimizedImageWidget(
                 imagePath: step.imagePath ?? 'assets/images/썬글차드.jpg',
@@ -610,9 +600,9 @@ class _InitialTestStepWidget extends StatelessWidget {
                 height: 160,
                 shadowColor: const Color(0xFFFF6B6B),
               ),
-              
+
               const SizedBox(height: 32),
-              
+
               // 제목
               Text(
                 step.title,
@@ -623,23 +613,23 @@ class _InitialTestStepWidget extends StatelessWidget {
                 ),
                 textAlign: TextAlign.center,
               ),
-              
+
               const SizedBox(height: 20),
-              
+
               // 설명
               _DescriptionContainerWidget(
                 description: step.description,
                 borderColor: const Color(0xFFFF6B6B),
                 isDark: isDark,
               ),
-              
+
               const Spacer(),
-              
+
               // 진행률 표시
               _ProgressIndicatorWidget(onboardingService: onboardingService),
-              
+
               const SizedBox(height: 20),
-              
+
               // 테스트 시작 버튼
               _ActionButtonWidget(
                 onPressed: () async {
@@ -647,10 +637,10 @@ class _InitialTestStepWidget extends StatelessWidget {
                     // 온보딩 완료 처리
                     await onboardingService.completeOnboarding();
                     debugPrint('온보딩 완료 처리됨');
-                    
+
                     // 저장 완료까지 잠시 대기
                     await Future.delayed(const Duration(milliseconds: 500));
-                    
+
                     if (context.mounted) {
                       // 권한 설정 화면으로 이동
                       Navigator.of(context).pushReplacement(
@@ -661,7 +651,7 @@ class _InitialTestStepWidget extends StatelessWidget {
                     }
                   } catch (e) {
                     debugPrint('온보딩 완료 처리 오류: $e');
-                    
+
                     // 오류 발생 시에도 권한 화면으로 이동 (재시도 가능하도록)
                     if (context.mounted) {
                       Navigator.of(context).pushReplacement(
@@ -673,10 +663,12 @@ class _InitialTestStepWidget extends StatelessWidget {
                   }
                 },
                 backgroundColor: const Color(0xFFFF6B6B),
-                text: step.buttonText ?? AppLocalizations.of(context)!.startTestButton,
+                text:
+                    step.buttonText ??
+                    AppLocalizations.of(context)!.startTestButton,
                 foregroundColor: Colors.white,
               ),
-              
+
               const SizedBox(height: 20),
             ],
           ),
@@ -749,21 +741,15 @@ class _TopNavigationWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        IconButton(
-          onPressed: onPrevious,
-          icon: const Icon(Icons.arrow_back),
-        ),
+        IconButton(onPressed: onPrevious, icon: const Icon(Icons.arrow_back)),
         if (canSkip && onSkip != null)
           TextButton(
             onPressed: onSkip,
             child: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '건너뛰기'
-                : 'Skip',
-              style: TextStyle(
-                color: Colors.grey[600],
-                fontSize: 16,
-              ),
+                  ? '건너뛰기'
+                  : 'Skip',
+              style: TextStyle(color: Colors.grey[600], fontSize: 16),
             ),
           )
         else
@@ -789,13 +775,9 @@ class _DescriptionContainerWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDark 
-            ? const Color(0xFF1A1A1A) 
-            : Colors.white,
+        color: isDark ? const Color(0xFF1A1A1A) : Colors.white,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(
-          color: borderColor.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: borderColor.withValues(alpha: 0.3)),
       ),
       child: Text(
         description,
@@ -813,9 +795,7 @@ class _DescriptionContainerWidget extends StatelessWidget {
 class _ProgressIndicatorWidget extends StatelessWidget {
   final OnboardingService onboardingService;
 
-  const _ProgressIndicatorWidget({
-    required this.onboardingService,
-  });
+  const _ProgressIndicatorWidget({required this.onboardingService});
 
   @override
   Widget build(BuildContext context) {
@@ -841,10 +821,7 @@ class _ProgressIndicatorWidget extends StatelessWidget {
         const SizedBox(height: 8),
         Text(
           '${onboardingService.progress.currentStepIndex + 1} / ${onboardingService.steps.length}',
-          style: TextStyle(
-            fontSize: 12,
-            color: Colors.grey[600],
-          ),
+          style: TextStyle(fontSize: 12, color: Colors.grey[600]),
         ),
       ],
     );
@@ -882,12 +859,9 @@ class _ActionButtonWidget extends StatelessWidget {
         ),
         child: Text(
           text,
-          style: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ),
     );
   }
-} 
+}

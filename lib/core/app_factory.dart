@@ -23,7 +23,7 @@ class AppFactory {
 
     // 1. 설정 관리자 초기화
     await ConfigManager.instance.initialize(
-      configPath: configPath ?? 'assets/config/app_config.json'
+      configPath: configPath ?? 'assets/config/app_config.json',
     );
     _currentConfig = ConfigManager.instance.currentConfig;
     debugPrint('✅ 설정 로드 완료: ${_currentConfig!.appInfo.name}');
@@ -36,8 +36,8 @@ class AppFactory {
     debugPrint('✅ 화면 방향 설정 완료');
 
     // 3. 광고 서비스 초기화
-    if (_currentConfig!.adConfig.enableBannerAds || 
-        _currentConfig!.adConfig.enableInterstitialAds || 
+    if (_currentConfig!.adConfig.enableBannerAds ||
+        _currentConfig!.adConfig.enableInterstitialAds ||
         _currentConfig!.adConfig.enableRewardedAds) {
       await CoreAdService().initialize(_currentConfig!.adConfig);
       debugPrint('✅ 광고 서비스 초기화 완료');
@@ -50,7 +50,7 @@ class AppFactory {
   /// 테마 데이터 생성
   ThemeData createTheme() {
     final themeConfig = _currentConfig!.themeConfig;
-    
+
     return ThemeData(
       primarySwatch: _createMaterialColor(themeConfig.primaryColor),
       primaryColor: themeConfig.primaryColor,
@@ -143,10 +143,10 @@ class AppFactory {
   Future<void> updateConfig(AppConfig newConfig) async {
     await ConfigManager.instance.updateConfig(newConfig);
     _currentConfig = newConfig;
-    
+
     // 광고 서비스 재초기화
-    if (newConfig.adConfig.enableBannerAds || 
-        newConfig.adConfig.enableInterstitialAds || 
+    if (newConfig.adConfig.enableBannerAds ||
+        newConfig.adConfig.enableInterstitialAds ||
         newConfig.adConfig.enableRewardedAds) {
       await CoreAdService().initialize(newConfig.adConfig);
     }

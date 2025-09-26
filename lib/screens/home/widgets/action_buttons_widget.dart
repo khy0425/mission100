@@ -50,9 +50,7 @@ class ActionButtonsWidget extends StatelessWidget {
         onPressed: onTutorialPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFF4DABF7),
-          padding: const EdgeInsets.symmetric(
-            vertical: AppConstants.paddingL,
-          ),
+          padding: const EdgeInsets.symmetric(vertical: AppConstants.paddingL),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppConstants.radiusM),
           ),
@@ -60,11 +58,7 @@ class ActionButtonsWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.school,
-              color: Colors.white,
-              size: 24,
-            ),
+            const Icon(Icons.school, color: Colors.white, size: 24),
             const SizedBox(width: AppConstants.paddingS),
             Text(
               AppLocalizations.of(context)!.tutorialButton,
@@ -86,9 +80,7 @@ class ActionButtonsWidget extends StatelessWidget {
         onPressed: onFormGuidePressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(AppColors.secondaryColor),
-          padding: const EdgeInsets.symmetric(
-            vertical: AppConstants.paddingL,
-          ),
+          padding: const EdgeInsets.symmetric(vertical: AppConstants.paddingL),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppConstants.radiusM),
           ),
@@ -96,11 +88,7 @@ class ActionButtonsWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.fitness_center,
-              color: Colors.white,
-              size: 24,
-            ),
+            const Icon(Icons.fitness_center, color: Colors.white, size: 24),
             const SizedBox(width: AppConstants.paddingS),
             Text(
               AppLocalizations.of(context)!.perfectPushupForm,
@@ -122,9 +110,7 @@ class ActionButtonsWidget extends StatelessWidget {
         onPressed: onProgressTrackingPressed,
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(AppColors.primaryColor),
-          padding: const EdgeInsets.symmetric(
-            vertical: AppConstants.paddingL,
-          ),
+          padding: const EdgeInsets.symmetric(vertical: AppConstants.paddingL),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppConstants.radiusM),
           ),
@@ -132,11 +118,7 @@ class ActionButtonsWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.analytics,
-              color: Colors.black,
-              size: 24,
-            ),
+            const Icon(Icons.analytics, color: Colors.black, size: 24),
             const SizedBox(width: AppConstants.paddingS),
             Text(
               Localizations.localeOf(context).languageCode == 'ko'

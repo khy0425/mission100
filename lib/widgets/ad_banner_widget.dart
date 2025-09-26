@@ -57,15 +57,12 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
           child: Center(
             child: Text(
               AppLocalizations.of(context)!.adLoadFailed,
-              style: const TextStyle(
-                color: Colors.grey,
-                fontSize: 12,
-              ),
+              style: const TextStyle(color: Colors.grey, fontSize: 12),
             ),
           ),
         );
       }
-      
+
       // 로딩 중일 때
       return Container(
         margin: widget.margin,
@@ -89,4 +86,4 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
       child: AdWidget(ad: _bannerAd!),
     );
   }
-} 
+}

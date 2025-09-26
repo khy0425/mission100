@@ -20,7 +20,7 @@ class _PermissionScreenState extends State<PermissionScreen>
   late AnimationController _animationController;
   late Animation<double> _fadeAnimation;
   late Animation<Offset> _slideAnimation;
-  
+
   bool _isRequestingPermission = false;
   bool _hasRequestedBefore = false;
 
@@ -41,12 +41,13 @@ class _PermissionScreenState extends State<PermissionScreen>
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
 
-    _slideAnimation = Tween<Offset>(
-      begin: const Offset(0, 0.3),
-      end: Offset.zero,
-    ).animate(
-      CurvedAnimation(parent: _animationController, curve: Curves.easeOutBack),
-    );
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Curves.easeOutBack,
+          ),
+        );
 
     _animationController.forward();
   }
@@ -54,12 +55,14 @@ class _PermissionScreenState extends State<PermissionScreen>
   Future<void> _checkPermissionStatus() async {
     final prefs = await SharedPreferences.getInstance();
     _hasRequestedBefore = prefs.getBool('has_requested_permissions') ?? false;
-    
+
     // 이미 권한이 허용되어 있는지 확인
     final hasNotificationPermission = await NotificationService.hasPermission();
-    final hasStoragePermission = await PermissionService.getStoragePermissionStatus();
-    
-    if (hasNotificationPermission && hasStoragePermission == PermissionStatus.granted) {
+    final hasStoragePermission =
+        await PermissionService.getStoragePermissionStatus();
+
+    if (hasNotificationPermission &&
+        hasStoragePermission == PermissionStatus.granted) {
       _navigateToMainScreen();
     }
   }
@@ -134,17 +137,13 @@ class _PermissionScreenState extends State<PermissionScreen>
           ),
         ],
       ),
-      child: const Icon(
-        Icons.security,
-        size: 60,
-        color: Colors.white,
-      ),
+      child: const Icon(Icons.security, size: 60, color: Colors.white),
     );
   }
 
   Widget _buildTitle() {
     final theme = Theme.of(context);
-    
+
     return Text(
       AppLocalizations.of(context)!.permissionsRequired,
       style: theme.textTheme.headlineSmall?.copyWith(
@@ -157,11 +156,11 @@ class _PermissionScreenState extends State<PermissionScreen>
 
   Widget _buildDescription() {
     final theme = Theme.of(context);
-    
+
     return Text(
-      _hasRequestedBefore 
-        ? AppLocalizations.of(context)!.permissionAlreadyRequested
-        : AppLocalizations.of(context)!.permissionsDescription,
+      _hasRequestedBefore
+          ? AppLocalizations.of(context)!.permissionAlreadyRequested
+          : AppLocalizations.of(context)!.permissionsDescription,
       style: theme.textTheme.bodyLarge?.copyWith(
         color: theme.textTheme.bodyLarge?.color?.withValues(alpha: 0.8),
         height: 1.5,
@@ -197,9 +196,9 @@ class _PermissionScreenState extends State<PermissionScreen>
               AppLocalizations.of(context)!.notificationBenefit3,
             ],
           ),
-          
+
           const SizedBox(height: 24),
-          
+
           // 저장소 권한 섹션
           _buildPermissionSection(
             AppLocalizations.of(context)!.storagePermissionTitle,
@@ -223,7 +222,7 @@ class _PermissionScreenState extends State<PermissionScreen>
     List<String> benefits,
   ) {
     final theme = Theme.of(context);
-    
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -233,7 +232,9 @@ class _PermissionScreenState extends State<PermissionScreen>
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+                color: const Color(
+                  AppColors.primaryColor,
+                ).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
@@ -257,7 +258,9 @@ class _PermissionScreenState extends State<PermissionScreen>
                   Text(
                     description,
                     style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.textTheme.bodySmall?.color?.withValues(alpha: 0.7),
+                      color: theme.textTheme.bodySmall?.color?.withValues(
+                        alpha: 0.7,
+                      ),
                     ),
                   ),
                 ],
@@ -266,15 +269,17 @@ class _PermissionScreenState extends State<PermissionScreen>
           ],
         ),
         const SizedBox(height: 12),
-        ...benefits.map((benefit) => Padding(
-          padding: const EdgeInsets.only(left: 16, bottom: 4),
-          child: Text(
-            benefit,
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: theme.textTheme.bodySmall?.color?.withValues(alpha: 0.8),
+        ...benefits.map(
+          (benefit) => Padding(
+            padding: const EdgeInsets.only(left: 16, bottom: 4),
+            child: Text(
+              benefit,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.textTheme.bodySmall?.color?.withValues(alpha: 0.8),
+              ),
             ),
           ),
-        )),
+        ),
       ],
     );
   }
@@ -305,9 +310,9 @@ class _PermissionScreenState extends State<PermissionScreen>
                     ),
                   )
                 : Text(
-                    _hasRequestedBefore 
-                      ? AppLocalizations.of(context)!.goToSettings 
-                      : AppLocalizations.of(context)!.allowPermissions,
+                    _hasRequestedBefore
+                        ? AppLocalizations.of(context)!.goToSettings
+                        : AppLocalizations.of(context)!.allowPermissions,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -321,7 +326,9 @@ class _PermissionScreenState extends State<PermissionScreen>
           child: Text(
             AppLocalizations.of(context)!.skipPermissions,
             style: TextStyle(
-              color: Theme.of(context).textTheme.bodyMedium?.color?.withValues(alpha: 0.6),
+              color: Theme.of(
+                context,
+              ).textTheme.bodyMedium?.color?.withValues(alpha: 0.6),
               fontSize: 14,
             ),
           ),
@@ -341,21 +348,21 @@ class _PermissionScreenState extends State<PermissionScreen>
 
       bool notificationGranted = false;
       bool storageGranted = false;
-      
+
       if (_hasRequestedBefore) {
         // 이미 한 번 요청했다면 설정 화면으로 이동
         debugPrint('🔄 설정 화면으로 이동...');
-        
+
         try {
           await NotificationService.openNotificationSettings();
         } catch (e) {
           debugPrint('⚠️ 설정 화면 열기 실패: $e');
         }
-        
+
         // 설정 화면에서 돌아온 후 충분한 시간 대기 후 권한 상태 재확인
         debugPrint('⏳ 설정 화면에서 돌아온 후 권한 상태 재확인 대기...');
         await Future.delayed(const Duration(seconds: 3));
-        
+
         try {
           notificationGranted = await NotificationService.hasPermission();
           debugPrint('📱 알림 권한 재확인 결과: $notificationGranted');
@@ -363,9 +370,10 @@ class _PermissionScreenState extends State<PermissionScreen>
           debugPrint('⚠️ 알림 권한 재확인 실패: $e');
           notificationGranted = false;
         }
-        
+
         try {
-          final storageStatus = await PermissionService.getStoragePermissionStatus();
+          final storageStatus =
+              await PermissionService.getStoragePermissionStatus();
           storageGranted = storageStatus == PermissionStatus.granted;
           debugPrint('💾 저장소 권한 재확인 결과: $storageGranted');
         } catch (e) {
@@ -375,7 +383,7 @@ class _PermissionScreenState extends State<PermissionScreen>
       } else {
         // 처음 요청하는 경우
         debugPrint('🔔 처음 권한 요청 시작...');
-        
+
         // 1. 알림 권한 요청 (타임아웃 적용)
         try {
           notificationGranted = await NotificationService.requestPermissions()
@@ -385,18 +393,20 @@ class _PermissionScreenState extends State<PermissionScreen>
           debugPrint('⚠️ 알림 권한 요청 실패 또는 타임아웃: $e');
           notificationGranted = false;
         }
-        
+
         // 2. 저장소 권한 요청 (타임아웃 적용)
         try {
-          final storageStatus = await PermissionService.requestStoragePermission()
-              .timeout(const Duration(seconds: 30));
+          final storageStatus =
+              await PermissionService.requestStoragePermission().timeout(
+                const Duration(seconds: 30),
+              );
           storageGranted = storageStatus == PermissionStatus.granted;
           debugPrint('💾 저장소 권한 요청 결과: $storageGranted');
         } catch (e) {
           debugPrint('⚠️ 저장소 권한 요청 실패 또는 타임아웃: $e');
           storageGranted = false;
         }
-        
+
         // 권한 요청 후 상태 저장
         try {
           await prefs.setBool('has_requested_permissions', true);
@@ -407,43 +417,55 @@ class _PermissionScreenState extends State<PermissionScreen>
 
       if (notificationGranted && storageGranted) {
         debugPrint('✅ 모든 권한 허용됨');
-        
+
         // 모든 권한이 허용되면 알림 채널 생성 및 기본 설정
         try {
           await NotificationService.createNotificationChannels();
         } catch (e) {
           debugPrint('⚠️ 알림 채널 생성 실패: $e');
         }
-        
+
         // 성공 메시지 표시
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.notificationPermissionGrantedMessage),
+              content: Text(
+                AppLocalizations.of(
+                  context,
+                )!.notificationPermissionGrantedMessage,
+              ),
               backgroundColor: const Color(AppColors.primaryColor),
               duration: const Duration(seconds: 2),
             ),
           );
         }
-        
+
         await Future.delayed(const Duration(milliseconds: 500));
         _navigateToMainScreen();
       } else {
-        debugPrint('⚠️ 일부 권한 거부됨 - 알림: $notificationGranted, 저장소: $storageGranted');
-        
+        debugPrint(
+          '⚠️ 일부 권한 거부됨 - 알림: $notificationGranted, 저장소: $storageGranted',
+        );
+
         setState(() {
           _hasRequestedBefore = true;
         });
-        
+
         String message = '';
         if (!notificationGranted && !storageGranted) {
-          message = AppLocalizations.of(context)!.notificationPermissionErrorMessage;
+          message = AppLocalizations.of(
+            context,
+          )!.notificationPermissionErrorMessage;
         } else if (!notificationGranted) {
-          message = AppLocalizations.of(context)!.notificationPermissionDeniedMessage;
+          message = AppLocalizations.of(
+            context,
+          )!.notificationPermissionDeniedMessage;
         } else {
-          message = AppLocalizations.of(context)!.notificationPermissionErrorMessage;
+          message = AppLocalizations.of(
+            context,
+          )!.notificationPermissionErrorMessage;
         }
-        
+
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
@@ -459,7 +481,9 @@ class _PermissionScreenState extends State<PermissionScreen>
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.notificationPermissionErrorMessage),
+            content: Text(
+              AppLocalizations.of(context)!.notificationPermissionErrorMessage,
+            ),
             backgroundColor: Colors.red,
           ),
         );
@@ -476,16 +500,18 @@ class _PermissionScreenState extends State<PermissionScreen>
   Future<void> _skipPermissions() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool('permission_screen_shown', true);
-    
+
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(AppLocalizations.of(context)!.notificationPermissionLaterMessage),
+          content: Text(
+            AppLocalizations.of(context)!.notificationPermissionLaterMessage,
+          ),
           duration: const Duration(seconds: 2),
         ),
       );
     }
-    
+
     _navigateToMainScreen();
   }
 
@@ -493,23 +519,20 @@ class _PermissionScreenState extends State<PermissionScreen>
     if (mounted) {
       // 처음 사용자인지 확인
       final prefs = await SharedPreferences.getInstance();
-      final hasSelectedDifficulty = prefs.getBool('has_selected_difficulty') ?? false;
-      
+      final hasSelectedDifficulty =
+          prefs.getBool('has_selected_difficulty') ?? false;
+
       if (hasSelectedDifficulty) {
         // 이미 난이도를 선택한 사용자는 바로 메인 화면으로
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (context) => const MainNavigationScreen(),
-          ),
+          MaterialPageRoute(builder: (context) => const MainNavigationScreen()),
         );
       } else {
         // 처음 사용자는 난이도 선택 화면으로
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
-            builder: (context) => const InitialTestScreen(),
-          ),
+          MaterialPageRoute(builder: (context) => const InitialTestScreen()),
         );
       }
     }
   }
-} 
+}

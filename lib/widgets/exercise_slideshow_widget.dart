@@ -16,7 +16,8 @@ class ExerciseSlideshowWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<ExerciseSlideshowWidget> createState() => _ExerciseSlideshowWidgetState();
+  State<ExerciseSlideshowWidget> createState() =>
+      _ExerciseSlideshowWidgetState();
 }
 
 class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
@@ -68,7 +69,9 @@ class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
     if (mounted) {
       _animationController.reverse().then((_) {
         setState(() {
-          _currentIndex = (_currentIndex - 1 + widget.imagePaths.length) % widget.imagePaths.length;
+          _currentIndex =
+              (_currentIndex - 1 + widget.imagePaths.length) %
+              widget.imagePaths.length;
         });
         _animationController.forward();
       });
@@ -96,18 +99,11 @@ class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.image,
-                color: Color(0xFF4DABF7),
-                size: 48,
-              ),
+              Icon(Icons.image, color: Color(0xFF4DABF7), size: 48),
               SizedBox(height: 8),
               Text(
                 '이미지 없음',
-                style: TextStyle(
-                  color: Color(0xFF4DABF7),
-                  fontSize: 14,
-                ),
+                style: TextStyle(color: Color(0xFF4DABF7), fontSize: 14),
               ),
             ],
           ),

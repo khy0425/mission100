@@ -19,7 +19,8 @@ class EnhancedAchievementCard extends StatefulWidget {
   });
 
   @override
-  State<EnhancedAchievementCard> createState() => _EnhancedAchievementCardState();
+  State<EnhancedAchievementCard> createState() =>
+      _EnhancedAchievementCardState();
 }
 
 class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
@@ -32,27 +33,19 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
   @override
   void initState() {
     super.initState();
-    
+
     _hoverController = AnimationController(
       duration: const Duration(milliseconds: 200),
       vsync: this,
     );
 
-    _scaleAnimation = Tween<double>(
-      begin: 1.0,
-      end: 1.02,
-    ).animate(CurvedAnimation(
-      parent: _hoverController,
-      curve: Curves.easeOutCubic,
-    ));
+    _scaleAnimation = Tween<double>(begin: 1.0, end: 1.02).animate(
+      CurvedAnimation(parent: _hoverController, curve: Curves.easeOutCubic),
+    );
 
-    _elevationAnimation = Tween<double>(
-      begin: 2.0,
-      end: 8.0,
-    ).animate(CurvedAnimation(
-      parent: _hoverController,
-      curve: Curves.easeOutCubic,
-    ));
+    _elevationAnimation = Tween<double>(begin: 2.0, end: 8.0).animate(
+      CurvedAnimation(parent: _hoverController, curve: Curves.easeOutCubic),
+    );
   }
 
   @override
@@ -65,7 +58,7 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
     setState(() {
       _isHovered = isHovered;
     });
-    
+
     if (isHovered) {
       _hoverController.forward();
     } else {
@@ -93,7 +86,7 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
   Widget _buildIcon() {
     final rarityColor = _getRarityColor();
     final iconSize = widget.isCompact ? 32.0 : 48.0;
-    
+
     return Container(
       width: iconSize,
       height: iconSize,
@@ -101,15 +94,14 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
         shape: BoxShape.circle,
         gradient: widget.achievement.isCompleted
             ? LinearGradient(
-                colors: [
-                  rarityColor,
-                  rarityColor.withOpacity(0.7),
-                ],
+                colors: [rarityColor, rarityColor.withOpacity(0.7)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               )
             : null,
-        color: widget.achievement.isCompleted ? null : rarityColor.withOpacity(0.3),
+        color: widget.achievement.isCompleted
+            ? null
+            : rarityColor.withOpacity(0.3),
         boxShadow: widget.achievement.isCompleted
             ? [
                 BoxShadow(
@@ -121,7 +113,9 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
             : null,
       ),
       child: Icon(
-        widget.achievement.isCompleted ? Icons.emoji_events : Icons.lock_outline,
+        widget.achievement.isCompleted
+            ? Icons.emoji_events
+            : Icons.lock_outline,
         color: widget.achievement.isCompleted ? Colors.white : rarityColor,
         size: iconSize * 0.6,
       ),
@@ -130,7 +124,7 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
 
   Widget _buildRarityBadge() {
     final rarityColor = _getRarityColor();
-    
+
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: AppConstants.paddingS,
@@ -139,10 +133,7 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
       decoration: BoxDecoration(
         color: rarityColor.withOpacity(0.2),
         borderRadius: BorderRadius.circular(AppConstants.radiusS),
-        border: Border.all(
-          color: rarityColor.withOpacity(0.5),
-          width: 1,
-        ),
+        border: Border.all(color: rarityColor.withOpacity(0.5), width: 1),
       ),
       child: Text(
         _getRarityText(context),
@@ -157,9 +148,9 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
 
   Widget _buildCompletedBadge() {
     if (!widget.achievement.isCompleted) return const SizedBox.shrink();
-    
+
     final rarityColor = _getRarityColor();
-    
+
     return Container(
       padding: const EdgeInsets.symmetric(
         horizontal: AppConstants.paddingS,
@@ -191,7 +182,7 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final rarityColor = _getRarityColor();
-    
+
     return AnimatedBuilder(
       animation: _hoverController,
       builder: (context, child) {
@@ -230,7 +221,9 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                   ),
                   child: Padding(
                     padding: EdgeInsets.all(
-                      widget.isCompact ? AppConstants.paddingM : AppConstants.paddingL,
+                      widget.isCompact
+                          ? AppConstants.paddingM
+                          : AppConstants.paddingL,
                     ),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -239,7 +232,11 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                         Row(
                           children: [
                             _buildIcon(),
-                            SizedBox(width: widget.isCompact ? AppConstants.paddingS : AppConstants.paddingM),
+                            SizedBox(
+                              width: widget.isCompact
+                                  ? AppConstants.paddingS
+                                  : AppConstants.paddingM,
+                            ),
                             Expanded(
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -249,27 +246,42 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                                       Expanded(
                                         child: Text(
                                           widget.achievement.getTitle(context),
-                                          style: theme.textTheme.titleMedium?.copyWith(
-                                            fontWeight: FontWeight.bold,
-                                            color: widget.achievement.isCompleted
-                                                ? rarityColor
-                                                : theme.colorScheme.onSurface,
-                                          ),
+                                          style: theme.textTheme.titleMedium
+                                              ?.copyWith(
+                                                fontWeight: FontWeight.bold,
+                                                color:
+                                                    widget
+                                                        .achievement
+                                                        .isCompleted
+                                                    ? rarityColor
+                                                    : theme
+                                                          .colorScheme
+                                                          .onSurface,
+                                              ),
                                           maxLines: widget.isCompact ? 1 : 2,
                                           overflow: TextOverflow.ellipsis,
                                         ),
                                       ),
-                                      const SizedBox(width: AppConstants.paddingS),
+                                      const SizedBox(
+                                        width: AppConstants.paddingS,
+                                      ),
                                       _buildRarityBadge(),
                                     ],
                                   ),
                                   if (!widget.isCompact) ...[
-                                    const SizedBox(height: AppConstants.paddingS / 2),
+                                    const SizedBox(
+                                      height: AppConstants.paddingS / 2,
+                                    ),
                                     Text(
-                                      widget.achievement.getDescription(context),
-                                      style: theme.textTheme.bodySmall?.copyWith(
-                                        color: theme.colorScheme.onSurfaceVariant,
+                                      widget.achievement.getDescription(
+                                        context,
                                       ),
+                                      style: theme.textTheme.bodySmall
+                                          ?.copyWith(
+                                            color: theme
+                                                .colorScheme
+                                                .onSurfaceVariant,
+                                          ),
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -283,19 +295,25 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                             ],
                           ],
                         ),
-                        
+
                         // 진행도 바 (완료되지 않은 업적만)
-                        if (widget.showProgress && !widget.achievement.isCompleted) ...[
-                          SizedBox(height: widget.isCompact ? AppConstants.paddingS : AppConstants.paddingM),
+                        if (widget.showProgress &&
+                            !widget.achievement.isCompleted) ...[
+                          SizedBox(
+                            height: widget.isCompact
+                                ? AppConstants.paddingS
+                                : AppConstants.paddingM,
+                          ),
                           AchievementProgressBar(
                             achievement: widget.achievement,
                             showLabel: !widget.isCompact,
                             height: widget.isCompact ? 6.0 : 8.0,
                           ),
                         ],
-                        
+
                         // 완료 시간 (완료된 업적만)
-                        if (widget.achievement.isCompleted && widget.achievement.unlockedAt != null) ...[
+                        if (widget.achievement.isCompleted &&
+                            widget.achievement.unlockedAt != null) ...[
                           const SizedBox(height: AppConstants.paddingS),
                           Row(
                             children: [
@@ -306,9 +324,10 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                               ),
                               const SizedBox(width: AppConstants.paddingS / 2),
                               Text(
-                                Localizations.localeOf(context).languageCode == 'ko'
-                                  ? '완료: ${_formatDate(widget.achievement.unlockedAt!)}'
-                                  : 'Completed: ${_formatDate(widget.achievement.unlockedAt!)}',
+                                Localizations.localeOf(context).languageCode ==
+                                        'ko'
+                                    ? '완료: ${_formatDate(widget.achievement.unlockedAt!)}'
+                                    : 'Completed: ${_formatDate(widget.achievement.unlockedAt!)}',
                                 style: theme.textTheme.bodySmall?.copyWith(
                                   color: rarityColor,
                                   fontWeight: FontWeight.w500,
@@ -354,4 +373,4 @@ class CompactAchievementCard extends StatelessWidget {
       isCompact: true,
     );
   }
-} 
+}

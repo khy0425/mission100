@@ -25,9 +25,11 @@ class WorkoutReminderSettings {
     int maxConsecutive = 1;
 
     for (int i = 1; i < sortedDays.length; i++) {
-      if (sortedDays[i] == sortedDays[i-1] + 1) {
+      if (sortedDays[i] == sortedDays[i - 1] + 1) {
         consecutiveDays++;
-        maxConsecutive = maxConsecutive > consecutiveDays ? maxConsecutive : consecutiveDays;
+        maxConsecutive = maxConsecutive > consecutiveDays
+            ? maxConsecutive
+            : consecutiveDays;
       } else {
         consecutiveDays = 1;
       }
@@ -39,7 +41,9 @@ class WorkoutReminderSettings {
       for (int day in [7, 1, 2, 3, 4, 5, 6]) {
         if (sortedDays.contains(day)) {
           consecutiveDays++;
-          maxConsecutive = maxConsecutive > consecutiveDays ? maxConsecutive : consecutiveDays;
+          maxConsecutive = maxConsecutive > consecutiveDays
+              ? maxConsecutive
+              : consecutiveDays;
         } else {
           break;
         }
@@ -74,9 +78,10 @@ class WorkoutReminderSettings {
   }
 
   /// 기본 설정들
-  static const WorkoutReminderSettings defaultWeekdays = WorkoutReminderSettings(
-    activeDays: {1, 2, 3, 4, 5}, // 월-금
-  );
+  static const WorkoutReminderSettings defaultWeekdays =
+      WorkoutReminderSettings(
+        activeDays: {1, 2, 3, 4, 5}, // 월-금
+      );
 
   static const WorkoutReminderSettings defaultMWF = WorkoutReminderSettings(
     activeDays: {1, 3, 5}, // 월, 수, 금
@@ -115,10 +120,7 @@ class WorkoutReminderSettings {
   factory WorkoutReminderSettings.fromJson(Map<String, dynamic> json) {
     return WorkoutReminderSettings(
       isEnabled: json['isEnabled'] ?? true,
-      time: TimeOfDay(
-        hour: json['hour'] ?? 18,
-        minute: json['minute'] ?? 0,
-      ),
+      time: TimeOfDay(hour: json['hour'] ?? 18, minute: json['minute'] ?? 0),
       activeDays: Set<int>.from(json['activeDays'] ?? [1, 2, 3, 4, 5]),
       requiresRestDay: json['requiresRestDay'] ?? true,
     );

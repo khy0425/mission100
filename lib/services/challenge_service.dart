@@ -76,11 +76,7 @@ class ChallengeService {
               value: 'perfect_week_warrior',
               description: '완벽한 주 워리어 배지',
             ),
-            ChallengeReward(
-              type: 'xp',
-              value: '350',
-              description: '350 경험치',
-            ),
+            ChallengeReward(type: 'xp', value: '350', description: '350 경험치'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -152,11 +148,7 @@ class ChallengeService {
               value: 'perfect_cycle_master',
               description: '완벽한 휴식 주기 마스터 배지',
             ),
-            ChallengeReward(
-              type: 'xp',
-              value: '500',
-              description: '500 경험치',
-            ),
+            ChallengeReward(type: 'xp', value: '500', description: '500 경험치'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -188,11 +180,7 @@ class ChallengeService {
               value: 'monday_crusher',
               description: 'Monday Crusher 배지',
             ),
-            ChallengeReward(
-              type: 'xp',
-              value: '100',
-              description: '100 경험치',
-            ),
+            ChallengeReward(type: 'xp', value: '100', description: '100 경험치'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -205,19 +193,23 @@ class ChallengeService {
   Future<void> _loadChallengesFromStorage() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // 활성 챌린지 로드
       final activeData = prefs.getString(_activeChallengesKey);
       if (activeData != null) {
         final activeJson = jsonDecode(activeData) as List<dynamic>;
-        _activeChallenges = activeJson.map((json) => Challenge.fromJson(json as Map<String, dynamic>)).toList();
+        _activeChallenges = activeJson
+            .map((json) => Challenge.fromJson(json as Map<String, dynamic>))
+            .toList();
       }
-      
+
       // 완료된 챌린지 로드
       final completedData = prefs.getString(_completedChallengesKey);
       if (completedData != null) {
         final completedJson = jsonDecode(completedData) as List<dynamic>;
-        _completedChallenges = completedJson.map((json) => Challenge.fromJson(json as Map<String, dynamic>)).toList();
+        _completedChallenges = completedJson
+            .map((json) => Challenge.fromJson(json as Map<String, dynamic>))
+            .toList();
       }
     } catch (e) {
       debugPrint('챌린지 로드 오류: $e');
@@ -228,13 +220,15 @@ class ChallengeService {
   Future<void> _saveChallenges() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       // 활성 챌린지 저장
       final activeJson = _activeChallenges.map((c) => c.toJson()).toList();
       await prefs.setString(_activeChallengesKey, jsonEncode(activeJson));
-      
+
       // 완료된 챌린지 저장
-      final completedJson = _completedChallenges.map((c) => c.toJson()).toList();
+      final completedJson = _completedChallenges
+          .map((c) => c.toJson())
+          .toList();
       await prefs.setString(_completedChallengesKey, jsonEncode(completedJson));
     } catch (e) {
       debugPrint('챌린지 저장 오류: $e');
@@ -242,24 +236,32 @@ class ChallengeService {
   }
 
   /// 사용자에게 사용 가능한 챌린지 목록 반환
-  Future<List<Challenge>> getAvailableChallenges(UserProfile userProfile) async {
+  Future<List<Challenge>> getAvailableChallenges(
+    UserProfile userProfile,
+  ) async {
     _unlockChallenges();
-    return _allChallenges.where((c) => 
-      c.status == ChallengeStatus.available || 
-      c.status == ChallengeStatus.active
-    ).toList();
+    return _allChallenges
+        .where(
+          (c) =>
+              c.status == ChallengeStatus.available ||
+              c.status == ChallengeStatus.active,
+        )
+        .toList();
   }
 
   /// 의존성 기반 챌린지 해제
   void _unlockChallenges() {
     for (int i = 0; i < _allChallenges.length; i++) {
       final challenge = _allChallenges[i];
-      if (challenge.status == ChallengeStatus.locked && challenge.prerequisites != null) {
-        final allDepsCompleted = challenge.prerequisites!.every((depId) =>
-          _completedChallenges.any((c) => c.id == depId)
+      if (challenge.status == ChallengeStatus.locked &&
+          challenge.prerequisites != null) {
+        final allDepsCompleted = challenge.prerequisites!.every(
+          (depId) => _completedChallenges.any((c) => c.id == depId),
         );
         if (allDepsCompleted) {
-          _allChallenges[i] = challenge.copyWith(status: ChallengeStatus.available);
+          _allChallenges[i] = challenge.copyWith(
+            status: ChallengeStatus.available,
+          );
         }
       }
     }
@@ -308,7 +310,10 @@ class ChallengeService {
   }
 
   /// 운동 완료시 챌린지 진행도 업데이트
-  Future<void> updateProgressAfterWorkout(int repsCompleted, DateTime workoutDate) async {
+  Future<void> updateProgressAfterWorkout(
+    int repsCompleted,
+    DateTime workoutDate,
+  ) async {
     await updateChallengesOnWorkoutComplete(repsCompleted, 1);
   }
 
@@ -320,9 +325,11 @@ class ChallengeService {
 
   /// 챌린지 참여 시작
   Future<bool> startChallenge(String challengeId) async {
-    final challengeIndex = _allChallenges.indexWhere((c) => c.id == challengeId);
+    final challengeIndex = _allChallenges.indexWhere(
+      (c) => c.id == challengeId,
+    );
     if (challengeIndex == -1) return false;
-    
+
     final challenge = _allChallenges[challengeIndex];
     if (challenge.status != ChallengeStatus.available) {
       return false;
@@ -342,8 +349,10 @@ class ChallengeService {
     );
 
     _activeChallenges.add(activeChallenge);
-    _allChallenges[challengeIndex] = challenge.copyWith(status: ChallengeStatus.active);
-    
+    _allChallenges[challengeIndex] = challenge.copyWith(
+      status: ChallengeStatus.active,
+    );
+
     await _saveChallenges();
     return true;
   }
@@ -355,7 +364,9 @@ class ChallengeService {
 
   /// 챌린지 진행도 업데이트 (int 버전)
   Future<void> updateChallengeProgress(String challengeId, int progress) async {
-    final challengeIndex = _activeChallenges.indexWhere((c) => c.id == challengeId);
+    final challengeIndex = _activeChallenges.indexWhere(
+      (c) => c.id == challengeId,
+    );
     if (challengeIndex != -1) {
       final challenge = _activeChallenges[challengeIndex];
       final updatedChallenge = challenge.copyWith(
@@ -363,12 +374,13 @@ class ChallengeService {
         lastUpdatedAt: DateTime.now(),
       );
       _activeChallenges[challengeIndex] = updatedChallenge;
-      
+
       // 완료 체크
-      if (updatedChallenge.currentProgress >= (updatedChallenge.targetValue ?? updatedChallenge.targetCount)) {
+      if (updatedChallenge.currentProgress >=
+          (updatedChallenge.targetValue ?? updatedChallenge.targetCount)) {
         _completeChallengeAt(challengeIndex);
       }
-      
+
       await _saveChallenges();
     }
   }
@@ -386,21 +398,26 @@ class ChallengeService {
     _activeChallenges.removeAt(index);
 
     // 전체 목록에서도 상태 업데이트
-    final allChallengeIndex = _allChallenges.indexWhere((c) => c.id == completedChallenge.id);
+    final allChallengeIndex = _allChallenges.indexWhere(
+      (c) => c.id == completedChallenge.id,
+    );
     if (allChallengeIndex != -1) {
-      _allChallenges[allChallengeIndex] = _allChallenges[allChallengeIndex].copyWith(
-        status: ChallengeStatus.completed,
-      );
+      _allChallenges[allChallengeIndex] = _allChallenges[allChallengeIndex]
+          .copyWith(status: ChallengeStatus.completed);
     }
 
     // 챌린지 완료 정보를 업적 시스템에 저장
     await _saveChallengCompletionForAchievements(completedChallenge);
 
-    debugPrint('🎉 챌린지 완료: ${completedChallenge.title} (${completedChallenge.id})');
+    debugPrint(
+      '🎉 챌린지 완료: ${completedChallenge.title} (${completedChallenge.id})',
+    );
   }
 
   /// 업적 시스템을 위한 챌린지 완료 정보 저장
-  Future<void> _saveChallengCompletionForAchievements(Challenge challenge) async {
+  Future<void> _saveChallengCompletionForAchievements(
+    Challenge challenge,
+  ) async {
     try {
       final prefs = await SharedPreferences.getInstance();
 
@@ -412,7 +429,8 @@ class ChallengeService {
       }
 
       // 완료 시간 기록
-      final completionTimes = prefs.getStringList('challenge_completion_times') ?? [];
+      final completionTimes =
+          prefs.getStringList('challenge_completion_times') ?? [];
       final completionTime = DateTime.now().toIso8601String();
       completionTimes.add('${challenge.id}:$completionTime');
       await prefs.setStringList('challenge_completion_times', completionTimes);
@@ -432,21 +450,23 @@ class ChallengeService {
       await prefs.setStringList('active_challenge_ids', activeIds);
 
       debugPrint('💾 업적용 챌린지 완료 데이터 저장: ${challenge.id}');
-
     } catch (e) {
       debugPrint('❌ 업적용 챌린지 데이터 저장 실패: $e');
     }
   }
 
   /// 운동 완료 시 챌린지 업데이트 (수정된 서명)
-  Future<List<Challenge>> updateChallengesOnWorkoutComplete(int repsCompleted, int sessionsCompleted) async {
+  Future<List<Challenge>> updateChallengesOnWorkoutComplete(
+    int repsCompleted,
+    int sessionsCompleted,
+  ) async {
     final updatedChallenges = <Challenge>[];
-    
+
     for (int i = _activeChallenges.length - 1; i >= 0; i--) {
       final challenge = _activeChallenges[i];
       bool updated = false;
       int newProgress = challenge.currentProgress;
-      
+
       switch (challenge.type) {
         case ChallengeType.dailyPerfect:
           // 오늘 운동 완료 시 성공
@@ -512,7 +532,9 @@ class ChallengeService {
               // 하나의 운동→휴식 사이클 완료
               newProgress += 1;
               updated = true;
-              debugPrint('🔄 완벽한 휴식 주기 사이클 완료: ${newProgress}/${challenge.targetValue}');
+              debugPrint(
+                '🔄 완벽한 휴식 주기 사이클 완료: ${newProgress}/${challenge.targetValue}',
+              );
             }
           }
           break;
@@ -524,7 +546,7 @@ class ChallengeService {
         default:
           break;
       }
-      
+
       if (updated) {
         final updatedChallenge = challenge.copyWith(
           currentProgress: newProgress,
@@ -532,15 +554,16 @@ class ChallengeService {
         );
         _activeChallenges[i] = updatedChallenge;
         updatedChallenges.add(updatedChallenge);
-        
+
         // 완료 체크
-        final targetValue = updatedChallenge.targetValue ?? updatedChallenge.targetCount;
+        final targetValue =
+            updatedChallenge.targetValue ?? updatedChallenge.targetCount;
         if (updatedChallenge.currentProgress >= targetValue) {
           _completeChallengeAt(i);
         }
       }
     }
-    
+
     await _saveChallenges();
     return updatedChallenges;
   }
@@ -563,7 +586,9 @@ class ChallengeService {
     try {
       final prefs = await SharedPreferences.getInstance();
       final today = DateTime.now();
-      final startOfWeek = today.subtract(Duration(days: today.weekday - 1)); // 이번 주 월요일
+      final startOfWeek = today.subtract(
+        Duration(days: today.weekday - 1),
+      ); // 이번 주 월요일
 
       // 사용자의 운동 설정 가져오기 (기본: 월-금 운동, 토-일 휴식)
       final settingsJson = prefs.getString('workout_reminder_settings');
@@ -572,7 +597,9 @@ class ChallengeService {
       if (settingsJson != null) {
         try {
           final settingsMap = jsonDecode(settingsJson) as Map<String, dynamic>;
-          final activeDays = List<int>.from(settingsMap['activeDays'] ?? [1, 2, 3, 4, 5]);
+          final activeDays = List<int>.from(
+            settingsMap['activeDays'] ?? [1, 2, 3, 4, 5],
+          );
           workoutDays = activeDays;
         } catch (e) {
           debugPrint('⚠️ 운동 설정 파싱 실패, 기본값 사용: $e');
@@ -589,7 +616,8 @@ class ChallengeService {
         // 운동일인지 확인
         if (workoutDays.contains(i)) {
           // 해당 날짜에 운동했는지 확인
-          final dayKey = 'workout_${dayOfWeek.year}_${dayOfWeek.month}_${dayOfWeek.day}';
+          final dayKey =
+              'workout_${dayOfWeek.year}_${dayOfWeek.month}_${dayOfWeek.day}';
           if (workoutHistory.contains(dayKey) || _isSameDay(dayOfWeek, today)) {
             // 오늘이면서 현재 운동을 완료한 경우도 포함
             completedWorkoutDays++;
@@ -601,7 +629,9 @@ class ChallengeService {
       final totalWorkoutDays = workoutDays.length;
       final isWeekComplete = completedWorkoutDays >= totalWorkoutDays;
 
-      debugPrint('📅 주간 스케줄 체크: $completedWorkoutDays/$totalWorkoutDays 완료, 완벽한 주: $isWeekComplete');
+      debugPrint(
+        '📅 주간 스케줄 체크: $completedWorkoutDays/$totalWorkoutDays 완료, 완벽한 주: $isWeekComplete',
+      );
 
       if (isWeekComplete && challenge.currentProgress == 0) {
         // 주간 챌린지 완료!
@@ -617,7 +647,11 @@ class ChallengeService {
   }
 
   /// 완벽한 휴식 주기 상태 저장
-  Future<void> _saveCycleState(String challengeId, String state, DateTime date) async {
+  Future<void> _saveCycleState(
+    String challengeId,
+    String state,
+    DateTime date,
+  ) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final stateKey = 'cycle_state_$challengeId';
@@ -634,7 +668,10 @@ class ChallengeService {
   }
 
   /// 완벽한 휴식 주기 패턴 확인
-  Future<Map<String, bool>> _checkPerfectRestCycle(Challenge challenge, DateTime today) async {
+  Future<Map<String, bool>> _checkPerfectRestCycle(
+    Challenge challenge,
+    DateTime today,
+  ) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final stateKey = 'cycle_state_${challenge.id}';
@@ -693,21 +730,26 @@ class ChallengeService {
 
   /// 챌린지 포기 (abandon)
   Future<bool> abandonChallenge(String challengeId) async {
-    final challengeIndex = _activeChallenges.indexWhere((c) => c.id == challengeId);
+    final challengeIndex = _activeChallenges.indexWhere(
+      (c) => c.id == challengeId,
+    );
     if (challengeIndex == -1) return false;
-    
+
     _activeChallenges.removeAt(challengeIndex);
-    
+
     // 전체 목록에서 상태를 다시 available로 변경
-    final allChallengeIndex = _allChallenges.indexWhere((c) => c.id == challengeId);
+    final allChallengeIndex = _allChallenges.indexWhere(
+      (c) => c.id == challengeId,
+    );
     if (allChallengeIndex != -1) {
-      _allChallenges[allChallengeIndex] = _allChallenges[allChallengeIndex].copyWith(
-        status: ChallengeStatus.available,
-        currentProgress: 0,
-        startDate: null,
-      );
+      _allChallenges[allChallengeIndex] = _allChallenges[allChallengeIndex]
+          .copyWith(
+            status: ChallengeStatus.available,
+            currentProgress: 0,
+            startDate: null,
+          );
     }
-    
+
     await _saveChallenges();
     return true;
   }
@@ -721,9 +763,13 @@ class ChallengeService {
   Future<Map<String, dynamic>> getTodayChallengesSummary() async {
     return {
       'activeCount': _activeChallenges.length,
-      'completedToday': _completedChallenges.where((c) =>
-        c.completionDate != null && _isSameDay(c.completionDate!, DateTime.now())
-      ).length,
+      'completedToday': _completedChallenges
+          .where(
+            (c) =>
+                c.completionDate != null &&
+                _isSameDay(c.completionDate!, DateTime.now()),
+          )
+          .length,
       'totalCompleted': _completedChallenges.length,
     };
   }
@@ -734,4 +780,4 @@ class ChallengeService {
     _completedChallenges.clear();
     _allChallenges.clear();
   }
-} 
+}

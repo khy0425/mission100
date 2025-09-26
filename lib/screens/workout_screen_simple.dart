@@ -125,13 +125,13 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           _newlyUnlockedAchievements.addAll(result.newAchievements);
         }
 
-        debugPrint('🔥 운동 완료 처리 성공 - XP 획득: ${result.xpGained}, 업적: ${result.newAchievements.length}개');
+        debugPrint(
+          '🔥 운동 완료 처리 성공 - XP 획득: ${result.xpGained}, 업적: ${result.newAchievements.length}개',
+        );
         _showWorkoutCompleteDialog();
-
       } else {
         throw Exception(result.error ?? '알 수 없는 오류');
       }
-
     } catch (e) {
       debugPrint('❌ 운동 완료 처리 실패: $e');
 
@@ -141,8 +141,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           SnackBar(
             content: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '오류가 발생했습니다: $e'
-                : 'Error occurred: $e',
+                  ? '오류가 발생했습니다: $e'
+                  : 'Error occurred: $e',
             ),
             duration: const Duration(seconds: 3),
             backgroundColor: Colors.red,
@@ -219,8 +219,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                 const SizedBox(width: 8),
                 Text(
                   Localizations.localeOf(context).languageCode == 'ko'
-                    ? '운동 완료!'
-                    : 'Workout Complete!',
+                      ? '운동 완료!'
+                      : 'Workout Complete!',
                 ),
               ],
             ),
@@ -229,14 +229,14 @@ class _WorkoutScreenState extends State<WorkoutScreen>
               children: [
                 Text(
                   Localizations.localeOf(context).languageCode == 'ko'
-                    ? '훌륭합니다! 오늘의 운동을 완료했습니다.'
-                    : 'Great job! You completed today\'s workout.',
+                      ? '훌륭합니다! 오늘의 운동을 완료했습니다.'
+                      : 'Great job! You completed today\'s workout.',
                 ),
                 const SizedBox(height: 16),
                 Text(
                   Localizations.localeOf(context).languageCode == 'ko'
-                    ? '총 횟수: ${_completedReps.fold(0, (sum, reps) => sum + reps)}개'
-                    : 'Total reps: ${_completedReps.fold(0, (sum, reps) => sum + reps)}',
+                      ? '총 횟수: ${_completedReps.fold(0, (sum, reps) => sum + reps)}개'
+                      : 'Total reps: ${_completedReps.fold(0, (sum, reps) => sum + reps)}',
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
@@ -251,9 +251,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                     _finishWorkout();
                   }
                 },
-                child: Text(
-                  AppLocalizations.of(context)!.okButton,
-                ),
+                child: Text(AppLocalizations.of(context)!.okButton),
               ),
             ],
           );
@@ -287,29 +285,25 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       builder: (context) => AlertDialog(
         title: Text(
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '운동 종료'
-            : 'Exit Workout',
+              ? '운동 종료'
+              : 'Exit Workout',
         ),
         content: Text(
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '운동을 종료하시겠습니까? 진행 상황이 저장되지 않습니다.'
-            : 'Are you sure you want to exit? Your progress will not be saved.',
+              ? '운동을 종료하시겠습니까? 진행 상황이 저장되지 않습니다.'
+              : 'Are you sure you want to exit? Your progress will not be saved.',
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(
-              AppLocalizations.of(context)!.cancelButton,
-            ),
+            child: Text(AppLocalizations.of(context)!.cancelButton),
           ),
           TextButton(
             onPressed: () {
               Navigator.pop(context);
               Navigator.pop(context);
             },
-            child: Text(
-              AppLocalizations.of(context)!.exitButton,
-            ),
+            child: Text(AppLocalizations.of(context)!.exitButton),
           ),
         ],
       ),
@@ -327,8 +321,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       ),
       appBar: AppBar(
         title: Text(
-          widget.workout.title ??
-          AppLocalizations.of(context)!.workoutTitle,
+          widget.workout.title ?? AppLocalizations.of(context)!.workoutTitle,
         ),
         centerTitle: true,
         leading: IconButton(

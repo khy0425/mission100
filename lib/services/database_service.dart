@@ -23,9 +23,9 @@ class DatabaseService {
     final path = join(dbPath, 'mission100_chad.db');
 
     return await openDatabase(
-      path, 
+      path,
       version: 2, // 버전을 2로 업그레이드
-      onCreate: _onCreate, 
+      onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
   }
@@ -280,10 +280,10 @@ class DatabaseService {
         await _database!.close();
         _database = null;
       }
-      
+
       final dbPath = await getDatabasesPath();
       final path = join(dbPath, 'mission100_chad.db');
-      
+
       // 데이터베이스 파일 삭제
       await deleteDatabase(path);
       debugPrint('데이터베이스 초기화 완료');
@@ -308,10 +308,14 @@ class DatabaseService {
   Future<Map<String, dynamic>> getDatabaseStatus() async {
     try {
       final db = await database;
-      
-      final userCount = await db.rawQuery('SELECT COUNT(*) as count FROM user_profile');
-      final sessionCount = await db.rawQuery('SELECT COUNT(*) as count FROM workout_session');
-      
+
+      final userCount = await db.rawQuery(
+        'SELECT COUNT(*) as count FROM user_profile',
+      );
+      final sessionCount = await db.rawQuery(
+        'SELECT COUNT(*) as count FROM workout_session',
+      );
+
       return {
         'userProfiles': userCount.first['count'],
         'workoutSessions': sessionCount.first['count'],

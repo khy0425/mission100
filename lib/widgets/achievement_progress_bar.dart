@@ -27,19 +27,22 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
   @override
   void initState() {
     super.initState();
-    
+
     _animationController = AnimationController(
       duration: const Duration(milliseconds: 1500),
       vsync: this,
     );
 
-    _progressAnimation = Tween<double>(
-      begin: 0.0,
-      end: widget.achievement.progress.clamp(0.0, 1.0),
-    ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: Curves.easeOutCubic,
-    ));
+    _progressAnimation =
+        Tween<double>(
+          begin: 0.0,
+          end: widget.achievement.progress.clamp(0.0, 1.0),
+        ).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Curves.easeOutCubic,
+          ),
+        );
 
     // 애니메이션 시작
     _animationController.forward();
@@ -48,16 +51,19 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
   @override
   void didUpdateWidget(AchievementProgressBar oldWidget) {
     super.didUpdateWidget(oldWidget);
-    
+
     if (oldWidget.achievement.currentValue != widget.achievement.currentValue) {
-      _progressAnimation = Tween<double>(
-        begin: _progressAnimation.value,
-        end: widget.achievement.progress.clamp(0.0, 1.0),
-      ).animate(CurvedAnimation(
-        parent: _animationController,
-        curve: Curves.easeOutCubic,
-      ));
-      
+      _progressAnimation =
+          Tween<double>(
+            begin: _progressAnimation.value,
+            end: widget.achievement.progress.clamp(0.0, 1.0),
+          ).animate(
+            CurvedAnimation(
+              parent: _animationController,
+              curve: Curves.easeOutCubic,
+            ),
+          );
+
       _animationController.reset();
       _animationController.forward();
     }
@@ -77,7 +83,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final rarityColor = _getRarityColor();
-    
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -102,7 +108,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
           ),
           const SizedBox(height: AppConstants.paddingS / 2),
         ],
-        
+
         // 진행도 바 컨테이너
         Container(
           height: widget.height,
@@ -124,7 +130,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
                       color: theme.colorScheme.surfaceVariant,
                     ),
                   ),
-                  
+
                   // 진행된 부분
                   FractionallySizedBox(
                     widthFactor: _progressAnimation.value,
@@ -133,10 +139,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(widget.height / 2),
                         gradient: LinearGradient(
-                          colors: [
-                            rarityColor,
-                            rarityColor.withOpacity(0.8),
-                          ],
+                          colors: [rarityColor, rarityColor.withOpacity(0.8)],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         ),
@@ -152,7 +155,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
                       ),
                     ),
                   ),
-                  
+
                   // 완료 시 반짝이는 효과
                   if (widget.achievement.isCompleted)
                     Container(
@@ -177,7 +180,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
             },
           ),
         ),
-        
+
         if (widget.showLabel) ...[
           const SizedBox(height: AppConstants.paddingS / 2),
           Row(
@@ -233,7 +236,7 @@ class SimpleProgressBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final progressColor = color ?? theme.primaryColor;
-    
+
     return Container(
       height: height,
       decoration: BoxDecoration(
@@ -252,4 +255,4 @@ class SimpleProgressBar extends StatelessWidget {
       ),
     );
   }
-} 
+}

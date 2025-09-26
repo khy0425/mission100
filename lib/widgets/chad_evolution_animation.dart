@@ -52,13 +52,17 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
 
     // 파티클 애니메이션 컨트롤러
     _particleController = AnimationController(
-      duration: Duration(milliseconds: (widget.duration.inMilliseconds * 0.8).round()),
+      duration: Duration(
+        milliseconds: (widget.duration.inMilliseconds * 0.8).round(),
+      ),
       vsync: this,
     );
 
     // 스케일 애니메이션 컨트롤러
     _scaleController = AnimationController(
-      duration: Duration(milliseconds: (widget.duration.inMilliseconds * 0.6).round()),
+      duration: Duration(
+        milliseconds: (widget.duration.inMilliseconds * 0.6).round(),
+      ),
       vsync: this,
     );
 
@@ -69,59 +73,50 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
     );
 
     // 페이드 애니메이션
-    _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _mainController,
-      curve: const Interval(0.3, 1.0, curve: Curves.easeInOut),
-    ));
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _mainController,
+        curve: const Interval(0.3, 1.0, curve: Curves.easeInOut),
+      ),
+    );
 
     // 스케일 애니메이션
-    _scaleAnimation = Tween<double>(
-      begin: 0.5,
-      end: 1.2,
-    ).animate(CurvedAnimation(
-      parent: _scaleController,
-      curve: Curves.elasticOut,
-    ));
+    _scaleAnimation = Tween<double>(begin: 0.5, end: 1.2).animate(
+      CurvedAnimation(parent: _scaleController, curve: Curves.elasticOut),
+    );
 
     // 회전 애니메이션
-    _rotationAnimation = Tween<double>(
-      begin: 0.0,
-      end: 2 * math.pi,
-    ).animate(CurvedAnimation(
-      parent: _rotationController,
-      curve: Curves.easeInOut,
-    ));
+    _rotationAnimation = Tween<double>(begin: 0.0, end: 2 * math.pi).animate(
+      CurvedAnimation(parent: _rotationController, curve: Curves.easeInOut),
+    );
 
     // 색상 애니메이션
-    _colorAnimation = ColorTween(
-      begin: widget.fromChad.themeColor,
-      end: widget.toChad.themeColor,
-    ).animate(CurvedAnimation(
-      parent: _mainController,
-      curve: Curves.easeInOut,
-    ));
+    _colorAnimation =
+        ColorTween(
+          begin: widget.fromChad.themeColor,
+          end: widget.toChad.themeColor,
+        ).animate(
+          CurvedAnimation(parent: _mainController, curve: Curves.easeInOut),
+        );
   }
 
   void _startAnimation() async {
     // 순차적으로 애니메이션 실행
     await Future.delayed(const Duration(milliseconds: 200));
-    
+
     // 파티클 애니메이션 시작
     _particleController.forward();
-    
+
     await Future.delayed(const Duration(milliseconds: 300));
-    
+
     // 스케일 애니메이션 시작
     _scaleController.forward();
-    
+
     await Future.delayed(const Duration(milliseconds: 200));
-    
+
     // 회전 애니메이션 시작
     _rotationController.forward();
-    
+
     // 메인 애니메이션 시작
     _mainController.forward();
 
@@ -160,7 +155,7 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
               children: [
                 // 배경 파티클 효과
                 _buildParticleEffect(),
-                
+
                 // 진화 전 Chad (페이드 아웃)
                 Opacity(
                   opacity: 1.0 - _fadeAnimation.value,
@@ -169,7 +164,7 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                     child: _buildChadImage(widget.fromChad),
                   ),
                 ),
-                
+
                 // 진화 후 Chad (페이드 인)
                 Opacity(
                   opacity: _fadeAnimation.value,
@@ -181,7 +176,7 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                     ),
                   ),
                 ),
-                
+
                 // 진화 텍스트
                 Positioned(
                   bottom: 100,
@@ -195,11 +190,17 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                             vertical: 12,
                           ),
                           decoration: BoxDecoration(
-                            color: _colorAnimation.value?.withValues(alpha: 0.9),
+                            color: _colorAnimation.value?.withValues(
+                              alpha: 0.9,
+                            ),
                             borderRadius: BorderRadius.circular(25),
                             boxShadow: [
                               BoxShadow(
-                                color: _colorAnimation.value?.withValues(alpha: 0.3) ?? Colors.transparent,
+                                color:
+                                    _colorAnimation.value?.withValues(
+                                      alpha: 0.3,
+                                    ) ??
+                                    Colors.transparent,
                                 blurRadius: 20,
                                 spreadRadius: 5,
                               ),
@@ -207,28 +208,29 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                           ),
                           child: Text(
                             AppLocalizations.of(context)!.evolutionCompleted,
-                            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
+                            style: Theme.of(context).textTheme.headlineSmall
+                                ?.copyWith(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
                           ),
                         ),
                         const SizedBox(height: 16),
                         Text(
                           widget.toChad.name,
-                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            color: _colorAnimation.value,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: Theme.of(context).textTheme.titleLarge
+                              ?.copyWith(
+                                color: _colorAnimation.value,
+                                fontWeight: FontWeight.bold,
+                              ),
                         ),
                         const SizedBox(height: 8),
                         Container(
                           constraints: const BoxConstraints(maxWidth: 300),
                           child: Text(
                             widget.toChad.unlockMessage,
-                            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                              color: Colors.white,
-                            ),
+                            style: Theme.of(context).textTheme.bodyMedium
+                                ?.copyWith(color: Colors.white),
                             textAlign: TextAlign.center,
                           ),
                         ),
@@ -264,10 +266,7 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                   spreadRadius: 10,
                 ),
               ],
-              image: DecorationImage(
-                image: snapshot.data!,
-                fit: BoxFit.cover,
-              ),
+              image: DecorationImage(image: snapshot.data!, fit: BoxFit.cover),
             ),
           );
         } else {
@@ -285,9 +284,7 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                 ),
               ],
             ),
-            child: const Center(
-              child: CircularProgressIndicator(),
-            ),
+            child: const Center(child: CircularProgressIndicator()),
           );
         }
       },
@@ -314,10 +311,8 @@ class ParticleEffectPainter extends CustomPainter {
   final Color color;
   final List<Particle> particles;
 
-  ParticleEffectPainter({
-    required this.animation,
-    required this.color,
-  }) : particles = List.generate(50, (index) => Particle()) {
+  ParticleEffectPainter({required this.animation, required this.color})
+    : particles = List.generate(50, (index) => Particle()) {
     animation.addListener(() {
       for (var particle in particles) {
         particle.update(animation.value);
@@ -334,12 +329,9 @@ class ParticleEffectPainter extends CustomPainter {
     for (var particle in particles) {
       final opacity = (1.0 - particle.life) * animation.value;
       paint.color = color.withValues(alpha: opacity * 0.6);
-      
+
       canvas.drawCircle(
-        Offset(
-          size.width * particle.x,
-          size.height * particle.y,
-        ),
+        Offset(size.width * particle.x, size.height * particle.y),
         particle.size * animation.value,
         paint,
       );
@@ -361,24 +353,24 @@ class Particle {
   double maxLife;
 
   Particle()
-      : x = 0.5 + (math.Random().nextDouble() - 0.5) * 0.2,
-        y = 0.5 + (math.Random().nextDouble() - 0.5) * 0.2,
-        vx = (math.Random().nextDouble() - 0.5) * 0.02,
-        vy = (math.Random().nextDouble() - 0.5) * 0.02,
-        size = math.Random().nextDouble() * 8 + 2,
-        life = 0.0,
-        maxLife = math.Random().nextDouble() * 0.8 + 0.2;
+    : x = 0.5 + (math.Random().nextDouble() - 0.5) * 0.2,
+      y = 0.5 + (math.Random().nextDouble() - 0.5) * 0.2,
+      vx = (math.Random().nextDouble() - 0.5) * 0.02,
+      vy = (math.Random().nextDouble() - 0.5) * 0.02,
+      size = math.Random().nextDouble() * 8 + 2,
+      life = 0.0,
+      maxLife = math.Random().nextDouble() * 0.8 + 0.2;
 
   void update(double animationValue) {
     life = animationValue;
     x += vx * animationValue;
     y += vy * animationValue;
-    
+
     // 화면 경계에서 반사
     if (x < 0 || x > 1) vx *= -1;
     if (y < 0 || y > 1) vy *= -1;
-    
+
     x = x.clamp(0.0, 1.0);
     y = y.clamp(0.0, 1.0);
   }
-} 
+}

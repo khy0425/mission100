@@ -41,7 +41,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   @override
   void didUpdateWidget(VideoPlayerWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (oldWidget.videoUrl != widget.videoUrl || 
+    if (oldWidget.videoUrl != widget.videoUrl ||
         oldWidget.assetPath != widget.assetPath) {
       _initializeVideo();
     }
@@ -50,7 +50,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   Future<void> _initializeVideo() async {
     // 기존 컨트롤러 정리
     await _controller?.dispose();
-    
+
     setState(() {
       _isInitialized = false;
       _hasError = false;
@@ -65,14 +65,16 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
     try {
       // 비디오 컨트롤러 초기화
       if (widget.videoUrl != null) {
-        _controller = VideoPlayerController.networkUrl(Uri.parse(widget.videoUrl!));
+        _controller = VideoPlayerController.networkUrl(
+          Uri.parse(widget.videoUrl!),
+        );
       } else if (widget.assetPath != null) {
         _controller = VideoPlayerController.asset(widget.assetPath!);
       }
 
       if (_controller != null) {
         await _controller!.initialize();
-        
+
         if (mounted) {
           setState(() {
             _isInitialized = true;
@@ -184,23 +186,25 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         children: [
           // 비디오
           VideoPlayer(_controller!),
-          
+
           // 컨트롤 오버레이
-          if (widget.showControls && _showControls)
-            _buildControlsOverlay(),
+          if (widget.showControls && _showControls) _buildControlsOverlay(),
         ],
       ),
     );
   }
 
   Widget _buildPlaceholder() {
-    final placeholderText = widget.placeholderText ?? 
-      (Localizations.localeOf(context).languageCode == 'ko' ? '비디오 시연' : 'Video Demo');
-    
+    final placeholderText =
+        widget.placeholderText ??
+        (Localizations.localeOf(context).languageCode == 'ko'
+            ? '비디오 시연'
+            : 'Video Demo');
+
     return Semantics(
       label: Localizations.localeOf(context).languageCode == 'ko'
-        ? '$placeholderText 플레이스홀더. 비디오가 준비되지 않았습니다.'
-        : '$placeholderText placeholder. Video is not ready.',
+          ? '$placeholderText 플레이스홀더. 비디오가 준비되지 않았습니다.'
+          : '$placeholderText placeholder. Video is not ready.',
       child: Container(
         color: const Color(0xFF2A2A2A),
         child: Column(
@@ -217,10 +221,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
             const SizedBox(height: 8),
             Text(
               placeholderText,
-              style: const TextStyle(
-                color: Color(0xFF4DABF7),
-                fontSize: 14,
-              ),
+              style: const TextStyle(color: Color(0xFF4DABF7), fontSize: 14),
             ),
           ],
         ),
@@ -234,18 +235,13 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const CircularProgressIndicator(
-            color: Color(0xFF4DABF7),
-          ),
+          const CircularProgressIndicator(color: Color(0xFF4DABF7)),
           const SizedBox(height: 8),
           Text(
             Localizations.localeOf(context).languageCode == 'ko'
-              ? '비디오 로딩 중...'
-              : 'Loading video...',
-            style: const TextStyle(
-              color: Color(0xFF4DABF7),
-              fontSize: 14,
-            ),
+                ? '비디오 로딩 중...'
+                : 'Loading video...',
+            style: const TextStyle(color: Color(0xFF4DABF7), fontSize: 14),
           ),
         ],
       ),
@@ -258,29 +254,19 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Icon(
-            Icons.error_outline,
-            color: Color(0xFFFF6B6B),
-            size: 48,
-          ),
+          const Icon(Icons.error_outline, color: Color(0xFFFF6B6B), size: 48),
           const SizedBox(height: 8),
           Text(
             Localizations.localeOf(context).languageCode == 'ko'
-              ? '비디오를 불러올 수 없습니다'
-              : 'Unable to load video',
-            style: const TextStyle(
-              color: Color(0xFFFF6B6B),
-              fontSize: 14,
-            ),
+                ? '비디오를 불러올 수 없습니다'
+                : 'Unable to load video',
+            style: const TextStyle(color: Color(0xFFFF6B6B), fontSize: 14),
           ),
           if (_errorMessage != null) ...[
             const SizedBox(height: 4),
             Text(
               _errorMessage!,
-              style: const TextStyle(
-                color: Colors.grey,
-                fontSize: 10,
-              ),
+              style: const TextStyle(color: Colors.grey, fontSize: 10),
               textAlign: TextAlign.center,
             ),
           ],
@@ -326,9 +312,11 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                     // 풀스크린 기능 (추후 구현)
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text(Localizations.localeOf(context).languageCode == 'ko'
-                          ? '풀스크린 기능은 추후 구현 예정입니다.'
-                          : 'Fullscreen feature will be implemented later.'),
+                        content: Text(
+                          Localizations.localeOf(context).languageCode == 'ko'
+                              ? '풀스크린 기능은 추후 구현 예정입니다.'
+                              : 'Fullscreen feature will be implemented later.',
+                        ),
                         duration: const Duration(seconds: 2),
                       ),
                     );
@@ -342,33 +330,33 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
               ],
             ),
           ),
-          
-                        // 중앙 재생/일시정지 버튼
-              Expanded(
-                child: Center(
-                  child: Semantics(
-                    button: true,
-                    label: _controller!.value.isPlaying 
-                      ? (Localizations.localeOf(context).languageCode == 'ko'
+
+          // 중앙 재생/일시정지 버튼
+          Expanded(
+            child: Center(
+              child: Semantics(
+                button: true,
+                label: _controller!.value.isPlaying
+                    ? (Localizations.localeOf(context).languageCode == 'ko'
                           ? '비디오 일시정지'
                           : 'Pause video')
-                      : (Localizations.localeOf(context).languageCode == 'ko'
+                    : (Localizations.localeOf(context).languageCode == 'ko'
                           ? '비디오 재생'
                           : 'Play video'),
-                    child: IconButton(
-                      onPressed: _togglePlayPause,
-                      icon: Icon(
-                        _controller!.value.isPlaying 
-                            ? Icons.pause_circle_filled
-                            : Icons.play_circle_filled,
-                        color: Colors.white,
-                        size: 64,
-                      ),
-                    ),
+                child: IconButton(
+                  onPressed: _togglePlayPause,
+                  icon: Icon(
+                    _controller!.value.isPlaying
+                        ? Icons.pause_circle_filled
+                        : Icons.play_circle_filled,
+                    color: Colors.white,
+                    size: 64,
                   ),
                 ),
               ),
-          
+            ),
+          ),
+
           // 하단 컨트롤 (진행률, 시간)
           Padding(
             padding: const EdgeInsets.all(8),
@@ -379,17 +367,22 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                   valueListenable: _controller!,
                   builder: (context, VideoPlayerValue value, child) {
                     final progress = value.duration.inMilliseconds > 0
-                        ? value.position.inMilliseconds / value.duration.inMilliseconds
+                        ? value.position.inMilliseconds /
+                              value.duration.inMilliseconds
                         : 0.0;
-                    
+
                     return SliderTheme(
                       data: SliderTheme.of(context).copyWith(
                         activeTrackColor: const Color(0xFF4DABF7),
                         inactiveTrackColor: Colors.white.withValues(alpha: 0.3),
                         thumbColor: const Color(0xFF4DABF7),
-                        overlayColor: const Color(0xFF4DABF7).withValues(alpha: 0.2),
+                        overlayColor: const Color(
+                          0xFF4DABF7,
+                        ).withValues(alpha: 0.2),
                         trackHeight: 2,
-                        thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 6),
+                        thumbShape: const RoundSliderThumbShape(
+                          enabledThumbRadius: 6,
+                        ),
                       ),
                       child: Slider(
                         value: progress.clamp(0.0, 1.0),
@@ -398,7 +391,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                     );
                   },
                 ),
-                
+
                 // 시간 표시
                 ValueListenableBuilder(
                   valueListenable: _controller!,
@@ -431,4 +424,4 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
       ),
     );
   }
-} 
+}

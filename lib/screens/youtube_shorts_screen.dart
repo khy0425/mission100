@@ -15,7 +15,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
   int _currentIndex = 0;
   bool _isLoading = true;
   String? _errorMessage;
-  
+
   // 푸쉬업 관련 유튜브 영상 ID들 (실제 운동 영상들)
   final List<String> _videoIds = [
     'IODxDxX7oi4', // 푸쉬업 기본 자세
@@ -25,7 +25,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
     'mmwlaVBMtlg', // 푸쉬업 운동법
     'bt5b9x9N0KU', // 홈트레이닝 푸쉬업
   ];
-  
+
   List<String> _getVideoTitles(BuildContext context) {
     return [
       AppLocalizations.of(context)!.perfectPushupForm,
@@ -36,7 +36,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
       AppLocalizations.of(context)!.strengthSecrets,
     ];
   }
-  
+
   List<String> _getVideoDescriptions(BuildContext context) {
     return [
       AppLocalizations.of(context)!.correctPushupFormDesc,
@@ -75,7 +75,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
           ),
         );
       }).toList();
-      
+
       setState(() {
         _isLoading = false;
       });
@@ -103,11 +103,11 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
         _controllers[i].pause();
       }
     }
-    
+
     setState(() {
       _currentIndex = index;
     });
-    
+
     // 현재 영상만 재생
     _controllers[index].play();
   }
@@ -155,56 +155,55 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
               ),
             )
           : _errorMessage != null
-              ? Center(
-                  child: Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Icon(
-                          Icons.error_outline,
-                          color: Colors.red,
-                          size: 64,
-                        ),
-                        const SizedBox(height: 16),
-                        Text(
-                          AppLocalizations.of(context)!.videoLoadError(_errorMessage!),
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                        const SizedBox(height: 20),
-                        ElevatedButton(
-                          onPressed: () {
-                            setState(() {
-                              _isLoading = true;
-                              _errorMessage = null;
-                            });
-                            _initializeControllers();
-                          },
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(AppColors.primaryColor),
-                          ),
-                          child: Text(
-                            AppLocalizations.of(context)!.tryAgain,
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ],
+          ? Center(
+              child: Padding(
+                padding: const EdgeInsets.all(20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Icon(
+                      Icons.error_outline,
+                      color: Colors.red,
+                      size: 64,
                     ),
-                  ),
-                )
-              : PageView.builder(
-                  controller: _pageController,
-                  scrollDirection: Axis.vertical,
-                  onPageChanged: _onPageChanged,
-                  itemCount: _videoIds.length,
-                  itemBuilder: (context, index) {
-                    return _buildVideoPage(index);
-                  },
+                    const SizedBox(height: 16),
+                    Text(
+                      AppLocalizations.of(
+                        context,
+                      )!.videoLoadError(_errorMessage!),
+                      style: const TextStyle(color: Colors.white, fontSize: 16),
+                      textAlign: TextAlign.center,
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        setState(() {
+                          _isLoading = true;
+                          _errorMessage = null;
+                        });
+                        _initializeControllers();
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(AppColors.primaryColor),
+                      ),
+                      child: Text(
+                        AppLocalizations.of(context)!.tryAgain,
+                        style: const TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
+              ),
+            )
+          : PageView.builder(
+              controller: _pageController,
+              scrollDirection: Axis.vertical,
+              onPageChanged: _onPageChanged,
+              itemCount: _videoIds.length,
+              itemBuilder: (context, index) {
+                return _buildVideoPage(index);
+              },
+            ),
     );
   }
 
@@ -252,25 +251,30 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
               _buildActionButton(
                 icon: Icons.favorite_border,
                 label: AppLocalizations.of(context)!.like,
-                onTap: () => _showSnackBar(AppLocalizations.of(context)!.likeMessage),
+                onTap: () =>
+                    _showSnackBar(AppLocalizations.of(context)!.likeMessage),
               ),
               const SizedBox(height: 20),
               _buildActionButton(
                 icon: Icons.share,
                 label: AppLocalizations.of(context)!.share,
-                onTap: () => _showSnackBar(AppLocalizations.of(context)!.shareMessage),
+                onTap: () =>
+                    _showSnackBar(AppLocalizations.of(context)!.shareMessage),
               ),
               const SizedBox(height: 20),
               _buildActionButton(
                 icon: Icons.bookmark_border,
                 label: AppLocalizations.of(context)!.save,
-                onTap: () => _showSnackBar(AppLocalizations.of(context)!.saveMessage),
+                onTap: () =>
+                    _showSnackBar(AppLocalizations.of(context)!.saveMessage),
               ),
               const SizedBox(height: 20),
               _buildActionButton(
                 icon: Icons.fitness_center,
                 label: AppLocalizations.of(context)!.workout,
-                onTap: () => _showSnackBar(AppLocalizations.of(context)!.workoutStartMessage),
+                onTap: () => _showSnackBar(
+                  AppLocalizations.of(context)!.workoutStartMessage,
+                ),
               ),
             ],
           ),
@@ -285,7 +289,8 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                _getVideoTitles(context)[index % _getVideoTitles(context).length],
+                _getVideoTitles(context)[index %
+                    _getVideoTitles(context).length],
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -294,11 +299,9 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                _getVideoDescriptions(context)[index % _getVideoDescriptions(context).length],
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 14,
-                ),
+                _getVideoDescriptions(context)[index %
+                    _getVideoDescriptions(context).length],
+                style: const TextStyle(color: Colors.white70, fontSize: 14),
               ),
               const SizedBox(height: 12),
               Row(
@@ -357,7 +360,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
                 width: 4,
                 height: index == _currentIndex ? 20 : 8,
                 decoration: BoxDecoration(
-                  color: index == _currentIndex 
+                  color: index == _currentIndex
                       ? const Color(AppColors.primaryColor)
                       : Colors.white.withValues(alpha: 0.5),
                   borderRadius: BorderRadius.circular(2),
@@ -386,18 +389,11 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    const Icon(
-                      Icons.swipe_up,
-                      color: Colors.white,
-                      size: 16,
-                    ),
+                    const Icon(Icons.swipe_up, color: Colors.white, size: 16),
                     const SizedBox(width: 8),
                     Text(
                       AppLocalizations.of(context)!.swipeUpHint,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontSize: 12,
-                      ),
+                      style: const TextStyle(color: Colors.white, fontSize: 12),
                     ),
                   ],
                 ),
@@ -424,11 +420,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
               color: Colors.black.withValues(alpha: 0.3),
               shape: BoxShape.circle,
             ),
-            child: Icon(
-              icon,
-              color: Colors.white,
-              size: 24,
-            ),
+            child: Icon(icon, color: Colors.white, size: 24),
           ),
           const SizedBox(height: 4),
           Text(
@@ -453,4 +445,4 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
       ),
     );
   }
-} 
+}

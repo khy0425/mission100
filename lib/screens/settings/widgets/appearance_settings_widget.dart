@@ -49,13 +49,17 @@ class AppearanceSettingsWidget extends StatelessWidget {
                 if (context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(value
-                        ? (Localizations.localeOf(context).languageCode == 'ko'
-                            ? '다크 모드가 활성화되었습니다'
-                            : 'Dark mode has been enabled')
-                        : (Localizations.localeOf(context).languageCode == 'ko'
-                            ? '라이트 모드가 활성화되었습니다'
-                            : 'Light mode has been enabled')),
+                      content: Text(
+                        value
+                            ? (Localizations.localeOf(context).languageCode ==
+                                      'ko'
+                                  ? '다크 모드가 활성화되었습니다'
+                                  : 'Dark mode has been enabled')
+                            : (Localizations.localeOf(context).languageCode ==
+                                      'ko'
+                                  ? '라이트 모드가 활성화되었습니다'
+                                  : 'Light mode has been enabled'),
+                      ),
                       duration: const Duration(seconds: 2),
                     ),
                   );
@@ -76,13 +80,17 @@ class AppearanceSettingsWidget extends StatelessWidget {
                 if (context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(value
-                        ? (Localizations.localeOf(context).languageCode == 'ko'
-                            ? '시스템 설정을 따릅니다'
-                            : 'Following system settings')
-                        : (Localizations.localeOf(context).languageCode == 'ko'
-                            ? '수동 설정이 활성화되었습니다'
-                            : 'Manual settings enabled')),
+                      content: Text(
+                        value
+                            ? (Localizations.localeOf(context).languageCode ==
+                                      'ko'
+                                  ? '시스템 설정을 따릅니다'
+                                  : 'Following system settings')
+                            : (Localizations.localeOf(context).languageCode ==
+                                      'ko'
+                                  ? '수동 설정이 활성화되었습니다'
+                                  : 'Manual settings enabled'),
+                      ),
                       duration: const Duration(seconds: 2),
                     ),
                   );
@@ -113,13 +121,17 @@ class AppearanceSettingsWidget extends StatelessWidget {
                 if (context.mounted) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      content: Text(value
-                        ? (Localizations.localeOf(context).languageCode == 'ko'
-                            ? '고대비 모드가 활성화되었습니다'
-                            : 'High contrast mode has been enabled')
-                        : (Localizations.localeOf(context).languageCode == 'ko'
-                            ? '고대비 모드가 비활성화되었습니다'
-                            : 'High contrast mode has been disabled')),
+                      content: Text(
+                        value
+                            ? (Localizations.localeOf(context).languageCode ==
+                                      'ko'
+                                  ? '고대비 모드가 활성화되었습니다'
+                                  : 'High contrast mode has been enabled')
+                            : (Localizations.localeOf(context).languageCode ==
+                                      'ko'
+                                  ? '고대비 모드가 비활성화되었습니다'
+                                  : 'High contrast mode has been disabled'),
+                      ),
                       duration: const Duration(seconds: 2),
                     ),
                   );
@@ -130,9 +142,9 @@ class AppearanceSettingsWidget extends StatelessWidget {
         ),
         _buildTapSetting(
           AppLocalizations.of(context).languageSettings,
-          AppLocalizations.of(context)!.currentLanguage(
-            LocaleService.getLocaleName(currentLocale),
-          ),
+          AppLocalizations.of(
+            context,
+          )!.currentLanguage(LocaleService.getLocaleName(currentLocale)),
           Icons.language,
           onLanguageDialogPressed ?? () {},
         ),
@@ -226,7 +238,9 @@ class AppearanceSettingsWidget extends StatelessWidget {
       child: ListTile(
         leading: Icon(
           icon,
-          color: isDestructive ? Colors.red : const Color(AppColors.primaryColor),
+          color: isDestructive
+              ? Colors.red
+              : const Color(AppColors.primaryColor),
         ),
         title: Text(
           title,
@@ -237,10 +251,7 @@ class AppearanceSettingsWidget extends StatelessWidget {
         ),
         subtitle: Text(
           subtitle,
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 13,
-          ),
+          style: TextStyle(color: Colors.grey[600], fontSize: 13),
         ),
         trailing: const Icon(Icons.chevron_right),
         onTap: onTap,
@@ -283,24 +294,37 @@ class AppearanceSettingsWidget extends StatelessWidget {
     }
   }
 
-  Future<void> _showThemeDialog(BuildContext context, ThemeService themeService) async {
+  Future<void> _showThemeDialog(
+    BuildContext context,
+    ThemeService themeService,
+  ) async {
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
         final themes = ['blue', 'green', 'orange', 'purple', 'red'];
         final themeNames = {
-          'blue': Localizations.localeOf(context).languageCode == 'ko' ? '블루' : 'Blue',
-          'green': Localizations.localeOf(context).languageCode == 'ko' ? '그린' : 'Green',
-          'orange': Localizations.localeOf(context).languageCode == 'ko' ? '오렌지' : 'Orange',
-          'purple': Localizations.localeOf(context).languageCode == 'ko' ? '퍼플' : 'Purple',
-          'red': Localizations.localeOf(context).languageCode == 'ko' ? '레드' : 'Red',
+          'blue': Localizations.localeOf(context).languageCode == 'ko'
+              ? '블루'
+              : 'Blue',
+          'green': Localizations.localeOf(context).languageCode == 'ko'
+              ? '그린'
+              : 'Green',
+          'orange': Localizations.localeOf(context).languageCode == 'ko'
+              ? '오렌지'
+              : 'Orange',
+          'purple': Localizations.localeOf(context).languageCode == 'ko'
+              ? '퍼플'
+              : 'Purple',
+          'red': Localizations.localeOf(context).languageCode == 'ko'
+              ? '레드'
+              : 'Red',
         };
 
         return AlertDialog(
           title: Text(
             Localizations.localeOf(context).languageCode == 'ko'
-              ? '색상 테마 선택'
-              : 'Select Color Theme',
+                ? '색상 테마 선택'
+                : 'Select Color Theme',
           ),
           content: Column(
             mainAxisSize: MainAxisSize.min,
@@ -316,8 +340,8 @@ class AppearanceSettingsWidget extends StatelessWidget {
                 ),
                 title: Text(themeNames[theme] ?? theme),
                 trailing: themeService.currentTheme.name.toLowerCase() == theme
-                  ? const Icon(Icons.check, color: Colors.green)
-                  : null,
+                    ? const Icon(Icons.check, color: Colors.green)
+                    : null,
                 onTap: () async {
                   final themeColor = _getThemeColorFromString(theme);
                   await themeService.setTheme(themeColor);
@@ -327,8 +351,8 @@ class AppearanceSettingsWidget extends StatelessWidget {
                       SnackBar(
                         content: Text(
                           Localizations.localeOf(context).languageCode == 'ko'
-                            ? '${themeNames[theme]} 테마가 적용되었습니다'
-                            : '${themeNames[theme]} theme applied',
+                              ? '${themeNames[theme]} 테마가 적용되었습니다'
+                              : '${themeNames[theme]} theme applied',
                         ),
                         duration: const Duration(seconds: 2),
                       ),
@@ -343,8 +367,8 @@ class AppearanceSettingsWidget extends StatelessWidget {
               onPressed: () => Navigator.of(context).pop(),
               child: Text(
                 Localizations.localeOf(context).languageCode == 'ko'
-                  ? '취소'
-                  : 'Cancel',
+                    ? '취소'
+                    : 'Cancel',
               ),
             ),
           ],

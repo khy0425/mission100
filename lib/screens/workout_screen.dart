@@ -139,13 +139,13 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         // XP 정보 저장
         _xpGained = result.xpGained;
 
-        debugPrint('🔥 운동 완료 처리 성공 - XP 획득: ${result.xpGained}, 업적: ${result.newAchievements.length}개');
+        debugPrint(
+          '🔥 운동 완료 처리 성공 - XP 획득: ${result.xpGained}, 업적: ${result.newAchievements.length}개',
+        );
         _showWorkoutCompleteDialog();
-
       } else {
         throw Exception(result.error ?? '알 수 없는 오류');
       }
-
     } catch (e) {
       debugPrint('❌ 운동 완료 처리 실패: $e');
 
@@ -155,8 +155,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           SnackBar(
             content: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '오류가 발생했습니다: $e'
-                : 'Error occurred: $e',
+                  ? '오류가 발생했습니다: $e'
+                  : 'Error occurred: $e',
             ),
             duration: const Duration(seconds: 3),
             backgroundColor: Colors.red,
@@ -226,7 +226,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       final prefs = await SharedPreferences.getInstance();
       final completedWorkouts = prefs.getStringList('completed_workouts') ?? [];
       final totalDays = 84; // 12주 * 7일
-      final progressPercentage = (completedWorkouts.length / totalDays * 100).round();
+      final progressPercentage = (completedWorkouts.length / totalDays * 100)
+          .round();
 
       // 내일 휴식일 여부 확인 (사용자 설정 고려)
       final tomorrow = DateTime.now().add(const Duration(days: 1));
@@ -237,7 +238,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       if (settingsJson != null) {
         try {
           final settingsMap = jsonDecode(settingsJson) as Map<String, dynamic>;
-          final activeDays = (settingsMap['activeDays'] as List?)?.cast<int>() ?? [];
+          final activeDays =
+              (settingsMap['activeDays'] as List?)?.cast<int>() ?? [];
           isTomorrowRestDay = !activeDays.contains(tomorrow.weekday);
         } catch (e) {
           // 설정 로드 실패 시 기본 주말 체크
@@ -250,8 +252,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
 
       // 운동 시간 계산
       final workoutDuration = _workoutStartTime != null
-        ? DateTime.now().difference(_workoutStartTime!)
-        : const Duration(minutes: 10);
+          ? DateTime.now().difference(_workoutStartTime!)
+          : const Duration(minutes: 10);
       final minutes = workoutDuration.inMinutes;
       final seconds = workoutDuration.inSeconds % 60;
 
@@ -262,7 +264,11 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           return AlertDialog(
             title: Row(
               children: [
-                const Icon(Icons.local_fire_department, color: Colors.red, size: 28),
+                const Icon(
+                  Icons.local_fire_department,
+                  color: Colors.red,
+                  size: 28,
+                ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
@@ -392,7 +398,9 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                         LinearProgressIndicator(
                           value: progressPercentage / 100,
                           backgroundColor: Colors.grey[300],
-                          valueColor: AlwaysStoppedAnimation<Color>(Colors.green),
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Colors.green,
+                          ),
                         ),
                         const SizedBox(height: 4),
                         Text(
@@ -423,7 +431,11 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Icon(Icons.emoji_events, color: Colors.purple, size: 20),
+                              const Icon(
+                                Icons.emoji_events,
+                                color: Colors.purple,
+                                size: 20,
+                              ),
                               const SizedBox(width: 8),
                               Text(
                                 '🏆 챌린지 완료! 🏆',
@@ -436,20 +448,24 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                             ],
                           ),
                           const SizedBox(height: 8),
-                          ...(_completedChallenges.take(2).map((challenge) =>
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 2),
-                              child: Text(
-                                '🎯 ${challenge.title ?? challenge.titleKey}',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.purple[600],
-                                  fontWeight: FontWeight.w600,
+                          ...(_completedChallenges
+                              .take(2)
+                              .map(
+                                (challenge) => Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 2,
+                                  ),
+                                  child: Text(
+                                    '🎯 ${challenge.title ?? challenge.titleKey}',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.purple[600],
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          )),
+                              )),
                           if (_completedChallenges.length > 2)
                             Text(
                               '외 ${_completedChallenges.length - 2}개 더!',
@@ -479,7 +495,11 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Icon(Icons.emoji_events, color: Colors.amber, size: 20),
+                              const Icon(
+                                Icons.emoji_events,
+                                color: Colors.amber,
+                                size: 20,
+                              ),
                               const SizedBox(width: 8),
                               Text(
                                 '🏆 새로운 업적 달성! 🏆',
@@ -492,20 +512,24 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                             ],
                           ),
                           const SizedBox(height: 8),
-                          ...(_newlyUnlockedAchievements.take(2).map((achievement) =>
-                            Padding(
-                              padding: const EdgeInsets.symmetric(vertical: 2),
-                              child: Text(
-                                '🌟 ${achievement.titleKey}',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.amber[600],
-                                  fontWeight: FontWeight.w600,
+                          ...(_newlyUnlockedAchievements
+                              .take(2)
+                              .map(
+                                (achievement) => Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 2,
+                                  ),
+                                  child: Text(
+                                    '🌟 ${achievement.titleKey}',
+                                    style: TextStyle(
+                                      fontSize: 12,
+                                      color: Colors.amber[600],
+                                      fontWeight: FontWeight.w600,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          )),
+                              )),
                           if (_newlyUnlockedAchievements.length > 2) ...[
                             Text(
                               '외 ${_newlyUnlockedAchievements.length - 2}개 더!',
@@ -522,7 +546,10 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                                 _showAchievementsDialog();
                               },
                               child: Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 8,
+                                  vertical: 4,
+                                ),
                                 decoration: BoxDecoration(
                                   color: Colors.amber,
                                   borderRadius: BorderRadius.circular(12),
@@ -617,7 +644,10 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                   _finishWorkout();
                 },
                 child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 16,
+                    vertical: 8,
+                  ),
                   decoration: BoxDecoration(
                     gradient: const LinearGradient(
                       colors: [Color(0xFF2196F3), Color(0xFF1976D2)],
@@ -665,29 +695,25 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       builder: (context) => AlertDialog(
         title: Text(
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '운동 종료'
-            : 'Exit Workout',
+              ? '운동 종료'
+              : 'Exit Workout',
         ),
         content: Text(
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '운동을 종료하시겠습니까? 진행 상황이 저장되지 않습니다.'
-            : 'Are you sure you want to exit? Your progress will not be saved.',
+              ? '운동을 종료하시겠습니까? 진행 상황이 저장되지 않습니다.'
+              : 'Are you sure you want to exit? Your progress will not be saved.',
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(
-              AppLocalizations.of(context)!.cancelButton,
-            ),
+            child: Text(AppLocalizations.of(context)!.cancelButton),
           ),
           TextButton(
             onPressed: () {
               Navigator.pop(context);
               Navigator.pop(context);
             },
-            child: Text(
-              AppLocalizations.of(context)!.exitButton,
-            ),
+            child: Text(AppLocalizations.of(context)!.exitButton),
           ),
         ],
       ),
@@ -705,8 +731,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       ),
       appBar: AppBar(
         title: Text(
-          widget.workout.title ??
-          AppLocalizations.of(context)!.workoutTitle,
+          widget.workout.title ?? AppLocalizations.of(context)!.workoutTitle,
         ),
         centerTitle: true,
         leading: IconButton(

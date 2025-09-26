@@ -45,7 +45,7 @@ class PermissionBottomSheet extends StatelessWidget {
               borderRadius: BorderRadius.circular(2),
             ),
           ),
-          
+
           Padding(
             padding: const EdgeInsets.all(20),
             child: Column(
@@ -67,9 +67,9 @@ class PermissionBottomSheet extends StatelessWidget {
                     ),
                   ],
                 ),
-                
+
                 const SizedBox(height: 16),
-                
+
                 // 설명
                 Text(
                   description,
@@ -79,9 +79,9 @@ class PermissionBottomSheet extends StatelessWidget {
                     height: 1.5,
                   ),
                 ),
-                
+
                 const SizedBox(height: 20),
-                
+
                 // 혜택 목록
                 if (benefits.isNotEmpty) ...[
                   const Text(
@@ -93,34 +93,36 @@ class PermissionBottomSheet extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-                  
-                  ...benefits.map((benefit) => Padding(
-                    padding: const EdgeInsets.only(bottom: 8),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Icon(
-                          Icons.check_circle,
-                          color: Colors.green,
-                          size: 20,
-                        ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            benefit,
-                            style: const TextStyle(
-                              fontSize: 14,
-                              color: Colors.black87,
+
+                  ...benefits.map(
+                    (benefit) => Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Icon(
+                            Icons.check_circle,
+                            color: Colors.green,
+                            size: 20,
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: Text(
+                              benefit,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                color: Colors.black87,
+                              ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  )),
+                  ),
                 ],
-                
+
                 const SizedBox(height: 24),
-                
+
                 // 버튼들
                 Row(
                   children: [
@@ -147,9 +149,9 @@ class PermissionBottomSheet extends StatelessWidget {
                         ),
                       ),
                     ),
-                    
+
                     const SizedBox(width: 12),
-                    
+
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
@@ -176,7 +178,7 @@ class PermissionBottomSheet extends StatelessWidget {
                     ),
                   ],
                 ),
-                
+
                 // 안전 바닥 여백
                 SizedBox(height: MediaQuery.of(context).padding.bottom),
               ],
@@ -197,17 +199,9 @@ class PermissionBottomSheet extends StatelessWidget {
           size: 28,
         );
       case Permission.storage:
-        return const Icon(
-          Icons.folder,
-          color: Colors.blue,
-          size: 28,
-        );
+        return const Icon(Icons.folder, color: Colors.blue, size: 28);
       default:
-        return const Icon(
-          Icons.security,
-          color: Colors.grey,
-          size: 28,
-        );
+        return const Icon(Icons.security, color: Colors.grey, size: 28);
     }
   }
 
@@ -234,12 +228,7 @@ class PermissionBottomSheet extends StatelessWidget {
         permission: Permission.notification,
         title: '🔔 알림 허용',
         description: '운동 알림을 받기 위해 알림 권한이 필요합니다.',
-        benefits: [
-          '일일 운동 리마인더',
-          '목표 달성 축하 알림',
-          '연속 기록 유지 알림',
-          '새로운 도전과제 알림',
-        ],
+        benefits: ['일일 운동 리마인더', '목표 달성 축하 알림', '연속 기록 유지 알림', '새로운 도전과제 알림'],
       ),
     );
   }
@@ -255,12 +244,7 @@ class PermissionBottomSheet extends StatelessWidget {
         permission: Permission.storage,
         title: '💾 백업 기능',
         description: '운동 데이터를 안전하게 백업하기 위해 저장소 접근이 필요합니다.',
-        benefits: [
-          '운동 기록 자동 백업',
-          '기기 변경 시 데이터 복원',
-          '데이터 손실 방지',
-          '안전한 데이터 보관',
-        ],
+        benefits: ['운동 기록 자동 백업', '기기 변경 시 데이터 복원', '데이터 손실 방지', '안전한 데이터 보관'],
       ),
     );
   }
@@ -276,12 +260,7 @@ class PermissionBottomSheet extends StatelessWidget {
         permission: Permission.storage,
         title: '📁 저장소 접근',
         description: '운동 데이터 백업/복원을 위해 저장소 접근 권한이 필요합니다.',
-        benefits: [
-          '운동 기록 백업',
-          '데이터 복원',
-          '운동 사진 저장',
-          '공유 기능 활용',
-        ],
+        benefits: ['운동 기록 백업', '데이터 복원', '운동 사진 저장', '공유 기능 활용'],
       ),
     );
   }
@@ -290,7 +269,7 @@ class PermissionBottomSheet extends StatelessWidget {
 /// 권한 요청 결과를 저장하는 서비스
 class PermissionRequestStorage {
   static const String _keyPrefix = 'permission_request_';
-  
+
   /// 권한 요청 결과 저장
   static Future<void> savePermissionRequest({
     required Permission permission,
@@ -300,40 +279,49 @@ class PermissionRequestStorage {
     try {
       final prefs = await SharedPreferences.getInstance();
       final permissionKey = '${_keyPrefix}${permission.toString()}';
-      
+
       final requestData = {
         'granted': granted,
         'requestTime': requestTime.millisecondsSinceEpoch,
         'permissionType': permission.toString(),
         'saveTime': DateTime.now().millisecondsSinceEpoch,
       };
-      
+
       await prefs.setString(permissionKey, jsonEncode(requestData));
-      
-      debugPrint('🔐 권한 요청 저장됨: ${permission.toString()} = $granted (${requestTime.toIso8601String()})');
+
+      debugPrint(
+        '🔐 권한 요청 저장됨: ${permission.toString()} = $granted (${requestTime.toIso8601String()})',
+      );
     } catch (e) {
       debugPrint('❌ 권한 요청 저장 실패: $e');
     }
   }
-  
+
   /// 권한 요청 기록 조회
-  static Future<Map<String, dynamic>?> getPermissionRequest(Permission permission) async {
+  static Future<Map<String, dynamic>?> getPermissionRequest(
+    Permission permission,
+  ) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final permissionKey = '${_keyPrefix}${permission.toString()}';
       final requestDataString = prefs.getString(permissionKey);
-      
+
       if (requestDataString != null) {
-        final requestData = jsonDecode(requestDataString) as Map<String, dynamic>;
+        final requestData =
+            jsonDecode(requestDataString) as Map<String, dynamic>;
         return {
           'found': true,
           'granted': requestData['granted'] as bool,
-          'requestTime': DateTime.fromMillisecondsSinceEpoch(requestData['requestTime'] as int),
-          'saveTime': DateTime.fromMillisecondsSinceEpoch(requestData['saveTime'] as int),
+          'requestTime': DateTime.fromMillisecondsSinceEpoch(
+            requestData['requestTime'] as int,
+          ),
+          'saveTime': DateTime.fromMillisecondsSinceEpoch(
+            requestData['saveTime'] as int,
+          ),
           'permissionType': requestData['permissionType'] as String,
         };
       }
-      
+
       return null;
     } catch (e) {
       debugPrint('❌ 권한 요청 기록 조회 실패: $e');
@@ -345,12 +333,15 @@ class PermissionRequestStorage {
   static Future<void> clearAllPermissionRequests() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final keys = prefs.getKeys().where((key) => key.startsWith(_keyPrefix)).toList();
-      
+      final keys = prefs
+          .getKeys()
+          .where((key) => key.startsWith(_keyPrefix))
+          .toList();
+
       for (final key in keys) {
         await prefs.remove(key);
       }
-      
+
       debugPrint('🔐 모든 권한 요청 기록 삭제 완료: ${keys.length}개');
     } catch (e) {
       debugPrint('❌ 권한 요청 기록 삭제 실패: $e');
@@ -363,10 +354,10 @@ class PermissionRequestStorage {
       final prefs = await SharedPreferences.getInstance();
       final permissionKey = '${_keyPrefix}${permission.toString()}';
       await prefs.remove(permissionKey);
-      
+
       debugPrint('🔐 권한 요청 기록 삭제됨: ${permission.toString()}');
     } catch (e) {
       debugPrint('❌ 권한 요청 기록 삭제 실패: $e');
     }
   }
-} 
+}

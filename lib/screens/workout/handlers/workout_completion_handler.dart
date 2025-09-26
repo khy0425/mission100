@@ -67,7 +67,6 @@ class WorkoutCompletionHandler {
 
       result.success = true;
       debugPrint('✅ 만삣삐! 운동 완료 처리 성공! LEGENDARY CHAD MODE! 🔥');
-
     } catch (e) {
       debugPrint('❌ 운동 완료 처리 실패: $e');
       result.success = false;
@@ -87,11 +86,14 @@ class WorkoutCompletionHandler {
     final history = WorkoutHistory(
       id: DateTime.now().millisecondsSinceEpoch.toString(),
       date: DateTime.now(),
-      workoutTitle: workout.title ?? '${workout.week ?? 1}주차 - ${workout.day ?? 1}일차',
+      workoutTitle:
+          workout.title ?? '${workout.week ?? 1}주차 - ${workout.day ?? 1}일차',
       targetReps: targetReps,
       completedReps: completedReps,
       totalReps: totalCompletedReps,
-      completionRate: totalTargetReps > 0 ? totalCompletedReps / totalTargetReps : 0.0,
+      completionRate: totalTargetReps > 0
+          ? totalCompletedReps / totalTargetReps
+          : 0.0,
       level: 'Rising',
       duration: workoutStartTime != null
           ? DateTime.now().difference(workoutStartTime!)
@@ -150,23 +152,29 @@ class WorkoutCompletionHandler {
 
         // 진행률 계산 (총 12주 * 7일 = 84일 기준)
         final totalDays = 84;
-        final progressPercentage = (completedWorkouts.length / totalDays * 100).round();
+        final progressPercentage = (completedWorkouts.length / totalDays * 100)
+            .round();
         await prefs.setInt('program_progress', progressPercentage);
 
-        debugPrint('✅ 프로그램 진행률 업데이트: ${completedWorkouts.length}/$totalDays ($progressPercentage%)');
+        debugPrint(
+          '✅ 프로그램 진행률 업데이트: ${completedWorkouts.length}/$totalDays ($progressPercentage%)',
+        );
       }
 
       // 날짜별 운동 완료 기록 (연속 운동 차단용)
       final today = DateTime.now();
       final todayKey = 'workout_${today.year}_${today.month}_${today.day}';
-      final dailyCompletedWorkouts = prefs.getStringList('daily_completed_workouts') ?? [];
+      final dailyCompletedWorkouts =
+          prefs.getStringList('daily_completed_workouts') ?? [];
 
       if (!dailyCompletedWorkouts.contains(todayKey)) {
         dailyCompletedWorkouts.add(todayKey);
-        await prefs.setStringList('daily_completed_workouts', dailyCompletedWorkouts);
+        await prefs.setStringList(
+          'daily_completed_workouts',
+          dailyCompletedWorkouts,
+        );
         debugPrint('✅ 날짜별 운동 완료 기록: $todayKey');
       }
-
     } catch (e) {
       debugPrint('❌ 프로그램 진행률 업데이트 실패: $e');
     }
@@ -179,7 +187,9 @@ class WorkoutCompletionHandler {
 
       final totalReps = completedReps.fold(0, (sum, reps) => sum + reps);
       final totalTargetReps = targetReps.fold(0, (sum, reps) => sum + reps);
-      final completionRate = totalTargetReps > 0 ? (totalReps / totalTargetReps) : 0.0;
+      final completionRate = totalTargetReps > 0
+          ? (totalReps / totalTargetReps)
+          : 0.0;
 
       // === 기본 XP 계산 ===
       int totalXP = 0;
@@ -215,7 +225,9 @@ class WorkoutCompletionHandler {
       // 5. 운동 시간 보너스 (장시간 운동시)
       int timeBonus = 0;
       if (workoutStartTime != null) {
-        final workoutDuration = DateTime.now().difference(workoutStartTime!).inMinutes;
+        final workoutDuration = DateTime.now()
+            .difference(workoutStartTime!)
+            .inMinutes;
         if (workoutDuration >= 30) {
           timeBonus = 20; // 30분 이상 운동 보너스
         } else if (workoutDuration >= 20) {
@@ -228,11 +240,14 @@ class WorkoutCompletionHandler {
       await ChadEvolutionService.addExperience(totalXP);
 
       debugPrint('✅ 차드 경험치 업데이트 완료: +${totalXP}XP');
-      debugPrint('   📊 XP 상세: 기본(${baseXP}) + 횟수(${repBonus}) + 완료율(${completionBonus}) + 초과달성(${overachievementBonus}) + 시간(${timeBonus})');
-      debugPrint('   🎯 완료율: ${(completionRate * 100).toStringAsFixed(1)}% (${totalReps}/${totalTargetReps})');
+      debugPrint(
+        '   📊 XP 상세: 기본(${baseXP}) + 횟수(${repBonus}) + 완료율(${completionBonus}) + 초과달성(${overachievementBonus}) + 시간(${timeBonus})',
+      );
+      debugPrint(
+        '   🎯 완료율: ${(completionRate * 100).toStringAsFixed(1)}% (${totalReps}/${totalTargetReps})',
+      );
 
       return totalXP;
-
     } catch (e) {
       debugPrint('❌ 차드 경험치 업데이트 실패: $e');
       return 0;
@@ -267,7 +282,6 @@ class WorkoutCompletionHandler {
 
       await prefs.setString('last_workout_date', today.toIso8601String());
       debugPrint('✅ 스트릭 업데이트 완료');
-
     } catch (e) {
       debugPrint('❌ 스트릭 업데이트 실패: $e');
     }
@@ -278,7 +292,8 @@ class WorkoutCompletionHandler {
     try {
       debugPrint('🎯 업적 확인 시작');
 
-      final achievements = await AchievementService.checkAndUpdateAchievements();
+      final achievements =
+          await AchievementService.checkAndUpdateAchievements();
 
       if (achievements.isNotEmpty) {
         // 업적 이벤트 저장 (MainNavigationScreen에서 표시용)
@@ -305,7 +320,6 @@ class WorkoutCompletionHandler {
 
       debugPrint('✅ 업적 확인 완료: ${achievements.length}개 새로 달성');
       return achievements;
-
     } catch (e) {
       debugPrint('❌ 업적 확인 실패: $e');
       return [];
@@ -324,7 +338,10 @@ class WorkoutCompletionHandler {
   }
 
   /// 챌린지 진행률 업데이트
-  Future<void> _updateChallenges(WorkoutHistory history, WorkoutCompletionResult result) async {
+  Future<void> _updateChallenges(
+    WorkoutHistory history,
+    WorkoutCompletionResult result,
+  ) async {
     try {
       debugPrint('🏆 챌린지 진행률 업데이트 시작');
 
@@ -333,7 +350,8 @@ class WorkoutCompletionHandler {
 
       // 완료된 총 횟수로 챌린지 업데이트
       final totalReps = history.totalReps;
-      final updatedChallenges = await challengeService.updateChallengesOnWorkoutComplete(totalReps, 1);
+      final updatedChallenges = await challengeService
+          .updateChallengesOnWorkoutComplete(totalReps, 1);
 
       if (updatedChallenges.isNotEmpty) {
         debugPrint('✅ 챌린지 업데이트 완료: ${updatedChallenges.length}개 챌린지 진행률 변경');
@@ -358,7 +376,6 @@ class WorkoutCompletionHandler {
 
       // 푸시업 마스터 진행률 업데이트
       await _updatePushupMastery(history);
-
     } catch (e) {
       debugPrint('❌ 챌린지 업데이트 실패: $e');
     }
@@ -377,7 +394,6 @@ class WorkoutCompletionHandler {
       } else {
         debugPrint('ℹ️ 푸시업 운동이 아니므로 마스터 진행률 업데이트 안함');
       }
-
     } catch (e) {
       debugPrint('❌ 푸시업 마스터 업데이트 실패: $e');
     }
@@ -396,7 +412,9 @@ class WorkoutCompletionHandler {
         final settings = WorkoutReminderSettings.fromJson(settingsMap);
 
         final tomorrow = DateTime.now().add(const Duration(days: 1));
-        final isTomorrowRestDay = !settings.activeDays.contains(tomorrow.weekday);
+        final isTomorrowRestDay = !settings.activeDays.contains(
+          tomorrow.weekday,
+        );
 
         if (isTomorrowRestDay) {
           // 휴식일 알림 표시
@@ -408,7 +426,8 @@ class WorkoutCompletionHandler {
       } else {
         // 기본 설정: 월-금 운동, 주말 휴식
         final tomorrow = DateTime.now().add(const Duration(days: 1));
-        final isWeekend = tomorrow.weekday == 6 || tomorrow.weekday == 7; // 토요일 또는 일요일
+        final isWeekend =
+            tomorrow.weekday == 6 || tomorrow.weekday == 7; // 토요일 또는 일요일
 
         if (isWeekend) {
           await NotificationService.showRestDayNotification();

@@ -18,47 +18,44 @@ class AboutSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildSettingsSection(
-      AppLocalizations.of(context).aboutSettings,
-      [
-        _buildTapSetting(
-          AppLocalizations.of(context).versionInfo,
-          AppLocalizations.of(context).versionInfoDesc,
-          Icons.info,
-          () => _showVersionDialog(context),
-        ),
-        _buildTapSetting(
-          AppLocalizations.of(context).developerInfo,
-          AppLocalizations.of(context).developerInfoDesc,
-          Icons.code,
-          () => _showDeveloperDialog(context),
-        ),
-        _buildTapSetting(
-          AppLocalizations.of(context).licenseInfo,
-          AppLocalizations.of(context).licenseInfoDesc,
-          Icons.description,
-          () => _showLicensePage(context),
-        ),
-        _buildTapSetting(
-          AppLocalizations.of(context).privacyPolicy,
-          AppLocalizations.of(context).privacyPolicyDesc,
-          Icons.privacy_tip,
-          () => _openPrivacyPolicy(context),
-        ),
-        _buildTapSetting(
-          AppLocalizations.of(context).termsOfService,
-          AppLocalizations.of(context).termsOfServiceDesc,
-          Icons.article,
-          () => _openTermsOfService(context),
-        ),
-        _buildTapSetting(
-          AppLocalizations.of(context).sendFeedback,
-          AppLocalizations.of(context).sendFeedbackDesc,
-          Icons.feedback,
-          () => _sendFeedback(context),
-        ),
-      ],
-    );
+    return _buildSettingsSection(AppLocalizations.of(context).aboutSettings, [
+      _buildTapSetting(
+        AppLocalizations.of(context).versionInfo,
+        AppLocalizations.of(context).versionInfoDesc,
+        Icons.info,
+        () => _showVersionDialog(context),
+      ),
+      _buildTapSetting(
+        AppLocalizations.of(context).developerInfo,
+        AppLocalizations.of(context).developerInfoDesc,
+        Icons.code,
+        () => _showDeveloperDialog(context),
+      ),
+      _buildTapSetting(
+        AppLocalizations.of(context).licenseInfo,
+        AppLocalizations.of(context).licenseInfoDesc,
+        Icons.description,
+        () => _showLicensePage(context),
+      ),
+      _buildTapSetting(
+        AppLocalizations.of(context).privacyPolicy,
+        AppLocalizations.of(context).privacyPolicyDesc,
+        Icons.privacy_tip,
+        () => _openPrivacyPolicy(context),
+      ),
+      _buildTapSetting(
+        AppLocalizations.of(context).termsOfService,
+        AppLocalizations.of(context).termsOfServiceDesc,
+        Icons.article,
+        () => _openTermsOfService(context),
+      ),
+      _buildTapSetting(
+        AppLocalizations.of(context).sendFeedback,
+        AppLocalizations.of(context).sendFeedbackDesc,
+        Icons.feedback,
+        () => _sendFeedback(context),
+      ),
+    ]);
   }
 
   Widget _buildSettingsSection(String title, List<Widget> children) {
@@ -108,7 +105,9 @@ class AboutSettingsWidget extends StatelessWidget {
       child: ListTile(
         leading: Icon(
           icon,
-          color: isDestructive ? Colors.red : const Color(AppColors.primaryColor),
+          color: isDestructive
+              ? Colors.red
+              : const Color(AppColors.primaryColor),
         ),
         title: Text(
           title,
@@ -119,10 +118,7 @@ class AboutSettingsWidget extends StatelessWidget {
         ),
         subtitle: Text(
           subtitle,
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 13,
-          ),
+          style: TextStyle(color: Colors.grey[600], fontSize: 13),
         ),
         trailing: const Icon(Icons.chevron_right),
         onTap: onTap,
@@ -166,7 +162,9 @@ class AboutSettingsWidget extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+                color: const Color(
+                  AppColors.primaryColor,
+                ).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Column(
@@ -174,20 +172,29 @@ class AboutSettingsWidget extends StatelessWidget {
                 children: [
                   Text(
                     '💪 ${packageInfo.appName}',
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   const SizedBox(height: 4),
-                  Text(Localizations.localeOf(context).languageCode == 'ko'
-                    ? '버전: ${packageInfo.version}'
-                    : 'Version: ${packageInfo.version}'),
+                  Text(
+                    Localizations.localeOf(context).languageCode == 'ko'
+                        ? '버전: ${packageInfo.version}'
+                        : 'Version: ${packageInfo.version}',
+                  ),
                   const SizedBox(height: 4),
-                  Text(Localizations.localeOf(context).languageCode == 'ko'
-                    ? '빌드: ${packageInfo.buildNumber}'
-                    : 'Build: ${packageInfo.buildNumber}'),
+                  Text(
+                    Localizations.localeOf(context).languageCode == 'ko'
+                        ? '빌드: ${packageInfo.buildNumber}'
+                        : 'Build: ${packageInfo.buildNumber}',
+                  ),
                   const SizedBox(height: 4),
-                  Text(Localizations.localeOf(context).languageCode == 'ko'
-                    ? '패키지: ${packageInfo.packageName}'
-                    : 'Package: ${packageInfo.packageName}'),
+                  Text(
+                    Localizations.localeOf(context).languageCode == 'ko'
+                        ? '패키지: ${packageInfo.packageName}'
+                        : 'Package: ${packageInfo.packageName}',
+                  ),
                 ],
               ),
             ),
@@ -197,8 +204,8 @@ class AboutSettingsWidget extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '6주 만에 100개 푸쉬업 달성!\n차드가 되는 여정을 함께하세요! 🔥'
-                : 'Achieve 100 pushups in 6 weeks!\nJoin the Chad journey! 🔥',
+                  ? '6주 만에 100개 푸쉬업 달성!\n차드가 되는 여정을 함께하세요! 🔥'
+                  : 'Achieve 100 pushups in 6 weeks!\nJoin the Chad journey! 🔥',
               style: const TextStyle(fontSize: 14),
             ),
             const SizedBox(height: 16),
@@ -206,19 +213,23 @@ class AboutSettingsWidget extends StatelessWidget {
             // 기술 스택 정보
             Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '기술 스택:'
-                : 'Tech Stack:',
+                  ? '기술 스택:'
+                  : 'Tech Stack:',
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
             const Text('• Flutter 3.8.0+'),
             const Text('• Dart 3.0+'),
-            Text(Localizations.localeOf(context).languageCode == 'ko'
-              ? '• SQLite 로컬 데이터베이스'
-              : '• SQLite Local Database'),
-            Text(Localizations.localeOf(context).languageCode == 'ko'
-              ? '• Provider 상태 관리'
-              : '• Provider State Management'),
+            Text(
+              Localizations.localeOf(context).languageCode == 'ko'
+                  ? '• SQLite 로컬 데이터베이스'
+                  : '• SQLite Local Database',
+            ),
+            Text(
+              Localizations.localeOf(context).languageCode == 'ko'
+                  ? '• Provider 상태 관리'
+                  : '• Provider State Management',
+            ),
             const Text('• Google Mobile Ads'),
           ],
         ),
@@ -238,8 +249,8 @@ class AboutSettingsWidget extends StatelessWidget {
             ),
             child: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '라이선스'
-                : 'Licenses',
+                  ? '라이선스'
+                  : 'Licenses',
             ),
           ),
         ],
@@ -257,7 +268,10 @@ class AboutSettingsWidget extends StatelessWidget {
       builder: (context) => AlertDialog(
         title: Row(
           children: [
-            const Icon(Icons.info_outline, color: Color(AppColors.primaryColor)),
+            const Icon(
+              Icons.info_outline,
+              color: Color(AppColors.primaryColor),
+            ),
             const SizedBox(width: 8),
             Text(AppLocalizations.of(context)!.developerInfo),
           ],
@@ -270,16 +284,22 @@ class AboutSettingsWidget extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+                color: const Color(
+                  AppColors.primaryColor,
+                ).withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('💪 Mission: 100',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+                  const Text(
+                    '💪 Mission: 100',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(height: 4),
-                  Text('${AppLocalizations.of(context)!.appVersion}: ${packageInfo.version}'),
+                  Text(
+                    '${AppLocalizations.of(context)!.appVersion}: ${packageInfo.version}',
+                  ),
                   const SizedBox(height: 4),
                   Text(AppLocalizations.of(context)!.builtWithFlutter),
                 ],
@@ -293,8 +313,10 @@ class AboutSettingsWidget extends StatelessWidget {
             const SizedBox(height: 16),
 
             // 개발자 연락처
-            Text(AppLocalizations.of(context)!.developerContact,
-              style: const TextStyle(fontWeight: FontWeight.bold)),
+            Text(
+              AppLocalizations.of(context)!.developerContact,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
             const SizedBox(height: 8),
 
             // GitHub 버튼
@@ -351,11 +373,7 @@ class AboutSettingsWidget extends StatelessWidget {
           color: Color(AppColors.primaryColor),
           shape: BoxShape.circle,
         ),
-        child: const Icon(
-          Icons.fitness_center,
-          size: 32,
-          color: Colors.white,
-        ),
+        child: const Icon(Icons.fitness_center, size: 32, color: Colors.white),
       ),
     );
   }
@@ -371,7 +389,9 @@ class AboutSettingsWidget extends StatelessWidget {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.cannotOpenPrivacyPolicy),
+              content: Text(
+                AppLocalizations.of(context)!.cannotOpenPrivacyPolicy,
+              ),
               backgroundColor: Colors.red,
             ),
           );
@@ -382,7 +402,9 @@ class AboutSettingsWidget extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.cannotOpenPrivacyPolicy),
+            content: Text(
+              AppLocalizations.of(context)!.cannotOpenPrivacyPolicy,
+            ),
             backgroundColor: Colors.red,
           ),
         );
@@ -401,7 +423,9 @@ class AboutSettingsWidget extends StatelessWidget {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.cannotOpenTermsOfService),
+              content: Text(
+                AppLocalizations.of(context)!.cannotOpenTermsOfService,
+              ),
               backgroundColor: Colors.red,
             ),
           );
@@ -412,7 +436,9 @@ class AboutSettingsWidget extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.cannotOpenTermsOfService),
+            content: Text(
+              AppLocalizations.of(context)!.cannotOpenTermsOfService,
+            ),
             backgroundColor: Colors.red,
           ),
         );
@@ -455,16 +481,17 @@ class AboutSettingsWidget extends StatelessWidget {
   Future<void> _sendFeedback(BuildContext context) async {
     const email = 'osu355@gmail.com';
     final subject = Localizations.localeOf(context).languageCode == 'ko'
-      ? 'Mission 100 Chad Pushup 피드백'
-      : 'Mission 100 Chad Pushup Feedback';
+        ? 'Mission 100 Chad Pushup 피드백'
+        : 'Mission 100 Chad Pushup Feedback';
     final body = Localizations.localeOf(context).languageCode == 'ko'
-      ? '안녕하세요! Mission 100 Chad Pushup 앱에 대한 피드백을 보내드립니다.\n\n'
-      : 'Hello! I am sending feedback about the Mission 100 Chad Pushup app.\n\n';
+        ? '안녕하세요! Mission 100 Chad Pushup 앱에 대한 피드백을 보내드립니다.\n\n'
+        : 'Hello! I am sending feedback about the Mission 100 Chad Pushup app.\n\n';
 
     final emailUri = Uri(
       scheme: 'mailto',
       path: email,
-      query: 'subject=${Uri.encodeComponent(subject)}&body=${Uri.encodeComponent(body)}',
+      query:
+          'subject=${Uri.encodeComponent(subject)}&body=${Uri.encodeComponent(body)}',
     );
 
     try {

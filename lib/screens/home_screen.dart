@@ -164,12 +164,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       debugPrint('👤 사용자 프로필: $profile');
 
       // 프로필이 null이면 기본 프로필 생성
-      final userProfile = profile ?? UserProfile(
-        id: 1,
-        level: UserLevel.rising,
-        initialMaxReps: 10,
-        startDate: DateTime.now(),
-      );
+      final userProfile =
+          profile ??
+          UserProfile(
+            id: 1,
+            level: UserLevel.rising,
+            initialMaxReps: 10,
+            startDate: DateTime.now(),
+          );
 
       // 오늘의 운동 로드
       final workout = await _workoutProgramService.getTodayWorkout(userProfile);
@@ -181,8 +183,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
       // 오늘 완료된 운동 기록 확인
       final today = DateTime.now();
-      final todayString = '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
-      final completedWorkout = await WorkoutHistoryService.getTodayCompletedWorkout(todayString);
+      final todayString =
+          '${today.year}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}';
+      final completedWorkout =
+          await WorkoutHistoryService.getTodayCompletedWorkout(todayString);
       debugPrint('✅ 오늘 완료된 운동: $completedWorkout');
 
       if (mounted) {
@@ -215,7 +219,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       debugPrint('🔄 홈 화면: 모든 서비스 데이터 새로고침 시작');
 
       // Chad Evolution Service 상태 업데이트
-      final chadService = Provider.of<ChadEvolutionService>(context, listen: false);
+      final chadService = Provider.of<ChadEvolutionService>(
+        context,
+        listen: false,
+      );
       await chadService.refreshEvolutionState();
       debugPrint('🦾 Chad 진화 상태 새로고침 완료');
 
@@ -250,14 +257,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: isDark
-                ? [
-                    Color(AppColors.chadGradient[0]),
-                    Color(AppColors.chadGradient[1]),
-                  ]
-                : [
-                    Colors.white,
-                    const Color(0xFFF5F5F5),
-                  ],
+                  ? [
+                      Color(AppColors.chadGradient[0]),
+                      Color(AppColors.chadGradient[1]),
+                    ]
+                  : [Colors.white, const Color(0xFFF5F5F5)],
             ),
           ),
           child: Column(
@@ -267,7 +271,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                 width: 100,
                 height: 100,
                 decoration: BoxDecoration(
-                  color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+                  color: const Color(
+                    AppColors.primaryColor,
+                  ).withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(50),
                 ),
                 child: const Icon(
@@ -305,7 +311,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               padding: const EdgeInsets.all(8),
               child: Icon(
                 Icons.refresh,
-                color: theme.appBarTheme.iconTheme?.color ?? theme.iconTheme.color,
+                color:
+                    theme.appBarTheme.iconTheme?.color ?? theme.iconTheme.color,
               ),
             ),
           ),
@@ -364,7 +371,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         ActionButtonsWidget(
                           onTutorialPressed: () => _openTutorial(context),
                           onFormGuidePressed: () => _openFormGuide(context),
-                          onProgressTrackingPressed: () => _openProgressTracking(context),
+                          onProgressTrackingPressed: () =>
+                              _openProgressTracking(context),
                         ),
 
                         const SizedBox(height: AppConstants.paddingL),
@@ -402,11 +410,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.error_outline,
-            size: 64,
-            color: Colors.red[400],
-          ),
+          Icon(Icons.error_outline, size: 64, color: Colors.red[400]),
           const SizedBox(height: AppConstants.paddingM),
           Text(
             AppLocalizations.of(context)!.errorOccurred,
@@ -422,9 +426,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           const SizedBox(height: AppConstants.paddingL),
           ElevatedButton(
             onPressed: _refreshData,
-            child: Text(
-              AppLocalizations.of(context)!.retryButton,
-            ),
+            child: Text(AppLocalizations.of(context)!.retryButton),
           ),
         ],
       ),
@@ -439,11 +441,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
-            Icons.person_add,
-            size: 64,
-            color: Colors.blue[400],
-          ),
+          Icon(Icons.person_add, size: 64, color: Colors.blue[400]),
           const SizedBox(height: AppConstants.paddingM),
           Text(
             AppLocalizations.of(context)!.pleaseCreateProfile,
@@ -462,9 +460,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               context,
               MaterialPageRoute(builder: (context) => const SettingsScreen()),
             ),
-            child: Text(
-              AppLocalizations.of(context)!.goToSettings,
-            ),
+            child: Text(AppLocalizations.of(context)!.goToSettings),
           ),
         ],
       ),
@@ -477,20 +473,13 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       decoration: BoxDecoration(
         color: theme.cardColor,
         borderRadius: BorderRadius.circular(AppConstants.radiusM),
-        border: Border.all(
-          color: Colors.grey.withValues(alpha: 0.2),
-          width: 1,
-        ),
+        border: Border.all(color: Colors.grey.withValues(alpha: 0.2), width: 1),
       ),
       child: Column(
         children: [
           Row(
             children: [
-              Icon(
-                Icons.info_outline,
-                color: Colors.grey[600],
-                size: 20,
-              ),
+              Icon(Icons.info_outline, color: Colors.grey[600], size: 20),
               const SizedBox(width: AppConstants.paddingS),
               Text(
                 AppLocalizations.of(context)!.workoutTips,
@@ -540,9 +529,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-            AppLocalizations.of(context)!.todayWorkoutNotAvailable,
-          ),
+          content: Text(AppLocalizations.of(context)!.todayWorkoutNotAvailable),
         ),
       );
     }
@@ -556,16 +543,22 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       final yesterday = today.subtract(const Duration(days: 1));
 
       // 어제 운동 기록이 있는지 확인
-      final yesterdayKey = 'workout_${yesterday.year}_${yesterday.month}_${yesterday.day}';
-      final dailyCompletedWorkouts = prefs.getStringList('daily_completed_workouts') ?? [];
+      final yesterdayKey =
+          'workout_${yesterday.year}_${yesterday.month}_${yesterday.day}';
+      final dailyCompletedWorkouts =
+          prefs.getStringList('daily_completed_workouts') ?? [];
 
       // 어제 운동했으면 오늘은 운동 불가
       if (dailyCompletedWorkouts.contains(yesterdayKey)) {
-        debugPrint('🚫 연속 운동 차단: 어제 ${yesterday.toString().split(' ')[0]}에 운동함');
+        debugPrint(
+          '🚫 연속 운동 차단: 어제 ${yesterday.toString().split(' ')[0]}에 운동함',
+        );
         return false;
       }
 
-      debugPrint('✅ 운동 가능: 어제 운동하지 않음 (${dailyCompletedWorkouts.length}개 기록 확인함)');
+      debugPrint(
+        '✅ 운동 가능: 어제 운동하지 않음 (${dailyCompletedWorkouts.length}개 기록 확인함)',
+      );
       return true;
     } catch (e) {
       debugPrint('❌ 연속 운동 확인 실패: $e');
@@ -598,7 +591,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.consecutiveWorkoutMessage.replaceAll('\\n', '\n'),
+              AppLocalizations.of(
+                context,
+              )!.consecutiveWorkoutMessage.replaceAll('\\n', '\n'),
               style: TextStyle(
                 fontSize: 16,
                 height: 1.5,
@@ -612,16 +607,11 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             onPressed: () => Navigator.of(context).pop(),
             child: Text(
               AppLocalizations.of(context)!.chadRestModeToday,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-              ),
+              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
         ],
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(16),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
       ),
     );
   }
@@ -643,7 +633,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   void _openProgressTracking(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => ProgressTrackingScreen(userProfile: _userProfile!)),
+      MaterialPageRoute(
+        builder: (context) =>
+            ProgressTrackingScreen(userProfile: _userProfile!),
+      ),
     );
   }
 }

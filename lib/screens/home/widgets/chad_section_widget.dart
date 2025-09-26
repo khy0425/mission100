@@ -14,10 +14,7 @@ import '../../../generated/app_localizations.dart';
 class ChadSectionWidget extends StatelessWidget {
   final double chadImageSize;
 
-  const ChadSectionWidget({
-    super.key,
-    required this.chadImageSize,
-  });
+  const ChadSectionWidget({super.key, required this.chadImageSize});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +35,9 @@ class ChadSectionWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppConstants.radiusL),
             boxShadow: [
               BoxShadow(
-                color: (isDark ? Colors.black : Colors.grey).withValues(alpha: 0.1),
+                color: (isDark ? Colors.black : Colors.grey).withValues(
+                  alpha: 0.1,
+                ),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
               ),
@@ -85,21 +84,24 @@ class ChadSectionWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildChadImage(BuildContext context, ChadEvolutionService chadService, dynamic currentChad) {
+  Widget _buildChadImage(
+    BuildContext context,
+    ChadEvolutionService chadService,
+    dynamic currentChad,
+  ) {
     return Container(
       width: chadImageSize,
       height: chadImageSize,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
-        border: Border.all(
-          color: currentChad.themeColor,
-          width: 3,
-        ),
+        border: Border.all(color: currentChad.themeColor, width: 3),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
         child: FutureBuilder<ImageProvider>(
-          future: chadService.getCurrentChadImage(targetSize: chadImageSize.toInt()),
+          future: chadService.getCurrentChadImage(
+            targetSize: chadImageSize.toInt(),
+          ),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return Image(
@@ -113,16 +115,11 @@ class ChadSectionWidget extends StatelessWidget {
                 },
               );
             } else if (snapshot.hasError) {
-              return Image.asset(
-                'assets/images/수면모자차드.jpg',
-                fit: BoxFit.cover,
-              );
+              return Image.asset('assets/images/수면모자차드.jpg', fit: BoxFit.cover);
             } else {
               return Container(
                 color: Colors.grey[300],
-                child: const Center(
-                  child: CircularProgressIndicator(),
-                ),
+                child: const Center(child: CircularProgressIndicator()),
               );
             }
           },
@@ -131,23 +128,29 @@ class ChadSectionWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildEvolutionStatusText(BuildContext context, ThemeData theme, ChadEvolutionService chadService) {
+  Widget _buildEvolutionStatusText(
+    BuildContext context,
+    ThemeData theme,
+    ChadEvolutionService chadService,
+  ) {
     return Text(
       chadService.isMaxEvolution
           ? (Localizations.localeOf(context).languageCode == 'ko'
-              ? '최종 진화 완료!'
-              : 'Final evolution complete!')
+                ? '최종 진화 완료!'
+                : 'Final evolution complete!')
           : (Localizations.localeOf(context).languageCode == 'ko'
-              ? '진화 진행 중...'
-              : 'Evolution in progress...'),
-      style: theme.textTheme.bodyMedium?.copyWith(
-        fontWeight: FontWeight.w500,
-      ),
+                ? '진화 진행 중...'
+                : 'Evolution in progress...'),
+      style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w500),
       textAlign: TextAlign.center,
     );
   }
 
-  Widget _buildEvolutionProgressBar(ThemeData theme, ChadEvolutionService chadService, bool isDark) {
+  Widget _buildEvolutionProgressBar(
+    ThemeData theme,
+    ChadEvolutionService chadService,
+    bool isDark,
+  ) {
     final evolutionState = chadService.evolutionState;
     final progress = chadService.evolutionProgress;
 

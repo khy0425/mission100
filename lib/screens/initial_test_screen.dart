@@ -39,8 +39,8 @@ class _InitialTestScreenState extends State<InitialTestScreen>
       vsync: this,
     );
 
-    _slideAnimation = Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero)
-        .animate(
+    _slideAnimation =
+        Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
           CurvedAnimation(parent: _slideController, curve: Curves.easeOutBack),
         );
 
@@ -142,9 +142,8 @@ class _InitialTestScreenState extends State<InitialTestScreen>
       if (mounted) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => WorkoutScheduleSetupScreen(
-              userProfile: userProfileWithId,
-            ),
+            builder: (context) =>
+                WorkoutScheduleSetupScreen(userProfile: userProfileWithId),
           ),
         );
       }
@@ -314,7 +313,9 @@ class _InitialTestScreenState extends State<InitialTestScreen>
                 Container(
                   padding: const EdgeInsets.all(AppConstants.paddingL),
                   decoration: BoxDecoration(
-                    color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+                    color: const Color(
+                      AppColors.primaryColor,
+                    ).withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(AppConstants.radiusM),
                   ),
                   child: Column(

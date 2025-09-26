@@ -21,22 +21,23 @@ class WorkoutResumptionDialog extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final primaryData = resumptionData.primaryData;
-    
+
     if (primaryData == null) {
       return const SizedBox.shrink();
     }
 
     // 복원 가능한 데이터 분석
     final workoutTitle = primaryData['workoutTitle'] as String? ?? l10n.workout;
-    final currentSet = (primaryData['currentSet'] as int? ?? 0) + 1; // 1-based index
+    final currentSet =
+        (primaryData['currentSet'] as int? ?? 0) + 1; // 1-based index
     final completedRepsStr = primaryData['completedReps'] as String? ?? '';
-    final completedReps = completedRepsStr.isNotEmpty 
+    final completedReps = completedRepsStr.isNotEmpty
         ? completedRepsStr.split(',').map(int.parse).toList()
         : <int>[];
-    
+
     final completedSetsCount = completedReps.where((reps) => reps > 0).length;
     final totalCompletedReps = completedReps.fold(0, (sum, reps) => sum + reps);
-    
+
     return AlertDialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
@@ -89,20 +90,11 @@ class WorkoutResumptionDialog extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Text(
-                    l10n.workoutTitle(workoutTitle),
-                  ),
-                  if (currentSet > 0)
-                    Text(
-                      l10n.progressSetReady(currentSet),
-                    ),
-                  Text(
-                    l10n.completedSetsCount(completedSetsCount),
-                  ),
+                  Text(l10n.workoutTitle(workoutTitle)),
+                  if (currentSet > 0) Text(l10n.progressSetReady(currentSet)),
+                  Text(l10n.completedSetsCount(completedSetsCount)),
                   if (totalCompletedReps > 0)
-                    Text(
-                      l10n.totalCompletedReps(totalCompletedReps),
-                    ),
+                    Text(l10n.totalCompletedReps(totalCompletedReps)),
                 ],
               ),
             ),
@@ -153,11 +145,9 @@ class WorkoutResumptionDialog extends StatelessWidget {
             foregroundColor: Colors.grey[600],
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           ),
-          child: Text(
-            l10n.startNewWorkout,
-          ),
+          child: Text(l10n.startNewWorkout),
         ),
-        
+
         // 운동 재개 버튼
         ElevatedButton(
           onPressed: () {
@@ -229,10 +219,7 @@ Future<bool?> showSimpleResumptionDialog({
     builder: (context) => AlertDialog(
       title: Text(
         l10n.resumeWorkout,
-        style: const TextStyle(
-          fontSize: 18,
-          fontWeight: FontWeight.bold,
-        ),
+        style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       ),
       content: Column(
         mainAxisSize: MainAxisSize.min,
@@ -254,7 +241,13 @@ Future<bool?> showSimpleResumptionDialog({
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  l10n.workoutDetailsWithStats(workoutTitle, completedSets, totalReps).replaceAll('\\n', '\n'),
+                  l10n
+                      .workoutDetailsWithStats(
+                        workoutTitle,
+                        completedSets,
+                        totalReps,
+                      )
+                      .replaceAll('\\n', '\n'),
                   textAlign: TextAlign.center,
                 ),
               ],
@@ -269,11 +262,9 @@ Future<bool?> showSimpleResumptionDialog({
         ),
         ElevatedButton(
           onPressed: () => Navigator.of(context).pop(true),
-          child: Text(
-            l10n.resumeButton,
-          ),
+          child: Text(l10n.resumeButton),
         ),
       ],
     ),
   );
-} 
+}

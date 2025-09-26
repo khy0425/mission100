@@ -5,13 +5,14 @@ import '../models/pushup_form_guide.dart';
 
 /// 푸시업 폼 가이드 데이터를 관리하는 서비스
 class PushupFormGuideService {
-  static final PushupFormGuideService _instance = PushupFormGuideService._internal();
+  static final PushupFormGuideService _instance =
+      PushupFormGuideService._internal();
   factory PushupFormGuideService() => _instance;
   PushupFormGuideService._internal();
 
   static const String _dataPathKo = 'assets/data/pushup_form_guide.json';
   static const String _dataPathEn = 'assets/data/pushup_form_guide_en.json';
-  
+
   PushupFormGuideData? _cachedDataKo;
   PushupFormGuideData? _cachedDataEn;
 
@@ -19,16 +20,17 @@ class PushupFormGuideService {
   Future<PushupFormGuideData> loadFormGuideData(BuildContext context) async {
     final locale = Localizations.localeOf(context);
     final isKorean = locale.languageCode == 'ko';
-    
+
     if (isKorean) {
       if (_cachedDataKo != null) {
         return _cachedDataKo!;
       }
-      
+
       try {
         final String jsonString = await rootBundle.loadString(_dataPathKo);
-        final Map<String, dynamic> jsonData = json.decode(jsonString) as Map<String, dynamic>;
-        
+        final Map<String, dynamic> jsonData =
+            json.decode(jsonString) as Map<String, dynamic>;
+
         _cachedDataKo = _parseFormGuideData(jsonData);
         return _cachedDataKo!;
       } catch (e) {
@@ -40,11 +42,12 @@ class PushupFormGuideService {
       if (_cachedDataEn != null) {
         return _cachedDataEn!;
       }
-      
+
       try {
         final String jsonString = await rootBundle.loadString(_dataPathEn);
-        final Map<String, dynamic> jsonData = json.decode(jsonString) as Map<String, dynamic>;
-        
+        final Map<String, dynamic> jsonData =
+            json.decode(jsonString) as Map<String, dynamic>;
+
         _cachedDataEn = _parseFormGuideData(jsonData);
         return _cachedDataEn!;
       } catch (e) {
@@ -57,25 +60,25 @@ class PushupFormGuideService {
 
   /// JSON 데이터를 PushupFormGuideData 객체로 파싱
   PushupFormGuideData _parseFormGuideData(Map<String, dynamic> jsonData) {
-    final List<FormStep> formSteps = (jsonData['formSteps'] as List)
-        .map((stepJson) {
-          final step = stepJson as Map<String, dynamic>;
-          return FormStep(
-            stepNumber: step['stepNumber'] as int,
-            title: step['title'] as String,
-            description: step['description'] as String,
-            imagePath: step['imagePath'] as String,
-            keyPoints: List<String>.from(step['keyPoints'] as List),
-            animationPath: step['animationPath'] as String?,
-            videoUrl: step['videoUrl'] as String?,
-            videoAssetPath: step['videoAssetPath'] as String?,
-            videoDescription: step['videoDescription'] as String?,
-          );
-        })
-        .toList();
+    final List<FormStep> formSteps = (jsonData['formSteps'] as List).map((
+      stepJson,
+    ) {
+      final step = stepJson as Map<String, dynamic>;
+      return FormStep(
+        stepNumber: step['stepNumber'] as int,
+        title: step['title'] as String,
+        description: step['description'] as String,
+        imagePath: step['imagePath'] as String,
+        keyPoints: List<String>.from(step['keyPoints'] as List),
+        animationPath: step['animationPath'] as String?,
+        videoUrl: step['videoUrl'] as String?,
+        videoAssetPath: step['videoAssetPath'] as String?,
+        videoDescription: step['videoDescription'] as String?,
+      );
+    }).toList();
 
-    final List<CommonMistake> commonMistakes = (jsonData['commonMistakes'] as List)
-        .map((mistakeJson) {
+    final List<CommonMistake> commonMistakes =
+        (jsonData['commonMistakes'] as List).map((mistakeJson) {
           final mistake = mistakeJson as Map<String, dynamic>;
           return CommonMistake(
             title: mistake['title'] as String,
@@ -85,8 +88,7 @@ class PushupFormGuideService {
             severity: mistake['severity'] as String,
             corrections: List<String>.from(mistake['corrections'] as List),
           );
-        })
-        .toList();
+        }).toList();
 
     final List<PushupVariation> variations = (jsonData['variations'] as List)
         .map((variationJson) {
@@ -102,8 +104,8 @@ class PushupFormGuideService {
         })
         .toList();
 
-    final List<ImprovementTip> improvementTips = (jsonData['improvementTips'] as List)
-        .map((tipJson) {
+    final List<ImprovementTip> improvementTips =
+        (jsonData['improvementTips'] as List).map((tipJson) {
           final tip = tipJson as Map<String, dynamic>;
           return ImprovementTip(
             category: tip['category'] as String,
@@ -112,11 +114,10 @@ class PushupFormGuideService {
             iconName: tip['iconName'] as String,
             actionItems: List<String>.from(tip['actionItems'] as List),
           );
-        })
-        .toList();
+        }).toList();
 
-    final List<QuizQuestion> quizQuestions = (jsonData['quizQuestions'] as List? ?? [])
-        .map((quizJson) {
+    final List<QuizQuestion> quizQuestions =
+        (jsonData['quizQuestions'] as List? ?? []).map((quizJson) {
           final quiz = quizJson as Map<String, dynamic>;
           return QuizQuestion(
             question: quiz['question'] as String,
@@ -125,8 +126,7 @@ class PushupFormGuideService {
             explanation: quiz['explanation'] as String,
             category: quiz['category'] as String,
           );
-        })
-        .toList();
+        }).toList();
 
     return PushupFormGuideData(
       formSteps: formSteps,
@@ -180,36 +180,21 @@ class PushupFormGuideService {
         title: '최하점 자세',
         description: '가슴이 바닥에 거의 닿는 최하점에서 잠시 정지합니다.',
         imagePath: 'assets/images/form_guide/step3_bottom_position.png',
-        keyPoints: [
-          '가슴과 바닥 사이 주먹 하나 간격',
-          '몸의 일직선 유지',
-          '어깨와 손목 정렬',
-          '1-2초간 정지',
-        ],
+        keyPoints: ['가슴과 바닥 사이 주먹 하나 간격', '몸의 일직선 유지', '어깨와 손목 정렬', '1-2초간 정지'],
       ),
       const FormStep(
         stepNumber: 4,
         title: '상승 동작',
         description: '팔을 펴며 시작 자세로 돌아갑니다.',
         imagePath: 'assets/images/form_guide/step4_ascending.png',
-        keyPoints: [
-          '팔을 힘차게 펴기',
-          '코어 근육으로 몸 지지',
-          '호흡은 올라가면서 내쉬기',
-          '팔꿈치 완전히 펴기',
-        ],
+        keyPoints: ['팔을 힘차게 펴기', '코어 근육으로 몸 지지', '호흡은 올라가면서 내쉬기', '팔꿈치 완전히 펴기'],
       ),
       const FormStep(
         stepNumber: 5,
         title: '완료 자세',
         description: '시작 자세로 완전히 돌아와 다음 반복을 준비합니다.',
         imagePath: 'assets/images/form_guide/step5_finish_position.png',
-        keyPoints: [
-          '팔꿈치 완전히 펴진 상태',
-          '몸의 일직선 유지',
-          '어깨 안정화',
-          '다음 반복 준비',
-        ],
+        keyPoints: ['팔꿈치 완전히 펴진 상태', '몸의 일직선 유지', '어깨 안정화', '다음 반복 준비'],
       ),
     ];
   }
@@ -235,11 +220,7 @@ class PushupFormGuideService {
         wrongImagePath: 'assets/images/mistakes/sagging_hips_wrong.png',
         correctImagePath: 'assets/images/mistakes/sagging_hips_correct.png',
         severity: 'high',
-        corrections: [
-          '복근과 둔근을 동시에 수축',
-          '허리 중립 자세 유지',
-          '코어 강화 운동 병행',
-        ],
+        corrections: ['복근과 둔근을 동시에 수축', '허리 중립 자세 유지', '코어 강화 운동 병행'],
       ),
       const CommonMistake(
         title: '팔꿈치가 너무 벌어짐',
@@ -247,11 +228,7 @@ class PushupFormGuideService {
         wrongImagePath: 'assets/images/mistakes/wide_elbows_wrong.png',
         correctImagePath: 'assets/images/mistakes/wide_elbows_correct.png',
         severity: 'medium',
-        corrections: [
-          '팔꿈치를 몸에 가깝게 유지 (45도 각도)',
-          '어깨날 안정화',
-          '삼두근 강화 운동',
-        ],
+        corrections: ['팔꿈치를 몸에 가깝게 유지 (45도 각도)', '어깨날 안정화', '삼두근 강화 운동'],
       ),
       const CommonMistake(
         title: '목이 앞으로 나옴',
@@ -259,11 +236,7 @@ class PushupFormGuideService {
         wrongImagePath: 'assets/images/mistakes/forward_head_wrong.png',
         correctImagePath: 'assets/images/mistakes/forward_head_correct.png',
         severity: 'medium',
-        corrections: [
-          '목을 중립 위치에 유지',
-          '시선은 바닥을 향하게',
-          '목 스트레칭으로 유연성 개선',
-        ],
+        corrections: ['목을 중립 위치에 유지', '시선은 바닥을 향하게', '목 스트레칭으로 유연성 개선'],
       ),
       const CommonMistake(
         title: '가동범위가 부족함',
@@ -294,11 +267,7 @@ class PushupFormGuideService {
           '무릎부터 머리까지 일직선 유지',
           '천천히 가슴을 바닥 쪽으로',
         ],
-        benefits: [
-          '기본 자세 익히기에 좋음',
-          '상체 근력 점진적 발달',
-          '부상 위험 낮음',
-        ],
+        benefits: ['기본 자세 익히기에 좋음', '상체 근력 점진적 발달', '부상 위험 낮음'],
       ),
       const PushupVariation(
         name: '인클라인 푸시업',
@@ -311,11 +280,7 @@ class PushupFormGuideService {
           '몸을 경사지게 유지',
           '일반 푸시업과 동일한 동작',
         ],
-        benefits: [
-          '강도 조절 가능',
-          '정확한 자세 연습',
-          '점진적 난이도 증가',
-        ],
+        benefits: ['강도 조절 가능', '정확한 자세 연습', '점진적 난이도 증가'],
       ),
       const PushupVariation(
         name: '다이아몬드 푸시업',
@@ -328,11 +293,7 @@ class PushupFormGuideService {
           '팔꿈치를 몸에 가깝게 유지',
           '천천히 컨트롤하며 동작',
         ],
-        benefits: [
-          '삼두근 집중 강화',
-          '코어 안정성 향상',
-          '상급자 근력 발달',
-        ],
+        benefits: ['삼두근 집중 강화', '코어 안정성 향상', '상급자 근력 발달'],
       ),
       const PushupVariation(
         name: '원암 푸시업',
@@ -345,11 +306,7 @@ class PushupFormGuideService {
           '몸의 회전 최소화',
           '극도로 천천히 동작',
         ],
-        benefits: [
-          '최고 수준의 근력 발달',
-          '균형감각 향상',
-          '정신력 강화',
-        ],
+        benefits: ['최고 수준의 근력 발달', '균형감각 향상', '정신력 강화'],
       ),
     ];
   }
@@ -398,12 +355,7 @@ class PushupFormGuideService {
         title: '목표 설정과 추적',
         description: '명확한 목표와 기록을 통해 지속적인 동기를 유지합니다.',
         iconName: 'flag',
-        actionItems: [
-          '단기/장기 목표 설정',
-          '운동 일지 작성',
-          '진전 사항 사진 촬영',
-          '성취 축하하기',
-        ],
+        actionItems: ['단기/장기 목표 설정', '운동 일지 작성', '진전 사항 사진 촬영', '성취 축하하기'],
       ),
     ];
   }
@@ -413,36 +365,21 @@ class PushupFormGuideService {
     return [
       const QuizQuestion(
         question: '올바른 푸시업 시작 자세에서 손의 위치는?',
-        options: [
-          '어깨보다 넓게',
-          '어깨 바로 아래',
-          '어깨보다 좁게',
-          '가슴 중앙에',
-        ],
+        options: ['어깨보다 넓게', '어깨 바로 아래', '어깨보다 좁게', '가슴 중앙에'],
         correctAnswerIndex: 1,
         explanation: '손은 어깨 바로 아래에 위치해야 안정적인 자세를 유지할 수 있습니다.',
         category: 'form',
       ),
       const QuizQuestion(
         question: '푸시업 중 가장 흔한 실수는?',
-        options: [
-          '팔꿈치가 너무 벌어짐',
-          '엉덩이가 너무 높이 올라감',
-          '목이 앞으로 나옴',
-          '가동범위가 부족함',
-        ],
+        options: ['팔꿈치가 너무 벌어짐', '엉덩이가 너무 높이 올라감', '목이 앞으로 나옴', '가동범위가 부족함'],
         correctAnswerIndex: 1,
         explanation: '엉덩이가 높이 올라가면 코어 근육 사용이 줄어들고 운동 효과가 떨어집니다.',
         category: 'mistakes',
       ),
       const QuizQuestion(
         question: '초보자에게 가장 적합한 푸시업 변형은?',
-        options: [
-          '다이아몬드 푸시업',
-          '원암 푸시업',
-          '무릎 푸시업',
-          '클랩 푸시업',
-        ],
+        options: ['다이아몬드 푸시업', '원암 푸시업', '무릎 푸시업', '클랩 푸시업'],
         correctAnswerIndex: 2,
         explanation: '무릎 푸시업은 부상 위험이 낮고 기본 자세를 익히기에 좋습니다.',
         category: 'variations',
@@ -461,12 +398,7 @@ class PushupFormGuideService {
       ),
       const QuizQuestion(
         question: '푸시업에서 팔꿈치의 올바른 각도는?',
-        options: [
-          '90도로 완전히 벌리기',
-          '45도 각도로 몸에 가깝게',
-          '완전히 몸에 붙이기',
-          '각도는 상관없음',
-        ],
+        options: ['90도로 완전히 벌리기', '45도 각도로 몸에 가깝게', '완전히 몸에 붙이기', '각도는 상관없음'],
         correctAnswerIndex: 1,
         explanation: '팔꿈치를 45도 각도로 유지하면 어깨 부상을 예방하고 효과적인 운동이 가능합니다.',
         category: 'form',
@@ -530,7 +462,8 @@ class PushupFormGuideService {
       const FormStep(
         stepNumber: 1,
         title: 'Starting Position',
-        description: 'Start in a plank position and set the correct positions for your hands and feet.',
+        description:
+            'Start in a plank position and set the correct positions for your hands and feet.',
         imagePath: 'assets/images/form_guide/step1_start_position.png',
         keyPoints: [
           'Hands directly under shoulders',
@@ -554,7 +487,8 @@ class PushupFormGuideService {
       const FormStep(
         stepNumber: 3,
         title: 'Bottom Position',
-        description: 'Pause briefly at the bottom position where your chest nearly touches the floor.',
+        description:
+            'Pause briefly at the bottom position where your chest nearly touches the floor.',
         imagePath: 'assets/images/form_guide/step3_bottom_position.png',
         keyPoints: [
           'Fist-width gap between chest and floor',
@@ -566,7 +500,8 @@ class PushupFormGuideService {
       const FormStep(
         stepNumber: 4,
         title: 'Ascending Motion',
-        description: 'Push back up to the starting position by extending your arms.',
+        description:
+            'Push back up to the starting position by extending your arms.',
         imagePath: 'assets/images/form_guide/step4_ascending.png',
         keyPoints: [
           'Push up powerfully',
@@ -578,7 +513,8 @@ class PushupFormGuideService {
       const FormStep(
         stepNumber: 5,
         title: 'Finish Position',
-        description: 'Return completely to starting position and prepare for the next repetition.',
+        description:
+            'Return completely to starting position and prepare for the next repetition.',
         imagePath: 'assets/images/form_guide/step5_finish_position.png',
         keyPoints: [
           'Elbows fully extended',
@@ -595,7 +531,8 @@ class PushupFormGuideService {
     return [
       const CommonMistake(
         title: 'Hips too high',
-        description: 'Raising your hips too high reduces core muscle engagement and decreases effectiveness.',
+        description:
+            'Raising your hips too high reduces core muscle engagement and decreases effectiveness.',
         wrongImagePath: 'assets/images/mistakes/high_hips_wrong.png',
         correctImagePath: 'assets/images/mistakes/high_hips_correct.png',
         severity: 'high',
@@ -607,7 +544,8 @@ class PushupFormGuideService {
       ),
       const CommonMistake(
         title: 'Sagging hips',
-        description: 'Sagging hips puts strain on the lower back and increases injury risk.',
+        description:
+            'Sagging hips puts strain on the lower back and increases injury risk.',
         wrongImagePath: 'assets/images/mistakes/sagging_hips_wrong.png',
         correctImagePath: 'assets/images/mistakes/sagging_hips_correct.png',
         severity: 'high',
@@ -619,7 +557,8 @@ class PushupFormGuideService {
       ),
       const CommonMistake(
         title: 'Elbows flared too wide',
-        description: 'Flaring elbows to 90 degrees puts stress on shoulders and increases injury risk.',
+        description:
+            'Flaring elbows to 90 degrees puts stress on shoulders and increases injury risk.',
         wrongImagePath: 'assets/images/mistakes/wide_elbows_wrong.png',
         correctImagePath: 'assets/images/mistakes/wide_elbows_correct.png',
         severity: 'medium',
@@ -631,7 +570,8 @@ class PushupFormGuideService {
       ),
       const CommonMistake(
         title: 'Head forward',
-        description: 'Pushing your head forward creates tension in neck and shoulders and breaks proper form.',
+        description:
+            'Pushing your head forward creates tension in neck and shoulders and breaks proper form.',
         wrongImagePath: 'assets/images/mistakes/forward_head_wrong.png',
         correctImagePath: 'assets/images/mistakes/forward_head_correct.png',
         severity: 'medium',
@@ -643,7 +583,8 @@ class PushupFormGuideService {
       ),
       const CommonMistake(
         title: 'Partial range of motion',
-        description: 'Not lowering enough significantly reduces muscle development benefits.',
+        description:
+            'Not lowering enough significantly reduces muscle development benefits.',
         wrongImagePath: 'assets/images/mistakes/partial_range_wrong.png',
         correctImagePath: 'assets/images/mistakes/partial_range_correct.png',
         severity: 'medium',
@@ -736,7 +677,8 @@ class PushupFormGuideService {
       const ImprovementTip(
         category: 'Breathing',
         title: 'Proper Breathing Pattern',
-        description: 'Maximize exercise effectiveness and improve endurance through proper breathing.',
+        description:
+            'Maximize exercise effectiveness and improve endurance through proper breathing.',
         iconName: 'air',
         actionItems: [
           'Inhale slowly while going down',
@@ -748,7 +690,8 @@ class PushupFormGuideService {
       const ImprovementTip(
         category: 'Strength',
         title: 'Progressive Overload',
-        description: 'Gradually increase intensity for continuous strength development.',
+        description:
+            'Gradually increase intensity for continuous strength development.',
         iconName: 'trending_up',
         actionItems: [
           'Increase reps by 2-3 per week',
@@ -760,7 +703,8 @@ class PushupFormGuideService {
       const ImprovementTip(
         category: 'Recovery',
         title: 'Proper Rest and Recovery',
-        description: 'Promote muscle growth and prevent injury through adequate rest.',
+        description:
+            'Promote muscle growth and prevent injury through adequate rest.',
         iconName: 'bedtime',
         actionItems: [
           '48-hour rest after workouts',
@@ -772,7 +716,8 @@ class PushupFormGuideService {
       const ImprovementTip(
         category: 'Motivation',
         title: 'Goal Setting and Tracking',
-        description: 'Maintain consistent motivation through clear goals and progress tracking.',
+        description:
+            'Maintain consistent motivation through clear goals and progress tracking.',
         iconName: 'flag',
         actionItems: [
           'Set short/long-term goals',
@@ -788,7 +733,8 @@ class PushupFormGuideService {
   List<QuizQuestion> getQuizQuestionsEn() {
     return [
       const QuizQuestion(
-        question: 'Where should your hands be positioned in the correct push-up starting position?',
+        question:
+            'Where should your hands be positioned in the correct push-up starting position?',
         options: [
           'Wider than shoulders',
           'Directly under shoulders',
@@ -796,7 +742,8 @@ class PushupFormGuideService {
           'At chest center',
         ],
         correctAnswerIndex: 1,
-        explanation: 'Hands should be directly under shoulders to maintain stable form.',
+        explanation:
+            'Hands should be directly under shoulders to maintain stable form.',
         category: 'form',
       ),
       const QuizQuestion(
@@ -808,7 +755,8 @@ class PushupFormGuideService {
           'Partial range of motion',
         ],
         correctAnswerIndex: 1,
-        explanation: 'Raising hips too high reduces core muscle engagement and decreases exercise effectiveness.',
+        explanation:
+            'Raising hips too high reduces core muscle engagement and decreases exercise effectiveness.',
         category: 'mistakes',
       ),
       const QuizQuestion(
@@ -820,7 +768,8 @@ class PushupFormGuideService {
           'Clap push-ups',
         ],
         correctAnswerIndex: 2,
-        explanation: 'Knee push-ups have lower injury risk and are great for learning proper form.',
+        explanation:
+            'Knee push-ups have lower injury risk and are great for learning proper form.',
         category: 'variations',
       ),
       const QuizQuestion(
@@ -832,7 +781,8 @@ class PushupFormGuideService {
           'Breathe rapidly',
         ],
         correctAnswerIndex: 1,
-        explanation: 'Inhaling while going down and exhaling while going up is the correct breathing technique.',
+        explanation:
+            'Inhaling while going down and exhaling while going up is the correct breathing technique.',
         category: 'tips',
       ),
       const QuizQuestion(
@@ -844,9 +794,10 @@ class PushupFormGuideService {
           'Angle doesn\'t matter',
         ],
         correctAnswerIndex: 1,
-        explanation: 'Keeping elbows at 45 degrees prevents shoulder injury and enables effective exercise.',
+        explanation:
+            'Keeping elbows at 45 degrees prevents shoulder injury and enables effective exercise.',
         category: 'form',
       ),
     ];
   }
-} 
+}

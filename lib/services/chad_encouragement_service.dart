@@ -13,7 +13,7 @@ class ChadEncouragementService {
   /// 튜토리얼 시작 시 격려 메시지들 (다국어 지원을 위해 키값 사용)
   static const List<String> _tutorialStartMessageKeys = [
     'encouragement_tutorial_start_1',
-    'encouragement_tutorial_start_2', 
+    'encouragement_tutorial_start_2',
     'encouragement_tutorial_start_3',
     'encouragement_tutorial_start_4',
     'encouragement_tutorial_start_5',

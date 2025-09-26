@@ -15,161 +15,170 @@ class MultilingualContentService {
         'title': '근육 메모리의 과학',
         'fact': '한 번 훈련된 근육은 10년 후에도 더 빠르게 회복됩니다.',
         'source': 'Journal of Applied Physiology, 2019',
-        'impact': '💪 오늘의 푸시업이 미래의 당신을 강하게 만듭니다!'
+        'impact': '💪 오늘의 푸시업이 미래의 당신을 강하게 만듭니다!',
       },
       {
         'title': '신경가소성 증가',
         'fact': '푸시업은 뇌의 신경 연결을 증가시켜 인지능력을 향상시킵니다.',
         'source': 'Neuroscience Research, 2020',
-        'impact': '🧠 근육과 뇌가 함께 진화하는 놀라운 변화!'
+        'impact': '🧠 근육과 뇌가 함께 진화하는 놀라운 변화!',
       },
       {
         'title': '호르몬 최적화',
         'fact': '고강도 푸시업은 테스토스테론을 최대 22% 증가시킵니다.',
         'source': 'Endocrinology Journal, 2021',
-        'impact': '⚡ 자연스러운 호르몬 부스터가 되어보세요!'
+        'impact': '⚡ 자연스러운 호르몬 부스터가 되어보세요!',
       },
       {
         'title': '심혈관 혁명',
         'fact': '매일 50개 푸시업은 심장질환 위험을 39% 감소시킵니다.',
         'source': 'Harvard Health Study, 2019',
-        'impact': '❤️ 심장이 감사할 투자를 하고 있습니다!'
+        'impact': '❤️ 심장이 감사할 투자를 하고 있습니다!',
       },
       {
         'title': '스트레스 해독제',
         'fact': '푸시업은 코르티솔을 45% 감소시켜 스트레스를 해소합니다.',
         'source': 'Stress Medicine Journal, 2020',
-        'impact': '🌟 스트레스가 녹아내리는 마법을 경험하세요!'
-      }
+        'impact': '🌟 스트레스가 녹아내리는 마법을 경험하세요!',
+      },
     ],
     'en': [
       {
         'title': 'Muscle Memory Science',
         'fact': 'Once trained muscles recover faster even after 10 years.',
         'source': 'Journal of Applied Physiology, 2019',
-        'impact': '💪 Today\'s pushups make your future self stronger!'
+        'impact': '💪 Today\'s pushups make your future self stronger!',
       },
       {
         'title': 'Neuroplasticity Boost',
-        'fact': 'Pushups increase brain neural connections, enhancing cognitive ability.',
+        'fact':
+            'Pushups increase brain neural connections, enhancing cognitive ability.',
         'source': 'Neuroscience Research, 2020',
-        'impact': '🧠 Amazing transformation where muscles and brain evolve together!'
+        'impact':
+            '🧠 Amazing transformation where muscles and brain evolve together!',
       },
       {
         'title': 'Hormone Optimization',
         'fact': 'High-intensity pushups increase testosterone by up to 22%.',
         'source': 'Endocrinology Journal, 2021',
-        'impact': '⚡ Become a natural hormone booster!'
+        'impact': '⚡ Become a natural hormone booster!',
       },
       {
         'title': 'Cardiovascular Revolution',
         'fact': '50 daily pushups reduce heart disease risk by 39%.',
         'source': 'Harvard Health Study, 2019',
-        'impact': '❤️ You\'re making an investment your heart will thank you for!'
+        'impact':
+            '❤️ You\'re making an investment your heart will thank you for!',
       },
       {
         'title': 'Stress Antidote',
         'fact': 'Pushups reduce cortisol by 45%, eliminating stress.',
         'source': 'Stress Medicine Journal, 2020',
-        'impact': '🌟 Experience the magic of melting stress away!'
-      }
+        'impact': '🌟 Experience the magic of melting stress away!',
+      },
     ],
     'ja': [
       {
         'title': '筋肉記憶の科学',
         'fact': '一度鍛えられた筋肉は10年後でも早く回復します。',
         'source': 'Journal of Applied Physiology, 2019',
-        'impact': '💪 今日の腕立て伏せが未来のあなたを強くします！'
+        'impact': '💪 今日の腕立て伏せが未来のあなたを強くします！',
       },
       {
         'title': '神経可塑性の向上',
         'fact': '腕立て伏せは脳の神経接続を増加させ、認知能力を向上させます。',
         'source': 'Neuroscience Research, 2020',
-        'impact': '🧠 筋肉と脳が一緒に進化する驚異的な変化！'
+        'impact': '🧠 筋肉と脳が一緒に進化する驚異的な変化！',
       },
       {
         'title': 'ホルモン最適化',
         'fact': '高強度の腕立て伏せはテストステロンを最大22%増加させます。',
         'source': 'Endocrinology Journal, 2021',
-        'impact': '⚡ 自然なホルモンブースターになりましょう！'
+        'impact': '⚡ 自然なホルモンブースターになりましょう！',
       },
       {
         'title': '心血管革命',
         'fact': '毎日50回の腕立て伏せは心疾患リスクを39%減少させます。',
         'source': 'Harvard Health Study, 2019',
-        'impact': '❤️ 心臓が感謝する投資をしています！'
+        'impact': '❤️ 心臓が感謝する投資をしています！',
       },
       {
         'title': 'ストレス解毒剤',
         'fact': '腕立て伏せはコルチゾルを45%減少させ、ストレスを解消します。',
         'source': 'Stress Medicine Journal, 2020',
-        'impact': '🌟 ストレスが溶けていく魔法を体験しましょう！'
-      }
+        'impact': '🌟 ストレスが溶けていく魔法を体験しましょう！',
+      },
     ],
     'zh': [
       {
         'title': '肌肉记忆科学',
         'fact': '训练过的肌肉即使在10年后也能更快恢复。',
         'source': 'Journal of Applied Physiology, 2019',
-        'impact': '💪 今天的俯卧撑让未来的你更强壮！'
+        'impact': '💪 今天的俯卧撑让未来的你更强壮！',
       },
       {
         'title': '神经可塑性提升',
         'fact': '俯卧撑增加大脑神经连接，提高认知能力。',
         'source': 'Neuroscience Research, 2020',
-        'impact': '🧠 肌肉和大脑共同进化的惊人变化！'
+        'impact': '🧠 肌肉和大脑共同进化的惊人变化！',
       },
       {
         'title': '激素优化',
         'fact': '高强度俯卧撑可将睾酮增加高达22%。',
         'source': 'Endocrinology Journal, 2021',
-        'impact': '⚡ 成为天然的激素助推器！'
+        'impact': '⚡ 成为天然的激素助推器！',
       },
       {
         'title': '心血管革命',
         'fact': '每天50个俯卧撑可将心脏病风险降低39%。',
         'source': 'Harvard Health Study, 2019',
-        'impact': '❤️ 你在做一项心脏会感谢你的投资！'
+        'impact': '❤️ 你在做一项心脏会感谢你的投资！',
       },
       {
         'title': '压力解毒剂',
         'fact': '俯卧撑可将皮质醇降低45%，消除压力。',
         'source': 'Stress Medicine Journal, 2020',
-        'impact': '🌟 体验压力消融的神奇魔法！'
-      }
+        'impact': '🌟 体验压力消融的神奇魔法！',
+      },
     ],
     'es': [
       {
         'title': 'Ciencia de la Memoria Muscular',
-        'fact': 'Los músculos entrenados se recuperan más rápido incluso después de 10 años.',
+        'fact':
+            'Los músculos entrenados se recuperan más rápido incluso después de 10 años.',
         'source': 'Journal of Applied Physiology, 2019',
-        'impact': '💪 ¡Las flexiones de hoy hacen más fuerte a tu yo futuro!'
+        'impact': '💪 ¡Las flexiones de hoy hacen más fuerte a tu yo futuro!',
       },
       {
         'title': 'Aumento de Neuroplasticidad',
-        'fact': 'Las flexiones aumentan las conexiones neuronales del cerebro, mejorando la capacidad cognitiva.',
+        'fact':
+            'Las flexiones aumentan las conexiones neuronales del cerebro, mejorando la capacidad cognitiva.',
         'source': 'Neuroscience Research, 2020',
-        'impact': '🧠 ¡Transformación asombrosa donde músculos y cerebro evolucionan juntos!'
+        'impact':
+            '🧠 ¡Transformación asombrosa donde músculos y cerebro evolucionan juntos!',
       },
       {
         'title': 'Optimización Hormonal',
-        'fact': 'Las flexiones de alta intensidad aumentan la testosterona hasta en un 22%.',
+        'fact':
+            'Las flexiones de alta intensidad aumentan la testosterona hasta en un 22%.',
         'source': 'Endocrinology Journal, 2021',
-        'impact': '⚡ ¡Conviértete en un potenciador hormonal natural!'
+        'impact': '⚡ ¡Conviértete en un potenciador hormonal natural!',
       },
       {
         'title': 'Revolución Cardiovascular',
-        'fact': '50 flexiones diarias reducen el riesgo de enfermedad cardíaca en un 39%.',
+        'fact':
+            '50 flexiones diarias reducen el riesgo de enfermedad cardíaca en un 39%.',
         'source': 'Harvard Health Study, 2019',
-        'impact': '❤️ ¡Estás haciendo una inversión que tu corazón agradecerá!'
+        'impact': '❤️ ¡Estás haciendo una inversión que tu corazón agradecerá!',
       },
       {
         'title': 'Antídoto del Estrés',
-        'fact': 'Las flexiones reducen el cortisol en un 45%, eliminando el estrés.',
+        'fact':
+            'Las flexiones reducen el cortisol en un 45%, eliminando el estrés.',
         'source': 'Stress Medicine Journal, 2020',
-        'impact': '🌟 ¡Experimenta la magia de derretir el estrés!'
-      }
-    ]
+        'impact': '🌟 ¡Experimenta la magia de derretir el estrés!',
+      },
+    ],
   };
 
   /// 레벨별 차드 동기부여 메시지 (50레벨)
@@ -234,7 +243,7 @@ class MultilingualContentService {
       '⚔️ 무한의 힘을 손에 넣었습니다!',
       '🌊 시공간을 지배하는 존재!',
       '💥 빅뱅을 일으킬 수 있는 힘!',
-      '🔱 최종 진화 완료! 기가차드 탄생!'
+      '🔱 최종 진화 완료! 기가차드 탄생!',
     ],
     'en': [
       // Level 1-10: Basic Chad
@@ -295,7 +304,7 @@ class MultilingualContentService {
       '⚔️ Obtained infinite power!',
       '🌊 Being that dominates spacetime!',
       '💥 Power to cause Big Bang!',
-      '🔱 Final evolution complete! Giga Chad born!'
+      '🔱 Final evolution complete! Giga Chad born!',
     ],
     'ja': [
       // レベル1-10: 基本チャド
@@ -356,7 +365,7 @@ class MultilingualContentService {
       '⚔️ 無限の力を手に入れました！',
       '🌊 時空を支配する存在！',
       '💥 ビッグバンを起こせる力！',
-      '🔱 最終進化完了！ギガチャド誕生！'
+      '🔱 最終進化完了！ギガチャド誕生！',
     ],
     'zh': [
       // 等级1-10: 基础查德
@@ -417,7 +426,7 @@ class MultilingualContentService {
       '⚔️ 获得无限力量！',
       '🌊 支配时空的存在！',
       '💥 能引发大爆炸的力量！',
-      '🔱 最终进化完成！千兆查德诞生！'
+      '🔱 最终进化完成！千兆查德诞生！',
     ],
     'es': [
       // Nivel 1-10: Chad Básico
@@ -478,21 +487,24 @@ class MultilingualContentService {
       '⚔️ ¡Obtuviste poder infinito!',
       '🌊 ¡Ser que domina espacio-tiempo!',
       '💥 ¡Poder para causar Big Bang!',
-      '🔱 ¡Evolución final completa! ¡Giga Chad nacido!'
-    ]
+      '🔱 ¡Evolución final completa! ¡Giga Chad nacido!',
+    ],
   };
 
   /// 현재 언어에 맞는 과학적 팩트 카드 가져오기
   static Map<String, String> getRandomFactCard(Locale locale) {
     final languageCode = locale.languageCode;
-    final facts = _scientificFactCards[languageCode] ?? _scientificFactCards['en']!;
+    final facts =
+        _scientificFactCards[languageCode] ?? _scientificFactCards['en']!;
     return facts[_random.nextInt(facts.length)];
   }
 
   /// 레벨에 맞는 차드 동기부여 메시지 가져오기
   static String getChadMotivationalMessage(int level, Locale locale) {
     final languageCode = locale.languageCode;
-    final messages = _chadMotivationalMessages[languageCode] ?? _chadMotivationalMessages['en']!;
+    final messages =
+        _chadMotivationalMessages[languageCode] ??
+        _chadMotivationalMessages['en']!;
 
     // 레벨이 메시지 개수를 초과하면 마지막 메시지 반복
     final index = level > messages.length ? messages.length - 1 : level - 1;
@@ -502,7 +514,9 @@ class MultilingualContentService {
   /// 랜덤 동기부여 메시지 가져오기
   static String getRandomMotivationalMessage(Locale locale) {
     final languageCode = locale.languageCode;
-    final messages = _chadMotivationalMessages[languageCode] ?? _chadMotivationalMessages['en']!;
+    final messages =
+        _chadMotivationalMessages[languageCode] ??
+        _chadMotivationalMessages['en']!;
     return messages[_random.nextInt(messages.length)];
   }
 
@@ -514,12 +528,16 @@ class MultilingualContentService {
     final seededRandom = Random(seed);
 
     final languageCode = locale.languageCode;
-    final facts = _scientificFactCards[languageCode] ?? _scientificFactCards['en']!;
+    final facts =
+        _scientificFactCards[languageCode] ?? _scientificFactCards['en']!;
     return facts[seededRandom.nextInt(facts.length)];
   }
 
   /// 운동 완료 후 격려 메시지와 팩트 조합
-  static Map<String, String> getWorkoutCompletionContent(int level, Locale locale) {
+  static Map<String, String> getWorkoutCompletionContent(
+    int level,
+    Locale locale,
+  ) {
     final motivationalMessage = getChadMotivationalMessage(level, locale);
     final factCard = getRandomFactCard(locale);
 
@@ -547,7 +565,7 @@ class MultilingualContentService {
         'streak': '연속',
         'achievement': '업적',
         'evolution': '진화',
-        'chad': '차드'
+        'chad': '차드',
       },
       'en': {
         'pushup': 'Push-up',
@@ -561,7 +579,7 @@ class MultilingualContentService {
         'streak': 'Streak',
         'achievement': 'Achievement',
         'evolution': 'Evolution',
-        'chad': 'Chad'
+        'chad': 'Chad',
       },
       'ja': {
         'pushup': '腕立て伏せ',
@@ -575,7 +593,7 @@ class MultilingualContentService {
         'streak': '連続',
         'achievement': '実績',
         'evolution': '進化',
-        'chad': 'チャド'
+        'chad': 'チャド',
       },
       'zh': {
         'pushup': '俯卧撑',
@@ -589,7 +607,7 @@ class MultilingualContentService {
         'streak': '连续',
         'achievement': '成就',
         'evolution': '进化',
-        'chad': '查德'
+        'chad': '查德',
       },
       'es': {
         'pushup': 'Flexión',
@@ -603,8 +621,8 @@ class MultilingualContentService {
         'streak': 'Racha',
         'achievement': 'Logro',
         'evolution': 'Evolución',
-        'chad': 'Chad'
-      }
+        'chad': 'Chad',
+      },
     };
 
     final languageCode = locale.languageCode;

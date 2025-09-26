@@ -18,39 +18,36 @@ class DataSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildSettingsSection(
-      AppLocalizations.of(context).dataSettings,
-      [
-        _buildTapSetting(
-          AppLocalizations.of(context).backupManagement,
-          AppLocalizations.of(context).backupManagementDesc,
-          Icons.backup,
-          () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const BackupScreen()),
-          ),
+    return _buildSettingsSection(AppLocalizations.of(context).dataSettings, [
+      _buildTapSetting(
+        AppLocalizations.of(context).backupManagement,
+        AppLocalizations.of(context).backupManagementDesc,
+        Icons.backup,
+        () => Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const BackupScreen()),
         ),
-        _buildTapSetting(
-          AppLocalizations.of(context).dataBackup,
-          AppLocalizations.of(context).dataBackupDesc,
-          Icons.backup,
-          () => _performDataBackup(context),
-        ),
-        _buildTapSetting(
-          AppLocalizations.of(context).dataRestore,
-          AppLocalizations.of(context).dataRestoreDesc,
-          Icons.restore,
-          () => _performDataRestore(context),
-        ),
-        _buildTapSetting(
-          AppLocalizations.of(context).levelReset,
-          AppLocalizations.of(context).levelResetDesc,
-          Icons.refresh,
-          () => _showResetDataDialog(context),
-          isDestructive: true,
-        ),
-      ],
-    );
+      ),
+      _buildTapSetting(
+        AppLocalizations.of(context).dataBackup,
+        AppLocalizations.of(context).dataBackupDesc,
+        Icons.backup,
+        () => _performDataBackup(context),
+      ),
+      _buildTapSetting(
+        AppLocalizations.of(context).dataRestore,
+        AppLocalizations.of(context).dataRestoreDesc,
+        Icons.restore,
+        () => _performDataRestore(context),
+      ),
+      _buildTapSetting(
+        AppLocalizations.of(context).levelReset,
+        AppLocalizations.of(context).levelResetDesc,
+        Icons.refresh,
+        () => _showResetDataDialog(context),
+        isDestructive: true,
+      ),
+    ]);
   }
 
   Widget _buildSettingsSection(String title, List<Widget> children) {
@@ -100,7 +97,9 @@ class DataSettingsWidget extends StatelessWidget {
       child: ListTile(
         leading: Icon(
           icon,
-          color: isDestructive ? Colors.red : const Color(AppColors.primaryColor),
+          color: isDestructive
+              ? Colors.red
+              : const Color(AppColors.primaryColor),
         ),
         title: Text(
           title,
@@ -111,10 +110,7 @@ class DataSettingsWidget extends StatelessWidget {
         ),
         subtitle: Text(
           subtitle,
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 13,
-          ),
+          style: TextStyle(color: Colors.grey[600], fontSize: 13),
         ),
         trailing: const Icon(Icons.chevron_right),
         onTap: onTap,
@@ -154,7 +150,11 @@ class DataSettingsWidget extends StatelessWidget {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.backupCompletedWithPath(backupPath).replaceAll('\\n', '\n')),
+              content: Text(
+                AppLocalizations.of(
+                  context,
+                )!.backupCompletedWithPath(backupPath).replaceAll('\\n', '\n'),
+              ),
               backgroundColor: const Color(AppColors.primaryColor),
               duration: const Duration(seconds: 4),
             ),
@@ -177,7 +177,9 @@ class DataSettingsWidget extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.backupErrorOccurred(e.toString())),
+            content: Text(
+              AppLocalizations.of(context)!.backupErrorOccurred(e.toString()),
+            ),
             backgroundColor: Colors.red,
           ),
         );
@@ -192,7 +194,11 @@ class DataSettingsWidget extends StatelessWidget {
       context: context,
       builder: (context) => AlertDialog(
         title: Text(AppLocalizations.of(context)!.dataRestoreTitle),
-        content: Text(AppLocalizations.of(context)!.dataRestoreWarning.replaceAll('\\n', '\n')),
+        content: Text(
+          AppLocalizations.of(
+            context,
+          )!.dataRestoreWarning.replaceAll('\\n', '\n'),
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
@@ -261,7 +267,9 @@ class DataSettingsWidget extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.restoreErrorOccurred(e.toString())),
+            content: Text(
+              AppLocalizations.of(context)!.restoreErrorOccurred(e.toString()),
+            ),
             backgroundColor: Colors.red,
           ),
         );
@@ -299,7 +307,10 @@ class DataSettingsWidget extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               AppLocalizations.of(context)!.actionCannotBeUndone,
-              style: const TextStyle(color: Colors.red, fontWeight: FontWeight.bold),
+              style: const TextStyle(
+                color: Colors.red,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ],
         ),
@@ -317,9 +328,7 @@ class DataSettingsWidget extends StatelessWidget {
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,
             ),
-            child: Text(
-              AppLocalizations.of(context)!.resetButton,
-            ),
+            child: Text(AppLocalizations.of(context)!.resetButton),
           ),
         ],
       ),
@@ -350,7 +359,10 @@ class DataSettingsWidget extends StatelessWidget {
       // await dataService.resetProgress(); // 메서드가 없으므로 주석 처리
 
       // Chad Evolution 상태도 리셋
-      final chadService = Provider.of<ChadEvolutionService>(context, listen: false);
+      final chadService = Provider.of<ChadEvolutionService>(
+        context,
+        listen: false,
+      );
       await chadService.resetEvolution();
 
       // 로딩 다이얼로그 닫기
@@ -360,7 +372,9 @@ class DataSettingsWidget extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.allDataResetSuccessfully),
+            content: Text(
+              AppLocalizations.of(context)!.allDataResetSuccessfully,
+            ),
             backgroundColor: Colors.green,
             duration: const Duration(seconds: 3),
           ),
@@ -374,7 +388,11 @@ class DataSettingsWidget extends StatelessWidget {
       if (context.mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.dataResetErrorOccurred(e.toString())),
+            content: Text(
+              AppLocalizations.of(
+                context,
+              )!.dataResetErrorOccurred(e.toString()),
+            ),
             backgroundColor: Colors.red,
             duration: const Duration(seconds: 3),
           ),

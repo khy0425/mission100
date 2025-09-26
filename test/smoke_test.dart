@@ -7,7 +7,9 @@ import 'package:mission100_v3/services/locale_service.dart';
 
 void main() {
   group('Mission100 Smoke Tests', () {
-    testWidgets('App should start without crashing', (WidgetTester tester) async {
+    testWidgets('App should start without crashing', (
+      WidgetTester tester,
+    ) async {
       // 기본 서비스 초기화 시뮬레이션
       try {
         // 앱 실행

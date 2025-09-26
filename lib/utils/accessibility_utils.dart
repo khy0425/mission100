@@ -26,7 +26,7 @@ class AccessibilityUtils {
   static String formatDuration(Duration duration) {
     final minutes = duration.inMinutes;
     final seconds = duration.inSeconds % 60;
-    
+
     if (minutes > 0) {
       return '$minutes분 $seconds초';
     } else {
@@ -110,17 +110,15 @@ class AccessibilityUtils {
   static bool hasGoodContrast(Color foreground, Color background) {
     final fgLuminance = foreground.computeLuminance();
     final bgLuminance = background.computeLuminance();
-    
+
     final lighter = fgLuminance > bgLuminance ? fgLuminance : bgLuminance;
     final darker = fgLuminance > bgLuminance ? bgLuminance : fgLuminance;
-    
+
     final contrastRatio = (lighter + 0.05) / (darker + 0.05);
-    
+
     // WCAG AA 기준: 4.5:1 이상
     return contrastRatio >= 4.5;
   }
-
-
 
   /// 리스트 아이템 라벨 생성
   static String createListItemLabel({
@@ -131,11 +129,11 @@ class AccessibilityUtils {
   }) {
     final buffer = StringBuffer();
     buffer.write('$total개 중 $position번째 항목. $content');
-    
+
     if (state != null) {
       buffer.write('. $state');
     }
-    
+
     return formatForScreenReader(buffer.toString());
   }
 
@@ -148,19 +146,19 @@ class AccessibilityUtils {
   }) {
     final buffer = StringBuffer();
     buffer.write(label);
-    
+
     if (isRequired) {
       buffer.write(', 필수 입력');
     }
-    
+
     if (hint != null) {
       buffer.write('. $hint');
     }
-    
+
     if (error != null) {
       buffer.write('. 오류: $error');
     }
-    
+
     return formatForScreenReader(buffer.toString());
   }
 
@@ -173,11 +171,11 @@ class AccessibilityUtils {
   }) {
     final buffer = StringBuffer();
     buffer.write('$total개 탭 중 $position번째. $title');
-    
+
     if (isSelected) {
       buffer.write(', 선택됨');
     }
-    
+
     return formatForScreenReader(buffer.toString());
   }
 
@@ -190,15 +188,15 @@ class AccessibilityUtils {
   }) {
     final buffer = StringBuffer();
     buffer.write('$mediaType $action');
-    
+
     if (currentState != null) {
       buffer.write(', 현재 상태: $currentState');
     }
-    
+
     if (duration != null) {
       buffer.write(', 길이: $duration');
     }
-    
+
     return formatForScreenReader(buffer.toString());
   }
 }
@@ -210,4 +208,4 @@ enum HapticFeedbackType {
   heavyImpact,
   selectionClick,
   vibrate,
-} 
+}

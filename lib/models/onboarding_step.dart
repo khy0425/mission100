@@ -106,12 +106,7 @@ class OnboardingStep {
 }
 
 /// 온보딩 상태 열거형
-enum OnboardingStatus {
-  notStarted,
-  inProgress,
-  completed,
-  skipped,
-}
+enum OnboardingStatus { notStarted, inProgress, completed, skipped }
 
 /// 온보딩 진행 상태 모델
 class OnboardingProgress {
@@ -152,10 +147,10 @@ class OnboardingProgress {
       ),
       currentStepIndex: json['currentStepIndex'] as int? ?? 0,
       totalSteps: json['totalSteps'] as int? ?? 0,
-      startedAt: json['startedAt'] != null 
+      startedAt: json['startedAt'] != null
           ? DateTime.parse(json['startedAt'] as String)
           : null,
-      completedAt: json['completedAt'] != null 
+      completedAt: json['completedAt'] != null
           ? DateTime.parse(json['completedAt'] as String)
           : null,
       wasSkipped: json['wasSkipped'] as bool? ?? false,
@@ -219,4 +214,4 @@ class OnboardingProgress {
   String toString() {
     return 'OnboardingProgress(status: $status, currentStep: $currentStepIndex/$totalSteps)';
   }
-} 
+}

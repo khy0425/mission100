@@ -21,7 +21,7 @@ class ChadImageService {
 
   // 디스크 캐시 디렉토리
   Directory? _cacheDirectory;
-  
+
   // 이미지 로딩 상태 추적
   final Map<String, Future<ImageProvider>> _loadingImages = {};
 
@@ -30,11 +30,11 @@ class ChadImageService {
     try {
       final appDir = await getApplicationDocumentsDirectory();
       _cacheDirectory = Directory('${appDir.path}/chad_images');
-      
+
       if (!await _cacheDirectory!.exists()) {
         await _cacheDirectory!.create(recursive: true);
       }
-      
+
       debugPrint('ChadImageService 초기화 완료: ${_cacheDirectory!.path}');
     } catch (e) {
       debugPrint('ChadImageService 초기화 오류: $e');
@@ -77,7 +77,7 @@ class ChadImageService {
       final oldestKey = _cacheOrder.removeAt(0);
       _memoryCache.remove(oldestKey);
     }
-    
+
     _memoryCache[cacheKey] = imageProvider;
     _cacheOrder.add(cacheKey);
   }
@@ -87,7 +87,7 @@ class ChadImageService {
     try {
       final filePath = _getDiskCachePath(cacheKey);
       final file = File(filePath);
-      
+
       if (await file.exists()) {
         final imageProvider = FileImage(file);
         _saveToMemoryCache(cacheKey, imageProvider);
@@ -137,7 +137,7 @@ class ChadImageService {
     bool preload = false,
   }) async {
     final cacheKey = _generateCacheKey(stage, size: targetSize);
-    
+
     // 이미 로딩 중인 경우 기존 Future 반환
     if (_loadingImages.containsKey(cacheKey)) {
       return await _loadingImages[cacheKey]!;
@@ -197,16 +197,17 @@ class ChadImageService {
   /// 모든 Chad 이미지 프리로드
   Future<void> preloadAllChadImages({int? targetSize}) async {
     final futures = <Future>[];
-    
+
     for (final stage in ChadEvolutionStage.values) {
       futures.add(
-        getChadImage(stage, targetSize: targetSize, preload: true)
-          .catchError((e) {
-            debugPrint('Chad 이미지 프리로드 오류 ($stage): $e');
-          }),
+        getChadImage(stage, targetSize: targetSize, preload: true).catchError((
+          e,
+        ) {
+          debugPrint('Chad 이미지 프리로드 오류 ($stage): $e');
+        }),
       );
     }
-    
+
     await Future.wait(futures);
     debugPrint('모든 Chad 이미지 프리로드 완료');
   }
@@ -218,18 +219,23 @@ class ChadImageService {
   }) async {
     final currentIndex = currentStage.index;
     final futures = <Future>[];
-    
+
     // 현재 단계 + 다음 2단계까지 프리로드
-    for (int i = currentIndex; i < currentIndex + 3 && i < ChadEvolutionStage.values.length; i++) {
+    for (
+      int i = currentIndex;
+      i < currentIndex + 3 && i < ChadEvolutionStage.values.length;
+      i++
+    ) {
       final stage = ChadEvolutionStage.values[i];
       futures.add(
-        getChadImage(stage, targetSize: targetSize, preload: true)
-          .catchError((e) {
-            debugPrint('Chad 이미지 프리로드 오류 ($stage): $e');
-          }),
+        getChadImage(stage, targetSize: targetSize, preload: true).catchError((
+          e,
+        ) {
+          debugPrint('Chad 이미지 프리로드 오류 ($stage): $e');
+        }),
       );
     }
-    
+
     await Future.wait(futures);
     debugPrint('다음 Chad 이미지들 프리로드 완료');
   }
@@ -240,7 +246,7 @@ class ChadImageService {
       if (_cacheDirectory == null || !await _cacheDirectory!.exists()) {
         return 0;
       }
-      
+
       int totalSize = 0;
       await for (final entity in _cacheDirectory!.list()) {
         if (entity is File) {
@@ -261,7 +267,7 @@ class ChadImageService {
       // 메모리 캐시 정리
       _memoryCache.clear();
       _cacheOrder.clear();
-      
+
       if (!memoryOnly && _cacheDirectory != null) {
         // 디스크 캐시 정리
         if (await _cacheDirectory!.exists()) {
@@ -272,7 +278,7 @@ class ChadImageService {
           }
         }
       }
-      
+
       debugPrint('Chad 이미지 캐시 정리 완료 (메모리만: $memoryOnly)');
     } catch (e) {
       debugPrint('캐시 정리 오류: $e');
@@ -303,7 +309,9 @@ class ChadImageService {
   }
 
   /// Chad 이미지 프로바이더 가져오기 (폴백 처리 포함)
-  static Future<ImageProvider> getChadImageProvider(ChadEvolutionStage stage) async {
+  static Future<ImageProvider> getChadImageProvider(
+    ChadEvolutionStage stage,
+  ) async {
     try {
       final assetPath = _getChadImagePathStatic(stage);
       final data = await rootBundle.load(assetPath);
@@ -311,7 +319,75 @@ class ChadImageService {
     } catch (e) {
       debugPrint('Chad 이미지 로드 실패: $e');
       // 기본 투명 이미지 반환
-      final emptyBytes = Uint8List.fromList([137, 80, 78, 71, 13, 10, 26, 10, 0, 0, 0, 13, 73, 72, 68, 82, 0, 0, 0, 1, 0, 0, 0, 1, 8, 2, 0, 0, 0, 144, 119, 83, 222, 0, 0, 0, 12, 73, 68, 65, 84, 8, 23, 99, 248, 15, 0, 1, 1, 1, 0, 24, 221, 141, 219, 0, 0, 0, 0, 73, 69, 78, 68, 174, 66, 96, 130]);
+      final emptyBytes = Uint8List.fromList([
+        137,
+        80,
+        78,
+        71,
+        13,
+        10,
+        26,
+        10,
+        0,
+        0,
+        0,
+        13,
+        73,
+        72,
+        68,
+        82,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        8,
+        2,
+        0,
+        0,
+        0,
+        144,
+        119,
+        83,
+        222,
+        0,
+        0,
+        0,
+        12,
+        73,
+        68,
+        65,
+        84,
+        8,
+        23,
+        99,
+        248,
+        15,
+        0,
+        1,
+        1,
+        1,
+        0,
+        24,
+        221,
+        141,
+        219,
+        0,
+        0,
+        0,
+        0,
+        73,
+        69,
+        78,
+        68,
+        174,
+        66,
+        96,
+        130,
+      ]);
       return MemoryImage(emptyBytes);
     }
   }
@@ -320,4 +396,4 @@ class ChadImageService {
   static String _getChadImagePathStatic(ChadEvolutionStage stage) {
     return 'assets/images/chad/${stage.name}.png';
   }
-} 
+}

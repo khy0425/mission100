@@ -26,11 +26,10 @@ class _PushupTutorialDetailScreenState
   late YoutubePlayerController _youtubeController;
   bool _isCompleted = false;
 
-
   @override
   void initState() {
     super.initState();
-    
+
     // 튜토리얼 조회 카운트 증가 및 완료 상태 로드
     WidgetsBinding.instance.addPostFrameCallback((_) async {
       try {
@@ -40,7 +39,9 @@ class _PushupTutorialDetailScreenState
         await AchievementService.checkAndUpdateAchievements();
 
         // 완료 상태 로드
-        final isCompleted = await PushupMasteryService.isGuideCompleted(widget.pushupType.id);
+        final isCompleted = await PushupMasteryService.isGuideCompleted(
+          widget.pushupType.id,
+        );
         setState(() {
           _isCompleted = isCompleted;
         });
@@ -50,7 +51,7 @@ class _PushupTutorialDetailScreenState
         debugPrint('❌ 튜토리얼 상세 조회 처리 실패: $e');
       }
     });
-    
+
     // 유튜브 플레이어 초기화
     _youtubeController = YoutubePlayerController(
       initialVideoId: widget.pushupType.youtubeVideoId,
@@ -82,8 +83,6 @@ class _PushupTutorialDetailScreenState
     _youtubeController.dispose();
     super.dispose();
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -130,9 +129,9 @@ class _PushupTutorialDetailScreenState
 
                     // 간단한 설명 섹션
                     _buildSection(
-                      Localizations.localeOf(context).languageCode == 'ko' 
-                        ? '💪 차드 설명' 
-                        : AppLocalizations.of(context)!.chadDescription,
+                      Localizations.localeOf(context).languageCode == 'ko'
+                          ? '💪 차드 설명'
+                          : AppLocalizations.of(context)!.chadDescription,
                       _getPushupDescription(widget.pushupType),
                       Icons.fitness_center,
                       Color(0xFF51CF66),
@@ -141,8 +140,8 @@ class _PushupTutorialDetailScreenState
                     // 차드의 조언 섹션
                     _buildSection(
                       Localizations.localeOf(context).languageCode == 'ko'
-                        ? '🔥 차드의 조언'
-                        : AppLocalizations.of(context)!.chadAdvice,
+                          ? '🔥 차드의 조언'
+                          : AppLocalizations.of(context)!.chadAdvice,
                       _getChadMotivation(widget.pushupType),
                       Icons.psychology,
                       Color(0xFFFFD43B),
@@ -223,11 +222,7 @@ class _PushupTutorialDetailScreenState
         const SizedBox(height: 8),
         Text(
           _getPushupDescription(widget.pushupType),
-          style: TextStyle(
-            color: Color(0xFFB0B0B0),
-            fontSize: 16,
-            height: 1.5,
-          ),
+          style: TextStyle(color: Color(0xFFB0B0B0), fontSize: 16, height: 1.5),
         ),
       ],
     );
@@ -388,11 +383,7 @@ class _PushupTutorialDetailScreenState
           ),
           child: Text(
             content,
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-              height: 1.6,
-            ),
+            style: TextStyle(color: Colors.white, fontSize: 14, height: 1.6),
           ),
         ),
         const SizedBox(height: 20),
@@ -424,9 +415,7 @@ class _PushupTutorialDetailScreenState
             ),
             const SizedBox(width: 8),
             Text(
-              _isCompleted
-                ? '✅ 가이드 완료됨!'
-                : '🎓 가이드 완료하기',
+              _isCompleted ? '✅ 가이드 완료됨!' : '🎓 가이드 완료하기',
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -558,8 +547,8 @@ class _PushupTutorialDetailScreenState
         return AppLocalizations.of(context)!.pushupOneArmDesc;
       default:
         return Localizations.localeOf(context).languageCode == 'ko'
-          ? '차드를 위한 특별한 푸시업' 
-          : 'Special pushup for chads';
+            ? '차드를 위한 특별한 푸시업'
+            : 'Special pushup for chads';
     }
   }
 
@@ -606,12 +595,7 @@ class _PushupTutorialDetailScreenState
           ),
         ),
       ),
-      child: const AdBannerWidget(
-        adSize: AdSize.banner,
-        showOnError: true,
-      ),
+      child: const AdBannerWidget(adSize: AdSize.banner, showOnError: true),
     );
-
-
   }
 }

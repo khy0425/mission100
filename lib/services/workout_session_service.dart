@@ -20,7 +20,7 @@ class WorkoutSessionService {
   }) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      
+
       final sessionData = {
         'currentSet': currentSet,
         'currentReps': currentReps,
@@ -32,10 +32,13 @@ class WorkoutSessionService {
         'userLevel': userLevel,
         'timestamp': DateTime.now().millisecondsSinceEpoch,
       };
-      
+
       await prefs.setString(_sessionKey, json.encode(sessionData));
-      await prefs.setString(_sessionDateKey, DateTime.now().toIso8601String().split('T')[0]);
-      
+      await prefs.setString(
+        _sessionDateKey,
+        DateTime.now().toIso8601String().split('T')[0],
+      );
+
       print('💾 운동 세션 저장됨: Set ${currentSet + 1}, Reps $currentReps');
     } catch (e) {
       print('❌ 운동 세션 저장 실패: $e');
@@ -48,11 +51,11 @@ class WorkoutSessionService {
       final prefs = await SharedPreferences.getInstance();
       final sessionJson = prefs.getString(_sessionKey);
       final sessionDate = prefs.getString(_sessionDateKey);
-      
+
       if (sessionJson == null || sessionDate == null) {
         return null;
       }
-      
+
       // 오늘 날짜와 비교
       final today = DateTime.now().toIso8601String().split('T')[0];
       if (sessionDate != today) {
@@ -60,19 +63,19 @@ class WorkoutSessionService {
         await clearWorkoutSession();
         return null;
       }
-      
+
       final sessionData = json.decode(sessionJson) as Map<String, dynamic>;
-      
+
       // 타임스탬프 확인 (6시간 이상 지났으면 무효)
       final timestamp = sessionData['timestamp'] as int;
       final sessionTime = DateTime.fromMillisecondsSinceEpoch(timestamp);
       final now = DateTime.now();
-      
+
       if (now.difference(sessionTime).inHours >= 6) {
         await clearWorkoutSession();
         return null;
       }
-      
+
       print('🔄 운동 세션 복원됨: Set ${sessionData['currentSet'] + 1}');
       return sessionData;
     } catch (e) {
@@ -104,12 +107,12 @@ class WorkoutSessionService {
   static Future<String?> getSessionSummary() async {
     final session = await restoreWorkoutSession();
     if (session == null) return null;
-    
+
     final currentSet = session['currentSet'] as int;
     final totalSets = (session['targetReps'] as List).length;
     final completedSets = (session['completedReps'] as List).cast<int>();
     final completedCount = completedSets.where((reps) => reps > 0).length;
-    
+
     return '세트 ${currentSet + 1}/$totalSets (완료: $completedCount세트)';
   }
-} 
+}

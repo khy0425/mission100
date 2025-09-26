@@ -99,7 +99,7 @@ class PushupMasteryService {
         if (level.level > currentLevel) {
           // 필요한 가이드를 모두 완료했는지 확인
           final requiredCompleted = level.requiredGuides.every(
-            (guide) => completedGuides.contains(guide)
+            (guide) => completedGuides.contains(guide),
           );
 
           // 필요한 횟수를 달성했는지 확인
@@ -120,13 +120,17 @@ class PushupMasteryService {
   /// 현재 마스터 레벨 정보 가져오기
   static Future<PushupMasteryLevel?> getCurrentMasteryLevelInfo() async {
     final currentLevel = await getCurrentMasteryLevel();
-    return masteryLevels.where((level) => level.level == currentLevel).firstOrNull;
+    return masteryLevels
+        .where((level) => level.level == currentLevel)
+        .firstOrNull;
   }
 
   /// 다음 마스터 레벨 정보 가져오기
   static Future<PushupMasteryLevel?> getNextMasteryLevelInfo() async {
     final currentLevel = await getCurrentMasteryLevel();
-    return masteryLevels.where((level) => level.level == currentLevel + 1).firstOrNull;
+    return masteryLevels
+        .where((level) => level.level == currentLevel + 1)
+        .firstOrNull;
   }
 
   /// 마스터 진행률 가져오기 (0.0 ~ 1.0)
@@ -143,9 +147,11 @@ class PushupMasteryService {
     final totalReps = prefs.getInt('total_pushup_reps') ?? 0;
 
     // 가이드 진행률
-    final guideProgress = completedGuides.where(
-      (guide) => nextLevel.requiredGuides.contains(guide)
-    ).length / nextLevel.requiredGuides.length;
+    final guideProgress =
+        completedGuides
+            .where((guide) => nextLevel.requiredGuides.contains(guide))
+            .length /
+        nextLevel.requiredGuides.length;
 
     // 횟수 진행률
     final repsProgress = totalReps / nextLevel.requiredReps;

@@ -14,7 +14,9 @@ class ConfigManager {
   AppConfig get currentConfig => _currentConfig ?? AppConfig.defaultMission100;
 
   /// 설정 초기화 - assets에서 설정 파일을 로드하거나 기본값 사용
-  Future<void> initialize({String configPath = 'assets/config/app_config.json'}) async {
+  Future<void> initialize({
+    String configPath = 'assets/config/app_config.json',
+  }) async {
     try {
       // assets에서 설정 파일 로드 시도
       final configString = await rootBundle.loadString(configPath);
@@ -25,7 +27,7 @@ class ConfigManager {
       // 설정 파일이 없으면 기본 설정 사용
       print('설정 파일 로드 실패, 기본 설정 사용: $e');
       _currentConfig = AppConfig.defaultMission100;
-      
+
       // 기본 설정을 파일로 저장
       await _saveConfigToFile();
     }
@@ -50,12 +52,16 @@ class ConfigManager {
     final currentFeatures = currentConfig.featureFlags;
     final newFeatures = FeatureFlags(
       timerEnabled: timerEnabled ?? currentFeatures.timerEnabled,
-      habitTrackingEnabled: habitTrackingEnabled ?? currentFeatures.habitTrackingEnabled,
+      habitTrackingEnabled:
+          habitTrackingEnabled ?? currentFeatures.habitTrackingEnabled,
       statisticsEnabled: statisticsEnabled ?? currentFeatures.statisticsEnabled,
-      achievementsEnabled: achievementsEnabled ?? currentFeatures.achievementsEnabled,
-      socialSharingEnabled: socialSharingEnabled ?? currentFeatures.socialSharingEnabled,
+      achievementsEnabled:
+          achievementsEnabled ?? currentFeatures.achievementsEnabled,
+      socialSharingEnabled:
+          socialSharingEnabled ?? currentFeatures.socialSharingEnabled,
       backupEnabled: backupEnabled ?? currentFeatures.backupEnabled,
-      notificationsEnabled: notificationsEnabled ?? currentFeatures.notificationsEnabled,
+      notificationsEnabled:
+          notificationsEnabled ?? currentFeatures.notificationsEnabled,
     );
 
     final newConfig = AppConfig(
@@ -100,7 +106,7 @@ class ConfigManager {
     try {
       final directory = await getApplicationDocumentsDirectory();
       final file = File('${directory.path}/app_config.json');
-      
+
       if (await file.exists()) {
         final configString = await file.readAsString();
         final configJson = jsonDecode(configString) as Map<String, dynamic>;
@@ -134,16 +140,18 @@ class ConfigManager {
       ),
       themeConfig: theme,
       featureFlags: features ?? const FeatureFlags(),
-      adConfig: adConfig ?? const AdConfig(
-        androidAppId: '',
-        androidBannerId: '',
-        androidInterstitialId: '',
-        androidRewardedId: '',
-        iosAppId: '',
-        iosBannerId: '',
-        iosInterstitialId: '',
-        iosRewardedId: '',
-      ),
+      adConfig:
+          adConfig ??
+          const AdConfig(
+            androidAppId: '',
+            androidBannerId: '',
+            androidInterstitialId: '',
+            androidRewardedId: '',
+            iosAppId: '',
+            iosBannerId: '',
+            iosInterstitialId: '',
+            iosRewardedId: '',
+          ),
       paymentConfig: paymentConfig ?? const PaymentConfig(),
     );
   }

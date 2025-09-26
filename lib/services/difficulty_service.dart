@@ -29,7 +29,8 @@ class DifficultyService {
     final prefs = await SharedPreferences.getInstance();
     final difficultyIndex = prefs.getInt(_difficultyKey) ?? 0;
 
-    if (difficultyIndex >= 0 && difficultyIndex < DifficultyLevel.values.length) {
+    if (difficultyIndex >= 0 &&
+        difficultyIndex < DifficultyLevel.values.length) {
       return DifficultyLevel.values[difficultyIndex];
     }
 
@@ -94,4 +95,4 @@ class DifficultyService {
         return 45; // 45초
     }
   }
-} 
+}

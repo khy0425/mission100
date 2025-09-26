@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 /// Chad 진화 단계 열거형
 enum ChadEvolutionStage {
-  sleepCapChad,    // Stage 0: 수면모자차드 (시작)
-  basicChad,       // Stage 1: 기본차드 (1주차 완료)
-  coffeeChad,      // Stage 2: 커피차드 (2주차 완료)
+  sleepCapChad, // Stage 0: 수면모자차드 (시작)
+  basicChad, // Stage 1: 기본차드 (1주차 완료)
+  coffeeChad, // Stage 2: 커피차드 (2주차 완료)
   frontFacingChad, // Stage 3: 정면차드 (3주차 완료)
-  sunglassesChad,  // Stage 4: 썬글차드 (4주차 완료)
+  sunglassesChad, // Stage 4: 썬글차드 (4주차 완료)
   glowingEyesChad, // Stage 5: 빛나는눈차드 (5주차 완료)
-  doubleChad,      // Stage 6: 더블차드 (6주차 완료)
+  doubleChad, // Stage 6: 더블차드 (6주차 완료)
 }
 
 /// Chad 진화 데이터 모델
@@ -141,7 +141,7 @@ class ChadEvolution {
       imagePath: json['imagePath'] as String? ?? '',
       requiredWeek: json['requiredWeek'] as int? ?? 0,
       isUnlocked: json['isUnlocked'] as bool? ?? false,
-      unlockedAt: json['unlockedAt'] != null 
+      unlockedAt: json['unlockedAt'] != null
           ? DateTime.parse(json['unlockedAt'] as String)
           : null,
       unlockMessage: json['unlockMessage'] as String? ?? '',
@@ -264,10 +264,12 @@ class ChadEvolutionState {
         (e) => e.toString().split('.').last == json['currentStage'],
         orElse: () => ChadEvolutionStage.sleepCapChad,
       ),
-      unlockedStages: (json['unlockedStages'] as List<dynamic>?)
-          ?.map((e) => ChadEvolution.fromJson(e as Map<String, dynamic>))
-          .toList() ?? [],
-      lastEvolutionAt: json['lastEvolutionAt'] != null 
+      unlockedStages:
+          (json['unlockedStages'] as List<dynamic>?)
+              ?.map((e) => ChadEvolution.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          [],
+      lastEvolutionAt: json['lastEvolutionAt'] != null
           ? DateTime.parse(json['lastEvolutionAt'] as String)
           : null,
       totalEvolutions: json['totalEvolutions'] as int? ?? 0,
@@ -321,4 +323,4 @@ class ChadEvolutionState {
   String toString() {
     return 'ChadEvolutionState(currentStage: $currentStage, totalEvolutions: $totalEvolutions)';
   }
-} 
+}

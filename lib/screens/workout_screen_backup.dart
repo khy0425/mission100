@@ -59,7 +59,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
   late int _restTimeSeconds;
 
   // 서비스들
-  final MotivationalMessageService _messageService = MotivationalMessageService();
+  final MotivationalMessageService _messageService =
+      MotivationalMessageService();
   final StreakService _streakService = StreakService();
   final WorkoutProgramService _workoutProgramService = WorkoutProgramService();
 
@@ -68,8 +69,10 @@ class _WorkoutScreenState extends State<WorkoutScreen>
 
   // 계산된 값들
   int get _totalSets => _targetReps.length;
-  int get _currentTargetReps => _currentSet < _totalSets ? _targetReps[_currentSet] : 0;
-  double get _overallProgress => (_currentSet + (_isSetCompleted ? 1 : 0)) / _totalSets;
+  int get _currentTargetReps =>
+      _currentSet < _totalSets ? _targetReps[_currentSet] : 0;
+  double get _overallProgress =>
+      (_currentSet + (_isSetCompleted ? 1 : 0)) / _totalSets;
 
   @override
   void initState() {
@@ -125,7 +128,10 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       );
 
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setString('current_workout_session', jsonEncode(session.toMap()));
+      await prefs.setString(
+        'current_workout_session',
+        jsonEncode(session.toMap()),
+      );
     } catch (e) {
       debugPrint('새 세션 시작 실패: $e');
     }
@@ -138,8 +144,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           SnackBar(
             content: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '💪 운동을 시작합니다! 화이팅!'
-                : '💪 Let\'s start the workout! You got this!',
+                  ? '💪 운동을 시작합니다! 화이팅!'
+                  : '💪 Let\'s start the workout! You got this!',
             ),
             backgroundColor: Color(AppColors.primaryColor),
             duration: const Duration(seconds: 2),
@@ -170,7 +176,10 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       );
 
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setString('current_workout_session', jsonEncode(session.toMap()));
+      await prefs.setString(
+        'current_workout_session',
+        jsonEncode(session.toMap()),
+      );
     } catch (e) {
       debugPrint('진행률 저장 실패: $e');
     }
@@ -208,8 +217,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       SnackBar(
         content: Text(
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '운동 완료 처리 중...'
-            : 'Processing workout completion...',
+              ? '운동 완료 처리 중...'
+              : 'Processing workout completion...',
         ),
         duration: const Duration(seconds: 1),
         backgroundColor: Colors.blue,
@@ -228,8 +237,11 @@ class _WorkoutScreenState extends State<WorkoutScreen>
 
   Future<void> _checkAchievementsDuringWorkout() async {
     try {
-      final currentTotalReps = _completedReps.fold(0, (sum, reps) => sum + reps) + _currentReps;
-      if (currentTotalReps >= 50 || currentTotalReps >= 100 || currentTotalReps >= 150) {
+      final currentTotalReps =
+          _completedReps.fold(0, (sum, reps) => sum + reps) + _currentReps;
+      if (currentTotalReps >= 50 ||
+          currentTotalReps >= 100 ||
+          currentTotalReps >= 150) {
         final achievements = await AchievementService.checkAchievements();
         _newlyUnlockedAchievements.addAll(achievements);
       }
@@ -278,22 +290,28 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     debugPrint('🔥 _completeWorkout 함수 호출됨');
     try {
       // 워크아웃 기록 저장
-      final totalCompletedReps = _completedReps.fold(0, (sum, reps) => sum + reps);
+      final totalCompletedReps = _completedReps.fold(
+        0,
+        (sum, reps) => sum + reps,
+      );
       debugPrint('🔥 총 완료된 횟수: $totalCompletedReps');
       final history = WorkoutHistory(
         id: DateTime.now().millisecondsSinceEpoch.toString(),
         date: DateTime.now(),
-        workoutTitle: widget.workout.title ?? '${widget.workout.week ?? 1}주차 - ${widget.workout.day ?? 1}일차',
+        workoutTitle:
+            widget.workout.title ??
+            '${widget.workout.week ?? 1}주차 - ${widget.workout.day ?? 1}일차',
         targetReps: _targetReps,
         completedReps: _completedReps,
         totalReps: totalCompletedReps,
         completionRate: _targetReps.fold(0, (sum, reps) => sum + reps) > 0
-            ? totalCompletedReps / _targetReps.fold(0, (sum, reps) => sum + reps)
+            ? totalCompletedReps /
+                  _targetReps.fold(0, (sum, reps) => sum + reps)
             : 0.0,
         level: 'Rising', // 임시값
         duration: _workoutStartTime != null
-          ? DateTime.now().difference(_workoutStartTime!)
-          : const Duration(minutes: 10),
+            ? DateTime.now().difference(_workoutStartTime!)
+            : const Duration(minutes: 10),
       );
 
       // 운동 기록 저장
@@ -350,7 +368,6 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           await AchievementService.addPendingAchievementEvents(achievements);
           debugPrint('✅ 업적 이벤트 저장 완료');
         }
-
       } catch (e) {
         debugPrint('❌ 업적 확인 중 오류 발생: $e');
         // 업적 확인 오류는 무시하고 계속 진행
@@ -368,8 +385,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           SnackBar(
             content: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '오류가 발생했습니다: $e'
-                : 'Error occurred: $e',
+                  ? '오류가 발생했습니다: $e'
+                  : 'Error occurred: $e',
             ),
             duration: const Duration(seconds: 3),
             backgroundColor: Colors.red,
@@ -393,45 +410,45 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         builder: (context) {
           debugPrint('🔥 다이얼로그 builder 호출됨');
           return AlertDialog(
-        title: Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-            ? '🎉 운동 완료!'
-            : '🎉 Workout Complete!',
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
+            title: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '훌륭합니다! 오늘의 운동을 완료했습니다.'
-                : 'Great job! You completed today\'s workout.',
+                  ? '🎉 운동 완료!'
+                  : '🎉 Workout Complete!',
             ),
-            const SizedBox(height: 16),
-            Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                ? '총 횟수: ${_completedReps.fold(0, (sum, reps) => sum + reps)}개'
-                : 'Total reps: ${_completedReps.fold(0, (sum, reps) => sum + reps)}',
-              style: const TextStyle(fontWeight: FontWeight.bold),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  Localizations.localeOf(context).languageCode == 'ko'
+                      ? '훌륭합니다! 오늘의 운동을 완료했습니다.'
+                      : 'Great job! You completed today\'s workout.',
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  Localizations.localeOf(context).languageCode == 'ko'
+                      ? '총 횟수: ${_completedReps.fold(0, (sum, reps) => sum + reps)}개'
+                      : 'Total reps: ${_completedReps.fold(0, (sum, reps) => sum + reps)}',
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-              if (_newlyUnlockedAchievements.isNotEmpty) {
-                _showAchievementsDialog();
-              } else {
-                _finishWorkout();
-              }
-            },
-            child: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                ? '확인'
-                : 'OK',
-            ),
-          ),
-        ],
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                  if (_newlyUnlockedAchievements.isNotEmpty) {
+                    _showAchievementsDialog();
+                  } else {
+                    _finishWorkout();
+                  }
+                },
+                child: Text(
+                  Localizations.localeOf(context).languageCode == 'ko'
+                      ? '확인'
+                      : 'OK',
+                ),
+              ),
+            ],
           );
         },
       );
@@ -445,8 +462,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           SnackBar(
             content: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '운동 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.'
-                : 'Cannot show completion dialog. Returning to home.',
+                  ? '운동 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.'
+                  : 'Cannot show completion dialog. Returning to home.',
             ),
             duration: const Duration(seconds: 2),
             backgroundColor: Colors.orange,
@@ -487,7 +504,6 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       await _updateStreak();
 
       debugPrint('✅ 모든 업데이트 완료');
-
     } catch (e) {
       debugPrint('❌ 업데이트 중 오류: $e');
     }
@@ -517,7 +533,10 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     try {
       debugPrint('💪 차드 경험치 업데이트 시작');
 
-      final chadService = Provider.of<ChadEvolutionService>(context, listen: false);
+      final chadService = Provider.of<ChadEvolutionService>(
+        context,
+        listen: false,
+      );
       final totalReps = _completedReps.fold(0, (sum, reps) => sum + reps);
 
       // 운동 완료로 경험치 획득 (총 횟수에 비례)
@@ -527,7 +546,9 @@ class _WorkoutScreenState extends State<WorkoutScreen>
 
       await chadService.addExperience(totalXP);
 
-      debugPrint('✅ 차드 경험치 업데이트 완료: +${totalXP}XP (기본 $baseXP + 보너스 $repBonus)');
+      debugPrint(
+        '✅ 차드 경험치 업데이트 완료: +${totalXP}XP (기본 $baseXP + 보너스 $repBonus)',
+      );
     } catch (e) {
       debugPrint('❌ 차드 경험치 업데이트 실패: $e');
     }
@@ -560,7 +581,9 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       appBar: AppBar(
         title: Text(
           widget.workout.title ??
-          (Localizations.localeOf(context).languageCode == 'ko' ? '운동' : 'Workout'),
+              (Localizations.localeOf(context).languageCode == 'ko'
+                  ? '운동'
+                  : 'Workout'),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -637,21 +660,21 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       builder: (context) => AlertDialog(
         title: Text(
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '운동 종료'
-            : 'Exit Workout',
+              ? '운동 종료'
+              : 'Exit Workout',
         ),
         content: Text(
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '정말로 운동을 종료하시겠습니까? 진행률이 저장됩니다.'
-            : 'Are you sure you want to exit? Your progress will be saved.',
+              ? '정말로 운동을 종료하시겠습니까? 진행률이 저장됩니다.'
+              : 'Are you sure you want to exit? Your progress will be saved.',
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '취소'
-                : 'Cancel',
+                  ? '취소'
+                  : 'Cancel',
             ),
           ),
           TextButton(
@@ -661,8 +684,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
             },
             child: Text(
               Localizations.localeOf(context).languageCode == 'ko'
-                ? '종료'
-                : 'Exit',
+                  ? '종료'
+                  : 'Exit',
             ),
           ),
         ],

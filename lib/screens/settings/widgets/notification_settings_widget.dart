@@ -118,7 +118,9 @@ class NotificationSettingsWidget extends StatelessWidget {
         _buildNotificationToggle(
           context,
           AppLocalizations.of(context).chadEvolutionEncouragementNotifications,
-          AppLocalizations.of(context).chadEvolutionEncouragementNotificationsDesc,
+          AppLocalizations.of(
+            context,
+          ).chadEvolutionEncouragementNotificationsDesc,
           chadEvolutionEncouragementNotifications,
           Icons.psychology,
           onChadEvolutionEncouragementNotificationsChanged,
@@ -191,7 +193,9 @@ class NotificationSettingsWidget extends StatelessWidget {
           margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: hasBasicNotifications ? Colors.green.withValues(alpha: 0.1) : Colors.orange.withValues(alpha: 0.1),
+            color: hasBasicNotifications
+                ? Colors.green.withValues(alpha: 0.1)
+                : Colors.orange.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
               color: hasBasicNotifications ? Colors.green : Colors.orange,
@@ -243,13 +247,20 @@ class NotificationSettingsWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildPermissionStatusRow(String title, bool granted, String description, {bool isRequired = false}) {
+  Widget _buildPermissionStatusRow(
+    String title,
+    bool granted,
+    String description, {
+    bool isRequired = false,
+  }) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Icon(
           granted ? Icons.check_circle : Icons.cancel,
-          color: granted ? Colors.green : (isRequired ? Colors.red : Colors.orange),
+          color: granted
+              ? Colors.green
+              : (isRequired ? Colors.red : Colors.orange),
           size: 20,
         ),
         const SizedBox(width: 8),
@@ -263,7 +274,9 @@ class NotificationSettingsWidget extends StatelessWidget {
                     title,
                     style: TextStyle(
                       fontWeight: FontWeight.w600,
-                      color: granted ? Colors.green[700] : (isRequired ? Colors.red[700] : Colors.orange[700]),
+                      color: granted
+                          ? Colors.green[700]
+                          : (isRequired ? Colors.red[700] : Colors.orange[700]),
                     ),
                   ),
                   if (isRequired) ...[
@@ -282,10 +295,7 @@ class NotificationSettingsWidget extends StatelessWidget {
               const SizedBox(height: 2),
               Text(
                 description,
-                style: TextStyle(
-                  fontSize: 13,
-                  color: Colors.grey[600],
-                ),
+                style: TextStyle(fontSize: 13, color: Colors.grey[600]),
               ),
             ],
           ),
@@ -345,22 +355,11 @@ class NotificationSettingsWidget extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
       child: ListTile(
-        leading: Icon(
-          icon,
-          color: const Color(AppColors.primaryColor),
-        ),
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+        leading: Icon(icon, color: const Color(AppColors.primaryColor)),
+        title: Text(title, style: const TextStyle(fontWeight: FontWeight.w500)),
         subtitle: Text(
           description,
-          style: TextStyle(
-            color: Colors.grey[600],
-            fontSize: 13,
-          ),
+          style: TextStyle(color: Colors.grey[600], fontSize: 13),
         ),
         trailing: Container(
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
@@ -397,9 +396,6 @@ class NotificationSettingsWidget extends StatelessWidget {
     final notifications = await NotificationService.hasPermission();
     final exactAlarms = await NotificationService.canScheduleExactAlarms();
 
-    return {
-      'notifications': notifications,
-      'exactAlarms': exactAlarms,
-    };
+    return {'notifications': notifications, 'exactAlarms': exactAlarms};
   }
 }

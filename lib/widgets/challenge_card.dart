@@ -41,9 +41,12 @@ class ChallengeCard extends StatelessWidget {
                       ),
                     ),
                   ),
-                  if (challenge.status != null) 
+                  if (challenge.status != null)
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 8,
+                        vertical: 4,
+                      ),
                       decoration: BoxDecoration(
                         color: _getStatusColor(),
                         borderRadius: BorderRadius.circular(12),
@@ -58,25 +61,26 @@ class ChallengeCard extends StatelessWidget {
                     ),
                 ],
               ),
-              
+
               const SizedBox(height: 8),
-              
+
               // 설명
               Text(
                 challenge.description ?? challenge.descriptionKey,
                 style: theme.textTheme.bodyMedium,
               ),
-              
+
               const SizedBox(height: 12),
-              
+
               // 진행률 표시 (활성 상태일 때만)
-              if (challenge.status == ChallengeStatus.active && challenge.targetValue != null) ...[
+              if (challenge.status == ChallengeStatus.active &&
+                  challenge.targetValue != null) ...[
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       AppLocalizations.of(context)!.challengeProgress(
-                        (challenge.progressPercentage * 100).round()
+                        (challenge.progressPercentage * 100).round(),
                       ),
                       style: theme.textTheme.bodySmall?.copyWith(
                         fontWeight: FontWeight.w600,
@@ -93,10 +97,13 @@ class ChallengeCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 LinearProgressIndicator(
-                  value: (challenge.currentProgress / challenge.targetValue!).clamp(0.0, 1.0),
+                  value: (challenge.currentProgress / challenge.targetValue!)
+                      .clamp(0.0, 1.0),
                   backgroundColor: Colors.grey[300],
                   valueColor: AlwaysStoppedAnimation<Color>(
-                    challenge.currentProgress >= challenge.targetValue! ? Colors.green : Colors.blue,
+                    challenge.currentProgress >= challenge.targetValue!
+                        ? Colors.green
+                        : Colors.blue,
                   ),
                 ),
                 const SizedBox(height: 8),
@@ -106,13 +113,13 @@ class ChallengeCard extends StatelessWidget {
                 Text(
                   AppLocalizations.of(context)!.challengeTarget(
                     challenge.targetValue ?? 0,
-                    challenge.targetUnit ?? ''
+                    challenge.targetUnit ?? '',
                   ),
                   style: theme.textTheme.bodySmall,
                 ),
                 const SizedBox(height: 8),
               ],
-              
+
               // 난이도와 기타 정보
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -131,11 +138,12 @@ class ChallengeCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                  
-                  if (challenge.estimatedDuration != null && challenge.estimatedDuration! > 0)
+
+                  if (challenge.estimatedDuration != null &&
+                      challenge.estimatedDuration! > 0)
                     Text(
                       AppLocalizations.of(context)!.challengeEstimatedDuration(
-                        challenge.estimatedDuration!
+                        challenge.estimatedDuration!,
                       ),
                       style: theme.textTheme.bodySmall,
                     ),
@@ -164,4 +172,4 @@ class ChallengeCard extends StatelessWidget {
         return Colors.grey;
     }
   }
-} 
+}

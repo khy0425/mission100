@@ -4,25 +4,21 @@ import 'package:mission100/generated/app_localizations.dart';
 /// 챌린지 타입 (단기 미션 중심)
 enum ChallengeType {
   // 🎯 일일 챌린지
-  dailyPerfect,    // 오늘 완벽한 운동
-
+  dailyPerfect, // 오늘 완벽한 운동
   // 🔥 주간 챌린지
-  weeklyGoal,      // 주간 목표 (예: 이번 주 5일 운동)
-
+  weeklyGoal, // 주간 목표 (예: 이번 주 5일 운동)
   // 💪 스킬 챌린지
-  skillChallenge,  // 특정 기술 도전 (예: 한 번에 30개)
-
+  skillChallenge, // 특정 기술 도전 (예: 한 번에 30개)
   // 🚀 스프린트 챌린지
   sprintChallenge, // 짧은 기간 집중 (예: 3일 연속)
-
   // 🎪 이벤트 챌린지
-  eventChallenge;  // 특별 이벤트 (시즌별, 기념일 등)
+  eventChallenge, // 특별 이벤트 (시즌별, 기념일 등)
 }
 
 /// 챌린지 난이도
 enum ChallengeDifficulty {
   easy,
-  medium, 
+  medium,
   hard,
   extreme;
 
@@ -57,11 +53,11 @@ enum ChallengeDifficulty {
 
 /// 챌린지 상태
 enum ChallengeStatus {
-  available,  // 참여 가능
-  active,     // 진행 중
-  completed,  // 완료
-  failed,     // 실패
-  locked;     // 잠김
+  available, // 참여 가능
+  active, // 진행 중
+  completed, // 완료
+  failed, // 실패
+  locked; // 잠김
 
   String get emoji {
     switch (this) {
@@ -109,11 +105,7 @@ class ChallengeReward {
   });
 
   Map<String, dynamic> toJson() {
-    return {
-      'type': type,
-      'value': value,
-      'description': description,
-    };
+    return {'type': type, 'value': value, 'description': description};
   }
 
   factory ChallengeReward.fromJson(Map<String, dynamic> json) {
@@ -207,7 +199,8 @@ class Challenge {
   DateTime? get startedAt => startDate;
 
   /// 남은 진행량
-  int get remainingProgress => (targetCount - currentProgress).clamp(0, targetCount);
+  int get remainingProgress =>
+      (targetCount - currentProgress).clamp(0, targetCount);
 
   /// 경과 일수 (시작일로부터)
   int get daysSinceStart {
@@ -322,25 +315,49 @@ class Challenge {
       milestones: List<String>.from(json['milestones'] as List? ?? []),
       rewardKey: json['rewardKey'] as String? ?? '',
       isActive: json['isActive'] as bool? ?? false,
-      startDate: json['startDate'] != null ? DateTime.parse(json['startDate'] as String) : null,
-      endDate: json['endDate'] != null ? DateTime.parse(json['endDate'] as String) : null,
+      startDate: json['startDate'] != null
+          ? DateTime.parse(json['startDate'] as String)
+          : null,
+      endDate: json['endDate'] != null
+          ? DateTime.parse(json['endDate'] as String)
+          : null,
       currentProgress: json['currentProgress'] as int? ?? 0,
       title: json['title'] as String?,
       description: json['description'] as String?,
       detailedDescription: json['detailedDescription'] as String?,
-      type: json['type'] != null ? ChallengeType.values.firstWhere((e) => e.name == (json['type'] as String)) : null,
-      difficulty: json['difficulty'] != null ? ChallengeDifficulty.values.firstWhere((e) => e.name == (json['difficulty'] as String)) : null,
+      type: json['type'] != null
+          ? ChallengeType.values.firstWhere(
+              (e) => e.name == (json['type'] as String),
+            )
+          : null,
+      difficulty: json['difficulty'] != null
+          ? ChallengeDifficulty.values.firstWhere(
+              (e) => e.name == (json['difficulty'] as String),
+            )
+          : null,
       targetValue: json['targetValue'] as int?,
       targetUnit: json['targetUnit'] as String?,
-      prerequisites: json['prerequisites'] != null ? List<String>.from(json['prerequisites'] as List) : null,
+      prerequisites: json['prerequisites'] != null
+          ? List<String>.from(json['prerequisites'] as List)
+          : null,
       estimatedDuration: json['estimatedDuration'] as int?,
-      rewards: json['rewards'] != null 
-        ? (json['rewards'] as List).map((r) => ChallengeReward.fromJson(r as Map<String, dynamic>)).toList()
-        : null,
+      rewards: json['rewards'] != null
+          ? (json['rewards'] as List)
+                .map((r) => ChallengeReward.fromJson(r as Map<String, dynamic>))
+                .toList()
+          : null,
       iconPath: json['iconPath'] as String?,
-      status: json['status'] != null ? ChallengeStatus.values.firstWhere((e) => e.name == (json['status'] as String)) : null,
-      completionDate: json['completionDate'] != null ? DateTime.parse(json['completionDate'] as String) : null,
-      lastUpdatedAt: json['lastUpdatedAt'] != null ? DateTime.parse(json['lastUpdatedAt'] as String) : null,
+      status: json['status'] != null
+          ? ChallengeStatus.values.firstWhere(
+              (e) => e.name == (json['status'] as String),
+            )
+          : null,
+      completionDate: json['completionDate'] != null
+          ? DateTime.parse(json['completionDate'] as String)
+          : null,
+      lastUpdatedAt: json['lastUpdatedAt'] != null
+          ? DateTime.parse(json['lastUpdatedAt'] as String)
+          : null,
     );
   }
 
@@ -404,7 +421,10 @@ extension ChallengeStatusExtension on bool {
 }
 
 /// 챌린지 난이도를 i18n 문자열로 변환하는 헬퍼 함수
-String getChallengeDifficultyName(BuildContext context, ChallengeDifficulty difficulty) {
+String getChallengeDifficultyName(
+  BuildContext context,
+  ChallengeDifficulty difficulty,
+) {
   final l10n = AppLocalizations.of(context)!;
   switch (difficulty) {
     case ChallengeDifficulty.easy:
@@ -433,4 +453,4 @@ String getChallengeStatusName(BuildContext context, ChallengeStatus status) {
     case ChallengeStatus.locked:
       return l10n.statusLocked;
   }
-} 
+}

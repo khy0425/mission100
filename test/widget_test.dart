@@ -4,7 +4,9 @@ import 'package:mission100/main.dart';
 
 void main() {
   group('Mission100 Chad Tests', () {
-    testWidgets('App should start without crashing', (WidgetTester tester) async {
+    testWidgets('App should start without crashing', (
+      WidgetTester tester,
+    ) async {
       // Chad-powered app initialization test
       await tester.pumpWidget(const Mission100App());
 

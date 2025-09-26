@@ -64,53 +64,37 @@ class _AchievementCelebrationDialogState
     );
 
     // 애니메이션 설정
-    _scaleAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _mainController,
-      curve: Curves.elasticOut,
-    ));
+    _scaleAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: _mainController, curve: Curves.elasticOut),
+    );
 
-    _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _mainController,
-      curve: const Interval(0.0, 0.6, curve: Curves.easeOut),
-    ));
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _mainController,
+        curve: const Interval(0.0, 0.6, curve: Curves.easeOut),
+      ),
+    );
 
-    _slideAnimation = Tween<double>(
-      begin: 50.0,
-      end: 0.0,
-    ).animate(CurvedAnimation(
-      parent: _mainController,
-      curve: const Interval(0.3, 1.0, curve: Curves.easeOut),
-    ));
+    _slideAnimation = Tween<double>(begin: 50.0, end: 0.0).animate(
+      CurvedAnimation(
+        parent: _mainController,
+        curve: const Interval(0.3, 1.0, curve: Curves.easeOut),
+      ),
+    );
 
     _xpScaleAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _xpController,
-      curve: Curves.bounceOut,
-    ));
+    ).animate(CurvedAnimation(parent: _xpController, curve: Curves.bounceOut));
 
     _xpFadeAnimation = Tween<double>(
       begin: 0.0,
       end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _xpController,
-      curve: Curves.easeOut,
-    ));
+    ).animate(CurvedAnimation(parent: _xpController, curve: Curves.easeOut));
 
-    _pulseAnimation = Tween<double>(
-      begin: 1.0,
-      end: 1.1,
-    ).animate(CurvedAnimation(
-      parent: _pulseController,
-      curve: Curves.easeInOut,
-    ));
+    _pulseAnimation = Tween<double>(begin: 1.0, end: 1.1).animate(
+      CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+    );
 
     // 애니메이션 시작
     _startAnimations();
@@ -207,10 +191,7 @@ class _AchievementCelebrationDialogState
                         decoration: BoxDecoration(
                           color: theme.cardColor,
                           borderRadius: BorderRadius.circular(24),
-                          border: Border.all(
-                            color: rarityColor,
-                            width: 3,
-                          ),
+                          border: Border.all(color: rarityColor, width: 3),
                           boxShadow: [
                             BoxShadow(
                               color: rarityColor.withOpacity(0.3),
@@ -250,11 +231,14 @@ class _AchievementCelebrationDialogState
                                   ),
                                   const SizedBox(width: 8),
                                   Text(
-                                    AppLocalizations.of(context)!.achievementUnlocked,
-                                    style: theme.textTheme.titleMedium?.copyWith(
-                                      color: rarityColor,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                    AppLocalizations.of(
+                                      context,
+                                    )!.achievementUnlocked,
+                                    style: theme.textTheme.titleMedium
+                                        ?.copyWith(
+                                          color: rarityColor,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                 ],
                               ),
@@ -359,15 +343,17 @@ class _AchievementCelebrationDialogState
                                         gradient: LinearGradient(
                                           colors: [
                                             const Color(AppColors.primaryColor),
-                                            const Color(AppColors.primaryColor)
-                                                .withOpacity(0.7),
+                                            const Color(
+                                              AppColors.primaryColor,
+                                            ).withOpacity(0.7),
                                           ],
                                         ),
                                         borderRadius: BorderRadius.circular(16),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: const Color(AppColors.primaryColor)
-                                                .withOpacity(0.3),
+                                            color: const Color(
+                                              AppColors.primaryColor,
+                                            ).withOpacity(0.3),
                                             blurRadius: 10,
                                             spreadRadius: 2,
                                           ),
@@ -429,13 +415,17 @@ class _AchievementCelebrationDialogState
                                 },
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: rarityColor,
-                                  padding: const EdgeInsets.symmetric(vertical: 16),
+                                  padding: const EdgeInsets.symmetric(
+                                    vertical: 16,
+                                  ),
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
                                   ),
                                 ),
                                 child: Text(
-                                  AppLocalizations.of(context)!.feelThePowerOfChad,
+                                  AppLocalizations.of(
+                                    context,
+                                  )!.feelThePowerOfChad,
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
@@ -500,7 +490,9 @@ class ConfettiPainter extends CustomPainter {
 
     for (final particle in particles) {
       final x = particle.x * size.width;
-      final y = particle.y * size.height + (animationValue * size.height * particle.speed);
+      final y =
+          particle.y * size.height +
+          (animationValue * size.height * particle.speed);
 
       // 화면 밖으로 나간 파티클은 그리지 않음
       if (y > size.height + 20) continue;
@@ -546,4 +538,4 @@ class ConfettiParticle {
     required this.rotation,
     required this.speed,
   });
-} 
+}

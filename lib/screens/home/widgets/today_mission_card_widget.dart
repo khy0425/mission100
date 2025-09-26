@@ -67,11 +67,7 @@ class TodayMissionCardWidget extends StatelessWidget {
   Widget _buildHeader(BuildContext context, ThemeData theme) {
     return Row(
       children: [
-        Icon(
-          Icons.today,
-          color: const Color(AppColors.primaryColor),
-          size: 24,
-        ),
+        Icon(Icons.today, color: const Color(AppColors.primaryColor), size: 24),
         const SizedBox(width: AppConstants.paddingS),
         Text(
           AppLocalizations.of(context)!.todayMissionTitle,
@@ -92,10 +88,9 @@ class TodayMissionCardWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(
-        AppLocalizations.of(context)!.weekDayFormat(
-          todayWorkout!.week ?? 0,
-          todayWorkout!.day ?? 0,
-        ),
+        AppLocalizations.of(
+          context,
+        )!.weekDayFormat(todayWorkout!.week ?? 0, todayWorkout!.day ?? 0),
         style: TextStyle(
           color: const Color(AppColors.primaryColor),
           fontSize: 13,
@@ -123,45 +118,43 @@ class TodayMissionCardWidget extends StatelessWidget {
 
   Widget _buildSetsList(BuildContext context, ThemeData theme) {
     return Column(
-      children: List.generate(
-        (todayWorkout!.workout as List).length,
-        (index) {
-          final setIndex = index + 1;
-          final reps = (todayWorkout!.workout as List)[index];
-          return Padding(
-            padding: const EdgeInsets.symmetric(vertical: 2),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.fitness_center,
-                  size: 16,
-                  color: todayCompletedWorkout != null ? Colors.green : Colors.grey,
+      children: List.generate((todayWorkout!.workout as List).length, (index) {
+        final setIndex = index + 1;
+        final reps = (todayWorkout!.workout as List)[index];
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 2),
+          child: Row(
+            children: [
+              Icon(
+                Icons.fitness_center,
+                size: 16,
+                color: todayCompletedWorkout != null
+                    ? Colors.green
+                    : Colors.grey,
+              ),
+              const SizedBox(width: 8),
+              Text(
+                AppLocalizations.of(context)!.setRepsFormat(setIndex, reps),
+                style: TextStyle(
+                  color: todayCompletedWorkout != null
+                      ? Colors.green[700]
+                      : theme.colorScheme.onSurface.withValues(alpha: 0.8),
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500,
                 ),
-                const SizedBox(width: 8),
-                Text(
-                  AppLocalizations.of(context)!.setRepsFormat(
-                    setIndex,
-                    reps,
-                  ),
-                  style: TextStyle(
-                    color: todayCompletedWorkout != null
-                        ? Colors.green[700]
-                        : theme.colorScheme.onSurface.withValues(alpha: 0.8),
-                    fontSize: 14,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ],
-            ),
-          );
-        },
-      ),
+              ),
+            ],
+          ),
+        );
+      }),
     );
   }
 
   Widget _buildTotalGoal(BuildContext context, ThemeData theme) {
     final totalReps = (todayWorkout!.workout as List).fold<int>(
-      0, (sum, reps) => sum + (reps as int));
+      0,
+      (sum, reps) => sum + (reps as int),
+    );
 
     return Container(
       padding: const EdgeInsets.all(12),
@@ -191,9 +184,7 @@ class TodayMissionCardWidget extends StatelessWidget {
             ),
           ),
           Text(
-            AppLocalizations.of(context)!.totalRepsFormat(
-              totalReps,
-            ),
+            AppLocalizations.of(context)!.totalRepsFormat(totalReps),
             style: TextStyle(
               color: todayCompletedWorkout != null
                   ? Colors.green[700]
@@ -254,10 +245,7 @@ class TodayMissionCardWidget extends StatelessWidget {
             const SizedBox(width: 8),
             Text(
               AppLocalizations.of(context)!.startWorkout,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ],
         ),

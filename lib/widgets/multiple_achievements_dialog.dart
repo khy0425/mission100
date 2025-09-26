@@ -34,21 +34,16 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
       vsync: this,
     );
 
-    _scaleAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _mainController,
-      curve: Curves.elasticOut,
-    ));
+    _scaleAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(parent: _mainController, curve: Curves.elasticOut),
+    );
 
-    _fadeAnimation = Tween<double>(
-      begin: 0.0,
-      end: 1.0,
-    ).animate(CurvedAnimation(
-      parent: _mainController,
-      curve: const Interval(0.0, 0.6, curve: Curves.easeOut),
-    ));
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _mainController,
+        curve: const Interval(0.0, 0.6, curve: Curves.easeOut),
+      ),
+    );
 
     // 햅틱 피드백
     HapticFeedback.heavyImpact();
@@ -77,7 +72,10 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
     }
   }
 
-  int get _totalXP => widget.achievements.fold(0, (sum, achievement) => sum + achievement.xpReward);
+  int get _totalXP => widget.achievements.fold(
+    0,
+    (sum, achievement) => sum + achievement.xpReward,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +92,10 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
             child: Opacity(
               opacity: _fadeAnimation.value,
               child: Container(
-                constraints: const BoxConstraints(maxWidth: 450, maxHeight: 600),
+                constraints: const BoxConstraints(
+                  maxWidth: 450,
+                  maxHeight: 600,
+                ),
                 decoration: BoxDecoration(
                   gradient: const LinearGradient(
                     begin: Alignment.topLeft,
@@ -130,10 +131,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: Colors.white.withOpacity(0.2),
-                              border: Border.all(
-                                color: Colors.white,
-                                width: 3,
-                              ),
+                              border: Border.all(color: Colors.white, width: 3),
                             ),
                             child: const Icon(
                               Icons.celebration,
@@ -141,9 +139,9 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                               color: Colors.white,
                             ),
                           ),
-                          
+
                           const SizedBox(height: 16),
-                          
+
                           // 축하 메시지
                           Text(
                             isKorean ? '축하합니다!' : 'Congratulations!',
@@ -152,13 +150,13 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          
+
                           const SizedBox(height: 8),
-                          
+
                           Text(
-                            isKorean 
-                              ? '${widget.achievements.length}개의 업적을 달성했습니다!'
-                              : 'You\'ve unlocked ${widget.achievements.length} achievements!',
+                            isKorean
+                                ? '${widget.achievements.length}개의 업적을 달성했습니다!'
+                                : 'You\'ve unlocked ${widget.achievements.length} achievements!',
                             style: theme.textTheme.bodyLarge?.copyWith(
                               color: Colors.white.withOpacity(0.9),
                             ),
@@ -167,7 +165,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                         ],
                       ),
                     ),
-                    
+
                     // 업적 목록
                     Flexible(
                       child: Container(
@@ -175,7 +173,9 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                         padding: const EdgeInsets.all(16),
                         decoration: BoxDecoration(
                           color: theme.cardColor,
-                          borderRadius: BorderRadius.circular(AppConstants.radiusM),
+                          borderRadius: BorderRadius.circular(
+                            AppConstants.radiusM,
+                          ),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -185,16 +185,21 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                               child: ListView.separated(
                                 shrinkWrap: true,
                                 itemCount: widget.achievements.length,
-                                separatorBuilder: (context, index) => const Divider(height: 16),
+                                separatorBuilder: (context, index) =>
+                                    const Divider(height: 16),
                                 itemBuilder: (context, index) {
-                                  final achievement = widget.achievements[index];
-                                  final rarityColor = achievement.getRarityColor();
-                                  
+                                  final achievement =
+                                      widget.achievements[index];
+                                  final rarityColor = achievement
+                                      .getRarityColor();
+
                                   return Container(
                                     padding: const EdgeInsets.all(12),
                                     decoration: BoxDecoration(
                                       color: rarityColor.withOpacity(0.1),
-                                      borderRadius: BorderRadius.circular(AppConstants.radiusS),
+                                      borderRadius: BorderRadius.circular(
+                                        AppConstants.radiusS,
+                                      ),
                                       border: Border.all(
                                         color: rarityColor.withOpacity(0.3),
                                         width: 1,
@@ -220,39 +225,54 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                             size: 24,
                                           ),
                                         ),
-                                        
+
                                         const SizedBox(width: 12),
-                                        
+
                                         // 업적 정보
                                         Expanded(
                                           child: Column(
-                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
                                             children: [
                                               Row(
                                                 children: [
                                                   Expanded(
                                                     child: Text(
-                                                      achievement.getTitle(context),
-                                                      style: theme.textTheme.titleSmall?.copyWith(
-                                                        fontWeight: FontWeight.bold,
+                                                      achievement.getTitle(
+                                                        context,
                                                       ),
+                                                      style: theme
+                                                          .textTheme
+                                                          .titleSmall
+                                                          ?.copyWith(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                          ),
                                                     ),
                                                   ),
                                                   Container(
-                                                    padding: const EdgeInsets.symmetric(
-                                                      horizontal: 8,
-                                                      vertical: 2,
-                                                    ),
+                                                    padding:
+                                                        const EdgeInsets.symmetric(
+                                                          horizontal: 8,
+                                                          vertical: 2,
+                                                        ),
                                                     decoration: BoxDecoration(
                                                       color: rarityColor,
-                                                      borderRadius: BorderRadius.circular(8),
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                            8,
+                                                          ),
                                                     ),
                                                     child: Text(
-                                                      _getRarityText(context, achievement.rarity),
+                                                      _getRarityText(
+                                                        context,
+                                                        achievement.rarity,
+                                                      ),
                                                       style: const TextStyle(
                                                         color: Colors.white,
                                                         fontSize: 10,
-                                                        fontWeight: FontWeight.bold,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                       ),
                                                     ),
                                                   ),
@@ -260,15 +280,18 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                               ),
                                               const SizedBox(height: 4),
                                               Text(
-                                                achievement.getDescription(context),
-                                                style: theme.textTheme.bodySmall?.copyWith(
-                                                  color: Colors.grey[600],
+                                                achievement.getDescription(
+                                                  context,
                                                 ),
+                                                style: theme.textTheme.bodySmall
+                                                    ?.copyWith(
+                                                      color: Colors.grey[600],
+                                                    ),
                                               ),
                                             ],
                                           ),
                                         ),
-                                        
+
                                         // XP 보상
                                         Container(
                                           padding: const EdgeInsets.symmetric(
@@ -276,8 +299,12 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                             vertical: 4,
                                           ),
                                           decoration: BoxDecoration(
-                                            color: Colors.amber.withOpacity(0.2),
-                                            borderRadius: BorderRadius.circular(8),
+                                            color: Colors.amber.withOpacity(
+                                              0.2,
+                                            ),
+                                            borderRadius: BorderRadius.circular(
+                                              8,
+                                            ),
                                             border: Border.all(
                                               color: Colors.amber,
                                               width: 1,
@@ -309,9 +336,9 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                 },
                               ),
                             ),
-                            
+
                             const SizedBox(height: 16),
-                            
+
                             // 총 XP 표시
                             Container(
                               width: double.infinity,
@@ -320,7 +347,9 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                 gradient: const LinearGradient(
                                   colors: [Colors.amber, Colors.orange],
                                 ),
-                                borderRadius: BorderRadius.circular(AppConstants.radiusS),
+                                borderRadius: BorderRadius.circular(
+                                  AppConstants.radiusS,
+                                ),
                               ),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -332,9 +361,9 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                   ),
                                   const SizedBox(width: 8),
                                   Text(
-                                    isKorean 
-                                      ? '총 $_totalXP XP 획득!'
-                                      : 'Total $_totalXP XP Earned!',
+                                    isKorean
+                                        ? '총 $_totalXP XP 획득!'
+                                        : 'Total $_totalXP XP Earned!',
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
@@ -348,7 +377,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                         ),
                       ),
                     ),
-                    
+
                     // 확인 버튼
                     Padding(
                       padding: const EdgeInsets.all(24),
@@ -364,7 +393,9 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                             foregroundColor: const Color(0xFF6366F1),
                             padding: const EdgeInsets.symmetric(vertical: 16),
                             shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(AppConstants.radiusM),
+                              borderRadius: BorderRadius.circular(
+                                AppConstants.radiusM,
+                              ),
                             ),
                           ),
                           child: Text(
@@ -386,4 +417,4 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
       ),
     );
   }
-} 
+}

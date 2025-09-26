@@ -29,7 +29,7 @@ class _AchievementsScreenState extends State<AchievementsScreen>
 
   // 업적 화면 전용 배너 광고
   BannerAd? _achievementsBannerAd;
-  
+
   // 업적 달성 애니메이션 상태
   bool _showUnlockAnimation = false;
   Achievement? _currentUnlockedAchievement;
@@ -40,7 +40,7 @@ class _AchievementsScreenState extends State<AchievementsScreen>
     _tabController = TabController(length: 2, vsync: this);
     _loadAchievements();
     _createAchievementsBannerAd();
-    
+
     // 업적 달성 시 업적 목록 새로고침을 위한 콜백 설정
     WidgetsBinding.instance.addPostFrameCallback((_) {
       AchievementService.setOnAchievementUnlocked(() {
@@ -88,7 +88,9 @@ class _AchievementsScreenState extends State<AchievementsScreen>
     } catch (e) {
       setState(() => _isLoading = false);
       if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('')));
+        ScaffoldMessenger.of(
+          context,
+        ).showSnackBar(const SnackBar(content: Text('')));
       }
     }
   }
@@ -120,7 +122,7 @@ class _AchievementsScreenState extends State<AchievementsScreen>
   /// 업적 진행도 체크 및 새로 달성된 업적 확인
   Future<void> _checkForNewAchievements() async {
     final newlyUnlocked = await AchievementService.checkAndUpdateAchievements();
-    
+
     // 새로 달성된 업적이 있으면 애니메이션 표시
     for (final achievement in newlyUnlocked) {
       _showAchievementUnlockAnimation(achievement);
@@ -200,28 +202,28 @@ class _AchievementsScreenState extends State<AchievementsScreen>
     }
 
     final isDark = theme.brightness == Brightness.dark;
-    
+
     return Container(
       margin: const EdgeInsets.all(AppConstants.paddingM),
       padding: const EdgeInsets.all(AppConstants.paddingL),
       decoration: BoxDecoration(
-        gradient: isDark 
-          ? LinearGradient(
-              colors: [
-                Color(AppColors.chadGradient[0]),
-                Color(AppColors.chadGradient[1]),
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            )
-          : const LinearGradient(
-              colors: <Color>[
-                Color(0xFF2196F3), // 밝은 파란색
-                Color(0xFF1976D2), // 진한 파란색
-              ],
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-            ),
+        gradient: isDark
+            ? LinearGradient(
+                colors: [
+                  Color(AppColors.chadGradient[0]),
+                  Color(AppColors.chadGradient[1]),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              )
+            : const LinearGradient(
+                colors: <Color>[
+                  Color(0xFF2196F3), // 밝은 파란색
+                  Color(0xFF1976D2), // 진한 파란색
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
         boxShadow: [
           BoxShadow(
@@ -249,7 +251,9 @@ class _AchievementsScreenState extends State<AchievementsScreen>
                 child: _buildStatItem(
                   icon: Icons.emoji_events,
                   value: '$_unlockedCount/$_totalCount',
-                  label: AppLocalizations.of(context).unlockedAchievements(_unlockedCount),
+                  label: AppLocalizations.of(
+                    context,
+                  ).unlockedAchievements(_unlockedCount),
                   color: Colors.amber,
                 ),
               ),
@@ -391,8 +395,16 @@ class _AchievementsScreenState extends State<AchievementsScreen>
           fontSize: 14,
         ),
         tabs: [
-          Tab(text: AppLocalizations.of(context).unlockedAchievements(_unlockedAchievements.length)),
-          Tab(text: AppLocalizations.of(context).lockedAchievements(_lockedAchievements.length)),
+          Tab(
+            text: AppLocalizations.of(
+              context,
+            ).unlockedAchievements(_unlockedAchievements.length),
+          ),
+          Tab(
+            text: AppLocalizations.of(
+              context,
+            ).lockedAchievements(_lockedAchievements.length),
+          ),
         ],
       ),
     );

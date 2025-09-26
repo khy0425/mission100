@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
- // kDebugMode 사용
+// kDebugMode 사용
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../utils/constants.dart';
@@ -52,7 +52,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
   String _selectedPeriod = 'week'; // 'week', 'month', 'year'
   List<FlSpot> _chartData = [];
   Map<String, double> _pieChartData = {};
-  
+
   // 차트 필터링 옵션
   final List<String> _periodOptions = ['week', 'month', 'year'];
 
@@ -72,11 +72,11 @@ class _StatisticsScreenState extends State<StatisticsScreen>
     _initializeAnimations();
     _loadBannerAd();
     _loadStatistics();
-    
+
     // 운동 기록 저장 시 통계 데이터 즉시 업데이트
     WorkoutHistoryService.addOnWorkoutSavedCallback(_onWorkoutSaved);
     debugPrint('📊 통계 화면: 운동 기록 콜백 등록 완료');
-    
+
     // 업적 달성 시 통계 데이터 새로고침을 위한 콜백 설정
     WidgetsBinding.instance.addPostFrameCallback((_) {
       AchievementService.setOnStatsUpdated(() {
@@ -163,7 +163,10 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           (sum, workout) => sum + workout.completionRate,
         ) /
         _totalWorkouts;
-    _totalWorkoutTime = _workoutHistory.fold(Duration.zero, (sum, workout) => sum + workout.duration);
+    _totalWorkoutTime = _workoutHistory.fold(
+      Duration.zero,
+      (sum, workout) => sum + workout.duration,
+    );
 
     // 연속 운동일 계산
     _calculateStreaks();
@@ -188,7 +191,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
     // 진행률 계산
     _weeklyProgress = (_thisWeekWorkouts / _weeklyGoal).clamp(0.0, 1.0);
     _monthlyProgress = (_thisMonthWorkouts / _monthlyGoal).clamp(0.0, 1.0);
-    
+
     // 차트 데이터 생성
     _generateChartData();
     _generatePieChartData();
@@ -244,15 +247,19 @@ class _StatisticsScreenState extends State<StatisticsScreen>
 
   void _generateChartData() {
     _chartData.clear();
-    
+
     if (_workoutHistory.isEmpty) return;
 
     final now = DateTime.now();
     final Map<DateTime, int> dailyReps = {};
 
     // 선택된 기간에 따라 데이터 생성
-    int daysToShow = _selectedPeriod == 'week' ? 7 : _selectedPeriod == 'month' ? 30 : 365;
-    
+    int daysToShow = _selectedPeriod == 'week'
+        ? 7
+        : _selectedPeriod == 'month'
+        ? 30
+        : 365;
+
     for (int i = daysToShow - 1; i >= 0; i--) {
       final date = DateTime(now.year, now.month, now.day - i);
       dailyReps[date] = 0;
@@ -260,7 +267,11 @@ class _StatisticsScreenState extends State<StatisticsScreen>
 
     // 운동 기록에서 데이터 추출
     for (final workout in _workoutHistory) {
-      final workoutDate = DateTime(workout.date.year, workout.date.month, workout.date.day);
+      final workoutDate = DateTime(
+        workout.date.year,
+        workout.date.month,
+        workout.date.day,
+      );
       if (dailyReps.containsKey(workoutDate)) {
         dailyReps[workoutDate] = dailyReps[workoutDate]! + workout.totalReps;
       }
@@ -276,18 +287,18 @@ class _StatisticsScreenState extends State<StatisticsScreen>
 
   void _generatePieChartData() {
     _pieChartData.clear();
-    
+
     if (_workoutHistory.isEmpty) return;
 
     final Map<String, int> workoutTypes = {};
-    
+
     for (final workout in _workoutHistory) {
       final type = workout.pushupType;
       workoutTypes[type] = (workoutTypes[type] ?? 0) + workout.totalReps;
     }
 
     final total = workoutTypes.values.fold(0, (sum, count) => sum + count);
-    
+
     workoutTypes.forEach((type, count) {
       _pieChartData[type] = (count / total) * 100;
     });
@@ -298,10 +309,10 @@ class _StatisticsScreenState extends State<StatisticsScreen>
     _counterController.dispose();
     _chartController.dispose();
     _statisticsBannerAd?.dispose();
-    
+
     // 콜백 제거하여 메모리 누수 방지
     WorkoutHistoryService.removeOnWorkoutSavedCallback(_onWorkoutSaved);
-    
+
     super.dispose();
   }
 
@@ -339,7 +350,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
                     // 진행률 시각화 섹션 추가
                     _buildProgressVisualizationSection(),
                     const SizedBox(height: 24),
-                    
+
                     // 기존 통계 카드들
                     _buildStatisticsCards(),
                     const SizedBox(height: 24),
@@ -367,13 +378,10 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           children: [
             Text(
               AppLocalizations.of(context)!.progressVisualization,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
-            
+
             // 원형 진행률 표시기들
             Row(
               children: [
@@ -400,9 +408,9 @@ class _StatisticsScreenState extends State<StatisticsScreen>
                 ),
               ],
             ),
-            
+
             const SizedBox(height: 24),
-            
+
             // 스트릭 진행 바
             _buildStreakProgressBar(),
           ],
@@ -450,10 +458,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
                 ),
                 Text(
                   '/$target',
-                  style: TextStyle(
-                    fontSize: 12,
-                    color: Colors.grey[600],
-                  ),
+                  style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                 ),
               ],
             ),
@@ -462,18 +467,12 @@ class _StatisticsScreenState extends State<StatisticsScreen>
         const SizedBox(height: 8),
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 14,
-            fontWeight: FontWeight.w500,
-          ),
+          style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
           textAlign: TextAlign.center,
         ),
         Text(
           '${(progress * 100).toInt()}%',
-          style: TextStyle(
-            fontSize: 12,
-            color: Colors.grey[600],
-          ),
+          style: TextStyle(fontSize: 12, color: Colors.grey[600]),
         ),
       ],
     );
@@ -483,7 +482,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
   Widget _buildStreakProgressBar() {
     double streakProgress = _currentStreak / _targetStreak;
     if (streakProgress > 1.0) streakProgress = 1.0;
-    
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -492,22 +491,16 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           children: [
             Text(
               AppLocalizations.of(context)!.streakProgress,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w600,
-              ),
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
             ),
             Text(
               '$_currentStreak / $_targetStreak ${AppLocalizations.of(context)!.days}',
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey[600],
-              ),
+              style: TextStyle(fontSize: 14, color: Colors.grey[600]),
             ),
           ],
         ),
         const SizedBox(height: 12),
-        
+
         // 스트릭 진행 바
         Container(
           height: 12,
@@ -532,10 +525,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(6),
                     gradient: LinearGradient(
-                      colors: [
-                        Colors.orange.shade400,
-                        Colors.red.shade400,
-                      ],
+                      colors: [Colors.orange.shade400, Colors.red.shade400],
                     ),
                   ),
                 ),
@@ -543,9 +533,9 @@ class _StatisticsScreenState extends State<StatisticsScreen>
             ],
           ),
         ),
-        
+
         const SizedBox(height: 8),
-        
+
         // 스트릭 아이콘들
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -556,9 +546,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
               height: 24,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: isCompleted 
-                    ? Colors.orange.shade400 
-                    : Colors.grey[300],
+                color: isCompleted ? Colors.orange.shade400 : Colors.grey[300],
               ),
               child: Icon(
                 Icons.local_fire_department,
@@ -688,20 +676,26 @@ class _StatisticsScreenState extends State<StatisticsScreen>
                 // 기간 선택 버튼들
                 Row(
                   children: [
-                    _buildPeriodButton('week', AppLocalizations.of(context)!.weekly),
+                    _buildPeriodButton(
+                      'week',
+                      AppLocalizations.of(context)!.weekly,
+                    ),
                     const SizedBox(width: 8),
-                    _buildPeriodButton('month', AppLocalizations.of(context)!.monthly),
+                    _buildPeriodButton(
+                      'month',
+                      AppLocalizations.of(context)!.monthly,
+                    ),
                     const SizedBox(width: 8),
-                    _buildPeriodButton('year', AppLocalizations.of(context)!.yearly),
+                    _buildPeriodButton(
+                      'year',
+                      AppLocalizations.of(context)!.yearly,
+                    ),
                   ],
                 ),
               ],
             ),
             const SizedBox(height: 20),
-            SizedBox(
-              height: 200,
-              child: _buildChart(),
-            ),
+            SizedBox(height: 200, child: _buildChart()),
           ],
         ),
       ),
@@ -742,7 +736,9 @@ class _StatisticsScreenState extends State<StatisticsScreen>
         return SizedBox(
           height: 200,
           child: _workoutHistory.isEmpty
-              ? Center(child: Text(AppLocalizations.of(context)!.noWorkoutHistory))
+              ? Center(
+                  child: Text(AppLocalizations.of(context)!.noWorkoutHistory),
+                )
               : _buildLineChart(),
         );
       },
@@ -754,8 +750,8 @@ class _StatisticsScreenState extends State<StatisticsScreen>
       return Center(child: Text(AppLocalizations.of(context)!.noChartData));
     }
 
-    final maxY = _chartData.isEmpty 
-        ? 100.0 
+    final maxY = _chartData.isEmpty
+        ? 100.0
         : _chartData.map((spot) => spot.y).reduce((a, b) => a > b ? a : b) + 10;
 
     return LineChart(
@@ -769,7 +765,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
             isStrokeCapRound: true,
             belowBarData: BarAreaData(
               show: true,
-                              color: Colors.blue.withValues(alpha: 0.1),
+              color: Colors.blue.withValues(alpha: 0.1),
             ),
             dotData: FlDotData(
               show: true,
@@ -816,7 +812,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           horizontalInterval: maxY / 5,
           getDrawingHorizontalLine: (value) {
             return FlLine(
-                              color: Colors.grey.withValues(alpha: 0.3),
+              color: Colors.grey.withValues(alpha: 0.3),
               strokeWidth: 1,
             );
           },
@@ -824,8 +820,8 @@ class _StatisticsScreenState extends State<StatisticsScreen>
         borderData: FlBorderData(
           show: true,
           border: Border(
-                          bottom: BorderSide(color: Colors.grey.withValues(alpha: 0.3)),
-              left: BorderSide(color: Colors.grey.withValues(alpha: 0.3)),
+            bottom: BorderSide(color: Colors.grey.withValues(alpha: 0.3)),
+            left: BorderSide(color: Colors.grey.withValues(alpha: 0.3)),
           ),
         ),
       ),
@@ -851,16 +847,16 @@ class _StatisticsScreenState extends State<StatisticsScreen>
       fontWeight: FontWeight.bold,
       fontSize: 10,
     );
-    
+
     int index = value.floor();
     if (index < 0 || index >= _chartData.length) {
       return Text('', style: style);
     }
-    
+
     // 기간에 따라 다른 라벨 표시
     String text = '';
     final now = DateTime.now();
-    
+
     if (_selectedPeriod == 'week') {
       final date = now.subtract(Duration(days: 6 - index));
       text = '${date.month}/${date.day}';
@@ -869,16 +865,16 @@ class _StatisticsScreenState extends State<StatisticsScreen>
       text = '${date.day}';
     } else {
       final date = now.subtract(Duration(days: 364 - index));
-                    text = '${date.month}${AppLocalizations.of(context)!.month}';
+      text = '${date.month}${AppLocalizations.of(context)!.month}';
     }
-    
+
     // 너무 많은 라벨이 표시되지 않도록 간격 조정
     if (_selectedPeriod == 'month' && index % 5 != 0) {
       return Text('', style: style);
     } else if (_selectedPeriod == 'year' && index % 30 != 0) {
       return Text('', style: style);
     }
-    
+
     return Text(text, style: style);
   }
 
@@ -893,10 +889,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           children: [
             Text(
               AppLocalizations.of(context)!.monthlyProgress,
-              style: const TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
+              style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
             _buildMonthlyProgressChart(),
@@ -909,9 +902,9 @@ class _StatisticsScreenState extends State<StatisticsScreen>
   Widget _buildMonthlyProgressChart() {
     return SizedBox(
       height: 200,
-                child: _workoutHistory.isEmpty
-              ? Center(child: Text(AppLocalizations.of(context)!.noWorkoutHistory))
-              : _buildPieChart(),
+      child: _workoutHistory.isEmpty
+          ? Center(child: Text(AppLocalizations.of(context)!.noWorkoutHistory))
+          : _buildPieChart(),
     );
   }
 
@@ -929,13 +922,13 @@ class _StatisticsScreenState extends State<StatisticsScreen>
     ];
 
     int colorIndex = 0;
-    
+
     return PieChart(
       PieChartData(
         sections: _pieChartData.entries.map((entry) {
           final color = colors[colorIndex % colors.length];
           colorIndex++;
-          
+
           return PieChartSectionData(
             value: entry.value,
             color: color,
@@ -954,6 +947,4 @@ class _StatisticsScreenState extends State<StatisticsScreen>
       ),
     );
   }
-
-
 }

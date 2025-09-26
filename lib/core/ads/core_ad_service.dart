@@ -17,15 +17,17 @@ class CoreAdService {
 
   // 테스트 광고 ID
   static const String _testBannerId = 'ca-app-pub-3940256099942544/6300978111';
-  static const String _testInterstitialId = 'ca-app-pub-3940256099942544/1033173712';
-  static const String _testRewardedId = 'ca-app-pub-3940256099942544/5224354917';
+  static const String _testInterstitialId =
+      'ca-app-pub-3940256099942544/1033173712';
+  static const String _testRewardedId =
+      'ca-app-pub-3940256099942544/5224354917';
 
   /// 광고 서비스 초기화
   Future<void> initialize(AdConfig config) async {
     _config = config;
-    
+
     await MobileAds.instance.initialize();
-    
+
     // 요청 설정
     RequestConfiguration configuration = RequestConfiguration(
       testDeviceIds: kDebugMode ? config.testDeviceIds : [],
@@ -46,51 +48,63 @@ class CoreAdService {
   /// 현재 사용할 배너 광고 ID
   String get bannerAdUnitId {
     if (_config == null) return _testBannerId;
-    
+
     if (kDebugMode) {
       return _testBannerId;
     }
-    
+
     if (Platform.isAndroid) {
-      return _config!.androidBannerId.isEmpty ? _testBannerId : _config!.androidBannerId;
+      return _config!.androidBannerId.isEmpty
+          ? _testBannerId
+          : _config!.androidBannerId;
     } else if (Platform.isIOS) {
-      return _config!.iosBannerId.isEmpty ? _testBannerId : _config!.iosBannerId;
+      return _config!.iosBannerId.isEmpty
+          ? _testBannerId
+          : _config!.iosBannerId;
     }
-    
+
     return _testBannerId;
   }
 
   /// 현재 사용할 전면 광고 ID
   String get interstitialAdUnitId {
     if (_config == null) return _testInterstitialId;
-    
+
     if (kDebugMode) {
       return _testInterstitialId;
     }
-    
+
     if (Platform.isAndroid) {
-      return _config!.androidInterstitialId.isEmpty ? _testInterstitialId : _config!.androidInterstitialId;
+      return _config!.androidInterstitialId.isEmpty
+          ? _testInterstitialId
+          : _config!.androidInterstitialId;
     } else if (Platform.isIOS) {
-      return _config!.iosInterstitialId.isEmpty ? _testInterstitialId : _config!.iosInterstitialId;
+      return _config!.iosInterstitialId.isEmpty
+          ? _testInterstitialId
+          : _config!.iosInterstitialId;
     }
-    
+
     return _testInterstitialId;
   }
 
   /// 현재 사용할 보상형 광고 ID
   String get rewardedAdUnitId {
     if (_config == null) return _testRewardedId;
-    
+
     if (kDebugMode) {
       return _testRewardedId;
     }
-    
+
     if (Platform.isAndroid) {
-      return _config!.androidRewardedId.isEmpty ? _testRewardedId : _config!.androidRewardedId;
+      return _config!.androidRewardedId.isEmpty
+          ? _testRewardedId
+          : _config!.androidRewardedId;
     } else if (Platform.isIOS) {
-      return _config!.iosRewardedId.isEmpty ? _testRewardedId : _config!.iosRewardedId;
+      return _config!.iosRewardedId.isEmpty
+          ? _testRewardedId
+          : _config!.iosRewardedId;
     }
-    
+
     return _testRewardedId;
   }
 
@@ -176,7 +190,7 @@ class CoreAdService {
           loadInterstitialAd();
         },
       );
-      
+
       await _interstitialAd!.show();
     } else {
       debugPrint('전면 광고가 준비되지 않음');
@@ -245,7 +259,7 @@ class CoreAdService {
           loadRewardedAd();
         },
       );
-      
+
       await _rewardedAd!.show(onUserEarnedReward: onUserEarnedReward);
     } else {
       debugPrint('보상형 광고가 준비되지 않음');
@@ -266,7 +280,7 @@ class CoreAdService {
     _interstitialAd?.dispose();
     _interstitialAd = null;
     _isInterstitialAdReady = false;
-    
+
     _rewardedAd?.dispose();
     _rewardedAd = null;
     _isRewardedAdReady = false;

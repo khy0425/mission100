@@ -922,7 +922,7 @@ class PredefinedAchievements {
     // ================================
     // 통계 기반 업적들
     // ================================
-    
+
     // 평균 완료율 관련 업적
     Achievement(
       id: 'completion_rate_80',

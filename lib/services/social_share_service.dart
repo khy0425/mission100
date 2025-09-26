@@ -8,7 +8,6 @@ import 'package:path_provider/path_provider.dart';
 import '../generated/app_localizations.dart';
 import '../models/user_profile.dart';
 
-
 class SocialShareService {
   /// 앱 이름 가져오기 (다국어 지원)
   static String _getAppName(AppLocalizations l10n) {
@@ -26,10 +25,15 @@ class SocialShareService {
   }
 
   /// 일일 운동 공유 메시지 가져오기 (다국어 지원)
-  static String _getDailyWorkoutMessage(AppLocalizations l10n, int currentDay, int pushupCount, String levelName) {
+  static String _getDailyWorkoutMessage(
+    AppLocalizations l10n,
+    int currentDay,
+    int pushupCount,
+    String levelName,
+  ) {
     final locale = l10n.localeName;
     final downloadMessage = _getDownloadMessage(l10n);
-    
+
     if (locale == 'ko') {
       return '''
 🔥💀 또 하나의 전설이 탄생했다! 💀🔥
@@ -62,12 +66,17 @@ $downloadMessage
   }
 
   /// 레벨업 공유 메시지 가져오기 (다국어 지원)
-  static String _getLevelUpMessage(AppLocalizations l10n, UserLevel newLevel, int totalDays, int totalPushups) {
+  static String _getLevelUpMessage(
+    AppLocalizations l10n,
+    UserLevel newLevel,
+    int totalDays,
+    int totalPushups,
+  ) {
     final locale = l10n.localeName;
     final levelName = _getLevelName(newLevel, l10n);
     final levelEmoji = _getLevelEmoji(newLevel);
     final downloadMessage = _getDownloadMessage(l10n);
-    
+
     if (locale == 'ko') {
       return '''
 $levelEmoji💥 LEVEL UP! 또 하나의 한계를 박살냈다! 💥$levelEmoji
@@ -98,10 +107,15 @@ $downloadMessage
   }
 
   /// 업적 공유 메시지 가져오기 (다국어 지원)
-  static String _getAchievementMessage(AppLocalizations l10n, String achievementTitle, String achievementDescription, int xpReward) {
+  static String _getAchievementMessage(
+    AppLocalizations l10n,
+    String achievementTitle,
+    String achievementDescription,
+    int xpReward,
+  ) {
     final locale = l10n.localeName;
     final downloadMessage = _getDownloadMessage(l10n);
-    
+
     if (locale == 'ko') {
       return '''
 🏆💀 업적 달성! 또 하나의 신화가 탄생했다! 💀🏆
@@ -132,12 +146,18 @@ $downloadMessage
   }
 
   /// 주간 진행률 공유 메시지 가져오기 (다국어 지원)
-  static String _getWeeklyProgressMessage(AppLocalizations l10n, int weekNumber, int completedDays, int totalPushups, double progressPercentage) {
+  static String _getWeeklyProgressMessage(
+    AppLocalizations l10n,
+    int weekNumber,
+    int completedDays,
+    int totalPushups,
+    double progressPercentage,
+  ) {
     final locale = l10n.localeName;
     final appName = _getAppName(l10n);
     final downloadMessage = _getDownloadMessage(l10n);
     final progressBar = _generateProgressBar(progressPercentage);
-    
+
     if (locale == 'ko') {
       return '''
 📊💀 $appName 주간 정복 리포트 💀📊
@@ -174,10 +194,14 @@ $downloadMessage
   }
 
   /// 100개 달성 공유 메시지 가져오기 (다국어 지원)
-  static String _get100AchievementMessage(AppLocalizations l10n, int totalDays, int duration) {
+  static String _get100AchievementMessage(
+    AppLocalizations l10n,
+    int totalDays,
+    int duration,
+  ) {
     final locale = l10n.localeName;
     final downloadMessage = _getDownloadMessage(l10n);
-    
+
     if (locale == 'ko') {
       return '''
 🎉👑💀 기가차드 완성! 인간 초월 달성! ALPHA EMPEROR 등극! 💀👑🎉
@@ -220,10 +244,13 @@ $downloadMessage
   }
 
   /// 친구 도전장 공유 메시지 가져오기 (다국어 지원)
-  static String _getFriendChallengeMessage(AppLocalizations l10n, String userName) {
+  static String _getFriendChallengeMessage(
+    AppLocalizations l10n,
+    String userName,
+  ) {
     final locale = l10n.localeName;
     final downloadMessage = _getDownloadMessage(l10n);
-    
+
     if (locale == 'ko') {
       return '''
 🔥💪💀 차드 도전장 발송! 약자는 도망가라! 💀💪🔥
@@ -266,10 +293,13 @@ $downloadMessage
   }
 
   /// 동기부여 공유 메시지 가져오기 (다국어 지원)
-  static String _getMotivationMessage(AppLocalizations l10n, String motivationMessage) {
+  static String _getMotivationMessage(
+    AppLocalizations l10n,
+    String motivationMessage,
+  ) {
     final locale = l10n.localeName;
     final downloadMessage = _getDownloadMessage(l10n);
-    
+
     if (locale == 'ko') {
       return '''
 💪💀 오늘의 ALPHA EMPEROR 동기부여 💀💪
@@ -298,10 +328,14 @@ $downloadMessage
   }
 
   /// 공유 제목 가져오기 (다국어 지원)
-  static String _getShareSubject(AppLocalizations l10n, String type, {String? extra}) {
+  static String _getShareSubject(
+    AppLocalizations l10n,
+    String type, {
+    String? extra,
+  }) {
     final locale = l10n.localeName;
     final appName = _getAppName(l10n);
-    
+
     if (locale == 'ko') {
       switch (type) {
         case 'daily':
@@ -353,8 +387,13 @@ $downloadMessage
     try {
       final l10n = AppLocalizations.of(context)!;
       final levelName = _getLevelName(level, l10n);
-      
-      final message = _getDailyWorkoutMessage(l10n, currentDay, pushupCount, levelName);
+
+      final message = _getDailyWorkoutMessage(
+        l10n,
+        currentDay,
+        pushupCount,
+        levelName,
+      );
 
       await Share.share(
         message,
@@ -375,8 +414,13 @@ $downloadMessage
     try {
       final l10n = AppLocalizations.of(context)!;
       final levelName = _getLevelName(newLevel, l10n);
-      
-      final message = _getLevelUpMessage(l10n, newLevel, totalDays, totalPushups);
+
+      final message = _getLevelUpMessage(
+        l10n,
+        newLevel,
+        totalDays,
+        totalPushups,
+      );
 
       await Share.share(
         message,
@@ -396,8 +440,13 @@ $downloadMessage
   }) async {
     try {
       final l10n = AppLocalizations.of(context)!;
-      
-      final message = _getAchievementMessage(l10n, achievementTitle, achievementDescription, xpReward);
+
+      final message = _getAchievementMessage(
+        l10n,
+        achievementTitle,
+        achievementDescription,
+        xpReward,
+      );
 
       await Share.share(
         message,
@@ -418,8 +467,14 @@ $downloadMessage
   }) async {
     try {
       final l10n = AppLocalizations.of(context)!;
-      
-      final message = _getWeeklyProgressMessage(l10n, weekNumber, completedDays, totalPushups, progressPercentage);
+
+      final message = _getWeeklyProgressMessage(
+        l10n,
+        weekNumber,
+        completedDays,
+        totalPushups,
+        progressPercentage,
+      );
 
       await Share.share(
         message,
@@ -439,7 +494,7 @@ $downloadMessage
     try {
       final l10n = AppLocalizations.of(context)!;
       final duration = DateTime.now().difference(startDate).inDays;
-      
+
       final message = _get100AchievementMessage(l10n, totalDays, duration);
 
       await Share.share(
@@ -458,13 +513,10 @@ $downloadMessage
   }) async {
     try {
       final l10n = AppLocalizations.of(context)!;
-      
+
       final message = _getFriendChallengeMessage(l10n, userName);
 
-      await Share.share(
-        message,
-        subject: _getShareSubject(l10n, 'challenge'),
-      );
+      await Share.share(message, subject: _getShareSubject(l10n, 'challenge'));
     } catch (e) {
       debugPrint('친구 도전장 공유 오류: $e');
     }
@@ -477,13 +529,10 @@ $downloadMessage
   }) async {
     try {
       final l10n = AppLocalizations.of(context)!;
-      
+
       final message = _getMotivationMessage(l10n, motivationMessage);
 
-      await Share.share(
-        message,
-        subject: _getShareSubject(l10n, 'motivation'),
-      );
+      await Share.share(message, subject: _getShareSubject(l10n, 'motivation'));
     } catch (e) {
       debugPrint('동기부여 메시지 공유 오류: $e');
     }
@@ -497,11 +546,14 @@ $downloadMessage
   }) async {
     try {
       // 위젯을 이미지로 캡처
-      RenderRepaintBoundary boundary = repaintBoundaryKey.currentContext!
-          .findRenderObject() as RenderRepaintBoundary;
-      
+      RenderRepaintBoundary boundary =
+          repaintBoundaryKey.currentContext!.findRenderObject()
+              as RenderRepaintBoundary;
+
       ui.Image image = await boundary.toImage(pixelRatio: 3.0);
-      ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+      ByteData? byteData = await image.toByteData(
+        format: ui.ImageByteFormat.png,
+      );
       Uint8List pngBytes = byteData!.buffer.asUint8List();
 
       // 임시 파일로 저장
@@ -555,7 +607,7 @@ $downloadMessage
     const int totalBars = 10;
     final int filledBars = (percentage / 10).round();
     final int emptyBars = totalBars - filledBars;
-    
+
     return '[${'█' * filledBars}${'░' * emptyBars}] ${percentage.toStringAsFixed(1)}%';
   }
-} 
+}

@@ -42,10 +42,7 @@ class RestTimerWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Color(AppColors.secondaryColor).withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppConstants.radiusXL),
-        border: Border.all(
-          color: Color(AppColors.secondaryColor),
-          width: 3,
-        ),
+        border: Border.all(color: Color(AppColors.secondaryColor), width: 3),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,

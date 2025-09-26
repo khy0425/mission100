@@ -53,16 +53,12 @@ class AchievementStatsWidget extends StatelessWidget {
   Widget _buildHeader(BuildContext context, ThemeData theme) {
     return Row(
       children: [
-        Icon(
-          Icons.emoji_events,
-          color: Colors.amber,
-          size: 24,
-        ),
+        Icon(Icons.emoji_events, color: Colors.amber, size: 24),
         const SizedBox(width: AppConstants.paddingS),
         Text(
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '업적 현황'
-            : 'Achievements',
+              ? '업적 현황'
+              : 'Achievements',
           style: theme.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
             color: Colors.amber,
@@ -80,8 +76,8 @@ class AchievementStatsWidget extends StatelessWidget {
           context,
           theme,
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '달성한 업적'
-            : 'Unlocked',
+              ? '달성한 업적'
+              : 'Unlocked',
           '$unlockedCount/$totalCount',
           Icons.military_tech,
           Colors.amber,
@@ -90,8 +86,8 @@ class AchievementStatsWidget extends StatelessWidget {
           context,
           theme,
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '총 경험치'
-            : 'Total XP',
+              ? '총 경험치'
+              : 'Total XP',
           '${totalXP} XP',
           Icons.star,
           Colors.purple,
@@ -100,11 +96,11 @@ class AchievementStatsWidget extends StatelessWidget {
           context,
           theme,
           Localizations.localeOf(context).languageCode == 'ko'
-            ? '완료율'
-            : 'Completion',
+              ? '완료율'
+              : 'Completion',
           totalCount > 0
-            ? '${((unlockedCount / totalCount) * 100).toStringAsFixed(0)}%'
-            : '0%',
+              ? '${((unlockedCount / totalCount) * 100).toStringAsFixed(0)}%'
+              : '0%',
           Icons.percent,
           Colors.green,
         ),
@@ -127,16 +123,9 @@ class AchievementStatsWidget extends StatelessWidget {
           decoration: BoxDecoration(
             color: color.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
-            border: Border.all(
-              color: color.withValues(alpha: 0.3),
-              width: 1,
-            ),
+            border: Border.all(color: color.withValues(alpha: 0.3), width: 1),
           ),
-          child: Icon(
-            icon,
-            color: color,
-            size: 24,
-          ),
+          child: Icon(icon, color: color, size: 24),
         ),
         const SizedBox(height: 8),
         Text(

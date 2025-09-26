@@ -28,7 +28,9 @@ class LocaleService {
   static Locale _getSystemBasedLocale() {
     final systemLocales = WidgetsBinding.instance.platformDispatcher.locales;
 
-    debugPrint('🌐 시스템 언어 목록: ${systemLocales.map((l) => '${l.languageCode}_${l.countryCode}').join(', ')}');
+    debugPrint(
+      '🌐 시스템 언어 목록: ${systemLocales.map((l) => '${l.languageCode}_${l.countryCode}').join(', ')}',
+    );
 
     // 시스템 언어 중 한국어가 있으면 한국어 선택
     for (final locale in systemLocales) {
@@ -45,7 +47,10 @@ class LocaleService {
   }
 
   /// 언어 설정을 저장한다 (수동 설정 표시)
-  static Future<void> setLocale(Locale locale, {bool manuallySet = true}) async {
+  static Future<void> setLocale(
+    Locale locale, {
+    bool manuallySet = true,
+  }) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setString(_localeKey, locale.languageCode);
     await prefs.setBool(_localeSetKey, manuallySet);
@@ -56,11 +61,11 @@ class LocaleService {
     final prefs = await SharedPreferences.getInstance();
     final wasManuallySet = prefs.getBool(_localeSetKey) ?? false;
     final currentLocaleCode = prefs.getString(_localeKey);
-    
+
     debugPrint('🌐 언어 초기화 시작');
     debugPrint('🌐 현재 저장된 언어: $currentLocaleCode');
     debugPrint('🌐 수동 설정 여부: $wasManuallySet');
-    
+
     // 수동으로 설정된 적이 없다면 시스템 언어 기반으로 자동 설정
     if (!wasManuallySet) {
       debugPrint('🌐 자동 언어 탐지 수행');

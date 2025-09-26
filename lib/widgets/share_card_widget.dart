@@ -3,16 +3,11 @@ import '../generated/app_localizations.dart';
 import '../models/user_profile.dart';
 import '../utils/constants.dart';
 
-
 class ShareCardWidget extends StatelessWidget {
   final ShareCardType type;
   final Map<String, dynamic> data;
 
-  const ShareCardWidget({
-    super.key,
-    required this.type,
-    required this.data,
-  });
+  const ShareCardWidget({super.key, required this.type, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -91,10 +86,7 @@ class ShareCardWidget extends StatelessWidget {
               ),
               Text(
                 l10n.journeyToChad,
-                style: const TextStyle(
-                  color: Colors.white70,
-                  fontSize: 12,
-                ),
+                style: const TextStyle(color: Colors.white70, fontSize: 12),
               ),
             ],
           ),
@@ -118,7 +110,10 @@ class ShareCardWidget extends StatelessWidget {
     }
   }
 
-  Widget _buildDailyWorkoutContent(BuildContext context, AppLocalizations l10n) {
+  Widget _buildDailyWorkoutContent(
+    BuildContext context,
+    AppLocalizations l10n,
+  ) {
     final pushupCount = data['pushupCount'] as int;
     final currentDay = data['currentDay'] as int;
     final level = data['level'] as UserLevel;
@@ -250,10 +245,7 @@ class ShareCardWidget extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      const Text(
-                        '📅',
-                        style: TextStyle(fontSize: 20),
-                      ),
+                      const Text('📅', style: TextStyle(fontSize: 20)),
                       Text(
                         l10n.daysFormat(totalDays),
                         style: const TextStyle(
@@ -266,10 +258,7 @@ class ShareCardWidget extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      const Text(
-                        '💪',
-                        style: TextStyle(fontSize: 20),
-                      ),
+                      const Text('💪', style: TextStyle(fontSize: 20)),
                       Text(
                         l10n.repsFormat(totalPushups),
                         style: const TextStyle(
@@ -333,7 +322,10 @@ class ShareCardWidget extends StatelessWidget {
               ),
               const SizedBox(height: 12),
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 12,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: Colors.white.withValues(alpha: 0.3),
                   borderRadius: BorderRadius.circular(20),
@@ -354,7 +346,10 @@ class ShareCardWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildWeeklyProgressContent(BuildContext context, AppLocalizations l10n) {
+  Widget _buildWeeklyProgressContent(
+    BuildContext context,
+    AppLocalizations l10n,
+  ) {
     final weekNumber = data['weekNumber'] as int;
     final completedDays = data['completedDays'] as int;
     final totalPushups = data['totalPushups'] as int;
@@ -393,7 +388,10 @@ class ShareCardWidget extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Text(AppLocalizations.of(context)!.checkIcon, style: const TextStyle(fontSize: 20)),
+                      Text(
+                        AppLocalizations.of(context)!.checkIcon,
+                        style: const TextStyle(fontSize: 20),
+                      ),
                       Text(
                         l10n.daysFormat(completedDays),
                         style: const TextStyle(
@@ -406,7 +404,10 @@ class ShareCardWidget extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Text(AppLocalizations.of(context)!.muscleIcon, style: const TextStyle(fontSize: 20)),
+                      Text(
+                        AppLocalizations.of(context)!.muscleIcon,
+                        style: const TextStyle(fontSize: 20),
+                      ),
                       Text(
                         l10n.repsFormat(totalPushups),
                         style: const TextStyle(
@@ -467,7 +468,10 @@ class ShareCardWidget extends StatelessWidget {
                 children: [
                   Column(
                     children: [
-                      Text(AppLocalizations.of(context)!.calendarIcon, style: const TextStyle(fontSize: 20)),
+                      Text(
+                        AppLocalizations.of(context)!.calendarIcon,
+                        style: const TextStyle(fontSize: 20),
+                      ),
                       Text(
                         l10n.daysFormat(duration),
                         style: const TextStyle(
@@ -487,7 +491,10 @@ class ShareCardWidget extends StatelessWidget {
                   ),
                   Column(
                     children: [
-                      Text(AppLocalizations.of(context)!.trophyIcon, style: const TextStyle(fontSize: 20)),
+                      Text(
+                        AppLocalizations.of(context)!.trophyIcon,
+                        style: const TextStyle(fontSize: 20),
+                      ),
                       Text(
                         l10n.timesFormat(totalDays),
                         style: const TextStyle(
@@ -559,10 +566,7 @@ class ShareCardWidget extends StatelessWidget {
   Widget _buildFooter(BuildContext context, AppLocalizations l10n) {
     return Column(
       children: [
-        Container(
-          height: 1,
-          color: Colors.white.withValues(alpha: 0.3),
-        ),
+        Container(height: 1, color: Colors.white.withValues(alpha: 0.3)),
         const SizedBox(height: 12),
         Text(
           l10n.becomeChad,
@@ -616,4 +620,4 @@ enum ShareCardType {
   achievement,
   weeklyProgress,
   mission100,
-} 
+}

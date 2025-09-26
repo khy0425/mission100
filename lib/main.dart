@@ -34,7 +34,7 @@ void main() async {
     ]);
 
     // 즉시 필요한 서비스들만 동기 초기화
-    
+
     // 테마 서비스 초기화 (UI 렌더링에 필요)
     final themeService = ThemeService();
     await themeService.initialize();
@@ -71,11 +71,10 @@ void main() async {
 
     // 나머지 서비스들은 백그라운드에서 초기화 (non-blocking)
     _initializeBackgroundServices();
-
   } catch (e, stackTrace) {
     debugPrint('🚨 앱 초기화 중 치명적인 오류 발생: $e');
     debugPrint('스택 트레이스: $stackTrace');
-    
+
     // 앱이 완전히 중단되지 않도록 기본 앱으로 실행
     runApp(
       MaterialApp(
@@ -118,45 +117,59 @@ void main() async {
 // 백그라운드에서 나머지 서비스들을 초기화하는 함수
 void _initializeBackgroundServices() {
   // 광고 서비스 초기화 (백그라운드)
-  AdService.initialize().then((_) {
-    debugPrint('✅ AdService 백그라운드 초기화 완료');
-  }).catchError((e) {
-    debugPrint('❌ AdService 초기화 오류: $e');
-  });
+  AdService.initialize()
+      .then((_) {
+        debugPrint('✅ AdService 백그라운드 초기화 완료');
+      })
+      .catchError((e) {
+        debugPrint('❌ AdService 초기화 오류: $e');
+      });
 
   // 알림 서비스 초기화 (백그라운드)
-  NotificationService.initialize().then((_) async {
-    await NotificationService.createNotificationChannels();
-    debugPrint('✅ NotificationService 백그라운드 초기화 완료');
-  }).catchError((e) {
-    debugPrint('❌ NotificationService 초기화 오류: $e');
-  });
+  NotificationService.initialize()
+      .then((_) async {
+        await NotificationService.createNotificationChannels();
+        debugPrint('✅ NotificationService 백그라운드 초기화 완료');
+      })
+      .catchError((e) {
+        debugPrint('❌ NotificationService 초기화 오류: $e');
+      });
 
   // Chad 이미지 서비스 초기화 (백그라운드)
-  ChadImageService().initialize().then((_) {
-    debugPrint('✅ ChadImageService 백그라운드 초기화 완료');
-  }).catchError((e) {
-    debugPrint('❌ ChadImageService 초기화 오류: $e');
-  });
+  ChadImageService()
+      .initialize()
+      .then((_) {
+        debugPrint('✅ ChadImageService 백그라운드 초기화 완료');
+      })
+      .catchError((e) {
+        debugPrint('❌ ChadImageService 초기화 오류: $e');
+      });
 
   // 업적 서비스 초기화 (백그라운드)
   Future.delayed(const Duration(milliseconds: 500), () {
-    AchievementService.initialize().then((_) async {
-      final totalCount = await AchievementService.getTotalCount();
-      final unlockedCount = await AchievementService.getUnlockedCount();
-      debugPrint('✅ 업적 서비스 백그라운드 초기화 완료 - 총 $totalCount개 업적, $unlockedCount개 잠금해제');
-    }).catchError((e) {
-      debugPrint('❌ 업적 서비스 초기화 오류: $e');
-    });
+    AchievementService.initialize()
+        .then((_) async {
+          final totalCount = await AchievementService.getTotalCount();
+          final unlockedCount = await AchievementService.getUnlockedCount();
+          debugPrint(
+            '✅ 업적 서비스 백그라운드 초기화 완료 - 총 $totalCount개 업적, $unlockedCount개 잠금해제',
+          );
+        })
+        .catchError((e) {
+          debugPrint('❌ 업적 서비스 초기화 오류: $e');
+        });
   });
 
   // 챌린지 서비스 초기화 (백그라운드)
   Future.delayed(const Duration(milliseconds: 700), () {
-    ChallengeService().initialize().then((_) {
-      debugPrint('✅ 챌린지 서비스 백그라운드 초기화 완료');
-    }).catchError((e) {
-      debugPrint('❌ 챌린지 서비스 초기화 오류: $e');
-    });
+    ChallengeService()
+        .initialize()
+        .then((_) {
+          debugPrint('✅ 챌린지 서비스 백그라운드 초기화 완료');
+        })
+        .catchError((e) {
+          debugPrint('❌ 챌린지 서비스 초기화 오류: $e');
+        });
   });
 
   // Chad 이미지 프리로드 (더 늦게, 메모리 부담 줄이기)
@@ -176,7 +189,7 @@ class LocaleNotifier extends ChangeNotifier {
 
   Future<void> setLocale(Locale newLocale) async {
     if (_locale == newLocale) return;
-    
+
     await LocaleService.setLocale(newLocale);
     _locale = newLocale;
     notifyListeners();
@@ -185,7 +198,7 @@ class LocaleNotifier extends ChangeNotifier {
   Future<void> loadLocale() async {
     // 로케일 자동 초기화는 스플래시 화면에서 처리
     // await LocaleService.initializeLocale();
-    
+
     // 설정된 언어 불러오기
     _locale = await LocaleService.getLocale();
     notifyListeners();
@@ -217,11 +230,11 @@ class _MissionAppState extends State<MissionApp> with WidgetsBindingObserver {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     super.didChangeAppLifecycleState(state);
-    
+
     // 앱이 포그라운드로 돌아왔을 때 권한 상태 재확인
     if (state == AppLifecycleState.resumed) {
       debugPrint('🔄 앱이 포그라운드로 돌아왔습니다. 권한 상태 재확인...');
-      
+
       // 알림 권한 재확인 (약간의 지연 후)
       Future.delayed(const Duration(milliseconds: 500), () {
         NotificationService.recheckPermissionsOnResume();
@@ -318,16 +331,19 @@ class _SplashScreenState extends State<SplashScreen>
       try {
         await LocaleService.initializeLocale();
         debugPrint('🌐 스마트 언어 탐지 완료');
-        
+
         // 언어 변경이 있었다면 LocaleNotifier 업데이트
         if (mounted) {
-          final localeNotifier = Provider.of<LocaleNotifier>(context, listen: false);
+          final localeNotifier = Provider.of<LocaleNotifier>(
+            context,
+            listen: false,
+          );
           await localeNotifier.loadLocale();
         }
       } catch (e) {
         debugPrint('🌐 스마트 언어 탐지 오류: $e (기존 설정 유지)');
       }
-      
+
       // 1단계: 온보딩 완료 여부 확인
       bool isOnboardingCompleted = false;
       try {
@@ -343,7 +359,9 @@ class _SplashScreenState extends State<SplashScreen>
         debugPrint('화면 이동: 온보딩 화면 (첫 실행)');
         if (mounted) {
           await Navigator.of(context).pushReplacement(
-            MaterialPageRoute<void>(builder: (context) => const OnboardingScreen()),
+            MaterialPageRoute<void>(
+              builder: (context) => const OnboardingScreen(),
+            ),
           );
         }
         return;
@@ -367,7 +385,9 @@ class _SplashScreenState extends State<SplashScreen>
         debugPrint('화면 이동: 메인 화면');
         if (mounted) {
           await Navigator.of(context).pushReplacement(
-            MaterialPageRoute<void>(builder: (context) => const MainNavigationScreen()),
+            MaterialPageRoute<void>(
+              builder: (context) => const MainNavigationScreen(),
+            ),
           );
         }
       } else {
@@ -375,18 +395,22 @@ class _SplashScreenState extends State<SplashScreen>
         debugPrint('화면 이동: 메인 화면 (프로필 생성 필요)');
         if (mounted) {
           await Navigator.of(context).pushReplacement(
-            MaterialPageRoute<void>(builder: (context) => const MainNavigationScreen()),
+            MaterialPageRoute<void>(
+              builder: (context) => const MainNavigationScreen(),
+            ),
           );
         }
       }
     } catch (e, stackTrace) {
       debugPrint('🚨 스플래시 화면 초기화 중 치명적인 오류 발생: $e');
       debugPrint('스택 트레이스: $stackTrace');
-      
+
       // 오류가 발생했을 때 온보딩 화면으로 안전하게 이동
       if (mounted) {
         await Navigator.of(context).pushReplacement(
-          MaterialPageRoute<void>(builder: (context) => const OnboardingScreen()),
+          MaterialPageRoute<void>(
+            builder: (context) => const OnboardingScreen(),
+          ),
         );
       }
     }

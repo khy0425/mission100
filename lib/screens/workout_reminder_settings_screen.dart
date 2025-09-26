@@ -10,10 +10,12 @@ class WorkoutReminderSettingsScreen extends StatefulWidget {
   const WorkoutReminderSettingsScreen({super.key});
 
   @override
-  State<WorkoutReminderSettingsScreen> createState() => _WorkoutReminderSettingsScreenState();
+  State<WorkoutReminderSettingsScreen> createState() =>
+      _WorkoutReminderSettingsScreenState();
 }
 
-class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsScreen> {
+class _WorkoutReminderSettingsScreenState
+    extends State<WorkoutReminderSettingsScreen> {
   WorkoutReminderSettings _settings = WorkoutReminderSettings.defaultWeekdays;
   bool _isLoading = true;
 
@@ -44,7 +46,10 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
   Future<void> _saveSettings() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      await prefs.setString('workout_reminder_settings', jsonEncode(_settings.toJson()));
+      await prefs.setString(
+        'workout_reminder_settings',
+        jsonEncode(_settings.toJson()),
+      );
 
       // 실제 알림 스케줄링 업데이트
       if (_settings.isEnabled && _settings.activeDays.isNotEmpty) {
@@ -125,10 +130,9 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
   }
 
   void _selectPreset(WorkoutReminderSettings preset) {
-    _updateSettings(preset.copyWith(
-      isEnabled: _settings.isEnabled,
-      time: _settings.time,
-    ));
+    _updateSettings(
+      preset.copyWith(isEnabled: _settings.isEnabled, time: _settings.time),
+    );
   }
 
   @override
@@ -166,16 +170,19 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 gradient: isDark
-                  ? LinearGradient(
-                      colors: [Colors.grey[800]!, Colors.grey[700]!],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    )
-                  : LinearGradient(
-                      colors: [const Color(0xFF2196F3), const Color(0xFF1976D2)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
+                    ? LinearGradient(
+                        colors: [Colors.grey[800]!, Colors.grey[700]!],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      )
+                    : LinearGradient(
+                        colors: [
+                          const Color(0xFF2196F3),
+                          const Color(0xFF1976D2),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
@@ -187,11 +194,7 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
               ),
               child: Column(
                 children: [
-                  const Icon(
-                    Icons.schedule,
-                    size: 48,
-                    color: Colors.white,
-                  ),
+                  const Icon(Icons.schedule, size: 48, color: Colors.white),
                   const SizedBox(height: 8),
                   Text(
                     AppLocalizations.of(context)!.workoutReminderSettings,
@@ -215,14 +218,22 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
             const SizedBox(height: 20),
 
             // 알림 활성화
-            _buildSectionHeader(AppLocalizations.of(context)!.chadNotificationSettings, Icons.notifications),
+            _buildSectionHeader(
+              AppLocalizations.of(context)!.chadNotificationSettings,
+              Icons.notifications,
+            ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               SwitchListTile(
                 title: Text(AppLocalizations.of(context)!.chadReminder),
-                subtitle: Text(_settings.isEnabled
-                  ? AppLocalizations.of(context)!.chadModeActive(_settings.activeDaysString, _settings.time.format(context))
-                  : AppLocalizations.of(context)!.chadModeWaiting),
+                subtitle: Text(
+                  _settings.isEnabled
+                      ? AppLocalizations.of(context)!.chadModeActive(
+                          _settings.activeDaysString,
+                          _settings.time.format(context),
+                        )
+                      : AppLocalizations.of(context)!.chadModeWaiting,
+                ),
                 value: _settings.isEnabled,
                 onChanged: (value) {
                   _updateSettings(_settings.copyWith(isEnabled: value));
@@ -234,13 +245,20 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
               const SizedBox(height: 20),
 
               // 시간 설정
-              _buildSectionHeader(AppLocalizations.of(context)!.chadTimeSettings, Icons.access_time),
+              _buildSectionHeader(
+                AppLocalizations.of(context)!.chadTimeSettings,
+                Icons.access_time,
+              ),
               const SizedBox(height: 8),
               _buildSettingsCard([
                 ListTile(
                   leading: const Icon(Icons.schedule),
                   title: Text(AppLocalizations.of(context)!.chadAlarmTime),
-                  subtitle: Text(AppLocalizations.of(context)!.victoryTime(_settings.time.format(context))),
+                  subtitle: Text(
+                    AppLocalizations.of(
+                      context,
+                    )!.victoryTime(_settings.time.format(context)),
+                  ),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: _selectTime,
                 ),
@@ -249,35 +267,50 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
               const SizedBox(height: 20),
 
               // 프리셋 선택
-              _buildSectionHeader(AppLocalizations.of(context)!.chadModeSelection, Icons.dashboard),
+              _buildSectionHeader(
+                AppLocalizations.of(context)!.chadModeSelection,
+                Icons.dashboard,
+              ),
               const SizedBox(height: 8),
               _buildSettingsCard([
                 ListTile(
                   leading: const Icon(Icons.work),
                   title: Text(AppLocalizations.of(context)!.workerChadMode),
-                  subtitle: Text(AppLocalizations.of(context)!.weekendRestWeekdayInvincible),
-                  onTap: () => _selectPreset(WorkoutReminderSettings.defaultWeekdays),
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.weekendRestWeekdayInvincible,
+                  ),
+                  onTap: () =>
+                      _selectPreset(WorkoutReminderSettings.defaultWeekdays),
                 ),
                 const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.star),
                   title: Text(AppLocalizations.of(context)!.strategicChadMode),
-                  subtitle: Text(AppLocalizations.of(context)!.scientificRecovery),
-                  onTap: () => _selectPreset(WorkoutReminderSettings.defaultMWF),
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.scientificRecovery,
+                  ),
+                  onTap: () =>
+                      _selectPreset(WorkoutReminderSettings.defaultMWF),
                 ),
                 const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.favorite),
                   title: Text(AppLocalizations.of(context)!.balanceChadMode),
-                  subtitle: Text(AppLocalizations.of(context)!.perfectBalanceOptimized),
-                  onTap: () => _selectPreset(WorkoutReminderSettings.defaultTTS),
+                  subtitle: Text(
+                    AppLocalizations.of(context)!.perfectBalanceOptimized,
+                  ),
+                  onTap: () =>
+                      _selectPreset(WorkoutReminderSettings.defaultTTS),
                 ),
               ]),
 
               const SizedBox(height: 20),
 
               // 요일별 설정
-              _buildSectionHeader(AppLocalizations.of(context)!.victoryDaySelection, Icons.calendar_today),
+              _buildSectionHeader(
+                AppLocalizations.of(context)!.victoryDaySelection,
+                Icons.calendar_today,
+              ),
               const SizedBox(height: 8),
               _buildWeekdaySelector(),
 
@@ -341,7 +374,9 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isDark ? Colors.blue.withOpacity(0.2) : Colors.blue.withOpacity(0.1),
+            color: isDark
+                ? Colors.blue.withOpacity(0.2)
+                : Colors.blue.withOpacity(0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(
@@ -417,16 +452,19 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
                   onTap: () => _toggleDay(day),
                   child: Container(
                     width: 80,
-                    padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 12,
+                      horizontal: 8,
+                    ),
                     decoration: BoxDecoration(
                       color: isSelected
-                        ? Colors.blue
-                        : (isDark ? Colors.grey[700] : Colors.grey[200]),
+                          ? Colors.blue
+                          : (isDark ? Colors.grey[700] : Colors.grey[200]),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                         color: isSelected
-                          ? Colors.blue
-                          : (isDark ? Colors.grey[600]! : Colors.grey[300]!),
+                            ? Colors.blue
+                            : (isDark ? Colors.grey[600]! : Colors.grey[300]!),
                         width: 1,
                       ),
                     ),
@@ -435,9 +473,11 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         color: isSelected
-                          ? Colors.white
-                          : (isDark ? Colors.white : Colors.black87),
-                        fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                            ? Colors.white
+                            : (isDark ? Colors.white : Colors.black87),
+                        fontWeight: isSelected
+                            ? FontWeight.bold
+                            : FontWeight.normal,
                         fontSize: 12,
                       ),
                     ),
@@ -447,7 +487,10 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
             ),
             const SizedBox(height: 12),
             Text(
-              AppLocalizations.of(context)!.selectedDaysFormat(_settings.activeDaysString, _settings.activeDays.length),
+              AppLocalizations.of(context)!.selectedDaysFormat(
+                _settings.activeDaysString,
+                _settings.activeDays.length,
+              ),
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.blue[700],
@@ -467,9 +510,7 @@ class _WorkoutReminderSettingsScreenState extends State<WorkoutReminderSettingsS
         duration: const Duration(seconds: 2),
         backgroundColor: Colors.blue,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );
   }

@@ -86,11 +86,7 @@ class WorkoutControlsWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    Icons.skip_next,
-                    color: Colors.white,
-                    size: iconSize,
-                  ),
+                  Icon(Icons.skip_next, color: Colors.white, size: iconSize),
                   SizedBox(width: padding / 2),
                   Text(
                     AppLocalizations.of(context).skipRest,

@@ -60,4 +60,4 @@ class StatCardWidget extends StatelessWidget {
       ),
     );
   }
-} 
+}

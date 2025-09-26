@@ -58,7 +58,9 @@ class WorkoutHeaderWidget extends StatelessWidget {
             children: [
               Flexible(
                 child: Text(
-                  AppLocalizations.of(context).setFormat(currentSet + 1, totalSets),
+                  AppLocalizations.of(
+                    context,
+                  ).setFormat(currentSet + 1, totalSets),
                   style: theme.textTheme.titleMedium?.copyWith(
                     color: Color(AppColors.primaryColor),
                     fontWeight: FontWeight.w600,
@@ -76,7 +78,9 @@ class WorkoutHeaderWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(AppConstants.radiusS),
                 ),
                 child: Text(
-                  AppLocalizations.of(context).targetRepsLabel(currentTargetReps),
+                  AppLocalizations.of(
+                    context,
+                  ).targetRepsLabel(currentTargetReps),
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: Colors.white,
                     fontWeight: FontWeight.w600,

@@ -15,7 +15,7 @@ class ChadLevelManager extends ChangeNotifier {
   ChadLevelManager._internal();
 
   static const String _chadLevelDataKey = 'chad_level_data';
-  
+
   // 차드 레벨 데이터 모델
   ChadLevelData _levelData = const ChadLevelData();
   bool _isInitialized = false;
@@ -24,7 +24,8 @@ class ChadLevelManager extends ChangeNotifier {
   ChadLevelData get levelData => _levelData;
 
   /// 현재 차드 단계
-  ChadStageInfo get currentStage => ChadStageInfo.allStages[_levelData.currentStageIndex];
+  ChadStageInfo get currentStage =>
+      ChadStageInfo.allStages[_levelData.currentStageIndex];
 
   /// 다음 차드 단계
   ChadStageInfo? get nextStage {
@@ -36,21 +37,22 @@ class ChadLevelManager extends ChangeNotifier {
   }
 
   /// 최종 진화 완료 여부
-  bool get isMaxLevel => _levelData.currentStageIndex >= ChadStageInfo.allStages.length - 1;
+  bool get isMaxLevel =>
+      _levelData.currentStageIndex >= ChadStageInfo.allStages.length - 1;
 
   /// 서비스 초기화
   Future<void> initialize() async {
     if (_isInitialized) return;
-    
+
     try {
       final prefs = await SharedPreferences.getInstance();
       final dataJson = prefs.getString(_chadLevelDataKey);
-      
+
       if (dataJson != null) {
         final dataMap = jsonDecode(dataJson) as Map<String, dynamic>;
         _levelData = ChadLevelData.fromJson(dataMap);
       }
-      
+
       _isInitialized = true;
       debugPrint('✅ ChadLevelManager 초기화 완료: ${currentStage.name}');
     } catch (e) {
@@ -63,13 +65,17 @@ class ChadLevelManager extends ChangeNotifier {
   /// 진행 상황 업데이트 및 레벨업 확인
   Future<ChadLevelUpResult> updateProgress(Progress progress) async {
     await _ensureInitialized();
-    
+
     final completedWeeks = _calculateCompletedWeeks(progress);
     final previousStage = _levelData.currentStageIndex;
-    
+
     // 새로운 단계 확인
     int newStageIndex = _levelData.currentStageIndex;
-    for (int i = _levelData.currentStageIndex + 1; i < ChadStageInfo.allStages.length; i++) {
+    for (
+      int i = _levelData.currentStageIndex + 1;
+      i < ChadStageInfo.allStages.length;
+      i++
+    ) {
       final stage = ChadStageInfo.allStages[i];
       if (completedWeeks >= stage.requiredWeeks) {
         newStageIndex = i;
@@ -77,11 +83,11 @@ class ChadLevelManager extends ChangeNotifier {
         break;
       }
     }
-    
+
     // 레벨업 발생
     if (newStageIndex > previousStage) {
       await _levelUp(newStageIndex);
-      
+
       return ChadLevelUpResult(
         leveledUp: true,
         previousStage: ChadStageInfo.allStages[previousStage],
@@ -89,10 +95,10 @@ class ChadLevelManager extends ChangeNotifier {
         completedWeeks: completedWeeks,
       );
     }
-    
+
     // 진행률만 업데이트
     await _updateProgressOnly(completedWeeks);
-    
+
     return ChadLevelUpResult(
       leveledUp: false,
       previousStage: currentStage,
@@ -105,28 +111,29 @@ class ChadLevelManager extends ChangeNotifier {
   Future<void> _levelUp(int newStageIndex) async {
     final previousStageIndex = _levelData.currentStageIndex;
     final newStage = ChadStageInfo.allStages[newStageIndex];
-    
+
     _levelData = _levelData.copyWith(
       currentStageIndex: newStageIndex,
       lastLevelUpAt: DateTime.now(),
-      totalLevelUps: _levelData.totalLevelUps + (newStageIndex - previousStageIndex),
+      totalLevelUps:
+          _levelData.totalLevelUps + (newStageIndex - previousStageIndex),
     );
-    
+
     await _saveLevelData();
     notifyListeners();
-    
+
     // 레벨업 알림
     await _sendLevelUpNotification(newStage);
-    
-    debugPrint('🎉 차드 레벨업: ${ChadStageInfo.allStages[previousStageIndex].name} → ${newStage.name}');
+
+    debugPrint(
+      '🎉 차드 레벨업: ${ChadStageInfo.allStages[previousStageIndex].name} → ${newStage.name}',
+    );
   }
 
   /// 진행률만 업데이트
   Future<void> _updateProgressOnly(int completedWeeks) async {
-    _levelData = _levelData.copyWith(
-      lastUpdatedAt: DateTime.now(),
-    );
-    
+    _levelData = _levelData.copyWith(lastUpdatedAt: DateTime.now());
+
     await _saveLevelData();
     notifyListeners();
   }
@@ -134,52 +141,52 @@ class ChadLevelManager extends ChangeNotifier {
   /// 완료된 주차 수 계산
   int _calculateCompletedWeeks(Progress progress) {
     int completedWeeks = 0;
-    
+
     for (int week = 1; week <= 6; week++) {
       final weekProgress = progress.weeklyProgress.firstWhere(
         (wp) => wp.week == week,
         orElse: () => WeeklyProgress(week: week),
       );
-      
+
       if (weekProgress.isWeekCompleted) {
         completedWeeks = week;
       } else {
         break; // 연속으로 완료되지 않은 주차가 있으면 중단
       }
     }
-    
+
     return completedWeeks;
   }
 
   /// 현재 진화 진행률 계산 (0.0 ~ 1.0)
   double getEvolutionProgress(Progress progress) {
     if (isMaxLevel) return 1.0;
-    
+
     final completedWeeks = _calculateCompletedWeeks(progress);
     final currentStageWeeks = currentStage.requiredWeeks;
     final nextStageWeeks = nextStage?.requiredWeeks ?? currentStageWeeks;
-    
+
     // 현재 단계가 이미 완료되었는지 확인
     if (completedWeeks <= currentStageWeeks) {
       // 현재 단계도 완료하지 못한 경우 0.0
       return 0.0;
     }
-    
+
     if (nextStageWeeks <= currentStageWeeks) return 1.0;
-    
+
     final progressInCurrentStage = completedWeeks - currentStageWeeks;
     final weeksNeededForNext = nextStageWeeks - currentStageWeeks;
-    
+
     return (progressInCurrentStage / weeksNeededForNext).clamp(0.0, 1.0);
   }
 
   /// 다음 레벨까지 남은 주차 수
   int getWeeksUntilNextLevel(Progress progress) {
     if (isMaxLevel) return 0;
-    
+
     final completedWeeks = _calculateCompletedWeeks(progress);
     final nextStageWeeks = nextStage?.requiredWeeks ?? completedWeeks;
-    
+
     return (nextStageWeeks - completedWeeks).clamp(0, 6);
   }
 
@@ -238,12 +245,12 @@ class ChadLevelManager extends ChangeNotifier {
   /// 특정 레벨로 설정 (디버그/테스트용)
   Future<void> setLevel(int stageIndex) async {
     if (stageIndex < 0 || stageIndex >= ChadStageInfo.allStages.length) return;
-    
+
     _levelData = _levelData.copyWith(
       currentStageIndex: stageIndex,
       lastLevelUpAt: DateTime.now(),
     );
-    
+
     await _saveLevelData();
     notifyListeners();
     debugPrint('🎯 차드 레벨 설정: ${currentStage.name}');
@@ -280,10 +287,10 @@ class ChadLevelData {
     return ChadLevelData(
       currentStageIndex: json['currentStageIndex'] as int? ?? 0,
       totalLevelUps: json['totalLevelUps'] as int? ?? 0,
-      lastLevelUpAt: json['lastLevelUpAt'] != null 
+      lastLevelUpAt: json['lastLevelUpAt'] != null
           ? DateTime.parse(json['lastLevelUpAt'] as String)
           : null,
-      lastUpdatedAt: json['lastUpdatedAt'] != null 
+      lastUpdatedAt: json['lastUpdatedAt'] != null
           ? DateTime.parse(json['lastUpdatedAt'] as String)
           : null,
     );
@@ -429,4 +436,4 @@ class ChadLevelUpResult {
     required this.newStage,
     required this.completedWeeks,
   });
-} 
+}

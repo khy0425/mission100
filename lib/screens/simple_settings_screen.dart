@@ -69,16 +69,19 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 gradient: isDark
-                  ? LinearGradient(
-                      colors: [Colors.grey[800]!, Colors.grey[700]!],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    )
-                  : LinearGradient(
-                      colors: [const Color(0xFF2196F3), const Color(0xFF1976D2)],
-                      begin: Alignment.topLeft,
-                      end: Alignment.bottomRight,
-                    ),
+                    ? LinearGradient(
+                        colors: [Colors.grey[800]!, Colors.grey[700]!],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      )
+                    : LinearGradient(
+                        colors: [
+                          const Color(0xFF2196F3),
+                          const Color(0xFF1976D2),
+                        ],
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                      ),
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
@@ -90,11 +93,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
               ),
               child: Column(
                 children: [
-                  const Icon(
-                    Icons.settings,
-                    size: 48,
-                    color: Colors.white,
-                  ),
+                  const Icon(Icons.settings, size: 48, color: Colors.white),
                   const SizedBox(height: 8),
                   Text(
                     AppLocalizations.of(context)!.mission100Settings,
@@ -118,12 +117,17 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
             const SizedBox(height: 20),
 
             // 알림 설정
-            _buildSectionHeader(AppLocalizations.of(context)!.notificationSettings, Icons.notifications),
+            _buildSectionHeader(
+              AppLocalizations.of(context)!.notificationSettings,
+              Icons.notifications,
+            ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               SwitchListTile(
                 title: Text(AppLocalizations.of(context)!.pushNotifications),
-                subtitle: Text(AppLocalizations.of(context)!.receiveGeneralNotifications),
+                subtitle: Text(
+                  AppLocalizations.of(context)!.receiveGeneralNotifications,
+                ),
                 value: _pushNotifications,
                 onChanged: (bool value) async {
                   setState(() {
@@ -131,14 +135,22 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                   });
                   await _saveBoolSetting('push_notifications', value);
                   _showSnackBar(
-                    value ? AppLocalizations.of(context)!.pushNotificationEnabled : AppLocalizations.of(context)!.pushNotificationDisabled,
+                    value
+                        ? AppLocalizations.of(context)!.pushNotificationEnabled
+                        : AppLocalizations.of(
+                            context,
+                          )!.pushNotificationDisabled,
                   );
                 },
               ),
               const Divider(height: 1),
               SwitchListTile(
                 title: Text(AppLocalizations.of(context)!.workoutReminder),
-                subtitle: Text(AppLocalizations.of(context)!.dailyReminderAt(_reminderTime.format(context))),
+                subtitle: Text(
+                  AppLocalizations.of(
+                    context,
+                  )!.dailyReminderAt(_reminderTime.format(context)),
+                ),
                 value: _workoutReminders,
                 onChanged: (bool value) async {
                   setState(() {
@@ -148,31 +160,47 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
 
                   // 실제 알림 스케줄링 처리
                   if (value && _pushNotifications) {
-                    await NotificationService.scheduleWorkoutReminder(_reminderTime);
+                    await NotificationService.scheduleWorkoutReminder(
+                      _reminderTime,
+                    );
                   } else {
                     await NotificationService.cancelWorkoutReminder();
                   }
 
                   _showSnackBar(
-                    value ? AppLocalizations.of(context)!.workoutReminderEnabled : AppLocalizations.of(context)!.workoutReminderDisabled,
+                    value
+                        ? AppLocalizations.of(context)!.workoutReminderEnabled
+                        : AppLocalizations.of(context)!.workoutReminderDisabled,
                   );
                 },
               ),
               const Divider(height: 1),
               ListTile(
                 leading: const Icon(Icons.schedule),
-                title: Text(AppLocalizations.of(context)!.detailedReminderSettings),
-                subtitle: Text(AppLocalizations.of(context)!.weeklyWorkoutSchedule),
+                title: Text(
+                  AppLocalizations.of(context)!.detailedReminderSettings,
+                ),
+                subtitle: Text(
+                  AppLocalizations.of(context)!.weeklyWorkoutSchedule,
+                ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: _workoutReminders ? _openReminderSettings : null,
               ),
               const Divider(height: 1),
               SwitchListTile(
-                title: Text(AppLocalizations.of(context)!.achievementNotifications),
-                subtitle: Text(AppLocalizations.of(context)!.receiveAchievementNotifications),
+                title: Text(
+                  AppLocalizations.of(context)!.achievementNotifications,
+                ),
+                subtitle: Text(
+                  AppLocalizations.of(context)!.receiveAchievementNotifications,
+                ),
                 value: true,
                 onChanged: (bool value) {
-                  _showSnackBar(AppLocalizations.of(context)!.achievementNotificationsAlwaysOn);
+                  _showSnackBar(
+                    AppLocalizations.of(
+                      context,
+                    )!.achievementNotificationsAlwaysOn,
+                  );
                 },
               ),
             ]),
@@ -180,7 +208,10 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
             const SizedBox(height: 20),
 
             // 외관 설정
-            _buildSectionHeader(AppLocalizations.of(context)!.appearanceSettings, Icons.palette),
+            _buildSectionHeader(
+              AppLocalizations.of(context)!.appearanceSettings,
+              Icons.palette,
+            ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               SwitchListTile(
@@ -204,7 +235,9 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 subtitle: Text(AppLocalizations.of(context)!.korean),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
-                  _showSnackBar(AppLocalizations.of(context)!.languageSettingsComingSoon);
+                  _showSnackBar(
+                    AppLocalizations.of(context)!.languageSettingsComingSoon,
+                  );
                 },
               ),
               const Divider(height: 1),
@@ -214,7 +247,9 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 subtitle: Text(AppLocalizations.of(context)!.beginnerMode),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
-                  _showSnackBar(AppLocalizations.of(context)!.difficultySettingsComingSoon);
+                  _showSnackBar(
+                    AppLocalizations.of(context)!.difficultySettingsComingSoon,
+                  );
                 },
               ),
             ]),
@@ -222,16 +257,23 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
             const SizedBox(height: 20),
 
             // 데이터 관리
-            _buildSectionHeader(AppLocalizations.of(context)!.dataManagement, Icons.storage),
+            _buildSectionHeader(
+              AppLocalizations.of(context)!.dataManagement,
+              Icons.storage,
+            ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               ListTile(
                 leading: const Icon(Icons.backup),
                 title: Text(AppLocalizations.of(context)!.dataBackup),
-                subtitle: Text(AppLocalizations.of(context)!.backupWorkoutRecords),
+                subtitle: Text(
+                  AppLocalizations.of(context)!.backupWorkoutRecords,
+                ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
-                  _showSnackBar(AppLocalizations.of(context)!.dataBackupComingSoon);
+                  _showSnackBar(
+                    AppLocalizations.of(context)!.dataBackupComingSoon,
+                  );
                 },
               ),
               const Divider(height: 1),
@@ -241,17 +283,26 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 subtitle: Text(AppLocalizations.of(context)!.restoreBackupData),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
-                  _showSnackBar(AppLocalizations.of(context)!.dataRestoreComingSoon);
+                  _showSnackBar(
+                    AppLocalizations.of(context)!.dataRestoreComingSoon,
+                  );
                 },
               ),
               const Divider(height: 1),
               ListTile(
                 leading: const Icon(Icons.delete_forever, color: Colors.red),
-                title: Text(AppLocalizations.of(context)!.dataReset, style: const TextStyle(color: Colors.red)),
-                subtitle: Text(AppLocalizations.of(context)!.deleteAllWorkoutRecords),
+                title: Text(
+                  AppLocalizations.of(context)!.dataReset,
+                  style: const TextStyle(color: Colors.red),
+                ),
+                subtitle: Text(
+                  AppLocalizations.of(context)!.deleteAllWorkoutRecords,
+                ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
-                  _showSnackBar(AppLocalizations.of(context)!.dataResetComingSoon);
+                  _showSnackBar(
+                    AppLocalizations.of(context)!.dataResetComingSoon,
+                  );
                 },
               ),
             ]),
@@ -259,7 +310,10 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
             const SizedBox(height: 20),
 
             // 앱 정보
-            _buildSectionHeader(AppLocalizations.of(context)!.appInfo, Icons.info),
+            _buildSectionHeader(
+              AppLocalizations.of(context)!.appInfo,
+              Icons.info,
+            ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               ListTile(
@@ -280,7 +334,9 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 subtitle: Text(AppLocalizations.of(context)!.openSourceLicense),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
-                  _showSnackBar(AppLocalizations.of(context)!.licenseInfoComingSoon);
+                  _showSnackBar(
+                    AppLocalizations.of(context)!.licenseInfoComingSoon,
+                  );
                 },
               ),
               const Divider(height: 1),
@@ -290,7 +346,9 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 subtitle: Text(AppLocalizations.of(context)!.rateOnPlayStore),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
-                  _showSnackBar(AppLocalizations.of(context)!.appRatingComingSoon);
+                  _showSnackBar(
+                    AppLocalizations.of(context)!.appRatingComingSoon,
+                  );
                 },
               ),
             ]),
@@ -336,7 +394,9 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isDark ? Colors.blue.withOpacity(0.2) : Colors.blue.withOpacity(0.1),
+            color: isDark
+                ? Colors.blue.withOpacity(0.2)
+                : Colors.blue.withOpacity(0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(
@@ -397,7 +457,8 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
   /// 리마인더 시간 저장
   Future<void> _saveReminderTime(TimeOfDay time) async {
     final prefs = await SharedPreferences.getInstance();
-    final timeString = '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
+    final timeString =
+        '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
     await prefs.setString('reminder_time', timeString);
 
     setState(() {
@@ -408,7 +469,9 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
     if (_workoutReminders && _pushNotifications) {
       await NotificationService.scheduleWorkoutReminder(time);
 
-      _showSnackBar(AppLocalizations.of(context)!.reminderTimeChanged(time.format(context)));
+      _showSnackBar(
+        AppLocalizations.of(context)!.reminderTimeChanged(time.format(context)),
+      );
     }
 
     debugPrint('리마인더 시간 저장: $timeString');
@@ -421,9 +484,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
         duration: const Duration(seconds: 2),
         backgroundColor: Colors.blue,
         behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );
   }

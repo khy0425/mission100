@@ -20,11 +20,11 @@ class _ChallengeScreenState extends State<ChallengeScreen>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
   late ChallengeService _challengeService;
-  
+
   List<Challenge> _availableChallenges = [];
   List<Challenge> _activeChallenges = [];
   List<Challenge> _completedChallenges = [];
-  
+
   bool _isLoading = true;
   UserProfile? _userProfile;
 
@@ -38,7 +38,7 @@ class _ChallengeScreenState extends State<ChallengeScreen>
   Future<void> _initializeService() async {
     try {
       _challengeService = ChallengeService();
-      
+
       await _challengeService.initialize();
       await _loadUserProfile();
       await _loadChallenges();
@@ -64,12 +64,14 @@ class _ChallengeScreenState extends State<ChallengeScreen>
 
   Future<void> _loadChallenges() async {
     if (_userProfile == null) return;
-    
+
     try {
-      final available = await _challengeService.getAvailableChallenges(_userProfile!);
+      final available = await _challengeService.getAvailableChallenges(
+        _userProfile!,
+      );
       final active = _challengeService.getActiveChallenges();
       final completed = _challengeService.getCompletedChallenges();
-      
+
       if (mounted) {
         setState(() {
           _availableChallenges = available;
@@ -125,7 +127,9 @@ class _ChallengeScreenState extends State<ChallengeScreen>
         _activeChallenges.removeWhere((c) => c.id == challengeId);
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(AppLocalizations.of(context)!.challengeAbandoned)),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.challengeAbandoned),
+        ),
       );
     }
   }
@@ -146,15 +150,18 @@ class _ChallengeScreenState extends State<ChallengeScreen>
           controller: _tabController,
           tabs: [
             Tab(
-              text: '${AppLocalizations.of(context)!.challengesAvailable} (${_availableChallenges.length})',
+              text:
+                  '${AppLocalizations.of(context)!.challengesAvailable} (${_availableChallenges.length})',
               icon: const Icon(Icons.play_arrow),
             ),
             Tab(
-              text: '${AppLocalizations.of(context)!.challengesActive} (${_activeChallenges.length})',
+              text:
+                  '${AppLocalizations.of(context)!.challengesActive} (${_activeChallenges.length})',
               icon: const Icon(Icons.timer),
             ),
             Tab(
-              text: '${AppLocalizations.of(context)!.challengeTabCompleted} (${_completedChallenges.length})',
+              text:
+                  '${AppLocalizations.of(context)!.challengeTabCompleted} (${_completedChallenges.length})',
               icon: const Icon(Icons.check_circle),
             ),
           ],
@@ -293,7 +300,11 @@ class _ChallengeScreenState extends State<ChallengeScreen>
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.check_circle_outline, size: 64, color: Colors.grey),
+            const Icon(
+              Icons.check_circle_outline,
+              size: 64,
+              color: Colors.grey,
+            ),
             const SizedBox(height: 16),
             Text(
               AppLocalizations.of(context)!.noCompletedChallenges,
@@ -316,12 +327,9 @@ class _ChallengeScreenState extends State<ChallengeScreen>
         itemCount: _completedChallenges.length,
         itemBuilder: (context, index) {
           final challenge = _completedChallenges[index];
-          return ChallengeCard(
-            challenge: challenge,
-            showCompletionDate: true,
-          );
+          return ChallengeCard(challenge: challenge, showCompletionDate: true);
         },
       ),
     );
   }
-} 
+}
