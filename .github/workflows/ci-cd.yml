@@ -1,4 +1,4 @@
-name: 🚀 Mission100 Chad CI/CD Pipeline
+name: 🚀 Mission100 Android CI/CD Pipeline
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
       - name: 🧪 Run Tests
         run: flutter test
 
-  # Android 빌드
+  # Android 빌드 (핵심 타겟)
   build-android:
     name: 🤖 Build Android APK
     needs: analyze
@@ -80,132 +80,7 @@ jobs:
           name: mission100-release-apk
           path: build/app/outputs/flutter-apk/app-release.apk
 
-  # iOS 빌드 (macOS에서만 가능)
-  build-ios:
-    name: 🍎 Build iOS
-    needs: analyze
-    runs-on: macos-latest
-    steps:
-      - name: 📥 Checkout Code
-        uses: actions/checkout@v4
-
-      - name: ⚡ Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.0'
-          channel: 'stable'
-          cache: true
-
-      - name: 📦 Get Dependencies
-        run: flutter pub get
-
-      - name: 🔧 Generate Localization
-        run: flutter gen-l10n
-
-      - name: 🏗️ Build iOS (no codesign)
-        run: flutter build ios --no-codesign
-
-  # 웹 빌드
-  build-web:
-    name: 🌐 Build Web
-    needs: analyze
-    runs-on: ubuntu-latest
-    steps:
-      - name: 📥 Checkout Code
-        uses: actions/checkout@v4
-
-      - name: ⚡ Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          flutter-version: '3.24.0'
-          channel: 'stable'
-          cache: true
-
-      - name: 📦 Get Dependencies
-        run: flutter pub get
-
-      - name: 🔧 Generate Localization
-        run: flutter gen-l10n
-
-      - name: 🏗️ Build Web
-        run: flutter build web
-
-      - name: 📤 Upload Web Build
-        uses: actions/upload-artifact@v4
-        with:
-          name: mission100-web-build
-          path: build/web/
-
-  # 릴리스 배포 (main 브랜치에서만)
-  deploy:
-    name: 🚀 Deploy Release
-    needs: [build-android, build-ios, build-web]
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    steps:
-      - name: 📥 Checkout Code
-        uses: actions/checkout@v4
-
-      - name: 📥 Download Android APK
-        uses: actions/download-artifact@v4
-        with:
-          name: mission100-release-apk
-          path: ./artifacts/
-
-      - name: 📥 Download Web Build
-        uses: actions/download-artifact@v4
-        with:
-          name: mission100-web-build
-          path: ./artifacts/web/
-
-      - name: 🏷️ Create Release Tag
-        id: create_tag
-        run: |
-          DATE=$(date +'%Y.%m.%d')
-          BUILD_NUMBER=${{ github.run_number }}
-          TAG="v${DATE}.${BUILD_NUMBER}"
-          echo "tag=${TAG}" >> $GITHUB_OUTPUT
-          echo "Creating release: ${TAG}"
-
-      - name: 🚀 Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.create_tag.outputs.tag }}
-          release_name: 💪 Mission100 Chad Release ${{ steps.create_tag.outputs.tag }}
-          body: |
-            # 🔥 Mission100 Chad Release
-
-            ## 🎯 What's New
-            - Chad-style motivational messaging
-            - Korean/English bilingual support
-            - Progressive workout system
-            - Advanced achievement system
-
-            ## 📱 Downloads
-            - **Android APK**: Ready for installation
-            - **Web Version**: Deploy to hosting platform
-
-            ## 💪 Chad Mode Activated
-            > "Weakness is not an option! Download now and become the ultimate Chad!"
-
-            ---
-            **Built with Chad Energy** 🚀
-          draft: false
-          prerelease: false
-
-      - name: 📤 Upload Release APK
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./artifacts/app-release.apk
-          asset_name: Mission100-Chad-${{ steps.create_tag.outputs.tag }}.apk
-          asset_content_type: application/vnd.android.package-archive
-
-  # 코드 커버리지
+  # 코드 커버리지 (PR에서만)
   coverage:
     name: 📊 Code Coverage
     runs-on: ubuntu-latest
@@ -233,3 +108,27 @@ jobs:
           files: ./coverage/lcov.info
           name: mission100-coverage
           fail_ci_if_error: false
+
+# 향후 확장을 위한 주석 템플릿
+#
+# iOS 개발 시 활성화:
+# build-ios:
+#   name: 🍎 Build iOS
+#   needs: analyze
+#   runs-on: macos-latest
+#   steps: [...]
+#
+# 웹 배포 시 활성화:
+# build-web:
+#   name: 🌐 Build Web
+#   needs: analyze
+#   runs-on: ubuntu-latest
+#   steps: [...]
+#
+# 자동 릴리스 배포 시 활성화:
+# deploy:
+#   name: 🚀 Deploy Release
+#   needs: [build-android]
+#   runs-on: ubuntu-latest
+#   if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+#   steps: [...]
