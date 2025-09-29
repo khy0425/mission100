@@ -10,6 +10,8 @@ import 'notification_service.dart';
 /// 업적 전용 알림 서비스
 /// 업적 달성, 진행률 업데이트, 특별 이벤트 등에 대한 알림을 관리
 class AchievementNotificationService {
+  static final FlutterLocalNotificationsPlugin _notifications =
+      FlutterLocalNotificationsPlugin();
   // 업적 알림 ID 범위: 5000 ~ 5999
   static const int _baseNotificationId = 5000;
   static const int _progressNotificationId = 5500;
@@ -18,6 +20,7 @@ class AchievementNotificationService {
   // 알림 채널 정보
   static const String _channelId = 'achievement_notifications';
   static String _channelName = '업적 알림';
+  static const String _channelNameConst = '업적 알림';
   static String _channelDescription = '업적 달성 및 진행률 알림';
 
   // 업적 달성 알림 표시 제한 (스팸 방지)
@@ -31,7 +34,7 @@ class AchievementNotificationService {
 
     // 로컬라이제이션 설정 (컨텍스트가 제공된 경우)
     if (context != null) {
-      final l10n = AppLocalizations.of(context)!;
+      final l10n = AppLocalizations.of(context);
       _channelName = l10n.achievementNotificationChannelName;
       _channelDescription = l10n.achievementNotificationChannelDescription;
     }
@@ -44,7 +47,7 @@ class AchievementNotificationService {
 
   /// 업적 전용 알림 채널 생성
   static Future<void> _createAchievementNotificationChannel() async {
-    const AndroidNotificationChannel channel = AndroidNotificationChannel(
+    final AndroidNotificationChannel channel = AndroidNotificationChannel(
       _channelId,
       _channelName,
       description: _channelDescription,
@@ -104,7 +107,7 @@ class AchievementNotificationService {
         showWhen: true,
       );
 
-      const iosDetails = DarwinNotificationDetails(
+      final iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: true,
         presentSound: true,
@@ -112,7 +115,7 @@ class AchievementNotificationService {
         categoryIdentifier: 'ACHIEVEMENT_CATEGORY',
       );
 
-      const notificationDetails = NotificationDetails(
+      final notificationDetails = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );
@@ -126,12 +129,12 @@ class AchievementNotificationService {
         'timestamp': DateTime.now().toIso8601String(),
       });
 
-      await NotificationService.showNotification(
-        id: notificationId,
-        title: _buildNotificationTitle(achievement),
-        body: _buildNotificationBody(achievement),
+      await _notifications.show(
+        notificationId,
+        _buildNotificationTitle(achievement),
+        _buildNotificationBody(achievement),
+        notificationDetails,
         payload: payload,
-        notificationDetails: notificationDetails,
       );
 
       _lastNotificationTime = DateTime.now();
@@ -158,7 +161,7 @@ class AchievementNotificationService {
       final notificationId =
           _progressNotificationId + achievement.id.hashCode % 300;
 
-      const androidDetails = AndroidNotificationDetails(
+      final androidDetails = AndroidNotificationDetails(
         _channelId,
         _channelName,
         channelDescription: _channelDescription,
@@ -172,14 +175,14 @@ class AchievementNotificationService {
         ongoing: false,
       );
 
-      const iosDetails = DarwinNotificationDetails(
+      final iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: false,
         presentSound: true,
         sound: 'progress_milestone.wav',
       );
 
-      const notificationDetails = NotificationDetails(
+      final notificationDetails = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );
@@ -192,12 +195,12 @@ class AchievementNotificationService {
         'timestamp': DateTime.now().toIso8601String(),
       });
 
-      await NotificationService.showNotification(
-        id: notificationId,
-        title: '📈 업적 진행률 ${milestone}% 달성!',
-        body: '${achievement.titleKey}에 ${milestone}% 도달했습니다. 조금만 더 화이팅!',
+      await _notifications.show(
+        notificationId,
+        '📈 업적 진행률 ${milestone}% 달성!',
+        '${achievement.titleKey}에 ${milestone}% 도달했습니다. 조금만 더 화이팅!',
+        notificationDetails,
         payload: payload,
-        notificationDetails: notificationDetails,
       );
 
       debugPrint('📈 업적 진행률 알림 발송: ${achievement.titleKey} (${milestone}%)');
@@ -220,14 +223,14 @@ class AchievementNotificationService {
           .map((a) => a.rarity)
           .reduce((a, b) => a.index > b.index ? a : b);
 
-      const androidDetails = AndroidNotificationDetails(
+      final androidDetails = AndroidNotificationDetails(
         _channelId,
         _channelName,
         channelDescription: _channelDescription,
         importance: Importance.max,
         priority: Priority.max,
         playSound: true,
-        sound: RawResourceAndroidNotificationSound('achievement_combo'),
+        sound: const RawResourceAndroidNotificationSound('achievement_combo'),
         enableVibration: true,
         vibrationPattern: Int64List.fromList([0, 500, 200, 500, 200, 800]),
         color: Color(AppColors.secondaryColor),
@@ -243,7 +246,7 @@ class AchievementNotificationService {
         autoCancel: true,
       );
 
-      const iosDetails = DarwinNotificationDetails(
+      final iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: true,
         presentSound: true,
@@ -251,7 +254,7 @@ class AchievementNotificationService {
         categoryIdentifier: 'ACHIEVEMENT_COMBO_CATEGORY',
       );
 
-      const notificationDetails = NotificationDetails(
+      final notificationDetails = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );
@@ -264,12 +267,12 @@ class AchievementNotificationService {
         'timestamp': DateTime.now().toIso8601String(),
       });
 
-      await NotificationService.showNotification(
-        id: notificationId,
-        title: '🏆 업적 연쇄 달성!',
-        body: '${achievements.length}개 업적을 동시에 달성했습니다! 대단해요! 🔥',
+      await _notifications.show(
+        notificationId,
+        '🏆 업적 연쇄 달성!',
+        '${achievements.length}개 업적을 동시에 달성했습니다! 대단해요! 🔥',
+        notificationDetails,
         payload: payload,
-        notificationDetails: notificationDetails,
       );
 
       debugPrint('🔥 업적 연쇄 달성 알림 발송: ${achievements.length}개');
@@ -290,14 +293,14 @@ class AchievementNotificationService {
           _specialEventNotificationId +
           (extraData?['eventId']?.hashCode ?? 0) % 100;
 
-      const androidDetails = AndroidNotificationDetails(
+      final androidDetails = AndroidNotificationDetails(
         _channelId,
         _channelName,
         channelDescription: _channelDescription,
         importance: Importance.max,
         priority: Priority.max,
         playSound: true,
-        sound: RawResourceAndroidNotificationSound('special_event'),
+        sound: const RawResourceAndroidNotificationSound('special_event'),
         enableVibration: true,
         vibrationPattern: Int64List.fromList([
           0,
@@ -323,7 +326,7 @@ class AchievementNotificationService {
         autoCancel: true,
       );
 
-      const iosDetails = DarwinNotificationDetails(
+      final iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: true,
         presentSound: true,
@@ -332,7 +335,7 @@ class AchievementNotificationService {
         categoryIdentifier: 'SPECIAL_EVENT_CATEGORY',
       );
 
-      const notificationDetails = NotificationDetails(
+      final notificationDetails = NotificationDetails(
         android: androidDetails,
         iOS: iosDetails,
       );
@@ -345,12 +348,12 @@ class AchievementNotificationService {
         ...?extraData,
       });
 
-      await NotificationService.showNotification(
-        id: notificationId,
-        title: title,
-        body: body,
+      await _notifications.show(
+        notificationId,
+        title,
+        body,
+        notificationDetails,
         payload: payload,
-        notificationDetails: notificationDetails,
       );
 
       debugPrint('⭐ 특별 이벤트 알림 발송: $title');

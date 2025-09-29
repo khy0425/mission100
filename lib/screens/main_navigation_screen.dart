@@ -55,7 +55,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
       // 화면 로드 완료 후 업적 이벤트 확인
       WidgetsBinding.instance.addPostFrameCallback((_) async {
-        await Future.delayed(const Duration(milliseconds: 300));
+        await Future<void>.delayed(const Duration(milliseconds: 300));
         await _checkPendingAchievementEvents();
 
         // 업적 서비스 콜백 설정
@@ -143,56 +143,31 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       debugPrint('🎯 대기 중인 업적 이벤트: ${events.length}개');
 
       if (events.isNotEmpty && mounted) {
-        // 다중 업적 달성 시 통합 다이얼로그 표시
-        if (events.length > 1) {
-          debugPrint('🎉 다중 업적 달성 감지: ${events.length}개 - 통합 다이얼로그 표시');
+        debugPrint('🎉 업적 달성 감지: ${events.length}개 - 통합 다이얼로그 표시');
 
-          // 모든 이벤트를 Achievement 객체로 변환
-          final List<Achievement> achievements = [];
-          for (final event in events) {
-            final achievement = _createAchievementFromEvent(event);
-            if (achievement != null) {
-              achievements.add(achievement);
-            }
-          }
-
-          if (achievements.isNotEmpty) {
-            // 통합 다이얼로그 표시
-            showDialog<void>(
-              context: context,
-              barrierDismissible: false,
-              builder: (context) => MultipleAchievementsDialog(
-                achievements: achievements,
-                onDismiss: () async {
-                  // 모든 이벤트 클리어
-                  await AchievementService.clearPendingAchievementEvents();
-                  debugPrint('✅ 모든 업적 이벤트 클리어 완료');
-                },
-              ),
-            );
-          }
-        } else {
-          // 단일 업적 달성 시 개별 다이얼로그 표시
-          final event = events.first;
-          debugPrint('🏆 단일 업적 이벤트 처리: ${event}');
-
+        // 모든 이벤트를 Achievement 객체로 변환
+        final List<Achievement> achievements = [];
+        for (final event in events) {
           final achievement = _createAchievementFromEvent(event);
           if (achievement != null) {
-            debugPrint('✨ 개별 업적 다이얼로그 표시: ${achievement.titleKey}');
-
-            // 개별 다이얼로그 표시
-            showDialog<void>(
-              context: context,
-              barrierDismissible: false,
-              builder: (context) => AchievementCelebrationDialog(
-                achievement: achievement,
-                onDismiss: () {
-                  // 표시된 이벤트 제거 후 다음 이벤트 확인
-                  _removeFirstEventAndCheckNext();
-                },
-              ),
-            );
+            achievements.add(achievement);
           }
+        }
+
+        if (achievements.isNotEmpty) {
+          // 항상 통합 다이얼로그 표시 (단일/다중 상관없이)
+          showDialog<void>(
+            context: context,
+            barrierDismissible: false,
+            builder: (context) => MultipleAchievementsDialog(
+              achievements: achievements,
+              onDismiss: () async {
+                // 모든 이벤트 클리어
+                await AchievementService.clearPendingAchievementEvents();
+                debugPrint('✅ 모든 업적 이벤트 클리어 완료');
+              },
+            ),
+          );
         }
       }
     } catch (e, stackTrace) {
@@ -265,27 +240,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
     }
   }
 
-  // 첫 번째 이벤트 제거 후 다음 이벤트 확인
-  Future<void> _removeFirstEventAndCheckNext() async {
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      final events = prefs.getStringList('pending_achievement_events') ?? [];
-
-      if (events.isNotEmpty) {
-        events.removeAt(0); // 첫 번째 이벤트 제거
-        await prefs.setStringList('pending_achievement_events', events);
-
-        // 남은 이벤트가 있으면 다음 이벤트 표시
-        if (events.isNotEmpty && mounted) {
-          await Future<void>.delayed(const Duration(milliseconds: 300));
-          _checkPendingAchievementEvents();
-        }
-      }
-    } catch (e) {
-      print('이벤트 제거 오류: $e');
-    }
-  }
-
   // 레어도 문자열을 enum으로 변환
   AchievementRarity _parseRarity(String rarityStr) {
     switch (rarityStr.toLowerCase()) {
@@ -338,7 +292,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   }
 
   Widget _buildCustomBottomNavBar(bool isDark) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
 
     return Container(
       height: 70,

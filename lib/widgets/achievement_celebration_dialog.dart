@@ -112,7 +112,7 @@ class _AchievementCelebrationDialogState
     _pulseController.repeat(reverse: true);
 
     // XP 애니메이션 지연 시작
-    await Future.delayed(const Duration(milliseconds: 600));
+    await Future<void>.delayed(const Duration(milliseconds: 600));
     if (mounted) {
       _xpController.forward();
       HapticFeedback.mediumImpact();
@@ -131,26 +131,26 @@ class _AchievementCelebrationDialogState
   Color _getRarityColor() {
     switch (widget.achievement.rarity) {
       case AchievementRarity.common:
-        return Colors.grey[600]!;
+        return Colors.grey[600] ?? Colors.grey;
       case AchievementRarity.rare:
-        return Colors.blue[600]!;
+        return Colors.blue[600] ?? Colors.blue;
       case AchievementRarity.epic:
-        return Colors.purple[600]!;
+        return Colors.purple[600] ?? Colors.purple;
       case AchievementRarity.legendary:
-        return Colors.orange[600]!;
+        return Colors.orange[600] ?? Colors.orange;
     }
   }
 
   String _getRarityText(BuildContext context) {
     switch (widget.achievement.rarity) {
       case AchievementRarity.common:
-        return AppLocalizations.of(context)!.common;
+        return AppLocalizations.of(context).common;
       case AchievementRarity.rare:
-        return AppLocalizations.of(context)!.rare;
+        return AppLocalizations.of(context).rare;
       case AchievementRarity.epic:
-        return AppLocalizations.of(context)!.epic;
+        return AppLocalizations.of(context).epic;
       case AchievementRarity.legendary:
-        return AppLocalizations.of(context)!.legendary;
+        return AppLocalizations.of(context).legendary;
     }
   }
 
@@ -194,12 +194,12 @@ class _AchievementCelebrationDialogState
                           border: Border.all(color: rarityColor, width: 3),
                           boxShadow: [
                             BoxShadow(
-                              color: rarityColor.withOpacity(0.3),
+                              color: rarityColor.withValues(alpha: 0.3),
                               blurRadius: 20,
                               spreadRadius: 5,
                             ),
                             BoxShadow(
-                              color: Colors.black.withOpacity(0.2),
+                              color: Colors.black.withValues(alpha: 0.2),
                               blurRadius: 10,
                               offset: const Offset(0, 5),
                             ),
@@ -215,10 +215,10 @@ class _AchievementCelebrationDialogState
                                 vertical: 8,
                               ),
                               decoration: BoxDecoration(
-                                color: rarityColor.withOpacity(0.1),
+                                color: rarityColor.withValues(alpha: 0.1),
                                 borderRadius: BorderRadius.circular(20),
                                 border: Border.all(
-                                  color: rarityColor.withOpacity(0.3),
+                                  color: rarityColor.withValues(alpha: 0.3),
                                 ),
                               ),
                               child: Row(
@@ -233,7 +233,7 @@ class _AchievementCelebrationDialogState
                                   Text(
                                     AppLocalizations.of(
                                       context,
-                                    )!.achievementUnlocked,
+                                    ).achievementUnlocked,
                                     style: theme.textTheme.titleMedium
                                         ?.copyWith(
                                           color: rarityColor,
@@ -257,14 +257,14 @@ class _AchievementCelebrationDialogState
                                     height: 100,
                                     decoration: BoxDecoration(
                                       shape: BoxShape.circle,
-                                      color: rarityColor.withOpacity(0.1),
+                                      color: rarityColor.withValues(alpha: 0.1),
                                       border: Border.all(
                                         color: rarityColor,
                                         width: 3,
                                       ),
                                       boxShadow: [
                                         BoxShadow(
-                                          color: rarityColor.withOpacity(0.3),
+                                          color: rarityColor.withValues(alpha: 0.3),
                                           blurRadius: 15,
                                           spreadRadius: 2,
                                         ),
@@ -345,7 +345,7 @@ class _AchievementCelebrationDialogState
                                             const Color(AppColors.primaryColor),
                                             const Color(
                                               AppColors.primaryColor,
-                                            ).withOpacity(0.7),
+                                            ).withValues(alpha: 0.7),
                                           ],
                                         ),
                                         borderRadius: BorderRadius.circular(16),
@@ -353,7 +353,7 @@ class _AchievementCelebrationDialogState
                                           BoxShadow(
                                             color: const Color(
                                               AppColors.primaryColor,
-                                            ).withOpacity(0.3),
+                                            ).withValues(alpha: 0.3),
                                             blurRadius: 10,
                                             spreadRadius: 2,
                                           ),
@@ -425,7 +425,7 @@ class _AchievementCelebrationDialogState
                                 child: Text(
                                   AppLocalizations.of(
                                     context,
-                                  )!.feelThePowerOfChad,
+                                  ).feelThePowerOfChad,
                                   style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 16,
@@ -497,7 +497,7 @@ class ConfettiPainter extends CustomPainter {
       // 화면 밖으로 나간 파티클은 그리지 않음
       if (y > size.height + 20) continue;
 
-      paint.color = particle.color.withOpacity(1.0 - animationValue * 0.5);
+      paint.color = particle.color.withValues(alpha: 1.0 - animationValue * 0.5);
 
       canvas.save();
       canvas.translate(x, y);

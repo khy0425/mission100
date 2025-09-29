@@ -179,7 +179,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
       backgroundColor: isDark ? const Color(0xFF0D0D0D) : Colors.grey[50],
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.progressTracking,
+          AppLocalizations.of(context).progressTracking,
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         backgroundColor: isDark ? const Color(0xFF1A1A1A) : Colors.white,
@@ -190,10 +190,10 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
           labelColor: const Color(0xFF4DABF7),
           unselectedLabelColor: isDark ? Colors.grey[400] : Colors.grey[600],
           tabs: [
-            Tab(text: AppLocalizations.of(context)!.weekly),
-            Tab(text: AppLocalizations.of(context)!.calendar),
-            Tab(text: AppLocalizations.of(context)!.statistics),
-            Tab(text: AppLocalizations.of(context)!.chadEvolution),
+            Tab(text: AppLocalizations.of(context).weekly),
+            Tab(text: AppLocalizations.of(context).calendar),
+            Tab(text: AppLocalizations.of(context).statistics),
+            Tab(text: AppLocalizations.of(context).chadEvolution),
           ],
         ),
       ),
@@ -236,7 +236,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
               backgroundColor: const Color(0xFF4DABF7),
               foregroundColor: Colors.white,
             ),
-            child: Text(AppLocalizations.of(context)!.retryButton),
+            child: Text(AppLocalizations.of(context).retryButton),
           ),
         ],
       ),
@@ -292,7 +292,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    AppLocalizations.of(context)!.overallProgress,
+                    AppLocalizations.of(context).overallProgress,
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -315,14 +315,14 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    '${(_programProgress!.progressPercentage * 100).toStringAsFixed(1)}% ${AppLocalizations.of(context)!.completed}',
+                    '${(_programProgress!.progressPercentage * 100).toStringAsFixed(1)}% ${AppLocalizations.of(context).completed}',
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
                   Text(
-                    '${_programProgress!.completedSessions}/${_programProgress!.totalSessions} ${AppLocalizations.of(context)!.sessions}',
+                    '${_programProgress!.completedSessions}/${_programProgress!.totalSessions} ${AppLocalizations.of(context).sessions}',
                     style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                   ),
                 ],
@@ -332,7 +332,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 children: [
                   Expanded(
                     child: _buildStatItem(
-                      AppLocalizations.of(context)!.completedCount,
+                      AppLocalizations.of(context).completedCount,
                       '${_programProgress!.totalCompletedReps}회',
                       Icons.fitness_center,
                       const Color(0xFF51CF66),
@@ -341,7 +341,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   const SizedBox(width: 16),
                   Expanded(
                     child: _buildStatItem(
-                      AppLocalizations.of(context)!.remainingCount,
+                      AppLocalizations.of(context).remainingCount,
                       '${_programProgress!.remainingReps}회',
                       Icons.schedule,
                       const Color(0xFFFFD43B),
@@ -406,7 +406,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.of(context)!.weeklyGrowthChart,
+                AppLocalizations.of(context).weeklyGrowthChart,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -440,7 +440,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.of(context)!.weeklyDetails,
+                AppLocalizations.of(context).weeklyDetails,
                 style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
@@ -508,7 +508,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '${data.completedSessions}/${data.totalSessions} ${AppLocalizations.of(context)!.sessionsCompleted} • ${data.totalReps}회',
+                  '${data.completedSessions}/${data.totalSessions} ${AppLocalizations.of(context).sessionsCompleted} • ${data.totalReps}회',
                   style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                 ),
               ],
@@ -551,7 +551,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      AppLocalizations.of(context)!.workoutCalendar,
+                      AppLocalizations.of(context).workoutCalendar,
                       style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
@@ -753,8 +753,8 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                     ),
                     Text(
                       isCompleted
-                          ? AppLocalizations.of(context)!.completed
-                          : AppLocalizations.of(context)!.inProgress,
+                          ? AppLocalizations.of(context).completed
+                          : AppLocalizations.of(context).inProgress,
                       style: TextStyle(
                         fontSize: 14,
                         color: isCompleted
@@ -893,7 +893,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    AppLocalizations.of(context)!.overallStats,
+                    AppLocalizations.of(context).overallStats,
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -914,26 +914,26 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 childAspectRatio: 1.2,
                 children: [
                   _buildStatCard(
-                    AppLocalizations.of(context)!.totalPushups,
+                    AppLocalizations.of(context).totalPushups,
                     '${_programProgress!.totalCompletedReps}회',
                     Icons.fitness_center,
                     const Color(0xFF51CF66),
                   ),
                   _buildStatCard(
-                    AppLocalizations.of(context)!.completedSessions,
+                    AppLocalizations.of(context).completedSessions,
                     '${_programProgress!.completedSessions}회',
                     Icons.check_circle,
                     const Color(0xFF4DABF7),
                   ),
                   _buildStatCard(
-                    AppLocalizations.of(context)!.averagePerSession,
+                    AppLocalizations.of(context).averagePerSession,
                     '${averageRepsPerDay.toStringAsFixed(1)}회',
                     Icons.trending_up,
                     const Color(0xFFFFD43B),
                   ),
                   _buildStatCard(
                     Localizations.localeOf(context).languageCode == 'ko'
-                        ? AppLocalizations.of(context)!.completionRate
+                        ? AppLocalizations.of(context).completionRate
                         : 'Completion',
                     '${(completionRate * 100).toStringAsFixed(1)}%',
                     Icons.pie_chart,
@@ -1122,7 +1122,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    AppLocalizations.of(context)!.weeklyPerformance,
+                    AppLocalizations.of(context).weeklyPerformance,
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -1175,15 +1175,15 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
     if (isExcellent) {
       statusColor = const Color(0xFF51CF66);
       statusIcon = Icons.star;
-      statusText = AppLocalizations.of(context)!.perfect;
+      statusText = AppLocalizations.of(context).perfect;
     } else if (isGood) {
       statusColor = const Color(0xFF4DABF7);
       statusIcon = Icons.thumb_up;
-      statusText = AppLocalizations.of(context)!.good;
+      statusText = AppLocalizations.of(context).good;
     } else {
       statusColor = const Color(0xFFFFD43B);
       statusIcon = Icons.trending_up;
-      statusText = AppLocalizations.of(context)!.improvement;
+      statusText = AppLocalizations.of(context).improvement;
     }
 
     return Container(
@@ -1408,12 +1408,12 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
     // Chad 레벨에 따른 이미지 및 정보
     final chadImages = [
       'assets/images/기본차드.jpg',
-      'assets/images/정면차드.jpg',
-      'assets/images/썬글차드.jpg',
-      'assets/images/커피차드.png',
-      'assets/images/더블차드.jpg',
-      'assets/images/눈빔차드.jpg',
-      'assets/images/수면모자차드.jpg',
+      'assets/images/기본차드.jpg',
+      'assets/images/기본차드.jpg',
+      'assets/images/기본차드.jpg',
+      'assets/images/기본차드.jpg',
+      'assets/images/기본차드.jpg',
+      'assets/images/기본차드.jpg',
     ];
 
     final chadTitles = [
@@ -1596,32 +1596,32 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
       },
       {
         'name': 'Rising Chad',
-        'image': 'assets/images/정면차드.jpg',
+        'image': 'assets/images/기본차드.jpg',
         'requirement': '1주차 완료',
       },
       {
         'name': 'Alpha Chad',
-        'image': 'assets/images/썬글차드.jpg',
+        'image': 'assets/images/기본차드.jpg',
         'requirement': '2주차 완료',
       },
       {
         'name': 'Sigma Chad',
-        'image': 'assets/images/커피차드.png',
+        'image': 'assets/images/기본차드.jpg',
         'requirement': '3주차 완료',
       },
       {
         'name': 'Giga Chad',
-        'image': 'assets/images/더블차드.jpg',
+        'image': 'assets/images/기본차드.jpg',
         'requirement': '4주차 완료',
       },
       {
         'name': 'Ultra Chad',
-        'image': 'assets/images/눈빔차드.jpg',
+        'image': 'assets/images/기본차드.jpg',
         'requirement': '5주차 완료',
       },
       {
         'name': 'Legendary Chad',
-        'image': 'assets/images/수면모자차드.jpg',
+        'image': 'assets/images/기본차드.jpg',
         'requirement': '6주차 완료',
       },
     ];
@@ -1639,7 +1639,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 const Icon(Icons.timeline, color: Color(0xFF4DABF7), size: 24),
                 const SizedBox(width: 8),
                 Text(
-                  AppLocalizations.of(context)!.chadEvolutionStages,
+                  AppLocalizations.of(context).chadEvolutionStages,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -1863,7 +1863,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  AppLocalizations.of(context)!.chadAchievements,
+                  AppLocalizations.of(context).chadAchievements,
                   style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -2064,12 +2064,9 @@ class _WeeklyGrowthChartState extends State<WeeklyGrowthChart>
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
                         );
-                        return SideTitleWidget(
-                          axisSide: meta.axisSide,
-                          child: Text(
-                            '${value.toInt()}${AppLocalizations.of(context)!.weekUnit}',
-                            style: style,
-                          ),
+                        return Text(
+                          '${value.toInt()}${AppLocalizations.of(context).weekUnit}',
+                          style: style,
                         );
                       },
                     ),

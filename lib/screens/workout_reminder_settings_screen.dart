@@ -99,34 +99,30 @@ class _WorkoutReminderSettingsScreenState
     }
   }
 
-  void _toggleDay(int day) {
-    final newActiveDays = Set<int>.from(_settings.activeDays);
+  /// 3가지 고정 옵션 선택
+  void _selectOption(int optionIndex) {
+    WorkoutReminderSettings selectedOption;
 
-    if (newActiveDays.contains(day)) {
-      // 하루는 무조건 쉬어야 하므로 모든 날을 비활성화할 수 없음
-      if (newActiveDays.length <= 1) {
-        _showSnackBar(AppLocalizations.of(context)!.minOneDayRest);
-        return;
-      }
-      newActiveDays.remove(day);
-    } else {
-      // 최대 6일까지만 허용 (하루는 무조건 쉬어야 함)
-      if (newActiveDays.length >= 6) {
-        _showSnackBar(AppLocalizations.of(context)!.maxSixDaysWorkout);
-        return;
-      }
-      newActiveDays.add(day);
+    switch (optionIndex) {
+      case 0:
+        selectedOption = WorkoutReminderSettings.optionMWF;
+        break;
+      case 1:
+        selectedOption = WorkoutReminderSettings.optionTTS;
+        break;
+      case 2:
+        selectedOption = WorkoutReminderSettings.optionMWFSTS;
+        break;
+      default:
+        selectedOption = WorkoutReminderSettings.optionMWF;
     }
 
-    final newSettings = _settings.copyWith(activeDays: newActiveDays);
-
-    // 연속 6일 이상 체크
-    if (!newSettings.hasValidRestDay) {
-      _showSnackBar(AppLocalizations.of(context)!.noConsecutiveSixDays);
-      return;
-    }
-
-    _updateSettings(newSettings);
+    _updateSettings(
+      selectedOption.copyWith(
+        isEnabled: _settings.isEnabled,
+        time: _settings.time,
+      ),
+    );
   }
 
   void _selectPreset(WorkoutReminderSettings preset) {
@@ -312,7 +308,7 @@ class _WorkoutReminderSettingsScreenState
                 Icons.calendar_today,
               ),
               const SizedBox(height: 8),
-              _buildWeekdaySelector(),
+              _buildWorkoutOptionSelector(),
 
               const SizedBox(height: 20),
 
@@ -422,9 +418,15 @@ class _WorkoutReminderSettingsScreenState
     );
   }
 
-  Widget _buildWeekdaySelector() {
+  Widget _buildWorkoutOptionSelector() {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+
+    final options = [
+      {'title': '월수금 (주 3회)', 'desc': '월요일, 수요일, 금요일', 'days': WorkoutReminderSettings.optionMWF.activeDays},
+      {'title': '화목토 (주 3회)', 'desc': '화요일, 목요일, 토요일', 'days': WorkoutReminderSettings.optionTTS.activeDays},
+      {'title': '순환 (주 7회)', 'desc': '월수금일, 화목토 패턴 반복', 'days': WorkoutReminderSettings.optionMWFSTS.activeDays},
+    ];
 
     return _buildSettingsCard([
       Padding(
@@ -433,64 +435,77 @@ class _WorkoutReminderSettingsScreenState
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.selectWorkoutDays,
+              '운동 스케줄 선택',
               style: TextStyle(
-                fontSize: 14,
-                color: isDark ? Colors.grey[300] : Colors.grey[600],
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: isDark ? Colors.white : Colors.black87,
               ),
             ),
             const SizedBox(height: 16),
-            Wrap(
-              spacing: 8,
-              runSpacing: 8,
-              children: List.generate(7, (index) {
-                final day = index + 1;
-                final isSelected = _settings.activeDays.contains(day);
-                final dayName = WorkoutReminderSettings.getWeekdayName(day);
+            ...List.generate(options.length, (index) {
+              final option = options[index];
+              final isSelected = _settings.activeDays.toString() == option['days'].toString();
 
-                return GestureDetector(
-                  onTap: () => _toggleDay(day),
+              return Container(
+                margin: const EdgeInsets.only(bottom: 12),
+                child: GestureDetector(
+                  onTap: () => _selectOption(index),
                   child: Container(
-                    width: 80,
-                    padding: const EdgeInsets.symmetric(
-                      vertical: 12,
-                      horizontal: 8,
-                    ),
+                    padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: isSelected
-                          ? Colors.blue
-                          : (isDark ? Colors.grey[700] : Colors.grey[200]),
-                      borderRadius: BorderRadius.circular(8),
+                          ? Colors.blue.withOpacity(0.1)
+                          : (isDark ? Colors.grey[800] : Colors.grey[50]),
+                      borderRadius: BorderRadius.circular(12),
                       border: Border.all(
                         color: isSelected
                             ? Colors.blue
                             : (isDark ? Colors.grey[600]! : Colors.grey[300]!),
-                        width: 1,
+                        width: 2,
                       ),
                     ),
-                    child: Text(
-                      dayName,
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        color: isSelected
-                            ? Colors.white
-                            : (isDark ? Colors.white : Colors.black87),
-                        fontWeight: isSelected
-                            ? FontWeight.bold
-                            : FontWeight.normal,
-                        fontSize: 12,
-                      ),
+                    child: Row(
+                      children: [
+                        Icon(
+                          isSelected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
+                          color: isSelected ? Colors.blue : Colors.grey,
+                        ),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                option['title']! as String,
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                  color: isSelected
+                                      ? Colors.blue
+                                      : (isDark ? Colors.white : Colors.black87),
+                                ),
+                              ),
+                              const SizedBox(height: 4),
+                              Text(
+                                option['desc']! as String,
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  color: isDark ? Colors.grey[400] : Colors.grey[600],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                );
-              }),
-            ),
-            const SizedBox(height: 12),
+                ),
+              );
+            }),
+            const SizedBox(height: 8),
             Text(
-              AppLocalizations.of(context)!.selectedDaysFormat(
-                _settings.activeDaysString,
-                _settings.activeDays.length,
-              ),
+              '현재 선택: ${_settings.optionName}',
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.blue[700],

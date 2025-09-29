@@ -17,7 +17,6 @@ class ChallengeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final l10n = AppLocalizations.of(context)!;
 
     return Card(
       elevation: 4,
@@ -79,7 +78,7 @@ class ChallengeCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      AppLocalizations.of(context)!.challengeProgress(
+                      AppLocalizations.of(context).challengeProgress(
                         (challenge.progressPercentage * 100).round(),
                       ),
                       style: theme.textTheme.bodySmall?.copyWith(
@@ -111,7 +110,7 @@ class ChallengeCard extends StatelessWidget {
               // 목표 정보 (비활성 상태일 때)
               else if (challenge.targetValue != null) ...[
                 Text(
-                  AppLocalizations.of(context)!.challengeTarget(
+                  AppLocalizations.of(context).challengeTarget(
                     challenge.targetValue ?? 0,
                     challenge.targetUnit ?? '',
                   ),
@@ -142,7 +141,7 @@ class ChallengeCard extends StatelessWidget {
                   if (challenge.estimatedDuration != null &&
                       challenge.estimatedDuration! > 0)
                     Text(
-                      AppLocalizations.of(context)!.challengeEstimatedDuration(
+                      AppLocalizations.of(context).challengeEstimatedDuration(
                         challenge.estimatedDuration!,
                       ),
                       style: theme.textTheme.bodySmall,

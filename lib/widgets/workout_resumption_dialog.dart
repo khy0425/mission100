@@ -18,7 +18,7 @@ class WorkoutResumptionDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final primaryData = resumptionData.primaryData;
 
@@ -90,7 +90,7 @@ class WorkoutResumptionDialog extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Text(l10n.workoutTitle(workoutTitle)),
+                  Text('${l10n.workout}: $workoutTitle'),
                   if (currentSet > 0) Text(l10n.progressSetReady(currentSet)),
                   Text(l10n.completedSetsCount(completedSetsCount)),
                   if (totalCompletedReps > 0)
@@ -213,6 +213,7 @@ Future<bool?> showSimpleResumptionDialog({
   required int completedSets,
   required int totalReps,
 }) async {
+  final l10n = AppLocalizations.of(context);
   return showDialog<bool>(
     context: context,
     barrierDismissible: false,
@@ -258,7 +259,7 @@ Future<bool?> showSimpleResumptionDialog({
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(false),
-          child: Text(AppLocalizations.of(context)!.cancel),
+          child: Text(AppLocalizations.of(context).cancel),
         ),
         ElevatedButton(
           onPressed: () => Navigator.of(context).pop(true),

@@ -145,7 +145,7 @@ class _PermissionScreenState extends State<PermissionScreen>
     final theme = Theme.of(context);
 
     return Text(
-      AppLocalizations.of(context)!.permissionsRequired,
+      AppLocalizations.of(context).permissionsRequired,
       style: theme.textTheme.headlineSmall?.copyWith(
         fontWeight: FontWeight.bold,
         color: const Color(AppColors.primaryColor),
@@ -159,8 +159,8 @@ class _PermissionScreenState extends State<PermissionScreen>
 
     return Text(
       _hasRequestedBefore
-          ? AppLocalizations.of(context)!.permissionAlreadyRequested
-          : AppLocalizations.of(context)!.permissionsDescription,
+          ? AppLocalizations.of(context).permissionAlreadyRequested
+          : AppLocalizations.of(context).permissionsDescription,
       style: theme.textTheme.bodyLarge?.copyWith(
         color: theme.textTheme.bodyLarge?.color?.withValues(alpha: 0.8),
         height: 1.5,
@@ -187,13 +187,13 @@ class _PermissionScreenState extends State<PermissionScreen>
         children: [
           // 알림 권한 섹션
           _buildPermissionSection(
-            AppLocalizations.of(context)!.notificationPermissionTitle,
-            AppLocalizations.of(context)!.notificationPermissionDesc,
+            AppLocalizations.of(context).notificationPermissionTitle,
+            AppLocalizations.of(context).notificationPermissionDesc,
             Icons.notifications_active,
             [
-              AppLocalizations.of(context)!.notificationBenefit1,
-              AppLocalizations.of(context)!.notificationBenefit2,
-              AppLocalizations.of(context)!.notificationBenefit3,
+              AppLocalizations.of(context).notificationBenefit1,
+              AppLocalizations.of(context).notificationBenefit2,
+              AppLocalizations.of(context).notificationBenefit3,
             ],
           ),
 
@@ -201,13 +201,13 @@ class _PermissionScreenState extends State<PermissionScreen>
 
           // 저장소 권한 섹션
           _buildPermissionSection(
-            AppLocalizations.of(context)!.storagePermissionTitle,
-            AppLocalizations.of(context)!.storagePermissionDesc,
+            AppLocalizations.of(context).storagePermissionTitle,
+            AppLocalizations.of(context).storagePermissionDesc,
             Icons.folder,
             [
-              AppLocalizations.of(context)!.storageBenefit1,
-              AppLocalizations.of(context)!.storageBenefit2,
-              AppLocalizations.of(context)!.storageBenefit3,
+              AppLocalizations.of(context).storageBenefit1,
+              AppLocalizations.of(context).storageBenefit2,
+              AppLocalizations.of(context).storageBenefit3,
             ],
           ),
         ],
@@ -258,8 +258,7 @@ class _PermissionScreenState extends State<PermissionScreen>
                   Text(
                     description,
                     style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.textTheme.bodySmall?.color?.withValues(
-                        alpha: 0.7,
+                      color: theme.textTheme.bodySmall?.color?.withValues(alpha: 0.7,
                       ),
                     ),
                   ),
@@ -311,8 +310,8 @@ class _PermissionScreenState extends State<PermissionScreen>
                   )
                 : Text(
                     _hasRequestedBefore
-                        ? AppLocalizations.of(context)!.goToSettings
-                        : AppLocalizations.of(context)!.allowPermissions,
+                        ? AppLocalizations.of(context).goToSettings
+                        : AppLocalizations.of(context).allowPermissions,
                     style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
@@ -324,7 +323,7 @@ class _PermissionScreenState extends State<PermissionScreen>
         TextButton(
           onPressed: _isRequestingPermission ? null : _skipPermissions,
           child: Text(
-            AppLocalizations.of(context)!.skipPermissions,
+            AppLocalizations.of(context).skipPermissions,
             style: TextStyle(
               color: Theme.of(
                 context,
@@ -361,7 +360,7 @@ class _PermissionScreenState extends State<PermissionScreen>
 
         // 설정 화면에서 돌아온 후 충분한 시간 대기 후 권한 상태 재확인
         debugPrint('⏳ 설정 화면에서 돌아온 후 권한 상태 재확인 대기...');
-        await Future.delayed(const Duration(seconds: 3));
+        await Future<void>.delayed(const Duration(seconds: 3));
 
         try {
           notificationGranted = await NotificationService.hasPermission();
@@ -432,7 +431,7 @@ class _PermissionScreenState extends State<PermissionScreen>
               content: Text(
                 AppLocalizations.of(
                   context,
-                )!.notificationPermissionGrantedMessage,
+                ).notificationPermissionGrantedMessage,
               ),
               backgroundColor: const Color(AppColors.primaryColor),
               duration: const Duration(seconds: 2),
@@ -440,7 +439,7 @@ class _PermissionScreenState extends State<PermissionScreen>
           );
         }
 
-        await Future.delayed(const Duration(milliseconds: 500));
+        await Future<void>.delayed(const Duration(milliseconds: 500));
         _navigateToMainScreen();
       } else {
         debugPrint(
@@ -455,15 +454,15 @@ class _PermissionScreenState extends State<PermissionScreen>
         if (!notificationGranted && !storageGranted) {
           message = AppLocalizations.of(
             context,
-          )!.notificationPermissionErrorMessage;
+          ).notificationPermissionErrorMessage;
         } else if (!notificationGranted) {
           message = AppLocalizations.of(
             context,
-          )!.notificationPermissionDeniedMessage;
+          ).notificationPermissionDeniedMessage;
         } else {
           message = AppLocalizations.of(
             context,
-          )!.notificationPermissionErrorMessage;
+          ).notificationPermissionErrorMessage;
         }
 
         if (mounted) {
@@ -482,7 +481,7 @@ class _PermissionScreenState extends State<PermissionScreen>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              AppLocalizations.of(context)!.notificationPermissionErrorMessage,
+              AppLocalizations.of(context).notificationPermissionErrorMessage,
             ),
             backgroundColor: Colors.red,
           ),
@@ -505,7 +504,7 @@ class _PermissionScreenState extends State<PermissionScreen>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            AppLocalizations.of(context)!.notificationPermissionLaterMessage,
+            AppLocalizations.of(context).notificationPermissionLaterMessage,
           ),
           duration: const Duration(seconds: 2),
         ),

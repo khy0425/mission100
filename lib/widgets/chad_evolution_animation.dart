@@ -102,17 +102,17 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
 
   void _startAnimation() async {
     // 순차적으로 애니메이션 실행
-    await Future.delayed(const Duration(milliseconds: 200));
+    await Future<void>.delayed(const Duration(milliseconds: 200));
 
     // 파티클 애니메이션 시작
     _particleController.forward();
 
-    await Future.delayed(const Duration(milliseconds: 300));
+    await Future<void>.delayed(const Duration(milliseconds: 300));
 
     // 스케일 애니메이션 시작
     _scaleController.forward();
 
-    await Future.delayed(const Duration(milliseconds: 200));
+    await Future<void>.delayed(const Duration(milliseconds: 200));
 
     // 회전 애니메이션 시작
     _rotationController.forward();
@@ -190,15 +190,13 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                             vertical: 12,
                           ),
                           decoration: BoxDecoration(
-                            color: _colorAnimation.value?.withValues(
-                              alpha: 0.9,
+                            color: _colorAnimation.value?.withValues(alpha: 0.9,
                             ),
                             borderRadius: BorderRadius.circular(25),
                             boxShadow: [
                               BoxShadow(
                                 color:
-                                    _colorAnimation.value?.withValues(
-                                      alpha: 0.3,
+                                    _colorAnimation.value?.withValues(alpha: 0.3,
                                     ) ??
                                     Colors.transparent,
                                 blurRadius: 20,
@@ -207,7 +205,7 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                             ],
                           ),
                           child: Text(
-                            AppLocalizations.of(context)!.evolutionCompleted,
+                            AppLocalizations.of(context).evolutionCompleted,
                             style: Theme.of(context).textTheme.headlineSmall
                                 ?.copyWith(
                                   color: Colors.white,

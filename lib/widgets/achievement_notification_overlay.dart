@@ -70,7 +70,6 @@ class _AchievementNotificationOverlayState
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     final rarityColor = widget.achievement.getRarityColor();
 
     return Positioned(
@@ -98,8 +97,8 @@ class _AchievementNotificationOverlayState
                     decoration: BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          rarityColor.withOpacity(0.9),
-                          rarityColor.withOpacity(0.7),
+                          rarityColor.withValues(alpha: 0.9),
+                          rarityColor.withValues(alpha: 0.7),
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -107,7 +106,7 @@ class _AchievementNotificationOverlayState
                       borderRadius: BorderRadius.circular(AppConstants.radiusL),
                       boxShadow: [
                         BoxShadow(
-                          color: rarityColor.withOpacity(0.4),
+                          color: rarityColor.withValues(alpha: 0.4),
                           blurRadius: 15,
                           spreadRadius: 2,
                         ),
@@ -121,10 +120,10 @@ class _AchievementNotificationOverlayState
                           height: 50,
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
-                            color: Colors.white.withOpacity(0.2),
+                            color: Colors.white.withValues(alpha: 0.2),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
+                                color: Colors.black.withValues(alpha: 0.2),
                                 blurRadius: 8,
                                 offset: const Offset(0, 2),
                               ),
@@ -167,7 +166,7 @@ class _AchievementNotificationOverlayState
                                       vertical: 2,
                                     ),
                                     decoration: BoxDecoration(
-                                      color: Colors.white.withOpacity(0.2),
+                                      color: Colors.white.withValues(alpha: 0.2),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                     child: Text(
@@ -195,7 +194,7 @@ class _AchievementNotificationOverlayState
                               Text(
                                 widget.achievement.getDescription(context),
                                 style: TextStyle(
-                                  color: Colors.white.withOpacity(0.9),
+                                  color: Colors.white.withValues(alpha: 0.9),
                                   fontSize: 12,
                                 ),
                                 maxLines: 1,
@@ -212,7 +211,7 @@ class _AchievementNotificationOverlayState
                             padding: const EdgeInsets.all(4),
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withValues(alpha: 0.2),
                             ),
                             child: const Icon(
                               Icons.close,

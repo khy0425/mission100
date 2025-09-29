@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "628188340009",
+    "project_id": "mission100-app",
+    "storage_bucket": "mission100-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:628188340009:android:c46941de02679a67682138",
+        "android_client_info": {
+          "package_name": "com.reaf.mission100"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "628188340009-11tl6mic8loti0erdn99bi0d2j0pthpm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reaf.mission100",
+            "certificate_hash": "97370b930c95e1f88f5140beb937c200f452bc01"
+          }
+        },
+        {
+          "client_id": "628188340009-96bhp49c8bg2pge9hncviehk9vu1kq91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reaf.mission100",
+            "certificate_hash": "1caa91eae3c5772cf009fcfab101e29bb0a0b6d9"
+          }
+        },
+        {
+          "client_id": "628188340009-p406iq2anfhhpqmjhkdrbhssn3ee3bf9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ_UQ4DiylhhhO5uAS796tmCsv9DEIm1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "628188340009-p406iq2anfhhpqmjhkdrbhssn3ee3bf9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -121,7 +121,7 @@ class AchievementLogger {
       metadata: {
         'achievementId': achievement.id,
         'rarity': achievement.rarity.toString(),
-        'category': achievement.category.toString(),
+        // 'category': achievement.category.toString(), // category 필드가 없음
         'xpReward': achievement.xpReward,
         'currentValue': achievement.currentValue,
         'targetValue': achievement.targetValue,
@@ -576,14 +576,16 @@ class AchievementLogger {
 
       final eventsJson = prefs.getString('achievement_log_events');
       if (eventsJson != null) {
-        final events = Map<String, dynamic>.from(jsonDecode(eventsJson));
-        _achievementEvents.addAll(events.cast<String, int>());
+        final eventsMap = jsonDecode(eventsJson) as Map<String, dynamic>;
+        final events = Map<String, int>.from(eventsMap);
+        _achievementEvents.addAll(events);
       }
 
       final errorsJson = prefs.getString('achievement_log_errors');
       if (errorsJson != null) {
-        final errors = Map<String, dynamic>.from(jsonDecode(errorsJson));
-        _errorCounts.addAll(errors.cast<String, int>());
+        final errorsMap = jsonDecode(errorsJson) as Map<String, dynamic>;
+        final errors = Map<String, int>.from(errorsMap);
+        _errorCounts.addAll(errors);
       }
     } catch (e) {
       debugPrint('❌ 로그 분석 데이터 로드 실패: $e');
@@ -651,7 +653,8 @@ class AchievementLogger {
   static List<Map<String, dynamic>> getRecentLogs({int? limit}) {
     final logs = _memoryBuffer.map((jsonStr) {
       try {
-        return Map<String, dynamic>.from(jsonDecode(jsonStr));
+        final decoded = jsonDecode(jsonStr) as Map<String, dynamic>;
+        return Map<String, dynamic>.from(decoded);
       } catch (e) {
         return <String, dynamic>{'error': 'Failed to parse log: $e'};
       }

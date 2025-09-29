@@ -83,8 +83,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     _workoutStartTime = DateTime.now();
 
     // 타겟 횟수 설정
-    if (widget.workout.workout != null && widget.workout.workout.isNotEmpty) {
-      _targetReps = List<int>.from(widget.workout.workout);
+    if (widget.workout.workout != null && (widget.workout.workout as List).isNotEmpty) {
+      _targetReps = List<int>.from(widget.workout.workout as List);
     } else {
       _targetReps = [10, 8, 6, 4, 2]; // 기본값
     }
@@ -99,7 +99,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
   void _onCompleteWorkout() {
     // 즉각적인 시각적 피드백
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context)!.workoutProcessing)),
+      SnackBar(content: Text(AppLocalizations.of(context).workoutProcessing)),
     );
     // 햅틱 피드백
     HapticFeedback.heavyImpact();
@@ -299,7 +299,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(0.1),
+                      color: Colors.blue.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: Colors.blue, width: 2),
                     ),
@@ -380,7 +380,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.green.withOpacity(0.1),
+                      color: Colors.green.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(color: Colors.green, width: 2),
                     ),
@@ -422,7 +422,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Colors.purple.withOpacity(0.1),
+                        color: Colors.purple.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Colors.purple, width: 2),
                       ),
@@ -486,7 +486,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Colors.amber.withOpacity(0.1),
+                        color: Colors.amber.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Colors.amber, width: 2),
                       ),
@@ -576,7 +576,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Colors.purple.withOpacity(0.1),
+                        color: Colors.purple.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Colors.purple, width: 2),
                       ),
@@ -607,7 +607,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                     Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: Colors.orange.withOpacity(0.1),
+                        color: Colors.orange.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(8),
                         border: Border.all(color: Colors.orange, width: 2),
                       ),
@@ -706,14 +706,14 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(AppLocalizations.of(context)!.cancelButton),
+            child: Text(AppLocalizations.of(context).cancelButton),
           ),
           TextButton(
             onPressed: () {
               Navigator.pop(context);
               Navigator.pop(context);
             },
-            child: Text(AppLocalizations.of(context)!.exitButton),
+            child: Text(AppLocalizations.of(context).exitButton),
           ),
         ],
       ),
@@ -731,7 +731,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       ),
       appBar: AppBar(
         title: Text(
-          widget.workout.title ?? AppLocalizations.of(context)!.workoutTitle,
+          (widget.workout.title as String?) ?? AppLocalizations.of(context).workoutTitle,
         ),
         centerTitle: true,
         leading: IconButton(
@@ -748,7 +748,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                 children: [
                   // 운동 헤더
                   WorkoutHeaderWidget(
-                    workoutTitle: widget.workout.title ?? '',
+                    workoutTitle: (widget.workout.title as String?) ?? '',
                     currentSet: _currentSet,
                     totalSets: _totalSets,
                     currentTargetReps: _currentTargetReps,

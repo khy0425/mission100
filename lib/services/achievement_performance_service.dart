@@ -303,18 +303,18 @@ class AchievementPerformanceService {
       if (dataString != null) {
         final data = jsonDecode(dataString) as Map<String, dynamic>;
 
-        _cacheHits = data['cacheHits'] ?? 0;
-        _cacheMisses = data['cacheMisses'] ?? 0;
-        _cacheEvictions = data['cacheEvictions'] ?? 0;
+        _cacheHits = (data['cacheHits'] as int?) ?? 0;
+        _cacheMisses = (data['cacheMisses'] as int?) ?? 0;
+        _cacheEvictions = (data['cacheEvictions'] as int?) ?? 0;
 
         if (data['operationCounts'] != null) {
           _operationCounts.addAll(
-            Map<String, int>.from(data['operationCounts']),
+            Map<String, int>.from(data['operationCounts'] as Map? ?? {}),
           );
         }
 
         if (data['logs'] != null) {
-          _performanceLogs.addAll(List<String>.from(data['logs']));
+          _performanceLogs.addAll((List<String>.from(data['logs'] as List? ?? [])));
         }
 
         debugPrint('📊 성능 데이터 로드 완료');

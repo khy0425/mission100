@@ -313,6 +313,15 @@ class AchievementService {
         await ChadEvolutionService.addExperience(achievement.xpReward);
         debugPrint('💰 XP 추가: ${achievement.xpReward} XP');
 
+        // CloudSyncService에 변경사항 알림
+        try {
+          // import 'cloud_sync_service.dart'; 추가 필요
+          // final cloudSyncService = CloudSyncService();
+          // await cloudSyncService.onAchievementChanged();
+        } catch (e) {
+          debugPrint('클라우드 동기화 알림 오류: $e');
+        }
+
         // 업적 달성 콜백 호출 (UI 업데이트용)
         _onAchievementUnlocked?.call();
 

@@ -14,7 +14,7 @@ class AchievementDetailDialog extends StatelessWidget {
   }
 
   String _getRarityText(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     switch (achievement.rarity) {
       case AchievementRarity.common:
         return l10n.achievementRarityCommon;
@@ -28,7 +28,7 @@ class AchievementDetailDialog extends StatelessWidget {
   }
 
   String _getTypeText(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     switch (achievement.type) {
       case AchievementType.first:
         return l10n.achievementTypeFirst;
@@ -59,10 +59,10 @@ class AchievementDetailDialog extends StatelessWidget {
         decoration: BoxDecoration(
           color: theme.cardColor,
           borderRadius: BorderRadius.circular(AppConstants.radiusL),
-          border: Border.all(color: rarityColor.withOpacity(0.5), width: 2),
+          border: Border.all(color: rarityColor.withValues(alpha: 0.5), width: 2),
           boxShadow: [
             BoxShadow(
-              color: rarityColor.withOpacity(0.3),
+              color: rarityColor.withValues(alpha: 0.3),
               blurRadius: 20,
               spreadRadius: 5,
             ),
@@ -78,8 +78,8 @@ class AchievementDetailDialog extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    rarityColor.withOpacity(0.1),
-                    rarityColor.withOpacity(0.05),
+                    rarityColor.withValues(alpha: 0.1),
+                    rarityColor.withValues(alpha: 0.05),
                   ],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -101,7 +101,7 @@ class AchievementDetailDialog extends StatelessWidget {
                           ? LinearGradient(
                               colors: [
                                 rarityColor,
-                                rarityColor.withOpacity(0.7),
+                                rarityColor.withValues(alpha: 0.7),
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
@@ -109,11 +109,11 @@ class AchievementDetailDialog extends StatelessWidget {
                           : null,
                       color: achievement.isCompleted
                           ? null
-                          : rarityColor.withOpacity(0.3),
+                          : rarityColor.withValues(alpha: 0.3),
                       boxShadow: achievement.isCompleted
                           ? [
                               BoxShadow(
-                                color: rarityColor.withOpacity(0.4),
+                                color: rarityColor.withValues(alpha: 0.4),
                                 blurRadius: 15,
                                 spreadRadius: 3,
                               ),
@@ -169,7 +169,7 @@ class AchievementDetailDialog extends StatelessWidget {
                 children: [
                   // 설명
                   Text(
-                    AppLocalizations.of(context)!.descriptionTitle,
+                    AppLocalizations.of(context).descriptionTitle,
                     style: theme.textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                     ),
@@ -185,7 +185,7 @@ class AchievementDetailDialog extends StatelessWidget {
                   // 진행도 (미완료 업적만)
                   if (!achievement.isCompleted) ...[
                     Text(
-                      AppLocalizations.of(context)!.progressLabel,
+                      AppLocalizations.of(context).progressLabel,
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -215,12 +215,12 @@ class AchievementDetailDialog extends StatelessWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.all(AppConstants.paddingM),
                       decoration: BoxDecoration(
-                        color: rarityColor.withOpacity(0.1),
+                        color: rarityColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(
                           AppConstants.radiusM,
                         ),
                         border: Border.all(
-                          color: rarityColor.withOpacity(0.3),
+                          color: rarityColor.withValues(alpha: 0.3),
                           width: 1,
                         ),
                       ),
@@ -252,7 +252,7 @@ class AchievementDetailDialog extends StatelessWidget {
                               Icon(Icons.star, color: Colors.amber, size: 20),
                               const SizedBox(width: AppConstants.paddingS),
                               Text(
-                                '${AppLocalizations.of(context)!.earnedXp}: ${achievement.xpReward}',
+                                '${AppLocalizations.of(context).earnedXp}: ${achievement.xpReward}',
                                 style: theme.textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.w500,
                                 ),
@@ -268,7 +268,7 @@ class AchievementDetailDialog extends StatelessWidget {
                   // 동기부여 메시지
                   if (achievement.getMotivation(context).isNotEmpty) ...[
                     Text(
-                      AppLocalizations.of(context)!.motivationMessage,
+                      AppLocalizations.of(context).motivationMessage,
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -278,14 +278,14 @@ class AchievementDetailDialog extends StatelessWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.all(AppConstants.paddingM),
                       decoration: BoxDecoration(
-                        color: theme.colorScheme.primaryContainer.withOpacity(
+                        color: theme.colorScheme.primaryContainer.withValues(alpha: 
                           0.3,
                         ),
                         borderRadius: BorderRadius.circular(
                           AppConstants.radiusM,
                         ),
                         border: Border.all(
-                          color: theme.colorScheme.primary.withOpacity(0.3),
+                          color: theme.colorScheme.primary.withValues(alpha: 0.3),
                           width: 1,
                         ),
                       ),
@@ -321,7 +321,7 @@ class AchievementDetailDialog extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    AppLocalizations.of(context)!.confirm,
+                    AppLocalizations.of(context).confirm,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -343,7 +343,7 @@ class AchievementDetailDialog extends StatelessWidget {
         vertical: AppConstants.paddingS / 2,
       ),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.2),
+        color: color.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(AppConstants.radiusS),
         border: Border.all(color: color, width: 1),
       ),

@@ -207,9 +207,8 @@ class ChadLevelManager extends ChangeNotifier {
   Future<void> _sendLevelUpNotification(ChadStageInfo newStage) async {
     try {
       await NotificationService.showChadEvolutionNotification(
-        chadName: newStage.name,
-        evolutionMessage: newStage.unlockMessage,
-        stageNumber: newStage.stageIndex,
+        newStage.name,
+        newStage.unlockMessage,
       );
     } catch (e) {
       debugPrint('차드 레벨업 알림 전송 실패: $e');
@@ -349,7 +348,7 @@ class ChadStageInfo {
       id: 'sleep_cap_chad',
       name: '수면모자 Chad',
       description: '여정을 시작하는 Chad입니다.\n아직 잠이 덜 깬 상태지만 곧 깨어날 것입니다!',
-      imagePath: 'assets/images/수면모자차드.jpg',
+      imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 0,
       unlockMessage: 'Mission 100에 오신 것을 환영합니다!',
       themeColor: const Color(0xFF9C88FF), // 보라색
@@ -369,7 +368,7 @@ class ChadStageInfo {
       id: 'coffee_chad',
       name: '커피 Chad',
       description: '에너지가 넘치는 Chad입니다.\n커피의 힘으로 더욱 강해졌습니다!',
-      imagePath: 'assets/images/커피차드.png',
+      imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 2,
       unlockMessage: '대단합니다! 2주차를 완료하여 커피 Chad로 진화했습니다!',
       themeColor: const Color(0xFF8B4513), // 갈색
@@ -379,7 +378,7 @@ class ChadStageInfo {
       id: 'front_facing_chad',
       name: '정면 Chad',
       description: '자신감이 넘치는 Chad입니다.\n정면을 당당히 바라보며 도전합니다!',
-      imagePath: 'assets/images/정면차드.jpg',
+      imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 3,
       unlockMessage: '놀랍습니다! 3주차를 완료하여 정면 Chad로 진화했습니다!',
       themeColor: const Color(0xFF51CF66), // 초록색
@@ -389,7 +388,7 @@ class ChadStageInfo {
       id: 'sunglasses_chad',
       name: '썬글라스 Chad',
       description: '쿨한 매력의 Chad입니다.\n선글라스를 쓰고 멋진 모습을 보여줍니다!',
-      imagePath: 'assets/images/썬글차드.jpg',
+      imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 4,
       unlockMessage: '멋집니다! 4주차를 완료하여 썬글라스 Chad로 진화했습니다!',
       themeColor: const Color(0xFF000000), // 검은색
@@ -399,7 +398,7 @@ class ChadStageInfo {
       id: 'glowing_eyes_chad',
       name: '빛나는눈 Chad',
       description: '강력한 힘을 가진 Chad입니다.\n눈에서 빛이 나며 엄청난 파워를 보여줍니다!',
-      imagePath: 'assets/images/눈빔차드.jpg',
+      imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 5,
       unlockMessage: '경이롭습니다! 5주차를 완료하여 빛나는눈 Chad로 진화했습니다!',
       themeColor: const Color(0xFFFF6B6B), // 빨간색
@@ -409,7 +408,7 @@ class ChadStageInfo {
       id: 'double_chad',
       name: '더블 Chad',
       description: '최종 진화를 완료한 전설의 Chad입니다.\n두 배의 파워로 모든 것을 정복합니다!',
-      imagePath: 'assets/images/더블차드.jpg',
+      imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 6,
       unlockMessage: '전설입니다! 6주차를 완료하여 더블 Chad로 진화했습니다!',
       themeColor: const Color(0xFFFFD43B), // 금색

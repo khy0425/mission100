@@ -281,15 +281,15 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: [
-            const Color(AppColors.primaryColor).withOpacity(0.1),
-            Colors.orange.withOpacity(0.1),
+            const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+            Colors.orange.withValues(alpha: 0.1),
           ],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
         borderRadius: BorderRadius.circular(16),
         border: Border.all(
-          color: const Color(AppColors.primaryColor).withOpacity(0.3),
+          color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
           width: 2,
         ),
       ),
@@ -411,7 +411,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -446,13 +446,13 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: _notificationsEnabled
-                  ? Colors.blue.withOpacity(0.1)
-                  : Colors.grey.withOpacity(0.1),
+                  ? Colors.blue.withValues(alpha: 0.1)
+                  : Colors.grey.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
                 color: _notificationsEnabled
-                    ? Colors.blue.withOpacity(0.3)
-                    : Colors.grey.withOpacity(0.3),
+                    ? Colors.blue.withValues(alpha: 0.3)
+                    : Colors.grey.withValues(alpha: 0.3),
               ),
             ),
             child: Row(
@@ -512,9 +512,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.orange.withOpacity(0.1),
+                color: Colors.orange.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
-                border: Border.all(color: Colors.orange.withOpacity(0.3)),
+                border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
               ),
               child: InkWell(
                 onTap: _selectNotificationTime,
@@ -569,9 +569,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.green.withOpacity(0.1),
+              color: Colors.green.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.green.withOpacity(0.3)),
+              border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [

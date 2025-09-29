@@ -28,23 +28,23 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
 
   List<String> _getVideoTitles(BuildContext context) {
     return [
-      AppLocalizations.of(context)!.perfectPushupForm,
-      AppLocalizations.of(context)!.pushupVariations,
-      AppLocalizations.of(context)!.chadSecrets,
-      AppLocalizations.of(context)!.pushup100Challenge,
-      AppLocalizations.of(context)!.homeWorkoutPushups,
-      AppLocalizations.of(context)!.strengthSecrets,
+      AppLocalizations.of(context).perfectPushupForm,
+      AppLocalizations.of(context).pushupVariations,
+      AppLocalizations.of(context).chadSecrets,
+      AppLocalizations.of(context).pushup100Challenge,
+      AppLocalizations.of(context).homeWorkoutPushups,
+      AppLocalizations.of(context).strengthSecrets,
     ];
   }
 
   List<String> _getVideoDescriptions(BuildContext context) {
     return [
-      AppLocalizations.of(context)!.correctPushupFormDesc,
-      AppLocalizations.of(context)!.variousPushupStimulation,
-      AppLocalizations.of(context)!.trueChadMindset,
-      AppLocalizations.of(context)!.challengeSpirit100,
-      AppLocalizations.of(context)!.perfectHomeWorkout,
-      AppLocalizations.of(context)!.consistentStrengthImprovement,
+      AppLocalizations.of(context).correctPushupFormDesc,
+      AppLocalizations.of(context).variousPushupStimulation,
+      AppLocalizations.of(context).trueChadMindset,
+      AppLocalizations.of(context).challengeSpirit100,
+      AppLocalizations.of(context).perfectHomeWorkout,
+      AppLocalizations.of(context).consistentStrengthImprovement,
     ];
   }
 
@@ -126,7 +126,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
           onPressed: () => Navigator.pop(context),
         ),
         title: Text(
-          AppLocalizations.of(context)!.chadShorts,
+          AppLocalizations.of(context).chadShorts,
           style: const TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.bold,
@@ -144,7 +144,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    AppLocalizations.of(context)!.loadingChadVideos,
+                    AppLocalizations.of(context).loadingChadVideos,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 16,
@@ -170,7 +170,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
                     Text(
                       AppLocalizations.of(
                         context,
-                      )!.videoLoadError(_errorMessage!),
+                      ).videoLoadError(_errorMessage!),
                       style: const TextStyle(color: Colors.white, fontSize: 16),
                       textAlign: TextAlign.center,
                     ),
@@ -187,7 +187,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
                         backgroundColor: const Color(AppColors.primaryColor),
                       ),
                       child: Text(
-                        AppLocalizations.of(context)!.tryAgain,
+                        AppLocalizations.of(context).tryAgain,
                         style: const TextStyle(color: Colors.white),
                       ),
                     ),
@@ -250,30 +250,30 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
             children: [
               _buildActionButton(
                 icon: Icons.favorite_border,
-                label: AppLocalizations.of(context)!.like,
+                label: AppLocalizations.of(context).like,
                 onTap: () =>
-                    _showSnackBar(AppLocalizations.of(context)!.likeMessage),
+                    _showSnackBar(AppLocalizations.of(context).likeMessage),
               ),
               const SizedBox(height: 20),
               _buildActionButton(
                 icon: Icons.share,
-                label: AppLocalizations.of(context)!.share,
+                label: AppLocalizations.of(context).share,
                 onTap: () =>
-                    _showSnackBar(AppLocalizations.of(context)!.shareMessage),
+                    _showSnackBar(AppLocalizations.of(context).shareMessage),
               ),
               const SizedBox(height: 20),
               _buildActionButton(
                 icon: Icons.bookmark_border,
-                label: AppLocalizations.of(context)!.save,
+                label: AppLocalizations.of(context).save,
                 onTap: () =>
-                    _showSnackBar(AppLocalizations.of(context)!.saveMessage),
+                    _showSnackBar(AppLocalizations.of(context).saveMessage),
               ),
               const SizedBox(height: 20),
               _buildActionButton(
                 icon: Icons.fitness_center,
-                label: AppLocalizations.of(context)!.workout,
+                label: AppLocalizations.of(context).workout,
                 onTap: () => _showSnackBar(
-                  AppLocalizations.of(context)!.workoutStartMessage,
+                  AppLocalizations.of(context).workoutStartMessage,
                 ),
               ),
             ],
@@ -316,7 +316,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
-                      AppLocalizations.of(context)!.pushupHashtag,
+                      AppLocalizations.of(context).pushupHashtag,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 12,
@@ -335,7 +335,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                     child: Text(
-                      AppLocalizations.of(context)!.chadHashtag,
+                      AppLocalizations.of(context).chadHashtag,
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 12,
@@ -392,7 +392,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
                     const Icon(Icons.swipe_up, color: Colors.white, size: 16),
                     const SizedBox(width: 8),
                     Text(
-                      AppLocalizations.of(context)!.swipeUpHint,
+                      AppLocalizations.of(context).swipeUpHint,
                       style: const TextStyle(color: Colors.white, fontSize: 12),
                     ),
                   ],

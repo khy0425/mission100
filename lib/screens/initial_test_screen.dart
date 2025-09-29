@@ -7,7 +7,7 @@ import '../utils/workout_data.dart';
 import '../models/user_profile.dart';
 import '../services/database_service.dart';
 import '../services/workout_program_service.dart';
-import 'main_navigation_screen.dart';
+
 import 'workout_schedule_setup_screen.dart';
 
 class InitialTestScreen extends StatefulWidget {
@@ -141,7 +141,7 @@ class _InitialTestScreenState extends State<InitialTestScreen>
       // 운동 스케줄 설정 화면으로 이동
       if (mounted) {
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(
+          MaterialPageRoute<void>(
             builder: (context) =>
                 WorkoutScheduleSetupScreen(userProfile: userProfileWithId),
           ),

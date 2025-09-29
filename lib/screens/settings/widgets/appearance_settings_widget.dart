@@ -144,7 +144,7 @@ class AppearanceSettingsWidget extends StatelessWidget {
           AppLocalizations.of(context).languageSettings,
           AppLocalizations.of(
             context,
-          )!.currentLanguage(LocaleService.getLocaleName(currentLocale)),
+          ).currentLanguage(LocaleService.getLocaleName(currentLocale)),
           Icons.language,
           onLanguageDialogPressed ?? () {},
         ),

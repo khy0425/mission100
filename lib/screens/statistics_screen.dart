@@ -331,7 +331,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.statistics,
+          AppLocalizations.of(context).statistics,
           style: const TextStyle(fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.transparent,
@@ -377,7 +377,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.progressVisualization,
+              AppLocalizations.of(context).progressVisualization,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
@@ -387,7 +387,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
               children: [
                 Expanded(
                   child: _buildCircularProgress(
-                    title: AppLocalizations.of(context)!.weeklyGoal,
+                    title: AppLocalizations.of(context).weeklyGoal,
                     progress: _weeklyProgress,
                     current: _thisWeekWorkouts,
                     target: _weeklyGoal,
@@ -398,7 +398,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
                 const SizedBox(width: 16),
                 Expanded(
                   child: _buildCircularProgress(
-                    title: AppLocalizations.of(context)!.monthlyGoal,
+                    title: AppLocalizations.of(context).monthlyGoal,
                     progress: _monthlyProgress,
                     current: _thisMonthWorkouts,
                     target: _monthlyGoal,
@@ -490,11 +490,11 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              AppLocalizations.of(context)!.streakProgress,
+              AppLocalizations.of(context).streakProgress,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
             ),
             Text(
-              '$_currentStreak / $_targetStreak ${AppLocalizations.of(context)!.days}',
+              '$_currentStreak / $_targetStreak ${AppLocalizations.of(context).days}',
               style: TextStyle(fontSize: 14, color: Colors.grey[600]),
             ),
           ],
@@ -573,32 +573,32 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           mainAxisSpacing: AppConstants.paddingM,
           children: [
             _buildStatCard(
-              AppLocalizations.of(context)!.totalWorkouts,
-              '${(_totalWorkouts * _counterAnimation.value).toInt()}${AppLocalizations.of(context)!.times}',
+              AppLocalizations.of(context).totalWorkouts,
+              '${(_totalWorkouts * _counterAnimation.value).toInt()}${AppLocalizations.of(context).times}',
               Icons.fitness_center,
               const Color(AppColors.primaryColor),
-              AppLocalizations.of(context)!.chadDays,
+              AppLocalizations.of(context).chadDays,
             ),
             _buildStatCard(
-              AppLocalizations.of(context)!.totalPushups,
-              '${(_totalPushups * _counterAnimation.value).toInt()}${AppLocalizations.of(context)!.count}',
+              AppLocalizations.of(context).totalPushups,
+              '${(_totalPushups * _counterAnimation.value).toInt()}${AppLocalizations.of(context).count}',
               Icons.trending_up,
               const Color(AppColors.secondaryColor),
-              AppLocalizations.of(context)!.realChadPower,
+              AppLocalizations.of(context).realChadPower,
             ),
             _buildStatCard(
-              AppLocalizations.of(context)!.averageCompletion,
+              AppLocalizations.of(context).averageCompletion,
               '${(_averageCompletionRate * _counterAnimation.value * 100).toInt()}%',
               Icons.track_changes,
               const Color(AppColors.successColor),
-              AppLocalizations.of(context)!.perfectExecution,
+              AppLocalizations.of(context).perfectExecution,
             ),
             _buildStatCard(
-              AppLocalizations.of(context)!.thisMonthWorkouts,
-              '${(_thisMonthWorkouts * _counterAnimation.value).toInt()}${AppLocalizations.of(context)!.times}',
+              AppLocalizations.of(context).thisMonthWorkouts,
+              '${(_thisMonthWorkouts * _counterAnimation.value).toInt()}${AppLocalizations.of(context).times}',
               Icons.calendar_today,
               Colors.orange,
-              AppLocalizations.of(context)!.consistentChad,
+              AppLocalizations.of(context).consistentChad,
             ),
           ],
         );
@@ -667,7 +667,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.workoutChart,
+                  AppLocalizations.of(context).workoutChart,
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -678,17 +678,17 @@ class _StatisticsScreenState extends State<StatisticsScreen>
                   children: [
                     _buildPeriodButton(
                       'week',
-                      AppLocalizations.of(context)!.weekly,
+                      AppLocalizations.of(context).weekly,
                     ),
                     const SizedBox(width: 8),
                     _buildPeriodButton(
                       'month',
-                      AppLocalizations.of(context)!.monthly,
+                      AppLocalizations.of(context).monthly,
                     ),
                     const SizedBox(width: 8),
                     _buildPeriodButton(
                       'year',
-                      AppLocalizations.of(context)!.yearly,
+                      AppLocalizations.of(context).yearly,
                     ),
                   ],
                 ),
@@ -737,7 +737,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           height: 200,
           child: _workoutHistory.isEmpty
               ? Center(
-                  child: Text(AppLocalizations.of(context)!.noWorkoutHistory),
+                  child: Text(AppLocalizations.of(context).noWorkoutHistory),
                 )
               : _buildLineChart(),
         );
@@ -747,7 +747,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
 
   Widget _buildLineChart() {
     if (_chartData.isEmpty) {
-      return Center(child: Text(AppLocalizations.of(context)!.noChartData));
+      return Center(child: Text(AppLocalizations.of(context).noChartData));
     }
 
     final maxY = _chartData.isEmpty
@@ -865,7 +865,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
       text = '${date.day}';
     } else {
       final date = now.subtract(Duration(days: 364 - index));
-      text = '${date.month}${AppLocalizations.of(context)!.month}';
+      text = '${date.month}${AppLocalizations.of(context).month}';
     }
 
     // 너무 많은 라벨이 표시되지 않도록 간격 조정
@@ -888,7 +888,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.monthlyProgress,
+              AppLocalizations.of(context).monthlyProgress,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 20),
@@ -903,14 +903,14 @@ class _StatisticsScreenState extends State<StatisticsScreen>
     return SizedBox(
       height: 200,
       child: _workoutHistory.isEmpty
-          ? Center(child: Text(AppLocalizations.of(context)!.noWorkoutHistory))
+          ? Center(child: Text(AppLocalizations.of(context).noWorkoutHistory))
           : _buildPieChart(),
     );
   }
 
   Widget _buildPieChart() {
     if (_pieChartData.isEmpty) {
-      return Center(child: Text(AppLocalizations.of(context)!.noPieChartData));
+      return Center(child: Text(AppLocalizations.of(context).noPieChartData));
     }
 
     final colors = [

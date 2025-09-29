@@ -86,7 +86,7 @@ class _PushupTutorialDetailScreenState
 
   @override
   Widget build(BuildContext context) {
-    // final l10n = AppLocalizations.of(context)!;
+    // final l10n = AppLocalizations.of(context);
     final mediaQuery = MediaQuery.of(context);
     final screenHeight = mediaQuery.size.height;
     final isSmallScreen = screenHeight < 700;
@@ -131,7 +131,7 @@ class _PushupTutorialDetailScreenState
                     _buildSection(
                       Localizations.localeOf(context).languageCode == 'ko'
                           ? '💪 차드 설명'
-                          : AppLocalizations.of(context)!.chadDescription,
+                          : AppLocalizations.of(context).chadDescription,
                       _getPushupDescription(widget.pushupType),
                       Icons.fitness_center,
                       Color(0xFF51CF66),
@@ -141,7 +141,7 @@ class _PushupTutorialDetailScreenState
                     _buildSection(
                       Localizations.localeOf(context).languageCode == 'ko'
                           ? '🔥 차드의 조언'
-                          : AppLocalizations.of(context)!.chadAdvice,
+                          : AppLocalizations.of(context).chadAdvice,
                       _getChadMotivation(widget.pushupType),
                       Icons.psychology,
                       Color(0xFFFFD43B),
@@ -460,7 +460,7 @@ class _PushupTutorialDetailScreenState
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.errorPleaseTryAgain),
+            content: Text(AppLocalizations.of(context).errorPleaseTryAgain),
             backgroundColor: Colors.red,
           ),
         );
@@ -471,53 +471,53 @@ class _PushupTutorialDetailScreenState
   String _getDifficultyName() {
     switch (widget.pushupType.difficulty) {
       case PushupDifficulty.beginner:
-        return AppLocalizations.of(context)!.difficultyBeginner;
+        return AppLocalizations.of(context).difficultyBeginner;
       case PushupDifficulty.intermediate:
-        return AppLocalizations.of(context)!.difficultyIntermediate;
+        return AppLocalizations.of(context).difficultyIntermediate;
       case PushupDifficulty.advanced:
-        return AppLocalizations.of(context)!.difficultyAdvanced;
+        return AppLocalizations.of(context).difficultyAdvanced;
       case PushupDifficulty.extreme:
-        return AppLocalizations.of(context)!.difficultyExtreme;
+        return AppLocalizations.of(context).difficultyExtreme;
     }
   }
 
   String _getTargetMuscleName(TargetMuscle muscle) {
     switch (muscle) {
       case TargetMuscle.chest:
-        return AppLocalizations.of(context)!.chest;
+        return AppLocalizations.of(context).chest;
       case TargetMuscle.triceps:
-        return AppLocalizations.of(context)!.triceps;
+        return AppLocalizations.of(context).triceps;
       case TargetMuscle.shoulders:
-        return AppLocalizations.of(context)!.shoulders;
+        return AppLocalizations.of(context).shoulders;
       case TargetMuscle.core:
-        return AppLocalizations.of(context)!.core;
+        return AppLocalizations.of(context).core;
       case TargetMuscle.full:
-        return AppLocalizations.of(context)!.fullBody;
+        return AppLocalizations.of(context).fullBody;
     }
   }
 
   String _getPushupName(PushupType pushup) {
     switch (pushup.id) {
       case 'standard':
-        return AppLocalizations.of(context)!.pushupStandard;
+        return AppLocalizations.of(context).pushupStandard;
       case 'knee':
-        return AppLocalizations.of(context)!.pushupKnee;
+        return AppLocalizations.of(context).pushupKnee;
       case 'incline':
-        return AppLocalizations.of(context)!.pushupIncline;
+        return AppLocalizations.of(context).pushupIncline;
       case 'wide_grip':
-        return AppLocalizations.of(context)!.pushupWideGrip;
+        return AppLocalizations.of(context).pushupWideGrip;
       case 'diamond':
-        return AppLocalizations.of(context)!.pushupDiamond;
+        return AppLocalizations.of(context).pushupDiamond;
       case 'decline':
-        return AppLocalizations.of(context)!.pushupDecline;
+        return AppLocalizations.of(context).pushupDecline;
       case 'archer':
-        return AppLocalizations.of(context)!.pushupArcher;
+        return AppLocalizations.of(context).pushupArcher;
       case 'pike':
-        return AppLocalizations.of(context)!.pushupPike;
+        return AppLocalizations.of(context).pushupPike;
       case 'clap':
-        return AppLocalizations.of(context)!.pushupClap;
+        return AppLocalizations.of(context).pushupClap;
       case 'one_arm':
-        return AppLocalizations.of(context)!.pushupOneArm;
+        return AppLocalizations.of(context).pushupOneArm;
       default:
         return pushup.id;
     }
@@ -526,25 +526,25 @@ class _PushupTutorialDetailScreenState
   String _getPushupDescription(PushupType pushup) {
     switch (pushup.id) {
       case 'standard':
-        return AppLocalizations.of(context)!.pushupStandardDesc;
+        return AppLocalizations.of(context).pushupStandardDesc;
       case 'knee':
-        return AppLocalizations.of(context)!.pushupKneeDesc;
+        return AppLocalizations.of(context).pushupKneeDesc;
       case 'incline':
-        return AppLocalizations.of(context)!.pushupInclineDesc;
+        return AppLocalizations.of(context).pushupInclineDesc;
       case 'wide_grip':
-        return AppLocalizations.of(context)!.pushupWideGripDesc;
+        return AppLocalizations.of(context).pushupWideGripDesc;
       case 'diamond':
-        return AppLocalizations.of(context)!.pushupDiamondDesc;
+        return AppLocalizations.of(context).pushupDiamondDesc;
       case 'decline':
-        return AppLocalizations.of(context)!.pushupDeclineDesc;
+        return AppLocalizations.of(context).pushupDeclineDesc;
       case 'archer':
-        return AppLocalizations.of(context)!.pushupArcherDesc;
+        return AppLocalizations.of(context).pushupArcherDesc;
       case 'pike':
-        return AppLocalizations.of(context)!.pushupPikeDesc;
+        return AppLocalizations.of(context).pushupPikeDesc;
       case 'clap':
-        return AppLocalizations.of(context)!.pushupClapDesc;
+        return AppLocalizations.of(context).pushupClapDesc;
       case 'one_arm':
-        return AppLocalizations.of(context)!.pushupOneArmDesc;
+        return AppLocalizations.of(context).pushupOneArmDesc;
       default:
         return Localizations.localeOf(context).languageCode == 'ko'
             ? '차드를 위한 특별한 푸시업'
@@ -555,27 +555,27 @@ class _PushupTutorialDetailScreenState
   String _getChadMotivation(PushupType pushup) {
     switch (pushup.id) {
       case 'standard':
-        return AppLocalizations.of(context)!.chadMotivationStandard;
+        return AppLocalizations.of(context).chadMotivationStandard;
       case 'knee':
-        return AppLocalizations.of(context)!.chadMotivationKnee;
+        return AppLocalizations.of(context).chadMotivationKnee;
       case 'incline':
-        return AppLocalizations.of(context)!.chadMotivationIncline;
+        return AppLocalizations.of(context).chadMotivationIncline;
       case 'wide_grip':
-        return AppLocalizations.of(context)!.chadMotivationWideGrip;
+        return AppLocalizations.of(context).chadMotivationWideGrip;
       case 'diamond':
-        return AppLocalizations.of(context)!.chadMotivationDiamond;
+        return AppLocalizations.of(context).chadMotivationDiamond;
       case 'decline':
-        return AppLocalizations.of(context)!.chadMotivationDecline;
+        return AppLocalizations.of(context).chadMotivationDecline;
       case 'archer':
-        return AppLocalizations.of(context)!.chadMotivationArcher;
+        return AppLocalizations.of(context).chadMotivationArcher;
       case 'pike':
-        return AppLocalizations.of(context)!.chadMotivationPike;
+        return AppLocalizations.of(context).chadMotivationPike;
       case 'clap':
-        return AppLocalizations.of(context)!.chadMotivationClap;
+        return AppLocalizations.of(context).chadMotivationClap;
       case 'one_arm':
-        return AppLocalizations.of(context)!.chadMotivationOneArm;
+        return AppLocalizations.of(context).chadMotivationOneArm;
       default:
-        return AppLocalizations.of(context)!.chadMotivationDefault;
+        return AppLocalizations.of(context).chadMotivationDefault;
     }
   }
 

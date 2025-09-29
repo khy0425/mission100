@@ -30,7 +30,7 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final l10n = AppLocalizations.of(context)!;
+    // final l10n = AppLocalizations.of(context);
     final service = PushupTutorialService();
     final allPushups = service.getAllPushupTypes();
     final mediaQuery = MediaQuery.of(context);
@@ -54,7 +54,7 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
         title: Text(
           Localizations.localeOf(context).languageCode == 'ko'
               ? '차드 푸시업 도장'
-              : AppLocalizations.of(context)!.pushupTutorialTitle,
+              : AppLocalizations.of(context).pushupTutorialTitle,
           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -95,7 +95,7 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                                 ? '진짜 차드들은 자세부터 다르다! 💪'
                                 : AppLocalizations.of(
                                     context,
-                                  )!.pushupTutorialSubtitle,
+                                  ).pushupTutorialSubtitle,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -342,38 +342,38 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
   String _getDifficultyName(PushupDifficulty difficulty) {
     switch (difficulty) {
       case PushupDifficulty.beginner:
-        return AppLocalizations.of(context)!.difficultyBeginner;
+        return AppLocalizations.of(context).difficultyBeginner;
       case PushupDifficulty.intermediate:
-        return AppLocalizations.of(context)!.difficultyIntermediate;
+        return AppLocalizations.of(context).difficultyIntermediate;
       case PushupDifficulty.advanced:
-        return AppLocalizations.of(context)!.difficultyAdvanced;
+        return AppLocalizations.of(context).difficultyAdvanced;
       case PushupDifficulty.extreme:
-        return AppLocalizations.of(context)!.difficultyExtreme;
+        return AppLocalizations.of(context).difficultyExtreme;
     }
   }
 
   String _getPushupName(PushupType pushup) {
     switch (pushup.id) {
       case 'standard':
-        return AppLocalizations.of(context)!.pushupStandard;
+        return AppLocalizations.of(context).pushupStandard;
       case 'knee':
-        return AppLocalizations.of(context)!.pushupKnee;
+        return AppLocalizations.of(context).pushupKnee;
       case 'incline':
-        return AppLocalizations.of(context)!.pushupIncline;
+        return AppLocalizations.of(context).pushupIncline;
       case 'wide_grip':
-        return AppLocalizations.of(context)!.pushupWideGrip;
+        return AppLocalizations.of(context).pushupWideGrip;
       case 'diamond':
-        return AppLocalizations.of(context)!.pushupDiamond;
+        return AppLocalizations.of(context).pushupDiamond;
       case 'decline':
-        return AppLocalizations.of(context)!.pushupDecline;
+        return AppLocalizations.of(context).pushupDecline;
       case 'archer':
-        return AppLocalizations.of(context)!.pushupArcher;
+        return AppLocalizations.of(context).pushupArcher;
       case 'pike':
-        return AppLocalizations.of(context)!.pushupPike;
+        return AppLocalizations.of(context).pushupPike;
       case 'clap':
-        return AppLocalizations.of(context)!.pushupClap;
+        return AppLocalizations.of(context).pushupClap;
       case 'one_arm':
-        return AppLocalizations.of(context)!.pushupOneArm;
+        return AppLocalizations.of(context).pushupOneArm;
       default:
         return pushup.id;
     }
@@ -382,25 +382,25 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
   String _getPushupDescription(PushupType pushup) {
     switch (pushup.id) {
       case 'standard':
-        return AppLocalizations.of(context)!.pushupStandardDesc;
+        return AppLocalizations.of(context).pushupStandardDesc;
       case 'knee':
-        return AppLocalizations.of(context)!.pushupKneeDesc;
+        return AppLocalizations.of(context).pushupKneeDesc;
       case 'incline':
-        return AppLocalizations.of(context)!.pushupInclineDesc;
+        return AppLocalizations.of(context).pushupInclineDesc;
       case 'wide_grip':
-        return AppLocalizations.of(context)!.pushupWideGripDesc;
+        return AppLocalizations.of(context).pushupWideGripDesc;
       case 'diamond':
-        return AppLocalizations.of(context)!.pushupDiamondDesc;
+        return AppLocalizations.of(context).pushupDiamondDesc;
       case 'decline':
-        return AppLocalizations.of(context)!.pushupDeclineDesc;
+        return AppLocalizations.of(context).pushupDeclineDesc;
       case 'archer':
-        return AppLocalizations.of(context)!.pushupArcherDesc;
+        return AppLocalizations.of(context).pushupArcherDesc;
       case 'pike':
-        return AppLocalizations.of(context)!.pushupPikeDesc;
+        return AppLocalizations.of(context).pushupPikeDesc;
       case 'clap':
-        return AppLocalizations.of(context)!.pushupClapDesc;
+        return AppLocalizations.of(context).pushupClapDesc;
       case 'one_arm':
-        return AppLocalizations.of(context)!.pushupOneArmDesc;
+        return AppLocalizations.of(context).pushupOneArmDesc;
       default:
         return Localizations.localeOf(context).languageCode == 'ko'
             ? '차드를 위한 특별한 푸시업'
@@ -411,15 +411,15 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
   String _getTargetMuscleName(TargetMuscle muscle) {
     switch (muscle) {
       case TargetMuscle.chest:
-        return AppLocalizations.of(context)!.chest;
+        return AppLocalizations.of(context).chest;
       case TargetMuscle.triceps:
-        return AppLocalizations.of(context)!.triceps;
+        return AppLocalizations.of(context).triceps;
       case TargetMuscle.shoulders:
-        return AppLocalizations.of(context)!.shoulders;
+        return AppLocalizations.of(context).shoulders;
       case TargetMuscle.core:
-        return AppLocalizations.of(context)!.core;
+        return AppLocalizations.of(context).core;
       case TargetMuscle.full:
-        return AppLocalizations.of(context)!.fullBody;
+        return AppLocalizations.of(context).fullBody;
     }
   }
 
@@ -466,7 +466,7 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
             ),
             const SizedBox(width: 8),
             Text(
-              AppLocalizations.of(context)!.advertisement,
+              AppLocalizations.of(context).advertisement,
               style: TextStyle(
                 color: const Color(0xFF4DABF7).withValues(alpha: 0.6),
                 fontSize: adHeight * 0.25,

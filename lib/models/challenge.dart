@@ -425,7 +425,7 @@ String getChallengeDifficultyName(
   BuildContext context,
   ChallengeDifficulty difficulty,
 ) {
-  final l10n = AppLocalizations.of(context)!;
+  final l10n = AppLocalizations.of(context);
   switch (difficulty) {
     case ChallengeDifficulty.easy:
       return l10n.difficultyEasy;
@@ -440,7 +440,7 @@ String getChallengeDifficultyName(
 
 /// 챌린지 상태를 i18n 문자열로 변환하는 헬퍼 함수
 String getChallengeStatusName(BuildContext context, ChallengeStatus status) {
-  final l10n = AppLocalizations.of(context)!;
+  final l10n = AppLocalizations.of(context);
   switch (status) {
     case ChallengeStatus.available:
       return l10n.statusAvailable;

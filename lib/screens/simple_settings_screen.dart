@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 import 'package:mission100/generated/app_localizations.dart';
 import '../services/notification_service.dart';
+import '../services/auth_service.dart';
+import '../screens/onboarding_screen.dart';
 import 'workout_reminder_settings_screen.dart';
 
 class SimpleSettingsScreen extends StatefulWidget {
@@ -53,7 +56,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
     return Scaffold(
       backgroundColor: isDark ? Colors.black : const Color(0xFFF5F5F5),
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.settings),
+        title: Text(AppLocalizations.of(context).settings),
         backgroundColor: isDark ? Colors.grey[900] : Colors.blue,
         foregroundColor: Colors.white,
         elevation: 0,
@@ -70,7 +73,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
               decoration: BoxDecoration(
                 gradient: isDark
                     ? LinearGradient(
-                        colors: [Colors.grey[800]!, Colors.grey[700]!],
+                        colors: [Colors.grey[800] ?? Colors.grey, Colors.grey[700] ?? Colors.grey],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       )
@@ -85,7 +88,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withValues(alpha: 0.1),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
@@ -96,7 +99,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                   const Icon(Icons.settings, size: 48, color: Colors.white),
                   const SizedBox(height: 8),
                   Text(
-                    AppLocalizations.of(context)!.mission100Settings,
+                    'MISSION 100 설정',
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
@@ -104,10 +107,10 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                     ),
                   ),
                   Text(
-                    AppLocalizations.of(context)!.customizeAppFeatures,
+                    '앱 기능을 사용자 정의하세요',
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withValues(alpha: 0.9),
                     ),
                   ),
                 ],
@@ -118,15 +121,15 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
 
             // 알림 설정
             _buildSectionHeader(
-              AppLocalizations.of(context)!.notificationSettings,
+              AppLocalizations.of(context).notificationSettings,
               Icons.notifications,
             ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               SwitchListTile(
-                title: Text(AppLocalizations.of(context)!.pushNotifications),
+                title: Text(AppLocalizations.of(context).pushNotifications),
                 subtitle: Text(
-                  AppLocalizations.of(context)!.receiveGeneralNotifications,
+                  AppLocalizations.of(context).receiveGeneralNotifications,
                 ),
                 value: _pushNotifications,
                 onChanged: (bool value) async {
@@ -136,20 +139,20 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                   await _saveBoolSetting('push_notifications', value);
                   _showSnackBar(
                     value
-                        ? AppLocalizations.of(context)!.pushNotificationEnabled
+                        ? AppLocalizations.of(context).pushNotificationEnabled
                         : AppLocalizations.of(
                             context,
-                          )!.pushNotificationDisabled,
+                          ).pushNotificationDisabled,
                   );
                 },
               ),
               const Divider(height: 1),
               SwitchListTile(
-                title: Text(AppLocalizations.of(context)!.workoutReminder),
+                title: Text(AppLocalizations.of(context).workoutReminder),
                 subtitle: Text(
                   AppLocalizations.of(
                     context,
-                  )!.dailyReminderAt(_reminderTime.format(context)),
+                  ).dailyReminderAt(_reminderTime.format(context)),
                 ),
                 value: _workoutReminders,
                 onChanged: (bool value) async {
@@ -169,8 +172,8 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
 
                   _showSnackBar(
                     value
-                        ? AppLocalizations.of(context)!.workoutReminderEnabled
-                        : AppLocalizations.of(context)!.workoutReminderDisabled,
+                        ? AppLocalizations.of(context).workoutReminderEnabled
+                        : AppLocalizations.of(context).workoutReminderDisabled,
                   );
                 },
               ),
@@ -178,10 +181,10 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
               ListTile(
                 leading: const Icon(Icons.schedule),
                 title: Text(
-                  AppLocalizations.of(context)!.detailedReminderSettings,
+                  AppLocalizations.of(context).detailedReminderSettings,
                 ),
                 subtitle: Text(
-                  AppLocalizations.of(context)!.weeklyWorkoutSchedule,
+                  AppLocalizations.of(context).weeklyWorkoutSchedule,
                 ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: _workoutReminders ? _openReminderSettings : null,
@@ -189,17 +192,17 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
               const Divider(height: 1),
               SwitchListTile(
                 title: Text(
-                  AppLocalizations.of(context)!.achievementNotifications,
+                  AppLocalizations.of(context).achievementNotifications,
                 ),
                 subtitle: Text(
-                  AppLocalizations.of(context)!.receiveAchievementNotifications,
+                  AppLocalizations.of(context).receiveAchievementNotifications,
                 ),
                 value: true,
                 onChanged: (bool value) {
                   _showSnackBar(
                     AppLocalizations.of(
                       context,
-                    )!.achievementNotificationsAlwaysOn,
+                    ).achievementNotificationsAlwaysOn,
                   );
                 },
               ),
@@ -209,14 +212,14 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
 
             // 외관 설정
             _buildSectionHeader(
-              AppLocalizations.of(context)!.appearanceSettings,
+              AppLocalizations.of(context).appearanceSettings,
               Icons.palette,
             ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               SwitchListTile(
-                title: Text(AppLocalizations.of(context)!.darkMode),
-                subtitle: Text(AppLocalizations.of(context)!.useDarkTheme),
+                title: Text(AppLocalizations.of(context).darkMode),
+                subtitle: Text(AppLocalizations.of(context).useDarkTheme),
                 value: _darkMode,
                 onChanged: (bool value) async {
                   setState(() {
@@ -224,31 +227,31 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                   });
                   await _saveBoolSetting('dark_mode', value);
                   _showSnackBar(
-                    AppLocalizations.of(context)!.themeChangeAfterRestart,
+                    AppLocalizations.of(context).themeChangeAfterRestart,
                   );
                 },
               ),
               const Divider(height: 1),
               ListTile(
                 leading: const Icon(Icons.language),
-                title: Text(AppLocalizations.of(context)!.languageSettings),
-                subtitle: Text(AppLocalizations.of(context)!.korean),
+                title: Text(AppLocalizations.of(context).languageSettings),
+                subtitle: Text(AppLocalizations.of(context).korean),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
                   _showSnackBar(
-                    AppLocalizations.of(context)!.languageSettingsComingSoon,
+                    AppLocalizations.of(context).languageSettingsComingSoon,
                   );
                 },
               ),
               const Divider(height: 1),
               ListTile(
                 leading: const Icon(Icons.fitness_center),
-                title: Text(AppLocalizations.of(context)!.difficultySettings),
-                subtitle: Text(AppLocalizations.of(context)!.beginnerMode),
+                title: Text(AppLocalizations.of(context).difficultySettings),
+                subtitle: Text(AppLocalizations.of(context).beginnerMode),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
                   _showSnackBar(
-                    AppLocalizations.of(context)!.difficultySettingsComingSoon,
+                    AppLocalizations.of(context).difficultySettingsComingSoon,
                   );
                 },
               ),
@@ -258,33 +261,33 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
 
             // 데이터 관리
             _buildSectionHeader(
-              AppLocalizations.of(context)!.dataManagement,
+              AppLocalizations.of(context).dataManagement,
               Icons.storage,
             ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               ListTile(
                 leading: const Icon(Icons.backup),
-                title: Text(AppLocalizations.of(context)!.dataBackup),
+                title: Text(AppLocalizations.of(context).dataBackup),
                 subtitle: Text(
-                  AppLocalizations.of(context)!.backupWorkoutRecords,
+                  AppLocalizations.of(context).backupWorkoutRecords,
                 ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
                   _showSnackBar(
-                    AppLocalizations.of(context)!.dataBackupComingSoon,
+                    AppLocalizations.of(context).dataBackupComingSoon,
                   );
                 },
               ),
               const Divider(height: 1),
               ListTile(
                 leading: const Icon(Icons.restore),
-                title: Text(AppLocalizations.of(context)!.dataRestore),
-                subtitle: Text(AppLocalizations.of(context)!.restoreBackupData),
+                title: Text(AppLocalizations.of(context).dataRestore),
+                subtitle: Text(AppLocalizations.of(context).restoreBackupData),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
                   _showSnackBar(
-                    AppLocalizations.of(context)!.dataRestoreComingSoon,
+                    AppLocalizations.of(context).dataRestoreComingSoon,
                   );
                 },
               ),
@@ -292,17 +295,79 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
               ListTile(
                 leading: const Icon(Icons.delete_forever, color: Colors.red),
                 title: Text(
-                  AppLocalizations.of(context)!.dataReset,
+                  AppLocalizations.of(context).dataReset,
                   style: const TextStyle(color: Colors.red),
                 ),
                 subtitle: Text(
-                  AppLocalizations.of(context)!.deleteAllWorkoutRecords,
+                  AppLocalizations.of(context).deleteAllWorkoutRecords,
                 ),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
                   _showSnackBar(
-                    AppLocalizations.of(context)!.dataResetComingSoon,
+                    AppLocalizations.of(context).dataResetComingSoon,
                   );
+                },
+              ),
+            ]),
+
+            const SizedBox(height: 20),
+
+            // 계정 관리 섹션 추가
+            _buildSectionHeader(
+              '계정 설정',
+              Icons.person,
+            ),
+            const SizedBox(height: 8),
+            _buildSettingsCard([
+              ListTile(
+                leading: const Icon(Icons.account_circle),
+                title: Text('계정 정보'),
+                subtitle: Consumer<AuthService>(
+                  builder: (context, authService, child) {
+                    final user = authService.currentUser;
+                    if (user != null) {
+                      return Text(user.email ?? user.displayName ?? 'User');
+                    }
+                    return Text('게스트 모드');
+                  },
+                ),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () {
+                  _showAccountInfo();
+                },
+              ),
+              const Divider(height: 1),
+              Consumer<AuthService>(
+                builder: (context, authService, child) {
+                  // 로그인된 경우에만 로그아웃 버튼 표시
+                  if (authService.isLoggedIn) {
+                    return ListTile(
+                      leading: const Icon(Icons.logout, color: Colors.orange),
+                      title: Text(
+                        '로그아웃',
+                        style: const TextStyle(color: Colors.orange),
+                      ),
+                      subtitle: Text('계정에서 로그아웃합니다'),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () {
+                        _showLogoutConfirmDialog();
+                      },
+                    );
+                  } else {
+                    // 게스트 모드일 때는 로그인 버튼 표시
+                    return ListTile(
+                      leading: const Icon(Icons.login, color: Colors.blue),
+                      title: Text(
+                        '로그인',
+                        style: const TextStyle(color: Colors.blue),
+                      ),
+                      subtitle: Text('진행 상황을 저장하려면 로그인하세요'),
+                      trailing: const Icon(Icons.chevron_right),
+                      onTap: () {
+                        _navigateToLogin();
+                      },
+                    );
+                  }
                 },
               ),
             ]),
@@ -311,43 +376,43 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
 
             // 앱 정보
             _buildSectionHeader(
-              AppLocalizations.of(context)!.appInfo,
+              AppLocalizations.of(context).appInfo,
               Icons.info,
             ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               ListTile(
                 leading: const Icon(Icons.info_outline),
-                title: Text(AppLocalizations.of(context)!.version),
+                title: Text(AppLocalizations.of(context).version),
                 subtitle: const Text('1.0.0'),
               ),
               const Divider(height: 1),
               ListTile(
                 leading: const Icon(Icons.code),
-                title: Text(AppLocalizations.of(context)!.developer),
-                subtitle: Text(AppLocalizations.of(context)!.mission100Team),
+                title: Text(AppLocalizations.of(context).developer),
+                subtitle: Text(AppLocalizations.of(context).mission100Team),
               ),
               const Divider(height: 1),
               ListTile(
                 leading: const Icon(Icons.description),
-                title: Text(AppLocalizations.of(context)!.license),
-                subtitle: Text(AppLocalizations.of(context)!.openSourceLicense),
+                title: Text(AppLocalizations.of(context).license),
+                subtitle: Text(AppLocalizations.of(context).openSourceLicense),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
                   _showSnackBar(
-                    AppLocalizations.of(context)!.licenseInfoComingSoon,
+                    AppLocalizations.of(context).licenseInfoComingSoon,
                   );
                 },
               ),
               const Divider(height: 1),
               ListTile(
                 leading: const Icon(Icons.star),
-                title: Text(AppLocalizations.of(context)!.appRating),
-                subtitle: Text(AppLocalizations.of(context)!.rateOnPlayStore),
+                title: Text(AppLocalizations.of(context).appRating),
+                subtitle: Text(AppLocalizations.of(context).rateOnPlayStore),
                 trailing: const Icon(Icons.chevron_right),
                 onTap: () {
                   _showSnackBar(
-                    AppLocalizations.of(context)!.appRatingComingSoon,
+                    AppLocalizations.of(context).appRatingComingSoon,
                   );
                 },
               ),
@@ -363,12 +428,12 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 color: isDark ? Colors.grey[900] : Colors.grey[100],
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
-                  color: isDark ? Colors.grey[700]! : Colors.grey[300]!,
+                  color: isDark ? Colors.grey[700] ?? Colors.grey : Colors.grey[300] ?? Colors.grey,
                   width: 1,
                 ),
               ),
               child: Text(
-                AppLocalizations.of(context)!.copyrightMission100,
+                AppLocalizations.of(context).copyrightMission100,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 12,
@@ -395,8 +460,8 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: isDark
-                ? Colors.blue.withOpacity(0.2)
-                : Colors.blue.withOpacity(0.1),
+                ? Colors.blue.withValues(alpha: 0.2)
+                : Colors.blue.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(
@@ -428,13 +493,13 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.3 : 0.1),
+            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
         ],
         border: Border.all(
-          color: isDark ? Colors.grey[700]! : Colors.grey[200]!,
+          color: isDark ? Colors.grey[700] ?? Colors.grey : Colors.grey[200] ?? Colors.grey,
           width: 1,
         ),
       ),
@@ -470,7 +535,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
       await NotificationService.scheduleWorkoutReminder(time);
 
       _showSnackBar(
-        AppLocalizations.of(context)!.reminderTimeChanged(time.format(context)),
+        AppLocalizations.of(context).reminderTimeChanged(time.format(context)),
       );
     }
 
@@ -486,6 +551,168 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
         behavior: SnackBarBehavior.floating,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
+    );
+  }
+
+  // 계정 정보 표시
+  void _showAccountInfo() {
+    final authService = Provider.of<AuthService>(context, listen: false);
+    final user = authService.currentUser;
+
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Row(
+            children: [
+              const Icon(Icons.account_circle, color: Colors.blue),
+              const SizedBox(width: 8),
+              Text('계정 정보'),
+            ],
+          ),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              if (user != null) ...[
+                if (user.displayName != null)
+                  _buildInfoRow(
+                    '이름',
+                    user.displayName!,
+                  ),
+                if (user.email != null)
+                  _buildInfoRow(
+                    '이메일',
+                    user.email!,
+                  ),
+                _buildInfoRow(
+                  '계정 유형',
+                  authService.currentSubscription?.type == 'premium'
+                      ? '프리미엄 계정'
+                      : '무료 계정',
+                ),
+                _buildInfoRow(
+                  '로그인 방법',
+                  user.providerData.isNotEmpty
+                      ? user.providerData.first.providerId.contains('google')
+                          ? 'Google'
+                          : '이메일'
+                      : '이메일',
+                ),
+              ] else ...[
+                Text('게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.'),
+              ],
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('닫기'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildInfoRow(String label, String value) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 4.0),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            '$label: ',
+            style: const TextStyle(fontWeight: FontWeight.bold),
+          ),
+          Expanded(
+            child: Text(value),
+          ),
+        ],
+      ),
+    );
+  }
+
+  // 로그아웃 확인 다이얼로그
+  void _showLogoutConfirmDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: Text('로그아웃'),
+          content: Text('정말로 로그아웃하시겠습니까? 저장되지 않은 데이터는 손실될 수 있습니다.'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text('취소'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                Navigator.pop(context); // 다이얼로그 닫기
+                await _performLogout();
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.orange,
+                foregroundColor: Colors.white,
+              ),
+              child: Text('로그아웃'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  // 실제 로그아웃 수행
+  Future<void> _performLogout() async {
+    try {
+      // 로딩 표시
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
+      );
+
+      final authService = Provider.of<AuthService>(context, listen: false);
+      await authService.signOut();
+
+      // SharedPreferences 초기화 (선택적)
+      final prefs = await SharedPreferences.getInstance();
+      // 온보딩 완료 상태는 유지하되, 사용자 관련 데이터만 초기화
+      await prefs.remove('user_profile');
+      await prefs.remove('workout_history');
+
+      if (!mounted) return;
+
+      // 로딩 다이얼로그 닫기
+      Navigator.pop(context);
+
+      // 온보딩 화면으로 이동
+      Navigator.of(context).pushAndRemoveUntil(
+        MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+        (Route<dynamic> route) => false,
+      );
+
+      _showSnackBar('로그아웃 되었습니다');
+    } catch (e) {
+      if (!mounted) return;
+
+      // 로딩 다이얼로그 닫기
+      Navigator.pop(context);
+
+      _showSnackBar('로그아웃 중 오류가 발생했습니다: $e');
+    }
+  }
+
+  // 로그인 화면으로 이동
+  void _navigateToLogin() {
+    Navigator.of(context).pushAndRemoveUntil(
+      MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+      (Route<dynamic> route) => false,
     );
   }
 }

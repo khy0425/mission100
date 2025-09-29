@@ -385,7 +385,7 @@ $downloadMessage
     required UserLevel level,
   }) async {
     try {
-      final l10n = AppLocalizations.of(context)!;
+      final l10n = AppLocalizations.of(context);
       final levelName = _getLevelName(level, l10n);
 
       final message = _getDailyWorkoutMessage(
@@ -412,7 +412,7 @@ $downloadMessage
     required int totalPushups,
   }) async {
     try {
-      final l10n = AppLocalizations.of(context)!;
+      final l10n = AppLocalizations.of(context);
       final levelName = _getLevelName(newLevel, l10n);
 
       final message = _getLevelUpMessage(
@@ -439,7 +439,7 @@ $downloadMessage
     required int xpReward,
   }) async {
     try {
-      final l10n = AppLocalizations.of(context)!;
+      final l10n = AppLocalizations.of(context);
 
       final message = _getAchievementMessage(
         l10n,
@@ -466,7 +466,7 @@ $downloadMessage
     required double progressPercentage,
   }) async {
     try {
-      final l10n = AppLocalizations.of(context)!;
+      final l10n = AppLocalizations.of(context);
 
       final message = _getWeeklyProgressMessage(
         l10n,
@@ -492,7 +492,7 @@ $downloadMessage
     required DateTime startDate,
   }) async {
     try {
-      final l10n = AppLocalizations.of(context)!;
+      final l10n = AppLocalizations.of(context);
       final duration = DateTime.now().difference(startDate).inDays;
 
       final message = _get100AchievementMessage(l10n, totalDays, duration);
@@ -512,7 +512,7 @@ $downloadMessage
     required String userName,
   }) async {
     try {
-      final l10n = AppLocalizations.of(context)!;
+      final l10n = AppLocalizations.of(context);
 
       final message = _getFriendChallengeMessage(l10n, userName);
 
@@ -528,7 +528,7 @@ $downloadMessage
     required String motivationMessage,
   }) async {
     try {
-      final l10n = AppLocalizations.of(context)!;
+      final l10n = AppLocalizations.of(context);
 
       final message = _getMotivationMessage(l10n, motivationMessage);
 

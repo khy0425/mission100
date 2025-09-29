@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import '../../config/app_config.dart';
+import '../ads/ad_config.dart';
 
 /// 앱 설정 관리자
 class ConfigManager {

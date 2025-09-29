@@ -61,7 +61,7 @@ class ActionButtonsWidget extends StatelessWidget {
             const Icon(Icons.school, color: Colors.white, size: 24),
             const SizedBox(width: AppConstants.paddingS),
             Text(
-              AppLocalizations.of(context)!.tutorialButton,
+              AppLocalizations.of(context).tutorialButton,
               style: theme.textTheme.titleMedium?.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -91,7 +91,7 @@ class ActionButtonsWidget extends StatelessWidget {
             const Icon(Icons.fitness_center, color: Colors.white, size: 24),
             const SizedBox(width: AppConstants.paddingS),
             Text(
-              AppLocalizations.of(context)!.perfectPushupForm,
+              AppLocalizations.of(context).perfectPushupForm,
               style: theme.textTheme.titleMedium?.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

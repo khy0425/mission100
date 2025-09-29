@@ -70,7 +70,7 @@ class TodayMissionCardWidget extends StatelessWidget {
         Icon(Icons.today, color: const Color(AppColors.primaryColor), size: 24),
         const SizedBox(width: AppConstants.paddingS),
         Text(
-          AppLocalizations.of(context)!.todayMissionTitle,
+          AppLocalizations.of(context).todayMissionTitle,
           style: theme.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
             color: const Color(AppColors.primaryColor),
@@ -90,7 +90,7 @@ class TodayMissionCardWidget extends StatelessWidget {
       child: Text(
         AppLocalizations.of(
           context,
-        )!.weekDayFormat(todayWorkout!.week ?? 0, todayWorkout!.day ?? 0),
+        ).weekDayFormat((todayWorkout!.week ?? 0) as int, (todayWorkout!.day ?? 0) as int),
         style: TextStyle(
           color: const Color(AppColors.primaryColor),
           fontSize: 13,
@@ -101,7 +101,7 @@ class TodayMissionCardWidget extends StatelessWidget {
   }
 
   Widget _buildTodayGoal(BuildContext context, ThemeData theme) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
 
     return Align(
       alignment: Alignment.centerLeft,
@@ -134,7 +134,7 @@ class TodayMissionCardWidget extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                AppLocalizations.of(context)!.setRepsFormat(setIndex, reps),
+                AppLocalizations.of(context).setRepsFormat(setIndex as int, reps as int),
                 style: TextStyle(
                   color: todayCompletedWorkout != null
                       ? Colors.green[700]
@@ -174,7 +174,7 @@ class TodayMissionCardWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
-            AppLocalizations.of(context)!.totalTarget,
+            AppLocalizations.of(context).totalTarget,
             style: TextStyle(
               color: todayCompletedWorkout != null
                   ? Colors.green[700]
@@ -184,7 +184,7 @@ class TodayMissionCardWidget extends StatelessWidget {
             ),
           ),
           Text(
-            AppLocalizations.of(context)!.totalRepsFormat(totalReps),
+            AppLocalizations.of(context).totalRepsFormat(totalReps),
             style: TextStyle(
               color: todayCompletedWorkout != null
                   ? Colors.green[700]
@@ -214,7 +214,7 @@ class TodayMissionCardWidget extends StatelessWidget {
             Icon(Icons.check_circle, color: Colors.green, size: 24),
             const SizedBox(width: 8),
             Text(
-              AppLocalizations.of(context)!.todayWorkoutCompleted,
+              AppLocalizations.of(context).todayWorkoutCompleted,
               style: TextStyle(
                 color: Colors.green[700],
                 fontSize: 16,
@@ -244,7 +244,7 @@ class TodayMissionCardWidget extends StatelessWidget {
             Icon(Icons.play_arrow, size: 24),
             const SizedBox(width: 8),
             Text(
-              AppLocalizations.of(context)!.startWorkout,
+              AppLocalizations.of(context).startWorkout,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ],
@@ -265,7 +265,7 @@ class TodayMissionCardWidget extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            AppLocalizations.of(context)!.noWorkoutToday,
+            AppLocalizations.of(context).noWorkoutToday,
             style: theme.textTheme.bodyLarge?.copyWith(
               color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
             ),

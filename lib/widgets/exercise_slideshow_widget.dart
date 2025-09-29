@@ -165,7 +165,7 @@ class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(
-                color: Colors.black.withOpacity(0.7),
+                color: Colors.black.withValues(alpha: 0.7),
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Text(
@@ -194,7 +194,7 @@ class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
                 icon: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
+                    color: Colors.black.withValues(alpha: 0.5),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -221,7 +221,7 @@ class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
                 icon: Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.5),
+                    color: Colors.black.withValues(alpha: 0.5),
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(
@@ -251,7 +251,7 @@ class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
                     shape: BoxShape.circle,
                     color: index == _currentIndex
                         ? const Color(0xFF4DABF7)
-                        : Colors.white.withOpacity(0.3),
+                        : Colors.white.withValues(alpha: 0.3),
                   ),
                 ),
               ),
@@ -274,7 +274,7 @@ class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
               child: Container(
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.7),
+                  color: Colors.black.withValues(alpha: 0.7),
                   shape: BoxShape.circle,
                 ),
                 child: Icon(

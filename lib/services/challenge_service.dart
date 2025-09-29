@@ -598,7 +598,7 @@ class ChallengeService {
         try {
           final settingsMap = jsonDecode(settingsJson) as Map<String, dynamic>;
           final activeDays = List<int>.from(
-            settingsMap['activeDays'] ?? [1, 2, 3, 4, 5],
+            (settingsMap['activeDays'] as List?) ?? [1, 2, 3, 4, 5],
           );
           workoutDays = activeDays;
         } catch (e) {

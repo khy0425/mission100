@@ -274,7 +274,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
           ElevatedButton.icon(
             onPressed: _initializeVideo,
             icon: const Icon(Icons.refresh, size: 16),
-            label: Text(AppLocalizations.of(context)!.retryButton),
+            label: Text(AppLocalizations.of(context).retryButton),
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF4DABF7),
               foregroundColor: Colors.white,

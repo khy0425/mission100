@@ -63,7 +63,7 @@ class RepCounterWidget extends StatelessWidget {
               Column(
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.target,
+                    AppLocalizations.of(context).target,
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: Color(AppColors.primaryColor),
                       fontWeight: FontWeight.bold,
@@ -87,8 +87,8 @@ class RepCounterWidget extends StatelessWidget {
                 children: [
                   Text(
                     isSetCompleted
-                        ? AppLocalizations.of(context)!.completed
-                        : AppLocalizations.of(context)!.current,
+                        ? AppLocalizations.of(context).completed
+                        : AppLocalizations.of(context).current,
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: _getPerformanceColor(),
                       fontWeight: FontWeight.bold,
@@ -134,7 +134,7 @@ class RepCounterWidget extends StatelessWidget {
                         context,
                         (targetReps * 0.6).round(),
                         '60%',
-                        Colors.orange[700]!,
+                        Colors.orange[700] ?? Colors.orange,
                         true,
                       ),
                     ),
@@ -171,8 +171,8 @@ class RepCounterWidget extends StatelessWidget {
                       child: _buildQuickInputButton(
                         context,
                         targetReps ~/ 2,
-                        AppLocalizations.of(context)!.half,
-                        Colors.grey[600]!,
+                        AppLocalizations.of(context).half,
+                        Colors.grey[600] ?? Colors.grey,
                         true,
                       ),
                     ),
@@ -181,7 +181,7 @@ class RepCounterWidget extends StatelessWidget {
                       child: _buildQuickInputButton(
                         context,
                         targetReps + 2,
-                        AppLocalizations.of(context)!.exceed,
+                        AppLocalizations.of(context).exceed,
                         Color(AppColors.primaryColor),
                         true,
                       ),
@@ -281,11 +281,11 @@ class RepCounterWidget extends StatelessWidget {
   ) {
     final theme = Theme.of(context);
     final padding = isSmallScreen
-        ? EdgeInsets.symmetric(
+        ? const EdgeInsets.symmetric(
             horizontal: AppConstants.paddingS,
             vertical: AppConstants.paddingS / 2,
           )
-        : EdgeInsets.symmetric(
+        : const EdgeInsets.symmetric(
             horizontal: AppConstants.paddingM,
             vertical: AppConstants.paddingS,
           );
@@ -343,19 +343,19 @@ class RepCounterWidget extends StatelessWidget {
     } else if (currentReps >= targetReps * 0.5) {
       return Colors.orange; // 50% 이상
     } else {
-      return Colors.grey[600]!; // 50% 미만
+      return Colors.grey[600] ?? Colors.grey; // 50% 미만
     }
   }
 
   String _getPerformanceMessage(BuildContext context) {
     if (currentReps >= targetReps) {
-      return AppLocalizations.of(context)!.excellentPerformance;
+      return AppLocalizations.of(context).excellentPerformance;
     } else if (currentReps >= targetReps * 0.8) {
-      return AppLocalizations.of(context)!.goodPerformance;
+      return AppLocalizations.of(context).goodPerformance;
     } else if (currentReps >= targetReps * 0.5) {
-      return AppLocalizations.of(context)!.keepGoing;
+      return AppLocalizations.of(context).keepGoing;
     } else {
-      return AppLocalizations.of(context)!.motivationGeneral;
+      return AppLocalizations.of(context).motivationGeneral;
     }
   }
 }

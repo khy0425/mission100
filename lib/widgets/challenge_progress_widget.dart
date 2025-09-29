@@ -52,7 +52,7 @@ class ChallengeProgressWidget extends StatelessWidget {
                 const Icon(Icons.calendar_today, color: Colors.blue),
                 const SizedBox(width: 8),
                 Text(
-                  AppLocalizations.of(context)!.streakChallenge,
+                  AppLocalizations.of(context).streakChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -97,9 +97,6 @@ class ChallengeProgressWidget extends StatelessWidget {
     // 실제 챌린지 진행률 사용
     final recordValue = challenge.currentProgress;
     final target = challenge.targetValue ?? 50;
-    final progressPercentage = target > 0
-        ? (recordValue / target).clamp(0.0, 1.0)
-        : 0.0;
 
     return Card(
       margin: const EdgeInsets.all(16),
@@ -113,7 +110,7 @@ class ChallengeProgressWidget extends StatelessWidget {
                 const Icon(Icons.fitness_center, color: Colors.orange),
                 const SizedBox(width: 8),
                 Text(
-                  AppLocalizations.of(context)!.singleSessionChallenge,
+                  AppLocalizations.of(context).singleSessionChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -126,14 +123,14 @@ class ChallengeProgressWidget extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(12),
               decoration: BoxDecoration(
-                color: Colors.orange.withOpacity(0.1),
+                color: Colors.orange.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    AppLocalizations.of(context)!.bestRecord,
+                    AppLocalizations.of(context).bestRecord,
                     style: Theme.of(context).textTheme.bodyMedium,
                   ),
                   Text(
@@ -154,7 +151,7 @@ class ChallengeProgressWidget extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(0.1),
+                  color: Colors.blue.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Row(
@@ -197,7 +194,7 @@ class ChallengeProgressWidget extends StatelessWidget {
                 const Icon(Icons.trending_up, color: Colors.green),
                 const SizedBox(width: 8),
                 Text(
-                  AppLocalizations.of(context)!.cumulativeChallenge,
+                  AppLocalizations.of(context).cumulativeChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -238,7 +235,7 @@ class ChallengeProgressWidget extends StatelessWidget {
             // 남은 개수
             if (remaining > 0)
               Text(
-                AppLocalizations.of(context)!.remainingToTarget(remaining),
+                AppLocalizations.of(context).remainingToTarget(remaining),
                 style: Theme.of(
                   context,
                 ).textTheme.bodySmall?.copyWith(color: Colors.grey[600]),
@@ -262,7 +259,7 @@ class ChallengeProgressWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              challenge.title ?? AppLocalizations.of(context)!.sprintChallenge,
+              challenge.title ?? AppLocalizations.of(context).sprintChallenge,
               style: Theme.of(
                 context,
               ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
@@ -270,7 +267,7 @@ class ChallengeProgressWidget extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               challenge.description ??
-                  AppLocalizations.of(context)!.shortTermIntensiveChallenge,
+                  AppLocalizations.of(context).shortTermIntensiveChallenge,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 16),
@@ -321,7 +318,7 @@ class ChallengeProgressWidget extends StatelessWidget {
                 const SizedBox(width: 8),
                 Text(
                   challenge.title ??
-                      AppLocalizations.of(context)!.eventChallenge,
+                      AppLocalizations.of(context).eventChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -331,7 +328,7 @@ class ChallengeProgressWidget extends StatelessWidget {
             const SizedBox(height: 8),
             Text(
               challenge.description ??
-                  AppLocalizations.of(context)!.specialEventChallenge,
+                  AppLocalizations.of(context).specialEventChallenge,
               style: Theme.of(context).textTheme.bodyMedium,
             ),
             const SizedBox(height: 16),
@@ -348,8 +345,8 @@ class ChallengeProgressWidget extends StatelessWidget {
               children: [
                 Text(
                   percentage >= 1.0
-                      ? AppLocalizations.of(context)!.challengeCompleted
-                      : AppLocalizations.of(context)!.challengeInProgress,
+                      ? AppLocalizations.of(context).challengeCompleted
+                      : AppLocalizations.of(context).challengeInProgress,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 Text(

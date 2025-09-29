@@ -131,7 +131,7 @@ class PermissionService {
                 children: [
                   const Icon(Icons.notifications_active, color: Colors.orange),
                   const SizedBox(width: 8),
-                  Text(AppLocalizations.of(context)!.allowNotifications),
+                  Text(AppLocalizations.of(context).allowNotifications),
                 ],
               ),
               content: Column(
@@ -151,7 +151,7 @@ class PermissionService {
                       SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          AppLocalizations.of(context)!.dailyWorkoutReminder,
+                          AppLocalizations.of(context).dailyWorkoutReminder,
                           style: TextStyle(fontSize: 14),
                         ),
                       ),
@@ -231,7 +231,7 @@ class PermissionService {
                 children: [
                   const Icon(Icons.folder, color: Colors.blue),
                   const SizedBox(width: 8),
-                  Text(AppLocalizations.of(context)!.storageAccess),
+                  Text(AppLocalizations.of(context).storageAccess),
                 ],
               ),
               content: const Column(

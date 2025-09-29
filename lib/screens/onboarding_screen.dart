@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/onboarding_step.dart';
 import '../services/onboarding_service.dart';
+import '../services/chad_onboarding_service.dart';
+import '../widgets/chad_onboarding_widget.dart';
 import '../screens/initial_test_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/permission_screen.dart';
+import '../screens/auth/chad_login_screen.dart';
 import '../generated/app_localizations.dart';
+import 'onboarding/goal_setup_widgets.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});
@@ -25,10 +29,10 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   // 이미지 미리 로딩을 위한 리스트
   final List<String> _imagePaths = [
     'assets/images/기본차드.jpg',
-    'assets/images/정면차드.jpg',
-    'assets/images/더블차드.jpg',
-    'assets/images/수면모자차드.jpg',
-    'assets/images/썬글차드.jpg',
+    'assets/images/기본차드.jpg',
+    'assets/images/기본차드.jpg',
+    'assets/images/기본차드.jpg',
+    'assets/images/기본차드.jpg',
   ];
 
   bool _imagesLoaded = false;
@@ -157,31 +161,240 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   ) {
     switch (step.type) {
       case OnboardingStepType.welcome:
-        return _WelcomeStepWidget(
-          step: step,
-          onboardingService: onboardingService,
-          onNext: () => _animateToNextStep(onboardingService),
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider<ChadOnboardingService>(
+              create: (_) => ChadOnboardingService(),
+            ),
+          ],
+          child: ChadOnboardingWidget(
+            stepType: 'welcome',
+            title: step.title,
+            description: step.description,
+            onNext: () => _animateToNextStep(onboardingService),
+            buttonText: '시작하기',
+          ),
         );
       case OnboardingStepType.programIntroduction:
-        return _ProgramIntroductionStepWidget(
-          step: step,
-          onboardingService: onboardingService,
-          onNext: () => _animateToNextStep(onboardingService),
-          onPrevious: () => _animateToPreviousStep(onboardingService),
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider<ChadOnboardingService>(
+              create: (_) => ChadOnboardingService(),
+            ),
+          ],
+          child: ChadOnboardingWidget(
+            stepType: 'programIntroduction',
+            title: step.title,
+            description: step.description,
+            onNext: () => _animateToNextStep(onboardingService),
+            onSkip: step.canSkip ? () => onboardingService.skipOnboarding() : null,
+            buttonText: '다음',
+          ),
         );
       case OnboardingStepType.chadEvolution:
-        return _ChadEvolutionStepWidget(
-          step: step,
-          onboardingService: onboardingService,
-          onNext: () => _animateToNextStep(onboardingService),
-          onPrevious: () => _animateToPreviousStep(onboardingService),
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider<ChadOnboardingService>(
+              create: (_) => ChadOnboardingService(),
+            ),
+          ],
+          child: ChadOnboardingWidget(
+            stepType: 'chadEvolution',
+            title: step.title,
+            description: step.description,
+            onNext: () => _animateToNextStep(onboardingService),
+            onSkip: step.canSkip ? () => onboardingService.skipOnboarding() : null,
+            buttonText: '멋져요!',
+          ),
         );
       case OnboardingStepType.initialTest:
-        return _InitialTestStepWidget(
-          step: step,
-          onboardingService: onboardingService,
-          onPrevious: () => _animateToPreviousStep(onboardingService),
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider<ChadOnboardingService>(
+              create: (_) => ChadOnboardingService(),
+            ),
+          ],
+          child: ChadOnboardingWidget(
+            stepType: 'initialTest',
+            title: step.title,
+            description: step.description,
+            onNext: () async {
+              try {
+                await onboardingService.completeOnboarding();
+                await Future<void>.delayed(const Duration(milliseconds: 500));
+                if (context.mounted) {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => const PermissionScreen(),
+                    ),
+                  );
+                }
+              } catch (e) {
+                debugPrint('온보딩 완료 처리 오류: $e');
+                if (context.mounted) {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (context) => const PermissionScreen(),
+                    ),
+                  );
+                }
+              }
+            },
+            buttonText: '테스트 시작',
+          ),
         );
+
+      // 목표 설정 단계들 - Chad 통합
+      case OnboardingStepType.goalSetupWeight:
+        return Column(
+          children: [
+            MultiProvider(
+              providers: [
+                ChangeNotifierProvider<ChadOnboardingService>(
+                  create: (_) => ChadOnboardingService(),
+                ),
+              ],
+              child: ChadProgressWidget(
+                currentStep: onboardingService.progress.currentStepIndex,
+                totalSteps: onboardingService.steps.length,
+              ),
+            ),
+            Expanded(
+              child: GoalSetupWeightWidget(
+                step: step,
+                onboardingService: onboardingService,
+                onNext: () => _animateToNextStep(onboardingService),
+                onPrevious: () => _animateToPreviousStep(onboardingService),
+              ),
+            ),
+          ],
+        );
+
+      case OnboardingStepType.goalSetupFitnessLevel:
+        return Column(
+          children: [
+            MultiProvider(
+              providers: [
+                ChangeNotifierProvider<ChadOnboardingService>(
+                  create: (_) => ChadOnboardingService(),
+                ),
+              ],
+              child: ChadProgressWidget(
+                currentStep: onboardingService.progress.currentStepIndex,
+                totalSteps: onboardingService.steps.length,
+              ),
+            ),
+            Expanded(
+              child: GoalSetupFitnessLevelWidget(
+                step: step,
+                onboardingService: onboardingService,
+                onNext: () => _animateToNextStep(onboardingService),
+                onPrevious: () => _animateToPreviousStep(onboardingService),
+              ),
+            ),
+          ],
+        );
+
+      case OnboardingStepType.goalSetupGoal:
+        return Column(
+          children: [
+            MultiProvider(
+              providers: [
+                ChangeNotifierProvider<ChadOnboardingService>(
+                  create: (_) => ChadOnboardingService(),
+                ),
+              ],
+              child: ChadProgressWidget(
+                currentStep: onboardingService.progress.currentStepIndex,
+                totalSteps: onboardingService.steps.length,
+              ),
+            ),
+            Expanded(
+              child: GoalSetupGoalWidget(
+                step: step,
+                onboardingService: onboardingService,
+                onNext: () => _animateToNextStep(onboardingService),
+                onPrevious: () => _animateToPreviousStep(onboardingService),
+              ),
+            ),
+          ],
+        );
+
+      case OnboardingStepType.goalSetupWorkoutTime:
+        return Column(
+          children: [
+            MultiProvider(
+              providers: [
+                ChangeNotifierProvider<ChadOnboardingService>(
+                  create: (_) => ChadOnboardingService(),
+                ),
+              ],
+              child: ChadProgressWidget(
+                currentStep: onboardingService.progress.currentStepIndex,
+                totalSteps: onboardingService.steps.length,
+              ),
+            ),
+            Expanded(
+              child: GoalSetupWorkoutTimeWidget(
+                step: step,
+                onboardingService: onboardingService,
+                onNext: () => _animateToNextStep(onboardingService),
+                onPrevious: () => _animateToPreviousStep(onboardingService),
+              ),
+            ),
+          ],
+        );
+
+      case OnboardingStepType.goalSetupMotivation:
+        return Column(
+          children: [
+            MultiProvider(
+              providers: [
+                ChangeNotifierProvider<ChadOnboardingService>(
+                  create: (_) => ChadOnboardingService(),
+                ),
+              ],
+              child: ChadProgressWidget(
+                currentStep: onboardingService.progress.currentStepIndex,
+                totalSteps: onboardingService.steps.length,
+              ),
+            ),
+            Expanded(
+              child: GoalSetupMotivationWidget(
+                step: step,
+                onboardingService: onboardingService,
+                onNext: () => _animateToNextStep(onboardingService),
+                onPrevious: () => _animateToPreviousStep(onboardingService),
+              ),
+            ),
+          ],
+        );
+
+      case OnboardingStepType.goalSetupComplete:
+        return Column(
+          children: [
+            MultiProvider(
+              providers: [
+                ChangeNotifierProvider<ChadOnboardingService>(
+                  create: (_) => ChadOnboardingService(),
+                ),
+              ],
+              child: ChadProgressWidget(
+                currentStep: onboardingService.progress.currentStepIndex,
+                totalSteps: onboardingService.steps.length,
+              ),
+            ),
+            Expanded(
+              child: GoalSetupCompleteWidget(
+                step: step,
+                onboardingService: onboardingService,
+                onNext: () => _completeOnboarding(onboardingService),
+                onPrevious: () => _animateToPreviousStep(onboardingService),
+              ),
+            ),
+          ],
+        );
+
       case OnboardingStepType.completion:
         return const SizedBox.shrink();
     }
@@ -209,6 +422,18 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
     // 페이드 인 애니메이션
     await _fadeAnimationController.forward();
+  }
+
+  /// 온보딩 완료 처리 (로그인 화면으로 이동)
+  Future<void> _completeOnboarding(OnboardingService onboardingService) async {
+    await onboardingService.completeOnboarding();
+
+    if (mounted) {
+      // 로그인 화면으로 이동
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const ChadLoginScreen()),
+      );
+    }
   }
 }
 
@@ -252,7 +477,7 @@ class _WelcomeStepWidget extends StatelessWidget {
                     ? TextButton(
                         onPressed: () => onboardingService.skipOnboarding(),
                         child: Text(
-                          AppLocalizations.of(context)!.skipButton,
+                          AppLocalizations.of(context).skipButton,
                           style: TextStyle(
                             color: Colors.grey[600],
                             fontSize: 16,
@@ -311,7 +536,7 @@ class _WelcomeStepWidget extends StatelessWidget {
                 backgroundColor: const Color(0xFF4DABF7),
                 text:
                     step.buttonText ??
-                    AppLocalizations.of(context)!.getStartedButton,
+                    AppLocalizations.of(context).getStartedButton,
                 foregroundColor: Colors.white,
               ),
 
@@ -368,7 +593,7 @@ class _ProgramIntroductionStepWidget extends StatelessWidget {
 
               // Chad 이미지
               _OptimizedImageWidget(
-                imagePath: step.imagePath ?? 'assets/images/정면차드.jpg',
+                imagePath: step.imagePath ?? 'assets/images/기본차드.jpg',
                 width: 160,
                 height: 160,
                 shadowColor: const Color(0xFF51CF66),
@@ -408,7 +633,7 @@ class _ProgramIntroductionStepWidget extends StatelessWidget {
                 onPressed: onNext,
                 backgroundColor: const Color(0xFF51CF66),
                 text:
-                    step.buttonText ?? AppLocalizations.of(context)!.nextButton,
+                    step.buttonText ?? AppLocalizations.of(context).nextButton,
                 foregroundColor: Colors.white,
               ),
 
@@ -479,7 +704,7 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
                     size: 24,
                   ),
                   _OptimizedImageWidget(
-                    imagePath: 'assets/images/더블차드.jpg',
+                    imagePath: 'assets/images/기본차드.jpg',
                     width: 80,
                     height: 80,
                     shadowColor: const Color(0xFFFFD43B),
@@ -490,7 +715,7 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
                     size: 24,
                   ),
                   _OptimizedImageWidget(
-                    imagePath: 'assets/images/수면모자차드.jpg',
+                    imagePath: 'assets/images/기본차드.jpg',
                     width: 100,
                     height: 100,
                     shadowColor: const Color(0xFFFFD43B),
@@ -595,7 +820,7 @@ class _InitialTestStepWidget extends StatelessWidget {
 
               // Chad 이미지
               _OptimizedImageWidget(
-                imagePath: step.imagePath ?? 'assets/images/썬글차드.jpg',
+                imagePath: step.imagePath ?? 'assets/images/기본차드.jpg',
                 width: 160,
                 height: 160,
                 shadowColor: const Color(0xFFFF6B6B),
@@ -639,7 +864,7 @@ class _InitialTestStepWidget extends StatelessWidget {
                     debugPrint('온보딩 완료 처리됨');
 
                     // 저장 완료까지 잠시 대기
-                    await Future.delayed(const Duration(milliseconds: 500));
+                    await Future<void>.delayed(const Duration(milliseconds: 500));
 
                     if (context.mounted) {
                       // 권한 설정 화면으로 이동
@@ -665,7 +890,7 @@ class _InitialTestStepWidget extends StatelessWidget {
                 backgroundColor: const Color(0xFFFF6B6B),
                 text:
                     step.buttonText ??
-                    AppLocalizations.of(context)!.startTestButton,
+                    AppLocalizations.of(context).startTestButton,
                 foregroundColor: Colors.white,
               ),
 

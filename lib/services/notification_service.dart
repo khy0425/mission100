@@ -61,7 +61,7 @@ class NotificationService {
       debugPrint('🔔 SCHEDULE_EXACT_ALARM 권한 요청 결과: $granted');
 
       // 설정 화면으로 이동한 후 충분한 시간 대기
-      await Future.delayed(const Duration(seconds: 2));
+      await Future<void>.delayed(const Duration(seconds: 2));
 
       // 실제 권한 상태를 다시 확인 (사용자가 허용했는지 확인)
       final actualPermission = await canScheduleExactAlarms();
@@ -110,8 +110,7 @@ class NotificationService {
         body,
         tz.TZDateTime.from(scheduledDate, tz.local),
         notificationDetails,
-        uiLocalNotificationDateInterpretation:
-            UILocalNotificationDateInterpretation.absoluteTime,
+        androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
       );
 
       debugPrint('✅ 정확한 알림 스케줄링 성공: $title (${scheduledDate.toString()})');
@@ -204,7 +203,7 @@ class NotificationService {
             children: [
               const Icon(Icons.security, color: Color(0xFF4DABF7)),
               const SizedBox(width: 8),
-              Text(AppLocalizations.of(context)!.notificationActivationTitle),
+              Text(AppLocalizations.of(context).notificationActivationTitle),
             ],
           ),
           content: SingleChildScrollView(
@@ -213,7 +212,7 @@ class NotificationService {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.notificationActivationMessage,
+                  AppLocalizations.of(context).notificationActivationMessage,
                   style: const TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 16),
@@ -245,7 +244,7 @@ class NotificationService {
                       Padding(
                         padding: const EdgeInsets.only(left: 28),
                         child: Text(
-                          AppLocalizations.of(context)!.dailyWorkoutAlarm,
+                          AppLocalizations.of(context).dailyWorkoutAlarm,
                         ),
                       ),
                       const SizedBox(height: 12),
@@ -271,7 +270,7 @@ class NotificationService {
             TextButton(
               onPressed: () => Navigator.of(context).pop(false),
               child: Text(
-                AppLocalizations.of(context)!.laterWeak,
+                AppLocalizations.of(context).laterWeak,
                 style: const TextStyle(color: Colors.grey),
               ),
             ),
@@ -282,7 +281,7 @@ class NotificationService {
                 foregroundColor: Colors.white,
               ),
               child: Text(
-                AppLocalizations.of(context)!.enableChadNotifications,
+                AppLocalizations.of(context).enableChadNotifications,
               ),
             ),
           ],
@@ -355,17 +354,17 @@ class NotificationService {
         barrierDismissible: true,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text(AppLocalizations.of(context)!.legendaryChadModeUpgrade),
+            title: Text(AppLocalizations.of(context).legendaryChadModeUpgrade),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  AppLocalizations.of(context)!.legendaryModeDescription,
+                  AppLocalizations.of(context).legendaryModeDescription,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  AppLocalizations.of(context)!.legendaryModeOptional,
+                  AppLocalizations.of(context).legendaryModeOptional,
                   style: const TextStyle(fontSize: 14, color: Colors.grey),
                   textAlign: TextAlign.center,
                 ),
@@ -374,7 +373,7 @@ class NotificationService {
             actions: [
               TextButton(
                 onPressed: () => Navigator.of(context).pop(false),
-                child: Text(AppLocalizations.of(context)!.laterBasicChad),
+                child: Text(AppLocalizations.of(context).laterBasicChad),
               ),
               ElevatedButton(
                 onPressed: () => Navigator.of(context).pop(true),
@@ -382,7 +381,7 @@ class NotificationService {
                   backgroundColor: const Color(0xFF4DABF7),
                   foregroundColor: Colors.white,
                 ),
-                child: Text(AppLocalizations.of(context)!.legendaryModeOn),
+                child: Text(AppLocalizations.of(context).legendaryModeOn),
               ),
             ],
           );
@@ -401,7 +400,7 @@ class NotificationService {
     if (context.mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(AppLocalizations.of(context)!.chadModeActivated),
+          content: Text(AppLocalizations.of(context).chadModeActivated),
           duration: const Duration(seconds: 3),
           backgroundColor: Colors.blue,
         ),
@@ -461,8 +460,7 @@ class NotificationService {
             body,
             tz.TZDateTime.from(scheduledDate, tz.local),
             notificationDetails,
-            uiLocalNotificationDateInterpretation:
-                UILocalNotificationDateInterpretation.absoluteTime,
+            androidScheduleMode: AndroidScheduleMode.exactAllowWhileIdle,
           );
           debugPrint('✅ 30분 이내 정확한 스케줄링 성공');
           return true;

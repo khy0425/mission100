@@ -37,7 +37,7 @@ class _BackupScreenState extends State<BackupScreen> {
       setState(() => _backupStatus = status);
     } catch (e) {
       _showErrorSnackBar(
-        AppLocalizations.of(context)!.backupStatusLoadFailed(e.toString()),
+        AppLocalizations.of(context).backupStatusLoadFailed(e.toString()),
       );
     } finally {
       setState(() => _isLoading = false);
@@ -53,19 +53,19 @@ class _BackupScreenState extends State<BackupScreen> {
 
       if (result.success) {
         _showSuccessSnackBar(
-          AppLocalizations.of(context)!.backupCreatedSuccessfully,
+          AppLocalizations.of(context).backupCreatedSuccessfully,
         );
         await _loadBackupStatus();
       } else {
         _showErrorSnackBar(
           AppLocalizations.of(
             context,
-          )!.backupCreationFailed(result.error ?? ''),
+          ).backupCreationFailed(result.error ?? ''),
         );
       }
     } catch (e) {
       _showErrorSnackBar(
-        AppLocalizations.of(context)!.backupCreationError(e.toString()),
+        AppLocalizations.of(context).backupCreationError(e.toString()),
       );
     } finally {
       setState(() => _isCreatingBackup = false);
@@ -87,19 +87,19 @@ class _BackupScreenState extends State<BackupScreen> {
 
       if (result.success) {
         _showSuccessSnackBar(
-          AppLocalizations.of(context)!.encryptedBackupCreated,
+          AppLocalizations.of(context).encryptedBackupCreated,
         );
         await _loadBackupStatus();
       } else {
         _showErrorSnackBar(
           AppLocalizations.of(
             context,
-          )!.encryptedBackupFailed(result.error ?? ''),
+          ).encryptedBackupFailed(result.error ?? ''),
         );
       }
     } catch (e) {
       _showErrorSnackBar(
-        AppLocalizations.of(context)!.encryptedBackupError(e.toString()),
+        AppLocalizations.of(context).encryptedBackupError(e.toString()),
       );
     } finally {
       setState(() => _isCreatingBackup = false);
@@ -117,12 +117,12 @@ class _BackupScreenState extends State<BackupScreen> {
 
       if (filePath != null) {
         _showSuccessSnackBar(
-          AppLocalizations.of(context)!.backupFileSaved(filePath),
+          AppLocalizations.of(context).backupFileSaved(filePath),
         );
       }
     } catch (e) {
       _showErrorSnackBar(
-        AppLocalizations.of(context)!.backupExportFailed(e.toString()),
+        AppLocalizations.of(context).backupExportFailed(e.toString()),
       );
     } finally {
       setState(() => _isCreatingBackup = false);
@@ -139,15 +139,15 @@ class _BackupScreenState extends State<BackupScreen> {
 
       if (success) {
         _showSuccessSnackBar(
-          AppLocalizations.of(context)!.backupRestoredSuccessfully,
+          AppLocalizations.of(context).backupRestoredSuccessfully,
         );
         await _loadBackupStatus();
       } else {
-        _showErrorSnackBar(AppLocalizations.of(context)!.backupRestoreFailed);
+        _showErrorSnackBar(AppLocalizations.of(context).backupRestoreFailed);
       }
     } catch (e) {
       _showErrorSnackBar(
-        AppLocalizations.of(context)!.backupRestoreError(e.toString()),
+        AppLocalizations.of(context).backupRestoreError(e.toString()),
       );
     } finally {
       if (mounted) setState(() => _isRestoringBackup = false);
@@ -250,7 +250,7 @@ class _BackupScreenState extends State<BackupScreen> {
             ),
             const SizedBox(height: 12),
             _buildStatusRow(
-              AppLocalizations.of(context)!.status,
+              AppLocalizations.of(context).status,
               status.statusText,
             ),
             if (status.lastBackupTime != null)
@@ -262,10 +262,10 @@ class _BackupScreenState extends State<BackupScreen> {
               _buildStatusRow('다음 백업', _formatDateTime(status.nextBackupTime!)),
             _buildStatusRow('백업 빈도', _getFrequencyText(status.frequency)),
             _buildStatusRow(
-              AppLocalizations.of(context)!.encryption,
+              AppLocalizations.of(context).encryption,
               status.encryptionEnabled
-                  ? AppLocalizations.of(context)!.enabled
-                  : AppLocalizations.of(context)!.disabled,
+                  ? AppLocalizations.of(context).enabled
+                  : AppLocalizations.of(context).disabled,
             ),
             if (status.failureCount > 0)
               _buildStatusRow(
@@ -323,7 +323,7 @@ class _BackupScreenState extends State<BackupScreen> {
                             child: CircularProgressIndicator(strokeWidth: 2),
                           )
                         : const Icon(Icons.backup),
-                    label: Text(AppLocalizations.of(context)!.createBackup),
+                    label: Text(AppLocalizations.of(context).createBackup),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.blue[600],
                       foregroundColor: Colors.white,
@@ -337,7 +337,7 @@ class _BackupScreenState extends State<BackupScreen> {
                         ? null
                         : _createEncryptedBackup,
                     icon: const Icon(Icons.lock),
-                    label: Text(AppLocalizations.of(context)!.encryptedBackup),
+                    label: Text(AppLocalizations.of(context).encryptedBackup),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.orange[600],
                       foregroundColor: Colors.white,
@@ -353,7 +353,7 @@ class _BackupScreenState extends State<BackupScreen> {
                   child: ElevatedButton.icon(
                     onPressed: _isCreatingBackup ? null : _exportBackup,
                     icon: const Icon(Icons.file_download),
-                    label: Text(AppLocalizations.of(context)!.exportToFile),
+                    label: Text(AppLocalizations.of(context).exportToFile),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green[600],
                       foregroundColor: Colors.white,
@@ -371,7 +371,7 @@ class _BackupScreenState extends State<BackupScreen> {
                             child: CircularProgressIndicator(strokeWidth: 2),
                           )
                         : const Icon(Icons.restore),
-                    label: Text(AppLocalizations.of(context)!.restoreBackup),
+                    label: Text(AppLocalizations.of(context).restoreBackup),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red[600],
                       foregroundColor: Colors.white,
@@ -402,15 +402,15 @@ class _BackupScreenState extends State<BackupScreen> {
             ),
             const SizedBox(height: 16),
             SwitchListTile(
-              title: Text(AppLocalizations.of(context)!.autoBackup),
+              title: Text(AppLocalizations.of(context).autoBackup),
               subtitle: Text(
-                AppLocalizations.of(context)!.autoBackupDescription,
+                AppLocalizations.of(context).autoBackupDescription,
               ),
               value: status.autoBackupEnabled,
               onChanged: _toggleAutoBackup,
             ),
             ListTile(
-              title: Text(AppLocalizations.of(context)!.backupFrequency),
+              title: Text(AppLocalizations.of(context).backupFrequency),
               subtitle: Text(_getFrequencyText(status.frequency)),
               trailing: const Icon(Icons.arrow_forward_ios),
               onTap: _changeBackupFrequency,
@@ -437,7 +437,7 @@ class _BackupScreenState extends State<BackupScreen> {
             if (_backupStatus!.lastBackupTime != null)
               ListTile(
                 leading: const Icon(Icons.check_circle, color: Colors.green),
-                title: Text(AppLocalizations.of(context)!.lastBackup),
+                title: Text(AppLocalizations.of(context).lastBackup),
                 subtitle: Text(_formatDateTime(_backupStatus!.lastBackupTime!)),
                 trailing: Text(
                   Localizations.localeOf(context).languageCode == 'ko'
@@ -448,8 +448,8 @@ class _BackupScreenState extends State<BackupScreen> {
             else
               ListTile(
                 leading: const Icon(Icons.info, color: Colors.grey),
-                title: Text(AppLocalizations.of(context)!.noBackupRecord),
-                subtitle: Text(AppLocalizations.of(context)!.noBackupCreated),
+                title: Text(AppLocalizations.of(context).noBackupRecord),
+                subtitle: Text(AppLocalizations.of(context).noBackupCreated),
               ),
           ],
         ),
@@ -492,34 +492,13 @@ class _BackupScreenState extends State<BackupScreen> {
   }
 
   /// 확인 다이얼로그
-  Future<bool> _showConfirmDialog(String title, String message) async {
-    final result = await showDialog<bool>(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: Text(title),
-        content: Text(message),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context, false),
-            child: Text(AppLocalizations.of(context).cancel),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text(AppLocalizations.of(context).confirm),
-          ),
-        ],
-      ),
-    );
-
-    return result ?? false;
-  }
 
   /// 백업 빈도 선택 다이얼로그
   Future<BackupFrequency?> _showFrequencyDialog() async {
     return showDialog<BackupFrequency>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(AppLocalizations.of(context)!.selectBackupFrequency),
+        title: Text(AppLocalizations.of(context).selectBackupFrequency),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: BackupFrequency.values.map((frequency) {

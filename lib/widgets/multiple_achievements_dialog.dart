@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../generated/app_localizations.dart';
 import '../models/achievement.dart';
 import '../utils/constants.dart';
 
@@ -109,7 +108,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                   borderRadius: BorderRadius.circular(AppConstants.radiusL),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.3),
+                      color: Colors.black.withValues(alpha: 0.3),
                       blurRadius: 30,
                       spreadRadius: 5,
                     ),
@@ -130,7 +129,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                             height: 80,
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withValues(alpha: 0.2),
                               border: Border.all(color: Colors.white, width: 3),
                             ),
                             child: const Icon(
@@ -158,7 +157,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                 ? '${widget.achievements.length}개의 업적을 달성했습니다!'
                                 : 'You\'ve unlocked ${widget.achievements.length} achievements!',
                             style: theme.textTheme.bodyLarge?.copyWith(
-                              color: Colors.white.withOpacity(0.9),
+                              color: Colors.white.withValues(alpha: 0.9),
                             ),
                             textAlign: TextAlign.center,
                           ),
@@ -196,12 +195,12 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                   return Container(
                                     padding: const EdgeInsets.all(12),
                                     decoration: BoxDecoration(
-                                      color: rarityColor.withOpacity(0.1),
+                                      color: rarityColor.withValues(alpha: 0.1),
                                       borderRadius: BorderRadius.circular(
                                         AppConstants.radiusS,
                                       ),
                                       border: Border.all(
-                                        color: rarityColor.withOpacity(0.3),
+                                        color: rarityColor.withValues(alpha: 0.3),
                                         width: 1,
                                       ),
                                     ),
@@ -213,7 +212,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                           height: 50,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
-                                            color: rarityColor.withOpacity(0.2),
+                                            color: rarityColor.withValues(alpha: 0.2),
                                             border: Border.all(
                                               color: rarityColor,
                                               width: 2,
@@ -299,7 +298,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                             vertical: 4,
                                           ),
                                           decoration: BoxDecoration(
-                                            color: Colors.amber.withOpacity(
+                                            color: Colors.amber.withValues(alpha: 
                                               0.2,
                                             ),
                                             borderRadius: BorderRadius.circular(

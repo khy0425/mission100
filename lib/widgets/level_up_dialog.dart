@@ -77,10 +77,10 @@ class _LevelUpDialogState extends State<LevelUpDialog>
     _scaleController.forward();
     _confettiController.play();
 
-    await Future.delayed(const Duration(milliseconds: 300));
+    await Future<void>.delayed(const Duration(milliseconds: 300));
     _rotationController.forward();
 
-    await Future.delayed(const Duration(milliseconds: 500));
+    await Future<void>.delayed(const Duration(milliseconds: 500));
     _slideController.forward();
   }
 
@@ -143,7 +143,7 @@ class _LevelUpDialogState extends State<LevelUpDialog>
                     borderRadius: BorderRadius.circular(20),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black.withOpacity(0.3),
+                        color: Colors.black.withValues(alpha: 0.3),
                         blurRadius: 20,
                         spreadRadius: 5,
                       ),
@@ -166,7 +166,7 @@ class _LevelUpDialogState extends State<LevelUpDialog>
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.2),
+                                    color: Colors.black.withValues(alpha: 0.2),
                                     blurRadius: 10,
                                     spreadRadius: 2,
                                   ),
@@ -214,7 +214,7 @@ class _LevelUpDialogState extends State<LevelUpDialog>
                               vertical: 8,
                             ),
                             decoration: BoxDecoration(
-                              color: Colors.white.withOpacity(0.2),
+                              color: Colors.white.withValues(alpha: 0.2),
                               borderRadius: BorderRadius.circular(20),
                             ),
                             child: Text(
@@ -244,7 +244,7 @@ class _LevelUpDialogState extends State<LevelUpDialog>
                               borderRadius: BorderRadius.circular(20),
                               boxShadow: [
                                 BoxShadow(
-                                  color: Colors.black.withOpacity(0.2),
+                                  color: Colors.black.withValues(alpha: 0.2),
                                   blurRadius: 5,
                                   spreadRadius: 1,
                                 ),
@@ -270,7 +270,7 @@ class _LevelUpDialogState extends State<LevelUpDialog>
                         child: Container(
                           padding: const EdgeInsets.all(16),
                           decoration: BoxDecoration(
-                            color: Colors.white.withOpacity(0.9),
+                            color: Colors.white.withValues(alpha: 0.9),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Column(

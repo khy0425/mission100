@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../models/chad_evolution.dart';
 import '../models/progress.dart';
 import '../services/notification_service.dart';
+import '../services/progress_tracker_service.dart';
 import 'chad_image_service.dart';
 import 'package:flutter/material.dart';
 import '../widgets/level_up_dialog.dart';
@@ -132,7 +133,21 @@ class ChadEvolutionService extends ChangeNotifier {
         await initialize();
       }
 
-      final currentWeek = _calculateCurrentWeek(progress);
+      // 완료된 주차 수 계산
+      int currentWeek = 0;
+      for (int week = 1; week <= 6; week++) {
+        final weekProgress = progress.weeklyProgress.firstWhere(
+          (wp) => wp.week == week,
+          orElse: () => WeeklyProgress(week: week),
+        );
+
+        if (weekProgress.isWeekCompleted) {
+          currentWeek = week;
+        } else {
+          break; // 연속으로 완료되지 않은 주차가 있으면 중단
+        }
+      }
+
       final currentStage = _evolutionState.currentStage;
 
       // 현재 단계에서 진화 가능한지 확인
@@ -423,8 +438,26 @@ class ChadEvolutionService extends ChangeNotifier {
       return 1.0; // 최종 단계는 100%
     }
 
-    // Progress가 주어진 경우 실제 주차 계산, 아니면 기본값 0
-    final currentWeek = progress != null ? _calculateCurrentWeek(progress) : 0;
+    int currentWeek = 0;
+
+    if (progress != null) {
+      // 완료된 주차 수 계산
+      for (int week = 1; week <= 6; week++) {
+        final weekProgress = progress.weeklyProgress.firstWhere(
+          (wp) => wp.week == week,
+          orElse: () => WeeklyProgress(week: week),
+        );
+
+        if (weekProgress.isWeekCompleted) {
+          currentWeek = week;
+        } else {
+          break; // 연속으로 완료되지 않은 주차가 있으면 중단
+        }
+      }
+    } else {
+      // Progress가 없으면 기본값 0 (처음 시작 상태)
+      currentWeek = 0;
+    }
 
     // 다음 단계가 있는지 확인
     final currentStageIndex = _evolutionState.currentStage.index;
@@ -441,6 +474,11 @@ class ChadEvolutionService extends ChangeNotifier {
         .firstWhere((chad) => chad.stage == _evolutionState.currentStage)
         .requiredWeek;
 
+    // 현재 단계의 요구 주차를 아직 달성하지 못했으면 0%
+    if (currentWeek < currentStageWeek) {
+      return 0.0;
+    }
+
     final progressInCurrentStage = currentWeek - currentStageWeek;
     final weeksNeededForNext = nextEvolution.requiredWeek - currentStageWeek;
 
@@ -455,8 +493,35 @@ class ChadEvolutionService extends ChangeNotifier {
       return 0; // 최종 단계
     }
 
-    // Progress가 주어진 경우 실제 주차 계산, 아니면 기본값 0
-    final currentWeek = progress != null ? _calculateCurrentWeek(progress) : 0;
+    // Progress가 없으면 현재 단계에서 필요한 주차 반환
+    if (progress == null) {
+      final currentStageIndex = _evolutionState.currentStage.index;
+      if (currentStageIndex >= ChadEvolutionStage.values.length - 1) {
+        return 0;
+      }
+
+      final nextStage = ChadEvolutionStage.values[currentStageIndex + 1];
+      final nextEvolution = ChadEvolution.defaultStages.firstWhere(
+        (chad) => chad.stage == nextStage,
+      );
+
+      return nextEvolution.requiredWeek;
+    }
+
+    // 완료된 주차 수 계산
+    int currentWeek = 0;
+    for (int week = 1; week <= 6; week++) {
+      final weekProgress = progress.weeklyProgress.firstWhere(
+        (wp) => wp.week == week,
+        orElse: () => WeeklyProgress(week: week),
+      );
+
+      if (weekProgress.isWeekCompleted) {
+        currentWeek = week;
+      } else {
+        break; // 연속으로 완료되지 않은 주차가 있으면 중단
+      }
+    }
 
     // 다음 단계가 있는지 확인
     final currentStageIndex = _evolutionState.currentStage.index;
@@ -683,6 +748,15 @@ class ChadEvolutionService extends ChangeNotifier {
 
       await prefs.setInt('chad_experience', newXP);
       debugPrint('경험치 추가: $amount XP (총: $newXP XP)');
+
+      // CloudSyncService에 변경사항 알림
+      try {
+        // import 'cloud_sync_service.dart'; 추가 필요
+        // final cloudSyncService = CloudSyncService();
+        // await cloudSyncService.onChadXPChanged();
+      } catch (e) {
+        debugPrint('클라우드 동기화 알림 오류: $e');
+      }
 
       // 레벨업 확인
       await _checkLevelUp(newXP);

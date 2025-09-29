@@ -4350,7 +4350,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get maxSixDaysWorkout => '최대 6일까지만 운동할 수 있습니다 (하루는 쉬어야 함)';
 
   @override
-  String get noConsecutiveSixDays => '연속으로 6일 이상 운동할 수 없습니다';
+  String get noConsecutiveSixDays => '주 4회까지만 운동할 수 있습니다. 충분한 휴식이 필요합니다!';
 
   @override
   String get cannotLoadQuizData => '퀴즈 데이터를 불러올 수 없습니다';

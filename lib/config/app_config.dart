@@ -19,11 +19,11 @@ class AppInfo {
 
   factory AppInfo.fromJson(Map<String, dynamic> json) {
     return AppInfo(
-      name: json['name'] ?? '',
-      packageName: json['package_name'] ?? '',
-      version: json['version'] ?? '1.0.0',
-      description: json['description'] ?? '',
-      author: json['author'] ?? '',
+      name: (json['name'] as String?) ?? '',
+      packageName: (json['package_name'] as String?) ?? '',
+      version: (json['version'] as String?) ?? '1.0.0',
+      description: (json['description'] as String?) ?? '',
+      author: (json['author'] as String?) ?? '',
     );
   }
 
@@ -65,19 +65,19 @@ class ThemeConfig {
       accentColor: Color(
         int.parse(json['accent_color'].toString().replaceFirst('#', '0xFF')),
       ),
-      fontFamily: json['font_family'] ?? 'Roboto',
-      isDarkMode: json['is_dark_mode'] ?? false,
+      fontFamily: (json['font_family'] as String?) ?? 'Roboto',
+      isDarkMode: (json['is_dark_mode'] as bool?) ?? false,
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
       'primary_color':
-          '#${primaryColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
+          '#${primaryColor.toARGB32().toRadixString(16).padLeft(8, '0').substring(2)}',
       'secondary_color':
-          '#${secondaryColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
+          '#${secondaryColor.toARGB32().toRadixString(16).padLeft(8, '0').substring(2)}',
       'accent_color':
-          '#${accentColor.value.toRadixString(16).padLeft(8, '0').substring(2)}',
+          '#${accentColor.toARGB32().toRadixString(16).padLeft(8, '0').substring(2)}',
       'font_family': fontFamily,
       'is_dark_mode': isDarkMode,
     };
@@ -106,13 +106,13 @@ class FeatureFlags {
 
   factory FeatureFlags.fromJson(Map<String, dynamic> json) {
     return FeatureFlags(
-      timerEnabled: json['timer_enabled'] ?? true,
-      habitTrackingEnabled: json['habit_tracking_enabled'] ?? true,
-      statisticsEnabled: json['statistics_enabled'] ?? true,
-      achievementsEnabled: json['achievements_enabled'] ?? true,
-      socialSharingEnabled: json['social_sharing_enabled'] ?? true,
-      backupEnabled: json['backup_enabled'] ?? true,
-      notificationsEnabled: json['notifications_enabled'] ?? true,
+      timerEnabled: (json['timer_enabled'] as bool?) ?? true,
+      habitTrackingEnabled: (json['habit_tracking_enabled'] as bool?) ?? true,
+      statisticsEnabled: (json['statistics_enabled'] as bool?) ?? true,
+      achievementsEnabled: (json['achievements_enabled'] as bool?) ?? true,
+      socialSharingEnabled: (json['social_sharing_enabled'] as bool?) ?? true,
+      backupEnabled: (json['backup_enabled'] as bool?) ?? true,
+      notificationsEnabled: (json['notifications_enabled'] as bool?) ?? true,
     );
   }
 
@@ -145,12 +145,12 @@ class PaymentConfig {
 
   factory PaymentConfig.fromJson(Map<String, dynamic> json) {
     return PaymentConfig(
-      subscriptionEnabled: json['subscription_enabled'] ?? false,
-      oneTimePurchaseEnabled: json['one_time_purchase_enabled'] ?? false,
+      subscriptionEnabled: (json['subscription_enabled'] as bool?) ?? false,
+      oneTimePurchaseEnabled: (json['one_time_purchase_enabled'] as bool?) ?? false,
       subscriptionProductIds: List<String>.from(
-        json['subscription_product_ids'] ?? [],
+        (json['subscription_product_ids'] as List?) ?? [],
       ),
-      oneTimeProductIds: List<String>.from(json['one_time_product_ids'] ?? []),
+      oneTimeProductIds: List<String>.from((json['one_time_product_ids'] as List?) ?? []),
     );
   }
 
@@ -182,11 +182,11 @@ class AppConfig {
 
   factory AppConfig.fromJson(Map<String, dynamic> json) {
     return AppConfig(
-      appInfo: AppInfo.fromJson(json['app'] ?? {}),
-      themeConfig: ThemeConfig.fromJson(json['theme'] ?? {}),
-      featureFlags: FeatureFlags.fromJson(json['features'] ?? {}),
-      adConfig: AdConfig.fromJson(json['ads'] ?? {}),
-      paymentConfig: PaymentConfig.fromJson(json['payment'] ?? {}),
+      appInfo: AppInfo.fromJson((json['app'] as Map<String, dynamic>?) ?? {}),
+      themeConfig: ThemeConfig.fromJson((json['theme'] as Map<String, dynamic>?) ?? {}),
+      featureFlags: FeatureFlags.fromJson((json['features'] as Map<String, dynamic>?) ?? {}),
+      adConfig: AdConfig.fromJson((json['ads'] as Map<String, dynamic>?) ?? {}),
+      paymentConfig: PaymentConfig.fromJson((json['payment'] as Map<String, dynamic>?) ?? {}),
     );
   }
 
@@ -202,7 +202,7 @@ class AppConfig {
 
   /// 기본 Mission100 설정
   static AppConfig get defaultMission100 {
-    return AppConfig(
+    return const AppConfig(
       appInfo: const AppInfo(
         name: 'Mission 100',
         packageName: 'com.example.mission100',

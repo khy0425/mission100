@@ -11,6 +11,7 @@ import '../../../services/streak_service.dart';
 import '../../../services/notification_service.dart';
 import '../../../services/challenge_service.dart';
 import '../../../services/pushup_mastery_service.dart';
+import '../../../services/cloud_sync_service.dart';
 import '../../../models/workout_history.dart';
 import '../../../models/achievement.dart';
 import '../../../models/challenge.dart';
@@ -87,7 +88,7 @@ class WorkoutCompletionHandler {
       id: DateTime.now().millisecondsSinceEpoch.toString(),
       date: DateTime.now(),
       workoutTitle:
-          workout.title ?? '${workout.week ?? 1}주차 - ${workout.day ?? 1}일차',
+          (workout.title as String?) ?? '${workout.week ?? 1}주차 - ${workout.day ?? 1}일차',
       targetReps: targetReps,
       completedReps: completedReps,
       totalReps: totalCompletedReps,
@@ -103,6 +104,9 @@ class WorkoutCompletionHandler {
     try {
       await WorkoutHistoryService.saveWorkoutHistory(history);
       debugPrint('✅ 운동 기록 저장 완료');
+
+      // 클라우드 동기화 (비동기로 실행하여 UX 차단 방지)
+      _syncWorkoutToCloud(history);
     } catch (e) {
       debugPrint('❌ 운동 기록 저장 실패, 대체 방법 시도: $e');
       await _saveWorkoutHistoryFallback(history);
@@ -437,6 +441,34 @@ class WorkoutCompletionHandler {
     } catch (e) {
       debugPrint('❌ 휴식일 확인 실패: $e');
     }
+  }
+
+  /// 운동 기록을 클라우드에 동기화 (비동기)
+  void _syncWorkoutToCloud(WorkoutHistory history) {
+    // 백그라운드에서 비동기 실행 (UX 차단 방지)
+    Future.microtask(() async {
+      try {
+        debugPrint('☁️ 운동 기록 클라우드 동기화 시작');
+
+        final cloudSyncService = CloudSyncService();
+        await cloudSyncService.syncWorkoutRecord(history);
+
+        debugPrint('✅ 운동 기록 클라우드 동기화 완료');
+      } catch (e) {
+        debugPrint('❌ 운동 기록 클라우드 동기화 실패: $e');
+        // 동기화 실패 시 로컬에 대기 큐에 추가
+        try {
+          final cloudSyncService = CloudSyncService();
+          cloudSyncService.queueChange('workout_record', {
+            'action': 'create',
+            'data': history.toJson(),
+          });
+          debugPrint('📝 운동 기록을 동기화 대기 큐에 추가');
+        } catch (queueError) {
+          debugPrint('❌ 동기화 큐 추가 실패: $queueError');
+        }
+      }
+    });
   }
 }
 

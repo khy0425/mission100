@@ -38,6 +38,21 @@ class WorkoutHistory {
     };
   }
 
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'date': date.toIso8601String(),
+      'workoutTitle': workoutTitle,
+      'targetReps': targetReps,
+      'completedReps': completedReps,
+      'totalReps': totalReps,
+      'completionRate': completionRate,
+      'level': level,
+      'duration': duration.inSeconds,
+      'pushupType': pushupType,
+    };
+  }
+
   factory WorkoutHistory.fromMap(Map<String, dynamic> map) {
     return WorkoutHistory(
       id: map['id'] as String,

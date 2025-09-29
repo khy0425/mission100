@@ -39,7 +39,7 @@ class AppFactory {
     if (_currentConfig!.adConfig.enableBannerAds ||
         _currentConfig!.adConfig.enableInterstitialAds ||
         _currentConfig!.adConfig.enableRewardedAds) {
-      await CoreAdService().initialize(_currentConfig!.adConfig);
+      await CoreAdService.instance.initialize(_currentConfig!.adConfig);
       debugPrint('✅ 광고 서비스 초기화 완료');
     }
 
@@ -80,14 +80,16 @@ class AppFactory {
 
   /// MaterialColor 생성 헬퍼
   MaterialColor _createMaterialColor(Color color) {
-    List strengths = <double>[.05];
-    Map<int, Color> swatch = {};
-    final int r = color.red, g = color.green, b = color.blue;
+    final List<double> strengths = <double>[.05];
+    final Map<int, Color> swatch = {};
+    final int r = (color.r * 255.0).round() & 0xff;
+    final int g = (color.g * 255.0).round() & 0xff;
+    final int b = (color.b * 255.0).round() & 0xff;
 
     for (int i = 1; i < 10; i++) {
       strengths.add(0.1 * i);
     }
-    for (var strength in strengths) {
+    for (final double strength in strengths) {
       final double ds = 0.5 - strength;
       swatch[(strength * 1000).round()] = Color.fromRGBO(
         r + ((ds < 0 ? r : (255 - r)) * ds).round(),
@@ -96,7 +98,7 @@ class AppFactory {
         1,
       );
     }
-    return MaterialColor(color.value, swatch);
+    return MaterialColor(color.toARGB32(), swatch);
   }
 
   /// 앱 타이틀 생성
@@ -148,7 +150,7 @@ class AppFactory {
     if (newConfig.adConfig.enableBannerAds ||
         newConfig.adConfig.enableInterstitialAds ||
         newConfig.adConfig.enableRewardedAds) {
-      await CoreAdService().initialize(newConfig.adConfig);
+      await CoreAdService.instance.initialize(newConfig.adConfig);
     }
   }
 

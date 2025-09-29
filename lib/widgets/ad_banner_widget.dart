@@ -56,7 +56,7 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
           height: widget.adSize.height.toDouble(),
           child: Center(
             child: Text(
-              AppLocalizations.of(context)!.adLoadFailed,
+              AppLocalizations.of(context).adLoadFailed,
               style: const TextStyle(color: Colors.grey, fontSize: 12),
             ),
           ),

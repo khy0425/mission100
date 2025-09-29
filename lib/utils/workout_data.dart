@@ -224,13 +224,13 @@ class WorkoutData {
 
   // 차드 진화 단계별 이미지 경로
   static List<String> get chadImagePaths => [
-    'assets/images/수면모자차드.jpg', // 0단계 - 시작
+    'assets/images/기본차드.jpg', // 0단계 - 시작
     'assets/images/기본차드.jpg', // 1단계 - 1주차
-    'assets/images/커피차드.png', // 2단계 - 2주차
-    'assets/images/정면차드.jpg', // 3단계 - 3주차
-    'assets/images/썬글차드.jpg', // 4단계 - 4주차
-    'assets/images/눈빔차드.jpg', // 5단계 - 5주차
-    'assets/images/더블차드.jpg', // 6단계 - 6주차 완료
+    'assets/images/기본차드.jpg', // 2단계 - 2주차
+    'assets/images/기본차드.jpg', // 3단계 - 3주차
+    'assets/images/기본차드.jpg', // 4단계 - 4주차
+    'assets/images/기본차드.jpg', // 5단계 - 5주차
+    'assets/images/기본차드.jpg', // 6단계 - 6주차 완료
   ];
 
   // 차드 레벨에 따른 이미지 경로 반환
@@ -243,7 +243,7 @@ class WorkoutData {
 
   // 차드 레벨별 메시지 (국제화)
   static List<String> getChadMessages(BuildContext context) {
-    final localizations = AppLocalizations.of(context)!;
+    final localizations = AppLocalizations.of(context);
     return [
       localizations.chadMessage0, // 0단계
       localizations.chadMessage1, // 1단계

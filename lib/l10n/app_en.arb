@@ -6717,9 +6717,9 @@
   "@maxSixDaysWorkout": {
     "description": "Maximum 6 days workout limit message"
   },
-  "noConsecutiveSixDays": "Cannot workout more than 6 consecutive days",
+  "noConsecutiveSixDays": "Maximum 4 workouts per week allowed. Adequate rest is essential!",
   "@noConsecutiveSixDays": {
-    "description": "No consecutive 6 days workout message"
+    "description": "Maximum 4 workouts per week limit message"
   },
   "cannotLoadQuizData": "Cannot load quiz data",
   "@cannotLoadQuizData": {

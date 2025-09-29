@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../../generated/app_localizations.dart';
 import '../../../utils/constants.dart';
 
 /// 업적 현황을 표시하는 위젯
@@ -53,7 +52,7 @@ class AchievementStatsWidget extends StatelessWidget {
   Widget _buildHeader(BuildContext context, ThemeData theme) {
     return Row(
       children: [
-        Icon(Icons.emoji_events, color: Colors.amber, size: 24),
+        const Icon(Icons.emoji_events, color: Colors.amber, size: 24),
         const SizedBox(width: AppConstants.paddingS),
         Text(
           Localizations.localeOf(context).languageCode == 'ko'

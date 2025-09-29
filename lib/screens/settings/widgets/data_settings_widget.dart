@@ -132,7 +132,7 @@ class DataSettingsWidget extends StatelessWidget {
             children: [
               const CircularProgressIndicator(),
               const SizedBox(height: 16),
-              Text(AppLocalizations.of(context)!.backingUpData),
+              Text(AppLocalizations.of(context).backingUpData),
             ],
           ),
         ),
@@ -153,7 +153,7 @@ class DataSettingsWidget extends StatelessWidget {
               content: Text(
                 AppLocalizations.of(
                   context,
-                )!.backupCompletedWithPath(backupPath).replaceAll('\\n', '\n'),
+                ).backupCompletedWithPath(backupPath).replaceAll('\\n', '\n'),
               ),
               backgroundColor: const Color(AppColors.primaryColor),
               duration: const Duration(seconds: 4),
@@ -164,7 +164,7 @@ class DataSettingsWidget extends StatelessWidget {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.backupFailed),
+              content: Text(AppLocalizations.of(context).backupFailed),
               backgroundColor: Colors.red,
             ),
           );
@@ -178,7 +178,7 @@ class DataSettingsWidget extends StatelessWidget {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              AppLocalizations.of(context)!.backupErrorOccurred(e.toString()),
+              AppLocalizations.of(context).backupErrorOccurred(e.toString()),
             ),
             backgroundColor: Colors.red,
           ),
@@ -193,16 +193,16 @@ class DataSettingsWidget extends StatelessWidget {
     final confirmed = await showDialog<bool>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(AppLocalizations.of(context)!.dataRestoreTitle),
+        title: Text(AppLocalizations.of(context).dataRestoreTitle),
         content: Text(
           AppLocalizations.of(
             context,
-          )!.dataRestoreWarning.replaceAll('\\n', '\n'),
+          ).dataRestoreWarning.replaceAll('\\n', '\n'),
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context, false),
-            child: Text(AppLocalizations.of(context)!.cancel),
+            child: Text(AppLocalizations.of(context).cancel),
           ),
           ElevatedButton(
             onPressed: () => Navigator.pop(context, true),
@@ -210,7 +210,7 @@ class DataSettingsWidget extends StatelessWidget {
               backgroundColor: Colors.orange,
               foregroundColor: Colors.white,
             ),
-            child: Text(AppLocalizations.of(context)!.confirm),
+            child: Text(AppLocalizations.of(context).confirm),
           ),
         ],
       ),
@@ -229,7 +229,7 @@ class DataSettingsWidget extends StatelessWidget {
             children: [
               const CircularProgressIndicator(),
               const SizedBox(height: 16),
-              Text(AppLocalizations.of(context)!.restoringData),
+              Text(AppLocalizations.of(context).restoringData),
             ],
           ),
         ),
@@ -244,7 +244,7 @@ class DataSettingsWidget extends StatelessWidget {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.dataRestoreCompleted),
+              content: Text(AppLocalizations.of(context).dataRestoreCompleted),
               backgroundColor: const Color(AppColors.primaryColor),
               duration: const Duration(seconds: 4),
             ),
@@ -254,7 +254,7 @@ class DataSettingsWidget extends StatelessWidget {
         if (context.mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.dataRestoreFailed),
+              content: Text(AppLocalizations.of(context).dataRestoreFailed),
               backgroundColor: Colors.red,
             ),
           );
@@ -268,7 +268,7 @@ class DataSettingsWidget extends StatelessWidget {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              AppLocalizations.of(context)!.restoreErrorOccurred(e.toString()),
+              AppLocalizations.of(context).restoreErrorOccurred(e.toString()),
             ),
             backgroundColor: Colors.red,
           ),
@@ -286,7 +286,7 @@ class DataSettingsWidget extends StatelessWidget {
           children: [
             const Icon(Icons.warning, color: Colors.red),
             const SizedBox(width: 8),
-            Text(AppLocalizations.of(context)!.confirmDataReset),
+            Text(AppLocalizations.of(context).confirmDataReset),
           ],
         ),
         content: Column(
@@ -294,19 +294,19 @@ class DataSettingsWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.resetAllProgressConfirm,
+              AppLocalizations.of(context).resetAllProgressConfirm,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
-            Text(AppLocalizations.of(context)!.followingDataDeleted),
+            Text(AppLocalizations.of(context).followingDataDeleted),
             const SizedBox(height: 4),
-            Text(AppLocalizations.of(context)!.currentLevelProgress),
-            Text(AppLocalizations.of(context)!.workoutRecordsStats),
-            Text(AppLocalizations.of(context)!.chadEvolutionStatus),
-            Text(AppLocalizations.of(context)!.achievementsBadges),
+            Text(AppLocalizations.of(context).currentLevelProgress),
+            Text(AppLocalizations.of(context).workoutRecordsStats),
+            Text(AppLocalizations.of(context).chadEvolutionStatus),
+            Text(AppLocalizations.of(context).achievementsBadges),
             const SizedBox(height: 8),
             Text(
-              AppLocalizations.of(context)!.actionCannotBeUndone,
+              AppLocalizations.of(context).actionCannotBeUndone,
               style: const TextStyle(
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
@@ -317,7 +317,7 @@ class DataSettingsWidget extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(AppLocalizations.of(context)!.cancel),
+            child: Text(AppLocalizations.of(context).cancel),
           ),
           ElevatedButton(
             onPressed: () async {
@@ -328,7 +328,7 @@ class DataSettingsWidget extends StatelessWidget {
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,
             ),
-            child: Text(AppLocalizations.of(context)!.resetButton),
+            child: Text(AppLocalizations.of(context).resetButton),
           ),
         ],
       ),
@@ -348,7 +348,7 @@ class DataSettingsWidget extends StatelessWidget {
             children: [
               const CircularProgressIndicator(),
               const SizedBox(height: 16),
-              Text(AppLocalizations.of(context)!.resettingData),
+              Text(AppLocalizations.of(context).resettingData),
             ],
           ),
         ),
@@ -373,7 +373,7 @@ class DataSettingsWidget extends StatelessWidget {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              AppLocalizations.of(context)!.allDataResetSuccessfully,
+              AppLocalizations.of(context).allDataResetSuccessfully,
             ),
             backgroundColor: Colors.green,
             duration: const Duration(seconds: 3),
@@ -391,7 +391,7 @@ class DataSettingsWidget extends StatelessWidget {
             content: Text(
               AppLocalizations.of(
                 context,
-              )!.dataResetErrorOccurred(e.toString()),
+              ).dataResetErrorOccurred(e.toString()),
             ),
             backgroundColor: Colors.red,
             duration: const Duration(seconds: 3),

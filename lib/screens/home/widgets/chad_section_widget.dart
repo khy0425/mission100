@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import '../../../services/chad_evolution_service.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/chad_translation_helper.dart';
-import '../../../generated/app_localizations.dart';
 
 /// Chad 진화 상태를 표시하는 섹션 위젯
 ///
@@ -24,7 +23,6 @@ class ChadSectionWidget extends StatelessWidget {
     return Consumer<ChadEvolutionService>(
       builder: (context, chadService, child) {
         final currentChad = chadService.currentChad;
-        final evolutionState = chadService.evolutionState;
 
         return Container(
           padding: const EdgeInsets.all(AppConstants.paddingL),
@@ -35,8 +33,7 @@ class ChadSectionWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppConstants.radiusL),
             boxShadow: [
               BoxShadow(
-                color: (isDark ? Colors.black : Colors.grey).withValues(
-                  alpha: 0.1,
+                color: (isDark ? Colors.black : Colors.grey).withValues(alpha: 0.1,
                 ),
                 blurRadius: 8,
                 offset: const Offset(0, 2),
@@ -94,7 +91,7 @@ class ChadSectionWidget extends StatelessWidget {
       height: chadImageSize,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
-        border: Border.all(color: currentChad.themeColor, width: 3),
+        border: Border.all(color: currentChad.themeColor as Color, width: 3),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
@@ -109,13 +106,13 @@ class ChadSectionWidget extends StatelessWidget {
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
                   return Image.asset(
-                    'assets/images/수면모자차드.jpg',
+                    'assets/images/기본차드.jpg',
                     fit: BoxFit.cover,
                   );
                 },
               );
             } else if (snapshot.hasError) {
-              return Image.asset('assets/images/수면모자차드.jpg', fit: BoxFit.cover);
+              return Image.asset('assets/images/기본차드.jpg', fit: BoxFit.cover);
             } else {
               return Container(
                 color: Colors.grey[300],
@@ -133,14 +130,46 @@ class ChadSectionWidget extends StatelessWidget {
     ThemeData theme,
     ChadEvolutionService chadService,
   ) {
+    final isKorean = Localizations.localeOf(context).languageCode == 'ko';
+    final currentChad = chadService.currentChad;
+    final nextChad = chadService.nextChad;
+
+    String statusText;
+
+    if (chadService.isMaxEvolution) {
+      statusText = isKorean ? '최종 진화 완료!' : 'Final evolution complete!';
+    } else if (nextChad != null) {
+      final currentStage = currentChad.stage.index;
+      final nextStage = nextChad.stage.index;
+      final weeksUntil = chadService.getWeeksUntilNextEvolution();
+
+      if (isKorean) {
+        statusText = 'Stage $currentStage → Stage $nextStage';
+        if (weeksUntil > 0) {
+          statusText += ' ($weeksUntil주 후 진화)';
+        } else {
+          statusText += ' (진화 준비 완료!)';
+        }
+      } else {
+        statusText = 'Stage $currentStage → Stage $nextStage';
+        if (weeksUntil > 0) {
+          statusText += ' (${weeksUntil}w to evolve)';
+        } else {
+          statusText += ' (Ready to evolve!)';
+        }
+      }
+    } else {
+      // nextChad가 null일 때도 현재 레벨 정보 표시
+      final currentStage = currentChad.stage.index;
+      if (isKorean) {
+        statusText = 'Stage $currentStage (현재 레벨)';
+      } else {
+        statusText = 'Stage $currentStage (Current Level)';
+      }
+    }
+
     return Text(
-      chadService.isMaxEvolution
-          ? (Localizations.localeOf(context).languageCode == 'ko'
-                ? '최종 진화 완료!'
-                : 'Final evolution complete!')
-          : (Localizations.localeOf(context).languageCode == 'ko'
-                ? '진화 진행 중...'
-                : 'Evolution in progress...'),
+      statusText,
       style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w500),
       textAlign: TextAlign.center,
     );
@@ -151,7 +180,6 @@ class ChadSectionWidget extends StatelessWidget {
     ChadEvolutionService chadService,
     bool isDark,
   ) {
-    final evolutionState = chadService.evolutionState;
     final progress = chadService.evolutionProgress;
 
     return Column(

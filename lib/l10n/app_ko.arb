@@ -5923,9 +5923,9 @@
   "@maxSixDaysWorkout": {
     "description": "최대 6일 운동 제한 메시지"
   },
-  "noConsecutiveSixDays": "연속으로 6일 이상 운동할 수 없습니다",
+  "noConsecutiveSixDays": "주 4회까지만 운동할 수 있습니다. 충분한 휴식이 필요합니다!",
   "@noConsecutiveSixDays": {
-    "description": "연속 6일 이상 운동 불가 메시지"
+    "description": "주 4회 운동 제한 메시지"
   },
   "cannotLoadQuizData": "퀴즈 데이터를 불러올 수 없습니다",
   "@cannotLoadQuizData": {

@@ -337,19 +337,19 @@ class _CalendarScreenState extends State<CalendarScreen> {
           children: [
             _buildStreakStat(
               icon: Icons.local_fire_department,
-              label: AppLocalizations.of(context)!.currentStreak,
+              label: AppLocalizations.of(context).currentStreak,
               value: '$currentStreak',
               color: Colors.orange,
             ),
             _buildStreakStat(
               icon: Icons.fitness_center,
-              label: AppLocalizations.of(context)!.totalWorkouts,
+              label: AppLocalizations.of(context).totalWorkouts,
               value: '$totalWorkouts',
               color: Colors.blue,
             ),
             _buildStreakStat(
               icon: Icons.calendar_month,
-              label: AppLocalizations.of(context)!.thisMonth,
+              label: AppLocalizations.of(context).thisMonth,
               value: '$thisMonthWorkouts',
               color: Colors.green,
             ),
@@ -528,7 +528,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
             const SizedBox(height: 12),
             if (events.isEmpty)
               Text(
-                AppLocalizations.of(context)!.noWorkoutThisDay,
+                AppLocalizations.of(context).noWorkoutThisDay,
                 style: TextStyle(color: Colors.grey[600], fontSize: 14),
               )
             else
@@ -608,7 +608,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.legend,
+              AppLocalizations.of(context).legend,
               style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),
@@ -617,19 +617,19 @@ class _CalendarScreenState extends State<CalendarScreen> {
               children: [
                 _buildLegendItem(
                   Colors.green.shade400,
-                  AppLocalizations.of(context)!.perfect,
+                  AppLocalizations.of(context).perfect,
                 ),
                 _buildLegendItem(
                   Colors.blue.shade400,
-                  AppLocalizations.of(context)!.good,
+                  AppLocalizations.of(context).good,
                 ),
                 _buildLegendItem(
                   Colors.orange.shade400,
-                  AppLocalizations.of(context)!.okay,
+                  AppLocalizations.of(context).okay,
                 ),
                 _buildLegendItem(
                   Colors.red.shade400,
-                  AppLocalizations.of(context)!.poor,
+                  AppLocalizations.of(context).poor,
                 ),
               ],
             ),
@@ -679,7 +679,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
                     ),
                     const SizedBox(width: 6),
                     Text(
-                      AppLocalizations.of(context)!.calendarBannerText,
+                      AppLocalizations.of(context).calendarBannerText,
                       style: const TextStyle(
                         color: Colors.white70,
                         fontSize: 13,
@@ -722,7 +722,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
               );
             }
           })
-          .catchError((e) {
+          .catchError((Object e) {
             debugPrint('❌ 달력 화면: 데이터 새로고침 실패: $e');
             if (mounted) {
               setState(() {

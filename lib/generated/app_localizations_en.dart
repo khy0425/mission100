@@ -4585,7 +4585,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noConsecutiveSixDays =>
-      'Cannot workout more than 6 consecutive days';
+      'Maximum 4 workouts per week allowed. Adequate rest is essential!';
 
   @override
   String get cannotLoadQuizData => 'Cannot load quiz data';

@@ -8,6 +8,9 @@ import '../services/workout_program_service.dart';
 import '../services/notification_service.dart';
 import '../services/workout_history_service.dart';
 import '../services/chad_evolution_service.dart';
+import '../services/chad_condition_service.dart';
+import '../services/chad_recovery_service.dart';
+import '../services/chad_active_recovery_service.dart';
 import '../services/achievement_service.dart';
 import '../screens/workout_screen.dart';
 import '../screens/settings_screen.dart';
@@ -15,15 +18,18 @@ import '../screens/pushup_tutorial_screen.dart';
 import '../screens/pushup_form_guide_screen.dart';
 import '../screens/progress_tracking_screen.dart';
 import '../models/user_profile.dart';
-import '../models/chad_evolution.dart';
+
 import '../models/workout_history.dart';
 import '../utils/constants.dart';
 import '../widgets/ad_banner_widget.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../utils/chad_translation_helper.dart';
+
+
 import 'package:shared_preferences/shared_preferences.dart';
 // 분리된 위젯들 import
 import 'home/widgets/chad_section_widget.dart';
+import 'home/widgets/chad_condition_widget.dart';
+import '../widgets/chad_recovery_widget.dart';
+import '../widgets/chad_active_recovery_widget.dart';
 import 'home/widgets/today_mission_card_widget.dart';
 import 'home/widgets/progress_card_widget.dart';
 import 'home/widgets/achievement_stats_widget.dart';
@@ -284,7 +290,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               ),
               const SizedBox(height: AppConstants.paddingL),
               Text(
-                AppLocalizations.of(context)!.loadingText,
+                AppLocalizations.of(context).loadingText,
                 style: theme.textTheme.titleLarge?.copyWith(
                   fontSize: _subtitleFontSize,
                 ),
@@ -300,7 +306,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
       ),
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.homeTitle),
+        title: Text(AppLocalizations.of(context).homeTitle),
         centerTitle: true,
         automaticallyImplyLeading: false,
         actions: [
@@ -339,6 +345,26 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       else if (_userProfile == null)
                         _buildNoUserWidget() // 프로필 생성 필요
                       else ...[
+                        // Chad 컨디션 체크 위젯
+                        ChangeNotifierProvider<ChadConditionService>(
+                          create: (_) => ChadConditionService(),
+                          child: const ChadConditionWidget(),
+                        ),
+
+                        // Chad 회복 점수 위젯
+                        ChangeNotifierProvider<ChadRecoveryService>(
+                          create: (_) => ChadRecoveryService(),
+                          child: const ChadRecoveryWidget(showDetails: false),
+                        ),
+
+                        // Chad 액티브 리커버리 위젯
+                        ChangeNotifierProvider<ChadActiveRecoveryService>(
+                          create: (_) => ChadActiveRecoveryService(),
+                          child: const ChadActiveRecoveryWidget(showFullDetails: false),
+                        ),
+
+                        const SizedBox(height: AppConstants.paddingM),
+
                         // Chad 이미지 및 환영 메시지
                         ChadSectionWidget(chadImageSize: _chadImageSize),
 
@@ -413,7 +439,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           Icon(Icons.error_outline, size: 64, color: Colors.red[400]),
           const SizedBox(height: AppConstants.paddingM),
           Text(
-            AppLocalizations.of(context)!.errorOccurred,
+            AppLocalizations.of(context).errorOccurred,
             style: Theme.of(context).textTheme.titleLarge,
             textAlign: TextAlign.center,
           ),
@@ -426,7 +452,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           const SizedBox(height: AppConstants.paddingL),
           ElevatedButton(
             onPressed: _refreshData,
-            child: Text(AppLocalizations.of(context)!.retryButton),
+            child: Text(AppLocalizations.of(context).retryButton),
           ),
         ],
       ),
@@ -444,13 +470,13 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           Icon(Icons.person_add, size: 64, color: Colors.blue[400]),
           const SizedBox(height: AppConstants.paddingM),
           Text(
-            AppLocalizations.of(context)!.pleaseCreateProfile,
+            AppLocalizations.of(context).pleaseCreateProfile,
             style: Theme.of(context).textTheme.titleLarge,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppConstants.paddingS),
           Text(
-            AppLocalizations.of(context)!.userProfileRequired,
+            AppLocalizations.of(context).userProfileRequired,
             style: Theme.of(context).textTheme.bodyMedium,
             textAlign: TextAlign.center,
           ),
@@ -458,9 +484,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           ElevatedButton(
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              MaterialPageRoute<void>(builder: (context) => const SettingsScreen()),
             ),
-            child: Text(AppLocalizations.of(context)!.goToSettings),
+            child: Text(AppLocalizations.of(context).goToSettings),
           ),
         ],
       ),
@@ -482,7 +508,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               Icon(Icons.info_outline, color: Colors.grey[600], size: 20),
               const SizedBox(width: AppConstants.paddingS),
               Text(
-                AppLocalizations.of(context)!.workoutTips,
+                AppLocalizations.of(context).workoutTips,
                 style: theme.textTheme.titleSmall?.copyWith(
                   fontWeight: FontWeight.bold,
                   color: Colors.grey[700],
@@ -492,7 +518,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           ),
           const SizedBox(height: AppConstants.paddingS),
           Text(
-            AppLocalizations.of(context)!.workoutTipsContent,
+            AppLocalizations.of(context).workoutTipsContent,
             style: theme.textTheme.bodySmall?.copyWith(
               color: Colors.grey[600],
               height: 1.4,
@@ -516,7 +542,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
       Navigator.push(
         context,
-        MaterialPageRoute(
+        MaterialPageRoute<void>(
           builder: (context) => WorkoutScreen(
             workout: _todayWorkout!,
             onWorkoutCompleted: _onWorkoutSaved,
@@ -529,7 +555,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     } else {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(AppLocalizations.of(context)!.todayWorkoutNotAvailable),
+          content: Text(AppLocalizations.of(context).todayWorkoutNotAvailable),
         ),
       );
     }
@@ -569,7 +595,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   /// 연속 운동 차단 다이얼로그 표시
   void _showConsecutiveWorkoutBlockDialog(BuildContext context) {
-    showDialog(
+    showDialog<void>(
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
@@ -578,7 +604,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             const Icon(Icons.warning, color: Colors.orange, size: 28),
             const SizedBox(width: 8),
             Text(
-              AppLocalizations.of(context)!.consecutiveWorkoutBlocked,
+              AppLocalizations.of(context).consecutiveWorkoutBlocked,
               style: const TextStyle(
                 color: Colors.orange,
                 fontWeight: FontWeight.bold,
@@ -593,7 +619,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             Text(
               AppLocalizations.of(
                 context,
-              )!.consecutiveWorkoutMessage.replaceAll('\\n', '\n'),
+              ).consecutiveWorkoutMessage.replaceAll('\\n', '\n'),
               style: TextStyle(
                 fontSize: 16,
                 height: 1.5,
@@ -606,7 +632,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
             child: Text(
-              AppLocalizations.of(context)!.chadRestModeToday,
+              AppLocalizations.of(context).chadRestModeToday,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
@@ -619,24 +645,25 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   void _openTutorial(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const PushupTutorialScreen()),
+      MaterialPageRoute<void>(builder: (context) => const PushupTutorialScreen()),
     );
   }
 
   void _openFormGuide(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => const PushupFormGuideScreen()),
+      MaterialPageRoute<void>(builder: (context) => const PushupFormGuideScreen()),
     );
   }
 
   void _openProgressTracking(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute(
+      MaterialPageRoute<void>(
         builder: (context) =>
             ProgressTrackingScreen(userProfile: _userProfile!),
       ),
     );
   }
+
 }

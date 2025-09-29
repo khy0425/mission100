@@ -4,8 +4,8 @@ import '../models/challenge.dart';
 import '../models/user_profile.dart';
 import '../services/challenge_service.dart';
 import '../services/database_service.dart';
-import '../services/achievement_service.dart';
-import '../services/notification_service.dart';
+
+
 import '../widgets/challenge_card.dart';
 import '../widgets/challenge_progress_widget.dart';
 
@@ -92,7 +92,7 @@ class _ChallengeScreenState extends State<ChallengeScreen>
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.challengeStarted),
+              content: Text(AppLocalizations.of(context).challengeStarted),
               backgroundColor: Colors.green,
             ),
           );
@@ -101,7 +101,7 @@ class _ChallengeScreenState extends State<ChallengeScreen>
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text(AppLocalizations.of(context)!.challengeCannotStart),
+              content: Text(AppLocalizations.of(context).challengeCannotStart),
               backgroundColor: Colors.red,
             ),
           );
@@ -112,7 +112,7 @@ class _ChallengeScreenState extends State<ChallengeScreen>
       if (mounted) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text(AppLocalizations.of(context)!.errorOccurred),
+            content: Text(AppLocalizations.of(context).errorOccurred),
             backgroundColor: Colors.red,
           ),
         );
@@ -128,7 +128,7 @@ class _ChallengeScreenState extends State<ChallengeScreen>
       });
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(AppLocalizations.of(context)!.challengeAbandoned),
+          content: Text(AppLocalizations.of(context).challengeAbandoned),
         ),
       );
     }
@@ -144,24 +144,24 @@ class _ChallengeScreenState extends State<ChallengeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.challengeTitle),
+        title: Text(AppLocalizations.of(context).challengeTitle),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         bottom: TabBar(
           controller: _tabController,
           tabs: [
             Tab(
               text:
-                  '${AppLocalizations.of(context)!.challengesAvailable} (${_availableChallenges.length})',
+                  '${AppLocalizations.of(context).challengesAvailable} (${_availableChallenges.length})',
               icon: const Icon(Icons.play_arrow),
             ),
             Tab(
               text:
-                  '${AppLocalizations.of(context)!.challengesActive} (${_activeChallenges.length})',
+                  '${AppLocalizations.of(context).challengesActive} (${_activeChallenges.length})',
               icon: const Icon(Icons.timer),
             ),
             Tab(
               text:
-                  '${AppLocalizations.of(context)!.challengeTabCompleted} (${_completedChallenges.length})',
+                  '${AppLocalizations.of(context).challengeTabCompleted} (${_completedChallenges.length})',
               icon: const Icon(Icons.check_circle),
             ),
           ],
@@ -189,12 +189,12 @@ class _ChallengeScreenState extends State<ChallengeScreen>
             const Icon(Icons.emoji_events, size: 64, color: Colors.grey),
             const SizedBox(height: 16),
             Text(
-              AppLocalizations.of(context)!.noChallengesAvailable,
+              AppLocalizations.of(context).noChallengesAvailable,
               style: const TextStyle(fontSize: 18, color: Colors.grey),
             ),
             const SizedBox(height: 8),
             Text(
-              AppLocalizations.of(context)!.unlockMoreChallenges,
+              AppLocalizations.of(context).unlockMoreChallenges,
               style: const TextStyle(color: Colors.grey),
               textAlign: TextAlign.center,
             ),
@@ -228,12 +228,12 @@ class _ChallengeScreenState extends State<ChallengeScreen>
             const Icon(Icons.timer_off, size: 64, color: Colors.grey),
             const SizedBox(height: 16),
             Text(
-              AppLocalizations.of(context)!.noActiveChallenges,
+              AppLocalizations.of(context).noActiveChallenges,
               style: const TextStyle(fontSize: 18, color: Colors.grey),
             ),
             const SizedBox(height: 8),
             Text(
-              AppLocalizations.of(context)!.startNewChallenge,
+              AppLocalizations.of(context).startNewChallenge,
               style: const TextStyle(color: Colors.grey),
             ),
           ],
@@ -269,15 +269,15 @@ class _ChallengeScreenState extends State<ChallengeScreen>
 
   /// 챌린지 옵션 다이얼로그 표시
   void _showChallengeOptions(Challenge challenge) {
-    showDialog(
+    showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
         title: Text(challenge.title ?? challenge.titleKey),
-        content: Text(AppLocalizations.of(context)!.challengeOptions),
+        content: Text(AppLocalizations.of(context).challengeOptions),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(AppLocalizations.of(context)!.cancel),
+            child: Text(AppLocalizations.of(context).cancel),
           ),
           TextButton(
             onPressed: () {
@@ -285,7 +285,7 @@ class _ChallengeScreenState extends State<ChallengeScreen>
               _abandonChallenge(challenge.id);
             },
             child: Text(
-              AppLocalizations.of(context)!.abandon,
+              AppLocalizations.of(context).abandon,
               style: const TextStyle(color: Colors.red),
             ),
           ),
@@ -307,12 +307,12 @@ class _ChallengeScreenState extends State<ChallengeScreen>
             ),
             const SizedBox(height: 16),
             Text(
-              AppLocalizations.of(context)!.noCompletedChallenges,
+              AppLocalizations.of(context).noCompletedChallenges,
               style: const TextStyle(fontSize: 18, color: Colors.grey),
             ),
             const SizedBox(height: 8),
             Text(
-              AppLocalizations.of(context)!.completeFirstChallenge,
+              AppLocalizations.of(context).completeFirstChallenge,
               style: const TextStyle(color: Colors.grey),
             ),
           ],

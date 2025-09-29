@@ -95,7 +95,7 @@ class OnboardingService extends ChangeNotifier {
         title: '6주 프로그램 소개',
         description:
             '과학적으로 설계된 6주 프로그램으로 점진적으로 실력을 향상시킵니다.\n\n• 1주차: 기초 체력 다지기\n• 2-3주차: 근력 강화\n• 4-5주차: 지구력 향상\n• 6주차: 목표 달성',
-        imagePath: 'assets/images/정면차드.jpg',
+        imagePath: 'assets/images/기본차드.jpg',
         buttonText: '다음',
         canSkip: true,
       ),
@@ -104,7 +104,7 @@ class OnboardingService extends ChangeNotifier {
         title: 'Chad 진화 시스템',
         description:
             '운동을 완료할 때마다 Chad가 진화합니다!\n\n🏃‍♂️ Rookie Chad → 💪 Giga Chad → 👑 Legendary Chad\n\n각 단계마다 새로운 Chad 이미지와 업적을 해제하세요!',
-        imagePath: 'assets/images/더블차드.jpg',
+        imagePath: 'assets/images/기본차드.jpg',
         buttonText: '멋져요!',
         canSkip: true,
       ),
@@ -113,9 +113,70 @@ class OnboardingService extends ChangeNotifier {
         title: '초기 실력 테스트',
         description:
             '현재 실력을 측정하여 맞춤형 프로그램을 제공합니다.\n\n• 최대한 많은 푸시업을 해보세요\n• 정확한 자세로 실시하세요\n• 결과에 따라 프로그램이 조정됩니다',
-        imagePath: 'assets/images/썬글차드.jpg',
+        imagePath: 'assets/images/기본차드.jpg',
         buttonText: '테스트 시작',
         canSkip: false,
+      ),
+
+      // 목표 설정 단계들
+      const OnboardingStep(
+        type: OnboardingStepType.goalSetupWeight,
+        title: '현재 체중을 알려주세요',
+        description:
+            '더 정확한 칼로리 소모량과 진행상황을 계산해드려요.\n\n목표 체중도 함께 설정하면 더욱 맞춤형 계획을 제공할 수 있습니다.',
+        imagePath: 'assets/images/기본차드.jpg',
+        buttonText: '다음',
+        canSkip: true,
+      ),
+
+      const OnboardingStep(
+        type: OnboardingStepType.goalSetupFitnessLevel,
+        title: '운동 경험이 어느정도인가요?',
+        description:
+            '레벨에 맞는 운동 강도로 조절해드려요.\n\n• 초보자: 기초부터 차근차근\n• 중급자: 적당한 도전으로\n• 고급자: 강도 높은 훈련으로',
+        imagePath: 'assets/images/기본차드.jpg',
+        buttonText: '다음',
+        canSkip: true,
+      ),
+
+      const OnboardingStep(
+        type: OnboardingStepType.goalSetupGoal,
+        title: '주요 목표를 선택해주세요',
+        description:
+            '목표에 맞는 운동 계획과 팁을 제공해드려요.\n\n🔥 체중 감량\n💪 근육 증가\n⚡ 체력 향상\n🌟 전반적인 건강',
+        imagePath: 'assets/images/기본차드.jpg',
+        buttonText: '다음',
+        canSkip: true,
+      ),
+
+      const OnboardingStep(
+        type: OnboardingStepType.goalSetupWorkoutTime,
+        title: '주로 언제 운동하시나요?',
+        description:
+            '선호하는 시간대에 맞춰 알림을 설정해드려요.\n\n복수선택이 가능하며, 나중에 언제든 변경할 수 있습니다.',
+        imagePath: 'assets/images/기본차드.jpg',
+        buttonText: '다음',
+        canSkip: true,
+      ),
+
+      const OnboardingStep(
+        type: OnboardingStepType.goalSetupMotivation,
+        title: '어떤 방식이 더 동기부여가 되나요?',
+        description:
+            '선호하는 방식으로 맞춤형 격려와 도전을 제공해드려요.\n\n🏆 경쟁과 순위로 동기부여\n📈 개인 기록 향상에 집중',
+        imagePath: 'assets/images/기본차드.jpg',
+        buttonText: '다음',
+        canSkip: true,
+      ),
+
+      const OnboardingStep(
+        type: OnboardingStepType.goalSetupComplete,
+        title: '🎉 맞춤형 프로그램 준비완료!',
+        description:
+            '당신만의 개인화된 Mission: 100이 준비되었습니다!\n\n• 맞춤형 운동 계획\n• 개인 목표 기반 추천\n• 최적화된 알림 설정\n\n지금 계정을 만들고 1개월 무료로 시작해보세요! 💪',
+        imagePath: 'assets/images/기본차드.jpg',
+        buttonText: '무료로 시작하기',
+        canSkip: true,
       ),
     ];
 

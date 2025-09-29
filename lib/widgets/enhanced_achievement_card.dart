@@ -28,7 +28,6 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
   late AnimationController _hoverController;
   late Animation<double> _scaleAnimation;
   late Animation<double> _elevationAnimation;
-  bool _isHovered = false;
 
   @override
   void initState() {
@@ -55,10 +54,6 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
   }
 
   void _onHoverChanged(bool isHovered) {
-    setState(() {
-      _isHovered = isHovered;
-    });
-
     if (isHovered) {
       _hoverController.forward();
     } else {
@@ -73,13 +68,13 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
   String _getRarityText(BuildContext context) {
     switch (widget.achievement.rarity) {
       case AchievementRarity.common:
-        return AppLocalizations.of(context)!.common;
+        return AppLocalizations.of(context).common;
       case AchievementRarity.rare:
-        return AppLocalizations.of(context)!.rare;
+        return AppLocalizations.of(context).rare;
       case AchievementRarity.epic:
-        return AppLocalizations.of(context)!.epic;
+        return AppLocalizations.of(context).epic;
       case AchievementRarity.legendary:
-        return AppLocalizations.of(context)!.legendary;
+        return AppLocalizations.of(context).legendary;
     }
   }
 
@@ -94,18 +89,18 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
         shape: BoxShape.circle,
         gradient: widget.achievement.isCompleted
             ? LinearGradient(
-                colors: [rarityColor, rarityColor.withOpacity(0.7)],
+                colors: [rarityColor, rarityColor.withValues(alpha: 0.7)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               )
             : null,
         color: widget.achievement.isCompleted
             ? null
-            : rarityColor.withOpacity(0.3),
+            : rarityColor.withValues(alpha: 0.3),
         boxShadow: widget.achievement.isCompleted
             ? [
                 BoxShadow(
-                  color: rarityColor.withOpacity(0.4),
+                  color: rarityColor.withValues(alpha: 0.4),
                   blurRadius: 8,
                   spreadRadius: 2,
                 ),
@@ -131,9 +126,9 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
         vertical: 2,
       ),
       decoration: BoxDecoration(
-        color: rarityColor.withOpacity(0.2),
+        color: rarityColor.withValues(alpha: 0.2),
         borderRadius: BorderRadius.circular(AppConstants.radiusS),
-        border: Border.all(color: rarityColor.withOpacity(0.5), width: 1),
+        border: Border.all(color: rarityColor.withValues(alpha: 0.5), width: 1),
       ),
       child: Text(
         _getRarityText(context),
@@ -161,14 +156,14 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
         borderRadius: BorderRadius.circular(AppConstants.radiusS),
         boxShadow: [
           BoxShadow(
-            color: rarityColor.withOpacity(0.3),
+            color: rarityColor.withValues(alpha: 0.3),
             blurRadius: 4,
             spreadRadius: 1,
           ),
         ],
       ),
       child: Text(
-        AppLocalizations.of(context)!.completed,
+        AppLocalizations.of(context).completed,
         style: const TextStyle(
           color: Colors.white,
           fontSize: 10,
@@ -200,7 +195,7 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                   borderRadius: BorderRadius.circular(AppConstants.radiusM),
                   side: widget.achievement.isCompleted
                       ? BorderSide(
-                          color: rarityColor.withOpacity(0.3),
+                          color: rarityColor.withValues(alpha: 0.3),
                           width: 2,
                         )
                       : BorderSide.none,
@@ -211,8 +206,8 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                     gradient: widget.achievement.isCompleted
                         ? LinearGradient(
                             colors: [
-                              rarityColor.withOpacity(0.05),
-                              rarityColor.withOpacity(0.02),
+                              rarityColor.withValues(alpha: 0.05),
+                              rarityColor.withValues(alpha: 0.02),
                             ],
                             begin: Alignment.topLeft,
                             end: Alignment.bottomRight,

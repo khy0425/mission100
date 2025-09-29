@@ -13,7 +13,7 @@ class ShareCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
 
     return Container(
       width: 350,
@@ -389,7 +389,7 @@ class ShareCardWidget extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        AppLocalizations.of(context)!.checkIcon,
+                        AppLocalizations.of(context).checkIcon,
                         style: const TextStyle(fontSize: 20),
                       ),
                       Text(
@@ -405,7 +405,7 @@ class ShareCardWidget extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        AppLocalizations.of(context)!.muscleIcon,
+                        AppLocalizations.of(context).muscleIcon,
                         style: const TextStyle(fontSize: 20),
                       ),
                       Text(
@@ -469,7 +469,7 @@ class ShareCardWidget extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        AppLocalizations.of(context)!.calendarIcon,
+                        AppLocalizations.of(context).calendarIcon,
                         style: const TextStyle(fontSize: 20),
                       ),
                       Text(
@@ -492,7 +492,7 @@ class ShareCardWidget extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        AppLocalizations.of(context)!.trophyIcon,
+                        AppLocalizations.of(context).trophyIcon,
                         style: const TextStyle(fontSize: 20),
                       ),
                       Text(

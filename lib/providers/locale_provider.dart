@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../services/locale_service.dart';
 
-/// 현재 선택된 언어를 관리하는 StateNotifier
-class LocaleNotifier extends StateNotifier<Locale> {
-  LocaleNotifier() : super(LocaleService.koreanLocale) {
+/// 현재 선택된 언어를 관리하는 Notifier
+class LocaleNotifier extends Notifier<Locale> {
+  @override
+  Locale build() {
     _loadLocale();
+    return LocaleService.koreanLocale;
   }
 
   /// 저장된 언어 설정을 불러온다
@@ -40,7 +42,7 @@ class LocaleNotifier extends StateNotifier<Locale> {
 }
 
 /// 언어 설정 provider
-final localeProvider = StateNotifierProvider<LocaleNotifier, Locale>((ref) {
+final localeProvider = NotifierProvider<LocaleNotifier, Locale>(() {
   return LocaleNotifier();
 });
 

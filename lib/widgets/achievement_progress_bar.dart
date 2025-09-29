@@ -92,7 +92,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                AppLocalizations.of(context)!.progress,
+                AppLocalizations.of(context).progress,
                 style: theme.textTheme.bodySmall?.copyWith(
                   fontWeight: FontWeight.w500,
                 ),
@@ -139,14 +139,14 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(widget.height / 2),
                         gradient: LinearGradient(
-                          colors: [rarityColor, rarityColor.withOpacity(0.8)],
+                          colors: [rarityColor, rarityColor.withValues(alpha: 0.8)],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         ),
                         boxShadow: widget.achievement.isCompleted
                             ? [
                                 BoxShadow(
-                                  color: rarityColor.withOpacity(0.4),
+                                  color: rarityColor.withValues(alpha: 0.4),
                                   blurRadius: 4,
                                   spreadRadius: 1,
                                 ),
@@ -165,9 +165,9 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
                         borderRadius: BorderRadius.circular(widget.height / 2),
                         gradient: LinearGradient(
                           colors: [
-                            Colors.white.withOpacity(0.0),
-                            Colors.white.withOpacity(0.3),
-                            Colors.white.withOpacity(0.0),
+                            Colors.white.withValues(alpha: 0.0),
+                            Colors.white.withValues(alpha: 0.3),
+                            Colors.white.withValues(alpha: 0.0),
                           ],
                           stops: const [0.0, 0.5, 1.0],
                           begin: Alignment.centerLeft,
@@ -199,11 +199,11 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
                     vertical: 2,
                   ),
                   decoration: BoxDecoration(
-                    color: rarityColor.withOpacity(0.2),
+                    color: rarityColor.withValues(alpha: 0.2),
                     borderRadius: BorderRadius.circular(AppConstants.radiusS),
                   ),
                   child: Text(
-                    AppLocalizations.of(context)!.completed,
+                    AppLocalizations.of(context).completed,
                     style: theme.textTheme.bodySmall?.copyWith(
                       color: rarityColor,
                       fontWeight: FontWeight.bold,

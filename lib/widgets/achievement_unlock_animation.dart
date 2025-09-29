@@ -85,17 +85,17 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
     _confettiController.play();
 
     // 순차적 애니메이션 실행
-    await Future.delayed(const Duration(milliseconds: 200));
+    await Future<void>.delayed(const Duration(milliseconds: 200));
     _scaleController.forward();
 
-    await Future.delayed(const Duration(milliseconds: 300));
+    await Future<void>.delayed(const Duration(milliseconds: 300));
     _slideController.forward();
 
-    await Future.delayed(const Duration(milliseconds: 200));
+    await Future<void>.delayed(const Duration(milliseconds: 200));
     _rotationController.forward();
 
     // 3초 후 자동 닫기
-    await Future.delayed(const Duration(seconds: 3));
+    await Future<void>.delayed(const Duration(seconds: 3));
     widget.onComplete();
   }
 
@@ -186,7 +186,7 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                           ),
                           boxShadow: [
                             BoxShadow(
-                              color: _getRarityColor().withOpacity(0.3),
+                              color: _getRarityColor().withValues(alpha: 0.3),
                               blurRadius: 20,
                               spreadRadius: 5,
                             ),
@@ -221,7 +221,7 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                                   shape: BoxShape.circle,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: _getRarityColor().withOpacity(0.5),
+                                      color: _getRarityColor().withValues(alpha: 0.5),
                                       blurRadius: 15,
                                       spreadRadius: 2,
                                     ),
@@ -263,7 +263,7 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                                 vertical: AppConstants.paddingS,
                               ),
                               decoration: BoxDecoration(
-                                color: _getRarityColor().withOpacity(0.2),
+                                color: _getRarityColor().withValues(alpha: 0.2),
                                 borderRadius: BorderRadius.circular(
                                   AppConstants.radiusS,
                                 ),
@@ -292,7 +292,7 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                                 foregroundColor: Colors.white,
                               ),
                               child: Text(
-                                AppLocalizations.of(context)!.confirm,
+                                AppLocalizations.of(context).confirm,
                               ),
                             ),
                           ],

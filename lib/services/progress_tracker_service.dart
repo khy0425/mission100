@@ -92,7 +92,7 @@ class ProgressTrackerService {
         // 현재 주차/일차 업데이트
         if (!weekProgress.isWeekCompleted) {
           currentWeek = week;
-          currentDay = weekProgress.actualCompletedDays + 1;
+          currentDay = weekProgress.completedDays + 1;
           if (currentDay > 3) {
             currentDay = 3;
           }
@@ -103,7 +103,7 @@ class ProgressTrackerService {
         }
 
         debugPrint(
-          '✅ ${week}주차 상태: ${weekProgress.actualCompletedDays}/3일 완료 (완료: ${weekProgress.isWeekCompleted})',
+          '✅ ${week}주차 상태: ${weekProgress.completedDays}/3일 완료 (완료: ${weekProgress.isWeekCompleted})',
         );
       }
 
@@ -127,6 +127,7 @@ class ProgressTrackerService {
       debugPrint(
         '📈 진행 상황 계산 완료: ${currentWeek}주차 ${currentDay}일차 (${(completionRate * 100).toInt()}% 완료)',
       );
+
       return progress;
     } catch (e) {
       debugPrint('❌ 진행 상황 계산 오류: $e');
@@ -264,9 +265,9 @@ class ProgressTrackerService {
             .firstOrNull;
 
         if (weekProgress != null) {
-          if (weekProgress.completedDays != weekProgress.actualCompletedDays) {
+          if (weekProgress.completedDays != weekProgress.completedDays) {
             issues.add(
-              '${week}주차: completedDays(${weekProgress.completedDays})와 actualCompletedDays(${weekProgress.actualCompletedDays}) 불일치',
+              '${week}주차: completedDays(${weekProgress.completedDays})와 completedDays(${weekProgress.completedDays}) 불일치',
             );
             recommendations.add('${week}주차 데이터 재계산 필요');
           }
@@ -305,4 +306,5 @@ class ProgressTrackerService {
       rethrow;
     }
   }
+
 }

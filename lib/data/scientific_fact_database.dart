@@ -6,7 +6,7 @@ import 'package:mission100/generated/app_localizations.dart';
 class ScientificFactDatabase {
   /// 카테고리 이름을 i18n으로 가져오기
   static String getCategoryName(BuildContext context, String categoryKey) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     switch (categoryKey) {
       case 'muscle':
         return l10n.factCategoryMuscle;
@@ -27,7 +27,7 @@ class ScientificFactDatabase {
 
   /// i18n 기반 팩트 가져오기 (새로운 메서드)
   static Map<String, String>? getI18nFact(BuildContext context, int factId) {
-    final l10n = AppLocalizations.of(context)!;
+    final l10n = AppLocalizations.of(context);
     final categoryKey = _getFactCategoryKey(factId);
     final category = getCategoryName(context, categoryKey);
 

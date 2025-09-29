@@ -30,18 +30,18 @@ class AdConfig {
 
   factory AdConfig.fromJson(Map<String, dynamic> json) {
     return AdConfig(
-      androidAppId: json['android_app_id'] ?? '',
-      androidBannerId: json['android_banner_id'] ?? '',
-      androidInterstitialId: json['android_interstitial_id'] ?? '',
-      androidRewardedId: json['android_rewarded_id'] ?? '',
-      iosAppId: json['ios_app_id'] ?? '',
-      iosBannerId: json['ios_banner_id'] ?? '',
-      iosInterstitialId: json['ios_interstitial_id'] ?? '',
-      iosRewardedId: json['ios_rewarded_id'] ?? '',
-      enableBannerAds: json['enable_banner_ads'] ?? true,
-      enableInterstitialAds: json['enable_interstitial_ads'] ?? true,
-      enableRewardedAds: json['enable_rewarded_ads'] ?? false,
-      testDeviceIds: List<String>.from(json['test_device_ids'] ?? []),
+      androidAppId: (json['android_app_id'] as String?) ?? '',
+      androidBannerId: (json['android_banner_id'] as String?) ?? '',
+      androidInterstitialId: (json['android_interstitial_id'] as String?) ?? '',
+      androidRewardedId: (json['android_rewarded_id'] as String?) ?? '',
+      iosAppId: (json['ios_app_id'] as String?) ?? '',
+      iosBannerId: (json['ios_banner_id'] as String?) ?? '',
+      iosInterstitialId: (json['ios_interstitial_id'] as String?) ?? '',
+      iosRewardedId: (json['ios_rewarded_id'] as String?) ?? '',
+      enableBannerAds: (json['enable_banner_ads'] as bool?) ?? true,
+      enableInterstitialAds: (json['enable_interstitial_ads'] as bool?) ?? true,
+      enableRewardedAds: (json['enable_rewarded_ads'] as bool?) ?? false,
+      testDeviceIds: List<String>.from((json['test_device_ids'] as List?) ?? []),
     );
   }
 

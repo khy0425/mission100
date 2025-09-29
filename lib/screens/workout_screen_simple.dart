@@ -48,6 +48,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
   bool _isSetCompleted = false;
   bool _isRestTime = false;
   int _restTimeRemaining = 0;
+  int _restTimeSeconds = 60;
   Timer? _restTimer;
 
   // 워크아웃 데이터
@@ -77,8 +78,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     _workoutStartTime = DateTime.now();
 
     // 타겟 횟수 설정
-    if (widget.workout.workout != null && widget.workout.workout.isNotEmpty) {
-      _targetReps = List<int>.from(widget.workout.workout);
+    if (widget.workout.workout != null && (widget.workout.workout as List).isNotEmpty) {
+      _targetReps = List<int>.from(widget.workout.workout as List);
     } else {
       _targetReps = [10, 8, 6, 4, 2]; // 기본값
     }
@@ -93,7 +94,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
   void _onCompleteWorkout() {
     // 즉각적인 시각적 피드백
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text(AppLocalizations.of(context)!.workoutProcessing)),
+      SnackBar(content: Text(AppLocalizations.of(context).workoutProcessing)),
     );
     // 햅틱 피드백
     HapticFeedback.heavyImpact();
@@ -104,15 +105,26 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     _markSetCompleted();
   }
 
+  void _completeSet() {
+    _markSetCompleted();
+  }
+
+  void _skipRest() {
+    setState(() {
+      _restTimeRemaining = 0;
+      _isRestTime = false;
+    });
+  }
+
   void _completeWorkout() async {
     debugPrint('🔥 _completeWorkout 함수 호출됨');
 
     try {
       // WorkoutCompletionHandler로 완료 처리 위임
       final handler = WorkoutCompletionHandler(
+        completedReps: _completedReps,
         context: context,
         workout: widget.workout,
-        completedReps: _completedReps,
         targetReps: _targetReps,
         workoutStartTime: _workoutStartTime,
       );
@@ -251,7 +263,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                     _finishWorkout();
                   }
                 },
-                child: Text(AppLocalizations.of(context)!.okButton),
+                child: Text(AppLocalizations.of(context).okButton),
               ),
             ],
           );
@@ -296,14 +308,14 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(AppLocalizations.of(context)!.cancelButton),
+            child: Text(AppLocalizations.of(context).cancelButton),
           ),
           TextButton(
             onPressed: () {
               Navigator.pop(context);
               Navigator.pop(context);
             },
-            child: Text(AppLocalizations.of(context)!.exitButton),
+            child: Text(AppLocalizations.of(context).exitButton),
           ),
         ],
       ),
@@ -321,7 +333,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       ),
       appBar: AppBar(
         title: Text(
-          widget.workout.title ?? AppLocalizations.of(context)!.workoutTitle,
+          (widget.workout.title as String?) ?? AppLocalizations.of(context).workoutTitle,
         ),
         centerTitle: true,
         leading: IconButton(
@@ -338,20 +350,21 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                 children: [
                   // 운동 헤더
                   WorkoutHeaderWidget(
-                    workoutTitle: widget.workout.title ?? '',
+                    overallProgress: _currentSet / _totalSets,
+                    workoutTitle: (widget.workout.title as String?) ?? '',
                     currentSet: _currentSet,
                     totalSets: _totalSets,
                     currentTargetReps: _currentTargetReps,
-                    completedReps: _completedReps,
-                  ),
+                    ),
 
                   const SizedBox(height: AppConstants.paddingL),
 
                   // 현재 세트 상태에 따라 위젯 표시
                   if (_isRestTime)
                     RestTimerWidget(
-                      remainingTime: _restTimeRemaining,
-                      onTimerComplete: () {
+                      restTimeSeconds: _restTimeSeconds,
+                      restTimeRemaining: _restTimeRemaining,
+                      onSkipRest: () {
                         setState(() {
                           _currentSet++;
                           _currentTargetReps = _currentSet < _targetReps.length
@@ -366,6 +379,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                   else
                     RepCounterWidget(
                       currentReps: _currentReps,
+                      isSetCompleted: _isSetCompleted,
+                      onSetCompleted: _completeSet,
                       targetReps: _currentTargetReps,
                       onRepsChanged: (reps) {
                         setState(() {
@@ -380,7 +395,17 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                   WorkoutControlsWidget(
                     isSetCompleted: _isSetCompleted,
                     isRestTime: _isRestTime,
-                    isLastSet: _currentSet == _totalSets - 1,
+                    currentSet: _currentSet,
+                    totalSets: _totalSets,
+                    currentReps: _currentReps,
+                    onSkipRest: _skipRest,
+                    onStartRest: () {
+                      setState(() {
+                        _isRestTime = true;
+                        _restTimeRemaining = _restTimeSeconds;
+                      });
+                      _startRestTimer();
+                    },
                     onMarkSetCompleted: _onMarkSetCompleted,
                     onCompleteWorkout: _onCompleteWorkout,
                   ),

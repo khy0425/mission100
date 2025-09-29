@@ -4,6 +4,13 @@ enum OnboardingStepType {
   programIntroduction,
   chadEvolution,
   initialTest,
+  // 목표 설정 단계들
+  goalSetupWeight,
+  goalSetupFitnessLevel,
+  goalSetupGoal,
+  goalSetupWorkoutTime,
+  goalSetupMotivation,
+  goalSetupComplete,
   completion,
 }
 
