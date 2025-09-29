@@ -9,12 +9,14 @@ import '../services/theme_service.dart';
 import '../services/locale_service.dart';
 import '../services/notification_service.dart';
 import '../services/chad_evolution_service.dart';
+import '../services/subscription_service.dart';
 import '../generated/app_localizations.dart';
 import '../main.dart';
 import 'settings/widgets/notification_settings_widget.dart';
 import 'settings/widgets/appearance_settings_widget.dart';
 import 'settings/widgets/data_settings_widget.dart';
 import 'settings/widgets/about_settings_widget.dart';
+import 'subscription_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -40,6 +42,9 @@ class _SettingsScreenState extends State<SettingsScreen>
   Locale _currentLocale = LocaleService.koreanLocale;
   TimeOfDay _reminderTime = const TimeOfDay(hour: 19, minute: 0); // 기본 오후 7시
 
+  final SubscriptionService _subscriptionService = SubscriptionService();
+  SubscriptionType _currentSubscription = SubscriptionType.free;
+
   @override
   void initState() {
     super.initState();
@@ -47,6 +52,7 @@ class _SettingsScreenState extends State<SettingsScreen>
     _loadBannerAd();
     _loadSettings();
     _initializeNotifications();
+    _loadSubscriptionData();
   }
 
   @override
@@ -162,6 +168,28 @@ class _SettingsScreenState extends State<SettingsScreen>
     debugPrint('설정 저장: $key = $value');
   }
 
+  /// 구독 데이터 로드
+  Future<void> _loadSubscriptionData() async {
+    await _subscriptionService.initialize();
+    setState(() {
+      _currentSubscription = _subscriptionService.currentSubscription;
+    });
+  }
+
+  /// 구독 화면으로 이동
+  Future<void> _navigateToSubscription() async {
+    final result = await Navigator.of(context).push<bool>(
+      MaterialPageRoute(
+        builder: (context) => const SubscriptionScreen(),
+      ),
+    );
+
+    // 구독 상태가 변경되었을 수 있으므로 다시 로드
+    if (result == true) {
+      await _loadSubscriptionData();
+    }
+  }
+
   /// 리마인더 시간 저장
   Future<void> _saveReminderTime(TimeOfDay time) async {
     final prefs = await SharedPreferences.getInstance();
@@ -183,7 +211,7 @@ class _SettingsScreenState extends State<SettingsScreen>
             content: Text(
               AppLocalizations.of(
                 context,
-              )!.reminderTimeChanged(time.format(context)),
+              ).reminderTimeChanged(time.format(context)),
             ),
             backgroundColor: const Color(AppColors.primaryColor),
             duration: const Duration(seconds: 2),
@@ -203,7 +231,7 @@ class _SettingsScreenState extends State<SettingsScreen>
     return Scaffold(
       backgroundColor: isDark ? Colors.black : Colors.white,
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.settings),
+        title: Text(AppLocalizations.of(context).settings),
         backgroundColor: isDark ? Colors.grey[900] : Colors.blue,
         foregroundColor: Colors.white,
       ),
@@ -227,7 +255,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    AppLocalizations.of(context)!.mission100Settings,
+                    AppLocalizations.of(context).mission100Settings,
                     style: theme.textTheme.headlineSmall?.copyWith(
                       color: isDark ? Colors.white : Colors.black,
                     ),
@@ -242,15 +270,15 @@ class _SettingsScreenState extends State<SettingsScreen>
             _buildSimpleSettingsCard(
               context,
               Icons.notifications,
-              AppLocalizations.of(context)!.notificationsSettings,
+              AppLocalizations.of(context).notificationsSettings,
               [
                 SwitchListTile(
-                  title: Text(AppLocalizations.of(context)!.pushNotifications),
+                  title: Text(AppLocalizations.of(context).pushNotifications),
                   value: _pushNotifications,
                   onChanged: _onPushNotificationsChanged,
                 ),
                 SwitchListTile(
-                  title: Text(AppLocalizations.of(context)!.workoutReminders),
+                  title: Text(AppLocalizations.of(context).workoutReminders),
                   value: _workoutReminders,
                   onChanged: _onWorkoutRemindersChanged,
                 ),
@@ -259,14 +287,19 @@ class _SettingsScreenState extends State<SettingsScreen>
 
             const SizedBox(height: 16),
 
+            // 구독 관리
+            _buildSubscriptionCard(context, isDark),
+
+            const SizedBox(height: 16),
+
             // 외관 설정
             _buildSimpleSettingsCard(
               context,
               Icons.palette,
-              AppLocalizations.of(context)!.appearance,
+              AppLocalizations.of(context).appearance,
               [
                 ListTile(
-                  title: Text(AppLocalizations.of(context)!.darkMode),
+                  title: Text(AppLocalizations.of(context).darkMode),
                   trailing: Switch(
                     value: isDark,
                     onChanged: (value) {
@@ -274,7 +307,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                       ScaffoldMessenger.of(context).showSnackBar(
                         SnackBar(
                           content: Text(
-                            AppLocalizations.of(context)!.themeChangeRestart,
+                            AppLocalizations.of(context).themeChangeRestart,
                           ),
                         ),
                       );
@@ -282,13 +315,13 @@ class _SettingsScreenState extends State<SettingsScreen>
                   ),
                 ),
                 ListTile(
-                  title: Text(AppLocalizations.of(context)!.languageSettings),
+                  title: Text(AppLocalizations.of(context).languageSettings),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: () {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          AppLocalizations.of(context)!.languageComingSoon,
+                          AppLocalizations.of(context).languageComingSoon,
                         ),
                       ),
                     );
@@ -303,15 +336,15 @@ class _SettingsScreenState extends State<SettingsScreen>
             _buildSimpleSettingsCard(
               context,
               Icons.info,
-              AppLocalizations.of(context)!.aboutApp,
+              AppLocalizations.of(context).aboutApp,
               [
                 ListTile(
-                  title: Text(AppLocalizations.of(context)!.version),
-                  subtitle: Text(AppLocalizations.of(context)!.appVersion),
+                  title: Text(AppLocalizations.of(context).version),
+                  subtitle: Text(AppLocalizations.of(context).appVersion),
                 ),
                 ListTile(
-                  title: Text(AppLocalizations.of(context)!.developer),
-                  subtitle: Text(AppLocalizations.of(context)!.mission100Team),
+                  title: Text(AppLocalizations.of(context).developer),
+                  subtitle: Text(AppLocalizations.of(context).mission100Team),
                 ),
               ],
             ),
@@ -374,12 +407,12 @@ class _SettingsScreenState extends State<SettingsScreen>
             ),
             const SizedBox(height: 8),
             Text(
-              AppLocalizations.of(context)!.settings,
+              AppLocalizations.of(context).settings,
               style: theme.textTheme.headlineSmall,
             ),
             const SizedBox(height: 4),
             Text(
-              AppLocalizations.of(context)!.manageAppSettings,
+              AppLocalizations.of(context).manageAppSettings,
               style: theme.textTheme.bodyMedium,
             ),
           ],
@@ -425,7 +458,7 @@ class _SettingsScreenState extends State<SettingsScreen>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.of(context)!.settings,
+                AppLocalizations.of(context).settings,
                 style: theme.textTheme.headlineSmall?.copyWith(
                   color: Colors.white,
                   fontWeight: FontWeight.bold,
@@ -433,7 +466,7 @@ class _SettingsScreenState extends State<SettingsScreen>
               ),
               const SizedBox(height: 4),
               Text(
-                AppLocalizations.of(context)!.customizeAppFeatures,
+                AppLocalizations.of(context).customizeAppFeatures,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   color: Colors.white70,
                 ),
@@ -458,12 +491,12 @@ class _SettingsScreenState extends State<SettingsScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppLocalizations.of(context)!.notificationSettings,
+            AppLocalizations.of(context).notificationSettings,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
           SwitchListTile(
-            title: Text(AppLocalizations.of(context)!.pushNotifications),
+            title: Text(AppLocalizations.of(context).pushNotifications),
             value: _pushNotifications,
             onChanged: _onPushNotificationsChanged,
           ),
@@ -511,12 +544,12 @@ class _SettingsScreenState extends State<SettingsScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppLocalizations.of(context)!.appearanceSettings,
+            AppLocalizations.of(context).appearanceSettings,
             style: Theme.of(context).textTheme.titleMedium,
           ),
           const SizedBox(height: 8),
           Text(
-            AppLocalizations.of(context)!.themeLanguageSettings,
+            AppLocalizations.of(context).themeLanguageSettings,
             style: Theme.of(context).textTheme.bodyMedium,
           ),
         ],
@@ -537,7 +570,7 @@ class _SettingsScreenState extends State<SettingsScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppLocalizations.of(context)!.dataManagement,
+            AppLocalizations.of(context).dataManagement,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ],
@@ -558,7 +591,7 @@ class _SettingsScreenState extends State<SettingsScreen>
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            AppLocalizations.of(context)!.aboutInfo,
+            AppLocalizations.of(context).aboutInfo,
             style: Theme.of(context).textTheme.titleMedium,
           ),
         ],
@@ -592,7 +625,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      AppLocalizations.of(context)!.perfectChadExperience,
+                      AppLocalizations.of(context).perfectChadExperience,
                       style: const TextStyle(
                         color: Colors.white70,
                         fontSize: 12,
@@ -690,7 +723,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                   const Icon(Icons.check_circle, color: Colors.white),
                   const SizedBox(width: 8),
                   Text(
-                    AppLocalizations.of(context)!.notificationPermissionGranted,
+                    AppLocalizations.of(context).notificationPermissionGranted,
                   ),
                 ],
               ),
@@ -713,19 +746,19 @@ class _SettingsScreenState extends State<SettingsScreen>
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(AppLocalizations.of(context)!.languageSettings),
+        title: Text(AppLocalizations.of(context).languageSettings),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(AppLocalizations.of(context)!.selectLanguage),
+            Text(AppLocalizations.of(context).selectLanguage),
             const SizedBox(height: 16),
             ListTile(
               leading: Text(
-                AppLocalizations.of(context)!.koreanFlag,
+                AppLocalizations.of(context).koreanFlag,
                 style: const TextStyle(fontSize: 24),
               ),
-              title: Text(AppLocalizations.of(context)!.korean),
-              subtitle: Text(AppLocalizations.of(context)!.koreanLanguage),
+              title: Text(AppLocalizations.of(context).korean),
+              subtitle: Text(AppLocalizations.of(context).koreanLanguage),
               trailing: _currentLocale.languageCode == 'ko'
                   ? const Icon(
                       Icons.check,
@@ -736,11 +769,11 @@ class _SettingsScreenState extends State<SettingsScreen>
             ),
             ListTile(
               leading: Text(
-                AppLocalizations.of(context)!.englishFlag,
+                AppLocalizations.of(context).englishFlag,
                 style: const TextStyle(fontSize: 24),
               ),
-              title: Text(AppLocalizations.of(context)!.englishLanguage),
-              subtitle: Text(AppLocalizations.of(context)!.english),
+              title: Text(AppLocalizations.of(context).englishLanguage),
+              subtitle: Text(AppLocalizations.of(context).english),
               trailing: _currentLocale.languageCode == 'en'
                   ? const Icon(
                       Icons.check,
@@ -754,7 +787,7 @@ class _SettingsScreenState extends State<SettingsScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text(AppLocalizations.of(context)!.cancel),
+            child: Text(AppLocalizations.of(context).cancel),
           ),
         ],
       ),
@@ -782,7 +815,7 @@ class _SettingsScreenState extends State<SettingsScreen>
           content: Text(
             AppLocalizations.of(
               context,
-            )!.languageChanged(LocaleService.getLocaleName(newLocale)),
+            ).languageChanged(LocaleService.getLocaleName(newLocale)),
           ),
           duration: const Duration(seconds: 2),
           backgroundColor: const Color(AppColors.primaryColor),
@@ -790,4 +823,112 @@ class _SettingsScreenState extends State<SettingsScreen>
       );
     }
   }
+
+  /// 구독 관리 카드 빌드
+  Widget _buildSubscriptionCard(BuildContext context, bool isDark) {
+    final statusText = _subscriptionService.getSubscriptionStatusText();
+    final isPremium = _subscriptionService.isPremium;
+    final shouldShowRenewal = _subscriptionService.shouldShowRenewalReminder();
+
+    return _buildSimpleSettingsCard(
+      context,
+      Icons.workspace_premium,
+      '구독 관리',
+      [
+        ListTile(
+          title: const Text('현재 구독'),
+          subtitle: Text(
+            statusText,
+            style: TextStyle(
+              color: isPremium ? Colors.green : Colors.grey,
+              fontWeight: isPremium ? FontWeight.w600 : FontWeight.normal,
+            ),
+          ),
+          trailing: isPremium
+              ? const Icon(Icons.verified, color: Colors.green)
+              : const Icon(Icons.chevron_right),
+          onTap: _navigateToSubscription,
+        ),
+        if (shouldShowRenewal)
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.orange.withOpacity(0.1),
+              borderRadius: BorderRadius.circular(8),
+              border: Border.all(color: Colors.orange.withOpacity(0.3)),
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.warning, color: Colors.orange, size: 20),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    '구독이 곧 만료됩니다. 갱신하시겠습니까?',
+                    style: TextStyle(
+                      color: Colors.orange[700],
+                      fontSize: 12,
+                    ),
+                  ),
+                ),
+                TextButton(
+                  onPressed: _navigateToSubscription,
+                  child: const Text('갱신'),
+                ),
+              ],
+            ),
+          ),
+        if (isPremium) ...[
+          const Divider(height: 1),
+          Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  '프리미엄 혜택',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                ..._subscriptionService.getSubscriptionBenefits().map(
+                  (benefit) => Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 2),
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.check_circle,
+                          color: Colors.green,
+                          size: 16,
+                        ),
+                        const SizedBox(width: 8),
+                        Expanded(
+                          child: Text(
+                            benefit,
+                            style: const TextStyle(fontSize: 12),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ] else ...[
+          const Divider(height: 1),
+          ListTile(
+            leading: const Icon(Icons.star, color: Colors.amber),
+            title: const Text('프리미엄으로 업그레이드'),
+            subtitle: const Text('모든 기능을 잠금 해제하세요'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: _navigateToSubscription,
+          ),
+        ],
+      ],
+    );
+  }
+
 }

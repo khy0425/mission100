@@ -1,32 +1,41 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'generated/app_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'utils/constants.dart';
 import 'screens/main_navigation_screen.dart';
-import 'screens/permission_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'services/theme_service.dart';
 import 'services/locale_service.dart';
 import 'services/notification_service.dart';
 import 'services/ad_service.dart';
-import 'services/permission_service.dart';
 import 'services/onboarding_service.dart';
 import 'services/chad_evolution_service.dart';
 import 'services/chad_image_service.dart';
+import 'services/chad_condition_service.dart';
+import 'services/chad_recovery_service.dart';
+import 'services/chad_active_recovery_service.dart';
 import 'services/achievement_service.dart';
 import 'services/database_service.dart';
 import 'services/challenge_service.dart';
-import 'screens/initial_test_screen.dart';
+import 'services/auth_service.dart';
+import 'services/cloud_sync_service.dart';
+import 'services/subscription_service.dart';
+import 'services/billing_service.dart';
 // MemoryManager import 제거됨
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+
   try {
+    // Firebase 초기화
+    await Firebase.initializeApp();
+    debugPrint('✅ Firebase 초기화 완료');
+
     // 화면 방향 고정 (세로) - 필수
     await SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
@@ -55,6 +64,48 @@ void main() async {
     await chadEvolutionService.initialize();
     debugPrint('✅ ChadEvolutionService 초기화 완료');
 
+    // Chad 관련 서비스들 초기화
+    final chadConditionService = ChadConditionService();
+    await chadConditionService.initialize();
+    debugPrint('✅ ChadConditionService 초기화 완료');
+
+    final chadRecoveryService = ChadRecoveryService();
+    await chadRecoveryService.initialize();
+    debugPrint('✅ ChadRecoveryService 초기화 완료');
+
+    final chadActiveRecoveryService = ChadActiveRecoveryService();
+    await chadActiveRecoveryService.initialize();
+    debugPrint('✅ ChadActiveRecoveryService 초기화 완료');
+
+    // Auth 서비스 초기화
+    final authService = AuthService();
+    await authService.initialize();
+    debugPrint('✅ AuthService 초기화 완료');
+
+    // CloudSync 서비스 초기화 (백그라운드에서)
+    final cloudSyncService = CloudSyncService();
+    unawaited(cloudSyncService.initialize().then((_) {
+      debugPrint('✅ CloudSyncService 초기화 완료');
+    }).catchError((e) {
+      debugPrint('❌ CloudSyncService 초기화 오류: $e');
+    }));
+
+    // 구독 서비스 초기화 (백그라운드에서)
+    final subscriptionService = SubscriptionService();
+    unawaited(subscriptionService.initialize().then((_) {
+      debugPrint('✅ SubscriptionService 초기화 완료');
+    }).catchError((e) {
+      debugPrint('❌ SubscriptionService 초기화 오류: $e');
+    }));
+
+    // 빌링 서비스 초기화 (백그라운드에서)
+    final billingService = BillingService();
+    unawaited(billingService.initialize().then((_) {
+      debugPrint('✅ BillingService 초기화 완료');
+    }).catchError((e) {
+      debugPrint('❌ BillingService 초기화 오류: $e');
+    }));
+
     debugPrint('🚀 앱 기본 초기화 완료 - 빠른 시작!');
 
     runApp(
@@ -64,6 +115,12 @@ void main() async {
           ChangeNotifierProvider.value(value: localeNotifier),
           ChangeNotifierProvider.value(value: onboardingService),
           ChangeNotifierProvider.value(value: chadEvolutionService),
+          ChangeNotifierProvider.value(value: chadConditionService),
+          ChangeNotifierProvider.value(value: chadRecoveryService),
+          ChangeNotifierProvider.value(value: chadActiveRecoveryService),
+          ChangeNotifierProvider.value(value: authService),
+          Provider.value(value: subscriptionService),
+          Provider.value(value: billingService),
         ],
         child: const MissionApp(),
       ),
@@ -121,7 +178,7 @@ void _initializeBackgroundServices() {
       .then((_) {
         debugPrint('✅ AdService 백그라운드 초기화 완료');
       })
-      .catchError((e) {
+      .catchError((Object e) {
         debugPrint('❌ AdService 초기화 오류: $e');
       });
 
@@ -131,7 +188,7 @@ void _initializeBackgroundServices() {
         await NotificationService.createNotificationChannels();
         debugPrint('✅ NotificationService 백그라운드 초기화 완료');
       })
-      .catchError((e) {
+      .catchError((Object e) {
         debugPrint('❌ NotificationService 초기화 오류: $e');
       });
 
@@ -141,7 +198,7 @@ void _initializeBackgroundServices() {
       .then((_) {
         debugPrint('✅ ChadImageService 백그라운드 초기화 완료');
       })
-      .catchError((e) {
+      .catchError((Object e) {
         debugPrint('❌ ChadImageService 초기화 오류: $e');
       });
 
@@ -155,7 +212,7 @@ void _initializeBackgroundServices() {
             '✅ 업적 서비스 백그라운드 초기화 완료 - 총 $totalCount개 업적, $unlockedCount개 잠금해제',
           );
         })
-        .catchError((e) {
+        .catchError((Object e) {
           debugPrint('❌ 업적 서비스 초기화 오류: $e');
         });
   });
@@ -167,7 +224,7 @@ void _initializeBackgroundServices() {
         .then((_) {
           debugPrint('✅ 챌린지 서비스 백그라운드 초기화 완료');
         })
-        .catchError((e) {
+        .catchError((Object e) {
           debugPrint('❌ 챌린지 서비스 초기화 오류: $e');
         });
   });
@@ -175,7 +232,7 @@ void _initializeBackgroundServices() {
   // Chad 이미지 프리로드 (더 늦게, 메모리 부담 줄이기)
   Future.delayed(const Duration(seconds: 2), () {
     final chadEvolutionService = ChadEvolutionService();
-    chadEvolutionService.preloadAllImages(targetSize: 150).catchError((e) {
+    chadEvolutionService.preloadAllImages(targetSize: 150).catchError((Object e) {
       debugPrint('Chad 이미지 프리로드 오류: $e');
     });
   });
@@ -494,10 +551,9 @@ class _SplashScreenState extends State<SplashScreen>
                   curve: const Interval(0.6, 1.0, curve: Curves.easeInOut),
                 ),
                 child: Text(
-                  AppLocalizations.of(context)!.appSlogan,
+                  AppLocalizations.of(context).appSlogan,
                   style: theme.textTheme.titleMedium?.copyWith(
-                    color: theme.textTheme.bodyLarge?.color?.withValues(
-                      alpha: 0.7,
+                    color: theme.textTheme.bodyLarge?.color?.withValues(alpha: 0.7,
                     ),
                   ),
                 ),
