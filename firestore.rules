@@ -1,0 +1,192 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================
+    // 공통 함수들
+    // ===============================================
+
+    // 인증된 사용자인지 확인
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // 해당 사용자 본인인지 확인
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
+    // 유효한 사용자 데이터인지 확인
+    function isValidUserData(data) {
+      return data.keys().hasAll(['userId', 'updatedAt']) &&
+             data.userId is string &&
+             data.updatedAt is timestamp;
+    }
+
+    // 데이터 크기 제한 (1MB)
+    function isValidSize(data) {
+      return request.resource.size < 1048576; // 1MB
+    }
+
+    // ===============================================
+    // 사용자 기본 정보
+    // ===============================================
+
+    match /users/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+
+      allow create: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       isValidUserData(request.resource.data) &&
+                       isValidSize(request.resource.data);
+
+      allow update: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       isValidUserData(request.resource.data) &&
+                       request.resource.data.userId == resource.data.userId;
+    }
+
+    // ===============================================
+    // 사용자 프로필
+    // ===============================================
+
+    match /userProfiles/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+
+      allow create: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       isValidUserData(request.resource.data);
+
+      allow update: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       request.resource.data.userId == resource.data.userId;
+    }
+
+    // ===============================================
+    // 구독 정보
+    // ===============================================
+
+    match /subscriptions/{subscriptionId} {
+      allow read: if isAuthenticated() &&
+                     isOwner(resource.data.userId);
+
+      // 구독 생성은 서버에서만 (결제 검증 후)
+      allow create: if false;
+
+      // 구독 업데이트도 서버에서만
+      allow update: if false;
+
+      // 취소는 사용자가 가능
+      allow update: if isAuthenticated() &&
+                       isOwner(resource.data.userId) &&
+                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'cancelledAt', 'cancellationReason', 'updatedAt']) &&
+                       request.resource.data.status == 'cancelled';
+    }
+
+    // ===============================================
+    // 운동 기록
+    // ===============================================
+
+    match /workoutRecords/{recordId} {
+      allow read, create, update: if isAuthenticated() &&
+                                     isOwner(resource.data.userId);
+
+      allow delete: if isAuthenticated() &&
+                       isOwner(resource.data.userId);
+
+      // 운동 기록 생성 시 필수 필드 확인
+      allow create: if isAuthenticated() &&
+                       isOwner(request.resource.data.userId) &&
+                       request.resource.data.keys().hasAll(['id', 'userId', 'date', 'week', 'day', 'exerciseType']) &&
+                       request.resource.data.week >= 1 && request.resource.data.week <= 14 &&
+                       request.resource.data.day >= 1 && request.resource.data.day <= 3;
+    }
+
+    // ===============================================
+    // 운동 진행 상황
+    // ===============================================
+
+    match /workoutProgress/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+
+      allow create: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       request.resource.data.userId == userId;
+
+      allow update: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       request.resource.data.userId == resource.data.userId;
+    }
+
+    // ===============================================
+    // 사용자 설정
+    // ===============================================
+
+    match /userSettings/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+
+      allow create: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       request.resource.data.userId == userId;
+
+      allow update: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       request.resource.data.userId == resource.data.userId;
+    }
+
+    // ===============================================
+    // 업적
+    // ===============================================
+
+    match /achievements/{achievementId} {
+      allow read: if isAuthenticated() &&
+                     isOwner(resource.data.userId);
+
+      // 업적 생성은 서버에서만 (무결성 보장)
+      allow create: if false;
+
+      // 진행도 업데이트만 허용
+      allow update: if isAuthenticated() &&
+                       isOwner(resource.data.userId) &&
+                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['progress', 'completed', 'completedAt']) &&
+                       request.resource.data.progress >= resource.data.progress; // 진행도는 감소 불가
+    }
+
+    // ===============================================
+    // Chad 진행 상황
+    // ===============================================
+
+    match /chadProgress/{userId} {
+      allow read, write: if isAuthenticated() && isOwner(userId);
+
+      allow create: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       request.resource.data.userId == userId;
+
+      allow update: if isAuthenticated() &&
+                       isOwner(userId) &&
+                       request.resource.data.userId == resource.data.userId &&
+                       // XP와 레벨이 감소하지 않도록 보장
+                       request.resource.data.experience >= resource.data.experience &&
+                       request.resource.data.currentLevel >= resource.data.currentLevel;
+    }
+
+    // ===============================================
+    // 앱 메타데이터 (읽기 전용)
+    // ===============================================
+
+    match /appMetadata/{document} {
+      allow read: if isAuthenticated();
+      allow write: if false; // 관리자만 수정 가능 (Firebase Admin SDK)
+    }
+
+    // ===============================================
+    // 기타 보안 규칙
+    // ===============================================
+
+    // 존재하지 않는 경로에 대한 기본 거부
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
