@@ -176,12 +176,12 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
       );
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
+        final data = jsonDecode(response.body) as Map<String, dynamic>;
 
         // 구독 상태 확인
-        final startTimeMillis = int.tryParse(data['startTimeMillis'] ?? '0') ?? 0;
-        final expiryTimeMillis = int.tryParse(data['expiryTimeMillis'] ?? '0') ?? 0;
-        final autoRenewing = data['autoRenewing'] ?? false;
+        final startTimeMillis = int.tryParse(data['startTimeMillis']?.toString() ?? '0') ?? 0;
+        final expiryTimeMillis = int.tryParse(data['expiryTimeMillis']?.toString() ?? '0') ?? 0;
+        final autoRenewing = data['autoRenewing'] as bool? ?? false;
 
         final now = DateTime.now().millisecondsSinceEpoch;
         final isActive = expiryTimeMillis > now || autoRenewing;
@@ -227,20 +227,20 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
       );
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        final status = data['status'];
+        final data = jsonDecode(response.body) as Map<String, dynamic>;
+        final status = data['status'] as int? ?? -1;
 
         if (status == 0) {
           // 검증 성공
-          final receipt = data['receipt'];
+          final receipt = data['receipt'] as Map<String, dynamic>? ?? {};
           final latestReceiptInfo = data['latest_receipt_info'];
 
           return VerificationResult(
             isValid: true,
-            transactionId: receipt['transaction_id'],
-            productId: receipt['product_id'],
+            transactionId: receipt['transaction_id']?.toString(),
+            productId: receipt['product_id']?.toString(),
             purchaseTime: DateTime.fromMillisecondsSinceEpoch(
-              int.parse(receipt['purchase_date_ms']),
+              int.tryParse(receipt['purchase_date_ms']?.toString() ?? '0') ?? 0,
             ),
           );
         } else if (status == 21007) {
@@ -294,13 +294,13 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
       );
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
+        final data = jsonDecode(response.body) as Map<String, dynamic>;
 
         return VerificationResult(
-          isValid: data['valid'] ?? false,
-          transactionId: data['transaction_id'],
-          productId: data['product_id'],
-          error: data['error'],
+          isValid: data['valid'] as bool? ?? false,
+          transactionId: data['transaction_id']?.toString(),
+          productId: data['product_id']?.toString(),
+          error: data['error']?.toString(),
         );
       } else {
         // 서버 검증 실패 시 기본 검증으로 폴백
@@ -347,8 +347,8 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
       );
 
       if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        return data['is_unique'] ?? false;
+        final data = jsonDecode(response.body) as Map<String, dynamic>;
+        return data['is_unique'] as bool? ?? false;
       }
 
       return false;
