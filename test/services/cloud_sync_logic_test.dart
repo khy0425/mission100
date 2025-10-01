@@ -260,8 +260,8 @@ void main() {
     group('Timestamp Parsing', () {
       test('should parse various timestamp formats correctly', () {
         // Given: 다양한 형태의 타임스탬프
-        final isoString = '2024-01-01T10:00:00Z';
-        final timestamp =
+        const isoString = '2024-01-01T10:00:00Z';
+        const timestamp =
             1704110400000; // 2024-01-01 10:00:00 UTC in milliseconds
 
         // When: 타임스탬프 파싱
@@ -283,8 +283,8 @@ void main() {
 
       test('should handle invalid timestamp gracefully', () {
         // Given: 잘못된 타임스탬프
-        final invalidString = 'invalid-date';
-        final invalidNumber = -1;
+        const invalidString = 'invalid-date';
+        const invalidNumber = -1;
 
         // When: 잘못된 타임스탬프 파싱
         final parsedInvalidString = _parseTimestamp(invalidString);

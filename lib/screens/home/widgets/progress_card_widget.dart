@@ -52,9 +52,9 @@ class ProgressCardWidget extends StatelessWidget {
   Widget _buildHeader(BuildContext context, ThemeData theme) {
     return Row(
       children: [
-        Icon(
+        const Icon(
           Icons.trending_up,
-          color: const Color(AppColors.primaryColor),
+          color: Color(AppColors.primaryColor),
           size: 24,
         ),
         const SizedBox(width: AppConstants.paddingS),
@@ -237,7 +237,7 @@ class ProgressCardWidget extends StatelessWidget {
       children: [
         Text(
           Localizations.localeOf(context).languageCode == 'ko'
-              ? '이번 주 (${currentWeek}주차)'
+              ? '이번 주 ($currentWeek주차)'
               : 'This Week (Week $currentWeek)',
           style: theme.textTheme.bodyMedium?.copyWith(
             fontWeight: FontWeight.w600,

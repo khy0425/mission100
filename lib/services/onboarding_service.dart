@@ -400,9 +400,4 @@ class OnboardingService extends ChangeNotifier {
 
   /// 남은 스텝 수
   int get remainingSteps => _steps.length - _progress.currentStepIndex;
-
-  @override
-  void dispose() {
-    super.dispose();
-  }
 }

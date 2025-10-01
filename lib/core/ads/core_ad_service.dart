@@ -29,7 +29,7 @@ class CoreAdService {
     await MobileAds.instance.initialize();
 
     // 요청 설정
-    RequestConfiguration configuration = RequestConfiguration(
+    final RequestConfiguration configuration = RequestConfiguration(
       testDeviceIds: kDebugMode ? config.testDeviceIds : [],
     );
     MobileAds.instance.updateRequestConfiguration(configuration);

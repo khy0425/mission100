@@ -219,29 +219,30 @@ class AdaptiveRecoveryService extends ChangeNotifier {
         case FitnessGoal.weightLoss:
           exercises.addAll([
             RecoveryExercise.lightBurpee(reps: 10),
-            RecoveryExercise.stretching(duration: Duration(minutes: 5)),
+            RecoveryExercise.stretching(duration: const Duration(minutes: 5)),
           ]);
           break;
         case FitnessGoal.muscleGain:
           exercises.addAll([
-            RecoveryExercise.mobilityWork(duration: Duration(minutes: 10)),
+            RecoveryExercise.mobilityWork(
+                duration: const Duration(minutes: 10)),
             RecoveryExercise.lightPushup(reps: 5),
           ]);
           break;
         default:
-          exercises
-              .add(RecoveryExercise.walking(duration: Duration(minutes: 15)));
+          exercises.add(
+              RecoveryExercise.walking(duration: const Duration(minutes: 15)));
       }
     } else if (status.score >= 40) {
       // 보통 컨디션 → 스트레칭 중심
       exercises.addAll([
-        RecoveryExercise.deepBreathing(duration: Duration(minutes: 3)),
-        RecoveryExercise.stretching(duration: Duration(minutes: 8)),
+        RecoveryExercise.deepBreathing(duration: const Duration(minutes: 3)),
+        RecoveryExercise.stretching(duration: const Duration(minutes: 8)),
       ]);
     } else {
       // 낮은 컨디션 → 완전 휴식 + 마음챙김
       exercises.add(
-        RecoveryExercise.meditation(duration: Duration(minutes: 5)),
+        RecoveryExercise.meditation(duration: const Duration(minutes: 5)),
       );
     }
 

@@ -668,8 +668,6 @@ class _OnboardingPageTemplate extends StatelessWidget {
     required this.step,
     required this.body,
     required this.onNext,
-    this.onPrevious,
-    this.canProceed = true,
   });
 
   @override

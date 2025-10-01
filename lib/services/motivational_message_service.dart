@@ -299,11 +299,11 @@ class MotivationalMessageService {
       );
     }
 
-    int totalWeight = messages.fold(0, (sum, msg) => sum + msg.weight);
-    int randomValue = _random.nextInt(totalWeight);
+    final int totalWeight = messages.fold(0, (sum, msg) => sum + msg.weight);
+    final int randomValue = _random.nextInt(totalWeight);
 
     int currentWeight = 0;
-    for (var message in messages) {
+    for (final message in messages) {
       currentWeight += message.weight;
       if (randomValue < currentWeight) {
         return message;
@@ -444,8 +444,8 @@ class MotivationalMessageService {
   /// 카테고리별 메시지 개수 가져오기 (테스트용)
   @visibleForTesting
   Map<MessageCategory, int> getMessageCountByCategory() {
-    Map<MessageCategory, int> counts = {};
-    for (var category in MessageCategory.values) {
+    final Map<MessageCategory, int> counts = {};
+    for (final category in MessageCategory.values) {
       counts[category] = _getMessagesByCategory(category).length;
     }
     return counts;

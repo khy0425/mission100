@@ -144,8 +144,8 @@ class MemoryOptimizer {
       // 플랫폼별 시스템 메모리 정보
       int totalPhysical = 0;
       int freePhysical = 0;
-      int appHeapUsage = 0;
-      int appHeapMax = 100 * 1024 * 1024; // 100MB 기본값
+      const int appHeapUsage = 0;
+      const int appHeapMax = 100 * 1024 * 1024; // 100MB 기본값
 
       if (Platform.isAndroid || Platform.isIOS) {
         // 모바일 플랫폼에서는 대략적인 값 사용

@@ -135,7 +135,7 @@ void main() {
       test('should simulate logout flow', () async {
         // Given: 로그인된 사용자
         final mockUser = _createMockUser('test_user_123', 'test@example.com');
-        var currentUser = mockUser;
+        final currentUser = mockUser;
 
         // When: 로그아웃 시뮬레이션
         final result = await _simulateLogout(currentUser);
@@ -400,11 +400,12 @@ bool _validatePassword(String password) {
 
 bool _validatePasswordComplexity(String password) {
   if (password.length < 8) return false;
-  if (!RegExp(r'[A-Z]').hasMatch(password)) return false; // 대문자
-  if (!RegExp(r'[a-z]').hasMatch(password)) return false; // 소문자
-  if (!RegExp(r'[0-9]').hasMatch(password)) return false; // 숫자
-  if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(password))
+  if (!RegExp('[A-Z]').hasMatch(password)) return false; // 대문자
+  if (!RegExp('[a-z]').hasMatch(password)) return false; // 소문자
+  if (!RegExp('[0-9]').hasMatch(password)) return false; // 숫자
+  if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(password)) {
     return false; // 특수문자
+  }
   return true;
 }
 
@@ -518,7 +519,7 @@ Future<Map<String, dynamic>> _simulateLogout(
 Map<String, dynamic> _simulateAuthError(
     String email, String password, String errorType) {
   String errorMessage;
-  String errorCode = errorType;
+  final String errorCode = errorType;
 
   switch (errorType) {
     case 'invalid_email':

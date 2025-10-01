@@ -1008,7 +1008,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   SizedBox(width: 8),
                   Text(
                     'Chad 진화 단계',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFFFFD43B),

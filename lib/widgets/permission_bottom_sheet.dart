@@ -221,7 +221,7 @@ class PermissionBottomSheet extends StatelessWidget {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       isDismissible: false,
-      builder: (context) => PermissionBottomSheet(
+      builder: (context) => const PermissionBottomSheet(
         permission: Permission.notification,
         title: '🔔 알림 허용',
         description: '운동 알림을 받기 위해 알림 권한이 필요합니다.',
@@ -237,7 +237,7 @@ class PermissionBottomSheet extends StatelessWidget {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       isDismissible: false,
-      builder: (context) => PermissionBottomSheet(
+      builder: (context) => const PermissionBottomSheet(
         permission: Permission.storage,
         title: '💾 백업 기능',
         description: '운동 데이터를 안전하게 백업하기 위해 저장소 접근이 필요합니다.',
@@ -253,7 +253,7 @@ class PermissionBottomSheet extends StatelessWidget {
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       isDismissible: false,
-      builder: (context) => PermissionBottomSheet(
+      builder: (context) => const PermissionBottomSheet(
         permission: Permission.storage,
         title: '📁 저장소 접근',
         description: '운동 데이터 백업/복원을 위해 저장소 접근 권한이 필요합니다.',
@@ -275,7 +275,7 @@ class PermissionRequestStorage {
   }) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final permissionKey = '${_keyPrefix}${permission.toString()}';
+      final permissionKey = '$_keyPrefix${permission.toString()}';
 
       final requestData = {
         'granted': granted,
@@ -300,7 +300,7 @@ class PermissionRequestStorage {
   ) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final permissionKey = '${_keyPrefix}${permission.toString()}';
+      final permissionKey = '$_keyPrefix${permission.toString()}';
       final requestDataString = prefs.getString(permissionKey);
 
       if (requestDataString != null) {
@@ -347,7 +347,7 @@ class PermissionRequestStorage {
   static Future<void> clearPermissionRequest(Permission permission) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final permissionKey = '${_keyPrefix}${permission.toString()}';
+      final permissionKey = '$_keyPrefix${permission.toString()}';
       await prefs.remove(permissionKey);
 
       debugPrint('🔐 권한 요청 기록 삭제됨: ${permission.toString()}');

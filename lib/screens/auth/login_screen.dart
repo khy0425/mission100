@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../services/auth_service.dart';
 import '../../utils/constants.dart';
-import '../../generated/app_localizations.dart';
 import 'signup_screen.dart';
 import '../permission_screen.dart';
 
@@ -149,10 +148,10 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 // 로고 및 환영 메시지
                 const SizedBox(height: 40),
-                Icon(
+                const Icon(
                   Icons.fitness_center,
                   size: 80,
-                  color: const Color(AppColors.primaryColor),
+                  color: Color(AppColors.primaryColor),
                 ),
                 const SizedBox(height: 24),
                 Text(
@@ -238,10 +237,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: _isLoading ? null : _handleForgotPassword,
-                    child: Text(
+                    child: const Text(
                       '비밀번호를 잊으셨나요?',
                       style: TextStyle(
-                        color: const Color(AppColors.primaryColor),
+                        color: Color(AppColors.primaryColor),
                       ),
                     ),
                   ),
@@ -337,10 +336,10 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               );
                             },
-                      child: Text(
+                      child: const Text(
                         '회원가입',
                         style: TextStyle(
-                          color: const Color(AppColors.primaryColor),
+                          color: Color(AppColors.primaryColor),
                           fontWeight: FontWeight.bold,
                         ),
                       ),

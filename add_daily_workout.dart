@@ -5,7 +5,7 @@ void main() {
   var content = file.readAsStringSync();
 
   // DailyWorkout 클래스 추가
-  final dailyWorkoutClass = '''
+  const dailyWorkoutClass = '''
 
 /// 일일 워크아웃 정보
 class DailyWorkout {

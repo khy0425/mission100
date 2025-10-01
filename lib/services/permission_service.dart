@@ -141,25 +141,24 @@ class PermissionService {
                   Text(
                     AppLocalizations.of(
                       context,
-                    )!
-                        .notificationPermissionRequired,
+                    ).notificationPermissionRequired,
                     style: const TextStyle(fontSize: 16),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Row(
                     children: [
-                      Icon(Icons.schedule, color: Colors.blue, size: 20),
-                      SizedBox(width: 8),
+                      const Icon(Icons.schedule, color: Colors.blue, size: 20),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
                           AppLocalizations.of(context).dailyWorkoutReminder,
-                          style: TextStyle(fontSize: 14),
+                          style: const TextStyle(fontSize: 14),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 8),
-                  Row(
+                  const SizedBox(height: 8),
+                  const Row(
                     children: [
                       Icon(Icons.emoji_events, color: Colors.amber, size: 20),
                       SizedBox(width: 8),
@@ -171,8 +170,8 @@ class PermissionService {
                       ),
                     ],
                   ),
-                  SizedBox(height: 8),
-                  Row(
+                  const SizedBox(height: 8),
+                  const Row(
                     children: [
                       Icon(
                         Icons.local_fire_department,
@@ -424,7 +423,7 @@ class PermissionService {
                   Localizations.localeOf(context).languageCode == 'ko'
                       ? '취소'
                       : 'Cancel',
-                  style: TextStyle(color: Colors.grey),
+                  style: const TextStyle(color: Colors.grey),
                 ),
               ),
               ElevatedButton(

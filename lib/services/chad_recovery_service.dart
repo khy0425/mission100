@@ -96,16 +96,16 @@ class ChadRecoveryService extends ChangeNotifier {
   Future<void> _calculateRecoveryScore() async {
     try {
       // 1. 기본 점수 (75점에서 시작)
-      double baseScore = 75.0;
+      const double baseScore = 75.0;
 
       // 2. RPE 기반 점수 조정 (50% 가중치)
-      double rpeScore = _calculateRPEScore();
+      final double rpeScore = _calculateRPEScore();
 
       // 3. 컨디션 기반 점수 조정 (30% 가중치)
-      double conditionScore = await _calculateConditionScore();
+      final double conditionScore = await _calculateConditionScore();
 
       // 4. 개인화 점수 조정 (20% 가중치)
-      double personalizedScore = _calculatePersonalizedScore();
+      final double personalizedScore = _calculatePersonalizedScore();
 
       // 5. 최종 점수 계산
       _recoveryScore =
@@ -237,39 +237,39 @@ class ChadRecoveryService extends ChangeNotifier {
     final level = _personalizedData['fitness_level'] as String?;
 
     String baseMessage =
-        "Chad가 분석한 회복 점수: $_recoveryScore점! ${_recoveryLevel.emoji}\n";
+        'Chad가 분석한 회복 점수: $_recoveryScore점! ${_recoveryLevel.emoji}\n';
 
     // 회복 레벨별 Chad 메시지
     switch (_recoveryLevel) {
       case RecoveryLevel.excellent:
-        baseMessage += "완벽한 컨디션이야! Beast Mode 가보자! 🔥";
+        baseMessage += '완벽한 컨디션이야! Beast Mode 가보자! 🔥';
         break;
       case RecoveryLevel.good:
-        baseMessage += "좋은 상태네! Chad와 오늘도 화이팅! 💪";
+        baseMessage += '좋은 상태네! Chad와 오늘도 화이팅! 💪';
         break;
       case RecoveryLevel.fair:
-        baseMessage += "괜찮은 상태야! 무리하지 말고 적당히 가자! 😊";
+        baseMessage += '괜찮은 상태야! 무리하지 말고 적당히 가자! 😊';
         break;
       case RecoveryLevel.poor:
-        baseMessage += "휴식이 필요해 보여! Chad 액티브 리커버리 어때? 🧘‍♂️";
+        baseMessage += '휴식이 필요해 보여! Chad 액티브 리커버리 어때? 🧘‍♂️';
         break;
     }
 
     // 목표별 개인화 메시지 추가
     if (goal != null) {
-      baseMessage += "\n";
+      baseMessage += '\n';
       switch (goal) {
         case 'weightLoss':
-          baseMessage += "체중감량 목표! Chad가 칼로리 소모 최적화해줄게!";
+          baseMessage += '체중감량 목표! Chad가 칼로리 소모 최적화해줄게!';
           break;
         case 'muscleGain':
-          baseMessage += "근육 증가 목표! Chad가 회복 시간도 고려해줄게!";
+          baseMessage += '근육 증가 목표! Chad가 회복 시간도 고려해줄게!';
           break;
         case 'endurance':
-          baseMessage += "지구력 향상 목표! Chad가 지속가능한 강도로 갈게!";
+          baseMessage += '지구력 향상 목표! Chad가 지속가능한 강도로 갈게!';
           break;
         case 'general':
-          baseMessage += "건강 관리 목표! Chad가 균형 잡힌 운동 추천해줄게!";
+          baseMessage += '건강 관리 목표! Chad가 균형 잡힌 운동 추천해줄게!';
           break;
       }
     }
@@ -281,13 +281,13 @@ class ChadRecoveryService extends ChangeNotifier {
   String getChadImageForRecovery() {
     switch (_recoveryLevel) {
       case RecoveryLevel.excellent:
-        return "assets/images/기본차드.jpg"; // Beast Chad
+        return 'assets/images/기본차드.jpg'; // Beast Chad
       case RecoveryLevel.good:
-        return "assets/images/기본차드.jpg"; // Cool Chad
+        return 'assets/images/기본차드.jpg'; // Cool Chad
       case RecoveryLevel.fair:
-        return "assets/images/기본차드.jpg"; // Normal Chad
+        return 'assets/images/기본차드.jpg'; // Normal Chad
       case RecoveryLevel.poor:
-        return "assets/images/기본차드.jpg"; // Rest Chad
+        return 'assets/images/기본차드.jpg'; // Rest Chad
     }
   }
 
@@ -297,21 +297,21 @@ class ChadRecoveryService extends ChangeNotifier {
       case RecoveryLevel.excellent:
         return WorkoutAdjustment.increase(
           intensity: 1.15,
-          reason: "Chad 분석: 최고 컨디션! 강도 업그레이드 🚀",
+          reason: 'Chad 분석: 최고 컨디션! 강도 업그레이드 🚀',
         );
       case RecoveryLevel.good:
         return WorkoutAdjustment.maintain(
-          reason: "Chad 분석: 좋은 상태! 현재 강도 유지 💪",
+          reason: 'Chad 분석: 좋은 상태! 현재 강도 유지 💪',
         );
       case RecoveryLevel.fair:
         return WorkoutAdjustment.decrease(
           intensity: 0.9,
-          reason: "Chad 분석: 무리하지 말고 적당히 😊",
+          reason: 'Chad 분석: 무리하지 말고 적당히 😊',
         );
       case RecoveryLevel.poor:
         return WorkoutAdjustment.decrease(
           intensity: 0.7,
-          reason: "Chad 분석: 휴식이 필요해! 가벼운 운동 🧘‍♂️",
+          reason: 'Chad 분석: 휴식이 필요해! 가벼운 운동 🧘‍♂️',
         );
     }
   }

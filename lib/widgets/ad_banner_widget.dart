@@ -21,8 +21,8 @@ class AdBannerWidget extends StatefulWidget {
 
 class _AdBannerWidgetState extends State<AdBannerWidget> {
   BannerAd? _bannerAd;
-  bool _isAdLoaded = false;
-  bool _hasError = false;
+  final bool _isAdLoaded = false;
+  final bool _hasError = false;
 
   @override
   void initState() {

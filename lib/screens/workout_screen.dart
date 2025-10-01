@@ -5,18 +5,8 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
-import '../models/user_profile.dart';
-import '../services/workout_program_service.dart';
-import '../services/workout_history_service.dart';
-import '../models/workout_history.dart';
-import '../services/achievement_service.dart';
 import '../models/achievement.dart';
-import '../services/social_share_service.dart';
-import '../services/motivational_message_service.dart';
-import '../services/streak_service.dart';
 import '../widgets/ad_banner_widget.dart';
-import '../services/notification_service.dart';
-import '../models/workout_session.dart';
 import '../widgets/multiple_achievements_dialog.dart';
 // 분리된 위젯들 import
 import 'workout/widgets/workout_header_widget.dart';
@@ -57,10 +47,10 @@ class _WorkoutScreenState extends State<WorkoutScreen>
   DateTime? _workoutStartTime;
 
   // 업적 관련
-  List<Achievement> _newlyUnlockedAchievements = [];
+  final List<Achievement> _newlyUnlockedAchievements = [];
 
   // 챌린지 관련
-  List<dynamic> _completedChallenges = [];
+  final List<dynamic> _completedChallenges = [];
 
   // 워크아웃 완료 결과
   int _xpGained = 0;
@@ -226,7 +216,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       // 프로그램 진행률 및 내일 휴식일 정보 가져오기
       final prefs = await SharedPreferences.getInstance();
       final completedWorkouts = prefs.getStringList('completed_workouts') ?? [];
-      final totalDays = 84; // 12주 * 7일
+      const totalDays = 84; // 12주 * 7일
       final progressPercentage =
           (completedWorkouts.length / totalDays * 100).round();
 
@@ -263,18 +253,18 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         barrierDismissible: false,
         builder: (context) {
           return AlertDialog(
-            title: Row(
+            title: const Row(
               children: [
-                const Icon(
+                Icon(
                   Icons.local_fire_department,
                   color: Colors.red,
                   size: 28,
                 ),
-                const SizedBox(width: 8),
+                SizedBox(width: 8),
                 Expanded(
                   child: Text(
                     '💀 WORKOUT DESTROYED! 💀',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
                     ),
@@ -286,9 +276,9 @@ class _WorkoutScreenState extends State<WorkoutScreen>
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Text(
+                  const Text(
                     '🔥 FXXK YEAH! 오늘의 운동 완전 파괴! 만삣삐! 💪',
-                    style: const TextStyle(
+                    style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
@@ -340,7 +330,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                                   ),
                                 ),
                                 Text(
-                                  '+${_xpGained} XP',
+                                  '+$_xpGained XP',
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
@@ -360,7 +350,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                                   ),
                                 ),
                                 Text(
-                                  '${minutes}분 ${seconds}초',
+                                  '$minutes분 $seconds초',
                                   style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16,
@@ -399,7 +389,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                         LinearProgressIndicator(
                           value: progressPercentage / 100,
                           backgroundColor: Colors.grey[300],
-                          valueColor: AlwaysStoppedAnimation<Color>(
+                          valueColor: const AlwaysStoppedAnimation<Color>(
                             Colors.green,
                           ),
                         ),
@@ -551,7 +541,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                                   color: Colors.amber,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: Text(
+                                child: const Text(
                                   '✨ 모든 업적 보기',
                                   style: TextStyle(
                                     fontSize: 10,

@@ -1,6 +1,5 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'locale_service.dart';
 
 /// Claude AI 기반 다국어 콘텐츠 서비스
 /// 과학적 사실 카드와 레벨별 동기부여 메시지를 제공

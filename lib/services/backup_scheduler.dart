@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -161,7 +160,7 @@ class BackupScheduler {
     final failureCount = (prefs.getInt(_backupFailureCountKey) ?? 0) + 1;
     await prefs.setInt(_backupFailureCountKey, failureCount);
 
-    debugPrint('❌ 백업 실패 (${failureCount}회): $error');
+    debugPrint('❌ 백업 실패 ($failureCount회): $error');
 
     // 실패 알림
     await _showBackupNotification(
@@ -195,7 +194,7 @@ class BackupScheduler {
 
     // 실제 구현에서는 파일 시스템에서 오래된 백업 파일들을 삭제
     // 현재는 로그만 출력
-    debugPrint('🗂️ 백업 보존 정책 적용: 최대 ${retentionCount}개 보관');
+    debugPrint('🗂️ 백업 보존 정책 적용: 최대 $retentionCount개 보관');
   }
 
   /// 다음 백업 시간 계산

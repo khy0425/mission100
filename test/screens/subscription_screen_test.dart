@@ -10,7 +10,7 @@ void main() {
         (WidgetTester tester) async {
       // SubscriptionScreen이 정상적으로 빌드되는지 테스트
       await tester.pumpWidget(
-        MaterialApp(
+        const MaterialApp(
           home: SubscriptionScreen(),
         ),
       );
@@ -76,7 +76,7 @@ void main() {
         (WidgetTester tester) async {
       // 프리미엄 제한 안내 위젯이 올바르게 표시되는지 테스트
       await tester.pumpWidget(
-        MaterialApp(
+        const MaterialApp(
           home: Scaffold(
             body: PremiumLimitWidget(
               limitMessage: '무료 사용자는 하루 3회만 운동할 수 있습니다.',
@@ -103,13 +103,13 @@ void main() {
                 onPressed: () {
                   showDialog(
                     context: context,
-                    builder: (context) => PremiumUpgradeDialog(
+                    builder: (context) => const PremiumUpgradeDialog(
                       featureName: '무제한 운동',
                       requiredFeature: PremiumFeature.unlimitedWorkouts,
                     ),
                   );
                 },
-                child: Text('Show Dialog'),
+                child: const Text('Show Dialog'),
               ),
             ),
           ),

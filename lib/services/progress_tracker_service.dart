@@ -50,7 +50,7 @@ class ProgressTrackerService {
                   0,
                   (sum, reps) => sum + reps,
                 ),
-                completedReps: daySession.completedReps?.fold<int>(
+                completedReps: daySession.completedReps.fold<int>(
                       0,
                       (sum, reps) => sum + reps,
                     ) ??
@@ -98,7 +98,7 @@ class ProgressTrackerService {
         }
 
         debugPrint(
-          '✅ ${week}주차 상태: ${weekProgress.completedDays}/3일 완료 (완료: ${weekProgress.isWeekCompleted})',
+          '✅ $week주차 상태: ${weekProgress.completedDays}/3일 완료 (완료: ${weekProgress.isWeekCompleted})',
         );
       }
 
@@ -106,7 +106,7 @@ class ProgressTrackerService {
       final consecutiveDays = await _calculateConsecutiveDays(allSessions);
 
       // 전체 완료율 계산
-      final totalPossibleWorkouts = 18; // 6주 * 3일
+      const totalPossibleWorkouts = 18; // 6주 * 3일
       final completionRate = totalWorkouts / totalPossibleWorkouts;
 
       final progress = Progress(
@@ -120,7 +120,7 @@ class ProgressTrackerService {
       );
 
       debugPrint(
-        '📈 진행 상황 계산 완료: ${currentWeek}주차 ${currentDay}일차 (${(completionRate * 100).toInt()}% 완료)',
+        '📈 진행 상황 계산 완료: $currentWeek주차 $currentDay일차 (${(completionRate * 100).toInt()}% 완료)',
       );
 
       return progress;
@@ -133,7 +133,7 @@ class ProgressTrackerService {
   /// 주차 완료 상태 강제 업데이트 (디버깅/수정용)
   Future<void> forceUpdateWeekStatus(int week) async {
     try {
-      debugPrint('🔧 ${week}주차 상태 강제 업데이트 시작...');
+      debugPrint('🔧 $week주차 상태 강제 업데이트 시작...');
 
       final weekSessions = await _databaseService.getWorkoutSessionsByWeek(
         week,
@@ -141,12 +141,12 @@ class ProgressTrackerService {
       final completedSessions =
           weekSessions.where((session) => session.isCompleted).toList();
 
-      debugPrint('📊 ${week}주차: ${completedSessions.length}/3개 세션 완료');
+      debugPrint('📊 $week주차: ${completedSessions.length}/3개 세션 완료');
 
       if (completedSessions.length >= 3) {
-        debugPrint('✅ ${week}주차가 완료되었습니다!');
+        debugPrint('✅ $week주차가 완료되었습니다!');
       } else {
-        debugPrint('⏸️ ${week}주차가 아직 미완료입니다 (${completedSessions.length}/3)');
+        debugPrint('⏸️ $week주차가 아직 미완료입니다 (${completedSessions.length}/3)');
       }
     } catch (e) {
       debugPrint('❌ 주차 상태 업데이트 오류: $e');
@@ -195,7 +195,7 @@ class ProgressTrackerService {
       }
     }
 
-    debugPrint('🔥 연속 운동일: ${consecutiveDays}일');
+    debugPrint('🔥 연속 운동일: $consecutiveDays일');
     return consecutiveDays;
   }
 
@@ -235,7 +235,7 @@ class ProgressTrackerService {
             .toList(),
       };
 
-      debugPrint('📋 ${week}주차 상세 정보: ${completedSessions.length}/3 완료');
+      debugPrint('📋 $week주차 상세 정보: ${completedSessions.length}/3 완료');
       return details;
     } catch (e) {
       debugPrint('❌ 주차 상세 정보 가져오기 오류: $e');
@@ -260,20 +260,20 @@ class ProgressTrackerService {
         if (weekProgress != null) {
           if (weekProgress.completedDays != weekProgress.completedDays) {
             issues.add(
-              '${week}주차: completedDays(${weekProgress.completedDays})와 completedDays(${weekProgress.completedDays}) 불일치',
+              '$week주차: completedDays(${weekProgress.completedDays})와 completedDays(${weekProgress.completedDays}) 불일치',
             );
-            recommendations.add('${week}주차 데이터 재계산 필요');
+            recommendations.add('$week주차 데이터 재계산 필요');
           }
 
           if (weekProgress.dailyProgress.length != 3) {
             issues.add(
-              '${week}주차: 일일 진행 상황 개수가 3개가 아님 (${weekProgress.dailyProgress.length}개)',
+              '$week주차: 일일 진행 상황 개수가 3개가 아님 (${weekProgress.dailyProgress.length}개)',
             );
-            recommendations.add('${week}주차 일일 진행 상황 재생성 필요');
+            recommendations.add('$week주차 일일 진행 상황 재생성 필요');
           }
         } else {
-          issues.add('${week}주차: 주차 진행 상황 데이터 없음');
-          recommendations.add('${week}주차 데이터 생성 필요');
+          issues.add('$week주차: 주차 진행 상황 데이터 없음');
+          recommendations.add('$week주차 데이터 생성 필요');
         }
       }
 

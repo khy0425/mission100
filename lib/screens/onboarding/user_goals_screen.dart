@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../../services/auth_service.dart';
 import '../../utils/constants.dart';
-import '../../generated/app_localizations.dart';
 import '../auth/login_screen.dart';
 import '../permission_screen.dart';
 
@@ -26,7 +23,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
   double? _targetWeight;
   FitnessLevel? _fitnessLevel;
   FitnessGoal? _fitnessGoal;
-  List<String> _workoutTimes = [];
+  final List<String> _workoutTimes = [];
   bool _likesCompetition = false;
 
   @override
@@ -378,7 +375,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                 ),
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -471,7 +468,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                 ),
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );
@@ -545,7 +542,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                 ),
               ),
             );
-          }).toList(),
+          }),
         ],
       ),
     );

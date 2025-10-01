@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:typed_data';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:crypto/crypto.dart';
@@ -23,7 +22,7 @@ class ApiKeyManager {
       final prefs = await SharedPreferences.getInstance();
 
       // 솔트 생성 또는 가져오기
-      String salt = prefs.getString(_saltKey) ?? _generateSalt();
+      final String salt = prefs.getString(_saltKey) ?? _generateSalt();
       if (!prefs.containsKey(_saltKey)) {
         await prefs.setString(_saltKey, salt);
       }

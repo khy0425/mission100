@@ -52,6 +52,7 @@ app.*.map.json
 *.md
 !README.md
 !CHANGELOG.md
+!assets/legal/*.md
 fix_*.dart
 analyze_*.dart
 apply_*.dart

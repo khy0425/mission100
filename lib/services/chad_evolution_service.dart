@@ -1,10 +1,8 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../models/chad_evolution.dart';
 import '../models/progress.dart';
 import '../services/notification_service.dart';
-import '../services/progress_tracker_service.dart';
 import 'chad_image_service.dart';
 import 'package:flutter/material.dart';
 import '../widgets/level_up_dialog.dart';
@@ -307,7 +305,7 @@ class ChadEvolutionService extends ChangeNotifier {
         if (weeksLeft == 1) {
           await NotificationService.showChadEvolutionPreview(
             nextChad.name,
-            '${weeksLeft}주 남음',
+            '$weeksLeft주 남음',
           );
         }
       }
@@ -342,7 +340,7 @@ class ChadEvolutionService extends ChangeNotifier {
         // 3일 남았을 때 격려 알림
         if (daysLeft == 3) {
           await NotificationService.showChadEvolutionEncouragement(
-            '${currentChad.name}에서 ${nextChad.name}까지 ${daysLeft}일 남음! 화이팅!',
+            '${currentChad.name}에서 ${nextChad.name}까지 $daysLeft일 남음! 화이팅!',
           );
         }
       }
@@ -703,11 +701,6 @@ class ChadEvolutionService extends ChangeNotifier {
   /// 메모리 압박 시 이미지 캐시 정리
   void onMemoryPressure() {
     ChadImageService().onMemoryPressure();
-  }
-
-  @override
-  void dispose() {
-    super.dispose();
   }
 
   /// 전역 컨텍스트 설정 (레벨업 다이얼로그 표시용)

@@ -95,13 +95,13 @@ class _PushupTutorialDetailScreenState
     final adHeight = isSmallScreen ? 50.0 : 60.0;
 
     return Scaffold(
-      backgroundColor: Color(0xFF0D0D0D),
+      backgroundColor: const Color(0xFF0D0D0D),
       appBar: AppBar(
-        backgroundColor: Color(0xFF0D0D0D),
+        backgroundColor: const Color(0xFF0D0D0D),
         foregroundColor: Colors.white,
         title: Text(
           _getPushupName(widget.pushupType),
-          style: TextStyle(fontSize: 18),
+          style: const TextStyle(fontSize: 18),
         ),
         centerTitle: true,
       ),
@@ -115,7 +115,7 @@ class _PushupTutorialDetailScreenState
             child: SafeArea(
               bottom: false, // 하단은 배너 광고 때문에 SafeArea 제외
               child: SingleChildScrollView(
-                padding: EdgeInsets.all(16),
+                padding: const EdgeInsets.all(16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -134,7 +134,7 @@ class _PushupTutorialDetailScreenState
                           : AppLocalizations.of(context).chadDescription,
                       _getPushupDescription(widget.pushupType),
                       Icons.fitness_center,
-                      Color(0xFF51CF66),
+                      const Color(0xFF51CF66),
                     ),
 
                     // 차드의 조언 섹션
@@ -144,7 +144,7 @@ class _PushupTutorialDetailScreenState
                           : AppLocalizations.of(context).chadAdvice,
                       _getChadMotivation(widget.pushupType),
                       Icons.psychology,
-                      Color(0xFFFFD43B),
+                      const Color(0xFFFFD43B),
                     ),
 
                     // 가이드 완료 버튼
@@ -168,11 +168,11 @@ class _PushupTutorialDetailScreenState
   Widget _buildVideoSection() {
     return Container(
       height: 220,
-      margin: EdgeInsets.all(16),
+      margin: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Color(0xFF1A1A1A),
+        color: const Color(0xFF1A1A1A),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Color(0xFF4DABF7), width: 2),
+        border: Border.all(color: const Color(0xFF4DABF7), width: 2),
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(10),
@@ -180,7 +180,7 @@ class _PushupTutorialDetailScreenState
           player: YoutubePlayer(
             controller: _youtubeController,
             showVideoProgressIndicator: false, // 진행률 표시줄 숨기기
-            progressIndicatorColor: Color(0xFF4DABF7),
+            progressIndicatorColor: const Color(0xFF4DABF7),
             progressColors: const ProgressBarColors(
               playedColor: Color(0xFF4DABF7),
               handleColor: Color(0xFF51CF66),
@@ -196,7 +196,7 @@ class _PushupTutorialDetailScreenState
             },
           ),
           builder: (context, player) {
-            return Container(
+            return SizedBox(
               width: double.infinity,
               height: double.infinity,
               child: player,
@@ -213,7 +213,7 @@ class _PushupTutorialDetailScreenState
       children: [
         Text(
           _getPushupName(widget.pushupType),
-          style: TextStyle(
+          style: const TextStyle(
             color: Colors.white,
             fontSize: 24,
             fontWeight: FontWeight.bold,
@@ -222,7 +222,8 @@ class _PushupTutorialDetailScreenState
         const SizedBox(height: 8),
         Text(
           _getPushupDescription(widget.pushupType),
-          style: TextStyle(color: Color(0xFFB0B0B0), fontSize: 16, height: 1.5),
+          style: const TextStyle(
+              color: Color(0xFFB0B0B0), fontSize: 16, height: 1.5),
         ),
       ],
     );
@@ -234,9 +235,9 @@ class _PushupTutorialDetailScreenState
         // 난이도
         Expanded(
           child: Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Color(0xFF1A1A1A),
+              color: const Color(0xFF1A1A1A),
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
                 color: Color(
@@ -281,11 +282,11 @@ class _PushupTutorialDetailScreenState
         // 칼로리
         Expanded(
           child: Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Color(0xFF1A1A1A),
+              color: const Color(0xFF1A1A1A),
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Color(0xFF4DABF7), width: 1),
+              border: Border.all(color: const Color(0xFF4DABF7), width: 1),
             ),
             child: Column(
               children: [
@@ -297,7 +298,7 @@ class _PushupTutorialDetailScreenState
                 const SizedBox(height: 4),
                 Text(
                   '${widget.pushupType.estimatedCaloriesPerRep}kcal/rep',
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF4DABF7),
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
@@ -313,11 +314,11 @@ class _PushupTutorialDetailScreenState
         // 타겟 근육
         Expanded(
           child: Container(
-            padding: EdgeInsets.all(12),
+            padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Color(0xFF1A1A1A),
+              color: const Color(0xFF1A1A1A),
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Color(0xFF51CF66), width: 1),
+              border: Border.all(color: const Color(0xFF51CF66), width: 1),
             ),
             child: Column(
               children: [
@@ -332,7 +333,7 @@ class _PushupTutorialDetailScreenState
                       .take(2)
                       .map((muscle) => _getTargetMuscleName(muscle))
                       .join(', '),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color(0xFF51CF66),
                     fontSize: 10,
                     fontWeight: FontWeight.w500,
@@ -375,15 +376,16 @@ class _PushupTutorialDetailScreenState
         const SizedBox(height: 12),
         Container(
           width: double.infinity,
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
-            color: Color(0xFF1A1A1A),
+            color: const Color(0xFF1A1A1A),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(color: color.withValues(alpha: 0.3), width: 1),
           ),
           child: Text(
             content,
-            style: TextStyle(color: Colors.white, fontSize: 14, height: 1.6),
+            style:
+                const TextStyle(color: Colors.white, fontSize: 14, height: 1.6),
           ),
         ),
         const SizedBox(height: 20),
@@ -587,10 +589,10 @@ class _PushupTutorialDetailScreenState
       width: double.infinity,
       alignment: Alignment.center,
       decoration: BoxDecoration(
-        color: Color(0xFF1A1A1A),
+        color: const Color(0xFF1A1A1A),
         border: Border(
           top: BorderSide(
-            color: Color(0xFF4DABF7).withValues(alpha: 0.3),
+            color: const Color(0xFF4DABF7).withValues(alpha: 0.3),
             width: 1,
           ),
         ),

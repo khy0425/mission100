@@ -22,7 +22,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
   DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
   List<WorkoutHistory> _workoutHistory = [];
-  Map<DateTime, List<WorkoutHistory>> _workoutEvents = {};
+  final Map<DateTime, List<WorkoutHistory>> _workoutEvents = {};
   bool _isLoading = true;
 
   BannerAd? _calendarBannerAd;
@@ -169,8 +169,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
       ..sort((a, b) => b.compareTo(a));
 
     int streak = 0;
-    DateTime today = DateTime.now();
-    DateTime currentDate = DateTime(today.year, today.month, today.day);
+    final DateTime today = DateTime.now();
+    final DateTime currentDate = DateTime(today.year, today.month, today.day);
 
     for (final date in sortedDates) {
       final daysDiff = currentDate.difference(date).inDays;
@@ -713,7 +713,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
         if (_selectedDay != null) {
           _selectedEvents.value = _getEventsForDay(_selectedDay!);
           debugPrint(
-            '📅 선택된 날짜(${_selectedDay}) 이벤트 업데이트: ${_selectedEvents.value.length}개',
+            '📅 선택된 날짜($_selectedDay) 이벤트 업데이트: ${_selectedEvents.value.length}개',
           );
         }
       }).catchError((Object e) {

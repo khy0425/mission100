@@ -167,18 +167,18 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             decoration: BoxDecoration(
               gradient: LinearGradient(
                 colors: [
-                  const Color(AppColors.primaryColor).withOpacity(0.1),
-                  Colors.green.withOpacity(0.1),
+                  const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+                  Colors.green.withValues(alpha: 0.1),
                 ],
               ),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: Colors.green.withOpacity(0.3),
+                color: Colors.green.withValues(alpha: 0.3),
               ),
             ),
-            child: Column(
+            child: const Column(
               children: [
-                const Text(
+                Text(
                   '🎉 런칭 기념 특가!',
                   style: TextStyle(
                     fontSize: 18,
@@ -186,8 +186,8 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
                     color: Colors.green,
                   ),
                 ),
-                const SizedBox(height: 8),
-                const Text(
+                SizedBox(height: 8),
+                Text(
                   '• Chad AI 개인 트레이너 1개월 무료\n• 개인 맞춤 운동 계획\n• Chad 회복 관리 시스템\n• 언제든 취소 가능',
                   style: TextStyle(
                     fontSize: 14,

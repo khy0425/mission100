@@ -1,8 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
-
-import '../models/pushup_type.dart';
 
 /// 푸시업 마스터 진행률 추적 서비스
 class PushupMasteryService {

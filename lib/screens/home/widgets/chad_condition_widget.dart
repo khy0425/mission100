@@ -102,7 +102,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
                 borderRadius: BorderRadius.circular(AppConstants.radiusL),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.blue.withOpacity(0.1),
+                    color: Colors.blue.withValues(alpha: 0.1),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),
@@ -140,7 +140,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
             borderRadius: BorderRadius.circular(40),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Colors.black.withValues(alpha: 0.1),
                 blurRadius: 10,
                 offset: const Offset(0, 4),
               ),
@@ -175,11 +175,11 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
               color: Colors.white,
               borderRadius: BorderRadius.circular(16),
               border: Border.all(
-                color: Theme.of(context).primaryColor.withOpacity(0.2),
+                color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
               ),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -267,11 +267,11 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: const Color(AppColors.primaryColor).withOpacity(0.3),
+            color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -328,21 +328,21 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
           width: double.infinity,
           padding: const EdgeInsets.all(AppConstants.paddingM),
           decoration: BoxDecoration(
-            color: const Color(AppColors.primaryColor).withOpacity(0.1),
+            color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: const Color(AppColors.primaryColor).withOpacity(0.3),
+              color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
             ),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              const Text(
                 '🎯 Chad 추천 운동',
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
-                  color: const Color(AppColors.primaryColor),
+                  color: Color(AppColors.primaryColor),
                 ),
               ),
               const SizedBox(height: 8),

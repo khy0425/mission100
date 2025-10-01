@@ -112,7 +112,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
           height: widget.height,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(widget.height / 2),
-            color: theme.colorScheme.surfaceVariant,
+            color: theme.colorScheme.surfaceContainerHighest,
           ),
           child: AnimatedBuilder(
             animation: _progressAnimation,
@@ -125,7 +125,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
                     height: widget.height,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(widget.height / 2),
-                      color: theme.colorScheme.surfaceVariant,
+                      color: theme.colorScheme.surfaceContainerHighest,
                     ),
                   ),
 
@@ -242,7 +242,7 @@ class SimpleProgressBar extends StatelessWidget {
       height: height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(height / 2),
-        color: theme.colorScheme.surfaceVariant,
+        color: theme.colorScheme.surfaceContainerHighest,
       ),
       child: FractionallySizedBox(
         widthFactor: progress.clamp(0.0, 1.0),

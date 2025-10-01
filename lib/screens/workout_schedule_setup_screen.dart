@@ -3,7 +3,6 @@ import '../utils/constants.dart';
 import '../services/database_service.dart';
 import '../services/workout_program_service.dart';
 import '../models/user_profile.dart';
-import '../generated/app_localizations.dart';
 import 'main_navigation_screen.dart';
 
 class WorkoutScheduleSetupScreen extends StatefulWidget {
@@ -24,7 +23,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
   late Animation<Offset> _slideAnimation;
 
   // 운동 요일 선택 상태 (월요일0, 화요일1, ... 일요일6)
-  List<bool> _selectedDays = [
+  final List<bool> _selectedDays = [
     true,
     false,
     true,
@@ -335,9 +334,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
       children: [
         Row(
           children: [
-            Icon(
+            const Icon(
               Icons.fitness_center,
-              color: const Color(AppColors.primaryColor),
+              color: Color(AppColors.primaryColor),
               size: 24,
             ),
             const SizedBox(width: 8),
@@ -499,7 +498,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                       _notificationsEnabled = value;
                     });
                   },
-                  activeColor: Colors.blue[700],
+                  activeThumbColor: Colors.blue[700],
                 ),
               ],
             ),

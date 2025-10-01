@@ -4,8 +4,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 import '../models/challenge.dart';
 import '../models/user_profile.dart';
-import 'achievement_service.dart';
-import '../services/notification_service.dart';
 
 /// 챌린지 관리 서비스
 class ChallengeService {
@@ -71,12 +69,13 @@ class ChallengeService {
           targetUnit: '주',
           estimatedDuration: 7,
           rewards: [
-            ChallengeReward(
+            const ChallengeReward(
               type: 'badge',
               value: 'perfect_week_warrior',
               description: '완벽한 주 워리어 배지',
             ),
-            ChallengeReward(type: 'xp', value: '350', description: '350 경험치'),
+            const ChallengeReward(
+                type: 'xp', value: '350', description: '350 경험치'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -143,12 +142,13 @@ class ChallengeService {
           targetUnit: '사이클',
           estimatedDuration: 6,
           rewards: [
-            ChallengeReward(
+            const ChallengeReward(
               type: 'badge',
               value: 'perfect_cycle_master',
               description: '완벽한 휴식 주기 마스터 배지',
             ),
-            ChallengeReward(type: 'xp', value: '500', description: '500 경험치'),
+            const ChallengeReward(
+                type: 'xp', value: '500', description: '500 경험치'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -175,12 +175,13 @@ class ChallengeService {
           targetUnit: '회',
           estimatedDuration: 1,
           rewards: [
-            ChallengeReward(
+            const ChallengeReward(
               type: 'badge',
               value: 'monday_crusher',
               description: 'Monday Crusher 배지',
             ),
-            ChallengeReward(type: 'xp', value: '100', description: '100 경험치'),
+            const ChallengeReward(
+                type: 'xp', value: '100', description: '100 경험치'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -532,7 +533,7 @@ class ChallengeService {
               newProgress += 1;
               updated = true;
               debugPrint(
-                '🔄 완벽한 휴식 주기 사이클 완료: ${newProgress}/${challenge.targetValue}',
+                '🔄 완벽한 휴식 주기 사이클 완료: $newProgress/${challenge.targetValue}',
               );
             }
           }
@@ -687,7 +688,7 @@ class ChallengeService {
       final lastDate = DateTime.parse(stateData['date'] as String);
       final daysDiff = today.difference(lastDate).inDays;
 
-      debugPrint('🔄 휴식 주기 체크: $lastState → 오늘 운동 (${daysDiff}일 차이)');
+      debugPrint('🔄 휴식 주기 체크: $lastState → 오늘 운동 ($daysDiff일 차이)');
 
       if (lastState == 'first_workout' || lastState == 'rest_completed') {
         // 마지막이 운동이었거나 휴식 완료였으면
@@ -702,7 +703,7 @@ class ChallengeService {
           return {'failed': false, 'completed_cycle': true};
         } else {
           // 3일 이상 차이 = 너무 오래 쉼
-          debugPrint('⚠️ 너무 오래 쉼 (${daysDiff}일), 새로운 사이클 시작');
+          debugPrint('⚠️ 너무 오래 쉼 ($daysDiff일), 새로운 사이클 시작');
           await _saveCycleState(challenge.id, 'first_workout', today);
           return {'failed': false, 'completed_cycle': false};
         }

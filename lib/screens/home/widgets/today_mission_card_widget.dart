@@ -66,7 +66,7 @@ class TodayMissionCardWidget extends StatelessWidget {
   Widget _buildHeader(BuildContext context, ThemeData theme) {
     return Row(
       children: [
-        Icon(Icons.today, color: const Color(AppColors.primaryColor), size: 24),
+        const Icon(Icons.today, color: Color(AppColors.primaryColor), size: 24),
         const SizedBox(width: AppConstants.paddingS),
         Text(
           AppLocalizations.of(context).todayMissionTitle,
@@ -91,8 +91,8 @@ class TodayMissionCardWidget extends StatelessWidget {
           context,
         ).weekDayFormat(
             (todayWorkout!.week ?? 0) as int, (todayWorkout!.day ?? 0) as int),
-        style: TextStyle(
-          color: const Color(AppColors.primaryColor),
+        style: const TextStyle(
+          color: Color(AppColors.primaryColor),
           fontSize: 13,
           fontWeight: FontWeight.w600,
         ),
@@ -134,7 +134,7 @@ class TodayMissionCardWidget extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 AppLocalizations.of(context)
-                    .setRepsFormat(setIndex as int, reps as int),
+                    .setRepsFormat(setIndex, reps as int),
                 style: TextStyle(
                   color: todayCompletedWorkout != null
                       ? Colors.green[700]
@@ -211,7 +211,7 @@ class TodayMissionCardWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.check_circle, color: Colors.green, size: 24),
+            const Icon(Icons.check_circle, color: Colors.green, size: 24),
             const SizedBox(width: 8),
             Text(
               AppLocalizations.of(context).todayWorkoutCompleted,
@@ -241,7 +241,7 @@ class TodayMissionCardWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.play_arrow, size: 24),
+            const Icon(Icons.play_arrow, size: 24),
             const SizedBox(width: 8),
             Text(
               AppLocalizations.of(context).startWorkout,

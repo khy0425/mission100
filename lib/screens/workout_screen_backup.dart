@@ -3,19 +3,15 @@ import 'package:flutter/services.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
-import '../models/user_profile.dart';
 import '../services/workout_program_service.dart';
 import '../services/workout_history_service.dart';
 import '../models/workout_history.dart';
 import '../services/achievement_service.dart';
 import '../models/achievement.dart';
-import '../services/social_share_service.dart';
 import '../services/motivational_message_service.dart';
 import '../services/streak_service.dart';
 import '../widgets/ad_banner_widget.dart';
-import '../services/notification_service.dart';
 import '../models/workout_session.dart';
 import '../widgets/multiple_achievements_dialog.dart';
 // 분리된 위젯들 import
@@ -23,7 +19,6 @@ import 'workout/widgets/workout_header_widget.dart';
 import 'workout/widgets/rep_counter_widget.dart';
 import 'workout/widgets/rest_timer_widget.dart';
 import 'workout/widgets/workout_controls_widget.dart';
-import 'workout/handlers/workout_completion_handler.dart';
 
 class WorkoutScreen extends StatefulWidget {
   final dynamic workout; // 서비스에서 가져오는 타입
@@ -65,7 +60,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
   final WorkoutProgramService _workoutProgramService = WorkoutProgramService();
 
   // 업적 관리
-  List<Achievement> _newlyUnlockedAchievements = [];
+  final List<Achievement> _newlyUnlockedAchievements = [];
 
   // 계산된 값들
   int get _totalSets => _targetReps.length;
@@ -147,7 +142,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                   ? '💪 운동을 시작합니다! 화이팅!'
                   : '💪 Let\'s start the workout! You got this!',
             ),
-            backgroundColor: Color(AppColors.primaryColor),
+            backgroundColor: const Color(AppColors.primaryColor),
             duration: const Duration(seconds: 2),
           ),
         );
@@ -539,7 +534,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       final totalReps = _completedReps.fold(0, (sum, reps) => sum + reps);
 
       // 운동 완료로 경험치 획득 (총 횟수에 비례)
-      final baseXP = 50; // 기본 운동 완료 경험치
+      const baseXP = 50; // 기본 운동 완료 경험치
       final repBonus = (totalReps * 0.5).round(); // 횟수당 0.5 경험치
       final totalXP = baseXP + repBonus;
 

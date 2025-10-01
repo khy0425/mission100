@@ -108,7 +108,7 @@ class AuthService extends ChangeNotifier {
         return AuthResult.failure('회원가입에 실패했습니다.');
       }
     } on FirebaseAuthException catch (e) {
-      String message = _getErrorMessage(e.code);
+      final String message = _getErrorMessage(e.code);
       debugPrint('❌ 이메일 회원가입 오류: ${e.code} - $message');
       return AuthResult.failure(message);
     } catch (e) {
@@ -141,7 +141,7 @@ class AuthService extends ChangeNotifier {
         return AuthResult.failure('로그인에 실패했습니다.');
       }
     } on FirebaseAuthException catch (e) {
-      String message = _getErrorMessage(e.code);
+      final String message = _getErrorMessage(e.code);
       debugPrint('❌ 이메일 로그인 오류: ${e.code} - $message');
       return AuthResult.failure(message);
     } catch (e) {
@@ -226,7 +226,7 @@ class AuthService extends ChangeNotifier {
       debugPrint('✅ 비밀번호 재설정 이메일 전송 완료');
       return AuthResult.success(_auth.currentUser!);
     } on FirebaseAuthException catch (e) {
-      String message = _getErrorMessage(e.code);
+      final String message = _getErrorMessage(e.code);
       debugPrint('❌ 비밀번호 재설정 오류: ${e.code} - $message');
       return AuthResult.failure(message);
     } catch (e) {

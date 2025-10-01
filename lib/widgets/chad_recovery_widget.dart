@@ -95,7 +95,7 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
             boxShadow: [
               BoxShadow(
                 color: _getColorForLevel(recoveryService.recoveryLevel)
-                    .withOpacity(0.3),
+                    .withValues(alpha: 0.3),
                 blurRadius: 15,
                 offset: const Offset(0, 8),
               ),
@@ -132,7 +132,7 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               'Chad 회복 분석',
               style: TextStyle(
                 fontSize: 18,
@@ -165,7 +165,7 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withValues(alpha: 0.1),
                       blurRadius: 10,
                       offset: const Offset(0, 4),
                     ),
@@ -225,7 +225,7 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
             border: Border.all(color: Colors.white, width: 2),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Colors.black.withValues(alpha: 0.1),
                 blurRadius: 8,
                 offset: const Offset(0, 4),
               ),
@@ -261,7 +261,7 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 6,
                   offset: const Offset(0, 2),
                 ),
@@ -288,9 +288,9 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
     return Container(
       padding: const EdgeInsets.all(AppConstants.paddingM),
       decoration: BoxDecoration(
-        color: Colors.white.withOpacity(0.9),
+        color: Colors.white.withValues(alpha: 0.9),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.white.withOpacity(0.5)),
+        border: Border.all(color: Colors.white.withValues(alpha: 0.5)),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

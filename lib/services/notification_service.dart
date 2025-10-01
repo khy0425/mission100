@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -232,8 +231,7 @@ class NotificationService {
                             child: Text(
                               AppLocalizations.of(
                                 context,
-                              )!
-                                  .workoutNotificationPermission,
+                              ).workoutNotificationPermission,
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -276,7 +274,7 @@ class NotificationService {
             ElevatedButton(
               onPressed: () => Navigator.of(context).pop(true),
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFF4DABF7),
+                backgroundColor: const Color(0xFF4DABF7),
                 foregroundColor: Colors.white,
               ),
               child: Text(
@@ -506,7 +504,7 @@ class NotificationService {
         continue;
       }
 
-      var scheduledDate = DateTime(
+      final scheduledDate = DateTime(
         targetDate.year,
         targetDate.month,
         targetDate.day,
@@ -535,12 +533,13 @@ class NotificationService {
             importance: Importance.max,
             priority: Priority.high,
             icon: '@drawable/ic_notification',
-            sound: RawResourceAndroidNotificationSound('notification_sound'),
+            sound:
+                const RawResourceAndroidNotificationSound('notification_sound'),
             playSound: true,
             enableVibration: true,
             vibrationPattern: Int64List.fromList([0, 1000, 500, 1000]),
           ),
-          iOS: DarwinNotificationDetails(
+          iOS: const DarwinNotificationDetails(
             presentAlert: true,
             presentBadge: true,
             presentSound: true,
@@ -577,7 +576,7 @@ class NotificationService {
     final renewalDate = DateTime.now().add(
       const Duration(days: 25),
     ); // 25일 후 갱신
-    final renewalNotificationId = 9999;
+    const renewalNotificationId = 9999;
 
     // 갱신용 데이터를 페이로드에 포함
     final payload =
@@ -640,12 +639,13 @@ class NotificationService {
           importance: Importance.high,
           priority: Priority.high,
           icon: '@drawable/ic_notification',
-          sound: RawResourceAndroidNotificationSound('notification_sound'),
+          sound:
+              const RawResourceAndroidNotificationSound('notification_sound'),
           playSound: true,
           enableVibration: true,
           vibrationPattern: Int64List.fromList([0, 500, 200, 500]),
         ),
-        iOS: DarwinNotificationDetails(
+        iOS: const DarwinNotificationDetails(
           sound: 'notification_sound.aiff',
           presentAlert: true,
           presentBadge: true,
@@ -683,12 +683,13 @@ class NotificationService {
           importance: Importance.high,
           priority: Priority.high,
           icon: '@drawable/ic_notification',
-          sound: RawResourceAndroidNotificationSound('notification_sound'),
+          sound:
+              const RawResourceAndroidNotificationSound('notification_sound'),
           playSound: true,
           enableVibration: true,
           vibrationPattern: Int64List.fromList([0, 300, 100, 300]),
         ),
-        iOS: DarwinNotificationDetails(
+        iOS: const DarwinNotificationDetails(
           sound: 'notification_sound.aiff',
           presentAlert: true,
           presentBadge: true,
@@ -742,12 +743,13 @@ class NotificationService {
           importance: Importance.max,
           priority: Priority.high,
           icon: '@drawable/ic_notification',
-          sound: RawResourceAndroidNotificationSound('notification_sound'),
+          sound:
+              const RawResourceAndroidNotificationSound('notification_sound'),
           playSound: true,
           enableVibration: true,
           vibrationPattern: Int64List.fromList([0, 1000, 300, 1000, 300, 1000]),
         ),
-        iOS: DarwinNotificationDetails(
+        iOS: const DarwinNotificationDetails(
           sound: 'notification_sound.aiff',
           presentAlert: true,
           presentBadge: true,
@@ -872,7 +874,7 @@ class NotificationService {
       title: '🚀 ULTIMATE CHAD EVOLUTION! 🚀',
       body: '🏆 전설의 차드가 되었습니다! LEGENDARY BEAST MODE! 만삣삐! 🏆',
       scheduledDate: DateTime.now(),
-      notificationDetails: NotificationDetails(
+      notificationDetails: const NotificationDetails(
         android: AndroidNotificationDetails(
           'chad_evolution',
           'Chad Evolution',
@@ -900,7 +902,7 @@ class NotificationService {
       title: '💪 CHAD EVOLUTION! $level 💪',
       body: '🔥 $message FXXK YEAH! 만삣삐! 🔥',
       scheduledDate: DateTime.now(),
-      notificationDetails: NotificationDetails(
+      notificationDetails: const NotificationDetails(
         android: AndroidNotificationDetails(
           'chad_evolution',
           'Chad Evolution',
@@ -928,7 +930,7 @@ class NotificationService {
       title: '👀 NEXT CHAD LEVEL PREVIEW! 👀',
       body: '🚀 다음 단계: $nextLevel | 필요조건: $requirement 💪',
       scheduledDate: DateTime.now(),
-      notificationDetails: NotificationDetails(
+      notificationDetails: const NotificationDetails(
         android: AndroidNotificationDetails(
           'chad_evolution',
           'Chad Evolution',
@@ -953,7 +955,7 @@ class NotificationService {
       title: '🔥 CHAD MOTIVATION! 🔥',
       body: '💪 $message KEEP GOING! 만삣삐! 💪',
       scheduledDate: DateTime.now(),
-      notificationDetails: NotificationDetails(
+      notificationDetails: const NotificationDetails(
         android: AndroidNotificationDetails(
           'chad_evolution',
           'Chad Evolution',
@@ -984,7 +986,7 @@ class NotificationService {
       title: '🔥 STREAK POWER! $streak일 연속! 🔥',
       body: '💪 연속 $streak일 달성! LEGENDARY CONSISTENCY! 만삣삐! 💪',
       scheduledDate: DateTime.now(),
-      notificationDetails: NotificationDetails(
+      notificationDetails: const NotificationDetails(
         android: AndroidNotificationDetails(
           'streak',
           'Workout Streak',

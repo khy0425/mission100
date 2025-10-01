@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../utils/constants.dart';
 
@@ -253,8 +252,6 @@ class ThemeService extends ChangeNotifier {
         secondary: baseColor.withValues(alpha: 0.7),
         surface: _highContrastMode ? Colors.black : const Color(0xFF1E1E1E),
         onSurface: _highContrastMode ? Colors.white : Colors.white70,
-        background: _highContrastMode ? Colors.black : const Color(0xFF121212),
-        onBackground: _highContrastMode ? Colors.white : Colors.white70,
       );
     } else {
       return ColorScheme.light(
@@ -262,8 +259,6 @@ class ThemeService extends ChangeNotifier {
         secondary: baseColor.withValues(alpha: 0.7),
         surface: _highContrastMode ? Colors.white : const Color(0xFFFAFAFA),
         onSurface: _highContrastMode ? Colors.black : Colors.black87,
-        background: _highContrastMode ? Colors.white : const Color(0xFFFFFFFF),
-        onBackground: _highContrastMode ? Colors.black : Colors.black87,
       );
     }
   }
@@ -308,70 +303,70 @@ class ThemeService extends ChangeNotifier {
       displayLarge: baseTextTheme.displayLarge?.copyWith(
         fontSize:
             (baseTextTheme.displayLarge?.fontSize ?? 57) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       displayMedium: baseTextTheme.displayMedium?.copyWith(
         fontSize:
             (baseTextTheme.displayMedium?.fontSize ?? 45) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       displaySmall: baseTextTheme.displaySmall?.copyWith(
         fontSize:
             (baseTextTheme.displaySmall?.fontSize ?? 36) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       headlineLarge: baseTextTheme.headlineLarge?.copyWith(
         fontSize:
             (baseTextTheme.headlineLarge?.fontSize ?? 32) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       headlineMedium: baseTextTheme.headlineMedium?.copyWith(
         fontSize:
             (baseTextTheme.headlineMedium?.fontSize ?? 28) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       headlineSmall: baseTextTheme.headlineSmall?.copyWith(
         fontSize:
             (baseTextTheme.headlineSmall?.fontSize ?? 24) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       titleLarge: baseTextTheme.titleLarge?.copyWith(
         fontSize: (baseTextTheme.titleLarge?.fontSize ?? 22) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       titleMedium: baseTextTheme.titleMedium?.copyWith(
         fontSize:
             (baseTextTheme.titleMedium?.fontSize ?? 16) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       titleSmall: baseTextTheme.titleSmall?.copyWith(
         fontSize: (baseTextTheme.titleSmall?.fontSize ?? 14) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       bodyLarge: baseTextTheme.bodyLarge?.copyWith(
         fontSize: (baseTextTheme.bodyLarge?.fontSize ?? 16) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       bodyMedium: baseTextTheme.bodyMedium?.copyWith(
         fontSize: (baseTextTheme.bodyMedium?.fontSize ?? 14) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       bodySmall: baseTextTheme.bodySmall?.copyWith(
         fontSize: (baseTextTheme.bodySmall?.fontSize ?? 12) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       labelLarge: baseTextTheme.labelLarge?.copyWith(
         fontSize: (baseTextTheme.labelLarge?.fontSize ?? 14) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       labelMedium: baseTextTheme.labelMedium?.copyWith(
         fontSize:
             (baseTextTheme.labelMedium?.fontSize ?? 12) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
       labelSmall: baseTextTheme.labelSmall?.copyWith(
         fontSize: (baseTextTheme.labelSmall?.fontSize ?? 11) * _fontScale.scale,
-        color: colorScheme.onBackground,
+        color: colorScheme.onSurface,
       ),
     );
   }

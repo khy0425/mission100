@@ -219,7 +219,7 @@ class AppearanceSettingsWidget extends StatelessWidget {
         trailing: Switch(
           value: value,
           onChanged: enabled ? onChanged : null,
-          activeColor: const Color(AppColors.primaryColor),
+          activeThumbColor: const Color(AppColors.primaryColor),
         ),
         contentPadding: const EdgeInsets.symmetric(horizontal: 0, vertical: 4),
       ),

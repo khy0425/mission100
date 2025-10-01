@@ -1,22 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart';
 import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
-import '../models/user_profile.dart';
-import '../services/workout_program_service.dart';
-import '../services/workout_history_service.dart';
-import '../models/workout_history.dart';
-import '../services/achievement_service.dart';
 import '../models/achievement.dart';
-import '../services/social_share_service.dart';
-import '../services/motivational_message_service.dart';
-import '../services/streak_service.dart';
 import '../widgets/ad_banner_widget.dart';
-import '../services/notification_service.dart';
-import '../models/workout_session.dart';
 import '../widgets/multiple_achievements_dialog.dart';
 // 분리된 위젯들 import
 import 'workout/widgets/workout_header_widget.dart';
@@ -48,7 +36,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
   bool _isSetCompleted = false;
   bool _isRestTime = false;
   int _restTimeRemaining = 0;
-  int _restTimeSeconds = 60;
+  final int _restTimeSeconds = 60;
   Timer? _restTimer;
 
   // 워크아웃 데이터
@@ -58,7 +46,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
   DateTime? _workoutStartTime;
 
   // 업적 관련
-  List<Achievement> _newlyUnlockedAchievements = [];
+  final List<Achievement> _newlyUnlockedAchievements = [];
 
   @override
   void initState() {

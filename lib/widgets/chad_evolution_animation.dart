@@ -316,7 +316,7 @@ class ParticleEffectPainter extends CustomPainter {
   ParticleEffectPainter({required this.animation, required this.color})
       : particles = List.generate(50, (index) => Particle()) {
     animation.addListener(() {
-      for (var particle in particles) {
+      for (final particle in particles) {
         particle.update(animation.value);
       }
     });
@@ -328,7 +328,7 @@ class ParticleEffectPainter extends CustomPainter {
       ..color = color.withValues(alpha: 0.6)
       ..style = PaintingStyle.fill;
 
-    for (var particle in particles) {
+    for (final particle in particles) {
       final opacity = (1.0 - particle.life) * animation.value;
       paint.color = color.withValues(alpha: opacity * 0.6);
 

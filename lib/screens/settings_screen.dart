@@ -5,17 +5,12 @@ import 'package:provider/provider.dart';
 import '../utils/constants.dart';
 import '../services/ad_service.dart';
 import '../services/difficulty_service.dart';
-import '../services/theme_service.dart';
 import '../services/locale_service.dart';
 import '../services/notification_service.dart';
 import '../services/chad_evolution_service.dart';
 import '../services/subscription_service.dart';
 import '../generated/app_localizations.dart';
 import '../main.dart';
-import 'settings/widgets/notification_settings_widget.dart';
-import 'settings/widgets/appearance_settings_widget.dart';
-import 'settings/widgets/data_settings_widget.dart';
-import 'settings/widgets/about_settings_widget.dart';
 import 'subscription_screen.dart';
 import 'subscription_management_screen.dart';
 
@@ -448,10 +443,10 @@ class _SettingsScreenState extends State<SettingsScreen>
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               )
-            : LinearGradient(
+            : const LinearGradient(
                 colors: [
-                  const Color(0xFF2196F3), // 밝은 파란색
-                  const Color(0xFF1976D2), // 진한 파란색
+                  Color(0xFF2196F3), // 밝은 파란색
+                  Color(0xFF1976D2), // 진한 파란색
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -633,7 +628,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.settings,
                       color: Color(AppColors.primaryColor),
                       size: 20,
@@ -869,9 +864,9 @@ class _SettingsScreenState extends State<SettingsScreen>
             margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.orange.withOpacity(0.1),
+              color: Colors.orange.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.orange.withOpacity(0.3)),
+              border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
             ),
             child: Row(
               children: [

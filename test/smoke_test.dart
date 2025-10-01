@@ -3,7 +3,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:mission100/services/ad_service.dart';
 import 'package:mission100/services/theme_service.dart';
-import 'package:mission100/services/locale_service.dart';
 import 'package:mission100/services/onboarding_service.dart';
 import 'package:mission100/services/chad_evolution_service.dart';
 import 'package:mission100/services/chad_condition_service.dart';
@@ -45,9 +44,9 @@ void main() {
             title: 'Mission: 100',
             home: Scaffold(
               appBar: AppBar(
-                title: Text('MISSION: 100'),
+                title: const Text('MISSION: 100'),
               ),
-              body: Center(
+              body: const Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -110,15 +109,15 @@ void main() {
           child: MaterialApp(
             title: 'Mission: 100',
             home: Scaffold(
-              appBar: AppBar(title: Text('Home')),
+              appBar: AppBar(title: const Text('Home')),
               body: Center(
                 child: ElevatedButton(
                   onPressed: () {},
-                  child: Text('Start Workout'),
+                  child: const Text('Start Workout'),
                 ),
               ),
               bottomNavigationBar: BottomNavigationBar(
-                items: [
+                items: const [
                   BottomNavigationBarItem(
                     icon: Icon(Icons.home),
                     label: 'Home',

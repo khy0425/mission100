@@ -546,14 +546,14 @@ $downloadMessage
   }) async {
     try {
       // 위젯을 이미지로 캡처
-      RenderRepaintBoundary boundary = repaintBoundaryKey.currentContext!
+      final RenderRepaintBoundary boundary = repaintBoundaryKey.currentContext!
           .findRenderObject() as RenderRepaintBoundary;
 
-      ui.Image image = await boundary.toImage(pixelRatio: 3.0);
-      ByteData? byteData = await image.toByteData(
+      final ui.Image image = await boundary.toImage(pixelRatio: 3.0);
+      final ByteData? byteData = await image.toByteData(
         format: ui.ImageByteFormat.png,
       );
-      Uint8List pngBytes = byteData!.buffer.asUint8List();
+      final Uint8List pngBytes = byteData!.buffer.asUint8List();
 
       // 임시 파일로 저장
       final tempDir = await getTemporaryDirectory();

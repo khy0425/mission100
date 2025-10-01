@@ -9,7 +9,7 @@ import 'achievement_service.dart';
 class AchievementEnhancementService {
   // === 성능 모니터링 시스템 ===
 
-  static Map<String, List<int>> _performanceMetrics = {};
+  static final Map<String, List<int>> _performanceMetrics = {};
   static bool _enablePerformanceLogging = kDebugMode;
 
   /// 성능 타이머 시작
@@ -287,8 +287,8 @@ class AchievementEnhancementService {
 
       // 검색 관련성에 따른 정렬
       results.sort((a, b) {
-        int scoreA = _calculateSearchScore(a, lowercaseQuery);
-        int scoreB = _calculateSearchScore(b, lowercaseQuery);
+        final int scoreA = _calculateSearchScore(a, lowercaseQuery);
+        final int scoreB = _calculateSearchScore(b, lowercaseQuery);
         return scoreB.compareTo(scoreA);
       });
 

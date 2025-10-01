@@ -362,24 +362,24 @@ class _SignUpScreenState extends State<SignUpScreen> {
                             style: theme.textTheme.bodyMedium?.copyWith(
                               color: isDark ? Colors.white70 : Colors.black87,
                             ),
-                            children: [
-                              const TextSpan(text: ''),
+                            children: const [
+                              TextSpan(text: ''),
                               TextSpan(
                                 text: '이용약관',
                                 style: TextStyle(
-                                  color: const Color(AppColors.primaryColor),
+                                  color: Color(AppColors.primaryColor),
                                   decoration: TextDecoration.underline,
                                 ),
                               ),
-                              const TextSpan(text: ' 및 '),
+                              TextSpan(text: ' 및 '),
                               TextSpan(
                                 text: '개인정보처리방침',
                                 style: TextStyle(
-                                  color: const Color(AppColors.primaryColor),
+                                  color: Color(AppColors.primaryColor),
                                   decoration: TextDecoration.underline,
                                 ),
                               ),
-                              const TextSpan(text: '에 동의합니다.'),
+                              TextSpan(text: '에 동의합니다.'),
                             ],
                           ),
                         ),
@@ -474,10 +474,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           : () {
                               Navigator.of(context).pop();
                             },
-                      child: Text(
+                      child: const Text(
                         '로그인',
                         style: TextStyle(
-                          color: const Color(AppColors.primaryColor),
+                          color: Color(AppColors.primaryColor),
                           fontWeight: FontWeight.bold,
                         ),
                       ),

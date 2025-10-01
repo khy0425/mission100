@@ -122,9 +122,9 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Chad 회복 관리 도구',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -262,9 +262,9 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
                   ),
                 ),
                 const SizedBox(width: 8),
-                Text(
+                const Text(
                   'Chad의 회복 꿀팁',
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -272,34 +272,32 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
               ],
             ),
             const SizedBox(height: AppConstants.paddingM),
-            ..._getChadRecoveryTips()
-                .map((tip) => Padding(
-                      padding: const EdgeInsets.only(bottom: 12),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            width: 6,
-                            height: 6,
-                            margin: const EdgeInsets.only(top: 6, right: 12),
-                            decoration: BoxDecoration(
-                              color: Colors.green[400],
-                              shape: BoxShape.circle,
-                            ),
-                          ),
-                          Expanded(
-                            child: Text(
-                              tip,
-                              style: const TextStyle(
-                                fontSize: 14,
-                                height: 1.4,
-                              ),
-                            ),
-                          ),
-                        ],
+            ..._getChadRecoveryTips().map((tip) => Padding(
+                  padding: const EdgeInsets.only(bottom: 12),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        width: 6,
+                        height: 6,
+                        margin: const EdgeInsets.only(top: 6, right: 12),
+                        decoration: BoxDecoration(
+                          color: Colors.green[400],
+                          shape: BoxShape.circle,
+                        ),
                       ),
-                    ))
-                .toList(),
+                      Expanded(
+                        child: Text(
+                          tip,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            height: 1.4,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                )),
           ],
         ),
       ),
@@ -329,9 +327,9 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
           children: [
             Text(recoveryService.getWeeklyRecoveryReport()),
             const SizedBox(height: 16),
-            Text(
+            const Text(
               'Chad가 분석한 이번 주 회복 패턴:',
-              style: const TextStyle(fontWeight: FontWeight.bold),
+              style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
             Text(
@@ -368,17 +366,14 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Text('Chad가 내일 추천할 활동들이야! 미리 준비해두자! 💪'),
+              const Text('Chad가 내일 추천할 활동들이야! 미리 준비해두자! 💪'),
               const SizedBox(height: 16),
-              ...tomorrowActivities
-                  .take(2)
-                  .map((activity) => ListTile(
-                        leading: Icon(_getIconForActivityType(activity.type)),
-                        title: Text(activity.title),
-                        subtitle: Text('${activity.durationMinutes}분'),
-                        dense: true,
-                      ))
-                  .toList(),
+              ...tomorrowActivities.take(2).map((activity) => ListTile(
+                    leading: Icon(_getIconForActivityType(activity.type)),
+                    title: Text(activity.title),
+                    subtitle: Text('${activity.durationMinutes}분'),
+                    dense: true,
+                  )),
               if (tomorrowActivities.length > 2)
                 Text(
                   '외 ${tomorrowActivities.length - 2}개 활동...',

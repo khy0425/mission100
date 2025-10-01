@@ -4,8 +4,6 @@ import '../models/onboarding_step.dart';
 import '../services/onboarding_service.dart';
 import '../services/chad_onboarding_service.dart';
 import '../widgets/chad_onboarding_widget.dart';
-import '../screens/initial_test_screen.dart';
-import '../screens/home_screen.dart';
 import '../screens/permission_screen.dart';
 import '../screens/auth/chad_login_screen.dart';
 import '../generated/app_localizations.dart';
@@ -707,16 +705,16 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
               const Spacer(),
 
               // Chad 진화 이미지들
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   _OptimizedImageWidget(
                     imagePath: 'assets/images/기본차드.jpg',
                     width: 60,
                     height: 60,
-                    shadowColor: const Color(0xFFFFD43B),
+                    shadowColor: Color(0xFFFFD43B),
                   ),
-                  const Icon(
+                  Icon(
                     Icons.arrow_forward,
                     color: Color(0xFFFFD43B),
                     size: 24,
@@ -725,9 +723,9 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
                     imagePath: 'assets/images/기본차드.jpg',
                     width: 80,
                     height: 80,
-                    shadowColor: const Color(0xFFFFD43B),
+                    shadowColor: Color(0xFFFFD43B),
                   ),
-                  const Icon(
+                  Icon(
                     Icons.arrow_forward,
                     color: Color(0xFFFFD43B),
                     size: 24,
@@ -736,7 +734,7 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
                     imagePath: 'assets/images/기본차드.jpg',
                     width: 100,
                     height: 100,
-                    shadowColor: const Color(0xFFFFD43B),
+                    shadowColor: Color(0xFFFFD43B),
                   ),
                 ],
               ),

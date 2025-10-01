@@ -82,12 +82,15 @@ class LegalDocumentScreen extends StatelessWidget {
                 ),
                 blockquote: TextStyle(
                   fontStyle: FontStyle.italic,
-                  color:
-                      Theme.of(context).colorScheme.onSurface.withOpacity(0.8),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.8),
                 ),
                 code: TextStyle(
                   fontFamily: 'monospace',
-                  backgroundColor: Theme.of(context).colorScheme.surfaceVariant,
+                  backgroundColor:
+                      Theme.of(context).colorScheme.surfaceContainerHighest,
                   color: Theme.of(context).colorScheme.onSurfaceVariant,
                 ),
               ),

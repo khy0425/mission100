@@ -22,7 +22,7 @@ class AchievementService {
   static BuildContext? _globalContext;
 
   // 성능 최적화를 위한 캐싱
-  static Map<String, Achievement> _achievementCache = {};
+  static final Map<String, Achievement> _achievementCache = {};
   static DateTime? _lastCacheUpdate;
   static const Duration _cacheValidDuration = Duration(minutes: 5);
 
@@ -1045,17 +1045,22 @@ class AchievementService {
             prefs.getStringList('completed_challenge_ids') ?? [];
         final completedTypes = <String>{};
 
-        if (completedChallenges.contains('daily_perfect_form'))
+        if (completedChallenges.contains('daily_perfect_form')) {
           completedTypes.add('dailyPerfect');
-        if (completedChallenges.contains('weekly_perfect_schedule'))
+        }
+        if (completedChallenges.contains('weekly_perfect_schedule')) {
           completedTypes.add('weeklyGoal');
+        }
         if (completedChallenges.contains('single_session_power') ||
-            completedChallenges.contains('single_session_beast'))
+            completedChallenges.contains('single_session_beast')) {
           completedTypes.add('skillChallenge');
-        if (completedChallenges.contains('three_day_sprint'))
+        }
+        if (completedChallenges.contains('three_day_sprint')) {
           completedTypes.add('sprintChallenge');
-        if (completedChallenges.contains('monday_motivation'))
+        }
+        if (completedChallenges.contains('monday_motivation')) {
           completedTypes.add('eventChallenge');
+        }
 
         return completedTypes.length;
 
@@ -1136,7 +1141,7 @@ class AchievementService {
           (sum, workout) => sum + workout.completionRate,
         );
         final averageCompletionRate =
-            (totalCompletionRate / workouts.length * 100);
+            totalCompletionRate / workouts.length * 100;
         debugPrint('평균 완료율: ${averageCompletionRate.round()}%');
         return averageCompletionRate.round();
 
@@ -1382,7 +1387,7 @@ class AchievementService {
       final statistics = await WorkoutHistoryService.getStatistics();
       final currentStreak = await WorkoutHistoryService.getCurrentStreak();
 
-      debugPrint('📊 기준 데이터: 운동 ${workouts.length}회, 스트릭 ${currentStreak}일');
+      debugPrint('📊 기준 데이터: 운동 ${workouts.length}회, 스트릭 $currentStreak일');
 
       // 모든 업적의 진행도를 다시 계산
       for (final achievement in PredefinedAchievements.all) {
@@ -1450,7 +1455,7 @@ class AchievementService {
   ) async {
     try {
       debugPrint(
-        '📝 운동 완료 기록: ${totalReps}개, 완료율: ${(completionRate * 100).round()}%',
+        '📝 운동 완료 기록: $totalReps개, 완료율: ${(completionRate * 100).round()}%',
       );
 
       // SharedPreferences에 운동 기록 저장

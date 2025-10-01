@@ -252,7 +252,7 @@ class WorkoutProgress {
     // 다음 운동일/주차 계산
     int nextWeek = currentWeek;
     int nextDay = currentDay;
-    List<int> newUnlockedWeeks = List.from(unlockedWeeks);
+    final List<int> newUnlockedWeeks = List.from(unlockedWeeks);
 
     if (currentDay == 3) {
       // 한 주 완료 시 다음 주로

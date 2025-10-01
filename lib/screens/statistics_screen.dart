@@ -38,20 +38,20 @@ class _StatisticsScreenState extends State<StatisticsScreen>
   Duration _totalWorkoutTime = Duration.zero;
 
   // 새로운 진행률 관련 변수들
-  int _weeklyGoal = 5; // 주간 목표 운동 횟수
-  int _monthlyGoal = 20; // 월간 목표 운동 횟수
+  final int _weeklyGoal = 5; // 주간 목표 운동 횟수
+  final int _monthlyGoal = 20; // 월간 목표 운동 횟수
   int _thisWeekWorkouts = 0;
   double _weeklyProgress = 0.0;
   double _monthlyProgress = 0.0;
-  int _targetStreak = 7; // 목표 연속 운동일
+  final int _targetStreak = 7; // 목표 연속 운동일
 
   // 광고
   BannerAd? _statisticsBannerAd;
 
   // 차트 관련 변수
   String _selectedPeriod = 'week'; // 'week', 'month', 'year'
-  List<FlSpot> _chartData = [];
-  Map<String, double> _pieChartData = {};
+  final List<FlSpot> _chartData = [];
+  final Map<String, double> _pieChartData = {};
 
   // 차트 필터링 옵션
   final List<String> _periodOptions = ['week', 'month', 'year'];
@@ -253,7 +253,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
     final Map<DateTime, int> dailyReps = {};
 
     // 선택된 기간에 따라 데이터 생성
-    int daysToShow = _selectedPeriod == 'week'
+    final int daysToShow = _selectedPeriod == 'week'
         ? 7
         : _selectedPeriod == 'month'
             ? 30
@@ -539,7 +539,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: List.generate(_targetStreak, (index) {
-            bool isCompleted = index < _currentStreak;
+            final bool isCompleted = index < _currentStreak;
             return Container(
               width: 24,
               height: 24,
@@ -702,7 +702,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
   }
 
   Widget _buildPeriodButton(String period, String label) {
-    bool isSelected = _selectedPeriod == period;
+    final bool isSelected = _selectedPeriod == period;
     return GestureDetector(
       onTap: () {
         setState(() {
@@ -847,7 +847,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
       fontSize: 10,
     );
 
-    int index = value.floor();
+    final int index = value.floor();
     if (index < 0 || index >= _chartData.length) {
       return Text('', style: style);
     }

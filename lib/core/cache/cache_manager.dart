@@ -327,7 +327,7 @@ class CacheManager {
       _stats.evictions++;
     }
 
-    debugPrint('메모리 캐시 크기 조정: ${itemsToRemove}개 제거');
+    debugPrint('메모리 캐시 크기 조정: $itemsToRemove개 제거');
   }
 
   /// 디스크에 저장
@@ -379,7 +379,7 @@ class CacheManager {
       }
 
       _stats.size = _memoryCache.length;
-      debugPrint('디스크 캐시 로드 완료: ${loadedCount}개');
+      debugPrint('디스크 캐시 로드 완료: $loadedCount개');
     } catch (e) {
       debugPrint('디스크 캐시 로드 실패: $e');
     }

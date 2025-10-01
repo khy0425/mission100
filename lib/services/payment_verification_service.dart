@@ -159,7 +159,7 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
       // Google Play Developer API 호출을 위한 액세스 토큰 필요
       // 실제 구현 시에는 서비스 계정 키를 사용하여 OAuth 2.0 토큰 획득
 
-      final packageName = 'com.reaf.mission100'; // 앱 패키지명
+      const packageName = 'com.reaf.mission100'; // 앱 패키지명
       final productId = purchaseDetails.productID;
       final token = purchaseDetails.purchaseID;
 
@@ -274,7 +274,7 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
     PurchaseDetails purchaseDetails,
   ) async {
     try {
-      final url = '$_baseUrl/verify-purchase';
+      const url = '$_baseUrl/verify-purchase';
 
       final requestBody = {
         'platform': Platform.isAndroid ? 'android' : 'ios',
@@ -337,7 +337,7 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
   /// 중복 구매 방지를 위한 트랜잭션 ID 검증
   static Future<bool> _isTransactionIdUnique(String transactionId) async {
     try {
-      final url = '$_baseUrl/check-transaction';
+      const url = '$_baseUrl/check-transaction';
 
       final response = await http.post(
         Uri.parse(url),

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
 
 import '../../../services/workout_history_service.dart';
 import '../../../services/achievement_service.dart';
 import '../../../services/chad_evolution_service.dart';
-import '../../../services/workout_program_service.dart';
-import '../../../services/streak_service.dart';
 import '../../../services/notification_service.dart';
 import '../../../services/challenge_service.dart';
 import '../../../services/pushup_mastery_service.dart';
@@ -154,7 +151,7 @@ class WorkoutCompletionHandler {
         await prefs.setStringList('completed_workouts', completedWorkouts);
 
         // 진행률 계산 (총 12주 * 7일 = 84일 기준)
-        final totalDays = 84;
+        const totalDays = 84;
         final progressPercentage =
             (completedWorkouts.length / totalDays * 100).round();
         await prefs.setInt('program_progress', progressPercentage);
@@ -197,7 +194,7 @@ class WorkoutCompletionHandler {
       int totalXP = 0;
 
       // 1. 기본 운동 완료 XP
-      final baseXP = 50;
+      const baseXP = 50;
       totalXP += baseXP;
 
       // 2. 횟수 보너스 XP (rep당 0.5 XP)
@@ -242,10 +239,10 @@ class WorkoutCompletionHandler {
 
       debugPrint('✅ 차드 경험치 업데이트 완료: +${totalXP}XP');
       debugPrint(
-        '   📊 XP 상세: 기본(${baseXP}) + 횟수(${repBonus}) + 완료율(${completionBonus}) + 초과달성(${overachievementBonus}) + 시간(${timeBonus})',
+        '   📊 XP 상세: 기본($baseXP) + 횟수($repBonus) + 완료율($completionBonus) + 초과달성($overachievementBonus) + 시간($timeBonus)',
       );
       debugPrint(
-        '   🎯 완료율: ${(completionRate * 100).toStringAsFixed(1)}% (${totalReps}/${totalTargetReps})',
+        '   🎯 완료율: ${(completionRate * 100).toStringAsFixed(1)}% ($totalReps/$totalTargetReps)',
       );
 
       return totalXP;

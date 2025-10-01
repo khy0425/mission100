@@ -37,7 +37,7 @@ void main() {
           ChangeNotifierProvider(create: (_) => ChadActiveRecoveryService()),
           ChangeNotifierProvider(create: (_) => AuthService()),
         ],
-        child: MaterialApp(
+        child: const MaterialApp(
           title: 'Mission: 100 Test',
           home: Scaffold(
             body: Center(
@@ -70,8 +70,8 @@ void main() {
         child: MaterialApp(
           title: 'Mission: 100 Test',
           home: Scaffold(
-            appBar: AppBar(title: Text('Chad Mode')),
-            body: Center(
+            appBar: AppBar(title: const Text('Chad Mode')),
+            body: const Center(
               child: Text('💪 Chad is Active'),
             ),
           ),

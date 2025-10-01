@@ -6,9 +6,6 @@ import 'dart:async';
 import 'dart:convert';
 
 import '../models/user_profile.dart';
-import '../models/workout_record.dart';
-import '../models/workout_progress.dart';
-import '../models/user_settings.dart';
 import '../models/firestore_achievement.dart';
 import '../models/achievement.dart' as LocalAchievement;
 import 'chad_evolution_service.dart';
@@ -604,7 +601,7 @@ class CloudSyncService {
       print('✅ Firestore 프로필 업데이트 완료');
     } catch (e) {
       print('❌ Firestore 프로필 업데이트 오류: $e');
-      throw e;
+      rethrow;
     }
   }
 
@@ -902,8 +899,9 @@ class CloudSyncService {
   DateTime _parseTimestamp(dynamic timestamp) {
     if (timestamp == null) return DateTime(1970);
     if (timestamp is DateTime) return timestamp;
-    if (timestamp is String)
+    if (timestamp is String) {
       return DateTime.tryParse(timestamp) ?? DateTime(1970);
+    }
     if (timestamp is int) return DateTime.fromMillisecondsSinceEpoch(timestamp);
     if (timestamp is Timestamp) return timestamp.toDate();
     return DateTime(1970);

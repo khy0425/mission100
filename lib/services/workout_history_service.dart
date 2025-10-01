@@ -676,7 +676,7 @@ class WorkoutHistoryService {
       final db = await database;
 
       // 테이블 구조 확인
-      final tableInfo = await db.rawQuery("PRAGMA table_info($tableName)");
+      final tableInfo = await db.rawQuery('PRAGMA table_info($tableName)');
       final columnNames = tableInfo.map((row) => row['name'] as String).toSet();
 
       debugPrint('🔍 현재 테이블 컬럼: $columnNames');

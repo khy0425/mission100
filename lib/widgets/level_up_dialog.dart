@@ -8,12 +8,12 @@ class LevelUpDialog extends StatefulWidget {
   final String rewardDescription;
 
   const LevelUpDialog({
-    Key? key,
+    super.key,
     required this.oldLevel,
     required this.newLevel,
     this.rewardTitle = '새로운 기능 해제!',
     this.rewardDescription = '더 강력한 차드로 진화했습니다!',
-  }) : super(key: key);
+  });
 
   @override
   State<LevelUpDialog> createState() => _LevelUpDialogState();

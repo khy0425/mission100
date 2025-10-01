@@ -90,7 +90,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
   @override
   void dispose() {
     _pageController.dispose();
-    for (var controller in _controllers) {
+    for (final controller in _controllers) {
       controller.dispose();
     }
     super.dispose();
@@ -235,7 +235,7 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
               },
             ),
             builder: (context, player) {
-              return Container(
+              return SizedBox(
                 width: double.infinity,
                 height: double.infinity,
                 child: player,

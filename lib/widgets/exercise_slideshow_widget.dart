@@ -8,12 +8,12 @@ class ExerciseSlideshowWidget extends StatefulWidget {
   final BoxFit fit;
 
   const ExerciseSlideshowWidget({
-    Key? key,
+    super.key,
     required this.imagePaths,
     this.slideDuration = const Duration(seconds: 2),
     this.height = 300,
     this.fit = BoxFit.cover,
-  }) : super(key: key);
+  });
 
   @override
   State<ExerciseSlideshowWidget> createState() =>

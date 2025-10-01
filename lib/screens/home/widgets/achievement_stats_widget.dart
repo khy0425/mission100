@@ -87,7 +87,7 @@ class AchievementStatsWidget extends StatelessWidget {
           Localizations.localeOf(context).languageCode == 'ko'
               ? '총 경험치'
               : 'Total XP',
-          '${totalXP} XP',
+          '$totalXP XP',
           Icons.star,
           Colors.purple,
         ),

@@ -51,13 +51,14 @@ class WorkoutControlsWidget extends StatelessWidget {
           Container(
             padding: EdgeInsets.all(padding),
             decoration: BoxDecoration(
-              color: Color(AppColors.secondaryColor).withValues(alpha: 0.1),
+              color:
+                  const Color(AppColors.secondaryColor).withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(AppConstants.radiusM),
             ),
             child: Text(
               AppLocalizations.of(context).restMessage,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    color: Color(AppColors.secondaryColor),
+                    color: const Color(AppColors.secondaryColor),
                     fontWeight: FontWeight.bold,
                     fontSize: isSmallScreen ? 14.0 : 16.0,
                   ),
@@ -73,7 +74,7 @@ class WorkoutControlsWidget extends StatelessWidget {
             child: ElevatedButton(
               onPressed: onSkipRest,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(AppColors.secondaryColor),
+                backgroundColor: const Color(AppColors.secondaryColor),
                 padding: EdgeInsets.symmetric(
                   horizontal: padding,
                   vertical: padding / 2,
@@ -111,7 +112,7 @@ class WorkoutControlsWidget extends StatelessWidget {
           onPressed:
               currentSet < totalSets - 1 ? onStartRest : onCompleteWorkout,
           style: ElevatedButton.styleFrom(
-            backgroundColor: Color(AppColors.successColor),
+            backgroundColor: const Color(AppColors.successColor),
             padding: EdgeInsets.symmetric(
               horizontal: padding,
               vertical: padding / 2,
@@ -151,10 +152,10 @@ class WorkoutControlsWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        color: Color(AppColors.primaryColor).withValues(alpha: 0.1),
+        color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppConstants.radiusM),
         border: Border.all(
-          color: Color(AppColors.primaryColor).withValues(alpha: 0.3),
+          color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -165,14 +166,14 @@ class WorkoutControlsWidget extends StatelessWidget {
             children: [
               Icon(
                 Icons.touch_app,
-                color: Color(AppColors.primaryColor),
+                color: const Color(AppColors.primaryColor),
                 size: iconSize,
               ),
               SizedBox(width: padding / 2),
               Text(
                 '🔥 CHAD 자동 모드 🔥',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: Color(AppColors.primaryColor),
+                      color: const Color(AppColors.primaryColor),
                       fontWeight: FontWeight.bold,
                       fontSize: fontSize,
                     ),
@@ -185,7 +186,7 @@ class WorkoutControlsWidget extends StatelessWidget {
                 ? '💪 횟수 입력 완료! 자동으로 휴식 타이머 시작! FXXK YEAH! 💪'
                 : '💀 횟수를 입력하면 자동으로 세트 완료! BEAST MODE! 💀',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Color(AppColors.primaryColor),
+                  color: const Color(AppColors.primaryColor),
                   fontWeight: FontWeight.w600,
                   fontSize: isSmallScreen ? 12.0 : 14.0,
                 ),

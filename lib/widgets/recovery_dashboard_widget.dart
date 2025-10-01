@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 import '../models/rpe_data.dart';
 
 /// 회복 상태 대시보드 위젯
@@ -80,13 +79,14 @@ class _RecoveryDashboardWidgetState extends State<RecoveryDashboardWidget>
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
           colors: [
-            _getScoreColor(widget.recoveryStatus.score).withOpacity(0.05),
-            _getScoreColor(widget.recoveryStatus.score).withOpacity(0.1),
+            _getScoreColor(widget.recoveryStatus.score).withValues(alpha: 0.05),
+            _getScoreColor(widget.recoveryStatus.score).withValues(alpha: 0.1),
           ],
         ),
         borderRadius: BorderRadius.circular(20),
         border: Border.all(
-          color: _getScoreColor(widget.recoveryStatus.score).withOpacity(0.2),
+          color: _getScoreColor(widget.recoveryStatus.score)
+              .withValues(alpha: 0.2),
         ),
       ),
       child: Column(
@@ -99,7 +99,7 @@ class _RecoveryDashboardWidgetState extends State<RecoveryDashboardWidget>
                 padding: const EdgeInsets.all(8),
                 decoration: BoxDecoration(
                   color: _getScoreColor(widget.recoveryStatus.score)
-                      .withOpacity(0.1),
+                      .withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(
@@ -239,7 +239,7 @@ class _RecoveryDashboardWidgetState extends State<RecoveryDashboardWidget>
               borderRadius: BorderRadius.circular(12),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
+                  color: Colors.black.withValues(alpha: 0.05),
                   blurRadius: 8,
                   offset: const Offset(0, 2),
                 ),
@@ -286,10 +286,10 @@ class _RecoveryDashboardWidgetState extends State<RecoveryDashboardWidget>
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.amber.withOpacity(0.1),
+                color: Colors.amber.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(12),
                 border: Border.all(
-                  color: Colors.amber.withOpacity(0.3),
+                  color: Colors.amber.withValues(alpha: 0.3),
                 ),
               ),
               child: Column(
@@ -353,7 +353,7 @@ class _RecoveryDashboardWidgetState extends State<RecoveryDashboardWidget>
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.05),
+            color: Colors.black.withValues(alpha: 0.05),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -498,11 +498,11 @@ class RecoveryStatusCard extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
-            color: _getScoreColor(status.score).withOpacity(0.2),
+            color: _getScoreColor(status.score).withValues(alpha: 0.2),
           ),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withOpacity(0.05),
+              color: Colors.black.withValues(alpha: 0.05),
               blurRadius: 8,
               offset: const Offset(0, 2),
             ),
@@ -516,7 +516,7 @@ class RecoveryStatusCard extends StatelessWidget {
               height: 60,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: _getScoreColor(status.score).withOpacity(0.1),
+                color: _getScoreColor(status.score).withValues(alpha: 0.1),
                 border: Border.all(
                   color: _getScoreColor(status.score),
                   width: 3,

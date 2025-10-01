@@ -45,7 +45,7 @@ class PremiumGateWidget extends StatelessWidget {
         Positioned.fill(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.7),
+              color: Colors.black.withValues(alpha: 0.7),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Center(
@@ -134,11 +134,11 @@ class PremiumUpgradeDialog extends StatelessWidget {
     final requiredPlan = _getRequiredPlan();
 
     return AlertDialog(
-      title: Row(
+      title: const Row(
         children: [
-          const Icon(Icons.workspace_premium, color: Colors.amber),
-          const SizedBox(width: 8),
-          const Text('프리미엄 기능'),
+          Icon(Icons.workspace_premium, color: Colors.amber),
+          SizedBox(width: 8),
+          Text('프리미엄 기능'),
         ],
       ),
       content: Column(
@@ -163,9 +163,9 @@ class PremiumUpgradeDialog extends StatelessWidget {
           Container(
             padding: const EdgeInsets.all(12),
             decoration: BoxDecoration(
-              color: Colors.amber.withOpacity(0.1),
+              color: Colors.amber.withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(8),
-              border: Border.all(color: Colors.amber.withOpacity(0.3)),
+              border: Border.all(color: Colors.amber.withValues(alpha: 0.3)),
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -306,9 +306,9 @@ class PremiumLimitWidget extends StatelessWidget {
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: Colors.orange.withOpacity(0.1),
+        color: Colors.orange.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
-        border: Border.all(color: Colors.orange.withOpacity(0.3)),
+        border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
       ),
       child: Column(
         children: [

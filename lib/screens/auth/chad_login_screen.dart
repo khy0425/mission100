@@ -123,18 +123,18 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                const Color(AppColors.primaryColor).withOpacity(0.1),
-                Colors.orange.withOpacity(0.1),
+                const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+                Colors.orange.withValues(alpha: 0.1),
               ],
             ),
             borderRadius: BorderRadius.circular(12),
             border: Border.all(
-              color: const Color(AppColors.primaryColor).withOpacity(0.3),
+              color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
             ),
           ),
-          child: Column(
+          child: const Column(
             children: [
-              const Text(
+              Text(
                 '🎉 Chad 런칭 특가!',
                 style: TextStyle(
                   fontSize: 18,
@@ -142,8 +142,8 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
                   color: Color(AppColors.primaryColor),
                 ),
               ),
-              const SizedBox(height: 8),
-              const Text(
+              SizedBox(height: 8),
+              Text(
                 'Chad AI 트레이너 1개월 무료 체험\n지금 가입하면 무료로 시작!',
                 textAlign: TextAlign.center,
                 style: TextStyle(

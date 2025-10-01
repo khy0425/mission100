@@ -61,10 +61,10 @@ class _WorkoutReminderSettingsScreenState
         await NotificationService.cancelWorkoutReminder();
       }
 
-      _showSnackBar(AppLocalizations.of(context)!.settingsSaved);
+      _showSnackBar(AppLocalizations.of(context).settingsSaved);
     } catch (e) {
       debugPrint('설정 저장 실패: $e');
-      _showSnackBar(AppLocalizations.of(context)!.settingsSaveFailed);
+      _showSnackBar(AppLocalizations.of(context).settingsSaveFailed);
     }
   }
 
@@ -139,7 +139,7 @@ class _WorkoutReminderSettingsScreenState
     if (_isLoading) {
       return Scaffold(
         appBar: AppBar(
-          title: Text(AppLocalizations.of(context)!.workoutReminderSettings),
+          title: Text(AppLocalizations.of(context).workoutReminderSettings),
           backgroundColor: isDark ? Colors.grey[900] : Colors.blue,
           foregroundColor: Colors.white,
         ),
@@ -150,7 +150,7 @@ class _WorkoutReminderSettingsScreenState
     return Scaffold(
       backgroundColor: isDark ? Colors.black : const Color(0xFFF5F5F5),
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.workoutReminderSettings),
+        title: Text(AppLocalizations.of(context).workoutReminderSettings),
         backgroundColor: isDark ? Colors.grey[900] : Colors.blue,
         foregroundColor: Colors.white,
         elevation: 0,
@@ -171,10 +171,10 @@ class _WorkoutReminderSettingsScreenState
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       )
-                    : LinearGradient(
+                    : const LinearGradient(
                         colors: [
-                          const Color(0xFF2196F3),
-                          const Color(0xFF1976D2),
+                          Color(0xFF2196F3),
+                          Color(0xFF1976D2),
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -182,7 +182,7 @@ class _WorkoutReminderSettingsScreenState
                 borderRadius: BorderRadius.circular(12),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black.withOpacity(0.1),
+                    color: Colors.black.withValues(alpha: 0.1),
                     blurRadius: 8,
                     offset: const Offset(0, 2),
                   ),
@@ -193,18 +193,18 @@ class _WorkoutReminderSettingsScreenState
                   const Icon(Icons.schedule, size: 48, color: Colors.white),
                   const SizedBox(height: 8),
                   Text(
-                    AppLocalizations.of(context)!.workoutReminderSettings,
-                    style: TextStyle(
+                    AppLocalizations.of(context).workoutReminderSettings,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
                   Text(
-                    AppLocalizations.of(context)!.chadModeActivate,
+                    AppLocalizations.of(context).chadModeActivate,
                     style: TextStyle(
                       fontSize: 14,
-                      color: Colors.white.withOpacity(0.9),
+                      color: Colors.white.withValues(alpha: 0.9),
                     ),
                   ),
                 ],
@@ -215,20 +215,20 @@ class _WorkoutReminderSettingsScreenState
 
             // 알림 활성화
             _buildSectionHeader(
-              AppLocalizations.of(context)!.chadNotificationSettings,
+              AppLocalizations.of(context).chadNotificationSettings,
               Icons.notifications,
             ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               SwitchListTile(
-                title: Text(AppLocalizations.of(context)!.chadReminder),
+                title: Text(AppLocalizations.of(context).chadReminder),
                 subtitle: Text(
                   _settings.isEnabled
-                      ? AppLocalizations.of(context)!.chadModeActive(
+                      ? AppLocalizations.of(context).chadModeActive(
                           _settings.activeDaysString,
                           _settings.time.format(context),
                         )
-                      : AppLocalizations.of(context)!.chadModeWaiting,
+                      : AppLocalizations.of(context).chadModeWaiting,
                 ),
                 value: _settings.isEnabled,
                 onChanged: (value) {
@@ -242,19 +242,18 @@ class _WorkoutReminderSettingsScreenState
 
               // 시간 설정
               _buildSectionHeader(
-                AppLocalizations.of(context)!.chadTimeSettings,
+                AppLocalizations.of(context).chadTimeSettings,
                 Icons.access_time,
               ),
               const SizedBox(height: 8),
               _buildSettingsCard([
                 ListTile(
                   leading: const Icon(Icons.schedule),
-                  title: Text(AppLocalizations.of(context)!.chadAlarmTime),
+                  title: Text(AppLocalizations.of(context).chadAlarmTime),
                   subtitle: Text(
                     AppLocalizations.of(
                       context,
-                    )!
-                        .victoryTime(_settings.time.format(context)),
+                    ).victoryTime(_settings.time.format(context)),
                   ),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: _selectTime,
@@ -265,16 +264,16 @@ class _WorkoutReminderSettingsScreenState
 
               // 프리셋 선택
               _buildSectionHeader(
-                AppLocalizations.of(context)!.chadModeSelection,
+                AppLocalizations.of(context).chadModeSelection,
                 Icons.dashboard,
               ),
               const SizedBox(height: 8),
               _buildSettingsCard([
                 ListTile(
                   leading: const Icon(Icons.work),
-                  title: Text(AppLocalizations.of(context)!.workerChadMode),
+                  title: Text(AppLocalizations.of(context).workerChadMode),
                   subtitle: Text(
-                    AppLocalizations.of(context)!.weekendRestWeekdayInvincible,
+                    AppLocalizations.of(context).weekendRestWeekdayInvincible,
                   ),
                   onTap: () =>
                       _selectPreset(WorkoutReminderSettings.defaultWeekdays),
@@ -282,9 +281,9 @@ class _WorkoutReminderSettingsScreenState
                 const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.star),
-                  title: Text(AppLocalizations.of(context)!.strategicChadMode),
+                  title: Text(AppLocalizations.of(context).strategicChadMode),
                   subtitle: Text(
-                    AppLocalizations.of(context)!.scientificRecovery,
+                    AppLocalizations.of(context).scientificRecovery,
                   ),
                   onTap: () =>
                       _selectPreset(WorkoutReminderSettings.defaultMWF),
@@ -292,9 +291,9 @@ class _WorkoutReminderSettingsScreenState
                 const Divider(height: 1),
                 ListTile(
                   leading: const Icon(Icons.favorite),
-                  title: Text(AppLocalizations.of(context)!.balanceChadMode),
+                  title: Text(AppLocalizations.of(context).balanceChadMode),
                   subtitle: Text(
-                    AppLocalizations.of(context)!.perfectBalanceOptimized,
+                    AppLocalizations.of(context).perfectBalanceOptimized,
                   ),
                   onTap: () =>
                       _selectPreset(WorkoutReminderSettings.defaultTTS),
@@ -305,7 +304,7 @@ class _WorkoutReminderSettingsScreenState
 
               // 요일별 설정
               _buildSectionHeader(
-                AppLocalizations.of(context)!.victoryDaySelection,
+                AppLocalizations.of(context).victoryDaySelection,
                 Icons.calendar_today,
               ),
               const SizedBox(height: 8),
@@ -318,10 +317,10 @@ class _WorkoutReminderSettingsScreenState
                 width: double.infinity,
                 padding: const EdgeInsets.all(16),
                 decoration: BoxDecoration(
-                  color: Colors.orange.withOpacity(0.1),
+                  color: Colors.orange.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(
-                    color: Colors.orange.withOpacity(0.3),
+                    color: Colors.orange.withValues(alpha: 0.3),
                     width: 1,
                   ),
                 ),
@@ -333,7 +332,7 @@ class _WorkoutReminderSettingsScreenState
                         Icon(Icons.info, color: Colors.orange[700], size: 20),
                         const SizedBox(width: 8),
                         Text(
-                          AppLocalizations.of(context)!.precautions,
+                          AppLocalizations.of(context).precautions,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             color: Colors.orange[700],
@@ -343,7 +342,7 @@ class _WorkoutReminderSettingsScreenState
                     ),
                     const SizedBox(height: 8),
                     Text(
-                      AppLocalizations.of(context)!.workoutPrecautions,
+                      AppLocalizations.of(context).workoutPrecautions,
                       style: TextStyle(
                         fontSize: 12,
                         color: Colors.orange[700],
@@ -372,8 +371,8 @@ class _WorkoutReminderSettingsScreenState
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
             color: isDark
-                ? Colors.blue.withOpacity(0.2)
-                : Colors.blue.withOpacity(0.1),
+                ? Colors.blue.withValues(alpha: 0.2)
+                : Colors.blue.withValues(alpha: 0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Icon(
@@ -405,7 +404,7 @@ class _WorkoutReminderSettingsScreenState
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(isDark ? 0.3 : 0.1),
+            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
             blurRadius: 8,
             offset: const Offset(0, 2),
           ),
@@ -469,7 +468,7 @@ class _WorkoutReminderSettingsScreenState
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: isSelected
-                          ? Colors.blue.withOpacity(0.1)
+                          ? Colors.blue.withValues(alpha: 0.1)
                           : (isDark ? Colors.grey[800] : Colors.grey[50]),
                       borderRadius: BorderRadius.circular(12),
                       border: Border.all(

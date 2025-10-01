@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart' as path;
-import 'dart:io';
 import 'package:provider/provider.dart';
 import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
-import '../utils/debug_helper.dart';
 import '../services/achievement_service.dart';
 import '../services/chad_evolution_service.dart';
 import '../widgets/chad_evolution_animation.dart';
 
 import '../services/workout_history_service.dart';
-import '../services/permission_service.dart';
-import '../services/ad_service.dart';
-import '../widgets/achievement_celebration_dialog.dart';
 import '../widgets/multiple_achievements_dialog.dart';
 import '../models/achievement.dart';
 import 'home_screen.dart';

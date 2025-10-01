@@ -36,19 +36,19 @@ class RepCounterWidget extends StatelessWidget {
     final isSmallScreen = screenHeight < 700;
 
     // 더 컴팩트한 패딩과 여백
-    final padding = AppConstants.paddingM;
-    final spacing = AppConstants.paddingS;
+    const padding = AppConstants.paddingM;
+    const spacing = AppConstants.paddingS;
     final fontSize = isSmallScreen ? 40.0 : 48.0;
 
     return Container(
-      padding: EdgeInsets.all(padding),
+      padding: const EdgeInsets.all(padding),
       decoration: BoxDecoration(
         color: _getPerformanceColor().withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
         border: Border.all(
           color: isSetCompleted
-              ? Color(AppColors.successColor)
-              : Color(AppColors.primaryColor),
+              ? const Color(AppColors.successColor)
+              : const Color(AppColors.primaryColor),
           width: 2,
         ),
       ),
@@ -65,14 +65,14 @@ class RepCounterWidget extends StatelessWidget {
                   Text(
                     AppLocalizations.of(context).target,
                     style: theme.textTheme.bodySmall?.copyWith(
-                      color: Color(AppColors.primaryColor),
+                      color: const Color(AppColors.primaryColor),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
                     '$targetReps',
                     style: theme.textTheme.headlineMedium?.copyWith(
-                      color: Color(AppColors.primaryColor),
+                      color: const Color(AppColors.primaryColor),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -108,7 +108,7 @@ class RepCounterWidget extends StatelessWidget {
           ),
 
           if (!isSetCompleted) ...[
-            SizedBox(height: spacing),
+            const SizedBox(height: spacing),
 
             // 성과 메시지
             Text(
@@ -120,7 +120,7 @@ class RepCounterWidget extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
 
-            SizedBox(height: spacing),
+            const SizedBox(height: spacing),
 
             // 빠른 입력 버튼들 (2줄로 배치)
             Column(
@@ -138,7 +138,7 @@ class RepCounterWidget extends StatelessWidget {
                         true,
                       ),
                     ),
-                    SizedBox(width: spacing),
+                    const SizedBox(width: spacing),
                     Expanded(
                       child: _buildQuickInputButton(
                         context,
@@ -148,20 +148,20 @@ class RepCounterWidget extends StatelessWidget {
                         true,
                       ),
                     ),
-                    SizedBox(width: spacing),
+                    const SizedBox(width: spacing),
                     Expanded(
                       child: _buildQuickInputButton(
                         context,
                         targetReps,
                         '100%',
-                        Color(AppColors.successColor),
+                        const Color(AppColors.successColor),
                         true,
                       ),
                     ),
                   ],
                 ),
 
-                SizedBox(height: spacing / 2),
+                const SizedBox(height: spacing / 2),
 
                 // 두 번째 줄: 추가 옵션
                 Row(
@@ -176,13 +176,13 @@ class RepCounterWidget extends StatelessWidget {
                         true,
                       ),
                     ),
-                    SizedBox(width: spacing),
+                    const SizedBox(width: spacing),
                     Expanded(
                       child: _buildQuickInputButton(
                         context,
                         targetReps + 2,
                         AppLocalizations.of(context).exceed,
-                        Color(AppColors.primaryColor),
+                        const Color(AppColors.primaryColor),
                         true,
                       ),
                     ),
@@ -191,7 +191,7 @@ class RepCounterWidget extends StatelessWidget {
               ],
             ),
 
-            SizedBox(height: spacing / 2),
+            const SizedBox(height: spacing / 2),
 
             // 수동 조정 버튼들 (반응형)
             Row(
@@ -233,7 +233,7 @@ class RepCounterWidget extends StatelessWidget {
                   ),
                 ),
 
-                SizedBox(width: spacing),
+                const SizedBox(width: spacing),
 
                 // +1 버튼
                 ElevatedButton(
@@ -250,7 +250,7 @@ class RepCounterWidget extends StatelessWidget {
                     });
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(AppColors.primaryColor),
+                    backgroundColor: const Color(AppColors.primaryColor),
                     shape: const CircleBorder(),
                     padding: EdgeInsets.all(
                       isSmallScreen
@@ -337,9 +337,9 @@ class RepCounterWidget extends StatelessWidget {
 
   Color _getPerformanceColor() {
     if (currentReps >= targetReps) {
-      return Color(AppColors.successColor); // 목표 달성
+      return const Color(AppColors.successColor); // 목표 달성
     } else if (currentReps >= targetReps * 0.8) {
-      return Color(AppColors.primaryColor); // 80% 이상
+      return const Color(AppColors.primaryColor); // 80% 이상
     } else if (currentReps >= targetReps * 0.5) {
       return Colors.orange; // 50% 이상
     } else {

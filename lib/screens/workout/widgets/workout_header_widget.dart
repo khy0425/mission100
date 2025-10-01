@@ -38,7 +38,7 @@ class WorkoutHeaderWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        color: Color(AppColors.primaryColor).withValues(alpha: 0.1),
+        color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppConstants.radiusM),
       ),
       child: Column(
@@ -46,7 +46,7 @@ class WorkoutHeaderWidget extends StatelessWidget {
           Text(
             workoutTitle,
             style: theme.textTheme.titleLarge?.copyWith(
-              color: Color(AppColors.primaryColor),
+              color: const Color(AppColors.primaryColor),
               fontWeight: FontWeight.bold,
               fontSize: titleFontSize,
             ),
@@ -62,7 +62,7 @@ class WorkoutHeaderWidget extends StatelessWidget {
                     context,
                   ).setFormat(currentSet + 1, totalSets),
                   style: theme.textTheme.titleMedium?.copyWith(
-                    color: Color(AppColors.primaryColor),
+                    color: const Color(AppColors.primaryColor),
                     fontWeight: FontWeight.w600,
                     fontSize: isLargeTablet ? 16.0 : (isTablet ? 14.0 : 12.0),
                   ),
@@ -74,7 +74,7 @@ class WorkoutHeaderWidget extends StatelessWidget {
                   vertical: padding / 2,
                 ),
                 decoration: BoxDecoration(
-                  color: Color(AppColors.primaryColor),
+                  color: const Color(AppColors.primaryColor),
                   borderRadius: BorderRadius.circular(AppConstants.radiusS),
                 ),
                 child: Text(

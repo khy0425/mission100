@@ -331,7 +331,7 @@ class ShareCardWidget extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Text(
-                  '🎯 +${xpReward} XP',
+                  '🎯 +$xpReward XP',
                   style: const TextStyle(
                     color: Colors.white,
                     fontSize: 14,

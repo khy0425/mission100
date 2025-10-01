@@ -315,7 +315,7 @@ class AchievementPerformanceService {
 
         if (data['logs'] != null) {
           _performanceLogs
-              .addAll((List<String>.from(data['logs'] as List? ?? [])));
+              .addAll(List<String>.from(data['logs'] as List? ?? []));
         }
 
         debugPrint('📊 성능 데이터 로드 완료');

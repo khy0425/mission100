@@ -482,8 +482,6 @@ class _MockPurchaseResult {
 
   _MockPurchaseResult({
     required this.success,
-    // ignore: unused_element
-    this.error,
     this.purchaseDetails,
   });
 }

@@ -1,10 +1,7 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
-import '../models/user_profile.dart';
 import '../models/progress.dart';
-import '../models/chad_evolution.dart';
 import '../services/notification_service.dart';
 
 /// 차드 레벨 통합 관리 서비스
@@ -341,7 +338,7 @@ class ChadStageInfo {
 
   /// 모든 차드 단계 정의 (통합된 순서)
   static final List<ChadStageInfo> allStages = [
-    ChadStageInfo(
+    const ChadStageInfo(
       stageIndex: 0,
       id: 'sleep_cap_chad',
       name: '수면모자 Chad',
@@ -349,9 +346,9 @@ class ChadStageInfo {
       imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 0,
       unlockMessage: 'Mission 100에 오신 것을 환영합니다!',
-      themeColor: const Color(0xFF9C88FF), // 보라색
+      themeColor: Color(0xFF9C88FF), // 보라색
     ),
-    ChadStageInfo(
+    const ChadStageInfo(
       stageIndex: 1,
       id: 'basic_chad',
       name: '기본 Chad',
@@ -359,9 +356,9 @@ class ChadStageInfo {
       imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 1,
       unlockMessage: '축하합니다! 1주차를 완료하여 기본 Chad로 진화했습니다!',
-      themeColor: const Color(0xFF4DABF7), // 파란색
+      themeColor: Color(0xFF4DABF7), // 파란색
     ),
-    ChadStageInfo(
+    const ChadStageInfo(
       stageIndex: 2,
       id: 'coffee_chad',
       name: '커피 Chad',
@@ -369,9 +366,9 @@ class ChadStageInfo {
       imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 2,
       unlockMessage: '대단합니다! 2주차를 완료하여 커피 Chad로 진화했습니다!',
-      themeColor: const Color(0xFF8B4513), // 갈색
+      themeColor: Color(0xFF8B4513), // 갈색
     ),
-    ChadStageInfo(
+    const ChadStageInfo(
       stageIndex: 3,
       id: 'front_facing_chad',
       name: '정면 Chad',
@@ -379,9 +376,9 @@ class ChadStageInfo {
       imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 3,
       unlockMessage: '놀랍습니다! 3주차를 완료하여 정면 Chad로 진화했습니다!',
-      themeColor: const Color(0xFF51CF66), // 초록색
+      themeColor: Color(0xFF51CF66), // 초록색
     ),
-    ChadStageInfo(
+    const ChadStageInfo(
       stageIndex: 4,
       id: 'sunglasses_chad',
       name: '썬글라스 Chad',
@@ -389,9 +386,9 @@ class ChadStageInfo {
       imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 4,
       unlockMessage: '멋집니다! 4주차를 완료하여 썬글라스 Chad로 진화했습니다!',
-      themeColor: const Color(0xFF000000), // 검은색
+      themeColor: Color(0xFF000000), // 검은색
     ),
-    ChadStageInfo(
+    const ChadStageInfo(
       stageIndex: 5,
       id: 'glowing_eyes_chad',
       name: '빛나는눈 Chad',
@@ -399,9 +396,9 @@ class ChadStageInfo {
       imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 5,
       unlockMessage: '경이롭습니다! 5주차를 완료하여 빛나는눈 Chad로 진화했습니다!',
-      themeColor: const Color(0xFFFF6B6B), // 빨간색
+      themeColor: Color(0xFFFF6B6B), // 빨간색
     ),
-    ChadStageInfo(
+    const ChadStageInfo(
       stageIndex: 6,
       id: 'double_chad',
       name: '더블 Chad',
@@ -409,7 +406,7 @@ class ChadStageInfo {
       imagePath: 'assets/images/기본차드.jpg',
       requiredWeeks: 6,
       unlockMessage: '전설입니다! 6주차를 완료하여 더블 Chad로 진화했습니다!',
-      themeColor: const Color(0xFFFFD43B), // 금색
+      themeColor: Color(0xFFFFD43B), // 금색
     ),
   ];
 

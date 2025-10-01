@@ -118,7 +118,7 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: adjustmentColor.withOpacity(0.1),
+              color: adjustmentColor.withValues(alpha: 0.1),
               blurRadius: 20,
               offset: const Offset(0, 8),
             ),
@@ -133,8 +133,8 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    adjustmentColor.withOpacity(0.1),
-                    adjustmentColor.withOpacity(0.05),
+                    adjustmentColor.withValues(alpha: 0.1),
+                    adjustmentColor.withValues(alpha: 0.05),
                   ],
                 ),
                 borderRadius: const BorderRadius.only(
@@ -149,7 +149,7 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
                     child: Container(
                       padding: const EdgeInsets.all(12),
                       decoration: BoxDecoration(
-                        color: adjustmentColor.withOpacity(0.2),
+                        color: adjustmentColor.withValues(alpha: 0.2),
                         borderRadius: BorderRadius.circular(16),
                       ),
                       child: Icon(
@@ -193,9 +193,9 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
                       color: adjustmentColor,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    child: Text(
+                    child: const Text(
                       'NEW',
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 10,
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -265,7 +265,7 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
                           child: Container(
                             padding: const EdgeInsets.all(8),
                             decoration: BoxDecoration(
-                              color: adjustmentColor.withOpacity(0.1),
+                              color: adjustmentColor.withValues(alpha: 0.1),
                               shape: BoxShape.circle,
                             ),
                             child: Icon(
@@ -336,9 +336,9 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
                                 borderRadius: BorderRadius.circular(12),
                               ),
                             ),
-                            child: Text(
+                            child: const Text(
                               '추천 적용',
-                              style: const TextStyle(
+                              style: TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
@@ -364,11 +364,14 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: isOriginal ? Colors.grey[50] : adjustmentColor.withOpacity(0.1),
+        color: isOriginal
+            ? Colors.grey[50]
+            : adjustmentColor.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color:
-              isOriginal ? Colors.grey[200]! : adjustmentColor.withOpacity(0.3),
+          color: isOriginal
+              ? Colors.grey[200]!
+              : adjustmentColor.withValues(alpha: 0.3),
         ),
       ),
       child: Column(
@@ -441,16 +444,16 @@ class QuickAdjustmentAlert extends StatelessWidget {
         margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: color.withOpacity(0.3)),
+          border: Border.all(color: color.withValues(alpha: 0.3)),
         ),
         child: Row(
           children: [
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: color.withOpacity(0.2),
+                color: color.withValues(alpha: 0.2),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(

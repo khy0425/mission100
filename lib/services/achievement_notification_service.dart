@@ -105,7 +105,7 @@ class AchievementNotificationService {
         showWhen: true,
       );
 
-      final iosDetails = DarwinNotificationDetails(
+      const iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: true,
         presentSound: true,
@@ -167,13 +167,13 @@ class AchievementNotificationService {
         priority: Priority.defaultPriority,
         playSound: true,
         enableVibration: false,
-        color: Color(AppColors.primaryColor),
+        color: const Color(AppColors.primaryColor),
         icon: '@drawable/ic_progress',
         autoCancel: true,
         ongoing: false,
       );
 
-      final iosDetails = DarwinNotificationDetails(
+      const iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: false,
         presentSound: true,
@@ -195,13 +195,13 @@ class AchievementNotificationService {
 
       await _notifications.show(
         notificationId,
-        '📈 업적 진행률 ${milestone}% 달성!',
-        '${achievement.titleKey}에 ${milestone}% 도달했습니다. 조금만 더 화이팅!',
+        '📈 업적 진행률 $milestone% 달성!',
+        '${achievement.titleKey}에 $milestone% 도달했습니다. 조금만 더 화이팅!',
         notificationDetails,
         payload: payload,
       );
 
-      debugPrint('📈 업적 진행률 알림 발송: ${achievement.titleKey} (${milestone}%)');
+      debugPrint('📈 업적 진행률 알림 발송: ${achievement.titleKey} ($milestone%)');
     } catch (e) {
       debugPrint('❌ 업적 진행률 알림 발송 실패: $e');
     }
@@ -214,7 +214,7 @@ class AchievementNotificationService {
     try {
       if (achievements.isEmpty) return;
 
-      final notificationId = _specialEventNotificationId + 1;
+      const notificationId = _specialEventNotificationId + 1;
 
       // 가장 높은 희귀도를 기준으로 알림 스타일 결정
       final highestRarity = achievements
@@ -231,7 +231,7 @@ class AchievementNotificationService {
         sound: const RawResourceAndroidNotificationSound('achievement_combo'),
         enableVibration: true,
         vibrationPattern: Int64List.fromList([0, 500, 200, 500, 200, 800]),
-        color: Color(AppColors.secondaryColor),
+        color: const Color(AppColors.secondaryColor),
         largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
         styleInformation: BigTextStyleInformation(
           '🔥 연쇄 달성! ${achievements.length}개 업적을 동시에 달성했습니다!\n\n${achievements.map((a) => '• ${a.titleKey}').join('\n')}',
@@ -244,7 +244,7 @@ class AchievementNotificationService {
         autoCancel: true,
       );
 
-      final iosDetails = DarwinNotificationDetails(
+      const iosDetails = DarwinNotificationDetails(
         presentAlert: true,
         presentBadge: true,
         presentSound: true,
@@ -309,7 +309,7 @@ class AchievementNotificationService {
           100,
           1000,
         ]),
-        color: Color(0xFFFFD700), // 골드 색상
+        color: const Color(0xFFFFD700), // 골드 색상
         largeIcon: const DrawableResourceAndroidBitmap('@mipmap/ic_launcher'),
         styleInformation: BigTextStyleInformation(
           body,

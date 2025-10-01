@@ -39,23 +39,24 @@ class RestTimerWidget extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
-        color: Color(AppColors.secondaryColor).withValues(alpha: 0.1),
+        color: const Color(AppColors.secondaryColor).withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(AppConstants.radiusXL),
-        border: Border.all(color: Color(AppColors.secondaryColor), width: 3),
+        border:
+            Border.all(color: const Color(AppColors.secondaryColor), width: 3),
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
             Icons.timer,
-            color: Color(AppColors.secondaryColor),
+            color: const Color(AppColors.secondaryColor),
             size: iconSize,
           ),
           SizedBox(height: padding / 2),
           Text(
             AppLocalizations.of(context).restTimeTitle,
             style: theme.textTheme.titleLarge?.copyWith(
-              color: Color(AppColors.secondaryColor),
+              color: const Color(AppColors.secondaryColor),
               fontWeight: FontWeight.bold,
               fontSize: isSmallScreen ? 16.0 : 20.0,
             ),
@@ -64,7 +65,7 @@ class RestTimerWidget extends StatelessWidget {
           Text(
             '${minutes.toString().padLeft(2, '0')}:${seconds.toString().padLeft(2, '0')}',
             style: theme.textTheme.displayLarge?.copyWith(
-              color: Color(AppColors.secondaryColor),
+              color: const Color(AppColors.secondaryColor),
               fontWeight: FontWeight.bold,
               fontSize: timerFontSize,
             ),
@@ -90,7 +91,7 @@ class RestTimerWidget extends StatelessWidget {
             child: ElevatedButton(
               onPressed: onSkipRest,
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(AppColors.secondaryColor),
+                backgroundColor: const Color(AppColors.secondaryColor),
                 padding: EdgeInsets.symmetric(
                   horizontal: padding,
                   vertical: padding / 2,

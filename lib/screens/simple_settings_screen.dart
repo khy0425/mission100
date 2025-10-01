@@ -80,10 +80,10 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       )
-                    : LinearGradient(
+                    : const LinearGradient(
                         colors: [
-                          const Color(0xFF2196F3),
-                          const Color(0xFF1976D2),
+                          Color(0xFF2196F3),
+                          Color(0xFF1976D2),
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
@@ -101,7 +101,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 children: [
                   const Icon(Icons.settings, size: 48, color: Colors.white),
                   const SizedBox(height: 8),
-                  Text(
+                  const Text(
                     'MISSION 100 설정',
                     style: TextStyle(
                       fontSize: 20,
@@ -324,14 +324,14 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
             _buildSettingsCard([
               ListTile(
                 leading: const Icon(Icons.account_circle),
-                title: Text('계정 정보'),
+                title: const Text('계정 정보'),
                 subtitle: Consumer<AuthService>(
                   builder: (context, authService, child) {
                     final user = authService.currentUser;
                     if (user != null) {
                       return Text(user.email ?? user.displayName ?? 'User');
                     }
-                    return Text('게스트 모드');
+                    return const Text('게스트 모드');
                   },
                 ),
                 trailing: const Icon(Icons.chevron_right),
@@ -346,11 +346,11 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                   if (authService.isLoggedIn) {
                     return ListTile(
                       leading: const Icon(Icons.logout, color: Colors.orange),
-                      title: Text(
+                      title: const Text(
                         '로그아웃',
-                        style: const TextStyle(color: Colors.orange),
+                        style: TextStyle(color: Colors.orange),
                       ),
-                      subtitle: Text('계정에서 로그아웃합니다'),
+                      subtitle: const Text('계정에서 로그아웃합니다'),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
                         _showLogoutConfirmDialog();
@@ -360,11 +360,11 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                     // 게스트 모드일 때는 로그인 버튼 표시
                     return ListTile(
                       leading: const Icon(Icons.login, color: Colors.blue),
-                      title: Text(
+                      title: const Text(
                         '로그인',
-                        style: const TextStyle(color: Colors.blue),
+                        style: TextStyle(color: Colors.blue),
                       ),
-                      subtitle: Text('진행 상황을 저장하려면 로그인하세요'),
+                      subtitle: const Text('진행 상황을 저장하려면 로그인하세요'),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
                         _navigateToLogin();
@@ -570,10 +570,10 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Row(
+          title: const Row(
             children: [
-              const Icon(Icons.account_circle, color: Colors.blue),
-              const SizedBox(width: 8),
+              Icon(Icons.account_circle, color: Colors.blue),
+              SizedBox(width: 8),
               Text('계정 정보'),
             ],
           ),
@@ -607,14 +607,14 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                       : '이메일',
                 ),
               ] else ...[
-                Text('게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.'),
+                const Text('게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.'),
               ],
             ],
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('닫기'),
+              child: const Text('닫기'),
             ),
           ],
         );
@@ -646,12 +646,12 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: Text('로그아웃'),
-          content: Text('정말로 로그아웃하시겠습니까? 저장되지 않은 데이터는 손실될 수 있습니다.'),
+          title: const Text('로그아웃'),
+          content: const Text('정말로 로그아웃하시겠습니까? 저장되지 않은 데이터는 손실될 수 있습니다.'),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: Text('취소'),
+              child: const Text('취소'),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -662,7 +662,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 backgroundColor: Colors.orange,
                 foregroundColor: Colors.white,
               ),
-              child: Text('로그아웃'),
+              child: const Text('로그아웃'),
             ),
           ],
         );

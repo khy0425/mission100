@@ -249,7 +249,8 @@ class AchievementDetailDialog extends StatelessWidget {
                           const SizedBox(height: AppConstants.paddingS / 2),
                           Row(
                             children: [
-                              Icon(Icons.star, color: Colors.amber, size: 20),
+                              const Icon(Icons.star,
+                                  color: Colors.amber, size: 20),
                               const SizedBox(width: AppConstants.paddingS),
                               Text(
                                 '${AppLocalizations.of(context).earnedXp}: ${achievement.xpReward}',
