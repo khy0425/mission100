@@ -67,10 +67,9 @@ jobs:
         run: flutter pub get
 
       - name: 🔐 Setup Firebase Config
-        run: |
-          cat <<EOF > android/app/google-services.json
-          ${{ secrets.GOOGLE_SERVICES_JSON }}
-          EOF
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: echo "$GOOGLE_SERVICES_JSON" > android/app/google-services.json
 
       - name: 🔧 Generate Localization
         run: flutter gen-l10n
