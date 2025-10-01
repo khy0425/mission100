@@ -1,0 +1,26 @@
+{
+  "environment": "development",
+  "api_keys": {
+    "firebase_api_key": "AIzaSyDevelopmentKeyForTestingOnly123456",
+    "admob_app_id": "ca-app-pub-3940256099942544~3347511713",
+    "admob_banner_id": "ca-app-pub-3940256099942544/6300978111",
+    "admob_interstitial_id": "ca-app-pub-3940256099942544/1033173712",
+    "admob_rewarded_id": "ca-app-pub-3940256099942544/5224354917"
+  },
+  "features": {
+    "debug_mode": true,
+    "logging_enabled": true,
+    "crash_reporting": false,
+    "analytics_enabled": false
+  },
+  "security": {
+    "encryption_enabled": false,
+    "api_key_rotation": false,
+    "rate_limiting": false
+  },
+  "database": {
+    "use_emulator": true,
+    "emulator_host": "localhost",
+    "emulator_port": 8080
+  }
+}

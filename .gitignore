@@ -60,3 +60,17 @@ store_assets/
 # 불필요한 생성 파일들
 pubspec_temp.yaml
 *_temp.*
+
+# Firebase 프로덕션 설정 (보안)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+assets/config/prod_config.json
+
+# 키스토어 (보안)
+android/key.properties
+android/keystore/*.jks
+android/keystore/*.keystore
+
+# 환경 변수
+.env
+.env.production

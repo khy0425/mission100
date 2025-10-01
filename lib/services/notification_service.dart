@@ -1036,4 +1036,46 @@ class NotificationService {
   static Future<void> cancelWorkoutReminder() async {
     await cancelAllNotifications();
   }
+
+  /// 구독 관리용 간단한 알림 표시
+  Future<void> showNotification({
+    required String title,
+    required String body,
+    int? id,
+  }) async {
+    try {
+      if (!_isInitialized) {
+        debugPrint('NotificationService가 초기화되지 않음');
+        return;
+      }
+
+      final notificationId = id ?? Random().nextInt(1000000);
+
+      await _notifications.show(
+        notificationId,
+        title,
+        body,
+        const NotificationDetails(
+          android: AndroidNotificationDetails(
+            'subscription_channel',
+            '구독 알림',
+            channelDescription: '구독 관련 알림을 표시합니다',
+            importance: Importance.high,
+            priority: Priority.high,
+            icon: '@mipmap/ic_launcher',
+          ),
+          iOS: DarwinNotificationDetails(
+            presentAlert: true,
+            presentBadge: true,
+            presentSound: true,
+          ),
+        ),
+      );
+
+      debugPrint('NotificationService: 알림 표시됨 - $title');
+    } catch (e) {
+      debugPrint('NotificationService: 알림 표시 실패 - $e');
+      rethrow;
+    }
+  }
 }

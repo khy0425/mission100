@@ -71,6 +71,7 @@ class ConfigManager {
       featureFlags: newFeatures,
       adConfig: currentConfig.adConfig,
       paymentConfig: currentConfig.paymentConfig,
+      securityConfig: currentConfig.securityConfig,
     );
 
     await updateConfig(newConfig);
@@ -84,6 +85,7 @@ class ConfigManager {
       featureFlags: currentConfig.featureFlags,
       adConfig: currentConfig.adConfig,
       paymentConfig: currentConfig.paymentConfig,
+      securityConfig: currentConfig.securityConfig,
     );
 
     await updateConfig(newConfig);
@@ -154,6 +156,7 @@ class ConfigManager {
             iosRewardedId: '',
           ),
       paymentConfig: paymentConfig ?? const PaymentConfig(),
+      securityConfig: const SecurityConfig(),
     );
   }
 

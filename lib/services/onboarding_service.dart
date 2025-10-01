@@ -100,6 +100,19 @@ class OnboardingService extends ChangeNotifier {
         canSkip: true,
       ),
       const OnboardingStep(
+        type: OnboardingStepType.adaptiveTraining,
+        title: '🎯 운동이 너무 힘들거나 쉽다면?',
+        description:
+            '걱정마세요! Mission 100은 여러분의 피드백을 실시간으로 반영합니다.\n\n'
+            '💬 운동 후 난이도를 알려주세요\n'
+            '📊 너무 힘들었다면 → 다음엔 강도 ⬇️\n'
+            '😊 너무 쉬웠다면 → 다음엔 강도 ⬆️\n\n'
+            '딱 맞는 운동을 찾을 때까지 자동으로 조절해드려요!',
+        imagePath: 'assets/images/기본차드.jpg',
+        buttonText: '똑똑하네요!',
+        canSkip: true,
+      ),
+      const OnboardingStep(
         type: OnboardingStepType.chadEvolution,
         title: 'Chad 진화 시스템',
         description:

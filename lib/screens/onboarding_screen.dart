@@ -191,6 +191,22 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             buttonText: '다음',
           ),
         );
+      case OnboardingStepType.adaptiveTraining:
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider<ChadOnboardingService>(
+              create: (_) => ChadOnboardingService(),
+            ),
+          ],
+          child: ChadOnboardingWidget(
+            stepType: 'adaptiveTraining',
+            title: step.title,
+            description: step.description,
+            onNext: () => _animateToNextStep(onboardingService),
+            onSkip: step.canSkip ? () => onboardingService.skipOnboarding() : null,
+            buttonText: '똑똑하네요!',
+          ),
+        );
       case OnboardingStepType.chadEvolution:
         return MultiProvider(
           providers: [

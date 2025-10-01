@@ -23,9 +23,46 @@ service cloud.firestore {
              data.updatedAt is timestamp;
     }
 
-    // 데이터 크기 제한 (1MB)
+    // 데이터 크기 제한 (512KB로 축소)
     function isValidSize(data) {
-      return request.resource.size < 1048576; // 1MB
+      return request.resource.size < 524288; // 512KB
+    }
+
+    // 레이트 리미팅 함수 (하루 최대 작업 수 제한)
+    function isWithinRateLimit(userId, collection, maxPerDay) {
+      return request.time > resource.data.lastRequestTime + duration.value(24, 'h') ||
+             get(/databases/$(database)/documents/rateLimits/$(userId + '_' + collection)).data.requestCount < maxPerDay;
+    }
+
+    // 프리미엄 구독자인지 확인
+    function isPremiumUser(userId) {
+      let subscription = get(/databases/$(database)/documents/subscriptions/$(userId)).data;
+      return subscription.status == 'active' && subscription.type in ['premium_monthly', 'premium_yearly', 'premium_lifetime'];
+    }
+
+    // 유효한 이메일 형식인지 확인
+    function isValidEmail(email) {
+      return email.matches('.*@.*\\..*');
+    }
+
+    // 스트링 길이 검증
+    function isValidStringLength(value, minLength, maxLength) {
+      return value is string && value.size() >= minLength && value.size() <= maxLength;
+    }
+
+    // 숫자 범위 검증
+    function isValidNumberRange(value, min, max) {
+      return value is number && value >= min && value <= max;
+    }
+
+    // 구독 상태 검증
+    function isValidSubscriptionStatus(status) {
+      return status in ['active', 'inactive', 'cancelled', 'expired', 'pending'];
+    }
+
+    // 결제 상태 검증
+    function isValidPaymentStatus(status) {
+      return status in ['pending', 'completed', 'failed', 'refunded', 'cancelled'];
     }
 
     // ===============================================
@@ -63,7 +100,7 @@ service cloud.firestore {
     }
 
     // ===============================================
-    // 구독 정보
+    // 구독 정보 (강화된 보안)
     // ===============================================
 
     match /subscriptions/{subscriptionId} {
@@ -73,33 +110,83 @@ service cloud.firestore {
       // 구독 생성은 서버에서만 (결제 검증 후)
       allow create: if false;
 
-      // 구독 업데이트도 서버에서만
+      // 구독 업데이트는 서버에서만 (결제 검증 필요)
       allow update: if false;
 
-      // 취소는 사용자가 가능
+      // 취소는 사용자가 가능하지만 추가 검증
       allow update: if isAuthenticated() &&
                        isOwner(resource.data.userId) &&
+                       resource.data.status == 'active' && // 현재 활성 상태만 취소 가능
                        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'cancelledAt', 'cancellationReason', 'updatedAt']) &&
-                       request.resource.data.status == 'cancelled';
+                       request.resource.data.status == 'cancelled' &&
+                       isValidStringLength(request.resource.data.cancellationReason, 1, 500) &&
+                       request.resource.data.cancelledAt == request.time;
     }
 
     // ===============================================
-    // 운동 기록
+    // 구독 변경 기록 (새로 추가)
+    // ===============================================
+
+    match /subscriptionChanges/{changeId} {
+      allow read: if isAuthenticated() &&
+                     isOwner(resource.data.userId);
+
+      // 구독 변경 기록은 서버에서만 생성/수정
+      allow create, update, delete: if false;
+    }
+
+    // ===============================================
+    // 결제 기록 (새로 추가)
+    // ===============================================
+
+    match /payments/{paymentId} {
+      allow read: if isAuthenticated() &&
+                     isOwner(resource.data.userId);
+
+      // 결제 기록은 서버에서만 관리
+      allow create, update, delete: if false;
+    }
+
+    // ===============================================
+    // 레이트 제한 (새로 추가)
+    // ===============================================
+
+    match /rateLimits/{userId} {
+      allow read: if isAuthenticated() && isOwner(userId);
+      allow write: if false; // 시스템에서만 관리
+    }
+
+    // ===============================================
+    // 운동 기록 (강화된 검증)
     // ===============================================
 
     match /workoutRecords/{recordId} {
-      allow read, create, update: if isAuthenticated() &&
-                                     isOwner(resource.data.userId);
+      allow read: if isAuthenticated() &&
+                     isOwner(resource.data.userId);
 
       allow delete: if isAuthenticated() &&
-                       isOwner(resource.data.userId);
+                       isOwner(resource.data.userId) &&
+                       // 최근 24시간 내 기록만 삭제 가능
+                       request.time < resource.data.createdAt + duration.value(24, 'h');
 
-      // 운동 기록 생성 시 필수 필드 확인
+      // 운동 기록 생성 시 강화된 검증
       allow create: if isAuthenticated() &&
                        isOwner(request.resource.data.userId) &&
-                       request.resource.data.keys().hasAll(['id', 'userId', 'date', 'week', 'day', 'exerciseType']) &&
-                       request.resource.data.week >= 1 && request.resource.data.week <= 14 &&
-                       request.resource.data.day >= 1 && request.resource.data.day <= 3;
+                       request.resource.data.keys().hasAll(['id', 'userId', 'date', 'week', 'day', 'exerciseType', 'createdAt']) &&
+                       isValidNumberRange(request.resource.data.week, 1, 14) &&
+                       isValidNumberRange(request.resource.data.day, 1, 3) &&
+                       request.resource.data.exerciseType in ['pushup', 'burpee', 'plank', 'squat'] &&
+                       request.resource.data.createdAt == request.time &&
+                       // 프리미엄 사용자는 무제한, 일반 사용자는 하루 10개 제한
+                       (isPremiumUser(request.auth.uid) || isWithinRateLimit(request.auth.uid, 'workoutRecords', 10));
+
+      // 운동 기록 수정 시 제한된 필드만 허용
+      allow update: if isAuthenticated() &&
+                       isOwner(resource.data.userId) &&
+                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['reps', 'sets', 'duration', 'notes', 'updatedAt']) &&
+                       request.resource.data.updatedAt == request.time &&
+                       // 수정은 생성 후 1시간 내만 가능
+                       request.time < resource.data.createdAt + duration.value(1, 'h');
     }
 
     // ===============================================
@@ -135,7 +222,7 @@ service cloud.firestore {
     }
 
     // ===============================================
-    // 업적
+    // 업적 (강화된 무결성 검증)
     // ===============================================
 
     match /achievements/{achievementId} {
@@ -145,11 +232,19 @@ service cloud.firestore {
       // 업적 생성은 서버에서만 (무결성 보장)
       allow create: if false;
 
-      // 진행도 업데이트만 허용
+      // 진행도 업데이트 시 강화된 검증
       allow update: if isAuthenticated() &&
                        isOwner(resource.data.userId) &&
-                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['progress', 'completed', 'completedAt']) &&
-                       request.resource.data.progress >= resource.data.progress; // 진행도는 감소 불가
+                       request.resource.data.diff(resource.data).affectedKeys().hasOnly(['progress', 'completed', 'completedAt', 'updatedAt']) &&
+                       // 진행도는 감소 불가
+                       request.resource.data.progress >= resource.data.progress &&
+                       // 완료 상태는 되돌릴 수 없음
+                       (!resource.data.completed || request.resource.data.completed) &&
+                       // 완료 시간 검증
+                       (request.resource.data.completed == false || request.resource.data.completedAt == request.time) &&
+                       request.resource.data.updatedAt == request.time &&
+                       // 진행도는 100을 초과할 수 없음
+                       request.resource.data.progress <= 100;
     }
 
     // ===============================================
@@ -178,6 +273,58 @@ service cloud.firestore {
     match /appMetadata/{document} {
       allow read: if isAuthenticated();
       allow write: if false; // 관리자만 수정 가능 (Firebase Admin SDK)
+    }
+
+    // ===============================================
+    // 사용자 분석 데이터 (새로 추가)
+    // ===============================================
+
+    match /analytics/{userId} {
+      allow read: if isAuthenticated() && isOwner(userId);
+      // 분석 데이터는 서버에서만 수집/저장
+      allow write: if false;
+    }
+
+    // ===============================================
+    // 앱 설정 및 공지사항 (새로 추가)
+    // ===============================================
+
+    match /appConfig/{configId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // 관리자만 수정 가능
+    }
+
+    match /announcements/{announcementId} {
+      allow read: if isAuthenticated();
+      allow write: if false; // 관리자만 수정 가능
+    }
+
+    // ===============================================
+    // 사용자 피드백 (새로 추가)
+    // ===============================================
+
+    match /feedback/{feedbackId} {
+      allow read: if isAuthenticated() &&
+                     isOwner(resource.data.userId);
+
+      allow create: if isAuthenticated() &&
+                       isOwner(request.resource.data.userId) &&
+                       request.resource.data.keys().hasAll(['userId', 'type', 'content', 'createdAt']) &&
+                       request.resource.data.type in ['bug', 'feature', 'improvement', 'other'] &&
+                       isValidStringLength(request.resource.data.content, 10, 2000) &&
+                       request.resource.data.createdAt == request.time &&
+                       // 하루 최대 5개 피드백 제한
+                       isWithinRateLimit(request.auth.uid, 'feedback', 5);
+
+      allow update, delete: if false; // 피드백은 수정/삭제 불가
+    }
+
+    // ===============================================
+    // 보안 로그 (새로 추가)
+    // ===============================================
+
+    match /securityLogs/{logId} {
+      allow read, write: if false; // 시스템에서만 접근 가능
     }
 
     // ===============================================

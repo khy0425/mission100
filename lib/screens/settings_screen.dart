@@ -17,6 +17,7 @@ import 'settings/widgets/appearance_settings_widget.dart';
 import 'settings/widgets/data_settings_widget.dart';
 import 'settings/widgets/about_settings_widget.dart';
 import 'subscription_screen.dart';
+import 'subscription_management_screen.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -181,6 +182,20 @@ class _SettingsScreenState extends State<SettingsScreen>
     final result = await Navigator.of(context).push<bool>(
       MaterialPageRoute(
         builder: (context) => const SubscriptionScreen(),
+      ),
+    );
+
+    // 구독 상태가 변경되었을 수 있으므로 다시 로드
+    if (result == true) {
+      await _loadSubscriptionData();
+    }
+  }
+
+  /// 구독 관리 화면으로 이동
+  Future<void> _navigateToSubscriptionManagement() async {
+    final result = await Navigator.of(context).push<bool>(
+      MaterialPageRoute(
+        builder: (context) => const SubscriptionManagementScreen(),
       ),
     );
 
@@ -916,6 +931,14 @@ class _SettingsScreenState extends State<SettingsScreen>
                 ),
               ],
             ),
+          ),
+          const Divider(height: 1),
+          ListTile(
+            leading: const Icon(Icons.settings, color: Colors.blue),
+            title: const Text('구독 관리'),
+            subtitle: const Text('플랜 변경, 취소 및 기록 확인'),
+            trailing: const Icon(Icons.chevron_right),
+            onTap: _navigateToSubscriptionManagement,
           ),
         ] else ...[
           const Divider(height: 1),

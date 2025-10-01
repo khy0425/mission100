@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../core/ads/ad_config.dart';
+import '../core/security/api_key_manager.dart';
 
 /// 앱 기본 정보
 class AppInfo {
@@ -164,6 +165,45 @@ class PaymentConfig {
   }
 }
 
+/// 보안 설정
+class SecurityConfig {
+  final bool apiKeyEncryptionEnabled;
+  final bool runtimeKeyValidation;
+  final bool keyRotationEnabled;
+  final Duration keyRotationInterval;
+  final int maxApiKeyAttempts;
+
+  const SecurityConfig({
+    this.apiKeyEncryptionEnabled = true,
+    this.runtimeKeyValidation = true,
+    this.keyRotationEnabled = true,
+    this.keyRotationInterval = const Duration(days: 30),
+    this.maxApiKeyAttempts = 5,
+  });
+
+  factory SecurityConfig.fromJson(Map<String, dynamic> json) {
+    return SecurityConfig(
+      apiKeyEncryptionEnabled: (json['api_key_encryption_enabled'] as bool?) ?? true,
+      runtimeKeyValidation: (json['runtime_key_validation'] as bool?) ?? true,
+      keyRotationEnabled: (json['key_rotation_enabled'] as bool?) ?? true,
+      keyRotationInterval: Duration(
+        days: (json['key_rotation_days'] as int?) ?? 30,
+      ),
+      maxApiKeyAttempts: (json['max_api_key_attempts'] as int?) ?? 5,
+    );
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'api_key_encryption_enabled': apiKeyEncryptionEnabled,
+      'runtime_key_validation': runtimeKeyValidation,
+      'key_rotation_enabled': keyRotationEnabled,
+      'key_rotation_days': keyRotationInterval.inDays,
+      'max_api_key_attempts': maxApiKeyAttempts,
+    };
+  }
+}
+
 /// 메인 앱 설정 클래스
 class AppConfig {
   final AppInfo appInfo;
@@ -171,6 +211,7 @@ class AppConfig {
   final FeatureFlags featureFlags;
   final AdConfig adConfig;
   final PaymentConfig paymentConfig;
+  final SecurityConfig securityConfig;
 
   const AppConfig({
     required this.appInfo,
@@ -178,6 +219,7 @@ class AppConfig {
     required this.featureFlags,
     required this.adConfig,
     required this.paymentConfig,
+    required this.securityConfig,
   });
 
   factory AppConfig.fromJson(Map<String, dynamic> json) {
@@ -187,6 +229,7 @@ class AppConfig {
       featureFlags: FeatureFlags.fromJson((json['features'] as Map<String, dynamic>?) ?? {}),
       adConfig: AdConfig.fromJson((json['ads'] as Map<String, dynamic>?) ?? {}),
       paymentConfig: PaymentConfig.fromJson((json['payment'] as Map<String, dynamic>?) ?? {}),
+      securityConfig: SecurityConfig.fromJson((json['security'] as Map<String, dynamic>?) ?? {}),
     );
   }
 
@@ -197,12 +240,23 @@ class AppConfig {
       'features': featureFlags.toJson(),
       'ads': adConfig.toJson(),
       'payment': paymentConfig.toJson(),
+      'security': securityConfig.toJson(),
     };
   }
 
-  /// 기본 Mission100 설정
-  static AppConfig get defaultMission100 {
-    return const AppConfig(
+  /// 보안 API 키 로드
+  static Future<AppConfig> loadSecureConfig() async {
+    final apiKeyManager = ApiKeyManager();
+    final apiKeys = await apiKeyManager.loadEnvironmentKeys();
+
+    // API 키 유효성 검증
+    for (final entry in apiKeys.entries) {
+      if (!apiKeyManager.validateApiKey(entry.key, entry.value)) {
+        debugPrint('유효하지 않은 API 키: ${entry.key}');
+      }
+    }
+
+    return AppConfig(
       appInfo: const AppInfo(
         name: 'Mission 100',
         packageName: 'com.example.mission100',
@@ -226,22 +280,93 @@ class AppConfig {
         backupEnabled: true,
         notificationsEnabled: true,
       ),
-      adConfig: const AdConfig(
-        androidAppId: 'ca-app-pub-1075071967728463~6042582986',
-        androidBannerId: 'ca-app-pub-1075071967728463/9498612269',
-        androidInterstitialId: 'ca-app-pub-1075071967728463/7039728635',
+      adConfig: AdConfig(
+        androidAppId: apiKeys['admob_app_id'] ?? '',
+        androidBannerId: apiKeys['admob_banner_id'] ?? '',
+        androidInterstitialId: apiKeys['admob_interstitial_id'] ?? '',
+        androidRewardedId: apiKeys['admob_rewarded_id'] ?? '',
+        iosAppId: apiKeys['ios_admob_app_id'] ?? '',
+        iosBannerId: apiKeys['ios_admob_banner_id'] ?? '',
+        iosInterstitialId: apiKeys['ios_admob_interstitial_id'] ?? '',
+        iosRewardedId: apiKeys['ios_admob_rewarded_id'] ?? '',
+        enableBannerAds: apiKeys['admob_banner_id']?.isNotEmpty == true,
+        enableInterstitialAds: apiKeys['admob_interstitial_id']?.isNotEmpty == true,
+        enableRewardedAds: apiKeys['admob_rewarded_id']?.isNotEmpty == true,
+      ),
+      paymentConfig: const PaymentConfig(
+        subscriptionEnabled: true,
+        oneTimePurchaseEnabled: false,
+        subscriptionProductIds: [
+          'premium_monthly',
+          'premium_yearly',
+          'premium_lifetime',
+        ],
+      ),
+      securityConfig: SecurityConfig(
+        apiKeyEncryptionEnabled: ApiSecurityConfig.currentSecurityLevel == SecurityLevel.production,
+        runtimeKeyValidation: true,
+        keyRotationEnabled: ApiSecurityConfig.currentSecurityLevel == SecurityLevel.production,
+        keyRotationInterval: ApiSecurityConfig.keyRotationInterval,
+        maxApiKeyAttempts: ApiSecurityConfig.maxKeyAttempts,
+      ),
+    );
+  }
+
+  /// 기본 Mission100 설정 (보안 강화 - API 키 제거)
+  static AppConfig get defaultMission100 {
+    return const AppConfig(
+      appInfo: AppInfo(
+        name: 'Mission 100',
+        packageName: 'com.example.mission100',
+        version: '2.1.0',
+        description: '100일 푸쉬업 챌린지 앱',
+        author: 'Mission 100 Team',
+      ),
+      themeConfig: ThemeConfig(
+        primaryColor: Color(0xFF2196F3),
+        secondaryColor: Color(0xFFFF5722),
+        accentColor: Color(0xFFFFC107),
+        fontFamily: 'Roboto',
+        isDarkMode: false,
+      ),
+      featureFlags: FeatureFlags(
+        timerEnabled: true,
+        habitTrackingEnabled: true,
+        statisticsEnabled: true,
+        achievementsEnabled: true,
+        socialSharingEnabled: true,
+        backupEnabled: true,
+        notificationsEnabled: true,
+      ),
+      // API 키는 보안상 제거, loadSecureConfig() 사용 권장
+      adConfig: AdConfig(
+        androidAppId: '',
+        androidBannerId: '',
+        androidInterstitialId: '',
         androidRewardedId: '',
         iosAppId: '',
         iosBannerId: '',
         iosInterstitialId: '',
         iosRewardedId: '',
-        enableBannerAds: true,
-        enableInterstitialAds: true,
+        enableBannerAds: false,
+        enableInterstitialAds: false,
         enableRewardedAds: false,
       ),
-      paymentConfig: const PaymentConfig(
-        subscriptionEnabled: false,
+      paymentConfig: PaymentConfig(
+        subscriptionEnabled: true,
         oneTimePurchaseEnabled: false,
+        subscriptionProductIds: [
+          'premium_monthly',
+          'premium_yearly',
+          'premium_lifetime',
+        ],
+      ),
+      securityConfig: SecurityConfig(
+        apiKeyEncryptionEnabled: true,
+        runtimeKeyValidation: true,
+        keyRotationEnabled: false, // 기본값에서는 비활성화
+        keyRotationInterval: Duration(days: 30),
+        maxApiKeyAttempts: 5,
       ),
     );
   }

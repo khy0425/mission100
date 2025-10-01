@@ -2,6 +2,7 @@
 enum OnboardingStepType {
   welcome,
   programIntroduction,
+  adaptiveTraining, // RPE 기반 적응형 훈련 설명
   chadEvolution,
   initialTest,
   // 목표 설정 단계들

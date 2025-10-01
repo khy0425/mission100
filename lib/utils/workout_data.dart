@@ -1,6 +1,30 @@
 import 'package:flutter/material.dart';
 import '../models/user_profile.dart';
+import '../models/exercise_type.dart';
 import '../generated/app_localizations.dart';
+
+/// 운동 세트 정보
+class ExerciseSet {
+  final ExerciseType type;
+  final int reps;
+
+  const ExerciseSet({required this.type, required this.reps});
+}
+
+/// 일일 운동 프로그램
+class DailyWorkout {
+  final int burpees;
+  final int pushups;
+
+  const DailyWorkout({required this.burpees, required this.pushups});
+
+  List<ExerciseSet> toSets() {
+    return [
+      ExerciseSet(type: ExerciseType.burpee, reps: burpees),
+      ExerciseSet(type: ExerciseType.pushup, reps: pushups),
+    ];
+  }
+}
 
 class WorkoutData {
   // 6주 워크아웃 프로그램 데이터
@@ -166,23 +190,24 @@ class WorkoutData {
     },
   };
 
-  // 레벨별 총 목표 (6주차 마지막 날 기준)
+  // 레벨별 총 목표 (14주차 마지막 날 기준 - 버피 20회 + 푸시업 50회 = 70회)
   static Map<UserLevel, int> get targetTotals => {
-    UserLevel.rookie: 100,
-    UserLevel.rising: 115,
-    UserLevel.alpha: 150,
-    UserLevel.giga: 200,
+    UserLevel.rookie: 70,
+    UserLevel.rising: 70,
+    UserLevel.alpha: 70,
+    UserLevel.giga: 70,
   };
 
   // 특정 레벨, 주차, 일차의 워크아웃 가져오기
-  static List<int>? getWorkout(UserLevel level, int week, int day) {
-    return workoutPrograms[level]?[week]?[day];
+  static DailyWorkout? getWorkout(UserLevel level, int week, int day) {
+    final sets = workoutPrograms[level]?[week]?[day];
+    if (sets == null || sets.length < 2) return null;
+    return DailyWorkout(burpees: sets[0], pushups: sets[1]);
   }
 
   // 특정 워크아웃의 총 횟수 계산
-  static int getTotalReps(List<int> workout) {
-    if (workout.isEmpty) return 0;
-    return workout.reduce((a, b) => a + b);
+  static int getTotalReps(DailyWorkout workout) {
+    return workout.burpees + workout.pushups;
   }
 
   // 주차별 총 운동량 계산
@@ -197,21 +222,21 @@ class WorkoutData {
     return total;
   }
 
-  // 6주 전체 운동량 계산
+  // 14주 전체 운동량 계산
   static int getProgramTotal(UserLevel level) {
     int total = 0;
-    for (int week = 1; week <= 6; week++) {
+    for (int week = 1; week <= 14; week++) {
       total += getWeeklyTotal(level, week);
     }
     return total;
   }
 
-  // 세트 간 권장 휴식 시간 (초)
+  // 세트 간 권장 휴식 시간 (초) - 버피와 푸시업 사이 휴식
   static Map<UserLevel, int> get restTimeSeconds => {
-    UserLevel.rookie: 60, // 1분
-    UserLevel.rising: 75, // 1분 15초
+    UserLevel.rookie: 90, // 1분 30초
+    UserLevel.rising: 90, // 1분 30초
     UserLevel.alpha: 90, // 1분 30초
-    UserLevel.giga: 120, // 2분
+    UserLevel.giga: 90, // 1분 30초
   };
 
   // 난이도별 색상 코드 - Chad 테마에 맞게 업데이트
@@ -301,5 +326,54 @@ class WorkoutData {
       AppLocalizations.of(context).encouragementMessage9,
       AppLocalizations.of(context).encouragementMessage10,
     ];
+  }
+
+  
+  // RPE 조정값 계산 헬퍼
+  static double calculateIntensityFromRPE(int rpeLevel) {
+    switch (rpeLevel) {
+      case 1: return 1.2;
+      case 2: return 1.1;
+      case 3: return 1.0;
+      case 4: return 0.9;
+      case 5: return 0.8;
+      default: return 1.0;
+    }
+  }
+
+  // RPE 레벨별 이모지
+  static String getRPEEmoji(int rpeLevel) {
+    switch (rpeLevel) {
+      case 1: return '😊';
+      case 2: return '🙂';
+      case 3: return '😐';
+      case 4: return '😰';
+      case 5: return '😫';
+      default: return '😐';
+    }
+  }
+
+  // RPE 레벨별 텍스트
+  static String getRPEText(int rpeLevel) {
+    switch (rpeLevel) {
+      case 1: return '너무 쉬워요';
+      case 2: return '쉬워요';
+      case 3: return '적당해요';
+      case 4: return '힘들어요';
+      case 5: return '너무 힘들어요';
+      default: return '알 수 없음';
+    }
+  }
+
+  // RPE 레벨별 설명
+  static String getRPEDescription(int rpeLevel) {
+    switch (rpeLevel) {
+      case 1: return '여유롭게 할 수 있었어요. 더 도전할 수 있을 것 같아요!';
+      case 2: return '약간 쉬웠지만 나쁘지 않았어요.';
+      case 3: return '딱 적당한 난이도였어요. 완벽해요!';
+      case 4: return '조금 힘들었지만 해낼 수 있었어요.';
+      case 5: return '정말 힘들었어요. 한계에 도전했어요!';
+      default: return '';
+    }
   }
 }

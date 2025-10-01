@@ -265,4 +265,34 @@ class DataService {
       debugPrint('마지막 백업 시간 저장 실패: $e');
     }
   }
+
+  /// 구독 관리용 데이터 저장
+  Future<void> saveData(String key, Map<String, dynamic> data) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = jsonEncode(data);
+      await prefs.setString(key, jsonString);
+      debugPrint('DataService: 데이터 저장됨 - $key');
+    } catch (e) {
+      debugPrint('DataService: 데이터 저장 실패 - $key: $e');
+      rethrow;
+    }
+  }
+
+  /// 구독 관리용 데이터 로드
+  Future<Map<String, dynamic>?> getData(String key) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = prefs.getString(key);
+      if (jsonString != null) {
+        final data = jsonDecode(jsonString) as Map<String, dynamic>;
+        debugPrint('DataService: 데이터 로드됨 - $key');
+        return data;
+      }
+      return null;
+    } catch (e) {
+      debugPrint('DataService: 데이터 로드 실패 - $key: $e');
+      rethrow;
+    }
+  }
 }
