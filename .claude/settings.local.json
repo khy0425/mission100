@@ -13,7 +13,8 @@
       "Bash(del /f \"E:\\Projects\\mission100_v3\\test\\performance\\performance_test.dart\")",
       "mcp__ide__getDiagnostics",
       "Read(//e/**)",
-      "Bash(flutter clean:*)"
+      "Bash(flutter clean:*)",
+      "Bash(dart format:*)"
     ],
     "deny": [],
     "ask": []

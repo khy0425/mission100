@@ -664,7 +664,8 @@ class AchievementService {
             ..sort((a, b) => a.date.compareTo(b.date));
 
           for (int i = 1; i < sortedWorkouts.length; i++) {
-            final gap = sortedWorkouts[i].date
+            final gap = sortedWorkouts[i]
+                .date
                 .difference(sortedWorkouts[i - 1].date)
                 .inDays;
             if (gap >= 7) {
@@ -836,7 +837,7 @@ class AchievementService {
 
   // 대기 중인 업적 달성 이벤트 조회
   static Future<List<Map<String, dynamic>>>
-  getPendingAchievementEvents() async {
+      getPendingAchievementEvents() async {
     final prefs = await SharedPreferences.getInstance();
     final events = prefs.getStringList('pending_achievement_events') ?? [];
 
@@ -1156,9 +1157,8 @@ class AchievementService {
       case 'weekly_sessions_7':
         final now = DateTime.now();
         final weekAgo = now.subtract(const Duration(days: 7));
-        final weeklyWorkouts = workouts
-            .where((w) => w.date.isAfter(weekAgo))
-            .length;
+        final weeklyWorkouts =
+            workouts.where((w) => w.date.isAfter(weekAgo)).length;
         debugPrint('주간 운동 횟수: $weeklyWorkouts회');
         return weeklyWorkouts;
 
@@ -1167,9 +1167,8 @@ class AchievementService {
       case 'monthly_sessions_30':
         final now = DateTime.now();
         final monthAgo = now.subtract(const Duration(days: 30));
-        final monthlyWorkouts = workouts
-            .where((w) => w.date.isAfter(monthAgo))
-            .length;
+        final monthlyWorkouts =
+            workouts.where((w) => w.date.isAfter(monthAgo)).length;
         debugPrint('월간 운동 횟수: $monthlyWorkouts회');
         return monthlyWorkouts;
 
@@ -1250,8 +1249,8 @@ class AchievementService {
       // 5. 잠금 해제된 업적 통계
       final unlockedCount = await getUnlockedCount();
       validation['stats']['unlockedCount'] = unlockedCount;
-      validation['stats']['completionRate'] = (unlockedCount / totalCount * 100)
-          .toStringAsFixed(1);
+      validation['stats']['completionRate'] =
+          (unlockedCount / totalCount * 100).toStringAsFixed(1);
 
       // 6. 진행도 값 검증 (음수나 비정상적인 값 확인)
       final invalidProgress = await db.rawQuery('''
@@ -1338,9 +1337,8 @@ class AchievementService {
       final existingIds = await db.rawQuery(
         'SELECT DISTINCT id FROM $tableName',
       );
-      final existingIdSet = existingIds
-          .map((row) => row['id'] as String)
-          .toSet();
+      final existingIdSet =
+          existingIds.map((row) => row['id'] as String).toSet();
 
       for (final achievement in PredefinedAchievements.all) {
         if (!existingIdSet.contains(achievement.id)) {

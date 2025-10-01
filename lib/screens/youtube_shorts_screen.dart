@@ -155,55 +155,57 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
               ),
             )
           : _errorMessage != null
-          ? Center(
-              child: Padding(
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      Icons.error_outline,
-                      color: Colors.red,
-                      size: 64,
+              ? Center(
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        const Icon(
+                          Icons.error_outline,
+                          color: Colors.red,
+                          size: 64,
+                        ),
+                        const SizedBox(height: 16),
+                        Text(
+                          AppLocalizations.of(
+                            context,
+                          ).videoLoadError(_errorMessage!),
+                          style: const TextStyle(
+                              color: Colors.white, fontSize: 16),
+                          textAlign: TextAlign.center,
+                        ),
+                        const SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed: () {
+                            setState(() {
+                              _isLoading = true;
+                              _errorMessage = null;
+                            });
+                            _initializeControllers();
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                const Color(AppColors.primaryColor),
+                          ),
+                          child: Text(
+                            AppLocalizations.of(context).tryAgain,
+                            style: const TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 16),
-                    Text(
-                      AppLocalizations.of(
-                        context,
-                      ).videoLoadError(_errorMessage!),
-                      style: const TextStyle(color: Colors.white, fontSize: 16),
-                      textAlign: TextAlign.center,
-                    ),
-                    const SizedBox(height: 20),
-                    ElevatedButton(
-                      onPressed: () {
-                        setState(() {
-                          _isLoading = true;
-                          _errorMessage = null;
-                        });
-                        _initializeControllers();
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(AppColors.primaryColor),
-                      ),
-                      child: Text(
-                        AppLocalizations.of(context).tryAgain,
-                        style: const TextStyle(color: Colors.white),
-                      ),
-                    ),
-                  ],
+                  ),
+                )
+              : PageView.builder(
+                  controller: _pageController,
+                  scrollDirection: Axis.vertical,
+                  onPageChanged: _onPageChanged,
+                  itemCount: _videoIds.length,
+                  itemBuilder: (context, index) {
+                    return _buildVideoPage(index);
+                  },
                 ),
-              ),
-            )
-          : PageView.builder(
-              controller: _pageController,
-              scrollDirection: Axis.vertical,
-              onPageChanged: _onPageChanged,
-              itemCount: _videoIds.length,
-              itemBuilder: (context, index) {
-                return _buildVideoPage(index);
-              },
-            ),
     );
   }
 
@@ -289,8 +291,8 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                _getVideoTitles(context)[index %
-                    _getVideoTitles(context).length],
+                _getVideoTitles(
+                    context)[index % _getVideoTitles(context).length],
                 style: const TextStyle(
                   color: Colors.white,
                   fontSize: 18,
@@ -299,8 +301,8 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
               ),
               const SizedBox(height: 8),
               Text(
-                _getVideoDescriptions(context)[index %
-                    _getVideoDescriptions(context).length],
+                _getVideoDescriptions(
+                    context)[index % _getVideoDescriptions(context).length],
                 style: const TextStyle(color: Colors.white70, fontSize: 14),
               ),
               const SizedBox(height: 12),

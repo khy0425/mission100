@@ -56,7 +56,8 @@ class ChadRecoveryService extends ChangeNotifier {
       }
 
       if (lastCalculationTimestamp != null) {
-        _lastCalculation = DateTime.fromMillisecondsSinceEpoch(lastCalculationTimestamp);
+        _lastCalculation =
+            DateTime.fromMillisecondsSinceEpoch(lastCalculationTimestamp);
       }
 
       // RPE 히스토리 로드 (최근 7일)
@@ -75,10 +76,9 @@ class ChadRecoveryService extends ChangeNotifier {
       _recentRPEHistory = rpeHistoryJson
           .map((json) => RPEData.fromJson(_parseJson(json)))
           .where((rpe) {
-            final daysDiff = DateTime.now().difference(rpe.timestamp).inDays;
-            return daysDiff <= 7; // 최근 7일
-          })
-          .toList();
+        final daysDiff = DateTime.now().difference(rpe.timestamp).inDays;
+        return daysDiff <= 7; // 최근 7일
+      }).toList();
 
       debugPrint('Chad 회복 서비스: 최근 RPE 히스토리 ${_recentRPEHistory.length}개 로드');
     } catch (e) {
@@ -108,7 +108,9 @@ class ChadRecoveryService extends ChangeNotifier {
       double personalizedScore = _calculatePersonalizedScore();
 
       // 5. 최종 점수 계산
-      _recoveryScore = (rpeScore * 0.5 + conditionScore * 0.3 + personalizedScore * 0.2).round();
+      _recoveryScore =
+          (rpeScore * 0.5 + conditionScore * 0.3 + personalizedScore * 0.2)
+              .round();
       _recoveryScore = _recoveryScore.clamp(0, 100);
 
       // 6. 회복 레벨 결정
@@ -120,7 +122,8 @@ class ChadRecoveryService extends ChangeNotifier {
       // 8. 저장
       await _saveRecoveryScore();
 
-      debugPrint('Chad 회복 점수 계산 완료: $_recoveryScore점 (${_recoveryLevel.label})');
+      debugPrint(
+          'Chad 회복 점수 계산 완료: $_recoveryScore점 (${_recoveryLevel.label})');
       notifyListeners();
     } catch (e) {
       debugPrint('Chad 회복 점수 계산 실패: $e');
@@ -132,7 +135,8 @@ class ChadRecoveryService extends ChangeNotifier {
     if (_recentRPEHistory.isEmpty) return 75.0; // 기본 점수
 
     // 최근 3회 운동의 평균 RPE
-    final recentRPEs = _recentRPEHistory.take(3).map((rpe) => rpe.value).toList();
+    final recentRPEs =
+        _recentRPEHistory.take(3).map((rpe) => rpe.value).toList();
     if (recentRPEs.isEmpty) return 75.0;
 
     final averageRPE = recentRPEs.reduce((a, b) => a + b) / recentRPEs.length;
@@ -156,7 +160,8 @@ class ChadRecoveryService extends ChangeNotifier {
   Future<double> _calculateConditionScore() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final lastConditionScore = prefs.getInt('last_chad_condition') ?? 1; // 기본값: 좋음
+      final lastConditionScore =
+          prefs.getInt('last_chad_condition') ?? 1; // 기본값: 좋음
 
       // ChadCondition 점수를 회복 점수로 변환
       switch (lastConditionScore) {
@@ -219,7 +224,8 @@ class ChadRecoveryService extends ChangeNotifier {
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setInt('chad_last_recovery_score', _recoveryScore);
-      await prefs.setInt('chad_last_calculation', _lastCalculation!.millisecondsSinceEpoch);
+      await prefs.setInt(
+          'chad_last_calculation', _lastCalculation!.millisecondsSinceEpoch);
     } catch (e) {
       debugPrint('Chad 회복 점수 저장 실패: $e');
     }
@@ -230,7 +236,8 @@ class ChadRecoveryService extends ChangeNotifier {
     final goal = _personalizedData['fitness_goal'] as String?;
     final level = _personalizedData['fitness_level'] as String?;
 
-    String baseMessage = "Chad가 분석한 회복 점수: $_recoveryScore점! ${_recoveryLevel.emoji}\n";
+    String baseMessage =
+        "Chad가 분석한 회복 점수: $_recoveryScore점! ${_recoveryLevel.emoji}\n";
 
     // 회복 레벨별 Chad 메시지
     switch (_recoveryLevel) {

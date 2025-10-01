@@ -23,7 +23,6 @@ import '../models/workout_history.dart';
 import '../utils/constants.dart';
 import '../widgets/ad_banner_widget.dart';
 
-
 import 'package:shared_preferences/shared_preferences.dart';
 // 분리된 위젯들 import
 import 'home/widgets/chad_section_widget.dart';
@@ -170,8 +169,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       debugPrint('👤 사용자 프로필: $profile');
 
       // 프로필이 null이면 기본 프로필 생성
-      final userProfile =
-          profile ??
+      final userProfile = profile ??
           UserProfile(
             id: 1,
             level: UserLevel.rising,
@@ -360,7 +358,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                         // Chad 액티브 리커버리 위젯
                         ChangeNotifierProvider<ChadActiveRecoveryService>(
                           create: (_) => ChadActiveRecoveryService(),
-                          child: const ChadActiveRecoveryWidget(showFullDetails: false),
+                          child: const ChadActiveRecoveryWidget(
+                              showFullDetails: false),
                         ),
 
                         const SizedBox(height: AppConstants.paddingM),
@@ -484,7 +483,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           ElevatedButton(
             onPressed: () => Navigator.push(
               context,
-              MaterialPageRoute<void>(builder: (context) => const SettingsScreen()),
+              MaterialPageRoute<void>(
+                  builder: (context) => const SettingsScreen()),
             ),
             child: Text(AppLocalizations.of(context).goToSettings),
           ),
@@ -645,14 +645,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   void _openTutorial(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute<void>(builder: (context) => const PushupTutorialScreen()),
+      MaterialPageRoute<void>(
+          builder: (context) => const PushupTutorialScreen()),
     );
   }
 
   void _openFormGuide(BuildContext context) {
     Navigator.push(
       context,
-      MaterialPageRoute<void>(builder: (context) => const PushupFormGuideScreen()),
+      MaterialPageRoute<void>(
+          builder: (context) => const PushupFormGuideScreen()),
     );
   }
 
@@ -665,5 +667,4 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       ),
     );
   }
-
 }

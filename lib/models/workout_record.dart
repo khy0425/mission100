@@ -144,7 +144,8 @@ class WorkoutRecord {
   WorkoutRecord addSet(WorkoutSet workoutSet) {
     final newSets = [...sets, workoutSet];
     final newTotalReps = totalReps + workoutSet.actualReps;
-    final newAverageRpe = newSets.map((s) => s.rpe).reduce((a, b) => a + b) / newSets.length;
+    final newAverageRpe =
+        newSets.map((s) => s.rpe).reduce((a, b) => a + b) / newSets.length;
 
     return copyWith(
       sets: newSets,

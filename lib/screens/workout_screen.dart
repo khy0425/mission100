@@ -83,7 +83,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     _workoutStartTime = DateTime.now();
 
     // 타겟 횟수 설정
-    if (widget.workout.workout != null && (widget.workout.workout as List).isNotEmpty) {
+    if (widget.workout.workout != null &&
+        (widget.workout.workout as List).isNotEmpty) {
       _targetReps = List<int>.from(widget.workout.workout as List);
     } else {
       _targetReps = [10, 8, 6, 4, 2]; // 기본값
@@ -226,8 +227,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       final prefs = await SharedPreferences.getInstance();
       final completedWorkouts = prefs.getStringList('completed_workouts') ?? [];
       final totalDays = 84; // 12주 * 7일
-      final progressPercentage = (completedWorkouts.length / totalDays * 100)
-          .round();
+      final progressPercentage =
+          (completedWorkouts.length / totalDays * 100).round();
 
       // 내일 휴식일 여부 확인 (사용자 설정 고려)
       final tomorrow = DateTime.now().add(const Duration(days: 1));
@@ -448,9 +449,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                             ],
                           ),
                           const SizedBox(height: 8),
-                          ...(_completedChallenges
-                              .take(2)
-                              .map(
+                          ...(_completedChallenges.take(2).map(
                                 (challenge) => Padding(
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 2,
@@ -512,9 +511,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                             ],
                           ),
                           const SizedBox(height: 8),
-                          ...(_newlyUnlockedAchievements
-                              .take(2)
-                              .map(
+                          ...(_newlyUnlockedAchievements.take(2).map(
                                 (achievement) => Padding(
                                   padding: const EdgeInsets.symmetric(
                                     vertical: 2,
@@ -731,7 +728,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       ),
       appBar: AppBar(
         title: Text(
-          (widget.workout.title as String?) ?? AppLocalizations.of(context).workoutTitle,
+          (widget.workout.title as String?) ??
+              AppLocalizations.of(context).workoutTitle,
         ),
         centerTitle: true,
         leading: IconButton(

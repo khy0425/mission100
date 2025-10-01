@@ -112,9 +112,8 @@ class StreakService {
         _lastWorkoutDate!.day,
       );
 
-      final daysDifference = normalizedWorkoutDate
-          .difference(normalizedLastDate)
-          .inDays;
+      final daysDifference =
+          normalizedWorkoutDate.difference(normalizedLastDate).inDays;
 
       if (daysDifference == 0) {
         // 같은 날 운동 - 스트릭 유지
@@ -184,9 +183,8 @@ class StreakService {
       _lastWorkoutDate!.day,
     );
 
-    final daysSinceLastWorkout = normalizedToday
-        .difference(normalizedLastDate)
-        .inDays;
+    final daysSinceLastWorkout =
+        normalizedToday.difference(normalizedLastDate).inDays;
 
     // 마지막 운동이 어제였다면 오늘 운동해야 스트릭 유지
     return daysSinceLastWorkout == 1;
@@ -209,9 +207,8 @@ class StreakService {
         _lastWorkoutDate!.month,
         _lastWorkoutDate!.day,
       );
-      daysSinceLastWorkout = normalizedToday
-          .difference(normalizedLastDate)
-          .inDays;
+      daysSinceLastWorkout =
+          normalizedToday.difference(normalizedLastDate).inDays;
       isActive = daysSinceLastWorkout <= 1; // 오늘 또는 어제 운동했으면 활성
     }
 
@@ -431,9 +428,8 @@ class StreakService {
       _lastWorkoutDate!.day,
     );
 
-    final daysSinceLastWorkout = normalizedToday
-        .difference(normalizedLastDate)
-        .inDays;
+    final daysSinceLastWorkout =
+        normalizedToday.difference(normalizedLastDate).inDays;
 
     // 유예 기간 내에서만 복구 가능
     return daysSinceLastWorkout > 1 && daysSinceLastWorkout <= _gracePeriodDays;
@@ -497,9 +493,8 @@ class StreakService {
         _lastWorkoutDate!.day,
       );
 
-      final daysSinceLastWorkout = normalizedToday
-          .difference(normalizedLastDate)
-          .inDays;
+      final daysSinceLastWorkout =
+          normalizedToday.difference(normalizedLastDate).inDays;
 
       if (daysSinceLastWorkout > 1 &&
           daysSinceLastWorkout <= _gracePeriodDays) {

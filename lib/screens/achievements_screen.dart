@@ -360,10 +360,10 @@ class _AchievementsScreenState extends State<AchievementsScreen>
             rarity == AchievementRarity.common
                 ? AppLocalizations.of(context).common
                 : rarity == AchievementRarity.rare
-                ? AppLocalizations.of(context).rare
-                : rarity == AchievementRarity.epic
-                ? AppLocalizations.of(context).epic
-                : AppLocalizations.of(context).legendary,
+                    ? AppLocalizations.of(context).rare
+                    : rarity == AchievementRarity.epic
+                        ? AppLocalizations.of(context).epic
+                        : AppLocalizations.of(context).legendary,
             style: theme.textTheme.bodySmall?.copyWith(
               color: Colors.white70,
               fontSize: 10,

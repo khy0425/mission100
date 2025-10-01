@@ -72,9 +72,9 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
   }
 
   int get _totalXP => widget.achievements.fold(
-    0,
-    (sum, achievement) => sum + achievement.xpReward,
-  );
+        0,
+        (sum, achievement) => sum + achievement.xpReward,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -189,8 +189,8 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                 itemBuilder: (context, index) {
                                   final achievement =
                                       widget.achievements[index];
-                                  final rarityColor = achievement
-                                      .getRarityColor();
+                                  final rarityColor =
+                                      achievement.getRarityColor();
 
                                   return Container(
                                     padding: const EdgeInsets.all(12),
@@ -200,7 +200,8 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                         AppConstants.radiusS,
                                       ),
                                       border: Border.all(
-                                        color: rarityColor.withValues(alpha: 0.3),
+                                        color:
+                                            rarityColor.withValues(alpha: 0.3),
                                         width: 1,
                                       ),
                                     ),
@@ -212,7 +213,8 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                           height: 50,
                                           decoration: BoxDecoration(
                                             shape: BoxShape.circle,
-                                            color: rarityColor.withValues(alpha: 0.2),
+                                            color: rarityColor.withValues(
+                                                alpha: 0.2),
                                             border: Border.all(
                                               color: rarityColor,
                                               width: 2,
@@ -241,26 +243,25 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                                         context,
                                                       ),
                                                       style: theme
-                                                          .textTheme
-                                                          .titleSmall
+                                                          .textTheme.titleSmall
                                                           ?.copyWith(
-                                                            fontWeight:
-                                                                FontWeight.bold,
-                                                          ),
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
                                                     ),
                                                   ),
                                                   Container(
-                                                    padding:
-                                                        const EdgeInsets.symmetric(
-                                                          horizontal: 8,
-                                                          vertical: 2,
-                                                        ),
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                      horizontal: 8,
+                                                      vertical: 2,
+                                                    ),
                                                     decoration: BoxDecoration(
                                                       color: rarityColor,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                            8,
-                                                          ),
+                                                        8,
+                                                      ),
                                                     ),
                                                     child: Text(
                                                       _getRarityText(
@@ -284,8 +285,8 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                                 ),
                                                 style: theme.textTheme.bodySmall
                                                     ?.copyWith(
-                                                      color: Colors.grey[600],
-                                                    ),
+                                                  color: Colors.grey[600],
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -298,8 +299,8 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                             vertical: 4,
                                           ),
                                           decoration: BoxDecoration(
-                                            color: Colors.amber.withValues(alpha: 
-                                              0.2,
+                                            color: Colors.amber.withValues(
+                                              alpha: 0.2,
                                             ),
                                             borderRadius: BorderRadius.circular(
                                               8,

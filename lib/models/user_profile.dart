@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 
 /// 피트니스 목표 열거형
 enum FitnessGoal {
-  weightLoss,    // 체중 감량
-  muscleGain,    // 근육 증가
-  endurance,     // 체력 향상
-  general,       // 전반적 건강
+  weightLoss, // 체중 감량
+  muscleGain, // 근육 증가
+  endurance, // 체력 향상
+  general, // 전반적 건강
 }
 
 /// 피트니스 레벨 열거형
 enum FitnessLevel {
-  beginner,     // 초보자
+  beginner, // 초보자
   intermediate, // 중급자
-  advanced,     // 고급자
+  advanced, // 고급자
 }
 
 extension FitnessGoalExtension on FitnessGoal {
@@ -120,7 +120,8 @@ class UserProfile {
       'fitness_level': fitnessLevel?.toString(),
       'fitness_goal': fitnessGoal?.toString(),
       'preferred_workout_times': preferredWorkoutTimes?.join(','),
-      'likes_competition': likesCompetition != null ? (likesCompetition! ? 1 : 0) : null,
+      'likes_competition':
+          likesCompetition != null ? (likesCompetition! ? 1 : 0) : null,
       'onboarding_completed_at': onboardingCompletedAt?.toIso8601String(),
       'chad_experience': chadExperience,
       'chad_current_level': chadCurrentLevel,
@@ -157,7 +158,8 @@ class UserProfile {
               orElse: () => FitnessGoal.general,
             )
           : null,
-      preferredWorkoutTimes: _parseWorkoutTimes(map['preferred_workout_times'] as String?),
+      preferredWorkoutTimes:
+          _parseWorkoutTimes(map['preferred_workout_times'] as String?),
       likesCompetition: map['likes_competition'] != null
           ? (map['likes_competition'] as int) == 1
           : null,
@@ -230,9 +232,11 @@ class UserProfile {
       targetWeight: targetWeight ?? this.targetWeight,
       fitnessLevel: fitnessLevel ?? this.fitnessLevel,
       fitnessGoal: fitnessGoal ?? this.fitnessGoal,
-      preferredWorkoutTimes: preferredWorkoutTimes ?? this.preferredWorkoutTimes,
+      preferredWorkoutTimes:
+          preferredWorkoutTimes ?? this.preferredWorkoutTimes,
       likesCompetition: likesCompetition ?? this.likesCompetition,
-      onboardingCompletedAt: onboardingCompletedAt ?? this.onboardingCompletedAt,
+      onboardingCompletedAt:
+          onboardingCompletedAt ?? this.onboardingCompletedAt,
       chadExperience: chadExperience ?? this.chadExperience,
       chadCurrentLevel: chadCurrentLevel ?? this.chadCurrentLevel,
       chadCurrentStage: chadCurrentStage ?? this.chadCurrentStage,

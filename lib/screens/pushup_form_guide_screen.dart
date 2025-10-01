@@ -1576,9 +1576,8 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
           children: [
             Icon(
               isPassed ? Icons.check_circle : Icons.cancel,
-              color: isPassed
-                  ? const Color(0xFF51CF66)
-                  : const Color(0xFFFF6B6B),
+              color:
+                  isPassed ? const Color(0xFF51CF66) : const Color(0xFFFF6B6B),
               size: 32,
             ),
             const SizedBox(width: 12),
@@ -1742,9 +1741,8 @@ class _QuizDialogState extends State<_QuizDialog> {
                 label: AccessibilityUtils.createButtonLabel(
                   action: AppLocalizations.of(context).select,
                   target: currentQuestion.options[index],
-                  state: isSelected
-                      ? AppLocalizations.of(context).selected
-                      : null,
+                  state:
+                      isSelected ? AppLocalizations.of(context).selected : null,
                 ),
                 child: Container(
                   margin: const EdgeInsets.only(bottom: 8),
@@ -1803,9 +1801,8 @@ class _QuizDialogState extends State<_QuizDialog> {
                             child: Text(
                               currentQuestion.options[index],
                               style: TextStyle(
-                                color: isSelected
-                                    ? Colors.white
-                                    : Colors.white70,
+                                color:
+                                    isSelected ? Colors.white : Colors.white70,
                                 fontSize: 14,
                               ),
                             ),
@@ -1837,9 +1834,7 @@ class _QuizDialogState extends State<_QuizDialog> {
                       ),
                     ),
                   ),
-
                 if (_currentQuestionIndex > 0) const SizedBox(width: 12),
-
                 Expanded(
                   child: ElevatedButton(
                     onPressed: _selectedAnswers[_currentQuestionIndex] != null

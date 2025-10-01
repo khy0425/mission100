@@ -45,7 +45,6 @@ class TodayMissionCardWidget extends StatelessWidget {
         children: [
           _buildHeader(context, theme),
           const SizedBox(height: AppConstants.paddingM),
-
           if (todayWorkout != null) ...[
             _buildWeekDayInfo(context),
             const SizedBox(height: 16),
@@ -90,7 +89,8 @@ class TodayMissionCardWidget extends StatelessWidget {
       child: Text(
         AppLocalizations.of(
           context,
-        ).weekDayFormat((todayWorkout!.week ?? 0) as int, (todayWorkout!.day ?? 0) as int),
+        ).weekDayFormat(
+            (todayWorkout!.week ?? 0) as int, (todayWorkout!.day ?? 0) as int),
         style: TextStyle(
           color: const Color(AppColors.primaryColor),
           fontSize: 13,
@@ -128,13 +128,13 @@ class TodayMissionCardWidget extends StatelessWidget {
               Icon(
                 Icons.fitness_center,
                 size: 16,
-                color: todayCompletedWorkout != null
-                    ? Colors.green
-                    : Colors.grey,
+                color:
+                    todayCompletedWorkout != null ? Colors.green : Colors.grey,
               ),
               const SizedBox(width: 8),
               Text(
-                AppLocalizations.of(context).setRepsFormat(setIndex as int, reps as int),
+                AppLocalizations.of(context)
+                    .setRepsFormat(setIndex as int, reps as int),
                 style: TextStyle(
                   color: todayCompletedWorkout != null
                       ? Colors.green[700]

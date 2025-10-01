@@ -362,10 +362,8 @@ class WorkoutHistoryService {
           .split(',')
           .map(int.parse)
           .toList();
-      final targetRepsList = (session['targetReps'] as String)
-          .split(',')
-          .map(int.parse)
-          .toList();
+      final targetRepsList =
+          (session['targetReps'] as String).split(',').map(int.parse).toList();
 
       final totalReps = completedRepsList.fold(0, (sum, reps) => sum + reps);
       final targetTotal = targetRepsList.fold(0, (sum, reps) => sum + reps);

@@ -69,14 +69,34 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
     [],
     // 중급자 B - 적당한 강도
     [
-      RPEData(value: 6, description: '적당함', emoji: '💪', timestamp: DateTime.now().subtract(const Duration(days: 2))),
-      RPEData(value: 5, description: '쉬움', emoji: '😊', timestamp: DateTime.now().subtract(const Duration(days: 1))),
+      RPEData(
+          value: 6,
+          description: '적당함',
+          emoji: '💪',
+          timestamp: DateTime.now().subtract(const Duration(days: 2))),
+      RPEData(
+          value: 5,
+          description: '쉬움',
+          emoji: '😊',
+          timestamp: DateTime.now().subtract(const Duration(days: 1))),
     ],
     // 고급자 C - 연속 고강도
     [
-      RPEData(value: 8, description: '힘듦', emoji: '😅', timestamp: DateTime.now().subtract(const Duration(days: 3))),
-      RPEData(value: 9, description: '매우 힘듦', emoji: '🥵', timestamp: DateTime.now().subtract(const Duration(days: 2))),
-      RPEData(value: 8, description: '힘듦', emoji: '😅', timestamp: DateTime.now().subtract(const Duration(days: 1))),
+      RPEData(
+          value: 8,
+          description: '힘듦',
+          emoji: '😅',
+          timestamp: DateTime.now().subtract(const Duration(days: 3))),
+      RPEData(
+          value: 9,
+          description: '매우 힘듦',
+          emoji: '🥵',
+          timestamp: DateTime.now().subtract(const Duration(days: 2))),
+      RPEData(
+          value: 8,
+          description: '힘듦',
+          emoji: '😅',
+          timestamp: DateTime.now().subtract(const Duration(days: 1))),
     ],
   ];
 
@@ -87,7 +107,8 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
       duration: const Duration(milliseconds: 500),
       vsync: this,
     );
-    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(_fadeController);
+    _fadeAnimation =
+        Tween<double>(begin: 0.0, end: 1.0).animate(_fadeController);
     _fadeController.forward();
   }
 
@@ -156,7 +177,8 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
       );
     }
 
-    final avgRPE = rpeHistory.map((r) => r.value).reduce((a, b) => a + b) / rpeHistory.length;
+    final avgRPE = rpeHistory.map((r) => r.value).reduce((a, b) => a + b) /
+        rpeHistory.length;
     int score = 70;
 
     if (avgRPE > 8) score -= 20;
@@ -166,9 +188,8 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
     return RecoveryStatus(
       score: score.clamp(0, 100),
       level: RecoveryLevel.fromScore(score),
-      recommendation: score > 70
-          ? '좋은 컨디션이에요! 계획대로 운동하세요.'
-          : '휴식이 필요해 보여요. 강도를 낮춰주세요.',
+      recommendation:
+          score > 70 ? '좋은 컨디션이에요! 계획대로 운동하세요.' : '휴식이 필요해 보여요. 강도를 낮춰주세요.',
       shouldReduceIntensity: score < 60,
       suggestedRestDays: score < 50 ? 1 : 0,
       assessedAt: DateTime.now(),
@@ -234,7 +255,8 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
                 Row(
                   children: [
                     Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 12, vertical: 6),
                       decoration: BoxDecoration(
                         color: scenario.accentColor,
                         borderRadius: BorderRadius.circular(20),
@@ -281,7 +303,8 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
                 ),
                 const SizedBox(height: 8),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
                     color: scenario.accentColor.withOpacity(0.1),
                     borderRadius: BorderRadius.circular(8),
@@ -365,8 +388,8 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
                 Text(
                   '1단계: RPE 피드백 수집',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -422,8 +445,8 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
                 Text(
                   '2단계: AI 자동 조정',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -476,8 +499,8 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
                 Text(
                   '3단계: 회복 상태 분석',
                   style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -528,9 +551,9 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
               Text(
                 '🚀 투자 포인트',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue,
-                ),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
               ),
             ],
           ),

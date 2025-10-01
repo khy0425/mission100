@@ -333,9 +333,8 @@ class _BackupScreenState extends State<BackupScreen> {
                 const SizedBox(width: 8),
                 Expanded(
                   child: ElevatedButton.icon(
-                    onPressed: _isCreatingBackup
-                        ? null
-                        : _createEncryptedBackup,
+                    onPressed:
+                        _isCreatingBackup ? null : _createEncryptedBackup,
                     icon: const Icon(Icons.lock),
                     label: Text(AppLocalizations.of(context).encryptedBackup),
                     style: ElevatedButton.styleFrom(

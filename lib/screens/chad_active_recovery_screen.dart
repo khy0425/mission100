@@ -9,7 +9,8 @@ class ChadActiveRecoveryScreen extends StatefulWidget {
   const ChadActiveRecoveryScreen({super.key});
 
   @override
-  State<ChadActiveRecoveryScreen> createState() => _ChadActiveRecoveryScreenState();
+  State<ChadActiveRecoveryScreen> createState() =>
+      _ChadActiveRecoveryScreenState();
 }
 
 class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
@@ -271,33 +272,34 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
               ],
             ),
             const SizedBox(height: AppConstants.paddingM),
-
-            ..._getChadRecoveryTips().map((tip) => Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 6,
-                    height: 6,
-                    margin: const EdgeInsets.only(top: 6, right: 12),
-                    decoration: BoxDecoration(
-                      color: Colors.green[400],
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      tip,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        height: 1.4,
+            ..._getChadRecoveryTips()
+                .map((tip) => Padding(
+                      padding: const EdgeInsets.only(bottom: 12),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: 6,
+                            height: 6,
+                            margin: const EdgeInsets.only(top: 6, right: 12),
+                            decoration: BoxDecoration(
+                              color: Colors.green[400],
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+                          Expanded(
+                            child: Text(
+                              tip,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                height: 1.4,
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                  ),
-                ],
-              ),
-            )).toList(),
+                    ))
+                .toList(),
           ],
         ),
       ),
@@ -315,7 +317,8 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
     ];
   }
 
-  void _showWeeklyReport(BuildContext context, ChadActiveRecoveryService recoveryService) {
+  void _showWeeklyReport(
+      BuildContext context, ChadActiveRecoveryService recoveryService) {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
@@ -352,7 +355,8 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
     );
   }
 
-  void _showTomorrowPreview(BuildContext context, ChadActiveRecoveryService recoveryService) {
+  void _showTomorrowPreview(
+      BuildContext context, ChadActiveRecoveryService recoveryService) {
     final tomorrowActivities = recoveryService.getTomorrowPreview();
 
     showDialog(
@@ -366,12 +370,15 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
             children: [
               Text('Chad가 내일 추천할 활동들이야! 미리 준비해두자! 💪'),
               const SizedBox(height: 16),
-              ...tomorrowActivities.take(2).map((activity) => ListTile(
-                leading: Icon(_getIconForActivityType(activity.type)),
-                title: Text(activity.title),
-                subtitle: Text('${activity.durationMinutes}분'),
-                dense: true,
-              )).toList(),
+              ...tomorrowActivities
+                  .take(2)
+                  .map((activity) => ListTile(
+                        leading: Icon(_getIconForActivityType(activity.type)),
+                        title: Text(activity.title),
+                        subtitle: Text('${activity.durationMinutes}분'),
+                        dense: true,
+                      ))
+                  .toList(),
               if (tomorrowActivities.length > 2)
                 Text(
                   '외 ${tomorrowActivities.length - 2}개 활동...',

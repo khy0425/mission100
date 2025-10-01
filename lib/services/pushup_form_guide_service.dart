@@ -79,54 +79,53 @@ class PushupFormGuideService {
 
     final List<CommonMistake> commonMistakes =
         (jsonData['commonMistakes'] as List).map((mistakeJson) {
-          final mistake = mistakeJson as Map<String, dynamic>;
-          return CommonMistake(
-            title: mistake['title'] as String,
-            description: mistake['description'] as String,
-            wrongImagePath: mistake['wrongImagePath'] as String,
-            correctImagePath: mistake['correctImagePath'] as String,
-            severity: mistake['severity'] as String,
-            corrections: List<String>.from(mistake['corrections'] as List),
-          );
-        }).toList();
+      final mistake = mistakeJson as Map<String, dynamic>;
+      return CommonMistake(
+        title: mistake['title'] as String,
+        description: mistake['description'] as String,
+        wrongImagePath: mistake['wrongImagePath'] as String,
+        correctImagePath: mistake['correctImagePath'] as String,
+        severity: mistake['severity'] as String,
+        corrections: List<String>.from(mistake['corrections'] as List),
+      );
+    }).toList();
 
-    final List<PushupVariation> variations = (jsonData['variations'] as List)
-        .map((variationJson) {
-          final variation = variationJson as Map<String, dynamic>;
-          return PushupVariation(
-            name: variation['name'] as String,
-            description: variation['description'] as String,
-            difficulty: variation['difficulty'] as String,
-            imagePath: variation['imagePath'] as String,
-            instructions: List<String>.from(variation['instructions'] as List),
-            benefits: List<String>.from(variation['benefits'] as List),
-          );
-        })
-        .toList();
+    final List<PushupVariation> variations =
+        (jsonData['variations'] as List).map((variationJson) {
+      final variation = variationJson as Map<String, dynamic>;
+      return PushupVariation(
+        name: variation['name'] as String,
+        description: variation['description'] as String,
+        difficulty: variation['difficulty'] as String,
+        imagePath: variation['imagePath'] as String,
+        instructions: List<String>.from(variation['instructions'] as List),
+        benefits: List<String>.from(variation['benefits'] as List),
+      );
+    }).toList();
 
     final List<ImprovementTip> improvementTips =
         (jsonData['improvementTips'] as List).map((tipJson) {
-          final tip = tipJson as Map<String, dynamic>;
-          return ImprovementTip(
-            category: tip['category'] as String,
-            title: tip['title'] as String,
-            description: tip['description'] as String,
-            iconName: tip['iconName'] as String,
-            actionItems: List<String>.from(tip['actionItems'] as List),
-          );
-        }).toList();
+      final tip = tipJson as Map<String, dynamic>;
+      return ImprovementTip(
+        category: tip['category'] as String,
+        title: tip['title'] as String,
+        description: tip['description'] as String,
+        iconName: tip['iconName'] as String,
+        actionItems: List<String>.from(tip['actionItems'] as List),
+      );
+    }).toList();
 
     final List<QuizQuestion> quizQuestions =
         (jsonData['quizQuestions'] as List? ?? []).map((quizJson) {
-          final quiz = quizJson as Map<String, dynamic>;
-          return QuizQuestion(
-            question: quiz['question'] as String,
-            options: List<String>.from(quiz['options'] as List),
-            correctAnswerIndex: quiz['correctAnswerIndex'] as int,
-            explanation: quiz['explanation'] as String,
-            category: quiz['category'] as String,
-          );
-        }).toList();
+      final quiz = quizJson as Map<String, dynamic>;
+      return QuizQuestion(
+        question: quiz['question'] as String,
+        options: List<String>.from(quiz['options'] as List),
+        correctAnswerIndex: quiz['correctAnswerIndex'] as int,
+        explanation: quiz['explanation'] as String,
+        category: quiz['category'] as String,
+      );
+    }).toList();
 
     return PushupFormGuideData(
       formSteps: formSteps,

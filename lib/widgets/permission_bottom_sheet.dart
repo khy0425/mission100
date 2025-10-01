@@ -93,7 +93,6 @@ class PermissionBottomSheet extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 12),
-
                   ...benefits.map(
                     (benefit) => Padding(
                       padding: const EdgeInsets.only(bottom: 8),
@@ -149,9 +148,7 @@ class PermissionBottomSheet extends StatelessWidget {
                         ),
                       ),
                     ),
-
                     const SizedBox(width: 12),
-
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
@@ -333,10 +330,8 @@ class PermissionRequestStorage {
   static Future<void> clearAllPermissionRequests() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final keys = prefs
-          .getKeys()
-          .where((key) => key.startsWith(_keyPrefix))
-          .toList();
+      final keys =
+          prefs.getKeys().where((key) => key.startsWith(_keyPrefix)).toList();
 
       for (final key in keys) {
         await prefs.remove(key);

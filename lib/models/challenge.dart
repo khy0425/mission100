@@ -343,8 +343,8 @@ class Challenge {
       estimatedDuration: json['estimatedDuration'] as int?,
       rewards: json['rewards'] != null
           ? (json['rewards'] as List)
-                .map((r) => ChallengeReward.fromJson(r as Map<String, dynamic>))
-                .toList()
+              .map((r) => ChallengeReward.fromJson(r as Map<String, dynamic>))
+              .toList()
           : null,
       iconPath: json['iconPath'] as String?,
       status: json['status'] != null

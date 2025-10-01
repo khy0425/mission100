@@ -43,11 +43,11 @@ class _PermissionScreenState extends State<PermissionScreen>
 
     _slideAnimation =
         Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
-          CurvedAnimation(
-            parent: _animationController,
-            curve: Curves.easeOutBack,
-          ),
-        );
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeOutBack,
+      ),
+    );
 
     _animationController.forward();
   }
@@ -258,7 +258,8 @@ class _PermissionScreenState extends State<PermissionScreen>
                   Text(
                     description,
                     style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.textTheme.bodySmall?.color?.withValues(alpha: 0.7,
+                      color: theme.textTheme.bodySmall?.color?.withValues(
+                        alpha: 0.7,
                       ),
                     ),
                   ),
@@ -397,8 +398,8 @@ class _PermissionScreenState extends State<PermissionScreen>
         try {
           final storageStatus =
               await PermissionService.requestStoragePermission().timeout(
-                const Duration(seconds: 30),
-              );
+            const Duration(seconds: 30),
+          );
           storageGranted = storageStatus == PermissionStatus.granted;
           debugPrint('💾 저장소 권한 요청 결과: $storageGranted');
         } catch (e) {

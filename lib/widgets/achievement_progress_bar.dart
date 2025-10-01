@@ -33,16 +33,15 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
       vsync: this,
     );
 
-    _progressAnimation =
-        Tween<double>(
-          begin: 0.0,
-          end: widget.achievement.progress.clamp(0.0, 1.0),
-        ).animate(
-          CurvedAnimation(
-            parent: _animationController,
-            curve: Curves.easeOutCubic,
-          ),
-        );
+    _progressAnimation = Tween<double>(
+      begin: 0.0,
+      end: widget.achievement.progress.clamp(0.0, 1.0),
+    ).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeOutCubic,
+      ),
+    );
 
     // 애니메이션 시작
     _animationController.forward();
@@ -53,16 +52,15 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
     super.didUpdateWidget(oldWidget);
 
     if (oldWidget.achievement.currentValue != widget.achievement.currentValue) {
-      _progressAnimation =
-          Tween<double>(
-            begin: _progressAnimation.value,
-            end: widget.achievement.progress.clamp(0.0, 1.0),
-          ).animate(
-            CurvedAnimation(
-              parent: _animationController,
-              curve: Curves.easeOutCubic,
-            ),
-          );
+      _progressAnimation = Tween<double>(
+        begin: _progressAnimation.value,
+        end: widget.achievement.progress.clamp(0.0, 1.0),
+      ).animate(
+        CurvedAnimation(
+          parent: _animationController,
+          curve: Curves.easeOutCubic,
+        ),
+      );
 
       _animationController.reset();
       _animationController.forward();
@@ -139,7 +137,10 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(widget.height / 2),
                         gradient: LinearGradient(
-                          colors: [rarityColor, rarityColor.withValues(alpha: 0.8)],
+                          colors: [
+                            rarityColor,
+                            rarityColor.withValues(alpha: 0.8)
+                          ],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         ),

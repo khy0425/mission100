@@ -229,7 +229,8 @@ class WorkoutProgress {
       maxPushupsInWorkout: totalReps > personalBests.maxPushupsInWorkout
           ? totalReps
           : personalBests.maxPushupsInWorkout,
-      fastestWorkout: personalBests.fastestWorkout == 0 || workoutTime < personalBests.fastestWorkout
+      fastestWorkout: personalBests.fastestWorkout == 0 ||
+              workoutTime < personalBests.fastestWorkout
           ? workoutTime
           : personalBests.fastestWorkout,
       lowestAverageRpe: averageRpe < personalBests.lowestAverageRpe
@@ -238,11 +239,13 @@ class WorkoutProgress {
     );
 
     // 연속 기록 업데이트
-    final daysSinceLastWorkout = now.difference(streakData.lastWorkoutDate).inDays;
+    final daysSinceLastWorkout =
+        now.difference(streakData.lastWorkoutDate).inDays;
     final newCurrent = daysSinceLastWorkout <= 1 ? streakData.current + 1 : 1;
     final updatedStreakData = streakData.copyWith(
       current: newCurrent,
-      longest: newCurrent > streakData.longest ? newCurrent : streakData.longest,
+      longest:
+          newCurrent > streakData.longest ? newCurrent : streakData.longest,
       lastWorkoutDate: now,
     );
 
@@ -287,7 +290,9 @@ class WorkoutProgress {
   double get overallCompletionRate {
     if (completedWorkouts.isEmpty) return 0.0;
     final totalExpectedWorkouts = (currentWeek - 1) * 3 + currentDay - 1;
-    return totalExpectedWorkouts > 0 ? completedWorkouts.length / totalExpectedWorkouts : 0.0;
+    return totalExpectedWorkouts > 0
+        ? completedWorkouts.length / totalExpectedWorkouts
+        : 0.0;
   }
 
   // JSON 변환
@@ -319,8 +324,10 @@ class WorkoutProgress {
       weeklyStats: (json['weeklyStats'] as List)
           .map((s) => WeeklyStats.fromJson(s as Map<String, dynamic>))
           .toList(),
-      personalBests: PersonalBests.fromJson(json['personalBests'] as Map<String, dynamic>),
-      streakData: StreakData.fromJson(json['streakData'] as Map<String, dynamic>),
+      personalBests:
+          PersonalBests.fromJson(json['personalBests'] as Map<String, dynamic>),
+      streakData:
+          StreakData.fromJson(json['streakData'] as Map<String, dynamic>),
       nextWorkoutDate: json['nextWorkoutDate'] != null
           ? DateTime.parse(json['nextWorkoutDate'] as String)
           : null,

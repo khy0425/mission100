@@ -79,7 +79,8 @@ class _LoginScreenState extends State<LoginScreen> {
     }
 
     final authService = Provider.of<AuthService>(context, listen: false);
-    final result = await authService.resetPassword(_emailController.text.trim());
+    final result =
+        await authService.resetPassword(_emailController.text.trim());
 
     if (mounted) {
       if (result.success) {
@@ -127,7 +128,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
       backgroundColor: isDark ? Colors.black : const Color(0xFFF5F5F5),
       appBar: AppBar(
-        backgroundColor: isDark ? Colors.grey[900] : const Color(AppColors.primaryColor),
+        backgroundColor:
+            isDark ? Colors.grey[900] : const Color(AppColors.primaryColor),
         foregroundColor: Colors.white,
         elevation: 0,
         title: const Text(
@@ -208,7 +210,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     prefixIcon: const Icon(Icons.lock),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                        _obscurePassword
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                       ),
                       onPressed: () {
                         setState(() => _obscurePassword = !_obscurePassword);
@@ -261,7 +265,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           width: 20,
                           child: CircularProgressIndicator(
                             strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.white),
                           ),
                         )
                       : const Text(

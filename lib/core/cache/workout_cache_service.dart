@@ -44,10 +44,13 @@ class WorkoutCacheService {
 
       // 강제 새로고침이 아닌 경우 캐시 확인
       if (!forceRefresh) {
-        final cachedData = await _cacheManager.get<List<Map<String, dynamic>>>(cacheKey);
+        final cachedData =
+            await _cacheManager.get<List<Map<String, dynamic>>>(cacheKey);
         if (cachedData != null) {
           debugPrint('워크아웃 기록 캐시 히트: $cacheKey');
-          return cachedData.map((data) => WorkoutHistory.fromMap(data)).toList();
+          return cachedData
+              .map((data) => WorkoutHistory.fromMap(data))
+              .toList();
         }
       }
 
@@ -66,12 +69,12 @@ class WorkoutCacheService {
       }).toList();
 
       // 캐시에 저장
-      final cacheData = workoutHistory.map((workout) => workout.toMap()).toList();
+      final cacheData =
+          workoutHistory.map((workout) => workout.toMap()).toList();
       await _cacheManager.put(cacheKey, cacheData, ttl: _workoutCacheTtl);
 
       debugPrint('워크아웃 기록 데이터베이스 조회: ${workoutHistory.length}개');
       return workoutHistory;
-
     } catch (e) {
       debugPrint('워크아웃 기록 조회 실패: $e');
       return [];
@@ -87,7 +90,8 @@ class WorkoutCacheService {
       final cacheKey = 'user_stats_$userId';
 
       if (!forceRefresh) {
-        final cachedStats = await _cacheManager.get<Map<String, dynamic>>(cacheKey);
+        final cachedStats =
+            await _cacheManager.get<Map<String, dynamic>>(cacheKey);
         if (cachedStats != null) {
           debugPrint('사용자 통계 캐시 히트: $cacheKey');
           return cachedStats;
@@ -102,7 +106,6 @@ class WorkoutCacheService {
 
       debugPrint('사용자 통계 데이터베이스 조회 완료');
       return stats;
-
     } catch (e) {
       debugPrint('사용자 통계 조회 실패: $e');
       return {};
@@ -118,10 +121,12 @@ class WorkoutCacheService {
     bool forceRefresh = false,
   }) async {
     try {
-      final cacheKey = _generateAchievementCacheKey(userId, completed, category, limit);
+      final cacheKey =
+          _generateAchievementCacheKey(userId, completed, category, limit);
 
       if (!forceRefresh) {
-        final cachedData = await _cacheManager.get<List<Map<String, dynamic>>>(cacheKey);
+        final cachedData =
+            await _cacheManager.get<List<Map<String, dynamic>>>(cacheKey);
         if (cachedData != null) {
           debugPrint('업적 캐시 히트: $cacheKey');
           return cachedData.map((data) => Achievement.fromMap(data)).toList();
@@ -142,12 +147,12 @@ class WorkoutCacheService {
       }).toList();
 
       // 캐시에 저장
-      final cacheData = achievements.map((achievement) => achievement.toMap()).toList();
+      final cacheData =
+          achievements.map((achievement) => achievement.toMap()).toList();
       await _cacheManager.put(cacheKey, cacheData, ttl: _achievementCacheTtl);
 
       debugPrint('업적 데이터베이스 조회: ${achievements.length}개');
       return achievements;
-
     } catch (e) {
       debugPrint('업적 조회 실패: $e');
       return [];
@@ -185,7 +190,6 @@ class WorkoutCacheService {
       );
 
       return weeklyProgress;
-
     } catch (e) {
       debugPrint('주간 진행도 조회 실패: $e');
       return List.filled(7, 0);
@@ -218,7 +222,6 @@ class WorkoutCacheService {
       );
 
       return currentStreak;
-
     } catch (e) {
       debugPrint('연속 기록 조회 실패: $e');
       return 0;
@@ -345,7 +348,8 @@ class WorkoutCacheService {
     final recommendations = <String>[];
 
     if (stats.hitRate < 0.7) {
-      recommendations.add('캐시 히트율이 낮습니다 (${(stats.hitRate * 100).toStringAsFixed(1)}%). TTL 조정을 고려해보세요.');
+      recommendations.add(
+          '캐시 히트율이 낮습니다 (${(stats.hitRate * 100).toStringAsFixed(1)}%). TTL 조정을 고려해보세요.');
     }
 
     if (stats.evictions > stats.hits * 0.3) {

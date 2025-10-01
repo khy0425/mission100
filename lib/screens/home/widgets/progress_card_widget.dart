@@ -111,10 +111,13 @@ class ProgressCardWidget extends StatelessWidget {
   }
 
   Widget _buildProgressContent(BuildContext context, ThemeData theme) {
-    final currentWeek = (programProgress?.weeklyProgress.currentWeek ?? 1) as int;
+    final currentWeek =
+        (programProgress?.weeklyProgress.currentWeek ?? 1) as int;
     final totalWeeks = (programProgress?.totalWeeks ?? 6) as int;
-    final progressPercentage = (programProgress?.progressPercentage ?? 0.0) as double;
-    final completedDaysThisWeek = (programProgress?.completedDaysThisWeek ?? 0) as int;
+    final progressPercentage =
+        (programProgress?.progressPercentage ?? 0.0) as double;
+    final completedDaysThisWeek =
+        (programProgress?.completedDaysThisWeek ?? 0) as int;
     final totalDaysThisWeek = (programProgress?.totalDaysThisWeek ?? 3) as int;
     final completedSessions = (programProgress?.completedSessions ?? 0) as int;
     final totalSessions = (programProgress?.totalSessions ?? 18) as int;

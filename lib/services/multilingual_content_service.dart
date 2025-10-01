@@ -502,8 +502,7 @@ class MultilingualContentService {
   /// 레벨에 맞는 차드 동기부여 메시지 가져오기
   static String getChadMotivationalMessage(int level, Locale locale) {
     final languageCode = locale.languageCode;
-    final messages =
-        _chadMotivationalMessages[languageCode] ??
+    final messages = _chadMotivationalMessages[languageCode] ??
         _chadMotivationalMessages['en']!;
 
     // 레벨이 메시지 개수를 초과하면 마지막 메시지 반복
@@ -514,8 +513,7 @@ class MultilingualContentService {
   /// 랜덤 동기부여 메시지 가져오기
   static String getRandomMotivationalMessage(Locale locale) {
     final languageCode = locale.languageCode;
-    final messages =
-        _chadMotivationalMessages[languageCode] ??
+    final messages = _chadMotivationalMessages[languageCode] ??
         _chadMotivationalMessages['en']!;
     return messages[_random.nextInt(messages.length)];
   }

@@ -4,12 +4,12 @@ import '../models/rpe_data.dart';
 
 /// Chad 액티브 리커버리 활동 타입
 enum ActiveRecoveryType {
-  lightMovement,     // 가벼운 움직임
-  stretching,        // 스트레칭
-  breathing,         // 호흡 운동
-  walking,           // 산책
-  mindfulness,       // 마음챙김/명상
-  rest,              // 완전 휴식
+  lightMovement, // 가벼운 움직임
+  stretching, // 스트레칭
+  breathing, // 호흡 운동
+  walking, // 산책
+  mindfulness, // 마음챙김/명상
+  rest, // 완전 휴식
 }
 
 /// Chad 액티브 리커버리 활동 데이터
@@ -385,8 +385,10 @@ class ChadActiveRecoveryService extends ChangeNotifier {
       _completedActivitiesCount++;
       _lastActivityDate = DateTime.now();
 
-      await prefs.setInt('chad_recovery_completed_count', _completedActivitiesCount);
-      await prefs.setInt('chad_recovery_last_activity', _lastActivityDate!.millisecondsSinceEpoch);
+      await prefs.setInt(
+          'chad_recovery_completed_count', _completedActivitiesCount);
+      await prefs.setInt('chad_recovery_last_activity',
+          _lastActivityDate!.millisecondsSinceEpoch);
 
       debugPrint('Chad 액티브 리커버리: 활동 "$activityId" 완료');
       notifyListeners();
@@ -406,7 +408,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
   /// 주간 액티브 리커버리 리포트
   String getWeeklyRecoveryReport() {
     return "이번 주 Chad 액티브 리커버리: $_completedActivitiesCount회 완료! 💪\n"
-           "Chad가 분석한 결과: ${_getRecoveryPerformanceMessage()}";
+        "Chad가 분석한 결과: ${_getRecoveryPerformanceMessage()}";
   }
 
   String _getRecoveryPerformanceMessage() {

@@ -161,7 +161,8 @@ void main() {
       } catch (e) {
         // Firebase not initialized in test environment is expected
         expect(e.toString(), contains('No Firebase App'));
-        debugPrint('✅ AuthService Firebase dependency test passed (expected error)');
+        debugPrint(
+            '✅ AuthService Firebase dependency test passed (expected error)');
       }
     });
   });

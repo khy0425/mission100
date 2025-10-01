@@ -8,10 +8,12 @@ class SubscriptionManagementScreen extends StatefulWidget {
   const SubscriptionManagementScreen({super.key});
 
   @override
-  State<SubscriptionManagementScreen> createState() => _SubscriptionManagementScreenState();
+  State<SubscriptionManagementScreen> createState() =>
+      _SubscriptionManagementScreenState();
 }
 
-class _SubscriptionManagementScreenState extends State<SubscriptionManagementScreen> {
+class _SubscriptionManagementScreenState
+    extends State<SubscriptionManagementScreen> {
   final SubscriptionService _subscriptionService = SubscriptionService();
   // final SubscriptionChangeService _changeService = SubscriptionChangeService();
   // final SubscriptionCancellationService _cancellationService = SubscriptionCancellationService();
@@ -133,10 +135,13 @@ class _SubscriptionManagementScreenState extends State<SubscriptionManagementScr
               ],
             ),
             const SizedBox(height: 16),
-            _buildSubscriptionDetail('플랜', _getProductName(subscription.productId)),
+            _buildSubscriptionDetail(
+                '플랜', _getProductName(subscription.productId)),
             _buildSubscriptionDetail('상태', _getStatusText(subscription.status)),
-            _buildSubscriptionDetail('시작일', _formatDate(subscription.startDate)),
-            _buildSubscriptionDetail('만료일', _formatDate(subscription.expiryDate)),
+            _buildSubscriptionDetail(
+                '시작일', _formatDate(subscription.startDate)),
+            _buildSubscriptionDetail(
+                '만료일', _formatDate(subscription.expiryDate)),
             if (subscription.autoRenewing) ...[
               const SizedBox(height: 8),
               Container(
@@ -170,14 +175,14 @@ class _SubscriptionManagementScreenState extends State<SubscriptionManagementScr
           Text(
             label,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              color: Colors.grey[600],
-            ),
+                  color: Colors.grey[600],
+                ),
           ),
           Text(
             value,
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-              fontWeight: FontWeight.w500,
-            ),
+                  fontWeight: FontWeight.w500,
+                ),
           ),
         ],
       ),
@@ -222,8 +227,8 @@ class _SubscriptionManagementScreenState extends State<SubscriptionManagementScr
       child: ListTile(
         leading: CircleAvatar(
           backgroundColor: isDestructive
-            ? Colors.red.withValues(alpha: 0.1)
-            : Theme.of(context).primaryColor.withValues(alpha: 0.1),
+              ? Colors.red.withValues(alpha: 0.1)
+              : Theme.of(context).primaryColor.withValues(alpha: 0.1),
           child: Icon(
             icon,
             color: isDestructive ? Colors.red : Theme.of(context).primaryColor,
@@ -355,7 +360,8 @@ class _SubscriptionChangeDialog extends StatefulWidget {
   });
 
   @override
-  State<_SubscriptionChangeDialog> createState() => _SubscriptionChangeDialogState();
+  State<_SubscriptionChangeDialog> createState() =>
+      _SubscriptionChangeDialogState();
 }
 
 class _SubscriptionChangeDialogState extends State<_SubscriptionChangeDialog> {
@@ -426,8 +432,8 @@ class _SubscriptionChangeDialogState extends State<_SubscriptionChangeDialog> {
 
   Widget _buildProductOption(Map<String, dynamic> product) {
     return
-    // ignore: deprecated_member_use
-    RadioListTile<String>(
+        // ignore: deprecated_member_use
+        RadioListTile<String>(
       value: product['id'] as String,
       // ignore: deprecated_member_use
       groupValue: _selectedProductId,
@@ -491,11 +497,13 @@ class _SubscriptionCancelDialog extends StatefulWidget {
   });
 
   @override
-  State<_SubscriptionCancelDialog> createState() => _SubscriptionCancelDialogState();
+  State<_SubscriptionCancelDialog> createState() =>
+      _SubscriptionCancelDialogState();
 }
 
 class _SubscriptionCancelDialogState extends State<_SubscriptionCancelDialog> {
-  final SubscriptionCancellationService _cancellationService = SubscriptionCancellationService();
+  final SubscriptionCancellationService _cancellationService =
+      SubscriptionCancellationService();
   final TextEditingController _reasonController = TextEditingController();
 
   CancellationType _cancellationType = CancellationType.endOfPeriod;
@@ -563,7 +571,8 @@ class _SubscriptionCancelDialogState extends State<_SubscriptionCancelDialog> {
             setState(() => _cancellationType = value!);
           },
           title: const Text('현재 구독 기간 종료 후 취소'),
-          subtitle: Text('${widget.currentSubscription.expiryDate.year}.${widget.currentSubscription.expiryDate.month}.${widget.currentSubscription.expiryDate.day}까지 이용 가능'),
+          subtitle: Text(
+              '${widget.currentSubscription.expiryDate.year}.${widget.currentSubscription.expiryDate.month}.${widget.currentSubscription.expiryDate.day}까지 이용 가능'),
         ),
         // ignore: deprecated_member_use
         RadioListTile<CancellationType>(
@@ -596,7 +605,8 @@ class _SubscriptionCancelDialogState extends State<_SubscriptionCancelDialog> {
           items: CancellationReason.values.map((reason) {
             return DropdownMenuItem(
               value: reason,
-              child: Text(_cancellationService.getCancellationReasonText(reason)),
+              child:
+                  Text(_cancellationService.getCancellationReasonText(reason)),
             );
           }).toList(),
         ),
@@ -635,9 +645,8 @@ class _SubscriptionCancelDialogState extends State<_SubscriptionCancelDialog> {
         productId: widget.currentSubscription.productId,
         type: _cancellationType,
         reason: _reason,
-        reasonText: _reason == CancellationReason.other
-            ? _reasonController.text
-            : null,
+        reasonText:
+            _reason == CancellationReason.other ? _reasonController.text : null,
         requestRefund: _requestRefund,
       );
 
@@ -686,18 +695,22 @@ class _SubscriptionHistoryScreen extends StatefulWidget {
   });
 
   @override
-  State<_SubscriptionHistoryScreen> createState() => _SubscriptionHistoryScreenState();
+  State<_SubscriptionHistoryScreen> createState() =>
+      _SubscriptionHistoryScreenState();
 }
 
-class _SubscriptionHistoryScreenState extends State<_SubscriptionHistoryScreen> {
+class _SubscriptionHistoryScreenState
+    extends State<_SubscriptionHistoryScreen> {
   final SubscriptionChangeService _changeService = SubscriptionChangeService();
-  final SubscriptionCancellationService _cancellationService = SubscriptionCancellationService();
+  final SubscriptionCancellationService _cancellationService =
+      SubscriptionCancellationService();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.historyType == _HistoryType.changes ? '변경 기록' : '결제 기록'),
+        title: Text(
+            widget.historyType == _HistoryType.changes ? '변경 기록' : '결제 기록'),
       ),
       body: widget.historyType == _HistoryType.changes
           ? _buildChangeHistory()

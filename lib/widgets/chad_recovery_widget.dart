@@ -94,7 +94,8 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
             borderRadius: BorderRadius.circular(AppConstants.radiusL),
             boxShadow: [
               BoxShadow(
-                color: _getColorForLevel(recoveryService.recoveryLevel).withOpacity(0.3),
+                color: _getColorForLevel(recoveryService.recoveryLevel)
+                    .withOpacity(0.3),
                 blurRadius: 15,
                 offset: const Offset(0, 8),
               ),
@@ -123,7 +124,8 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
     );
   }
 
-  Widget _buildRecoveryHeader(BuildContext context, ChadRecoveryService recoveryService) {
+  Widget _buildRecoveryHeader(
+      BuildContext context, ChadRecoveryService recoveryService) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -176,13 +178,16 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
                       AnimatedBuilder(
                         animation: _scoreAnimation,
                         builder: (context, child) {
-                          final displayScore = (recoveryService.recoveryScore * _scoreAnimation.value).round();
+                          final displayScore = (recoveryService.recoveryScore *
+                                  _scoreAnimation.value)
+                              .round();
                           return Text(
                             '$displayScore',
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
-                              color: _getColorForLevel(recoveryService.recoveryLevel),
+                              color: _getColorForLevel(
+                                  recoveryService.recoveryLevel),
                             ),
                           );
                         },
@@ -192,7 +197,8 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
                         style: TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
-                          color: _getColorForLevel(recoveryService.recoveryLevel),
+                          color:
+                              _getColorForLevel(recoveryService.recoveryLevel),
                         ),
                       ),
                     ],
@@ -206,7 +212,8 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
     );
   }
 
-  Widget _buildChadSection(BuildContext context, ChadRecoveryService recoveryService) {
+  Widget _buildChadSection(
+      BuildContext context, ChadRecoveryService recoveryService) {
     return Row(
       children: [
         // Chad 이미지
@@ -274,7 +281,8 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
     );
   }
 
-  Widget _buildWorkoutRecommendation(BuildContext context, ChadRecoveryService recoveryService) {
+  Widget _buildWorkoutRecommendation(
+      BuildContext context, ChadRecoveryService recoveryService) {
     final adjustment = recoveryService.getWorkoutAdjustment();
 
     return Container(

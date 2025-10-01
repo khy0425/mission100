@@ -52,8 +52,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
 
     // UserProfile에서 기존 알림 설정 불러오기
     _notificationsEnabled = widget.userProfile.reminderEnabled;
-    _notificationTime =
-        widget.userProfile.reminderTimeOfDay ??
+    _notificationTime = widget.userProfile.reminderTimeOfDay ??
         const TimeOfDay(hour: 18, minute: 0);
   }
 
@@ -74,8 +73,8 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
 
     _slideAnimation =
         Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
-          CurvedAnimation(parent: _slideController, curve: Curves.easeOutBack),
-        );
+      CurvedAnimation(parent: _slideController, curve: Curves.easeOutBack),
+    );
 
     _fadeController.forward();
     _slideController.forward();
@@ -305,9 +304,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                     ? '🔥 운동 스케줄을 설정하세요!'
                     : '🔥 Set Your Workout Schedule!',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.orange[700],
-                ),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.orange[700],
+                    ),
               ),
             ],
           ),
@@ -347,9 +346,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                   ? '운동 요일 선택 (최소 3일)'
                   : 'Select Workout Days (Min 3 days)',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: const Color(AppColors.primaryColor),
-              ),
+                    fontWeight: FontWeight.bold,
+                    color: const Color(AppColors.primaryColor),
+                  ),
             ),
           ],
         ),
@@ -359,9 +358,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
               ? '선택된 날짜: $_selectedDaysCount일'
               : 'Selected days: $_selectedDaysCount days',
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
-            color: _selectedDaysCount >= 3 ? Colors.green : Colors.red,
-            fontWeight: FontWeight.w600,
-          ),
+                color: _selectedDaysCount >= 3 ? Colors.green : Colors.red,
+                fontWeight: FontWeight.w600,
+              ),
         ),
         const SizedBox(height: 16),
         Row(
@@ -433,9 +432,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                     ? '운동 알림 설정'
                     : 'Workout Notifications',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue[700],
-                ),
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue[700],
+                    ),
               ),
             ],
           ),
@@ -476,19 +475,19 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                             ? '운동 알림 받기'
                             : 'Enable Workout Reminders',
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: _notificationsEnabled
-                              ? Colors.blue[700]
-                              : Colors.grey[600],
-                        ),
+                              fontWeight: FontWeight.w600,
+                              color: _notificationsEnabled
+                                  ? Colors.blue[700]
+                                  : Colors.grey[600],
+                            ),
                       ),
                       Text(
                         Localizations.localeOf(context).languageCode == 'ko'
                             ? '선택한 운동일에 알림을 받습니다'
                             : 'Get reminders on your workout days',
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Colors.grey[600],
-                        ),
+                              color: Colors.grey[600],
+                            ),
                       ),
                     ],
                   ),
@@ -538,7 +537,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                                       'ko'
                                   ? '알림 시간'
                                   : 'Notification Time',
-                              style: Theme.of(context).textTheme.bodyLarge
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyLarge
                                   ?.copyWith(
                                     fontWeight: FontWeight.w600,
                                     color: Colors.orange[700],
@@ -546,7 +547,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                             ),
                             Text(
                               _formatNotificationTime(),
-                              style: Theme.of(context).textTheme.titleMedium
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium
                                   ?.copyWith(
                                     fontWeight: FontWeight.bold,
                                     color: Colors.orange[800],
@@ -583,9 +586,9 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                         ? '💡 설정 탭에서 언제든지 변경할 수 있습니다'
                         : '💡 You can change these settings anytime in Settings',
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                      color: Colors.green[700],
-                      fontWeight: FontWeight.w500,
-                    ),
+                          color: Colors.green[700],
+                          fontWeight: FontWeight.w500,
+                        ),
                   ),
                 ),
               ],
@@ -625,9 +628,8 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                   ? '여정 시작하기! 🚀'
                   : 'Start the Journey! 🚀',
               style: TextStyle(
-                color: _selectedDaysCount >= 3
-                    ? Colors.black
-                    : Colors.grey[400],
+                color:
+                    _selectedDaysCount >= 3 ? Colors.black : Colors.grey[400],
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),

@@ -16,13 +16,13 @@ class NotificationSettings {
   });
 
   static NotificationSettings get defaultSettings => const NotificationSettings(
-    pushEnabled: true,
-    workoutReminders: true,
-    achievementAlerts: true,
-    weeklyReports: false,
-    reminderTime: '18:00',
-    reminderDays: [1, 3, 5], // 월, 수, 금
-  );
+        pushEnabled: true,
+        workoutReminders: true,
+        achievementAlerts: true,
+        weeklyReports: false,
+        reminderTime: '18:00',
+        reminderDays: [1, 3, 5], // 월, 수, 금
+      );
 
   Map<String, dynamic> toJson() {
     return {
@@ -66,7 +66,7 @@ class NotificationSettings {
 }
 
 enum ChadIntensity {
-  mild,   // 순한 Chad
+  mild, // 순한 Chad
   normal, // 일반 Chad
   intense, // 강렬한 Chad
 }
@@ -83,10 +83,10 @@ class AppearanceSettings {
   });
 
   static AppearanceSettings get defaultSettings => const AppearanceSettings(
-    darkMode: false,
-    language: 'ko',
-    chadIntensity: ChadIntensity.normal,
-  );
+        darkMode: false,
+        language: 'ko',
+        chadIntensity: ChadIntensity.normal,
+      );
 
   Map<String, dynamic> toJson() {
     return {
@@ -132,10 +132,10 @@ class PrivacySettings {
   });
 
   static PrivacySettings get defaultSettings => const PrivacySettings(
-    shareProgress: false,
-    analytics: true,
-    crashReporting: true,
-  );
+        shareProgress: false,
+        analytics: true,
+        crashReporting: true,
+      );
 
   Map<String, dynamic> toJson() {
     return {
@@ -184,9 +184,9 @@ class BackupSettings {
   });
 
   static BackupSettings get defaultSettings => const BackupSettings(
-    autoBackup: true,
-    backupFrequency: BackupFrequency.daily,
-  );
+        autoBackup: true,
+        backupFrequency: BackupFrequency.daily,
+      );
 
   Map<String, dynamic> toJson() {
     return {

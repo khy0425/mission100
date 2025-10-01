@@ -191,10 +191,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
     // 오늘과 며칠 전의 데이터만 로그 출력
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
-    final daysDiff = today
-        .difference(DateTime(day.year, day.month, day.day))
-        .inDays
-        .abs();
+    final daysDiff =
+        today.difference(DateTime(day.year, day.month, day.day)).inDays.abs();
 
     if (events.isEmpty) {
       if (daysDiff <= 7) {
@@ -211,9 +209,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
       bool allSetsCompleted = true;
       if (event.completedReps.isNotEmpty && event.targetReps.isNotEmpty) {
         for (int i = 0; i < event.completedReps.length; i++) {
-          final targetRep = i < event.targetReps.length
-              ? event.targetReps[i]
-              : 0;
+          final targetRep =
+              i < event.targetReps.length ? event.targetReps[i] : 0;
           final completedRep = event.completedReps[i];
           if (completedRep < targetRep) {
             allSetsCompleted = false;
@@ -229,9 +226,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
           0,
           (sum, reps) => sum + reps,
         );
-        totalCompletionRate += totalTarget > 0
-            ? totalCompleted / totalTarget
-            : 1.0;
+        totalCompletionRate +=
+            totalTarget > 0 ? totalCompleted / totalTarget : 1.0;
       } else {
         // 개별 세트 중 하나라도 목표에 못 미쳤다면 기존 로직 사용
         totalCompletionRate += event.completionRate;
@@ -468,8 +464,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
         color: isSelected
             ? Colors.blue.shade600
             : isToday
-            ? Colors.blue.shade100
-            : dayColor,
+                ? Colors.blue.shade100
+                : dayColor,
         shape: BoxShape.circle,
         border: isToday && !isSelected
             ? Border.all(color: Colors.blue.shade600, width: 2)
@@ -485,8 +481,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
                 color: isSelected || dayColor != Colors.transparent
                     ? Colors.white
                     : isToday
-                    ? Colors.blue.shade600
-                    : Colors.black,
+                        ? Colors.blue.shade600
+                        : Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -552,10 +548,10 @@ class _CalendarScreenState extends State<CalendarScreen> {
             color: workout.completionRate >= 1.0
                 ? Colors.green
                 : workout.completionRate >= 0.8
-                ? Colors.blue
-                : workout.completionRate >= 0.5
-                ? Colors.orange
-                : Colors.red,
+                    ? Colors.blue
+                    : workout.completionRate >= 0.5
+                        ? Colors.orange
+                        : Colors.red,
           ),
         ),
       ),
@@ -584,13 +580,13 @@ class _CalendarScreenState extends State<CalendarScreen> {
             workout.completionRate >= 1.0
                 ? Icons.check_circle
                 : workout.completionRate >= 0.8
-                ? Icons.check_circle_outline
-                : Icons.radio_button_unchecked,
+                    ? Icons.check_circle_outline
+                    : Icons.radio_button_unchecked,
             color: workout.completionRate >= 1.0
                 ? Colors.green
                 : workout.completionRate >= 0.8
-                ? Colors.blue
-                : Colors.grey,
+                    ? Colors.blue
+                    : Colors.grey,
           ),
         ],
       ),
@@ -710,26 +706,24 @@ class _CalendarScreenState extends State<CalendarScreen> {
       });
 
       // 비동기로 데이터 로드
-      _loadWorkoutHistory()
-          .then((_) {
-            debugPrint('📅 달력 화면: 데이터 새로고침 완료');
+      _loadWorkoutHistory().then((_) {
+        debugPrint('📅 달력 화면: 데이터 새로고침 완료');
 
-            // 선택된 날짜의 이벤트도 업데이트
-            if (_selectedDay != null) {
-              _selectedEvents.value = _getEventsForDay(_selectedDay!);
-              debugPrint(
-                '📅 선택된 날짜(${_selectedDay}) 이벤트 업데이트: ${_selectedEvents.value.length}개',
-              );
-            }
-          })
-          .catchError((Object e) {
-            debugPrint('❌ 달력 화면: 데이터 새로고침 실패: $e');
-            if (mounted) {
-              setState(() {
-                _isLoading = false;
-              });
-            }
+        // 선택된 날짜의 이벤트도 업데이트
+        if (_selectedDay != null) {
+          _selectedEvents.value = _getEventsForDay(_selectedDay!);
+          debugPrint(
+            '📅 선택된 날짜(${_selectedDay}) 이벤트 업데이트: ${_selectedEvents.value.length}개',
+          );
+        }
+      }).catchError((Object e) {
+        debugPrint('❌ 달력 화면: 데이터 새로고침 실패: $e');
+        if (mounted) {
+          setState(() {
+            _isLoading = false;
           });
+        }
+      });
     } else {
       debugPrint('⚠️ 달력 화면: mounted가 false이므로 콜백 무시');
     }

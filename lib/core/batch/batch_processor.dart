@@ -90,11 +90,13 @@ class BatchStats {
   Duration totalProcessingTime = Duration.zero;
   DateTime? lastFlush;
 
-  double get averageProcessingTime =>
-      totalBatches > 0 ? totalProcessingTime.inMilliseconds / totalBatches : 0.0;
+  double get averageProcessingTime => totalBatches > 0
+      ? totalProcessingTime.inMilliseconds / totalBatches
+      : 0.0;
 
-  double get successRate =>
-      totalOperations > 0 ? (totalOperations - totalFailures) / totalOperations : 1.0;
+  double get successRate => totalOperations > 0
+      ? (totalOperations - totalFailures) / totalOperations
+      : 1.0;
 
   Map<String, dynamic> toJson() {
     return {
@@ -138,11 +140,13 @@ class BatchProcessor {
       _startAutoFlush();
     }
 
-    debugPrint('배치 처리기 초기화 완료 (maxSize: ${_config.maxBatchSize}, interval: ${_config.flushInterval.inSeconds}s)');
+    debugPrint(
+        '배치 처리기 초기화 완료 (maxSize: ${_config.maxBatchSize}, interval: ${_config.flushInterval.inSeconds}s)');
   }
 
   /// 생성 작업 추가
-  void addCreate(String collection, Map<String, dynamic> data, {String? documentId}) {
+  void addCreate(String collection, Map<String, dynamic> data,
+      {String? documentId}) {
     final operation = BatchOperation(
       collection: collection,
       documentId: documentId,
@@ -155,7 +159,8 @@ class BatchProcessor {
   }
 
   /// 업데이트 작업 추가
-  void addUpdate(String collection, String documentId, Map<String, dynamic> data) {
+  void addUpdate(
+      String collection, String documentId, Map<String, dynamic> data) {
     final operation = BatchOperation(
       collection: collection,
       documentId: documentId,
@@ -183,7 +188,8 @@ class BatchProcessor {
   void _addOperation(BatchOperation operation) {
     _operationQueue.add(operation);
 
-    debugPrint('배치 작업 추가: ${operation.toString()} (큐 크기: ${_operationQueue.length})');
+    debugPrint(
+        '배치 작업 추가: ${operation.toString()} (큐 크기: ${_operationQueue.length})');
 
     // 최대 크기에 도달하면 즉시 플러시
     if (_operationQueue.length >= _config.maxBatchSize) {
@@ -241,10 +247,10 @@ class BatchProcessor {
       _stats.totalProcessingTime += result.processingTime;
       _stats.lastFlush = DateTime.now();
 
-      debugPrint('배치 처리 완료: ${result.successCount}/${result.totalOperations} 성공');
+      debugPrint(
+          '배치 처리 완료: ${result.successCount}/${result.totalOperations} 성공');
 
       return result;
-
     } catch (e) {
       debugPrint('배치 플러시 실패: $e');
       return BatchResult(
@@ -272,7 +278,9 @@ class BatchProcessor {
 
         for (final operation in operations) {
           final docRef = operation.documentId != null
-              ? _firestore.collection(operation.collection).doc(operation.documentId)
+              ? _firestore
+                  .collection(operation.collection)
+                  .doc(operation.documentId)
               : _firestore.collection(operation.collection).doc();
 
           switch (operation.type) {
@@ -297,14 +305,14 @@ class BatchProcessor {
               break;
 
             case BatchOperationType.mixed:
-              throw UnimplementedError('Mixed batch operations not supported in single batch');
+              throw UnimplementedError(
+                  'Mixed batch operations not supported in single batch');
           }
         }
 
         await batch.commit();
         successCount = operations.length;
         break; // 성공 시 재시도 루프 탈출
-
       } catch (e) {
         retryCount++;
         errors.add('Attempt $retryCount: $e');
@@ -349,9 +357,8 @@ class BatchProcessor {
       'queue_size': _operationQueue.length,
       'is_processing': _isProcessing,
       'auto_flush_enabled': _flushTimer != null,
-      'next_flush_in_seconds': _flushTimer != null
-          ? _config.flushInterval.inSeconds
-          : null,
+      'next_flush_in_seconds':
+          _flushTimer != null ? _config.flushInterval.inSeconds : null,
     };
   }
 
@@ -497,7 +504,8 @@ class BatchProcessor {
       debugPrint('총 배치: ${stats.totalBatches}');
       debugPrint('총 작업: ${stats.totalOperations}');
       debugPrint('성공률: ${(stats.successRate * 100).toStringAsFixed(1)}%');
-      debugPrint('평균 처리시간: ${stats.averageProcessingTime.toStringAsFixed(1)}ms');
+      debugPrint(
+          '평균 처리시간: ${stats.averageProcessingTime.toStringAsFixed(1)}ms');
       debugPrint('=========================');
     }
   }

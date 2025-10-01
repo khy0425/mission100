@@ -143,8 +143,7 @@ class ConfigManager {
       ),
       themeConfig: theme,
       featureFlags: features ?? const FeatureFlags(),
-      adConfig:
-          adConfig ??
+      adConfig: adConfig ??
           const AdConfig(
             androidAppId: '',
             androidBannerId: '',

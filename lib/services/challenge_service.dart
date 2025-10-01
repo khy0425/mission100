@@ -226,9 +226,8 @@ class ChallengeService {
       await prefs.setString(_activeChallengesKey, jsonEncode(activeJson));
 
       // 완료된 챌린지 저장
-      final completedJson = _completedChallenges
-          .map((c) => c.toJson())
-          .toList();
+      final completedJson =
+          _completedChallenges.map((c) => c.toJson()).toList();
       await prefs.setString(_completedChallengesKey, jsonEncode(completedJson));
     } catch (e) {
       debugPrint('챌린지 저장 오류: $e');
@@ -742,12 +741,12 @@ class ChallengeService {
       (c) => c.id == challengeId,
     );
     if (allChallengeIndex != -1) {
-      _allChallenges[allChallengeIndex] = _allChallenges[allChallengeIndex]
-          .copyWith(
-            status: ChallengeStatus.available,
-            currentProgress: 0,
-            startDate: null,
-          );
+      _allChallenges[allChallengeIndex] =
+          _allChallenges[allChallengeIndex].copyWith(
+        status: ChallengeStatus.available,
+        currentProgress: 0,
+        startDate: null,
+      );
     }
 
     await _saveChallenges();

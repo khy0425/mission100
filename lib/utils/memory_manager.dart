@@ -54,8 +54,8 @@ class MemoryManager {
     if (!kDebugMode) return;
 
     final imageCache = PaintingBinding.instance.imageCache;
-    final currentSizeMB = (imageCache.currentSizeBytes / (1024 * 1024))
-        .toStringAsFixed(1);
+    final currentSizeMB =
+        (imageCache.currentSizeBytes / (1024 * 1024)).toStringAsFixed(1);
     final maxSizeMB = (imageCache.maximumSizeBytes / (1024 * 1024)).round();
 
     debugPrint(

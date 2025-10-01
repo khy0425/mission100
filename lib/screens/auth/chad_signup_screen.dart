@@ -56,7 +56,8 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
     if (mounted) {
       if (result.success) {
         // Chad 개인화 데이터 적용
-        final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+        final chadService =
+            Provider.of<ChadOnboardingService>(context, listen: false);
         await chadService.applyPersonalizationImmediately();
 
         _showSuccessSnackBar('Chad와 함께하는 Mission: 100에 오신 것을 환영합니다!');
@@ -80,7 +81,8 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
     if (mounted) {
       if (result.success) {
         // Chad 개인화 데이터 적용
-        final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+        final chadService =
+            Provider.of<ChadOnboardingService>(context, listen: false);
         await chadService.applyPersonalizationImmediately();
 
         _showSuccessSnackBar('Chad와 함께하는 Mission: 100에 오신 것을 환영합니다!');
@@ -131,13 +133,16 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
                   title: 'Chad AI 트레이너 가입하기',
                   description: chadService.getSignupMotivationMessage(),
                   customContent: _buildSignupContent(context),
-                  onNext: _isLoading ? null : () async {
-                    if (_formKey.currentState!.validate() && _agreeTerms) {
-                      await _handleSignUp();
-                    } else if (!_agreeTerms) {
-                      _showErrorSnackBar('이용약관에 동의해주세요.');
-                    }
-                  },
+                  onNext: _isLoading
+                      ? null
+                      : () async {
+                          if (_formKey.currentState!.validate() &&
+                              _agreeTerms) {
+                            await _handleSignUp();
+                          } else if (!_agreeTerms) {
+                            _showErrorSnackBar('이용약관에 동의해주세요.');
+                          }
+                        },
                   buttonText: _isLoading ? '가입 중...' : 'Chad와 1개월 무료 시작!',
                 );
               },

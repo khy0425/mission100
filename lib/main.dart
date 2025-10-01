@@ -30,7 +30,6 @@ import 'services/billing_service.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-
   try {
     // Firebase 초기화
     await Firebase.initializeApp();
@@ -174,65 +173,55 @@ void main() async {
 // 백그라운드에서 나머지 서비스들을 초기화하는 함수
 void _initializeBackgroundServices() {
   // 광고 서비스 초기화 (백그라운드)
-  AdService.initialize()
-      .then((_) {
-        debugPrint('✅ AdService 백그라운드 초기화 완료');
-      })
-      .catchError((Object e) {
-        debugPrint('❌ AdService 초기화 오류: $e');
-      });
+  AdService.initialize().then((_) {
+    debugPrint('✅ AdService 백그라운드 초기화 완료');
+  }).catchError((Object e) {
+    debugPrint('❌ AdService 초기화 오류: $e');
+  });
 
   // 알림 서비스 초기화 (백그라운드)
-  NotificationService.initialize()
-      .then((_) async {
-        await NotificationService.createNotificationChannels();
-        debugPrint('✅ NotificationService 백그라운드 초기화 완료');
-      })
-      .catchError((Object e) {
-        debugPrint('❌ NotificationService 초기화 오류: $e');
-      });
+  NotificationService.initialize().then((_) async {
+    await NotificationService.createNotificationChannels();
+    debugPrint('✅ NotificationService 백그라운드 초기화 완료');
+  }).catchError((Object e) {
+    debugPrint('❌ NotificationService 초기화 오류: $e');
+  });
 
   // Chad 이미지 서비스 초기화 (백그라운드)
-  ChadImageService()
-      .initialize()
-      .then((_) {
-        debugPrint('✅ ChadImageService 백그라운드 초기화 완료');
-      })
-      .catchError((Object e) {
-        debugPrint('❌ ChadImageService 초기화 오류: $e');
-      });
+  ChadImageService().initialize().then((_) {
+    debugPrint('✅ ChadImageService 백그라운드 초기화 완료');
+  }).catchError((Object e) {
+    debugPrint('❌ ChadImageService 초기화 오류: $e');
+  });
 
   // 업적 서비스 초기화 (백그라운드)
   Future.delayed(const Duration(milliseconds: 500), () {
-    AchievementService.initialize()
-        .then((_) async {
-          final totalCount = await AchievementService.getTotalCount();
-          final unlockedCount = await AchievementService.getUnlockedCount();
-          debugPrint(
-            '✅ 업적 서비스 백그라운드 초기화 완료 - 총 $totalCount개 업적, $unlockedCount개 잠금해제',
-          );
-        })
-        .catchError((Object e) {
-          debugPrint('❌ 업적 서비스 초기화 오류: $e');
-        });
+    AchievementService.initialize().then((_) async {
+      final totalCount = await AchievementService.getTotalCount();
+      final unlockedCount = await AchievementService.getUnlockedCount();
+      debugPrint(
+        '✅ 업적 서비스 백그라운드 초기화 완료 - 총 $totalCount개 업적, $unlockedCount개 잠금해제',
+      );
+    }).catchError((Object e) {
+      debugPrint('❌ 업적 서비스 초기화 오류: $e');
+    });
   });
 
   // 챌린지 서비스 초기화 (백그라운드)
   Future.delayed(const Duration(milliseconds: 700), () {
-    ChallengeService()
-        .initialize()
-        .then((_) {
-          debugPrint('✅ 챌린지 서비스 백그라운드 초기화 완료');
-        })
-        .catchError((Object e) {
-          debugPrint('❌ 챌린지 서비스 초기화 오류: $e');
-        });
+    ChallengeService().initialize().then((_) {
+      debugPrint('✅ 챌린지 서비스 백그라운드 초기화 완료');
+    }).catchError((Object e) {
+      debugPrint('❌ 챌린지 서비스 초기화 오류: $e');
+    });
   });
 
   // Chad 이미지 프리로드 (더 늦게, 메모리 부담 줄이기)
   Future.delayed(const Duration(seconds: 2), () {
     final chadEvolutionService = ChadEvolutionService();
-    chadEvolutionService.preloadAllImages(targetSize: 150).catchError((Object e) {
+    chadEvolutionService
+        .preloadAllImages(targetSize: 150)
+        .catchError((Object e) {
       debugPrint('Chad 이미지 프리로드 오류: $e');
     });
   });
@@ -553,7 +542,8 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Text(
                   AppLocalizations.of(context).appSlogan,
                   style: theme.textTheme.titleMedium?.copyWith(
-                    color: theme.textTheme.bodyLarge?.color?.withValues(alpha: 0.7,
+                    color: theme.textTheme.bodyLarge?.color?.withValues(
+                      alpha: 0.7,
                     ),
                   ),
                 ),

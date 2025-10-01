@@ -128,18 +128,14 @@ class DemoLauncher extends StatelessWidget {
                       );
                     },
                   ),
-
                   const SizedBox(height: 16),
-
                   _buildComingSoonCard(
                     context,
                     title: '버피 통합 시연',
                     subtitle: '푸시업 + 버피 혼합 운동',
                     description: '개인 레벨별 운동 조합 자동 최적화',
                   ),
-
                   const SizedBox(height: 16),
-
                   _buildComingSoonCard(
                     context,
                     title: '수익화 시뮬레이션',

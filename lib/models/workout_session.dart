@@ -44,15 +44,15 @@ class WorkoutSession {
       targetReps: (map['target_reps'] as String).isEmpty
           ? []
           : (map['target_reps'] as String)
-                .split(',')
-                .map<int>((String e) => int.parse(e.trim()))
-                .toList(),
+              .split(',')
+              .map<int>((String e) => int.parse(e.trim()))
+              .toList(),
       completedReps: (map['completed_reps'] as String).isEmpty
           ? []
           : (map['completed_reps'] as String)
-                .split(',')
-                .map<int>((String e) => int.parse(e.trim()))
-                .toList(),
+              .split(',')
+              .map<int>((String e) => int.parse(e.trim()))
+              .toList(),
       isCompleted: (map['is_completed'] as int) == 1,
       totalReps: map['total_reps'] as int? ?? 0,
       totalTime: Duration(seconds: map['total_time'] as int? ?? 0),

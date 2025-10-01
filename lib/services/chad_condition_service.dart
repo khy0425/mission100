@@ -33,8 +33,8 @@ class ChadConditionService extends ChangeNotifier {
     final now = DateTime.now();
     final lastCheck = _lastConditionCheck!;
     return now.year == lastCheck.year &&
-           now.month == lastCheck.month &&
-           now.day == lastCheck.day;
+        now.month == lastCheck.month &&
+        now.day == lastCheck.day;
   }
 
   /// 서비스 초기화
@@ -78,7 +78,8 @@ class ChadConditionService extends ChangeNotifier {
       }
 
       if (lastCheckTimestamp != null) {
-        _lastConditionCheck = DateTime.fromMillisecondsSinceEpoch(lastCheckTimestamp);
+        _lastConditionCheck =
+            DateTime.fromMillisecondsSinceEpoch(lastCheckTimestamp);
       }
     } catch (e) {
       debugPrint('Chad 컨디션 로드 실패: $e');
@@ -93,7 +94,8 @@ class ChadConditionService extends ChangeNotifier {
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setInt('last_chad_condition', condition.score);
-      await prefs.setInt('last_condition_check', _lastConditionCheck!.millisecondsSinceEpoch);
+      await prefs.setInt(
+          'last_condition_check', _lastConditionCheck!.millisecondsSinceEpoch);
 
       debugPrint('Chad 컨디션 업데이트: ${condition.koreanName}');
       notifyListeners();

@@ -137,7 +137,6 @@ class ChallengeCard extends StatelessWidget {
                         ),
                       ],
                     ),
-
                   if (challenge.estimatedDuration != null &&
                       challenge.estimatedDuration! > 0)
                     Text(

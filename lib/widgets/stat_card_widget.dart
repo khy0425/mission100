@@ -35,25 +35,25 @@ class StatCardWidget extends StatelessWidget {
           Text(
             title,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: color,
-              fontWeight: FontWeight.w600,
-            ),
+                  color: color,
+                  fontWeight: FontWeight.w600,
+                ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 4),
           Text(
             value,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: color,
-              fontWeight: FontWeight.bold,
-            ),
+                  color: color,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           Text(
             subtitle,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: color.withValues(alpha: 0.7),
-              fontSize: 10,
-            ),
+                  color: color.withValues(alpha: 0.7),
+                  fontSize: 10,
+                ),
             textAlign: TextAlign.center,
           ),
         ],

@@ -250,7 +250,7 @@ class AchievementPerformanceService {
         final avgDuration = Duration(
           microseconds:
               timings.map((d) => d.inMicroseconds).reduce((a, b) => a + b) ~/
-              timings.length,
+                  timings.length,
         );
 
         if (avgDuration > _slowOperationThreshold) {
@@ -314,7 +314,8 @@ class AchievementPerformanceService {
         }
 
         if (data['logs'] != null) {
-          _performanceLogs.addAll((List<String>.from(data['logs'] as List? ?? [])));
+          _performanceLogs
+              .addAll((List<String>.from(data['logs'] as List? ?? [])));
         }
 
         debugPrint('📊 성능 데이터 로드 완료');

@@ -7,19 +7,19 @@ import '../security/api_key_manager.dart';
 
 /// 암호화 알고리즘 타입
 enum EncryptionType {
-  aes256,    // AES-256 (미래 구현)
-  xor,       // 간단한 XOR 암호화
-  base64,    // Base64 인코딩 (개발용)
+  aes256, // AES-256 (미래 구현)
+  xor, // 간단한 XOR 암호화
+  base64, // Base64 인코딩 (개발용)
 }
 
 /// 민감한 데이터 타입
 enum SensitiveDataType {
-  userCredentials,  // 사용자 인증 정보
-  personalInfo,     // 개인정보
-  paymentInfo,      // 결제 정보
-  healthData,       // 건강 데이터
-  apiKeys,          // API 키
-  deviceInfo,       // 디바이스 정보
+  userCredentials, // 사용자 인증 정보
+  personalInfo, // 개인정보
+  paymentInfo, // 결제 정보
+  healthData, // 건강 데이터
+  apiKeys, // API 키
+  deviceInfo, // 디바이스 정보
 }
 
 /// 암호화 설정
@@ -75,7 +75,8 @@ class EncryptionResult {
 
 /// 데이터 암호화 서비스
 class DataEncryptionService {
-  static final DataEncryptionService _instance = DataEncryptionService._internal();
+  static final DataEncryptionService _instance =
+      DataEncryptionService._internal();
   factory DataEncryptionService() => _instance;
   DataEncryptionService._internal();
 
@@ -153,7 +154,6 @@ class DataEncryptionService {
 
       _logEncryptionEvent('encrypt', dataType, algorithm);
       return result;
-
     } catch (e) {
       debugPrint('데이터 암호화 실패: $e');
       rethrow;
@@ -171,10 +171,12 @@ class DataEncryptionService {
 
       switch (encryptionResult.algorithm) {
         case EncryptionType.xor:
-          decryptedData = _xorDecrypt(encryptionResult.encryptedData, masterKey);
+          decryptedData =
+              _xorDecrypt(encryptionResult.encryptedData, masterKey);
           break;
         case EncryptionType.base64:
-          decryptedData = utf8.decode(base64Decode(encryptionResult.encryptedData));
+          decryptedData =
+              utf8.decode(base64Decode(encryptionResult.encryptedData));
           break;
         case EncryptionType.aes256:
           throw UnimplementedError('AES-256 decryption not implemented yet');
@@ -190,7 +192,6 @@ class DataEncryptionService {
 
       _logEncryptionEvent('decrypt', dataType, encryptionResult.algorithm);
       return decryptedData;
-
     } catch (e) {
       debugPrint('데이터 복호화 실패: $e');
       rethrow;
@@ -270,7 +271,6 @@ class DataEncryptionService {
       );
 
       return await decryptData(encryptionResult, dataType);
-
     } catch (e) {
       debugPrint('보안 데이터 로드 실패: $e');
       return null;
@@ -315,7 +315,6 @@ class DataEncryptionService {
           // 구 키로 복호화 (실제로는 구 키를 별도 보관해야 함)
           // 여기서는 간단한 구현을 위해 skip
           debugPrint('키 순환 완료: $originalKey');
-
         } catch (e) {
           debugPrint('키 순환 실패: ${entry.key} - $e');
         }
@@ -387,7 +386,6 @@ class DataEncryptionService {
 
       debugPrint('암호화 무결성 검증: ${isValid ? '성공' : '실패'}');
       return isValid;
-
     } catch (e) {
       debugPrint('암호화 무결성 검증 실패: $e');
       return false;

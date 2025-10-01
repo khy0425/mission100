@@ -4,7 +4,6 @@ import 'dart:convert';
 
 void main() {
   group('CloudSync Logic Tests', () {
-
     setUp(() {
       // SharedPreferences Mock 설정
       SharedPreferences.setMockInitialValues({});
@@ -50,7 +49,9 @@ void main() {
         expect(resolved['id'], 'workout_123');
       });
 
-      test('should resolve workout conflict by timestamp when completion rates are equal', () {
+      test(
+          'should resolve workout conflict by timestamp when completion rates are equal',
+          () {
         // Given: 완료율이 같은 운동 기록
         final localData = {
           'id': 'workout_123',
@@ -111,14 +112,17 @@ void main() {
         };
 
         // When: 충돌 해결
-        final resolved = _resolveAchievementConflict(localCompleted, cloudIncomplete);
+        final resolved =
+            _resolveAchievementConflict(localCompleted, cloudIncomplete);
 
         // Then: 완료된 성취가 우선되어야 함
         expect(resolved['completed'], true);
         expect(resolved['progress'], 80);
       });
 
-      test('should resolve achievement conflict by progress when both incomplete', () {
+      test(
+          'should resolve achievement conflict by progress when both incomplete',
+          () {
         // Given: 둘 다 미완료인 성취
         final localData = {
           'progress': 70,
@@ -183,7 +187,8 @@ void main() {
     });
 
     group('Offline Queue Management', () {
-      test('should serialize and deserialize pending changes correctly', () async {
+      test('should serialize and deserialize pending changes correctly',
+          () async {
         // Given: SharedPreferences 초기화
         final prefs = await SharedPreferences.getInstance();
         final changes = [
@@ -256,7 +261,8 @@ void main() {
       test('should parse various timestamp formats correctly', () {
         // Given: 다양한 형태의 타임스탬프
         final isoString = '2024-01-01T10:00:00Z';
-        final timestamp = 1704110400000; // 2024-01-01 10:00:00 UTC in milliseconds
+        final timestamp =
+            1704110400000; // 2024-01-01 10:00:00 UTC in milliseconds
 
         // When: 타임스탬프 파싱
         final parsedString = _parseTimestamp(isoString);
@@ -294,7 +300,8 @@ void main() {
 
 // 테스트 헬퍼 함수들 - CloudSyncService 로직을 시뮬레이션
 bool _isOnlineFromConnectivity(List<String> connectivityResults) {
-  return connectivityResults.isNotEmpty && !connectivityResults.contains('none');
+  return connectivityResults.isNotEmpty &&
+      !connectivityResults.contains('none');
 }
 
 Map<String, dynamic> _resolveWorkoutRecordConflict(
@@ -325,7 +332,8 @@ Map<String, dynamic> _resolveUserProfileConflict(
   final cloudTime = _parseTimestamp(cloudData['updatedAt']);
 
   if (cloudTime.isAfter(localTime)) {
-    resolved['displayName'] = cloudData['displayName'] ?? resolved['displayName'];
+    resolved['displayName'] =
+        cloudData['displayName'] ?? resolved['displayName'];
     resolved['updatedAt'] = cloudData['updatedAt'];
   }
 
@@ -340,7 +348,8 @@ Map<String, dynamic> _resolveUserProfileConflict(
 
   final localStreak = (localData['currentStreak'] as int?) ?? 0;
   final cloudStreak = (cloudData['currentStreak'] as int?) ?? 0;
-  resolved['currentStreak'] = localStreak > cloudStreak ? localStreak : cloudStreak;
+  resolved['currentStreak'] =
+      localStreak > cloudStreak ? localStreak : cloudStreak;
 
   return resolved;
 }
@@ -386,7 +395,8 @@ List<Map<String, dynamic>> _mergeWorkoutRecords(
   return mergedMap.values.toList();
 }
 
-List<Map<String, dynamic>> _sortWorkoutsByDate(List<Map<String, dynamic>> workouts) {
+List<Map<String, dynamic>> _sortWorkoutsByDate(
+    List<Map<String, dynamic>> workouts) {
   final sorted = List<Map<String, dynamic>>.from(workouts);
   sorted.sort((a, b) {
     final dateA = DateTime.parse(a['date'] as String);

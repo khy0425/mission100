@@ -32,12 +32,12 @@ enum UserPermission {
 
 /// 사용자 역할
 enum UserRole {
-  guest,        // 비회원
-  user,         // 일반 사용자
-  premium,      // 프리미엄 사용자
-  beta,         // 베타 테스터
-  moderator,    // 관리자
-  admin,        // 최고 관리자
+  guest, // 비회원
+  user, // 일반 사용자
+  premium, // 프리미엄 사용자
+  beta, // 베타 테스터
+  moderator, // 관리자
+  admin, // 최고 관리자
 }
 
 /// 권한 검증 결과
@@ -63,7 +63,8 @@ class PermissionResult {
     );
   }
 
-  factory PermissionResult.granted(UserRole role, List<UserPermission> permissions) {
+  factory PermissionResult.granted(
+      UserRole role, List<UserPermission> permissions) {
     return PermissionResult(
       granted: true,
       userRole: role,
@@ -74,7 +75,8 @@ class PermissionResult {
 
 /// 사용자 권한 관리자
 class UserPermissionManager {
-  static final UserPermissionManager _instance = UserPermissionManager._internal();
+  static final UserPermissionManager _instance =
+      UserPermissionManager._internal();
   factory UserPermissionManager() => _instance;
   UserPermissionManager._internal();
 
@@ -103,10 +105,7 @@ class UserPermissionManager {
       }
 
       // Firestore에서 사용자 역할 조회
-      final userDoc = await _firestore
-          .collection('users')
-          .doc(user.uid)
-          .get();
+      final userDoc = await _firestore.collection('users').doc(user.uid).get();
 
       if (!userDoc.exists) {
         // 새 사용자인 경우 기본 역할 설정
@@ -129,7 +128,6 @@ class UserPermissionManager {
 
       _updateCache(role, _getPermissionsForRole(role));
       return role;
-
     } catch (e) {
       debugPrint('사용자 역할 조회 실패: $e');
       _updateCache(UserRole.guest, []);
@@ -151,7 +149,6 @@ class UserPermissionManager {
         '권한이 없습니다: ${permission.toString()}',
         role,
       );
-
     } catch (e) {
       debugPrint('권한 확인 실패: $e');
       return PermissionResult.denied('권한 확인 중 오류 발생', UserRole.guest);
@@ -174,7 +171,8 @@ class UserPermissionManager {
   }
 
   /// 권한 요구사항 검증
-  Future<bool> requirePermissions(List<UserPermission> requiredPermissions) async {
+  Future<bool> requirePermissions(
+      List<UserPermission> requiredPermissions) async {
     final results = await checkMultiplePermissions(requiredPermissions);
     return results.values.every((granted) => granted);
   }
@@ -302,7 +300,8 @@ class UserPermissionManager {
     try {
       // 현재 사용자가 관리자인지 확인
       final currentUserRole = await getCurrentUserRole();
-      if (currentUserRole != UserRole.admin && currentUserRole != UserRole.moderator) {
+      if (currentUserRole != UserRole.admin &&
+          currentUserRole != UserRole.moderator) {
         debugPrint('권한 없음: 사용자 역할 변경은 관리자만 가능');
         return false;
       }
@@ -310,9 +309,8 @@ class UserPermissionManager {
       await _firestore.collection('users').doc(userId).update({
         'role': newRole.toString().split('.').last,
         'updatedAt': FieldValue.serverTimestamp(),
-        'permissions': _getPermissionsForRole(newRole)
-            .map((p) => p.toString())
-            .toList(),
+        'permissions':
+            _getPermissionsForRole(newRole).map((p) => p.toString()).toList(),
       });
 
       // 해당 사용자의 캐시 무효화 (현재 사용자인 경우)
@@ -322,7 +320,6 @@ class UserPermissionManager {
 
       debugPrint('사용자 역할 업데이트 완료: $userId -> $newRole');
       return true;
-
     } catch (e) {
       debugPrint('사용자 역할 업데이트 실패: $e');
       return false;
@@ -337,7 +334,8 @@ class UserPermissionManager {
   }
 
   /// 보안 이벤트 로깅
-  Future<void> _logSecurityEvent(String event, Map<String, dynamic> details) async {
+  Future<void> _logSecurityEvent(
+      String event, Map<String, dynamic> details) async {
     try {
       if (kReleaseMode) {
         await _firestore.collection('securityLogs').add({

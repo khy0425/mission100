@@ -57,7 +57,8 @@ class BillingService {
       _subscription = _inAppPurchase.purchaseStream.listen(
         _handlePurchaseUpdates,
         onDone: () => debugPrint('BillingService: Purchase stream closed'),
-        onError: (Object error) => debugPrint('BillingService: Purchase stream error: $error'),
+        onError: (Object error) =>
+            debugPrint('BillingService: Purchase stream error: $error'),
       );
 
       // 상품 정보 로드
@@ -66,7 +67,6 @@ class BillingService {
       _isInitialized = true;
       debugPrint('BillingService: Initialized successfully');
       return true;
-
     } catch (e) {
       debugPrint('BillingService: Initialization failed: $e');
       return false;
@@ -76,10 +76,12 @@ class BillingService {
   // 상품 정보 로드
   Future<void> _loadProducts() async {
     try {
-      final ProductDetailsResponse response = await _inAppPurchase.queryProductDetails(_subscriptionIds);
+      final ProductDetailsResponse response =
+          await _inAppPurchase.queryProductDetails(_subscriptionIds);
 
       if (response.error != null) {
-        debugPrint('BillingService: Failed to load products: ${response.error}');
+        debugPrint(
+            'BillingService: Failed to load products: ${response.error}');
         return;
       }
 
@@ -87,9 +89,9 @@ class BillingService {
       debugPrint('BillingService: Loaded ${_products.length} products');
 
       for (final product in _products) {
-        debugPrint('Product: ${product.id} - ${product.title} - ${product.price}');
+        debugPrint(
+            'Product: ${product.id} - ${product.title} - ${product.price}');
       }
-
     } catch (e) {
       debugPrint('BillingService: Error loading products: $e');
     }
@@ -123,16 +125,18 @@ class BillingService {
     }
 
     try {
-      final PurchaseParam purchaseParam = PurchaseParam(productDetails: product);
+      final PurchaseParam purchaseParam =
+          PurchaseParam(productDetails: product);
 
-      final bool success = await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
+      final bool success =
+          await _inAppPurchase.buyNonConsumable(purchaseParam: purchaseParam);
 
       if (!success) {
-        debugPrint('BillingService: Failed to initiate purchase for $productId');
+        debugPrint(
+            'BillingService: Failed to initiate purchase for $productId');
       }
 
       return success;
-
     } catch (e) {
       debugPrint('BillingService: Error purchasing $productId: $e');
       return false;
@@ -142,7 +146,8 @@ class BillingService {
   // 구매 업데이트 처리
   void _handlePurchaseUpdates(List<PurchaseDetails> purchaseDetailsList) {
     for (final PurchaseDetails purchaseDetails in purchaseDetailsList) {
-      debugPrint('BillingService: Purchase update - ${purchaseDetails.productID}: ${purchaseDetails.status}');
+      debugPrint(
+          'BillingService: Purchase update - ${purchaseDetails.productID}: ${purchaseDetails.status}');
 
       switch (purchaseDetails.status) {
         case PurchaseStatus.pending:
@@ -171,12 +176,14 @@ class BillingService {
 
   // 대기 중인 구매 처리
   void _handlePendingPurchase(PurchaseDetails purchaseDetails) {
-    debugPrint('BillingService: Purchase pending: ${purchaseDetails.productID}');
+    debugPrint(
+        'BillingService: Purchase pending: ${purchaseDetails.productID}');
   }
 
   // 성공한 구매 처리
   void _handleSuccessfulPurchase(PurchaseDetails purchaseDetails) {
-    debugPrint('BillingService: Purchase successful: ${purchaseDetails.productID}');
+    debugPrint(
+        'BillingService: Purchase successful: ${purchaseDetails.productID}');
 
     // 구매 검증 수행
     _verifyPurchase(purchaseDetails).then((isValid) {
@@ -192,28 +199,34 @@ class BillingService {
 
   // 실패한 구매 처리
   void _handleFailedPurchase(PurchaseDetails purchaseDetails) {
-    debugPrint('BillingService: Purchase failed: ${purchaseDetails.productID} - ${purchaseDetails.error}');
-    _onPurchaseError?.call('구매에 실패했습니다: ${purchaseDetails.error?.message ?? "알 수 없는 오류"}');
+    debugPrint(
+        'BillingService: Purchase failed: ${purchaseDetails.productID} - ${purchaseDetails.error}');
+    _onPurchaseError
+        ?.call('구매에 실패했습니다: ${purchaseDetails.error?.message ?? "알 수 없는 오류"}');
   }
 
   // 취소된 구매 처리
   void _handleCanceledPurchase(PurchaseDetails purchaseDetails) {
-    debugPrint('BillingService: Purchase canceled: ${purchaseDetails.productID}');
+    debugPrint(
+        'BillingService: Purchase canceled: ${purchaseDetails.productID}');
   }
 
   // 복원된 구매 처리
   void _handleRestoredPurchase(PurchaseDetails purchaseDetails) {
-    debugPrint('BillingService: Purchase restored: ${purchaseDetails.productID}');
+    debugPrint(
+        'BillingService: Purchase restored: ${purchaseDetails.productID}');
     _activateSubscription(purchaseDetails.productID);
   }
 
   // 구매 검증 (강화된 검증 시스템 사용)
   Future<bool> _verifyPurchase(PurchaseDetails purchaseDetails) async {
     try {
-      debugPrint('BillingService: Starting purchase verification for ${purchaseDetails.productID}');
+      debugPrint(
+          'BillingService: Starting purchase verification for ${purchaseDetails.productID}');
 
       // PaymentVerificationService를 사용한 포괄적 검증
-      final verificationResult = await PaymentVerificationService.verifyPurchase(purchaseDetails);
+      final verificationResult =
+          await PaymentVerificationService.verifyPurchase(purchaseDetails);
 
       if (verificationResult.isValid) {
         debugPrint('BillingService: Purchase verification successful');
@@ -223,10 +236,10 @@ class BillingService {
 
         return true;
       } else {
-        debugPrint('BillingService: Purchase verification failed: ${verificationResult.error}');
+        debugPrint(
+            'BillingService: Purchase verification failed: ${verificationResult.error}');
         return false;
       }
-
     } catch (e) {
       debugPrint('BillingService: Purchase verification error: $e');
       return false;
@@ -234,7 +247,8 @@ class BillingService {
   }
 
   // 구독 서비스에 구매 완료 알림
-  Future<void> _notifySubscriptionService(PurchaseDetails purchaseDetails) async {
+  Future<void> _notifySubscriptionService(
+      PurchaseDetails purchaseDetails) async {
     try {
       final subscriptionService = SubscriptionService();
 
@@ -251,7 +265,8 @@ class BillingService {
           subscriptionType = SubscriptionType.lifetime;
           break;
         default:
-          debugPrint('BillingService: Unknown product ID: ${purchaseDetails.productID}');
+          debugPrint(
+              'BillingService: Unknown product ID: ${purchaseDetails.productID}');
           return;
       }
 
@@ -259,7 +274,6 @@ class BillingService {
       await subscriptionService.activateSubscription(purchaseDetails.productID);
 
       debugPrint('BillingService: Subscription service notified of purchase');
-
     } catch (e) {
       debugPrint('BillingService: Error notifying subscription service: $e');
     }

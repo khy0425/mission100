@@ -195,8 +195,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   }
 
   Widget _buildPlaceholder() {
-    final placeholderText =
-        widget.placeholderText ??
+    final placeholderText = widget.placeholderText ??
         (Localizations.localeOf(context).languageCode == 'ko'
             ? '비디오 시연'
             : 'Video Demo');
@@ -338,11 +337,11 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                 button: true,
                 label: _controller!.value.isPlaying
                     ? (Localizations.localeOf(context).languageCode == 'ko'
-                          ? '비디오 일시정지'
-                          : 'Pause video')
+                        ? '비디오 일시정지'
+                        : 'Pause video')
                     : (Localizations.localeOf(context).languageCode == 'ko'
-                          ? '비디오 재생'
-                          : 'Play video'),
+                        ? '비디오 재생'
+                        : 'Play video'),
                 child: IconButton(
                   onPressed: _togglePlayPause,
                   icon: Icon(
@@ -368,7 +367,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                   builder: (context, VideoPlayerValue value, child) {
                     final progress = value.duration.inMilliseconds > 0
                         ? value.position.inMilliseconds /
-                              value.duration.inMilliseconds
+                            value.duration.inMilliseconds
                         : 0.0;
 
                     return SliderTheme(

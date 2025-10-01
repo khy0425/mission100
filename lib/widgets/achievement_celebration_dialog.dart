@@ -21,8 +21,7 @@ class AchievementCelebrationDialog extends StatefulWidget {
 }
 
 class _AchievementCelebrationDialogState
-    extends State<AchievementCelebrationDialog>
-    with TickerProviderStateMixin {
+    extends State<AchievementCelebrationDialog> with TickerProviderStateMixin {
   late AnimationController _mainController;
   late AnimationController _confettiController;
   late AnimationController _xpController;
@@ -234,11 +233,11 @@ class _AchievementCelebrationDialogState
                                     AppLocalizations.of(
                                       context,
                                     ).achievementUnlocked,
-                                    style: theme.textTheme.titleMedium
-                                        ?.copyWith(
-                                          color: rarityColor,
-                                          fontWeight: FontWeight.bold,
-                                        ),
+                                    style:
+                                        theme.textTheme.titleMedium?.copyWith(
+                                      color: rarityColor,
+                                      fontWeight: FontWeight.bold,
+                                    ),
                                   ),
                                 ],
                               ),
@@ -264,7 +263,8 @@ class _AchievementCelebrationDialogState
                                       ),
                                       boxShadow: [
                                         BoxShadow(
-                                          color: rarityColor.withValues(alpha: 0.3),
+                                          color: rarityColor.withValues(
+                                              alpha: 0.3),
                                           blurRadius: 15,
                                           spreadRadius: 2,
                                         ),
@@ -490,14 +490,14 @@ class ConfettiPainter extends CustomPainter {
 
     for (final particle in particles) {
       final x = particle.x * size.width;
-      final y =
-          particle.y * size.height +
+      final y = particle.y * size.height +
           (animationValue * size.height * particle.speed);
 
       // 화면 밖으로 나간 파티클은 그리지 않음
       if (y > size.height + 20) continue;
 
-      paint.color = particle.color.withValues(alpha: 1.0 - animationValue * 0.5);
+      paint.color =
+          particle.color.withValues(alpha: 1.0 - animationValue * 0.5);
 
       canvas.save();
       canvas.translate(x, y);

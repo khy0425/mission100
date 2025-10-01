@@ -147,11 +147,13 @@ class PaymentConfig {
   factory PaymentConfig.fromJson(Map<String, dynamic> json) {
     return PaymentConfig(
       subscriptionEnabled: (json['subscription_enabled'] as bool?) ?? false,
-      oneTimePurchaseEnabled: (json['one_time_purchase_enabled'] as bool?) ?? false,
+      oneTimePurchaseEnabled:
+          (json['one_time_purchase_enabled'] as bool?) ?? false,
       subscriptionProductIds: List<String>.from(
         (json['subscription_product_ids'] as List?) ?? [],
       ),
-      oneTimeProductIds: List<String>.from((json['one_time_product_ids'] as List?) ?? []),
+      oneTimeProductIds:
+          List<String>.from((json['one_time_product_ids'] as List?) ?? []),
     );
   }
 
@@ -183,7 +185,8 @@ class SecurityConfig {
 
   factory SecurityConfig.fromJson(Map<String, dynamic> json) {
     return SecurityConfig(
-      apiKeyEncryptionEnabled: (json['api_key_encryption_enabled'] as bool?) ?? true,
+      apiKeyEncryptionEnabled:
+          (json['api_key_encryption_enabled'] as bool?) ?? true,
       runtimeKeyValidation: (json['runtime_key_validation'] as bool?) ?? true,
       keyRotationEnabled: (json['key_rotation_enabled'] as bool?) ?? true,
       keyRotationInterval: Duration(
@@ -225,11 +228,15 @@ class AppConfig {
   factory AppConfig.fromJson(Map<String, dynamic> json) {
     return AppConfig(
       appInfo: AppInfo.fromJson((json['app'] as Map<String, dynamic>?) ?? {}),
-      themeConfig: ThemeConfig.fromJson((json['theme'] as Map<String, dynamic>?) ?? {}),
-      featureFlags: FeatureFlags.fromJson((json['features'] as Map<String, dynamic>?) ?? {}),
+      themeConfig:
+          ThemeConfig.fromJson((json['theme'] as Map<String, dynamic>?) ?? {}),
+      featureFlags: FeatureFlags.fromJson(
+          (json['features'] as Map<String, dynamic>?) ?? {}),
       adConfig: AdConfig.fromJson((json['ads'] as Map<String, dynamic>?) ?? {}),
-      paymentConfig: PaymentConfig.fromJson((json['payment'] as Map<String, dynamic>?) ?? {}),
-      securityConfig: SecurityConfig.fromJson((json['security'] as Map<String, dynamic>?) ?? {}),
+      paymentConfig: PaymentConfig.fromJson(
+          (json['payment'] as Map<String, dynamic>?) ?? {}),
+      securityConfig: SecurityConfig.fromJson(
+          (json['security'] as Map<String, dynamic>?) ?? {}),
     );
   }
 
@@ -290,7 +297,8 @@ class AppConfig {
         iosInterstitialId: apiKeys['ios_admob_interstitial_id'] ?? '',
         iosRewardedId: apiKeys['ios_admob_rewarded_id'] ?? '',
         enableBannerAds: apiKeys['admob_banner_id']?.isNotEmpty == true,
-        enableInterstitialAds: apiKeys['admob_interstitial_id']?.isNotEmpty == true,
+        enableInterstitialAds:
+            apiKeys['admob_interstitial_id']?.isNotEmpty == true,
         enableRewardedAds: apiKeys['admob_rewarded_id']?.isNotEmpty == true,
       ),
       paymentConfig: const PaymentConfig(
@@ -303,9 +311,11 @@ class AppConfig {
         ],
       ),
       securityConfig: SecurityConfig(
-        apiKeyEncryptionEnabled: ApiSecurityConfig.currentSecurityLevel == SecurityLevel.production,
+        apiKeyEncryptionEnabled:
+            ApiSecurityConfig.currentSecurityLevel == SecurityLevel.production,
         runtimeKeyValidation: true,
-        keyRotationEnabled: ApiSecurityConfig.currentSecurityLevel == SecurityLevel.production,
+        keyRotationEnabled:
+            ApiSecurityConfig.currentSecurityLevel == SecurityLevel.production,
         keyRotationInterval: ApiSecurityConfig.keyRotationInterval,
         maxApiKeyAttempts: ApiSecurityConfig.maxKeyAttempts,
       ),

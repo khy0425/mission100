@@ -7,6 +7,7 @@ import '../auth/login_screen.dart';
 import '../permission_screen.dart';
 
 enum FitnessLevel { beginner, intermediate, advanced }
+
 enum FitnessGoal { weightLoss, muscleGain, endurance, general }
 
 class UserGoalsScreen extends StatefulWidget {
@@ -96,7 +97,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               Navigator.of(context).pop();
               // 목표 설정 건너뛰고 권한 설정으로 이동
               Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const PermissionScreen()),
+                MaterialPageRoute(
+                    builder: (context) => const PermissionScreen()),
               );
             },
             child: const Text('나중에'),
@@ -144,16 +146,17 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
     return Scaffold(
       backgroundColor: isDark ? Colors.black : const Color(0xFFF5F5F5),
       appBar: AppBar(
-        backgroundColor: isDark ? Colors.grey[900] : const Color(AppColors.primaryColor),
+        backgroundColor:
+            isDark ? Colors.grey[900] : const Color(AppColors.primaryColor),
         foregroundColor: Colors.white,
         elevation: 0,
         title: const Text('목표 설정'),
         leading: _currentPage > 0
-          ? IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: _previousPage,
-            )
-          : null,
+            ? IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: _previousPage,
+              )
+            : null,
       ),
       body: Column(
         children: [
@@ -168,8 +171,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                     margin: const EdgeInsets.symmetric(horizontal: 2),
                     decoration: BoxDecoration(
                       color: index <= _currentPage
-                        ? const Color(AppColors.primaryColor)
-                        : Colors.grey[300],
+                          ? const Color(AppColors.primaryColor)
+                          : Colors.grey[300],
                       borderRadius: BorderRadius.circular(2),
                     ),
                   ),
@@ -227,12 +230,18 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
 
   bool _canProceed() {
     switch (_currentPage) {
-      case 0: return _currentWeight != null;
-      case 1: return _fitnessLevel != null;
-      case 2: return _fitnessGoal != null;
-      case 3: return _workoutTimes.isNotEmpty;
-      case 4: return true;
-      default: return false;
+      case 0:
+        return _currentWeight != null;
+      case 1:
+        return _fitnessLevel != null;
+      case 2:
+        return _fitnessGoal != null;
+      case 3:
+        return _workoutTimes.isNotEmpty;
+      case 4:
+        return true;
+      default:
+        return false;
     }
   }
 
@@ -251,8 +260,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
           Text(
             '현재 체중을 알려주세요',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 8),
           Text(
@@ -260,7 +269,6 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             style: TextStyle(color: Colors.grey[600]),
           ),
           const SizedBox(height: 32),
-
           TextField(
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
@@ -277,7 +285,6 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             },
           ),
           const SizedBox(height: 16),
-
           TextField(
             keyboardType: TextInputType.number,
             decoration: InputDecoration(
@@ -313,8 +320,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
           Text(
             '운동 경험이 어느정도인가요?',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 8),
           Text(
@@ -322,7 +329,6 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             style: TextStyle(color: Colors.grey[600]),
           ),
           const SizedBox(height: 32),
-
           ...FitnessLevel.values.map((level) {
             String title, description;
             switch (level) {
@@ -345,16 +351,16 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               child: Card(
                 elevation: _fitnessLevel == level ? 4 : 1,
                 color: _fitnessLevel == level
-                  ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-                  : null,
+                    ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                    : null,
                 child: ListTile(
                   title: Text(
                     title,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: _fitnessLevel == level
-                        ? const Color(AppColors.primaryColor)
-                        : null,
+                          ? const Color(AppColors.primaryColor)
+                          : null,
                     ),
                   ),
                   subtitle: Text(description),
@@ -393,8 +399,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
           Text(
             '주요 목표를 선택해주세요',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 8),
           Text(
@@ -402,7 +408,6 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             style: TextStyle(color: Colors.grey[600]),
           ),
           const SizedBox(height: 32),
-
           ...FitnessGoal.values.map((goal) {
             String title, description, emoji;
             switch (goal) {
@@ -433,8 +438,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               child: Card(
                 elevation: _fitnessGoal == goal ? 4 : 1,
                 color: _fitnessGoal == goal
-                  ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-                  : null,
+                    ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                    : null,
                 child: ListTile(
                   title: Row(
                     children: [
@@ -445,8 +450,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: _fitnessGoal == goal
-                            ? const Color(AppColors.primaryColor)
-                            : null,
+                              ? const Color(AppColors.primaryColor)
+                              : null,
                         ),
                       ),
                     ],
@@ -497,8 +502,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
           Text(
             '주로 언제 운동하시나요?',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 8),
           Text(
@@ -506,7 +511,6 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             style: TextStyle(color: Colors.grey[600]),
           ),
           const SizedBox(height: 32),
-
           ...times.map((time) {
             final isSelected = _workoutTimes.contains(time);
             return Container(
@@ -514,16 +518,17 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               child: Card(
                 elevation: isSelected ? 4 : 1,
                 color: isSelected
-                  ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-                  : null,
+                    ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                    : null,
                 child: CheckboxListTile(
                   title: Text(
                     time,
                     style: TextStyle(
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
+                      fontWeight:
+                          isSelected ? FontWeight.bold : FontWeight.normal,
                       color: isSelected
-                        ? const Color(AppColors.primaryColor)
-                        : null,
+                          ? const Color(AppColors.primaryColor)
+                          : null,
                     ),
                   ),
                   value: isSelected,
@@ -561,8 +566,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
           Text(
             '어떤 방식이 더 동기부여가 되나요?',
             style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-              fontWeight: FontWeight.bold,
-            ),
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           const SizedBox(height: 8),
           Text(
@@ -570,12 +575,11 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             style: TextStyle(color: Colors.grey[600]),
           ),
           const SizedBox(height: 32),
-
           Card(
             elevation: _likesCompetition ? 4 : 1,
             color: _likesCompetition
-              ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-              : null,
+                ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                : null,
             child: ListTile(
               title: const Row(
                 children: [
@@ -599,12 +603,11 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             ),
           ),
           const SizedBox(height: 12),
-
           Card(
             elevation: !_likesCompetition ? 4 : 1,
             color: !_likesCompetition
-              ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-              : null,
+                ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                : null,
             child: ListTile(
               title: const Row(
                 children: [
@@ -627,7 +630,6 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               },
             ),
           ),
-
           const SizedBox(height: 32),
           Container(
             padding: const EdgeInsets.all(16),
@@ -635,7 +637,8 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
               borderRadius: BorderRadius.circular(12),
               border: Border.all(
-                color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
+                color:
+                    const Color(AppColors.primaryColor).withValues(alpha: 0.3),
               ),
             ),
             child: const Column(

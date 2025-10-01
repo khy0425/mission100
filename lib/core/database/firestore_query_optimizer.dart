@@ -34,16 +34,17 @@ class QueryMetrics {
 
 /// 쿼리 최적화 전략
 enum QueryOptimizationStrategy {
-  indexing,        // 인덱싱 최적화
-  pagination,      // 페이지네이션
-  fieldFiltering,  // 필드 필터링
-  caching,         // 캐싱
-  batchOperation,  // 배치 작업
+  indexing, // 인덱싱 최적화
+  pagination, // 페이지네이션
+  fieldFiltering, // 필드 필터링
+  caching, // 캐싱
+  batchOperation, // 배치 작업
 }
 
 /// Firestore 쿼리 최적화 서비스
 class FirestoreQueryOptimizer {
-  static final FirestoreQueryOptimizer _instance = FirestoreQueryOptimizer._internal();
+  static final FirestoreQueryOptimizer _instance =
+      FirestoreQueryOptimizer._internal();
   factory FirestoreQueryOptimizer() => _instance;
   FirestoreQueryOptimizer._internal();
 
@@ -69,7 +70,8 @@ class FirestoreQueryOptimizer {
 
     try {
       // 캐시 키 생성
-      final cacheKey = 'workout_records_${userId}_${limit}_${startDate?.toString()}_${endDate?.toString()}_$exerciseType';
+      final cacheKey =
+          'workout_records_${userId}_${limit}_${startDate?.toString()}_${endDate?.toString()}_$exerciseType';
 
       // 캐시된 결과 확인
       final cachedResult = _getFromCache(cacheKey);
@@ -85,10 +87,12 @@ class FirestoreQueryOptimizer {
 
       // 날짜 범위 필터 (복합 인덱스 필요)
       if (startDate != null) {
-        query = query.where('date', isGreaterThanOrEqualTo: Timestamp.fromDate(startDate));
+        query = query.where('date',
+            isGreaterThanOrEqualTo: Timestamp.fromDate(startDate));
       }
       if (endDate != null) {
-        query = query.where('date', isLessThanOrEqualTo: Timestamp.fromDate(endDate));
+        query = query.where('date',
+            isLessThanOrEqualTo: Timestamp.fromDate(endDate));
       }
 
       // 운동 타입 필터
@@ -97,16 +101,15 @@ class FirestoreQueryOptimizer {
       }
 
       // 정렬 및 제한 (인덱스 최적화)
-      query = query
-          .orderBy('date', descending: true)
-          .limit(limit);
+      query = query.orderBy('date', descending: true).limit(limit);
 
       // 페이지네이션
       if (startAfter != null) {
         query = query.startAfterDocument(startAfter);
       }
 
-      final querySnapshot = await query.get(const GetOptions(source: Source.serverAndCache));
+      final querySnapshot =
+          await query.get(const GetOptions(source: Source.serverAndCache));
       final docs = querySnapshot.docs;
 
       // 캐시에 저장
@@ -123,7 +126,6 @@ class FirestoreQueryOptimizer {
       ));
 
       return docs;
-
     } catch (e) {
       debugPrint('최적화된 운동 기록 조회 실패: $e');
       rethrow;
@@ -164,9 +166,7 @@ class FirestoreQueryOptimizer {
       }
 
       // 진행도 순으로 정렬 (미완료 업적 우선)
-      query = query
-          .orderBy('progress', descending: true)
-          .limit(limit);
+      query = query.orderBy('progress', descending: true).limit(limit);
 
       final querySnapshot = await query.get();
       final docs = querySnapshot.docs;
@@ -183,7 +183,6 @@ class FirestoreQueryOptimizer {
       ));
 
       return docs;
-
     } catch (e) {
       debugPrint('최적화된 업적 조회 실패: $e');
       rethrow;
@@ -193,7 +192,8 @@ class FirestoreQueryOptimizer {
   }
 
   /// 배치 운동 기록 저장 (성능 최적화)
-  Future<void> batchSaveWorkoutRecords(List<Map<String, dynamic>> records) async {
+  Future<void> batchSaveWorkoutRecords(
+      List<Map<String, dynamic>> records) async {
     if (records.isEmpty) return;
 
     final stopwatch = Stopwatch()..start();
@@ -238,7 +238,6 @@ class FirestoreQueryOptimizer {
       ));
 
       debugPrint('배치 운동 기록 저장 완료: ${records.length}개');
-
     } catch (e) {
       debugPrint('배치 운동 기록 저장 실패: $e');
       rethrow;
@@ -287,7 +286,6 @@ class FirestoreQueryOptimizer {
       ));
 
       return stats;
-
     } catch (e) {
       debugPrint('최적화된 사용자 통계 조회 실패: $e');
       rethrow;
@@ -316,7 +314,8 @@ class FirestoreQueryOptimizer {
     for (int i = 0; i < 100; i++) {
       final checkDate = today.subtract(Duration(days: i));
       final startOfDay = Timestamp.fromDate(checkDate);
-      final endOfDay = Timestamp.fromDate(checkDate.add(const Duration(hours: 24)));
+      final endOfDay =
+          Timestamp.fromDate(checkDate.add(const Duration(hours: 24)));
 
       final query = await _firestore
           .collection('workoutRecords')
@@ -345,8 +344,10 @@ class FirestoreQueryOptimizer {
 
     for (int i = 0; i < 7; i++) {
       final day = weekStart.add(Duration(days: i));
-      final startOfDay = Timestamp.fromDate(DateTime(day.year, day.month, day.day));
-      final endOfDay = Timestamp.fromDate(DateTime(day.year, day.month, day.day + 1));
+      final startOfDay =
+          Timestamp.fromDate(DateTime(day.year, day.month, day.day));
+      final endOfDay =
+          Timestamp.fromDate(DateTime(day.year, day.month, day.day + 1));
 
       final query = await _firestore
           .collection('workoutRecords')
@@ -369,8 +370,10 @@ class FirestoreQueryOptimizer {
 
     for (int i = 0; i < 30; i++) {
       final day = now.subtract(Duration(days: i));
-      final startOfDay = Timestamp.fromDate(DateTime(day.year, day.month, day.day));
-      final endOfDay = Timestamp.fromDate(DateTime(day.year, day.month, day.day + 1));
+      final startOfDay =
+          Timestamp.fromDate(DateTime(day.year, day.month, day.day));
+      final endOfDay =
+          Timestamp.fromDate(DateTime(day.year, day.month, day.day + 1));
 
       final query = await _firestore
           .collection('workoutRecords')
@@ -456,7 +459,8 @@ class FirestoreQueryOptimizer {
     }
 
     if (kDebugMode) {
-      debugPrint('쿼리 성능: ${metrics.queryPath} - ${metrics.executionTime.inMilliseconds}ms');
+      debugPrint(
+          '쿼리 성능: ${metrics.queryPath} - ${metrics.executionTime.inMilliseconds}ms');
     }
   }
 
@@ -477,9 +481,10 @@ class FirestoreQueryOptimizer {
         .where((metric) => metric.executionTime.inMilliseconds > 1000)
         .length;
 
-    final cacheHitRate = _queryMetrics
-        .where((metric) => metric.useCache)
-        .length / totalQueries * 100;
+    final cacheHitRate =
+        _queryMetrics.where((metric) => metric.useCache).length /
+            totalQueries *
+            100;
 
     return {
       'total_queries': totalQueries,
@@ -514,7 +519,8 @@ class FirestoreQueryOptimizer {
     }
 
     if ((report['cache_hit_rate_percent'] as int) < 50) {
-      suggestions.add('캐시 적중률이 낮음 (${report['cache_hit_rate_percent']}%) - 캐싱 전략 개선 권장');
+      suggestions.add(
+          '캐시 적중률이 낮음 (${report['cache_hit_rate_percent']}%) - 캐싱 전략 개선 권장');
     }
 
     if ((report['total_documents_read'] as int) > 10000) {

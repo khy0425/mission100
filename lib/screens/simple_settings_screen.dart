@@ -73,7 +73,10 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
               decoration: BoxDecoration(
                 gradient: isDark
                     ? LinearGradient(
-                        colors: [Colors.grey[800] ?? Colors.grey, Colors.grey[700] ?? Colors.grey],
+                        colors: [
+                          Colors.grey[800] ?? Colors.grey,
+                          Colors.grey[700] ?? Colors.grey
+                        ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
                       )
@@ -428,7 +431,9 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 color: isDark ? Colors.grey[900] : Colors.grey[100],
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(
-                  color: isDark ? Colors.grey[700] ?? Colors.grey : Colors.grey[300] ?? Colors.grey,
+                  color: isDark
+                      ? Colors.grey[700] ?? Colors.grey
+                      : Colors.grey[300] ?? Colors.grey,
                   width: 1,
                 ),
               ),
@@ -499,7 +504,9 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
           ),
         ],
         border: Border.all(
-          color: isDark ? Colors.grey[700] ?? Colors.grey : Colors.grey[200] ?? Colors.grey,
+          color: isDark
+              ? Colors.grey[700] ?? Colors.grey
+              : Colors.grey[200] ?? Colors.grey,
           width: 1,
         ),
       ),

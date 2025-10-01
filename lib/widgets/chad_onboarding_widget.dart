@@ -66,7 +66,8 @@ class _ChadOnboardingWidgetState extends State<ChadOnboardingWidget>
 
     // Chad 메시지 생성 및 애니메이션 시작
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+      final chadService =
+          Provider.of<ChadOnboardingService>(context, listen: false);
       chadService.getChadMessageForStep(widget.stepType);
 
       _fadeController.forward();

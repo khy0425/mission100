@@ -41,7 +41,8 @@ class AdConfig {
       enableBannerAds: (json['enable_banner_ads'] as bool?) ?? true,
       enableInterstitialAds: (json['enable_interstitial_ads'] as bool?) ?? true,
       enableRewardedAds: (json['enable_rewarded_ads'] as bool?) ?? false,
-      testDeviceIds: List<String>.from((json['test_device_ids'] as List?) ?? []),
+      testDeviceIds:
+          List<String>.from((json['test_device_ids'] as List?) ?? []),
     );
   }
 

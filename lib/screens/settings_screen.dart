@@ -909,26 +909,26 @@ class _SettingsScreenState extends State<SettingsScreen>
                 ),
                 const SizedBox(height: 8),
                 ..._subscriptionService.getSubscriptionBenefits().map(
-                  (benefit) => Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 2),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.check_circle,
-                          color: Colors.green,
-                          size: 16,
+                      (benefit) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.check_circle,
+                              color: Colors.green,
+                              size: 16,
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                benefit,
+                                style: const TextStyle(fontSize: 12),
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            benefit,
-                            style: const TextStyle(fontSize: 12),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
               ],
             ),
           ),
@@ -953,5 +953,4 @@ class _SettingsScreenState extends State<SettingsScreen>
       ],
     );
   }
-
 }

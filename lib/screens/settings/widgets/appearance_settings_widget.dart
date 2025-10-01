@@ -52,13 +52,13 @@ class AppearanceSettingsWidget extends StatelessWidget {
                       content: Text(
                         value
                             ? (Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '다크 모드가 활성화되었습니다'
-                                  : 'Dark mode has been enabled')
+                                    'ko'
+                                ? '다크 모드가 활성화되었습니다'
+                                : 'Dark mode has been enabled')
                             : (Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '라이트 모드가 활성화되었습니다'
-                                  : 'Light mode has been enabled'),
+                                    'ko'
+                                ? '라이트 모드가 활성화되었습니다'
+                                : 'Light mode has been enabled'),
                       ),
                       duration: const Duration(seconds: 2),
                     ),
@@ -83,13 +83,13 @@ class AppearanceSettingsWidget extends StatelessWidget {
                       content: Text(
                         value
                             ? (Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '시스템 설정을 따릅니다'
-                                  : 'Following system settings')
+                                    'ko'
+                                ? '시스템 설정을 따릅니다'
+                                : 'Following system settings')
                             : (Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '수동 설정이 활성화되었습니다'
-                                  : 'Manual settings enabled'),
+                                    'ko'
+                                ? '수동 설정이 활성화되었습니다'
+                                : 'Manual settings enabled'),
                       ),
                       duration: const Duration(seconds: 2),
                     ),
@@ -124,13 +124,13 @@ class AppearanceSettingsWidget extends StatelessWidget {
                       content: Text(
                         value
                             ? (Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '고대비 모드가 활성화되었습니다'
-                                  : 'High contrast mode has been enabled')
+                                    'ko'
+                                ? '고대비 모드가 활성화되었습니다'
+                                : 'High contrast mode has been enabled')
                             : (Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '고대비 모드가 비활성화되었습니다'
-                                  : 'High contrast mode has been disabled'),
+                                    'ko'
+                                ? '고대비 모드가 비활성화되었습니다'
+                                : 'High contrast mode has been disabled'),
                       ),
                       duration: const Duration(seconds: 2),
                     ),
@@ -238,9 +238,8 @@ class AppearanceSettingsWidget extends StatelessWidget {
       child: ListTile(
         leading: Icon(
           icon,
-          color: isDestructive
-              ? Colors.red
-              : const Color(AppColors.primaryColor),
+          color:
+              isDestructive ? Colors.red : const Color(AppColors.primaryColor),
         ),
         title: Text(
           title,

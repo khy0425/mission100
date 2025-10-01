@@ -230,7 +230,8 @@ class _RPEInputWidgetState extends State<RPEInputWidget>
                         color: Theme.of(context).primaryColor.withOpacity(0.05),
                         borderRadius: BorderRadius.circular(12),
                         border: Border.all(
-                          color: Theme.of(context).primaryColor.withOpacity(0.2),
+                          color:
+                              Theme.of(context).primaryColor.withOpacity(0.2),
                         ),
                       ),
                       child: Column(

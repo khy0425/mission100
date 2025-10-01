@@ -346,77 +346,77 @@ class AppTheme {
 class ButtonStyles {
   // 차드 버튼 스타일 (그라데이션)
   static ButtonStyle get chadButton => ElevatedButton.styleFrom(
-    padding: const EdgeInsets.symmetric(
-      horizontal: AppConstants.paddingXL,
-      vertical: AppConstants.paddingL,
-    ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(AppConstants.radiusL),
-    ),
-    elevation: AppConstants.elevationM,
-  );
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppConstants.paddingXL,
+          vertical: AppConstants.paddingL,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConstants.radiusL),
+        ),
+        elevation: AppConstants.elevationM,
+      );
 
   // 성공 버튼 스타일
   static ButtonStyle get successButton => ElevatedButton.styleFrom(
-    backgroundColor: const Color(AppColors.successColor),
-    foregroundColor: Colors.white,
-    padding: const EdgeInsets.symmetric(
-      horizontal: AppConstants.paddingL,
-      vertical: AppConstants.paddingM,
-    ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(AppConstants.radiusM),
-    ),
-  );
+        backgroundColor: const Color(AppColors.successColor),
+        foregroundColor: Colors.white,
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppConstants.paddingL,
+          vertical: AppConstants.paddingM,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConstants.radiusM),
+        ),
+      );
 
   // 위험 버튼 스타일
   static ButtonStyle get dangerButton => ElevatedButton.styleFrom(
-    backgroundColor: const Color(AppColors.errorColor),
-    foregroundColor: Colors.white,
-    padding: const EdgeInsets.symmetric(
-      horizontal: AppConstants.paddingL,
-      vertical: AppConstants.paddingM,
-    ),
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(AppConstants.radiusM),
-    ),
-  );
+        backgroundColor: const Color(AppColors.errorColor),
+        foregroundColor: Colors.white,
+        padding: const EdgeInsets.symmetric(
+          horizontal: AppConstants.paddingL,
+          vertical: AppConstants.paddingM,
+        ),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppConstants.radiusM),
+        ),
+      );
 
   // 둥근 버튼 스타일
   static ButtonStyle get roundButton => ElevatedButton.styleFrom(
-    shape: const CircleBorder(),
-    padding: const EdgeInsets.all(AppConstants.paddingL),
-    elevation: AppConstants.elevationM,
-  );
+        shape: const CircleBorder(),
+        padding: const EdgeInsets.all(AppConstants.paddingL),
+        elevation: AppConstants.elevationM,
+      );
 }
 
 // 커스텀 텍스트 스타일들
 class TextStyles {
   // 차드 타이틀 스타일
   static TextStyle get chadTitle => const TextStyle(
-    fontSize: AppConstants.fontSizeXXL,
-    fontWeight: FontWeight.bold,
-    color: Color(AppColors.primaryColor),
-  );
+        fontSize: AppConstants.fontSizeXXL,
+        fontWeight: FontWeight.bold,
+        color: Color(AppColors.primaryColor),
+      );
 
   // 카운터 텍스트 스타일 (큰 숫자)
   static TextStyle get counter => const TextStyle(
-    fontSize: 48.0,
-    fontWeight: FontWeight.bold,
-    color: Color(AppColors.primaryColor),
-  );
+        fontSize: 48.0,
+        fontWeight: FontWeight.bold,
+        color: Color(AppColors.primaryColor),
+      );
 
   // 강조 텍스트 스타일
   static TextStyle get emphasis => const TextStyle(
-    fontSize: AppConstants.fontSizeL,
-    fontWeight: FontWeight.w600,
-    color: Color(AppColors.primaryColor),
-  );
+        fontSize: AppConstants.fontSizeL,
+        fontWeight: FontWeight.w600,
+        color: Color(AppColors.primaryColor),
+      );
 
   // 캡션 텍스트 스타일
   static TextStyle get caption => const TextStyle(
-    fontSize: AppConstants.fontSizeXS,
-    color: Color(AppColors.textSecondaryLight),
-    fontStyle: FontStyle.italic,
-  );
+        fontSize: AppConstants.fontSizeXS,
+        color: Color(AppColors.textSecondaryLight),
+        fontStyle: FontStyle.italic,
+      );
 }

@@ -542,14 +542,12 @@ class ScientificFactDatabase {
       return basicFacts[level % basicFacts.length];
     } else if (level <= 25) {
       // 중급: 신경계와 심혈관
-      final intermediateFacts =
-          getFactsByCategory('신경계', languageCode) +
+      final intermediateFacts = getFactsByCategory('신경계', languageCode) +
           getFactsByCategory('심혈관', languageCode);
       return intermediateFacts[level % intermediateFacts.length];
     } else if (level <= 40) {
       // 고급: 대사와 호르몬
-      final advancedFacts =
-          getFactsByCategory('대사', languageCode) +
+      final advancedFacts = getFactsByCategory('대사', languageCode) +
           getFactsByCategory('호르몬', languageCode);
       return advancedFacts[level % advancedFacts.length];
     } else {

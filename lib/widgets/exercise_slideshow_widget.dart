@@ -69,8 +69,7 @@ class _ExerciseSlideshowWidgetState extends State<ExerciseSlideshowWidget>
     if (mounted) {
       _animationController.reverse().then((_) {
         setState(() {
-          _currentIndex =
-              (_currentIndex - 1 + widget.imagePaths.length) %
+          _currentIndex = (_currentIndex - 1 + widget.imagePaths.length) %
               widget.imagePaths.length;
         });
         _animationController.forward();

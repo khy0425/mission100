@@ -41,8 +41,8 @@ class _InitialTestScreenState extends State<InitialTestScreen>
 
     _slideAnimation =
         Tween<Offset>(begin: const Offset(0, 0.3), end: Offset.zero).animate(
-          CurvedAnimation(parent: _slideController, curve: Curves.easeOutBack),
-        );
+      CurvedAnimation(parent: _slideController, curve: Curves.easeOutBack),
+    );
 
     _slideController.forward();
   }
@@ -362,7 +362,6 @@ class _InitialTestScreenState extends State<InitialTestScreen>
                           ],
                           Icons.directions_walk,
                         ),
-
                         _buildLevelCard(
                           UserLevel.rising,
                           AppLocalizations.of(context).risingLevelTitle,
@@ -376,7 +375,6 @@ class _InitialTestScreenState extends State<InitialTestScreen>
                           ],
                           Icons.directions_run,
                         ),
-
                         _buildLevelCard(
                           UserLevel.alpha,
                           AppLocalizations.of(context).alphaLevelTitle,

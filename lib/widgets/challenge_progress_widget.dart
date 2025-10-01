@@ -54,8 +54,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                 Text(
                   AppLocalizations.of(context).streakChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ],
             ),
@@ -82,8 +82,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                 Text(
                   '${(percentage * 100).toInt()}%',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: percentage >= 1.0 ? Colors.green : Colors.blue,
-                  ),
+                        color: percentage >= 1.0 ? Colors.green : Colors.blue,
+                      ),
                 ),
               ],
             ),
@@ -112,8 +112,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                 Text(
                   AppLocalizations.of(context).singleSessionChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ],
             ),
@@ -136,9 +136,9 @@ class ChallengeProgressWidget extends StatelessWidget {
                   Text(
                     '$recordValue개',
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange,
-                    ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.orange,
+                        ),
                   ),
                 ],
               ),
@@ -196,8 +196,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                 Text(
                   AppLocalizations.of(context).cumulativeChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ],
             ),
@@ -224,8 +224,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                 Text(
                   '${(percentage * 100).toInt()}%',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: percentage >= 1.0 ? Colors.green : Colors.blue,
-                  ),
+                        color: percentage >= 1.0 ? Colors.green : Colors.blue,
+                      ),
                 ),
               ],
             ),
@@ -289,8 +289,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                 Text(
                   '${(percentage * 100).toInt()}%',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: percentage >= 1.0 ? Colors.green : Colors.orange,
-                  ),
+                        color: percentage >= 1.0 ? Colors.green : Colors.orange,
+                      ),
                 ),
               ],
             ),
@@ -320,8 +320,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                   challenge.title ??
                       AppLocalizations.of(context).eventChallenge,
                   style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ],
             ),
@@ -352,8 +352,8 @@ class ChallengeProgressWidget extends StatelessWidget {
                 Text(
                   '${(percentage * 100).toInt()}%',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                    color: percentage >= 1.0 ? Colors.green : Colors.purple,
-                  ),
+                        color: percentage >= 1.0 ? Colors.green : Colors.purple,
+                      ),
                 ),
               ],
             ),

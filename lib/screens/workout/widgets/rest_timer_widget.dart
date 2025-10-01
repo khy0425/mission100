@@ -27,9 +27,8 @@ class RestTimerWidget extends StatelessWidget {
     final screenHeight = mediaQuery.size.height;
     final isSmallScreen = screenHeight < 700;
 
-    final padding = isSmallScreen
-        ? AppConstants.paddingL
-        : AppConstants.paddingXL;
+    final padding =
+        isSmallScreen ? AppConstants.paddingL : AppConstants.paddingXL;
     final iconSize = isSmallScreen ? 40.0 : 48.0;
     final timerFontSize = isSmallScreen ? 48.0 : 60.0;
     final progressSize = isSmallScreen ? 100.0 : 120.0;

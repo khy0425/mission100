@@ -176,26 +176,26 @@ class PremiumUpgradeDialog extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 ...SubscriptionService().getSubscriptionBenefits().take(3).map(
-                  (benefit) => Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 2),
-                    child: Row(
-                      children: [
-                        const Icon(
-                          Icons.check_circle,
-                          color: Colors.green,
-                          size: 16,
+                      (benefit) => Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 2),
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.check_circle,
+                              color: Colors.green,
+                              size: 16,
+                            ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: Text(
+                                benefit,
+                                style: const TextStyle(fontSize: 12),
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            benefit,
-                            style: const TextStyle(fontSize: 12),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
-                  ),
-                ),
               ],
             ),
           ),

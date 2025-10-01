@@ -207,7 +207,8 @@ class _RecoveryDashboardWidgetState extends State<RecoveryDashboardWidget>
                               style: TextStyle(
                                 fontSize: 28,
                                 fontWeight: FontWeight.bold,
-                                color: _getScoreColor(widget.recoveryStatus.score),
+                                color:
+                                    _getScoreColor(widget.recoveryStatus.score),
                               ),
                             );
                           },

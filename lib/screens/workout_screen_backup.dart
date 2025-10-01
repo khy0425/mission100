@@ -298,15 +298,14 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       final history = WorkoutHistory(
         id: DateTime.now().millisecondsSinceEpoch.toString(),
         date: DateTime.now(),
-        workoutTitle:
-            (widget.workout.title as String?) ??
+        workoutTitle: (widget.workout.title as String?) ??
             '${widget.workout.week ?? 1}주차 - ${widget.workout.day ?? 1}일차',
         targetReps: _targetReps,
         completedReps: _completedReps,
         totalReps: totalCompletedReps,
         completionRate: _targetReps.fold(0, (sum, reps) => sum + reps) > 0
             ? totalCompletedReps /
-                  _targetReps.fold(0, (sum, reps) => sum + reps)
+                _targetReps.fold(0, (sum, reps) => sum + reps)
             : 0.0,
         level: 'Rising', // 임시값
         duration: _workoutStartTime != null

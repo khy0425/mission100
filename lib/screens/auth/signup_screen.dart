@@ -118,7 +118,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
               Navigator.of(context).pop(); // 다이얼로그 닫기
               // 회원가입 완료 후 권한 설정 화면으로 이동
               Navigator.of(context).pushReplacement(
-                MaterialPageRoute(builder: (context) => const PermissionScreen()),
+                MaterialPageRoute(
+                    builder: (context) => const PermissionScreen()),
               );
             },
             style: ElevatedButton.styleFrom(
@@ -150,7 +151,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       backgroundColor: isDark ? Colors.black : const Color(0xFFF5F5F5),
       appBar: AppBar(
-        backgroundColor: isDark ? Colors.grey[900] : const Color(AppColors.primaryColor),
+        backgroundColor:
+            isDark ? Colors.grey[900] : const Color(AppColors.primaryColor),
         foregroundColor: Colors.white,
         elevation: 0,
         title: const Text(
@@ -182,10 +184,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Container(
                   padding: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
+                    color: const Color(AppColors.primaryColor)
+                        .withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                     border: Border.all(
-                      color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
+                      color: const Color(AppColors.primaryColor)
+                          .withValues(alpha: 0.3),
                     ),
                   ),
                   child: Column(
@@ -271,7 +275,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     prefixIcon: const Icon(Icons.lock),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscurePassword ? Icons.visibility : Icons.visibility_off,
+                        _obscurePassword
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                       ),
                       onPressed: () {
                         setState(() => _obscurePassword = !_obscurePassword);
@@ -305,10 +311,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     prefixIcon: const Icon(Icons.lock_outline),
                     suffixIcon: IconButton(
                       icon: Icon(
-                        _obscureConfirmPassword ? Icons.visibility : Icons.visibility_off,
+                        _obscureConfirmPassword
+                            ? Icons.visibility
+                            : Icons.visibility_off,
                       ),
                       onPressed: () {
-                        setState(() => _obscureConfirmPassword = !_obscureConfirmPassword);
+                        setState(() =>
+                            _obscureConfirmPassword = !_obscureConfirmPassword);
                       },
                     ),
                     border: OutlineInputBorder(
@@ -397,7 +406,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           width: 20,
                           child: CircularProgressIndicator(
                             strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.white),
                           ),
                         )
                       : const Text(

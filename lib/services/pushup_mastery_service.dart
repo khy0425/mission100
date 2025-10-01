@@ -147,8 +147,7 @@ class PushupMasteryService {
     final totalReps = prefs.getInt('total_pushup_reps') ?? 0;
 
     // 가이드 진행률
-    final guideProgress =
-        completedGuides
+    final guideProgress = completedGuides
             .where((guide) => nextLevel.requiredGuides.contains(guide))
             .length /
         nextLevel.requiredGuides.length;

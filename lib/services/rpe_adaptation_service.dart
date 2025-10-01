@@ -29,7 +29,8 @@ class RPEAdaptationService extends ChangeNotifier {
   /// 평균 RPE (최근 7일)
   double get averageRPE {
     if (recentRPE.isEmpty) return 5.0;
-    return recentRPE.map((r) => r.value).reduce((a, b) => a + b) / recentRPE.length;
+    return recentRPE.map((r) => r.value).reduce((a, b) => a + b) /
+        recentRPE.length;
   }
 
   /// 서비스 초기화
@@ -49,7 +50,9 @@ class RPEAdaptationService extends ChangeNotifier {
       final rpeJson = prefs.getString(_rpeHistoryKey);
       if (rpeJson != null) {
         final rpeList = jsonDecode(rpeJson) as List;
-        _rpeHistory = rpeList.map((json) => RPEData.fromJson(json as Map<String, dynamic>)).toList();
+        _rpeHistory = rpeList
+            .map((json) => RPEData.fromJson(json as Map<String, dynamic>))
+            .toList();
       }
 
       // 조정 기록 로드
@@ -57,7 +60,8 @@ class RPEAdaptationService extends ChangeNotifier {
       if (adjustmentJson != null) {
         final adjustmentList = jsonDecode(adjustmentJson) as List;
         _adjustmentHistory = adjustmentList
-            .map((json) => WorkoutAdjustment.fromJson(json as Map<String, dynamic>))
+            .map((json) =>
+                WorkoutAdjustment.fromJson(json as Map<String, dynamic>))
             .toList();
       }
     } catch (e) {
@@ -138,14 +142,16 @@ class RPEAdaptationService extends ChangeNotifier {
       final intensityReduction = min(0.15, rpeDifference * 0.05);
       adjustment = WorkoutAdjustment.decrease(
         intensity: 1.0 - intensityReduction,
-        reason: 'RPE ${currentRPE.toInt()}로 목표(${targetRPE.toInt()})보다 높아 강도를 조정했습니다',
+        reason:
+            'RPE ${currentRPE.toInt()}로 목표(${targetRPE.toInt()})보다 높아 강도를 조정했습니다',
       );
     } else if (rpeDifference < -tolerance) {
       // 너무 쉬웠음 → 증가
       final intensityIncrease = min(0.15, rpeDifference.abs() * 0.05);
       adjustment = WorkoutAdjustment.increase(
         intensity: 1.0 + intensityIncrease,
-        reason: 'RPE ${currentRPE.toInt()}로 목표(${targetRPE.toInt()})보다 낮아 강도를 높였습니다',
+        reason:
+            'RPE ${currentRPE.toInt()}로 목표(${targetRPE.toInt()})보다 낮아 강도를 높였습니다',
       );
     } else {
       // 적절한 범위 → 유지

@@ -31,8 +31,8 @@ class WorkoutReminderSettings {
   /// 3가지 고정 옵션 중 하나인지 확인
   bool _isValidOption() {
     return activeDays == optionMWF.activeDays ||
-           activeDays == optionTTS.activeDays ||
-           activeDays == optionMWFSTS.activeDays;
+        activeDays == optionTTS.activeDays ||
+        activeDays == optionMWFSTS.activeDays;
   }
 
   /// 현재 설정의 옵션 이름 반환
@@ -155,7 +155,8 @@ class WorkoutReminderSettings {
 
     if (patternName != null) {
       try {
-        pattern = WorkoutPattern.values.firstWhere((e) => e.name == patternName);
+        pattern =
+            WorkoutPattern.values.firstWhere((e) => e.name == patternName);
       } catch (e) {
         pattern = WorkoutPattern.mwfOnly; // 기본값
       }
@@ -163,7 +164,9 @@ class WorkoutReminderSettings {
 
     return WorkoutReminderSettings(
       isEnabled: (json['isEnabled'] as bool?) ?? true,
-      time: TimeOfDay(hour: (json['hour'] as int?) ?? 18, minute: (json['minute'] as int?) ?? 0),
+      time: TimeOfDay(
+          hour: (json['hour'] as int?) ?? 18,
+          minute: (json['minute'] as int?) ?? 0),
       activeDays: Set<int>.from((json['activeDays'] as List?) ?? [1, 3, 5]),
       requiresRestDay: (json['requiresRestDay'] as bool?) ?? true,
       pattern: pattern,

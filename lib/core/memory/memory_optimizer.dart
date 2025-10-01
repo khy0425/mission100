@@ -23,8 +23,10 @@ class MemoryInfo {
     required this.timestamp,
   });
 
-  double get physicalUsagePercent => totalPhysical > 0 ? (usedPhysical / totalPhysical) * 100 : 0;
-  double get heapUsagePercent => appHeapMax > 0 ? (appHeapUsage / appHeapMax) * 100 : 0;
+  double get physicalUsagePercent =>
+      totalPhysical > 0 ? (usedPhysical / totalPhysical) * 100 : 0;
+  double get heapUsagePercent =>
+      appHeapMax > 0 ? (appHeapUsage / appHeapMax) * 100 : 0;
 
   Map<String, dynamic> toJson() {
     return {
@@ -42,10 +44,10 @@ class MemoryInfo {
 
 /// 메모리 경고 레벨
 enum MemoryWarningLevel {
-  normal,     // < 70%
-  warning,    // 70-85%
-  critical,   // 85-95%
-  emergency,  // > 95%
+  normal, // < 70%
+  warning, // 70-85%
+  critical, // 85-95%
+  emergency, // > 95%
 }
 
 /// 메모리 최적화 액션
@@ -172,7 +174,6 @@ class MemoryOptimizer {
         appHeapMax: appHeapMax,
         timestamp: DateTime.now(),
       );
-
     } catch (e) {
       debugPrint('메모리 정보 조회 실패: $e');
       return MemoryInfo(
@@ -196,17 +197,20 @@ class MemoryOptimizer {
 
       switch (warningLevel) {
         case MemoryWarningLevel.warning:
-          debugPrint('메모리 경고: ${memoryInfo.heapUsagePercent.toStringAsFixed(1)}%');
+          debugPrint(
+              '메모리 경고: ${memoryInfo.heapUsagePercent.toStringAsFixed(1)}%');
           await performOptimization(aggressive: false);
           break;
 
         case MemoryWarningLevel.critical:
-          debugPrint('메모리 위험: ${memoryInfo.heapUsagePercent.toStringAsFixed(1)}%');
+          debugPrint(
+              '메모리 위험: ${memoryInfo.heapUsagePercent.toStringAsFixed(1)}%');
           await performOptimization(aggressive: true);
           break;
 
         case MemoryWarningLevel.emergency:
-          debugPrint('메모리 비상: ${memoryInfo.heapUsagePercent.toStringAsFixed(1)}%');
+          debugPrint(
+              '메모리 비상: ${memoryInfo.heapUsagePercent.toStringAsFixed(1)}%');
           await performEmergencyOptimization();
           break;
 
@@ -214,7 +218,6 @@ class MemoryOptimizer {
           // 정상 상태, 아무 조치 없음
           break;
       }
-
     } catch (e) {
       debugPrint('메모리 사용량 확인 실패: $e');
     }
@@ -236,7 +239,8 @@ class MemoryOptimizer {
   }
 
   /// 메모리 최적화 수행
-  Future<OptimizationResult> performOptimization({bool aggressive = false}) async {
+  Future<OptimizationResult> performOptimization(
+      {bool aggressive = false}) async {
     final stopwatch = Stopwatch()..start();
     final beforeMemory = await getCurrentMemoryInfo();
     final actionsPerformed = <OptimizationAction>[];
@@ -285,7 +289,6 @@ class MemoryOptimizer {
 
       debugPrint('메모리 최적화 완료: ${result.memorySavedMB.toStringAsFixed(1)}MB 절약');
       return result;
-
     } catch (e) {
       debugPrint('메모리 최적화 실패: $e');
       final afterMemory = await getCurrentMemoryInfo();
@@ -350,7 +353,8 @@ class MemoryOptimizer {
     try {
       // Flutter 이미지 캐시 크기 조정
       PaintingBinding.instance.imageCache.maximumSize = 50; // 기본값의 절반
-      PaintingBinding.instance.imageCache.maximumSizeBytes = 50 * 1024 * 1024; // 50MB
+      PaintingBinding.instance.imageCache.maximumSizeBytes =
+          50 * 1024 * 1024; // 50MB
 
       debugPrint('이미지 캐시 크기 축소 완료');
     } catch (e) {
@@ -442,8 +446,9 @@ class MemoryOptimizer {
 
     final recent = _memoryHistory.last;
     final averageHeapUsage = _memoryHistory
-        .map((info) => info.heapUsagePercent)
-        .reduce((a, b) => a + b) / _memoryHistory.length;
+            .map((info) => info.heapUsagePercent)
+            .reduce((a, b) => a + b) /
+        _memoryHistory.length;
 
     final maxHeapUsage = _memoryHistory
         .map((info) => info.heapUsagePercent)
@@ -453,10 +458,13 @@ class MemoryOptimizer {
       'current_heap_usage_percent': recent.heapUsagePercent.toStringAsFixed(1),
       'average_heap_usage_percent': averageHeapUsage.toStringAsFixed(1),
       'max_heap_usage_percent': maxHeapUsage.toStringAsFixed(1),
-      'current_heap_usage_mb': (recent.appHeapUsage / (1024 * 1024)).toStringAsFixed(1),
-      'heap_capacity_mb': (recent.appHeapMax / (1024 * 1024)).toStringAsFixed(1),
+      'current_heap_usage_mb':
+          (recent.appHeapUsage / (1024 * 1024)).toStringAsFixed(1),
+      'heap_capacity_mb':
+          (recent.appHeapMax / (1024 * 1024)).toStringAsFixed(1),
       'warning_level': _getWarningLevel(recent).name,
-      'monitoring_duration_minutes': _memoryHistory.length * _monitoringInterval.inMinutes,
+      'monitoring_duration_minutes':
+          _memoryHistory.length * _monitoringInterval.inMinutes,
     };
   }
 
@@ -469,7 +477,8 @@ class MemoryOptimizer {
     report.writeln('=== 메모리 상태 리포트 ===');
 
     if (recent != null) {
-      report.writeln('현재 힙 사용량: ${stats['current_heap_usage_mb']}MB (${stats['current_heap_usage_percent']}%)');
+      report.writeln(
+          '현재 힙 사용량: ${stats['current_heap_usage_mb']}MB (${stats['current_heap_usage_percent']}%)');
       report.writeln('힙 용량: ${stats['heap_capacity_mb']}MB');
       report.writeln('경고 레벨: ${stats['warning_level']}');
       report.writeln('평균 사용량: ${stats['average_heap_usage_percent']}%');

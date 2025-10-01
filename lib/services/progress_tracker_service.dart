@@ -29,20 +29,17 @@ class ProgressTrackerService {
       int totalPushups = 0;
 
       for (int week = 1; week <= 6; week++) {
-        final weekSessions = allSessions
-            .where((session) => session.week == week)
-            .toList();
+        final weekSessions =
+            allSessions.where((session) => session.week == week).toList();
 
-        final completedSessions = weekSessions
-            .where((session) => session.isCompleted)
-            .toList();
+        final completedSessions =
+            weekSessions.where((session) => session.isCompleted).toList();
 
         // 일일 진행 상황 생성
         final dailyProgress = <DayProgress>[];
         for (int day = 1; day <= 3; day++) {
-          final daySession = weekSessions
-              .where((session) => session.day == day)
-              .firstOrNull;
+          final daySession =
+              weekSessions.where((session) => session.day == day).firstOrNull;
 
           if (daySession != null) {
             dailyProgress.add(
@@ -53,8 +50,7 @@ class ProgressTrackerService {
                   0,
                   (sum, reps) => sum + reps,
                 ),
-                completedReps:
-                    daySession.completedReps?.fold<int>(
+                completedReps: daySession.completedReps?.fold<int>(
                       0,
                       (sum, reps) => sum + reps,
                     ) ??
@@ -81,9 +77,8 @@ class ProgressTrackerService {
             0,
             (sum, session) => sum + session.totalReps,
           ),
-          averageCompletionRate: completedSessions.isEmpty
-              ? 0.0
-              : completedSessions.length / 3.0,
+          averageCompletionRate:
+              completedSessions.isEmpty ? 0.0 : completedSessions.length / 3.0,
           dailyProgress: dailyProgress,
         );
 
@@ -143,9 +138,8 @@ class ProgressTrackerService {
       final weekSessions = await _databaseService.getWorkoutSessionsByWeek(
         week,
       );
-      final completedSessions = weekSessions
-          .where((session) => session.isCompleted)
-          .toList();
+      final completedSessions =
+          weekSessions.where((session) => session.isCompleted).toList();
 
       debugPrint('📊 ${week}주차: ${completedSessions.length}/3개 세션 완료');
 
@@ -166,9 +160,10 @@ class ProgressTrackerService {
     if (allSessions.isEmpty) return 0;
 
     // 완료된 세션만 필터링하고 날짜순 정렬
-    final completedSessions =
-        allSessions.where((session) => session.isCompleted).toList()
-          ..sort((a, b) => b.date.compareTo(a.date)); // 최근 날짜부터
+    final completedSessions = allSessions
+        .where((session) => session.isCompleted)
+        .toList()
+      ..sort((a, b) => b.date.compareTo(a.date)); // 최근 날짜부터
 
     if (completedSessions.isEmpty) return 0;
 
@@ -214,9 +209,8 @@ class ProgressTrackerService {
       final weekSessions = await _databaseService.getWorkoutSessionsByWeek(
         week,
       );
-      final completedSessions = weekSessions
-          .where((session) => session.isCompleted)
-          .toList();
+      final completedSessions =
+          weekSessions.where((session) => session.isCompleted).toList();
 
       final details = {
         'week': week,
@@ -260,9 +254,8 @@ class ProgressTrackerService {
 
       // 주차별 문제 확인
       for (int week = 1; week <= 6; week++) {
-        final weekProgress = progress.weeklyProgress
-            .where((wp) => wp.week == week)
-            .firstOrNull;
+        final weekProgress =
+            progress.weeklyProgress.where((wp) => wp.week == week).firstOrNull;
 
         if (weekProgress != null) {
           if (weekProgress.completedDays != weekProgress.completedDays) {
@@ -291,9 +284,8 @@ class ProgressTrackerService {
         'recommendations': recommendations,
         'currentWeek': progress.currentWeek,
         'currentDay': progress.currentDay,
-        'totalCompletedWeeks': progress.weeklyProgress
-            .where((wp) => wp.isWeekCompleted)
-            .length,
+        'totalCompletedWeeks':
+            progress.weeklyProgress.where((wp) => wp.isWeekCompleted).length,
         'summary': issues.isEmpty
             ? '진행 상황 데이터가 정상입니다'
             : '${issues.length}개의 문제가 발견되었습니다',
@@ -306,5 +298,4 @@ class ProgressTrackerService {
       rethrow;
     }
   }
-
 }

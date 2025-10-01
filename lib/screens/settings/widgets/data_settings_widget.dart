@@ -97,9 +97,8 @@ class DataSettingsWidget extends StatelessWidget {
       child: ListTile(
         leading: Icon(
           icon,
-          color: isDestructive
-              ? Colors.red
-              : const Color(AppColors.primaryColor),
+          color:
+              isDestructive ? Colors.red : const Color(AppColors.primaryColor),
         ),
         title: Text(
           title,

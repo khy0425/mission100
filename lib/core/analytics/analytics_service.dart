@@ -104,7 +104,6 @@ class AnalyticsService {
 
       _isInitialized = true;
       debugPrint('Analytics 서비스 초기화 완료');
-
     } catch (e) {
       debugPrint('Analytics 서비스 초기화 실패: $e');
     }
@@ -177,7 +176,6 @@ class AnalyticsService {
         _eventQueue.add(event);
         debugPrint('이벤트 큐에 추가: $eventName');
       }
-
     } catch (e) {
       debugPrint('커스텀 이벤트 기록 실패: $e');
     }
@@ -300,7 +298,10 @@ class AnalyticsService {
         await _crashlytics!.recordError(
           errorMessage,
           stackTrace != null ? StackTrace.fromString(stackTrace) : null,
-          information: (additionalData ?? {}).entries.map((e) => 'Key: ${e.key}, Value: ${e.value}').toList(),
+          information: (additionalData ?? {})
+              .entries
+              .map((e) => 'Key: ${e.key}, Value: ${e.value}')
+              .toList(),
           fatal: false,
         );
       }
@@ -314,7 +315,6 @@ class AnalyticsService {
       });
 
       debugPrint('에러 기록: $errorType - $errorMessage');
-
     } catch (e) {
       debugPrint('에러 기록 실패: $e');
     }

@@ -18,7 +18,8 @@ class SubscriptionService {
 
   static const String _subscriptionTypeKey = 'subscription_type';
   static const String _subscriptionExpiryKey = 'subscription_expiry';
-  static const String _subscriptionPurchaseDateKey = 'subscription_purchase_date';
+  static const String _subscriptionPurchaseDateKey =
+      'subscription_purchase_date';
   static const String _userSignupDateKey = 'user_signup_date';
   static const String _trialStartDateKey = 'trial_start_date';
 
@@ -32,7 +33,8 @@ class SubscriptionService {
       StreamController<SubscriptionType>.broadcast();
 
   // 구독 상태 변경 스트림
-  Stream<SubscriptionType> get subscriptionStream => _subscriptionController.stream;
+  Stream<SubscriptionType> get subscriptionStream =>
+      _subscriptionController.stream;
 
   // 현재 구독 타입 반환
   SubscriptionType get currentSubscription => _currentSubscription;
@@ -132,8 +134,8 @@ class SubscriptionService {
         _trialStartDate = DateTime.fromMillisecondsSinceEpoch(trialTimestamp);
       }
 
-      debugPrint('SubscriptionService: Loaded subscription data - ${_currentSubscription.name}, tier: ${getCurrentTier()}');
-
+      debugPrint(
+          'SubscriptionService: Loaded subscription data - ${_currentSubscription.name}, tier: ${getCurrentTier()}');
     } catch (e) {
       debugPrint('SubscriptionService: Error loading subscription data: $e');
     }
@@ -147,23 +149,26 @@ class SubscriptionService {
       await prefs.setInt(_subscriptionTypeKey, _currentSubscription.index);
 
       if (_expiryDate != null) {
-        await prefs.setInt(_subscriptionExpiryKey, _expiryDate!.millisecondsSinceEpoch);
+        await prefs.setInt(
+            _subscriptionExpiryKey, _expiryDate!.millisecondsSinceEpoch);
       }
 
       if (_purchaseDate != null) {
-        await prefs.setInt(_subscriptionPurchaseDateKey, _purchaseDate!.millisecondsSinceEpoch);
+        await prefs.setInt(_subscriptionPurchaseDateKey,
+            _purchaseDate!.millisecondsSinceEpoch);
       }
 
       if (_userSignupDate != null) {
-        await prefs.setInt(_userSignupDateKey, _userSignupDate!.millisecondsSinceEpoch);
+        await prefs.setInt(
+            _userSignupDateKey, _userSignupDate!.millisecondsSinceEpoch);
       }
 
       if (_trialStartDate != null) {
-        await prefs.setInt(_trialStartDateKey, _trialStartDate!.millisecondsSinceEpoch);
+        await prefs.setInt(
+            _trialStartDateKey, _trialStartDate!.millisecondsSinceEpoch);
       }
 
       debugPrint('SubscriptionService: Saved subscription data');
-
     } catch (e) {
       debugPrint('SubscriptionService: Error saving subscription data: $e');
     }
@@ -179,16 +184,20 @@ class SubscriptionService {
       }
 
       // 각 구독 상품의 활성 상태 확인
-      for (final productId in ['premium_monthly', 'premium_yearly', 'premium_lifetime']) {
+      for (final productId in [
+        'premium_monthly',
+        'premium_yearly',
+        'premium_lifetime'
+      ]) {
         final isActive = await billingService.isSubscriptionActive(productId);
         if (isActive) {
           await activateSubscription(productId);
           break;
         }
       }
-
     } catch (e) {
-      debugPrint('SubscriptionService: Error checking active subscriptions: $e');
+      debugPrint(
+          'SubscriptionService: Error checking active subscriptions: $e');
     }
   }
 
@@ -254,7 +263,7 @@ class SubscriptionService {
         return features.hasExclusiveChallenges;
       case PremiumFeature.prioritySupport:
         return tier == SubscriptionTier.premium &&
-               _currentSubscription == SubscriptionType.lifetime;
+            _currentSubscription == SubscriptionType.lifetime;
     }
   }
 
@@ -369,10 +378,12 @@ class SubscriptionService {
 
     return UserSubscription(
       productId: _getProductIdFromType(_currentSubscription),
-      status: isExpired ? SubscriptionStatus.expired : SubscriptionStatus.active,
+      status:
+          isExpired ? SubscriptionStatus.expired : SubscriptionStatus.active,
       startDate: _purchaseDate ?? DateTime.now(),
       expiryDate: _expiryDate ?? DateTime.now(),
-      autoRenewing: _currentSubscription != SubscriptionType.lifetime && !isExpired,
+      autoRenewing:
+          _currentSubscription != SubscriptionType.lifetime && !isExpired,
     );
   }
 
@@ -395,7 +406,6 @@ class SubscriptionService {
     // 실제 구현에서는 상태에 따른 로직 추가
     debugPrint('구독 상태 업데이트: $status');
   }
-
 
   // 자동 갱신 방지
   Future<void> preventAutoRenewal() async {
@@ -465,11 +475,11 @@ enum UsageType {
 
 // 구독 상태 열거형
 enum SubscriptionStatus {
-  active,              // 활성
-  expired,             // 만료됨
-  cancelled,           // 취소됨
-  cancelledAtPeriodEnd,// 기간 종료 후 취소 예정
-  paused,              // 일시정지
+  active, // 활성
+  expired, // 만료됨
+  cancelled, // 취소됨
+  cancelledAtPeriodEnd, // 기간 종료 후 취소 예정
+  paused, // 일시정지
 }
 
 // 사용자 구독 정보 클래스
@@ -505,8 +515,10 @@ class UserSubscription {
         (e) => e.toString() == json['status'],
         orElse: () => SubscriptionStatus.expired,
       ),
-      startDate: DateTime.fromMillisecondsSinceEpoch((json['startDate'] as int?) ?? 0),
-      expiryDate: DateTime.fromMillisecondsSinceEpoch((json['expiryDate'] as int?) ?? 0),
+      startDate:
+          DateTime.fromMillisecondsSinceEpoch((json['startDate'] as int?) ?? 0),
+      expiryDate: DateTime.fromMillisecondsSinceEpoch(
+          (json['expiryDate'] as int?) ?? 0),
       autoRenewing: (json['autoRenewing'] as bool?) ?? false,
     );
   }

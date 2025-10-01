@@ -87,14 +87,13 @@ class WorkoutCompletionHandler {
     final history = WorkoutHistory(
       id: DateTime.now().millisecondsSinceEpoch.toString(),
       date: DateTime.now(),
-      workoutTitle:
-          (workout.title as String?) ?? '${workout.week ?? 1}주차 - ${workout.day ?? 1}일차',
+      workoutTitle: (workout.title as String?) ??
+          '${workout.week ?? 1}주차 - ${workout.day ?? 1}일차',
       targetReps: targetReps,
       completedReps: completedReps,
       totalReps: totalCompletedReps,
-      completionRate: totalTargetReps > 0
-          ? totalCompletedReps / totalTargetReps
-          : 0.0,
+      completionRate:
+          totalTargetReps > 0 ? totalCompletedReps / totalTargetReps : 0.0,
       level: 'Rising',
       duration: workoutStartTime != null
           ? DateTime.now().difference(workoutStartTime!)
@@ -156,8 +155,8 @@ class WorkoutCompletionHandler {
 
         // 진행률 계산 (총 12주 * 7일 = 84일 기준)
         final totalDays = 84;
-        final progressPercentage = (completedWorkouts.length / totalDays * 100)
-            .round();
+        final progressPercentage =
+            (completedWorkouts.length / totalDays * 100).round();
         await prefs.setInt('program_progress', progressPercentage);
 
         debugPrint(
@@ -191,9 +190,8 @@ class WorkoutCompletionHandler {
 
       final totalReps = completedReps.fold(0, (sum, reps) => sum + reps);
       final totalTargetReps = targetReps.fold(0, (sum, reps) => sum + reps);
-      final completionRate = totalTargetReps > 0
-          ? (totalReps / totalTargetReps)
-          : 0.0;
+      final completionRate =
+          totalTargetReps > 0 ? (totalReps / totalTargetReps) : 0.0;
 
       // === 기본 XP 계산 ===
       int totalXP = 0;
@@ -229,9 +227,8 @@ class WorkoutCompletionHandler {
       // 5. 운동 시간 보너스 (장시간 운동시)
       int timeBonus = 0;
       if (workoutStartTime != null) {
-        final workoutDuration = DateTime.now()
-            .difference(workoutStartTime!)
-            .inMinutes;
+        final workoutDuration =
+            DateTime.now().difference(workoutStartTime!).inMinutes;
         if (workoutDuration >= 30) {
           timeBonus = 20; // 30분 이상 운동 보너스
         } else if (workoutDuration >= 20) {

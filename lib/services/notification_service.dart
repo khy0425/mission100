@@ -157,10 +157,10 @@ class NotificationService {
     // iOS 초기화 설정
     const DarwinInitializationSettings iosSettings =
         DarwinInitializationSettings(
-          requestAlertPermission: true,
-          requestBadgePermission: true,
-          requestSoundPermission: true,
-        );
+      requestAlertPermission: true,
+      requestBadgePermission: true,
+      requestSoundPermission: true,
+    );
 
     const InitializationSettings initSettings = InitializationSettings(
       android: androidSettings,
@@ -216,7 +216,6 @@ class NotificationService {
                   style: const TextStyle(fontSize: 16),
                 ),
                 const SizedBox(height: 16),
-
                 if (!hasNotificationPermission)
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -233,7 +232,8 @@ class NotificationService {
                             child: Text(
                               AppLocalizations.of(
                                 context,
-                              )!.workoutNotificationPermission,
+                              )!
+                                  .workoutNotificationPermission,
                               style: const TextStyle(
                                 fontWeight: FontWeight.bold,
                               ),
@@ -250,7 +250,6 @@ class NotificationService {
                       const SizedBox(height: 12),
                     ],
                   ),
-
                 const SizedBox(height: 16),
                 Container(
                   padding: const EdgeInsets.all(12),
@@ -323,8 +322,7 @@ class NotificationService {
         // iOS - flutter_local_notifications 사용
         final granted = await _notifications
             .resolvePlatformSpecificImplementation<
-              IOSFlutterLocalNotificationsPlugin
-            >()
+                IOSFlutterLocalNotificationsPlugin>()
             ?.requestPermissions(alert: true, badge: true, sound: true);
 
         final prefs = await SharedPreferences.getInstance();
@@ -413,10 +411,9 @@ class NotificationService {
     await initialize();
 
     if (defaultTargetPlatform == TargetPlatform.android) {
-      final androidPlugin = _notifications
-          .resolvePlatformSpecificImplementation<
-            AndroidFlutterLocalNotificationsPlugin
-          >();
+      final androidPlugin =
+          _notifications.resolvePlatformSpecificImplementation<
+              AndroidFlutterLocalNotificationsPlugin>();
 
       if (androidPlugin != null) {
         // Android에서는 권한 상태를 직접 확인하기 어려우므로
@@ -799,36 +796,34 @@ class NotificationService {
       if (defaultTargetPlatform == TargetPlatform.android) {
         const AndroidNotificationChannel workoutChannel =
             AndroidNotificationChannel(
-              'workout_reminders',
-              'Workout Reminders',
-              description: 'Notifications for workout reminders',
-              importance: Importance.high,
-              playSound: true,
-            );
+          'workout_reminders',
+          'Workout Reminders',
+          description: 'Notifications for workout reminders',
+          importance: Importance.high,
+          playSound: true,
+        );
 
         const AndroidNotificationChannel achievementChannel =
             AndroidNotificationChannel(
-              'achievements',
-              'Achievements',
-              description: 'Notifications for unlocked achievements',
-              importance: Importance.high,
-              playSound: true,
-            );
+          'achievements',
+          'Achievements',
+          description: 'Notifications for unlocked achievements',
+          importance: Importance.high,
+          playSound: true,
+        );
 
         const AndroidNotificationChannel chadEvolutionChannel =
             AndroidNotificationChannel(
-              'chad_evolution',
-              'Chad Evolution',
-              description: 'Notifications for Chad evolution',
-              importance: Importance.high,
-              playSound: true,
-            );
+          'chad_evolution',
+          'Chad Evolution',
+          description: 'Notifications for Chad evolution',
+          importance: Importance.high,
+          playSound: true,
+        );
 
         final AndroidFlutterLocalNotificationsPlugin? androidPlugin =
-            _notifications
-                .resolvePlatformSpecificImplementation<
-                  AndroidFlutterLocalNotificationsPlugin
-                >();
+            _notifications.resolvePlatformSpecificImplementation<
+                AndroidFlutterLocalNotificationsPlugin>();
 
         if (androidPlugin != null) {
           await androidPlugin.createNotificationChannel(workoutChannel);
@@ -1010,8 +1005,8 @@ class NotificationService {
   /// 대기 중인 알림 확인
   static Future<void> checkPendingNotifications() async {
     try {
-      final pendingNotifications = await _notifications
-          .pendingNotificationRequests();
+      final pendingNotifications =
+          await _notifications.pendingNotificationRequests();
       debugPrint('📋 대기 중인 알림: ${pendingNotifications.length}개');
     } catch (e) {
       debugPrint('❌ 대기 중인 알림 확인 실패: $e');

@@ -16,52 +16,62 @@ class ChadOnboardingService extends ChangeNotifier {
   String getChadMessageForStep(String stepType) {
     switch (stepType) {
       case 'welcome':
-        _currentChadMessage = "안녕 Bro! 나는 Chad야! 🔥\nMission: 100에서 너의 개인 트레이너가 될게!\n함께 6주 만에 100개 푸시업 도전해보자!";
+        _currentChadMessage =
+            "안녕 Bro! 나는 Chad야! 🔥\nMission: 100에서 너의 개인 트레이너가 될게!\n함께 6주 만에 100개 푸시업 도전해보자!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'programIntroduction':
-        _currentChadMessage = "Chad가 특별히 설계한 6주 프로그램이야! 💪\n과학적으로 검증된 방법으로 너를 100개까지 이끌어줄게!\n준비됐어?";
+        _currentChadMessage =
+            "Chad가 특별히 설계한 6주 프로그램이야! 💪\n과학적으로 검증된 방법으로 너를 100개까지 이끌어줄게!\n준비됐어?";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'chadEvolution':
-        _currentChadMessage = "운동할 때마다 Chad도 함께 진화해! 🚀\nRookie Chad → Giga Chad → Legendary Chad!\n너의 성장이 Chad의 성장이야!";
+        _currentChadMessage =
+            "운동할 때마다 Chad도 함께 진화해! 🚀\nRookie Chad → Giga Chad → Legendary Chad!\n너의 성장이 Chad의 성장이야!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'initialTest':
-        _currentChadMessage = "Chad가 너의 현재 실력을 체크해볼게! 💯\n최대한 많이 해봐! 정확한 자세로!\nChad가 완벽한 계획 세워줄게!";
+        _currentChadMessage =
+            "Chad가 너의 현재 실력을 체크해볼게! 💯\n최대한 많이 해봐! 정확한 자세로!\nChad가 완벽한 계획 세워줄게!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'goalSetupWeight':
-        _currentChadMessage = "Chad가 더 정확한 칼로리 계산을 위해 물어볼게! ⚖️\n현재 체중이 어떻게 돼?\n목표 체중도 있으면 Chad가 특별 계획 세워줄게!";
+        _currentChadMessage =
+            "Chad가 더 정확한 칼로리 계산을 위해 물어볼게! ⚖️\n현재 체중이 어떻게 돼?\n목표 체중도 있으면 Chad가 특별 계획 세워줄게!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'goalSetupFitnessLevel':
-        _currentChadMessage = "Chad가 네 운동 경험을 알아야겠어! 🏋️‍♂️\n초보자면 Chad가 기초부터 차근차근!\n고급자면 Chad도 강도 높게 갈게!";
+        _currentChadMessage =
+            "Chad가 네 운동 경험을 알아야겠어! 🏋️‍♂️\n초보자면 Chad가 기초부터 차근차근!\n고급자면 Chad도 강도 높게 갈게!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'goalSetupGoal':
-        _currentChadMessage = "Chad가 가장 중요하게 생각하는 질문이야! 🎯\n네 목표가 뭐야?\nChad가 그 목표에 맞는 완벽한 전략 짜줄게!";
+        _currentChadMessage =
+            "Chad가 가장 중요하게 생각하는 질문이야! 🎯\n네 목표가 뭐야?\nChad가 그 목표에 맞는 완벽한 전략 짜줄게!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'goalSetupWorkoutTime':
-        _currentChadMessage = "Chad가 네 스케줄에 맞춰줄게! ⏰\n언제 운동하는 게 좋아?\nChad가 딱 맞는 시간에 알림 보내줄게!";
+        _currentChadMessage =
+            "Chad가 네 스케줄에 맞춰줄게! ⏰\n언제 운동하는 게 좋아?\nChad가 딱 맞는 시간에 알림 보내줄게!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'goalSetupMotivation':
-        _currentChadMessage = "Chad가 너를 어떻게 동기부여 해줄까? 🔥\n경쟁으로 불타오르는 타입?\n아니면 개인 기록 달성하는 타입?\nChad가 맞춰줄게!";
+        _currentChadMessage =
+            "Chad가 너를 어떻게 동기부여 해줄까? 🔥\n경쟁으로 불타오르는 타입?\n아니면 개인 기록 달성하는 타입?\nChad가 맞춰줄게!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
       case 'goalSetupComplete':
-        _currentChadMessage = "Perfect! Chad가 너만의 맞춤 프로그램 완성했어! 🎉\n이제 Chad AI 트레이너와 함께 Mission: 100 시작하자!\n1개월 무료로 Chad의 모든 기능을 체험해봐!";
+        _currentChadMessage =
+            "Perfect! Chad가 너만의 맞춤 프로그램 완성했어! 🎉\n이제 Chad AI 트레이너와 함께 Mission: 100 시작하자!\n1개월 무료로 Chad의 모든 기능을 체험해봐!";
         _currentChadImage = "assets/images/기본차드.jpg";
         break;
 
@@ -168,7 +178,6 @@ class ChadOnboardingService extends ChangeNotifier {
       await prefs.setBool('chad_personalization_active', true);
 
       debugPrint('Chad 개인화 데이터 즉시 적용 완료: $_collectedData');
-
     } catch (e) {
       debugPrint('Chad 개인화 적용 오류: $e');
     }

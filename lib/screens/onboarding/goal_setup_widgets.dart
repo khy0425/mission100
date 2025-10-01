@@ -40,10 +40,12 @@ class _GoalSetupWeightWidgetState extends State<GoalSetupWeightWidget> {
   Future<void> _saveAndNext() async {
     final prefs = await SharedPreferences.getInstance();
     if (_currentWeightController.text.isNotEmpty) {
-      await prefs.setDouble('current_weight', double.parse(_currentWeightController.text));
+      await prefs.setDouble(
+          'current_weight', double.parse(_currentWeightController.text));
     }
     if (_targetWeightController.text.isNotEmpty) {
-      await prefs.setDouble('target_weight', double.parse(_targetWeightController.text));
+      await prefs.setDouble(
+          'target_weight', double.parse(_targetWeightController.text));
     }
     widget.onNext();
   }
@@ -78,9 +80,11 @@ class _GoalSetupWeightWidgetState extends State<GoalSetupWeightWidget> {
                 suffixText: 'kg',
               ),
               onChanged: (value) {
-                final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                final chadService =
+                    Provider.of<ChadOnboardingService>(context, listen: false);
                 if (value.isNotEmpty) {
-                  chadService.collectData('current_weight', double.tryParse(value));
+                  chadService.collectData(
+                      'current_weight', double.tryParse(value));
                 }
               },
             ),
@@ -98,9 +102,11 @@ class _GoalSetupWeightWidgetState extends State<GoalSetupWeightWidget> {
                 suffixText: 'kg',
               ),
               onChanged: (value) {
-                final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                final chadService =
+                    Provider.of<ChadOnboardingService>(context, listen: false);
                 if (value.isNotEmpty) {
-                  chadService.collectData('target_weight', double.tryParse(value));
+                  chadService.collectData(
+                      'target_weight', double.tryParse(value));
                 }
               },
             ),
@@ -129,10 +135,12 @@ class GoalSetupFitnessLevelWidget extends StatefulWidget {
   });
 
   @override
-  State<GoalSetupFitnessLevelWidget> createState() => _GoalSetupFitnessLevelWidgetState();
+  State<GoalSetupFitnessLevelWidget> createState() =>
+      _GoalSetupFitnessLevelWidgetState();
 }
 
-class _GoalSetupFitnessLevelWidgetState extends State<GoalSetupFitnessLevelWidget> {
+class _GoalSetupFitnessLevelWidgetState
+    extends State<GoalSetupFitnessLevelWidget> {
   String? _selectedLevel;
 
   final List<Map<String, String>> _levels = [
@@ -181,14 +189,16 @@ class _GoalSetupFitnessLevelWidgetState extends State<GoalSetupFitnessLevelWidge
               child: Card(
                 elevation: isSelected ? 4 : 1,
                 color: isSelected
-                  ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-                  : null,
+                    ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                    : null,
                 child: ListTile(
                   title: Text(
                     level['title']!,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
-                      color: isSelected ? const Color(AppColors.primaryColor) : null,
+                      color: isSelected
+                          ? const Color(AppColors.primaryColor)
+                          : null,
                     ),
                   ),
                   subtitle: Text(level['description']!),
@@ -197,14 +207,18 @@ class _GoalSetupFitnessLevelWidgetState extends State<GoalSetupFitnessLevelWidge
                     groupValue: _selectedLevel,
                     onChanged: (value) {
                       setState(() => _selectedLevel = value);
-                      final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                      final chadService = Provider.of<ChadOnboardingService>(
+                          context,
+                          listen: false);
                       chadService.collectData('fitness_level', value);
                     },
                     activeColor: const Color(AppColors.primaryColor),
                   ),
                   onTap: () {
                     setState(() => _selectedLevel = level['key']);
-                    final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                    final chadService = Provider.of<ChadOnboardingService>(
+                        context,
+                        listen: false);
                     chadService.collectData('fitness_level', level['key']);
                   },
                 ),
@@ -296,18 +310,21 @@ class _GoalSetupGoalWidgetState extends State<GoalSetupGoalWidget> {
               child: Card(
                 elevation: isSelected ? 4 : 1,
                 color: isSelected
-                  ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-                  : null,
+                    ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                    : null,
                 child: ListTile(
                   title: Row(
                     children: [
-                      Text(goal['emoji']!, style: const TextStyle(fontSize: 20)),
+                      Text(goal['emoji']!,
+                          style: const TextStyle(fontSize: 20)),
                       const SizedBox(width: 8),
                       Text(
                         goal['title']!,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          color: isSelected ? const Color(AppColors.primaryColor) : null,
+                          color: isSelected
+                              ? const Color(AppColors.primaryColor)
+                              : null,
                         ),
                       ),
                     ],
@@ -318,14 +335,18 @@ class _GoalSetupGoalWidgetState extends State<GoalSetupGoalWidget> {
                     groupValue: _selectedGoal,
                     onChanged: (value) {
                       setState(() => _selectedGoal = value);
-                      final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                      final chadService = Provider.of<ChadOnboardingService>(
+                          context,
+                          listen: false);
                       chadService.collectData('fitness_goal', value);
                     },
                     activeColor: const Color(AppColors.primaryColor),
                   ),
                   onTap: () {
                     setState(() => _selectedGoal = goal['key']);
-                    final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                    final chadService = Provider.of<ChadOnboardingService>(
+                        context,
+                        listen: false);
                     chadService.collectData('fitness_goal', goal['key']);
                   },
                 ),
@@ -356,10 +377,12 @@ class GoalSetupWorkoutTimeWidget extends StatefulWidget {
   });
 
   @override
-  State<GoalSetupWorkoutTimeWidget> createState() => _GoalSetupWorkoutTimeWidgetState();
+  State<GoalSetupWorkoutTimeWidget> createState() =>
+      _GoalSetupWorkoutTimeWidgetState();
 }
 
-class _GoalSetupWorkoutTimeWidgetState extends State<GoalSetupWorkoutTimeWidget> {
+class _GoalSetupWorkoutTimeWidgetState
+    extends State<GoalSetupWorkoutTimeWidget> {
   final List<String> _selectedTimes = [];
 
   final List<String> _times = [
@@ -400,14 +423,17 @@ class _GoalSetupWorkoutTimeWidgetState extends State<GoalSetupWorkoutTimeWidget>
               child: Card(
                 elevation: isSelected ? 4 : 1,
                 color: isSelected
-                  ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-                  : null,
+                    ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                    : null,
                 child: CheckboxListTile(
                   title: Text(
                     time,
                     style: TextStyle(
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                      color: isSelected ? const Color(AppColors.primaryColor) : null,
+                      fontWeight:
+                          isSelected ? FontWeight.bold : FontWeight.normal,
+                      color: isSelected
+                          ? const Color(AppColors.primaryColor)
+                          : null,
                     ),
                   ),
                   value: isSelected,
@@ -419,7 +445,9 @@ class _GoalSetupWorkoutTimeWidgetState extends State<GoalSetupWorkoutTimeWidget>
                         _selectedTimes.remove(time);
                       }
                     });
-                    final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                    final chadService = Provider.of<ChadOnboardingService>(
+                        context,
+                        listen: false);
                     chadService.collectData('workout_times', _selectedTimes);
                   },
                   activeColor: const Color(AppColors.primaryColor),
@@ -451,7 +479,8 @@ class GoalSetupMotivationWidget extends StatefulWidget {
   });
 
   @override
-  State<GoalSetupMotivationWidget> createState() => _GoalSetupMotivationWidgetState();
+  State<GoalSetupMotivationWidget> createState() =>
+      _GoalSetupMotivationWidgetState();
 }
 
 class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
@@ -482,14 +511,15 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
             Card(
               elevation: _likesCompetition == true ? 4 : 1,
               color: _likesCompetition == true
-                ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-                : null,
+                  ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                  : null,
               child: ListTile(
                 title: const Row(
                   children: [
                     Text('🏆', style: TextStyle(fontSize: 20)),
                     SizedBox(width: 8),
-                    Text('경쟁과 순위', style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text('경쟁과 순위',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
                 subtitle: const Text('다른 사용자와 비교하고 순위를 확인하며 동기부여'),
@@ -498,14 +528,18 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
                   groupValue: _likesCompetition,
                   onChanged: (value) {
                     setState(() => _likesCompetition = value);
-                    final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                    final chadService = Provider.of<ChadOnboardingService>(
+                        context,
+                        listen: false);
                     chadService.collectData('likes_competition', value);
                   },
                   activeColor: const Color(AppColors.primaryColor),
                 ),
                 onTap: () {
                   setState(() => _likesCompetition = true);
-                  final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                  final chadService = Provider.of<ChadOnboardingService>(
+                      context,
+                      listen: false);
                   chadService.collectData('likes_competition', true);
                 },
               ),
@@ -514,14 +548,15 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
             Card(
               elevation: _likesCompetition == false ? 4 : 1,
               color: _likesCompetition == false
-                ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
-                : null,
+                  ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
+                  : null,
               child: ListTile(
                 title: const Row(
                   children: [
                     Text('📈', style: TextStyle(fontSize: 20)),
                     SizedBox(width: 8),
-                    Text('개인 기록', style: TextStyle(fontWeight: FontWeight.bold)),
+                    Text('개인 기록',
+                        style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
                 subtitle: const Text('나만의 목표 달성과 개인 기록 향상에 집중'),
@@ -530,14 +565,18 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
                   groupValue: _likesCompetition,
                   onChanged: (value) {
                     setState(() => _likesCompetition = value);
-                    final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                    final chadService = Provider.of<ChadOnboardingService>(
+                        context,
+                        listen: false);
                     chadService.collectData('likes_competition', value);
                   },
                   activeColor: const Color(AppColors.primaryColor),
                 ),
                 onTap: () {
                   setState(() => _likesCompetition = false);
-                  final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+                  final chadService = Provider.of<ChadOnboardingService>(
+                      context,
+                      listen: false);
                   chadService.collectData('likes_competition', false);
                 },
               ),
@@ -606,7 +645,8 @@ class GoalSetupCompleteWidget extends StatelessWidget {
           ),
         ),
         onNext: () async {
-          final chadService = Provider.of<ChadOnboardingService>(context, listen: false);
+          final chadService =
+              Provider.of<ChadOnboardingService>(context, listen: false);
           await chadService.applyPersonalizationImmediately();
           onNext();
         },

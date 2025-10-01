@@ -141,7 +141,8 @@ class PermissionService {
                   Text(
                     AppLocalizations.of(
                       context,
-                    )!.notificationPermissionRequired,
+                    )!
+                        .notificationPermissionRequired,
                     style: const TextStyle(fontSize: 16),
                   ),
                   SizedBox(height: 16),

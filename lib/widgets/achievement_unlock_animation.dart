@@ -62,8 +62,8 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
 
     _slideAnimation =
         Tween<Offset>(begin: const Offset(0, -1), end: Offset.zero).animate(
-          CurvedAnimation(parent: _slideController, curve: Curves.bounceOut),
-        );
+      CurvedAnimation(parent: _slideController, curve: Curves.bounceOut),
+    );
 
     _rotationAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
       CurvedAnimation(parent: _rotationController, curve: Curves.easeInOut),
@@ -201,7 +201,9 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                                       'ko'
                                   ? '🏆 업적 달성! 🏆'
                                   : '🏆 Achievement Unlocked! 🏆',
-                              style: Theme.of(context).textTheme.headlineMedium
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineMedium
                                   ?.copyWith(
                                     color: _getRarityColor(),
                                     fontWeight: FontWeight.bold,
@@ -221,7 +223,8 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                                   shape: BoxShape.circle,
                                   boxShadow: [
                                     BoxShadow(
-                                      color: _getRarityColor().withValues(alpha: 0.5),
+                                      color: _getRarityColor()
+                                          .withValues(alpha: 0.5),
                                       blurRadius: 15,
                                       spreadRadius: 2,
                                     ),
@@ -240,7 +243,9 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                             // 업적 제목
                             Text(
                               widget.achievement.title,
-                              style: Theme.of(context).textTheme.titleLarge
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge
                                   ?.copyWith(fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
@@ -274,7 +279,9 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                               ),
                               child: Text(
                                 widget.achievement.rarity.name.toUpperCase(),
-                                style: Theme.of(context).textTheme.labelMedium
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium
                                     ?.copyWith(
                                       color: _getRarityColor(),
                                       fontWeight: FontWeight.bold,

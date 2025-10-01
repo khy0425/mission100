@@ -5,11 +5,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 /// 캐시 정책
 enum CachePolicy {
-  noCache,          // 캐시 사용 안함
-  cacheFirst,       // 캐시 우선
-  networkFirst,     // 네트워크 우선
-  cacheOnly,        // 캐시만 사용
-  networkOnly,      // 네트워크만 사용
+  noCache, // 캐시 사용 안함
+  cacheFirst, // 캐시 우선
+  networkFirst, // 네트워크 우선
+  cacheOnly, // 캐시만 사용
+  networkOnly, // 네트워크만 사용
 }
 
 /// 캐시 아이템
@@ -145,14 +145,14 @@ class CacheManager {
 
       _stats.size = _memoryCache.length;
       debugPrint('캐시 저장: $key (TTL: ${ttl?.inMinutes ?? 30}분)');
-
     } catch (e) {
       debugPrint('캐시 저장 실패: $key - $e');
     }
   }
 
   /// 캐시에서 데이터 조회
-  Future<T?> get<T>(String key, {CachePolicy policy = CachePolicy.cacheFirst}) async {
+  Future<T?> get<T>(String key,
+      {CachePolicy policy = CachePolicy.cacheFirst}) async {
     try {
       switch (policy) {
         case CachePolicy.cacheFirst:
@@ -215,7 +215,6 @@ class CacheManager {
 
       _stats.size = _memoryCache.length;
       debugPrint('캐시 삭제: $key');
-
     } catch (e) {
       debugPrint('캐시 삭제 실패: $key - $e');
     }
@@ -250,7 +249,6 @@ class CacheManager {
       }
 
       debugPrint('패턴 기반 캐시 삭제: $pattern (${keysToRemove.length}개)');
-
     } catch (e) {
       debugPrint('패턴 기반 캐시 삭제 실패: $pattern - $e');
     }
@@ -280,7 +278,6 @@ class CacheManager {
 
       _stats.reset();
       debugPrint('전체 캐시 삭제 완료');
-
     } catch (e) {
       debugPrint('전체 캐시 삭제 실패: $e');
     }
@@ -308,7 +305,6 @@ class CacheManager {
       await _cleanExpiredFromDisk();
 
       debugPrint('만료된 캐시 정리 완료: ${expiredKeys.length}개');
-
     } catch (e) {
       debugPrint('만료된 캐시 정리 실패: $e');
     }
@@ -341,7 +337,6 @@ class CacheManager {
 
       final jsonString = jsonEncode(cacheItem.toJson());
       await _prefs!.setString('$_cachePrefix$key', jsonString);
-
     } catch (e) {
       debugPrint('디스크 캐시 저장 실패: $key - $e');
     }
@@ -357,7 +352,6 @@ class CacheManager {
 
       final json = jsonDecode(jsonString) as Map<String, dynamic>;
       return CacheItem<T>.fromJson(json, key);
-
     } catch (e) {
       debugPrint('디스크 캐시 로드 실패: $key - $e');
       return null;
@@ -386,7 +380,6 @@ class CacheManager {
 
       _stats.size = _memoryCache.length;
       debugPrint('디스크 캐시 로드 완료: ${loadedCount}개');
-
     } catch (e) {
       debugPrint('디스크 캐시 로드 실패: $e');
     }
@@ -416,7 +409,6 @@ class CacheManager {
       }
 
       debugPrint('디스크 만료 캐시 정리: ${expiredKeys.length}개');
-
     } catch (e) {
       debugPrint('디스크 만료 캐시 정리 실패: $e');
     }
@@ -468,7 +460,6 @@ class CacheManager {
       }
 
       return totalSize;
-
     } catch (e) {
       debugPrint('캐시 크기 계산 실패: $e');
       return 0;
@@ -485,7 +476,8 @@ class CacheManager {
       debugPrint('메모리 캐시 항목: ${_memoryCache.length}');
       debugPrint('캐시 히트율: ${(stats.hitRate * 100).toStringAsFixed(1)}%');
       debugPrint('총 캐시 크기: ${(cacheSize / 1024).toStringAsFixed(1)} KB');
-      debugPrint('히트: ${stats.hits}, 미스: ${stats.misses}, 제거: ${stats.evictions}');
+      debugPrint(
+          '히트: ${stats.hits}, 미스: ${stats.misses}, 제거: ${stats.evictions}');
       debugPrint('==================');
     }
   }

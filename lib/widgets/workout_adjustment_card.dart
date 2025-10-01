@@ -84,9 +84,9 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
       (widget.originalReps * widget.adjustment.repsMultiplier).round();
 
   Duration get adjustedRest => Duration(
-        milliseconds:
-            (widget.originalRest.inMilliseconds * widget.adjustment.restMultiplier)
-                .round(),
+        milliseconds: (widget.originalRest.inMilliseconds *
+                widget.adjustment.restMultiplier)
+            .round(),
       );
 
   Color get adjustmentColor {
@@ -317,10 +317,8 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
                             ),
                           ),
                         ),
-
                       if (widget.onDecline != null && widget.onAccept != null)
                         const SizedBox(width: 12),
-
                       if (widget.onAccept != null)
                         Expanded(
                           flex: widget.onDecline != null ? 1 : 1,
@@ -369,7 +367,8 @@ class _WorkoutAdjustmentCardState extends State<WorkoutAdjustmentCard>
         color: isOriginal ? Colors.grey[50] : adjustmentColor.withOpacity(0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: isOriginal ? Colors.grey[200]! : adjustmentColor.withOpacity(0.3),
+          color:
+              isOriginal ? Colors.grey[200]! : adjustmentColor.withOpacity(0.3),
         ),
       ),
       child: Column(

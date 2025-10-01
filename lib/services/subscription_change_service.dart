@@ -16,8 +16,8 @@ enum SubscriptionChangeStatus {
 
 /// 구독 변경 타입
 enum SubscriptionChangeType {
-  upgrade,    // 업그레이드
-  downgrade,  // 다운그레이드
+  upgrade, // 업그레이드
+  downgrade, // 다운그레이드
   crossgrade, // 동급 변경
 }
 
@@ -62,7 +62,8 @@ class SubscriptionChangeInfo {
         orElse: () => SubscriptionChangeType.upgrade,
       ),
       proratedAmount: ((json['proratedAmount'] as num?) ?? 0.0).toDouble(),
-      changeDate: DateTime.fromMillisecondsSinceEpoch((json['changeDate'] as int?) ?? 0),
+      changeDate: DateTime.fromMillisecondsSinceEpoch(
+          (json['changeDate'] as int?) ?? 0),
       status: SubscriptionChangeStatus.values.firstWhere(
         (e) => e.toString() == json['status'],
         orElse: () => SubscriptionChangeStatus.none,
@@ -87,7 +88,8 @@ class SubscriptionChangeResult {
 
 /// 구독 변경(업그레이드/다운그레이드) 관리 서비스
 class SubscriptionChangeService {
-  static final SubscriptionChangeService _instance = SubscriptionChangeService._internal();
+  static final SubscriptionChangeService _instance =
+      SubscriptionChangeService._internal();
   factory SubscriptionChangeService() => _instance;
   SubscriptionChangeService._internal();
 
@@ -104,8 +106,10 @@ class SubscriptionChangeService {
   }) async {
     try {
       // 1. 현재 구독 상태 확인
-      final currentSubscription = await _subscriptionService.getCurrentSubscription();
-      if (currentSubscription == null || currentSubscription.productId != currentProductId) {
+      final currentSubscription =
+          await _subscriptionService.getCurrentSubscription();
+      if (currentSubscription == null ||
+          currentSubscription.productId != currentProductId) {
         return SubscriptionChangeResult(
           success: false,
           error: '현재 구독 정보가 일치하지 않습니다.',
@@ -133,10 +137,10 @@ class SubscriptionChangeService {
       );
 
       // 5. 구독 변경 실행
-      final changeResult = await _executeSubscriptionChange(changeInfo, immediate);
+      final changeResult =
+          await _executeSubscriptionChange(changeInfo, immediate);
 
       return changeResult;
-
     } catch (e) {
       debugPrint('구독 변경 요청 실패: $e');
       return SubscriptionChangeResult(
@@ -147,7 +151,8 @@ class SubscriptionChangeService {
   }
 
   /// 구독 변경 타입 결정
-  SubscriptionChangeType _determineChangeType(String currentProductId, String newProductId) {
+  SubscriptionChangeType _determineChangeType(
+      String currentProductId, String newProductId) {
     // 상품 등급 매핑
     final productTiers = {
       'premium_monthly': 1,
@@ -207,7 +212,6 @@ class SubscriptionChangeService {
       final proratedAmount = newPrice - remainingValue;
 
       return proratedAmount > 0 ? proratedAmount : 0.0;
-
     } catch (e) {
       debugPrint('비례 배분 계산 실패: $e');
       return 0.0;
@@ -240,15 +244,20 @@ class SubscriptionChangeService {
       // 2. Google Play/App Store API를 통한 구독 변경
       dynamic purchaseResult;
       try {
-        purchaseResult = await _billingService.purchaseProduct(changeInfo.toProductId);
+        purchaseResult =
+            await _billingService.purchaseProduct(changeInfo.toProductId);
       } catch (e) {
         // BillingService가 아직 구현되지 않은 경우 시뮬레이션
         debugPrint('BillingService not implemented yet, using simulation: $e');
-        purchaseResult = _MockPurchaseResult(success: true, purchaseDetails: _MockPurchaseDetails(productId: changeInfo.toProductId));
+        purchaseResult = _MockPurchaseResult(
+            success: true,
+            purchaseDetails:
+                _MockPurchaseDetails(productId: changeInfo.toProductId));
       }
 
       final isSuccess = purchaseResult?.success;
-      if (!(isSuccess is bool && isSuccess) || purchaseResult?.purchaseDetails == null) {
+      if (!(isSuccess is bool && isSuccess) ||
+          purchaseResult?.purchaseDetails == null) {
         // 변경 실패 처리
         final failedChangeInfo = SubscriptionChangeInfo(
           fromProductId: changeInfo.fromProductId,
@@ -275,7 +284,8 @@ class SubscriptionChangeService {
         );
       } catch (e) {
         // BillingService가 아직 구현되지 않은 경우 시뮬레이션
-        debugPrint('BillingService verification not implemented yet, using simulation: $e');
+        debugPrint(
+            'BillingService verification not implemented yet, using simulation: $e');
         verificationResult = _MockVerificationResult(isValid: true);
       }
 
@@ -311,7 +321,6 @@ class SubscriptionChangeService {
         success: true,
         changeInfo: completedChangeInfo,
       );
-
     } catch (e) {
       debugPrint('구독 변경 실행 실패: $e');
       return SubscriptionChangeResult(
@@ -321,9 +330,9 @@ class SubscriptionChangeService {
     }
   }
 
-
   /// 구독 변경 정보 저장
-  Future<void> _saveSubscriptionChangeInfo(SubscriptionChangeInfo changeInfo) async {
+  Future<void> _saveSubscriptionChangeInfo(
+      SubscriptionChangeInfo changeInfo) async {
     try {
       final currentHistory = await _getSubscriptionChangeHistory();
       currentHistory.add(changeInfo.toJson());
@@ -342,14 +351,14 @@ class SubscriptionChangeService {
   }
 
   /// 구독 변경 정보 업데이트
-  Future<void> _updateSubscriptionChangeInfo(SubscriptionChangeInfo changeInfo) async {
+  Future<void> _updateSubscriptionChangeInfo(
+      SubscriptionChangeInfo changeInfo) async {
     try {
       final currentHistory = await _getSubscriptionChangeHistory();
       final index = currentHistory.indexWhere((change) =>
-        change['fromProductId'] == changeInfo.fromProductId &&
-        change['toProductId'] == changeInfo.toProductId &&
-        change['changeDate'] == changeInfo.changeDate.millisecondsSinceEpoch
-      );
+          change['fromProductId'] == changeInfo.fromProductId &&
+          change['toProductId'] == changeInfo.toProductId &&
+          change['changeDate'] == changeInfo.changeDate.millisecondsSinceEpoch);
 
       if (index != -1) {
         currentHistory[index] = changeInfo.toJson();
@@ -388,7 +397,8 @@ class SubscriptionChangeService {
   }
 
   /// 사용자에게 구독 변경 알림
-  Future<void> _notifySubscriptionChange(SubscriptionChangeInfo changeInfo) async {
+  Future<void> _notifySubscriptionChange(
+      SubscriptionChangeInfo changeInfo) async {
     try {
       String title = '';
       String body = '';
@@ -423,10 +433,12 @@ class SubscriptionChangeService {
   }
 
   /// 구독 변경 가능 여부 확인
-  Future<bool> canChangeSubscription(String currentProductId, String newProductId) async {
+  Future<bool> canChangeSubscription(
+      String currentProductId, String newProductId) async {
     try {
       // 현재 구독 상태 확인
-      final currentSubscription = await _subscriptionService.getCurrentSubscription();
+      final currentSubscription =
+          await _subscriptionService.getCurrentSubscription();
       if (currentSubscription == null) {
         return false;
       }
@@ -452,7 +464,9 @@ class SubscriptionChangeService {
   Future<List<SubscriptionChangeInfo>> getSubscriptionChangeHistory() async {
     try {
       final historyData = await _getSubscriptionChangeHistory();
-      return historyData.map((data) => SubscriptionChangeInfo.fromJson(data)).toList();
+      return historyData
+          .map((data) => SubscriptionChangeInfo.fromJson(data))
+          .toList();
     } catch (e) {
       debugPrint('구독 변경 기록 조회 실패: $e');
       return [];

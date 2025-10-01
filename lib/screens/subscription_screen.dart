@@ -49,7 +49,6 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
       // 상품 목록 로드
       _loadProducts();
-
     } catch (e) {
       setState(() {
         _errorMessage = 'Billing 초기화 실패: $e';
@@ -407,7 +406,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                                 width: 20,
                                 child: CircularProgressIndicator(
                                   strokeWidth: 2,
-                                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                                  valueColor: AlwaysStoppedAnimation<Color>(
+                                      Colors.white),
                                 ),
                               )
                             : const Text(
@@ -429,7 +429,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               top: 0,
               right: 16,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                 decoration: BoxDecoration(
                   color: color,
                   borderRadius: const BorderRadius.only(

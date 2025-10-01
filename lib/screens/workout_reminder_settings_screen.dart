@@ -253,7 +253,8 @@ class _WorkoutReminderSettingsScreenState
                   subtitle: Text(
                     AppLocalizations.of(
                       context,
-                    )!.victoryTime(_settings.time.format(context)),
+                    )!
+                        .victoryTime(_settings.time.format(context)),
                   ),
                   trailing: const Icon(Icons.chevron_right),
                   onTap: _selectTime,
@@ -423,9 +424,21 @@ class _WorkoutReminderSettingsScreenState
     final isDark = theme.brightness == Brightness.dark;
 
     final options = [
-      {'title': '월수금 (주 3회)', 'desc': '월요일, 수요일, 금요일', 'days': WorkoutReminderSettings.optionMWF.activeDays},
-      {'title': '화목토 (주 3회)', 'desc': '화요일, 목요일, 토요일', 'days': WorkoutReminderSettings.optionTTS.activeDays},
-      {'title': '순환 (주 7회)', 'desc': '월수금일, 화목토 패턴 반복', 'days': WorkoutReminderSettings.optionMWFSTS.activeDays},
+      {
+        'title': '월수금 (주 3회)',
+        'desc': '월요일, 수요일, 금요일',
+        'days': WorkoutReminderSettings.optionMWF.activeDays
+      },
+      {
+        'title': '화목토 (주 3회)',
+        'desc': '화요일, 목요일, 토요일',
+        'days': WorkoutReminderSettings.optionTTS.activeDays
+      },
+      {
+        'title': '순환 (주 7회)',
+        'desc': '월수금일, 화목토 패턴 반복',
+        'days': WorkoutReminderSettings.optionMWFSTS.activeDays
+      },
     ];
 
     return _buildSettingsCard([
@@ -445,7 +458,8 @@ class _WorkoutReminderSettingsScreenState
             const SizedBox(height: 16),
             ...List.generate(options.length, (index) {
               final option = options[index];
-              final isSelected = _settings.activeDays.toString() == option['days'].toString();
+              final isSelected =
+                  _settings.activeDays.toString() == option['days'].toString();
 
               return Container(
                 margin: const EdgeInsets.only(bottom: 12),
@@ -468,7 +482,9 @@ class _WorkoutReminderSettingsScreenState
                     child: Row(
                       children: [
                         Icon(
-                          isSelected ? Icons.radio_button_checked : Icons.radio_button_unchecked,
+                          isSelected
+                              ? Icons.radio_button_checked
+                              : Icons.radio_button_unchecked,
                           color: isSelected ? Colors.blue : Colors.grey,
                         ),
                         const SizedBox(width: 12),
@@ -483,7 +499,9 @@ class _WorkoutReminderSettingsScreenState
                                   fontWeight: FontWeight.bold,
                                   color: isSelected
                                       ? Colors.blue
-                                      : (isDark ? Colors.white : Colors.black87),
+                                      : (isDark
+                                          ? Colors.white
+                                          : Colors.black87),
                                 ),
                               ),
                               const SizedBox(height: 4),
@@ -491,7 +509,9 @@ class _WorkoutReminderSettingsScreenState
                                 option['desc']! as String,
                                 style: TextStyle(
                                   fontSize: 12,
-                                  color: isDark ? Colors.grey[400] : Colors.grey[600],
+                                  color: isDark
+                                      ? Colors.grey[400]
+                                      : Colors.grey[600],
                                 ),
                               ),
                             ],

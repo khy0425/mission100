@@ -221,11 +221,9 @@ class ChadImageService {
     final futures = <Future>[];
 
     // 현재 단계 + 다음 2단계까지 프리로드
-    for (
-      int i = currentIndex;
-      i < currentIndex + 3 && i < ChadEvolutionStage.values.length;
-      i++
-    ) {
+    for (int i = currentIndex;
+        i < currentIndex + 3 && i < ChadEvolutionStage.values.length;
+        i++) {
       final stage = ChadEvolutionStage.values[i];
       futures.add(
         getChadImage(stage, targetSize: targetSize, preload: true).catchError((

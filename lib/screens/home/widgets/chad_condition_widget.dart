@@ -128,7 +128,8 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
     );
   }
 
-  Widget _buildChadSection(BuildContext context, ChadConditionService chadService) {
+  Widget _buildChadSection(
+      BuildContext context, ChadConditionService chadService) {
     return Row(
       children: [
         // Chad 이미지
@@ -226,14 +227,15 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
     );
   }
 
-  Widget _buildConditionInputSection(BuildContext context, ChadConditionService chadService) {
+  Widget _buildConditionInputSection(
+      BuildContext context, ChadConditionService chadService) {
     return Column(
       children: [
         Text(
           '오늘 컨디션을 선택해주세요',
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
-            fontWeight: FontWeight.bold,
-          ),
+                fontWeight: FontWeight.bold,
+              ),
         ),
 
         const SizedBox(height: AppConstants.paddingM),
@@ -295,7 +297,8 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
     );
   }
 
-  Widget _buildRecommendationSection(BuildContext context, ChadConditionService chadService) {
+  Widget _buildRecommendationSection(
+      BuildContext context, ChadConditionService chadService) {
     return Column(
       children: [
         // 오늘 컨디션 표시
@@ -305,15 +308,15 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
             Text(
               '오늘 컨디션: ',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-              ),
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
             Text(
               '${chadService.currentCondition?.emoji} ${chadService.currentCondition?.koreanName}',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: const Color(AppColors.primaryColor),
-              ),
+                    fontWeight: FontWeight.bold,
+                    color: const Color(AppColors.primaryColor),
+                  ),
             ),
           ],
         ),
@@ -369,7 +372,8 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
     );
   }
 
-  Future<void> _selectCondition(ChadConditionService chadService, ChadCondition condition) async {
+  Future<void> _selectCondition(
+      ChadConditionService chadService, ChadCondition condition) async {
     await chadService.updateCondition(condition);
 
     // 성공 피드백

@@ -63,7 +63,6 @@ class ApiKeyManager {
       // 키 복호화
       final decryptedKey = _decryptApiKey(encryptedKey, salt);
       return decryptedKey;
-
     } catch (e) {
       debugPrint('API 키 조회 실패: $e');
       return null;
@@ -77,7 +76,8 @@ class ApiKeyManager {
     try {
       // 개발/테스트 환경에서는 assets에서 로드
       if (kDebugMode) {
-        final configString = await rootBundle.loadString('assets/config/dev_config.json');
+        final configString =
+            await rootBundle.loadString('assets/config/dev_config.json');
         final config = jsonDecode(configString) as Map<String, dynamic>;
         final apiKeys = config['api_keys'] as Map<String, dynamic>?;
 
@@ -103,7 +103,6 @@ class ApiKeyManager {
           }
         }
       }
-
     } catch (e) {
       debugPrint('환경별 API 키 로드 실패: $e');
     }
@@ -194,7 +193,12 @@ class ApiKeyManager {
 
       // 기존 키들 백업
       final backupKeys = <String, String>{};
-      final keyNames = ['firebase_api_key', 'admob_app_id', 'admob_banner_id', 'admob_interstitial_id'];
+      final keyNames = [
+        'firebase_api_key',
+        'admob_app_id',
+        'admob_banner_id',
+        'admob_interstitial_id'
+      ];
 
       for (final keyName in keyNames) {
         final key = await getApiKey(keyName);

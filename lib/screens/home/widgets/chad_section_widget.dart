@@ -33,7 +33,8 @@ class ChadSectionWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(AppConstants.radiusL),
             boxShadow: [
               BoxShadow(
-                color: (isDark ? Colors.black : Colors.grey).withValues(alpha: 0.1,
+                color: (isDark ? Colors.black : Colors.grey).withValues(
+                  alpha: 0.1,
                 ),
                 blurRadius: 8,
                 offset: const Offset(0, 2),

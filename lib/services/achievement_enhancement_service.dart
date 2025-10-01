@@ -363,9 +363,8 @@ class AchievementEnhancementService {
 
     try {
       final allAchievements = await AchievementService.getAllAchievements();
-      final filtered = allAchievements
-          .where((a) => a.rarity == rarity)
-          .toList();
+      final filtered =
+          allAchievements.where((a) => a.rarity == rarity).toList();
 
       // 잠금해제 상태, 진행률로 정렬
       filtered.sort((a, b) {
@@ -479,9 +478,8 @@ class AchievementEnhancementService {
         final rarityAchievements = allAchievements.where(
           (a) => a.rarity == rarity,
         );
-        final rarityUnlocked = rarityAchievements
-            .where((a) => a.isUnlocked)
-            .length;
+        final rarityUnlocked =
+            rarityAchievements.where((a) => a.isUnlocked).length;
         rarityStats[rarity.toString().split('.').last] = {
           'total': rarityAchievements.length,
           'unlocked': rarityUnlocked,
@@ -541,9 +539,8 @@ class AchievementEnhancementService {
     for (final entry in typeStats.entries) {
       final type = entry.key;
       final data = entry.value;
-      final rate = data['total']! > 0
-          ? (data['unlocked']! / data['total']!) * 100
-          : 0.0;
+      final rate =
+          data['total']! > 0 ? (data['unlocked']! / data['total']!) * 100 : 0.0;
       buffer.writeln(
         '   • $type: ${data['unlocked']}/${data['total']} (${rate.toStringAsFixed(1)}%)',
       );
@@ -554,9 +551,8 @@ class AchievementEnhancementService {
     for (final entry in rarityStats.entries) {
       final rarity = entry.key;
       final data = entry.value;
-      final rate = data['total']! > 0
-          ? (data['unlocked']! / data['total']!) * 100
-          : 0.0;
+      final rate =
+          data['total']! > 0 ? (data['unlocked']! / data['total']!) * 100 : 0.0;
       buffer.writeln(
         '   • $rarity: ${data['unlocked']}/${data['total']} (${rate.toStringAsFixed(1)}%)',
       );
@@ -564,8 +560,10 @@ class AchievementEnhancementService {
 
     return buffer.toString();
   }
+
   /// 업적을 데이터베이스에 업데이트 (단순 구현)
-  static Future<void> updateAchievementInDatabase(Achievement achievement) async {
+  static Future<void> updateAchievementInDatabase(
+      Achievement achievement) async {
     try {
       // 기본 구현: AchievementService를 통해 업적 업데이트
       // AchievementService의 기본 메서드 사용
@@ -592,5 +590,4 @@ class AchievementEnhancementService {
     // 메모리 캐시 정리 로직
     debugPrint('📝 메모리 캐시 정리 완료');
   }
-
 }

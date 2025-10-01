@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mission100/services/billing_service.dart' hide VerificationResult;
+import 'package:mission100/services/billing_service.dart'
+    hide VerificationResult;
 import 'package:mission100/services/subscription_service.dart';
 import 'package:mission100/services/payment_verification_service.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
@@ -33,7 +34,8 @@ void main() {
         expect(() async => await billingService.initialize(), returnsNormally);
       }, skip: true); // Requires platform channel - test on real device
 
-      test('BillingService should handle unavailable store gracefully', () async {
+      test('BillingService should handle unavailable store gracefully',
+          () async {
         // 스토어를 사용할 수 없을 때 적절히 처리하는지 확인
         final result = await billingService.initialize();
         expect(result, isA<bool>());
@@ -48,7 +50,8 @@ void main() {
       }, skip: true); // Requires platform channel - test on real device
 
       test('Initial subscription should be free', () {
-        expect(subscriptionService.currentSubscription, equals(SubscriptionType.free));
+        expect(subscriptionService.currentSubscription,
+            equals(SubscriptionType.free));
       }, skip: true); // Requires platform channel - test on real device
 
       test('isPremium should be false for free users', () {
@@ -58,7 +61,8 @@ void main() {
       test('Should correctly identify premium features', () {
         // 무료 사용자는 프리미엄 기능에 접근할 수 없어야 함
         expect(
-          subscriptionService.hasFeatureAccess(PremiumFeature.unlimitedWorkouts),
+          subscriptionService
+              .hasFeatureAccess(PremiumFeature.unlimitedWorkouts),
           isFalse,
         );
         expect(
@@ -75,7 +79,8 @@ void main() {
       test('Should handle subscription activation', () async {
         await subscriptionService.activateSubscription('premium_monthly');
         // activateSubscription을 호출하면 월간 구독으로 변경됨
-        expect(subscriptionService.currentSubscription, equals(SubscriptionType.monthly));
+        expect(subscriptionService.currentSubscription,
+            equals(SubscriptionType.monthly));
       }, skip: true); // Requires platform channel - test on real device
 
       test('Usage limits should work for free users', () {
@@ -144,14 +149,16 @@ void main() {
         expect(hasAccess, isFalse);
       }, skip: true); // Requires platform channel - test on real device
 
-      test('Subscription benefits should be updated after activation', () async {
+      test('Subscription benefits should be updated after activation',
+          () async {
         // 초기 상태: 무료 사용자는 혜택이 없음 (이미 활성화된 경우 리셋)
         // 새로운 SubscriptionService 인스턴스로 테스트
         final newSubscriptionService = SubscriptionService();
         var benefits = newSubscriptionService.getSubscriptionBenefits();
 
         // 무료 계정은 혜택이 비어있어야 함
-        if (newSubscriptionService.currentSubscription == SubscriptionType.free) {
+        if (newSubscriptionService.currentSubscription ==
+            SubscriptionType.free) {
           expect(benefits, isEmpty);
         }
 

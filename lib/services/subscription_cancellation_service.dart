@@ -8,37 +8,37 @@ import 'data_service.dart';
 
 /// 취소 사유
 enum CancellationReason {
-  tooExpensive,           // 가격이 비싸서
-  notUsingFeatures,       // 기능을 사용하지 않아서
+  tooExpensive, // 가격이 비싸서
+  notUsingFeatures, // 기능을 사용하지 않아서
   foundBetterAlternative, // 더 나은 대안을 찾아서
-  technicalIssues,        // 기술적 문제
-  temporaryBreak,         // 일시적 중단
-  other,                  // 기타
+  technicalIssues, // 기술적 문제
+  temporaryBreak, // 일시적 중단
+  other, // 기타
 }
 
 /// 취소 타입
 enum CancellationType {
-  immediate,    // 즉시 취소
-  endOfPeriod,  // 현재 구독 기간 종료 후 취소
+  immediate, // 즉시 취소
+  endOfPeriod, // 현재 구독 기간 종료 후 취소
 }
 
 /// 취소 상태
 enum CancellationStatus {
-  pending,        // 처리 중
-  completed,      // 완료
-  failed,         // 실패
-  refundPending,  // 환불 처리 중
-  refundCompleted,// 환불 완료
-  refundFailed,   // 환불 실패
+  pending, // 처리 중
+  completed, // 완료
+  failed, // 실패
+  refundPending, // 환불 처리 중
+  refundCompleted, // 환불 완료
+  refundFailed, // 환불 실패
 }
 
 /// 데이터 보관 정책
 enum DataRetentionPolicy {
-  immediate,   // 즉시 삭제
-  thirtyDays,  // 30일 보관
-  ninetyDays,  // 90일 보관
-  oneYear,     // 1년 보관
-  permanent,   // 영구 보관 (익명화)
+  immediate, // 즉시 삭제
+  thirtyDays, // 30일 보관
+  ninetyDays, // 90일 보관
+  oneYear, // 1년 보관
+  permanent, // 영구 보관 (익명화)
 }
 
 /// 취소 정보
@@ -91,10 +91,11 @@ class CancellationInfo {
         orElse: () => CancellationReason.other,
       ),
       reasonText: json['reasonText'] as String?,
-      cancellationDate: DateTime.fromMillisecondsSinceEpoch((json['cancellationDate'] as int?) ?? 0),
+      cancellationDate: DateTime.fromMillisecondsSinceEpoch(
+          (json['cancellationDate'] as int?) ?? 0),
       effectiveDate: json['effectiveDate'] != null
-        ? DateTime.fromMillisecondsSinceEpoch(json['effectiveDate'] as int)
-        : null,
+          ? DateTime.fromMillisecondsSinceEpoch(json['effectiveDate'] as int)
+          : null,
       refundRequested: (json['refundRequested'] as bool?) ?? false,
       status: CancellationStatus.values.firstWhere(
         (e) => e.toString() == json['status'],
@@ -120,7 +121,8 @@ class CancellationResult {
 
 /// 구독 취소 및 환불 관리 서비스
 class SubscriptionCancellationService {
-  static final SubscriptionCancellationService _instance = SubscriptionCancellationService._internal();
+  static final SubscriptionCancellationService _instance =
+      SubscriptionCancellationService._internal();
   factory SubscriptionCancellationService() => _instance;
   SubscriptionCancellationService._internal();
 
@@ -141,8 +143,10 @@ class SubscriptionCancellationService {
   }) async {
     try {
       // 1. 현재 구독 상태 확인
-      final currentSubscription = await _subscriptionService.getCurrentSubscription();
-      if (currentSubscription == null || currentSubscription.productId != productId) {
+      final currentSubscription =
+          await _subscriptionService.getCurrentSubscription();
+      if (currentSubscription == null ||
+          currentSubscription.productId != productId) {
         return CancellationResult(
           success: false,
           error: '취소할 구독 정보를 찾을 수 없습니다.',
@@ -157,8 +161,8 @@ class SubscriptionCancellationService {
         reasonText: reasonText,
         cancellationDate: DateTime.now(),
         effectiveDate: type == CancellationType.endOfPeriod
-          ? currentSubscription.expiryDate
-          : DateTime.now(),
+            ? currentSubscription.expiryDate
+            : DateTime.now(),
         refundRequested: requestRefund,
         status: CancellationStatus.pending,
       );
@@ -172,7 +176,6 @@ class SubscriptionCancellationService {
       }
 
       return result;
-
     } catch (e) {
       debugPrint('구독 취소 요청 실패: $e');
       return CancellationResult(
@@ -183,13 +186,15 @@ class SubscriptionCancellationService {
   }
 
   /// 구독 취소 실행
-  Future<CancellationResult> _executeCancellation(CancellationInfo cancellationInfo) async {
+  Future<CancellationResult> _executeCancellation(
+      CancellationInfo cancellationInfo) async {
     try {
       // 1. 취소 정보 저장
       await _saveCancellationInfo(cancellationInfo);
 
       // 2. 플랫폼별 취소 처리
-      final platformResult = await _processPlatformCancellation(cancellationInfo);
+      final platformResult =
+          await _processPlatformCancellation(cancellationInfo);
 
       if (!platformResult) {
         final failedInfo = CancellationInfo(
@@ -229,8 +234,8 @@ class SubscriptionCancellationService {
         effectiveDate: cancellationInfo.effectiveDate,
         refundRequested: cancellationInfo.refundRequested,
         status: cancellationInfo.refundRequested
-          ? CancellationStatus.refundPending
-          : CancellationStatus.completed,
+            ? CancellationStatus.refundPending
+            : CancellationStatus.completed,
       );
       await _updateCancellationInfo(completedInfo);
 
@@ -241,7 +246,6 @@ class SubscriptionCancellationService {
         success: true,
         cancellationInfo: completedInfo,
       );
-
     } catch (e) {
       debugPrint('구독 취소 실행 실패: $e');
       return CancellationResult(
@@ -252,7 +256,8 @@ class SubscriptionCancellationService {
   }
 
   /// 플랫폼별 취소 처리
-  Future<bool> _processPlatformCancellation(CancellationInfo cancellationInfo) async {
+  Future<bool> _processPlatformCancellation(
+      CancellationInfo cancellationInfo) async {
     try {
       // Google Play 또는 App Store에서의 구독 취소는
       // 실제로는 사용자가 플랫폼에서 직접 취소해야 함
@@ -291,21 +296,23 @@ class SubscriptionCancellationService {
       //   body: '환불 요청이 접수되었습니다. 처리까지 영업일 기준 3-5일이 소요될 수 있습니다.',
       // );
       debugPrint('환불 요청 접수 알림 전송됨');
-
     } catch (e) {
       debugPrint('환불 요청 처리 실패: $e');
     }
   }
 
   /// 구독 상태 업데이트
-  Future<void> _updateSubscriptionStatus(CancellationInfo cancellationInfo) async {
+  Future<void> _updateSubscriptionStatus(
+      CancellationInfo cancellationInfo) async {
     try {
       if (cancellationInfo.type == CancellationType.immediate) {
         // 즉시 취소 - 구독을 바로 비활성화
-        await _subscriptionService.updateSubscriptionStatus(SubscriptionStatus.cancelled);
+        await _subscriptionService
+            .updateSubscriptionStatus(SubscriptionStatus.cancelled);
       } else {
         // 기간 종료 후 취소 - 취소 예정 상태로 설정
-        await _subscriptionService.updateSubscriptionStatus(SubscriptionStatus.cancelledAtPeriodEnd);
+        await _subscriptionService
+            .updateSubscriptionStatus(SubscriptionStatus.cancelledAtPeriodEnd);
       }
     } catch (e) {
       debugPrint('구독 상태 업데이트 실패: $e');
@@ -314,9 +321,7 @@ class SubscriptionCancellationService {
 
   /// 데이터 보관 정책 적용
   Future<void> _applyDataRetentionPolicy(
-    DataRetentionPolicy policy,
-    CancellationInfo cancellationInfo
-  ) async {
+      DataRetentionPolicy policy, CancellationInfo cancellationInfo) async {
     try {
       final retentionDate = _calculateRetentionDate(policy);
 
@@ -336,7 +341,6 @@ class SubscriptionCancellationService {
       } else {
         await _scheduleDataDeletion(retentionDate);
       }
-
     } catch (e) {
       debugPrint('데이터 보관 정책 적용 실패: $e');
     }
@@ -399,13 +403,14 @@ class SubscriptionCancellationService {
   }
 
   /// 취소 정보 업데이트
-  Future<void> _updateCancellationInfo(CancellationInfo cancellationInfo) async {
+  Future<void> _updateCancellationInfo(
+      CancellationInfo cancellationInfo) async {
     try {
       final history = await _getCancellationHistory();
       final index = history.indexWhere((cancel) =>
-        cancel['productId'] == cancellationInfo.productId &&
-        cancel['cancellationDate'] == cancellationInfo.cancellationDate.millisecondsSinceEpoch
-      );
+          cancel['productId'] == cancellationInfo.productId &&
+          cancel['cancellationDate'] ==
+              cancellationInfo.cancellationDate.millisecondsSinceEpoch);
 
       if (index != -1) {
         history[index] = cancellationInfo.toJson();
@@ -498,7 +503,7 @@ class SubscriptionCancellationService {
     try {
       final subscription = await _subscriptionService.getCurrentSubscription();
       return subscription != null &&
-             subscription.status == SubscriptionStatus.active;
+          subscription.status == SubscriptionStatus.active;
     } catch (e) {
       debugPrint('취소 가능 여부 확인 실패: $e');
       return false;
@@ -509,7 +514,9 @@ class SubscriptionCancellationService {
   Future<List<CancellationInfo>> getCancellationHistory() async {
     try {
       final historyData = await _getCancellationHistory();
-      return historyData.map((data) => CancellationInfo.fromJson(data)).toList();
+      return historyData
+          .map((data) => CancellationInfo.fromJson(data))
+          .toList();
     } catch (e) {
       debugPrint('취소 기록 조회 실패: $e');
       return [];

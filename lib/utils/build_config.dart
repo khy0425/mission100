@@ -32,8 +32,8 @@ class BuildConfig {
       'buildMode': kReleaseMode
           ? 'release'
           : kProfileMode
-          ? 'profile'
-          : 'debug',
+              ? 'profile'
+              : 'debug',
     };
   }
 

@@ -91,13 +91,12 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
     );
 
     // 색상 애니메이션
-    _colorAnimation =
-        ColorTween(
-          begin: widget.fromChad.themeColor,
-          end: widget.toChad.themeColor,
-        ).animate(
-          CurvedAnimation(parent: _mainController, curve: Curves.easeInOut),
-        );
+    _colorAnimation = ColorTween(
+      begin: widget.fromChad.themeColor,
+      end: widget.toChad.themeColor,
+    ).animate(
+      CurvedAnimation(parent: _mainController, curve: Curves.easeInOut),
+    );
   }
 
   void _startAnimation() async {
@@ -190,13 +189,14 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                             vertical: 12,
                           ),
                           decoration: BoxDecoration(
-                            color: _colorAnimation.value?.withValues(alpha: 0.9,
+                            color: _colorAnimation.value?.withValues(
+                              alpha: 0.9,
                             ),
                             borderRadius: BorderRadius.circular(25),
                             boxShadow: [
                               BoxShadow(
-                                color:
-                                    _colorAnimation.value?.withValues(alpha: 0.3,
+                                color: _colorAnimation.value?.withValues(
+                                      alpha: 0.3,
                                     ) ??
                                     Colors.transparent,
                                 blurRadius: 20,
@@ -206,7 +206,9 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                           ),
                           child: Text(
                             AppLocalizations.of(context).evolutionCompleted,
-                            style: Theme.of(context).textTheme.headlineSmall
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineSmall
                                 ?.copyWith(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
@@ -216,18 +218,20 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
                         const SizedBox(height: 16),
                         Text(
                           widget.toChad.name,
-                          style: Theme.of(context).textTheme.titleLarge
-                              ?.copyWith(
-                                color: _colorAnimation.value,
-                                fontWeight: FontWeight.bold,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.titleLarge?.copyWith(
+                                    color: _colorAnimation.value,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                         ),
                         const SizedBox(height: 8),
                         Container(
                           constraints: const BoxConstraints(maxWidth: 300),
                           child: Text(
                             widget.toChad.unlockMessage,
-                            style: Theme.of(context).textTheme.bodyMedium
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
                                 ?.copyWith(color: Colors.white),
                             textAlign: TextAlign.center,
                           ),
@@ -247,9 +251,9 @@ class _ChadEvolutionAnimationState extends State<ChadEvolutionAnimation>
   Widget _buildChadImage(ChadEvolution chad) {
     return FutureBuilder<ImageProvider>(
       future: context.read<ChadEvolutionService>().getChadImage(
-        chad.stage,
-        targetSize: 200,
-      ),
+            chad.stage,
+            targetSize: 200,
+          ),
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Container(
@@ -310,7 +314,7 @@ class ParticleEffectPainter extends CustomPainter {
   final List<Particle> particles;
 
   ParticleEffectPainter({required this.animation, required this.color})
-    : particles = List.generate(50, (index) => Particle()) {
+      : particles = List.generate(50, (index) => Particle()) {
     animation.addListener(() {
       for (var particle in particles) {
         particle.update(animation.value);
@@ -351,13 +355,13 @@ class Particle {
   double maxLife;
 
   Particle()
-    : x = 0.5 + (math.Random().nextDouble() - 0.5) * 0.2,
-      y = 0.5 + (math.Random().nextDouble() - 0.5) * 0.2,
-      vx = (math.Random().nextDouble() - 0.5) * 0.02,
-      vy = (math.Random().nextDouble() - 0.5) * 0.02,
-      size = math.Random().nextDouble() * 8 + 2,
-      life = 0.0,
-      maxLife = math.Random().nextDouble() * 0.8 + 0.2;
+      : x = 0.5 + (math.Random().nextDouble() - 0.5) * 0.2,
+        y = 0.5 + (math.Random().nextDouble() - 0.5) * 0.2,
+        vx = (math.Random().nextDouble() - 0.5) * 0.02,
+        vy = (math.Random().nextDouble() - 0.5) * 0.02,
+        size = math.Random().nextDouble() * 8 + 2,
+        life = 0.0,
+        maxLife = math.Random().nextDouble() * 0.8 + 0.2;
 
   void update(double animationValue) {
     life = animationValue;

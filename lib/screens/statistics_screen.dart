@@ -157,8 +157,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
       0,
       (sum, workout) => sum + workout.totalReps,
     );
-    _averageCompletionRate =
-        _workoutHistory.fold(
+    _averageCompletionRate = _workoutHistory.fold(
           0.0,
           (sum, workout) => sum + workout.completionRate,
         ) /
@@ -257,8 +256,8 @@ class _StatisticsScreenState extends State<StatisticsScreen>
     int daysToShow = _selectedPeriod == 'week'
         ? 7
         : _selectedPeriod == 'month'
-        ? 30
-        : 365;
+            ? 30
+            : 365;
 
     for (int i = daysToShow - 1; i >= 0; i--) {
       final date = DateTime(now.year, now.month, now.day - i);
@@ -628,25 +627,25 @@ class _StatisticsScreenState extends State<StatisticsScreen>
           Text(
             title,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: color,
-              fontWeight: FontWeight.w600,
-            ),
+                  color: color,
+                  fontWeight: FontWeight.w600,
+                ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 4),
           Text(
             value,
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              color: color,
-              fontWeight: FontWeight.bold,
-            ),
+                  color: color,
+                  fontWeight: FontWeight.bold,
+                ),
           ),
           Text(
             subtitle,
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
-              color: color.withValues(alpha: 0.7),
-              fontSize: 10,
-            ),
+                  color: color.withValues(alpha: 0.7),
+                  fontSize: 10,
+                ),
             textAlign: TextAlign.center,
           ),
         ],

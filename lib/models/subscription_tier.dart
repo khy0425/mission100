@@ -42,7 +42,7 @@ class SubscriptionFeatures {
   /// 독점 도전과제 접근 가능 여부
   bool get hasExclusiveChallenges {
     return tier == SubscriptionTier.premium ||
-           tier == SubscriptionTier.earlyAdopter;
+        tier == SubscriptionTier.earlyAdopter;
   }
 
   /// Tier 표시 이름

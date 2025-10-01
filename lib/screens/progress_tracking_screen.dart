@@ -200,19 +200,19 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : _errorMessage.isNotEmpty
-          ? _buildErrorWidget()
-          : FadeTransition(
-              opacity: _fadeAnimation,
-              child: TabBarView(
-                controller: _tabController,
-                children: [
-                  _buildWeeklyGrowthTab(),
-                  _buildCalendarTab(),
-                  _buildStatisticsTab(),
-                  _buildChadEvolutionTab(),
-                ],
-              ),
-            ),
+              ? _buildErrorWidget()
+              : FadeTransition(
+                  opacity: _fadeAnimation,
+                  child: TabBarView(
+                    controller: _tabController,
+                    children: [
+                      _buildWeeklyGrowthTab(),
+                      _buildCalendarTab(),
+                      _buildStatisticsTab(),
+                      _buildChadEvolutionTab(),
+                    ],
+                  ),
+                ),
       bottomNavigationBar: const AdBannerWidget(),
     );
   }
@@ -670,7 +670,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 ],
               ),
               const SizedBox(height: 16),
-
               if (_selectedDayWorkouts.isEmpty) ...[
                 Container(
                   padding: const EdgeInsets.all(16),
@@ -787,7 +786,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
               ],
             ],
           ),
-
           if (isCompleted && session.completedReps.isNotEmpty) ...[
             const SizedBox(height: 12),
             const Divider(),
@@ -866,8 +864,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
     if (_programProgress == null) return const SizedBox.shrink();
 
     // 전체 통계 계산
-    final averageRepsPerDay =
-        _programProgress!.totalCompletedReps /
+    final averageRepsPerDay = _programProgress!.totalCompletedReps /
         (_programProgress!.completedSessions > 0
             ? _programProgress!.completedSessions
             : 1);
@@ -1020,7 +1017,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 ],
               ),
               const SizedBox(height: 20),
-
               Row(
                 children: [
                   // Chad 이미지
@@ -1282,7 +1278,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 ],
               ),
               const SizedBox(height: 16),
-
               Row(
                 children: [
                   Expanded(
@@ -1304,9 +1299,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   ),
                 ],
               ),
-
               const SizedBox(height: 16),
-
               Row(
                 children: [
                   Expanded(
@@ -1463,7 +1456,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 ],
               ),
               const SizedBox(height: 20),
-
               Row(
                 children: [
                   // 현재 Chad 이미지
@@ -1649,7 +1641,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
               ],
             ),
             const SizedBox(height: 20),
-
             ...chadStages.asMap().entries.map((entry) {
               final index = entry.key;
               final stage = entry.value;
@@ -1693,18 +1684,17 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   color: isCurrent
                       ? const Color(0xFFFFD43B)
                       : isUnlocked
-                      ? const Color(0xFF51CF66)
-                      : Colors.grey,
+                          ? const Color(0xFF51CF66)
+                          : Colors.grey,
                   width: 3,
                 ),
                 boxShadow: isUnlocked
                     ? [
                         BoxShadow(
-                          color:
-                              (isCurrent
-                                      ? const Color(0xFFFFD43B)
-                                      : const Color(0xFF51CF66))
-                                  .withValues(alpha: 0.3),
+                          color: (isCurrent
+                                  ? const Color(0xFFFFD43B)
+                                  : const Color(0xFF51CF66))
+                              .withValues(alpha: 0.3),
                           blurRadius: 8,
                           offset: const Offset(0, 4),
                         ),
@@ -1744,8 +1734,8 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                           color: isCurrent
                               ? const Color(0xFFFFD43B)
                               : isUnlocked
-                              ? const Color(0xFF51CF66)
-                              : Colors.grey,
+                                  ? const Color(0xFF51CF66)
+                                  : Colors.grey,
                         ),
                       ),
                       const SizedBox(width: 8),
@@ -1791,7 +1781,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
             ),
           ],
         ),
-
         if (showConnector) ...[
           const SizedBox(height: 8),
           Container(
@@ -1873,7 +1862,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
               ],
             ),
             const SizedBox(height: 16),
-
             GridView.count(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),

@@ -65,9 +65,11 @@ class CloudSyncService {
 
   /// 네트워크 연결 상태 모니터링
   void _startConnectivityMonitoring() {
-    _connectivitySubscription = _connectivity.onConnectivityChanged.listen((List<ConnectivityResult> results) {
+    _connectivitySubscription = _connectivity.onConnectivityChanged
+        .listen((List<ConnectivityResult> results) {
       final wasOnline = _isOnline;
-      _isOnline = results.isNotEmpty && !results.contains(ConnectivityResult.none);
+      _isOnline =
+          results.isNotEmpty && !results.contains(ConnectivityResult.none);
 
       print('🌐 네트워크 상태 변경: ${_isOnline ? "온라인" : "오프라인"}');
 
@@ -79,7 +81,8 @@ class CloudSyncService {
         });
       }
 
-      _syncStatusController.add(_isOnline ? SyncStatus.connected : SyncStatus.offline);
+      _syncStatusController
+          .add(_isOnline ? SyncStatus.connected : SyncStatus.offline);
     });
 
     // 초기 네트워크 상태 확인
@@ -90,7 +93,8 @@ class CloudSyncService {
   Future<void> _checkInitialConnectivity() async {
     try {
       final result = await _connectivity.checkConnectivity();
-      _isOnline = result.isNotEmpty && !result.contains(ConnectivityResult.none);
+      _isOnline =
+          result.isNotEmpty && !result.contains(ConnectivityResult.none);
       print('🌐 초기 네트워크 상태: ${_isOnline ? "온라인" : "오프라인"}');
     } catch (e) {
       print('❌ 네트워크 상태 확인 오류: $e');
@@ -128,7 +132,6 @@ class CloudSyncService {
 
       _syncStatusController.add(SyncStatus.synced);
       print('✅ 동기화 완료: ${user.email}');
-
     } catch (e) {
       _syncStatusController.add(SyncStatus.error);
       print('❌ 동기화 오류: $e');
@@ -146,10 +149,12 @@ class CloudSyncService {
       final profileJson = prefs.getString('user_profile');
 
       if (profileJson != null) {
-        final localProfile = UserProfile.fromMap(json.decode(profileJson) as Map<String, dynamic>);
+        final localProfile = UserProfile.fromMap(
+            json.decode(profileJson) as Map<String, dynamic>);
 
         // Chad XP 및 레벨 데이터 통합
-        final chadExperience = await ChadEvolutionService.getCurrentExperience();
+        final chadExperience =
+            await ChadEvolutionService.getCurrentExperience();
         final chadLevel = await ChadEvolutionService.getCurrentLevel();
         final chadLevelManager = ChadLevelManager();
         await chadLevelManager.initialize();
@@ -208,7 +213,6 @@ class CloudSyncService {
           .set(chadProgressData, SetOptions(merge: true));
 
       print('✅ Chad 진행 상황 동기화 완료 (XP: $chadExperience, Level: $chadLevel)');
-
     } catch (e) {
       print('❌ Chad 진행 상황 동기화 오류: $e');
       throw SyncException('Chad 진행 상황 동기화 실패', e);
@@ -219,7 +223,8 @@ class CloudSyncService {
   Future<void> _syncAchievements(String userId) async {
     try {
       // 로컬 업적 데이터 가져오기
-      final localAchievements = await AchievementService.getUnlockedAchievements();
+      final localAchievements =
+          await AchievementService.getUnlockedAchievements();
 
       // Firestore 업적 컬렉션 참조
       final achievementsRef = _firestore.collection('achievements');
@@ -230,13 +235,12 @@ class CloudSyncService {
 
       for (final localAchievement in localAchievements) {
         // 로컬 Achievement를 Firestore Achievement로 변환
-        final firestoreAchievement = _convertToFirestoreAchievement(
-          localAchievement,
-          userId
-        );
+        final firestoreAchievement =
+            _convertToFirestoreAchievement(localAchievement, userId);
 
         final docRef = achievementsRef.doc(firestoreAchievement.id);
-        batch.set(docRef, firestoreAchievement.toJson(), SetOptions(merge: true));
+        batch.set(
+            docRef, firestoreAchievement.toJson(), SetOptions(merge: true));
         syncCount++;
       }
 
@@ -244,7 +248,6 @@ class CloudSyncService {
         await batch.commit();
         print('✅ 업적 동기화 완료 ($syncCount개)');
       }
-
     } catch (e) {
       print('❌ 업적 동기화 오류: $e');
       throw SyncException('업적 동기화 실패', e);
@@ -253,9 +256,7 @@ class CloudSyncService {
 
   /// 로컬 Achievement를 FirestoreAchievement로 변환
   FirestoreAchievement _convertToFirestoreAchievement(
-    LocalAchievement.Achievement localAchievement,
-    String userId
-  ) {
+      LocalAchievement.Achievement localAchievement, String userId) {
     // 업적 타입 매핑
     AchievementType achievementType;
     switch (localAchievement.type) {
@@ -433,7 +434,8 @@ class CloudSyncService {
       final cloudWorkouts = await _getCloudWorkoutRecords(userId);
 
       // 3. 병합 로직 실행
-      final mergedWorkouts = await _mergeWorkoutData(localWorkouts, cloudWorkouts);
+      final mergedWorkouts =
+          await _mergeWorkoutData(localWorkouts, cloudWorkouts);
 
       // 4. 병합된 데이터를 클라우드에 저장
       await _saveMergedWorkouts(userId, mergedWorkouts);
@@ -461,7 +463,8 @@ class CloudSyncService {
   }
 
   /// 클라우드 운동 기록 가져오기
-  Future<List<Map<String, dynamic>>> _getCloudWorkoutRecords(String userId) async {
+  Future<List<Map<String, dynamic>>> _getCloudWorkoutRecords(
+      String userId) async {
     try {
       final snapshot = await _firestore
           .collection('workoutRecords')
@@ -497,7 +500,8 @@ class CloudSyncService {
         mergedMap[id] = workout;
       } else {
         // 충돌 발생 - 해결 로직 적용
-        final resolved = await _resolveConflict(workout, mergedMap[id]!, 'workoutRecord');
+        final resolved =
+            await _resolveConflict(workout, mergedMap[id]!, 'workoutRecord');
         mergedMap[id] = resolved;
       }
     }
@@ -514,11 +518,13 @@ class CloudSyncService {
   }
 
   /// 병합된 운동 기록을 클라우드에 저장
-  Future<void> _saveMergedWorkouts(String userId, List<Map<String, dynamic>> workouts) async {
+  Future<void> _saveMergedWorkouts(
+      String userId, List<Map<String, dynamic>> workouts) async {
     final batch = _firestore.batch();
 
     for (final workout in workouts) {
-      final docRef = _firestore.collection('workoutRecords').doc(workout['id'] as String);
+      final docRef =
+          _firestore.collection('workoutRecords').doc(workout['id'] as String);
       batch.set(docRef, {
         ...workout,
         'userId': userId,
@@ -571,7 +577,8 @@ class CloudSyncService {
   }
 
   /// Firestore에 프로필 업데이트
-  Future<void> _updateProfileInFirestore(String userId, Map<String, dynamic> profileData) async {
+  Future<void> _updateProfileInFirestore(
+      String userId, Map<String, dynamic> profileData) async {
     try {
       // userProfiles 컬렉션 업데이트
       await _firestore.collection('userProfiles').doc(userId).update({
@@ -580,7 +587,8 @@ class CloudSyncService {
       });
 
       // users 컬렉션의 기본 정보도 업데이트 (필요한 경우)
-      if (profileData.containsKey('displayName') || profileData.containsKey('photoURL')) {
+      if (profileData.containsKey('displayName') ||
+          profileData.containsKey('photoURL')) {
         final basicData = <String, dynamic>{};
         if (profileData.containsKey('displayName')) {
           basicData['displayName'] = profileData['displayName'];
@@ -634,14 +642,16 @@ class CloudSyncService {
       final localProfileJson = prefs.getString('user_profile');
       if (localProfileJson == null) return;
 
-      final localProfile = json.decode(localProfileJson) as Map<String, dynamic>;
+      final localProfile =
+          json.decode(localProfileJson) as Map<String, dynamic>;
 
       // 마지막 동기화 시간 확인
       final lastSyncTime = prefs.getInt('profile_last_sync') ?? 0;
       final currentTime = DateTime.now().millisecondsSinceEpoch;
 
       // 5분 이상 지났고 온라인 상태일 때만 동기화
-      if (currentTime - lastSyncTime > 300000 && _isOnline) { // 5분 = 300,000ms
+      if (currentTime - lastSyncTime > 300000 && _isOnline) {
+        // 5분 = 300,000ms
         await _updateProfileInFirestore(userId, localProfile);
         await prefs.setInt('profile_last_sync', currentTime);
         print('🔄 자동 프로필 동기화 완료');
@@ -656,9 +666,7 @@ class CloudSyncService {
     try {
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString(
-        'pending_sync_changes',
-        json.encode(_pendingChanges)
-      );
+          'pending_sync_changes', json.encode(_pendingChanges));
     } catch (e) {
       print('❌ 대기 중인 변경사항 저장 오류: $e');
     }
@@ -770,7 +778,8 @@ class CloudSyncService {
 
     try {
       final userId = _auth.currentUser!.uid;
-      final recordId = (workoutHistory.id as String?) ?? DateTime.now().millisecondsSinceEpoch.toString();
+      final recordId = (workoutHistory.id as String?) ??
+          DateTime.now().millisecondsSinceEpoch.toString();
 
       // workoutRecords 컬렉션에 개별 운동 기록 저장
       await _firestore.collection('workoutRecords').doc(recordId).set({
@@ -798,7 +807,8 @@ class CloudSyncService {
   }
 
   /// 운동 진행 상황 업데이트
-  Future<void> _updateWorkoutProgress(String userId, dynamic workoutHistory) async {
+  Future<void> _updateWorkoutProgress(
+      String userId, dynamic workoutHistory) async {
     try {
       final docRef = _firestore.collection('workoutProgress').doc(userId);
       final doc = await docRef.get();
@@ -806,10 +816,12 @@ class CloudSyncService {
       if (doc.exists) {
         final data = doc.data()!;
         final completedWorkouts = (data['completedWorkouts'] as int? ?? 0) + 1;
-        final totalPushups = (data['totalPushups'] as int? ?? 0) + (workoutHistory.totalReps as int);
+        final totalPushups = (data['totalPushups'] as int? ?? 0) +
+            (workoutHistory.totalReps as int);
         final averageReps = totalPushups / completedWorkouts;
         final bestSingleSet = data['bestSingleSet'] as int? ?? 0;
-        final currentBest = (workoutHistory.completedReps as List<int>).fold(0, (a, b) => a > b ? a : b);
+        final currentBest = (workoutHistory.completedReps as List<int>)
+            .fold(0, (a, b) => a > b ? a : b);
 
         // 연속 운동 기록 계산
         final today = DateTime.now();
@@ -831,9 +843,12 @@ class CloudSyncService {
           'completedWorkouts': completedWorkouts,
           'totalPushups': totalPushups,
           'averageReps': averageReps.round(),
-          'bestSingleSet': currentBest > bestSingleSet ? currentBest : bestSingleSet,
+          'bestSingleSet':
+              currentBest > bestSingleSet ? currentBest : bestSingleSet,
           'streak': streak,
-          'longestStreak': streak > (data['longestStreak'] as int? ?? 0) ? streak : (data['longestStreak'] as int? ?? 0),
+          'longestStreak': streak > (data['longestStreak'] as int? ?? 0)
+              ? streak
+              : (data['longestStreak'] as int? ?? 0),
           'lastWorkoutDate': Timestamp.fromDate(today),
           'updatedAt': Timestamp.now(),
         });
@@ -861,13 +876,17 @@ class CloudSyncService {
       // 2. 데이터 타입별 특별 처리
       switch (dataType) {
         case 'userProfile':
-          return _resolveUserProfileConflict(localData, cloudData, localTimestamp, cloudTimestamp);
+          return _resolveUserProfileConflict(
+              localData, cloudData, localTimestamp, cloudTimestamp);
         case 'workoutRecord':
-          return _resolveWorkoutRecordConflict(localData, cloudData, localTimestamp, cloudTimestamp);
+          return _resolveWorkoutRecordConflict(
+              localData, cloudData, localTimestamp, cloudTimestamp);
         case 'achievement':
-          return _resolveAchievementConflict(localData, cloudData, localTimestamp, cloudTimestamp);
+          return _resolveAchievementConflict(
+              localData, cloudData, localTimestamp, cloudTimestamp);
         case 'userSettings':
-          return _resolveUserSettingsConflict(localData, cloudData, localTimestamp, cloudTimestamp);
+          return _resolveUserSettingsConflict(
+              localData, cloudData, localTimestamp, cloudTimestamp);
         default:
           // 기본적으로 최신 타임스탬프 데이터 선택
           return cloudTimestamp.isAfter(localTimestamp) ? cloudData : localData;
@@ -883,7 +902,8 @@ class CloudSyncService {
   DateTime _parseTimestamp(dynamic timestamp) {
     if (timestamp == null) return DateTime(1970);
     if (timestamp is DateTime) return timestamp;
-    if (timestamp is String) return DateTime.tryParse(timestamp) ?? DateTime(1970);
+    if (timestamp is String)
+      return DateTime.tryParse(timestamp) ?? DateTime(1970);
     if (timestamp is int) return DateTime.fromMillisecondsSinceEpoch(timestamp);
     if (timestamp is Timestamp) return timestamp.toDate();
     return DateTime(1970);
@@ -901,7 +921,8 @@ class CloudSyncService {
 
     // 기본 정보는 최신 데이터 우선
     if (cloudTimestamp.isAfter(localTimestamp)) {
-      resolved['displayName'] = cloudData['displayName'] ?? resolved['displayName'];
+      resolved['displayName'] =
+          cloudData['displayName'] ?? resolved['displayName'];
       resolved['email'] = cloudData['email'] ?? resolved['email'];
       resolved['photoURL'] = cloudData['photoURL'] ?? resolved['photoURL'];
     }
@@ -909,15 +930,18 @@ class CloudSyncService {
     // 운동 관련 데이터는 더 진전된 값 선택
     final localLevel = (localData['currentLevel'] as int?) ?? 0;
     final cloudLevel = (cloudData['currentLevel'] as int?) ?? 0;
-    resolved['currentLevel'] = localLevel > cloudLevel ? localLevel : cloudLevel;
+    resolved['currentLevel'] =
+        localLevel > cloudLevel ? localLevel : cloudLevel;
 
     final localTotalReps = (localData['totalReps'] as int?) ?? 0;
     final cloudTotalReps = (cloudData['totalReps'] as int?) ?? 0;
-    resolved['totalReps'] = localTotalReps > cloudTotalReps ? localTotalReps : cloudTotalReps;
+    resolved['totalReps'] =
+        localTotalReps > cloudTotalReps ? localTotalReps : cloudTotalReps;
 
     final localStreak = (localData['currentStreak'] as int?) ?? 0;
     final cloudStreak = (cloudData['currentStreak'] as int?) ?? 0;
-    resolved['currentStreak'] = localStreak > cloudStreak ? localStreak : cloudStreak;
+    resolved['currentStreak'] =
+        localStreak > cloudStreak ? localStreak : cloudStreak;
 
     // 최신 타임스탬프로 업데이트
     resolved['updatedAt'] = cloudTimestamp.isAfter(localTimestamp)
@@ -949,7 +973,8 @@ class CloudSyncService {
     }
 
     // 완료율이 같으면 최신 데이터 선택
-    final result = cloudTimestamp.isAfter(localTimestamp) ? cloudData : localData;
+    final result =
+        cloudTimestamp.isAfter(localTimestamp) ? cloudData : localData;
     print('✅ 운동 기록 충돌 해결: 타임스탬프 기준 선택');
     return result;
   }
@@ -984,7 +1009,8 @@ class CloudSyncService {
     }
 
     // 둘 다 완료면 먼저 완료된 것 선택 (타임스탬프 기준)
-    final result = cloudTimestamp.isAfter(localTimestamp) ? cloudData : localData;
+    final result =
+        cloudTimestamp.isAfter(localTimestamp) ? cloudData : localData;
     print('✅ 성취 충돌 해결: 완료 시점 기준 선택');
     return result;
   }
@@ -1042,11 +1068,11 @@ class CloudSyncService {
 
 /// 동기화 상태 열거형
 enum SyncStatus {
-  idle,      // 대기 중
-  syncing,   // 동기화 중
-  synced,    // 동기화 완료
-  error,     // 오류 발생
-  offline,   // 오프라인
+  idle, // 대기 중
+  syncing, // 동기화 중
+  synced, // 동기화 완료
+  error, // 오류 발생
+  offline, // 오프라인
   connected, // 온라인 연결됨
 }
 

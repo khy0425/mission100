@@ -22,8 +22,8 @@ class DataService {
       if (context != null && Platform.isAndroid) {
         final hasPermission =
             await PermissionService.checkAndRequestStoragePermissionForBackup(
-              context,
-            );
+          context,
+        );
         if (!hasPermission) {
           debugPrint('❌ 저장소 권한이 없어 백업을 취소합니다');
           return null;
@@ -70,8 +70,8 @@ class DataService {
       if (context != null && Platform.isAndroid) {
         final hasPermission =
             await PermissionService.checkAndRequestStoragePermissionForBackup(
-              context,
-            );
+          context,
+        );
         if (!hasPermission) {
           debugPrint('❌ 저장소 권한이 없어 복원을 취소합니다');
           return false;
@@ -157,9 +157,8 @@ class DataService {
 
     // 업적 데이터
     final achievements = await AchievementService.getAllAchievements();
-    final achievementData = achievements
-        .map((achievement) => achievement.toMap())
-        .toList();
+    final achievementData =
+        achievements.map((achievement) => achievement.toMap()).toList();
 
     return {
       'version': '1.0.0',

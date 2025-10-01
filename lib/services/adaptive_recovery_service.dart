@@ -83,7 +83,8 @@ class AdaptiveRecoveryService extends ChangeNotifier {
     int score = 70;
 
     // 평균 RPE 분석
-    final avgRPE = recentRPE.map((r) => r.value).reduce((a, b) => a + b) / recentRPE.length;
+    final avgRPE = recentRPE.map((r) => r.value).reduce((a, b) => a + b) /
+        recentRPE.length;
     if (avgRPE > 8) score -= 20;
     if (avgRPE > 7) score -= 10;
     if (avgRPE < 5) score += 10;
@@ -132,7 +133,8 @@ class AdaptiveRecoveryService extends ChangeNotifier {
 
     int consecutive = 1;
     for (int i = rpeData.length - 2; i >= 0; i--) {
-      final dayDiff = rpeData[i + 1].timestamp.difference(rpeData[i].timestamp).inDays;
+      final dayDiff =
+          rpeData[i + 1].timestamp.difference(rpeData[i].timestamp).inDays;
       if (dayDiff <= 1) {
         consecutive++;
       } else {
@@ -198,9 +200,8 @@ class AdaptiveRecoveryService extends ChangeNotifier {
     if (score >= 50) return 1;
 
     // 연속 고강도가 많으면 더 많은 휴식
-    final consecutiveHighIntensity = recentRPE
-        .takeWhile((r) => r.value >= 8)
-        .length;
+    final consecutiveHighIntensity =
+        recentRPE.takeWhile((r) => r.value >= 8).length;
 
     return min(3, 1 + (consecutiveHighIntensity ~/ 2));
   }
@@ -228,7 +229,8 @@ class AdaptiveRecoveryService extends ChangeNotifier {
           ]);
           break;
         default:
-          exercises.add(RecoveryExercise.walking(duration: Duration(minutes: 15)));
+          exercises
+              .add(RecoveryExercise.walking(duration: Duration(minutes: 15)));
       }
     } else if (status.score >= 40) {
       // 보통 컨디션 → 스트레칭 중심
@@ -254,7 +256,8 @@ class AdaptiveRecoveryService extends ChangeNotifier {
   }
 
   /// 회복 운동 동기부여 메시지
-  String _generateRecoveryMotivation(RecoveryStatus status, UserProfile profile) {
+  String _generateRecoveryMotivation(
+      RecoveryStatus status, UserProfile profile) {
     if (status.score >= 70) {
       return '💫 오늘의 액티브 리커버리로 내일을 위한 에너지를 충전하세요!';
     } else if (status.score >= 40) {
@@ -320,8 +323,8 @@ class AdaptiveRecoveryService extends ChangeNotifier {
 /// 회복 모드 열거형
 enum RecoveryMode {
   conservative, // 보수적 (휴식 중시)
-  balanced,     // 균형적 (기본)
-  aggressive,   // 적극적 (성과 중시)
+  balanced, // 균형적 (기본)
+  aggressive, // 적극적 (성과 중시)
 }
 
 extension RecoveryModeExtension on RecoveryMode {
@@ -361,11 +364,11 @@ extension RecoveryModeExtension on RecoveryMode {
 
 /// 운동 빈도 모드 열거형
 enum WorkoutFrequencyMode {
-  habitBuilding,  // 습관 형성
-  muscleGain,     // 근육 증가
-  weightLoss,     // 체중 감량
-  maintenance,    // 현재 상태 유지
-  custom,         // 사용자 정의
+  habitBuilding, // 습관 형성
+  muscleGain, // 근육 증가
+  weightLoss, // 체중 감량
+  maintenance, // 현재 상태 유지
+  custom, // 사용자 정의
 }
 
 extension WorkoutFrequencyModeExtension on WorkoutFrequencyMode {
@@ -432,55 +435,60 @@ class RecoveryExercise {
   });
 
   factory RecoveryExercise.lightBurpee({required int reps}) => RecoveryExercise(
-    name: '가벼운 버피',
-    duration: Duration(seconds: reps * 6), // 6초/개
-    reps: reps,
-    instruction: '천천히 호흡에 집중하며 가볍게 실시하세요',
-    emoji: '🏃‍♂️',
-  );
+        name: '가벼운 버피',
+        duration: Duration(seconds: reps * 6), // 6초/개
+        reps: reps,
+        instruction: '천천히 호흡에 집중하며 가볍게 실시하세요',
+        emoji: '🏃‍♂️',
+      );
 
-  factory RecoveryExercise.stretching({required Duration duration}) => RecoveryExercise(
-    name: '전신 스트레칭',
-    duration: duration,
-    instruction: '목, 어깨, 허리, 다리를 부드럽게 늘여주세요',
-    emoji: '🧘‍♀️',
-  );
+  factory RecoveryExercise.stretching({required Duration duration}) =>
+      RecoveryExercise(
+        name: '전신 스트레칭',
+        duration: duration,
+        instruction: '목, 어깨, 허리, 다리를 부드럽게 늘여주세요',
+        emoji: '🧘‍♀️',
+      );
 
-  factory RecoveryExercise.mobilityWork({required Duration duration}) => RecoveryExercise(
-    name: '관절 가동성 운동',
-    duration: duration,
-    instruction: '어깨, 고관절, 발목의 가동범위를 늘려주세요',
-    emoji: '🤸‍♂️',
-  );
+  factory RecoveryExercise.mobilityWork({required Duration duration}) =>
+      RecoveryExercise(
+        name: '관절 가동성 운동',
+        duration: duration,
+        instruction: '어깨, 고관절, 발목의 가동범위를 늘려주세요',
+        emoji: '🤸‍♂️',
+      );
 
   factory RecoveryExercise.lightPushup({required int reps}) => RecoveryExercise(
-    name: '가벼운 푸시업',
-    duration: Duration(seconds: reps * 4),
-    reps: reps,
-    instruction: '무릎을 바닥에 대고 가볍게 실시하세요',
-    emoji: '💪',
-  );
+        name: '가벼운 푸시업',
+        duration: Duration(seconds: reps * 4),
+        reps: reps,
+        instruction: '무릎을 바닥에 대고 가볍게 실시하세요',
+        emoji: '💪',
+      );
 
-  factory RecoveryExercise.walking({required Duration duration}) => RecoveryExercise(
-    name: '가벼운 산책',
-    duration: duration,
-    instruction: '신선한 공기를 마시며 천천히 걸어보세요',
-    emoji: '🚶‍♂️',
-  );
+  factory RecoveryExercise.walking({required Duration duration}) =>
+      RecoveryExercise(
+        name: '가벼운 산책',
+        duration: duration,
+        instruction: '신선한 공기를 마시며 천천히 걸어보세요',
+        emoji: '🚶‍♂️',
+      );
 
-  factory RecoveryExercise.deepBreathing({required Duration duration}) => RecoveryExercise(
-    name: '복식 호흡',
-    duration: duration,
-    instruction: '4초 들이마시고, 4초 참고, 6초에 걸쳐 내쉬어주세요',
-    emoji: '🌬️',
-  );
+  factory RecoveryExercise.deepBreathing({required Duration duration}) =>
+      RecoveryExercise(
+        name: '복식 호흡',
+        duration: duration,
+        instruction: '4초 들이마시고, 4초 참고, 6초에 걸쳐 내쉬어주세요',
+        emoji: '🌬️',
+      );
 
-  factory RecoveryExercise.meditation({required Duration duration}) => RecoveryExercise(
-    name: '마음챙김 명상',
-    duration: duration,
-    instruction: '편안한 자세로 앉아 호흡에만 집중해보세요',
-    emoji: '🧘‍♂️',
-  );
+  factory RecoveryExercise.meditation({required Duration duration}) =>
+      RecoveryExercise(
+        name: '마음챙김 명상',
+        duration: duration,
+        instruction: '편안한 자세로 앉아 호흡에만 집중해보세요',
+        emoji: '🧘‍♂️',
+      );
 }
 
 /// 액티브 리커버리 계획

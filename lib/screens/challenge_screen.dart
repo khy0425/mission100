@@ -5,7 +5,6 @@ import '../models/user_profile.dart';
 import '../services/challenge_service.dart';
 import '../services/database_service.dart';
 
-
 import '../widgets/challenge_card.dart';
 import '../widgets/challenge_progress_widget.dart';
 

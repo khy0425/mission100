@@ -84,7 +84,9 @@ void main() {
           'productId': 'premium_monthly',
           'status': 'SubscriptionStatus.active',
           'startDate': DateTime.now().millisecondsSinceEpoch,
-          'expiryDate': DateTime.now().add(const Duration(days: 30)).millisecondsSinceEpoch,
+          'expiryDate': DateTime.now()
+              .add(const Duration(days: 30))
+              .millisecondsSinceEpoch,
           'autoRenewing': true,
         };
 
@@ -174,7 +176,8 @@ void main() {
 
         expect(cancellationInfo.productId, equals('premium_monthly'));
         expect(cancellationInfo.type, equals(CancellationType.endOfPeriod));
-        expect(cancellationInfo.reason, equals(CancellationReason.tooExpensive));
+        expect(
+            cancellationInfo.reason, equals(CancellationReason.tooExpensive));
         expect(cancellationInfo.reasonText, equals('가격이 너무 비싸요'));
         expect(cancellationInfo.refundRequested, isFalse);
         expect(cancellationInfo.status, equals(CancellationStatus.completed));
@@ -203,7 +206,8 @@ void main() {
         expect(restored.type, equals(cancellationInfo.type));
         expect(restored.reason, equals(cancellationInfo.reason));
         expect(restored.reasonText, equals(cancellationInfo.reasonText));
-        expect(restored.refundRequested, equals(cancellationInfo.refundRequested));
+        expect(
+            restored.refundRequested, equals(cancellationInfo.refundRequested));
         expect(restored.status, equals(cancellationInfo.status));
       }, skip: true); // Requires platform channel - test on real device
     });

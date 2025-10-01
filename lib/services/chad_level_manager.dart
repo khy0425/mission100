@@ -71,11 +71,9 @@ class ChadLevelManager extends ChangeNotifier {
 
     // 새로운 단계 확인
     int newStageIndex = _levelData.currentStageIndex;
-    for (
-      int i = _levelData.currentStageIndex + 1;
-      i < ChadStageInfo.allStages.length;
-      i++
-    ) {
+    for (int i = _levelData.currentStageIndex + 1;
+        i < ChadStageInfo.allStages.length;
+        i++) {
       final stage = ChadStageInfo.allStages[i];
       if (completedWeeks >= stage.requiredWeeks) {
         newStageIndex = i;

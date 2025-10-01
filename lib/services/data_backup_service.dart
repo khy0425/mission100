@@ -57,8 +57,7 @@ class DataBackupService {
       }
 
       // 파일명 결정
-      final fileName =
-          customFileName ??
+      final fileName = customFileName ??
           (encrypt ? _encryptedBackupFileName : _backupFileName);
 
       // 백업 크기 계산
@@ -94,8 +93,8 @@ class DataBackupService {
       if (context != null && Platform.isAndroid) {
         final hasPermission =
             await PermissionService.checkAndRequestStoragePermissionForBackup(
-              context,
-            );
+          context,
+        );
         if (!hasPermission) {
           debugPrint('❌ 저장소 권한이 없어 백업을 취소합니다');
           return null;
@@ -162,8 +161,8 @@ class DataBackupService {
         if (context != null && Platform.isAndroid) {
           final hasPermission =
               await PermissionService.checkAndRequestStoragePermissionForBackup(
-                context,
-              );
+            context,
+          );
           if (!hasPermission) {
             debugPrint('❌ 저장소 권한이 없어 복원을 취소합니다');
             return false;
@@ -231,9 +230,8 @@ class DataBackupService {
 
     // 업적 데이터
     final achievements = await AchievementService.getAllAchievements();
-    final achievementData = achievements
-        .map((achievement) => achievement.toMap())
-        .toList();
+    final achievementData =
+        achievements.map((achievement) => achievement.toMap()).toList();
 
     // 스트릭 데이터
     final streakService = StreakService();

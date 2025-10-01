@@ -7,7 +7,6 @@ import 'dart:convert';
 /// Firebase 없이 로컬에서 동기화 로직을 테스트
 void main() {
   group('CloudSync Integration Tests', () {
-
     setUp(() {
       SharedPreferences.setMockInitialValues({});
     });
@@ -33,17 +32,20 @@ void main() {
         expect(users['displayName'], displayName);
         expect(users['status'], 'active');
 
-        final userProfiles = userProfile['userProfiles'] as Map<String, dynamic>;
+        final userProfiles =
+            userProfile['userProfiles'] as Map<String, dynamic>;
         expect(userProfiles['userId'], userId);
         expect(userProfiles['fitnessLevel'], 'beginner');
         expect(userProfiles['language'], 'ko');
 
-        final chadProgress = userProfile['chadProgress'] as Map<String, dynamic>;
+        final chadProgress =
+            userProfile['chadProgress'] as Map<String, dynamic>;
         expect(chadProgress['userId'], userId);
         expect(chadProgress['level'], 1);
         expect(chadProgress['currentStage'], 'rookie');
 
-        final workoutProgress = userProfile['workoutProgress'] as Map<String, dynamic>;
+        final workoutProgress =
+            userProfile['workoutProgress'] as Map<String, dynamic>;
         expect(workoutProgress['userId'], userId);
         expect(workoutProgress['currentWeek'], 1);
         expect(workoutProgress['currentDay'], 1);
@@ -96,12 +98,14 @@ void main() {
         final syncResult = await _simulateWorkoutRecordSync(workoutHistory);
 
         // Then: 올바른 구조로 동기화되어야 함
-        final workoutRecord = syncResult['workoutRecord'] as Map<String, dynamic>;
+        final workoutRecord =
+            syncResult['workoutRecord'] as Map<String, dynamic>;
         expect(workoutRecord['userId'], isNotNull);
         expect(workoutRecord['totalReps'], 44);
         expect(workoutRecord['completionRate'], 1.0);
 
-        final workoutProgress = syncResult['workoutProgress'] as Map<String, dynamic>;
+        final workoutProgress =
+            syncResult['workoutProgress'] as Map<String, dynamic>;
         expect(workoutProgress['completedWorkouts'], 1);
         expect(workoutProgress['totalPushups'], 44);
         expect(workoutProgress['streak'], 1);
@@ -130,7 +134,8 @@ void main() {
         ];
 
         // When: 운동 기록 병합 시뮬레이션
-        final merged = await _simulateWorkoutRecordMerge(localWorkouts, cloudWorkouts);
+        final merged =
+            await _simulateWorkoutRecordMerge(localWorkouts, cloudWorkouts);
 
         // Then: 완료율이 높은 클라우드 기록이 선택되어야 함
         expect(merged.length, 1);
@@ -193,18 +198,20 @@ void main() {
         // When: 네트워크 상태에 따른 동작 시뮬레이션
 
         // 1. 온라인 상태 - 즉시 동기화
-        final result1 = _simulateNetworkStateAction(
-          isOnline: isOnline,
-          changeData: {'type': 'profile', 'data': {'level': 1}}
-        );
+        final result1 =
+            _simulateNetworkStateAction(isOnline: isOnline, changeData: {
+          'type': 'profile',
+          'data': {'level': 1}
+        });
         expect(result1['action'], 'immediate_sync');
 
         // 2. 오프라인 상태 - 큐에 저장
         isOnline = false;
-        final result2 = _simulateNetworkStateAction(
-          isOnline: isOnline,
-          changeData: {'type': 'workout', 'data': {'reps': 50}}
-        );
+        final result2 =
+            _simulateNetworkStateAction(isOnline: isOnline, changeData: {
+          'type': 'workout',
+          'data': {'reps': 50}
+        });
         expect(result2['action'], 'queue_for_later');
 
         // 3. 다시 온라인 - 큐 처리
@@ -267,7 +274,8 @@ void main() {
         const actualDuration = 7000; // 7초 (타임아웃)
 
         // When: 타임아웃 감지 시뮬레이션
-        final result = _simulateTimeoutDetection(operationTimeout, actualDuration);
+        final result =
+            _simulateTimeoutDetection(operationTimeout, actualDuration);
 
         // Then: 타임아웃이 감지되어야 함
         expect(result['timedOut'], true);
@@ -381,7 +389,8 @@ Future<Map<String, Map<String, dynamic>>> _simulateWorkoutRecordSync(
     'completedWorkouts': 1,
     'totalPushups': workoutHistory.totalReps,
     'averageReps': workoutHistory.totalReps,
-    'bestSingleSet': workoutHistory.completedReps.reduce((a, b) => a > b ? a : b),
+    'bestSingleSet':
+        workoutHistory.completedReps.reduce((a, b) => a > b ? a : b),
     'streak': 1,
     'longestStreak': 1,
     'lastWorkoutDate': workoutHistory.date.toIso8601String(),

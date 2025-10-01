@@ -60,10 +60,8 @@ class AchievementNotificationService {
     final FlutterLocalNotificationsPlugin notifications =
         FlutterLocalNotificationsPlugin();
 
-    final android = notifications
-        .resolvePlatformSpecificImplementation<
-          AndroidFlutterLocalNotificationsPlugin
-        >();
+    final android = notifications.resolvePlatformSpecificImplementation<
+        AndroidFlutterLocalNotificationsPlugin>();
 
     if (android != null) {
       await android.createNotificationChannel(channel);
@@ -289,8 +287,7 @@ class AchievementNotificationService {
     Map<String, dynamic>? extraData,
   }) async {
     try {
-      final notificationId =
-          _specialEventNotificationId +
+      final notificationId = _specialEventNotificationId +
           (extraData?['eventId']?.hashCode ?? 0) % 100;
 
       final androidDetails = AndroidNotificationDetails(
@@ -464,9 +461,8 @@ class AchievementNotificationService {
 
   /// 알림 본문 생성
   static String _buildNotificationBody(Achievement achievement) {
-    final xpText = achievement.xpReward > 0
-        ? ' (+${achievement.xpReward} XP)'
-        : '';
+    final xpText =
+        achievement.xpReward > 0 ? ' (+${achievement.xpReward} XP)' : '';
     return '${achievement.titleKey}을(를) 달성했습니다!$xpText';
   }
 

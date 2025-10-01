@@ -546,9 +546,8 @@ $downloadMessage
   }) async {
     try {
       // 위젯을 이미지로 캡처
-      RenderRepaintBoundary boundary =
-          repaintBoundaryKey.currentContext!.findRenderObject()
-              as RenderRepaintBoundary;
+      RenderRepaintBoundary boundary = repaintBoundaryKey.currentContext!
+          .findRenderObject() as RenderRepaintBoundary;
 
       ui.Image image = await boundary.toImage(pixelRatio: 3.0);
       ByteData? byteData = await image.toByteData(

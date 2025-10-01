@@ -179,7 +179,8 @@ class AuthService extends ChangeNotifier {
         // 신규 사용자인 경우 런칭 이벤트 구독 생성 및 프로필 생성
         if (userCredential.additionalUserInfo?.isNewUser == true) {
           await _createLaunchPromoSubscription(userCredential.user!.uid);
-          await _createUserProfile(userCredential.user!, userCredential.user!.displayName ?? 'Google User');
+          await _createUserProfile(userCredential.user!,
+              userCredential.user!.displayName ?? 'Google User');
         }
 
         debugPrint('✅ Google 로그인 성공');
@@ -250,7 +251,8 @@ class AuthService extends ChangeNotifier {
 
       // TODO: Firestore에서 구독 정보 로드
       // 현재는 임시로 런칭 이벤트 구독 생성
-      _currentSubscription = UserSubscription.createLaunchPromoSubscription(userId);
+      _currentSubscription =
+          UserSubscription.createLaunchPromoSubscription(userId);
 
       debugPrint('✅ 구독 정보 로드 완료: ${_currentSubscription?.type}');
     } catch (e) {
@@ -265,7 +267,8 @@ class AuthService extends ChangeNotifier {
     try {
       debugPrint('🎉 런칭 이벤트 구독 생성: $userId');
 
-      final subscription = UserSubscription.createLaunchPromoSubscription(userId);
+      final subscription =
+          UserSubscription.createLaunchPromoSubscription(userId);
       _currentSubscription = subscription;
 
       // TODO: Firestore에 구독 정보 저장
@@ -286,7 +289,9 @@ class AuthService extends ChangeNotifier {
         userId: user.uid,
         email: user.email ?? '',
         displayName: displayName,
-        provider: user.providerData.isNotEmpty ? user.providerData.first.providerId : 'email',
+        provider: user.providerData.isNotEmpty
+            ? user.providerData.first.providerId
+            : 'email',
         photoURL: user.photoURL,
       );
 
@@ -321,7 +326,6 @@ class AuthService extends ChangeNotifier {
       return false;
     }
   }
-
 
   // 편의 메서드들
   bool canAccessWeek(int week) {

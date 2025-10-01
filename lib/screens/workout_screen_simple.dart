@@ -78,7 +78,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     _workoutStartTime = DateTime.now();
 
     // 타겟 횟수 설정
-    if (widget.workout.workout != null && (widget.workout.workout as List).isNotEmpty) {
+    if (widget.workout.workout != null &&
+        (widget.workout.workout as List).isNotEmpty) {
       _targetReps = List<int>.from(widget.workout.workout as List);
     } else {
       _targetReps = [10, 8, 6, 4, 2]; // 기본값
@@ -333,7 +334,8 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       ),
       appBar: AppBar(
         title: Text(
-          (widget.workout.title as String?) ?? AppLocalizations.of(context).workoutTitle,
+          (widget.workout.title as String?) ??
+              AppLocalizations.of(context).workoutTitle,
         ),
         centerTitle: true,
         leading: IconButton(
@@ -355,7 +357,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                     currentSet: _currentSet,
                     totalSets: _totalSets,
                     currentTargetReps: _currentTargetReps,
-                    ),
+                  ),
 
                   const SizedBox(height: AppConstants.paddingL),
 

@@ -264,8 +264,7 @@ class ChadEvolutionState {
         (e) => e.toString().split('.').last == json['currentStage'],
         orElse: () => ChadEvolutionStage.sleepCapChad,
       ),
-      unlockedStages:
-          (json['unlockedStages'] as List<dynamic>?)
+      unlockedStages: (json['unlockedStages'] as List<dynamic>?)
               ?.map((e) => ChadEvolution.fromJson(e as Map<String, dynamic>))
               .toList() ??
           [],

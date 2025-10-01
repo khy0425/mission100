@@ -59,7 +59,8 @@ class AchievementDetailDialog extends StatelessWidget {
         decoration: BoxDecoration(
           color: theme.cardColor,
           borderRadius: BorderRadius.circular(AppConstants.radiusL),
-          border: Border.all(color: rarityColor.withValues(alpha: 0.5), width: 2),
+          border:
+              Border.all(color: rarityColor.withValues(alpha: 0.5), width: 2),
           boxShadow: [
             BoxShadow(
               color: rarityColor.withValues(alpha: 0.3),
@@ -124,9 +125,8 @@ class AchievementDetailDialog extends StatelessWidget {
                       achievement.isCompleted
                           ? Icons.emoji_events
                           : Icons.lock_outline,
-                      color: achievement.isCompleted
-                          ? Colors.white
-                          : rarityColor,
+                      color:
+                          achievement.isCompleted ? Colors.white : rarityColor,
                       size: 40,
                     ),
                   ),
@@ -278,14 +278,15 @@ class AchievementDetailDialog extends StatelessWidget {
                       width: double.infinity,
                       padding: const EdgeInsets.all(AppConstants.paddingM),
                       decoration: BoxDecoration(
-                        color: theme.colorScheme.primaryContainer.withValues(alpha: 
-                          0.3,
+                        color: theme.colorScheme.primaryContainer.withValues(
+                          alpha: 0.3,
                         ),
                         borderRadius: BorderRadius.circular(
                           AppConstants.radiusM,
                         ),
                         border: Border.all(
-                          color: theme.colorScheme.primary.withValues(alpha: 0.3),
+                          color:
+                              theme.colorScheme.primary.withValues(alpha: 0.3),
                           width: 1,
                         ),
                       ),

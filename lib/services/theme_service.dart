@@ -159,9 +159,8 @@ class ThemeService extends ChangeNotifier {
 
   /// 다크 모드 토글
   Future<void> toggleDarkMode() async {
-    final newMode = _themeMode == ThemeMode.dark
-        ? ThemeMode.light
-        : ThemeMode.dark;
+    final newMode =
+        _themeMode == ThemeMode.dark ? ThemeMode.light : ThemeMode.dark;
     await setThemeMode(newMode);
   }
 
@@ -276,9 +275,8 @@ class ThemeService extends ChangeNotifier {
     return ThemeData(
       useMaterial3: true,
       colorScheme: colorScheme,
-      brightness: _themeMode == ThemeMode.dark
-          ? Brightness.dark
-          : Brightness.light,
+      brightness:
+          _themeMode == ThemeMode.dark ? Brightness.dark : Brightness.light,
       fontFamily: 'Pretendard',
       textTheme: _buildTextTheme(colorScheme),
       appBarTheme: AppBarTheme(

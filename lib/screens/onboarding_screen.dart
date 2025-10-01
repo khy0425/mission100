@@ -67,11 +67,11 @@ class _OnboardingScreenState extends State<OnboardingScreen>
 
     _slideAnimation =
         Tween<Offset>(begin: const Offset(0.3, 0), end: Offset.zero).animate(
-          CurvedAnimation(
-            parent: _slideAnimationController,
-            curve: Curves.easeOutCubic,
-          ),
-        );
+      CurvedAnimation(
+        parent: _slideAnimationController,
+        curve: Curves.easeOutCubic,
+      ),
+    );
 
     // 애니메이션 시작
     _fadeAnimationController.forward();
@@ -187,7 +187,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             title: step.title,
             description: step.description,
             onNext: () => _animateToNextStep(onboardingService),
-            onSkip: step.canSkip ? () => onboardingService.skipOnboarding() : null,
+            onSkip:
+                step.canSkip ? () => onboardingService.skipOnboarding() : null,
             buttonText: '다음',
           ),
         );
@@ -203,7 +204,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             title: step.title,
             description: step.description,
             onNext: () => _animateToNextStep(onboardingService),
-            onSkip: step.canSkip ? () => onboardingService.skipOnboarding() : null,
+            onSkip:
+                step.canSkip ? () => onboardingService.skipOnboarding() : null,
             buttonText: '똑똑하네요!',
           ),
         );
@@ -219,7 +221,8 @@ class _OnboardingScreenState extends State<OnboardingScreen>
             title: step.title,
             description: step.description,
             onNext: () => _animateToNextStep(onboardingService),
-            onSkip: step.canSkip ? () => onboardingService.skipOnboarding() : null,
+            onSkip:
+                step.canSkip ? () => onboardingService.skipOnboarding() : null,
             buttonText: '멋져요!',
           ),
         );
@@ -550,8 +553,7 @@ class _WelcomeStepWidget extends StatelessWidget {
               _ActionButtonWidget(
                 onPressed: onNext,
                 backgroundColor: const Color(0xFF4DABF7),
-                text:
-                    step.buttonText ??
+                text: step.buttonText ??
                     AppLocalizations.of(context).getStartedButton,
                 foregroundColor: Colors.white,
               ),
@@ -772,8 +774,7 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
               _ActionButtonWidget(
                 onPressed: onNext,
                 backgroundColor: const Color(0xFFFFD43B),
-                text:
-                    step.buttonText ??
+                text: step.buttonText ??
                     (Localizations.localeOf(context).languageCode == 'ko'
                         ? '멋져요!'
                         : 'Awesome!'),
@@ -880,7 +881,8 @@ class _InitialTestStepWidget extends StatelessWidget {
                     debugPrint('온보딩 완료 처리됨');
 
                     // 저장 완료까지 잠시 대기
-                    await Future<void>.delayed(const Duration(milliseconds: 500));
+                    await Future<void>.delayed(
+                        const Duration(milliseconds: 500));
 
                     if (context.mounted) {
                       // 권한 설정 화면으로 이동
@@ -904,8 +906,7 @@ class _InitialTestStepWidget extends StatelessWidget {
                   }
                 },
                 backgroundColor: const Color(0xFFFF6B6B),
-                text:
-                    step.buttonText ??
+                text: step.buttonText ??
                     AppLocalizations.of(context).startTestButton,
                 foregroundColor: Colors.white,
               ),

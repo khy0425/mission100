@@ -6,7 +6,8 @@ import 'package:mission100/services/subscription_service.dart';
 
 void main() {
   group('Subscription UI Tests', () {
-    testWidgets('SubscriptionScreen should build without errors', (WidgetTester tester) async {
+    testWidgets('SubscriptionScreen should build without errors',
+        (WidgetTester tester) async {
       // SubscriptionScreen이 정상적으로 빌드되는지 테스트
       await tester.pumpWidget(
         MaterialApp(
@@ -19,7 +20,8 @@ void main() {
       expect(find.text('구독 상품을 불러오는 중...'), findsOneWidget);
     }, skip: true); // Requires platform channel - test on real device
 
-    testWidgets('PremiumGateWidget should show lock for non-premium users', (WidgetTester tester) async {
+    testWidgets('PremiumGateWidget should show lock for non-premium users',
+        (WidgetTester tester) async {
       // 프리미엄 게이트 위젯이 무료 사용자에게 잠금 상태를 표시하는지 테스트
       await tester.pumpWidget(
         MaterialApp(
@@ -49,7 +51,8 @@ void main() {
       expect(find.text('업그레이드'), findsOneWidget);
     });
 
-    testWidgets('PremiumFeatureButton should show lock icon for non-premium', (WidgetTester tester) async {
+    testWidgets('PremiumFeatureButton should show lock icon for non-premium',
+        (WidgetTester tester) async {
       // 프리미엄 기능 버튼이 무료 사용자에게 잠금 아이콘을 표시하는지 테스트
       await tester.pumpWidget(
         MaterialApp(
@@ -69,7 +72,8 @@ void main() {
       expect(find.text('고급 통계'), findsOneWidget);
     });
 
-    testWidgets('PremiumLimitWidget should display correctly', (WidgetTester tester) async {
+    testWidgets('PremiumLimitWidget should display correctly',
+        (WidgetTester tester) async {
       // 프리미엄 제한 안내 위젯이 올바르게 표시되는지 테스트
       await tester.pumpWidget(
         MaterialApp(
@@ -88,7 +92,8 @@ void main() {
       expect(find.text('프리미엄으로 업그레이드'), findsOneWidget);
     });
 
-    testWidgets('PremiumUpgradeDialog should display correctly', (WidgetTester tester) async {
+    testWidgets('PremiumUpgradeDialog should display correctly',
+        (WidgetTester tester) async {
       // 프리미엄 업그레이드 다이얼로그가 올바르게 표시되는지 테스트
       await tester.pumpWidget(
         MaterialApp(

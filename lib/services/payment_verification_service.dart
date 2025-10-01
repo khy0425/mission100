@@ -49,13 +49,15 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
   ) async {
     try {
       // 1. 클라이언트 사이드 기본 검증
-      final clientVerification = _performClientSideVerification(purchaseDetails);
+      final clientVerification =
+          _performClientSideVerification(purchaseDetails);
       if (!clientVerification.isValid) {
         return clientVerification;
       }
 
       // 2. 서버 사이드 검증 (Google Play Developer API 사용)
-      final serverVerification = await _verifyWithGooglePlayAPI(purchaseDetails);
+      final serverVerification =
+          await _verifyWithGooglePlayAPI(purchaseDetails);
       if (!serverVerification.isValid) {
         return serverVerification;
       }
@@ -70,7 +72,6 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
         purchaseTime: DateTime.now(),
         error: customVerification.error,
       );
-
     } catch (e) {
       return VerificationResult(
         isValid: false,
@@ -104,7 +105,6 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
         purchaseTime: DateTime.now(),
         error: verification.error,
       );
-
     } catch (e) {
       return VerificationResult(
         isValid: false,
@@ -179,8 +179,10 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
         final data = jsonDecode(response.body) as Map<String, dynamic>;
 
         // 구독 상태 확인
-        final startTimeMillis = int.tryParse(data['startTimeMillis']?.toString() ?? '0') ?? 0;
-        final expiryTimeMillis = int.tryParse(data['expiryTimeMillis']?.toString() ?? '0') ?? 0;
+        final startTimeMillis =
+            int.tryParse(data['startTimeMillis']?.toString() ?? '0') ?? 0;
+        final expiryTimeMillis =
+            int.tryParse(data['expiryTimeMillis']?.toString() ?? '0') ?? 0;
         final autoRenewing = data['autoRenewing'] as bool? ?? false;
 
         final now = DateTime.now().millisecondsSinceEpoch;
@@ -200,7 +202,6 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
           error: 'Google Play API error: ${response.statusCode}',
         );
       }
-
     } catch (e) {
       debugPrint('Google Play API verification error: $e');
       // API 검증 실패 시 기본 검증으로 폴백
@@ -209,7 +210,8 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
   }
 
   /// Apple 서버를 통한 영수증 검증
-  static Future<VerificationResult> _verifyWithAppleServer(String receipt) async {
+  static Future<VerificationResult> _verifyWithAppleServer(
+      String receipt) async {
     try {
       const url = 'https://buy.itunes.apple.com/verifyReceipt';
       // 샌드박스 환경: 'https://sandbox.itunes.apple.com/verifyReceipt'
@@ -258,7 +260,6 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
           error: 'Apple server error: ${response.statusCode}',
         );
       }
-
     } catch (e) {
       debugPrint('Apple verification error: $e');
       return VerificationResult(
@@ -279,8 +280,10 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
         'platform': Platform.isAndroid ? 'android' : 'ios',
         'product_id': purchaseDetails.productID,
         'purchase_id': purchaseDetails.purchaseID,
-        'verification_data': purchaseDetails.verificationData.localVerificationData,
-        'server_verification_data': purchaseDetails.verificationData.serverVerificationData,
+        'verification_data':
+            purchaseDetails.verificationData.localVerificationData,
+        'server_verification_data':
+            purchaseDetails.verificationData.serverVerificationData,
         'timestamp': DateTime.now().millisecondsSinceEpoch,
       };
 
@@ -307,7 +310,6 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
         debugPrint('Custom server verification failed: ${response.statusCode}');
         return VerificationResult(isValid: true);
       }
-
     } catch (e) {
       debugPrint('Custom server verification error: $e');
       // 네트워크 오류 등으로 서버 검증 실패 시 기본 검증으로 폴백
@@ -382,6 +384,6 @@ class VerificationResult {
   @override
   String toString() {
     return 'VerificationResult(isValid: $isValid, transactionId: $transactionId, '
-           'productId: $productId, error: $error)';
+        'productId: $productId, error: $error)';
   }
 }

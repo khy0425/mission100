@@ -1,20 +1,20 @@
 enum AchievementType {
-  firstWorkout,        // 첫 운동 완료
-  weeklyComplete,      // 주차 완료
-  streakMilestone,     // 연속 운동 달성
-  pushupMilestone,     // 푸시업 개수 달성
-  speedRecord,         // 빠른 운동 완료
-  perfectionStreak,    // 완벽한 RPE 연속 달성
-  totalWorkouts,       // 총 운동 횟수 달성
-  timeRecord,          // 시간 기록 달성
-  specialEvent,        // 특별 이벤트
+  firstWorkout, // 첫 운동 완료
+  weeklyComplete, // 주차 완료
+  streakMilestone, // 연속 운동 달성
+  pushupMilestone, // 푸시업 개수 달성
+  speedRecord, // 빠른 운동 완료
+  perfectionStreak, // 완벽한 RPE 연속 달성
+  totalWorkouts, // 총 운동 횟수 달성
+  timeRecord, // 시간 기록 달성
+  specialEvent, // 특별 이벤트
 }
 
 enum RequirementType {
-  count,    // 횟수
-  streak,   // 연속
-  time,     // 시간
-  rpe,      // 체감 강도
+  count, // 횟수
+  streak, // 연속
+  time, // 시간
+  rpe, // 체감 강도
 }
 
 enum AchievementRarity {

@@ -21,7 +21,8 @@ class ChadActiveRecoveryWidget extends StatefulWidget {
   });
 
   @override
-  State<ChadActiveRecoveryWidget> createState() => _ChadActiveRecoveryWidgetState();
+  State<ChadActiveRecoveryWidget> createState() =>
+      _ChadActiveRecoveryWidgetState();
 }
 
 class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
@@ -38,7 +39,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
 
     // Chad 액티브 리커버리 서비스 초기화
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      Provider.of<ChadActiveRecoveryService>(context, listen: false).initialize();
+      Provider.of<ChadActiveRecoveryService>(context, listen: false)
+          .initialize();
     });
   }
 
@@ -110,29 +112,31 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
               borderRadius: BorderRadius.circular(AppConstants.radiusL),
               boxShadow: [
                 BoxShadow(
-                  color: _getGradientStartColor(recoveryService.currentRecoveryLevel).withOpacity(0.3),
+                  color: _getGradientStartColor(
+                          recoveryService.currentRecoveryLevel)
+                      .withOpacity(0.3),
                   blurRadius: 15,
                   offset: const Offset(0, 8),
                 ),
               ],
             ),
             child: Column(
-            children: [
-              // Chad 액티브 리커버리 헤더
-              _buildRecoveryHeader(context, recoveryService),
+              children: [
+                // Chad 액티브 리커버리 헤더
+                _buildRecoveryHeader(context, recoveryService),
 
-              if (widget.showFullDetails) ...{
-                const SizedBox(height: AppConstants.paddingL),
+                if (widget.showFullDetails) ...{
+                  const SizedBox(height: AppConstants.paddingL),
 
-                // Chad 추천 메시지
-                _buildChadRecommendation(context, recoveryService),
+                  // Chad 추천 메시지
+                  _buildChadRecommendation(context, recoveryService),
 
-                const SizedBox(height: AppConstants.paddingM),
+                  const SizedBox(height: AppConstants.paddingM),
 
-                // 오늘의 활동 목록
-                _buildTodayActivities(context, recoveryService),
-              }
-            ],
+                  // 오늘의 활동 목록
+                  _buildTodayActivities(context, recoveryService),
+                }
+              ],
             ),
           ),
         );
@@ -140,7 +144,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
     );
   }
 
-  Widget _buildRecoveryHeader(BuildContext context, ChadActiveRecoveryService recoveryService) {
+  Widget _buildRecoveryHeader(
+      BuildContext context, ChadActiveRecoveryService recoveryService) {
     return AnimatedBuilder(
       animation: _headerAnimation,
       builder: (context, child) {
@@ -168,7 +173,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(30),
                     child: Image.asset(
-                      _getChadImageForLevel(recoveryService.currentRecoveryLevel),
+                      _getChadImageForLevel(
+                          recoveryService.currentRecoveryLevel),
                       fit: BoxFit.cover,
                       errorBuilder: (context, error, stackTrace) {
                         return Container(
@@ -227,7 +233,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
                       Icon(
                         Icons.check_circle,
                         size: 16,
-                        color: _getGradientStartColor(recoveryService.currentRecoveryLevel),
+                        color: _getGradientStartColor(
+                            recoveryService.currentRecoveryLevel),
                       ),
                       const SizedBox(width: 4),
                       Text(
@@ -235,7 +242,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
                         style: TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.bold,
-                          color: _getGradientStartColor(recoveryService.currentRecoveryLevel),
+                          color: _getGradientStartColor(
+                              recoveryService.currentRecoveryLevel),
                         ),
                       ),
                     ],
@@ -249,7 +257,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
     );
   }
 
-  Widget _buildChadRecommendation(BuildContext context, ChadActiveRecoveryService recoveryService) {
+  Widget _buildChadRecommendation(
+      BuildContext context, ChadActiveRecoveryService recoveryService) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingL),
       child: Container(
@@ -277,7 +286,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
     );
   }
 
-  Widget _buildTodayActivities(BuildContext context, ChadActiveRecoveryService recoveryService) {
+  Widget _buildTodayActivities(
+      BuildContext context, ChadActiveRecoveryService recoveryService) {
     if (recoveryService.todayActivities.isEmpty) {
       return Padding(
         padding: const EdgeInsets.all(AppConstants.paddingL),
@@ -317,12 +327,20 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
                     ),
                   ),
                   const SizedBox(height: AppConstants.paddingM),
-                  ...recoveryService.todayActivities.asMap().entries.map((entry) {
+                  ...recoveryService.todayActivities
+                      .asMap()
+                      .entries
+                      .map((entry) {
                     int index = entry.key;
                     ActiveRecoveryActivity activity = entry.value;
                     return Padding(
-                      padding: EdgeInsets.only(bottom: index < recoveryService.todayActivities.length - 1 ? AppConstants.paddingS : 0),
-                      child: _buildActivityCard(context, activity, recoveryService),
+                      padding: EdgeInsets.only(
+                          bottom:
+                              index < recoveryService.todayActivities.length - 1
+                                  ? AppConstants.paddingS
+                                  : 0),
+                      child: _buildActivityCard(
+                          context, activity, recoveryService),
                     );
                   }).toList(),
                 ],
@@ -334,7 +352,10 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
     );
   }
 
-  Widget _buildActivityCard(BuildContext context, ActiveRecoveryActivity activity, ChadActiveRecoveryService recoveryService) {
+  Widget _buildActivityCard(
+      BuildContext context,
+      ActiveRecoveryActivity activity,
+      ChadActiveRecoveryService recoveryService) {
     return Container(
       padding: const EdgeInsets.all(AppConstants.paddingM),
       decoration: BoxDecoration(
@@ -354,7 +375,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
               Icon(
                 _getIconForActivityType(activity.type),
                 size: 24,
-                color: _getGradientStartColor(recoveryService.currentRecoveryLevel),
+                color: _getGradientStartColor(
+                    recoveryService.currentRecoveryLevel),
               ),
               const SizedBox(width: 8),
               Expanded(
@@ -366,7 +388,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
-                        color: _getGradientStartColor(recoveryService.currentRecoveryLevel),
+                        color: _getGradientStartColor(
+                            recoveryService.currentRecoveryLevel),
                       ),
                     ),
                     Text(
@@ -408,7 +431,9 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
           Container(
             padding: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: _getGradientStartColor(recoveryService.currentRecoveryLevel).withOpacity(0.1),
+              color:
+                  _getGradientStartColor(recoveryService.currentRecoveryLevel)
+                      .withOpacity(0.1),
               borderRadius: BorderRadius.circular(8),
             ),
             child: Text(
@@ -416,7 +441,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
               style: TextStyle(
                 fontSize: 12,
                 fontStyle: FontStyle.italic,
-                color: _getGradientStartColor(recoveryService.currentRecoveryLevel),
+                color: _getGradientStartColor(
+                    recoveryService.currentRecoveryLevel),
               ),
             ),
           ),
@@ -427,9 +453,11 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
           SizedBox(
             width: double.infinity,
             child: ElevatedButton(
-              onPressed: () => _completeActivity(context, activity, recoveryService),
+              onPressed: () =>
+                  _completeActivity(context, activity, recoveryService),
               style: ElevatedButton.styleFrom(
-                backgroundColor: _getGradientStartColor(recoveryService.currentRecoveryLevel),
+                backgroundColor: _getGradientStartColor(
+                    recoveryService.currentRecoveryLevel),
                 foregroundColor: Colors.white,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
@@ -450,7 +478,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
     );
   }
 
-  void _showActivityDetails(BuildContext context, ActiveRecoveryActivity activity) {
+  void _showActivityDetails(
+      BuildContext context, ActiveRecoveryActivity activity) {
     showModalBottomSheet(
       context: context,
       isScrollControlled: true,
@@ -459,7 +488,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
     );
   }
 
-  Widget _buildActivityDetailSheet(BuildContext context, ActiveRecoveryActivity activity) {
+  Widget _buildActivityDetailSheet(
+      BuildContext context, ActiveRecoveryActivity activity) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.7,
       decoration: const BoxDecoration(
@@ -525,7 +555,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
           // 내용
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingL),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: AppConstants.paddingL),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -577,16 +608,18 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
                     ),
                   ),
                   const SizedBox(height: 8),
-                  ...activity.instructions.map((instruction) => Padding(
-                    padding: const EdgeInsets.only(bottom: 4),
-                    child: Text(
-                      instruction,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        height: 1.4,
-                      ),
-                    ),
-                  )).toList(),
+                  ...activity.instructions
+                      .map((instruction) => Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: Text(
+                              instruction,
+                              style: const TextStyle(
+                                fontSize: 14,
+                                height: 1.4,
+                              ),
+                            ),
+                          ))
+                      .toList(),
 
                   const SizedBox(height: AppConstants.paddingL),
 
@@ -599,26 +632,28 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
                     ),
                   ),
                   const SizedBox(height: 8),
-                  ...activity.benefits.map((benefit) => Padding(
-                    padding: const EdgeInsets.only(bottom: 4),
-                    child: Row(
-                      children: [
-                        Icon(
-                          Icons.check_circle,
-                          size: 16,
-                          color: Colors.green[600],
-                        ),
-                        const SizedBox(width: 8),
-                        Text(
-                          benefit,
-                          style: const TextStyle(
-                            fontSize: 14,
-                            height: 1.4,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )).toList(),
+                  ...activity.benefits
+                      .map((benefit) => Padding(
+                            padding: const EdgeInsets.only(bottom: 4),
+                            child: Row(
+                              children: [
+                                Icon(
+                                  Icons.check_circle,
+                                  size: 16,
+                                  color: Colors.green[600],
+                                ),
+                                const SizedBox(width: 8),
+                                Text(
+                                  benefit,
+                                  style: const TextStyle(
+                                    fontSize: 14,
+                                    height: 1.4,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ))
+                      .toList(),
 
                   const SizedBox(height: AppConstants.paddingXL),
                 ],
@@ -630,7 +665,8 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
     );
   }
 
-  void _completeActivity(BuildContext context, ActiveRecoveryActivity activity, ChadActiveRecoveryService recoveryService) {
+  void _completeActivity(BuildContext context, ActiveRecoveryActivity activity,
+      ChadActiveRecoveryService recoveryService) {
     recoveryService.completeActivity(activity.id);
 
     ScaffoldMessenger.of(context).showSnackBar(

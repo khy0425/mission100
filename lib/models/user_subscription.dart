@@ -1,14 +1,14 @@
 enum SubscriptionType {
-  free,           // 무료 사용자 (1-2주차만)
-  launchPromo,    // 런칭 이벤트 (1개월 무료, 광고 포함)
-  premium,        // 정식 프리미엄 (₩4,900/월, 광고 없음)
+  free, // 무료 사용자 (1-2주차만)
+  launchPromo, // 런칭 이벤트 (1개월 무료, 광고 포함)
+  premium, // 정식 프리미엄 (₩4,900/월, 광고 없음)
 }
 
 enum SubscriptionStatus {
-  active,         // 활성 구독
-  expired,        // 만료됨
-  cancelled,      // 취소됨
-  trial,          // 체험중
+  active, // 활성 구독
+  expired, // 만료됨
+  cancelled, // 취소됨
+  trial, // 체험중
 }
 
 class UserSubscription {

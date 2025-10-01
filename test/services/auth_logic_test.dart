@@ -6,7 +6,6 @@ import 'dart:convert';
 /// AuthService의 핵심 로직을 Firebase 없이 테스트
 void main() {
   group('Phase 1: Firebase Auth Logic Tests', () {
-
     setUp(() {
       SharedPreferences.setMockInitialValues({});
     });
@@ -55,11 +54,13 @@ void main() {
 
         // When & Then: 비밀번호 강도 검사
         for (final password in strongPasswords) {
-          expect(_validatePassword(password), true, reason: 'Strong password: $password');
+          expect(_validatePassword(password), true,
+              reason: 'Strong password: $password');
         }
 
         for (final password in weakPasswords) {
-          expect(_validatePassword(password), false, reason: 'Weak password: $password');
+          expect(_validatePassword(password), false,
+              reason: 'Weak password: $password');
         }
       });
 
@@ -86,7 +87,8 @@ void main() {
         const password = 'securePassword123';
 
         // When: 로그인 시뮬레이션
-        final result = await _simulateEmailPasswordAuth(email, password, 'login');
+        final result =
+            await _simulateEmailPasswordAuth(email, password, 'login');
 
         // Then: 성공적인 로그인
         expect(result['success'], true);
@@ -119,7 +121,8 @@ void main() {
         const googleToken = 'mock_google_token_12345';
 
         // When: Google 로그인 시뮬레이션
-        final result = await _simulateGoogleSignIn(email, displayName, googleToken);
+        final result =
+            await _simulateGoogleSignIn(email, displayName, googleToken);
 
         // Then: Google 로그인 성공
         expect(result['success'], true);
@@ -149,10 +152,26 @@ void main() {
       test('should handle authentication errors gracefully', () {
         // Given: 다양한 에러 시나리오
         final errorScenarios = {
-          'invalid_email': {'email': 'invalid', 'password': 'test123', 'expectedError': 'Invalid email format'},
-          'weak_password': {'email': 'test@example.com', 'password': '123', 'expectedError': 'Password too weak'},
-          'user_not_found': {'email': 'nonexistent@example.com', 'password': 'test123', 'expectedError': 'User not found'},
-          'wrong_password': {'email': 'test@example.com', 'password': 'wrongpass', 'expectedError': 'Wrong password'},
+          'invalid_email': {
+            'email': 'invalid',
+            'password': 'test123',
+            'expectedError': 'Invalid email format'
+          },
+          'weak_password': {
+            'email': 'test@example.com',
+            'password': '123',
+            'expectedError': 'Password too weak'
+          },
+          'user_not_found': {
+            'email': 'nonexistent@example.com',
+            'password': 'test123',
+            'expectedError': 'User not found'
+          },
+          'wrong_password': {
+            'email': 'test@example.com',
+            'password': 'wrongpass',
+            'expectedError': 'Wrong password'
+          },
         };
 
         // When & Then: 각 에러 시나리오 테스트
@@ -165,7 +184,8 @@ void main() {
 
           expect(result['success'], false);
           expect(result['errorCode'], scenario.key);
-          expect(result['errorMessage'], contains(scenario.value['expectedError']!));
+          expect(result['errorMessage'],
+              contains(scenario.value['expectedError']!));
         }
       });
 
@@ -173,8 +193,16 @@ void main() {
         // Given: 네트워크 연결 상태별 시나리오
         final connectivityScenarios = {
           'offline': {'connected': false, 'shouldQueue': true},
-          'poor_connection': {'connected': true, 'slow': true, 'shouldRetry': true},
-          'good_connection': {'connected': true, 'slow': false, 'shouldSucceed': true},
+          'poor_connection': {
+            'connected': true,
+            'slow': true,
+            'shouldRetry': true
+          },
+          'good_connection': {
+            'connected': true,
+            'slow': false,
+            'shouldSucceed': true
+          },
         };
 
         // When & Then: 각 네트워크 상태 테스트
@@ -250,7 +278,9 @@ void main() {
         final expiredSession = {
           'uid': 'test_user_123',
           'email': 'test@example.com',
-          'expiresAt': DateTime.now().subtract(const Duration(days: 1)).toIso8601String(),
+          'expiresAt': DateTime.now()
+              .subtract(const Duration(days: 1))
+              .toIso8601String(),
         };
 
         await prefs.setString('user_session', json.encode(expiredSession));
@@ -269,7 +299,8 @@ void main() {
           'uid': 'test_user_123',
           'email': 'test@example.com',
           'refreshToken': 'mock_refresh_token',
-          'accessTokenExpiresAt': DateTime.now().add(const Duration(minutes: 5)).toIso8601String(),
+          'accessTokenExpiresAt':
+              DateTime.now().add(const Duration(minutes: 5)).toIso8601String(),
         };
 
         // When: 세션 갱신 시뮬레이션
@@ -315,11 +346,13 @@ void main() {
     group('Security and Performance Tests', () {
       test('should handle concurrent authentication attempts', () async {
         // Given: 동시 인증 요청들
-        final concurrentRequests = List.generate(5, (index) => {
-          'email': 'user$index@example.com',
-          'password': 'password$index',
-          'requestId': 'req_$index',
-        });
+        final concurrentRequests = List.generate(
+            5,
+            (index) => {
+                  'email': 'user$index@example.com',
+                  'password': 'password$index',
+                  'requestId': 'req_$index',
+                });
 
         // When: 동시 요청 처리
         final results = await _simulateConcurrentAuth(concurrentRequests);
@@ -370,7 +403,8 @@ bool _validatePasswordComplexity(String password) {
   if (!RegExp(r'[A-Z]').hasMatch(password)) return false; // 대문자
   if (!RegExp(r'[a-z]').hasMatch(password)) return false; // 소문자
   if (!RegExp(r'[0-9]').hasMatch(password)) return false; // 숫자
-  if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(password)) return false; // 특수문자
+  if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(password))
+    return false; // 특수문자
   return true;
 }
 
@@ -378,7 +412,8 @@ String _generateUserId(String email, int timestamp) {
   return 'user_${email.hashCode.abs()}_$timestamp';
 }
 
-Map<String, dynamic> _createMockUser(String uid, String email, {String? displayName}) {
+Map<String, dynamic> _createMockUser(String uid, String email,
+    {String? displayName}) {
   return {
     'uid': uid,
     'email': email,
@@ -405,7 +440,8 @@ Future<Map<String, dynamic>> _simulateEmailPasswordAuth(
   }
 
   // 성공적인 인증 시뮬레이션
-  final user = _createMockUser(_generateUserId(email, DateTime.now().millisecondsSinceEpoch), email);
+  final user = _createMockUser(
+      _generateUserId(email, DateTime.now().millisecondsSinceEpoch), email);
 
   return {
     'success': true,
@@ -421,7 +457,8 @@ Future<Map<String, dynamic>> _simulateSignupFlow(
   String displayName,
 ) async {
   // 1. 계정 생성
-  final authResult = await _simulateEmailPasswordAuth(email, password, 'signup');
+  final authResult =
+      await _simulateEmailPasswordAuth(email, password, 'signup');
   if (!(authResult['success'] as bool)) {
     return {
       'authSuccess': false,
@@ -466,7 +503,8 @@ Future<Map<String, dynamic>> _simulateGoogleSignIn(
   };
 }
 
-Future<Map<String, dynamic>> _simulateLogout(Map<String, dynamic> currentUser) async {
+Future<Map<String, dynamic>> _simulateLogout(
+    Map<String, dynamic> currentUser) async {
   // 로그아웃 처리
   return {
     'success': true,
@@ -477,7 +515,8 @@ Future<Map<String, dynamic>> _simulateLogout(Map<String, dynamic> currentUser) a
   };
 }
 
-Map<String, dynamic> _simulateAuthError(String email, String password, String errorType) {
+Map<String, dynamic> _simulateAuthError(
+    String email, String password, String errorType) {
   String errorMessage;
   String errorCode = errorType;
 
@@ -565,7 +604,8 @@ Map<String, dynamic> _simulateRateLimitedAuth(
   };
 }
 
-Future<void> _saveUserSession(SharedPreferences prefs, Map<String, dynamic> user) async {
+Future<void> _saveUserSession(
+    SharedPreferences prefs, Map<String, dynamic> user) async {
   final sessionData = {
     ...user,
     'savedAt': DateTime.now().toIso8601String(),
@@ -575,7 +615,8 @@ Future<void> _saveUserSession(SharedPreferences prefs, Map<String, dynamic> user
   await prefs.setString('user_session', json.encode(sessionData));
 }
 
-Future<Map<String, dynamic>> _restoreUserSession(SharedPreferences prefs) async {
+Future<Map<String, dynamic>> _restoreUserSession(
+    SharedPreferences prefs) async {
   final sessionJson = prefs.getString('user_session');
   if (sessionJson == null) return {};
 
@@ -592,7 +633,8 @@ Future<bool> _validateSession(SharedPreferences prefs) async {
   return DateTime.now().isBefore(expiresAt);
 }
 
-Future<Map<String, dynamic>> _simulateSessionRefresh(Map<String, dynamic> session) async {
+Future<Map<String, dynamic>> _simulateSessionRefresh(
+    Map<String, dynamic> session) async {
   // 세션 갱신 시뮬레이션
   return {
     'success': true,
@@ -602,7 +644,8 @@ Future<Map<String, dynamic>> _simulateSessionRefresh(Map<String, dynamic> sessio
   };
 }
 
-Future<Map<String, dynamic>> _simulateCloudSyncInit(Map<String, dynamic> user) async {
+Future<Map<String, dynamic>> _simulateCloudSyncInit(
+    Map<String, dynamic> user) async {
   // CloudSync 초기화 시뮬레이션
   await Future.delayed(const Duration(milliseconds: 100));
 
@@ -615,7 +658,8 @@ Future<Map<String, dynamic>> _simulateCloudSyncInit(Map<String, dynamic> user) a
   };
 }
 
-Future<Map<String, dynamic>> _simulateCloudSyncFailure(Map<String, dynamic> user) async {
+Future<Map<String, dynamic>> _simulateCloudSyncFailure(
+    Map<String, dynamic> user) async {
   return {
     'success': false,
     'fallbackToOfflineMode': true,

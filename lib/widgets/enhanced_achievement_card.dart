@@ -243,16 +243,12 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                                           widget.achievement.getTitle(context),
                                           style: theme.textTheme.titleMedium
                                               ?.copyWith(
-                                                fontWeight: FontWeight.bold,
-                                                color:
-                                                    widget
-                                                        .achievement
-                                                        .isCompleted
-                                                    ? rarityColor
-                                                    : theme
-                                                          .colorScheme
-                                                          .onSurface,
-                                              ),
+                                            fontWeight: FontWeight.bold,
+                                            color: widget
+                                                    .achievement.isCompleted
+                                                ? rarityColor
+                                                : theme.colorScheme.onSurface,
+                                          ),
                                           maxLines: widget.isCompact ? 1 : 2,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -271,12 +267,11 @@ class _EnhancedAchievementCardState extends State<EnhancedAchievementCard>
                                       widget.achievement.getDescription(
                                         context,
                                       ),
-                                      style: theme.textTheme.bodySmall
-                                          ?.copyWith(
-                                            color: theme
-                                                .colorScheme
-                                                .onSurfaceVariant,
-                                          ),
+                                      style:
+                                          theme.textTheme.bodySmall?.copyWith(
+                                        color:
+                                            theme.colorScheme.onSurfaceVariant,
+                                      ),
                                       maxLines: 2,
                                       overflow: TextOverflow.ellipsis,
                                     ),
