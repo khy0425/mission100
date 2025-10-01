@@ -48,10 +48,16 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# Firebase configuration files (contain API keys)
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+lib/firebase_options.dart
+
 # 프로젝트 루트의 임시 파일들 제외
 *.md
 !README.md
 !CHANGELOG.md
+!SECURITY_SETUP.md
 !assets/legal/*.md
 fix_*.dart
 analyze_*.dart
