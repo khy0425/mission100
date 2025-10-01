@@ -77,20 +77,11 @@ jobs:
       - name: 🏗️ Build Debug APK
         run: flutter build apk --debug
 
-      - name: 🏗️ Build Release APK
-        run: flutter build apk --release
-
       - name: 📤 Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
           name: mission100-debug-apk
           path: build/app/outputs/flutter-apk/app-debug.apk
-
-      - name: 📤 Upload Release APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: mission100-release-apk
-          path: build/app/outputs/flutter-apk/app-release.apk
 
   # 코드 커버리지 (PR에서만)
   coverage:
