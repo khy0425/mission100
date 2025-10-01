@@ -104,7 +104,8 @@ class WorkoutProgramService {
     if (_rpeService.recentRPE.isNotEmpty) {
       final lastRPE = _rpeService.recentRPE.last.value;
       intensityMultiplier = WorkoutData.calculateIntensityFromRPE(lastRPE);
-      debugPrint('📈 RPE 조정: 최근 RPE=$lastRPE → 강도=${(intensityMultiplier * 100).toStringAsFixed(0)}%');
+      debugPrint(
+          '📈 RPE 조정: 최근 RPE=$lastRPE → 강도=${(intensityMultiplier * 100).toStringAsFixed(0)}%');
     }
 
     // 버피 + 푸시업 세트 가져오기 (RPE 조정 적용)
@@ -122,14 +123,18 @@ class WorkoutProgramService {
     }
 
     // Apply intensity multiplier to daily workout
-    final adjustedBurpees = (dailyWorkout.burpees.toDouble() * intensityMultiplier).round();
-    final adjustedPushups = (dailyWorkout.pushups.toDouble() * intensityMultiplier).round();
-    final adjustedWorkout = DailyWorkout(burpees: adjustedBurpees, pushups: adjustedPushups);
+    final adjustedBurpees =
+        (dailyWorkout.burpees.toDouble() * intensityMultiplier).round();
+    final adjustedPushups =
+        (dailyWorkout.pushups.toDouble() * intensityMultiplier).round();
+    final adjustedWorkout =
+        DailyWorkout(burpees: adjustedBurpees, pushups: adjustedPushups);
     final workoutSets = adjustedWorkout.toSets();
 
     final totalReps = WorkoutData.getTotalReps(adjustedWorkout);
     debugPrint('✅ 오늘의 워크아웃 찾음: $week주차 $workoutDay일차 - 총 $totalReps회');
-    debugPrint('   세트 구성: ${workoutSets.map((ExerciseSet s) => '${s.type.name}:${s.reps}').join(", ")}');
+    debugPrint(
+        '   세트 구성: ${workoutSets.map((ExerciseSet s) => '${s.type.name}:${s.reps}').join(", ")}');
 
     return TodayWorkout(
       week: week,
