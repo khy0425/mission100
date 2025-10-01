@@ -16,7 +16,10 @@
       "Bash(flutter clean:*)",
       "Bash(dart format:*)",
       "Bash(dart fix:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(gh auth:*)",
+      "Bash(chmod:*)",
+      "Bash(./revoke_exposed_keys.bat)"
     ],
     "deny": [],
     "ask": []

@@ -38,6 +38,26 @@
 - **i18n**: 다국어 지원 (한국어/영어)
 - **Chad Engine**: 동기부여 메시징 시스템
 
+## ⚠️ 보안 설정 필수
+
+**이 저장소는 보안상 Firebase 설정 파일을 포함하지 않습니다.**
+
+시작하기 전에 반드시 [SECURITY_SETUP.md](SECURITY_SETUP.md)를 참고하여 Firebase 구성을 완료하세요.
+
+필요한 파일:
+- `android/app/google-services.json`
+- `ios/Runner/GoogleService-Info.plist`
+- `lib/firebase_options.dart`
+
+자동화 스크립트 사용:
+```bash
+# Windows
+scripts\revoke_exposed_keys.bat
+
+# Linux/Mac
+scripts/revoke_exposed_keys.sh
+```
+
 ## 📱 설치 및 실행
 
 ```bash
