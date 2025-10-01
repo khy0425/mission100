@@ -12,9 +12,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(
         seedColor: const Color(AppColors.primaryColor),
         brightness: Brightness.light,
-        background: const Color(AppColors.backgroundLight),
         surface: const Color(AppColors.surfaceLight),
-        onBackground: const Color(AppColors.textPrimaryLight),
         onSurface: const Color(AppColors.textPrimaryLight),
       ),
 
@@ -180,9 +178,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSeed(
         seedColor: const Color(AppColors.primaryColor),
         brightness: Brightness.dark,
-        background: const Color(AppColors.backgroundDark),
         surface: const Color(AppColors.surfaceDark),
-        onBackground: const Color(AppColors.textPrimaryDark),
         onSurface: const Color(AppColors.textPrimaryDark),
       ),
 

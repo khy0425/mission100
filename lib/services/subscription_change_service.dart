@@ -482,6 +482,7 @@ class _MockPurchaseResult {
 
   _MockPurchaseResult({
     required this.success,
+    this.error,
     this.purchaseDetails,
   });
 }
