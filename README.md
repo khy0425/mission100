@@ -67,12 +67,27 @@ flutter pub get
 # i18n 파일 생성
 flutter gen-l10n
 
-# 앱 실행
+# 앱 실행 (Debug)
 flutter run
 
-# APK 빌드
-flutter build apk
+# Debug APK 빌드
+flutter build apk --debug
 ```
+
+### Release 빌드
+프로덕션 배포는 [Release 빌드 가이드](docs/RELEASE_BUILD.md) 참고
+
+## 🔄 CI/CD
+
+### 자동화 (GitHub Actions)
+- ✅ 코드 품질 검사 (analyze, format)
+- ✅ 단위 테스트 자동 실행
+- ✅ Debug APK 빌드 및 검증
+
+### 수동 배포
+- 🔐 Release APK는 로컬에서 빌드
+- 📱 Play Console에서 수동 업로드
+- 상세 가이드: [docs/RELEASE_BUILD.md](docs/RELEASE_BUILD.md)
 
 ## 🎊 개발 현황
 

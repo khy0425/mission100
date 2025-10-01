@@ -59,6 +59,7 @@ lib/firebase_options.dart
 !CHANGELOG.md
 !SECURITY_SETUP.md
 !assets/legal/*.md
+!docs/**/*.md
 fix_*.dart
 analyze_*.dart
 apply_*.dart

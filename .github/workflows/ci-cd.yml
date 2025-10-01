@@ -1,5 +1,13 @@
 name: 🚀 Mission100 Android CI/CD Pipeline
 
+# 자동화 전략:
+# ✅ CI/CD: 코드 검증 + Debug APK 빌드 (자동)
+# 🔐 Release: 수동 배포 (보안 및 품질 보장)
+#
+# Release 빌드는 로컬에서 실행:
+#   flutter build apk --release
+#   → Play Console에서 수동 업로드
+
 on:
   push:
     branches: [ main, develop ]
@@ -41,9 +49,9 @@ jobs:
       - name: 🧪 Run Tests
         run: flutter test
 
-  # Android 빌드 (핵심 타겟)
+  # Android 빌드 (검증용 Debug APK만)
   build-android:
-    name: 🤖 Build Android APK
+    name: 🤖 Build Android Debug APK (Verification Only)
     needs: analyze
     runs-on: ubuntu-latest
     steps:

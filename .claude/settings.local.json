@@ -20,7 +20,8 @@
       "Bash(gh auth:*)",
       "Bash(chmod:*)",
       "Bash(./revoke_exposed_keys.bat)",
-      "Bash(echo \"Exit code: $?\")"
+      "Bash(echo \"Exit code: $?\")",
+      "Bash(cat:*)"
     ],
     "deny": [],
     "ask": []
