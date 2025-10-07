@@ -116,7 +116,6 @@ dependencies:
   video_player: ^2.10.0
 
   # 마크다운 지원 (법적 문서)
-  flutter_markdown: ^0.6.18
 
 dependency_overrides:
   # webview_flutter 호환성 문제 해결을 위한 버전 고정
