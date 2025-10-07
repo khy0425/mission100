@@ -1,4 +1,5 @@
 import '../models/user_profile.dart';
+import 'package:flutter/material.dart';
 
 /// 14주 푸시업 프로그램 데이터
 ///
@@ -348,4 +349,13 @@ class WorkoutData {
     }
     return true;
   }
+
+  /// 레벨별 색상
+  static Map<UserLevel, Color> get levelColors => {
+        UserLevel.rookie: const Color(0xFF4CAF50), // Green
+        UserLevel.rising: const Color(0xFF2196F3), // Blue
+        UserLevel.alpha: const Color(0xFFFF9800), // Orange
+        UserLevel.giga: const Color(0xFFF44336), // Red
+      };
 }
+

@@ -188,26 +188,6 @@ flutter:
   # see https://flutter.dev/to/font-from-package
 
   # 기가차드 이미지 assets
-  assets:
-    - assets/images/
-    - assets/images/기본차드.jpg
-    # 푸시업 자세 가이드 이미지 assets
-    - assets/images/pushup_forms/
-    - assets/images/pushup_forms/standard/
-    - assets/images/pushup_forms/knee/
-    - assets/images/pushup_forms/incline/
-    - assets/images/pushup_forms/wide/
-    - assets/images/pushup_forms/diamond/
-    - assets/images/pushup_forms/decline/
-    - assets/images/pushup_forms/archer/
-    - assets/images/pushup_forms/pike/
-    - assets/images/pushup_forms/clap/
-    - assets/data/pushup_form_guide.json
-    - assets/data/pushup_form_guide_en.json
-    - assets/config/
-    # 법적 문서
-    - assets/legal/
-  
   # 커스텀 폰트 (추후 추가 시)
   # fonts:
   #   - family: ChadFont
