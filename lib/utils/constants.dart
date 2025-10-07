@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 
 class AppConstants {
   // 앱 정보
-  static const String appName = '💥 Mission: 100 💥';
-  static const String appSubtitle = '🚀 ALPHA EMPEROR Pushup Master 🚀';
-  static const String appSlogan =
-      '⚡ From Zero to ULTRA GIGA CHAD EMPEROR in 6 Weeks ⚡';
+  static const String appName = 'Mission: 100 Push-Ups';
+  static const String appSubtitle = '100일 푸시업 챌린지';
+  static const String appSlogan = '100일 동안, 연속 100개를 목표로!';
+  static const String appDescription =
+      '14주 과학적 프로그램으로 연속 100개 푸시업 마스터하기';
 
   // 운동 프로그램 관련
-  static const int totalWeeks = 6;
+  static const int totalWeeks = 14; // 6주 → 14주로 확장
   static const int daysPerWeek = 3;
-  static const int totalWorkoutDays = totalWeeks * daysPerWeek; // 18일
+  static const int totalWorkoutDays = totalWeeks * daysPerWeek; // 42일
+  static const int targetReps = 100; // 최종 목표: 연속 100개
 
   // 차드 레벨 관련
   static const int maxChadLevel = 6;

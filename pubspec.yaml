@@ -1,5 +1,5 @@
 name: mission100
-description: "Mission: 100 - 기가차드 밈 기반 개인화된 푸쉬업 마스터 앱, 6주 만에 100개 달성!"
+description: "Mission 100 Push-Ups - 100일 푸시업 챌린지! 14주 과학적 프로그램으로 연속 100개 달성. Chad AI 코칭과 함께!"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -38,6 +38,7 @@ dependencies:
   firebase_analytics: ^12.0.2
   firebase_crashlytics: ^5.0.2
   firebase_performance: ^0.11.1
+  firebase_messaging: ^16.0.2
   google_sign_in: ^6.3.0
 
   # 결제 시스템
@@ -104,7 +105,10 @@ dependencies:
   
   # UI 아이콘
   cupertino_icons: ^1.0.8
-  
+
+  # Markdown 뷰어
+  flutter_markdown: ^0.7.4+1
+
   # 소셜 공유
   share_plus: ^12.0.0
 
@@ -155,9 +159,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/legal/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
