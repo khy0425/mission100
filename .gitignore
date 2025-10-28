@@ -86,3 +86,20 @@ android/keystore/*.keystore
 # 환경 변수
 .env
 .env.production
+
+# 임시 스크립트 및 파일들
+*.py
+!tools/**/*.py
+archive_old/
+archive_fix_scripts/
+node_modules/
+package-lock.json
+package.json
+nul
+analyze_output.txt
+temp_methods.txt
+pubspec.yaml.backup
+lib/core/error/
+lib/core/network/
+lib/core/performance/
+scripts/download_ios_config.bat
