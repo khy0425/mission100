@@ -1,0 +1,187 @@
+{
+  "@@locale": "ko",
+  "@adaptiveTheme": {
+    "description": "Adaptive theme setting"
+  },
+  "@adaptiveThemeDesc": {
+    "description": "Adaptive theme description"
+  },
+  "@allowNotificationPermission": {
+    "description": "Allow notification permission button"
+  },
+  "@basicNotificationPermission": {
+    "description": "Basic notification permission"
+  },
+  "@colorTheme": {
+    "description": "Color theme setting"
+  },
+  "@currentLanguage": {
+    "description": "현재 언어 표시",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@dailyNotificationModeChanged": {
+    "description": "매일 알림 모드 변경 메시지"
+  },
+  "@englishLanguage": {
+    "description": "영어 언어명"
+  },
+  "@exactNotificationPermission": {
+    "description": "Exact notification permission"
+  },
+  "@koreanLanguage": {
+    "description": "한국어 언어명"
+  },
+  "@languageChanged": {
+    "description": "언어 변경 확인 메시지",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@languageComingSoon": {
+    "description": "언어 설정 준비 중 메시지"
+  },
+  "@notificationBenefit1": {
+    "description": "알림 혜택 1"
+  },
+  "@notificationBenefit2": {
+    "description": "알림 혜택 2"
+  },
+  "@notificationBenefit3": {
+    "description": "알림 혜택 3"
+  },
+  "@notificationPermissionCheckingStatus": {
+    "description": "Checking permission status message"
+  },
+  "@notificationPermissionDeniedMessage": {
+    "description": "알림 권한 거부 메시지"
+  },
+  "@notificationPermissionDesc": {
+    "description": "알림 권한 설명"
+  },
+  "@notificationPermissionErrorMessage": {
+    "description": "알림 권한 오류 메시지"
+  },
+  "@notificationPermissionFeatures": {
+    "description": "알림 권한 기능 목록"
+  },
+  "@notificationPermissionGranted": {
+    "description": "알림 권한 허용 메시지"
+  },
+  "@notificationPermissionGrantedMessage": {
+    "description": "알림 권한 허용 성공 메시지"
+  },
+  "@notificationPermissionLaterMessage": {
+    "description": "알림 권한 나중에 설정 메시지"
+  },
+  "@notificationPermissionMessage": {
+    "description": "알림 권한 다이얼로그 메시지"
+  },
+  "@notificationPermissionNeeded": {
+    "description": "Notification permission needed status"
+  },
+  "@notificationPermissionPerfect": {
+    "description": "Perfect notification permission status"
+  },
+  "@notificationPermissionRequest": {
+    "description": "알림 권한 요청 메시지"
+  },
+  "@notificationPermissionRequired": {
+    "description": "알림 권한 다이얼로그 제목"
+  },
+  "@notificationPermissionTitle": {
+    "description": "알림 권한 제목"
+  },
+  "@permissionNotificationMessage": {
+    "description": "알림 및 저장소 권한 요청 메시지"
+  },
+  "@pushNotificationDisabled": {
+    "description": "푸시 알림 비활성화 메시지"
+  },
+  "@pushNotificationEnabled": {
+    "description": "푸시 알림 활성화 메시지"
+  },
+  "@pushNotifications": {
+    "description": "푸시 알림 옵션"
+  },
+  "@pushNotificationsDesc": {
+    "description": "푸시 알림 설명"
+  },
+  "@receiveGeneralNotifications": {
+    "description": "푸시 알림 설명"
+  },
+  "@selectLanguage": {
+    "description": "언어 선택 메시지"
+  },
+  "@themeColor": {
+    "description": "테마 색상 설정 제목"
+  },
+  "@themeColorChanged": {
+    "description": "테마 색상 변경 메시지",
+    "placeholders": {
+      "colorName": {
+        "type": "String"
+      }
+    }
+  },
+  "@themeColorDesc": {
+    "description": "테마 색상 설정 설명"
+  },
+  "@themeColorSelection": {
+    "description": "테마 색상 선택 다이얼로그 제목"
+  },
+  "@useDarkTheme": {
+    "description": "다크 모드 설명"
+  },
+  "adaptiveTheme": "적응형 테마",
+  "adaptiveThemeDesc": "시스템 설정에 따라 자동으로 변경",
+  "allowNotificationPermission": "알림 권한 허용하기",
+  "allowNotifications": "🔔 알림 허용",
+  "basicNotificationPermission": "기본 알림 권한",
+  "colorTheme": "색상 테마",
+  "currentLanguage": "현재: {language}",
+  "dailyNotificationModeChanged": "매일 알림 모드로 변경! 매일 알림 받아요! 📱",
+  "englishLanguage": "English",
+  "exactNotificationPermission": "정확한 알림 권한",
+  "koreanLanguage": "한국어",
+  "languageChanged": "언어 변경! -> {language} 💪",
+  "languageComingSoon": "언어 설정 기능은 준비 중이다",
+  "notificationActivationMessage": "💪 알림 활성화!\n바로 설정하자! FXXK THE EXCUSES! 💪",
+  "notificationActivationTitle": "🔥 MISSION 100 알림 활성화! 🔥",
+  "notificationBenefit1": "💪 매일 운동 리마인더",
+  "notificationBenefit2": "🏆 업적 달성 축하 알림",
+  "notificationBenefit3": "🔥 동기부여 메시지",
+  "notificationPermissionCheckingStatus": "알림 권한 상태를 확인하고 있다",
+  "notificationPermissionDeniedMessage": "⚠️ 알림 권한 필요! 설정에서 허용! 💪",
+  "notificationPermissionDesc": "운동 리마인더와 업적 알림을 받기 위해 필요한다",
+  "notificationPermissionErrorMessage": "권한 요청 중 오류 발생!",
+  "notificationPermissionFeatures": "• 운동 리마인더\n• 업적 달성 알림\n• 동기부여 메시지",
+  "notificationPermissionGranted": "✅ 알림 권한 허용! 💪",
+  "notificationPermissionGrantedMessage": "🎉 알림 권한 허용 완료! 여정 시작! 💪",
+  "notificationPermissionLaterMessage": "나중에 설정에서 알림을 허용할 수 있다.",
+  "notificationPermissionMessage": "푸시 알림을 받으려면 알림 권한이 필요한다.",
+  "notificationPermissionNeeded": "❌ 알림 권한 필요",
+  "notificationPermissionPerfect": "알림 권한 완벽!",
+  "notificationPermissionRequest": "설정에서 알림 권한을 허용해주세요.",
+  "notificationPermissionRequired": "🔔 알림 권한 필요",
+  "notificationPermissionTitle": "🔔 알림 권한",
+  "permissionNotificationMessage": "알림 및 저장소 권한이 필요한다. 설정에서 허용해주세요.",
+  "pushNotificationDisabled": "푸시 알림이 비활성화되었다",
+  "pushNotificationEnabled": "푸시 알림이 활성화되었다",
+  "pushNotifications": "푸시 알림",
+  "pushNotificationsDesc": "💥 모든 알림을 받아라! 도망칠 곳은 없다!",
+  "receiveGeneralNotifications": "일반 알림을 받다",
+  "selectLanguage": "사용할 언어를 선택해주세요",
+  "themeColor": "테마 색상",
+  "themeColorChanged": "테마 색상이 {colorName}로 변경되었다",
+  "themeColorDesc": "앱의 메인 색상을 변경한다",
+  "themeColorSelection": "테마 색상 선택",
+  "useDarkTheme": "어두운 테마를 사용한다",
+  "backupActions": "백업 작업",
+  "backupHistory": "백업 기록"
+}

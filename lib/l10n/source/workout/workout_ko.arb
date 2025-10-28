@@ -1,0 +1,1308 @@
+{
+  "@aboutSettings": {
+    "description": "앱 정보 섹션"
+  },
+  "@allDataResetSuccessfully": {
+    "description": "모든 데이터 초기화 성공 메시지"
+  },
+  "@appearanceSettings": {
+    "description": "외관 설정 제목"
+  },
+  "@autoStartNextSet": {
+    "description": "다음 세트 자동 시작 설정"
+  },
+  "@autoStartNextSetDesc": {
+    "description": "다음 세트 자동 시작 설명"
+  },
+  "@averagePerSession": {
+    "description": "Average per session label"
+  },
+  "@backupFailureStoppedStatus": {
+    "description": "백업 실패로 인해 중단된 상태 메시지"
+  },
+  "@backupWorkoutRecords": {
+    "description": "데이터 백업 설명"
+  },
+  "@bestWeek": {
+    "description": "Best week label"
+  },
+  "@chadDays": {
+    "description": "총 운동 횟수 부제목"
+  },
+  "@chadNotificationSettings": {
+    "description": "알림 설정 섹션 제목"
+  },
+  "@chadRestModeToday": {
+    "description": "휴식모드 확인 버튼"
+  },
+  "@chadTimeSettings": {
+    "description": "시간 설정 섹션"
+  },
+  "@challenge14DaysDescription": {
+    "description": "14 consecutive days challenge description"
+  },
+  "@challenge14DaysDetailedDescription": {
+    "description": "14 consecutive days challenge detailed description"
+  },
+  "@challenge14DaysTitle": {
+    "description": "14 consecutive days challenge title"
+  },
+  "@challenge7DaysDescription": {
+    "description": "7 consecutive days challenge description"
+  },
+  "@challenge7DaysDetailedDescription": {
+    "description": "7 consecutive days challenge detailed description"
+  },
+  "@challenge7DaysTitle": {
+    "description": "7 consecutive days challenge title"
+  },
+  "@challengeHintConsecutiveDays": {
+    "description": "Hint for consecutive days challenges"
+  },
+  "@challengeHintSingleSession": {
+    "description": "Hint for single session challenges"
+  },
+  "@challengeRestartButton": {
+    "description": "Restart challenge button"
+  },
+  "@challengeTypeConsecutiveDays": {
+    "description": "Challenge type: consecutive days"
+  },
+  "@challengeTypeSingleSession": {
+    "description": "Challenge type: single session"
+  },
+  "@challengeUnitDays": {
+    "description": "Days unit for challenges"
+  },
+  "@challengeUnitReps": {
+    "description": "Reps unit for challenges"
+  },
+  "@completeSetButton": {
+    "description": "마지막 세트 완료 버튼"
+  },
+  "@completeSetContinue": {
+    "description": "일반 세트 완료 버튼"
+  },
+  "@completedRepsFormat": {
+    "description": "완료된 횟수 형식",
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      }
+    }
+  },
+  "@completedSessions": {
+    "description": "Completed sessions label"
+  },
+  "@completedSetsCount": {
+    "description": "완료된 세트 수",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmDataReset": {
+    "description": "데이터 초기화 확인 제목"
+  },
+  "@consecutiveDays": {
+    "description": "Consecutive days label"
+  },
+  "@consecutiveWorkoutBlocked": {
+    "description": "연속 운동 차단 제목"
+  },
+  "@consecutiveWorkoutMessage": {
+    "description": "연속 운동 차단 메시지"
+  },
+  "@customWorkoutDays": {
+    "description": "Custom workout days setting"
+  },
+  "@customWorkoutDaysDesc": {
+    "description": "Custom workout days description"
+  },
+  "@dailyNotificationSet": {
+    "description": "일일 알림 설정 성공 메시지"
+  },
+  "@dailyWorkoutAlarm": {
+    "description": "매일 운동 시간 알림 메시지"
+  },
+  "@dailyWorkoutReminder": {
+    "description": "일일 운동 알림 설정"
+  },
+  "@dataReset": {
+    "description": "데이터 초기화 제목"
+  },
+  "@dataResetComingSoon": {
+    "description": "데이터 초기화 준비 중 메시지"
+  },
+  "@dataResetConfirm": {
+    "description": "데이터 초기화 확인 메시지"
+  },
+  "@dataResetDesc": {
+    "description": "데이터 초기화 설명"
+  },
+  "@dataResetErrorOccurred": {
+    "description": "데이터 초기화 오류 메시지",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@dataRestore": {
+    "description": "데이터 복원 제목"
+  },
+  "@dataRestoreComingSoon": {
+    "description": "데이터 복원 준비 중 메시지"
+  },
+  "@dataRestoreCompleted": {
+    "description": "데이터 복원 완료 메시지"
+  },
+  "@dataRestoreDesc": {
+    "description": "데이터 복원 설명"
+  },
+  "@dataRestoreFailed": {
+    "description": "데이터 복원 실패 메시지"
+  },
+  "@dataRestoreTitle": {
+    "description": "데이터 복원 다이얼로그 제목"
+  },
+  "@dataRestoreWarning": {
+    "description": "데이터 복원 경고 메시지"
+  },
+  "@dataSettings": {
+    "description": "데이터 관리 섹션"
+  },
+  "@dateFormatYearMonthDay": {
+    "description": "년월일 한국어 날짜 형식",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "month": {
+        "type": "int"
+      },
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "@dayLabel": {
+    "description": "일 레이블"
+  },
+  "@dayX": {
+    "description": "Day number format",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "@days": {
+    "description": "일 단위"
+  },
+  "@daysFormat": {
+    "description": "일 형식",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteAllWorkoutRecords": {
+    "description": "데이터 초기화 설명"
+  },
+  "@detailedReminderSettings": {
+    "description": "상세 리마인더 설정 제목"
+  },
+  "@difficultySettings": {
+    "description": "난이도 설정 제목"
+  },
+  "@difficultySettingsComingSoon": {
+    "description": "난이도 설정 준비 중 메시지"
+  },
+  "@difficultySettingsTitle": {
+    "description": "난이도 설정 다이얼로그 제목"
+  },
+  "@errorPleaseTryAgain": {
+    "description": "오류 발생 시 재시도 요청 메시지"
+  },
+  "@firstWorkoutCompleted": {
+    "description": "First workout completed description"
+  },
+  "@firstWorkoutMessage": {
+    "description": "첫 운동 시작 메시지"
+  },
+  "@foundWorkout": {
+    "description": "발견된 운동 제목"
+  },
+  "@fridayShort": {
+    "description": "Friday short form"
+  },
+  "@goToSettings": {
+    "description": "설정 화면으로 이동 버튼"
+  },
+  "@homeWorkoutPushups": {
+    "description": "영상 제목 5"
+  },
+  "@hundredRepsInOneSession": {
+    "description": "Hundred reps in one session description"
+  },
+  "@incompleteWorkoutFound": {
+    "description": "미완료 운동 발견 메시지"
+  },
+  "@languageSettings": {
+    "description": "언어 설정 제목"
+  },
+  "@languageSettingsComingSoon": {
+    "description": "언어 설정 준비 중 메시지"
+  },
+  "@levelReset": {
+    "description": "Level reset title"
+  },
+  "@levelResetConfirm": {
+    "description": "Level reset confirmation dialog title"
+  },
+  "@levelResetDesc": {
+    "description": "Level reset description"
+  },
+  "@manageAppSettings": {
+    "description": "앱 설정 관리 설명"
+  },
+  "@maxSixDaysWorkout": {
+    "description": "최대 6일 운동 제한 메시지"
+  },
+  "@minOneDayRest": {
+    "description": "최소 하루 쉬는 날 필요 메시지"
+  },
+  "@mission100Settings": {
+    "description": "Mission 100 설정 제목"
+  },
+  "@mondayShort": {
+    "description": "Monday short form"
+  },
+  "@nextSetButton": {
+    "description": "마지막 세트 완료 버튼"
+  },
+  "@nextSetContinue": {
+    "description": "다음 세트 진행 버튼"
+  },
+  "@noConsecutiveSixDays": {
+    "description": "주 4회 운동 제한 메시지"
+  },
+  "@noWorkout": {
+    "description": "운동하기로 결정 버튼"
+  },
+  "@noWorkoutHistory": {
+    "description": "운동 기록이 없을 때 메시지"
+  },
+  "@noWorkoutRecordForDate": {
+    "description": "선택된 날짜에 운동 기록 없음"
+  },
+  "@noWorkoutRecords": {
+    "description": "운동 기록 없음 제목"
+  },
+  "@noWorkoutThisDay": {
+    "description": "운동 기록이 없는 날 메시지"
+  },
+  "@noWorkoutToday": {
+    "description": "오늘의 운동 없음 메시지 - 스타일"
+  },
+  "@noWorkoutsToday": {
+    "description": "No workouts today message"
+  },
+  "@notificationSettings": {
+    "description": "알림 설정 제목"
+  },
+  "@notificationSetupFailed": {
+    "description": "알림 설정 실패 에러 메시지"
+  },
+  "@notificationsSettings": {
+    "description": "알림 설정 제목"
+  },
+  "@oneWeekChallenge": {
+    "description": "One week challenge achievement"
+  },
+  "@oneWeekCompleted": {
+    "description": "One week completed description"
+  },
+  "@perfectHomeWorkout": {
+    "description": "영상 설명 5"
+  },
+  "@perfectWeek": {
+    "description": "Perfect week achievement"
+  },
+  "@programCompletedMessage": {
+    "description": "프로그램 완료 메시지"
+  },
+  "@programProgress": {
+    "description": "Program progress label"
+  },
+  "@programStart": {
+    "description": "Program start requirement"
+  },
+  "@progressSetReady": {
+    "description": "운동 진행 상황 - 세트 준비",
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressWeekDay": {
+    "description": "진행 상황 상세",
+    "placeholders": {
+      "completedDays": {
+        "type": "int"
+      },
+      "totalDays": {
+        "type": "int"
+      },
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "@recentWorkouts": {
+    "description": "최근 운동 기록 제목"
+  },
+  "@repsAchieved": {
+    "description": "운동 기록 형식",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@repsCompleted": {
+    "description": "Reps completed label"
+  },
+  "@repsCount": {
+    "description": "횟수 표시",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@repsFormat": {
+    "description": "횟수 형식",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@resetAllProgressConfirm": {
+    "description": "모든 진행 상황 초기화 확인 메시지"
+  },
+  "@resetButton": {
+    "description": "초기화 버튼"
+  },
+  "@resetConfirmMessage": {
+    "description": "초기화 확인 다이얼로그 메시지"
+  },
+  "@resetConfirmTitle": {
+    "description": "초기화 확인 다이얼로그 제목"
+  },
+  "@resetSuccess": {
+    "description": "초기화 성공 메시지"
+  },
+  "@resettingData": {
+    "description": "데이터 초기화 중 메시지"
+  },
+  "@restDayAccept": {
+    "description": "휴식일 수용 확인 메시지"
+  },
+  "@restDayBonusChallenge": {
+    "description": "휴식일 보너스 챌린지 내용"
+  },
+  "@restDayChallenge": {
+    "description": "휴식일 추가 챌린지 메시지"
+  },
+  "@restDayChampionTitle": {
+    "description": "휴식일 챔피언 모드 제목"
+  },
+  "@restDayDescription": {
+    "description": "휴식일 설명 메시지"
+  },
+  "@restDayMessage": {
+    "description": "Rest day message for non-workout days"
+  },
+  "@restDayTeasing": {
+    "description": "휴식일 놀리기 메시지"
+  },
+  "@restMessage": {
+    "description": "휴식 중 메시지"
+  },
+  "@restTimeDesc": {
+    "description": "휴식 시간 설명"
+  },
+  "@restTimeSettings": {
+    "description": "휴식 시간 설정"
+  },
+  "@restTimeTitle": {
+    "description": "휴식시간 제목"
+  },
+  "@restoreBackup": {
+    "description": "백업 복원 버튼"
+  },
+  "@restoreBackupData": {
+    "description": "데이터 복원 설명"
+  },
+  "@restoreErrorOccurred": {
+    "description": "복원 오류 메시지",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@restoreSuccess": {
+    "description": "복원 성공 메시지"
+  },
+  "@restoringData": {
+    "description": "데이터 복원 중 메시지"
+  },
+  "@resumeWorkout": {
+    "description": "운동 재개 제목"
+  },
+  "@saturdayShort": {
+    "description": "Saturday short form"
+  },
+  "@selectWorkoutDays": {
+    "description": "요일 선택 안내"
+  },
+  "@selectedDaysFormat": {
+    "description": "선택된 요일 표시 형식",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@sessions": {
+    "description": "Sessions label"
+  },
+  "@sessionsCompleted": {
+    "description": "Sessions completed label"
+  },
+  "@sessionsCompletedFormat": {
+    "description": "Sessions completed format",
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@setCompletedGood": {
+    "description": "목표 미달성이지만 세트 완료시"
+  },
+  "@setCompletedSuccess": {
+    "description": "목표 달성하고 세트 완료시"
+  },
+  "@setCount": {
+    "description": "세트 수 표시",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@setExactAlarmPermission": {
+    "description": "Set exact alarm permission button"
+  },
+  "@setFormat": {
+    "description": "세트 형식",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "setNumber": {
+        "type": "int"
+      }
+    }
+  },
+  "@setFormat2": {
+    "description": "Set format with number and reps",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@setRecords": {
+    "description": "Set records label"
+  },
+  "@setRepFormat": {
+    "description": "세트별 목표 횟수 표시",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "setIndex": {
+        "type": "int"
+      }
+    }
+  },
+  "@setRepsDisplayFormat": {
+    "description": "세트 수 및 횟수 표시 형식"
+  },
+  "@setRepsFormat": {
+    "description": "세트/횟수 형식",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "setIndex": {
+        "type": "int"
+      }
+    }
+  },
+  "@settings": {
+    "description": "설정 제목"
+  },
+  "@settingsBannerText": {
+    "description": "설정 배너 광고 텍스트"
+  },
+  "@settingsSaveFailed": {
+    "description": "설정 저장 실패 메시지"
+  },
+  "@settingsSaved": {
+    "description": "설정 저장 완료 메시지"
+  },
+  "@settingsSubtitle": {
+    "description": "설정 화면 부제목"
+  },
+  "@settingsTitle": {
+    "description": "설정 화면 제목"
+  },
+  "@sevenDayStreak": {
+    "description": "7일 연속 챌린지 메시지"
+  },
+  "@sevenDaysExercise": {
+    "description": "Seven days exercise description"
+  },
+  "@shareWorkout": {
+    "description": "운동 결과 공유 버튼"
+  },
+  "@skipRest": {
+    "description": "Skip rest button text"
+  },
+  "@skipRestButton": {
+    "description": "휴식 건너뛰기 버튼"
+  },
+  "@soundSettings": {
+    "description": "사운드 설정"
+  },
+  "@soundSettingsDesc": {
+    "description": "사운드 설정 설명"
+  },
+  "@startFirstWorkout": {
+    "description": "첫 운동 시작 메시지"
+  },
+  "@startNewWorkout": {
+    "description": "새 운동 시작 버튼"
+  },
+  "@startTodayWorkout": {
+    "description": "오늘 운동 시작 버튼"
+  },
+  "@startWorkout": {
+    "description": "운동 시작 버튼"
+  },
+  "@streakDays": {
+    "description": "연속 일수 형식",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakNotificationSet": {
+    "description": "연속 운동 알림 설정 성공 메시지"
+  },
+  "@successSettingsSaved": {
+    "description": "설정 저장 성공 메시지"
+  },
+  "@successWorkoutCompleted": {
+    "description": "운동 완료 성공 메시지"
+  },
+  "@sundayShort": {
+    "description": "Sunday short form"
+  },
+  "@targetRepsLabel": {
+    "description": "목표 횟수 표시",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@themeChangeAfterRestart": {
+    "description": "테마 변경 적용 안내"
+  },
+  "@themeChangeRestart": {
+    "description": "테마 변경 재시작 안내"
+  },
+  "@themeLanguageSettings": {
+    "description": "테마 및 언어 설정 설명"
+  },
+  "@thisMonthWorkouts": {
+    "description": "이번 달 운동 횟수"
+  },
+  "@thisWeekProgress": {
+    "description": "이번 주 진행률 표시",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      }
+    }
+  },
+  "@thursdayShort": {
+    "description": "Thursday short form"
+  },
+  "@todayGoalTitle": {
+    "description": "오늘의 목표 제목"
+  },
+  "@todayMission": {
+    "description": "Today's mission"
+  },
+  "@todayMissionTitle": {
+    "description": "오늘의 미션 제목"
+  },
+  "@todayTarget": {
+    "description": "Today's target label"
+  },
+  "@todayWorkoutCompleted": {
+    "description": "오늘 운동 완료 축하 메시지"
+  },
+  "@todayWorkoutNotAvailable": {
+    "description": "오늘의 운동 불가 메시지"
+  },
+  "@todaysGoal": {
+    "description": "오늘의 목표 제목"
+  },
+  "@totalCompletedReps": {
+    "description": "총 완료 횟수",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@totalRepsFormat": {
+    "description": "총 횟수 형식",
+    "placeholders": {
+      "totalReps": {
+        "type": "int"
+      }
+    }
+  },
+  "@totalWorkouts": {
+    "description": "총 운동 횟수"
+  },
+  "@trueChadMindset": {
+    "description": "영상 설명 3"
+  },
+  "@tuesdayShort": {
+    "description": "Tuesday short form"
+  },
+  "@vibrationSettings": {
+    "description": "진동 설정"
+  },
+  "@vibrationSettingsDesc": {
+    "description": "진동 설정 설명"
+  },
+  "@victoryDaySelection": {
+    "description": "승리의 요일 선택 섹션"
+  },
+  "@wednesdayShort": {
+    "description": "Wednesday short form"
+  },
+  "@week1Completed": {
+    "description": "Week 1 completed requirement"
+  },
+  "@week2Completed": {
+    "description": "Week 2 completed requirement"
+  },
+  "@week3Completed": {
+    "description": "Week 3 completed requirement"
+  },
+  "@week4Completed": {
+    "description": "Week 4 completed requirement"
+  },
+  "@week5Completed": {
+    "description": "Week 5 completed requirement"
+  },
+  "@week6Completed": {
+    "description": "Week 6 completed requirement"
+  },
+  "@weekCompleted": {
+    "description": "Week completed label"
+  },
+  "@weekCompletedMessage": {
+    "description": "주차 완료 메시지"
+  },
+  "@weekDayFormat": {
+    "description": "주차/일차 형식",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "@weekProgress": {
+    "description": "전체 프로그램 진행률",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@weekX": {
+    "description": "Week number format",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "@weekendRestWeekdayInvincible": {
+    "description": "직장인 차드 모드 설명"
+  },
+  "@weekly": {
+    "description": "주간 필터 옵션"
+  },
+  "@weeklyChallenge": {
+    "description": "Weekly challenge achievement"
+  },
+  "@weeklyChallengeDesc": {
+    "description": "Weekly challenge achievement description"
+  },
+  "@weeklyDetails": {
+    "description": "Weekly details title"
+  },
+  "@weeklyGoal": {
+    "description": "Weekly goal label"
+  },
+  "@weeklyGrowthChart": {
+    "description": "Weekly growth chart title"
+  },
+  "@weeklyPerformance": {
+    "description": "Weekly performance title"
+  },
+  "@weeklyReport": {
+    "description": "주간 리포트 타이틀"
+  },
+  "@weeklyWorkoutSchedule": {
+    "description": "요일별 운동 설정 설명"
+  },
+  "@weeksCompleted": {
+    "description": "완료된 주차 수",
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@weeksRemaining": {
+    "description": "진화까지 남은 주차",
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "@workout": {
+    "description": "운동 버튼 라벨"
+  },
+  "@workoutAchieved": {
+    "description": "운동 목표 달성"
+  },
+  "@workoutAlreadyCompleted": {
+    "description": "운동 이미 완료 메시지"
+  },
+  "@workoutAutoRenewalBody": {
+    "description": "운동 리마인더 자동 갱신 알림 내용"
+  },
+  "@workoutAutoRenewalTitle": {
+    "description": "운동 리마인더 자동 갱신 알림 제목"
+  },
+  "@workoutButtonConquer": {
+    "description": "일반 세트 완료 버튼"
+  },
+  "@workoutButtonUltimate": {
+    "description": "마지막 세트 완료 버튼"
+  },
+  "@workoutCalendar": {
+    "description": "Workout calendar title"
+  },
+  "@workoutChart": {
+    "description": "운동 차트 제목"
+  },
+  "@workoutCompleteButton": {
+    "description": "운동 완료 확인 버튼"
+  },
+  "@workoutCompleteMessage": {
+    "description": "운동 완료 메시지",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "totalReps": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutCompleteTitle": {
+    "description": "운동 완료 다이얼로그 제목"
+  },
+  "@workoutCompleted": {
+    "description": "운동 완료 상태"
+  },
+  "@workoutCompletionChannelDescription": {
+    "description": "운동 완룀 축하 알림 채널 설명"
+  },
+  "@workoutCompletionMessage": {
+    "description": "운동 완료 성취 메시지",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutCount": {
+    "description": "운동 횟수 형식",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutDate": {
+    "description": "Workout date format",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "month": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutDayNotification": {
+    "description": "Workout day notification"
+  },
+  "@workoutDaySelection": {
+    "description": "Workout day selection title"
+  },
+  "@workoutDaysModeActivated": {
+    "description": "운동일 전용 모드 활성화 메시지"
+  },
+  "@workoutDaysOnlyNotifications": {
+    "description": "운동일 전용 알림 설정 제목"
+  },
+  "@workoutDaysOnlyNotificationsDesc": {
+    "description": "운동일 전용 알림 설정 설명"
+  },
+  "@workoutDetailsWithStats": {
+    "description": "운동 상세 정보",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@workoutHistoryLoadError": {
+    "description": "운동 기록 로딩 실패 오류 메시지",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@workoutInterruptionDetected": {
+    "description": "운동 중단 발견 경고"
+  },
+  "@workoutPrecautions": {
+    "description": "운동 주의사항"
+  },
+  "@workoutProcessing": {
+    "description": "운동 완료 처리 상태 메시지"
+  },
+  "@workoutRecordForDate": {
+    "description": "선택된 날짜의 운동 기록",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "month": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutRecordsStats": {
+    "description": "운동 기록 및 통계 항목"
+  },
+  "@workoutReminder": {
+    "description": "운동 리마인더 설정"
+  },
+  "@workoutReminderDefaultBody": {
+    "description": "기본 운동 리마인더 알림 내용"
+  },
+  "@workoutReminderDisabled": {
+    "description": "운동 리마인더 비활성화 메시지"
+  },
+  "@workoutReminderEnabled": {
+    "description": "운동 리마인더 활성화 메시지"
+  },
+  "@workoutReminderSettings": {
+    "description": "운동 리마인더 설정 제목"
+  },
+  "@workoutReminders": {
+    "description": "운동 리마인더 옵션"
+  },
+  "@workoutRemindersChannelDescription": {
+    "description": "운동 리마인더 알림 채널 설명"
+  },
+  "@workoutRemindersDesc": {
+    "description": "운동 리마인더 설명"
+  },
+  "@workoutSaveError": {
+    "description": "운동 저장 오류 메시지"
+  },
+  "@workoutScreenAdMessage": {
+    "description": "운동 화면 광고 대체 메시지"
+  },
+  "@workoutSettings": {
+    "description": "운동 설정 섹션"
+  },
+  "@workoutStartError": {
+    "description": "운동 시작 오류 메시지",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@workoutStartMessage": {
+    "description": "운동 시작 액션 메시지"
+  },
+  "@workoutTime": {
+    "description": "운동 시간 통계 제목"
+  },
+  "@workoutTips": {
+    "description": "운동 팁 제목"
+  },
+  "@workoutTipsContent": {
+    "description": "운동 팁 내용"
+  },
+  "@workoutTitle": {
+    "description": "운동 제목 - 스타일"
+  },
+  "aboutSettings": "ℹ️ 앱 정보",
+  "allDataResetSuccessfully": "모든 데이터가 성공적으로 초기화되었다",
+  "appearanceSettings": "외관 설정",
+  "autoStartNextSet": "다음 세트 자동 시작",
+  "autoStartNextSetDesc": "휴식 후 자동으로 다음 세트 시작",
+  "averagePerSession": "평균/세션",
+  "backupFailureStoppedStatus": "백업 실패로 인한 중단",
+  "backupRestoreError": "백업 복원 중 오류 발생: {error}",
+  "backupRestoreFailed": "백업 복원에 실패했다",
+  "backupRestoredSuccessfully": "백업이 성공적으로 복원되었다",
+  "backupWorkoutRecords": "운동 기록을 백업한다",
+  "bestWeek": "최고 주차",
+  "chadDays": "강자가 된 날들!",
+  "chadNotificationSettings": "🔔 알림 설정",
+  "chadRestModeToday": "오케이! 오늘은 휴식모드다! 💪😎",
+  "chadTimeSettings": "⏰ 시간 설정",
+  "challenge14DaysDescription": "14일 동안 연속으로 운동하기",
+  "challenge14DaysDetailedDescription": "하루도 안 빠지고 14일 연속! 7일 챌린지 클리어 후 도전! 💪",
+  "challenge14DaysTitle": "14일 연속 운동",
+  "challenge7DaysDescription": "7일 동안 연속으로 운동하기",
+  "challenge7DaysDetailedDescription": "하루도 안 빠지고 7일 연속! 매일 최소 1세트! 🔥",
+  "challenge7DaysTitle": "7일 연속 운동",
+  "challengeHintConsecutiveDays": "매일 꾸준히! 하루라도 빠뜨리면 처음부터 다시! 💪",
+  "challengeHintSingleSession": "한 번에 목표 개수! 중간에 쉬면 안 돼! 🔥",
+  "challengeRestartButton": "다시 시작",
+  "challengeTypeConsecutiveDays": "연속 일수",
+  "challengeTypeSingleSession": "단일 세션",
+  "challengeUnitDays": "일",
+  "challengeUnitReps": "개",
+  "completeSetButton": "전설 등극, 만삣삐!",
+  "completeSetContinue": "또 하나 박살내기!",
+  "completedRepsFormat": "완료: {completed}회",
+  "completedSessions": "완료 세션",
+  "completedSetsCount": "완료된 세트: {count}개",
+  "confirmDataReset": "데이터 초기화 확인",
+  "consecutiveDays": "연속 일수",
+  "consecutiveWorkoutBlocked": "STOP! 연속 운동 금지!",
+  "consecutiveWorkoutMessage": "야야야! 어제 운동했잖아! 🔥\n\n지금 뭘 하려는거야? 연속 운동이야?\n진짜 강자라면 쉴 때 확실히 쉬는 거다!\n\n💀 오버트레이닝은 노답이야!\n😎 오늘은 쿨하게 쉬고 내일 다시 가자! 💪",
+  "customWorkoutDays": "운동일 설정",
+  "customWorkoutDaysDesc": "원하는 요일에 운동하도록 설정해",
+  "dailyNotificationSet": "매일 {time} 운동 알림 설정 완료! 💪",
+  "dailyWorkoutAlarm": "매일 운동 시간 알림! 놓치면 WEAK! 💪",
+  "dailyWorkoutReminder": "일일 운동 알림",
+  "dataReset": "데이터 초기화",
+  "dataResetComingSoon": "데이터 초기화 기능은 준비 중이다",
+  "dataResetConfirm": "정말로 모든 데이터를 삭제할래? 이 작업은 되돌릴 수 없다.",
+  "dataResetDesc": "모든 데이터를 삭제한다",
+  "dataResetErrorOccurred": "데이터 초기화 중 오류가 발생했다: {error}",
+  "dataRestore": "데이터 복원",
+  "dataRestoreComingSoon": "데이터 복원 기능은 준비 중이다",
+  "dataRestoreCompleted": "데이터 복원이 완료되었다! 앱을 재시작해주세요.",
+  "dataRestoreDesc": "백업된 데이터를 복원한다",
+  "dataRestoreFailed": "데이터 복원에 실패했다. 백업 파일을 확인해주세요.",
+  "dataRestoreTitle": "⚠️ 데이터 복원",
+  "dataRestoreWarning": "백업 파일로부터 데이터를 복원하면 현재 데이터가 모두 삭제된다.\\n정말로 복원할래?",
+  "dataSettings": "💾 데이터 관리",
+  "dateFormatYearMonthDay": "{year}년 {month}월 {day}일",
+  "dayLabel": "📅 Day",
+  "dayX": "{day}일차",
+  "days": "일",
+  "daysFormat": "{days}일",
+  "deleteAllWorkoutRecords": "모든 운동 기록을 삭제한다",
+  "detailedReminderSettings": "상세 리마인더 설정",
+  "difficultySettings": "난이도 설정",
+  "difficultySettingsComingSoon": "난이도 설정 기능은 준비 중이다",
+  "difficultySettingsTitle": "💪 난이도 설정",
+  "errorPleaseTryAgain": "오류가 발생했다. 다시 시도해주세요",
+  "firstWorkoutCompleted": "첫 번째 워크아웃 완료",
+  "firstWorkoutMessage": "첫 번째 운동을 시작한다! 화이팅!",
+  "foundWorkout": "🔍 발견된 운동",
+  "fridayFull": "금요일",
+  "fridayShort": "금",
+  "goToSettings": "설정으로 이동",
+  "homeWorkoutPushups": "홈트 팔굽혀펴기 🏠",
+  "hundredRepsInOneSession": "한 세션에 100회 달성",
+  "incompleteWorkoutFound": "미완료된 운동이 발견되었다!",
+  "languageSettings": "언어 설정",
+  "languageSettingsComingSoon": "언어 설정 기능은 준비 중이다",
+  "levelReset": "레벨 리셋",
+  "levelResetConfirm": "레벨 리셋 확인",
+  "levelResetDesc": "모든 진행 상황을 초기화하고 처음부터 시작한다.",
+  "manageAppSettings": "앱 설정을 관리해",
+  "maxSixDaysWorkout": "최대 6일까지만 운동할 수 있다 (하루는 쉬어야 함)",
+  "minOneDayRest": "최소 하루는 쉬는 날이 있어야 한다",
+  "mission100Settings": "Mission 100 설정",
+  "mondayFull": "월요일",
+  "mondayShort": "월",
+  "nextSetButton": "굿 잡! 우주 정복 완료!",
+  "nextSetContinue": "다음 희생양을 가져와라, 만삣삐!",
+  "noConsecutiveSixDays": "주 4회까지만 운동할 수 있다. 충분한 휴식이 필요한다!",
+  "noWorkout": "아니다! 운동할래!",
+  "noWorkoutHistory": "운동 기록이 없다",
+  "noWorkoutRecordForDate": "이 날에는 운동 기록이 없다",
+  "noWorkoutRecords": "아직 운동 기록이 없어!",
+  "noWorkoutThisDay": "이 날에는 운동 기록이 없다",
+  "noWorkoutToday": "🤷‍♂️ 오늘은 휴식? 내일은 더 파괴적으로! 🔥",
+  "noWorkoutsToday": "이 날에는 워크아웃이 없다",
+  "notificationSettings": "알림 설정",
+  "notificationSetupFailed": "알림 설정에 실패했다",
+  "notificationsSettings": "알림 설정",
+  "oneWeekChallenge": "일주일 챌린지",
+  "oneWeekCompleted": "한 주 100% 완료",
+  "perfectHomeWorkout": "집에서 할 수 있는 완벽한 운동",
+  "perfectWeek": "완벽주의자",
+  "programCompletedMessage": "프로그램 완료! 정말 대단한다!",
+  "programProgress": "프로그램 진행률",
+  "programStart": "프로그램 시작",
+  "progressSetReady": "진행: {set}세트 준비 중",
+  "progressWeekDay": "{week}주차 - {totalDays}일 중 {completedDays}일 완료",
+  "recentWorkouts": "최근 운동 기록",
+  "repsAchieved": "{reps}개 • {percentage}% 달성",
+  "repsCompleted": "회 완료",
+  "repsCount": "{count}개",
+  "repsFormat": "{count}개",
+  "resetAllProgressConfirm": "정말로 모든 진행 상황을 초기화할래?",
+  "resetButton": "초기화",
+  "resetConfirmMessage": "정말로 모든 데이터를 삭제할래? 이 작업은 되돌릴 수 없다.",
+  "resetConfirmTitle": "모든 데이터 초기화",
+  "resetSuccess": "모든 데이터가 성공적으로 초기화되었다",
+  "resettingData": "데이터를 초기화하는 중...",
+  "restDayAccept": "휴식일을 받아들이을래?",
+  "restDayBonusChallenge": "휴식일 보너스 챌린지! 💪\n\n• 플랭크 30초 x 3세트\n• 스쿼트 20개 x 2세트\n• 푸시업 10개 (완벽한 자세로!)\n\n준비됐어? 진짜 챔피언만 할 수 있어! 🏆",
+  "restDayChallenge": "휴식일이라고? 그런 건 약한 놈들이나 하는 거야!\n진짜 챔피언들은 매일이 전쟁이다! 🥊\n\n간단한 추가 챌린지로 너의 정신력을 증명해봐!",
+  "restDayChampionTitle": "🔥 진짜 챔피언의 선택",
+  "restDayDescription": "오늘은 프로그램상 휴식일이지만...\n진짜 챔피언들은 쉬지 않는다! 🔥\n\n추가 챌린지를 진행할래?",
+  "restDayMessage": "오늘은 회복의 날. 진정한 강함은 휴식에서 나온다.",
+  "restDayTeasing": "누군가는 100개 푸시업하고 있어! 💪\n\n정말 오늘은 쉬실 건가요?",
+  "restMessage": "쉬는 것도 성장이야. 다음은 더 파괴적으로 가자, 만삣삐 🦍",
+  "restTimeDesc": "세트 간 휴식 시간 설정",
+  "restTimeSettings": "휴식 시간 설정",
+  "restTimeTitle": "강자들의 재충전 타임, 만삣삐 ⚡",
+  "restoreBackup": "백업 복원",
+  "restoreBackupData": "백업된 데이터를 복원한다",
+  "restoreErrorOccurred": "복원 중 오류가 발생했다: {error}",
+  "restoreSuccess": "데이터 복원이 성공적으로 완료되었다",
+  "restoringData": "데이터를 복원하는 중...",
+  "resumeWorkout": "💪 운동 재개",
+  "saturdayFull": "토요일",
+  "saturdayShort": "토",
+  "selectWorkoutDays": "운동할 요일을 선택해 (최대 6일)",
+  "selectedDaysFormat": "선택됨: {days} ({count}/6일)",
+  "sessions": "세션",
+  "sessionsCompleted": "세션 완료",
+  "sessionsCompletedFormat": "{completed}/{total} 세션 완료 • {reps}회",
+  "setCompletedGood": "not bad, 만삣삐! 또 하나의 한계를 부숴버렸어 ⚡🔱",
+  "setCompletedSuccess": "굿 잡, 만삣삐! 또 하나의 신화가 탄생했어 🔥👑",
+  "setCount": "{count}세트",
+  "setExactAlarmPermission": "정확한 알람 권한 설정하기",
+  "setFormat": "{setNumber}세트: {reps}회",
+  "setFormat2": "{number}세트: {reps}회",
+  "setRecords": "세트별 기록:",
+  "setRepFormat": "{setIndex}세트: {reps}개",
+  "setRepsDisplayFormat": "세트 × 횟수",
+  "setRepsFormat": "{setIndex}세트: {reps}개",
+  "settings": "설정",
+  "settingsBannerText": "나만의 설정을 맞춤화해! ⚙️",
+  "settingsSaveFailed": "설정 저장에 실패했다",
+  "settingsSaved": "설정이 저장되었다",
+  "settingsSubtitle": "당신의 여정을 커스터마이즈해",
+  "settingsTitle": "⚙️ 설정",
+  "sevenDayStreak": "🔄 7일 연속 챌린지 시작! 하루라도 빠지면 처음부터! 🚀",
+  "sevenDaysExercise": "7일 연속 운동",
+  "shareWorkout": "공유하기",
+  "singleSessionChallenge": "단일 세션 챌린지",
+  "skipRest": "휴식 건너뛰기",
+  "skipRestButton": "휴식? 약자나 해라, 만삣삐! 다음 희생양 가져와!",
+  "soundSettings": "사운드 설정",
+  "soundSettingsDesc": "운동 효과음 활성화",
+  "startFirstWorkout": "첫 운동을 시작하고\\n나만의 전설을 만들어보자! 🔥",
+  "startNewWorkout": "새 운동 시작",
+  "startTodayWorkout": "🚀 오늘의 DOMINATION 시작! 🚀",
+  "startWorkout": "운동 시작",
+  "streakDays": "{days}일",
+  "streakNotificationSet": "연속 운동 격려 알림이 설정되었다!",
+  "successSettingsSaved": "⚡ ALPHA SETTINGS LOCKED! 완벽한 설정으로 무장 완료! ⚡",
+  "successWorkoutCompleted": "🚀 WORKOUT DOMINATION COMPLETE! 또 하나의 LEGENDARY ACHIEVEMENT 달성! 🚀",
+  "sundayFull": "일요일",
+  "sundayShort": "일",
+  "targetRepsLabel": "목표: {count}회",
+  "themeChangeAfterRestart": "테마 변경은 앱 재시작 후 적용된다",
+  "themeChangeRestart": "테마 변경은 앱 재시작 후 적용된다",
+  "themeLanguageSettings": "테마 및 언어 설정",
+  "thisMonthWorkouts": "이번 달 운동",
+  "thisWeekProgress": "이번 주 ({current}주차)",
+  "thursdayFull": "목요일",
+  "thursdayShort": "목",
+  "todayGoalTitle": "오늘의 목표",
+  "todayMission": "오늘의 미션",
+  "todayMissionTitle": "오늘의 미션",
+  "todayTarget": "오늘의 목표:",
+  "todayWorkoutCompleted": "🎉 오늘 운동 완료! 🎉",
+  "todayWorkoutNotAvailable": "오늘의 운동을 불러올 수 없다",
+  "todaysGoal": "오늘의 목표",
+  "totalCompletedReps": "총 완료 횟수: {reps}회",
+  "totalRepsFormat": "{totalReps}개",
+  "totalWorkouts": "총 운동 횟수",
+  "trueChadMindset": "진정한 차드가 되는 마인드셋",
+  "tuesdayFull": "화요일",
+  "tuesdayShort": "화",
+  "vibrationSettings": "진동 설정",
+  "vibrationSettingsDesc": "진동 피드백 활성화",
+  "victoryDaySelection": "💪 승리의 요일 선택",
+  "wednesdayFull": "수요일",
+  "wednesdayShort": "수",
+  "week1Completed": "1주차 완료",
+  "week2Completed": "2주차 완료",
+  "week3Completed": "3주차 완료",
+  "week4Completed": "4주차 완료",
+  "week5Completed": "5주차 완료",
+  "week6Completed": "6주차 완료",
+  "weekCompleted": "주차",
+  "weekCompletedMessage": "주차 완료! 축하드립니다!",
+  "weekDayFormat": "{week}주차 {day}일차",
+  "weekProgress": "{current}/{total} 주차",
+  "weekUnit": "주",
+  "weekX": "{week}주차",
+  "weekendRestWeekdayInvincible": "주말엔 휴식, 평일엔 무적! 💪",
+  "weekly": "주간",
+  "weeklyChallenge": "일주일 챌린지",
+  "weeklyChallengeDesc": "7일 연속 운동",
+  "weeklyDetails": "주차별 상세",
+  "weeklyGoal": "주간 목표",
+  "weeklyGrowthChart": "주간 성장 차트",
+  "weeklyPerformance": "주간별 성과",
+  "weeklyReport": "📊 주간 리포트 📊",
+  "weeklyWorkoutSchedule": "요일별 운동 시간 설정",
+  "weeksCompleted": "{completed}/{total} 주 완료",
+  "weeksRemaining": "{weeks}주 남음",
+  "workout": "운동",
+  "workoutAchieved": "달성",
+  "workoutAlreadyCompleted": "오늘의 운동은 이미 완료했다! 💪",
+  "workoutAutoRenewalBody": "운동 리마인더가 자동으로 갱신되었다. 계속해서 건강한 운동 습관을 유지해! 💪",
+  "workoutAutoRenewalTitle": "⏰ 운동 리마인더 자동 갱신",
+  "workoutButtonConquer": "이 세트를 정복하라, 만삣삐!",
+  "workoutButtonUltimate": "궁극의 승리 차지하라!",
+  "workoutCalendar": "워크아웃 캘린더",
+  "workoutChart": "운동 차트",
+  "workoutCompleteButton": "레전드다, 만삣삐!",
+  "workoutCompleteMessage": "{title} 완전 파괴!\n총 파워 해방: {totalReps}회! you did it! ⚡",
+  "workoutCompleteTitle": "🔥 굿 잡, 만삣삐! 야수 모드 완료! 👑",
+  "workoutCompleted": "완료",
+  "workoutCompletionChannelDescription": "운동 완료 축하 알림",
+  "workoutCompletionMessage": "목표의 {percentage}% 파괴! 강자의 길을 걷고 있다! KEEP GRINDING! 🔥💪",
+  "workoutCount": "{count}회",
+  "workoutDate": "{month}월 {day}일 워크아웃",
+  "workoutDayNotification": "운동일 전용 알림",
+  "workoutDaySelection": "운동 요일 선택",
+  "workoutDaysModeActivated": "💪 운동일 전용 알림 모드 활성화! 월,수,금에만 알림이 옵니다!",
+  "workoutDaysOnlyNotifications": "🔥 운동일 전용 알림",
+  "workoutDaysOnlyNotificationsDesc": "매일이 아닌 운동일(월,수,금)에만 알림을 받다. 휴식일엔 방해받지 않아요!",
+  "workoutDetailsWithStats": "운동: {title}\\n완료된 세트: {sets}개\\n총 횟수: {reps}회",
+  "workoutHistoryLoadError": "운동 기록을 불러오는 중 오류가 발생했다: {error}",
+  "workoutInterruptionDetected": "⚠️ 운동 중단 발견",
+  "workoutNotificationPermission": "🔔 운동 알림 권한",
+  "workoutPrecautions": "• 최소 하루는 쉬는 날이 있어야 한다\n• 연속으로 6일 이상 운동할 수 없다\n• 충분한 휴식은 근육 성장에 필수이다",
+  "workoutProcessing": "운동 완료 처리 중...",
+  "workoutRecordForDate": "{month}/{day} 운동 기록",
+  "workoutRecordsStats": "• 운동 기록 및 통계",
+  "workoutReminder": "운동 리마인더",
+  "workoutReminderDefaultBody": "💪 MISSION 100 운동 시간! LEGENDARY MODE 활성화! 💪",
+  "workoutReminderDisabled": "운동 리마인더가 비활성화되었다",
+  "workoutReminderEnabled": "운동 리마인더가 활성화되었다",
+  "workoutReminderSettings": "운동 리마인더 설정",
+  "workoutReminders": "운동 리마인더",
+  "workoutRemindersChannelDescription": "요일별 운동 알림",
+  "workoutRemindersDesc": "💀 매일 너를 깨워서 운동시켜줄 거야! 도망갈 생각 마라!",
+  "workoutSaveError": "운동 저장 중 오류가 발생했다.",
+  "workoutScreenAdMessage": "나만의 힘을 느껴라! 💪",
+  "workoutSettings": "💪 운동 설정",
+  "workoutStartError": "⚡ ALPHA SYSTEM ERROR! 재시도하라, 만삣삐: {error} ⚡",
+  "workoutStartMessage": "운동 시작! 🔥",
+  "workoutTime": "운동 시간",
+  "workoutTips": "운동 팁",
+  "workoutTipsContent": "• 운동 전후 충분한 스트레칭을 해\\n• 정확한 자세가 횟수보다 중요한다\\n• 꾸준함이 가장 중요한 성공 요소이다",
+  "workoutTitle": "💪 전쟁터 💪"
+}

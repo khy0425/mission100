@@ -1,0 +1,536 @@
+{
+  "@beginnerPushupQuiz": {
+    "description": "Quiz question 3"
+  },
+  "@bottomPosition": {
+    "description": "Step 3 title - bottom position"
+  },
+  "@bottomPositionDesc": {
+    "description": "Step 3 description"
+  },
+  "@breathingTechnique": {
+    "description": "호흡법 카테고리"
+  },
+  "@chadPerfectPushupForm": {
+    "description": "Subtitle for pushup form guide"
+  },
+  "@completedFormat": {
+    "description": "완료된 운동 표시",
+    "placeholders": {
+      "totalReps": {
+        "type": "int"
+      },
+      "totalSets": {
+        "type": "int"
+      }
+    }
+  },
+  "@correctPushupForm5Steps": {
+    "description": "Header for 5-step pushup guide"
+  },
+  "@correctPushupFormDesc": {
+    "description": "영상 설명 1"
+  },
+  "@correctPushupQuiz1": {
+    "description": "Quiz question 1"
+  },
+  "@excellentPerformance": {
+    "description": "Excellent performance message"
+  },
+  "@finishPosition": {
+    "description": "Step 5 title - finish position"
+  },
+  "@finishPositionDesc": {
+    "description": "Step 5 description"
+  },
+  "@goalFormat": {
+    "description": "목표 운동 표시",
+    "placeholders": {
+      "totalReps": {
+        "type": "int"
+      },
+      "totalSets": {
+        "type": "int"
+      }
+    }
+  },
+  "@goodPerformance": {
+    "description": "Good performance message"
+  },
+  "@hundredPushups": {
+    "description": "Hundred pushups achievement"
+  },
+  "@hundredPushupsDesc": {
+    "description": "Hundred pushups achievement description"
+  },
+  "@perfectFormChallenge": {
+    "description": "완벽 자세 챌린지 메시지"
+  },
+  "@perfectPushupForm": {
+    "description": "Title for pushup form guide screen"
+  },
+  "@performanceGodTier": {
+    "description": "목표 100% 달성시 메시지"
+  },
+  "@performanceMedium": {
+    "description": "목표 50% 이상 달성시 메시지"
+  },
+  "@performanceMotivation": {
+    "description": "기본 동기부여 메시지"
+  },
+  "@performanceStart": {
+    "description": "운동 시작시 메시지"
+  },
+  "@performanceStrong": {
+    "description": "목표 80% 이상 달성시 메시지"
+  },
+  "@pushup100Challenge": {
+    "description": "영상 제목 4"
+  },
+  "@pushup100Streak": {
+    "description": "푸시업 100개 연속 달성 메시지"
+  },
+  "@pushupArcher": {
+    "description": "아처 푸시업 이름"
+  },
+  "@pushupArcherBenefits": {
+    "description": "아처 푸시업 효과"
+  },
+  "@pushupArcherBreathing": {
+    "description": "아처 푸시업 호흡법"
+  },
+  "@pushupArcherChad": {
+    "description": "아처 푸시업 차드 조언"
+  },
+  "@pushupArcherDesc": {
+    "description": "아처 푸시업 설명"
+  },
+  "@pushupArcherInstructions": {
+    "description": "아처 푸시업 실행법"
+  },
+  "@pushupArcherMistakes": {
+    "description": "아처 푸시업 일반적인 실수"
+  },
+  "@pushupArcherName": {
+    "description": "아처 푸시업 이름"
+  },
+  "@pushupBreathingQuiz": {
+    "description": "Quiz question 4"
+  },
+  "@pushupClap": {
+    "description": "박수 푸시업 이름"
+  },
+  "@pushupClapBenefits": {
+    "description": "박수 푸시업 효과"
+  },
+  "@pushupClapBreathing": {
+    "description": "박수 푸시업 호흡법"
+  },
+  "@pushupClapChad": {
+    "description": "박수 푸시업 차드 조언"
+  },
+  "@pushupClapDesc": {
+    "description": "박수 푸시업 설명"
+  },
+  "@pushupClapInstructions": {
+    "description": "박수 푸시업 실행법"
+  },
+  "@pushupClapMistakes": {
+    "description": "박수 푸시업 일반적인 실수"
+  },
+  "@pushupClapName": {
+    "description": "박수 푸시업 이름"
+  },
+  "@pushupDecline": {
+    "description": "디클라인 푸시업 이름"
+  },
+  "@pushupDeclineBenefits": {
+    "description": "디클라인 푸시업 효과"
+  },
+  "@pushupDeclineBreathing": {
+    "description": "디클라인 푸시업 호흡법"
+  },
+  "@pushupDeclineChad": {
+    "description": "디클라인 푸시업 차드 조언"
+  },
+  "@pushupDeclineDesc": {
+    "description": "디클라인 푸시업 설명"
+  },
+  "@pushupDeclineInstructions": {
+    "description": "디클라인 푸시업 실행법"
+  },
+  "@pushupDeclineMistakes": {
+    "description": "디클라인 푸시업 일반적인 실수"
+  },
+  "@pushupDeclineName": {
+    "description": "디클라인 푸시업 이름"
+  },
+  "@pushupDiamond": {
+    "description": "다이아몬드 푸시업 이름"
+  },
+  "@pushupDiamondBenefits": {
+    "description": "다이아몬드 푸시업 효과"
+  },
+  "@pushupDiamondBreathing": {
+    "description": "다이아몬드 푸시업 호흡법"
+  },
+  "@pushupDiamondChad": {
+    "description": "다이아몬드 푸시업 차드 조언"
+  },
+  "@pushupDiamondDesc": {
+    "description": "다이아몬드 푸시업 설명"
+  },
+  "@pushupDiamondInstructions": {
+    "description": "다이아몬드 푸시업 실행법"
+  },
+  "@pushupDiamondMistakes": {
+    "description": "다이아몬드 푸시업 일반적인 실수"
+  },
+  "@pushupDiamondName": {
+    "description": "다이아몬드 푸시업 이름"
+  },
+  "@pushupHashtag": {
+    "description": "팔굽혀펴기 해시태그"
+  },
+  "@pushupIncline": {
+    "description": "인클라인 푸시업 이름"
+  },
+  "@pushupInclineBenefits": {
+    "description": "인클라인 푸시업 효과"
+  },
+  "@pushupInclineBreathing": {
+    "description": "인클라인 푸시업 호흡법"
+  },
+  "@pushupInclineChad": {
+    "description": "인클라인 푸시업 차드 조언"
+  },
+  "@pushupInclineDesc": {
+    "description": "인클라인 푸시업 설명"
+  },
+  "@pushupInclineInstructions": {
+    "description": "인클라인 푸시업 실행법"
+  },
+  "@pushupInclineMistakes": {
+    "description": "인클라인 푸시업 일반적인 실수"
+  },
+  "@pushupInclineName": {
+    "description": "인클라인 푸시업 이름"
+  },
+  "@pushupKnee": {
+    "description": "무릎 푸시업 이름"
+  },
+  "@pushupKneeBenefits": {
+    "description": "무릎 푸시업 효과"
+  },
+  "@pushupKneeBreathing": {
+    "description": "무릎 푸시업 호흡법"
+  },
+  "@pushupKneeChad": {
+    "description": "무릎 푸시업 차드 조언"
+  },
+  "@pushupKneeDesc": {
+    "description": "무릎 푸시업 설명"
+  },
+  "@pushupKneeInstructions": {
+    "description": "무릎 푸시업 실행법"
+  },
+  "@pushupKneeMistakes": {
+    "description": "무릎 푸시업 일반적인 실수"
+  },
+  "@pushupKneeName": {
+    "description": "무릎 푸시업 이름"
+  },
+  "@pushupMistakeQuiz": {
+    "description": "Quiz question 2"
+  },
+  "@pushupOneArm": {
+    "description": "원핸드 푸시업 이름"
+  },
+  "@pushupOneArmBenefits": {
+    "description": "원핸드 푸시업 효과"
+  },
+  "@pushupOneArmBreathing": {
+    "description": "원핸드 푸시업 호흡법"
+  },
+  "@pushupOneArmChad": {
+    "description": "원핸드 푸시업 차드 조언"
+  },
+  "@pushupOneArmDesc": {
+    "description": "원핸드 푸시업 설명"
+  },
+  "@pushupOneArmInstructions": {
+    "description": "원핸드 푸시업 실행법"
+  },
+  "@pushupOneArmMistakes": {
+    "description": "원핸드 푸시업 일반적인 실수"
+  },
+  "@pushupOneArmName": {
+    "description": "원핸드 푸시업 이름"
+  },
+  "@pushupPike": {
+    "description": "파이크 푸시업 이름"
+  },
+  "@pushupPikeBenefits": {
+    "description": "파이크 푸시업 효과"
+  },
+  "@pushupPikeBreathing": {
+    "description": "파이크 푸시업 호흡법"
+  },
+  "@pushupPikeChad": {
+    "description": "파이크 푸시업 차드 조언"
+  },
+  "@pushupPikeDesc": {
+    "description": "파이크 푸시업 설명"
+  },
+  "@pushupPikeInstructions": {
+    "description": "파이크 푸시업 실행법"
+  },
+  "@pushupPikeMistakes": {
+    "description": "파이크 푸시업 일반적인 실수"
+  },
+  "@pushupPikeName": {
+    "description": "파이크 푸시업 이름"
+  },
+  "@pushupStandard": {
+    "description": "기본 푸시업 이름"
+  },
+  "@pushupStandardBenefits": {
+    "description": "기본 푸시업 효과"
+  },
+  "@pushupStandardBreathing": {
+    "description": "기본 푸시업 호흡법"
+  },
+  "@pushupStandardChad": {
+    "description": "표준 푸시업 차드 조언"
+  },
+  "@pushupStandardDesc": {
+    "description": "기본 푸시업 설명"
+  },
+  "@pushupStandardInstructions": {
+    "description": "기본 푸시업 실행법"
+  },
+  "@pushupStandardMistakes": {
+    "description": "기본 푸시업 일반적인 실수"
+  },
+  "@pushupStandardName": {
+    "description": "기본 푸시업 이름"
+  },
+  "@pushupTutorialSubtitle": {
+    "description": "푸시업 튜토리얼 화면 부제목"
+  },
+  "@pushupTutorialTitle": {
+    "description": "푸시업 튜토리얼 화면 제목"
+  },
+  "@pushupVariations": {
+    "description": "영상 제목 2"
+  },
+  "@pushupVariationsByDifficulty": {
+    "description": "Variations section header"
+  },
+  "@pushupWideGrip": {
+    "description": "와이드 그립 푸시업 이름"
+  },
+  "@pushupWideGripBenefits": {
+    "description": "와이드 그립 푸시업 효과"
+  },
+  "@pushupWideGripBreathing": {
+    "description": "와이드 그립 푸시업 호흡법"
+  },
+  "@pushupWideGripChad": {
+    "description": "와이드 그립 푸시업 차드 조언"
+  },
+  "@pushupWideGripDesc": {
+    "description": "와이드 그립 푸시업 설명"
+  },
+  "@pushupWideGripInstructions": {
+    "description": "와이드 그립 푸시업 실행법"
+  },
+  "@pushupWideGripMistakes": {
+    "description": "와이드 그립 푸시업 일반적인 실수"
+  },
+  "@pushupWideGripName": {
+    "description": "와이드 그립 푸시업 이름"
+  },
+  "@pushupsCount": {
+    "description": "푸시업 개수 형식",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@pushupsLabel": {
+    "description": "푸시업 레이블"
+  },
+  "@resultFormat": {
+    "description": "운동 결과 표시 형식",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@startPosition": {
+    "description": "Step 1 title - start position"
+  },
+  "@startPositionDesc": {
+    "description": "Step 1 description"
+  },
+  "@timesFormat": {
+    "description": "횟수 형식",
+    "placeholders": {
+      "times": {
+        "type": "int"
+      }
+    }
+  },
+  "@totalFormat": {
+    "description": "Total workout format",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
+  "@totalPushups": {
+    "description": "Total pushups label"
+  },
+  "@tutorialAdviceForm": {
+    "description": "자세 튜토리얼 조언"
+  },
+  "@variationExercises": {
+    "description": "Tab title for variation exercises"
+  },
+  "@variousPushupStimulation": {
+    "description": "영상 설명 2"
+  },
+  "beginnerPushupQuiz": "초보자에게 가장 적합한 푸시업 변형은?",
+  "bottomPosition": "최하점 자세",
+  "bottomPositionDesc": "가슴이 바닥에 거의 닿는 최하점에서 잠시 정지한다.",
+  "breathingTechnique": "호흡법",
+  "chadPerfectPushupForm": "차드가 알려주는 완벽한 푸시업 폼! 💪",
+  "completedFormat": "완료: {totalReps}개 / {totalSets}세트",
+  "correctPushupForm5Steps": "올바른 푸시업 자세 5단계",
+  "correctPushupFormDesc": "올바른 팔굽혀펴기 자세로 효과적인 운동",
+  "correctPushupQuiz1": "올바른 푸시업 시작 자세에서 손의 위치는?",
+  "excellentPerformance": "🚀 EXCELLENT! 완벽한 실행! 🚀",
+  "finishPosition": "완료 자세",
+  "finishPositionDesc": "시작 자세로 완전히 돌아와 다음 반복을 준비한다.",
+  "goalFormat": "목표: {totalReps}개 / {totalSets}세트",
+  "goodPerformance": "💪 GOOD! 잘하고 있다! 💪",
+  "hundredPushups": "백 푸시업",
+  "hundredPushupsDesc": "한 세션에 100회 달성",
+  "perfectFormChallenge": "🎯 완벽 자세 챌린지 활성화! 대충하면 안 된다! 💪",
+  "perfectPushupForm": "완벽한 푸시업 자세",
+  "performanceGodTier": "🚀 ABSOLUTE PERFECTION! 신을 넘어선 ULTRA GOD EMPEROR 탄생! 👑",
+  "performanceMedium": "⚡ GOOD! 약함이 도망치고 있다. ALPHA STORM이 몰려온다, 만삣삐! ⚡",
+  "performanceMotivation": "🔥 할 수 있어? 당연하지! 이제 세상을 정복하러 가자, 만삣삐! 🔥",
+  "performanceStart": "💥 시작이 반? 틀렸다! 이미 전설의 문이 열렸다, YOU FUTURE EMPEROR! 💥",
+  "performanceStrong": "🔱 철봉이 무릎꿇는다고? 이제 중력이 너에게 항복한다! LEGENDARY BEAST! 🔱",
+  "pushup100Challenge": "팔굽혀펴기 100개 도전 🎯",
+  "pushup100Streak": "💪💀 푸시업 100개 연속 달성! 인간 초월! 💀💪",
+  "pushupArcher": "아처 푸시업",
+  "pushupArcherBenefits": "• 한쪽 팔 집중 강화\\n• 좌우 균형 발달\\n• 원핸드 푸시업 준비\\n• 코어 회전 안정성 강화",
+  "pushupArcherBreathing": "활시위 당기듯 집중해서 호흡해라. 정확성이 생명이다, you idiot!",
+  "pushupArcherChad": "🏹 정확한 아처가 원핸드 지름길? 맞다! 양쪽 균등 마스터하면 LEGENDARY ARCHER EMPEROR! 🏹",
+  "pushupArcherDesc": "한쪽씩 집중하는 고급 기술! 균형감각과 코어가 필요하다, 만삣삐!",
+  "pushupArcherInstructions": "1. 와이드 그립으로 시작하라\\n2. 한쪽으로 체중을 기울여라\\n3. 한 팔은 굽히고 다른 팔은 쭉\\n4. 활시위 당기듯 정확하게\\n5. 양쪽을 번갈아가며, 만삣삐!",
+  "pushupArcherMistakes": "• 몸이 비틀어짐\\n• 쭉 편 팔에도 힘이 들어감\\n• 좌우 동작이 불균등\\n• 코어가 흔들림",
+  "pushupArcherName": "아처 푸시업",
+  "pushupBreathingQuiz": "푸시업 시 올바른 호흡법은?",
+  "pushupClap": "박수 푸시업",
+  "pushupClapBenefits": "• 폭발적인 근력 발달\\n• 전신 파워 향상\\n• 순간 반응속도 증가\\n• 진짜 나만의 증명",
+  "pushupClapBreathing": "폭발할 때 강하게 내뱉고, 착지 후 빠르게 호흡 정리. 리듬이 중요하다, you idiot!",
+  "pushupClapChad": "👏 박수 푸시업은 파워의 증명? 아니다! 이제 EXPLOSIVE THUNDER POWER의 표현이다! 👏",
+  "pushupClapDesc": "박수치면서 하는 폭발적인 파워! 진짜 강자만이 할 수 있다!",
+  "pushupClapInstructions": "1. 기본 푸시업 자세로 시작\\n2. 폭발적으로 밀어올려라\\n3. 공중에서 박수를 쳐라\\n4. 안전하게 착지하라\\n5. 연속으로 도전해라, 만삣삐!",
+  "pushupClapMistakes": "• 충분한 높이로 올라가지 않음\\n• 착지할 때 손목 부상 위험\\n• 폼이 흐트러짐\\n• 무리한 연속 시도",
+  "pushupClapName": "박수 푸시업",
+  "pushupDecline": "디클라인 푸시업",
+  "pushupDeclineBenefits": "• 상부 가슴근육 집중 발달\\n• 어깨 전면 강화\\n• 코어 안정성 최대 강화\\n• 전신 근력 향상",
+  "pushupDeclineBreathing": "중력과 싸우면서도 안정된 호흡을 유지해라. 진짜 파워는 여기서 나온다, you idiot!",
+  "pushupDeclineChad": "🌪️ 중력 따위 개무시? 당연하지! 이제 물리법칙을 지배하라! 디클라인으로 GODLIKE SHOULDERS! 🌪️",
+  "pushupDeclineDesc": "발을 높게 올려서 강도 업! 어깨와 상체 근육을 제대로 자극한다!",
+  "pushupDeclineInstructions": "1. 발을 벤치나 의자에 올려라\\n2. 손은 어깨 아래 정확히\\n3. 몸은 아래쪽으로 기울어진 직선\\n4. 중력의 저항을 이겨내라\\n5. 강하게 밀어올려라, 만삣삐!",
+  "pushupDeclineMistakes": "• 발 위치가 불안정\\n• 엉덩이가 아래로 처짐\\n• 목에 무리가 가는 자세\\n• 균형을 잃고 비틀어짐",
+  "pushupDeclineName": "디클라인 푸시업",
+  "pushupDiamond": "다이아몬드 푸시업",
+  "pushupDiamondBenefits": "• 삼두근 집중 강화\\n• 가슴 안쪽 근육 발달\\n• 팔 전체 근력 향상\\n• 코어 안정성 증가",
+  "pushupDiamondBreathing": "집중해서 호흡해라. 삼두근이 불타는 걸 느껴라, you idiot!",
+  "pushupDiamondChad": "💎 다이아몬드보다 단단한 팔? 틀렸다! 이제 UNBREAKABLE TITANIUM ARMS다! 10개면 진짜 BEAST 인정! 💎",
+  "pushupDiamondDesc": "삼두근 집중 공략! 다이아몬드 모양이 진짜 나만의 상징이다!",
+  "pushupDiamondInstructions": "1. 엄지와 검지로 다이아몬드 모양 만들어라\\n2. 가슴 중앙 아래에 손 위치\\n3. 팔꿈치는 몸에 가깝게 유지\\n4. 가슴이 손에 닿을 때까지\\n5. 삼두근 힘으로 밀어올려라, 만삣삐!",
+  "pushupDiamondMistakes": "• 손목에 과도한 압력\\n• 팔꿈치가 너무 벌어짐\\n• 몸이 비틀어짐\\n• 다이아몬드 모양이 부정확함",
+  "pushupDiamondName": "다이아몬드 푸시업",
+  "pushupHashtag": "#팔굽혀펴기",
+  "pushupIncline": "인클라인 푸시업",
+  "pushupInclineBenefits": "• 부담을 줄여 폼 완성\\n• 하부 가슴근육 강화\\n• 어깨 안정성 향상\\n• 기본 푸시업으로의 징검다리",
+  "pushupInclineBreathing": "각도가 편해진 만큼 호흡도 편안하게. 하지만 집중력은 최고로, you idiot!",
+  "pushupInclineChad": "🚀 높이는 조절하고 강도는 MAX! 20개 완벽 수행하면 GOD TIER 입장권 획득이다, 만삣삐! 🚀",
+  "pushupInclineDesc": "경사면을 이용해서 난이도 조절! 계단이나 벤치면 충분하다, 만삣삐!",
+  "pushupInclineInstructions": "1. 벤치나 의자에 손을 올려라\\n2. 몸을 비스듬히 기울여라\\n3. 발가락부터 머리까지 일직선\\n4. 높을수록 쉬워진다, 만삣삐\\n5. 점차 낮은 곳으로 도전해라!",
+  "pushupInclineMistakes": "• 엉덩이가 위로 솟음\\n• 손목에 과도한 체중\\n• 불안정한 지지대 사용\\n• 각도를 너무 급하게 낮춤",
+  "pushupInclineName": "인클라인 푸시업",
+  "pushupKnee": "무릎 푸시업",
+  "pushupKneeBenefits": "• 기본 근력 향상\\n• 올바른 푸시업 폼 학습\\n• 어깨와 팔 안정성 강화\\n• 기본 푸시업으로의 단계적 진행",
+  "pushupKneeBreathing": "부드럽고 꾸준한 호흡으로 시작해라. 급하게 하지 마라, 만삣삐!",
+  "pushupKneeChad": "⚡ 시작이 반? 아니다! 이미 ALPHA JOURNEY가 시작됐다! 무릎 푸시업도 EMPEROR의 길이다! ⚡",
+  "pushupKneeDesc": "입문자도 할 수 있다! 무릎 대고 하는 거 부끄러워하지 마라, 만삣삐!",
+  "pushupKneeInstructions": "1. 무릎을 바닥에 대고 시작하라\\n2. 발목을 들어올려라\\n3. 상체는 기본 푸시업과 동일하게\\n4. 무릎에서 머리까지 일직선 유지\\n5. 천천히 확실하게 움직여라, 만삣삐!",
+  "pushupKneeMistakes": "• 엉덩이가 뒤로 빠짐\\n• 무릎 위치가 너무 앞쪽\\n• 상체만 움직이고 코어 사용 안 함\\n• 너무 빠르게 동작함",
+  "pushupKneeName": "무릎 푸시업",
+  "pushupMistakeQuiz": "푸시업 중 가장 흔한 실수는?",
+  "pushupOneArm": "원핸드 푸시업",
+  "pushupOneArmBenefits": "• 궁극의 상체 근력\\n• 완벽한 코어 컨트롤\\n• 전신 균형과 조정력\\n• 기가 나만의 완성",
+  "pushupOneArmBreathing": "깊고 안정된 호흡으로 집중력을 최고조로. 모든 에너지를 하나로, you idiot!",
+  "pushupOneArmChad": "🚀 원핸드는 차드 완성형? 틀렸다! 이제 ULTIMATE APEX GOD EMPEROR 탄생이다, FXXK YEAH! 🚀",
+  "pushupOneArmDesc": "원핸드 푸시업은 나만의 완성형이다! 이거 한 번이라도 하면 진짜 기가 차드 인정!",
+  "pushupOneArmInstructions": "1. 다리를 넓게 벌려 균형잡아라\\n2. 한 손은 등 뒤로\\n3. 코어에 모든 힘을 집중\\n4. 천천히 확실하게\\n5. 기가 나만의 자격을 증명하라!",
+  "pushupOneArmMistakes": "• 다리가 너무 좁음\\n• 몸이 비틀어지며 회전\\n• 반대 손으로 지탱\\n• 무리한 도전으로 부상",
+  "pushupOneArmName": "원핸드 푸시업",
+  "pushupPike": "파이크 푸시업",
+  "pushupPikeBenefits": "• 어깨 전체 근육 강화\\n• 핸드스탠드 푸시업 준비\\n• 상체 수직 힘 발달\\n• 코어와 균형감 향상",
+  "pushupPikeBreathing": "거꾸로 된 자세에서도 안정된 호흡. 어깨에 집중해라, you idiot!",
+  "pushupPikeChad": "⚡ 파이크 마스터하면 핸드스탠드? 당연하지! 어깨 EMPEROR로 진화하라, 만삣삐! ⚡",
+  "pushupPikeDesc": "어깨 집중 공략! 핸드스탠드 푸시업의 전 단계다!",
+  "pushupPikeInstructions": "1. 다운독 자세로 시작하라\\n2. 엉덩이를 최대한 위로\\n3. 머리가 바닥에 가까워질 때까지\\n4. 어깨 힘으로만 밀어올려라\\n5. 역삼각형을 유지하라, 만삣삐!",
+  "pushupPikeMistakes": "• 엉덩이가 충분히 올라가지 않음\\n• 팔꿈치가 옆으로 벌어짐\\n• 머리로만 지탱하려 함\\n• 발 위치가 너무 멀거나 가까움",
+  "pushupPikeName": "파이크 푸시업",
+  "pushupStandard": "기본 푸시업",
+  "pushupStandardBenefits": "• 가슴근육 전체 발달\\n• 삼두근과 어깨 강화\\n• 기본 체력 향상\\n• 모든 푸시업의 기초가 된다, you idiot!",
+  "pushupStandardBreathing": "내려갈 때 숨을 마시고, 올라올 때 강하게 내뱉어라. 호흡이 파워다, 만삣삐!",
+  "pushupStandardChad": "🔥 기본이 제일 어렵다고? 틀렸다! 완벽한 폼 하나가 세상을 정복한다, 만삣삐! MASTER THE BASICS! 🔥",
+  "pushupStandardDesc": "모든 나만의 시작점. 완벽한 기본기가 진짜 강함이다, 만삣삐!",
+  "pushupStandardInstructions": "1. 플랭크 자세로 시작한다, 만삣삐\\n2. 손은 어깨 너비로 벌려라\\n3. 몸은 일직선으로 유지해라, 흐트러지지 말고\\n4. 가슴이 바닥에 닿을 때까지 내려가라\\n5. 강하게 밀어올려라, 차드답게!",
+  "pushupStandardMistakes": "• 엉덩이가 위로 솟음 - 약자들이나 하는 짓이야\\n• 가슴을 끝까지 내리지 않음\\n• 목을 앞으로 빼고 함\\n• 손목이 어깨보다 앞에 위치\\n• 일정한 속도를 유지하지 않음, fxxk idiot!",
+  "pushupStandardName": "기본 푸시업",
+  "pushupTutorialSubtitle": "진짜 강자들은 자세부터 다르다! 💪",
+  "pushupTutorialTitle": "차드 푸시업 도장",
+  "pushupVariations": "팔굽혀펴기 변형 동작 🔥",
+  "pushupVariationsByDifficulty": "난이도별 푸시업 변형",
+  "pushupWideGrip": "와이드 그립 푸시업",
+  "pushupWideGripBenefits": "• 가슴 바깥쪽 근육 집중 발달\\n• 어깨 안정성 향상\\n• 가슴 넓이 확장\\n• 상체 전체적인 균형 발달",
+  "pushupWideGripBreathing": "넓은 가슴으로 깊게 숨쉬어라. 가슴이 확장되는 걸 느껴라, you idiot!",
+  "pushupWideGripChad": "🦁 넓은 가슴? 아니다! 이제 LEGENDARY GORILLA CHEST를 만들어라! 와이드 그립으로 세상을 압도하라! 🦁",
+  "pushupWideGripDesc": "와이드하게 벌려서 가슴을 더 넓게! 진짜 강자 가슴을 만들어라!",
+  "pushupWideGripInstructions": "1. 손을 어깨보다 1.5배 넓게 벌려라\\n2. 손가락은 약간 바깥쪽을 향하게\\n3. 가슴이 바닥에 닿을 때까지\\n4. 팔꿈치는 45도 각도 유지\\n5. 넓은 가슴으로 밀어올려라, 만삣삐!",
+  "pushupWideGripMistakes": "• 손을 너무 넓게 벌림\\n• 팔꿈치가 완전히 바깥쪽\\n• 어깨에 무리가 가는 자세\\n• 가슴을 충분히 내리지 않음",
+  "pushupWideGripName": "와이드 그립 푸시업",
+  "pushupsCount": "{count}개",
+  "pushupsLabel": "💪 푸시업",
+  "resultFormat": "전설 등급: {reps}회 ({percentage}%) 🏆",
+  "startPosition": "시작 자세",
+  "startPositionDesc": "플랭크 자세로 시작하여 손과 발의 위치를 정확히 설정한다.",
+  "timesFormat": "{times}회",
+  "totalFormat": "총 {reps}회 ({sets}세트)",
+  "totalPushups": "총 푸시업",
+  "tutorialAdviceForm": "완벽한 자세가 완벽한 차드를 만든다!",
+  "variationExercises": "변형\n운동",
+  "variousPushupStimulation": "다양한 팔굽혀펴기 변형으로 근육 자극"
+}

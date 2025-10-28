@@ -165,8 +165,8 @@ class AchievementEnhancementService {
         try {
           final map = mapDynamic as Map<String, dynamic>;
           final achievement = Achievement.fromMap(map);
-          // TODO: updateAchievementInDatabase 메서드 구현 필요
-          // await AchievementService.updateAchievementInDatabase(achievement);
+          // 업적을 데이터베이스에 업데이트
+          await updateAchievementInDatabase(achievement);
         } catch (e) {
           debugPrint('⚠️ 개별 업적 복원 실패: $e');
           // 개별 실패는 전체 프로세스를 중단하지 않음
@@ -174,8 +174,7 @@ class AchievementEnhancementService {
       }
 
       // 캐시 무효화
-      // TODO: invalidateCache 메서드 구현 필요
-      // AchievementService.invalidateCache();
+      invalidateCache();
 
       debugPrint('✅ 업적 데이터 복원 완료: ${achievementMaps.length}개');
       return true;
@@ -561,17 +560,21 @@ class AchievementEnhancementService {
     return buffer.toString();
   }
 
-  /// 업적을 데이터베이스에 업데이트 (단순 구현)
+  /// 업적을 데이터베이스에 업데이트
   static Future<void> updateAchievementInDatabase(
       Achievement achievement) async {
     try {
-      // 기본 구현: AchievementService를 통해 업적 업데이트
-      // AchievementService의 기본 메서드 사용
-      // TODO: updateAchievement 메서드가 구현되면 주석 해제
-      debugPrint('업적 업데이트 시뮬레이션: ${achievement.id}');
+      final prefs = await SharedPreferences.getInstance();
+
+      // SharedPreferences에 업적 저장
+      final key = 'achievement_${achievement.id}';
+      final jsonString = jsonEncode(achievement.toMap());
+      await prefs.setString(key, jsonString);
+
       debugPrint('✅ 업적 데이터베이스 업데이트 완료: ${achievement.id}');
     } catch (e) {
       debugPrint('❌ 업적 데이터베이스 업데이트 실패: $e');
+      rethrow;
     }
   }
 

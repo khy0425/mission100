@@ -1,0 +1,71 @@
+{
+  "@chadSleepyCap": {
+    "description": "수면모자 Chad 이름"
+  },
+  "@chadSleepyCapDesc": {
+    "description": "수면모자 Chad 설명"
+  },
+  "@chadTitleSleepy": {
+    "description": "수면모자 차드 타이틀"
+  },
+  "@factCategoryMuscle": {
+    "description": "근육 생리학 카테고리"
+  },
+  "@recovery": {
+    "description": "회복 카테고리"
+  },
+  "@recoveryLevelExcellent": {
+    "description": "회복 레벨 - 최고"
+  },
+  "@recoveryLevelGood": {
+    "description": "회복 레벨 - 좋음"
+  },
+  "@recoveryLevelFair": {
+    "description": "회복 레벨 - 보통"
+  },
+  "@recoveryLevelPoor": {
+    "description": "회복 레벨 - 휴식 필요"
+  },
+  "@scientificRecovery": {
+    "description": "전략적 차드 모드 설명"
+  },
+  "@sleepyChadEvolution": {
+    "description": "수면모자 차드 진화 상태"
+  },
+  "@sleepyHatChad": {
+    "description": "Sleepy hat chad name"
+  },
+  "@targetMuscleChest": {
+    "description": "타겟 근육 - 가슴"
+  },
+  "@targetMuscleCore": {
+    "description": "타겟 근육 - 코어"
+  },
+  "@targetMuscleFull": {
+    "description": "타겟 근육 - 전신"
+  },
+  "@targetMuscleShoulders": {
+    "description": "타겟 근육 - 어깨"
+  },
+  "@targetMuscleTriceps": {
+    "description": "타겟 근육 - 삼두근"
+  },
+  "chadSleepyCap": "수면모자",
+  "chadSleepyCapDesc": "여정을 시작하는 단계다.\n아직 잠이 덜 깼지만 곧 깨어날 거야! 😴",
+  "chadTitleSleepy": "수면모자",
+  "factCategoryMuscle": "근육 생리학",
+  "muscleIcon": "💪",
+  "recovery": "회복",
+  "recoveryLevelExcellent": "최고",
+  "recoveryLevelGood": "좋음",
+  "recoveryLevelFair": "보통",
+  "recoveryLevelPoor": "휴식필요",
+  "scientificRecovery": "과학적 근육 회복 + 지속가능한 파워! 🧠💪",
+  "sleepyChadEvolution": "수면모자 진화",
+  "sleepyHatChad": "수면모자",
+  "targetMuscleChest": "가슴",
+  "targetMuscleCore": "코어",
+  "targetMuscleFull": "전신",
+  "targetMuscleShoulders": "어깨",
+  "targetMuscleTriceps": "삼두근"
+}

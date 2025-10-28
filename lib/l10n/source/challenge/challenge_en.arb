@@ -1,0 +1,259 @@
+{
+  "@bonusChallenge": {
+    "description": "Bonus challenge title"
+  },
+  "@challenge100CumulativeDescription": {
+    "description": "100 cumulative challenge description"
+  },
+  "@challenge100CumulativeDetailedDescription": {
+    "description": "100 cumulative challenge detailed description"
+  },
+  "@challenge100CumulativeTitle": {
+    "description": "100 cumulative challenge title"
+  },
+  "@challenge200CumulativeDescription": {
+    "description": "200 cumulative challenge description"
+  },
+  "@challenge200CumulativeDetailedDescription": {
+    "description": "200 cumulative challenge detailed description"
+  },
+  "@challenge200CumulativeTitle": {
+    "description": "200 cumulative challenge title"
+  },
+  "@challenge50SingleDescription": {
+    "description": "50 single session challenge description"
+  },
+  "@challenge50SingleDetailedDescription": {
+    "description": "50 single session challenge detailed description"
+  },
+  "@challenge50SingleTitle": {
+    "description": "50 single session challenge title"
+  },
+  "@challengeAbandonButton": {
+    "description": "Abandon challenge button"
+  },
+  "@challengeAbandoned": {
+    "description": "Challenge abandoned message"
+  },
+  "@challengeAlreadyActive": {
+    "description": "Challenge already active message"
+  },
+  "@challengeCannotStart": {
+    "description": "Challenge cannot start message"
+  },
+  "@challengeCompleted": {
+    "description": "Challenge completed message"
+  },
+  "@challengeCompletedTab": {
+    "description": "Challenge completed tab"
+  },
+  "@challengeDifficultyEasy": {
+    "description": "Challenge difficulty: easy"
+  },
+  "@challengeDifficultyExtreme": {
+    "description": "Challenge difficulty: extreme"
+  },
+  "@challengeDifficultyHard": {
+    "description": "Challenge difficulty: hard"
+  },
+  "@challengeDifficultyMedium": {
+    "description": "Challenge difficulty: medium"
+  },
+  "@challengeEstimatedDuration": {
+    "description": "Challenge estimated duration",
+    "placeholders": {
+      "duration": {
+        "type": "int"
+      }
+    }
+  },
+  "@challengeFailed": {
+    "description": "Challenge failed message"
+  },
+  "@challengeGaveUp": {
+    "description": "Challenge give up completed message"
+  },
+  "@challengeGiveUpMessage": {
+    "description": "Challenge give up confirmation message"
+  },
+  "@challengeGiveUpTitle": {
+    "description": "Challenge give up confirmation title"
+  },
+  "@challengeHintCumulative": {
+    "description": "Hint for cumulative challenges"
+  },
+  "@challengeMode": {
+    "description": "Challenge mode"
+  },
+  "@challengeModeActivated": {
+    "description": "Challenge mode activation message"
+  },
+  "@challengeModeDescription": {
+    "description": "Challenge mode description"
+  },
+  "@challengeModeOn": {
+    "description": "Challenge mode activation button"
+  },
+  "@challengeOptions": {
+    "description": "Challenge options dialog content"
+  },
+  "@challengePrerequisitesNotMet": {
+    "description": "Challenge prerequisites not met message"
+  },
+  "@challengeSpirit100": {
+    "description": "Video description 4"
+  },
+  "@challengeStartButton": {
+    "description": "Start challenge button"
+  },
+  "@challengeStarted": {
+    "description": "Challenge started message"
+  },
+  "@challengeStatusActive": {
+    "description": "Challenge status: active"
+  },
+  "@challengeStatusAvailable": {
+    "description": "Challenge status: available"
+  },
+  "@challengeStatusCompleted": {
+    "description": "Challenge status: completed"
+  },
+  "@challengeStatusFailed": {
+    "description": "Challenge status: failed"
+  },
+  "@challengeStatusLocked": {
+    "description": "Challenge status: locked"
+  },
+  "@challengeTabCompleted": {
+    "description": "Completed challenges tab"
+  },
+  "@challengeTabTitle": {
+    "description": "Challenge tab title"
+  },
+  "@challengeTarget": {
+    "description": "Challenge target display",
+    "placeholders": {
+      "target": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@challengeTitle": {
+    "description": "Challenge screen title"
+  },
+  "@challengeTypeCumulative": {
+    "description": "Challenge type: cumulative"
+  },
+  "@challengesActive": {
+    "description": "Active challenges tab"
+  },
+  "@challengesAvailable": {
+    "description": "Available challenges tab"
+  },
+  "@challengesCompleted": {
+    "description": "Completed challenges tab"
+  },
+  "@challengesTitle": {
+    "description": "Challenges screen title"
+  },
+  "@completeFirstChallenge": {
+    "description": "Complete first challenge guide message"
+  },
+  "@cumulativeChallenge": {
+    "description": "Cumulative challenge type"
+  },
+  "@eventChallenge": {
+    "description": "Event challenge default title"
+  },
+  "@noActiveChallenges": {
+    "description": "No active challenges message"
+  },
+  "@noChallengesAvailable": {
+    "description": "No available challenges message"
+  },
+  "@noCompletedChallenges": {
+    "description": "No completed challenges message"
+  },
+  "@sendFriendChallenge": {
+    "description": "Send friend challenge button text"
+  },
+  "@shortTermIntensiveChallenge": {
+    "description": "Sprint challenge default description"
+  },
+  "@specialEventChallenge": {
+    "description": "Event challenge default description"
+  },
+  "@sprintChallenge": {
+    "description": "Sprint challenge default title"
+  },
+  "@startChallenge": {
+    "description": "Start challenge button"
+  },
+  "@startNewChallenge": {
+    "description": "Start new challenge guide message"
+  },
+  "bonusChallenge": "🔥 Bonus Challenge",
+  "challenge100CumulativeDescription": "Achieve a total of 100 pushups",
+  "challenge100CumulativeDetailedDescription": "Hit 100 total reps across multiple sessions! 💪",
+  "challenge100CumulativeTitle": "100 Challenge",
+  "challenge200CumulativeDescription": "Achieve a total of 200 pushups",
+  "challenge200CumulativeDetailedDescription": "Hit 200 total reps across multiple sessions! Clear 100 first! 🔥",
+  "challenge200CumulativeTitle": "200 Challenge",
+  "challenge50SingleDescription": "50 pushups in a single workout",
+  "challenge50SingleDetailedDescription": "50 reps in one shot! Stop = Start over! 💥",
+  "challenge50SingleTitle": "50 in One Go",
+  "challengeAbandonButton": "Abandon",
+  "challengeAbandoned": "Challenge Abandoned",
+  "challengeAlreadyActive": "Challenge already active",
+  "challengeCannotStart": "Can't start challenge yet!",
+  "challengeCompleted": "Challenge Completed!",
+  "challengeCompletedTab": "Completed",
+  "challengeDifficultyEasy": "Easy",
+  "challengeDifficultyExtreme": "Extreme",
+  "challengeDifficultyHard": "Hard",
+  "challengeDifficultyMedium": "Medium",
+  "challengeEstimatedDuration": "Estimated Duration: {duration} days",
+  "challengeFailed": "Challenge Failed",
+  "challengeGaveUp": "Challenge given up! Try again! 💪",
+  "challengeGiveUpMessage": "Are you sure you want to give up this challenge?",
+  "challengeGiveUpTitle": "Give Up Challenge",
+  "challengeHintCumulative": "Split across sessions! Keep it consistent! 💪",
+  "challengeMode": "Challenge Mode",
+  "challengeModeActivated": "🔥 Challenge Mode Activated! Let's test your mental strength! 💪",
+  "challengeModeDescription": "Just basic workout? Or true champion mode? 🚀\n\n⚡ Challenge Mode ON gives you:\n• Higher difficulty\n• Bonus points earned 🏆",
+  "challengeModeOn": "Challenge Mode ON! 🔥",
+  "challengeOptions": "What would you like to do with this challenge?",
+  "challengePrerequisitesNotMet": "Prerequisites not met",
+  "challengeSpirit100": "Challenge spirit towards 100 pushups",
+  "challengeStartButton": "Start",
+  "challengeStarted": "Challenge started! 🔥",
+  "challengeStatusActive": "Active",
+  "challengeStatusAvailable": "Available",
+  "challengeStatusCompleted": "Completed",
+  "challengeStatusFailed": "Failed",
+  "challengeStatusLocked": "Locked",
+  "challengeTabCompleted": "Completed",
+  "challengeTabTitle": "Challenges",
+  "challengeTarget": "Target: {target}{unit}",
+  "challengeTitle": "Challenge",
+  "challengeTypeCumulative": "Cumulative",
+  "challengesActive": "Active",
+  "challengesAvailable": "Available",
+  "challengesCompleted": "Completed",
+  "challengesTitle": "Challenges",
+  "completeFirstChallenge": "Complete your first challenge! 💪",
+  "cumulativeChallenge": "Cumulative Challenge",
+  "eventChallenge": "Event Challenge",
+  "noActiveChallenges": "No active challenges",
+  "noChallengesAvailable": "No challenges available",
+  "noCompletedChallenges": "No completed challenges",
+  "sendFriendChallenge": "💀 Send CHAD Challenge to Friends! 💀",
+  "shortTermIntensiveChallenge": "Short-term Intensive Challenge",
+  "specialEventChallenge": "Special Event Challenge",
+  "sprintChallenge": "Sprint Challenge",
+  "startChallenge": "Start! 🔥",
+  "startNewChallenge": "Start a new challenge! 🔥"
+}

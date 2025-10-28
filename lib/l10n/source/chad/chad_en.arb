@@ -1,0 +1,515 @@
+{
+  "@alphaChad": {
+    "description": "Alpha title"
+  },
+  "@balanceChadMode": {
+    "description": "Balance chad mode title"
+  },
+  "@becomeChad": {
+    "description": "Become Chad invitation message"
+  },
+  "@becomeTrueChadTips": {
+    "description": "Improvement tips section subtitle"
+  },
+  "@bottomMotivation": {
+    "description": "Bottom motivation message"
+  },
+  "@chadAdvice": {
+    "description": "Chad advice section title"
+  },
+  "@chadAlarmTime": {
+    "description": "Chad alarm time title"
+  },
+  "@chadBasic": {
+    "description": "Basic Chad name"
+  },
+  "@chadBasicDesc": {
+    "description": "Basic Chad description"
+  },
+  "@chadCoffee": {
+    "description": "Coffee Chad name"
+  },
+  "@chadCoffeeDesc": {
+    "description": "Coffee Chad description"
+  },
+  "@chadDescription": {
+    "description": "Chad description section title"
+  },
+  "@chadDouble": {
+    "description": "Double Chad name"
+  },
+  "@chadDoubleDesc": {
+    "description": "Double Chad description"
+  },
+  "@chadEvolution": {
+    "description": "Chad evolution label"
+  },
+  "@chadEvolutionCompleteNotification": {
+    "description": "Chad evolution complete notification"
+  },
+  "@chadEvolutionEncouragementNotifications": {
+    "description": "Chad evolution encouragement notification setting title"
+  },
+  "@chadEvolutionEncouragementNotificationsDesc": {
+    "description": "Chad evolution encouragement notification setting description"
+  },
+  "@chadEvolutionNotifications": {
+    "description": "Chad evolution complete notification setting title"
+  },
+  "@chadEvolutionNotificationsDesc": {
+    "description": "Chad evolution complete notification setting description"
+  },
+  "@chadEvolutionPreviewNotification": {
+    "description": "Chad evolution preview notification"
+  },
+  "@chadEvolutionPreviewNotifications": {
+    "description": "Chad evolution preview notification setting title"
+  },
+  "@chadEvolutionPreviewNotificationsDesc": {
+    "description": "Chad evolution preview notification setting description"
+  },
+  "@chadEvolutionQuarantineNotification": {
+    "description": "Chad evolution quarantine notification"
+  },
+  "@chadEvolutionStage": {
+    "description": "Chad evolution stage title"
+  },
+  "@chadEvolutionStages": {
+    "description": "Chad evolution stages title"
+  },
+  "@chadEvolutionStatus": {
+    "description": "Chad evolution status item"
+  },
+  "@chadFrontFacing": {
+    "description": "Front Facing Chad name"
+  },
+  "@chadFrontFacingDesc": {
+    "description": "Front Facing Chad description"
+  },
+  "@chadGlowingEyes": {
+    "description": "Glowing Eyes Chad name"
+  },
+  "@chadGlowingEyesDesc": {
+    "description": "Glowing Eyes Chad description"
+  },
+  "@chadHashtag": {
+    "description": "Chad hashtag"
+  },
+  "@chadJourneyTagline": {
+    "description": "Chad journey tagline"
+  },
+  "@chadMessage0": {
+    "description": "Chad level 0 message - Sleep Cap Chad"
+  },
+  "@chadMessage1": {
+    "description": "Chad level 1 message - Basic Chad"
+  },
+  "@chadMessage2": {
+    "description": "Chad level 2 message - Coffee Chad"
+  },
+  "@chadMessage3": {
+    "description": "Chad level 3 message - Front Chad"
+  },
+  "@chadMessage4": {
+    "description": "Chad level 4 message - Sunglasses Chad"
+  },
+  "@chadMessage5": {
+    "description": "Chad level 5 message - Eye Beam Chad"
+  },
+  "@chadMessage6": {
+    "description": "Chad level 6 message - Double Chad"
+  },
+  "@chadMistakesAdvice": {
+    "description": "Chad's advice about mistakes"
+  },
+  "@chadModeActivate": {
+    "description": "Chad mode activation description"
+  },
+  "@chadModeActive": {
+    "description": "Chad mode active status",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@chadModeSelection": {
+    "description": "Chad mode selection section"
+  },
+  "@chadModeWaiting": {
+    "description": "Chad mode waiting status"
+  },
+  "@chadMotivationArcher": {
+    "description": "Chad motivation for archer pushups"
+  },
+  "@chadMotivationClap": {
+    "description": "Chad motivation for clap pushups"
+  },
+  "@chadMotivationDecline": {
+    "description": "Chad motivation for decline pushups"
+  },
+  "@chadMotivationDefault": {
+    "description": "Default chad motivation message"
+  },
+  "@chadMotivationDiamond": {
+    "description": "Chad motivation for diamond pushups"
+  },
+  "@chadMotivationIncline": {
+    "description": "Chad motivation for incline pushups"
+  },
+  "@chadMotivationKnee": {
+    "description": "Chad motivation for knee pushups"
+  },
+  "@chadMotivationOneArm": {
+    "description": "Chad motivation for one-arm pushups"
+  },
+  "@chadMotivationPike": {
+    "description": "Chad motivation for pike pushups"
+  },
+  "@chadMotivationStandard": {
+    "description": "Chad motivation for standard pushups"
+  },
+  "@chadMotivationWideGrip": {
+    "description": "Chad motivation for wide grip pushups"
+  },
+  "@chadReminder": {
+    "description": "Chad reminder title"
+  },
+  "@chadSays": {
+    "description": "Chad Says label for speech bubble"
+  },
+  "@selectTodayCondition": {
+    "description": "Prompt to select today's condition"
+  },
+  "@todayCondition": {
+    "description": "Today's condition label"
+  },
+  "@chadRecommendedWorkout": {
+    "description": "Chad's recommended workout section title"
+  },
+  "@recheckCondition": {
+    "description": "Recheck condition button text"
+  },
+  "@chadConfirmedCondition": {
+    "description": "Chad confirmed condition completion message",
+    "placeholders": {
+      "condition": {
+        "type": "String"
+      }
+    }
+  },
+  "@canRecheckCondition": {
+    "description": "Can recheck condition info message"
+  },
+  "@chadSecretTips": {
+    "description": "Improvement tips section header"
+  },
+  "@chadSecrets": {
+    "description": "Video title 3"
+  },
+  "@chadShorts": {
+    "description": "YouTube Shorts screen title"
+  },
+  "@chadSunglasses": {
+    "description": "Sunglasses Chad name"
+  },
+  "@chadSunglassesDesc": {
+    "description": "Sunglasses Chad description"
+  },
+  "@chadTitleBasic": {
+    "description": "Basic Chad title"
+  },
+  "@chadTitleCoffee": {
+    "description": "Coffee Chad title"
+  },
+  "@chadTitleCool": {
+    "description": "Cool Chad title"
+  },
+  "@chadTitleDouble": {
+    "description": "Double Chad title"
+  },
+  "@chadTitleFront": {
+    "description": "Front Chad title"
+  },
+  "@chadTitleLaser": {
+    "description": "Laser Chad title"
+  },
+  "@checkChadGrowth": {
+    "description": "Banner ad fallback text for statistics"
+  },
+  "@congratulationsChad": {
+    "description": "All achievements unlocked message"
+  },
+  "@consistentChad": {
+    "description": "Subtitle for monthly workouts"
+  },
+  "@currentChadState": {
+    "description": "Current Chad state title"
+  },
+  "@dailyMotivation": {
+    "description": "Daily motivation message"
+  },
+  "@feelThePowerOfChad": {
+    "description": "Achievement celebration dialog confirm button text"
+  },
+  "@gigaChad": {
+    "description": "Giga Chad title"
+  },
+  "@improvementTips": {
+    "description": "Tab title for improvement tips"
+  },
+  "@joinChadJourney": {
+    "description": "Join Chad journey message"
+  },
+  "@journeyChadEvolution": {
+    "description": "Chad starting journey evolution state"
+  },
+  "@journeyStartingChad": {
+    "description": "Journey starting chad description"
+  },
+  "@journeyToChad": {
+    "description": "Journey to become Chad description"
+  },
+  "@laterBasicChad": {
+    "description": "Later option button text"
+  },
+  "@legendary": {
+    "description": "Legendary rarity"
+  },
+  "@legendaryChad": {
+    "description": "Legendary Chad title"
+  },
+  "@loadingChadVideos": {
+    "description": "Loading message for YouTube videos"
+  },
+  "@motivation": {
+    "description": "Motivation category - Chad style"
+  },
+  "@motivationGeneral": {
+    "description": "General motivation message"
+  },
+  "@motivationGod": {
+    "description": "Ultimate motivation when target achieved"
+  },
+  "@motivationMedium": {
+    "description": "Medium motivation for 50%+ achievement"
+  },
+  "@motivationMessage1": {
+    "description": "Motivation message 1"
+  },
+  "@motivationMessage10": {
+    "description": "Motivation message 10"
+  },
+  "@motivationMessage2": {
+    "description": "Motivation message 2"
+  },
+  "@motivationMessage3": {
+    "description": "Motivation message 3"
+  },
+  "@motivationMessage4": {
+    "description": "Motivation message 4"
+  },
+  "@motivationMessage5": {
+    "description": "Motivation message 5"
+  },
+  "@motivationMessage6": {
+    "description": "Motivation message 6"
+  },
+  "@motivationMessage7": {
+    "description": "Motivation message 7"
+  },
+  "@motivationMessage8": {
+    "description": "Motivation message 8"
+  },
+  "@motivationMessage9": {
+    "description": "Motivation message 9"
+  },
+  "@motivationMessages": {
+    "description": "Motivation messages setting"
+  },
+  "@motivationMessagesDesc": {
+    "description": "Motivation messages description"
+  },
+  "@motivationStrong": {
+    "description": "Strong motivation for 80%+ achievement"
+  },
+  "@perfectChadExperience": {
+    "description": "Perfect Chad experience description"
+  },
+  "@quickInputStrong": {
+    "description": "80% target button"
+  },
+  "@rarityLegendary": {
+    "description": "Legendary rarity level"
+  },
+  "@realChadPower": {
+    "description": "Subtitle for total pushups"
+  },
+  "@risingChad": {
+    "description": "Rising Chad title"
+  },
+  "@rookieChad": {
+    "description": "Rookie Chad title"
+  },
+  "@sigmaChad": {
+    "description": "Sigma Chad title"
+  },
+  "@strategicChadMode": {
+    "description": "Strategic chad mode title"
+  },
+  "@supportChadJourney": {
+    "description": "Support Chad journey message"
+  },
+  "@trueGigaChad": {
+    "description": "True Giga Chad complete message"
+  },
+  "@tutorialAdviceBasic": {
+    "description": "Basic pushup tutorial advice"
+  },
+  "@tutorialAdviceConsistency": {
+    "description": "Consistency tutorial advice"
+  },
+  "@tutorialAdviceStart": {
+    "description": "Starting tutorial advice"
+  },
+  "@ultraChad": {
+    "description": "Ultra Chad title"
+  },
+  "@workerChadMode": {
+    "description": "Worker chad mode title"
+  },
+  "alphaChad": "Alpha Level",
+  "balanceChadMode": "❤️ Balance Chad Mode (Tue/Thu/Sat)",
+  "becomeChad": "💀 Want to become Chad too? 💀",
+  "becomeTrueChadTips": "With these tips, you can become a true Chad too! 💎",
+  "bottomMotivation": "🔥 GROW A LITTLE? WRONG! DAILY LEGENDARY LEVEL UP! 💪",
+  "chadAdvice": "🔥 Chad's Advice",
+  "chadAlarmTime": "🔥 Chad Alarm Time",
+  "chadBasic": "Basic Form",
+  "chadBasicDesc": "First evolution complete!\nBuilding the foundation! 🔥",
+  "chadCoffee": "Coffee Power",
+  "chadCoffeeDesc": "Energy MAX!\nCoffee power activated! ☕💪",
+  "chadDescription": "💪 Chad Description",
+  "chadDouble": "Double Power",
+  "chadDoubleDesc": "Final evolution! Legend status!\nDouble power, total domination! 👑",
+  "chadEvolution": "Evolution",
+  "chadEvolutionCompleteNotification": "Evolution Complete Alert",
+  "chadEvolutionEncouragementNotifications": "Evolution Encouragement Alerts",
+  "chadEvolutionEncouragementNotificationsDesc": "Receive encouraging messages when 3 days remain until next evolution",
+  "chadEvolutionNotifications": "Evolution Complete Alerts",
+  "chadEvolutionNotificationsDesc": "Get notified when you evolve to a new stage",
+  "chadEvolutionPreviewNotification": "Evolution Preview Alert",
+  "chadEvolutionPreviewNotifications": "Chad Evolution Preview Alerts",
+  "chadEvolutionPreviewNotificationsDesc": "Get advance notice when 1 week remains until next evolution",
+  "chadEvolutionQuarantineNotification": "Chad Evolution Quarantine Notification",
+  "chadEvolutionStage": "Chad Evolution Stage",
+  "chadEvolutionStages": "Chad Evolution Stages",
+  "chadEvolutionStatus": "• Chad evolution status",
+  "chadFrontFacing": "Front Facing",
+  "chadFrontFacingDesc": "Confidence overload!\nReady to face anything! 💪",
+  "chadGlowingEyes": "Glowing Eyes Chad",
+  "chadGlowingEyesDesc": "Chad with incredible power.\nEyes glow with tremendous energy!",
+  "chadHashtag": "#Chad",
+  "chadJourneyTagline": "Join the journey to become Chad! 🔥",
+  "chadMessage0": "🛌 Wake up, future Chad! Your journey begins now!",
+  "chadMessage1": "😎 Your basics are getting solid! This is the real start of Chad!",
+  "chadMessage2": "☕ Energy overflowing! You've got power stronger than coffee!",
+  "chadMessage3": "🔥 Frontal breakthrough! No obstacle can stop you!",
+  "chadMessage4": "🕶️ Coolness is in your bones! True alpha appearance!",
+  "chadMessage5": "⚡ You can change the world with just your eyes! Legend begins!",
+  "chadMessage6": "👑 Ultimate Chad complete! Conquer the universe with double power!",
+  "chadMistakesAdvice": "Chad made mistakes at first too. But now he's perfect! 🔥",
+  "chadModeActivate": "💪 Chad Mode Activate! Set your victory schedule! 🔥",
+  "chadModeActivated": "💡 MODE ACTIVATED! More precise notifications available in settings! 🔥",
+  "chadModeActive": "🔥 {days} {time} - Chad Mode Activated!",
+  "chadModeSelection": "🚀 Chad Mode Selection",
+  "chadModeWaiting": "😴 Chad Mode Standby...",
+  "chadMotivationArcher": "Advanced technique requiring balance and focus! Master each side perfectly and you're a real chad!",
+  "chadMotivationClap": "Clap with explosive power! Master this and you're a real chad, f**k yeah!",
+  "chadMotivationDecline": "Challenging higher ground is what chads do! Feel your shoulders and upper body burning!",
+  "chadMotivationDefault": "The chad path is tough but that makes it more valuable! Don't give up!",
+  "chadMotivationDiamond": "Build your precious triceps like diamonds! Feel your arm muscles explode!",
+  "chadMotivationIncline": "Step-by-step progression is the chad way! Challenge yourself by gradually lowering the angle!",
+  "chadMotivationKnee": "Starting is half the battle! Do knee pushups properly and you'll quickly advance to regular pushups!",
+  "chadMotivationOneArm": "One-arm pushup is the ultimate chad form! Do this even once and you're recognized as a real giga chad, f**k yeah!",
+  "chadMotivationPike": "First step to handstands! Enjoy the feeling of your shoulder muscles bursting!",
+  "chadMotivationSection": "🔥 EMPEROR'S ULTIMATE WISDOM 🔥",
+  "chadMotivationStandard": "Basics are most important! Build up one by one with perfect form and you'll become a real chad!",
+  "chadMotivationWideGrip": "Spread your chest wide and receive chad energy! A broad chest is the symbol of a real chad!",
+  "chadReminder": "💪 Chad Reminder",
+  "chadSays": "Chad Says",
+  "selectTodayCondition": "How are you feeling today?",
+  "todayCondition": "Today's Condition: ",
+  "chadRecommendedWorkout": "🎯 Chad's Workout Recommendation",
+  "recheckCondition": "Recheck Condition",
+  "chadConfirmedCondition": "Chad confirmed your {condition} condition!",
+  "canRecheckCondition": "You can recheck your condition!",
+  "chadSecretTips": "Chad's Secret Tips",
+  "chadSecrets": "Chad Secrets ⚡",
+  "chadShorts": "Chad Shorts 🔥",
+  "chadSunglasses": "Style MAX",
+  "chadSunglassesDesc": "Style MAX!\nLooking good is part of the game! 😎",
+  "chadTitleBasic": "Basic Chad",
+  "chadTitleCoffee": "Coffee Chad",
+  "chadTitleCool": "Cool Chad",
+  "chadTitleDouble": "Double Chad",
+  "chadTitleFront": "Front Chad",
+  "chadTitleLaser": "Laser Chad",
+  "checkChadGrowth": "Check Chad's growth! 📊",
+  "congratulationsChad": "Congrats! True warrior status! 🎉",
+  "consistentChad": "Consistent Chad!",
+  "currentChadState": "Current Chad State",
+  "dailyMotivation": "⚡ ANOTHER DAY OF\nLEGENDARY BEAST MODE!\nCRUSH THE UNIVERSE! ⚡",
+  "enableChadNotifications": "🔥 ENABLE CHAD NOTIFICATIONS! 🔥",
+  "feelThePowerOfChad": "Feel the Power of Chad! 💪",
+  "gigaChad": "Giga Chad",
+  "improvementTips": "Improvement\nTips",
+  "joinChadJourney": "Join the journey to become Chad",
+  "journeyChadEvolution": "Chad Starting the Journey",
+  "journeyStartingChad": "Chad beginning awakening.\nPotential is stirring.",
+  "journeyToChad": "Journey to Become Chad",
+  "laterBasicChad": "Later (BASIC CHAD)",
+  "laterWeak": "Later... (WEAK)",
+  "legendary": "Legendary",
+  "legendaryChad": "Legendary Chad",
+  "legendaryModeDescription": "🔥 Want more precise notifications?\nActivate LEGENDARY MODE! 🔥",
+  "legendaryModeOn": "⚡ LEGENDARY MODE ON! ⚡",
+  "legendaryModeOptional": "💡 It's okay if not now!\nYou can set it anytime in settings later! 💪",
+  "loadingChadVideos": "Loading Chad videos... 🔥",
+  "motivation": "🔥 SAVAGE FUEL 🔥",
+  "motivationGeneral": "TODAY'S SWEAT IS TOMORROW'S GLORY. NEVER GIVE UP! 🔥💪",
+  "motivationGod": "🚀 HOLY FUCKING SHIT, BRO! YOU'RE AN ABSOLUTE SAVAGE ALPHA GOD! WEAKNESS JUST QUIT THE UNIVERSE! ⚡👑💀",
+  "motivationMedium": "YOUR LIMITS ARE JUST YOUR THOUGHTS. DESTROY THEM! 🦍⚡",
+  "motivationMessage": "Motivation Message",
+  "motivationMessage1": "🔥 REAL ALPHAS BURN EXCUSES ALIVE, FXXK THE WEAKNESS! 🔥",
+  "motivationMessage10": "🦁 CHAD BROTHERHOOD? NO! BOW TO THE ALPHA EMPIRE EMPEROR! 🦁",
+  "motivationMessage2": "⚡ CONQUER LIKE CHAD, DOMINATE LIKE SIGMA! REST IS STRATEGY ⚡",
+  "motivationMessage3": "💪 EVERY REP ELEVATES YOU TO GOD TIER! 💪",
+  "motivationMessage4": "⚡ CHAD ENERGY 100% CHARGED! NOW CONQUER THE WORLD! ⚡",
+  "motivationMessage5": "🚀 NOT CHAD EVOLUTION! NOW LEGEND TRANSFORMATION, FXXK YEAH! 🚀",
+  "motivationMessage6": "👑 MODE? PAST THAT! NOW EMPEROR MODE: ACTIVATED! 👑",
+  "motivationMessage7": "🌪️ THIS IS HOW LEGENDS ARE BORN! HISTORY WILL REMEMBER YOU! 🌪️",
+  "motivationMessage8": "⚡ NOT CHAD POWER... NOW ALPHA LIGHTNING FLOWS THROUGH YOUR BODY! ⚡",
+  "motivationMessage9": "🔱 CHAD TRANSFORMATION COMPLETE! NOW EVOLVED TO ULTIMATE APEX PREDATOR! 🔱",
+  "motivationMessages": "Motivation Messages",
+  "motivationMessagesDesc": "Show motivational messages during workout",
+  "motivationStrong": "QUITTING IS EXCUSE FOR THE WEAK. GO HARDER! 🔱💪",
+  "perfectChadExperience": "Adjust settings for the perfect Chad experience",
+  "quickInputStrong": "👑 EMPEROR POWER 👑",
+  "rarityLegendary": "Legendary",
+  "realChadPower": "Real Chad power!",
+  "risingChad": "Rising Chad",
+  "rookieChad": "Rookie Chad",
+  "sigmaChad": "Sigma Chad",
+  "strategicChadMode": "⭐ Strategic Chad Mode (Mon/Wed/Fri)",
+  "supportChadJourney": "We support your journey! 🔥",
+  "trueGigaChad": "🔥💀 True Giga Chad Complete! ALPHA EMPEROR! 💀🔥",
+  "tutorialAdviceBasic": "Basics are the most important, bro!",
+  "tutorialAdviceConsistency": "Consistency is the key to Chad power!",
+  "tutorialAdviceStart": "Starting is half the battle!",
+  "ultraChad": "Ultra Chad",
+  "workerChadMode": "💼 Worker Chad Mode (Mon-Fri)"
+}

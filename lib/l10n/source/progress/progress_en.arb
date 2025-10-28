@@ -1,0 +1,137 @@
+{
+  "@bestRecord": {
+    "description": "Best record label"
+  },
+  "@challengeInProgress": {
+    "description": "Challenge in progress status"
+  },
+  "@challengeProgress": {
+    "description": "Challenge progress",
+    "placeholders": {
+      "progress": {
+        "type": "int"
+      }
+    }
+  },
+  "@currentLevelProgress": {
+    "description": "Current level and progress item"
+  },
+  "@currentStreak": {
+    "description": "Current workout streak label"
+  },
+  "@dailyConquestRecord": {
+    "description": "Daily conquest record title"
+  },
+  "@dataBackupProgress": {
+    "description": "Data backup progress message"
+  },
+  "@inProgress": {
+    "description": "In progress status"
+  },
+  "@inProgressStatus": {
+    "description": "In progress status"
+  },
+  "@loadingStatistics": {
+    "description": "Loading message for statistics screen"
+  },
+  "@monthlyProgress": {
+    "description": "Monthly progress title"
+  },
+  "@noBackupRecord": {
+    "description": "Title when no backup record exists"
+  },
+  "@noChartData": {
+    "description": "Message when there is no chart data"
+  },
+  "@noPieChartData": {
+    "description": "Message when there is no pie chart data"
+  },
+  "@overallProgress": {
+    "description": "Overall progress label"
+  },
+  "@overallStatistics": {
+    "description": "Overall statistics title"
+  },
+  "@overallStats": {
+    "description": "Overall statistics label"
+  },
+  "@personalRecords": {
+    "description": "Personal records title"
+  },
+  "@progress": {
+    "description": "Progress label for achievement progress bar"
+  },
+  "@progressLabel": {
+    "description": "Progress label - Chad style"
+  },
+  "@progressText": {
+    "description": "Progress text"
+  },
+  "@progressTracking": {
+    "description": "Progress tracking title"
+  },
+  "@progressVisualization": {
+    "description": "Progress visualization section title"
+  },
+  "@statistics": {
+    "description": "Statistics tab"
+  },
+  "@statisticsBannerText": {
+    "description": "Statistics screen banner text"
+  },
+  "@statisticsTab": {
+    "description": "Statistics tab"
+  },
+  "@streakBrokenMessage": {
+    "description": "Workout streak broken message"
+  },
+  "@streakContinueMessage": {
+    "description": "Workout streak continue message"
+  },
+  "@streakEncouragement": {
+    "description": "Streak encouragement setting"
+  },
+  "@streakEncouragementSubtitle": {
+    "description": "Subtitle for streak encouragement setting"
+  },
+  "@streakProgress": {
+    "description": "Streak progress label"
+  },
+  "@streakStartMessage": {
+    "description": "Workout streak start message"
+  },
+  "bestRecord": "Best Record",
+  "challengeInProgress": "In Progress",
+  "challengeProgress": "Progress: {progress}%",
+  "currentLevelProgress": "• Current level and progress",
+  "currentStreak": "Current Streak",
+  "dailyConquestRecord": "🔥💀 Daily Conquest Record 💀🔥",
+  "dataBackupProgress": "Backing up data...",
+  "inProgress": "In Progress",
+  "inProgressStatus": "In Progress",
+  "loadingStatistics": "Loading Chad's statistics...",
+  "monthlyProgress": "Monthly Progress",
+  "noBackupRecord": "No Backup Record",
+  "noChartData": "No chart data available",
+  "noPieChartData": "No pie chart data available",
+  "overallProgress": "Overall Progress",
+  "overallStatistics": "Overall Statistics",
+  "overallStats": "Overall Statistics",
+  "personalRecords": "Personal Records",
+  "progress": "Progress",
+  "progressLabel": "🚀 LEGEND PROGRESS 🚀",
+  "progressText": "Progress",
+  "progressTracking": "Progress Tracking",
+  "progressVisualization": "Progress Visualization",
+  "statistics": "Statistics",
+  "statisticsBannerText": "Check your Chad growth! 📊",
+  "statisticsTab": "Statistics",
+  "statusInProgress": "In Progress",
+  "streakBrokenMessage": "Workout streak broken",
+  "streakChallenge": "Streak Challenge",
+  "streakContinueMessage": "Workout streak continues!",
+  "streakEncouragement": "Streak Encouragement",
+  "streakEncouragementSubtitle": "Encouragement message after 3 consecutive workouts",
+  "streakProgress": "Streak Progress",
+  "streakStartMessage": "Workout streak started!"
+}

@@ -1,0 +1,86 @@
+{
+  "onboardingWelcomeTitle": "6 Weeks, 100 Reps. Let's Go! 🔥",
+  "@onboardingWelcomeTitle": {
+    "description": "Onboarding welcome screen title"
+  },
+  "onboardingWelcomeDescription": "6 weeks is all you need. You got this.\nLet's crush it! 💪",
+  "@onboardingWelcomeDescription": {
+    "description": "Onboarding welcome screen description"
+  },
+  "onboardingProgramIntroTitle": "6-Week Total Domination Plan 📋",
+  "@onboardingProgramIntroTitle": {
+    "description": "Onboarding program introduction title"
+  },
+  "onboardingProgramIntroDescription": "6 weeks. Step by step to the top.\n\n• Week 1: Build the base\n• Week 2-3: Power explosion\n• Week 4-5: Endurance MAX\n• Week 6: Hit 100! 🎯",
+  "@onboardingProgramIntroDescription": {
+    "description": "Onboarding program introduction description"
+  },
+  "onboardingAdaptiveTrainingTitle": "🎯 Tailored Just For You",
+  "@onboardingAdaptiveTrainingTitle": {
+    "description": "Onboarding adaptive training title"
+  },
+  "onboardingAdaptiveTrainingDescription": "Too hard? → We dial it down ⬇️\nToo easy? → We crank it up ⬆️\n\nPerfect intensity, every time! 🔥",
+  "@onboardingAdaptiveTrainingDescription": {
+    "description": "Onboarding adaptive training description"
+  },
+  "onboardingChadEvolutionTitle": "Level Up Non-Stop 🚀",
+  "@onboardingChadEvolutionTitle": {
+    "description": "Onboarding Chad evolution title"
+  },
+  "onboardingChadEvolutionDescription": "Every workout = Level up!\n\n🏃 Rookie → 💪 Giga → 👑 Legendary\n\nUnlock new achievements at each stage! 🏆",
+  "@onboardingChadEvolutionDescription": {
+    "description": "Onboarding Chad evolution description"
+  },
+  "onboardingInitialTestTitle": "Skill Check Time ⏱️",
+  "@onboardingInitialTestTitle": {
+    "description": "Onboarding initial test title"
+  },
+  "onboardingInitialTestDescription": "Check your current level.\nGet your personalized program.\n\n• Push to your max\n• Keep perfect form\n• Get your custom plan",
+  "@onboardingInitialTestDescription": {
+    "description": "Onboarding initial test description"
+  },
+  "onboardingButtonStart": "Let's Go! 🔥",
+  "@onboardingButtonStart": {
+    "description": "Onboarding start button (Chad tone without name)"
+  },
+  "onboardingButtonNext": "Keep Going! 💪",
+  "@onboardingButtonNext": {
+    "description": "Onboarding next button (Chad tone without name)"
+  },
+  "onboardingButtonGotIt": "Got It! 👌",
+  "@onboardingButtonGotIt": {
+    "description": "Onboarding adaptive training confirmation button (Chad tone without name)"
+  },
+  "onboardingButtonGreat": "Locked In! 💪",
+  "@onboardingButtonGreat": {
+    "description": "Onboarding Chad evolution confirmation button (Chad tone without name)"
+  },
+  "onboardingButtonStartTest": "Let's Check! 🎯",
+  "@onboardingButtonStartTest": {
+    "description": "Onboarding test start button (Chad tone without name)"
+  },
+  "challengeTestYourLimits": "💪 Test your limits today?",
+  "@challengeTestYourLimits": {
+    "description": "Challenge test your limits message"
+  },
+  "completeInitialTest": "Complete initial test to create your profile",
+  "@completeInitialTest": {
+    "description": "Complete initial test guide"
+  },
+  "getStarted": "Get Started 🚀",
+  "@getStarted": {
+    "description": "Get started button text (with emoji)"
+  },
+  "getStartedButton": "Get Started",
+  "onboardingNext": "Next",
+  "onboardingSkip": "Skip",
+  "onboardingStart": "Start",
+  "startTestButton": "Start Test",
+  "stepByStepGuide": "Step-by-Step\nGuide",
+  "testAdMessage": "Test Ad - Fitness App",
+  "tutorialButton": "💥 BECOME PUSHUP MASTER 💥",
+  "tutorialDetailTitle": "💥 MASTER THE EMPEROR FORM 💥",
+  "tutorialSubtitle": "Real EMPERORS perfect their form! 💪",
+  "tutorialTitle": "🔥 ALPHA EMPEROR PUSHUP DOJO 🔥",
+  "welcomeMessage": "🔥 WELCOME,\nFUTURE EMPEROR! 🔥\nTime to conquer!"
+}

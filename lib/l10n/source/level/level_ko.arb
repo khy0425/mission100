@@ -1,0 +1,230 @@
+{
+  "@advancedLevel": {
+    "description": "Advanced level label"
+  },
+  "@alphaLevelDescription": {
+    "description": "고급자 레벨 설명"
+  },
+  "@alphaLevelSubtitle": {
+    "description": "고급 레벨 부제목"
+  },
+  "@alphaLevelTitle": {
+    "description": "고급자 레벨 제목"
+  },
+  "@beginnerLevel": {
+    "description": "Beginner level label"
+  },
+  "@beginnerMode": {
+    "description": "초급자 모드 표시"
+  },
+  "@beginnerToChad": {
+    "description": "Variations section subtitle"
+  },
+  "@chadLevel": {
+    "description": "차드 레벨 라벨"
+  },
+  "@difficultyAdvanced": {
+    "description": "푸시업 상급 난이도"
+  },
+  "@difficultyBeginner": {
+    "description": "푸시업 초급 난이도"
+  },
+  "@difficultyIntermediate": {
+    "description": "푸시업 중급 난이도"
+  },
+  "@intermediateLevel": {
+    "description": "Intermediate level label"
+  },
+  "@levelDescAlpha": {
+    "description": "고급 레벨 설명"
+  },
+  "@levelDescGiga": {
+    "description": "최고급 레벨 설명"
+  },
+  "@levelDescRising": {
+    "description": "중급 레벨 설명"
+  },
+  "@levelDescRookie": {
+    "description": "초급 레벨 설명"
+  },
+  "@levelGoalAlpha": {
+    "description": "고급 목표 메시지"
+  },
+  "@levelGoalGiga": {
+    "description": "최고급 목표 메시지"
+  },
+  "@levelGoalRising": {
+    "description": "중급 목표 메시지"
+  },
+  "@levelGoalRookie": {
+    "description": "초급 목표 메시지"
+  },
+  "@levelLabel": {
+    "description": "레벨 레이블"
+  },
+  "@levelMotivationAlpha": {
+    "description": "고급 격려 메시지"
+  },
+  "@levelMotivationGiga": {
+    "description": "최고급 격려 메시지"
+  },
+  "@levelMotivationRising": {
+    "description": "중급 격려 메시지"
+  },
+  "@levelMotivationRookie": {
+    "description": "초급 격려 메시지"
+  },
+  "@levelNameAlpha": {
+    "description": "고급 차드 이름"
+  },
+  "@levelNameGiga": {
+    "description": "최고급 차드 이름"
+  },
+  "@levelNameRising": {
+    "description": "중급 차드 이름"
+  },
+  "@levelNameRookie": {
+    "description": "초급 차드 이름"
+  },
+  "@levelSelectionDescription": {
+    "description": "레벨 선택 설명"
+  },
+  "@levelSelectionHeader": {
+    "description": "레벨 선택 헤더"
+  },
+  "@levelSelectionTitle": {
+    "description": "레벨 선택 화면 제목"
+  },
+  "@maxLevelAchieved": {
+    "description": "Maximum level achieved message"
+  },
+  "@newChadLevel": {
+    "description": "새로운 차드 등급 텍스트"
+  },
+  "@nextLevel": {
+    "description": "Progress to next level label"
+  },
+  "@nextLevelIn": {
+    "description": "Next level progress message"
+  },
+  "@risingLevelDescription": {
+    "description": "중급자 레벨 설명"
+  },
+  "@risingLevelSubtitle": {
+    "description": "중급 레벨 부제목"
+  },
+  "@risingLevelTitle": {
+    "description": "중급자 레벨 제목"
+  },
+  "@rookieLevelDescription": {
+    "description": "초보자 레벨 설명"
+  },
+  "@rookieLevelSubtitle": {
+    "description": "초급 레벨 부제목"
+  },
+  "@rookieLevelTitle": {
+    "description": "초보자 레벨 제목"
+  },
+  "@selectLevelButton": {
+    "description": "레벨 선택 요청 버튼"
+  },
+  "@startWithLevel": {
+    "description": "선택한 레벨로 시작하기 버튼",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "advancedLevel": "고급자",
+  "alphaLevelDescription": "궁극의 차드",
+  "alphaLevelSubtitle": "푸시업 11개 이상 - 이미 나만의 자질",
+  "alphaLevelTitle": "고급자",
+  "beginnerLevel": "초급자",
+  "beginnerMode": "초급자 모드",
+  "beginnerToChad": "초보자부터 차드까지! 단계별로 도전해보자! 🚀",
+  "chadLevel": "차드 레벨",
+  "difficultyAdvanced": "차드 - 강력한 기가들",
+  "difficultyBeginner": "푸시 - 시작하는 만삣삐들",
+  "difficultyIntermediate": "알파 지망생 - 성장하는 차드들",
+  "intermediateLevel": "중급자",
+  "legendaryChadModeUpgrade": "⚡ LEGENDARY MODE 업그레이드! ⚡",
+  "levelDescAlpha": "👑 상당한 실력을 갖춘 ALPHA EMPEROR다.\n이미 많은 LEGENDARY ACHIEVEMENTS를 이루었어, 만삣삐! 👑",
+  "levelDescGiga": "🚀 최고 수준의 ULTRA GIGA 단계다.\n놀라운 GODLIKE POWER를 가지고 있어! 🚀",
+  "levelDescRising": "⚡ 기본기를 갖춘 상승하는 ALPHA 단계다.\n더 높은 목표를 향해 DOMINATING 중이야! ⚡",
+  "levelDescRookie": "🔥 ROOKIE 단계. 푸시업 제국의 시작점.\n각성의 여정이 시작되었다. 🔥",
+  "levelGoalAlpha": "👑 목표: 완벽한 폼으로 100개 PERFECT EXECUTION! 👑",
+  "levelGoalGiga": "🚀 목표: ULTIMATE MASTER로 UNIVERSE DOMINATION! 🚀",
+  "levelGoalRising": "⚡ 목표: 더 강한 ALPHA로 LEGENDARY EVOLUTION! ⚡",
+  "levelGoalRookie": "🔥 목표: 6주 후 연속 100개 푸시업 ABSOLUTE DOMINATION! 🔥",
+  "levelLabel": "🏆 레벨",
+  "levelMotivationAlpha": "👑 OUTSTANDING PERFORMANCE다!\n100개 목표까지 DOMINATE하라, FXXK LIMITS! 👑",
+  "levelMotivationGiga": "🚀 이미 강력한 GIGA 단계군!\n완벽한 100개를 향해 CONQUER THE UNIVERSE! 🚀",
+  "levelMotivationRising": "⚡ EXCELLENT START다!\n더 강한 ALPHA BEAST가 되어라, 만삣삐! ⚡",
+  "levelMotivationRookie": "🔥 모든 EMPEROR는 여기서 시작한다!\n6주 후 MIND-BLOWING TRANSFORMATION을 경험하라, 만삣삐! 🔥",
+  "levelNameAlpha": "Alpha",
+  "levelNameGiga": "기가 차드",
+  "levelNameRising": "Rising",
+  "levelNameRookie": "Rookie",
+  "levelSelectionDescription": "현재 푸시업 최대 횟수에 맞는 레벨을 선택해라!\n6주 후 목표 달성을 위한 맞춤 프로그램이 제공된다!",
+  "levelSelectionHeader": "🏋️‍♂️ 너의 레벨을 선택해라, 만삣삐!",
+  "levelSelectionTitle": "💪 레벨 체크",
+  "maxLevelAchieved": "최고 레벨 달성!",
+  "newChadLevel": "새로운 차드 등급",
+  "nextLevel": "다음 레벨까지",
+  "nextLevelIn": "다음 레벨까지 30% 남음",
+  "risingLevelDescription": "성장하는 차드",
+  "risingLevelSubtitle": "푸시업 6-10개 - 차드로 성장 중",
+  "risingLevelTitle": "중급자",
+  "rookieLevelDescription": "천천히 시작하는 차드",
+  "rookieLevelSubtitle": "푸시업 6개 미만 - 기초부터 차근차근",
+  "rookieLevelTitle": "초보자",
+  "selectLevelButton": "🔥 레벨을 선택하라, FUTURE EMPEROR! 🔥",
+  "startWithLevel": "💥 {level}로 EMPEROR JOURNEY 시작! 💥",
+  "levelAndExperience": "레벨 & 경험치",
+  "levelProgressMax": "레벨 {currentLevel} (최대)",
+  "@levelProgressMax": {
+    "description": "Maximum level reached",
+    "placeholders": {
+      "currentLevel": {
+        "type": "int"
+      }
+    }
+  },
+  "levelProgressNext": "레벨 {currentLevel} → {nextLevel}",
+  "@levelProgressNext": {
+    "description": "Current level to next level",
+    "placeholders": {
+      "currentLevel": {
+        "type": "int"
+      },
+      "nextLevel": {
+        "type": "int"
+      }
+    }
+  },
+  "expProgress": "{current} / {required} XP",
+  "@expProgress": {
+    "description": "Experience progress",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "required": {
+        "type": "int"
+      }
+    }
+  },
+  "totalExpEarned": "총 획득 경험치",
+  "avgExpPerDay": "일평균 경험치",
+  "levelUps": "레벨업 횟수",
+  "levelUpsCount": "{count}회",
+  "@levelUpsCount": {
+    "description": "Number of level ups",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
+}

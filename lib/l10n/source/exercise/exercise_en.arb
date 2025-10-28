@@ -1,0 +1,391 @@
+{
+  "@beginnerPushupQuiz": {
+    "description": "Quiz question 3"
+  },
+  "@bottomPosition": {
+    "description": "Step 3 title - bottom position"
+  },
+  "@bottomPositionDesc": {
+    "description": "Step 3 description"
+  },
+  "@breathingTechnique": {
+    "description": "Breathing technique category - Chad style"
+  },
+  "@chadPerfectFormGuide": {
+    "description": "Subtitle for form guide"
+  },
+  "@chadPerfectPushupForm": {
+    "description": "Subtitle for pushup form guide"
+  },
+  "@completedFormat": {
+    "description": "Completed workout display",
+    "placeholders": {
+      "totalReps": {
+        "type": "int"
+      },
+      "totalSets": {
+        "type": "int"
+      }
+    }
+  },
+  "@correctPushupForm5Steps": {
+    "description": "Header for 5-step pushup guide"
+  },
+  "@correctPushupFormDesc": {
+    "description": "Video description 1"
+  },
+  "@correctPushupQuiz1": {
+    "description": "Quiz question 1"
+  },
+  "@excellentPerformance": {
+    "description": "Excellent performance message"
+  },
+  "@finishPosition": {
+    "description": "Step 5 title - finish position"
+  },
+  "@finishPositionDesc": {
+    "description": "Step 5 description"
+  },
+  "@formGuideAdvancedLevel": {
+    "description": "Advanced level in form guide"
+  },
+  "@formGuideBeginnerLevel": {
+    "description": "Beginner level in form guide"
+  },
+  "@formGuideCategoryBreathing": {
+    "description": "Breathing category in form guide"
+  },
+  "@formGuideCategoryMotivation": {
+    "description": "Motivation category in form guide"
+  },
+  "@formGuideCategoryRecovery": {
+    "description": "Recovery category in form guide"
+  },
+  "@formGuideIntermediateLevel": {
+    "description": "Intermediate level in form guide"
+  },
+  "@goalFormat": {
+    "description": "Target workout display",
+    "placeholders": {
+      "totalReps": {
+        "type": "int"
+      },
+      "totalSets": {
+        "type": "int"
+      }
+    }
+  },
+  "@goodPerformance": {
+    "description": "Good performance message"
+  },
+  "@hundredPushups": {
+    "description": "Hundred pushups achievement"
+  },
+  "@hundredPushupsDesc": {
+    "description": "Hundred pushups achievement description"
+  },
+  "@perfectFormChallenge": {
+    "description": "Perfect form challenge message"
+  },
+  "@perfectPerformance": {
+    "description": "Average completion subtitle"
+  },
+  "@perfectPushupForm": {
+    "description": "Title for pushup form guide screen"
+  },
+  "@performanceGodTier": {
+    "description": "Message when 100% target achieved"
+  },
+  "@performanceMedium": {
+    "description": "Message when 50%+ target achieved"
+  },
+  "@performanceMotivation": {
+    "description": "Basic motivation message"
+  },
+  "@performanceStart": {
+    "description": "Message when starting workout"
+  },
+  "@performanceStrong": {
+    "description": "Message when 80%+ target achieved"
+  },
+  "@pushup100Challenge": {
+    "description": "Video title 4"
+  },
+  "@pushup100Streak": {
+    "description": "100 push-ups streak message"
+  },
+  "@pushupArcher": {
+    "description": "Archer pushup name"
+  },
+  "@pushupArcherDesc": {
+    "description": "Archer pushup description"
+  },
+  "@pushupBreathingQuiz": {
+    "description": "Quiz question 4"
+  },
+  "@pushupClap": {
+    "description": "Clap pushup name"
+  },
+  "@pushupClapDesc": {
+    "description": "Clap pushup description"
+  },
+  "@pushupDecline": {
+    "description": "Decline pushup name"
+  },
+  "@pushupDeclineDesc": {
+    "description": "Decline pushup description"
+  },
+  "@pushupDiamond": {
+    "description": "Diamond pushup name"
+  },
+  "@pushupDiamondDesc": {
+    "description": "Diamond pushup description"
+  },
+  "@pushupHashtag": {
+    "description": "Pushup hashtag"
+  },
+  "@pushupIncline": {
+    "description": "Incline pushup name"
+  },
+  "@pushupInclineDesc": {
+    "description": "Incline pushup description"
+  },
+  "@pushupKnee": {
+    "description": "Knee pushup name"
+  },
+  "@pushupKneeDesc": {
+    "description": "Knee pushup description"
+  },
+  "@pushupMistakeQuiz": {
+    "description": "Quiz question 2"
+  },
+  "@pushupOneArm": {
+    "description": "One-arm pushup name"
+  },
+  "@pushupOneArmChad": {
+    "description": "Motivational message for one-arm pushups"
+  },
+  "@pushupOneArmDesc": {
+    "description": "One-arm pushup description"
+  },
+  "@pushupPike": {
+    "description": "Pike pushup name"
+  },
+  "@pushupPikeDesc": {
+    "description": "Pike pushup description"
+  },
+  "@pushupStandard": {
+    "description": "Standard pushup name"
+  },
+  "@pushupStandardDesc": {
+    "description": "Standard pushup description"
+  },
+  "@pushupTutorialSubtitle": {
+    "description": "Pushup tutorial screen subtitle"
+  },
+  "@pushupTutorialTitle": {
+    "description": "Pushup tutorial screen title"
+  },
+  "@pushupVariations": {
+    "description": "Video title 2"
+  },
+  "@pushupVariationsByDifficulty": {
+    "description": "Variations section header"
+  },
+  "@pushupWideGrip": {
+    "description": "Wide grip pushup name"
+  },
+  "@pushupWideGripDesc": {
+    "description": "Wide grip pushup description"
+  },
+  "@pushupsCount": {
+    "description": "Push-ups count format",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@pushupsLabel": {
+    "description": "Push-ups label"
+  },
+  "@resultFormat": {
+    "description": "Workout result display format",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@startPosition": {
+    "description": "Step 1 title - start position"
+  },
+  "@startPositionDesc": {
+    "description": "Step 1 description"
+  },
+  "@timesFormat": {
+    "description": "Times format",
+    "placeholders": {
+      "times": {
+        "type": "int"
+      }
+    }
+  },
+  "@totalFormat": {
+    "description": "Total workout format",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      }
+    }
+  },
+  "@totalPushups": {
+    "description": "Total pushups label"
+  },
+  "@tutorialAdviceForm": {
+    "description": "Form tutorial advice"
+  },
+  "@variationExercises": {
+    "description": "Tab title for variation exercises"
+  },
+  "@variousPushupStimulation": {
+    "description": "Video description 2"
+  },
+  "beginnerPushupQuiz": "What is the most suitable pushup variation for beginners?",
+  "bottomPosition": "Bottom Position",
+  "bottomPositionDesc": "Pause briefly at the lowest point where your chest almost touches the floor.",
+  "breathingTechnique": "💨 BREATH LIKE A BEAST 💨",
+  "chadPerfectFormGuide": "Chad's perfect pushup form guide! 💪",
+  "chadPerfectPushupForm": "Chad's guide to perfect pushup form! 💪",
+  "completedFormat": "Completed: {totalReps} reps / {totalSets} sets",
+  "correctPushupForm5Steps": "Correct Pushup Form in 5 Steps",
+  "correctPushupFormDesc": "Effective workout with proper pushup form",
+  "correctPushupQuiz1": "What is the correct hand position in a proper pushup starting position?",
+  "excellentPerformance": "🚀 EXCELLENT! Perfect execution! 🚀",
+  "finishPosition": "Finish Position",
+  "finishPositionDesc": "Completely return to the starting position and prepare for the next repetition.",
+  "formGuideAdvancedLevel": "Advanced",
+  "formGuideBeginnerLevel": "Beginner",
+  "formGuideCategoryBreathing": "Breathing",
+  "formGuideCategoryMotivation": "Motivation",
+  "formGuideCategoryRecovery": "Recovery",
+  "formGuideIntermediateLevel": "Intermediate",
+  "goalFormat": "Goal: {totalReps} reps / {totalSets} sets",
+  "goodPerformance": "💪 GOOD! Keep it up! 💪",
+  "hundredPushups": "Hundred Pushups",
+  "hundredPushupsDesc": "Achieve 100 reps in one session",
+  "perfectFormChallenge": "🎯 Perfect Form Challenge activated! No slacking! 💪",
+  "perfectPerformance": "Perfect performance!",
+  "perfectPushupForm": "Perfect Pushup Form",
+  "performanceGodTier": "🚀 ABSOLUTE PERFECTION! ULTRA GOD EMPEROR BEYOND GODS! 👑",
+  "performanceMedium": "⚡ GOOD! WEAKNESS IS FLEEING! ALPHA STORM INCOMING! ⚡",
+  "performanceMotivation": "YOU CAN DO IT, JUST DO IT! 🔥",
+  "performanceStart": "💥 BEGINNING IS HALF? WRONG! LEGEND'S GATE ALREADY OPENED, YOU FUTURE EMPEROR! 💥",
+  "performanceStrong": "🔱 IRON BOWS TO YOUR MIGHT! NOW GRAVITY SURRENDERS TO YOU! LEGENDARY BEAST! 🔱",
+  "pushup100Challenge": "100 Pushup Challenge 🎯",
+  "pushup100Streak": "💪💀 100 Push-ups Streak! Human Transcendence! 💀💪",
+  "pushupArcher": "Archer Pushup",
+  "pushupArcherBenefits": "• ONE ARM FOCUS\\n• LEFT-RIGHT BALANCE\\n• ONE-ARM PUSHUP PREPARATION\\n• CORE ROTATIONAL STABILITY",
+  "pushupArcherBreathing": "FOCUSED BREATHING LIKE DRAWING BOW. ACCURACY IS LIFE, YOU IDIOT!",
+  "pushupArcherChad": "🏹 PRECISE ARCHER = ONE-ARM SHORTCUT? YES! MASTER BOTH SIDES = LEGENDARY ARCHER EMPEROR! 🏹",
+  "pushupArcherDesc": "Advanced technique focusing on one side! Requires balance and core!",
+  "pushupArcherInstructions": "1. START WITH WIDE GRIP\\n2. LEAN WEIGHT TO ONE SIDE\\n3. ONE ARM BENT, OTHER STRAIGHT\\n4. PRECISE LIKE BOWSTRING\\n5. ALTERNATE BOTH SIDES!",
+  "pushupArcherMistakes": "• BODY TWISTING\\n• FORCE IN STRAIGHT ARM\\n• UNEVEN LEFT-RIGHT MOVEMENT\\n• CORE SHAKING",
+  "pushupArcherName": "ARCHER PUSHUP",
+  "pushupBreathingQuiz": "What is the correct breathing technique during pushups?",
+  "pushupClap": "Clap Pushup",
+  "pushupClapBenefits": "• EXPLOSIVE STRENGTH DEVELOPMENT\\n• FULL BODY POWER\\n• INSTANT REACTION SPEED\\n• PROOF OF REAL CHAD",
+  "pushupClapBreathing": "EXPLOSIVE EXHALE UP, QUICK BREATHING RESET AFTER LANDING. RHYTHM IS KEY, YOU IDIOT!",
+  "pushupClapChad": "👏 CLAP PUSHUP = POWER PROOF? NO! NOW EXPLOSIVE THUNDER POWER EXPRESSION! 👏",
+  "pushupClapDesc": "Explosive power with clapping! Only real chads can do this!",
+  "pushupClapInstructions": "1. START IN STANDARD POSITION\\n2. EXPLODE UP\\n3. CLAP IN AIR\\n4. LAND SAFELY\\n5. TRY CONSECUTIVELY!",
+  "pushupClapMistakes": "• NOT ENOUGH HEIGHT\\n• WRIST INJURY RISK ON LANDING\\n• FORM BREAKDOWN\\n• EXCESSIVE CONSECUTIVE ATTEMPTS",
+  "pushupClapName": "CLAP PUSHUP",
+  "pushupDecline": "Decline Pushup",
+  "pushupDeclineBenefits": "• UPPER CHEST FOCUS\\n• FRONT SHOULDER STRENGTHENING\\n• MAXIMUM CORE STABILITY\\n• FULL BODY STRENGTH",
+  "pushupDeclineBreathing": "STABLE BREATHING WHILE FIGHTING GRAVITY. REAL POWER COMES FROM HERE, YOU IDIOT!",
+  "pushupDeclineChad": "🌪️ IGNORE GRAVITY? SURE! NOW DOMINATE PHYSICS LAWS! DECLINE = GODLIKE SHOULDERS! 🌪️",
+  "pushupDeclineDesc": "Raise feet for increased intensity! Properly stimulate shoulders and upper body!",
+  "pushupDeclineInstructions": "1. FEET ON BENCH OR CHAIR\\n2. HANDS DIRECTLY UNDER SHOULDERS\\n3. STRAIGHT LINE ANGLED DOWN\\n4. OVERCOME GRAVITY'S RESISTANCE\\n5. PUSH UP POWERFULLY!",
+  "pushupDeclineMistakes": "• UNSTABLE FOOT POSITION\\n• BUTT SAGGING DOWN\\n• NECK STRAIN\\n• LOSING BALANCE",
+  "pushupDeclineName": "DECLINE PUSHUP",
+  "pushupDiamond": "Diamond Pushup",
+  "pushupDiamondBenefits": "• TRICEPS FOCUS\\n• INNER CHEST DEVELOPMENT\\n• FULL ARM STRENGTH\\n• CORE STABILITY INCREASE",
+  "pushupDiamondBreathing": "FOCUSED BREATHING. FEEL THE TRICEPS BURN, YOU IDIOT!",
+  "pushupDiamondChad": "💎 HARDER THAN DIAMOND ARMS? WRONG! NOW UNBREAKABLE TITANIUM ARMS! 10 REPS = REAL BEAST RECOGNITION! 💎",
+  "pushupDiamondDesc": "Focused triceps attack! Diamond shape is the symbol of real chad!",
+  "pushupDiamondInstructions": "1. MAKE DIAMOND WITH THUMBS AND FINGERS\\n2. HANDS BELOW CHEST CENTER\\n3. ELBOWS CLOSE TO BODY\\n4. CHEST TO HANDS\\n5. PUSH WITH TRICEPS POWER!",
+  "pushupDiamondMistakes": "• EXCESSIVE WRIST PRESSURE\\n• ELBOWS TOO WIDE\\n• BODY TWISTING\\n• INACCURATE DIAMOND SHAPE",
+  "pushupDiamondName": "DIAMOND PUSHUP",
+  "pushupHashtag": "#Pushup",
+  "pushupIncline": "Incline Pushup",
+  "pushupInclineBenefits": "• REDUCED LOAD FOR FORM PERFECTION\\n• LOWER CHEST STRENGTHENING\\n• SHOULDER STABILITY\\n• BRIDGE TO STANDARD PUSHUP",
+  "pushupInclineBreathing": "COMFORTABLE BREATHING WITH EASIER ANGLE. BUT MAXIMUM FOCUS, YOU IDIOT!",
+  "pushupInclineChad": "🚀 ADJUST HEIGHT, MAX INTENSITY! 20 PERFECT REPS = GOD TIER ENTRY TICKET! 🚀",
+  "pushupInclineDesc": "Use incline to adjust difficulty! Stairs or bench are enough!",
+  "pushupInclineInstructions": "1. HANDS ON BENCH OR CHAIR\\n2. LEAN BODY AT ANGLE\\n3. STRAIGHT LINE TOE TO HEAD\\n4. HIGHER = EASIER\\n5. GRADUALLY GO LOWER!",
+  "pushupInclineMistakes": "• BUTT STICKING UP\\n• TOO MUCH WEIGHT ON WRISTS\\n• UNSTABLE SUPPORT\\n• LOWERING ANGLE TOO QUICKLY",
+  "pushupInclineName": "INCLINE PUSHUP",
+  "pushupKnee": "Knee Pushup",
+  "pushupKneeBenefits": "• BASIC STRENGTH IMPROVEMENT\\n• LEARN PROPER PUSHUP FORM\\n• SHOULDER AND ARM STABILITY\\n• PROGRESSION TO STANDARD PUSHUP",
+  "pushupKneeBreathing": "SMOOTH, STEADY BREATHING TO START. DON'T RUSH!",
+  "pushupKneeChad": "⚡ BEGINNING IS HALF? NO! ALPHA JOURNEY ALREADY STARTED! KNEE PUSHUPS ARE EMPEROR'S PATH TOO! ⚡",
+  "pushupKneeDesc": "Beginners can do it too! Don't be ashamed of knee pushups!",
+  "pushupKneeInstructions": "1. START ON KNEES\\n2. LIFT ANKLES UP\\n3. UPPER BODY SAME AS STANDARD\\n4. STRAIGHT LINE FROM KNEES TO HEAD\\n5. MOVE SLOWLY AND SURELY!",
+  "pushupKneeMistakes": "• BUTT SAGGING BACK\\n• KNEES TOO FAR FORWARD\\n• ONLY MOVING UPPER BODY\\n• MOVING TOO FAST",
+  "pushupKneeName": "KNEE PUSHUP",
+  "pushupMistakeQuiz": "What is the most common mistake during pushups?",
+  "pushupOneArm": "One-Arm Pushup",
+  "pushupOneArmBenefits": "• ULTIMATE UPPER BODY STRENGTH\\n• PERFECT CORE CONTROL\\n• FULL BODY BALANCE AND COORDINATION\\n• GIGA CHAD COMPLETION",
+  "pushupOneArmBreathing": "DEEP, STABLE BREATHING FOR MAXIMUM FOCUS. UNITE ALL ENERGY, YOU IDIOT!",
+  "pushupOneArmChad": "🚀 ONE-ARM = CHAD COMPLETION? WRONG! NOW ULTIMATE APEX GOD EMPEROR BIRTH, FXXK YEAH! 🚀",
+  "pushupOneArmDesc": "One-arm pushup is the ultimate chad form! Do this even once and you're recognized as a real giga chad!",
+  "pushupOneArmInstructions": "1. SPREAD LEGS WIDE FOR BALANCE\\n2. ONE HAND BEHIND BACK\\n3. FOCUS ALL POWER IN CORE\\n4. SLOW AND SURE\\n5. PROVE YOUR GIGA CHAD QUALIFICATION!",
+  "pushupOneArmMistakes": "• LEGS TOO NARROW\\n• BODY TWISTING AND ROTATING\\n• SUPPORTING WITH OTHER HAND\\n• INJURY FROM EXCESSIVE ATTEMPT",
+  "pushupOneArmName": "ONE-ARM PUSHUP",
+  "pushupPike": "Pike Pushup",
+  "pushupPikeBenefits": "• FULL SHOULDER STRENGTHENING\\n• HANDSTAND PUSHUP PREPARATION\\n• VERTICAL UPPER BODY POWER\\n• CORE AND BALANCE IMPROVEMENT",
+  "pushupPikeBreathing": "STABLE BREATHING IN INVERTED POSITION. FOCUS ON SHOULDERS, YOU IDIOT!",
+  "pushupPikeChad": "⚡ PIKE MASTER = HANDSTAND? SURE! EVOLVE TO SHOULDER EMPEROR! ⚡",
+  "pushupPikeDesc": "Shoulder focused attack! Pre-stage to handstand pushups!",
+  "pushupPikeInstructions": "1. START IN DOWNWARD DOG\\n2. BUTT AS HIGH AS POSSIBLE\\n3. HEAD CLOSE TO FLOOR\\n4. PUSH WITH SHOULDER POWER ONLY\\n5. MAINTAIN INVERTED TRIANGLE!",
+  "pushupPikeMistakes": "• BUTT NOT HIGH ENOUGH\\n• ELBOWS OUT TO SIDES\\n• SUPPORTING WITH HEAD ONLY\\n• FEET TOO FAR OR CLOSE",
+  "pushupPikeName": "PIKE PUSHUP",
+  "pushupStandard": "Standard Pushup",
+  "pushupStandardBenefits": "• FULL CHEST DEVELOPMENT\\n• TRICEPS AND SHOULDER STRENGTH\\n• BASIC FITNESS IMPROVEMENT\\n• FOUNDATION FOR ALL PUSHUPS, YOU IDIOT!",
+  "pushupStandardBreathing": "INHALE DOWN, EXHALE UP POWERFULLY. BREATHING IS POWER!",
+  "pushupStandardChad": "🔥 BASICS HARDEST? WRONG! ONE PERFECT FORM CONQUERS THE WORLD! MASTER THE BASICS! 🔥",
+  "pushupStandardDesc": "Starting point of all chads. Perfect basics are true strength!",
+  "pushupStandardInstructions": "1. START IN PLANK POSITION\\n2. HANDS SHOULDER-WIDTH APART\\n3. KEEP BODY IN STRAIGHT LINE\\n4. LOWER CHEST TO FLOOR\\n5. PUSH UP POWERFULLY, CHAD STYLE!",
+  "pushupStandardMistakes": "• BUTT STICKING UP - WEAKLING MOVE\\n• NOT LOWERING CHEST FULLY\\n• NECK FORWARD\\n• WRISTS AHEAD OF SHOULDERS\\n• INCONSISTENT TEMPO, FXXK IDIOT!",
+  "pushupStandardName": "STANDARD PUSHUP",
+  "pushupTutorialSubtitle": "Real chads start with different form! 💪",
+  "pushupTutorialTitle": "Chad Pushup Dojo",
+  "pushupVariations": "Pushup Variations 🔥",
+  "pushupVariationsByDifficulty": "Pushup Variations by Difficulty",
+  "pushupWideGrip": "Wide Grip Pushup",
+  "pushupWideGripBenefits": "• OUTER CHEST FOCUS\\n• SHOULDER STABILITY\\n• CHEST WIDTH EXPANSION\\n• OVERALL UPPER BODY BALANCE",
+  "pushupWideGripBreathing": "BREATHE DEEP WITH WIDE CHEST. FEEL THE EXPANSION, YOU IDIOT!",
+  "pushupWideGripChad": "🦁 WIDE CHEST? NO! NOW LEGENDARY GORILLA CHEST! DOMINATE WORLD WITH WIDE GRIP! 🦁",
+  "pushupWideGripDesc": "Spread wide for broader chest! Build that real chad chest!",
+  "pushupWideGripInstructions": "1. HANDS 1.5X SHOULDER WIDTH\\n2. FINGERS SLIGHTLY OUTWARD\\n3. CHEST TO FLOOR\\n4. ELBOWS AT 45 DEGREES\\n5. PUSH WITH WIDE CHEST!",
+  "pushupWideGripMistakes": "• HANDS TOO WIDE\\n• ELBOWS COMPLETELY OUT\\n• SHOULDER STRAIN\\n• NOT LOWERING CHEST ENOUGH",
+  "pushupWideGripName": "WIDE GRIP PUSHUP",
+  "pushupsCount": "{count} reps",
+  "pushupsLabel": "💪 Push-ups",
+  "resultFormat": "LEGEND RANK: {reps} REPS ({percentage}%) 🏆",
+  "startPosition": "Start Position",
+  "startPositionDesc": "Start with a plank position and accurately set the position of your hands and feet.",
+  "timesFormat": "{times} times",
+  "totalFormat": "Total {reps} reps ({sets} sets)",
+  "totalPushups": "Total Pushups",
+  "tutorialAdviceForm": "Perfect form makes perfect Chad!",
+  "variationExercises": "Variation\nExercises",
+  "variousPushupStimulation": "Stimulate muscles with various pushup variations"
+}

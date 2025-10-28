@@ -1,0 +1,1364 @@
+{
+  "@aboutSettings": {
+    "description": "App info section"
+  },
+  "@allDataResetSuccessfully": {
+    "description": "All data reset success message"
+  },
+  "@appearanceSettings": {
+    "description": "Appearance settings title"
+  },
+  "@autoStartNextSet": {
+    "description": "Auto start next set setting"
+  },
+  "@autoStartNextSetDesc": {
+    "description": "Auto start next set description"
+  },
+  "@averagePerSession": {
+    "description": "Average per session label"
+  },
+  "@backupFailureStoppedStatus": {
+    "description": "Status message when backup stopped due to failures"
+  },
+  "@backupWorkoutRecords": {
+    "description": "Data backup description"
+  },
+  "@bestWeek": {
+    "description": "Best week label"
+  },
+  "@chadDays": {
+    "description": "Subtitle for total workouts"
+  },
+  "@chadNotificationSettings": {
+    "description": "Chad notification settings section title"
+  },
+  "@chadRestModeToday": {
+    "description": "CHAD rest mode confirmation button"
+  },
+  "@chadTimeSettings": {
+    "description": "Chad time settings section"
+  },
+  "@challenge14DaysDescription": {
+    "description": "14 consecutive days challenge description"
+  },
+  "@challenge14DaysDetailedDescription": {
+    "description": "14 consecutive days challenge detailed description"
+  },
+  "@challenge14DaysTitle": {
+    "description": "14 consecutive days challenge title"
+  },
+  "@challenge7DaysDescription": {
+    "description": "7 consecutive days challenge description"
+  },
+  "@challenge7DaysDetailedDescription": {
+    "description": "7 consecutive days challenge detailed description"
+  },
+  "@challenge7DaysTitle": {
+    "description": "7 consecutive days challenge title"
+  },
+  "@challengeHintConsecutiveDays": {
+    "description": "Hint for consecutive days challenges"
+  },
+  "@challengeHintSingleSession": {
+    "description": "Hint for single session challenges"
+  },
+  "@challengeRestartButton": {
+    "description": "Restart challenge button"
+  },
+  "@challengeTypeConsecutiveDays": {
+    "description": "Challenge type: consecutive days"
+  },
+  "@challengeTypeSingleSession": {
+    "description": "Challenge type: single session"
+  },
+  "@challengeUnitDays": {
+    "description": "Days unit for challenges"
+  },
+  "@challengeUnitReps": {
+    "description": "Reps unit for challenges"
+  },
+  "@completeSetButton": {
+    "description": "Final set completion button"
+  },
+  "@completeSetContinue": {
+    "description": "Regular set completion button"
+  },
+  "@completedRepsFormat": {
+    "description": "Completed workout summary"
+  },
+  "@completedSessions": {
+    "description": "Completed sessions label"
+  },
+  "@completedSetsCount": {
+    "description": "Completed sets count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@confirmDataReset": {
+    "description": "Data reset confirmation title"
+  },
+  "@consecutiveDays": {
+    "description": "Consecutive days label"
+  },
+  "@consecutiveWorkoutBlocked": {
+    "description": "Consecutive workout blocked title"
+  },
+  "@consecutiveWorkoutMessage": {
+    "description": "Consecutive workout blocked message"
+  },
+  "@customWorkoutDays": {
+    "description": "Custom workout days setting"
+  },
+  "@customWorkoutDaysDesc": {
+    "description": "Custom workout days description"
+  },
+  "@dailyNotificationSet": {
+    "description": "Daily notification setup success message"
+  },
+  "@dailyWorkoutAlarm": {
+    "description": "Daily workout time alarm message"
+  },
+  "@dailyWorkoutReminder": {
+    "description": "Daily workout reminder setting"
+  },
+  "@dataReset": {
+    "description": "Data reset title"
+  },
+  "@dataResetComingSoon": {
+    "description": "Data reset coming soon message"
+  },
+  "@dataResetConfirm": {
+    "description": "Data reset confirmation title"
+  },
+  "@dataResetDesc": {
+    "description": "Data reset description"
+  },
+  "@dataResetError": {
+    "description": "Data reset error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@dataResetErrorOccurred": {
+    "description": "Data reset error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@dataResetProgress": {
+    "description": "Data reset progress message"
+  },
+  "@dataResetSuccess": {
+    "description": "Data reset success message"
+  },
+  "@dataResetWarning": {
+    "description": "Data reset warning message"
+  },
+  "@dataRestore": {
+    "description": "Data restore title"
+  },
+  "@dataRestoreComingSoon": {
+    "description": "Data restore coming soon message"
+  },
+  "@dataRestoreCompleted": {
+    "description": "Data restore completed message"
+  },
+  "@dataRestoreConfirm": {
+    "description": "Data restore confirmation title"
+  },
+  "@dataRestoreDesc": {
+    "description": "Data restore description"
+  },
+  "@dataRestoreError": {
+    "description": "Data restore error message"
+  },
+  "@dataRestoreFailed": {
+    "description": "Data restore failed message"
+  },
+  "@dataRestoreProgress": {
+    "description": "Data restore progress message"
+  },
+  "@dataRestoreSuccess": {
+    "description": "Data restore success message"
+  },
+  "@dataRestoreTitle": {
+    "description": "Data restore dialog title"
+  },
+  "@dataRestoreWarning": {
+    "description": "Data restore warning message"
+  },
+  "@dataSettings": {
+    "description": "Data management section"
+  },
+  "@dateFormatYearMonthDay": {
+    "description": "English date format for year, month, day",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "month": {
+        "type": "int"
+      },
+      "year": {
+        "type": "int"
+      }
+    }
+  },
+  "@dayLabel": {
+    "description": "Day label"
+  },
+  "@dayX": {
+    "description": "Day number format",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "@days": {
+    "description": "Days unit"
+  },
+  "@daysFormat": {
+    "description": "Days format",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@deleteAllWorkoutRecords": {
+    "description": "Data reset description"
+  },
+  "@detailedReminderSettings": {
+    "description": "Detailed reminder settings title"
+  },
+  "@difficultySettings": {
+    "description": "Difficulty settings title"
+  },
+  "@difficultySettingsComingSoon": {
+    "description": "Difficulty settings coming soon message"
+  },
+  "@difficultySettingsTitle": {
+    "description": "Difficulty settings dialog title"
+  },
+  "@durationDays": {
+    "description": "Duration in days"
+  },
+  "@errorPleaseTryAgain": {
+    "description": "Error occurred, please retry message"
+  },
+  "@firstWorkoutCompleted": {
+    "description": "First workout completed description"
+  },
+  "@firstWorkoutMessage": {
+    "description": "First workout start message"
+  },
+  "@foundWorkout": {
+    "description": "Found workout title"
+  },
+  "@fridayShort": {
+    "description": "Friday short form"
+  },
+  "@goToSettings": {
+    "description": "Go to settings screen button"
+  },
+  "@homeWorkoutPushups": {
+    "description": "Video title 5"
+  },
+  "@hundredRepsInOneSession": {
+    "description": "Hundred reps in one session description"
+  },
+  "@incompleteWorkoutFound": {
+    "description": "Incomplete workout found message"
+  },
+  "@languageSettings": {
+    "description": "Language settings title"
+  },
+  "@languageSettingsComingSoon": {
+    "description": "Language settings coming soon message"
+  },
+  "@levelReset": {
+    "description": "Level reset menu title"
+  },
+  "@levelResetConfirm": {
+    "description": "Level reset confirmation dialog title"
+  },
+  "@levelResetDesc": {
+    "description": "Level reset description"
+  },
+  "@manageAppSettings": {
+    "description": "Manage app settings description"
+  },
+  "@maxSixDaysWorkout": {
+    "description": "Maximum 6 days workout limit message"
+  },
+  "@minOneDayRest": {
+    "description": "Minimum one day rest required message"
+  },
+  "@mission100Settings": {
+    "description": "Mission 100 settings title"
+  },
+  "@mondayShort": {
+    "description": "Monday short form"
+  },
+  "@nextSetButton": {
+    "description": "Final set completion button"
+  },
+  "@nextSetContinue": {
+    "description": "Next set continuation button"
+  },
+  "@noConsecutiveSixDays": {
+    "description": "Maximum 4 workouts per week limit message"
+  },
+  "@noWorkout": {
+    "description": "Decision to workout button"
+  },
+  "@noWorkoutHistory": {
+    "description": "Message when there is no workout history"
+  },
+  "@noWorkoutRecordForDate": {
+    "description": "No workout record for selected date"
+  },
+  "@noWorkoutRecords": {
+    "description": "No workout records title"
+  },
+  "@noWorkoutThisDay": {
+    "description": "No workout records message"
+  },
+  "@noWorkoutToday": {
+    "description": "No workout today message - Chad style"
+  },
+  "@noWorkoutsToday": {
+    "description": "No workouts today message"
+  },
+  "@notificationSettings": {
+    "description": "Notification settings title"
+  },
+  "@notificationSetupFailed": {
+    "description": "Error message when notification setup fails"
+  },
+  "@notificationsSettings": {
+    "description": "Notifications settings title"
+  },
+  "@oneWeekChallenge": {
+    "description": "One week challenge achievement"
+  },
+  "@oneWeekCompleted": {
+    "description": "One week completed description"
+  },
+  "@perfectHomeWorkout": {
+    "description": "Video description 5"
+  },
+  "@perfectWeek": {
+    "description": "Perfect week achievement"
+  },
+  "@permissionRestricted": {
+    "description": "Permission restricted status"
+  },
+  "@programCompletedMessage": {
+    "description": "Program completion message"
+  },
+  "@programProgress": {
+    "description": "Program progress label"
+  },
+  "@programStart": {
+    "description": "Program start requirement"
+  },
+  "@progressSetReady": {
+    "description": "Workout progress - set ready",
+    "placeholders": {
+      "set": {
+        "type": "int"
+      }
+    }
+  },
+  "@progressWeekDay": {
+    "description": "Progress details",
+    "placeholders": {
+      "completedDays": {
+        "type": "int"
+      },
+      "totalDays": {
+        "type": "int"
+      },
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "@recentWorkouts": {
+    "description": "Recent workouts section title"
+  },
+  "@repsAchieved": {
+    "description": "Workout item description format",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@repsAndCompletion": {
+    "description": "Workout record format",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@repsCompleted": {
+    "description": "Reps completed label"
+  },
+  "@repsCount": {
+    "description": "Reps count display",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@repsFormat": {
+    "description": "Reps format",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@resetAllProgressConfirm": {
+    "description": "Reset all progress confirmation message"
+  },
+  "@resetButton": {
+    "description": "Reset button"
+  },
+  "@resetConfirmMessage": {
+    "description": "Reset confirmation dialog message"
+  },
+  "@resetConfirmTitle": {
+    "description": "Reset confirmation dialog title"
+  },
+  "@resetSuccess": {
+    "description": "Reset success message"
+  },
+  "@resettingData": {
+    "description": "Data reset in progress message"
+  },
+  "@restDayAccept": {
+    "description": "Rest day acceptance confirmation message"
+  },
+  "@restDayBonusChallenge": {
+    "description": "Rest day bonus challenge content"
+  },
+  "@restDayChallenge": {
+    "description": "Rest day additional challenge message"
+  },
+  "@restDayChampionTitle": {
+    "description": "Rest day champion title"
+  },
+  "@restDayDescription": {
+    "description": "Rest day description message"
+  },
+  "@restDayMessage": {
+    "description": "Rest day message for non-workout days"
+  },
+  "@restDayTeasing": {
+    "description": "Rest day teasing message"
+  },
+  "@restMessage": {
+    "description": "Rest period message"
+  },
+  "@restTimeDesc": {
+    "description": "Rest time description"
+  },
+  "@restTimeSettings": {
+    "description": "Rest time settings"
+  },
+  "@restTimeTitle": {
+    "description": "Rest time title"
+  },
+  "@restoreBackup": {
+    "description": "Restore backup button"
+  },
+  "@restoreBackupData": {
+    "description": "Data restore description"
+  },
+  "@restoreButton": {
+    "description": "Restore button text"
+  },
+  "@restoreErrorOccurred": {
+    "description": "Restore error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@restoreSuccess": {
+    "description": "Restore success message"
+  },
+  "@restoringData": {
+    "description": "Data restore in progress message"
+  },
+  "@resumeWorkout": {
+    "description": "Resume workout title"
+  },
+  "@saturdayShort": {
+    "description": "Saturday short form"
+  },
+  "@selectWorkoutDays": {
+    "description": "Workout day selection guide"
+  },
+  "@selectedDaysFormat": {
+    "description": "Selected days display format",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "@sessions": {
+    "description": "Sessions label"
+  },
+  "@sessionsCompleted": {
+    "description": "Sessions completed label"
+  },
+  "@sessionsCompletedFormat": {
+    "description": "Sessions completed format",
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@setCompletedGood": {
+    "description": "Message when set completed below target"
+  },
+  "@setCompletedSuccess": {
+    "description": "Message when set completed with target achieved"
+  },
+  "@setCount": {
+    "description": "Set count display",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@setExactAlarmPermission": {
+    "description": "Set exact alarm permission button"
+  },
+  "@setFormat": {
+    "description": "Set format",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "setNumber": {
+        "type": "int"
+      }
+    }
+  },
+  "@setFormat2": {
+    "description": "Set format with number and reps",
+    "placeholders": {
+      "number": {
+        "type": "int"
+      },
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@setRecords": {
+    "description": "Set records label"
+  },
+  "@setRepFormat": {
+    "description": "Set-wise target reps display",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "setIndex": {
+        "type": "int"
+      }
+    }
+  },
+  "@setRepsDisplayFormat": {
+    "description": "Set count and reps display format"
+  },
+  "@setRepsFormat": {
+    "description": "Set/reps format",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "setIndex": {
+        "type": "int"
+      }
+    }
+  },
+  "@settings": {
+    "description": "Settings title"
+  },
+  "@settingsBannerText": {
+    "description": "Settings banner ad text"
+  },
+  "@settingsSaveFailed": {
+    "description": "Settings save failed message"
+  },
+  "@settingsSaved": {
+    "description": "Settings saved success message"
+  },
+  "@settingsSubtitle": {
+    "description": "Settings screen subtitle"
+  },
+  "@settingsTitle": {
+    "description": "Settings screen title"
+  },
+  "@sevenDayStreak": {
+    "description": "7-day streak challenge message"
+  },
+  "@sevenDaysExercise": {
+    "description": "Seven days exercise description"
+  },
+  "@shareWorkout": {
+    "description": "Share workout result button"
+  },
+  "@skipRest": {
+    "description": "Skip rest button text"
+  },
+  "@skipRestButton": {
+    "description": "Skip rest button"
+  },
+  "@soundSettings": {
+    "description": "Sound settings"
+  },
+  "@soundSettingsDesc": {
+    "description": "Sound settings description"
+  },
+  "@startFirstWorkout": {
+    "description": "Start first workout message"
+  },
+  "@startNewWorkout": {
+    "description": "Start new workout button"
+  },
+  "@startTodayWorkout": {
+    "description": "Start today's workout button"
+  },
+  "@startWorkout": {
+    "description": "Start workout button"
+  },
+  "@streakDays": {
+    "description": "Streak days format",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "@streakNotificationSet": {
+    "description": "Success message for streak notification setup"
+  },
+  "@successSettingsSaved": {
+    "description": "Settings save success message"
+  },
+  "@successWorkoutCompleted": {
+    "description": "Workout completion success message"
+  },
+  "@sundayShort": {
+    "description": "Sunday short form"
+  },
+  "@targetRepsLabel": {
+    "description": "Target reps display",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@themeChangeAfterRestart": {
+    "description": "Theme change application notice"
+  },
+  "@themeChangeRestart": {
+    "description": "Theme change restart notice"
+  },
+  "@themeLanguageSettings": {
+    "description": "Theme and language settings description"
+  },
+  "@thisMonthWorkouts": {
+    "description": "This month workouts count label"
+  },
+  "@thisWeekProgress": {
+    "description": "This week progress display",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      }
+    }
+  },
+  "@thursdayShort": {
+    "description": "Thursday short form"
+  },
+  "@todayGoalTitle": {
+    "description": "Today's goal label"
+  },
+  "@todayMission": {
+    "description": "Today's mission"
+  },
+  "@todayMissionTitle": {
+    "description": "Today's mission card title"
+  },
+  "@todayTarget": {
+    "description": "Today's target label"
+  },
+  "@todayWorkoutCompleted": {
+    "description": "Today's workout completion celebration message"
+  },
+  "@todayWorkoutNotAvailable": {
+    "description": "Today's workout unavailable message"
+  },
+  "@todaysGoal": {
+    "description": "Today's goal title"
+  },
+  "@totalCompletedReps": {
+    "description": "Total completed reps",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      }
+    }
+  },
+  "@totalRepsFormat": {
+    "description": "Total reps format",
+    "placeholders": {
+      "totalReps": {
+        "type": "int"
+      }
+    }
+  },
+  "@totalWorkouts": {
+    "description": "Total workouts count label"
+  },
+  "@trueChadMindset": {
+    "description": "Video description 3"
+  },
+  "@tuesdayShort": {
+    "description": "Tuesday short form"
+  },
+  "@vibrationSettings": {
+    "description": "Vibration settings"
+  },
+  "@vibrationSettingsDesc": {
+    "description": "Vibration settings description"
+  },
+  "@victoryDaySelection": {
+    "description": "Victory day selection section"
+  },
+  "@wednesdayShort": {
+    "description": "Wednesday short form"
+  },
+  "@week1Completed": {
+    "description": "Week 1 completed requirement"
+  },
+  "@week2Completed": {
+    "description": "Week 2 completed requirement"
+  },
+  "@week3Completed": {
+    "description": "Week 3 completed requirement"
+  },
+  "@week4Completed": {
+    "description": "Week 4 completed requirement"
+  },
+  "@week5Completed": {
+    "description": "Week 5 completed requirement"
+  },
+  "@week6Completed": {
+    "description": "Week 6 completed requirement"
+  },
+  "@weekCompleted": {
+    "description": "Week completed label"
+  },
+  "@weekCompletedMessage": {
+    "description": "Week completion message"
+  },
+  "@weekDayFormat": {
+    "description": "Week/day format",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "@weekProgress": {
+    "description": "Overall program progress",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@weekX": {
+    "description": "Week number format",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "@weekendRestWeekdayInvincible": {
+    "description": "Worker chad mode description"
+  },
+  "@weekly": {
+    "description": "Weekly filter option"
+  },
+  "@weeklyChallenge": {
+    "description": "Weekly challenge achievement"
+  },
+  "@weeklyChallengeDesc": {
+    "description": "Weekly challenge achievement description"
+  },
+  "@weeklyDetails": {
+    "description": "Weekly details title"
+  },
+  "@weeklyGoal": {
+    "description": "Weekly goal label"
+  },
+  "@weeklyGrowthChart": {
+    "description": "Weekly growth chart title"
+  },
+  "@weeklyPerformance": {
+    "description": "Weekly performance title"
+  },
+  "@weeklyReport": {
+    "description": "Weekly report title"
+  },
+  "@weeklyWorkoutSchedule": {
+    "description": "Weekly workout schedule description"
+  },
+  "@weeksCompleted": {
+    "description": "Number of completed weeks",
+    "placeholders": {
+      "completed": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "@weeksRemaining": {
+    "description": "Weeks remaining until evolution",
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "@workout": {
+    "description": "Workout button label"
+  },
+  "@workoutAchieved": {
+    "description": "Workout goal achieved"
+  },
+  "@workoutAlreadyCompleted": {
+    "description": "Workout already completed message"
+  },
+  "@workoutAutoRenewalBody": {
+    "description": "Workout reminder auto renewal notification body"
+  },
+  "@workoutAutoRenewalTitle": {
+    "description": "Workout reminder auto renewal notification title"
+  },
+  "@workoutButtonConquer": {
+    "description": "Regular set completion button"
+  },
+  "@workoutButtonUltimate": {
+    "description": "Ultimate set completion button"
+  },
+  "@workoutCalendar": {
+    "description": "Workout calendar title"
+  },
+  "@workoutChart": {
+    "description": "Workout chart title"
+  },
+  "@workoutCompleteButton": {
+    "description": "Workout completion confirmation button"
+  },
+  "@workoutCompleteMessage": {
+    "description": "Workout completion message",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "totalReps": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutCompleteTitle": {
+    "description": "Workout completion dialog title"
+  },
+  "@workoutCompleted": {
+    "description": "Workout completion status"
+  },
+  "@workoutCompletionChannelDescription": {
+    "description": "Workout completion celebration notification channel description"
+  },
+  "@workoutCompletionMessage": {
+    "description": "Workout completion achievement message",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutCount": {
+    "description": "Workout count format",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutDate": {
+    "description": "Workout date format",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "month": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutDayNotification": {
+    "description": "Workout day notification"
+  },
+  "@workoutDaySelection": {
+    "description": "Workout day selection title"
+  },
+  "@workoutDaysModeActivated": {
+    "description": "Workout days mode activated message"
+  },
+  "@workoutDaysOnlyNotifications": {
+    "description": "Workout days only notification setting title"
+  },
+  "@workoutDaysOnlyNotificationsDesc": {
+    "description": "Workout days only notification setting description"
+  },
+  "@workoutDetailsWithStats": {
+    "description": "Workout details with stats",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "sets": {
+        "type": "int"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "@workoutHistoryLoadError": {
+    "description": "Error message when loading workout history fails",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@workoutInterruptionDetected": {
+    "description": "Workout interruption detected warning"
+  },
+  "@workoutPrecautions": {
+    "description": "Workout precautions"
+  },
+  "@workoutProcessing": {
+    "description": "Workout completion processing message"
+  },
+  "@workoutRecordForDate": {
+    "description": "Selected date workout record",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      },
+      "month": {
+        "type": "int"
+      }
+    }
+  },
+  "@workoutRecordsStats": {
+    "description": "Workout records and statistics item"
+  },
+  "@workoutReminder": {
+    "description": "Workout reminder setting"
+  },
+  "@workoutReminderDefaultBody": {
+    "description": "Default workout reminder notification body"
+  },
+  "@workoutReminderDisabled": {
+    "description": "Workout reminder disabled message"
+  },
+  "@workoutReminderEnabled": {
+    "description": "Workout reminder enabled message"
+  },
+  "@workoutReminderSettings": {
+    "description": "Workout reminder settings title"
+  },
+  "@workoutReminders": {
+    "description": "Workout reminders option"
+  },
+  "@workoutRemindersChannelDescription": {
+    "description": "Workout reminders notification channel description"
+  },
+  "@workoutRemindersDesc": {
+    "description": "Workout reminders description"
+  },
+  "@workoutSaveError": {
+    "description": "Workout record save failure error message"
+  },
+  "@workoutScreenAdMessage": {
+    "description": "Workout screen advertisement fallback message"
+  },
+  "@workoutSettings": {
+    "description": "Workout settings section"
+  },
+  "@workoutStartError": {
+    "description": "Workout start error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@workoutStartMessage": {
+    "description": "Workout start action message"
+  },
+  "@workoutTime": {
+    "description": "Workout time statistics title"
+  },
+  "@workoutTips": {
+    "description": "Workout tips title"
+  },
+  "@workoutTipsContent": {
+    "description": "Workout tips content"
+  },
+  "@workoutTitle": {
+    "description": "Workout title - Chad style"
+  },
+  "aboutSettings": "ℹ️ App Info",
+  "allDataResetSuccessfully": "All data has been successfully reset",
+  "appearanceSettings": "Appearance Settings",
+  "autoStartNextSet": "Auto Start Next Set",
+  "autoStartNextSetDesc": "Automatically start next set after rest",
+  "averagePerSession": "Avg/Session",
+  "backupFailureStoppedStatus": "Stopped due to backup failures",
+  "backupRestoreError": "Error occurred during backup restore: {error}",
+  "backupRestoreFailed": "Backup restore failed",
+  "backupRestoredSuccessfully": "Backup restored successfully",
+  "backupWorkoutRecords": "Backup workout records",
+  "bestWeek": "Best Week",
+  "chadDays": "Chad days!",
+  "chadNotificationSettings": "🔔 Chad Notification Settings",
+  "chadRestModeToday": "Okay! Today's rest mode! 💪😎",
+  "chadTimeSettings": "⏰ Chad Time Settings",
+  "challenge14DaysDescription": "Work out for 14 consecutive days",
+  "challenge14DaysDetailedDescription": "14 days straight, no skips! Clear 7-day first! 💪",
+  "challenge14DaysTitle": "14 Consecutive Days",
+  "challenge7DaysDescription": "Work out for 7 consecutive days",
+  "challenge7DaysDetailedDescription": "7 days straight, no skips! Min 1 set daily! 🔥",
+  "challenge7DaysTitle": "7 Consecutive Days",
+  "challengeHintConsecutiveDays": "Every single day! Miss one = Start over! 💪",
+  "challengeHintSingleSession": "Hit target in one shot! Stop = Fail! 🔥",
+  "challengeRestartButton": "Restart",
+  "challengeTypeConsecutiveDays": "Consecutive Days",
+  "challengeTypeSingleSession": "Single Session",
+  "challengeUnitDays": "days",
+  "challengeUnitReps": "reps",
+  "completeSetButton": "ASCEND TO LEGEND!",
+  "completeSetContinue": "DESTROY ANOTHER ONE!",
+  "completedRepsFormat": "Completed: reps (sets)",
+  "completedSessions": "Completed Sessions",
+  "completedSetsCount": "Completed sets: {count}",
+  "confirmDataReset": "Confirm Data Reset",
+  "consecutiveDays": "Consecutive Days",
+  "consecutiveWorkoutBlocked": "STOP! No Consecutive Workouts!",
+  "consecutiveWorkoutMessage": "Yo! You worked out yesterday! 🔥\n\nWhat are you doing? Back-to-back?\nReal warriors rest when it's time!\n\n💀 Overtraining = NO GO!\n😎 Chill today, crush it tomorrow! 💪",
+  "customWorkoutDays": "Workout Days Settings",
+  "customWorkoutDaysDesc": "Set your preferred workout days",
+  "dailyNotificationSet": "Daily {time} workout reminder set! 💪",
+  "dailyWorkoutAlarm": "Daily workout time alarm! Miss it and you're WEAK! 💪",
+  "dailyWorkoutReminder": "Daily Workout Reminder",
+  "dataReset": "Data Reset",
+  "dataResetComingSoon": "Data reset feature is coming soon",
+  "dataResetConfirm": "Data Reset Confirmation",
+  "dataResetDesc": "Delete all data",
+  "dataResetError": "An error occurred during data reset: {error}",
+  "dataResetErrorOccurred": "Data reset error occurred: {error}",
+  "dataResetProgress": "Resetting data...",
+  "dataResetSuccess": "All data has been successfully reset",
+  "dataResetWarning": "The following data will be completely deleted:",
+  "dataRestore": "Data Restore",
+  "dataRestoreComingSoon": "Data restore feature is coming soon",
+  "dataRestoreCompleted": "Data restore completed! Please restart the app.",
+  "dataRestoreConfirm": "⚠️ Data Restore",
+  "dataRestoreDesc": "Restore backed up data",
+  "dataRestoreError": "Data restore failed. Please check the backup file.",
+  "dataRestoreFailed": "Data restore failed. Please check the backup file.",
+  "dataRestoreProgress": "Restoring data...",
+  "dataRestoreSuccess": "Data restore completed! Please restart the app.",
+  "dataRestoreTitle": "⚠️ Data Restore",
+  "dataRestoreWarning": "Restoring data from backup will delete all current data.\\nAre you sure you want to restore?",
+  "dataSettings": "💾 Data Management",
+  "dateFormatYearMonthDay": "{month}/{day}/{year}",
+  "dayLabel": "📅 Day",
+  "dayX": "Day {day}",
+  "days": "days",
+  "daysFormat": "{days} days",
+  "deleteAllWorkoutRecords": "Delete all workout records",
+  "detailedReminderSettings": "Detailed Reminder Settings",
+  "difficultySettings": "Difficulty Settings",
+  "difficultySettingsComingSoon": "Difficulty settings feature is coming soon",
+  "difficultySettingsTitle": "💪 Difficulty Settings",
+  "durationDays": "Duration",
+  "errorPleaseTryAgain": "An error occurred. Please try again",
+  "firstWorkoutCompleted": "First workout completed",
+  "firstWorkoutMessage": "Starting your first workout! Let's go!",
+  "foundWorkout": "🔍 Found Workout",
+  "fridayFull": "Friday",
+  "fridayShort": "Fri",
+  "goToSettings": "Go to Settings",
+  "homeWorkoutPushups": "Home Workout Pushups 🏠",
+  "hundredRepsInOneSession": "100 reps in one session",
+  "incompleteWorkoutFound": "Incomplete workout found!",
+  "languageSettings": "Language Settings",
+  "languageSettingsComingSoon": "Language settings feature is coming soon",
+  "levelReset": "Level Reset",
+  "levelResetConfirm": "Level Reset Confirmation",
+  "levelResetDesc": "Reset all progress and start from the beginning",
+  "manageAppSettings": "Manage your app settings",
+  "maxSixDaysWorkout": "Maximum 6 days workout allowed (one day must be rest)",
+  "minOneDayRest": "At least one rest day is required",
+  "mission100Settings": "Mission 100 Settings",
+  "mondayFull": "Monday",
+  "mondayShort": "Mon",
+  "nextSetButton": "UNIVERSE CONQUERED!",
+  "nextSetContinue": "BRING THE NEXT SACRIFICE!",
+  "noConsecutiveSixDays": "Maximum 4 workouts per week allowed. Adequate rest is essential!",
+  "noWorkout": "No! I'll work out!",
+  "noWorkoutHistory": "No workout history",
+  "noWorkoutRecordForDate": "No workout record for this date",
+  "noWorkoutRecords": "No workout records yet!",
+  "noWorkoutThisDay": "No workout records for this day",
+  "noWorkoutToday": "🤷‍♂️ REST DAY? TOMORROW WE DESTROY! 🔥",
+  "noWorkoutsToday": "No workouts on this day",
+  "notificationSettings": "Notification Settings",
+  "notificationSetupFailed": "Failed to set up notification",
+  "notificationsSettings": "Notifications",
+  "oneWeekChallenge": "One Week Challenge",
+  "oneWeekCompleted": "One week 100% completed",
+  "perfectHomeWorkout": "Perfect workout you can do at home",
+  "perfectWeek": "Perfectionist",
+  "permissionRestricted": "Restricted",
+  "programCompletedMessage": "Program completed! Amazing job!",
+  "programProgress": "Program Progress",
+  "programStart": "Program Start",
+  "progressSetReady": "Progress: Set {set} ready",
+  "progressWeekDay": "WEEK {week} - {completedDays} of {totalDays} DAYS COMPLETED",
+  "recentWorkouts": "Recent Workouts",
+  "repsAchieved": "{reps} reps • {percentage}% achieved",
+  "repsAndCompletion": "{reps} reps • {percentage}% completed",
+  "repsCompleted": "Reps Completed",
+  "repsCount": "{count} reps",
+  "repsFormat": "{count} reps",
+  "resetAllProgressConfirm": "Are you sure you want to reset all progress?",
+  "resetButton": "Reset",
+  "resetConfirmMessage": "Are you sure you want to delete all data? This action cannot be undone.",
+  "resetConfirmTitle": "Reset All Data",
+  "resetSuccess": "All data has been reset successfully",
+  "resettingData": "Resetting data...",
+  "restDayAccept": "Would you like to accept the rest day?",
+  "restDayBonusChallenge": "Rest Day Bonus Challenge! 💪\n\n• Plank 30s x 3 sets\n• Squats 20 x 2 sets\n• Push-ups 10 (perfect form!)\n\nReady? Only real champions can do this! 🏆",
+  "restDayChallenge": "Rest day? That's for the weak!\nTrue champions fight every day! 🥊\n\nProve your mental strength with a simple additional challenge!",
+  "restDayChampionTitle": "Rest Day Champion! 💪",
+  "restDayDescription": "Today is a scheduled rest day but...\nTrue champions never rest! 🔥\n\nWould you like to take on an additional challenge?",
+  "restDayMessage": "Today is recovery day. True strength comes from rest.",
+  "restDayTeasing": "Someone is doing 100 push-ups right now! 💪\n\nAre you really going to rest today?",
+  "restMessage": "REST IS ALSO GROWTH. NEXT WILL BE MORE DESTRUCTIVE 🦍",
+  "restTimeDesc": "Set rest time between sets",
+  "restTimeSettings": "Rest Time Settings",
+  "restTimeTitle": "ALPHA RECHARGE TIME ⚡",
+  "restoreBackup": "Restore Backup",
+  "restoreBackupData": "Restore backed up data",
+  "restoreButton": "Restore",
+  "restoreErrorOccurred": "Restore error occurred: {error}",
+  "restoreSuccess": "Data restore completed successfully",
+  "restoringData": "Restoring data...",
+  "resumeWorkout": "💪 Resume Workout",
+  "saturdayFull": "Saturday",
+  "saturdayShort": "Sat",
+  "selectWorkoutDays": "Select workout days (maximum 6 days)",
+  "selectedDaysFormat": "Selected: {days} ({count}/6 days)",
+  "sessions": "Sessions",
+  "sessionsCompleted": "Sessions Completed",
+  "sessionsCompletedFormat": "{completed}/{total} sessions completed • {reps} reps",
+  "setCompletedGood": "ANOTHER LIMIT DESTROYED! ⚡🔱",
+  "setCompletedSuccess": "ANOTHER MYTH IS BORN! 🔥👑",
+  "setCount": "{count} sets",
+  "setExactAlarmPermission": "Set Exact Alarm Permission",
+  "setFormat": "Set {setNumber}: {reps} reps",
+  "setFormat2": "Set {number}: {reps} reps",
+  "setRecords": "Set Records:",
+  "setRepFormat": "Set {setIndex}: {reps} reps",
+  "setRepsDisplayFormat": "Sets × Reps",
+  "setRepsFormat": "Set {setIndex}: {reps} reps",
+  "settings": "Settings",
+  "settingsBannerText": "Customize Chad's settings! ⚙️",
+  "settingsSaveFailed": "Failed to save settings",
+  "settingsSaved": "Settings have been saved",
+  "settingsSubtitle": "Customize your Chad journey",
+  "settingsTitle": "⚙️ Chad Settings",
+  "sevenDayStreak": "🔄 7-day streak challenge started! Miss a day, start over! 🚀",
+  "sevenDaysExercise": "7 consecutive days",
+  "shareWorkout": "Share",
+  "singleSessionChallenge": "Single Session Challenge",
+  "skipRest": "Skip Rest",
+  "skipRestButton": "REST? ONLY FOR THE WEAK! BRING THE NEXT VICTIM!",
+  "soundSettings": "Sound Settings",
+  "soundSettingsDesc": "Enable workout sound effects",
+  "startFirstWorkout": "Start your first workout and\\ncreate your Chad legend! 🔥",
+  "startNewWorkout": "Start New Workout",
+  "startTodayWorkout": "🚀 START TODAY'S DOMINATION! 🚀",
+  "startWorkout": "Start Workout",
+  "streakDays": "{days} days",
+  "streakNotificationSet": "Streak encouragement notification has been set!",
+  "successSettingsSaved": "⚡ ALPHA SETTINGS LOCKED! PERFECT CONFIG ARMED! ⚡",
+  "successWorkoutCompleted": "🚀 WORKOUT DOMINATION COMPLETE! ANOTHER LEGENDARY ACHIEVEMENT! 🚀",
+  "sundayFull": "Sunday",
+  "sundayShort": "Sun",
+  "targetRepsLabel": "TARGET: {count} REPS",
+  "themeChangeAfterRestart": "Theme changes will be applied after app restart",
+  "themeChangeRestart": "Theme change will apply after app restart",
+  "themeLanguageSettings": "Theme and Language Settings",
+  "thisMonthWorkouts": "This Month",
+  "thisWeekProgress": "This Week (Week {current})",
+  "thursdayFull": "Thursday",
+  "thursdayShort": "Thu",
+  "todayGoalTitle": "Today's Goal:",
+  "todayMission": "Today's Mission",
+  "todayMissionTitle": "Today's Mission",
+  "todayTarget": "Today's Target:",
+  "todayWorkoutCompleted": "🎉 Today's Workout Complete! 🎉",
+  "todayWorkoutNotAvailable": "Today's workout is not available",
+  "todaysGoal": "Today's Goal",
+  "totalCompletedReps": "Total completed: {reps} reps",
+  "totalRepsFormat": "{totalReps} reps",
+  "totalWorkouts": "Total Workouts",
+  "trueChadMindset": "Mindset to become a true Chad",
+  "tuesdayFull": "Tuesday",
+  "tuesdayShort": "Tue",
+  "vibrationSettings": "Vibration Settings",
+  "vibrationSettingsDesc": "Enable vibration feedback",
+  "victoryDaySelection": "💪 Victory Day Selection",
+  "wednesdayFull": "Wednesday",
+  "wednesdayShort": "Wed",
+  "week1Completed": "Week 1 Completed",
+  "week2Completed": "Week 2 Completed",
+  "week3Completed": "Week 3 Completed",
+  "week4Completed": "Week 4 Completed",
+  "week5Completed": "Week 5 Completed",
+  "week6Completed": "Week 6 Completed",
+  "weekCompleted": "Week",
+  "weekCompletedMessage": "Week completed! Congratulations!",
+  "weekDayFormat": "Week {week} Day {day}",
+  "weekProgress": "Week {current}/{total}",
+  "weekUnit": "week",
+  "weekX": "Week {week}",
+  "weekendRestWeekdayInvincible": "Weekend rest, weekday invincible! 💪",
+  "weekly": "Weekly",
+  "weeklyChallenge": "Weekly Challenge",
+  "weeklyChallengeDesc": "Exercise for 7 consecutive days",
+  "weeklyDetails": "Weekly Details",
+  "weeklyGoal": "Weekly Goal",
+  "weeklyGrowthChart": "Weekly Growth Chart",
+  "weeklyPerformance": "Weekly Performance",
+  "weeklyReport": "📊 Weekly Report 📊",
+  "weeklyWorkoutSchedule": "Set weekly workout schedule",
+  "weeksCompleted": "{completed}/{total} weeks completed",
+  "weeksRemaining": "{weeks} weeks left",
+  "workout": "Workout",
+  "workoutAchieved": "Achieved",
+  "workoutAlreadyCompleted": "Today's workout is already completed! 💪",
+  "workoutAutoRenewalBody": "Workout reminders have been automatically renewed. Keep up your healthy exercise habits! 💪",
+  "workoutAutoRenewalTitle": "⏰ Workout Reminder Auto Renewal",
+  "workoutButtonConquer": "CONQUER THIS SET!",
+  "workoutButtonUltimate": "CLAIM ULTIMATE VICTORY!",
+  "workoutCalendar": "Workout Calendar",
+  "workoutChart": "Workout Chart",
+  "workoutCompleteButton": "LEGENDARY!",
+  "workoutCompleteMessage": "{title} COMPLETELY DESTROYED!\nTOTAL POWER UNLEASHED: {totalReps} REPS! ⚡",
+  "workoutCompleteTitle": "🔥 BEAST MODE COMPLETED! 👑",
+  "workoutCompleted": "Completed",
+  "workoutCompletionChannelDescription": "Workout completion celebration notifications",
+  "workoutCompletionMessage": "{percentage}% of goal crushed! Walking the warrior path! KEEP GRINDING! 🔥💪",
+  "workoutCount": "{count} times",
+  "workoutDate": "{month}/{day} Workout",
+  "workoutDayNotification": "Workout Day Notification",
+  "workoutDaySelection": "Select Workout Days",
+  "workoutDaysModeActivated": "💪 Workout days only mode activated! Notifications will come only on Mon, Wed, Fri!",
+  "workoutDaysOnlyNotifications": "🔥 Workout Days Only Alerts",
+  "workoutDaysOnlyNotificationsDesc": "Receive notifications only on workout days (Mon, Wed, Fri). No disturbance on rest days!",
+  "workoutDetailsWithStats": "Workout: {title}\\nCompleted sets: {sets}\\nTotal reps: {reps}",
+  "workoutHistoryLoadError": "Error loading workout history: {error}",
+  "workoutInterruptionDetected": "⚠️ Workout Interruption Detected",
+  "workoutNotificationPermission": "🔔 Workout Notification Permission",
+  "workoutPrecautions": "• At least one rest day is required\n• Cannot workout more than 6 consecutive days\n• Adequate rest is essential for muscle growth",
+  "workoutProcessing": "Processing workout completion...",
+  "workoutRecordForDate": "{month}/{day} Workout Record",
+  "workoutRecordsStats": "• Workout records and statistics",
+  "workoutReminder": "Workout Reminder",
+  "workoutReminderDefaultBody": "💪 MISSION 100 workout time! LEGENDARY MODE activated! 💪",
+  "workoutReminderDisabled": "Workout reminders have been disabled",
+  "workoutReminderEnabled": "Workout reminders have been enabled",
+  "workoutReminderSettings": "Workout Reminder Settings",
+  "workoutReminders": "Workout Reminders",
+  "workoutRemindersChannelDescription": "Weekly workout reminders",
+  "workoutRemindersDesc": "Daily reminders at your set time",
+  "workoutSaveError": "An error occurred while saving workout record. Please try again.",
+  "workoutScreenAdMessage": "Feel the power of Chad! 💪",
+  "workoutSettings": "💪 Workout Settings",
+  "workoutStartError": "⚡ ALPHA SYSTEM ERROR! RETRY, FUTURE EMPEROR: {error} ⚡",
+  "workoutStartMessage": "Workout started! 🔥",
+  "workoutTime": "Workout Time",
+  "workoutTips": "Workout Tips",
+  "workoutTipsContent": "• Stretch sufficiently before and after workouts\\n• Proper form is more important than quantity\\n• Consistency is the most important success factor",
+  "workoutTitle": "💪 WAR ZONE 💪"
+}

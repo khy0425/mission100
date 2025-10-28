@@ -8,6 +8,7 @@ import 'dart:convert';
 import '../models/user_profile.dart';
 import '../models/firestore_achievement.dart';
 import '../models/achievement.dart' as LocalAchievement;
+import '../models/user_subscription.dart';
 import 'chad_evolution_service.dart';
 import 'chad_level_manager.dart';
 import 'achievement_service.dart';
@@ -1054,6 +1055,363 @@ class CloudSyncService {
 
     print('✅ 사용자 설정 충돌 해결 완료');
     return resolved;
+  }
+
+  /// 구독 정보 저장 (Firestore)
+  Future<void> saveSubscription(UserSubscription subscription) async {
+    final user = _auth.currentUser;
+    if (user == null) {
+      print('❌ 구독 저장 실패: 로그인 필요');
+      return;
+    }
+
+    try {
+      await _firestore
+          .collection('users')
+          .doc(user.uid)
+          .collection('subscription')
+          .doc(subscription.id)
+          .set(subscription.toJson());
+
+      print('✅ 구독 정보 Firestore 저장 완료: ${subscription.type}');
+    } catch (e) {
+      print('❌ 구독 정보 Firestore 저장 오류: $e');
+      rethrow;
+    }
+  }
+
+  /// 구독 정보 로드 (Firestore)
+  Future<UserSubscription?> loadSubscription(String userId) async {
+    try {
+      final snapshot = await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('subscription')
+          .orderBy('createdAt', descending: true)
+          .limit(1)
+          .get();
+
+      if (snapshot.docs.isEmpty) {
+        print('ℹ️ 구독 정보 없음 - 신규 사용자');
+        return null;
+      }
+
+      final data = snapshot.docs.first.data();
+      final subscription = UserSubscription.fromJson(data);
+
+      print('✅ 구독 정보 Firestore 로드 완료: ${subscription.type}');
+      return subscription;
+    } catch (e) {
+      print('❌ 구독 정보 Firestore 로드 오류: $e');
+      return null;
+    }
+  }
+
+  /// 구독 정보 업데이트 (Firestore)
+  Future<void> updateSubscription(UserSubscription subscription) async {
+    final user = _auth.currentUser;
+    if (user == null) {
+      print('❌ 구독 업데이트 실패: 로그인 필요');
+      return;
+    }
+
+    try {
+      final updatedSubscription = subscription.copyWith(
+        updatedAt: DateTime.now(),
+      );
+
+      await _firestore
+          .collection('users')
+          .doc(user.uid)
+          .collection('subscription')
+          .doc(subscription.id)
+          .update(updatedSubscription.toJson());
+
+      print('✅ 구독 정보 Firestore 업데이트 완료: ${subscription.type}');
+    } catch (e) {
+      print('❌ 구독 정보 Firestore 업데이트 오류: $e');
+      rethrow;
+    }
+  }
+
+  /// 구독 정보 로컬 저장 (SharedPreferences)
+  Future<void> saveSubscriptionLocally(UserSubscription subscription) async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = jsonEncode(subscription.toJson());
+      await prefs.setString('user_subscription', jsonString);
+
+      print('✅ 구독 정보 로컬 저장 완료: ${subscription.type}');
+    } catch (e) {
+      print('❌ 구독 정보 로컬 저장 오류: $e');
+    }
+  }
+
+  /// 구독 정보 로컬 로드 (SharedPreferences)
+  Future<UserSubscription?> loadSubscriptionLocally() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = prefs.getString('user_subscription');
+
+      if (jsonString == null) {
+        print('ℹ️ 로컬 구독 정보 없음');
+        return null;
+      }
+
+      final json = jsonDecode(jsonString) as Map<String, dynamic>;
+      final subscription = UserSubscription.fromJson(json);
+
+      print('✅ 구독 정보 로컬 로드 완료: ${subscription.type}');
+      return subscription;
+    } catch (e) {
+      print('❌ 구독 정보 로컬 로드 오류: $e');
+      return null;
+    }
+  }
+
+  // ==================== VIP 경험을 위한 데이터 프리로드 메서드 ====================
+
+  /// 운동 기록 프리로드 (VIP 빠른 로딩용)
+  Future<void> preloadWorkoutHistory(String userId) async {
+    if (!_isOnline) {
+      print('⚠️ 오프라인 - 운동 기록 프리로드 건너뜀');
+      return;
+    }
+
+    try {
+      print('⏳ 운동 기록 프리로드 시작...');
+
+      final snapshot = await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('workout_history')
+          .orderBy('timestamp', descending: true)
+          .limit(30) // 최근 30개 운동 기록
+          .get();
+
+      if (snapshot.docs.isEmpty) {
+        print('ℹ️ 프리로드할 운동 기록 없음');
+        return;
+      }
+
+      // 로컬 캐시에 저장
+      final prefs = await SharedPreferences.getInstance();
+      final workoutData = snapshot.docs
+          .map((doc) => {'id': doc.id, ...doc.data()})
+          .toList();
+
+      await prefs.setString(
+        'preloaded_workout_history',
+        jsonEncode(workoutData),
+      );
+
+      print('✅ 운동 기록 프리로드 완료 (${snapshot.docs.length}개)');
+    } catch (e) {
+      print('❌ 운동 기록 프리로드 오류: $e');
+      // 프리로드 실패는 앱 사용에 지장 없음 - 예외 무시
+    }
+  }
+
+  /// 진행 상황 프리로드 (VIP 빠른 로딩용)
+  Future<void> preloadProgress(String userId) async {
+    if (!_isOnline) {
+      print('⚠️ 오프라인 - 진행 상황 프리로드 건너뜀');
+      return;
+    }
+
+    try {
+      print('⏳ 진행 상황 프리로드 시작...');
+
+      final snapshot = await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('progress')
+          .get();
+
+      if (snapshot.docs.isEmpty) {
+        print('ℹ️ 프리로드할 진행 상황 없음');
+        return;
+      }
+
+      // 로컬 캐시에 저장
+      final prefs = await SharedPreferences.getInstance();
+      final progressData = snapshot.docs
+          .map((doc) => {'id': doc.id, ...doc.data()})
+          .toList();
+
+      await prefs.setString(
+        'preloaded_progress',
+        jsonEncode(progressData),
+      );
+
+      print('✅ 진행 상황 프리로드 완료 (${snapshot.docs.length}개)');
+    } catch (e) {
+      print('❌ 진행 상황 프리로드 오류: $e');
+      // 프리로드 실패는 앱 사용에 지장 없음 - 예외 무시
+    }
+  }
+
+  /// 업적 프리로드 (VIP 빠른 로딩용)
+  Future<void> preloadAchievements(String userId) async {
+    if (!_isOnline) {
+      print('⚠️ 오프라인 - 업적 프리로드 건너뜀');
+      return;
+    }
+
+    try {
+      print('⏳ 업적 프리로드 시작...');
+
+      final snapshot = await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('achievements')
+          .get();
+
+      if (snapshot.docs.isEmpty) {
+        print('ℹ️ 프리로드할 업적 없음');
+        return;
+      }
+
+      // 로컬 캐시에 저장
+      final prefs = await SharedPreferences.getInstance();
+      final achievementData = snapshot.docs
+          .map((doc) => {'id': doc.id, ...doc.data()})
+          .toList();
+
+      await prefs.setString(
+        'preloaded_achievements',
+        jsonEncode(achievementData),
+      );
+
+      print('✅ 업적 프리로드 완료 (${snapshot.docs.length}개)');
+    } catch (e) {
+      print('❌ 업적 프리로드 오류: $e');
+      // 프리로드 실패는 앱 사용에 지장 없음 - 예외 무시
+    }
+  }
+
+  /// Chad Evolution 상태 프리로드 (VIP 빠른 로딩용)
+  Future<void> preloadChadState(String userId) async {
+    if (!_isOnline) {
+      print('⚠️ 오프라인 - Chad 상태 프리로드 건너뜀');
+      return;
+    }
+
+    try {
+      print('⏳ Chad Evolution 상태 프리로드 시작...');
+
+      final snapshot = await _firestore
+          .collection('users')
+          .doc(userId)
+          .collection('chad_evolution')
+          .orderBy('lastUpdated', descending: true)
+          .limit(1)
+          .get();
+
+      if (snapshot.docs.isEmpty) {
+        print('ℹ️ 프리로드할 Chad 상태 없음');
+        return;
+      }
+
+      // 로컬 캐시에 저장
+      final prefs = await SharedPreferences.getInstance();
+      final chadData = snapshot.docs.first.data();
+
+      await prefs.setString(
+        'preloaded_chad_state',
+        jsonEncode(chadData),
+      );
+
+      print('✅ Chad Evolution 상태 프리로드 완료');
+    } catch (e) {
+      print('❌ Chad Evolution 상태 프리로드 오류: $e');
+      // 프리로드 실패는 앱 사용에 지장 없음 - 예외 무시
+    }
+  }
+
+  /// 모든 사용자 데이터 프리로드 (VIP 경험 최적화)
+  Future<void> preloadAllUserData(String userId) async {
+    print('🚀 VIP 데이터 프리로드 시작 - 모든 데이터 로딩...');
+
+    try {
+      // 모든 프리로드를 병렬로 실행 (성능 최적화)
+      await Future.wait([
+        preloadWorkoutHistory(userId),
+        preloadProgress(userId),
+        preloadAchievements(userId),
+        preloadChadState(userId),
+      ]);
+
+      print('✅ VIP 데이터 프리로드 완료 - 앱 사용 준비 완료!');
+    } catch (e) {
+      print('⚠️ VIP 데이터 프리로드 일부 실패: $e');
+      // 일부 실패해도 계속 진행
+    }
+  }
+
+  // ==================== 프리로드된 데이터 조회 메서드 ====================
+
+  /// 프리로드된 운동 기록 가져오기
+  Future<List<Map<String, dynamic>>> getPreloadedWorkoutHistory() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = prefs.getString('preloaded_workout_history');
+
+      if (jsonString == null) return [];
+
+      final List<dynamic> data = jsonDecode(jsonString);
+      return data.cast<Map<String, dynamic>>();
+    } catch (e) {
+      print('❌ 프리로드된 운동 기록 조회 오류: $e');
+      return [];
+    }
+  }
+
+  /// 프리로드된 진행 상황 가져오기
+  Future<List<Map<String, dynamic>>> getPreloadedProgress() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = prefs.getString('preloaded_progress');
+
+      if (jsonString == null) return [];
+
+      final List<dynamic> data = jsonDecode(jsonString);
+      return data.cast<Map<String, dynamic>>();
+    } catch (e) {
+      print('❌ 프리로드된 진행 상황 조회 오류: $e');
+      return [];
+    }
+  }
+
+  /// 프리로드된 업적 가져오기
+  Future<List<Map<String, dynamic>>> getPreloadedAchievements() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = prefs.getString('preloaded_achievements');
+
+      if (jsonString == null) return [];
+
+      final List<dynamic> data = jsonDecode(jsonString);
+      return data.cast<Map<String, dynamic>>();
+    } catch (e) {
+      print('❌ 프리로드된 업적 조회 오류: $e');
+      return [];
+    }
+  }
+
+  /// 프리로드된 Chad 상태 가져오기
+  Future<Map<String, dynamic>?> getPreloadedChadState() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final jsonString = prefs.getString('preloaded_chad_state');
+
+      if (jsonString == null) return null;
+
+      return jsonDecode(jsonString) as Map<String, dynamic>;
+    } catch (e) {
+      print('❌ 프리로드된 Chad 상태 조회 오류: $e');
+      return null;
+    }
   }
 
   /// 서비스 정리

@@ -1,0 +1,64 @@
+{
+  "@errorDatabase": {
+    "description": "데이터베이스 오류 메시지"
+  },
+  "@errorGeneral": {
+    "description": "일반 오류 메시지"
+  },
+  "@errorLoadingData": {
+    "description": "데이터 로딩 오류 메시지"
+  },
+  "@errorNetwork": {
+    "description": "네트워크 오류 메시지"
+  },
+  "@errorNotFound": {
+    "description": "데이터 없음 오류 메시지"
+  },
+  "@errorOccurred": {
+    "description": "일반적인 오류 발생 메시지"
+  },
+  "@permissionsRequired": {
+    "description": "권한 요청 다이얼로그 제목"
+  },
+  "@profileCreationError": {
+    "description": "프로필 생성 오류 메시지",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@required": {
+    "description": "필수 권한 라벨"
+  },
+  "@requiredLabel": {
+    "description": "Required permission label"
+  },
+  "@shareError": {
+    "description": "공유 실패 오류 메시지"
+  },
+  "@videoLoadError": {
+    "description": "영상 로딩 실패 오류 메시지",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "adLoadFailed": "광고를 불러올 수 없다",
+  "appInitError": "앱 초기화 중 오류 발생!",
+  "error": "오류",
+  "errorDatabase": "💥 데이터 요새에 문제 발생! TECH 팀이 복구 중이다! 💥",
+  "errorGeneral": "🦁 일시적 장애물 발견! 진짜 EMPEROR는 다시 도전한다, 만삣삐! 🦁",
+  "errorLoadingData": "데이터를 불러오는 중 오류가 발생했다",
+  "errorNetwork": "🌪️ 네트워크 연결을 확인하라! ALPHA CONNECTION 필요하다! 🌪️",
+  "errorNotFound": "🔱 데이터를 찾을 수 없다! 새로운 전설을 만들 시간이다, 만삣삐! 🔱",
+  "errorOccurred": "오류가 발생했다",
+  "permissionsRequired": "🔐 권한이 필요해요",
+  "profileCreationError": "⚡ PROFILE CREATION FAILED! 다시 도전하라, ALPHA! 오류: {error} ⚡",
+  "required": "필수",
+  "requiredLabel": "필수",
+  "shareError": "공유 중 오류 발생!",
+  "statusFailed": "실패",
+  "videoLoadError": "영상 로딩 오류: {error}"
+}

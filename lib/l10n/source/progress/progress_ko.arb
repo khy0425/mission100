@@ -1,0 +1,117 @@
+{
+  "@bestRecord": {
+    "description": "Best record label"
+  },
+  "@challengeInProgress": {
+    "description": "챌린지 진행 중 상태"
+  },
+  "@challengeProgress": {
+    "description": "Challenge progress",
+    "placeholders": {
+      "progress": {
+        "type": "int"
+      }
+    }
+  },
+  "@currentLevelProgress": {
+    "description": "현재 레벨 및 진행률 항목"
+  },
+  "@currentStreak": {
+    "description": "현재 연속 운동일"
+  },
+  "@dailyConquestRecord": {
+    "description": "일일 정복 기록 타이틀"
+  },
+  "@inProgress": {
+    "description": "In progress status"
+  },
+  "@loadingStatistics": {
+    "description": "통계 로딩 메시지"
+  },
+  "@monthlyProgress": {
+    "description": "월간 진행률 제목"
+  },
+  "@noBackupRecord": {
+    "description": "백업 기록이 없을 때 제목"
+  },
+  "@noChartData": {
+    "description": "차트 데이터가 없을 때 메시지"
+  },
+  "@noPieChartData": {
+    "description": "파이 차트 데이터가 없을 때 메시지"
+  },
+  "@overallProgress": {
+    "description": "Overall progress label"
+  },
+  "@overallStatistics": {
+    "description": "Overall statistics title"
+  },
+  "@overallStats": {
+    "description": "Overall statistics label"
+  },
+  "@personalRecords": {
+    "description": "Personal records title"
+  },
+  "@progress": {
+    "description": "진행도 라벨"
+  },
+  "@progressLabel": {
+    "description": "진행도 라벨 - 스타일"
+  },
+  "@progressTracking": {
+    "description": "Progress tracking title"
+  },
+  "@progressVisualization": {
+    "description": "Progress visualization section title"
+  },
+  "@statistics": {
+    "description": "통계 탭"
+  },
+  "@streakBrokenMessage": {
+    "description": "연속 운동 중단 메시지"
+  },
+  "@streakContinueMessage": {
+    "description": "연속 운동 지속 메시지"
+  },
+  "@streakEncouragement": {
+    "description": "연속 운동 격려 설정"
+  },
+  "@streakEncouragementSubtitle": {
+    "description": "연속 운동 격려 설정 부제목"
+  },
+  "@streakProgress": {
+    "description": "연속 운동 진행률 라벨"
+  },
+  "@streakStartMessage": {
+    "description": "연속 운동 시작 메시지"
+  },
+  "bestRecord": "최고 기록",
+  "challengeInProgress": "진행 중",
+  "challengeProgress": "진행률: {progress}%",
+  "currentLevelProgress": "• 현재 레벨 및 진행률",
+  "currentStreak": "현재 연속",
+  "dailyConquestRecord": "🔥💀 일일 정복 기록 💀🔥",
+  "inProgress": "진행 중",
+  "loadingStatistics": "나만의 통계를 불러오는 중...",
+  "monthlyProgress": "월간 진행률",
+  "noBackupRecord": "백업 기록 없음",
+  "noChartData": "차트 데이터가 없다",
+  "noPieChartData": "파이 차트 데이터가 없다",
+  "overallProgress": "전체 진행률",
+  "overallStatistics": "전체통계",
+  "overallStats": "전체 통계",
+  "personalRecords": "개인 기록",
+  "progress": "진행도",
+  "progressLabel": "🚀 전설 달성률 🚀",
+  "progressTracking": "진행률 추적",
+  "progressVisualization": "진행률 시각화",
+  "statistics": "통계",
+  "statusInProgress": "진행 중",
+  "streakBrokenMessage": "연속 운동이 끊어졌다",
+  "streakChallenge": "연속 일수 챌린지",
+  "streakContinueMessage": "연속 운동 계속 중!",
+  "streakEncouragement": "연속 운동 격려",
+  "streakEncouragementSubtitle": "3일 연속 운동 시 격려 메시지",
+  "streakProgress": "연속 운동 진행률",
+  "streakStartMessage": "연속 운동 시작!"
+}

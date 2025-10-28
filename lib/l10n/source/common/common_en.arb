@@ -1,0 +1,1609 @@
+{
+  "@abandon": {
+    "description": "Challenge abandon button"
+  },
+  "@abandonButton": {
+    "description": "Abandon challenge button text"
+  },
+  "@aboutApp": {
+    "description": "About app title"
+  },
+  "@aboutInfo": {
+    "description": "About info title"
+  },
+  "@achieved": {
+    "description": "Achieved status"
+  },
+  "@actionCannotBeUndone": {
+    "description": "Action cannot be undone warning"
+  },
+  "@activated": {
+    "description": "Permission activated status label"
+  },
+  "@activatedStatus": {
+    "description": "Permission activated status"
+  },
+  "@adFallbackMessage": {
+    "description": "Fallback message when ads are not available"
+  },
+  "@advertisement": {
+    "description": "Advertisement label"
+  },
+  "@allowButton": {
+    "description": "Allow button text"
+  },
+  "@allowPermissions": {
+    "description": "Allow permissions button"
+  },
+  "@alphaEmperorDomain": {
+    "description": "Alpha Emperor Domain title"
+  },
+  "@alphaFeature1": {
+    "description": "Alpha feature 1"
+  },
+  "@alphaFeature2": {
+    "description": "Alpha feature 2"
+  },
+  "@alphaFeature3": {
+    "description": "Alpha feature 3"
+  },
+  "@alphaFeature4": {
+    "description": "Alpha feature 4"
+  },
+  "@alphaShort": {
+    "description": "Alpha short notation"
+  },
+  "@animationEffect": {
+    "description": "Animation effect setting"
+  },
+  "@animations": {
+    "description": "Animation setting title"
+  },
+  "@animationsDesc": {
+    "description": "Animation setting description"
+  },
+  "@animationsDisabled": {
+    "description": "Animation disabled message"
+  },
+  "@animationsEnabled": {
+    "description": "Animation enabled message"
+  },
+  "@animationsEnabledDesc": {
+    "description": "Animation effects setting description"
+  },
+  "@appInfo": {
+    "description": "App information section title"
+  },
+  "@appRating": {
+    "description": "App rating title"
+  },
+  "@appRatingComingSoon": {
+    "description": "App rating coming soon message"
+  },
+  "@appTitle": {
+    "description": "App bar title"
+  },
+  "@appearance": {
+    "description": "Appearance settings title"
+  },
+  "@ascendingMotion": {
+    "description": "Step 4 title - ascending motion"
+  },
+  "@ascendingMotionDesc": {
+    "description": "Step 4 description"
+  },
+  "@averageCompletion": {
+    "description": "Average completion rate label"
+  },
+  "@averageScore": {
+    "description": "Average score label"
+  },
+  "@backingUpData": {
+    "description": "Data backup in progress message"
+  },
+  "@benefits": {
+    "description": "Benefits label"
+  },
+  "@buildInfo": {
+    "description": "Build information",
+    "placeholders": {
+      "buildNumber": {
+        "type": "String"
+      }
+    }
+  },
+  "@calendar": {
+    "description": "Calendar tab title"
+  },
+  "@calendarBannerText": {
+    "description": "Calendar screen banner text"
+  },
+  "@calendarTab": {
+    "description": "Calendar tab"
+  },
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "@cancelButton": {
+    "description": "Cancel button - Chad style"
+  },
+  "@cannotLoadQuizData": {
+    "description": "Quiz data load failed message"
+  },
+  "@cannotOpenPrivacyPolicy": {
+    "description": "Error message when privacy policy cannot be opened"
+  },
+  "@cannotOpenTermsOfService": {
+    "description": "Error message when terms of service cannot be opened"
+  },
+  "@chest": {
+    "description": "Chest muscle group"
+  },
+  "@collapsedInfo": {
+    "description": "Collapsed info with tap instruction"
+  },
+  "@collapsedTapToExpand": {
+    "description": "Collapsed state instruction"
+  },
+  "@comingSoon": {
+    "description": "Coming soon dialog title"
+  },
+  "@common": {
+    "description": "Common rarity"
+  },
+  "@commonMistakes": {
+    "description": "Tab title for common mistakes"
+  },
+  "@complete": {
+    "description": "Complete button"
+  },
+  "@completed": {
+    "description": "Achievement completion status"
+  },
+  "@completedCount": {
+    "description": "Completed count label"
+  },
+  "@completedLabel": {
+    "description": "Completed label"
+  },
+  "@completedStatus": {
+    "description": "Completed status"
+  },
+  "@completionMessage1": {
+    "description": "Completion message 1"
+  },
+  "@completionMessage10": {
+    "description": "Completion message 10"
+  },
+  "@completionMessage2": {
+    "description": "Completion message 2"
+  },
+  "@completionMessage3": {
+    "description": "Completion message 3"
+  },
+  "@completionMessage4": {
+    "description": "Completion message 4"
+  },
+  "@completionMessage5": {
+    "description": "Completion message 5"
+  },
+  "@completionMessage6": {
+    "description": "Completion message 6"
+  },
+  "@completionMessage7": {
+    "description": "Completion message 7"
+  },
+  "@completionMessage8": {
+    "description": "Completion message 8"
+  },
+  "@completionMessage9": {
+    "description": "Completion message 9"
+  },
+  "@completionPercentage": {
+    "description": "Completion percentage format",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      }
+    }
+  },
+  "@completionRate": {
+    "description": "Completion rate label"
+  },
+  "@confirm": {
+    "description": "Confirm button text"
+  },
+  "@confirmButton": {
+    "description": "Confirm button text"
+  },
+  "@congratulations": {
+    "description": "Congratulations message"
+  },
+  "@congratulationsMessage": {
+    "description": "Congratulations message for permissions"
+  },
+  "@consistentStrengthImprovement": {
+    "description": "Video description 6"
+  },
+  "@contactButton": {
+    "description": "Contact button text"
+  },
+  "@continueOrStartNew": {
+    "description": "Continue workout or start new choice"
+  },
+  "@copyrightMission100": {
+    "description": "Copyright and slogan"
+  },
+  "@core": {
+    "description": "Core muscle group"
+  },
+  "@correctPose": {
+    "description": "Correct pose label"
+  },
+  "@correctionMethod": {
+    "description": "Correction method label"
+  },
+  "@count": {
+    "description": "Count unit"
+  },
+  "@current": {
+    "description": "Current status label"
+  },
+  "@currentDifficulty": {
+    "description": "Current difficulty display",
+    "placeholders": {
+      "description": {
+        "type": "String"
+      },
+      "difficulty": {
+        "type": "String"
+      }
+    }
+  },
+  "@currentStatus": {
+    "description": "Current status"
+  },
+  "@customizeAppFeatures": {
+    "description": "Customize app features description"
+  },
+  "@dailyReminderAt": {
+    "description": "Reminder time display",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@dailyReminderSubtitle": {
+    "description": "Subtitle for daily reminder setting"
+  },
+  "@darkMode": {
+    "description": "Dark mode option"
+  },
+  "@darkModeDesc": {
+    "description": "Dark mode description"
+  },
+  "@darkModeEnabled": {
+    "description": "Dark mode enabled message"
+  },
+  "@dataManagement": {
+    "description": "Data management title"
+  },
+  "@delete": {
+    "description": "Delete button text"
+  },
+  "@descendingMotion": {
+    "description": "Step 2 title - descending motion"
+  },
+  "@descendingMotionDesc": {
+    "description": "Step 2 description"
+  },
+  "@description": {
+    "description": "Description label"
+  },
+  "@descriptionText": {
+    "description": "Description text"
+  },
+  "@developer": {
+    "description": "Developer title"
+  },
+  "@developerInfo": {
+    "description": "Developer info"
+  },
+  "@developerInfoDesc": {
+    "description": "Developer info description"
+  },
+  "@difficultyChanged": {
+    "description": "Difficulty change message",
+    "placeholders": {
+      "difficulty": {
+        "type": "String"
+      }
+    }
+  },
+  "@difficultyEasy": {
+    "description": "Easy difficulty level"
+  },
+  "@difficultyExpert": {
+    "description": "Expert difficulty"
+  },
+  "@difficultyExpertDesc": {
+    "description": "Expert difficulty description"
+  },
+  "@difficultyExtreme": {
+    "description": "Extreme difficulty level for pushups"
+  },
+  "@difficultyHard": {
+    "description": "Hard difficulty level"
+  },
+  "@difficultyMedium": {
+    "description": "Medium difficulty level"
+  },
+  "@disabled": {
+    "description": "Disabled status"
+  },
+  "@disabledStatus": {
+    "description": "Disabled status"
+  },
+  "@dontMakeTheseMistakes": {
+    "description": "Common mistakes section header"
+  },
+  "@downloadMission100": {
+    "description": "Mission 100 app download message"
+  },
+  "@durationLabel": {
+    "description": "Duration label"
+  },
+  "@elbowAngleQuiz": {
+    "description": "Quiz question 5"
+  },
+  "@enabled": {
+    "description": "Enabled status"
+  },
+  "@enabledStatus": {
+    "description": "Enabled status"
+  },
+  "@encouragementMessage1": {
+    "description": "Encouragement message 1"
+  },
+  "@encouragementMessage10": {
+    "description": "Encouragement message 10"
+  },
+  "@encouragementMessage2": {
+    "description": "Encouragement message 2"
+  },
+  "@encouragementMessage3": {
+    "description": "Encouragement message 3"
+  },
+  "@encouragementMessage4": {
+    "description": "Encouragement message 4"
+  },
+  "@encouragementMessage5": {
+    "description": "Encouragement message 5"
+  },
+  "@encouragementMessage6": {
+    "description": "Encouragement message 6"
+  },
+  "@encouragementMessage7": {
+    "description": "Encouragement message 7"
+  },
+  "@encouragementMessage8": {
+    "description": "Encouragement message 8"
+  },
+  "@encouragementMessage9": {
+    "description": "Encouragement message 9"
+  },
+  "@encryption": {
+    "description": "Encryption label"
+  },
+  "@encryptionLabel": {
+    "description": "Encryption label"
+  },
+  "@english": {
+    "description": "English language option"
+  },
+  "@epic": {
+    "description": "Epic rarity"
+  },
+  "@exactAlarmPermission": {
+    "description": "Exact alarm permission label"
+  },
+  "@exceed": {
+    "description": "Quick input button for exceeding target reps"
+  },
+  "@excellent": {
+    "description": "Excellent performance label"
+  },
+  "@exitButton": {
+    "description": "Exit button - Chad style"
+  },
+  "@exitDialogContinue": {
+    "description": "Continue workout button"
+  },
+  "@exitDialogMessage": {
+    "description": "Exit dialog content"
+  },
+  "@exitDialogRetreat": {
+    "description": "Exit workout button"
+  },
+  "@exitDialogTitle": {
+    "description": "Exit dialog title"
+  },
+  "@expanded": {
+    "description": "Expanded state"
+  },
+  "@expandedInfo": {
+    "description": "Expanded info"
+  },
+  "@factCategoryCardio": {
+    "description": "Cardiovascular health category"
+  },
+  "@factCategoryHormone": {
+    "description": "Hormonal system category"
+  },
+  "@factCategoryMental": {
+    "description": "Mental health category"
+  },
+  "@factCategoryMetabolic": {
+    "description": "Metabolic system category"
+  },
+  "@factCategoryNervous": {
+    "description": "Nervous system enhancement category"
+  },
+  "@feedbackComingSoon": {
+    "description": "Feedback coming soon message"
+  },
+  "@fileNamePlaceholder": {
+    "description": "File name placeholder"
+  },
+  "@finishButton": {
+    "description": "Finish button text"
+  },
+  "@firstStep": {
+    "description": "First step achievement"
+  },
+  "@firstStepDesc": {
+    "description": "First step achievement description"
+  },
+  "@followingDataDeleted": {
+    "description": "Data to be deleted list notice"
+  },
+  "@fontScale": {
+    "description": "Font scale setting title"
+  },
+  "@fontScaleDesc": {
+    "description": "Font scale setting description"
+  },
+  "@fontSize": {
+    "description": "Font size setting"
+  },
+  "@fontSizeDesc": {
+    "description": "Font size setting description"
+  },
+  "@fullBody": {
+    "description": "Full body muscle group"
+  },
+  "@gigaShort": {
+    "description": "Giga short notation"
+  },
+  "@good": {
+    "description": "Good status"
+  },
+  "@goodStatus": {
+    "description": "Good status"
+  },
+  "@guidanceMessage": {
+    "description": "Set progress guidance message"
+  },
+  "@half": {
+    "description": "Quick input button for half target reps"
+  },
+  "@highContrastDisabled": {
+    "description": "High contrast mode disabled message"
+  },
+  "@highContrastEnabled": {
+    "description": "High contrast mode enabled message"
+  },
+  "@highContrastMode": {
+    "description": "High contrast mode setting title"
+  },
+  "@highContrastModeDesc": {
+    "description": "High contrast mode setting description"
+  },
+  "@home": {
+    "description": "Home tab"
+  },
+  "@homeTitle": {
+    "description": "Home screen title"
+  },
+  "@improvement": {
+    "description": "Improvement needed label"
+  },
+  "@improvementNeeded": {
+    "description": "Improvement needed status"
+  },
+  "@instructions": {
+    "description": "Instructions label"
+  },
+  "@justWait": {
+    "description": "Rest prevention message"
+  },
+  "@keepGoing": {
+    "description": "Keep going motivation message"
+  },
+  "@korean": {
+    "description": "Korean language display"
+  },
+  "@laterButton": {
+    "description": "Later button text"
+  },
+  "@legend": {
+    "description": "Legend title"
+  },
+  "@license": {
+    "description": "License title"
+  },
+  "@licenseButton": {
+    "description": "License button text"
+  },
+  "@licenseInfo": {
+    "description": "License information menu title"
+  },
+  "@licenseInfoComingSoon": {
+    "description": "License information coming soon message"
+  },
+  "@licenseInfoDesc": {
+    "description": "License information description"
+  },
+  "@lightModeEnabled": {
+    "description": "Light mode enabled message"
+  },
+  "@like": {
+    "description": "Like button label"
+  },
+  "@likeMessage": {
+    "description": "Like action message"
+  },
+  "@listView": {
+    "description": "List view button text"
+  },
+  "@loadingText": {
+    "description": "Loading text display"
+  },
+  "@madeWithLove": {
+    "description": "Made with love message"
+  },
+  "@minutes": {
+    "description": "Minutes unit"
+  },
+  "@mission100Team": {
+    "description": "Development team name"
+  },
+  "@missionComplete": {
+    "description": "Mission complete message"
+  },
+  "@month": {
+    "description": "Month unit for date display"
+  },
+  "@monthly": {
+    "description": "Monthly filter option"
+  },
+  "@monthlyGoal": {
+    "description": "Monthly goal label"
+  },
+  "@next": {
+    "description": "Next button text"
+  },
+  "@nextButton": {
+    "description": "Next button text"
+  },
+  "@noData": {
+    "description": "No data message"
+  },
+  "@noDataAvailable": {
+    "description": "No data available message"
+  },
+  "@ok": {
+    "description": "OK button text"
+  },
+  "@okButton": {
+    "description": "OK button - Chad style"
+  },
+  "@okay": {
+    "description": "Okay workout completion"
+  },
+  "@openInBrowser": {
+    "description": "Open in browser button text"
+  },
+  "@openSourceLicense": {
+    "description": "License description"
+  },
+  "@openSourceLicenses": {
+    "description": "Open source licenses"
+  },
+  "@openSourceLicensesDesc": {
+    "description": "Open source licenses description"
+  },
+  "@percentComplete": {
+    "description": "Percent complete label"
+  },
+  "@perfect": {
+    "description": "Perfect completion label"
+  },
+  "@perfectBalanceOptimized": {
+    "description": "Balance chad mode description"
+  },
+  "@perfectExecution": {
+    "description": "Subtitle for average completion"
+  },
+  "@perfectionist": {
+    "description": "Perfectionist achievement"
+  },
+  "@perfectionistDesc": {
+    "description": "Perfectionist achievement description"
+  },
+  "@permissionAllowed": {
+    "description": "Permission allowed status"
+  },
+  "@permissionAlreadyRequested": {
+    "description": "Permission already requested message"
+  },
+  "@permissionBenefits": {
+    "description": "Permission benefits title"
+  },
+  "@permissionDenied": {
+    "description": "Permission denied status"
+  },
+  "@permissionStorageMessage": {
+    "description": "Storage permission request message"
+  },
+  "@permissionsDescription": {
+    "description": "Permission request description"
+  },
+  "@pleaseCreateProfile": {
+    "description": "Profile creation request message"
+  },
+  "@poor": {
+    "description": "Poor workout completion"
+  },
+  "@precautions": {
+    "description": "Precautions title"
+  },
+  "@previousButton": {
+    "description": "Previous button - Chad style"
+  },
+  "@privacyPolicy": {
+    "description": "Privacy policy menu title"
+  },
+  "@privacyPolicyDesc": {
+    "description": "Privacy policy description"
+  },
+  "@profileCreated": {
+    "description": "Profile creation complete message",
+    "placeholders": {
+      "sessions": {
+        "type": "int"
+      }
+    }
+  },
+  "@quickInputBeast": {
+    "description": "Above target button"
+  },
+  "@quickInputMedium": {
+    "description": "60% target button"
+  },
+  "@quickInputPerfect": {
+    "description": "Perfect target achievement button"
+  },
+  "@quickInputStart": {
+    "description": "50% target button"
+  },
+  "@quiz": {
+    "description": "Quiz button text"
+  },
+  "@quizButton": {
+    "description": "Quiz button text"
+  },
+  "@rare": {
+    "description": "Rare rarity"
+  },
+  "@rarityCommon": {
+    "description": "Common rarity level"
+  },
+  "@rarityEpic": {
+    "description": "Epic rarity level"
+  },
+  "@rarityRare": {
+    "description": "Rare rarity level"
+  },
+  "@rateOnPlayStore": {
+    "description": "App rating description"
+  },
+  "@recommendedLabel": {
+    "description": "Recommended permission label"
+  },
+  "@refresh": {
+    "description": "Refresh tooltip"
+  },
+  "@refreshButton": {
+    "description": "Refresh button"
+  },
+  "@remaining": {
+    "description": "Remaining progress label"
+  },
+  "@remainingCount": {
+    "description": "Remaining count label"
+  },
+  "@remainingGoal": {
+    "description": "Remaining goal statistics title"
+  },
+  "@remainingToTarget": {
+    "description": "Remaining count to reach target",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@reminderTime": {
+    "description": "Reminder time setting"
+  },
+  "@reminderTimeChanged": {
+    "description": "Reminder time change complete message",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@reminderTimeDesc": {
+    "description": "Reminder time description"
+  },
+  "@repLogMessage": {
+    "description": "Rep input guidance message"
+  },
+  "@resumeButton": {
+    "description": "Resume button - Chad style"
+  },
+  "@retry": {
+    "description": "Retry button"
+  },
+  "@retryButton": {
+    "description": "Retry button"
+  },
+  "@risingFeature1": {
+    "description": "Rising feature 1"
+  },
+  "@risingFeature2": {
+    "description": "Rising feature 2"
+  },
+  "@risingFeature3": {
+    "description": "Rising feature 3"
+  },
+  "@risingFeature4": {
+    "description": "Rising feature 4"
+  },
+  "@risingShort": {
+    "description": "Rising short notation"
+  },
+  "@rookieFeature1": {
+    "description": "Rookie feature 1"
+  },
+  "@rookieFeature2": {
+    "description": "Rookie feature 2"
+  },
+  "@rookieFeature3": {
+    "description": "Rookie feature 3"
+  },
+  "@rookieFeature4": {
+    "description": "Rookie feature 4"
+  },
+  "@rookieShort": {
+    "description": "Rookie short notation"
+  },
+  "@save": {
+    "description": "Save button label"
+  },
+  "@saveMessage": {
+    "description": "Save action message"
+  },
+  "@schedulerStoppedStatus": {
+    "description": "Status message when scheduler is stopped"
+  },
+  "@scientificFact10Content": {
+    "description": "Scientific fact 10 content"
+  },
+  "@scientificFact10Impact": {
+    "description": "Scientific fact 10 impact message"
+  },
+  "@scientificFact10Title": {
+    "description": "Scientific fact 10 - increased cardiac output title"
+  },
+  "@scientificFact11Content": {
+    "description": "Scientific fact 11 content"
+  },
+  "@scientificFact11Impact": {
+    "description": "Scientific fact 11 impact message"
+  },
+  "@scientificFact11Title": {
+    "description": "Scientific fact 11 - enhanced angiogenesis title"
+  },
+  "@scientificFact12Content": {
+    "description": "Scientific fact 12 content"
+  },
+  "@scientificFact12Impact": {
+    "description": "Scientific fact 12 impact message"
+  },
+  "@scientificFact12Title": {
+    "description": "Scientific fact 12 - blood pressure normalization title"
+  },
+  "@scientificFact13Content": {
+    "description": "Scientific fact 13 content"
+  },
+  "@scientificFact13Impact": {
+    "description": "Scientific fact 13 impact message"
+  },
+  "@scientificFact13Title": {
+    "description": "Scientific fact 13 - improved heart rate variability title"
+  },
+  "@scientificFact14Content": {
+    "description": "Scientific fact 14 content"
+  },
+  "@scientificFact14Impact": {
+    "description": "Scientific fact 14 impact message"
+  },
+  "@scientificFact14Title": {
+    "description": "Scientific fact 14 - improved endothelial function title"
+  },
+  "@scientificFact15Content": {
+    "description": "Scientific fact 15 content"
+  },
+  "@scientificFact15Impact": {
+    "description": "Scientific fact 15 impact message"
+  },
+  "@scientificFact15Title": {
+    "description": "Scientific fact 15 - increased basal metabolic rate title"
+  },
+  "@scientificFact16Content": {
+    "description": "Scientific fact 16 content"
+  },
+  "@scientificFact16Impact": {
+    "description": "Scientific fact 16 impact message"
+  },
+  "@scientificFact16Title": {
+    "description": "Scientific fact 16 - improved insulin sensitivity title"
+  },
+  "@scientificFact17Content": {
+    "description": "Scientific fact 17 content"
+  },
+  "@scientificFact17Impact": {
+    "description": "Scientific fact 17 impact message"
+  },
+  "@scientificFact17Title": {
+    "description": "Scientific fact 17 - enhanced fat oxidation title"
+  },
+  "@scientificFact18Content": {
+    "description": "Scientific fact 18 content"
+  },
+  "@scientificFact18Impact": {
+    "description": "Scientific fact 18 impact message"
+  },
+  "@scientificFact18Title": {
+    "description": "Scientific fact 18 - brown fat activation title"
+  },
+  "@scientificFact19Content": {
+    "description": "Scientific fact 19 content"
+  },
+  "@scientificFact19Impact": {
+    "description": "Scientific fact 19 impact message"
+  },
+  "@scientificFact19Title": {
+    "description": "Scientific fact 19 - post-exercise oxygen consumption title"
+  },
+  "@scientificFact1Content": {
+    "description": "Scientific fact 1 content"
+  },
+  "@scientificFact1Impact": {
+    "description": "Scientific fact 1 impact message"
+  },
+  "@scientificFact1Title": {
+    "description": "Scientific fact 1 title"
+  },
+  "@scientificFact20Content": {
+    "description": "Scientific fact 20 content"
+  },
+  "@scientificFact20Impact": {
+    "description": "Scientific fact 20 impact message"
+  },
+  "@scientificFact20Title": {
+    "description": "Scientific fact 20 - growth hormone surge title"
+  },
+  "@scientificFact21Content": {
+    "description": "Scientific fact 21 content"
+  },
+  "@scientificFact21Impact": {
+    "description": "Scientific fact 21 impact message"
+  },
+  "@scientificFact21Title": {
+    "description": "Scientific fact 21 - motor unit synchronization title"
+  },
+  "@scientificFact22Content": {
+    "description": "Scientific fact 22 content"
+  },
+  "@scientificFact22Impact": {
+    "description": "Scientific fact 22 impact message"
+  },
+  "@scientificFact22Title": {
+    "description": "Scientific fact 22 - enhanced neuroplasticity title"
+  },
+  "@scientificFact23Content": {
+    "description": "Scientific fact 23 content"
+  },
+  "@scientificFact23Impact": {
+    "description": "Scientific fact 23 impact message"
+  },
+  "@scientificFact23Title": {
+    "description": "Scientific fact 23 - increased BDNF secretion title"
+  },
+  "@scientificFact24Content": {
+    "description": "Scientific fact 24 content"
+  },
+  "@scientificFact24Impact": {
+    "description": "Scientific fact 24 impact message"
+  },
+  "@scientificFact24Title": {
+    "description": "Scientific fact 24 - improved reaction speed title"
+  },
+  "@scientificFact25Content": {
+    "description": "Scientific fact 25 content"
+  },
+  "@scientificFact25Impact": {
+    "description": "Scientific fact 25 impact message"
+  },
+  "@scientificFact25Title": {
+    "description": "Scientific fact 25 - interneuron activation title"
+  },
+  "@scientificFact2Content": {
+    "description": "Scientific fact 2 content"
+  },
+  "@scientificFact2Impact": {
+    "description": "Scientific fact 2 impact message"
+  },
+  "@scientificFact2Title": {
+    "description": "Scientific fact 2 title"
+  },
+  "@scientificFact3Content": {
+    "description": "Scientific fact 3 content"
+  },
+  "@scientificFact3Impact": {
+    "description": "Scientific fact 3 impact message"
+  },
+  "@scientificFact3Title": {
+    "description": "Scientific fact 3 - mTOR signaling activation title"
+  },
+  "@scientificFact4Content": {
+    "description": "Scientific fact 4 content"
+  },
+  "@scientificFact4Impact": {
+    "description": "Scientific fact 4 impact message"
+  },
+  "@scientificFact4Title": {
+    "description": "Scientific fact 4 - permanence of muscle memory title"
+  },
+  "@scientificFact5Content": {
+    "description": "Scientific fact 5 content"
+  },
+  "@scientificFact5Impact": {
+    "description": "Scientific fact 5 impact message"
+  },
+  "@scientificFact5Title": {
+    "description": "Scientific fact 5 - motor unit synchronization title"
+  },
+  "@scientificFact6Content": {
+    "description": "Scientific fact 6 content"
+  },
+  "@scientificFact6Impact": {
+    "description": "Scientific fact 6 impact message"
+  },
+  "@scientificFact6Title": {
+    "description": "Scientific fact 6 - enhanced neuroplasticity title"
+  },
+  "@scientificFact7Content": {
+    "description": "Scientific fact 7 content"
+  },
+  "@scientificFact7Impact": {
+    "description": "Scientific fact 7 impact message"
+  },
+  "@scientificFact7Title": {
+    "description": "Scientific fact 7 - increased BDNF secretion title"
+  },
+  "@scientificFact8Content": {
+    "description": "Scientific fact 8 content"
+  },
+  "@scientificFact8Impact": {
+    "description": "Scientific fact 8 impact message"
+  },
+  "@scientificFact8Title": {
+    "description": "Scientific fact 8 - improved reaction speed title"
+  },
+  "@scientificFact9Content": {
+    "description": "Scientific fact 9 content"
+  },
+  "@scientificFact9Impact": {
+    "description": "Scientific fact 9 impact message"
+  },
+  "@scientificFact9Title": {
+    "description": "Scientific fact 9 - interneuron activation title"
+  },
+  "@seconds": {
+    "description": "Seconds unit"
+  },
+  "@select": {
+    "description": "Select button or action"
+  },
+  "@selectAction": {
+    "description": "Select action"
+  },
+  "@selectTime": {
+    "description": "Time picker title"
+  },
+  "@selected": {
+    "description": "Selected state"
+  },
+  "@selectedState": {
+    "description": "Selected state"
+  },
+  "@sendFeedback": {
+    "description": "Send feedback"
+  },
+  "@sendFeedbackDesc": {
+    "description": "Send feedback description"
+  },
+  "@share": {
+    "description": "Share button label"
+  },
+  "@shareButton": {
+    "description": "Share button text"
+  },
+  "@shareMessage": {
+    "description": "Share action message"
+  },
+  "@shoulders": {
+    "description": "Shoulders muscle group"
+  },
+  "@skip": {
+    "description": "Skip button text"
+  },
+  "@skipPermissions": {
+    "description": "Skip permissions button"
+  },
+  "@sqliteDatabase": {
+    "description": "SQLite database item"
+  },
+  "@startButton": {
+    "description": "Start button text"
+  },
+  "@status": {
+    "description": "Status label"
+  },
+  "@statusLabel": {
+    "description": "Status label"
+  },
+  "@storageBenefit1": {
+    "description": "Storage benefit 1"
+  },
+  "@storageBenefit2": {
+    "description": "Storage benefit 2"
+  },
+  "@storageBenefit3": {
+    "description": "Storage benefit 3"
+  },
+  "@storagePermissionDesc": {
+    "description": "Storage permission description"
+  },
+  "@storagePermissionTitle": {
+    "description": "Storage permission title"
+  },
+  "@strengthImprovement": {
+    "description": "Strength improvement category - Chad style"
+  },
+  "@strengthSecrets": {
+    "description": "Video title 6"
+  },
+  "@successProfileSaved": {
+    "description": "Profile save success message"
+  },
+  "@swipeUpHint": {
+    "description": "Swipe hint text"
+  },
+  "@swipeView": {
+    "description": "Swipe view button text"
+  },
+  "@systemAutoRenewalChannelDescription": {
+    "description": "System auto renewal notification channel description"
+  },
+  "@target": {
+    "description": "Target reps label"
+  },
+  "@targetText": {
+    "description": "Target text"
+  },
+  "@termsOfService": {
+    "description": "Terms of service menu title"
+  },
+  "@termsOfServiceDesc": {
+    "description": "Terms of service description"
+  },
+  "@thisMonth": {
+    "description": "This month label"
+  },
+  "@times": {
+    "description": "Times unit for workout count"
+  },
+  "@totalExperience": {
+    "description": "Total experience label"
+  },
+  "@totalTarget": {
+    "description": "Total target label"
+  },
+  "@triceps": {
+    "description": "Triceps muscle group"
+  },
+  "@tryAgain": {
+    "description": "Try again button text"
+  },
+  "@urlNotAvailableMessage": {
+    "description": "URL not available dialog message",
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "@urlNotAvailableTitle": {
+    "description": "URL not available dialog title"
+  },
+  "@version": {
+    "description": "Version label"
+  },
+  "@versionAndBuild": {
+    "description": "Version and build information",
+    "placeholders": {
+      "buildNumber": {
+        "type": "String"
+      },
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@versionInfo": {
+    "description": "Version info"
+  },
+  "@versionInfoDesc": {
+    "description": "Version info description"
+  },
+  "@victoryTime": {
+    "description": "Victory time display",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@videoCannotOpen": {
+    "description": "Video cannot open error message"
+  },
+  "@viewAll": {
+    "description": "View all button text"
+  },
+  "@wrongPose": {
+    "description": "Wrong pose label"
+  },
+  "@yearly": {
+    "description": "Yearly filter option"
+  },
+  "abandon": "Abandon",
+  "abandonButton": "Abandon",
+  "aboutApp": "About",
+  "aboutInfo": "About",
+  "achieved": "Achieved",
+  "actionCannotBeUndone": "Can't undo this! Think carefully!",
+  "activated": "Activated",
+  "activatedStatus": "Activated",
+  "adFallbackMessage": "Journey to Chad status, let's go! 💪",
+  "advertisement": "Advertisement",
+  "allowButton": "Allow",
+  "allowPermissions": "Allow Permissions",
+  "alphaEmperorDomain": "💀 ALPHA EMPEROR DOMAIN 💀",
+  "alphaFeature1": "Advanced pushup variations",
+  "alphaFeature2": "Explosive power training",
+  "alphaFeature3": "Plyometric exercises",
+  "alphaFeature4": "Complete giga chad course",
+  "alphaShort": "CHAD",
+  "animationEffect": "Animation Effect",
+  "animations": "Animations",
+  "animationsDesc": "Enable/disable app animation effects",
+  "animationsDisabled": "Animations have been disabled",
+  "animationsEnabled": "Animations have been enabled",
+  "animationsEnabledDesc": "Enable or disable app-wide animation effects",
+  "appInfo": "App Information",
+  "appRating": "App Rating",
+  "appRatingComingSoon": "App rating feature is coming soon",
+  "appSlogan": "Journey to Become Chad",
+  "appTitle": "⚡ ALPHA BATTLEGROUND ⚡",
+  "appVersion": "1.0.0",
+  "appearance": "Appearance",
+  "ascendingMotion": "Ascending Motion",
+  "ascendingMotionDesc": "Straighten your arms and return to the starting position.",
+  "averageCompletion": "Average Completion",
+  "averageScore": "Average Score",
+  "awesomeButton": "Awesome!",
+  "backingUpData": "Backing up data...",
+  "benefits": "Benefits",
+  "benefitsSection": "🚀 HOW YOU BECOME LEGENDARY BEAST 🚀",
+  "breathingSection": "��️ ALPHA EMPEROR BREATHING 🌪️",
+  "buildInfo": "Build: {buildNumber}",
+  "calendar": "Calendar",
+  "calendarBannerText": "Consistency is Chad power! 📅",
+  "calendarIcon": "📅",
+  "calendarTab": "Calendar",
+  "caloriesPerRep": "{calories}kcal/rep",
+  "cancel": "Cancel",
+  "cancelButton": "❌ QUIT LIKE A BETA? ❌",
+  "cannotLoadQuizData": "Cannot load quiz data",
+  "cannotOpenPrivacyPolicy": "Cannot open Privacy Policy",
+  "cannotOpenTermsOfService": "Cannot open Terms of Service",
+  "checkIcon": "✅",
+  "chest": "Chest",
+  "collapsedInfo": "Collapsed. Tap to expand",
+  "collapsedTapToExpand": "Collapsed. Tap to expand",
+  "comingSoon": "🚀 Coming Soon",
+  "common": "Common",
+  "commonMistakes": "Common\nMistakes",
+  "complete": "Complete",
+  "completed": "Complete!",
+  "completedCount": "Completed Count",
+  "completedLabel": "Completed",
+  "completedStatus": "Completed",
+  "completionMessage1": "🔥 THAT'S IT! ABSOLUTE DOMINATION, FXXK YEAH! 🔥",
+  "completionMessage10": "👑 CHAD'S DAY? NO! EMPEROR OF ALPHAS EMPIRE BUILDING COMPLETE! 👑",
+  "completionMessage2": "⚡ ALPHA STORM HIT TODAY! THE WORLD IS TREMBLING! ⚡",
+  "completionMessage3": "👑 NOT CLOSER TO CHAD... NOW SURPASSED CHAD! 👑",
+  "completionMessage4": "🚀 CHAD-LIKE? WRONG! NOW LEGENDARY BEAST MODE, YOU MONSTER! 🚀",
+  "completionMessage5": "⚡ CHAD ENERGY LEVEL: ∞ INFINITY BREAKTHROUGH! UNIVERSE BOWS! ⚡",
+  "completionMessage6": "🦁 RESPECT? PAST THAT! NOW THE WHOLE WORLD BOWS TO YOU! 🦁",
+  "completionMessage7": "🔱 CHAD APPROVES? NO! GOD TIER ACKNOWLEDGES BIRTH! 🔱",
+  "completionMessage8": "🌪️ CHAD GAME LEVEL UP? WRONG! CONQUERED ALPHA DIMENSION, FXXK BEAST! 🌪️",
+  "completionMessage9": "💥 NOT PURE CHAD PERFORMANCE... NOW PURE LEGENDARY DOMINANCE! 💥",
+  "completionPercentage": "{percentage}%",
+  "completionRate": "Completion Rate",
+  "confirm": "Confirm",
+  "confirmButton": "Confirm",
+  "congratulations": "Congrats! 🎉",
+  "congratulationsMessage": "Perfect! All permissions set! 🎉",
+  "consistentStrengthImprovement": "Improve strength through consistent exercise",
+  "contactButton": "Contact",
+  "continueOrStartNew": "Would you like to continue the previous workout?\\nOr start a new workout?",
+  "copyrightMission100": "© 2024 Mission 100 Team\nAll rights reserved\n\n💪 Until you become unstoppable!",
+  "core": "Core",
+  "correctPose": "Correct Pose",
+  "correctionMethod": "Correction Method:",
+  "count": "count",
+  "current": "Current",
+  "currentDifficulty": "Current: {difficulty} - {description}",
+  "currentStatus": "Current",
+  "customizeAppFeatures": "Customize app features to your liking",
+  "dailyReminderAt": "Daily notification at {time}",
+  "dailyReminderSubtitle": "Daily workout reminder at set time",
+  "darkMode": "Dark Mode",
+  "darkModeDesc": "Use dark theme",
+  "darkModeEnabled": "Dark mode enabled",
+  "dataManagement": "Data Management",
+  "delete": "Delete",
+  "descendingMotion": "Descending Motion",
+  "descendingMotionDesc": "Bend your elbows and slowly lower your body downward.",
+  "description": "Description",
+  "descriptionText": "Description",
+  "descriptionTitle": "Description",
+  "developer": "Developer",
+  "developerInfo": "Developer Info",
+  "developerInfoDesc": "Join the journey to become Chad",
+  "difficultyChanged": "Difficulty changed! -> {difficulty} 💪",
+  "difficultyEasy": "Easy",
+  "difficultyExpert": "Expert",
+  "difficultyExpertDesc": "CHAD Legend",
+  "difficultyExtreme": "Giga Chad - Legendary Territory",
+  "difficultyHard": "Hard",
+  "difficultyMedium": "Medium",
+  "disabled": "Disabled",
+  "disabledStatus": "Disabled",
+  "dontMakeTheseMistakes": "Don't Make These Mistakes!",
+  "downloadMission100": "Download Mission: 100 app! Weaklings run away!",
+  "durationLabel": "Duration",
+  "earnedXp": "Earned XP",
+  "elbowAngleQuiz": "What is the correct elbow angle during pushups?",
+  "enabled": "Enabled",
+  "enabledStatus": "Enabled",
+  "encouragementMessage1": "🔥 ALPHAS HAVE TRIALS TOO! BUT THAT MAKES YOU STRONGER! 🔥",
+  "encouragementMessage10": "👑 NOT CHAD RESILIENCE... NOW IMMORTAL PHOENIX POWER, FXXK YEAH! 👑",
+  "encouragementMessage2": "⚡ TOMORROW IS LEGENDARY COMEBACK DAY! WORLD WILL SEE YOUR RESURRECTION! ⚡",
+  "encouragementMessage3": "👑 REAL EMPERORS NEVER SURRENDER, FXXK THE LIMITS! 👑",
+  "encouragementMessage4": "🚀 THIS IS JUST ULTIMATE BOSS FIGHT MODE! YOU ALREADY WON! 🚀",
+  "encouragementMessage5": "🦁 REAL APEX PREDATORS RETURN STRONGER! 🦁",
+  "encouragementMessage6": "🔱 ALPHA SPIRIT IS IMMORTAL! EVEN IF UNIVERSE ENDS, YOU SURVIVE! 🔱",
+  "encouragementMessage7": "⚡ STILL LEGEND TRANSFORMATION IN PROGRESS, YOU ABSOLUTE UNIT! ⚡",
+  "encouragementMessage8": "🌪️ EPIC COMEBACK STORM INCOMING! WORLD TREMBLES AWAITING YOUR RETURN! 🌪️",
+  "encouragementMessage9": "💥 ALL EMPERORS PASS THROUGH TRIALS! THIS IS THE ROYAL PATH! 💥",
+  "encryption": "Encryption",
+  "encryptionLabel": "Encryption",
+  "english": "English",
+  "englishFlag": "🇺🇸",
+  "epic": "Epic",
+  "evolutionCompleted": "🎉 Evolution Complete! 🎉",
+  "exactAlarmPermission": "Exact Alarm Permission",
+  "exceed": "Exceed",
+  "excellent": "Good",
+  "exitButton": "💀 RUN AWAY 💀",
+  "exitDialogContinue": "KEEP FIGHTING!",
+  "exitDialogMessage": "WARRIORS NEVER QUIT MID-BATTLE!\nYOUR CONQUEST WILL BE LOST!",
+  "exitDialogRetreat": "RETREAT...",
+  "exitDialogTitle": "RETREAT FROM BATTLE?",
+  "expanded": "Expanded",
+  "expandedInfo": "Expanded",
+  "factCategoryCardio": "Cardiovascular Health",
+  "factCategoryHormone": "Hormonal System",
+  "factCategoryMental": "Mental Health",
+  "factCategoryMetabolic": "Metabolic System",
+  "factCategoryNervous": "Nervous System Enhancement",
+  "feedbackComingSoon": "Feedback feature coming soon!",
+  "fileNamePlaceholder": "backup_filename",
+  "finishButton": "Finish",
+  "firstStep": "First Step",
+  "firstStepDesc": "Complete first workout",
+  "followingDataDeleted": "The following data will be deleted:",
+  "fontScale": "Font Size",
+  "fontScaleDesc": "Adjust text size throughout the app",
+  "fontSize": "Font Size",
+  "fontSizeDesc": "Adjust the app's font size",
+  "fullBody": "Full Body",
+  "gigaShort": "GIGA CHAD",
+  "good": "Good",
+  "goodStatus": "Good",
+  "guidanceMessage": "YOUR BODY OBEYS YOUR COMMANDS! 🔱",
+  "half": "Half",
+  "highContrastDisabled": "High contrast mode has been disabled",
+  "highContrastEnabled": "High contrast mode has been enabled",
+  "highContrastMode": "High Contrast Mode",
+  "highContrastModeDesc": "Enable high contrast mode for visual accessibility",
+  "home": "Home",
+  "homeTitle": "💥 ALPHA EMPEROR COMMAND CENTER 💥",
+  "improvement": "Needs Improvement",
+  "improvementNeeded": "Needs Improvement",
+  "instructions": "Instructions",
+  "instructionsSection": "⚡ EMPEROR EXECUTION METHOD ⚡",
+  "justWait": "Today is recovery day. But the choice is yours.",
+  "keepGoing": "🔥 KEEP GOING! Don't stop! 🔥",
+  "korean": "Korean",
+  "koreanFlag": "🇰🇷",
+  "laterButton": "Later",
+  "legend": "Legend",
+  "license": "License",
+  "licenseButton": "License",
+  "licenseInfo": "License Information",
+  "licenseInfoComingSoon": "License information is coming soon",
+  "licenseInfoDesc": "Check licenses of open source libraries used in the app",
+  "lightModeEnabled": "Light mode enabled",
+  "like": "Like",
+  "likeMessage": "Liked! 💪",
+  "listView": "List View",
+  "loadingText": "Loading...",
+  "madeWithLove": "Made with ❤️ for Chad",
+  "minutes": "minutes",
+  "mission100Team": "Mission 100 Team",
+  "missionComplete": "🎉👑💀 MISSION COMPLETE! ALPHA EMPEROR Ascension! 💀👑🎉",
+  "mistakesSection": "❌ WEAKLINGS' PATHETIC MISTAKES ❌",
+  "month": "month",
+  "monthly": "Monthly",
+  "monthlyGoal": "Monthly Goal",
+  "next": "Next",
+  "nextButton": "Next",
+  "noData": "No data available",
+  "noDataAvailable": "No data available",
+  "ok": "OK",
+  "okButton": "🔥 HELL YEAH, BRO! 🔥",
+  "okay": "Okay",
+  "openInBrowser": "Open in Browser",
+  "openSourceLicense": "Open Source License",
+  "openSourceLicenses": "Open Source Licenses",
+  "openSourceLicensesDesc": "View open source licenses",
+  "percentComplete": "Complete",
+  "perfect": "Perfect!",
+  "perfectBalanceOptimized": "Perfect balance! Weekday+weekend optimized pattern! ⚖️🔥",
+  "perfectExecution": "Perfect execution!",
+  "perfectionist": "Perfectionist",
+  "perfectionistDesc": "Complete one week 100%",
+  "permissionAllowed": "Allowed",
+  "permissionAlreadyRequested": "Permissions have already been requested.\nPlease allow them manually in settings.",
+  "permissionBenefits": "With these permissions, you can:",
+  "permissionDenied": "Denied",
+  "permissionStorageMessage": "Storage permission is required. Please allow in settings.",
+  "permissionsDescription": "Mission 100 needs the following permissions\nfor the best experience:",
+  "pleaseCreateProfile": "Please create your profile",
+  "poor": "Poor",
+  "precautions": "Precautions",
+  "previousButton": "⬅️ RETREAT LIKE A COWARD ⬅️",
+  "privacyPolicy": "Privacy Policy",
+  "privacyPolicyDesc": "Check privacy protection and processing policy",
+  "profileCreated": "🚀 EMPEROR PROFILE CREATION COMPLETE! ({sessions} DOMINATION SESSIONS READY!) 🚀",
+  "quickInputBeast": "💥 LIMIT DESTROYER 💥",
+  "quickInputMedium": "⚡ ALPHA STEPS ⚡",
+  "quickInputPerfect": "🚀 GODLIKE ACHIEVED 🚀",
+  "quickInputStart": "🔥 LEGENDARY CRY 🔥",
+  "quiz": "Quiz",
+  "quizButton": "Quiz",
+  "rare": "Rare",
+  "rarityCommon": "Common",
+  "rarityEpic": "Epic",
+  "rarityRare": "Rare",
+  "rateOnPlayStore": "Rate on Play Store",
+  "recommendedLabel": "Recommended",
+  "refresh": "Refresh",
+  "refreshButton": "Refresh",
+  "remaining": "remaining",
+  "remainingCount": "Remaining Count",
+  "remainingGoal": "Remaining Goal",
+  "remainingToTarget": "{remaining} left to reach target",
+  "reminderTime": "Reminder Time",
+  "reminderTimeChanged": "Reminder time has been changed to {time}",
+  "reminderTimeDesc": "Set the time for workout notifications",
+  "repLogMessage": "WEAK RECORD NUMBERS. STRONG MAKE HISTORY 💪",
+  "resumeButton": "💀 BACK TO WAR 💀",
+  "retry": "Retry",
+  "retryButton": "Retry",
+  "risingFeature1": "Master standard pushups",
+  "risingFeature2": "Various training types",
+  "risingFeature3": "Build muscle endurance",
+  "risingFeature4": "Systematic progression",
+  "risingShort": "ALPHA WANNABE",
+  "rookieFeature1": "Start with knee pushups",
+  "rookieFeature2": "Form-focused training",
+  "rookieFeature3": "Gradual intensity increase",
+  "rookieFeature4": "Build basic fitness",
+  "rookieShort": "PUSH",
+  "save": "Save",
+  "saveMessage": "Saved 📌",
+  "scheduleDaily": "Daily",
+  "scheduleNone": "None",
+  "schedulerStoppedStatus": "Scheduler stopped",
+  "scientificFact10Content": "Regular push-ups increase cardiac output by 20%, improving systemic circulation.",
+  "scientificFact10Impact": "❤️ Powerful heart pump upgrade!",
+  "scientificFact10Title": "Increased Cardiac Output",
+  "scientificFact11Content": "Push-ups increase capillary density by 30%, improving oxygen supply to muscles and brain.",
+  "scientificFact11Impact": "🌊 Life highway expansion project!",
+  "scientificFact11Title": "Enhanced Angiogenesis",
+  "scientificFact12Content": "12 weeks of push-up program reduces systolic blood pressure by an average of 8mmHg.",
+  "scientificFact12Impact": "📉 Natural blood pressure normalization!",
+  "scientificFact12Title": "Blood Pressure Normalization",
+  "scientificFact13Content": "Regular push-ups improve heart rate variability by 35%, increasing stress resistance.",
+  "scientificFact13Impact": "💎 Diamond-like heart rhythm!",
+  "scientificFact13Title": "Improved Heart Rate Variability",
+  "scientificFact14Content": "High-intensity push-ups improve vascular endothelial function by 25%, promoting vascular health.",
+  "scientificFact14Impact": "✨ Vascular youth recovery!",
+  "scientificFact14Title": "Improved Endothelial Function",
+  "scientificFact15Content": "Resistance exercise push-ups increase basal metabolic rate by 15%, boosting 24-hour calorie burn.",
+  "scientificFact15Impact": "🔥 24-hour fat burning system!",
+  "scientificFact15Title": "Increased Basal Metabolic Rate",
+  "scientificFact16Content": "8 weeks of push-up training improves insulin sensitivity by 40%, enhancing blood sugar control.",
+  "scientificFact16Impact": "📊 Perfect blood sugar control system!",
+  "scientificFact16Title": "Improved Insulin Sensitivity",
+  "scientificFact17Content": "Push-ups increase fat oxidation enzyme activity by 50%, accelerating body fat reduction.",
+  "scientificFact17Impact": "🔥 Fat-burning turbo engine!",
+  "scientificFact17Title": "Enhanced Fat Oxidation",
+  "scientificFact18Content": "High-intensity exercise activates brown fat to increase calorie burn through heat generation.",
+  "scientificFact18Impact": "♨️ Internal heating system activated!",
+  "scientificFact18Title": "Brown Fat Activation",
+  "scientificFact19Content": "High-intensity push-ups increase oxygen consumption for up to 24 hours after exercise, burning additional calories.",
+  "scientificFact19Impact": "🌪️ 24-hour afterburn effect!",
+  "scientificFact19Title": "Post-Exercise Oxygen Consumption",
+  "scientificFact1Content": "Regular pushups convert slow-twitch fibers (Type I) to fast-twitch fibers (Type II), increasing explosive power.",
+  "scientificFact1Impact": "💪 Qualitative muscle transformation in progress!",
+  "scientificFact1Title": "Muscle Fiber Type Transformation",
+  "scientificFact20Content": "High-intensity push-ups increase growth hormone secretion by up to 500%, promoting muscle growth and recovery.",
+  "scientificFact20Impact": "🚀 Youth hormone explosion!",
+  "scientificFact20Title": "Growth Hormone Surge",
+  "scientificFact21Content": "Push-up training improves motor unit synchronization by 70%, enabling explosive power generation.",
+  "scientificFact21Impact": "⚡ Perfect harmony between nerves and muscles!",
+  "scientificFact21Title": "Motor Unit Synchronization",
+  "scientificFact22Content": "Regular push-ups increase motor cortex neuroplasticity by 45%, improving learning ability.",
+  "scientificFact22Impact": "🧠 Your brain is evolving too!",
+  "scientificFact22Title": "Enhanced Neuroplasticity",
+  "scientificFact23Content": "High-intensity push-ups increase brain-derived neurotrophic factor (BDNF) by up to 300%, improving brain health.",
+  "scientificFact23Impact": "🌟 Brain rejuvenation program activated!",
+  "scientificFact23Title": "Increased BDNF Secretion",
+  "scientificFact24Content": "6 weeks of push-up training improves neural conduction velocity by 15%, shortening reaction time.",
+  "scientificFact24Impact": "⚡ Lightning-fast reflexes acquired!",
+  "scientificFact24Title": "Improved Reaction Speed",
+  "scientificFact25Content": "Complex push-up exercises improve spinal interneuron inhibitory function by 25%, enhancing movement precision.",
+  "scientificFact25Impact": "🎯 Perfect movement control system established!",
+  "scientificFact25Title": "Interneuron Activation",
+  "scientificFact2Content": "Pushups increase muscle mitochondrial density by up to 40%, maximizing energy production.",
+  "scientificFact2Impact": "⚡ Infinite energy system being constructed!",
+  "scientificFact2Title": "Mitochondrial Density Increase",
+  "scientificFact3Content": "Push-ups activate mTOR signaling, the key to muscle growth, by 300%.",
+  "scientificFact3Impact": "🚀 Muscle growth turbo engine is activated!",
+  "scientificFact3Title": "mTOR Signaling Activation",
+  "scientificFact4Content": "Once developed muscles maintain nuclear domains even after stopping exercise, enabling rapid recovery even after 10 years.",
+  "scientificFact4Impact": "🧐 Eternal muscle memory is being carved!",
+  "scientificFact4Title": "Permanence of Muscle Memory",
+  "scientificFact5Content": "Push-up training improves motor unit synchronization by 70%, enabling explosive power output.",
+  "scientificFact5Impact": "⚡ Perfect harmony between nerves and muscles!",
+  "scientificFact5Title": "Motor Unit Synchronization",
+  "scientificFact6Content": "Regular push-ups increase motor cortex neuroplasticity by 45%, improving learning abilities.",
+  "scientificFact6Impact": "🧐 The brain is also evolving!",
+  "scientificFact6Title": "Enhanced Neuroplasticity",
+  "scientificFact7Content": "High-intensity push-ups increase Brain-Derived Neurotrophic Factor (BDNF) by up to 300%, improving brain health.",
+  "scientificFact7Impact": "🌟 Brain youth recovery program activated!",
+  "scientificFact7Title": "Increased BDNF Secretion",
+  "scientificFact8Content": "6 weeks of push-up training improves nerve transmission speed by 15%, shortening reaction time.",
+  "scientificFact8Impact": "⚡ Lightning-fast reflexes acquired!",
+  "scientificFact8Title": "Improved Reaction Speed",
+  "scientificFact9Content": "Complex movement push-ups improve spinal interneuron inhibitory function by 25%, enhancing movement precision.",
+  "scientificFact9Impact": "🎯 Perfect movement control system established!",
+  "scientificFact9Title": "Interneuron Activation",
+  "seconds": "seconds",
+  "select": "Select",
+  "selectAction": "Select",
+  "selectTime": "Select Time",
+  "selected": "Selected",
+  "selectedState": "Selected",
+  "sendFeedback": "Send Feedback",
+  "sendFeedbackDesc": "Share your thoughts with us",
+  "share": "Share",
+  "shareButton": "Share",
+  "shareMessage": "Sharing 📤",
+  "shoulders": "Shoulders",
+  "skip": "Skip",
+  "skipButton": "Skip",
+  "skipPermissions": "Set Up Later",
+  "sqliteDatabase": "• SQLite Local Database",
+  "startButton": "Start",
+  "status": "Status",
+  "statusAvailable": "Available",
+  "statusCompleted": "Completed",
+  "statusLabel": "Status",
+  "statusLocked": "Locked",
+  "storageAccess": "📁 Storage Access",
+  "storageBenefit1": "📁 Secure workout data backup",
+  "storageBenefit2": "🔄 Data restoration when changing devices",
+  "storageBenefit3": "💾 Prevent data loss",
+  "storagePermissionDesc": "Required for backing up and restoring workout data",
+  "storagePermissionTitle": "📁 Storage Permission",
+  "strengthImprovement": "💪 POWER SURGE PROTOCOL 💪",
+  "strengthSecrets": "Strength Secrets 💯",
+  "successProfileSaved": "👑 EMPEROR PROFILE SAVED! YOUR LEGEND IS RECORDED! 👑",
+  "swipeUpHint": "Swipe up for next video",
+  "swipeView": "Swipe View",
+  "systemAutoRenewalChannelDescription": "System auto renewal notifications",
+  "target": "Target",
+  "targetText": "Target",
+  "termsOfService": "Terms of Service",
+  "termsOfServiceDesc": "Check terms of service for app usage",
+  "thisMonth": "This Month",
+  "times": "times",
+  "totalExperience": "Total XP",
+  "totalTarget": "Total Target:",
+  "triceps": "Triceps",
+  "tryAgain": "Try Again",
+  "urlNotAvailableMessage": "The {page} page is not available yet. It will be provided in a future update.",
+  "urlNotAvailableTitle": "Page Not Available",
+  "version": "Version",
+  "versionAndBuild": "Version {version}+{buildNumber}",
+  "versionInfo": "Version Info",
+  "versionInfoDesc": "Mission: 100 v1.0.0",
+  "victoryTime": "{time} - Victory Time!",
+  "videoCannotOpen": "Cannot open video. Please check your YouTube app.",
+  "viewAll": "View All",
+  "wrongPose": "Wrong Pose",
+  "yearly": "Yearly"
+}

@@ -1,0 +1,196 @@
+{
+  "@advancedLevel": {
+    "description": "Advanced level label"
+  },
+  "@alphaLevelDescription": {
+    "description": "Alpha level description"
+  },
+  "@alphaLevelSubtitle": {
+    "description": "Alpha level subtitle"
+  },
+  "@alphaLevelTitle": {
+    "description": "Alpha level title"
+  },
+  "@beginnerLevel": {
+    "description": "Beginner level label"
+  },
+  "@beginnerMode": {
+    "description": "Beginner mode display"
+  },
+  "@beginnerToChad": {
+    "description": "Variations section subtitle"
+  },
+  "@chadLevel": {
+    "description": "Chad level label"
+  },
+  "@difficultyAdvanced": {
+    "description": "Advanced difficulty level for pushups"
+  },
+  "@difficultyAdvancedDesc": {
+    "description": "Advanced difficulty description"
+  },
+  "@difficultyBeginner": {
+    "description": "Beginner difficulty level for pushups"
+  },
+  "@difficultyBeginnerDesc": {
+    "description": "Beginner difficulty description"
+  },
+  "@difficultyIntermediate": {
+    "description": "Intermediate difficulty level for pushups"
+  },
+  "@difficultyIntermediateDesc": {
+    "description": "Intermediate difficulty description"
+  },
+  "@intermediateLevel": {
+    "description": "Intermediate level label"
+  },
+  "@levelDescAlpha": {
+    "description": "Alpha level description"
+  },
+  "@levelDescGiga": {
+    "description": "Giga level description"
+  },
+  "@levelDescRising": {
+    "description": "Rising level description"
+  },
+  "@levelDescRookie": {
+    "description": "Rookie level description"
+  },
+  "@levelGoalAlpha": {
+    "description": "Alpha goal message"
+  },
+  "@levelGoalGiga": {
+    "description": "Giga goal message"
+  },
+  "@levelGoalRising": {
+    "description": "Rising goal message"
+  },
+  "@levelGoalRookie": {
+    "description": "Rookie goal message"
+  },
+  "@levelLabel": {
+    "description": "Level label"
+  },
+  "@levelMotivationAlpha": {
+    "description": "Alpha motivation message"
+  },
+  "@levelMotivationGiga": {
+    "description": "Giga motivation message"
+  },
+  "@levelMotivationRising": {
+    "description": "Rising motivation message"
+  },
+  "@levelMotivationRookie": {
+    "description": "Rookie motivation message"
+  },
+  "@levelNameAlpha": {
+    "description": "Alpha chad name"
+  },
+  "@levelNameGiga": {
+    "description": "Giga chad name"
+  },
+  "@levelNameRising": {
+    "description": "Rising chad name"
+  },
+  "@levelNameRookie": {
+    "description": "Rookie chad name"
+  },
+  "@levelSelectionDescription": {
+    "description": "Level selection description"
+  },
+  "@levelSelectionHeader": {
+    "description": "Level selection header"
+  },
+  "@levelSelectionTitle": {
+    "description": "Level selection screen title"
+  },
+  "@maxLevelAchieved": {
+    "description": "Maximum level achieved message"
+  },
+  "@newChadLevel": {
+    "description": "New Chad level text"
+  },
+  "@nextLevel": {
+    "description": "Progress to next level label"
+  },
+  "@nextLevelIn": {
+    "description": "Next level progress message"
+  },
+  "@risingLevelDescription": {
+    "description": "Rising level description"
+  },
+  "@risingLevelSubtitle": {
+    "description": "Rising level subtitle"
+  },
+  "@risingLevelTitle": {
+    "description": "Rising level title"
+  },
+  "@rookieLevelDescription": {
+    "description": "Rookie level description"
+  },
+  "@rookieLevelSubtitle": {
+    "description": "Rookie level subtitle"
+  },
+  "@rookieLevelTitle": {
+    "description": "Rookie level title"
+  },
+  "@selectLevelButton": {
+    "description": "Level selection request button"
+  },
+  "@startWithLevel": {
+    "description": "Start with selected level button",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "advancedLevel": "Advanced",
+  "alphaLevelDescription": "Ultimate Chad",
+  "alphaLevelSubtitle": "11+ pushups - Already chad material",
+  "alphaLevelTitle": "Alpha",
+  "beginnerLevel": "Beginner",
+  "beginnerMode": "Beginner Mode",
+  "beginnerToChad": "From beginner to Chad! Challenge yourself step by step! 🚀",
+  "chadLevel": "Chad Level",
+  "difficultyAdvanced": "Chad - Powerful Gigas",
+  "difficultyAdvancedDesc": "True CHAD",
+  "difficultyBeginner": "PUSH - Starting Alphas",
+  "difficultyBeginnerDesc": "Slowly starting CHAD",
+  "difficultyIntermediate": "Alpha Wannabe - Growing Chads",
+  "difficultyIntermediateDesc": "Consistent CHAD",
+  "intermediateLevel": "Intermediate",
+  "legendaryChadModeUpgrade": "⚡ LEGENDARY MODE UPGRADE! ⚡",
+  "levelDescAlpha": "👑 ALPHA CHAD WITH CONSIDERABLE ALPHA EMPEROR SKILLS.\nALREADY ACHIEVED MANY LEGENDARY ACCOMPLISHMENTS! 👑",
+  "levelDescGiga": "🚀 Reached ULTRA GIGA level.\nWielding GODLIKE POWER! 🚀",
+  "levelDescRising": "⚡ Rising ALPHA level with solid basics.\nDOMINATING towards higher goals! ⚡",
+  "levelDescRookie": "🔥 ROOKIE level. Starting point of the pushup empire.\nThe awakening journey begins. 🔥",
+  "levelGoalAlpha": "👑 GOAL: PERFECT FORM 100 REPS PERFECT EXECUTION! 👑",
+  "levelGoalGiga": "🚀 Goal: ULTIMATE MASTER - UNIVERSE DOMINATION! 🚀",
+  "levelGoalRising": "⚡ Goal: Stronger ALPHA - LEGENDARY EVOLUTION! ⚡",
+  "levelGoalRookie": "🔥 GOAL: 100 CONSECUTIVE PUSHUPS ABSOLUTE DOMINATION AFTER 6 WEEKS! 🔥",
+  "levelLabel": "🏆 Level",
+  "levelMotivationAlpha": "👑 OUTSTANDING PERFORMANCE!\nDOMINATE TO 100 TARGET, FXXK LIMITS! 👑",
+  "levelMotivationGiga": "🚀 Already at powerful GIGA level!\nCONQUER THE UNIVERSE towards perfect 100! 🚀",
+  "levelMotivationRising": "⚡ EXCELLENT START!\nBECOME STRONGER ALPHA BEAST! ⚡",
+  "levelMotivationRookie": "🔥 ALL EMPERORS START HERE!\nEXPERIENCE MIND-BLOWING TRANSFORMATION AFTER 6 WEEKS! 🔥",
+  "levelNameAlpha": "Alpha",
+  "levelNameGiga": "GIGA CHAD",
+  "levelNameRising": "Rising",
+  "levelNameRookie": "Rookie",
+  "levelSelectionDescription": "Select your current max pushup count level!\nCustom 6-week program for goal achievement!",
+  "levelSelectionHeader": "🏋️‍♂️ CHOOSE YOUR LEVEL NOW!",
+  "levelSelectionTitle": "💪 LEVEL CHECK",
+  "maxLevelAchieved": "Maximum level achieved!",
+  "newChadLevel": "New Chad Level",
+  "nextLevel": "Until next level",
+  "nextLevelIn": "30% remaining to next level",
+  "risingLevelDescription": "Chad who is growing",
+  "risingLevelSubtitle": "6-10 pushups - Growing into chad",
+  "risingLevelTitle": "Rising",
+  "rookieLevelDescription": "Chad who starts slowly",
+  "rookieLevelSubtitle": "Under 6 pushups - Build from basics",
+  "rookieLevelTitle": "Rookie",
+  "selectLevelButton": "🔥 CHOOSE YOUR LEVEL, FUTURE EMPEROR! 🔥",
+  "startWithLevel": "💥 START EMPEROR JOURNEY AS {level}! 💥"
+}

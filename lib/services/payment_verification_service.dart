@@ -113,13 +113,16 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
     }
   }
 
-  /// 클라이언트 사이드 기본 검증
+  /// 클라이언트 사이드 기본 검증 (강화된 버전)
   static VerificationResult _performClientSideVerification(
     PurchaseDetails purchaseDetails,
   ) {
-    // 기본 데이터 존재 여부 확인
+    debugPrint('🔒 클라이언트 검증 시작: ${purchaseDetails.productID}');
+
+    // 1. 기본 데이터 존재 여부 확인
     if (purchaseDetails.purchaseID == null ||
         purchaseDetails.purchaseID!.isEmpty) {
+      debugPrint('❌ 검증 실패: 잘못된 구매 ID');
       return VerificationResult(
         isValid: false,
         error: 'Invalid purchase ID',
@@ -127,6 +130,7 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
     }
 
     if (purchaseDetails.productID.isEmpty) {
+      debugPrint('❌ 검증 실패: 잘못된 제품 ID');
       return VerificationResult(
         isValid: false,
         error: 'Invalid product ID',
@@ -134,22 +138,132 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
     }
 
     if (purchaseDetails.verificationData.localVerificationData.isEmpty) {
+      debugPrint('❌ 검증 실패: 빈 검증 데이터');
       return VerificationResult(
         isValid: false,
         error: 'Empty verification data',
       );
     }
 
-    // 구매 상태 확인
+    // 2. 구매 상태 확인
     if (purchaseDetails.status != PurchaseStatus.purchased) {
+      debugPrint('❌ 검증 실패: 구매 미완료 (${purchaseDetails.status})');
       return VerificationResult(
         isValid: false,
         error: 'Purchase not completed',
       );
     }
 
+    // 3. 제품 ID 화이트리스트 검증 (허용된 제품만)
+    const allowedProductIds = {
+      'premium_monthly',
+      'premium_yearly',
+      'premium_lifetime',
+    };
+
+    if (!allowedProductIds.contains(purchaseDetails.productID)) {
+      debugPrint('❌ 검증 실패: 허용되지 않은 제품 ID (${purchaseDetails.productID})');
+      return VerificationResult(
+        isValid: false,
+        error: 'Product ID not in whitelist',
+      );
+    }
+
+    // 4. 타임스탬프 검증 (미래 날짜 구매 방지)
+    final now = DateTime.now();
+    final transactionDateStr = purchaseDetails.transactionDate;
+
+    if (transactionDateStr != null && transactionDateStr.isNotEmpty) {
+      try {
+        // transactionDate는 String 타입이므로 DateTime으로 파싱
+        final transactionDate = DateTime.parse(transactionDateStr);
+
+        // 미래 날짜 검증
+        if (transactionDate.isAfter(now)) {
+          debugPrint('❌ 검증 실패: 미래 날짜 구매 ($transactionDateStr)');
+          return VerificationResult(
+            isValid: false,
+            error: 'Transaction date is in the future',
+          );
+        }
+
+        // 너무 오래된 구매 검증 (30일 이상 된 구매는 의심)
+        final daysSincePurchase = now.difference(transactionDate).inDays;
+        if (daysSincePurchase > 30) {
+          debugPrint('⚠️ 경고: 30일 이상 된 구매 ($daysSincePurchase일 전)');
+          // 경고만 하고 통과 (복원 기능 지원)
+        }
+
+        // 너무 최근 구매 검증 (1분 이내 중복 구매 방지)
+        final secondsSincePurchase = now.difference(transactionDate).inSeconds;
+        if (secondsSincePurchase < 60 && _isRecentDuplicatePurchase(purchaseDetails)) {
+          debugPrint('❌ 검증 실패: 중복 구매 감지 ($secondsSincePurchase초 전)');
+          return VerificationResult(
+            isValid: false,
+            error: 'Duplicate purchase detected',
+          );
+        }
+      } catch (e) {
+        debugPrint('⚠️ 경고: 타임스탬프 파싱 실패 - $e');
+        // 파싱 실패 시 타임스탬프 검증 건너뛰기
+      }
+    }
+
+    // 5. 서명 데이터 존재 여부 확인 (Android)
+    if (Platform.isAndroid) {
+      final serverVerificationData = purchaseDetails.verificationData.serverVerificationData;
+      if (serverVerificationData.isEmpty) {
+        debugPrint('⚠️ 경고: Android 서버 검증 데이터 없음');
+        // 경고만 하고 통과 (Google Play가 서명 제공)
+      }
+    }
+
+    // 6. 영수증 데이터 크기 검증 (비정상적으로 작거나 큰 데이터 차단)
+    final verificationDataLength = purchaseDetails.verificationData.localVerificationData.length;
+    if (verificationDataLength < 50) {
+      debugPrint('❌ 검증 실패: 영수증 데이터 너무 작음 ($verificationDataLength bytes)');
+      return VerificationResult(
+        isValid: false,
+        error: 'Receipt data too small',
+      );
+    }
+
+    if (verificationDataLength > 1000000) { // 1MB 제한
+      debugPrint('❌ 검증 실패: 영수증 데이터 너무 큼 ($verificationDataLength bytes)');
+      return VerificationResult(
+        isValid: false,
+        error: 'Receipt data too large',
+      );
+    }
+
+    debugPrint('✅ 클라이언트 검증 통과: ${purchaseDetails.productID}');
     return VerificationResult(isValid: true);
   }
+
+  /// 중복 구매 감지 (최근 구매 내역 체크)
+  static bool _isRecentDuplicatePurchase(PurchaseDetails purchaseDetails) {
+    // SharedPreferences에서 최근 구매 내역 확인
+    // 간단한 메모리 캐시로 구현 (실제로는 영구 저장소 사용)
+    final purchaseId = purchaseDetails.purchaseID;
+
+    // 메모리 캐시에 이미 있으면 중복
+    if (_recentPurchaseCache.contains(purchaseId)) {
+      return true;
+    }
+
+    // 캐시에 추가
+    _recentPurchaseCache.add(purchaseId);
+
+    // 캐시 크기 제한 (최근 100개만 유지)
+    if (_recentPurchaseCache.length > 100) {
+      _recentPurchaseCache.removeAt(0);
+    }
+
+    return false;
+  }
+
+  // 최근 구매 캐시 (중복 방지용)
+  static final List<String?> _recentPurchaseCache = [];
 
   /// Google Play Developer API를 통한 검증
   static Future<VerificationResult> _verifyWithGooglePlayAPI(

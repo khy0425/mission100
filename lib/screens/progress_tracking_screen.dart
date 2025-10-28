@@ -7,6 +7,7 @@ import '../models/workout_session.dart';
 import '../services/workout_program_service.dart';
 import '../services/database_service.dart';
 import '../widgets/ad_banner_widget.dart';
+import '../widgets/chad/brainjolt_meter_widget.dart';
 
 class ProgressTrackingScreen extends StatefulWidget {
   final UserProfile userProfile;
@@ -1375,6 +1376,32 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // 뇌절 미터 (Brainjolt Meter)
+          Center(
+            child: BrainjoltMeter(
+              brainjoltDegree: widget.userProfile.chadLevel.clamp(1, 9),
+              intensity: _programProgress != null
+                  ? (_programProgress!.progressPercentage * 100 % 100) / 100
+                  : 0.0,
+              size: 220,
+              showLabel: true,
+              animate: true,
+            ),
+          ),
+
+          const SizedBox(height: 20),
+
+          // 컴팩트 뇌절 미터 (프로그레스 바 스타일)
+          CompactBrainjoltMeter(
+            brainjoltDegree: widget.userProfile.chadLevel.clamp(1, 9),
+            intensity: _programProgress != null
+                ? (_programProgress!.progressPercentage * 100 % 100) / 100
+                : 0.0,
+            height: 50,
+          ),
+
+          const SizedBox(height: 20),
+
           // 현재 Chad 상태
           _buildCurrentChadCard(),
 

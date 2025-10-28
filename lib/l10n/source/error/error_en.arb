@@ -1,0 +1,64 @@
+{
+  "@errorDatabase": {
+    "description": "Database error message"
+  },
+  "@errorGeneral": {
+    "description": "General error message"
+  },
+  "@errorLoadingData": {
+    "description": "Data loading error message"
+  },
+  "@errorNetwork": {
+    "description": "Network error message"
+  },
+  "@errorNotFound": {
+    "description": "Data not found error message"
+  },
+  "@errorOccurred": {
+    "description": "General error occurrence message"
+  },
+  "@permissionsRequired": {
+    "description": "Permission request dialog title"
+  },
+  "@profileCreationError": {
+    "description": "Profile creation error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@required": {
+    "description": "Required permission label"
+  },
+  "@requiredLabel": {
+    "description": "Required permission label"
+  },
+  "@shareError": {
+    "description": "Share failure error message"
+  },
+  "@videoLoadError": {
+    "description": "Error message when loading videos fails",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "adLoadFailed": "Unable to load advertisement",
+  "appInitError": "App initialization error!",
+  "error": "Error",
+  "errorDatabase": "💥 Data fortress issue! TECH team on it! 💥",
+  "errorGeneral": "🦁 TEMPORARY OBSTACLE DETECTED! REAL EMPERORS TRY AGAIN! 🦁",
+  "errorLoadingData": "Error occurred while loading data",
+  "errorNetwork": "🌪️ CHECK NETWORK CONNECTION! ALPHA CONNECTION REQUIRED! 🌪️",
+  "errorNotFound": "🔱 DATA NOT FOUND! TIME TO CREATE NEW LEGENDS! 🔱",
+  "errorOccurred": "An error occurred",
+  "permissionsRequired": "🔐 Permissions Required",
+  "profileCreationError": "⚡ PROFILE CREATION FAILED! TRY AGAIN, ALPHA! ERROR: {error} ⚡",
+  "required": "Required",
+  "requiredLabel": "Required",
+  "shareError": "Share error!",
+  "statusFailed": "Failed",
+  "videoLoadError": "Error loading videos: {error}"
+}

@@ -122,16 +122,17 @@ class WorkoutProgramService {
       return null;
     }
 
-    // Apply intensity multiplier to daily workout
-    final adjustedBurpees =
-        (dailyWorkout.burpees.toDouble() * intensityMultiplier).round();
-    final adjustedPushups =
-        (dailyWorkout.pushups.toDouble() * intensityMultiplier).round();
-    final adjustedWorkout =
-        DailyWorkout(burpees: adjustedBurpees, pushups: adjustedPushups);
+    // Apply intensity multiplier to daily workout sets
+    final adjustedSets = dailyWorkout.sets
+        .map((reps) => (reps.toDouble() * intensityMultiplier).round())
+        .toList();
+    final adjustedWorkout = DailyWorkout(
+      sets: adjustedSets,
+      restTimeSeconds: dailyWorkout.restTimeSeconds,
+    );
     final workoutSets = adjustedWorkout.toSets();
 
-    final totalReps = WorkoutData.getTotalReps(adjustedWorkout);
+    final totalReps = adjustedWorkout.totalReps;
     debugPrint('✅ 오늘의 워크아웃 찾음: $week주차 $workoutDay일차 - 총 $totalReps회');
     debugPrint(
         '   세트 구성: ${workoutSets.map((ExerciseSet s) => '${s.type.name}:${s.reps}').join(", ")}');
@@ -141,7 +142,7 @@ class WorkoutProgramService {
       day: workoutDay,
       workoutSets: workoutSets,
       totalReps: totalReps,
-      restTimeSeconds: WorkoutData.restTimeSeconds[userProfile.level] ?? 60,
+      restTimeSeconds: dailyWorkout.restTimeSeconds ?? 60,
       intensityMultiplier: intensityMultiplier,
     );
   }
@@ -237,14 +238,14 @@ class WorkoutProgramService {
     }
 
     final workoutSets = dailyWorkout.toSets();
-    final totalReps = WorkoutData.getTotalReps(dailyWorkout);
+    final totalReps = dailyWorkout.totalReps;
 
     return TodayWorkout(
       week: week,
       day: day,
       workoutSets: workoutSets,
       totalReps: totalReps,
-      restTimeSeconds: WorkoutData.restTimeSeconds[userProfile.level] ?? 60,
+      restTimeSeconds: dailyWorkout.restTimeSeconds ?? 60,
     );
   }
 
@@ -374,7 +375,7 @@ class TodayWorkout {
 
   /// 총 버피 횟수
   int get totalBurpees => workoutSets
-      .where((set) => set.type == ExerciseType.burpee)
+      .where((set) => set.type == ExerciseType.pushup)
       .fold<int>(0, (sum, set) => sum + set.reps);
 
   /// 총 푸시업 횟수

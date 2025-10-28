@@ -1,0 +1,514 @@
+{
+  "@alphaChad": {
+    "description": "Alpha title"
+  },
+  "@balanceChadMode": {
+    "description": "밸런스 차드 모드 제목"
+  },
+  "@becomeChad": {
+    "description": "차드 되기 초대 메시지"
+  },
+  "@becomeTrueChadTips": {
+    "description": "Improvement tips section subtitle"
+  },
+  "@bottomMotivation": {
+    "description": "하단 동기부여 메시지"
+  },
+  "@chadAdvice": {
+    "description": "차드 조언 섹션 제목"
+  },
+  "@chadAlarmTime": {
+    "description": "알림 시간 제목"
+  },
+  "@chadBasic": {
+    "description": "기본형 이름"
+  },
+  "@chadBasicDesc": {
+    "description": "기본형 설명"
+  },
+  "@chadCoffee": {
+    "description": "커피 Chad 이름"
+  },
+  "@chadCoffeeDesc": {
+    "description": "커피 Chad 설명"
+  },
+  "@chadDescription": {
+    "description": "차드 설명 섹션 제목"
+  },
+  "@chadDouble": {
+    "description": "더블 Chad 이름"
+  },
+  "@chadDoubleDesc": {
+    "description": "더블 Chad 설명"
+  },
+  "@chadEvolution": {
+    "description": "Chad evolution label"
+  },
+  "@chadEvolutionCompleteNotification": {
+    "description": "Chad evolution complete notification"
+  },
+  "@chadEvolutionEncouragementNotifications": {
+    "description": "진화 격려 알림 설정 제목"
+  },
+  "@chadEvolutionEncouragementNotificationsDesc": {
+    "description": "진화 격려 알림 설정 설명"
+  },
+  "@chadEvolutionNotifications": {
+    "description": "진화 완료 알림 설정 제목"
+  },
+  "@chadEvolutionNotificationsDesc": {
+    "description": "진화 완료 알림 설정 설명"
+  },
+  "@chadEvolutionPreviewNotification": {
+    "description": "Chad evolution preview notification"
+  },
+  "@chadEvolutionPreviewNotifications": {
+    "description": "진화 예고 알림 설정 제목"
+  },
+  "@chadEvolutionPreviewNotificationsDesc": {
+    "description": "진화 예고 알림 설정 설명"
+  },
+  "@chadEvolutionQuarantineNotification": {
+    "description": "Chad evolution quarantine notification"
+  },
+  "@chadEvolutionStage": {
+    "description": "Chad evolution stage title"
+  },
+  "@chadEvolutionStages": {
+    "description": "Chad evolution stages label"
+  },
+  "@chadEvolutionStatus": {
+    "description": "진화 상태 항목"
+  },
+  "@chadFrontFacing": {
+    "description": "정면 Chad 이름"
+  },
+  "@chadFrontFacingDesc": {
+    "description": "정면 Chad 설명"
+  },
+  "@chadGlowingEyes": {
+    "description": "빛나는눈 Chad 이름"
+  },
+  "@chadGlowingEyesDesc": {
+    "description": "빛나는눈 Chad 설명"
+  },
+  "@chadHashtag": {
+    "description": "차드 해시태그"
+  },
+  "@chadMessage0": {
+    "description": "차드 레벨 0 메시지 - 수면모자차드"
+  },
+  "@chadMessage1": {
+    "description": "차드 레벨 1 메시지 - 기본차드"
+  },
+  "@chadMessage2": {
+    "description": "차드 레벨 2 메시지 - 커피차드"
+  },
+  "@chadMessage3": {
+    "description": "차드 레벨 3 메시지 - 정면차드"
+  },
+  "@chadMessage4": {
+    "description": "차드 레벨 4 메시지 - 썬글차드"
+  },
+  "@chadMessage5": {
+    "description": "차드 레벨 5 메시지 - 눈빔차드"
+  },
+  "@chadMessage6": {
+    "description": "차드 레벨 6 메시지 - 더블차드"
+  },
+  "@chadMistakesAdvice": {
+    "description": "Chad's advice about mistakes"
+  },
+  "@chadModeActivate": {
+    "description": "차드 모드 활성화 설명"
+  },
+  "@chadModeActive": {
+    "description": "차드 모드 활성화 상태",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      },
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@chadModeSelection": {
+    "description": "차드 모드 선택 섹션"
+  },
+  "@chadModeWaiting": {
+    "description": "차드 모드 대기 상태"
+  },
+  "@chadMotivationArcher": {
+    "description": "아처 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationClap": {
+    "description": "박수 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationDecline": {
+    "description": "디클라인 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationDefault": {
+    "description": "기본 차드 격려 메시지"
+  },
+  "@chadMotivationDiamond": {
+    "description": "다이아몬드 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationIncline": {
+    "description": "인클라인 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationKnee": {
+    "description": "무릎 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationOneArm": {
+    "description": "원핸드 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationPike": {
+    "description": "파이크 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationSection": {
+    "description": "차드 격려 메시지 섹션 제목"
+  },
+  "@chadMotivationStandard": {
+    "description": "기본 푸시업에 대한 차드 격려"
+  },
+  "@chadMotivationWideGrip": {
+    "description": "와이드 그립 푸시업에 대한 차드 격려"
+  },
+  "@chadReminder": {
+    "description": "차드 리마인더 제목"
+  },
+  "@chadSays": {
+    "description": "Chad 말풍선 레이블"
+  },
+  "@selectTodayCondition": {
+    "description": "오늘의 컨디션 선택 안내 메시지"
+  },
+  "@todayCondition": {
+    "description": "오늘 컨디션 레이블"
+  },
+  "@chadRecommendedWorkout": {
+    "description": "Chad 추천 운동 섹션 제목"
+  },
+  "@recheckCondition": {
+    "description": "컨디션 재체크 버튼 텍스트"
+  },
+  "@chadConfirmedCondition": {
+    "description": "컨디션 확인 완료 메시지",
+    "placeholders": {
+      "condition": {
+        "type": "String"
+      }
+    }
+  },
+  "@canRecheckCondition": {
+    "description": "컨디션 재체크 가능 안내 메시지"
+  },
+  "@chadSecretTips": {
+    "description": "Improvement tips section header"
+  },
+  "@chadSecrets": {
+    "description": "영상 제목 3"
+  },
+  "@chadShorts": {
+    "description": "YouTube Shorts 화면 제목"
+  },
+  "@chadSunglasses": {
+    "description": "썬글라스 Chad 이름"
+  },
+  "@chadSunglassesDesc": {
+    "description": "썬글라스 Chad 설명"
+  },
+  "@chadTitleBasic": {
+    "description": "기본 차드 타이틀"
+  },
+  "@chadTitleCoffee": {
+    "description": "커피 차드 타이틀"
+  },
+  "@chadTitleCool": {
+    "description": "썬글 차드 타이틀"
+  },
+  "@chadTitleDouble": {
+    "description": "더블 차드 타이틀"
+  },
+  "@chadTitleFront": {
+    "description": "정면 차드 타이틀"
+  },
+  "@chadTitleLaser": {
+    "description": "눈빨 차드 타이틀"
+  },
+  "@checkChadGrowth": {
+    "description": "통계 화면 배너 텍스트"
+  },
+  "@congratulationsChad": {
+    "description": "모든 업적 획득 메시지"
+  },
+  "@consistentChad": {
+    "description": "이번 달 운동 부제목"
+  },
+  "@currentChadState": {
+    "description": "Current Chad state title"
+  },
+  "@dailyMotivation": {
+    "description": "일일 동기부여 메시지"
+  },
+  "@feelThePowerOfChad": {
+    "description": "업적 달성 대화상자 확인 버튼 텍스트"
+  },
+  "@gigaChad": {
+    "description": "Giga Chad title"
+  },
+  "@improvementTips": {
+    "description": "Tab title for improvement tips"
+  },
+  "@joinChadJourney": {
+    "description": "여정 참여 메시지"
+  },
+  "@journeyChadEvolution": {
+    "description": "여정을 시작하는 차드 진화 상태"
+  },
+  "@journeyStartingChad": {
+    "description": "Journey starting chad description"
+  },
+  "@journeyToChad": {
+    "description": "차드가 되는 여정 설명"
+  },
+  "@laterBasicChad": {
+    "description": "나중에 선택 버튼 텍스트"
+  },
+  "@legendary": {
+    "description": "레전더리 등급"
+  },
+  "@legendaryChad": {
+    "description": "Legendary Chad title"
+  },
+  "@loadingChadVideos": {
+    "description": "YouTube 영상 로딩 메시지"
+  },
+  "@motivation": {
+    "description": "동기부여 카테고리"
+  },
+  "@motivationGeneral": {
+    "description": "일반 동기부여 메시지"
+  },
+  "@motivationGod": {
+    "description": "목표 달성시 최고 동기부여 메시지"
+  },
+  "@motivationMedium": {
+    "description": "목표 50% 이상시 동기부여 메시지"
+  },
+  "@motivationMessage1": {
+    "description": "동기부여 메시지 1"
+  },
+  "@motivationMessage10": {
+    "description": "동기부여 메시지 10"
+  },
+  "@motivationMessage2": {
+    "description": "동기부여 메시지 2"
+  },
+  "@motivationMessage3": {
+    "description": "동기부여 메시지 3"
+  },
+  "@motivationMessage4": {
+    "description": "동기부여 메시지 4"
+  },
+  "@motivationMessage5": {
+    "description": "동기부여 메시지 5"
+  },
+  "@motivationMessage6": {
+    "description": "동기부여 메시지 6"
+  },
+  "@motivationMessage7": {
+    "description": "동기부여 메시지 7"
+  },
+  "@motivationMessage8": {
+    "description": "동기부여 메시지 8"
+  },
+  "@motivationMessage9": {
+    "description": "동기부여 메시지 9"
+  },
+  "@motivationMessages": {
+    "description": "동기부여 메시지 설정"
+  },
+  "@motivationMessagesDesc": {
+    "description": "동기부여 메시지 설명"
+  },
+  "@motivationStrong": {
+    "description": "목표 80% 이상시 동기부여 메시지"
+  },
+  "@perfectChadExperience": {
+    "description": "완벽한 Chad 경험 설명"
+  },
+  "@quickInputStrong": {
+    "description": "목표 80% 버튼"
+  },
+  "@rarityLegendary": {
+    "description": "Legendary rarity level"
+  },
+  "@realChadPower": {
+    "description": "총 푸시업 부제목"
+  },
+  "@risingChad": {
+    "description": "Rising Chad title"
+  },
+  "@rookieChad": {
+    "description": "Rookie Chad title"
+  },
+  "@sigmaChad": {
+    "description": "Sigma Chad title"
+  },
+  "@strategicChadMode": {
+    "description": "전략적 차드 모드 제목"
+  },
+  "@supportChadJourney": {
+    "description": "여정 응원 메시지"
+  },
+  "@trueGigaChad": {
+    "description": "진정한 기가차드 완성 메시지"
+  },
+  "@tutorialAdviceBasic": {
+    "description": "기본 푸시업 튜토리얼 조언"
+  },
+  "@tutorialAdviceConsistency": {
+    "description": "꾸준함 튜토리얼 조언"
+  },
+  "@tutorialAdviceStart": {
+    "description": "시작 튜토리얼 조언"
+  },
+  "@ultraChad": {
+    "description": "Ultra Chad title"
+  },
+  "@workerChadMode": {
+    "description": "직장인 차드 모드 제목"
+  },
+  "alphaChad": "알파 레벨",
+  "balanceChadMode": "❤️ 밸런스 차드 모드 (화목토)",
+  "becomeChad": "💀 너도 차드가 되고 싶다면? 💀",
+  "becomeTrueChadTips": "이 팁들로 너도 진짜 강자가 될 수 있다! 💎",
+  "bottomMotivation": "🔥 매일 조금씩? 틀렸다! 매일 LEGENDARY LEVEL UP이다, 만삣삐! 💪",
+  "chadAdvice": "🔥 나만의 조언",
+  "chadAlarmTime": "🔥 알림 시간",
+  "chadBasic": "기본형",
+  "chadBasicDesc": "첫 진화 완료!\n기초 다지기 시작! 🔥",
+  "chadCoffee": "커피 파워",
+  "chadCoffeeDesc": "에너지 MAX!\n커피 파워로 더 강해졌다! ☕💪",
+  "chadDescription": "💪 차드 설명",
+  "chadDouble": "더블 파워",
+  "chadDoubleDesc": "최종 진화 완료! 전설 등극!\n2배 파워로 모든 걸 정복한다! 👑",
+  "chadEvolution": "진화",
+  "chadEvolutionCompleteNotification": "진화 완료 알림",
+  "chadEvolutionEncouragementNotifications": "진화 격려 알림",
+  "chadEvolutionEncouragementNotificationsDesc": "다음 진화까지 3일 남았을 때 격려 메시지를 받다",
+  "chadEvolutionNotifications": "진화 완료 알림",
+  "chadEvolutionNotificationsDesc": "새로운 단계로 진화했을 때 알림받기",
+  "chadEvolutionPreviewNotification": "진화 예고 알림",
+  "chadEvolutionPreviewNotifications": "진화 예고 알림",
+  "chadEvolutionPreviewNotificationsDesc": "다음 진화까지 1주일 남았을 때 미리 알림을 받다",
+  "chadEvolutionQuarantineNotification": "진화 격리 알림",
+  "chadEvolutionStage": "진화단계",
+  "chadEvolutionStages": "진화 단계",
+  "chadEvolutionStatus": "• 진화 상태",
+  "chadFrontFacing": "정면 돌파",
+  "chadFrontFacingDesc": "자신감 폭발!\n정면 돌파 준비 완료! 💪",
+  "chadGlowingEyes": "빛나는눈 Chad",
+  "chadGlowingEyesDesc": "강력한 힘을 가진 Chad이다.\n눈에서 빛이 나며 엄청난 파워를 보여줍니다!",
+  "chadHashtag": "#차드",
+  "chadMessage0": "🛌 잠에서 깨어나라, 미래의 차드여! 여정이 시작된다!",
+  "chadMessage1": "😎 기본기가 탄탄해지고 있어! 진짜 나만의 시작이야!",
+  "chadMessage2": "☕ 에너지가 넘쳐흘러! 커피보다 강한 힘이 생겼어!",
+  "chadMessage3": "🔥 정면돌파! 어떤 장애물도 막을 수 없다!",
+  "chadMessage4": "🕶️ 쿨함이 몸에 배었어! 진정한 알파의 모습이야!",
+  "chadMessage5": "⚡ 눈빛만으로도 세상을 바꿀 수 있어! 전설의 시작!",
+  "chadMessage6": "👑 최고의 차드 완성! 더블 파워로 우주를 정복하라!",
+  "chadMistakesAdvice": "차드도 처음엔 실수했다. 하지만 이제는 완벽하지! 🔥",
+  "chadModeActivate": "💪 차드 모드 활성화! 승리의 스케줄을 설정하라! 🔥",
+  "chadModeActivated": "💡 MODE 활성화! 더 정확한 알림은 나중에 설정 가능! 🔥",
+  "chadModeActive": "🔥 {days} {time} - 차드 모드 활성화!",
+  "chadModeSelection": "🚀 차드 모드 선택",
+  "chadModeWaiting": "😴 차드 모드 대기 중...",
+  "chadMotivationArcher": "균형과 집중력이 필요한 고급 기술! 한쪽씩 완벽하게 해내면 진짜 강자 인정!",
+  "chadMotivationClap": "폭발적인 파워로 박수를 쳐라! 이거 되면 너도 진짜 강자다, fxxk yeah!",
+  "chadMotivationDecline": "높은 곳을 향해 도전하는 것이 차드다! 어깨와 상체가 불타오르는 걸 느껴봐!",
+  "chadMotivationDefault": "나만의 길은 험하지만 그래서 더 가치있다! 포기하지 마라, 만삣삐!",
+  "chadMotivationDiamond": "다이아몬드처럼 귀한 네 삼두근을 만들어라! 팔 근육 폭발하는 기분을 느껴봐!",
+  "chadMotivationIncline": "단계적으로 올라가는 것이 나만의 길이다! 각도를 점점 낮춰가면서 도전해봐!",
+  "chadMotivationKnee": "시작이 반이다! 무릎 푸시업도 제대로 하면 금방 일반 푸시업으로 갈 수 있어!",
+  "chadMotivationOneArm": "원핸드 푸시업은 나만의 완성형이다! 이거 한 번이라도 하면 진짜 기가 차드 인정, fxxk yeah!",
+  "chadMotivationPike": "핸드스탠드의 첫걸음! 어깨 근육이 터져나갈 것 같은 기분을 만끽해라!",
+  "chadMotivationSection": "🔥 EMPEROR'S ULTIMATE WISDOM 🔥",
+  "chadMotivationStandard": "기본이 제일 중요하다, 만삣삐! 완벽한 폼으로 하나하나 쌓아가면 진짜 강자가 된다!",
+  "chadMotivationWideGrip": "가슴을 활짝 펴고 나만의 기운을 받아라! 넓은 가슴이 진짜 나만의 상징이다!",
+  "chadReminder": "💪 차드 리마인더",
+  "chadSays": "Chad가 말해요",
+  "selectTodayCondition": "오늘 컨디션을 선택해주세요",
+  "todayCondition": "오늘 컨디션: ",
+  "chadRecommendedWorkout": "🎯 Chad 추천 운동",
+  "recheckCondition": "컨디션 다시 체크",
+  "chadConfirmedCondition": "Chad가 {condition} 컨디션을 확인했어요!",
+  "canRecheckCondition": "컨디션을 다시 체크할 수 있어요!",
+  "chadSecretTips": "나만의 특급 비법",
+  "chadSecrets": "나만의 비밀 ⚡",
+  "chadShorts": "차드 쇼츠 🔥",
+  "chadSunglasses": "스타일 MAX",
+  "chadSunglassesDesc": "스타일 MAX!\n멋도 실력이다! 😎",
+  "chadTitleBasic": "기본형",
+  "chadTitleCoffee": "커피 Chad",
+  "chadTitleCool": "썬글 Chad",
+  "chadTitleDouble": "더블 Chad",
+  "chadTitleFront": "정면 Chad",
+  "chadTitleLaser": "눈빨 Chad",
+  "checkChadGrowth": "나만의 성장을 확인하라! 📊",
+  "congratulationsChad": "축하한다! 진짜 강자 등극! 🎉",
+  "consistentChad": "꾸준한 차드!",
+  "currentChadState": "현재 Chad 상태",
+  "dailyMotivation": "⚡ 오늘도 LEGENDARY\nBEAST MODE로\n세상을 압도해라! ⚡",
+  "enableChadNotifications": "🔥 CHAD 알림 켜기! 만삣삐!",
+  "feelThePowerOfChad": "나만의 힘을 느껴다! 💪",
+  "gigaChad": "Giga Chad",
+  "improvementTips": "개선\n팁",
+  "joinChadJourney": "차드가 되는 여정에 동참해",
+  "journeyChadEvolution": "여정을 시작하는 Chad",
+  "journeyStartingChad": "각성을 시작한 Chad.\n잠재력이 깨어나고 있다.",
+  "journeyToChad": "차드가 되는 정복의 여정",
+  "laterBasicChad": "나중에 (BASIC CHAD)",
+  "laterWeak": "나중에... (WEAK)",
+  "legendary": "레전더리",
+  "legendaryChad": "Legendary Chad",
+  "legendaryModeDescription": "🔥 더 정확한 시간에 알림을 받고 싶다면\nLEGENDARY MODE를 활성화하자! 🔥",
+  "legendaryModeOn": "⚡ LEGENDARY MODE ON! ⚡",
+  "legendaryModeOptional": "💡 지금 안 해도 괜찮다!\n나중에 설정에서 언제든지 가능! 만삣삐!",
+  "loadingChadVideos": "차드 영상 로딩 중... 🔥",
+  "motivation": "동기부여",
+  "motivationGeneral": "오늘 흘린 땀은 내일의 영광이야, 만삣삐. 절대 포기하지 마 🔥💪",
+  "motivationGod": "🚀 WHAT THE FUCK?! 너는 이미 신도 부끄러워할 ULTRA ALPHA GOD다, 만삣삐! 약함? 그딴 건 우주에서도 찾을 수 없어! ⚡👑💀",
+  "motivationMedium": "한계는 너의 머릿속에만 있어, you idiot. 부숴버려! 🦍⚡",
+  "motivationMessage": "동기부여 메시지",
+  "motivationMessage1": "🔥 진짜 ALPHA는 변명 따위 불태워버린다, FXXK THE WEAKNESS! 🔥",
+  "motivationMessage10": "🦁 차드 브라더후드? 아니다! ALPHA EMPIRE의 황제에게 경배하라, 만삣삐! 🦁",
+  "motivationMessage2": "⚡ 차드처럼 정복하고, 시그마처럼 지배하라! 휴식도 전략이다 ⚡",
+  "motivationMessage3": "💪 모든 푸시업이 너를 GOD TIER로 끌어올린다, 만삣삐! 💪",
+  "motivationMessage4": "⚡ 차드 에너지 100% 충전 완료! 이제 세상을 평정하라! ⚡",
+  "motivationMessage5": "🚀 차드 진화가 아니다! 이제 LEGEND TRANSFORMATION이다, FXXK YEAH! 🚀",
+  "motivationMessage6": "👑 차드 모드? 그딴 건 지났다. 지금은 EMPEROR MODE: ACTIVATED! 👑",
+  "motivationMessage7": "🌪️ 이렇게 전설들이 탄생한다, 만삣삐! 역사가 너를 기억할 것이다! 🌪️",
+  "motivationMessage8": "⚡ 차드 파워가 아니다... 이제 ALPHA LIGHTNING이 몸을 관통한다! ⚡",
+  "motivationMessage9": "🔱 차드 변신 완료! 이제 ULTIMATE APEX PREDATOR로 진화했다! 🔱",
+  "motivationMessages": "동기부여 메시지",
+  "motivationMessagesDesc": "운동 중 동기부여 메시지 표시",
+  "motivationStrong": "포기? 그건 약자나 하는 거야. 더 강하게, 만삣삐! 🔱💪",
+  "perfectChadExperience": "설정을 조정하여 완벽한 Chad 경험을 만들어보세요",
+  "quickInputStrong": "👑 EMPEROR 여유 👑",
+  "rarityLegendary": "레전더리",
+  "realChadPower": "진짜 강자 파워!",
+  "risingChad": "Rising Chad",
+  "rookieChad": "Rookie Chad",
+  "sigmaChad": "Sigma Chad",
+  "strategicChadMode": "⭐ 전략적 차드 모드 (월수금)",
+  "supportChadJourney": "너의 여정을 응원한다! 🔥",
+  "trueGigaChad": "🔥💀 진정한 기가차드 완성! ALPHA EMPEROR! 💀🔥",
+  "tutorialAdviceBasic": "기본이 제일 중요하다, 만삣삐!",
+  "tutorialAdviceConsistency": "꾸준함이 차드 파워의 열쇠다!",
+  "tutorialAdviceStart": "시작이 반이다!",
+  "ultraChad": "Ultra Chad",
+  "workerChadMode": "💼 직장인 차드 모드 (월~금)"
+}

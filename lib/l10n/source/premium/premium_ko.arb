@@ -1,0 +1,102 @@
+{
+  "@scientificFact10Explanation": {
+    "description": "과학적 팩트 10번 설명"
+  },
+  "@scientificFact11Explanation": {
+    "description": "과학적 팩트 11번 설명"
+  },
+  "@scientificFact12Explanation": {
+    "description": "과학적 팩트 12번 설명"
+  },
+  "@scientificFact13Explanation": {
+    "description": "과학적 팩트 13번 설명"
+  },
+  "@scientificFact14Explanation": {
+    "description": "과학적 팩트 14번 설명"
+  },
+  "@scientificFact15Explanation": {
+    "description": "과학적 팩트 15번 설명"
+  },
+  "@scientificFact16Explanation": {
+    "description": "과학적 팩트 16번 설명"
+  },
+  "@scientificFact17Explanation": {
+    "description": "과학적 팩트 17번 설명"
+  },
+  "@scientificFact18Explanation": {
+    "description": "과학적 팩트 18번 설명"
+  },
+  "@scientificFact19Explanation": {
+    "description": "과학적 팩트 19번 설명"
+  },
+  "@scientificFact1Explanation": {
+    "description": "과학적 팩트 1 설명"
+  },
+  "@scientificFact20Explanation": {
+    "description": "과학적 팩트 20번 설명"
+  },
+  "@scientificFact21Explanation": {
+    "description": "과학적 팩트 21번 설명"
+  },
+  "@scientificFact22Explanation": {
+    "description": "과학적 팩트 22번 설명"
+  },
+  "@scientificFact23Explanation": {
+    "description": "과학적 팩트 23번 설명"
+  },
+  "@scientificFact24Explanation": {
+    "description": "과학적 팩트 24번 설명"
+  },
+  "@scientificFact25Explanation": {
+    "description": "과학적 팩트 25번 설명"
+  },
+  "@scientificFact2Explanation": {
+    "description": "과학적 팩트 2 설명"
+  },
+  "@scientificFact3Explanation": {
+    "description": "과학적 팩트 3번 설명"
+  },
+  "@scientificFact4Explanation": {
+    "description": "과학적 팩트 4번 설명"
+  },
+  "@scientificFact5Explanation": {
+    "description": "과학적 팩트 5번 설명"
+  },
+  "@scientificFact6Explanation": {
+    "description": "과학적 팩트 6번 설명"
+  },
+  "@scientificFact7Explanation": {
+    "description": "과학적 팩트 7번 설명"
+  },
+  "@scientificFact8Explanation": {
+    "description": "과학적 팩트 8번 설명"
+  },
+  "@scientificFact9Explanation": {
+    "description": "과학적 팩트 9번 설명"
+  },
+  "scientificFact10Explanation": "심박출량 증가는 운동 능력뿜만 아니라 일상 활동의 질도 향상시킵니다.",
+  "scientificFact11Explanation": "새로운 혈관 형성으로 영양소와 산소 공급이 극대화된다.",
+  "scientificFact12Explanation": "혈관 탄성 개선과 말초 저항 감소로 건강한 혈압이 유지된다.",
+  "scientificFact13Explanation": "높은 심박변이도는 자율신경계의 건강한 균형을 나타냅니다.",
+  "scientificFact14Explanation": "건강한 내피세포는 혈관 확장과 항염 작용을 통해 심혈관 질환을 예방한다.",
+  "scientificFact15Explanation": "근육량 증가로 인해 안정 시에도 더 많은 에너지를 소모한다.",
+  "scientificFact16Explanation": "근육의 포도당 흡수 증가로 자연스러운 혈당 관리가 가능해집니다.",
+  "scientificFact17Explanation": "효소 활성 증가로 지방이 에너지원으로 더 효율적으로 사용된다.",
+  "scientificFact18Explanation": "갈색지방은 칼로리를 열로 직접 변환하여 체중 감량에 도움을 줍니다.",
+  "scientificFact19Explanation": "EPOC 효과로 운동이 끝난 후에도 지속적인 에너지 소모가 일어납니다.",
+  "scientificFact1Explanation": "근섬유 타입 변환은 약 6-8주 후부터 시작되며, 최대 30% 증가할 수 있다.",
+  "scientificFact20Explanation": "성장호르몬은 근육 성장, 지방 분해, 조직 회복의 핵심 호르몬이다.",
+  "scientificFact21Explanation": "동조화된 운동 단위는 더 큰 힘을 더 효율적으로 생성한다.",
+  "scientificFact22Explanation": "운동으로 인한 신경가소성 증가는 인지 기능 전반의 향상을 가져옵니다.",
+  "scientificFact23Explanation": "BDNF는 뇌의 비료라고 불리며, 새로운 신경 연결을 촉진한다.",
+  "scientificFact24Explanation": "미엘린초의 두께 증가로 신경 신호 전달이 빨라집니다.",
+  "scientificFact25Explanation": "인터뉴런의 정교한 조절로 무의식적으로도 완벽한 자세가 가능해집니다.",
+  "scientificFact2Explanation": "미토콘드리아는 세포의 발전소로, 증가하면 피로도가 현저히 감소한다.",
+  "scientificFact3Explanation": "mTOR은 근육 단백질 합성의 마스터 조절자로, 활성화되면 폭발적 성장을 유도한다.",
+  "scientificFact4Explanation": "근섬유 핵이 증가하면 평생 동안 근육 성장의 템플릿이 된다.",
+  "scientificFact5Explanation": "동조화된 운동 단위는 더 큰 힘을 더 효율적으로 생성한다.",
+  "scientificFact6Explanation": "운동으로 인한 신경가소성 증가는 인지 기능 전반의 향상을 가져옵니다.",
+  "scientificFact7Explanation": "BDNF는 뇌의 비료라고 불리며, 새로운 신경 연결을 촉진한다.",
+  "scientificFact8Explanation": "빠른 신경 전달은 일상생활에서 빠르고 정확한 반응을 가능하게 한다.",
+  "scientificFact9Explanation": "인터뉴런의 정교한 조절로 무의식적으로도 완벽한 자세가 가능해집니다."
+}

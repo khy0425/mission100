@@ -1,0 +1,154 @@
+{
+  "@autoBackup": {
+    "description": "자동 백업 설정"
+  },
+  "@autoBackupDescription": {
+    "description": "자동 백업 설정 설명"
+  },
+  "@autoBackupDisabledStatus": {
+    "description": "자동 백업이 비활성화된 상태 메시지"
+  },
+  "@backup": {
+    "description": "백업 레이블"
+  },
+  "@backupCompletedBody": {
+    "description": "백업 완료 알림 내용",
+    "placeholders": {
+      "size": {
+        "type": "String"
+      }
+    }
+  },
+  "@backupCompletedTitle": {
+    "description": "백업 완료 알림 제목"
+  },
+  "@backupCompletedWithPath": {
+    "description": "백업 완료 메시지",
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "@backupErrorOccurred": {
+    "description": "백업 오류 메시지",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "@backupFailed": {
+    "description": "백업 실패 메시지"
+  },
+  "@backupFailedBody": {
+    "description": "백업 실패 알림 내용"
+  },
+  "@backupFailedTitle": {
+    "description": "백업 실패 알림 제목"
+  },
+  "@backupFileName": {
+    "description": "백업 파일명 레이블"
+  },
+  "@backupFrequency": {
+    "description": "백업 빈도 설정"
+  },
+  "@backupManagement": {
+    "description": "Backup management title"
+  },
+  "@backupManagementDesc": {
+    "description": "Backup management description"
+  },
+  "@backupScheduleSuspendedBody": {
+    "description": "백업 스케줄 중단 알림 내용"
+  },
+  "@backupScheduleSuspendedTitle": {
+    "description": "백업 스케줄 중단 알림 제목"
+  },
+  "@backupSuccess": {
+    "description": "백업 성공 메시지"
+  },
+  "@backupWaitingStatus": {
+    "description": "백업 대기 상태 메시지"
+  },
+  "@createBackup": {
+    "description": "백업 생성 버튼"
+  },
+  "@dataBackup": {
+    "description": "데이터 백업 제목"
+  },
+  "@dataBackupComingSoon": {
+    "description": "데이터 백업 준비 중 메시지"
+  },
+  "@dataBackupDesc": {
+    "description": "데이터 백업 설명"
+  },
+  "@encryptedBackup": {
+    "description": "암호화 백업 버튼"
+  },
+  "@exportToFile": {
+    "description": "파일로 내보내기 버튼"
+  },
+  "@lastBackup": {
+    "description": "마지막 백업 라벨"
+  },
+  "@manualBackupCompletedBody": {
+    "description": "수동 백업 완료 알림 내용"
+  },
+  "@manualBackupCompletedTitle": {
+    "description": "수동 백업 완료 알림 제목"
+  },
+  "@manualBackupFailedBody": {
+    "description": "수동 백업 실패 알림 내용"
+  },
+  "@manualBackupFailedTitle": {
+    "description": "수동 백업 실패 알림 제목"
+  },
+  "@noBackupCreated": {
+    "description": "백업 기록이 없을 때 설명"
+  },
+  "@selectBackupFrequency": {
+    "description": "백업 빈도 선택 다이얼로그 제목"
+  },
+  "autoBackup": "자동 백업",
+  "autoBackupDescription": "정기적으로 자동 백업을 수행한다",
+  "autoBackupDisabledStatus": "자동 백업 비활성화",
+  "backup": "백업",
+  "backupCompletedBody": "데이터 백업 성공! ({size}) 💪",
+  "backupCompletedTitle": "Mission 100 백업 완료",
+  "backupCompletedWithPath": "백업 완료!\n저장 위치: {path}",
+  "backupCreatedSuccessfully": "백업이 성공적으로 생성되었다",
+  "backupCreationError": "백업 생성 중 오류 발생: {error}",
+  "backupCreationFailed": "백업 생성 실패: {error}",
+  "backupErrorOccurred": "백업 중 오류: {error}",
+  "backupExportFailed": "백업 내보내기 실패: {error}",
+  "backupFailed": "백업 실패! 다시 시도! 💪",
+  "backupFailedBody": "백업 중 오류 발생! 설정 확인! ⚠️",
+  "backupFailedTitle": "Mission 100 백업 실패",
+  "backupFileName": "백업 파일명",
+  "backupFileSaved": "백업 파일이 저장되었다:\n{filePath}",
+  "backupFrequency": "백업 빈도",
+  "backupManagement": "백업 관리",
+  "backupManagementDesc": "데이터 백업, 복원 및 자동 백업 설정을 관리한다.",
+  "backupScheduleSuspendedBody": "연속 실패로 인해 자동 백업이 중단되었다.",
+  "backupScheduleSuspendedTitle": "Mission 100 백업 중단",
+  "backupStatusLoadFailed": "백업 상태를 불러오는데 실패했다: {error}",
+  "backupSuccess": "데이터 백업이 성공적으로 완료되었다",
+  "backupWaitingStatus": "백업 대기 중",
+  "createBackup": "백업 생성",
+  "dataBackup": "데이터 백업",
+  "dataBackupComingSoon": "데이터 백업 기능은 준비 중이다",
+  "dataBackupDesc": "💾 너의 차드 전설을 영원히 보존한다!",
+  "encryptedBackup": "암호화 백업",
+  "encryptedBackupCreated": "암호화된 백업이 생성되었다",
+  "encryptedBackupError": "암호화된 백업 생성 중 오류 발생: {error}",
+  "encryptedBackupFailed": "암호화된 백업 생성 실패: {error}",
+  "exportToFile": "파일로 내보내기",
+  "lastBackup": "마지막 백업",
+  "manualBackupCompletedBody": "백업이 성공적으로 생성되었다",
+  "manualBackupCompletedTitle": "Mission 100 수동 백업 완료",
+  "manualBackupFailedBody": "백업 생성 중 오류가 발생했다",
+  "manualBackupFailedTitle": "Mission 100 수동 백업 실패",
+  "noBackupCreated": "아직 백업을 생성하지 않았다",
+  "selectBackupFrequency": "백업 빈도 선택"
+}

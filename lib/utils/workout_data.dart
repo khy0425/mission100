@@ -1,5 +1,38 @@
 import '../models/user_profile.dart';
+import '../models/exercise_type.dart';
 import 'package:flutter/material.dart';
+
+/// 운동 세트 정보
+class ExerciseSet {
+  final ExerciseType type;
+  final int reps;
+
+  const ExerciseSet({required this.type, required this.reps});
+}
+
+/// 일일 운동 프로그램
+class DailyWorkout {
+  final List<int> sets;
+  final int restTimeSeconds;
+
+  const DailyWorkout({
+    required this.sets,
+    this.restTimeSeconds = 90,
+  });
+
+  /// 총 횟수
+  int get totalReps => sets.fold(0, (sum, reps) => sum + reps);
+
+  /// ExerciseSet 리스트로 변환
+  List<ExerciseSet> toSets() {
+    return sets
+        .map((reps) => ExerciseSet(type: ExerciseType.pushup, reps: reps))
+        .toList();
+  }
+
+  /// 총 횟수 (하위 호환성)
+  int getTotalReps() => totalReps;
+}
 
 /// 14주 푸시업 프로그램 데이터
 ///
@@ -318,11 +351,6 @@ class WorkoutData {
         UserLevel.giga: 200,
       };
 
-  /// 특정 주차, 요일의 운동 프로그램 가져오기
-  static List<int>? getWorkout(UserLevel level, int week, int day) {
-    return workoutPrograms[level]?[week]?[day];
-  }
-
   /// 특정 주차의 총 운동량 계산
   static int getWeeklyTotal(UserLevel level, int week) {
     final weekData = workoutPrograms[level]?[week];
@@ -357,5 +385,32 @@ class WorkoutData {
         UserLevel.alpha: const Color(0xFFFF9800), // Orange
         UserLevel.giga: const Color(0xFFF44336), // Red
       };
+
+  /// 특정 주차, 요일의 DailyWorkout 가져오기 (DailyWorkout 형태)
+  static DailyWorkout? getWorkout(UserLevel level, int week, int day) {
+    final sets = workoutPrograms[level]?[week]?[day];
+    if (sets == null) return null;
+    return DailyWorkout(sets: sets, restTimeSeconds: 90);
+  }
+
+  /// 총 운동 횟수 계산
+  static int getTotalReps(List<int> sets) {
+    return sets.fold(0, (sum, reps) => sum + reps);
+  }
+
+  /// 프로그램 총 목표 달성 횟수
+  static int getProgramTotal(UserLevel level) {
+    return targetTotals[level] ?? 100;
+  }
+
+  /// RPE로부터 강도 계산 (임시 구현)
+  static double calculateIntensityFromRPE(int rpe) {
+    // RPE 6-10 → 강도 60-100%
+    return (rpe * 10).toDouble();
+  }
+
+  /// 세트간 휴식 시간 (초)
+  static int get restTimeSeconds => 90;
+
 }
 

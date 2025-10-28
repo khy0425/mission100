@@ -161,8 +161,8 @@ class DailyWorkout {
 
   /// 피니셔 타입을 ExerciseType으로 변환
   static ExerciseType _getFinisherExerciseType(FinisherType type) {
-    // 현재는 모든 피니셔를 burpee로 처리 (기존 ExerciseType이 burpee, pushup만 지원)
-    return ExerciseType.burpee;
+    // 현재는 모든 피니셔를 pushup으로 처리 (기존 ExerciseType이 pushup만 지원)
+    return ExerciseType.pushup;
   }
 
   /// 하위 호환성: 총 버피 횟수 (피니셔)

@@ -1,0 +1,10 @@
+{
+  "@noUserProfile": {
+    "description": "No user profile message"
+  },
+  "@userProfileRequired": {
+    "description": "User profile required explanation"
+  },
+  "noUserProfile": "No user profile found",
+  "userProfileRequired": "User profile is required to start your workout"
+}

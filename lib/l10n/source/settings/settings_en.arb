@@ -1,0 +1,191 @@
+{
+  "@@locale": "en",
+  "@adaptiveTheme": {
+    "description": "Adaptive theme setting"
+  },
+  "@adaptiveThemeDesc": {
+    "description": "Adaptive theme description"
+  },
+  "@allowNotificationPermission": {
+    "description": "Allow notification permission button"
+  },
+  "@basicNotificationPermission": {
+    "description": "Basic notification permission label"
+  },
+  "@colorTheme": {
+    "description": "Color theme setting"
+  },
+  "@currentLanguage": {
+    "description": "Current language display",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@dailyNotificationModeChanged": {
+    "description": "Daily notification mode change message"
+  },
+  "@englishLanguage": {
+    "description": "English language name in English"
+  },
+  "@exactNotificationPermission": {
+    "description": "Exact notification permission"
+  },
+  "@koreanLanguage": {
+    "description": "Korean language name in English"
+  },
+  "@languageChanged": {
+    "description": "Language change confirmation message",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
+  "@languageComingSoon": {
+    "description": "Language settings coming soon message"
+  },
+  "@languageKorean": {
+    "description": "Korean language"
+  },
+  "@notificationBenefit1": {
+    "description": "Notification benefit 1"
+  },
+  "@notificationBenefit2": {
+    "description": "Notification benefit 2"
+  },
+  "@notificationBenefit3": {
+    "description": "Notification benefit 3"
+  },
+  "@notificationPermissionCheckingStatus": {
+    "description": "Checking permission status message"
+  },
+  "@notificationPermissionDeniedMessage": {
+    "description": "Notification permission denied message"
+  },
+  "@notificationPermissionDesc": {
+    "description": "Notification permission description"
+  },
+  "@notificationPermissionErrorMessage": {
+    "description": "Notification permission error message"
+  },
+  "@notificationPermissionFeatures": {
+    "description": "Notification permission features list"
+  },
+  "@notificationPermissionGranted": {
+    "description": "Notification permission granted message"
+  },
+  "@notificationPermissionGrantedMessage": {
+    "description": "Notification permission granted success message"
+  },
+  "@notificationPermissionLaterMessage": {
+    "description": "Notification permission later message"
+  },
+  "@notificationPermissionMessage": {
+    "description": "Notification permission dialog message"
+  },
+  "@notificationPermissionNeeded": {
+    "description": "Notification permission needed status"
+  },
+  "@notificationPermissionPerfect": {
+    "description": "Perfect notification permission status"
+  },
+  "@notificationPermissionRequest": {
+    "description": "Notification permission request message"
+  },
+  "@notificationPermissionRequired": {
+    "description": "Notification permission dialog title"
+  },
+  "@notificationPermissionTitle": {
+    "description": "Notification permission title"
+  },
+  "@permissionNotificationMessage": {
+    "description": "Notification and storage permission request message"
+  },
+  "@pushNotificationDisabled": {
+    "description": "Push notifications disabled message"
+  },
+  "@pushNotificationEnabled": {
+    "description": "Push notifications enabled message"
+  },
+  "@pushNotifications": {
+    "description": "Push notifications option"
+  },
+  "@pushNotificationsDesc": {
+    "description": "Push notifications description"
+  },
+  "@receiveGeneralNotifications": {
+    "description": "Push notifications description"
+  },
+  "@selectLanguage": {
+    "description": "Language selection message"
+  },
+  "@themeColor": {
+    "description": "Theme color setting title"
+  },
+  "@themeColorChanged": {
+    "description": "Theme color change message",
+    "placeholders": {
+      "colorName": {
+        "type": "String"
+      }
+    }
+  },
+  "@themeColorDesc": {
+    "description": "Theme color setting description"
+  },
+  "@themeColorSelection": {
+    "description": "Theme color selection dialog title"
+  },
+  "@useDarkTheme": {
+    "description": "Dark mode description"
+  },
+  "adaptiveTheme": "Adaptive Theme",
+  "adaptiveThemeDesc": "Automatically changes with system settings",
+  "allowNotificationPermission": "Allow Notification Permission",
+  "allowNotifications": "🔔 Allow Notifications",
+  "basicNotificationPermission": "Basic Notification Permission",
+  "colorTheme": "Color Theme",
+  "currentLanguage": "Current: {language}",
+  "dailyNotificationModeChanged": "Switched to daily notification mode! Getting alerts every day! 📱",
+  "englishLanguage": "English",
+  "exactNotificationPermission": "Exact Notification Permission",
+  "koreanLanguage": "Korean",
+  "languageChanged": "Language changed! -> {language} 💪",
+  "languageComingSoon": "Language settings coming soon",
+  "languageKorean": "Korean",
+  "notificationActivationMessage": "💪 Activate notifications!\nLet's set it up! FXXK THE EXCUSES! 💪",
+  "notificationActivationTitle": "🔥 MISSION 100 NOTIFICATION ACTIVATE! 🔥",
+  "notificationBenefit1": "💪 Daily workout reminders",
+  "notificationBenefit2": "🏆 Achievement celebration alerts",
+  "notificationBenefit3": "🔥 Motivational messages",
+  "notificationPermissionCheckingStatus": "Checking notification permission status",
+  "notificationPermissionDeniedMessage": "⚠️ Need notification permission! Enable in settings! 💪",
+  "notificationPermissionDesc": "Required for workout reminders and achievement notifications",
+  "notificationPermissionErrorMessage": "Error requesting permission!",
+  "notificationPermissionFeatures": "• Workout reminders\n• Achievement notifications\n• Motivational messages",
+  "notificationPermissionGranted": "✅ Notification permission granted! 💪",
+  "notificationPermissionGrantedMessage": "🎉 Permission granted! Let's go! 💪",
+  "notificationPermissionLaterMessage": "You can allow notifications later in settings.",
+  "notificationPermissionMessage": "Notification permission is required to receive push notifications.",
+  "notificationPermissionNeeded": "❌ Notification Permission Required",
+  "notificationPermissionPerfect": "🔔 Notification Permission Perfect!",
+  "notificationPermissionRequest": "Please allow notification permission in settings.",
+  "notificationPermissionRequired": "🔔 Notification Permission Required",
+  "notificationPermissionTitle": "🔔 Notification Permission",
+  "permissionNotificationMessage": "Notification and storage permissions are required. Please allow in settings.",
+  "pushNotificationDisabled": "Push notifications have been disabled",
+  "pushNotificationEnabled": "Push notifications have been enabled",
+  "pushNotifications": "Push Notifications",
+  "pushNotificationsDesc": "Receive all app notifications",
+  "receiveGeneralNotifications": "Receive general notifications",
+  "selectLanguage": "Please select a language to use",
+  "themeColor": "Theme Color",
+  "themeColorChanged": "Theme color changed to {colorName}",
+  "themeColorDesc": "Change the main color of the app",
+  "themeColorSelection": "Theme Color Selection",
+  "useDarkTheme": "Use dark theme",
+  "backupActions": "Backup Actions",
+  "backupHistory": "Backup History"
+}

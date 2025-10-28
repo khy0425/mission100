@@ -136,6 +136,10 @@ class AuthService extends ChangeNotifier {
 
       if (credential.user != null) {
         debugPrint('✅ 이메일 로그인 성공');
+
+        // VIP 경험 제공
+        await _onLoginSuccess(credential.user!);
+
         return AuthResult.success(credential.user!);
       } else {
         return AuthResult.failure('로그인에 실패했습니다.');
@@ -184,6 +188,10 @@ class AuthService extends ChangeNotifier {
         }
 
         debugPrint('✅ Google 로그인 성공');
+
+        // VIP 경험 제공
+        await _onLoginSuccess(userCredential.user!);
+
         return AuthResult.success(userCredential.user!);
       } else {
         return AuthResult.failure('Google 로그인에 실패했습니다.');
@@ -249,11 +257,64 @@ class AuthService extends ChangeNotifier {
     try {
       debugPrint('📊 사용자 구독 정보 로드: $userId');
 
-      // TODO: Firestore에서 구독 정보 로드
-      // 현재는 임시로 런칭 이벤트 구독 생성
-      _currentSubscription =
-          UserSubscription.createLaunchPromoSubscription(userId);
+      final cloudSyncService = CloudSyncService();
 
+      // Firestore에서 구독 정보 로드
+      var subscription = await cloudSyncService.loadSubscription(userId);
+
+      // Firestore에 구독 정보가 없으면 로컬에서 시도
+      if (subscription == null) {
+        subscription = await cloudSyncService.loadSubscriptionLocally();
+      }
+
+      // 둘 다 없으면 런칭 이벤트 구독 생성
+      if (subscription == null) {
+        debugPrint('ℹ️ 구독 정보 없음 - 런칭 이벤트 구독 생성');
+        subscription = UserSubscription.createLaunchPromoSubscription(userId);
+
+        // 새로 생성한 구독 정보를 저장
+        await cloudSyncService.saveSubscription(subscription);
+        await cloudSyncService.saveSubscriptionLocally(subscription);
+      }
+
+      // 구독 만료 확인 및 자동 갱신/다운그레이드
+      if (subscription.isExpired && subscription.type == SubscriptionType.launchPromo) {
+        debugPrint('⚠️ 런칭 프로모션 만료 - 무료 구독으로 다운그레이드');
+
+        // 무료 구독으로 전환
+        subscription = UserSubscription.createFreeSubscription(userId);
+
+        // 다운그레이드된 구독 정보 저장
+        await cloudSyncService.saveSubscription(subscription);
+        await cloudSyncService.saveSubscriptionLocally(subscription);
+
+        debugPrint('✅ 무료 구독으로 자동 전환 완료 (Week 1-2, 광고 있음)');
+      } else if (subscription.isExpired && subscription.type == SubscriptionType.premium) {
+        debugPrint('⚠️ 프리미엄 구독 만료 - 자동 갱신 확인 중...');
+
+        // Google Play 구독 상태 확인 (자동 갱신 여부)
+        final isRenewed = await _checkAndRenewSubscription(userId);
+
+        if (isRenewed) {
+          // 자동 갱신 성공 - 새로운 구독 생성
+          subscription = UserSubscription.createPremiumSubscription(userId);
+
+          await cloudSyncService.saveSubscription(subscription);
+          await cloudSyncService.saveSubscriptionLocally(subscription);
+
+          debugPrint('✅ 프리미엄 구독 자동 갱신 완료 (30일 연장)');
+        } else {
+          // 자동 갱신 실패 또는 취소 - 무료로 다운그레이드
+          subscription = UserSubscription.createFreeSubscription(userId);
+
+          await cloudSyncService.saveSubscription(subscription);
+          await cloudSyncService.saveSubscriptionLocally(subscription);
+
+          debugPrint('✅ 무료 구독으로 자동 전환 완료 (갱신 실패)');
+        }
+      }
+
+      _currentSubscription = subscription;
       debugPrint('✅ 구독 정보 로드 완료: ${_currentSubscription?.type}');
     } catch (e) {
       debugPrint('❌ 구독 정보 로드 오류: $e');
@@ -271,7 +332,10 @@ class AuthService extends ChangeNotifier {
           UserSubscription.createLaunchPromoSubscription(userId);
       _currentSubscription = subscription;
 
-      // TODO: Firestore에 구독 정보 저장
+      // Firestore와 로컬에 구독 정보 저장
+      final cloudSyncService = CloudSyncService();
+      await cloudSyncService.saveSubscription(subscription);
+      await cloudSyncService.saveSubscriptionLocally(subscription);
 
       debugPrint('✅ 런칭 이벤트 구독 생성 완료');
     } catch (e) {
@@ -314,8 +378,12 @@ class AuthService extends ChangeNotifier {
       );
       _currentSubscription = premiumSubscription;
 
-      // TODO: Firestore에 구독 정보 업데이트
-      // TODO: 결제 처리
+      // Firestore와 로컬에 구독 정보 업데이트
+      final cloudSyncService = CloudSyncService();
+      await cloudSyncService.saveSubscription(premiumSubscription);
+      await cloudSyncService.saveSubscriptionLocally(premiumSubscription);
+
+      // 결제 처리는 BillingService.purchaseSubscription()을 통해 수행됨
 
       notifyListeners();
 
@@ -325,6 +393,122 @@ class AuthService extends ChangeNotifier {
       debugPrint('❌ 프리미엄 구독 업그레이드 오류: $e');
       return false;
     }
+  }
+
+  // VIP 로그인 경험 - 회원에게 프리미엄 경험 제공
+  Future<void> _onLoginSuccess(User user) async {
+    try {
+      debugPrint('🎉 VIP 로그인 경험 시작 - ${user.displayName ?? user.email}');
+
+      final cloudSyncService = CloudSyncService();
+
+      // 1. 환영 메시지 (구독 타입 기반)
+      await _showWelcomeMessage(user);
+
+      // 2. 자동 복원 - 구독 정보
+      debugPrint('💎 구독 정보 자동 복원 중...');
+      await _loadUserSubscription(user.uid);
+
+      // 3. 자동 동기화 - 클라우드 데이터
+      debugPrint('☁️ 클라우드 데이터 자동 동기화 중...');
+      await cloudSyncService.syncUserData();
+
+      // 4. 보류 중인 구매 완료
+      debugPrint('💳 보류 중인 구매 확인 중...');
+      await _completePendingPurchases();
+
+      // 5. 데이터 프리로드 (백그라운드)
+      debugPrint('⚡ 사용자 데이터 프리로드 중...');
+      _preloadUserData(user.uid); // 백그라운드에서 실행
+
+      debugPrint('✅ VIP 로그인 경험 완료 - 빠른 로딩 준비 완료!');
+    } catch (e) {
+      debugPrint('⚠️ VIP 로그인 경험 오류: $e');
+      // 오류가 로그인 자체를 방해하지 않도록 예외를 던지지 않음
+    }
+  }
+
+  // 환영 메시지 표시 (구독 타입 기반 VIP 대우)
+  Future<void> _showWelcomeMessage(User user) async {
+    final userName = user.displayName ?? '회원님';
+
+    if (_currentSubscription == null) {
+      debugPrint('👋 안녕하세요, $userName!');
+      return;
+    }
+
+    // 구독 타입별 환영 메시지
+    switch (_currentSubscription!.type) {
+      case SubscriptionType.premium:
+        final days = _currentSubscription!.remainingDays;
+        if (days != null) {
+          debugPrint('✨ 프리미엄 $userName님, 환영합니다! ($days일 남음)');
+        } else {
+          debugPrint('💎 프리미엄 $userName님, 환영합니다! (VIP)');
+        }
+        break;
+      case SubscriptionType.launchPromo:
+        final days = _currentSubscription!.remainingDays ?? 0;
+        debugPrint('🎉 런칭 프로모션 $userName님, 환영합니다! ($days일 남음)');
+        break;
+      case SubscriptionType.free:
+        debugPrint('👋 $userName님, 환영합니다!');
+        break;
+    }
+  }
+
+  // 보류 중인 구매 완료
+  Future<void> _completePendingPurchases() async {
+    try {
+      // BillingService의 completePendingPurchase() 호출은
+      // 순환 참조를 피하기 위해 BillingService에서 직접 호출하도록 설계됨
+      debugPrint('ℹ️ 보류 중인 구매는 BillingService에서 처리됩니다');
+    } catch (e) {
+      debugPrint('⚠️ 보류 중인 구매 확인 오류: $e');
+    }
+  }
+
+  // 구독 자동 갱신 확인
+  Future<bool> _checkAndRenewSubscription(String userId) async {
+    try {
+      debugPrint('🔄 구독 자동 갱신 확인 중...');
+
+      // TODO: Google Play Billing을 통한 실제 구독 상태 확인
+      // 현재는 임시로 false 반환 (구현 필요)
+      // 실제 구현 시:
+      // 1. BillingService를 통해 Google Play에 구독 상태 조회
+      // 2. autoRenewing 플래그 확인
+      // 3. 갱신 성공 시 true, 실패/취소 시 false 반환
+
+      debugPrint('⚠️ 자동 갱신 확인은 Google Play Billing 연동 후 구현 예정');
+      return false; // 임시로 false 반환
+
+      // 실제 구현 예시:
+      // final billingService = BillingService();
+      // final isActive = await billingService.isSubscriptionActive('premium_monthly');
+      // return isActive;
+
+    } catch (e) {
+      debugPrint('❌ 구독 자동 갱신 확인 오류: $e');
+      return false;
+    }
+  }
+
+  // 사용자 데이터 프리로드 (백그라운드)
+  void _preloadUserData(String userId) {
+    // 백그라운드에서 비동기 실행 (await 없이)
+    Future.microtask(() async {
+      try {
+        final cloudSyncService = CloudSyncService();
+
+        // 모든 데이터를 한 번에 프리로드 (병렬 실행으로 성능 최적화)
+        await cloudSyncService.preloadAllUserData(userId);
+
+        debugPrint('✅ VIP 데이터 프리로드 완료 - 앱 사용 준비 완료!');
+      } catch (e) {
+        debugPrint('⚠️ 데이터 프리로드 오류: $e');
+      }
+    });
   }
 
   // 편의 메서드들

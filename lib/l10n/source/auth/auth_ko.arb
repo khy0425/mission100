@@ -1,0 +1,22 @@
+{
+  "@cannotOpenEmail": {
+    "description": "Cannot open email app error"
+  },
+  "@emailFeedback": {
+    "description": "Send feedback via email"
+  },
+  "@feedbackEmail": {
+    "description": "Send feedback via email"
+  },
+  "@noUserProfile": {
+    "description": "사용자 프로필 없음 메시지"
+  },
+  "@userProfileRequired": {
+    "description": "사용자 프로필 필요 설명"
+  },
+  "cannotOpenEmail": "이메일 앱을 열 수 없다",
+  "emailFeedback": "이메일로 의견을 보내주세요",
+  "feedbackEmail": "이메일로 피드백 보내기",
+  "noUserProfile": "사용자 프로필이 없다",
+  "userProfileRequired": "운동을 시작하려면 사용자 프로필이 필요한다"
+}

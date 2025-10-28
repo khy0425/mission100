@@ -1,0 +1,56 @@
+{
+  "@chadSleepyCap": {
+    "description": "Sleepy Hat Chad name"
+  },
+  "@chadSleepyCapDesc": {
+    "description": "Sleepy Hat Chad description"
+  },
+  "@chadTitleSleepy": {
+    "description": "Sleepy Chad title"
+  },
+  "@factCategoryMuscle": {
+    "description": "Muscle physiology category"
+  },
+  "@recovery": {
+    "description": "Recovery category - Chad style"
+  },
+  "@recoveryLevelExcellent": {
+    "description": "Recovery level - Excellent"
+  },
+  "@recoveryLevelGood": {
+    "description": "Recovery level - Good"
+  },
+  "@recoveryLevelFair": {
+    "description": "Recovery level - Fair"
+  },
+  "@recoveryLevelPoor": {
+    "description": "Recovery level - Poor/Need rest"
+  },
+  "@scientificRecovery": {
+    "description": "Strategic chad mode description"
+  },
+  "@sleepyChadEvolution": {
+    "description": "Sleepy Chad evolution state"
+  },
+  "@sleepyHatChad": {
+    "description": "Sleepy hat chad name"
+  },
+  "chadSleepyCap": "Sleep Cap",
+  "chadSleepyCapDesc": "Starting the journey.\nStill waking up, but ready to rise! 😴",
+  "chadTitleSleepy": "Sleep Cap",
+  "factCategoryMuscle": "Muscle Physiology",
+  "muscleIcon": "💪",
+  "recovery": "🛡️ WARRIOR RESTORATION 🛡️",
+  "recoveryLevelExcellent": "Excellent",
+  "recoveryLevelGood": "Good",
+  "recoveryLevelFair": "Fair",
+  "recoveryLevelPoor": "Need Rest",
+  "scientificRecovery": "Scientific muscle recovery + sustainable power! 🧠💪",
+  "sleepyChadEvolution": "Sleep Cap Evolution",
+  "sleepyHatChad": "Sleep Cap",
+  "targetMuscleChest": "CHEST",
+  "targetMuscleCore": "CORE",
+  "targetMuscleFull": "FULL BODY",
+  "targetMuscleShoulders": "SHOULDERS",
+  "targetMuscleTriceps": "TRICEPS"
+}

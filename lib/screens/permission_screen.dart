@@ -92,17 +92,21 @@ class _PermissionScreenState extends State<PermissionScreen>
               child: Column(
                 children: [
                   Expanded(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        _buildPermissionIcon(),
-                        const SizedBox(height: 32),
-                        _buildTitle(),
-                        const SizedBox(height: 16),
-                        _buildDescription(),
-                        const SizedBox(height: 40),
-                        _buildPermissionList(),
-                      ],
+                    child: SingleChildScrollView(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const SizedBox(height: 20),
+                          _buildPermissionIcon(),
+                          const SizedBox(height: 24),
+                          _buildTitle(),
+                          const SizedBox(height: 12),
+                          _buildDescription(),
+                          const SizedBox(height: 32),
+                          _buildPermissionList(),
+                          const SizedBox(height: 20),
+                        ],
+                      ),
                     ),
                   ),
                   _buildActionButtons(),

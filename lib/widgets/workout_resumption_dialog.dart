@@ -244,9 +244,9 @@ Future<bool?> showSimpleResumptionDialog({
                 Text(
                   l10n
                       .workoutDetailsWithStats(
-                        workoutTitle,
-                        completedSets,
                         totalReps,
+                        completedSets,
+                        workoutTitle,
                       )
                       .replaceAll('\\n', '\n'),
                   textAlign: TextAlign.center,

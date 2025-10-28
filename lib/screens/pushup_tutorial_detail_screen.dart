@@ -417,7 +417,7 @@ class _PushupTutorialDetailScreenState
             ),
             const SizedBox(width: 8),
             Text(
-              _isCompleted ? '✅ 가이드 완료됨!' : '🎓 가이드 완료하기',
+              _isCompleted ? '✅ Guide Completed!' : '🎓 Complete Guide',
               style: const TextStyle(
                 color: Colors.white,
                 fontSize: 16,
@@ -447,7 +447,7 @@ class _PushupTutorialDetailScreenState
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              '🎉 ${_getPushupName(widget.pushupType)} 가이드 완료! CHAD 레벨업! 💪',
+              '🎉 ${_getPushupName(widget.pushupType)} Guide Completed! CHAD Level Up! 💪',
             ),
             backgroundColor: Colors.green,
             duration: const Duration(seconds: 3),

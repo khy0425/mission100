@@ -186,9 +186,7 @@ class _InitialTestScreenState extends State<InitialTestScreen>
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     final isSelected = _selectedLevel == level;
-    final levelColor = Color(
-      WorkoutData.levelColors[level] ?? AppColors.primaryColor,
-    );
+    final levelColor = WorkoutData.levelColors[level] ?? const Color(AppColors.primaryColor);
 
     return GestureDetector(
       onTap: () => _selectLevel(level),

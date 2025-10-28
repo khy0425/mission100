@@ -1,0 +1,251 @@
+{
+  "@bonusChallenge": {
+    "description": "보너스 챌린지 제목"
+  },
+  "@challenge100CumulativeDescription": {
+    "description": "100 cumulative challenge description"
+  },
+  "@challenge100CumulativeDetailedDescription": {
+    "description": "100 cumulative challenge detailed description"
+  },
+  "@challenge100CumulativeTitle": {
+    "description": "100 cumulative challenge title"
+  },
+  "@challenge200CumulativeDescription": {
+    "description": "200 cumulative challenge description"
+  },
+  "@challenge200CumulativeDetailedDescription": {
+    "description": "200 cumulative challenge detailed description"
+  },
+  "@challenge200CumulativeTitle": {
+    "description": "200 cumulative challenge title"
+  },
+  "@challenge50SingleDescription": {
+    "description": "50 single session challenge description"
+  },
+  "@challenge50SingleDetailedDescription": {
+    "description": "50 single session challenge detailed description"
+  },
+  "@challenge50SingleTitle": {
+    "description": "50 single session challenge title"
+  },
+  "@challengeAbandonButton": {
+    "description": "Abandon challenge button"
+  },
+  "@challengeAbandoned": {
+    "description": "Challenge abandoned message"
+  },
+  "@challengeAlreadyActive": {
+    "description": "Challenge already active message"
+  },
+  "@challengeCannotStart": {
+    "description": "챌린지 시작 불가 메시지"
+  },
+  "@challengeCompleted": {
+    "description": "Challenge completed message"
+  },
+  "@challengeDifficultyEasy": {
+    "description": "Challenge difficulty: easy"
+  },
+  "@challengeDifficultyExtreme": {
+    "description": "Challenge difficulty: extreme"
+  },
+  "@challengeDifficultyHard": {
+    "description": "Challenge difficulty: hard"
+  },
+  "@challengeDifficultyMedium": {
+    "description": "Challenge difficulty: medium"
+  },
+  "@challengeEstimatedDuration": {
+    "description": "Challenge estimated duration",
+    "placeholders": {
+      "duration": {
+        "type": "int"
+      }
+    }
+  },
+  "@challengeFailed": {
+    "description": "Challenge failed message"
+  },
+  "@challengeGaveUp": {
+    "description": "챌린지 포기 완료 메시지"
+  },
+  "@challengeGiveUpMessage": {
+    "description": "챌린지 포기 확인 메시지"
+  },
+  "@challengeGiveUpTitle": {
+    "description": "챌린지 포기 확인 제목"
+  },
+  "@challengeHintCumulative": {
+    "description": "Hint for cumulative challenges"
+  },
+  "@challengeMode": {
+    "description": "챌린지 모드"
+  },
+  "@challengeModeActivated": {
+    "description": "챌린지 모드 활성화 메시지"
+  },
+  "@challengeModeDescription": {
+    "description": "챌린지 모드 설명"
+  },
+  "@challengeModeOn": {
+    "description": "챌린지 모드 활성화 버튼"
+  },
+  "@challengeOptions": {
+    "description": "챌린지 옵션 다이얼로그 내용"
+  },
+  "@challengePrerequisitesNotMet": {
+    "description": "Challenge prerequisites not met message"
+  },
+  "@challengeSpirit100": {
+    "description": "영상 설명 4"
+  },
+  "@challengeStartButton": {
+    "description": "Start challenge button"
+  },
+  "@challengeStarted": {
+    "description": "챌린지 시작 메시지"
+  },
+  "@challengeStatusActive": {
+    "description": "Challenge status: active"
+  },
+  "@challengeStatusAvailable": {
+    "description": "Challenge status: available"
+  },
+  "@challengeStatusCompleted": {
+    "description": "Challenge status: completed"
+  },
+  "@challengeStatusFailed": {
+    "description": "Challenge status: failed"
+  },
+  "@challengeStatusLocked": {
+    "description": "Challenge status: locked"
+  },
+  "@challengeTabCompleted": {
+    "description": "완료된 챌린지 탭"
+  },
+  "@challengeTarget": {
+    "description": "챌린지 목표",
+    "placeholders": {
+      "target": {
+        "type": "int"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "@challengeTitle": {
+    "description": "챌린지 화면 제목"
+  },
+  "@challengeTypeCumulative": {
+    "description": "Challenge type: cumulative"
+  },
+  "@challengesActive": {
+    "description": "Active challenges tab"
+  },
+  "@challengesAvailable": {
+    "description": "Available challenges tab"
+  },
+  "@challengesCompleted": {
+    "description": "Completed challenges tab"
+  },
+  "@challengesTitle": {
+    "description": "Challenges screen title"
+  },
+  "@completeFirstChallenge": {
+    "description": "첫 챌린지 완료 안내 메시지"
+  },
+  "@cumulativeChallenge": {
+    "description": "누적형 챌린지 타입"
+  },
+  "@eventChallenge": {
+    "description": "이벤트 챌린지 기본 제목"
+  },
+  "@noActiveChallenges": {
+    "description": "진행 중인 챌린지 없음 메시지"
+  },
+  "@noChallengesAvailable": {
+    "description": "사용 가능한 챌린지 없음 메시지"
+  },
+  "@noCompletedChallenges": {
+    "description": "완료된 챌린지 없음 메시지"
+  },
+  "@sendFriendChallenge": {
+    "description": "Send friend challenge button"
+  },
+  "@shortTermIntensiveChallenge": {
+    "description": "스프린트 챌린지 기본 설명"
+  },
+  "@specialEventChallenge": {
+    "description": "이벤트 챌린지 기본 설명"
+  },
+  "@sprintChallenge": {
+    "description": "스프린트 챌린지 기본 제목"
+  },
+  "@startChallenge": {
+    "description": "챌린지 시작 버튼"
+  },
+  "@startNewChallenge": {
+    "description": "새 챌린지 시작 안내 메시지"
+  },
+  "bonusChallenge": "🔥 보너스 챌린지",
+  "challenge100CumulativeDescription": "총 100개 팔굽혀펴기 달성",
+  "challenge100CumulativeDetailedDescription": "여러 세션 합쳐서 총 100개 달성! 💪",
+  "challenge100CumulativeTitle": "100개 챌린지",
+  "challenge200CumulativeDescription": "총 200개 팔굽혀펴기 달성",
+  "challenge200CumulativeDetailedDescription": "여러 세션 합쳐서 총 200개 달성! 100개 클리어 후 도전! 🔥",
+  "challenge200CumulativeTitle": "200개 챌린지",
+  "challenge50SingleDescription": "한 번의 운동에서 50개 팔굽혀펴기",
+  "challenge50SingleDetailedDescription": "한 번에 50개! 중간에 쉬면 처음부터 다시! 💥",
+  "challenge50SingleTitle": "50개 한번에",
+  "challengeAbandonButton": "포기하기",
+  "challengeAbandoned": "챌린지 포기됨",
+  "challengeAlreadyActive": "이미 활성화된 챌린지가 있다",
+  "challengeCannotStart": "아직 챌린지 시작 불가!",
+  "challengeCompleted": "챌린지 완료!",
+  "challengeDifficultyEasy": "쉬움",
+  "challengeDifficultyExtreme": "극한",
+  "challengeDifficultyHard": "어려움",
+  "challengeDifficultyMedium": "보통",
+  "challengeEstimatedDuration": "예상 기간: {duration}일",
+  "challengeFailed": "챌린지 실패",
+  "challengeGaveUp": "챌린지 포기! 다시 도전하자! 💪",
+  "challengeGiveUpMessage": "정말로 이 챌린지를 포기할래?",
+  "challengeGiveUpTitle": "챌린지 포기",
+  "challengeHintCumulative": "여러 번 나눠서 목표 달성! 꾸준히 가자! 💪",
+  "challengeMode": "챌린지 모드",
+  "challengeModeActivated": "🔥 챌린지 모드 활성화! 정신력을 시험해보자! 💪",
+  "challengeModeDescription": "그냥 기본 운동? 아니면 진짜 챔피언 모드? 🚀\n\n⚡ 챌린지 모드 ON 하면:\n• 더 높은 난이도\n• 보너스 포인트 획득 🏆",
+  "challengeModeOn": "챌린지 모드 ON! 🔥",
+  "challengeOptions": "이 챌린지를 어떻게 할래?",
+  "challengePrerequisitesNotMet": "전제 조건이 충족되지 않았다",
+  "challengeSpirit100": "팔굽혀펴기 100개를 향한 도전 정신",
+  "challengeStartButton": "시작하기",
+  "challengeStarted": "챌린지 시작! 🔥",
+  "challengeStatusActive": "진행 중",
+  "challengeStatusAvailable": "도전 가능",
+  "challengeStatusCompleted": "완료",
+  "challengeStatusFailed": "실패",
+  "challengeStatusLocked": "잠김",
+  "challengeTabCompleted": "완료",
+  "challengeTarget": "목표: {target}{unit}",
+  "challengeTitle": "챌린지",
+  "challengeTypeCumulative": "누적",
+  "challengesActive": "진행 중",
+  "challengesAvailable": "도전 가능",
+  "challengesCompleted": "완료",
+  "challengesTitle": "챌린지",
+  "completeFirstChallenge": "첫 챌린지 완료해보자! 💪",
+  "cumulativeChallenge": "누적 챌린지",
+  "eventChallenge": "이벤트 챌린지",
+  "noActiveChallenges": "진행 중인 챌린지가 없다",
+  "noChallengesAvailable": "사용 가능한 챌린지가 없다",
+  "noCompletedChallenges": "완료된 챌린지가 없다",
+  "sendFriendChallenge": "💀 친구에게 차드 도전장 발송! 💀",
+  "shortTermIntensiveChallenge": "단기간 집중 도전",
+  "specialEventChallenge": "특별 이벤트 챌린지",
+  "sprintChallenge": "스프린트 챌린지",
+  "startChallenge": "챌린지 시작! 🔥",
+  "startNewChallenge": "새 챌린지 시작하자! 🔥"
+}

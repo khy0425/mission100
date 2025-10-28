@@ -1,0 +1,1549 @@
+{
+  "@abandon": {
+    "description": "챌린지 포기 버튼"
+  },
+  "@aboutApp": {
+    "description": "앱 정보 제목"
+  },
+  "@aboutInfo": {
+    "description": "정보 제목"
+  },
+  "@achieved": {
+    "description": "Achieved status"
+  },
+  "@actionCannotBeUndone": {
+    "description": "되돌릴 수 없는 작업 경고"
+  },
+  "@activated": {
+    "description": "권한 활성화 상태 라벨"
+  },
+  "@activatedStatus": {
+    "description": "Permission activated status"
+  },
+  "@adFallbackMessage": {
+    "description": "광고가 없을 때 표시되는 대체 메시지"
+  },
+  "@advertisement": {
+    "description": "광고 라벨"
+  },
+  "@allowPermissions": {
+    "description": "권한 허용 버튼"
+  },
+  "@alphaEmperorDomain": {
+    "description": "알파 엠퍼러 도메인 타이틀"
+  },
+  "@alphaFeature1": {
+    "description": "고급 특징 1"
+  },
+  "@alphaFeature2": {
+    "description": "고급 특징 2"
+  },
+  "@alphaFeature3": {
+    "description": "고급 특징 3"
+  },
+  "@alphaFeature4": {
+    "description": "고급 특징 4"
+  },
+  "@alphaShort": {
+    "description": "고급 짧은 이름"
+  },
+  "@animationEffect": {
+    "description": "Animation effect setting"
+  },
+  "@animations": {
+    "description": "애니메이션 설정 제목"
+  },
+  "@animationsDesc": {
+    "description": "애니메이션 설정 설명"
+  },
+  "@animationsDisabled": {
+    "description": "애니메이션 비활성화 메시지"
+  },
+  "@animationsEnabled": {
+    "description": "애니메이션 활성화 메시지"
+  },
+  "@animationsEnabledDesc": {
+    "description": "Animation effects setting description"
+  },
+  "@appInfo": {
+    "description": "앱 정보 섹션 제목"
+  },
+  "@appInfoDesc": {
+    "description": "앱 정보 설명"
+  },
+  "@appRating": {
+    "description": "앱 평가 제목"
+  },
+  "@appRatingComingSoon": {
+    "description": "앱 평가 준비 중 메시지"
+  },
+  "@appTitle": {
+    "description": "앱 바 제목"
+  },
+  "@appVersion": {
+    "description": "App version"
+  },
+  "@appearance": {
+    "description": "외관 설정 제목"
+  },
+  "@ascendingMotion": {
+    "description": "Step 4 title - ascending motion"
+  },
+  "@ascendingMotionDesc": {
+    "description": "Step 4 description"
+  },
+  "@averageCompletion": {
+    "description": "평균 달성률"
+  },
+  "@averageScore": {
+    "description": "Average score label"
+  },
+  "@backingUpData": {
+    "description": "데이터 백업 중 메시지"
+  },
+  "@benefits": {
+    "description": "Benefits label"
+  },
+  "@benefitsSection": {
+    "description": "효과 섹션 제목"
+  },
+  "@breathingSection": {
+    "description": "호흡법 섹션 제목"
+  },
+  "@buildInfo": {
+    "description": "빌드 정보",
+    "placeholders": {
+      "buildNumber": {
+        "type": "String"
+      }
+    }
+  },
+  "@builtWithFlutter": {
+    "description": "Built with Flutter"
+  },
+  "@calendar": {
+    "description": "달력 탭 제목"
+  },
+  "@calendarBannerText": {
+    "description": "달력 화면 배너 텍스트"
+  },
+  "@caloriesPerRep": {
+    "description": "회당 칼로리 소모량",
+    "placeholders": {
+      "calories": {
+        "type": "int"
+      }
+    }
+  },
+  "@cancel": {
+    "description": "Cancel button text"
+  },
+  "@cancelButton": {
+    "description": "취소 버튼 - 스타일"
+  },
+  "@cannotLoadQuizData": {
+    "description": "퀴즈 데이터 로드 실패 메시지"
+  },
+  "@cannotOpenGithub": {
+    "description": "Cannot open GitHub error"
+  },
+  "@cannotOpenPrivacyPolicy": {
+    "description": "Error message when privacy policy cannot be opened"
+  },
+  "@cannotOpenTermsOfService": {
+    "description": "Error message when terms of service cannot be opened"
+  },
+  "@chest": {
+    "description": "가슴 근육군"
+  },
+  "@collapsedTapToExpand": {
+    "description": "축소된 상태 안내"
+  },
+  "@comingSoon": {
+    "description": "준비 중 다이얼로그 제목"
+  },
+  "@common": {
+    "description": "일반 등급"
+  },
+  "@commonMistakes": {
+    "description": "Tab title for common mistakes"
+  },
+  "@complete": {
+    "description": "완료 버튼"
+  },
+  "@completed": {
+    "description": "Completed status"
+  },
+  "@completedCount": {
+    "description": "Completed count label"
+  },
+  "@completedLabel": {
+    "description": "완료 레이블"
+  },
+  "@completionMessage1": {
+    "description": "완료 메시지 1"
+  },
+  "@completionMessage10": {
+    "description": "완료 메시지 10"
+  },
+  "@completionMessage2": {
+    "description": "완료 메시지 2"
+  },
+  "@completionMessage3": {
+    "description": "완료 메시지 3"
+  },
+  "@completionMessage4": {
+    "description": "완료 메시지 4"
+  },
+  "@completionMessage5": {
+    "description": "완료 메시지 5"
+  },
+  "@completionMessage6": {
+    "description": "완료 메시지 6"
+  },
+  "@completionMessage7": {
+    "description": "완료 메시지 7"
+  },
+  "@completionMessage8": {
+    "description": "완료 메시지 8"
+  },
+  "@completionMessage9": {
+    "description": "완료 메시지 9"
+  },
+  "@completionPercentage": {
+    "description": "달성률 퍼센트 형식",
+    "placeholders": {
+      "percentage": {
+        "type": "int"
+      }
+    }
+  },
+  "@completionRate": {
+    "description": "Completion rate label"
+  },
+  "@confirm": {
+    "description": "확인 버튼 텍스트"
+  },
+  "@congratulations": {
+    "description": "축하 메시지"
+  },
+  "@congratulationsMessage": {
+    "description": "Congratulations message for permissions"
+  },
+  "@consistentStrengthImprovement": {
+    "description": "영상 설명 6"
+  },
+  "@continueOrStartNew": {
+    "description": "운동 계속 또는 새 운동 시작 선택"
+  },
+  "@copyrightMission100": {
+    "description": "저작권 및 슬로건"
+  },
+  "@core": {
+    "description": "코어 근육군"
+  },
+  "@correctPose": {
+    "description": "Correct pose label"
+  },
+  "@correctionMethod": {
+    "description": "Correction method label"
+  },
+  "@count": {
+    "description": "개수 단위"
+  },
+  "@current": {
+    "description": "Current status label"
+  },
+  "@currentDifficulty": {
+    "description": "현재 난이도 표시",
+    "placeholders": {
+      "description": {
+        "type": "String"
+      },
+      "difficulty": {
+        "type": "String"
+      }
+    }
+  },
+  "@customizeAppFeatures": {
+    "description": "앱 기능 커스터마이징 설명"
+  },
+  "@dailyReminderAt": {
+    "description": "리마인더 시간 표시",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@dailyReminderSubtitle": {
+    "description": "일일 알림 설정 부제목"
+  },
+  "@darkMode": {
+    "description": "다크 모드 옵션"
+  },
+  "@darkModeDesc": {
+    "description": "다크 모드 설명"
+  },
+  "@darkModeEnabled": {
+    "description": "다크 모드 활성화 메시지"
+  },
+  "@dataManagement": {
+    "description": "데이터 관리 제목"
+  },
+  "@dataManagementDesc": {
+    "description": "데이터 관리 설명"
+  },
+  "@delete": {
+    "description": "삭제 버튼 텍스트"
+  },
+  "@descendingMotion": {
+    "description": "Step 2 title - descending motion"
+  },
+  "@descendingMotionDesc": {
+    "description": "Step 2 description"
+  },
+  "@description": {
+    "description": "설명 라벨"
+  },
+  "@developer": {
+    "description": "개발자 제목"
+  },
+  "@developerContact": {
+    "description": "Developer contact information"
+  },
+  "@developerInfo": {
+    "description": "개발자 정보"
+  },
+  "@developerInfoDesc": {
+    "description": "개발자 정보 설명"
+  },
+  "@difficultyChanged": {
+    "description": "난이도 변경 성공 메시지",
+    "placeholders": {
+      "difficulty": {
+        "type": "String"
+      }
+    }
+  },
+  "@difficultyEasy": {
+    "description": "쉬움 난이도"
+  },
+  "@difficultyExpert": {
+    "description": "전문가 난이도"
+  },
+  "@difficultyExtreme": {
+    "description": "푸시업 극한 난이도"
+  },
+  "@difficultyHard": {
+    "description": "어려움 난이도"
+  },
+  "@difficultyMedium": {
+    "description": "보통 난이도"
+  },
+  "@disabled": {
+    "description": "비활성화 상태"
+  },
+  "@dontMakeTheseMistakes": {
+    "description": "Common mistakes section header"
+  },
+  "@downloadMission100": {
+    "description": "Mission 100 앱 다운로드 메시지"
+  },
+  "@durationLabel": {
+    "description": "소요일 레이블"
+  },
+  "@elbowAngleQuiz": {
+    "description": "Quiz question 5"
+  },
+  "@enabled": {
+    "description": "활성화 상태"
+  },
+  "@encouragementMessage1": {
+    "description": "격려 메시지 1"
+  },
+  "@encouragementMessage10": {
+    "description": "격려 메시지 10"
+  },
+  "@encouragementMessage2": {
+    "description": "격려 메시지 2"
+  },
+  "@encouragementMessage3": {
+    "description": "격려 메시지 3"
+  },
+  "@encouragementMessage4": {
+    "description": "격려 메시지 4"
+  },
+  "@encouragementMessage5": {
+    "description": "격려 메시지 5"
+  },
+  "@encouragementMessage6": {
+    "description": "격려 메시지 6"
+  },
+  "@encouragementMessage7": {
+    "description": "격려 메시지 7"
+  },
+  "@encouragementMessage8": {
+    "description": "격려 메시지 8"
+  },
+  "@encouragementMessage9": {
+    "description": "격려 메시지 9"
+  },
+  "@encryption": {
+    "description": "암호화 레이블"
+  },
+  "@english": {
+    "description": "영어 언어 옵션"
+  },
+  "@epic": {
+    "description": "에픽 등급"
+  },
+  "@exactAlarmPermission": {
+    "description": "Exact alarm permission label"
+  },
+  "@exceed": {
+    "description": "목표 횟수 초과 빠른 입력 버튼"
+  },
+  "@excellent": {
+    "description": "Excellent performance label"
+  },
+  "@exitButton": {
+    "description": "종료 버튼 - 스타일"
+  },
+  "@exitDialogContinue": {
+    "description": "계속하기 버튼"
+  },
+  "@exitDialogMessage": {
+    "description": "종료 다이얼로그 내용"
+  },
+  "@exitDialogRetreat": {
+    "description": "종료하기 버튼"
+  },
+  "@exitDialogTitle": {
+    "description": "종료 다이얼로그 제목"
+  },
+  "@expanded": {
+    "description": "확장된 상태"
+  },
+  "@factCategoryCardio": {
+    "description": "심혈관 건강 카테고리"
+  },
+  "@factCategoryHormone": {
+    "description": "호르몬 시스템 카테고리"
+  },
+  "@factCategoryMental": {
+    "description": "정신건강 카테고리"
+  },
+  "@factCategoryMetabolic": {
+    "description": "대사 시스템 카테고리"
+  },
+  "@factCategoryNervous": {
+    "description": "신경계 개선 카테고리"
+  },
+  "@feedbackComingSoon": {
+    "description": "피드백 준비 중 메시지"
+  },
+  "@fileNamePlaceholder": {
+    "description": "파일명 플레이스홀더"
+  },
+  "@firstStep": {
+    "description": "First step achievement"
+  },
+  "@firstStepDesc": {
+    "description": "First step achievement description"
+  },
+  "@followingDataDeleted": {
+    "description": "삭제될 데이터 목록 안내"
+  },
+  "@fontScale": {
+    "description": "Font scale setting title"
+  },
+  "@fontScaleDesc": {
+    "description": "Font scale setting description"
+  },
+  "@fontSize": {
+    "description": "글자 크기 설정 제목"
+  },
+  "@fontSizeDesc": {
+    "description": "글자 크기 설정 설명"
+  },
+  "@fullBody": {
+    "description": "전신 근육군"
+  },
+  "@gigaShort": {
+    "description": "최고급 짧은 이름"
+  },
+  "@githubRepository": {
+    "description": "GitHub repository link"
+  },
+  "@good": {
+    "description": "Good status"
+  },
+  "@guidanceMessage": {
+    "description": "세트 진행 중 안내 메시지"
+  },
+  "@half": {
+    "description": "목표 횟수의 절반 빠른 입력 버튼"
+  },
+  "@highContrastDisabled": {
+    "description": "고대비 모드 비활성화 메시지"
+  },
+  "@highContrastEnabled": {
+    "description": "고대비 모드 활성화 메시지"
+  },
+  "@highContrastMode": {
+    "description": "High contrast mode setting"
+  },
+  "@highContrastModeDesc": {
+    "description": "High contrast mode setting description"
+  },
+  "@home": {
+    "description": "홈 탭"
+  },
+  "@homeTitle": {
+    "description": "홈 화면 제목"
+  },
+  "@improvement": {
+    "description": "Improvement needed label"
+  },
+  "@improvementNeeded": {
+    "description": "Improvement needed status"
+  },
+  "@instructions": {
+    "description": "Instructions label"
+  },
+  "@instructionsSection": {
+    "description": "실행 방법 섹션 제목"
+  },
+  "@justWait": {
+    "description": "Rest prevention message"
+  },
+  "@keepGoing": {
+    "description": "Keep going motivation message"
+  },
+  "@korean": {
+    "description": "한국어 표시"
+  },
+  "@legend": {
+    "description": "범례 제목"
+  },
+  "@license": {
+    "description": "라이선스 제목"
+  },
+  "@licenseInfo": {
+    "description": "License information title"
+  },
+  "@licenseInfoComingSoon": {
+    "description": "라이선스 정보 준비 중 메시지"
+  },
+  "@licenseInfoDesc": {
+    "description": "License information description"
+  },
+  "@lightModeEnabled": {
+    "description": "라이트 모드 활성화 메시지"
+  },
+  "@like": {
+    "description": "좋아요 버튼 라벨"
+  },
+  "@likeMessage": {
+    "description": "좋아요 액션 메시지"
+  },
+  "@listView": {
+    "description": "Button label for list view mode"
+  },
+  "@loadingText": {
+    "description": "로딩 중 표시 텍스트"
+  },
+  "@madeWithLove": {
+    "description": "사랑으로 제작 메시지"
+  },
+  "@minutes": {
+    "description": "분 단위"
+  },
+  "@mission100Team": {
+    "description": "개발팀 이름"
+  },
+  "@missionComplete": {
+    "description": "미션 완료 메시지"
+  },
+  "@mistakesSection": {
+    "description": "일반적인 실수 섹션 제목"
+  },
+  "@month": {
+    "description": "날짜 표시용 월 단위"
+  },
+  "@monthly": {
+    "description": "월간 필터 옵션"
+  },
+  "@monthlyGoal": {
+    "description": "Monthly goal label"
+  },
+  "@next": {
+    "description": "다음 버튼 텍스트"
+  },
+  "@noData": {
+    "description": "No data message"
+  },
+  "@noDataAvailable": {
+    "description": "No data available message"
+  },
+  "@ok": {
+    "description": "OK button text"
+  },
+  "@okButton": {
+    "description": "확인 버튼 - 스타일"
+  },
+  "@okay": {
+    "description": "보통 운동 완료"
+  },
+  "@openGithub": {
+    "description": "Open GitHub repository"
+  },
+  "@openInBrowser": {
+    "description": "Open in browser button text"
+  },
+  "@openSourceLicense": {
+    "description": "라이선스 설명"
+  },
+  "@openSourceLicenses": {
+    "description": "오픈소스 라이선스"
+  },
+  "@openSourceLicensesDesc": {
+    "description": "오픈소스 라이선스 설명"
+  },
+  "@percentComplete": {
+    "description": "Percent complete label"
+  },
+  "@perfect": {
+    "description": "Perfect completion label"
+  },
+  "@perfectBalanceOptimized": {
+    "description": "밸런스 차드 모드 설명"
+  },
+  "@perfectExecution": {
+    "description": "평균 달성률 부제목"
+  },
+  "@perfectionistDesc": {
+    "description": "Perfectionist achievement description"
+  },
+  "@permissionAlreadyRequested": {
+    "description": "이미 권한 요청한 경우 메시지"
+  },
+  "@permissionBenefits": {
+    "description": "권한 혜택 제목"
+  },
+  "@permissionStorageMessage": {
+    "description": "저장소 권한 요청 메시지"
+  },
+  "@permissionsDescription": {
+    "description": "권한 요청 설명"
+  },
+  "@pleaseCreateProfile": {
+    "description": "프로필 생성 요청 메시지"
+  },
+  "@poor": {
+    "description": "부족한 운동 완료"
+  },
+  "@precautions": {
+    "description": "주의사항 제목"
+  },
+  "@previousButton": {
+    "description": "이전 버튼"
+  },
+  "@privacyPolicy": {
+    "description": "Privacy policy title"
+  },
+  "@privacyPolicyDesc": {
+    "description": "Privacy policy description"
+  },
+  "@profileCreated": {
+    "description": "프로필 생성 완료 메시지",
+    "placeholders": {
+      "sessions": {
+        "type": "int"
+      }
+    }
+  },
+  "@quickInputBeast": {
+    "description": "목표 초과 버튼"
+  },
+  "@quickInputMedium": {
+    "description": "목표 60% 버튼"
+  },
+  "@quickInputPerfect": {
+    "description": "목표 달성 버튼"
+  },
+  "@quickInputStart": {
+    "description": "목표 50% 버튼"
+  },
+  "@quiz": {
+    "description": "Quiz button text"
+  },
+  "@rare": {
+    "description": "레어 등급"
+  },
+  "@rarityCommon": {
+    "description": "Common rarity level"
+  },
+  "@rarityEpic": {
+    "description": "Epic rarity level"
+  },
+  "@rarityRare": {
+    "description": "Rare rarity level"
+  },
+  "@rateOnPlayStore": {
+    "description": "앱 평가 설명"
+  },
+  "@recommendedLabel": {
+    "description": "Recommended permission label"
+  },
+  "@refresh": {
+    "description": "Refresh button"
+  },
+  "@refreshButton": {
+    "description": "새로고침 버튼"
+  },
+  "@remaining": {
+    "description": "Remaining progress label"
+  },
+  "@remainingCount": {
+    "description": "Remaining count label"
+  },
+  "@remainingGoal": {
+    "description": "남은 목표 통계 제목"
+  },
+  "@remainingToTarget": {
+    "description": "목표 달성까지 남은 개수",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      }
+    }
+  },
+  "@reminderTime": {
+    "description": "리마인더 시간 설정"
+  },
+  "@reminderTimeChanged": {
+    "description": "리마인더 시간 변경 완료 메시지",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@reminderTimeDesc": {
+    "description": "리마인더 시간 설명"
+  },
+  "@repLogMessage": {
+    "description": "운동 횟수 입력 안내 메시지"
+  },
+  "@resumeButton": {
+    "description": "재개 버튼"
+  },
+  "@retry": {
+    "description": "다시 시도 버튼"
+  },
+  "@retryButton": {
+    "description": "다시 시도 버튼"
+  },
+  "@risingFeature1": {
+    "description": "중급 특징 1"
+  },
+  "@risingFeature2": {
+    "description": "중급 특징 2"
+  },
+  "@risingFeature3": {
+    "description": "중급 특징 3"
+  },
+  "@risingFeature4": {
+    "description": "중급 특징 4"
+  },
+  "@risingShort": {
+    "description": "중급 짧은 이름"
+  },
+  "@rookieFeature1": {
+    "description": "초급 특징 1"
+  },
+  "@rookieFeature2": {
+    "description": "초급 특징 2"
+  },
+  "@rookieFeature3": {
+    "description": "초급 특징 3"
+  },
+  "@rookieFeature4": {
+    "description": "초급 특징 4"
+  },
+  "@rookieShort": {
+    "description": "초급 짧은 이름"
+  },
+  "@save": {
+    "description": "저장 버튼 라벨"
+  },
+  "@saveMessage": {
+    "description": "저장 액션 메시지"
+  },
+  "@schedulerStoppedStatus": {
+    "description": "스케줄러가 중지된 상태 메시지"
+  },
+  "@scientificFact10Content": {
+    "description": "과학적 팩트 10번 내용"
+  },
+  "@scientificFact10Impact": {
+    "description": "과학적 팩트 10번 임팩트 메시지"
+  },
+  "@scientificFact10Title": {
+    "description": "과학적 팩트 10번 - 심박출량 증가 제목"
+  },
+  "@scientificFact11Content": {
+    "description": "과학적 팩트 11번 내용"
+  },
+  "@scientificFact11Impact": {
+    "description": "과학적 팩트 11번 임팩트 메시지"
+  },
+  "@scientificFact11Title": {
+    "description": "과학적 팩트 11번 - 혈관신생 촉진 제목"
+  },
+  "@scientificFact12Content": {
+    "description": "과학적 팩트 12번 내용"
+  },
+  "@scientificFact12Impact": {
+    "description": "과학적 팩트 12번 임팩트 메시지"
+  },
+  "@scientificFact12Title": {
+    "description": "과학적 팩트 12번 - 혈압 정상화 제목"
+  },
+  "@scientificFact13Content": {
+    "description": "과학적 팩트 13번 내용"
+  },
+  "@scientificFact13Impact": {
+    "description": "과학적 팩트 13번 임팩트 메시지"
+  },
+  "@scientificFact13Title": {
+    "description": "과학적 팩트 13번 - 심박변이도 향상 제목"
+  },
+  "@scientificFact14Content": {
+    "description": "과학적 팩트 14번 내용"
+  },
+  "@scientificFact14Impact": {
+    "description": "과학적 팩트 14번 임팩트 메시지"
+  },
+  "@scientificFact14Title": {
+    "description": "과학적 팩트 14번 - 내피세포 기능 개선 제목"
+  },
+  "@scientificFact15Content": {
+    "description": "과학적 팩트 15번 내용"
+  },
+  "@scientificFact15Impact": {
+    "description": "과학적 팩트 15번 임팩트 메시지"
+  },
+  "@scientificFact15Title": {
+    "description": "과학적 팩트 15번 - 기초대사율 증가 제목"
+  },
+  "@scientificFact16Content": {
+    "description": "과학적 팩트 16번 내용"
+  },
+  "@scientificFact16Impact": {
+    "description": "과학적 팩트 16번 임팩트 메시지"
+  },
+  "@scientificFact16Title": {
+    "description": "과학적 팩트 16번 - 인슐린 감수성 향상 제목"
+  },
+  "@scientificFact17Content": {
+    "description": "과학적 팩트 17번 내용"
+  },
+  "@scientificFact17Impact": {
+    "description": "과학적 팩트 17번 임팩트 메시지"
+  },
+  "@scientificFact17Title": {
+    "description": "과학적 팩트 17번 - 지방 산화 증진 제목"
+  },
+  "@scientificFact18Content": {
+    "description": "과학적 팩트 18번 내용"
+  },
+  "@scientificFact18Impact": {
+    "description": "과학적 팩트 18번 임팩트 메시지"
+  },
+  "@scientificFact18Title": {
+    "description": "과학적 팩트 18번 - 갈색지방 활성화 제목"
+  },
+  "@scientificFact19Content": {
+    "description": "과학적 팩트 19번 내용"
+  },
+  "@scientificFact19Impact": {
+    "description": "과학적 팩트 19번 임팩트 메시지"
+  },
+  "@scientificFact19Title": {
+    "description": "과학적 팩트 19번 - 운동 후 산소 소비량 제목"
+  },
+  "@scientificFact1Content": {
+    "description": "과학적 팩트 1 내용"
+  },
+  "@scientificFact1Impact": {
+    "description": "과학적 팩트 1 임팩트 메시지"
+  },
+  "@scientificFact1Title": {
+    "description": "과학적 팩트 1 제목"
+  },
+  "@scientificFact20Content": {
+    "description": "과학적 팩트 20번 내용"
+  },
+  "@scientificFact20Impact": {
+    "description": "과학적 팩트 20번 임팩트 메시지"
+  },
+  "@scientificFact20Title": {
+    "description": "과학적 팩트 20번 - 성장호르몬 급증 제목"
+  },
+  "@scientificFact21Content": {
+    "description": "과학적 팩트 21번 내용"
+  },
+  "@scientificFact21Impact": {
+    "description": "과학적 팩트 21번 임팩트 메시지"
+  },
+  "@scientificFact21Title": {
+    "description": "과학적 팩트 21번 - 운동 단위 동조화 제목"
+  },
+  "@scientificFact22Content": {
+    "description": "과학적 팩트 22번 내용"
+  },
+  "@scientificFact22Impact": {
+    "description": "과학적 팩트 22번 임팩트 메시지"
+  },
+  "@scientificFact22Title": {
+    "description": "과학적 팩트 22번 - 신경가소성 증진 제목"
+  },
+  "@scientificFact23Content": {
+    "description": "과학적 팩트 23번 내용"
+  },
+  "@scientificFact23Impact": {
+    "description": "과학적 팩트 23번 임팩트 메시지"
+  },
+  "@scientificFact23Title": {
+    "description": "과학적 팩트 23번 - BDNF 분비 증가 제목"
+  },
+  "@scientificFact24Content": {
+    "description": "과학적 팩트 24번 내용"
+  },
+  "@scientificFact24Impact": {
+    "description": "과학적 팩트 24번 임팩트 메시지"
+  },
+  "@scientificFact24Title": {
+    "description": "과학적 팩트 24번 - 반응 속도 개선 제목"
+  },
+  "@scientificFact25Content": {
+    "description": "과학적 팩트 25번 내용"
+  },
+  "@scientificFact25Impact": {
+    "description": "과학적 팩트 25번 임팩트 메시지"
+  },
+  "@scientificFact25Title": {
+    "description": "과학적 팩트 25번 - 인터뉴런 활성화 제목"
+  },
+  "@scientificFact2Content": {
+    "description": "과학적 팩트 2 내용"
+  },
+  "@scientificFact2Impact": {
+    "description": "과학적 팩트 2 임팩트 메시지"
+  },
+  "@scientificFact2Title": {
+    "description": "과학적 팩트 2 제목"
+  },
+  "@scientificFact3Content": {
+    "description": "과학적 팩트 3번 내용"
+  },
+  "@scientificFact3Impact": {
+    "description": "과학적 팩트 3번 임팩트 메시지"
+  },
+  "@scientificFact3Title": {
+    "description": "과학적 팩트 3번 - mTOR 신호전달 활성화 제목"
+  },
+  "@scientificFact4Content": {
+    "description": "과학적 팩트 4번 내용"
+  },
+  "@scientificFact4Impact": {
+    "description": "과학적 팩트 4번 임팩트 메시지"
+  },
+  "@scientificFact4Title": {
+    "description": "과학적 팩트 4번 - 근육 기억의 영속성 제목"
+  },
+  "@scientificFact5Content": {
+    "description": "과학적 팩트 5번 내용"
+  },
+  "@scientificFact5Impact": {
+    "description": "과학적 팩트 5번 임팩트 메시지"
+  },
+  "@scientificFact5Title": {
+    "description": "과학적 팩트 5번 - 운동 단위 동조화 제목"
+  },
+  "@scientificFact6Content": {
+    "description": "과학적 팩트 6번 내용"
+  },
+  "@scientificFact6Impact": {
+    "description": "과학적 팩트 6번 임팩트 메시지"
+  },
+  "@scientificFact6Title": {
+    "description": "과학적 팩트 6번 - 신경가소성 증진 제목"
+  },
+  "@scientificFact7Content": {
+    "description": "과학적 팩트 7번 내용"
+  },
+  "@scientificFact7Impact": {
+    "description": "과학적 팩트 7번 임팩트 메시지"
+  },
+  "@scientificFact7Title": {
+    "description": "과학적 팩트 7번 - BDNF 분비 증가 제목"
+  },
+  "@scientificFact8Content": {
+    "description": "과학적 팩트 8번 내용"
+  },
+  "@scientificFact8Impact": {
+    "description": "과학적 팩트 8번 임팩트 메시지"
+  },
+  "@scientificFact8Title": {
+    "description": "과학적 팩트 8번 - 반응 속도 개선 제목"
+  },
+  "@scientificFact9Content": {
+    "description": "과학적 팩트 9번 내용"
+  },
+  "@scientificFact9Impact": {
+    "description": "과학적 팩트 9번 임팩트 메시지"
+  },
+  "@scientificFact9Title": {
+    "description": "과학적 팩트 9번 - 인터뉴런 활성화 제목"
+  },
+  "@seconds": {
+    "description": "초 단위"
+  },
+  "@select": {
+    "description": "선택 버튼 또는 액션"
+  },
+  "@selectTime": {
+    "description": "시간 선택기 제목"
+  },
+  "@selected": {
+    "description": "선택된 상태"
+  },
+  "@sendFeedback": {
+    "description": "Send feedback button"
+  },
+  "@sendFeedbackDesc": {
+    "description": "피드백 보내기 설명"
+  },
+  "@share": {
+    "description": "공유 버튼 라벨"
+  },
+  "@shareButton": {
+    "description": "Share button"
+  },
+  "@shareMessage": {
+    "description": "공유 액션 메시지"
+  },
+  "@shoulders": {
+    "description": "어깨 근육군"
+  },
+  "@skip": {
+    "description": "건너뛰기 버튼 텍스트"
+  },
+  "@skipPermissions": {
+    "description": "권한 건너뛰기 버튼"
+  },
+  "@status": {
+    "description": "상태 레이블"
+  },
+  "@storageBenefit1": {
+    "description": "저장소 혜택 1"
+  },
+  "@storageBenefit2": {
+    "description": "저장소 혜택 2"
+  },
+  "@storageBenefit3": {
+    "description": "저장소 혜택 3"
+  },
+  "@storagePermissionDesc": {
+    "description": "저장소 권한 설명"
+  },
+  "@storagePermissionTitle": {
+    "description": "저장소 권한 제목"
+  },
+  "@strengthImprovement": {
+    "description": "근력 향상 카테고리"
+  },
+  "@strengthSecrets": {
+    "description": "영상 제목 6"
+  },
+  "@successProfileSaved": {
+    "description": "프로필 저장 성공 메시지"
+  },
+  "@swipeUpHint": {
+    "description": "스와이프 힌트 텍스트"
+  },
+  "@swipeView": {
+    "description": "Button label for swipe view mode"
+  },
+  "@systemAutoRenewalChannelDescription": {
+    "description": "시스템 자동 갱신 알림 채널 설명"
+  },
+  "@target": {
+    "description": "목표 횟수 라벨"
+  },
+  "@termsOfService": {
+    "description": "Terms of service menu title"
+  },
+  "@termsOfServiceDesc": {
+    "description": "Terms of service description"
+  },
+  "@thisMonth": {
+    "description": "이번 달 라벨"
+  },
+  "@times": {
+    "description": "운동 횟수 단위"
+  },
+  "@totalExperience": {
+    "description": "총 경험치 라벨"
+  },
+  "@totalTarget": {
+    "description": "총 목표 라벨"
+  },
+  "@triceps": {
+    "description": "삼두 근육군"
+  },
+  "@tryAgain": {
+    "description": "다시 시도 버튼 텍스트"
+  },
+  "@urlNotAvailableMessage": {
+    "description": "URL not available dialog message",
+    "placeholders": {
+      "page": {
+        "type": "String"
+      }
+    }
+  },
+  "@urlNotAvailableTitle": {
+    "description": "URL not available dialog title"
+  },
+  "@version": {
+    "description": "버전 레이블"
+  },
+  "@versionAndBuild": {
+    "description": "버전 및 빌드 정보",
+    "placeholders": {
+      "buildNumber": {
+        "type": "String"
+      },
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "@versionInfo": {
+    "description": "버전 정보"
+  },
+  "@versionInfoDesc": {
+    "description": "버전 정보 설명"
+  },
+  "@victoryTime": {
+    "description": "승리의 시간 표시",
+    "placeholders": {
+      "time": {
+        "type": "String"
+      }
+    }
+  },
+  "@videoCannotOpen": {
+    "description": "영상 열기 실패 메시지"
+  },
+  "@viewAll": {
+    "description": "View all button text"
+  },
+  "@wrongPose": {
+    "description": "Wrong pose label"
+  },
+  "@yearly": {
+    "description": "연간 필터 옵션"
+  },
+  "abandon": "포기하기",
+  "aboutApp": "앱 정보",
+  "aboutInfo": "정보",
+  "achieved": "달성",
+  "actionCannotBeUndone": "되돌릴 수 없다! 신중하게!",
+  "activated": "활성화됨",
+  "activatedStatus": "활성화됨",
+  "adFallbackMessage": "차드가 되는 여정, 함께 간다! 💪",
+  "advertisement": "광고",
+  "allowPermissions": "권한 허용하기",
+  "alphaEmperorDomain": "💀 ALPHA EMPEROR DOMAIN 💀",
+  "alphaFeature1": "고급 변형 푸시업",
+  "alphaFeature2": "폭발적 파워 훈련",
+  "alphaFeature3": "플라이오메트릭 운동",
+  "alphaFeature4": "기가차드 완성 코스",
+  "alphaShort": "차드",
+  "animationEffect": "애니메이션 효과",
+  "animations": "애니메이션",
+  "animationsDesc": "앱의 애니메이션 효과를 활성화/비활성화한다",
+  "animationsDisabled": "애니메이션이 비활성화되었다",
+  "animationsEnabled": "애니메이션이 활성화되었다",
+  "animationsEnabledDesc": "앱 전체의 애니메이션 효과를 켜거나 끕니다",
+  "appInfo": "앱 정보",
+  "appInfoDesc": "버전 정보 및 개발자 정보",
+  "appRating": "앱 평가",
+  "appRatingComingSoon": "앱 평가 기능은 준비 중이다",
+  "appSlogan": "차드가 되는 여정",
+  "appTitle": "⚡ ALPHA EMPEROR DOMAIN ⚡",
+  "appVersion": "앱 버전",
+  "appearance": "외관 설정",
+  "ascendingMotion": "상승 동작",
+  "ascendingMotionDesc": "팔을 펴며 시작 자세로 돌아갑니다.",
+  "averageCompletion": "평균 달성률",
+  "averageScore": "평균 점수",
+  "awesomeButton": "멋져요!",
+  "backingUpData": "데이터를 백업하는 중...",
+  "benefits": "운동 효과",
+  "benefitsSection": "🚀 이렇게 LEGENDARY BEAST가 된다 🚀",
+  "breathingSection": "🌪️ ALPHA EMPEROR 호흡법 🌪️",
+  "buildInfo": "빌드: {buildNumber}",
+  "builtWithFlutter": "Flutter로 제작됨",
+  "calendar": "달력",
+  "calendarBannerText": "꾸준함이 나만의 힘! 📅",
+  "calendarIcon": "📅",
+  "caloriesPerRep": "{calories}kcal/회",
+  "cancel": "취소",
+  "cancelButton": "❌ 쫄았냐? ❌",
+  "cannotLoadQuizData": "퀴즈 데이터를 불러올 수 없다",
+  "cannotOpenGithub": "GitHub을 열 수 없다",
+  "cannotOpenPrivacyPolicy": "개인정보처리방침을 열 수 없다",
+  "cannotOpenTermsOfService": "이용약관을 열 수 없다",
+  "checkIcon": "✅",
+  "chest": "가슴",
+  "collapsedTapToExpand": "축소됨. 탭하여 확장",
+  "comingSoon": "🚀 Coming Soon",
+  "common": "일반",
+  "commonMistakes": "일반적인\n실수",
+  "complete": "완료",
+  "completed": "완료",
+  "completedCount": "완료한 횟수",
+  "completedLabel": "완료",
+  "completionMessage1": "🔥 바로 그거다! ABSOLUTE DOMINATION, FXXK YEAH! 🔥",
+  "completionMessage10": "👑 나만의 하루? 아니다! EMPEROR OF ALPHAS의 제국 건설 완료, 만삣삐! 👑",
+  "completionMessage2": "⚡ 오늘 ALPHA STORM이 몰아쳤다, 만삣삐! 세상이 떨고 있어! ⚡",
+  "completionMessage3": "👑 차드에 가까워진 게 아니다... 이제 차드를 넘어섰다! 👑",
+  "completionMessage4": "🚀 차드답다고? 틀렸다! 이제 LEGENDARY BEAST MODE다, YOU MONSTER! 🚀",
+  "completionMessage5": "⚡ 차드 에너지 레벨: ∞ 무한대 돌파! 우주가 경배한다! ⚡",
+  "completionMessage6": "🦁 존경? 그딴 건 지났다! 이제 온 세상이 너에게 절한다, 만삣삐! 🦁",
+  "completionMessage7": "🔱 차드가 승인했다고? 아니다! GOD TIER가 탄생을 인정했다! 🔱",
+  "completionMessage8": "🌪️ 차드 게임 레벨업? 틀렸다! ALPHA DIMENSION을 정복했다, FXXK BEAST! 🌪️",
+  "completionMessage9": "💥 순수한 차드 퍼포먼스가 아니다... 이제 PURE LEGENDARY DOMINANCE! 💥",
+  "completionPercentage": "{percentage}%",
+  "completionRate": "완료율",
+  "confirm": "확인",
+  "congratulations": "축하한다! 🎉",
+  "congratulationsMessage": "완벽! 모든 권한 설정 완료! 🎉",
+  "consistentStrengthImprovement": "꾸준한 운동으로 근력 향상",
+  "continueOrStartNew": "이전 운동을 이어서 계속할래?\\n아니면 새 운동을 시작할래?",
+  "copyrightMission100": "© 2024 Mission 100 Team\n모든 권리 보유\n\n💪 강자가 되는 그 날까지!",
+  "core": "코어",
+  "correctPose": "올바른 자세",
+  "correctionMethod": "교정 방법:",
+  "count": "개",
+  "current": "현재",
+  "currentDifficulty": "현재: {difficulty} - {description}",
+  "customizeAppFeatures": "앱 기능을 자유자재로 커스터마이징해",
+  "dailyReminderAt": "매일 {time}에 알림",
+  "dailyReminderSubtitle": "매일 정해진 시간에 운동 알림",
+  "darkMode": "다크 모드",
+  "darkModeDesc": "🌙 진짜 강자는 어둠 속에서도 강하다",
+  "darkModeEnabled": "다크 모드가 활성화되었다",
+  "dataManagement": "데이터 관리",
+  "dataManagementDesc": "운동 기록 백업 및 복원",
+  "delete": "삭제",
+  "descendingMotion": "하강 동작",
+  "descendingMotionDesc": "팔꿈치를 구부리며 천천히 몸을 아래로 내립니다.",
+  "description": "설명",
+  "descriptionTitle": "설명",
+  "developer": "개발자",
+  "developerContact": "개발자 연락처",
+  "developerInfo": "개발자 정보",
+  "developerInfoDesc": "차드가 되는 여정을 함께해",
+  "difficultyChanged": "난이도 변경! -> {difficulty} 💪",
+  "difficultyEasy": "쉬움",
+  "difficultyExpert": "전문가",
+  "difficultyExtreme": "기가 차드 - 전설의 영역",
+  "difficultyHard": "어려움",
+  "difficultyMedium": "보통",
+  "disabled": "비활성화",
+  "dontMakeTheseMistakes": "이런 실수는 하지 마라!",
+  "downloadMission100": "Mission: 100 앱 다운로드해라! 약자는 도망가라!",
+  "durationLabel": "소요일",
+  "earnedXp": "획득 XP",
+  "elbowAngleQuiz": "푸시업에서 팔꿈치의 올바른 각도는?",
+  "enabled": "활성화",
+  "encouragementMessage1": "🔥 ALPHA도 시련이 있다, 만삣삐! 하지만 그게 너를 더 강하게 만든다! 🔥",
+  "encouragementMessage10": "👑 ALPHA 회복력이 아니다... 이제 IMMORTAL PHOENIX POWER다, FXXK YEAH! 👑",
+  "encouragementMessage2": "⚡ 내일은 LEGENDARY COMEBACK의 날이다! 세상이 너의 부활을 보게 될 것이다! ⚡",
+  "encouragementMessage3": "👑 진짜 EMPEROR는 절대 굴복하지 않는다, FXXK THE LIMITS! 👑",
+  "encouragementMessage4": "🚀 이건 그냥 ULTIMATE BOSS FIGHT 모드야! 너는 이미 승리했다! 🚀",
+  "encouragementMessage5": "🦁 진짜 APEX PREDATOR는 더 강해져서 돌아온다, 만삣삐! 🦁",
+  "encouragementMessage6": "🔱 ALPHA 정신은 불멸이다! 우주가 끝나도 너는 살아남는다! 🔱",
+  "encouragementMessage7": "⚡ 아직 LEGEND TRANSFORMATION 진행 중이다, YOU ABSOLUTE UNIT! ⚡",
+  "encouragementMessage8": "🌪️ EPIC COMEBACK STORM이 몰려온다! 세상이 너의 복귀를 떨며 기다린다! 🌪️",
+  "encouragementMessage9": "💥 모든 EMPEROR는 시련을 통과한다, 만삣삐! 이게 바로 왕의 길이다! 💥",
+  "encryption": "암호화",
+  "english": "영어",
+  "englishFlag": "🇺🇸",
+  "epic": "에픽",
+  "evolutionCompleted": "🎉 진화 완료! 🎉",
+  "exactAlarmPermission": "정확한 알람 권한",
+  "exceed": "초과",
+  "excellent": "좋음",
+  "exitButton": "💀 도망가기 💀",
+  "exitDialogContinue": "계속 싸운다, 만삣삐!",
+  "exitDialogMessage": "전사는 절대 전투 중에 포기하지 않아!\n너의 정복이 사라질 거야, you idiot!",
+  "exitDialogRetreat": "후퇴한다...",
+  "exitDialogTitle": "전투에서 후퇴하겠어, 만삣삐?",
+  "expanded": "확장됨",
+  "factCategoryCardio": "심혈관 건강",
+  "factCategoryHormone": "호르몬 시스템",
+  "factCategoryMental": "정신건강",
+  "factCategoryMetabolic": "대사 시스템",
+  "factCategoryNervous": "신경계 개선",
+  "feedbackComingSoon": "피드백 기능이 곧 추가된다!",
+  "fileNamePlaceholder": "백업_파일명",
+  "firstStep": "첫 걸음",
+  "firstStepDesc": "첫 번째 워크아웃 완료",
+  "followingDataDeleted": "다음 데이터가 모두 삭제된다:",
+  "fontScale": "글자 크기",
+  "fontScaleDesc": "앱 전체의 텍스트 크기를 조정한다",
+  "fontSize": "글자 크기",
+  "fontSizeDesc": "앱의 글자 크기를 조정한다",
+  "fullBody": "전신",
+  "gigaShort": "기가차드",
+  "githubRepository": "GitHub 저장소",
+  "good": "좋음",
+  "guidanceMessage": "네 몸은 네가 명령하는 대로 따를 뿐이야, you idiot! 🔱",
+  "half": "절반",
+  "highContrastDisabled": "고대비 모드가 비활성화되었다",
+  "highContrastEnabled": "고대비 모드가 활성화되었다",
+  "highContrastMode": "고대비 모드",
+  "highContrastModeDesc": "시각적 접근성을 위한 고대비 모드를 활성화한다",
+  "home": "홈",
+  "homeTitle": "💥 ALPHA EMPEROR COMMAND CENTER 💥",
+  "improvement": "개선 필요",
+  "improvementNeeded": "개선 필요",
+  "instructions": "운동 방법",
+  "instructionsSection": "⚡ EMPEROR EXECUTION 방법 ⚡",
+  "justWait": "오늘은 회복의 날이다. 하지만 선택은 너의 것.",
+  "keepGoing": "🔥 KEEP GOING! 계속해! 🔥",
+  "korean": "한국어",
+  "koreanFlag": "🇰🇷",
+  "legend": "범례",
+  "license": "라이선스",
+  "licenseInfo": "라이선스 정보",
+  "licenseInfoComingSoon": "라이선스 정보는 준비 중이다",
+  "licenseInfoDesc": "앱에서 사용된 라이선스 정보..",
+  "lightModeEnabled": "라이트 모드가 활성화되었다",
+  "like": "좋아요",
+  "likeMessage": "좋아요! 💪",
+  "listView": "목록 보기",
+  "loadingText": "로딩 중...",
+  "madeWithLove": "차드를 위해 ❤️로 제작",
+  "minutes": "분",
+  "mission100Team": "Mission 100 Team",
+  "missionComplete": "🎉👑💀 MISSION COMPLETE! ALPHA EMPEROR 등극! 💀👑🎉",
+  "mistakesSection": "❌ 약자들의 PATHETIC 실수들 ❌",
+  "month": "월",
+  "monthly": "월간",
+  "monthlyGoal": "월간 목표",
+  "next": "다음",
+  "nextButton": "다음",
+  "noData": "데이터가 없다",
+  "noDataAvailable": "데이터가 없다",
+  "ok": "확인",
+  "okButton": "🔥 OK, 만삣삐! 🔥",
+  "okay": "보통",
+  "openGithub": "GitHub에서 소스코드 보기",
+  "openInBrowser": "브라우저에서 열기",
+  "openSourceLicense": "오픈소스 라이선스",
+  "openSourceLicenses": "오픈소스 라이선스",
+  "openSourceLicensesDesc": "오픈소스 라이선스 보기",
+  "percentComplete": "완료",
+  "perfect": "완벽!",
+  "perfectBalanceOptimized": "완벽한 균형! 주중+주말 최적화 패턴! ⚖️🔥",
+  "perfectExecution": "완벽한 수행!",
+  "perfectionistDesc": "한 주 100% 완료",
+  "permissionAlreadyRequested": "이미 권한을 요청했다.\n설정에서 수동으로 허용해주세요.",
+  "permissionBenefits": "이 권한들을 허용하면:",
+  "permissionStorageMessage": "저장소 권한이 필요한다. 설정에서 허용해주세요.",
+  "permissionsDescription": "Mission 100에서 최고의 경험을 위해\n다음 권한들이 필요한다:",
+  "pleaseCreateProfile": "프로필을 생성해주세요",
+  "poor": "부족",
+  "precautions": "주의사항",
+  "previousButton": "이전",
+  "privacyPolicy": "개인정보 처리방침",
+  "privacyPolicyDesc": "개인정보 보호 및 처리 방침을 확인",
+  "profileCreated": "🚀 EMPEROR PROFILE CREATION COMPLETE! ({sessions}개 DOMINATION SESSION 준비됨, 만삣삐!) 🚀",
+  "quickInputBeast": "💥 LIMIT DESTROYER 💥",
+  "quickInputMedium": "⚡ ALPHA 발걸음 ⚡",
+  "quickInputPerfect": "🚀 GODLIKE 달성 🚀",
+  "quickInputStart": "🔥 LEGENDARY 함성 🔥",
+  "quiz": "퀴즈",
+  "rare": "레어",
+  "rarityCommon": "일반",
+  "rarityEpic": "에픽",
+  "rarityRare": "레어",
+  "rateOnPlayStore": "Play Store에서 평가하기",
+  "recommendedLabel": "권장",
+  "refresh": "새로고침",
+  "refreshButton": "새로고침",
+  "remaining": "남음",
+  "remainingCount": "남은 횟수",
+  "remainingGoal": "남은 목표",
+  "remainingToTarget": "목표까지 {remaining}개 남음",
+  "reminderTime": "⏰ 리마인더 시간",
+  "reminderTimeChanged": "리마인더 시간이 {time}로 변경되었다",
+  "reminderTimeDesc": "⚡ 너의 운명이 결정되는 시간을 정해라!",
+  "repLogMessage": "기록해라, 만삣삐. 약자는 숫자를 센다, 강자는 전설을 만든다 💪",
+  "resumeButton": "재개",
+  "retry": "다시 시도",
+  "retryButton": "다시 시도",
+  "risingFeature1": "표준 푸시업 마스터",
+  "risingFeature2": "다양한 변형 훈련",
+  "risingFeature3": "근지구력 향상",
+  "risingFeature4": "체계적 진급 프로그램",
+  "risingShort": "알파 지망생",
+  "rookieFeature1": "무릎 푸시업부터 시작",
+  "rookieFeature2": "폼 교정 중심 훈련",
+  "rookieFeature3": "점진적 강도 증가",
+  "rookieFeature4": "기초 체력 향상",
+  "rookieShort": "푸시",
+  "save": "저장",
+  "saveMessage": "저장됨 📌",
+  "scheduleDaily": "매일",
+  "scheduleNone": "없음",
+  "schedulerStoppedStatus": "스케줄러 중지됨",
+  "scientificFact10Content": "정기적인 푸시업은 심박출량을 20% 증가시켜 전신 순환을 개선한다.",
+  "scientificFact10Impact": "❤️ 강력한 심장 펀프 업그레이드!",
+  "scientificFact10Title": "심박출량 증가",
+  "scientificFact11Content": "푸시업은 모세혈관 밀도를 30% 증가시켜 근육과 뇌로의 산소 공급을 개선한다.",
+  "scientificFact11Impact": "🌊 생명의 고속도로 확장 공사!",
+  "scientificFact11Title": "혈관신생 촉진",
+  "scientificFact12Content": "12주간의 푸시업 프로그램은 수축기 혈압을 평균 8mmHg 감소시킵니다.",
+  "scientificFact12Impact": "📉 혈압의 자연스러운 정상화!",
+  "scientificFact12Title": "혈압 정상화",
+  "scientificFact13Content": "규칙적인 푸시업은 심박변이도를 35% 향상시켜 스트레스 저항력을 증가시킵니다.",
+  "scientificFact13Impact": "💎 다이아몬드 같은 심장 리듬!",
+  "scientificFact13Title": "심박변이도 향상",
+  "scientificFact14Content": "고강도 푸시업은 혈관 내피세포 기능을 25% 개선하여 혈관 건강을 증진시킵니다.",
+  "scientificFact14Impact": "✨ 혈관의 절음 회복!",
+  "scientificFact14Title": "내피세포 기능 개선",
+  "scientificFact15Content": "근력 운동인 푸시업은 기초대사율을 15% 증가시켜 24시간 칼로리 소모를 늘립니다.",
+  "scientificFact15Impact": "🔥 24시간 지방 연소 시스템!",
+  "scientificFact15Title": "기초대사율 증가",
+  "scientificFact16Content": "8주간의 푸시업 훈련은 인슐린 감수성을 40% 향상시켜 혈당 조절을 개선한다.",
+  "scientificFact16Impact": "📊 완벽한 혈당 제어 시스템!",
+  "scientificFact16Title": "인슐린 감수성 향상",
+  "scientificFact17Content": "푸시업은 지방 산화 효소 활성을 50% 증가시켜 체지방 감소를 가속화한다.",
+  "scientificFact17Impact": "🔥 지방 용해 터보 엔진!",
+  "scientificFact17Title": "지방 산화 증진",
+  "scientificFact18Content": "고강도 운동은 갈색지방을 활성화시켜 열 생성을 통한 칼로리 소모를 증가시킵니다.",
+  "scientificFact18Impact": "♨️ 내장 난방 시스템 가동!",
+  "scientificFact18Title": "갈색지방 활성화",
+  "scientificFact19Content": "고강도 푸시업은 운동 후 최대 24시간 동안 산소 소비량을 증가시켜 추가 칼로리를 소모한다.",
+  "scientificFact19Impact": "🌪️ 24시간 애프터번 효과!",
+  "scientificFact19Title": "운동 후 산소 소비량",
+  "scientificFact1Content": "정기적인 푸시업은 느린 근섬유(Type I)를 빠른 근섬유(Type II)로 변환시켜 폭발적인 힘을 증가시킵니다.",
+  "scientificFact1Impact": "💪 근육의 질적 변화가 일어나고 있다!",
+  "scientificFact1Title": "근섬유 타입의 변화",
+  "scientificFact20Content": "고강도 푸시업은 성장호르몬 분비를 최대 500% 증가시켜 근육 성장과 회복을 촉진한다.",
+  "scientificFact20Impact": "🚀 청춘의 호르몬 폭발!",
+  "scientificFact20Title": "성장호르몬 급증",
+  "scientificFact21Content": "푸시업 훈련은 운동 단위 간 동조화를 70% 향상시켜 폭발적인 힘 발휘를 가능하게 한다.",
+  "scientificFact21Impact": "⚡ 신경과 근육의 완벽한 하모니!",
+  "scientificFact21Title": "운동 단위 동조화",
+  "scientificFact22Content": "규칙적인 푸시업은 운동 피질의 신경가소성을 45% 증가시켜 학습 능력을 향상시킵니다.",
+  "scientificFact22Impact": "🧠 뇌도 함께 진화하고 있다!",
+  "scientificFact22Title": "신경가소성 증진",
+  "scientificFact23Content": "고강도 푸시업은 뇌유래신경영양인자(BDNF)를 최대 300% 증가시켜 뇌 건강을 개선한다.",
+  "scientificFact23Impact": "🌟 뇌의 젊음 회복 프로그램 가동!",
+  "scientificFact23Title": "BDNF 분비 증가",
+  "scientificFact24Content": "6주간의 푸시업 훈련은 신경 전달 속도를 15% 향상시켜 반응 시간을 단축시킵니다.",
+  "scientificFact24Impact": "⚡ 번개 같은 반사신경 획득!",
+  "scientificFact24Title": "반응 속도 개선",
+  "scientificFact25Content": "복합 운동인 푸시업은 척수 인터뉴런의 억제 기능을 25% 개선하여 동작의 정확성을 높이다.",
+  "scientificFact25Impact": "🎯 완벽한 동작 제어 시스템 구축!",
+  "scientificFact25Title": "인터뉴런 활성화",
+  "scientificFact2Content": "푸시업은 근육 내 미토콘드리아 밀도를 최대 40% 증가시켜 에너지 생산을 극대화한다.",
+  "scientificFact2Impact": "⚡ 무한 에너지 시스템이 구축되고 있다!",
+  "scientificFact2Title": "미토콘드리아 밀도 증가",
+  "scientificFact3Content": "푸시업은 근육 성장의 핵심인 mTOR 신호전달을 300% 활성화시킵니다.",
+  "scientificFact3Impact": "🚀 근육 성장 터보 엔진이 작동한다!",
+  "scientificFact3Title": "mTOR 신호전달 활성화",
+  "scientificFact4Content": "한 번 발달한 근육은 운동을 중단해도 핵 도메인이 유지되어 10년 후에도 빠른 회복이 가능한다.",
+  "scientificFact4Impact": "🧐 영원한 근육 기억이 새겨지고 있다!",
+  "scientificFact4Title": "근육 기억의 영속성",
+  "scientificFact5Content": "푸시업 훈련은 운동 단위 간 동조화를 70% 향상시켜 폭발적인 힘 발휘를 가능하게 한다.",
+  "scientificFact5Impact": "⚡ 신경과 근육의 완벽한 하모니!",
+  "scientificFact5Title": "운동 단위 동조화",
+  "scientificFact6Content": "규칙적인 푸시업은 운동 피질의 신경가소성을 45% 증가시켜 학습 능력을 향상시킵니다.",
+  "scientificFact6Impact": "🧐 뇌도 함께 진화하고 있다!",
+  "scientificFact6Title": "신경가소성 증진",
+  "scientificFact7Content": "고강도 푸시업은 뇌유래신경영양인자(BDNF)를 최대 300% 증가시켜 뇌 건강을 개선한다.",
+  "scientificFact7Impact": "🌟 뇌의 절음 회복 프로그램 가동!",
+  "scientificFact7Title": "BDNF 분비 증가",
+  "scientificFact8Content": "6주간의 푸시업 훈련은 신경 전달 속도를 15% 향상시켜 반응 시간을 단축시킵니다.",
+  "scientificFact8Impact": "⚡ 번개 같은 반사신경 획득!",
+  "scientificFact8Title": "반응 속도 개선",
+  "scientificFact9Content": "복합 운동인 푸시업은 척수 인터뉴런의 억제 기능을 25% 개선하여 동작의 정확성을 높이다.",
+  "scientificFact9Impact": "🎯 완벽한 동작 제어 시스템 구축!",
+  "scientificFact9Title": "인터뉴런 활성화",
+  "seconds": "초",
+  "select": "선택",
+  "selectTime": "시간 선택",
+  "selected": "선택됨",
+  "sendFeedback": "📧 피드백 보내기",
+  "sendFeedbackDesc": "💬 너의 의견을 들려달라! 차드들의 목소리가 필요하다!",
+  "share": "공유",
+  "shareButton": "공유",
+  "shareMessage": "공유 중 📤",
+  "shoulders": "어깨",
+  "skip": "건너뛰기",
+  "skipButton": "건너뛰기",
+  "skipPermissions": "나중에 설정하기",
+  "status": "상태",
+  "statusAvailable": "참여 가능",
+  "statusCompleted": "완료",
+  "statusLocked": "잠김",
+  "storageAccess": "📁 저장소 접근",
+  "storageBenefit1": "📁 운동 데이터 안전 백업",
+  "storageBenefit2": "🔄 기기 변경 시 데이터 복원",
+  "storageBenefit3": "💾 데이터 손실 방지",
+  "storagePermissionDesc": "운동 데이터 백업 및 복원을 위해 필요한다",
+  "storagePermissionTitle": "📁 저장소 권한",
+  "strengthImprovement": "근력 향상",
+  "strengthSecrets": "근력의 비밀 💯",
+  "successProfileSaved": "👑 EMPEROR PROFILE SAVED! 너의 전설이 기록되었다, 만삣삐! 👑",
+  "swipeUpHint": "위로 스와이프하여 다음 영상",
+  "swipeView": "스와이프 보기",
+  "systemAutoRenewalChannelDescription": "시스템 자동 갱신 알림",
+  "target": "목표",
+  "termsOfService": "이용약관",
+  "termsOfServiceDesc": "앱 사용시 약관 확인",
+  "thisMonth": "이번 달",
+  "times": "회",
+  "totalExperience": "총 경험치",
+  "totalTarget": "총 목표:",
+  "triceps": "삼두",
+  "tryAgain": "다시 시도",
+  "urlNotAvailableMessage": "{page} 페이지는 아직 준비되지 않았다. 향후 업데이트에서 제공될 예정이다.",
+  "urlNotAvailableTitle": "페이지 준비 중",
+  "version": "버전",
+  "versionAndBuild": "버전 {version}+{buildNumber}",
+  "versionInfo": "버전 정보",
+  "versionInfoDesc": "Mission: 100 v1.0.0",
+  "victoryTime": "{time} - 승리의 시간!",
+  "videoCannotOpen": "영상을 열 수 없다. YouTube 앱을 확인해주세요.",
+  "viewAll": "전체 보기",
+  "wrongPose": "잘못된 자세",
+  "yearly": "연간",
+  "tutorial": "튜토리얼",
+  "previous": "이전",
+  "start": "시작",
+  "success": "성공"
+}

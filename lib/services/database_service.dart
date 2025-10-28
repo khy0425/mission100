@@ -24,14 +24,14 @@ class DatabaseService {
 
     return await openDatabase(
       path,
-      version: 2, // 버전을 2로 업그레이드
+      version: 3, // 버전을 3으로 업그레이드 (개인화 필드 추가)
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
   }
 
   Future<void> _onCreate(Database db, int version) async {
-    // UserProfile 테이블 생성
+    // UserProfile 테이블 생성 (모든 필드 포함)
     await db.execute('''
       CREATE TABLE user_profile (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -41,7 +41,19 @@ class DatabaseService {
         chad_level INTEGER DEFAULT 0,
         reminder_enabled INTEGER DEFAULT 0,
         reminder_time TEXT,
-        workout_days TEXT
+        workout_days TEXT,
+        current_weight REAL,
+        target_weight REAL,
+        fitness_level TEXT,
+        fitness_goal TEXT,
+        preferred_workout_times TEXT,
+        likes_competition INTEGER,
+        onboarding_completed_at TEXT,
+        chad_experience INTEGER DEFAULT 0,
+        chad_current_level INTEGER DEFAULT 1,
+        chad_current_stage INTEGER DEFAULT 0,
+        chad_total_level_ups INTEGER DEFAULT 0,
+        chad_last_level_up_at TEXT
       )
     ''');
 
@@ -73,6 +85,23 @@ class DatabaseService {
       // workout_days 컬럼 추가
       await db.execute('ALTER TABLE user_profile ADD COLUMN workout_days TEXT');
       debugPrint('✅ 데이터베이스 업그레이드: workout_days 컬럼 추가 완료');
+    }
+
+    if (oldVersion < 3) {
+      // 개인화 필드들 추가
+      await db.execute('ALTER TABLE user_profile ADD COLUMN current_weight REAL');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN target_weight REAL');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN fitness_level TEXT');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN fitness_goal TEXT');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN preferred_workout_times TEXT');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN likes_competition INTEGER');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN onboarding_completed_at TEXT');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN chad_experience INTEGER DEFAULT 0');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN chad_current_level INTEGER DEFAULT 1');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN chad_current_stage INTEGER DEFAULT 0');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN chad_total_level_ups INTEGER DEFAULT 0');
+      await db.execute('ALTER TABLE user_profile ADD COLUMN chad_last_level_up_at TEXT');
+      debugPrint('✅ 데이터베이스 업그레이드: 개인화 필드 추가 완료 (v3)');
     }
   }
 

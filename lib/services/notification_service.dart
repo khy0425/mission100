@@ -662,7 +662,7 @@ class NotificationService {
     const restMessages = [
       '😴 내일은 휴식일! CHAD도 쉬어야 강해진다! 💪',
       '🌙 LEGENDARY CHAD는 회복의 중요성을 안다! 내일은 쉬는 날! 💤',
-      '🛏️ BEAST MODE는 휴식에서 태어난다! 내일은 충전 타임! ⚡',
+      '🛏️ BEAST MODE IS BORN FROM REST! TOMORROW: RECHARGE TIME! ⚡',
       '🧘‍♂️ 진정한 GIGACHAD는 언제 쉴지 안다! 내일은 회복일! 🌱',
       '🏖️ 휴식은 약함이 아니라 전략이다! CHAD의 지혜! 🧠',
     ];
@@ -872,7 +872,7 @@ class NotificationService {
     await _safeScheduleNotification(
       id: 4,
       title: '🚀 ULTIMATE CHAD EVOLUTION! 🚀',
-      body: '🏆 전설의 차드가 되었습니다! LEGENDARY BEAST MODE! 만삣삐! 🏆',
+      body: '🏆 LEGENDARY STATUS ACHIEVED! LEGENDARY BEAST MODE! 🏆',
       scheduledDate: DateTime.now(),
       notificationDetails: const NotificationDetails(
         android: AndroidNotificationDetails(
