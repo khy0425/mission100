@@ -41,5 +41,8 @@
   "continueAnywhere": "Continue anywhere on tablet or phone",
   "fastAppStart": "10x faster app startup",
   "allFeaturesWithoutSignup": "You can use all features without signing up",
-  "signupIn30Seconds": "Sign up (30 seconds)"
+  "signupIn30Seconds": "Sign up (30 seconds)",
+  "cannotOpenEmail": "Cannot open email app",
+  "emailFeedback": "Send your feedback via email",
+  "feedbackEmail": "Send feedback via email"
 }

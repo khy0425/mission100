@@ -47,5 +47,11 @@
   "continueAnywhere": "태블릿, 폰 어디서나 이어하기",
   "fastAppStart": "앱 시작 시 10배 빠른 속도",
   "allFeaturesWithoutSignup": "회원가입 없이도 모든 기능을 사용할 수 있습니다",
-  "signupIn30Seconds": "회원가입 (30초)"
+  "signupIn30Seconds": "회원가입 (30초)",
+  "btnSignInGoogle": "구글로 로그인",
+  "btnStartGoogleQuick": "구글로 3초만에 시작하기",
+  "msgAlreadyHaveAccount": "이미 차드 계정이 있나요?",
+  "msgGuestMode": "게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.",
+  "titleAccountInfo": "계정 정보",
+  "titleCreateAccount": "계정 생성"
 }

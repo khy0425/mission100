@@ -648,5 +648,6 @@
         "type": "int"
       }
     }
-  }
+  },
+  "rewardText": "보상"
 }

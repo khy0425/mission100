@@ -89,5 +89,8 @@
   "step3StartJourney": "14주 여정 시작!",
   "awesome": "멋져요!",
   "onboardingProgramIntroTitle": "14주 프로그램 소개",
-  "onboardingProgramIntroDescription": "과학적으로 설계된 14주 프로그램으로\n100개 푸시업 달성을 목표로 합니다"
+  "onboardingProgramIntroDescription": "과학적으로 설계된 14주 프로그램으로\n100개 푸시업 달성을 목표로 합니다",
+  "btnGetStarted": "시작하기",
+  "msgWelcome": "환영합니다!",
+  "titleTutorial": "튜토리얼"
 }

@@ -1345,5 +1345,35 @@
   "processingCompletion": "운동 완료 처리 중...",
   "cannotShowCompletionDialog": "운동 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.",
   "exitWorkoutSaved": "정말로 운동을 종료하시겠습니까? 진행률이 저장됩니다.",
-  "exit": "종료"
+  "exit": "종료",
+  "dataResetError": "데이터 초기화 중 오류가 발생했습니다: {error}",
+  "@dataResetError": {
+    "description": "Data reset error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dataResetProgress": "데이터를 초기화하는 중...",
+  "dataResetSuccess": "모든 데이터가 성공적으로 초기화되었습니다",
+  "dataResetWarning": "다음 데이터가 완전히 삭제됩니다:",
+  "dataRestoreConfirm": "⚠️ 데이터 복원",
+  "dataRestoreError": "데이터 복원에 실패했습니다. 백업 파일을 확인해주세요.",
+  "dataRestoreProgress": "데이터를 복원하는 중...",
+  "dataRestoreSuccess": "데이터 복원이 완료되었습니다! 앱을 재시작해주세요.",
+  "durationDays": "기간",
+  "repsAndCompletion": "{reps}회 • {percentage}% 완료",
+  "@repsAndCompletion": {
+    "description": "Reps and completion percentage",
+    "placeholders": {
+      "reps": {
+        "type": "int"
+      },
+      "percentage": {
+        "type": "int"
+      }
+    }
+  },
+  "restoreButton": "복원"
 }

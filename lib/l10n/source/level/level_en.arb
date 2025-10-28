@@ -196,5 +196,12 @@
   "rookieGoalDesc": "≤5 reps → Achieve 100",
   "risingGoalDesc": "6-10 reps → Achieve 100",
   "alphaGoalDesc": "11-20 reps → Achieve 100",
-  "gigaGoalDesc": "21+ reps → Achieve 100+"
+  "gigaGoalDesc": "21+ reps → Achieve 100+",
+  "avgExpPerDay": "Average XP per day",
+  "expProgress": "{current} / {required} XP",
+  "levelAndExperience": "Level & Experience",
+  "levelProgressMax": "Level {currentLevel} (Max)",
+  "levelProgressNext": "Level {currentLevel} → {nextLevel}",
+  "levelUps": "Level Ups",
+  "levelUpsCount": "{count} times"
 }

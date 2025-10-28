@@ -623,5 +623,7 @@
   "totalXP": "Total XP",
   "completion": "Completion",
   "achievementsUnlockedFormat": "You've unlocked {count} achievements!",
-  "totalXpEarned": "Total {totalXP} XP Earned!"
+  "totalXpEarned": "Total {totalXP} XP Earned!",
+  "achievementsCompleted": "Achievements completed: {completed}/{total}",
+  "categoryAchievements": "Achievements by category"
 }

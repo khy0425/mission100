@@ -514,5 +514,7 @@
   "currentLevel": "현재 레벨",
   "selectTodayCondition": "오늘의 컨디션을 선택하세요",
   "todayCondition": "오늘의 컨디션",
-  "chadRecommendedWorkout": "차드 추천 운동"
+  "chadRecommendedWorkout": "차드 추천 운동",
+  "chadJourneyTagline": "차드가 되는 여정에 함께하라! 🔥",
+  "titleTomorrowChadActivity": "내일의 차드 활동"
 }

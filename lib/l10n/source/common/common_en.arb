@@ -1699,5 +1699,14 @@
   "ok": "OK",
   "congratulations": "Congratulations!",
   "completionInfo": "Completion Info",
-  "completedDate": "Completed: {date}"
+  "completedDate": "Completed: {date}",
+  "appInfoDesc": "Version and developer information",
+  "builtWithFlutter": "Built with Flutter",
+  "cannotOpenGithub": "Cannot open GitHub",
+  "dataManagementDesc": "Workout data backup and restore",
+  "developerContact": "Developer Contact",
+  "githubRepository": "GitHub Repository",
+  "openGithub": "View source code on GitHub",
+  "start": "Start",
+  "totalExpEarned": "Total experience earned"
 }

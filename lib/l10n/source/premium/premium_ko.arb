@@ -122,5 +122,13 @@
   "statusLabel": "상태",
   "startDate": "시작일",
   "expiryDate": "만료일",
-  "autoRenewalEnabled": "자동 갱신 활성화"
+  "autoRenewalEnabled": "자동 갱신 활성화",
+  "btnStartFree": "무료로 시작하기",
+  "btnStartSubscription": "구독 시작하기",
+  "msgCannotStartPurchase": "구매를 시작할 수 없습니다.",
+  "msgLoadingSubscription": "구독 상품을 불러오는 중...",
+  "msgSubscriptionSuccess": "구독이 성공적으로 완료되었습니다!",
+  "titleManageSubscription": "구독 관리",
+  "titlePremiumFeatures": "프리미엄 기능",
+  "titlePremiumSubscription": "프리미엄 구독"
 }

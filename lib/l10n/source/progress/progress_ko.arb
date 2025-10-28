@@ -176,5 +176,12 @@
     }
   },
   "daysCompleted": "일 완료",
-  "totalSessions": "총 운동 세션"
+  "totalSessions": "총 운동 세션",
+  "dataBackupProgress": "데이터를 백업하는 중...",
+  "inProgressStatus": "진행 중",
+  "optionPersonalRecordDesc": "개인 목표 달성과 기록 향상에 집중합니다",
+  "optionPersonalRecordTitle": "개인 기록",
+  "progressText": "진행도",
+  "statisticsBannerText": "차드 성장을 확인하라! 📊",
+  "statisticsTab": "통계"
 }

@@ -247,5 +247,7 @@
   "specialEventChallenge": "특별 이벤트 챌린지",
   "sprintChallenge": "스프린트 챌린지",
   "startChallenge": "챌린지 시작! 🔥",
-  "startNewChallenge": "새 챌린지 시작하자! 🔥"
+  "startNewChallenge": "새 챌린지 시작하자! 🔥",
+  "challengeCompletedTab": "완료됨",
+  "challengeTabTitle": "챌린지"
 }
