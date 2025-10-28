@@ -2749,6 +2749,23 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get letsStartWorkout => '💪 Let\'s start the workout! You got this!';
+
+  @override
+  String get processingCompletion => 'Processing workout completion...';
+
+  @override
+  String get cannotShowCompletionDialog =>
+      'Cannot show completion dialog. Returning to home.';
+
+  @override
+  String get exitWorkoutSaved =>
+      'Are you sure you want to exit? Your progress will be saved.';
+
+  @override
+  String get exit => 'Exit';
+
+  @override
   String get beginnerPushupQuiz =>
       'What is the most suitable pushup variation for beginners?';
 

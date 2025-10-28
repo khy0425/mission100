@@ -2674,6 +2674,21 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get letsStartWorkout => '💪 운동을 시작합니다! 화이팅!';
+
+  @override
+  String get processingCompletion => '운동 완료 처리 중...';
+
+  @override
+  String get cannotShowCompletionDialog => '운동 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.';
+
+  @override
+  String get exitWorkoutSaved => '정말로 운동을 종료하시겠습니까? 진행률이 저장됩니다.';
+
+  @override
+  String get exit => '종료';
+
+  @override
   String get beginnerPushupQuiz => '초보자에게 가장 적합한 푸시업 변형은?';
 
   @override

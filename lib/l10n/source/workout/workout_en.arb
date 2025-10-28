@@ -1372,5 +1372,10 @@
   "startTheJourney": "Start the Journey! 🚀",
   "workoutCompleteSimple": "Workout Complete!",
   "workoutCompleteGreatJob": "Great job! You completed today's workout.",
-  "totalRepsCount": "Total reps: {count}"
+  "totalRepsCount": "Total reps: {count}",
+  "letsStartWorkout": "💪 Let's start the workout! You got this!",
+  "processingCompletion": "Processing workout completion...",
+  "cannotShowCompletionDialog": "Cannot show completion dialog. Returning to home.",
+  "exitWorkoutSaved": "Are you sure you want to exit? Your progress will be saved.",
+  "exit": "Exit"
 }

@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
 import '../services/workout_program_service.dart';
 import '../services/workout_history_service.dart';
@@ -138,9 +139,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '💪 운동을 시작합니다! 화이팅!'
-                  : '💪 Let\'s start the workout! You got this!',
+              AppLocalizations.of(context).letsStartWorkout,
             ),
             backgroundColor: const Color(AppColors.primaryColor),
             duration: const Duration(seconds: 2),
@@ -211,9 +210,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '운동 완료 처리 중...'
-              : 'Processing workout completion...',
+          AppLocalizations.of(context).processingCompletion,
         ),
         duration: const Duration(seconds: 1),
         backgroundColor: Colors.blue,
@@ -378,9 +375,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '오류가 발생했습니다: $e'
-                  : 'Error occurred: $e',
+              AppLocalizations.of(context).errorOccurredWithMessage(e.toString()),
             ),
             duration: const Duration(seconds: 3),
             backgroundColor: Colors.red,
@@ -405,23 +400,19 @@ class _WorkoutScreenState extends State<WorkoutScreen>
           debugPrint('🔥 다이얼로그 builder 호출됨');
           return AlertDialog(
             title: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '🎉 운동 완료!'
-                  : '🎉 Workout Complete!',
+              AppLocalizations.of(context).workoutCompleteSimple,
             ),
             content: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  Localizations.localeOf(context).languageCode == 'ko'
-                      ? '훌륭합니다! 오늘의 운동을 완료했습니다.'
-                      : 'Great job! You completed today\'s workout.',
+                  AppLocalizations.of(context).workoutCompleteGreatJob,
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  Localizations.localeOf(context).languageCode == 'ko'
-                      ? '총 횟수: ${_completedReps.fold(0, (sum, reps) => sum + reps)}개'
-                      : 'Total reps: ${_completedReps.fold(0, (sum, reps) => sum + reps)}',
+                  AppLocalizations.of(context).totalRepsCount(
+                    _completedReps.fold(0, (sum, reps) => sum + reps),
+                  ),
                   style: const TextStyle(fontWeight: FontWeight.bold),
                 ),
               ],
@@ -437,9 +428,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                   }
                 },
                 child: Text(
-                  Localizations.localeOf(context).languageCode == 'ko'
-                      ? '확인'
-                      : 'OK',
+                  AppLocalizations.of(context).ok,
                 ),
               ),
             ],
@@ -455,9 +444,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '운동 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.'
-                  : 'Cannot show completion dialog. Returning to home.',
+              AppLocalizations.of(context).cannotShowCompletionDialog,
             ),
             duration: const Duration(seconds: 2),
             backgroundColor: Colors.orange,
@@ -574,10 +561,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       ),
       appBar: AppBar(
         title: Text(
-          (widget.workout.title as String?) ??
-              (Localizations.localeOf(context).languageCode == 'ko'
-                  ? '운동'
-                  : 'Workout'),
+          (widget.workout.title as String?) ?? AppLocalizations.of(context).workout,
         ),
         centerTitle: true,
         leading: IconButton(
@@ -653,22 +637,16 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '운동 종료'
-              : 'Exit Workout',
+          AppLocalizations.of(context).exitWorkout,
         ),
         content: Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '정말로 운동을 종료하시겠습니까? 진행률이 저장됩니다.'
-              : 'Are you sure you want to exit? Your progress will be saved.',
+          AppLocalizations.of(context).exitWorkoutSaved,
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '취소'
-                  : 'Cancel',
+              AppLocalizations.of(context).cancel,
             ),
           ),
           TextButton(
@@ -677,9 +655,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
               _saveCurrentProgress().then((_) => Navigator.pop(context));
             },
             child: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '종료'
-                  : 'Exit',
+              AppLocalizations.of(context).exit,
             ),
           ),
         ],

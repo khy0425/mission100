@@ -5060,6 +5060,36 @@ abstract class AppLocalizations {
   /// **'총 횟수: {count}개'**
   String totalRepsCount(int count);
 
+  /// No description provided for @letsStartWorkout.
+  ///
+  /// In ko, this message translates to:
+  /// **'💪 운동을 시작합니다! 화이팅!'**
+  String get letsStartWorkout;
+
+  /// No description provided for @processingCompletion.
+  ///
+  /// In ko, this message translates to:
+  /// **'운동 완료 처리 중...'**
+  String get processingCompletion;
+
+  /// No description provided for @cannotShowCompletionDialog.
+  ///
+  /// In ko, this message translates to:
+  /// **'운동 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.'**
+  String get cannotShowCompletionDialog;
+
+  /// No description provided for @exitWorkoutSaved.
+  ///
+  /// In ko, this message translates to:
+  /// **'정말로 운동을 종료하시겠습니까? 진행률이 저장됩니다.'**
+  String get exitWorkoutSaved;
+
+  /// No description provided for @exit.
+  ///
+  /// In ko, this message translates to:
+  /// **'종료'**
+  String get exit;
+
   /// Quiz question 3
   ///
   /// In ko, this message translates to:
