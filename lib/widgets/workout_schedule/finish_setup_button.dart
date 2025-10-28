@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 import '../../utils/constants.dart';
 
 /// 설정 완료 버튼
-class FinishSetupButton extends StatelessWidget {
+class FinishSetupButton extends StatelessWidget{
   final int selectedDaysCount;
   final VoidCallback onFinish;
 
@@ -38,9 +39,7 @@ class FinishSetupButton extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '여정 시작하기! 🚀'
-                  : 'Start the Journey! 🚀',
+              AppLocalizations.of(context).startJourney,
               style: TextStyle(
                 color:
                     selectedDaysCount >= 3 ? Colors.black : Colors.grey,

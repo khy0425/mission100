@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../utils/constants.dart';
+import '../../generated/app_localizations.dart';
 
 /// 운동 요일 선택 섹션
 class DaySelectionSection extends StatelessWidget {
@@ -16,10 +17,16 @@ class DaySelectionSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final locale = Localizations.localeOf(context);
-    final dayNames = locale.languageCode == 'ko'
-        ? ['월', '화', '수', '목', '금', '토', '일']
-        : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+    final l10n = AppLocalizations.of(context);
+    final dayNames = [
+      l10n.dayMon,
+      l10n.dayTue,
+      l10n.dayWed,
+      l10n.dayThu,
+      l10n.dayFri,
+      l10n.daySat,
+      l10n.daySun,
+    ];
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,9 +40,7 @@ class DaySelectionSection extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '운동 요일 선택 (최소 3일)'
-                  : 'Select Workout Days (Min 3 days)',
+              AppLocalizations.of(context).selectWorkoutDaysMin3,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: const Color(AppColors.primaryColor),
@@ -45,9 +50,7 @@ class DaySelectionSection extends StatelessWidget {
         ),
         const SizedBox(height: 4),
         Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '선택된 날짜: $selectedDaysCount일'
-              : 'Selected days: $selectedDaysCount days',
+          AppLocalizations.of(context).selectedDaysCount(selectedDaysCount),
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: selectedDaysCount >= 3 ? Colors.green : Colors.red,
                 fontWeight: FontWeight.w600,

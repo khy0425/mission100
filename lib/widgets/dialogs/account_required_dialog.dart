@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 /// 구매 시 회원가입 유도 다이얼로그
 class AccountRequiredDialog extends StatelessWidget {
@@ -15,6 +16,7 @@ class AccountRequiredDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Dialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
@@ -28,8 +30,8 @@ class AccountRequiredDialog extends StatelessWidget {
             Container(
               width: 80,
               height: 80,
-              decoration: BoxDecoration(
-                gradient: const LinearGradient(
+              decoration: const BoxDecoration(
+                gradient: LinearGradient(
                   colors: [Colors.blue, Colors.purple],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -45,9 +47,9 @@ class AccountRequiredDialog extends StatelessWidget {
             const SizedBox(height: 20),
 
             // 제목
-            const Text(
-              '간단한 계정 생성이 필요합니다',
-              style: TextStyle(
+            Text(
+              l10n.accountCreationRequired,
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -57,7 +59,7 @@ class AccountRequiredDialog extends StatelessWidget {
 
             // 설명
             Text(
-              '구매하신 $productName을(를) 안전하게\n관리하고 모든 기기에서 사용하려면\n계정이 필요합니다.',
+              l10n.purchaseProtectionMessage(productName),
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey[600],
@@ -68,13 +70,13 @@ class AccountRequiredDialog extends StatelessWidget {
             const SizedBox(height: 24),
 
             // 혜택 리스트
-            _buildBenefitItem(Icons.cloud_done, '클라우드 동기화'),
+            _buildBenefitItem(Icons.cloud_done, l10n.cloudSync),
             const SizedBox(height: 12),
-            _buildBenefitItem(Icons.devices, '여러 기기에서 사용'),
+            _buildBenefitItem(Icons.devices, l10n.multiDeviceAccess),
             const SizedBox(height: 12),
-            _buildBenefitItem(Icons.backup, '데이터 백업 & 복원'),
+            _buildBenefitItem(Icons.backup, l10n.dataBackupRestore),
             const SizedBox(height: 12),
-            _buildBenefitItem(Icons.lock, '구매 내역 보호'),
+            _buildBenefitItem(Icons.lock, l10n.purchaseHistoryProtection),
             const SizedBox(height: 24),
 
             // 버튼들
@@ -89,7 +91,7 @@ class AccountRequiredDialog extends StatelessWidget {
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
-                    child: const Text('나중에'),
+                    child: Text(l10n.later),
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -106,9 +108,9 @@ class AccountRequiredDialog extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
-                    child: const Text(
-                      '계정 만들기',
-                      style: TextStyle(
+                    child: Text(
+                      l10n.createAccount,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -122,7 +124,7 @@ class AccountRequiredDialog extends StatelessWidget {
 
             // 안내 문구
             Text(
-              '30초면 완료됩니다',
+              l10n.completesIn30Seconds,
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.grey[500],

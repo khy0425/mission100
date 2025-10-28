@@ -530,7 +530,7 @@ class _AchievementsScreenState extends State<AchievementsScreen>
                     ),
                     SizedBox(width: 6),
                     Text(
-                      '업적을 달성해서 차드가 되자! 🏆',
+                      'Achieve and become CHAD! 🏆',
                       style: TextStyle(
                         color: Colors.white70,
                         fontSize: 13,

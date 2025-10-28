@@ -15,16 +15,8 @@ class ExitConfirmationDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(
-        Localizations.localeOf(context).languageCode == 'ko'
-            ? '운동 종료'
-            : 'Exit Workout',
-      ),
-      content: Text(
-        Localizations.localeOf(context).languageCode == 'ko'
-            ? '운동을 종료하시겠습니까? 진행 상황이 저장되지 않습니다.'
-            : 'Are you sure you want to exit? Your progress will not be saved.',
-      ),
+      title: Text(AppLocalizations.of(context).exitWorkout),
+      content: Text(AppLocalizations.of(context).exitWorkoutConfirm),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context, false),

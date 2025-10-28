@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 /// 설정 화면 헤더
 class SettingsHeader extends StatelessWidget {
@@ -45,16 +46,16 @@ class SettingsHeader extends StatelessWidget {
         children: [
           const Icon(Icons.settings, size: 48, color: Colors.white),
           const SizedBox(height: 8),
-          const Text(
-            'MISSION 100 설정',
-            style: TextStyle(
+          Text(
+            AppLocalizations.of(context).settingsHeader,
+            style: const TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
           Text(
-            '앱 기능을 사용자 정의하세요',
+            AppLocalizations.of(context).customizeAppFeatures,
             style: TextStyle(
               fontSize: 14,
               color: Colors.white.withValues(alpha: 0.9),

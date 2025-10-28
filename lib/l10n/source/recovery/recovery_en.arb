@@ -1,4 +1,15 @@
 {
+  "@canRecheckCondition": {
+    "description": "Can recheck condition info message"
+  },
+  "@chadConfirmedCondition": {
+    "description": "Chad confirmed condition completion message",
+    "placeholders": {
+      "condition": {
+        "type": "String"
+      }
+    }
+  },
   "@chadSleepyCap": {
     "description": "Sleepy Hat Chad name"
   },
@@ -11,17 +22,20 @@
   "@factCategoryMuscle": {
     "description": "Muscle physiology category"
   },
+  "@recheckCondition": {
+    "description": "Recheck condition button text"
+  },
   "@recovery": {
     "description": "Recovery category - Chad style"
   },
   "@recoveryLevelExcellent": {
     "description": "Recovery level - Excellent"
   },
-  "@recoveryLevelGood": {
-    "description": "Recovery level - Good"
-  },
   "@recoveryLevelFair": {
     "description": "Recovery level - Fair"
+  },
+  "@recoveryLevelGood": {
+    "description": "Recovery level - Good"
   },
   "@recoveryLevelPoor": {
     "description": "Recovery level - Poor/Need rest"
@@ -35,15 +49,18 @@
   "@sleepyHatChad": {
     "description": "Sleepy hat chad name"
   },
+  "canRecheckCondition": "You can recheck your condition!",
+  "chadConfirmedCondition": "Chad confirmed your {condition} condition!",
   "chadSleepyCap": "Sleep Cap",
   "chadSleepyCapDesc": "Starting the journey.\nStill waking up, but ready to rise! 😴",
   "chadTitleSleepy": "Sleep Cap",
   "factCategoryMuscle": "Muscle Physiology",
   "muscleIcon": "💪",
+  "recheckCondition": "Recheck Condition",
   "recovery": "🛡️ WARRIOR RESTORATION 🛡️",
   "recoveryLevelExcellent": "Excellent",
-  "recoveryLevelGood": "Good",
   "recoveryLevelFair": "Fair",
+  "recoveryLevelGood": "Good",
   "recoveryLevelPoor": "Need Rest",
   "scientificRecovery": "Scientific muscle recovery + sustainable power! 🧠💪",
   "sleepyChadEvolution": "Sleep Cap Evolution",

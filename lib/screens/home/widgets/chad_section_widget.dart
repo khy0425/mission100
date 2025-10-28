@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../services/chad_evolution_service.dart';
 import '../../../utils/constants.dart';
 import '../../../utils/chad_translation_helper.dart';
+import '../../../generated/app_localizations.dart';
 
 /// Chad 진화 상태를 표시하는 섹션 위젯
 ///
@@ -131,42 +132,29 @@ class ChadSectionWidget extends StatelessWidget {
     ThemeData theme,
     ChadEvolutionService chadService,
   ) {
-    final isKorean = Localizations.localeOf(context).languageCode == 'ko';
+    final l10n = AppLocalizations.of(context);
     final currentChad = chadService.currentChad;
     final nextChad = chadService.nextChad;
 
     String statusText;
 
     if (chadService.isMaxEvolution) {
-      statusText = isKorean ? '최종 진화 완료!' : 'Final evolution complete!';
+      statusText = l10n.finalEvolutionComplete;
     } else if (nextChad != null) {
       final currentStage = currentChad.stage.index;
       final nextStage = nextChad.stage.index;
       final weeksUntil = chadService.getWeeksUntilNextEvolution();
 
-      if (isKorean) {
-        statusText = 'Stage $currentStage → Stage $nextStage';
-        if (weeksUntil > 0) {
-          statusText += ' ($weeksUntil주 후 진화)';
-        } else {
-          statusText += ' (진화 준비 완료!)';
-        }
+      statusText = 'Stage $currentStage → Stage $nextStage';
+      if (weeksUntil > 0) {
+        statusText += ' (${l10n.weeksToEvolve(weeksUntil)})';
       } else {
-        statusText = 'Stage $currentStage → Stage $nextStage';
-        if (weeksUntil > 0) {
-          statusText += ' (${weeksUntil}w to evolve)';
-        } else {
-          statusText += ' (Ready to evolve!)';
-        }
+        statusText += ' (${l10n.readyToEvolve})';
       }
     } else {
       // nextChad가 null일 때도 현재 레벨 정보 표시
       final currentStage = currentChad.stage.index;
-      if (isKorean) {
-        statusText = 'Stage $currentStage (현재 레벨)';
-      } else {
-        statusText = 'Stage $currentStage (Current Level)';
-      }
+      statusText = 'Stage $currentStage (${l10n.currentLevel})';
     }
 
     return Text(

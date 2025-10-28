@@ -213,9 +213,7 @@ class NotificationSettingsWidget extends StatelessWidget {
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '알림 권한 상태'
-                        : 'Notification Permission Status',
+                    AppLocalizations.of(context).notificationPermissionStatus,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -227,18 +225,14 @@ class NotificationSettingsWidget extends StatelessWidget {
               _buildPermissionStatusRow(
                 AppLocalizations.of(context).basicNotificationPermission,
                 hasBasicNotifications,
-                Localizations.localeOf(context).languageCode == 'ko'
-                    ? '기본 알림을 받기 위해 필요합니다'
-                    : 'Required for basic notifications',
+                AppLocalizations.of(context).basicNotificationRequired,
                 isRequired: true,
               ),
               const SizedBox(height: 8),
               _buildPermissionStatusRow(
                 AppLocalizations.of(context).exactAlarmPermission,
                 hasExactAlarms,
-                Localizations.localeOf(context).languageCode == 'ko'
-                    ? '정확한 시간에 알림을 받기 위해 필요합니다'
-                    : 'Required for exact alarm notifications',
+                AppLocalizations.of(context).exactAlarmRequired,
               ),
             ],
           ),
@@ -281,12 +275,14 @@ class NotificationSettingsWidget extends StatelessWidget {
                   ),
                   if (isRequired) ...[
                     const SizedBox(width: 4),
-                    Text(
-                      '(필수)',
-                      style: TextStyle(
-                        fontSize: 12,
-                        color: Colors.red[600],
-                        fontWeight: FontWeight.bold,
+                    Builder(
+                      builder: (context) => Text(
+                        AppLocalizations.of(context).required,
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.red[600],
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
                     ),
                   ],

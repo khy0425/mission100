@@ -121,9 +121,7 @@ class ActionButtonsWidget extends StatelessWidget {
             const Icon(Icons.analytics, color: Colors.black, size: 24),
             const SizedBox(width: AppConstants.paddingS),
             Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '진행률 추적'
-                  : 'Progress Tracking',
+              AppLocalizations.of(context).progressTracking,
               style: theme.textTheme.titleMedium?.copyWith(
                 color: Colors.black,
                 fontWeight: FontWeight.bold,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
+import '../../../generated/app_localizations.dart';
 
 /// 프로그램 진행률을 표시하는 카드 위젯
 ///
@@ -59,9 +60,7 @@ class ProgressCardWidget extends StatelessWidget {
         ),
         const SizedBox(width: AppConstants.paddingS),
         Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '프로그램 진행률'
-              : 'Program Progress',
+          AppLocalizations.of(context).programProgress,
           style: theme.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
             color: const Color(AppColors.primaryColor),
@@ -87,9 +86,7 @@ class ProgressCardWidget extends StatelessWidget {
           Icon(Icons.info_outline, color: Colors.orange[600], size: 48),
           const SizedBox(height: 12),
           Text(
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '프로그램 데이터를 불러오는 중...'
-                : 'Loading program data...',
+            AppLocalizations.of(context).loadingProgramData,
             style: theme.textTheme.bodyMedium?.copyWith(
               fontWeight: FontWeight.w600,
             ),
@@ -97,9 +94,7 @@ class ProgressCardWidget extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '운동을 시작하면 진행률이 표시됩니다'
-                : 'Progress will be shown once you start working out',
+            AppLocalizations.of(context).progressShownAfterWorkout,
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.textTheme.bodySmall?.color?.withValues(alpha: 0.7),
             ),
@@ -191,9 +186,7 @@ class ProgressCardWidget extends StatelessWidget {
             const SizedBox(width: 8),
             Flexible(
               child: Text(
-                Localizations.localeOf(context).languageCode == 'ko'
-                    ? '전체 프로그램 진행도'
-                    : 'Overall Program Progress',
+                AppLocalizations.of(context).overallProgramProgress,
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -204,9 +197,7 @@ class ProgressCardWidget extends StatelessWidget {
         ),
         const SizedBox(height: 16),
         Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '$currentWeek/$totalWeeks 주차'
-              : '$currentWeek/$totalWeeks weeks',
+          AppLocalizations.of(context).weeksFormat(currentWeek, totalWeeks),
           style: theme.textTheme.bodyLarge?.copyWith(
             fontWeight: FontWeight.w600,
           ),
@@ -239,9 +230,7 @@ class ProgressCardWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '이번 주 ($currentWeek주차)'
-              : 'This Week (Week $currentWeek)',
+          AppLocalizations.of(context).thisWeekFormat(currentWeek),
           style: theme.textTheme.bodyMedium?.copyWith(
             fontWeight: FontWeight.w600,
           ),
@@ -261,9 +250,7 @@ class ProgressCardWidget extends StatelessWidget {
             const SizedBox(width: 4),
             Flexible(
               child: Text(
-                Localizations.localeOf(context).languageCode == 'ko'
-                    ? '일 완료'
-                    : 'days completed',
+                AppLocalizations.of(context).daysCompleted,
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: Colors.grey[600],
                 ),
@@ -307,9 +294,7 @@ class ProgressCardWidget extends StatelessWidget {
             const SizedBox(width: 8),
             Flexible(
               child: Text(
-                Localizations.localeOf(context).languageCode == 'ko'
-                    ? '총 운동 세션'
-                    : 'Total Sessions',
+                AppLocalizations.of(context).totalSessions,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w600,
                 ),

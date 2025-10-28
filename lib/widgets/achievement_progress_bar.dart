@@ -188,7 +188,7 @@ class _AchievementProgressBarState extends State<AchievementProgressBar>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                '${(widget.achievement.progress * 100).toInt()}% 완료',
+                '${(widget.achievement.progress * 100).toInt()}% Completed',
                 style: theme.textTheme.bodySmall?.copyWith(
                   color: theme.colorScheme.onSurfaceVariant,
                 ),

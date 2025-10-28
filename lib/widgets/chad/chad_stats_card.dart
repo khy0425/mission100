@@ -84,8 +84,8 @@ class ChadStatsCard extends StatelessWidget {
                 Expanded(
                   child: _buildMainStat(
                     icon: '🧠',
-                    label: '뇌절 도수',
-                    value: '${stats.brainjoltDegree}도',
+                    label: 'Brainjolt',
+                    value: '${stats.brainjoltDegree}°',
                     color: Colors.purple,
                   ),
                 ),
@@ -199,7 +199,7 @@ class ChadStatsCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '🧠 뇌절 ${stats.brainjoltDegree}도',
+                  '🧠 Brainjolt ${stats.brainjoltDegree}°',
                   style: TextStyle(
                     fontSize: 14,
                     color: Colors.grey[400],
@@ -482,8 +482,8 @@ class ChadStatsGrid extends StatelessWidget {
         ),
         _buildGridItem(
           icon: '🧠',
-          label: '뇌절 도수',
-          value: '${stats.brainjoltDegree}도',
+          label: 'Brainjolt',
+          value: '${stats.brainjoltDegree}°',
           color: Colors.purple,
         ),
         _buildGridItem(

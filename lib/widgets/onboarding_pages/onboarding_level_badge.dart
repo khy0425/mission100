@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 import '../../utils/constants.dart';
 
 /// 온보딩 레벨 뱃지
@@ -67,7 +68,7 @@ class OnboardingLevelBadge extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '현재 최대 $range',
+                  AppLocalizations.of(context).currentMaxRange(range),
                   style: theme.textTheme.bodyMedium?.copyWith(
                     color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                   ),

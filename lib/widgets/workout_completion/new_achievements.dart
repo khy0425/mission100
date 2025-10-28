@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 import '../../models/achievement.dart';
 
 /// 새로운 업적 위젯
@@ -37,8 +38,8 @@ class NewAchievements extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                '🏆 새로운 업적 달성! 🏆',
-                style: TextStyle(
+                AppLocalizations.of(context).newAchievementUnlocked,
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.amber,
                   fontSize: 14,
@@ -63,8 +64,8 @@ class NewAchievements extends StatelessWidget {
               )),
           if (newlyUnlockedAchievements.length > 2) ...[
             Text(
-              '외 ${newlyUnlockedAchievements.length - 2}개 더!',
-              style: TextStyle(
+              AppLocalizations.of(context).andMoreCount(newlyUnlockedAchievements.length - 2),
+              style: const TextStyle(
                 fontSize: 10,
                 color: Colors.amber,
                 fontWeight: FontWeight.bold,
@@ -82,9 +83,9 @@ class NewAchievements extends StatelessWidget {
                   color: Colors.amber,
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: const Text(
-                  '✨ 모든 업적 보기',
-                  style: TextStyle(
+                child: Text(
+                  AppLocalizations.of(context).viewAllAchievements,
+                  style: const TextStyle(
                     fontSize: 10,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,

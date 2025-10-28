@@ -181,29 +181,6 @@
   "@chadSays": {
     "description": "Chad Says label for speech bubble"
   },
-  "@selectTodayCondition": {
-    "description": "Prompt to select today's condition"
-  },
-  "@todayCondition": {
-    "description": "Today's condition label"
-  },
-  "@chadRecommendedWorkout": {
-    "description": "Chad's recommended workout section title"
-  },
-  "@recheckCondition": {
-    "description": "Recheck condition button text"
-  },
-  "@chadConfirmedCondition": {
-    "description": "Chad confirmed condition completion message",
-    "placeholders": {
-      "condition": {
-        "type": "String"
-      }
-    }
-  },
-  "@canRecheckCondition": {
-    "description": "Can recheck condition info message"
-  },
   "@chadSecretTips": {
     "description": "Improvement tips section header"
   },
@@ -336,6 +313,12 @@
   "@motivationStrong": {
     "description": "Strong motivation for 80%+ achievement"
   },
+  "@onboardingChadEvolutionDescription": {
+    "description": "Onboarding Chad evolution description"
+  },
+  "@onboardingChadEvolutionTitle": {
+    "description": "Onboarding Chad evolution title"
+  },
   "@perfectChadExperience": {
     "description": "Perfect Chad experience description"
   },
@@ -392,6 +375,8 @@
   "chadBasicDesc": "First evolution complete!\nBuilding the foundation! 🔥",
   "chadCoffee": "Coffee Power",
   "chadCoffeeDesc": "Energy MAX!\nCoffee power activated! ☕💪",
+  "chadConfident": "Confident Chad",
+  "chadConfidentDesc": "Confidence overload!\nReady to face anything! 💪",
   "chadDescription": "💪 Chad Description",
   "chadDouble": "Double Power",
   "chadDoubleDesc": "Final evolution! Legend status!\nDouble power, total domination! 👑",
@@ -412,8 +397,14 @@
   "chadFrontFacingDesc": "Confidence overload!\nReady to face anything! 💪",
   "chadGlowingEyes": "Glowing Eyes Chad",
   "chadGlowingEyesDesc": "Chad with incredible power.\nEyes glow with tremendous energy!",
+  "chadGod": "God Chad",
+  "chadGodDesc": "Legendary completion! Divine realm!\nThe ultimate Chad transcending everything! 👑✨",
   "chadHashtag": "#Chad",
   "chadJourneyTagline": "Join the journey to become Chad! 🔥",
+  "chadLaserEyes": "Laser Eyes Chad",
+  "chadLaserEyesDesc": "Chad with incredible power!\nEyes shoot lasers with tremendous energy! ⚡",
+  "chadLaserEyesHud": "Laser+HUD Chad",
+  "chadLaserEyesHudDesc": "Cutting-edge system equipped!\nInvincible mode with HUD and lasers! 🎯",
   "chadMessage0": "🛌 Wake up, future Chad! Your journey begins now!",
   "chadMessage1": "😎 Your basics are getting solid! This is the real start of Chad!",
   "chadMessage2": "☕ Energy overflowing! You've got power stronger than coffee!",
@@ -441,12 +432,6 @@
   "chadMotivationWideGrip": "Spread your chest wide and receive chad energy! A broad chest is the symbol of a real chad!",
   "chadReminder": "💪 Chad Reminder",
   "chadSays": "Chad Says",
-  "selectTodayCondition": "How are you feeling today?",
-  "todayCondition": "Today's Condition: ",
-  "chadRecommendedWorkout": "🎯 Chad's Workout Recommendation",
-  "recheckCondition": "Recheck Condition",
-  "chadConfirmedCondition": "Chad confirmed your {condition} condition!",
-  "canRecheckCondition": "You can recheck your condition!",
   "chadSecretTips": "Chad's Secret Tips",
   "chadSecrets": "Chad Secrets ⚡",
   "chadShorts": "Chad Shorts 🔥",
@@ -458,6 +443,8 @@
   "chadTitleDouble": "Double Chad",
   "chadTitleFront": "Front Chad",
   "chadTitleLaser": "Laser Chad",
+  "chadTriple": "Triple Chad",
+  "chadTripleDesc": "Triple power explosion!\nOne person doing the work of three! 💥",
   "checkChadGrowth": "Check Chad's growth! 📊",
   "congratulationsChad": "Congrats! True warrior status! 🎉",
   "consistentChad": "Consistent Chad!",
@@ -497,6 +484,8 @@
   "motivationMessages": "Motivation Messages",
   "motivationMessagesDesc": "Show motivational messages during workout",
   "motivationStrong": "QUITTING IS EXCUSE FOR THE WEAK. GO HARDER! 🔱💪",
+  "onboardingChadEvolutionDescription": "Every workout = Level up!\n\n🏃 Rookie → 💪 Giga → 👑 Legendary\n\nUnlock new achievements at each stage! 🏆",
+  "onboardingChadEvolutionTitle": "Level Up Non-Stop 🚀",
   "perfectChadExperience": "Adjust settings for the perfect Chad experience",
   "quickInputStrong": "👑 EMPEROR POWER 👑",
   "rarityLegendary": "Legendary",
@@ -506,10 +495,18 @@
   "sigmaChad": "Sigma Chad",
   "strategicChadMode": "⭐ Strategic Chad Mode (Mon/Wed/Fri)",
   "supportChadJourney": "We support your journey! 🔥",
+  "titleTomorrowChadActivity": "Tomorrow's Chad Activity",
   "trueGigaChad": "🔥💀 True Giga Chad Complete! ALPHA EMPEROR! 💀🔥",
   "tutorialAdviceBasic": "Basics are the most important, bro!",
   "tutorialAdviceConsistency": "Consistency is the key to Chad power!",
   "tutorialAdviceStart": "Starting is half the battle!",
   "ultraChad": "Ultra Chad",
-  "workerChadMode": "💼 Worker Chad Mode (Mon-Fri)"
+  "workerChadMode": "💼 Worker Chad Mode (Mon-Fri)",
+  "finalEvolutionComplete": "Final evolution complete!",
+  "weeksToEvolve": "{weeks}w to evolve",
+  "readyToEvolve": "Ready to evolve!",
+  "currentLevel": "Current Level",
+  "selectTodayCondition": "Select today's condition",
+  "todayCondition": "Today's Condition",
+  "chadRecommendedWorkout": "Chad's Recommended Workout"
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 import '../../utils/constants.dart';
 import 'onboarding_feature_item.dart';
 
@@ -16,35 +17,35 @@ class OnboardingFeaturesPage extends StatelessWidget {
         children: [
           const SizedBox(height: AppConstants.paddingXL),
           Text(
-            '✨ 주요 기능',
+            AppLocalizations.of(context).keyFeatures,
             style: theme.textTheme.headlineMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppConstants.paddingXL * 2),
-          const OnboardingFeatureItem(
+          OnboardingFeatureItem(
             icon: Icons.science,
-            title: '과학적 근거 기반',
-            description: '최신 스포츠 과학 논문을\n바탕으로 설계된 프로그램',
+            title: AppLocalizations.of(context).scientificBasisTitle,
+            description: AppLocalizations.of(context).scientificBasisDesc,
           ),
           const SizedBox(height: AppConstants.paddingXL),
-          const OnboardingFeatureItem(
+          OnboardingFeatureItem(
             icon: Icons.trending_up,
-            title: '점진적 과부하',
-            description: '매주 체계적으로 증가하는\n운동량으로 안전한 성장',
+            title: AppLocalizations.of(context).progressiveOverloadTitle,
+            description: AppLocalizations.of(context).progressiveOverloadDesc,
           ),
           const SizedBox(height: AppConstants.paddingXL),
-          const OnboardingFeatureItem(
+          OnboardingFeatureItem(
             icon: Icons.psychology,
-            title: 'RPE 기반 적응',
-            description: '운동 강도를 기록하면\n자동으로 난이도 조정',
+            title: AppLocalizations.of(context).rpeAdaptationTitle,
+            description: AppLocalizations.of(context).rpeAdaptationDesc,
           ),
           const SizedBox(height: AppConstants.paddingXL),
-          const OnboardingFeatureItem(
+          OnboardingFeatureItem(
             icon: Icons.emoji_events,
-            title: '차드 진화 시스템',
-            description: '운동할수록 성장하는\n나만의 캐릭터',
+            title: AppLocalizations.of(context).chadEvolutionTitle,
+            description: AppLocalizations.of(context).chadEvolutionDesc,
           ),
         ],
       ),

@@ -1360,5 +1360,17 @@
   "workoutTime": "Workout Time",
   "workoutTips": "Workout Tips",
   "workoutTipsContent": "• Stretch sufficiently before and after workouts\\n• Proper form is more important than quantity\\n• Consistency is the most important success factor",
-  "workoutTitle": "💪 WAR ZONE 💪"
+  "workoutTitle": "💪 WAR ZONE 💪",
+  "exitWorkout": "Exit Workout",
+  "exitWorkoutConfirm": "Are you sure you want to exit? Your progress will not be saved.",
+  "selectMinimum3Days": "You need to select at least 3 days! 💪",
+  "championNeedsConsistency": "True champions need consistency!\n\nYou need to work out at least 3 days a week to see real change!\n\nSelect more and try again! 💪",
+  "scheduleSetupComplete": "🎉 Schedule setup complete!\n\n{sessionsCreated} workout sessions have been created!\nLET'S GO! 💪🔥",
+  "scheduleSetupError": "Error during schedule setup:\n{error}",
+  "workoutScheduleSetup": "Workout Schedule Setup",
+  "setYourWorkoutSchedule": "🔥 Set Your Workout Schedule!",
+  "startTheJourney": "Start the Journey! 🚀",
+  "workoutCompleteSimple": "Workout Complete!",
+  "workoutCompleteGreatJob": "Great job! You completed today's workout.",
+  "totalRepsCount": "Total reps: {count}"
 }

@@ -24,7 +24,7 @@ class BackupHistoryCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "백업 기록",
+              AppLocalizations.of(context).backupHistory,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
@@ -33,8 +33,8 @@ class BackupHistoryCard extends StatelessWidget {
                 leading: const Icon(Icons.check_circle, color: Colors.green),
                 title: Text(AppLocalizations.of(context).lastBackup),
                 subtitle: Text(_formatDateTime(lastBackupTime!)),
-                trailing: const Text(
-                  '성공',
+                trailing: Text(
+                  AppLocalizations.of(context).success,
                 ),
               )
             else

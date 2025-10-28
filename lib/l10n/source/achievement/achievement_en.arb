@@ -606,5 +606,22 @@
   "startWorkoutForAchievements": "Start working out to unlock first achievement! 💪",
   "trophyIcon": "🏆",
   "unlockMoreChallenges": "Complete more workouts to unlock new challenges!",
-  "unlockedAchievements": "Unlocked Achievements ({count})"
+  "unlockedAchievements": "Unlocked Achievements ({count})",
+  "newAchievementUnlocked": "🏆 New Achievement Unlocked! 🏆",
+  "viewAllAchievements": "✨ View All Achievements",
+  "andMoreCount": "and {count} more!",
+  "@andMoreCount": {
+    "description": "Shows count of additional items",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "achievementStatus": "Achievements",
+  "achievementsUnlocked": "Unlocked",
+  "totalXP": "Total XP",
+  "completion": "Completion",
+  "achievementsUnlockedFormat": "You've unlocked {count} achievements!",
+  "totalXpEarned": "Total {totalXP} XP Earned!"
 }

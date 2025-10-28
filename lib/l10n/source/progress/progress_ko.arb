@@ -22,8 +22,38 @@
   "@dailyConquestRecord": {
     "description": "일일 정복 기록 타이틀"
   },
+  "@expProgress": {
+    "description": "Experience progress",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "required": {
+        "type": "int"
+      }
+    }
+  },
   "@inProgress": {
     "description": "In progress status"
+  },
+  "@levelProgressMax": {
+    "description": "Maximum level reached",
+    "placeholders": {
+      "currentLevel": {
+        "type": "int"
+      }
+    }
+  },
+  "@levelProgressNext": {
+    "description": "Current level to next level",
+    "placeholders": {
+      "currentLevel": {
+        "type": "int"
+      },
+      "nextLevel": {
+        "type": "int"
+      }
+    }
   },
   "@loadingStatistics": {
     "description": "통계 로딩 메시지"
@@ -85,14 +115,19 @@
   "@streakStartMessage": {
     "description": "연속 운동 시작 메시지"
   },
+  "backupHistory": "백업 기록",
   "bestRecord": "최고 기록",
   "challengeInProgress": "진행 중",
   "challengeProgress": "진행률: {progress}%",
   "currentLevelProgress": "• 현재 레벨 및 진행률",
   "currentStreak": "현재 연속",
   "dailyConquestRecord": "🔥💀 일일 정복 기록 💀🔥",
+  "expProgress": "{current} / {required} XP",
   "inProgress": "진행 중",
+  "levelProgressMax": "레벨 {currentLevel} (최대)",
+  "levelProgressNext": "레벨 {currentLevel} → {nextLevel}",
   "loadingStatistics": "나만의 통계를 불러오는 중...",
+  "loginToSaveProgress": "진행 상황을 저장하려면 로그인하세요",
   "monthlyProgress": "월간 진행률",
   "noBackupRecord": "백업 기록 없음",
   "noChartData": "차트 데이터가 없다",
@@ -113,5 +148,33 @@
   "streakEncouragement": "연속 운동 격려",
   "streakEncouragementSubtitle": "3일 연속 운동 시 격려 메시지",
   "streakProgress": "연속 운동 진행률",
-  "streakStartMessage": "연속 운동 시작!"
+  "streakStartMessage": "연속 운동 시작!",
+  "loadingProgramData": "프로그램 데이터를 불러오는 중...",
+  "startWorkoutToStartProgram": "운동을 시작하여 프로그램을 시작하세요! 💪",
+  "programProgress": "프로그램 진행률",
+  "progressShownAfterWorkout": "운동을 시작하면 진행률이 표시됩니다",
+  "overallProgramProgress": "전체 프로그램 진행도",
+  "weeksFormat": "{current}/{total} 주차",
+  "@weeksFormat": {
+    "description": "Format for weeks progress",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "thisWeekFormat": "이번 주 ({week}주차)",
+  "@thisWeekFormat": {
+    "description": "Format for this week label",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "daysCompleted": "일 완료",
+  "totalSessions": "총 운동 세션"
 }

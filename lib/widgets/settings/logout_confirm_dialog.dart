@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 /// 로그아웃 확인 다이얼로그
 class LogoutConfirmDialog extends StatelessWidget {
@@ -23,13 +24,14 @@ class LogoutConfirmDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return AlertDialog(
-      title: const Text('로그아웃'),
-      content: const Text('정말로 로그아웃하시겠습니까? 저장되지 않은 데이터는 손실될 수 있습니다.'),
+      title: Text(l10n.logout),
+      content: Text(l10n.logoutConfirm),
       actions: [
         TextButton(
           onPressed: () => Navigator.pop(context),
-          child: const Text('취소'),
+          child: Text(l10n.cancel),
         ),
         ElevatedButton(
           onPressed: () {
@@ -40,7 +42,7 @@ class LogoutConfirmDialog extends StatelessWidget {
             backgroundColor: Colors.orange,
             foregroundColor: Colors.white,
           ),
-          child: const Text('로그아웃'),
+          child: Text(l10n.logout),
         ),
       ],
     );

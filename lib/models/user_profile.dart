@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../generated/app_localizations.dart';
 
 /// 피트니스 목표 열거형
 enum FitnessGoal {
@@ -285,16 +286,16 @@ extension UserLevelExtension on UserLevel {
   }
 
   String getDescription(BuildContext context) {
-    final isKorean = Localizations.localeOf(context).languageCode == 'ko';
+    final l10n = AppLocalizations.of(context);
     switch (this) {
       case UserLevel.rookie:
-        return isKorean ? '5개 이하 → 100개 달성' : '≤5 reps → Achieve 100';
+        return l10n.rookieGoalDesc;
       case UserLevel.rising:
-        return isKorean ? '6-10개 → 100개 달성' : '6-10 reps → Achieve 100';
+        return l10n.risingGoalDesc;
       case UserLevel.alpha:
-        return isKorean ? '11-20개 → 100개 달성' : '11-20 reps → Achieve 100';
+        return l10n.alphaGoalDesc;
       case UserLevel.giga:
-        return isKorean ? '21개 이상 → 100개+ 달성' : '21+ reps → Achieve 100+';
+        return l10n.gigaGoalDesc;
     }
   }
 

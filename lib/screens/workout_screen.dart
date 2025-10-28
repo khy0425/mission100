@@ -3,9 +3,11 @@ import 'package:flutter/services.dart';
 import 'dart:async';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
 import '../models/achievement.dart';
+import '../models/challenge.dart';
 import '../widgets/ad_banner_widget.dart';
 import '../widgets/multiple_achievements_dialog.dart';
 // 분리된 위젯들 import
@@ -14,6 +16,11 @@ import 'workout/widgets/rep_counter_widget.dart';
 import 'workout/widgets/rest_timer_widget.dart';
 import 'workout/widgets/workout_controls_widget.dart';
 import 'workout/handlers/workout_completion_handler.dart';
+// 회원가입 유도 관련
+import '../services/auth_service.dart';
+import '../services/signup_prompt_service.dart';
+import '../widgets/dialogs/gentle_signup_prompt_dialog.dart';
+import '../screens/onboarding/onboarding_screen.dart';
 
 class WorkoutScreen extends StatefulWidget {
   final dynamic workout; // 서비스에서 가져오는 타입
@@ -145,9 +152,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '오류가 발생했습니다: $e'
-                  : 'Error occurred: $e',
+              AppLocalizations.of(context).errorOccurredWithMessage(e.toString()),
             ),
             duration: const Duration(seconds: 3),
             backgroundColor: Colors.red,
@@ -671,9 +676,88 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     );
   }
 
-  void _finishWorkout() {
+  void _finishWorkout() async {
+    // 회원가입 유도 체크 (비차단, 백그라운드)
+    _checkAndShowSignupPrompt();
+
     widget.onWorkoutCompleted?.call();
     Navigator.pop(context);
+  }
+
+  /// 회원가입 유도 체크 및 표시
+  ///
+  /// 조건:
+  /// 1. 사용자가 비로그인 상태
+  /// 2. 아직 유도를 보여주지 않음 (한 번만)
+  /// 3. 적절한 타이밍 (3일 사용 + 5회 운동 이상)
+  Future<void> _checkAndShowSignupPrompt() async {
+    try {
+      // 1. 로그인 상태 확인
+      final authService = Provider.of<AuthService>(context, listen: false);
+      final isLoggedIn = authService.currentUser != null;
+
+      if (isLoggedIn) {
+        debugPrint('ℹ️ 이미 로그인됨 - 회원가입 유도 불필요');
+        return;
+      }
+
+      // 2. 유도 표시 여부 확인
+      final signupPromptService = SignupPromptService();
+      final shouldShow = await signupPromptService.shouldShowPrompt();
+
+      if (!shouldShow) {
+        debugPrint('ℹ️ 이미 유도를 보여줌 - 회원가입 유도 스킵');
+        return;
+      }
+
+      // 3. 적절한 타이밍 확인
+      final timing = await signupPromptService.getRecommendedTiming();
+
+      if (timing == SignupPromptTiming.notYet) {
+        debugPrint('ℹ️ 아직 적절한 타이밍이 아님 - 회원가입 유도 스킵');
+        return;
+      }
+
+      // 4. 운동 완료 횟수 증가 (타이밍 판단용)
+      final prefs = await SharedPreferences.getInstance();
+      final workoutCount = prefs.getInt('completed_workout_count') ?? 0;
+      await prefs.setInt('completed_workout_count', workoutCount + 1);
+
+      // 5. 모든 조건 충족 - 유도 표시
+      debugPrint('✅ 회원가입 유도 조건 충족 - 다이얼로그 표시');
+
+      // 약간의 딜레이 후 표시 (UX 개선)
+      await Future.delayed(const Duration(milliseconds: 500));
+
+      if (!mounted) return;
+
+      await showDialog(
+        context: context,
+        barrierDismissible: true,
+        builder: (context) => GentleSignupPromptDialog(
+          onSignUp: () {
+            // 회원가입 화면으로 이동
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const OnboardingScreen(),
+              ),
+            );
+          },
+          onDismiss: () async {
+            // 유도를 보여줬음을 기록
+            await signupPromptService.markPromptShown();
+            debugPrint('✅ 회원가입 유도 표시 완료 - 다음부터는 안 보여줌');
+          },
+        ),
+      );
+
+      // 다이얼로그가 닫힌 후에도 기록
+      await signupPromptService.markPromptShown();
+
+    } catch (e) {
+      debugPrint('❌ 회원가입 유도 확인 실패: $e');
+      // 에러 발생 시에도 앱 흐름은 계속 진행
+    }
   }
 
   void _showExitConfirmation() {
@@ -681,14 +765,10 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       context: context,
       builder: (context) => AlertDialog(
         title: Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '운동 종료'
-              : 'Exit Workout',
+          AppLocalizations.of(context).exitWorkout,
         ),
         content: Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '운동을 종료하시겠습니까? 진행 상황이 저장되지 않습니다.'
-              : 'Are you sure you want to exit? Your progress will not be saved.',
+          AppLocalizations.of(context).exitWorkoutConfirm,
         ),
         actions: [
           TextButton(

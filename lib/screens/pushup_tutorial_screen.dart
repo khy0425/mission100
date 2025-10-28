@@ -52,9 +52,7 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
         backgroundColor: const Color(0xFF0D0D0D),
         foregroundColor: Colors.white,
         title: Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '차드 푸시업 도장'
-              : AppLocalizations.of(context).pushupTutorialTitle,
+          AppLocalizations.of(context).pushupTutorialTitle,
           style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
@@ -91,11 +89,7 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                           ),
                           const SizedBox(height: 12),
                           Text(
-                            Localizations.localeOf(context).languageCode == 'ko'
-                                ? '진짜 차드들은 자세부터 다르다! 💪'
-                                : AppLocalizations.of(
-                                    context,
-                                  ).pushupTutorialSubtitle,
+                            AppLocalizations.of(context).pushupTutorialSubtitle,
                             style: const TextStyle(
                               color: Colors.white,
                               fontSize: 16,
@@ -402,9 +396,7 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
       case 'one_arm':
         return AppLocalizations.of(context).pushupOneArmDesc;
       default:
-        return Localizations.localeOf(context).languageCode == 'ko'
-            ? '차드를 위한 특별한 푸시업'
-            : 'Special pushup for chads';
+        return AppLocalizations.of(context).specialPushupForChads;
     }
   }
 

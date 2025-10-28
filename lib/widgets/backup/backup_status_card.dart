@@ -37,9 +37,9 @@ class BackupStatusCard extends StatelessWidget {
                   color: status.autoBackupEnabled ? Colors.green : Colors.grey,
                 ),
                 const SizedBox(width: 8),
-                const Text(
-                  '백업 상태',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                Text(
+                  AppLocalizations.of(context).backupStatus,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -50,16 +50,16 @@ class BackupStatusCard extends StatelessWidget {
             ),
             if (status.lastBackupTime != null)
               BackupStatusRow(
-                label: '마지막 백업',
+                label: AppLocalizations.of(context).lastBackup,
                 value: _formatDateTime(status.lastBackupTime!),
               ),
             if (status.nextBackupTime != null)
               BackupStatusRow(
-                label: '다음 백업',
+                label: AppLocalizations.of(context).nextBackup,
                 value: _formatDateTime(status.nextBackupTime!),
               ),
             BackupStatusRow(
-              label: '백업 빈도',
+              label: AppLocalizations.of(context).backupFrequency,
               value: getFrequencyText(status.frequency),
             ),
             BackupStatusRow(
@@ -70,8 +70,8 @@ class BackupStatusCard extends StatelessWidget {
             ),
             if (status.failureCount > 0)
               BackupStatusRow(
-                label: '실패 횟수',
-                value: '${status.failureCount}회',
+                label: AppLocalizations.of(context).failureCount,
+                value: '${status.failureCount}${AppLocalizations.of(context).times}',
                 isError: true,
               ),
           ],

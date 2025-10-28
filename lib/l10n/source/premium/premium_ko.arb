@@ -74,6 +74,10 @@
   "@scientificFact9Explanation": {
     "description": "과학적 팩트 9번 설명"
   },
+  "currentSubscription": "현재 구독",
+  "freeUsing": "무료 사용 중",
+  "premiumActive": "프리미엄 구독 활성",
+  "premiumBenefits": "프리미엄 혜택",
   "scientificFact10Explanation": "심박출량 증가는 운동 능력뿜만 아니라 일상 활동의 질도 향상시킵니다.",
   "scientificFact11Explanation": "새로운 혈관 형성으로 영양소와 산소 공급이 극대화된다.",
   "scientificFact12Explanation": "혈관 탄성 개선과 말초 저항 감소로 건강한 혈압이 유지된다.",
@@ -98,5 +102,25 @@
   "scientificFact6Explanation": "운동으로 인한 신경가소성 증가는 인지 기능 전반의 향상을 가져옵니다.",
   "scientificFact7Explanation": "BDNF는 뇌의 비료라고 불리며, 새로운 신경 연결을 촉진한다.",
   "scientificFact8Explanation": "빠른 신경 전달은 일상생활에서 빠르고 정확한 반응을 가능하게 한다.",
-  "scientificFact9Explanation": "인터뉴런의 정교한 조절로 무의식적으로도 완벽한 자세가 가능해집니다."
+  "scientificFact9Explanation": "인터뉴런의 정교한 조절로 무의식적으로도 완벽한 자세가 가능해집니다.",
+  "subscriptionExpiringSoon": "구독이 곧 만료됩니다. 갱신하시겠습니까?",
+  "subscriptionManagement": "구독 관리",
+  "freeTrialDaysRemaining": "무료 체험 {days}일 남음",
+  "allWorkoutProgramsAvailable": "모든 운동 프로그램 이용 가능",
+  "premium": "프리미엄",
+  "promotion": "프로모션",
+  "free": "무료",
+  "freePlan": "무료 플랜",
+  "launchPromotion": "런칭 프로모션",
+  "premiumMonthly": "프리미엄 (₩4,900/월)",
+  "statusActive": "활성",
+  "statusExpired": "만료됨",
+  "statusCancelled": "취소됨",
+  "statusTrial": "체험중",
+  "unlimited": "무제한",
+  "planLabel": "플랜",
+  "statusLabel": "상태",
+  "startDate": "시작일",
+  "expiryDate": "만료일",
+  "autoRenewalEnabled": "자동 갱신 활성화"
 }

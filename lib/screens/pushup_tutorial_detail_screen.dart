@@ -129,9 +129,7 @@ class _PushupTutorialDetailScreenState
 
                     // 간단한 설명 섹션
                     _buildSection(
-                      Localizations.localeOf(context).languageCode == 'ko'
-                          ? '💪 차드 설명'
-                          : AppLocalizations.of(context).chadDescription,
+                      AppLocalizations.of(context).chadDescription,
                       _getPushupDescription(widget.pushupType),
                       Icons.fitness_center,
                       const Color(0xFF51CF66),
@@ -139,9 +137,7 @@ class _PushupTutorialDetailScreenState
 
                     // 차드의 조언 섹션
                     _buildSection(
-                      Localizations.localeOf(context).languageCode == 'ko'
-                          ? '🔥 차드의 조언'
-                          : AppLocalizations.of(context).chadAdvice,
+                      AppLocalizations.of(context).chadAdvice,
                       _getChadMotivation(widget.pushupType),
                       Icons.psychology,
                       const Color(0xFFFFD43B),
@@ -548,9 +544,7 @@ class _PushupTutorialDetailScreenState
       case 'one_arm':
         return AppLocalizations.of(context).pushupOneArmDesc;
       default:
-        return Localizations.localeOf(context).languageCode == 'ko'
-            ? '차드를 위한 특별한 푸시업'
-            : 'Special pushup for chads';
+        return AppLocalizations.of(context).specialPushupForChads;
     }
   }
 

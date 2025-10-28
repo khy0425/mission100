@@ -1,86 +1,93 @@
 {
-  "onboardingWelcomeTitle": "6주, 100개. 가능하다! 🔥",
-  "@onboardingWelcomeTitle": {
-    "description": "온보딩 환영 화면 제목"
-  },
-  "onboardingWelcomeDescription": "6주면 충분해. 너도 100개 간다.\n각 잡고 시작하자! 💪",
-  "@onboardingWelcomeDescription": {
-    "description": "온보딩 환영 화면 설명"
-  },
-  "onboardingProgramIntroTitle": "6주 완전 정복 플랜 📋",
-  "@onboardingProgramIntroTitle": {
-    "description": "온보딩 프로그램 소개 제목"
-  },
-  "onboardingProgramIntroDescription": "6주면 끝난다. 단계별로 올라간다.\n\n• 1주차: 기초 다지기\n• 2-3주차: 근력 폭발\n• 4-5주차: 지구력 MAX\n• 6주차: 100개 달성 🎯",
-  "@onboardingProgramIntroDescription": {
-    "description": "온보딩 프로그램 소개 설명"
-  },
-  "onboardingAdaptiveTrainingTitle": "🎯 너한테 딱 맞춰준다",
-  "@onboardingAdaptiveTrainingTitle": {
-    "description": "온보딩 적응형 훈련 제목"
-  },
-  "onboardingAdaptiveTrainingDescription": "힘들면? → 강도 낮춘다 ⬇️\n쉬우면? → 강도 올린다 ⬆️\n\n너한테 딱 맞는 난이도로 간다! 🔥",
-  "@onboardingAdaptiveTrainingDescription": {
-    "description": "온보딩 적응형 훈련 설명"
-  },
-  "onboardingChadEvolutionTitle": "계속 진화한다 🚀",
-  "@onboardingChadEvolutionTitle": {
-    "description": "온보딩 진화 제목"
-  },
-  "onboardingChadEvolutionDescription": "운동할 때마다 레벨업!\n\n🏃 Rookie → 💪 Giga → 👑 Legendary\n\n각 단계마다 새로운 업적 해제! 🏆",
-  "@onboardingChadEvolutionDescription": {
-    "description": "온보딩 진화 설명"
-  },
-  "onboardingInitialTestTitle": "실력 체크 타임 ⏱️",
-  "@onboardingInitialTestTitle": {
-    "description": "온보딩 초기 테스트 제목"
-  },
-  "onboardingInitialTestDescription": "지금 실력 체크하고\n너한테 딱 맞는 프로그램 시작한다.\n\n• 최대한 많이 해봐\n• 정확한 자세로\n• 결과로 맞춤 프로그램 완성",
-  "@onboardingInitialTestDescription": {
-    "description": "온보딩 초기 테스트 설명"
-  },
-  "onboardingButtonStart": "바로 간다! 🔥",
-  "@onboardingButtonStart": {
-    "description": "온보딩 시작 버튼"
-  },
-  "onboardingButtonNext": "계속 간다! 💪",
-  "@onboardingButtonNext": {
-    "description": "온보딩 다음 버튼"
-  },
-  "onboardingButtonGotIt": "오케이! 👌",
-  "@onboardingButtonGotIt": {
-    "description": "온보딩 적응형 훈련 확인 버튼"
-  },
-  "onboardingButtonGreat": "각 잡혔다! 💪",
-  "@onboardingButtonGreat": {
-    "description": "온보딩 진화 확인 버튼"
-  },
-  "onboardingButtonStartTest": "바로 체크! 🎯",
-  "@onboardingButtonStartTest": {
-    "description": "온보딩 테스트 시작 버튼"
-  },
-  "challengeTestYourLimits": "💪 오늘 너의 한계를 시험해볼까?",
   "@challengeTestYourLimits": {
     "description": "한계 시험 챌린지 메시지"
   },
-  "completeInitialTest": "초기 테스트를 완료하여 프로필을 생성해주세요",
   "@completeInitialTest": {
     "description": "초기 테스트 완료 안내"
   },
-  "getStarted": "시작하기 🚀",
   "@getStarted": {
     "description": "시작하기 버튼 텍스트 (이모지 포함)"
   },
+  "@onboardingAdaptiveTrainingDescription": {
+    "description": "온보딩 적응형 훈련 설명"
+  },
+  "@onboardingAdaptiveTrainingTitle": {
+    "description": "온보딩 적응형 훈련 제목"
+  },
+  "@onboardingButtonGotIt": {
+    "description": "온보딩 적응형 훈련 확인 버튼"
+  },
+  "@onboardingButtonGreat": {
+    "description": "온보딩 진화 확인 버튼"
+  },
+  "@onboardingButtonNext": {
+    "description": "온보딩 다음 버튼"
+  },
+  "@onboardingButtonStart": {
+    "description": "온보딩 시작 버튼"
+  },
+  "@onboardingButtonStartTest": {
+    "description": "온보딩 테스트 시작 버튼"
+  },
+  "@onboardingInitialTestDescription": {
+    "description": "온보딩 초기 테스트 설명"
+  },
+  "@onboardingInitialTestTitle": {
+    "description": "온보딩 초기 테스트 제목"
+  },
+  "@onboardingWelcomeDescription": {
+    "description": "온보딩 환영 화면 설명"
+  },
+  "@onboardingWelcomeTitle": {
+    "description": "온보딩 환영 화면 제목"
+  },
+  "challengeTestYourLimits": "💪 오늘 너의 한계를 시험해볼까?",
+  "completeInitialTest": "초기 테스트를 완료하여 프로필을 생성해주세요",
+  "getStarted": "시작하기 🚀",
   "getStartedButton": "시작하기",
+  "onboardingAdaptiveTrainingDescription": "힘들면? → 강도 낮춘다 ⬇️\n쉬우면? → 강도 올린다 ⬆️\n\n너한테 딱 맞는 난이도로 간다! 🔥",
+  "onboardingAdaptiveTrainingTitle": "🎯 너한테 딱 맞춰준다",
+  "onboardingButtonGotIt": "오케이! 👌",
+  "onboardingButtonGreat": "각 잡혔다! 💪",
+  "onboardingButtonNext": "계속 간다! 💪",
+  "onboardingButtonStart": "바로 간다! 🔥",
+  "onboardingButtonStartTest": "바로 체크! 🎯",
+  "onboardingInitialTestDescription": "지금 실력 체크하고\n너한테 딱 맞는 프로그램 시작한다.\n\n• 최대한 많이 해봐\n• 정확한 자세로\n• 결과로 맞춤 프로그램 완성",
+  "onboardingInitialTestTitle": "실력 체크 타임 ⏱️",
   "onboardingNext": "다음",
   "onboardingSkip": "건너뛰기",
   "onboardingStart": "시작하기",
+  "onboardingWelcomeDescription": "6주면 충분해. 너도 100개 간다.\n각 잡고 시작하자! 💪",
+  "onboardingWelcomeTitle": "6주, 100개. 가능하다! 🔥",
   "startTestButton": "테스트 시작",
   "stepByStepGuide": "단계별\n가이드",
   "testAdMessage": "테스트 광고 - 피트니스 앱",
+  "tutorial": "튜토리얼",
   "tutorialButton": "💥 PUSHUP MASTER 되기 💥",
   "tutorialDetailTitle": "💥 EMPEROR 자세 MASTER하기 💥",
   "tutorialSubtitle": "진짜 EMPEROR는 자세부터 다르다! 💪",
   "tutorialTitle": "🔥 ALPHA EMPEROR PUSHUP DOJO 🔥",
-  "welcomeMessage": "🔥 WELCOME,\nFUTURE EMPEROR! 🔥\n정복의 시간이다!"
+  "welcomeMessage": "🔥 WELCOME,\nFUTURE EMPEROR! 🔥\n정복의 시간이다!",
+  "startJourney": "여정 시작하기! 🚀",
+  "setWorkoutSchedule": "🔥 운동 스케줄을 설정하세요!",
+  "workoutScheduleDescription": "진정한 챔피언이 되려면 일관성이 필요합니다!\n주 3일 이상 운동해야 합니다. 💪\n\n라이프스타일에 맞는 날을 선택하고,\n알림으로 핑계를 차단하세요! 🚀",
+  "goalSetupComplete": "🎉 목표 설정 완료!",
+  "goalSetupCompleteMessage": "이제 당신만의 맞춤형 Mission: 100이 시작됩니다.\n런칭 이벤트로 1개월 무료 체험해보세요!",
+  "keyFeatures": "✨ 주요 기능",
+  "scientificBasisTitle": "과학적 근거 기반",
+  "scientificBasisDesc": "최신 스포츠 과학 논문을\n바탕으로 설계된 프로그램",
+  "progressiveOverloadTitle": "점진적 과부하",
+  "progressiveOverloadDesc": "매주 체계적으로 증가하는\n운동량으로 안전한 성장",
+  "rpeAdaptationTitle": "RPE 기반 적응",
+  "rpeAdaptationDesc": "운동 강도를 기록하면\n자동으로 난이도 조정",
+  "chadEvolutionTitle": "차드 진화 시스템",
+  "chadEvolutionDesc": "운동할수록 성장하는\n나만의 캐릭터",
+  "readyToStart": "준비되셨나요?",
+  "findYourLevel": "먼저 간단한 레벨 테스트로\n당신의 시작점을 찾아보세요",
+  "step1LevelTest": "레벨 테스트 (30초)",
+  "step2SetStartDate": "운동 시작일 설정",
+  "step3StartJourney": "14주 여정 시작!",
+  "awesome": "멋져요!",
+  "onboardingProgramIntroTitle": "14주 프로그램 소개",
+  "onboardingProgramIntroDescription": "과학적으로 설계된 14주 프로그램으로\n100개 푸시업 달성을 목표로 합니다"
 }

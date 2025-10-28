@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../generated/app_localizations.dart';
 import '../services/auth_service.dart';
 import '../models/user_subscription.dart';
 import '../screens/subscription_screen.dart';
@@ -42,6 +43,7 @@ class PremiumGateWidget extends StatelessWidget {
   }
 
   Widget _buildLockedContent(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Stack(
       children: [
         // 원본 콘텐츠를 흐리게 표시
@@ -69,7 +71,7 @@ class PremiumGateWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    featureName ?? '프리미엄 기능',
+                    featureName ?? l10n.premiumFeatures,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -94,7 +96,7 @@ class PremiumGateWidget extends StatelessWidget {
                   ElevatedButton.icon(
                     onPressed: () => _showUpgradeDialog(context),
                     icon: const Icon(Icons.upgrade),
-                    label: const Text('업그레이드'),
+                    label: Text(l10n.upgrade),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.amber,
                       foregroundColor: Colors.black,
@@ -119,10 +121,11 @@ class PremiumGateWidget extends StatelessWidget {
       return;
     }
 
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       builder: (context) => PremiumUpgradeDialog(
-        featureName: featureName ?? '이 기능',
+        featureName: featureName ?? l10n.thisFeature,
         requiredFeature: requiredFeature,
       ),
     );
@@ -141,14 +144,15 @@ class PremiumUpgradeDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final requiredPlan = _getRequiredPlan();
+    final l10n = AppLocalizations.of(context);
+    final requiredPlan = _getRequiredPlan(context);
 
     return AlertDialog(
-      title: const Row(
+      title: Row(
         children: [
-          Icon(Icons.workspace_premium, color: Colors.amber),
-          SizedBox(width: 8),
-          Text('프리미엄 기능'),
+          const Icon(Icons.workspace_premium, color: Colors.amber),
+          const SizedBox(width: 8),
+          Text(l10n.premiumFeatures),
         ],
       ),
       content: Column(
@@ -156,13 +160,13 @@ class PremiumUpgradeDialog extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '$featureName을 사용하려면 프리미엄 구독이 필요합니다.',
+            l10n.featureRequiresPremium(featureName),
             style: const TextStyle(fontSize: 16),
           ),
           const SizedBox(height: 16),
           if (requiredPlan != null) ...[
             Text(
-              '필요한 구독: $requiredPlan',
+              '${l10n.requiredSubscription} $requiredPlan',
               style: const TextStyle(
                 fontWeight: FontWeight.w600,
                 color: Colors.blue,
@@ -180,12 +184,12 @@ class PremiumUpgradeDialog extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  '프리미엄 혜택:',
-                  style: TextStyle(fontWeight: FontWeight.w600),
+                Text(
+                  l10n.premiumBenefits,
+                  style: const TextStyle(fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(height: 8),
-                ..._getPremiumBenefits().map(
+                ..._getPremiumBenefits(context).map(
                       (benefit) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 2),
                         child: Row(
@@ -214,7 +218,7 @@ class PremiumUpgradeDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: () => Navigator.of(context).pop(),
-          child: const Text('나중에'),
+          child: Text(l10n.later),
         ),
         ElevatedButton(
           onPressed: () => _navigateToSubscription(context),
@@ -222,17 +226,18 @@ class PremiumUpgradeDialog extends StatelessWidget {
             backgroundColor: Colors.amber,
             foregroundColor: Colors.black,
           ),
-          child: const Text('구독하기'),
+          child: Text(l10n.subscribe),
         ),
       ],
     );
   }
 
-  String? _getRequiredPlan() {
+  String? _getRequiredPlan(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     // 새 구독 모델에서는 광고 제거만 프리미엄
     switch (requiredFeature) {
       case PremiumFeature.adFree:
-        return '프리미엄 구독 (₩4,900/월)';
+        return l10n.premiumSubscriptionPrice;
       case PremiumFeature.unlimitedWorkouts:
       case PremiumFeature.advancedStats:
       case PremiumFeature.premiumChads:
@@ -242,11 +247,12 @@ class PremiumUpgradeDialog extends StatelessWidget {
     }
   }
 
-  List<String> _getPremiumBenefits() {
+  List<String> _getPremiumBenefits(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return [
-      '✨ 모든 광고 제거',
-      '⚡ VIP 빠른 로딩',
-      '☁️ 클라우드 백업',
+      l10n.premiumBenefitAdFree,
+      l10n.premiumBenefitFastLoading,
+      l10n.premiumBenefitCloudBackup,
     ];
   }
 
@@ -324,6 +330,7 @@ class PremiumLimitWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Container(
       margin: const EdgeInsets.all(16),
       padding: const EdgeInsets.all(16),
@@ -354,7 +361,7 @@ class PremiumLimitWidget extends StatelessWidget {
             child: ElevatedButton.icon(
               onPressed: () => _navigateToSubscription(context),
               icon: const Icon(Icons.workspace_premium),
-              label: const Text('프리미엄으로 업그레이드'),
+              label: Text(l10n.upgradeToPremium),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.amber,
                 foregroundColor: Colors.black,

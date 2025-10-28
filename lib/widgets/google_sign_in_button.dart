@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../generated/app_localizations.dart';
 
 /// Google Material Design 스타일의 로그인 버튼
 ///
@@ -9,7 +10,7 @@ import 'package:flutter/material.dart';
 class GoogleSignInButton extends StatefulWidget {
   final VoidCallback? onPressed;
   final bool isLoading;
-  final String text;
+  final String? text;
   final double? width;
   final double height;
 
@@ -17,7 +18,7 @@ class GoogleSignInButton extends StatefulWidget {
     super.key,
     required this.onPressed,
     this.isLoading = false,
-    this.text = '구글로 로그인',
+    this.text,
     this.width,
     this.height = 40,
   });
@@ -144,17 +145,19 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                           Flexible(
                             child: Opacity(
                               opacity: isDisabled ? 0.38 : 1.0,
-                              child: Text(
-                                widget.text,
-                                style: const TextStyle(
-                                  fontFamily: 'Roboto',
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
-                                  letterSpacing: 0.25,
-                                  color: Color(0xFF1F1F1F),
+                              child: Builder(
+                                builder: (context) => Text(
+                                  widget.text ?? AppLocalizations.of(context).signInGoogle,
+                                  style: const TextStyle(
+                                    fontFamily: 'Roboto',
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                    letterSpacing: 0.25,
+                                    color: Color(0xFF1F1F1F),
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                  maxLines: 1,
                                 ),
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 1,
                               ),
                             ),
                           ),

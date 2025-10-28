@@ -85,9 +85,7 @@ class OverallStatsCard extends StatelessWidget {
                     color: const Color(0xFFFFD43B),
                   ),
                   StatCardItem(
-                    title: Localizations.localeOf(context).languageCode == 'ko'
-                        ? AppLocalizations.of(context).completionRate
-                        : 'Completion',
+                    title: AppLocalizations.of(context).completionRate,
                     value: '${(completionRate * 100).toStringAsFixed(1)}%',
                     icon: Icons.pie_chart,
                     color: const Color(0xFFFF6B6B),

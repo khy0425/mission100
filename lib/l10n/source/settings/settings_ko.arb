@@ -182,6 +182,111 @@
   "themeColorDesc": "앱의 메인 색상을 변경한다",
   "themeColorSelection": "테마 색상 선택",
   "useDarkTheme": "어두운 테마를 사용한다",
-  "backupActions": "백업 작업",
-  "backupHistory": "백업 기록"
+  "settingsHeader": "MISSION 100 설정",
+  "notificationPermissionStatus": "알림 권한 상태",
+  "basicNotificationRequired": "기본 알림을 받기 위해 필요합니다",
+  "exactAlarmRequired": "정확한 시간에 알림을 받기 위해 필요합니다",
+  "required": "(필수)",
+  "currentMaxRange": "현재 최대 {range}",
+  "workoutNotifications": "운동 알림 설정",
+  "enableWorkoutReminders": "운동 알림 받기",
+  "getRemindersOnWorkoutDays": "선택한 운동일에 알림을 받습니다",
+  "notificationTime": "알림 시간",
+  "canChangeInSettingsAnytime": "💡 설정 탭에서 언제든지 변경할 수 있습니다",
+  "selectWorkoutDaysMin3": "운동 요일 선택 (최소 3일)",
+  "selectedDaysCount": "선택된 날짜: {count}일",
+  "@selectedDaysCount": {
+    "description": "Shows selected days count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "selectedDaysCountEn": "Selected days: {count} days",
+  "darkModeEnabled": "다크 모드가 활성화되었습니다",
+  "lightModeEnabled": "라이트 모드가 활성화되었습니다",
+  "followingSystemSettings": "시스템 설정을 따릅니다",
+  "manualSettingsEnabled": "수동 설정이 활성화되었습니다",
+  "highContrastEnabled": "고대비 모드가 활성화되었습니다",
+  "highContrastDisabled": "고대비 모드가 비활성화되었습니다",
+  "selectColorTheme": "색상 테마 선택",
+  "themeApplied": "{theme} 테마가 적용되었습니다",
+  "@themeApplied": {
+    "description": "Theme applied message",
+    "placeholders": {
+      "theme": {
+        "type": "String"
+      }
+    }
+  },
+  "themeBlue": "블루",
+  "themeGreen": "그린",
+  "themeOrange": "오렌지",
+  "themePurple": "퍼플",
+  "themeRed": "레드",
+  "versionLabel": "버전: {version}",
+  "@versionLabel": {
+    "description": "Version label",
+    "placeholders": {
+      "version": {
+        "type": "String"
+      }
+    }
+  },
+  "buildLabel": "빌드: {build}",
+  "@buildLabel": {
+    "description": "Build label",
+    "placeholders": {
+      "build": {
+        "type": "String"
+      }
+    }
+  },
+  "packageLabel": "패키지: {package}",
+  "@packageLabel": {
+    "description": "Package label",
+    "placeholders": {
+      "package": {
+        "type": "String"
+      }
+    }
+  },
+  "achieve100Pushups": "6주 만에 100개 푸쉬업 달성!\n차드가 되는 여정을 함께하세요! 🔥",
+  "techStack": "기술 스택:",
+  "sqliteDatabase": "SQLite 로컬 데이터베이스",
+  "providerStateManagement": "Provider 상태 관리",
+  "licenses": "라이선스",
+  "feedbackSubject": "Mission 100 Chad Pushup 피드백",
+  "feedbackBody": "안녕하세요! Mission 100 Chad Pushup 앱에 대한 피드백을 보내드립니다.\n\n",
+  "goalAchievementCelebration": "• 목표 달성 축하",
+  "streakMaintenanceReminder": "• 연속 기록 유지 알림",
+  "later": "나중에",
+  "allow": "허용",
+  "storageBackupRestorePermission": "운동 데이터 백업/복원을 위해 저장소 접근 권한이 필요합니다.",
+  "workoutRecordBackup": "• 운동 기록 백업",
+  "dataRestore": "• 데이터 복원",
+  "android13FilePickerNote": "💡 Android 13+에서는 파일 선택기를 사용하므로 이 권한이 필요하지 않습니다.",
+  "storagePermissionRequired": "저장소 권한 필요",
+  "storagePermissionNeededForBackup": "데이터 백업 및 복원 기능을 사용하려면\n저장소 접근 권한이 필요합니다.\n\n권한을 허용하시겠습니까?",
+  "grantPermission": "권한 허용",
+  "permissionRequired": "권한 필요",
+  "storagePermissionDeniedMessage": "저장소 권한이 거부되었습니다.\n\n백업/복원 기능을 사용하려면 설정에서\n수동으로 권한을 허용해주세요.\n\n설정 > 앱 > Mission 100 > 권한 > 저장소",
+  "goToSettings": "설정으로 이동",
+  "permissionGranted": "허용됨",
+  "permissionDenied": "거부됨",
+  "permissionRestricted": "제한됨",
+  "permissionLimited": "제한적 허용",
+  "permissionPermanentlyDenied": "영구 거부됨",
+  "permissionUnknown": "알 수 없음",
+  "accountSettings": "계정 설정",
+  "logoutErrorMessage": "로그아웃 중 오류 발생: {error}",
+  "@logoutErrorMessage": {
+    "description": "Logout error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  }
 }

@@ -74,6 +74,15 @@
   "@scientificFact9Explanation": {
     "description": "Scientific fact 9 explanation"
   },
+  "btnStartFree": "Start for Free",
+  "btnStartSubscription": "Start Subscription",
+  "currentSubscription": "Current Subscription",
+  "freeUsing": "Free Tier",
+  "msgCannotStartPurchase": "Cannot start purchase.",
+  "msgLoadingSubscription": "Loading subscription products...",
+  "msgSubscriptionSuccess": "Subscription completed successfully!",
+  "premiumActive": "Premium Active",
+  "premiumBenefits": "Premium Benefits",
   "scientificFact10Explanation": "Increased cardiac output improves not only exercise capacity but also quality of daily activities.",
   "scientificFact11Explanation": "New blood vessel formation maximizes nutrient and oxygen supply.",
   "scientificFact12Explanation": "Improved vascular elasticity and reduced peripheral resistance maintain healthy blood pressure.",
@@ -98,5 +107,67 @@
   "scientificFact6Explanation": "Exercise-induced neuroplasticity increases lead to overall cognitive function improvements.",
   "scientificFact7Explanation": "BDNF is called brain fertilizer and promotes new neural connections.",
   "scientificFact8Explanation": "Faster nerve transmission enables quick and accurate responses in daily life.",
-  "scientificFact9Explanation": "Precise interneuron control enables perfect posture even unconsciously."
+  "scientificFact9Explanation": "Precise interneuron control enables perfect posture even unconsciously.",
+  "subscriptionExpiringSoon": "Your subscription is expiring soon. Renew?",
+  "subscriptionManagement": "Subscription Management",
+  "titleManageSubscription": "Manage Subscription",
+  "titlePremiumFeatures": "Premium Features",
+  "freeTrialDaysRemaining": "Free trial {days} days remaining",
+  "allWorkoutProgramsAvailable": "All workout programs available",
+  "titlePremiumSubscription": "Premium Subscription",
+  "premium": "Premium",
+  "promotion": "Promotion",
+  "free": "Free",
+  "@freePlan": {
+    "description": "Free plan name"
+  },
+  "@launchPromotion": {
+    "description": "Launch promotion subscription name"
+  },
+  "@premiumMonthly": {
+    "description": "Premium monthly subscription with price"
+  },
+  "@statusActive": {
+    "description": "Active subscription status"
+  },
+  "@statusExpired": {
+    "description": "Expired subscription status"
+  },
+  "@statusCancelled": {
+    "description": "Cancelled subscription status"
+  },
+  "@statusTrial": {
+    "description": "Trial subscription status"
+  },
+  "@unlimited": {
+    "description": "Unlimited (for no expiry date)"
+  },
+  "@planLabel": {
+    "description": "Plan label"
+  },
+  "@statusLabel": {
+    "description": "Status label"
+  },
+  "@startDate": {
+    "description": "Start date label"
+  },
+  "@expiryDate": {
+    "description": "Expiry date label"
+  },
+  "@autoRenewalEnabled": {
+    "description": "Auto renewal enabled message"
+  },
+  "freePlan": "Free Plan",
+  "launchPromotion": "Launch Promotion",
+  "premiumMonthly": "Premium (₩4,900/month)",
+  "statusActive": "Active",
+  "statusExpired": "Expired",
+  "statusCancelled": "Cancelled",
+  "statusTrial": "Trial",
+  "unlimited": "Unlimited",
+  "planLabel": "Plan",
+  "statusLabel": "Status",
+  "startDate": "Start Date",
+  "expiryDate": "Expiry Date",
+  "autoRenewalEnabled": "Auto Renewal Enabled"
 }

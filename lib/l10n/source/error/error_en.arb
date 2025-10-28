@@ -54,6 +54,7 @@
   "errorNetwork": "🌪️ CHECK NETWORK CONNECTION! ALPHA CONNECTION REQUIRED! 🌪️",
   "errorNotFound": "🔱 DATA NOT FOUND! TIME TO CREATE NEW LEGENDS! 🔱",
   "errorOccurred": "An error occurred",
+  "errorOccurredWithMessage": "Error occurred: {error}",
   "permissionsRequired": "🔐 Permissions Required",
   "profileCreationError": "⚡ PROFILE CREATION FAILED! TRY AGAIN, ALPHA! ERROR: {error} ⚡",
   "required": "Required",

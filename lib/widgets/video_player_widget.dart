@@ -195,15 +195,11 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
   }
 
   Widget _buildPlaceholder() {
-    final placeholderText = widget.placeholderText ??
-        (Localizations.localeOf(context).languageCode == 'ko'
-            ? '비디오 시연'
-            : 'Video Demo');
+    final l10n = AppLocalizations.of(context);
+    final placeholderText = widget.placeholderText ?? l10n.videoDemo;
 
     return Semantics(
-      label: Localizations.localeOf(context).languageCode == 'ko'
-          ? '$placeholderText 플레이스홀더. 비디오가 준비되지 않았습니다.'
-          : '$placeholderText placeholder. Video is not ready.',
+      label: l10n.videoDemoPlaceholder(placeholderText),
       child: Container(
         color: const Color(0xFF2A2A2A),
         child: Column(
@@ -237,9 +233,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
           const CircularProgressIndicator(color: Color(0xFF4DABF7)),
           const SizedBox(height: 8),
           Text(
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '비디오 로딩 중...'
-                : 'Loading video...',
+            AppLocalizations.of(context).loadingVideo,
             style: const TextStyle(color: Color(0xFF4DABF7), fontSize: 14),
           ),
         ],
@@ -256,9 +250,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
           const Icon(Icons.error_outline, color: Color(0xFFFF6B6B), size: 48),
           const SizedBox(height: 8),
           Text(
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '비디오를 불러올 수 없습니다'
-                : 'Unable to load video',
+            AppLocalizations.of(context).unableToLoadVideo,
             style: const TextStyle(color: Color(0xFFFF6B6B), fontSize: 14),
           ),
           if (_errorMessage != null) ...[
@@ -312,9 +304,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          Localizations.localeOf(context).languageCode == 'ko'
-                              ? '풀스크린 기능은 추후 구현 예정입니다.'
-                              : 'Fullscreen feature will be implemented later.',
+                          AppLocalizations.of(context).fullscreenComingSoon,
                         ),
                         duration: const Duration(seconds: 2),
                       ),
@@ -336,12 +326,8 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
               child: Semantics(
                 button: true,
                 label: _controller!.value.isPlaying
-                    ? (Localizations.localeOf(context).languageCode == 'ko'
-                        ? '비디오 일시정지'
-                        : 'Pause video')
-                    : (Localizations.localeOf(context).languageCode == 'ko'
-                        ? '비디오 재생'
-                        : 'Play video'),
+                    ? AppLocalizations.of(context).pauseVideo
+                    : AppLocalizations.of(context).playVideo,
                 child: IconButton(
                   onPressed: _togglePlayPause,
                   icon: Icon(

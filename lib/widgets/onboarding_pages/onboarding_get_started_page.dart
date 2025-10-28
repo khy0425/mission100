@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 import '../../utils/constants.dart';
 import 'onboarding_step_item.dart';
 
@@ -37,7 +38,7 @@ class OnboardingGetStartedPage extends StatelessWidget {
           ),
           const SizedBox(height: AppConstants.paddingXL * 2),
           Text(
-            '준비되셨나요?',
+            AppLocalizations.of(context).readyToStart,
             style: theme.textTheme.displaySmall?.copyWith(
               fontWeight: FontWeight.bold,
             ),
@@ -45,7 +46,7 @@ class OnboardingGetStartedPage extends StatelessWidget {
           ),
           const SizedBox(height: AppConstants.paddingL),
           Text(
-            '먼저 간단한 레벨 테스트로\n당신의 시작점을 찾아보세요',
+            AppLocalizations.of(context).findYourLevel,
             style: theme.textTheme.titleLarge?.copyWith(
               color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
               height: 1.5,
@@ -53,11 +54,11 @@ class OnboardingGetStartedPage extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppConstants.paddingXL * 2),
-          const OnboardingStepItem(emoji: '1️⃣', text: '레벨 테스트 (30초)'),
+          OnboardingStepItem(emoji: '1️⃣', text: AppLocalizations.of(context).step1LevelTest),
           const SizedBox(height: AppConstants.paddingM),
-          const OnboardingStepItem(emoji: '2️⃣', text: '운동 시작일 설정'),
+          OnboardingStepItem(emoji: '2️⃣', text: AppLocalizations.of(context).step2SetStartDate),
           const SizedBox(height: AppConstants.paddingM),
-          const OnboardingStepItem(emoji: '3️⃣', text: '14주 여정 시작!'),
+          OnboardingStepItem(emoji: '3️⃣', text: AppLocalizations.of(context).step3StartJourney),
         ],
       ),
     );

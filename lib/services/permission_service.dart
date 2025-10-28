@@ -193,9 +193,7 @@ class PermissionService {
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(false),
                   child: Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '나중에'
-                        : 'Later',
+                    AppLocalizations.of(context).later,
                     style: const TextStyle(color: Colors.grey),
                   ),
                 ),
@@ -206,9 +204,7 @@ class PermissionService {
                     foregroundColor: Colors.white,
                   ),
                   child: Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '허용'
-                        : 'Allow',
+                    AppLocalizations.of(context).allow,
                   ),
                 ),
               ],
@@ -280,9 +276,7 @@ class PermissionService {
                 TextButton(
                   onPressed: () => Navigator.of(context).pop(false),
                   child: Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '나중에'
-                        : 'Later',
+                    AppLocalizations.of(context).later,
                     style: const TextStyle(color: Colors.grey),
                   ),
                 ),
@@ -293,9 +287,7 @@ class PermissionService {
                     foregroundColor: Colors.white,
                   ),
                   child: Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '허용'
-                        : 'Allow',
+                    AppLocalizations.of(context).allow,
                   ),
                 ),
               ],
@@ -406,23 +398,18 @@ class PermissionService {
                 const Icon(Icons.backup, color: Colors.orange),
                 const SizedBox(width: 8),
                 Text(
-                  Localizations.localeOf(context).languageCode == 'ko'
-                      ? '저장소 권한 필요'
-                      : 'Storage Permission Required',
+                  AppLocalizations.of(context).storagePermissionRequired,
                 ),
               ],
             ),
-            content: const Text(
-              '데이터 백업 및 복원 기능을 사용하려면\n저장소 접근 권한이 필요합니다.\n\n'
-              '권한을 허용하시겠습니까?',
+            content: Text(
+              AppLocalizations.of(context).storagePermissionNeededForBackup,
             ),
             actions: [
               TextButton(
                 onPressed: () => Navigator.pop(context, false),
                 child: Text(
-                  Localizations.localeOf(context).languageCode == 'ko'
-                      ? '취소'
-                      : 'Cancel',
+                  AppLocalizations.of(context).cancel,
                   style: const TextStyle(color: Colors.grey),
                 ),
               ),
@@ -433,9 +420,7 @@ class PermissionService {
                   foregroundColor: Colors.white,
                 ),
                 child: Text(
-                  Localizations.localeOf(context).languageCode == 'ko'
-                      ? '권한 허용'
-                      : 'Grant Permission',
+                  AppLocalizations.of(context).grantPermission,
                 ),
               ),
             ],
@@ -454,24 +439,18 @@ class PermissionService {
             const Icon(Icons.warning, color: Colors.red),
             const SizedBox(width: 8),
             Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '권한 필요'
-                  : 'Permission Required',
+              AppLocalizations.of(context).permissionRequired,
             ),
           ],
         ),
-        content: const Text(
-          '저장소 권한이 거부되었습니다.\n\n'
-          '백업/복원 기능을 사용하려면 설정에서\n수동으로 권한을 허용해주세요.\n\n'
-          '설정 > 앱 > Mission 100 > 권한 > 저장소',
+        content: Text(
+          AppLocalizations.of(context).storagePermissionDeniedMessage,
         ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '확인'
-                  : 'OK',
+              AppLocalizations.of(context).ok,
             ),
           ),
           ElevatedButton(
@@ -480,9 +459,7 @@ class PermissionService {
               await openAppSettings();
             },
             child: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '설정으로 이동'
-                  : 'Go to Settings',
+              AppLocalizations.of(context).goToSettings,
             ),
           ),
         ],

@@ -192,5 +192,9 @@
   "rookieLevelSubtitle": "Under 6 pushups - Build from basics",
   "rookieLevelTitle": "Rookie",
   "selectLevelButton": "🔥 CHOOSE YOUR LEVEL, FUTURE EMPEROR! 🔥",
-  "startWithLevel": "💥 START EMPEROR JOURNEY AS {level}! 💥"
+  "startWithLevel": "💥 START EMPEROR JOURNEY AS {level}! 💥",
+  "rookieGoalDesc": "≤5 reps → Achieve 100",
+  "risingGoalDesc": "6-10 reps → Achieve 100",
+  "alphaGoalDesc": "11-20 reps → Achieve 100",
+  "gigaGoalDesc": "21+ reps → Achieve 100+"
 }

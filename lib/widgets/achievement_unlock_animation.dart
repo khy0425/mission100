@@ -195,12 +195,9 @@ class _AchievementUnlockAnimationState extends State<AchievementUnlockAnimation>
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            // "업적 달성!" 텍스트
+                            // Achievement Unlocked text
                             Text(
-                              Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '🏆 업적 달성! 🏆'
-                                  : '🏆 Achievement Unlocked! 🏆',
+                              '🏆 Achievement Unlocked! 🏆',
                               style: Theme.of(context)
                                   .textTheme
                                   .headlineMedium

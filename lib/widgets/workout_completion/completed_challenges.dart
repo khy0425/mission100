@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 /// 완료된 챌린지 위젯
 class CompletedChallenges extends StatelessWidget {
@@ -34,7 +35,7 @@ class CompletedChallenges extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                '🏆 챌린지 완료! 🏆',
+                '🏆 ${AppLocalizations.of(context).challengeCompleted} 🏆',
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.purple[700],
@@ -60,7 +61,7 @@ class CompletedChallenges extends StatelessWidget {
               )),
           if (completedChallenges.length > 2)
             Text(
-              '외 ${completedChallenges.length - 2}개 더!',
+              AppLocalizations.of(context).andMoreCount(completedChallenges.length - 2),
               style: TextStyle(
                 fontSize: 10,
                 color: Colors.purple[600],

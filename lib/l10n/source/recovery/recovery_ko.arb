@@ -1,4 +1,15 @@
 {
+  "@canRecheckCondition": {
+    "description": "컨디션 재체크 가능 안내 메시지"
+  },
+  "@chadConfirmedCondition": {
+    "description": "컨디션 확인 완료 메시지",
+    "placeholders": {
+      "condition": {
+        "type": "String"
+      }
+    }
+  },
   "@chadSleepyCap": {
     "description": "수면모자 Chad 이름"
   },
@@ -11,17 +22,20 @@
   "@factCategoryMuscle": {
     "description": "근육 생리학 카테고리"
   },
+  "@recheckCondition": {
+    "description": "컨디션 재체크 버튼 텍스트"
+  },
   "@recovery": {
     "description": "회복 카테고리"
   },
   "@recoveryLevelExcellent": {
     "description": "회복 레벨 - 최고"
   },
-  "@recoveryLevelGood": {
-    "description": "회복 레벨 - 좋음"
-  },
   "@recoveryLevelFair": {
     "description": "회복 레벨 - 보통"
+  },
+  "@recoveryLevelGood": {
+    "description": "회복 레벨 - 좋음"
   },
   "@recoveryLevelPoor": {
     "description": "회복 레벨 - 휴식 필요"
@@ -50,15 +64,18 @@
   "@targetMuscleTriceps": {
     "description": "타겟 근육 - 삼두근"
   },
+  "canRecheckCondition": "컨디션을 다시 체크할 수 있어요!",
+  "chadConfirmedCondition": "Chad가 {condition} 컨디션을 확인했어요!",
   "chadSleepyCap": "수면모자",
   "chadSleepyCapDesc": "여정을 시작하는 단계다.\n아직 잠이 덜 깼지만 곧 깨어날 거야! 😴",
   "chadTitleSleepy": "수면모자",
   "factCategoryMuscle": "근육 생리학",
   "muscleIcon": "💪",
+  "recheckCondition": "컨디션 다시 체크",
   "recovery": "회복",
   "recoveryLevelExcellent": "최고",
-  "recoveryLevelGood": "좋음",
   "recoveryLevelFair": "보통",
+  "recoveryLevelGood": "좋음",
   "recoveryLevelPoor": "휴식필요",
   "scientificRecovery": "과학적 근육 회복 + 지속가능한 파워! 🧠💪",
   "sleepyChadEvolution": "수면모자 진화",

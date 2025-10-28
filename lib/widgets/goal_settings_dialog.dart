@@ -44,7 +44,7 @@ class _GoalSettingsDialogState extends State<GoalSettingsDialog> {
                 Icon(Icons.tune, color: Theme.of(context).primaryColor, size: 28),
                 const SizedBox(width: 12),
                 Text(
-                  '목표 설정',
+                  AppLocalizations.of(context).goalSettings,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -60,7 +60,7 @@ class _GoalSettingsDialogState extends State<GoalSettingsDialog> {
               min: 1,
               max: 7,
               divisions: 6,
-              unit: '회',
+              unit: AppLocalizations.of(context).times,
               icon: Icons.calendar_view_week,
               color: const Color(0xFF00BCD4),
               onChanged: (value) {
@@ -79,7 +79,7 @@ class _GoalSettingsDialogState extends State<GoalSettingsDialog> {
               min: 4,
               max: 31,
               divisions: 27,
-              unit: '회',
+              unit: AppLocalizations.of(context).times,
               icon: Icons.calendar_month,
               color: Colors.green,
               onChanged: (value) {
@@ -93,12 +93,12 @@ class _GoalSettingsDialogState extends State<GoalSettingsDialog> {
 
             // 연속 목표
             _buildGoalSlider(
-              title: '연속 목표',
+              title: AppLocalizations.of(context).consecutiveGoal,
               value: _streakTarget,
               min: 3,
               max: 30,
               divisions: 27,
-              unit: '일',
+              unit: AppLocalizations.of(context).days,
               icon: Icons.local_fire_department,
               color: Colors.orange,
               onChanged: (value) {
@@ -124,7 +124,7 @@ class _GoalSettingsDialogState extends State<GoalSettingsDialog> {
                     });
                   },
                   icon: const Icon(Icons.refresh),
-                  label: const Text('초기화'),
+                  label: Text(AppLocalizations.of(context).reset),
                 ),
                 const SizedBox(width: 12),
 
@@ -133,7 +133,7 @@ class _GoalSettingsDialogState extends State<GoalSettingsDialog> {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  child: const Text('취소'),
+                  child: Text(AppLocalizations.of(context).cancel),
                 ),
                 const SizedBox(width: 8),
 
@@ -155,7 +155,7 @@ class _GoalSettingsDialogState extends State<GoalSettingsDialog> {
                       vertical: 12,
                     ),
                   ),
-                  child: const Text('저장'),
+                  child: Text(AppLocalizations.of(context).save),
                 ),
               ],
             ),

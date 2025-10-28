@@ -662,34 +662,31 @@ class _StatisticsScreenState extends State<StatisticsScreen>
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            Text(
+              AppLocalizations.of(context).workoutChart,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 12),
+            // 기간 선택 버튼들
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  AppLocalizations.of(context).workoutChart,
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
+                _buildPeriodButton(
+                  'week',
+                  AppLocalizations.of(context).weekly,
                 ),
-                // 기간 선택 버튼들
-                Row(
-                  children: [
-                    _buildPeriodButton(
-                      'week',
-                      AppLocalizations.of(context).weekly,
-                    ),
-                    const SizedBox(width: 8),
-                    _buildPeriodButton(
-                      'month',
-                      AppLocalizations.of(context).monthly,
-                    ),
-                    const SizedBox(width: 8),
-                    _buildPeriodButton(
-                      'year',
-                      AppLocalizations.of(context).yearly,
-                    ),
-                  ],
+                const SizedBox(width: 8),
+                _buildPeriodButton(
+                  'month',
+                  AppLocalizations.of(context).monthly,
+                ),
+                const SizedBox(width: 8),
+                _buildPeriodButton(
+                  'year',
+                  AppLocalizations.of(context).yearly,
                 ),
               ],
             ),

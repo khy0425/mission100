@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 import '../../models/user_subscription.dart';
 import 'subscription_detail_row.dart';
 
@@ -11,37 +12,40 @@ class CurrentSubscriptionCard extends StatelessWidget {
     required this.subscription,
   });
 
-  String _getTypeName(SubscriptionType type) {
+  String _getTypeName(SubscriptionType type, BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     switch (type) {
       case SubscriptionType.free:
-        return '무료 플랜';
+        return l10n.freePlan;
       case SubscriptionType.launchPromo:
-        return '런칭 프로모션';
+        return l10n.launchPromotion;
       case SubscriptionType.premium:
-        return '프리미엄 (₩4,900/월)';
+        return l10n.premiumMonthly;
     }
   }
 
-  String _getStatusText(SubscriptionStatus status) {
+  String _getStatusText(SubscriptionStatus status, BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     switch (status) {
       case SubscriptionStatus.active:
-        return '활성';
+        return l10n.statusActive;
       case SubscriptionStatus.expired:
-        return '만료됨';
+        return l10n.statusExpired;
       case SubscriptionStatus.cancelled:
-        return '취소됨';
+        return l10n.statusCancelled;
       case SubscriptionStatus.trial:
-        return '체험중';
+        return l10n.statusTrial;
     }
   }
 
-  String _formatDate(DateTime? date) {
-    if (date == null) return '무제한';
+  String _formatDate(DateTime? date, BuildContext context) {
+    if (date == null) return AppLocalizations.of(context).unlimited;
     return '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
   }
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -57,27 +61,27 @@ class CurrentSubscriptionCard extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 Text(
-                  '현재 구독',
+                  l10n.currentSubscription,
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ],
             ),
             const SizedBox(height: 16),
             SubscriptionDetailRow(
-              label: '플랜',
-              value: _getTypeName(subscription.type),
+              label: l10n.planLabel,
+              value: _getTypeName(subscription.type, context),
             ),
             SubscriptionDetailRow(
-              label: '상태',
-              value: _getStatusText(subscription.status),
+              label: l10n.statusLabel,
+              value: _getStatusText(subscription.status, context),
             ),
             SubscriptionDetailRow(
-              label: '시작일',
-              value: _formatDate(subscription.startDate),
+              label: l10n.startDate,
+              value: _formatDate(subscription.startDate, context),
             ),
             SubscriptionDetailRow(
-              label: '만료일',
-              value: _formatDate(subscription.endDate),
+              label: l10n.expiryDate,
+              value: _formatDate(subscription.endDate, context),
             ),
             if (subscription.type == SubscriptionType.premium) ...[
               const SizedBox(height: 8),
@@ -87,9 +91,9 @@ class CurrentSubscriptionCard extends StatelessWidget {
                   color: Colors.green.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: const Text(
-                  '자동 갱신 활성화',
-                  style: TextStyle(
+                child: Text(
+                  l10n.autoRenewalEnabled,
+                  style: const TextStyle(
                     color: Colors.green,
                     fontSize: 12,
                     fontWeight: FontWeight.w500,

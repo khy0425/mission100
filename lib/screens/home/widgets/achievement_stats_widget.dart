@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../utils/constants.dart';
+import '../../../generated/app_localizations.dart';
 
 /// 업적 현황을 표시하는 위젯
 ///
@@ -55,9 +56,7 @@ class AchievementStatsWidget extends StatelessWidget {
         const Icon(Icons.emoji_events, color: Colors.amber, size: 24),
         const SizedBox(width: AppConstants.paddingS),
         Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '업적 현황'
-              : 'Achievements',
+          AppLocalizations.of(context).achievementStatus,
           style: theme.textTheme.titleMedium?.copyWith(
             fontWeight: FontWeight.bold,
             color: Colors.amber,
@@ -75,9 +74,7 @@ class AchievementStatsWidget extends StatelessWidget {
           child: _buildAchievementStat(
             context,
             theme,
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '달성한 업적'
-                : 'Unlocked',
+            AppLocalizations.of(context).achievementsUnlocked,
             '$unlockedCount/$totalCount',
             Icons.military_tech,
             Colors.amber,
@@ -87,9 +84,7 @@ class AchievementStatsWidget extends StatelessWidget {
           child: _buildAchievementStat(
             context,
             theme,
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '총 경험치'
-                : 'Total XP',
+            AppLocalizations.of(context).totalXP,
             '$totalXP XP',
             Icons.star,
             Colors.purple,
@@ -99,9 +94,7 @@ class AchievementStatsWidget extends StatelessWidget {
           child: _buildAchievementStat(
             context,
             theme,
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '완료율'
-                : 'Completion',
+            AppLocalizations.of(context).completion,
             totalCount > 0
                 ? '${((unlockedCount / totalCount) * 100).toStringAsFixed(0)}%'
                 : '0%',

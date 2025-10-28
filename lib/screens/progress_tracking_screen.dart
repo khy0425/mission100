@@ -930,9 +930,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                     const Color(0xFFFFD43B),
                   ),
                   _buildStatCard(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? AppLocalizations.of(context).completionRate
-                        : 'Completion',
+                    AppLocalizations.of(context).completionRate,
                     '${(completionRate * 100).toStringAsFixed(1)}%',
                     Icons.pie_chart,
                     const Color(0xFFFF6B6B),
@@ -1777,9 +1775,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(
-                            Localizations.localeOf(context).languageCode == 'ko'
-                                ? '현재'
-                                : 'Current',
+                            AppLocalizations.of(context).current,
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 10,

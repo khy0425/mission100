@@ -10,7 +10,7 @@ import '../services/chad_condition_service.dart';
 import '../services/chad_recovery_service.dart';
 import '../services/achievement_service.dart';
 import '../screens/workout_screen.dart';
-import '../screens/settings_screen.dart';
+import '../screens/simple_settings_screen.dart';
 import '../screens/pushup_tutorial_screen.dart';
 import '../screens/pushup_form_guide_screen.dart';
 import '../screens/progress_tracking_screen.dart';
@@ -29,6 +29,8 @@ import 'home/widgets/achievement_stats_widget.dart';
 import 'home/widgets/action_buttons_widget.dart';
 import '../widgets/chad/chad_stats_card.dart';
 import '../models/chad_evolution.dart';
+import '../widgets/vip_badge_widget.dart';
+import '../services/auth_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -306,7 +308,32 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
         isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
       ),
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context).homeTitle),
+        title: Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Flexible(
+              child: Text(
+                AppLocalizations.of(context).homeTitle,
+                overflow: TextOverflow.ellipsis,
+              ),
+            ),
+            const SizedBox(width: 8),
+            // VIP 배지 표시
+            Consumer<AuthService>(
+              builder: (context, authService, child) {
+                final subscription = authService.currentSubscription;
+                if (subscription != null) {
+                  return VIPBadgeWidget(
+                    subscription: subscription,
+                    size: VIPBadgeSize.small,
+                    showLabel: false,
+                  );
+                }
+                return const SizedBox.shrink();
+              },
+            ),
+          ],
+        ),
         centerTitle: true,
         automaticallyImplyLeading: false,
         actions: [
@@ -494,7 +521,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             onPressed: () => Navigator.push(
               context,
               MaterialPageRoute<void>(
-                  builder: (context) => const SettingsScreen()),
+                  builder: (context) => const SimpleSettingsScreen()),
             ),
             child: Text(AppLocalizations.of(context).goToSettings),
           ),

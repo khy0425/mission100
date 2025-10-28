@@ -203,9 +203,7 @@ class AchievementDetailDialog extends StatelessWidget {
                   if (achievement.isCompleted &&
                       achievement.unlockedAt != null) ...[
                     Text(
-                      Localizations.localeOf(context).languageCode == 'ko'
-                          ? '완료 정보'
-                          : 'Completion Info',
+                      AppLocalizations.of(context).completionInfo,
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.bold,
                       ),
@@ -236,10 +234,7 @@ class AchievementDetailDialog extends StatelessWidget {
                               ),
                               const SizedBox(width: AppConstants.paddingS),
                               Text(
-                                Localizations.localeOf(context).languageCode ==
-                                        'ko'
-                                    ? '완료일: ${_formatDate(achievement.unlockedAt!)}'
-                                    : 'Completed: ${_formatDate(achievement.unlockedAt!)}',
+                                AppLocalizations.of(context).completedDate(_formatDate(achievement.unlockedAt!)),
                                 style: theme.textTheme.bodyMedium?.copyWith(
                                   fontWeight: FontWeight.w500,
                                 ),

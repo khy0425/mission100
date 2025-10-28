@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../models/achievement.dart';
 import '../utils/constants.dart';
+import '../generated/app_localizations.dart';
 
 class MultipleAchievementsDialog extends StatefulWidget {
   final List<Achievement> achievements;
@@ -58,16 +59,16 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
   }
 
   String _getRarityText(BuildContext context, AchievementRarity rarity) {
-    final isKorean = Localizations.localeOf(context).languageCode == 'ko';
+    final l10n = AppLocalizations.of(context);
     switch (rarity) {
       case AchievementRarity.common:
-        return isKorean ? '일반' : 'Common';
+        return l10n.achievementRarityCommon;
       case AchievementRarity.rare:
-        return isKorean ? '레어' : 'Rare';
+        return l10n.achievementRarityRare;
       case AchievementRarity.epic:
-        return isKorean ? '에픽' : 'Epic';
+        return l10n.achievementRarityEpic;
       case AchievementRarity.legendary:
-        return isKorean ? '전설' : 'Legendary';
+        return l10n.achievementRarityLegendary;
     }
   }
 
@@ -79,7 +80,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final isKorean = Localizations.localeOf(context).languageCode == 'ko';
+    final l10n = AppLocalizations.of(context);
 
     return Dialog(
       backgroundColor: Colors.transparent,
@@ -143,7 +144,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
 
                           // 축하 메시지
                           Text(
-                            isKorean ? '축하합니다!' : 'Congratulations!',
+                            l10n.congratulations,
                             style: theme.textTheme.headlineMedium?.copyWith(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -153,9 +154,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                           const SizedBox(height: 8),
 
                           Text(
-                            isKorean
-                                ? '${widget.achievements.length}개의 업적을 달성했습니다!'
-                                : 'You\'ve unlocked ${widget.achievements.length} achievements!',
+                            l10n.achievementsUnlockedFormat(widget.achievements.length),
                             style: theme.textTheme.bodyLarge?.copyWith(
                               color: Colors.white.withValues(alpha: 0.9),
                             ),
@@ -361,9 +360,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                                   ),
                                   const SizedBox(width: 8),
                                   Text(
-                                    isKorean
-                                        ? '총 $_totalXP XP 획득!'
-                                        : 'Total $_totalXP XP Earned!',
+                                    l10n.totalXpEarned(_totalXP),
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 18,
@@ -399,7 +396,7 @@ class _MultipleAchievementsDialogState extends State<MultipleAchievementsDialog>
                             ),
                           ),
                           child: Text(
-                            isKorean ? '확인' : 'OK',
+                            l10n.ok,
                             style: const TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,

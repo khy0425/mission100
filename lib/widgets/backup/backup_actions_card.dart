@@ -29,7 +29,7 @@ class BackupActionsCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "백업 작업",
+              AppLocalizations.of(context).backupActions,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),

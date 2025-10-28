@@ -100,6 +100,7 @@
   "@streakStartMessage": {
     "description": "Workout streak start message"
   },
+  "backupHistory": "Backup History",
   "bestRecord": "Best Record",
   "challengeInProgress": "In Progress",
   "challengeProgress": "Progress: {progress}%",
@@ -110,10 +111,13 @@
   "inProgress": "In Progress",
   "inProgressStatus": "In Progress",
   "loadingStatistics": "Loading Chad's statistics...",
+  "loginToSaveProgress": "Login to save your progress",
   "monthlyProgress": "Monthly Progress",
   "noBackupRecord": "No Backup Record",
   "noChartData": "No chart data available",
   "noPieChartData": "No pie chart data available",
+  "optionPersonalRecordDesc": "Focus on achieving personal goals and improving records",
+  "optionPersonalRecordTitle": "Personal Records",
   "overallProgress": "Overall Progress",
   "overallStatistics": "Overall Statistics",
   "overallStats": "Overall Statistics",
@@ -133,5 +137,14 @@
   "streakEncouragement": "Streak Encouragement",
   "streakEncouragementSubtitle": "Encouragement message after 3 consecutive workouts",
   "streakProgress": "Streak Progress",
-  "streakStartMessage": "Workout streak started!"
+  "streakStartMessage": "Workout streak started!",
+  "loadingProgramData": "Loading program data...",
+  "startWorkoutToStartProgram": "Start your workout to begin the program! 💪",
+  "programProgress": "Program Progress",
+  "progressShownAfterWorkout": "Progress will be shown once you start working out",
+  "overallProgramProgress": "Overall Program Progress",
+  "weeksFormat": "{current}/{total} weeks",
+  "thisWeekFormat": "This Week (Week {week})",
+  "daysCompleted": "days completed",
+  "totalSessions": "Total Sessions"
 }

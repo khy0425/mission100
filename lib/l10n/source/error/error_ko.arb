@@ -54,6 +54,15 @@
   "errorNetwork": "🌪️ 네트워크 연결을 확인하라! ALPHA CONNECTION 필요하다! 🌪️",
   "errorNotFound": "🔱 데이터를 찾을 수 없다! 새로운 전설을 만들 시간이다, 만삣삐! 🔱",
   "errorOccurred": "오류가 발생했다",
+  "errorOccurredWithMessage": "오류가 발생했습니다: {error}",
+  "@errorOccurredWithMessage": {
+    "description": "Error occurred with message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
   "permissionsRequired": "🔐 권한이 필요해요",
   "profileCreationError": "⚡ PROFILE CREATION FAILED! 다시 도전하라, ALPHA! 오류: {error} ⚡",
   "required": "필수",

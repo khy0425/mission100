@@ -1304,5 +1304,41 @@
   "workoutTime": "운동 시간",
   "workoutTips": "운동 팁",
   "workoutTipsContent": "• 운동 전후 충분한 스트레칭을 해\\n• 정확한 자세가 횟수보다 중요한다\\n• 꾸준함이 가장 중요한 성공 요소이다",
-  "workoutTitle": "💪 전쟁터 💪"
+  "workoutTitle": "💪 전쟁터 💪",
+  "exitWorkout": "운동 종료",
+  "exitWorkoutConfirm": "운동을 종료하시겠습니까? 진행 상황이 저장되지 않습니다.",
+  "selectMinimum3Days": "최소 3일은 선택해야 합니다! 💪",
+  "championNeedsConsistency": "진정한 챔피언은 일관성이 필요해!\n\n주 3일 이상은 운동해야 진짜 변화가 일어나!\n\n더 선택하고 다시 시도하라! 💪",
+  "scheduleSetupComplete": "🎉 스케줄 설정 완료!\n\n{sessionsCreated}개의 운동 세션이 생성되었다!\nLET'S GO! 💪🔥",
+  "@scheduleSetupComplete": {
+    "description": "Schedule setup complete message with session count",
+    "placeholders": {
+      "sessionsCreated": {
+        "type": "int"
+      }
+    }
+  },
+  "scheduleSetupError": "스케줄 설정 중 오류 발생:\n{error}",
+  "@scheduleSetupError": {
+    "description": "Schedule setup error message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "workoutScheduleSetup": "운동 스케줄 설정",
+  "setYourWorkoutSchedule": "🔥 운동 스케줄을 설정하세요!",
+  "startTheJourney": "여정 시작하기! 🚀",
+  "workoutCompleteSimple": "운동 완료!",
+  "workoutCompleteGreatJob": "훌륭합니다! 오늘의 운동을 완료했습니다.",
+  "totalRepsCount": "총 횟수: {count}개",
+  "@totalRepsCount": {
+    "description": "Total reps count message",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  }
 }

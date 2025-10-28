@@ -181,29 +181,6 @@
   "@chadSays": {
     "description": "Chad 말풍선 레이블"
   },
-  "@selectTodayCondition": {
-    "description": "오늘의 컨디션 선택 안내 메시지"
-  },
-  "@todayCondition": {
-    "description": "오늘 컨디션 레이블"
-  },
-  "@chadRecommendedWorkout": {
-    "description": "Chad 추천 운동 섹션 제목"
-  },
-  "@recheckCondition": {
-    "description": "컨디션 재체크 버튼 텍스트"
-  },
-  "@chadConfirmedCondition": {
-    "description": "컨디션 확인 완료 메시지",
-    "placeholders": {
-      "condition": {
-        "type": "String"
-      }
-    }
-  },
-  "@canRecheckCondition": {
-    "description": "컨디션 재체크 가능 안내 메시지"
-  },
   "@chadSecretTips": {
     "description": "Improvement tips section header"
   },
@@ -336,6 +313,12 @@
   "@motivationStrong": {
     "description": "목표 80% 이상시 동기부여 메시지"
   },
+  "@onboardingChadEvolutionDescription": {
+    "description": "온보딩 진화 설명"
+  },
+  "@onboardingChadEvolutionTitle": {
+    "description": "온보딩 진화 제목"
+  },
   "@perfectChadExperience": {
     "description": "완벽한 Chad 경험 설명"
   },
@@ -392,6 +375,8 @@
   "chadBasicDesc": "첫 진화 완료!\n기초 다지기 시작! 🔥",
   "chadCoffee": "커피 파워",
   "chadCoffeeDesc": "에너지 MAX!\n커피 파워로 더 강해졌다! ☕💪",
+  "chadConfident": "자신감 차드",
+  "chadConfidentDesc": "자신감 폭발!\n정면 돌파 준비 완료! 💪",
   "chadDescription": "💪 차드 설명",
   "chadDouble": "더블 파워",
   "chadDoubleDesc": "최종 진화 완료! 전설 등극!\n2배 파워로 모든 걸 정복한다! 👑",
@@ -412,7 +397,13 @@
   "chadFrontFacingDesc": "자신감 폭발!\n정면 돌파 준비 완료! 💪",
   "chadGlowingEyes": "빛나는눈 Chad",
   "chadGlowingEyesDesc": "강력한 힘을 가진 Chad이다.\n눈에서 빛이 나며 엄청난 파워를 보여줍니다!",
+  "chadGod": "갓 차드",
+  "chadGodDesc": "전설의 완성! 신의 경지!\n모든 것을 초월한 궁극의 차드! 👑✨",
   "chadHashtag": "#차드",
+  "chadLaserEyes": "레이저 차드",
+  "chadLaserEyesDesc": "강력한 힘을 가진 차드!\n눈에서 빛이 나며 엄청난 파워! ⚡",
+  "chadLaserEyesHud": "레이저+HUD 차드",
+  "chadLaserEyesHudDesc": "최첨단 시스템 장착!\nHUD와 레이저로 무적 모드! 🎯",
   "chadMessage0": "🛌 잠에서 깨어나라, 미래의 차드여! 여정이 시작된다!",
   "chadMessage1": "😎 기본기가 탄탄해지고 있어! 진짜 나만의 시작이야!",
   "chadMessage2": "☕ 에너지가 넘쳐흘러! 커피보다 강한 힘이 생겼어!",
@@ -440,12 +431,6 @@
   "chadMotivationWideGrip": "가슴을 활짝 펴고 나만의 기운을 받아라! 넓은 가슴이 진짜 나만의 상징이다!",
   "chadReminder": "💪 차드 리마인더",
   "chadSays": "Chad가 말해요",
-  "selectTodayCondition": "오늘 컨디션을 선택해주세요",
-  "todayCondition": "오늘 컨디션: ",
-  "chadRecommendedWorkout": "🎯 Chad 추천 운동",
-  "recheckCondition": "컨디션 다시 체크",
-  "chadConfirmedCondition": "Chad가 {condition} 컨디션을 확인했어요!",
-  "canRecheckCondition": "컨디션을 다시 체크할 수 있어요!",
   "chadSecretTips": "나만의 특급 비법",
   "chadSecrets": "나만의 비밀 ⚡",
   "chadShorts": "차드 쇼츠 🔥",
@@ -457,6 +442,8 @@
   "chadTitleDouble": "더블 Chad",
   "chadTitleFront": "정면 Chad",
   "chadTitleLaser": "눈빨 Chad",
+  "chadTriple": "트리플 차드",
+  "chadTripleDesc": "3배 파워 폭발!\n혼자서 셋이 할 일을 한다! 💥",
   "checkChadGrowth": "나만의 성장을 확인하라! 📊",
   "congratulationsChad": "축하한다! 진짜 강자 등극! 🎉",
   "consistentChad": "꾸준한 차드!",
@@ -496,6 +483,8 @@
   "motivationMessages": "동기부여 메시지",
   "motivationMessagesDesc": "운동 중 동기부여 메시지 표시",
   "motivationStrong": "포기? 그건 약자나 하는 거야. 더 강하게, 만삣삐! 🔱💪",
+  "onboardingChadEvolutionDescription": "운동할 때마다 레벨업!\n\n🏃 Rookie → 💪 Giga → 👑 Legendary\n\n각 단계마다 새로운 업적 해제! 🏆",
+  "onboardingChadEvolutionTitle": "계속 진화한다 🚀",
   "perfectChadExperience": "설정을 조정하여 완벽한 Chad 경험을 만들어보세요",
   "quickInputStrong": "👑 EMPEROR 여유 👑",
   "rarityLegendary": "레전더리",
@@ -510,5 +499,20 @@
   "tutorialAdviceConsistency": "꾸준함이 차드 파워의 열쇠다!",
   "tutorialAdviceStart": "시작이 반이다!",
   "ultraChad": "Ultra Chad",
-  "workerChadMode": "💼 직장인 차드 모드 (월~금)"
+  "workerChadMode": "💼 직장인 차드 모드 (월~금)",
+  "finalEvolutionComplete": "최종 진화 완료!",
+  "weeksToEvolve": "{weeks}주 후 진화",
+  "@weeksToEvolve": {
+    "description": "Weeks until evolution",
+    "placeholders": {
+      "weeks": {
+        "type": "int"
+      }
+    }
+  },
+  "readyToEvolve": "진화 준비 완료!",
+  "currentLevel": "현재 레벨",
+  "selectTodayCondition": "오늘의 컨디션을 선택하세요",
+  "todayCondition": "오늘의 컨디션",
+  "chadRecommendedWorkout": "차드 추천 운동"
 }

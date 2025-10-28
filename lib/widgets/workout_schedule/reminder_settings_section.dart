@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 /// 운동 알림 설정 섹션
 class ReminderSettingsSection extends StatelessWidget {
@@ -44,9 +45,7 @@ class ReminderSettingsSection extends StatelessWidget {
               ),
               const SizedBox(width: 8),
               Text(
-                Localizations.localeOf(context).languageCode == 'ko'
-                    ? '운동 알림 설정'
-                    : 'Workout Notifications',
+                AppLocalizations.of(context).workoutNotifications,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Colors.blue[700],
@@ -87,9 +86,7 @@ class ReminderSettingsSection extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        Localizations.localeOf(context).languageCode == 'ko'
-                            ? '운동 알림 받기'
-                            : 'Enable Workout Reminders',
+                        AppLocalizations.of(context).enableWorkoutReminders,
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               fontWeight: FontWeight.w600,
                               color: notificationsEnabled
@@ -98,9 +95,7 @@ class ReminderSettingsSection extends StatelessWidget {
                             ),
                       ),
                       Text(
-                        Localizations.localeOf(context).languageCode == 'ko'
-                            ? '선택한 운동일에 알림을 받습니다'
-                            : 'Get reminders on your workout days',
+                        AppLocalizations.of(context).getRemindersOnWorkoutDays,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: Theme.of(context).colorScheme.onSurface.withValues(alpha: 0.6),
                             ),
@@ -145,10 +140,7 @@ class ReminderSettingsSection extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '알림 시간'
-                                  : 'Notification Time',
+                              AppLocalizations.of(context).notificationTime,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge
@@ -194,9 +186,7 @@ class ReminderSettingsSection extends StatelessWidget {
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '💡 설정 탭에서 언제든지 변경할 수 있습니다'
-                        : '💡 You can change these settings anytime in Settings',
+                    AppLocalizations.of(context).canChangeInSettingsAnytime,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Colors.green,
                           fontWeight: FontWeight.w500,

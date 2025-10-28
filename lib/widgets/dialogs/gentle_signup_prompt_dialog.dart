@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 /// 부드러운 회원가입 유도 다이얼로그
 ///
@@ -16,6 +17,7 @@ class GentleSignupPromptDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Dialog(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
@@ -50,9 +52,9 @@ class GentleSignupPromptDialog extends StatelessWidget {
             const SizedBox(height: 20),
 
             // 제목
-            const Text(
-              '데이터를 안전하게 보관하세요',
-              style: TextStyle(
+            Text(
+              l10n.keepDataSafe,
+              style: const TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
@@ -63,7 +65,7 @@ class GentleSignupPromptDialog extends StatelessWidget {
 
             // 설명
             Text(
-              '회원가입하시면 모든 운동 기록과\n진행 상황이 클라우드에 자동 백업됩니다.',
+              l10n.signupBenefitsMessage,
               style: TextStyle(
                 fontSize: 15,
                 color: Colors.grey[700],
@@ -76,24 +78,24 @@ class GentleSignupPromptDialog extends StatelessWidget {
             // 혜택 목록
             _buildBenefitItem(
               Icons.cloud_done,
-              '자동 백업',
-              '휴대폰을 바꿔도 데이터 유지',
+              l10n.autoBackup,
+              l10n.dataRetainOnDeviceChange,
             ),
 
             const SizedBox(height: 12),
 
             _buildBenefitItem(
               Icons.devices,
-              '여러 기기 동기화',
-              '태블릿, 폰 어디서나 이어하기',
+              l10n.multiDeviceSync,
+              l10n.continueAnywhere,
             ),
 
             const SizedBox(height: 12),
 
             _buildBenefitItem(
               Icons.flash_on,
-              'VIP 빠른 로딩',
-              '앱 시작 시 10배 빠른 속도',
+              l10n.premiumBenefitFastLoading,
+              l10n.fastAppStart,
             ),
 
             const SizedBox(height: 24),
@@ -115,7 +117,7 @@ class GentleSignupPromptDialog extends StatelessWidget {
                   const SizedBox(width: 8),
                   Expanded(
                     child: Text(
-                      '회원가입 없이도 모든 기능을 사용할 수 있습니다',
+                      l10n.allFeaturesWithoutSignup,
                       style: TextStyle(
                         fontSize: 12,
                         color: Colors.blue.shade700,
@@ -141,9 +143,9 @@ class GentleSignupPromptDialog extends StatelessWidget {
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.symmetric(vertical: 12),
                     ),
-                    child: const Text(
-                      '나중에',
-                      style: TextStyle(
+                    child: Text(
+                      l10n.later,
+                      style: const TextStyle(
                         fontSize: 16,
                         color: Colors.grey,
                       ),
@@ -167,9 +169,9 @@ class GentleSignupPromptDialog extends StatelessWidget {
                         borderRadius: BorderRadius.circular(8),
                       ),
                     ),
-                    child: const Text(
-                      '회원가입 (30초)',
-                      style: TextStyle(
+                    child: Text(
+                      l10n.signupIn30Seconds,
+                      style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),

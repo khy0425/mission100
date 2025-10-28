@@ -74,7 +74,7 @@ class _BackupScreenState extends State<BackupScreen> {
 
   /// 암호화된 백업 생성
   Future<void> _createEncryptedBackup() async {
-    final password = await _showPasswordDialog('백업 암호화');
+    final password = await _showPasswordDialog(AppLocalizations.of(context).backupEncryption);
     if (password == null || password.isEmpty) return;
 
     setState(() => _isCreatingBackup = true);
@@ -439,9 +439,7 @@ class _BackupScreenState extends State<BackupScreen> {
                 title: Text(AppLocalizations.of(context).lastBackup),
                 subtitle: Text(_formatDateTime(_backupStatus!.lastBackupTime!)),
                 trailing: Text(
-                  Localizations.localeOf(context).languageCode == 'ko'
-                      ? '성공'
-                      : 'Success',
+                  AppLocalizations.of(context).success,
                 ),
               )
             else
@@ -468,12 +466,8 @@ class _BackupScreenState extends State<BackupScreen> {
           controller: controller,
           obscureText: true,
           decoration: InputDecoration(
-            labelText: Localizations.localeOf(context).languageCode == 'ko'
-                ? '비밀번호'
-                : 'Password',
-            hintText: Localizations.localeOf(context).languageCode == 'ko'
-                ? '백업 암호화에 사용할 비밀번호를 입력하세요'
-                : 'Enter password for backup encryption',
+            labelText: AppLocalizations.of(context).password,
+            hintText: AppLocalizations.of(context).enterPasswordForEncryption,
           ),
         ),
         actions: [
@@ -518,16 +512,16 @@ class _BackupScreenState extends State<BackupScreen> {
 
   /// 백업 빈도 텍스트
   String _getFrequencyText(BackupFrequency frequency) {
-    final isKorean = Localizations.localeOf(context).languageCode == 'ko';
+    final l10n = AppLocalizations.of(context);
     switch (frequency) {
       case BackupFrequency.daily:
-        return isKorean ? '매일' : 'Daily';
+        return l10n.frequencyDaily;
       case BackupFrequency.weekly:
-        return isKorean ? '매주' : 'Weekly';
+        return l10n.frequencyWeekly;
       case BackupFrequency.monthly:
-        return isKorean ? '매월' : 'Monthly';
+        return l10n.frequencyMonthly;
       case BackupFrequency.manual:
-        return isKorean ? '수동' : 'Manual';
+        return l10n.frequencyManual;
     }
   }
 

@@ -4,8 +4,11 @@ import 'package:provider/provider.dart';
 import 'package:mission100/generated/app_localizations.dart';
 import '../services/notification_service.dart';
 import '../services/auth_service.dart';
+import '../models/user_subscription.dart';
+import '../widgets/vip_badge_widget.dart';
 import '../screens/onboarding_screen.dart';
 import 'workout_reminder_settings_screen.dart';
+import 'subscription_screen.dart';
 
 class SimpleSettingsScreen extends StatefulWidget {
   const SimpleSettingsScreen({super.key});
@@ -101,16 +104,16 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 children: [
                   const Icon(Icons.settings, size: 48, color: Colors.white),
                   const SizedBox(height: 8),
-                  const Text(
-                    'MISSION 100 설정',
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).mission100Settings,
+                    style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
                   ),
                   Text(
-                    '앱 기능을 사용자 정의하세요',
+                    AppLocalizations.of(context).customizeAppFeatures,
                     style: TextStyle(
                       fontSize: 14,
                       color: Colors.white.withValues(alpha: 0.9),
@@ -317,21 +320,21 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
 
             // 계정 관리 섹션 추가
             _buildSectionHeader(
-              '계정 설정',
+              AppLocalizations.of(context).accountSettings,
               Icons.person,
             ),
             const SizedBox(height: 8),
             _buildSettingsCard([
               ListTile(
                 leading: const Icon(Icons.account_circle),
-                title: const Text('계정 정보'),
+                title: Text(AppLocalizations.of(context).accountInfo),
                 subtitle: Consumer<AuthService>(
                   builder: (context, authService, child) {
                     final user = authService.currentUser;
                     if (user != null) {
                       return Text(user.email ?? user.displayName ?? 'User');
                     }
-                    return const Text('게스트 모드');
+                    return Text(AppLocalizations.of(context).guestMode);
                   },
                 ),
                 trailing: const Icon(Icons.chevron_right),
@@ -346,11 +349,11 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                   if (authService.isLoggedIn) {
                     return ListTile(
                       leading: const Icon(Icons.logout, color: Colors.orange),
-                      title: const Text(
-                        '로그아웃',
-                        style: TextStyle(color: Colors.orange),
+                      title: Text(
+                        AppLocalizations.of(context).logoutButton,
+                        style: const TextStyle(color: Colors.orange),
                       ),
-                      subtitle: const Text('계정에서 로그아웃합니다'),
+                      subtitle: Text(AppLocalizations.of(context).logoutFromAccount),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
                         _showLogoutConfirmDialog();
@@ -360,11 +363,11 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                     // 게스트 모드일 때는 로그인 버튼 표시
                     return ListTile(
                       leading: const Icon(Icons.login, color: Colors.blue),
-                      title: const Text(
-                        '로그인',
-                        style: TextStyle(color: Colors.blue),
+                      title: Text(
+                        AppLocalizations.of(context).loginButton,
+                        style: const TextStyle(color: Colors.blue),
                       ),
-                      subtitle: const Text('진행 상황을 저장하려면 로그인하세요'),
+                      subtitle: Text(AppLocalizations.of(context).loginToSaveProgress),
                       trailing: const Icon(Icons.chevron_right),
                       onTap: () {
                         _navigateToLogin();
@@ -374,6 +377,67 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 },
               ),
             ]),
+
+            const SizedBox(height: 20),
+
+            // 구독 관리
+            _buildSectionHeader(
+              AppLocalizations.of(context).subscriptionManagement,
+              Icons.workspace_premium,
+            ),
+            const SizedBox(height: 8),
+            Consumer<AuthService>(
+              builder: (context, authService, child) {
+                final subscription = authService.currentSubscription;
+                final isPremium = subscription?.type == SubscriptionType.premium;
+                final isLaunchPromo = subscription?.type == SubscriptionType.launchPromo;
+
+                String statusText;
+                if (isPremium) {
+                  statusText = AppLocalizations.of(context).premiumActive;
+                } else if (isLaunchPromo) {
+                  statusText = AppLocalizations.of(context).launchPromoActive;
+                } else {
+                  statusText = AppLocalizations.of(context).freeUsing;
+                }
+
+                return _buildSettingsCard([
+                  ListTile(
+                    leading: const Icon(Icons.workspace_premium),
+                    title: Row(
+                      children: [
+                        Text(AppLocalizations.of(context).currentSubscription),
+                        const SizedBox(width: 8),
+                        if (subscription != null)
+                          VIPBadgeWidget(
+                            subscription: subscription,
+                            size: VIPBadgeSize.small,
+                            showLabel: true,
+                          ),
+                      ],
+                    ),
+                    subtitle: Text(
+                      statusText,
+                      style: TextStyle(
+                        color: isPremium ? Colors.green : Colors.grey,
+                        fontWeight: isPremium ? FontWeight.w600 : FontWeight.normal,
+                      ),
+                    ),
+                    trailing: isPremium
+                        ? const Icon(Icons.verified, color: Colors.green)
+                        : const Icon(Icons.chevron_right),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute<void>(
+                          builder: (context) => const SubscriptionScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                ]);
+              },
+            ),
 
             const SizedBox(height: 20),
 
@@ -526,29 +590,6 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
     await _loadSettings();
   }
 
-  /// 리마인더 시간 저장
-  Future<void> _saveReminderTime(TimeOfDay time) async {
-    final prefs = await SharedPreferences.getInstance();
-    final timeString =
-        '${time.hour.toString().padLeft(2, '0')}:${time.minute.toString().padLeft(2, '0')}';
-    await prefs.setString('reminder_time', timeString);
-
-    setState(() {
-      _reminderTime = time;
-    });
-
-    // 운동 리마인더가 활성화되어 있으면 새 시간으로 재설정
-    if (_workoutReminders && _pushNotifications) {
-      await NotificationService.scheduleWorkoutReminder(time);
-
-      _showSnackBar(
-        AppLocalizations.of(context).reminderTimeChanged(time.format(context)),
-      );
-    }
-
-    debugPrint('리마인더 시간 저장: $timeString');
-  }
-
   void _showSnackBar(String message) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -570,11 +611,11 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Row(
+          title: Row(
             children: [
-              Icon(Icons.account_circle, color: Colors.blue),
-              SizedBox(width: 8),
-              Text('계정 정보'),
+              const Icon(Icons.account_circle, color: Colors.blue),
+              const SizedBox(width: 8),
+              Text(AppLocalizations.of(context).accountInfoTitle),
             ],
           ),
           content: Column(
@@ -584,37 +625,37 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
               if (user != null) ...[
                 if (user.displayName != null)
                   _buildInfoRow(
-                    '이름',
+                    AppLocalizations.of(context).nameLabel,
                     user.displayName!,
                   ),
                 if (user.email != null)
                   _buildInfoRow(
-                    '이메일',
+                    AppLocalizations.of(context).emailLabel,
                     user.email!,
                   ),
                 _buildInfoRow(
-                  '계정 유형',
-                  authService.currentSubscription?.type == 'premium'
-                      ? '프리미엄 계정'
-                      : '무료 계정',
+                  AppLocalizations.of(context).accountTypeLabel,
+                  authService.currentSubscription?.type == SubscriptionType.premium
+                      ? AppLocalizations.of(context).premiumAccountType
+                      : AppLocalizations.of(context).freeAccountType,
                 ),
                 _buildInfoRow(
-                  '로그인 방법',
+                  AppLocalizations.of(context).loginMethodLabel,
                   user.providerData.isNotEmpty
                       ? user.providerData.first.providerId.contains('google')
-                          ? 'Google'
-                          : '이메일'
-                      : '이메일',
+                          ? AppLocalizations.of(context).googleMethod
+                          : AppLocalizations.of(context).emailMethod
+                      : AppLocalizations.of(context).emailMethod,
                 ),
               ] else ...[
-                const Text('게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.'),
+                Text(AppLocalizations.of(context).guestModeMessage),
               ],
             ],
           ),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('닫기'),
+              child: Text(AppLocalizations.of(context).closeButton),
             ),
           ],
         );
@@ -646,12 +687,12 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-          title: const Text('로그아웃'),
-          content: const Text('정말로 로그아웃하시겠습니까? 저장되지 않은 데이터는 손실될 수 있습니다.'),
+          title: Text(AppLocalizations.of(context).logoutTitle),
+          content: Text(AppLocalizations.of(context).logoutConfirmMessage),
           actions: [
             TextButton(
               onPressed: () => Navigator.pop(context),
-              child: const Text('취소'),
+              child: Text(AppLocalizations.of(context).cancelButton),
             ),
             ElevatedButton(
               onPressed: () async {
@@ -662,7 +703,7 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                 backgroundColor: Colors.orange,
                 foregroundColor: Colors.white,
               ),
-              child: const Text('로그아웃'),
+              child: Text(AppLocalizations.of(context).logoutButton),
             ),
           ],
         );
@@ -704,14 +745,14 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
         (Route<dynamic> route) => false,
       );
 
-      _showSnackBar('로그아웃 되었습니다');
+      _showSnackBar(AppLocalizations.of(context).logoutSuccessMessage);
     } catch (e) {
       if (!mounted) return;
 
       // 로딩 다이얼로그 닫기
       Navigator.pop(context);
 
-      _showSnackBar('로그아웃 중 오류가 발생했습니다: $e');
+      _showSnackBar(AppLocalizations.of(context).logoutErrorMessage(e.toString()));
     }
   }
 

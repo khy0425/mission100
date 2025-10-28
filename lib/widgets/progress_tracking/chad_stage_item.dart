@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/app_localizations.dart';
 
 /// Chad 진화 단계 아이템 위젯
 class ChadStageItem extends StatelessWidget {
@@ -101,9 +102,7 @@ class ChadStageItem extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                           child: Text(
-                            Localizations.localeOf(context).languageCode == 'ko'
-                                ? '현재'
-                                : 'Current',
+                            AppLocalizations.of(context).current,
                             style: const TextStyle(
                               color: Colors.black,
                               fontSize: 10,

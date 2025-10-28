@@ -615,5 +615,38 @@
       }
     }
   },
-  "categoryAchievements": "카테고리별 업적"
+  "categoryAchievements": "카테고리별 업적",
+  "newAchievementUnlocked": "🏆 새로운 업적 달성! 🏆",
+  "viewAllAchievements": "✨ 모든 업적 보기",
+  "andMoreCount": "외 {count}개 더!",
+  "@andMoreCount": {
+    "description": "Shows count of additional items",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "achievementStatus": "업적 현황",
+  "achievementsUnlocked": "달성한 업적",
+  "totalXP": "총 경험치",
+  "completion": "완료율",
+  "achievementsUnlockedFormat": "{count}개의 업적을 달성했습니다!",
+  "@achievementsUnlockedFormat": {
+    "description": "Number of achievements unlocked message",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "totalXpEarned": "총 {totalXP} XP 획득!",
+  "@totalXpEarned": {
+    "description": "Total XP earned message",
+    "placeholders": {
+      "totalXP": {
+        "type": "int"
+      }
+    }
+  }
 }

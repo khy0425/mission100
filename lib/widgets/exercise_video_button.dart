@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../generated/app_localizations.dart';
 import '../models/exercise_video.dart';
 
 /// 운동 영상을 외부 앱(YouTube)에서 재생하는 버튼 위젯
@@ -42,7 +43,7 @@ class ExerciseVideoButton extends StatelessWidget {
         size: 28,
       ),
       label: Text(
-        _getButtonText(languageCode),
+        _getButtonText(context),
         style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
@@ -62,13 +63,8 @@ class ExerciseVideoButton extends StatelessWidget {
   }
 
   /// 로케일에 따른 버튼 텍스트 반환
-  String _getButtonText(String languageCode) {
-    switch (languageCode) {
-      case 'ko':
-        return '운동 영상 보기';
-      default:
-        return 'Watch Video';
-    }
+  String _getButtonText(BuildContext context) {
+    return AppLocalizations.of(context).watchVideo;
   }
 
   /// YouTube 영상 실행

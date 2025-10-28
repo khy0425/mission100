@@ -179,21 +179,15 @@ class AboutSettingsWidget extends StatelessWidget {
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '버전: ${packageInfo.version}'
-                        : 'Version: ${packageInfo.version}',
+                    AppLocalizations.of(context).versionLabel(packageInfo.version),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '빌드: ${packageInfo.buildNumber}'
-                        : 'Build: ${packageInfo.buildNumber}',
+                    AppLocalizations.of(context).buildLabel(packageInfo.buildNumber),
                   ),
                   const SizedBox(height: 4),
                   Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '패키지: ${packageInfo.packageName}'
-                        : 'Package: ${packageInfo.packageName}',
+                    AppLocalizations.of(context).packageLabel(packageInfo.packageName),
                   ),
                 ],
               ),
@@ -203,33 +197,21 @@ class AboutSettingsWidget extends StatelessWidget {
             Text(AppLocalizations.of(context).joinChadJourney),
             const SizedBox(height: 8),
             Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '6주 만에 100개 푸쉬업 달성!\n차드가 되는 여정을 함께하세요! 🔥'
-                  : 'Achieve 100 pushups in 6 weeks!\nJoin the Chad journey! 🔥',
+              AppLocalizations.of(context).achieve100Pushups,
               style: const TextStyle(fontSize: 14),
             ),
             const SizedBox(height: 16),
 
             // 기술 스택 정보
             Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '기술 스택:'
-                  : 'Tech Stack:',
+              AppLocalizations.of(context).techStack,
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 4),
             const Text('• Flutter 3.8.0+'),
             const Text('• Dart 3.0+'),
-            Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '• SQLite 로컬 데이터베이스'
-                  : '• SQLite Local Database',
-            ),
-            Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '• Provider 상태 관리'
-                  : '• Provider State Management',
-            ),
+            Text('• ${AppLocalizations.of(context).sqliteDatabase}'),
+            Text('• ${AppLocalizations.of(context).providerStateManagement}'),
             const Text('• Google Mobile Ads'),
           ],
         ),
@@ -248,9 +230,7 @@ class AboutSettingsWidget extends StatelessWidget {
               foregroundColor: Colors.white,
             ),
             child: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '라이선스'
-                  : 'Licenses',
+              AppLocalizations.of(context).licenses,
             ),
           ),
         ],
@@ -438,12 +418,9 @@ class AboutSettingsWidget extends StatelessWidget {
   /// 피드백 이메일 보내기
   Future<void> _sendFeedback(BuildContext context) async {
     const email = 'osu355@gmail.com';
-    final subject = Localizations.localeOf(context).languageCode == 'ko'
-        ? 'Mission 100 Chad Pushup 피드백'
-        : 'Mission 100 Chad Pushup Feedback';
-    final body = Localizations.localeOf(context).languageCode == 'ko'
-        ? '안녕하세요! Mission 100 Chad Pushup 앱에 대한 피드백을 보내드립니다.\n\n'
-        : 'Hello! I am sending feedback about the Mission 100 Chad Pushup app.\n\n';
+    final l10n = AppLocalizations.of(context);
+    final subject = l10n.feedbackSubject;
+    final body = l10n.feedbackBody;
 
     final emailUri = Uri(
       scheme: 'mailto',

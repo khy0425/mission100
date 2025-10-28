@@ -706,10 +706,7 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
               _ActionButtonWidget(
                 onPressed: onNext,
                 backgroundColor: const Color(0xFFFFD43B),
-                text: step.buttonText ??
-                    (Localizations.localeOf(context).languageCode == 'ko'
-                        ? '멋져요!'
-                        : 'Awesome!'),
+                text: step.buttonText ?? AppLocalizations.of(context).awesome,
                 foregroundColor: Colors.black,
               ),
 
@@ -920,9 +917,7 @@ class _TopNavigationWidget extends StatelessWidget {
           TextButton(
             onPressed: onSkip,
             child: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '건너뛰기'
-                  : 'Skip',
+              AppLocalizations.of(context).skip,
               style: TextStyle(color: Colors.grey[600], fontSize: 16),
             ),
           )

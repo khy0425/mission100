@@ -226,5 +226,9 @@
         "type": "int"
       }
     }
-  }
+  },
+  "rookieGoalDesc": "5개 이하 → 100개 달성",
+  "risingGoalDesc": "6-10개 → 100개 달성",
+  "alphaGoalDesc": "11-20개 → 100개 달성",
+  "gigaGoalDesc": "21개 이상 → 100개+ 달성"
 }

@@ -4,6 +4,7 @@ import '../services/database_service.dart';
 import '../services/workout_program_service.dart';
 import '../models/user_profile.dart';
 import 'main_navigation_screen.dart';
+import '../generated/app_localizations.dart';
 
 class WorkoutScheduleSetupScreen extends StatefulWidget {
   final UserProfile userProfile;
@@ -96,9 +97,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '최소 3일은 선택해야 합니다! 💪'
-                : 'You must select at least 3 days! 💪',
+            AppLocalizations.of(context).selectMinimum3Days,
           ),
           backgroundColor: Colors.orange,
           duration: const Duration(seconds: 2),
@@ -149,9 +148,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '진정한 챔피언이 되려면 일관성이 필요합니다!\n주 3일 이상 운동해야 합니다. 💪\n\n라이프스타일에 맞는 날을 선택하고,\n알림으로 핑계를 차단하세요! 🚀'
-                : 'To become a true champion, you need consistency!\nYou must work out at least 3 days a week. 💪\n\nChoose days that fit your lifestyle,\nand block excuses with reminder notifications! 🚀',
+            AppLocalizations.of(context).championNeedsConsistency,
           ),
           backgroundColor: Colors.red,
           duration: const Duration(seconds: 3),
@@ -185,9 +182,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '🎉 설정 완료! 이제 진짜 여정이 시작됩니다! 🔥\n$sessionsCreated개의 운동 세션이 준비되었습니다!\n💡 알림 설정은 설정 탭에서 변경할 수 있습니다!'
-                  : '🎉 Setup Complete! Now the real journey begins! 🔥\n$sessionsCreated workout sessions are ready!\n💡 You can change notification settings in the Settings tab!',
+              AppLocalizations.of(context).scheduleSetupComplete(sessionsCreated),
             ),
             backgroundColor: Colors.green,
             duration: const Duration(seconds: 5),
@@ -204,9 +199,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '오류: ${e.toString()}'
-                  : 'Error: ${e.toString()}',
+              AppLocalizations.of(context).scheduleSetupError(e.toString()),
             ),
             backgroundColor: Colors.red,
             duration: const Duration(seconds: 3),
@@ -227,9 +220,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
       ),
       appBar: AppBar(
         title: Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '운동 스케줄 설정'
-              : 'Workout Schedule Setup',
+          AppLocalizations.of(context).workoutScheduleSetup,
         ),
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -299,9 +290,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
               Icon(Icons.calendar_month, color: Colors.orange[700], size: 32),
               const SizedBox(width: 12),
               Text(
-                Localizations.localeOf(context).languageCode == 'ko'
-                    ? '🔥 운동 스케줄을 설정하세요!'
-                    : '🔥 Set Your Workout Schedule!',
+                AppLocalizations.of(context).setYourWorkoutSchedule,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Colors.orange[700],
@@ -311,9 +300,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
           ),
           const SizedBox(height: 16),
           Text(
-            Localizations.localeOf(context).languageCode == 'ko'
-                ? '진정한 챔피언이 되려면 일관성이 필요합니다!\n주 3일 이상 운동해야 합니다. 💪\n\n라이프스타일에 맞는 날을 선택하고,\n알림으로 핑계를 차단하세요! 🚀'
-                : 'To become a true champion, you need consistency!\nYou must work out at least 3 days a week. 💪\n\nChoose days that fit your lifestyle,\nand block excuses with reminder notifications! 🚀',
+            AppLocalizations.of(context).championNeedsConsistency,
             style: Theme.of(
               context,
             ).textTheme.bodyMedium?.copyWith(height: 1.5),
@@ -341,9 +328,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
             ),
             const SizedBox(width: 8),
             Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '운동 요일 선택 (최소 3일)'
-                  : 'Select Workout Days (Min 3 days)',
+              AppLocalizations.of(context).selectWorkoutDaysMin3,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: const Color(AppColors.primaryColor),
@@ -353,9 +338,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
         ),
         const SizedBox(height: 4),
         Text(
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '선택된 날짜: $_selectedDaysCount일'
-              : 'Selected days: $_selectedDaysCount days',
+          AppLocalizations.of(context).selectedDaysCount(_selectedDaysCount),
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: _selectedDaysCount >= 3 ? Colors.green : Colors.red,
                 fontWeight: FontWeight.w600,
@@ -427,9 +410,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
               ),
               const SizedBox(width: 8),
               Text(
-                Localizations.localeOf(context).languageCode == 'ko'
-                    ? '운동 알림 설정'
-                    : 'Workout Notifications',
+                AppLocalizations.of(context).workoutNotifications,
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: Colors.blue[700],
@@ -470,9 +451,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        Localizations.localeOf(context).languageCode == 'ko'
-                            ? '운동 알림 받기'
-                            : 'Enable Workout Reminders',
+                        AppLocalizations.of(context).enableWorkoutReminders,
                         style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                               fontWeight: FontWeight.w600,
                               color: _notificationsEnabled
@@ -481,9 +460,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                             ),
                       ),
                       Text(
-                        Localizations.localeOf(context).languageCode == 'ko'
-                            ? '선택한 운동일에 알림을 받습니다'
-                            : 'Get reminders on your workout days',
+                        AppLocalizations.of(context).getRemindersOnWorkoutDays,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
                               color: Colors.grey[600],
                             ),
@@ -532,10 +509,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              Localizations.localeOf(context).languageCode ==
-                                      'ko'
-                                  ? '알림 시간'
-                                  : 'Notification Time',
+                              AppLocalizations.of(context).notificationTime,
                               style: Theme.of(context)
                                   .textTheme
                                   .bodyLarge
@@ -581,9 +555,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(
-                    Localizations.localeOf(context).languageCode == 'ko'
-                        ? '💡 설정 탭에서 언제든지 변경할 수 있습니다'
-                        : '💡 You can change these settings anytime in Settings',
+                    AppLocalizations.of(context).canChangeInSettingsAnytime,
                     style: Theme.of(context).textTheme.bodySmall?.copyWith(
                           color: Colors.green[700],
                           fontWeight: FontWeight.w500,
@@ -623,9 +595,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
             ),
             const SizedBox(width: 8),
             Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '여정 시작하기! 🚀'
-                  : 'Start the Journey! 🚀',
+              AppLocalizations.of(context).startTheJourney,
               style: TextStyle(
                 color:
                     _selectedDaysCount >= 3 ? Colors.black : Colors.grey[400],
