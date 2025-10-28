@@ -20,7 +20,7 @@ import 'workout/handlers/workout_completion_handler.dart';
 import '../services/auth_service.dart';
 import '../services/signup_prompt_service.dart';
 import '../widgets/dialogs/gentle_signup_prompt_dialog.dart';
-import '../screens/onboarding/onboarding_screen.dart';
+import '../screens/onboarding/onboarding_screen.dart' as quick;
 
 class WorkoutScreen extends StatefulWidget {
   final dynamic workout; // 서비스에서 가져오는 타입
@@ -739,7 +739,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
             // 회원가입 화면으로 이동
             Navigator.of(context).push(
               MaterialPageRoute(
-                builder: (context) => const OnboardingScreen(),
+                builder: (context) => const quick.QuickOnboardingScreen(),
               ),
             );
           },

@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-/// 법적 문서 뷰어 화면
 class LegalDocumentScreen extends StatelessWidget {
   final String title;
-  final String assetPath;
+  final String documentPath;
 
   const LegalDocumentScreen({
     super.key,
     required this.title,
-    required this.assetPath,
+    required this.documentPath,
   });
 
   @override
@@ -18,13 +18,17 @@ class LegalDocumentScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+        backgroundColor: Theme.of(context).colorScheme.surface,
+        foregroundColor: Theme.of(context).colorScheme.onSurface,
         elevation: 0,
       ),
       body: FutureBuilder<String>(
-        future: rootBundle.loadString(assetPath),
+        future: _loadDocument(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
           }
 
           if (snapshot.hasError) {
@@ -32,7 +36,11 @@ class LegalDocumentScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(Icons.error_outline, size: 48, color: Colors.red),
+                  Icon(
+                    Icons.error_outline,
+                    size: 64,
+                    color: Theme.of(context).colorScheme.error,
+                  ),
                   const SizedBox(height: 16),
                   Text(
                     '문서를 불러올 수 없습니다',
@@ -40,50 +48,78 @@ class LegalDocumentScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    snapshot.error.toString(),
+                    '${snapshot.error}',
                     style: Theme.of(context).textTheme.bodySmall,
+                    textAlign: TextAlign.center,
                   ),
                 ],
               ),
             );
           }
 
-          return Markdown(
-            data: snapshot.data ?? '',
-            selectable: true,
-            styleSheet: MarkdownStyleSheet(
-              h1: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-              h2: Theme.of(context).textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-              h3: Theme.of(context).textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
-                  ),
-              p: Theme.of(context).textTheme.bodyMedium,
-              listBullet: Theme.of(context).textTheme.bodyMedium,
+          return Container(
+            color: Theme.of(context).colorScheme.surface,
+            child: Markdown(
+              data: snapshot.data ?? '',
+              styleSheet: MarkdownStyleSheet(
+                h1: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                h2: const TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                h3: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+                p: TextStyle(
+                  fontSize: 16,
+                  height: 1.5,
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+                blockquote: TextStyle(
+                  fontStyle: FontStyle.italic,
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.8),
+                ),
+                code: TextStyle(
+                  fontFamily: 'monospace',
+                  backgroundColor:
+                      Theme.of(context).colorScheme.surfaceContainerHighest,
+                  color: Theme.of(context).colorScheme.onSurfaceVariant,
+                ),
+              ),
+              onTapLink: (text, href, title) {
+                if (href != null) {
+                  _launchUrl(href);
+                }
+              },
             ),
-            padding: const EdgeInsets.all(16),
           );
         },
       ),
     );
   }
 
-  /// 개인정보처리방침 화면
-  static Widget privacyPolicy(BuildContext context) {
-    return const LegalDocumentScreen(
-      title: '개인정보처리방침',
-      assetPath: 'assets/legal/privacy_policy_ko.md',
-    );
+  Future<String> _loadDocument() async {
+    try {
+      return await rootBundle.loadString(documentPath);
+    } catch (e) {
+      throw Exception('문서를 찾을 수 없습니다: $documentPath');
+    }
   }
 
-  /// 이용약관 화면
-  static Widget termsOfService(BuildContext context) {
-    return const LegalDocumentScreen(
-      title: '이용약관',
-      assetPath: 'assets/legal/terms_of_service_ko.md',
-    );
+  Future<void> _launchUrl(String url) async {
+    final Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
+    } else {
+      throw Exception('Could not launch $url');
+    }
   }
 }

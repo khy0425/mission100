@@ -15,14 +15,14 @@ import '../initial_test_screen.dart';
 /// - 앱의 핵심 가치 제안
 /// - 주요 기능 소개
 /// - 시작하기 버튼으로 레벨 테스트로 이동
-class OnboardingScreen extends StatefulWidget {
-  const OnboardingScreen({super.key});
+class QuickOnboardingScreen extends StatefulWidget {
+  const QuickOnboardingScreen({super.key});
 
   @override
-  State<OnboardingScreen> createState() => _OnboardingScreenState();
+  State<QuickOnboardingScreen> createState() => _QuickOnboardingScreenState();
 }
 
-class _OnboardingScreenState extends State<OnboardingScreen>
+class _QuickOnboardingScreenState extends State<QuickOnboardingScreen>
     with TickerProviderStateMixin {
   final PageController _pageController = PageController();
   int _currentPage = 0;
