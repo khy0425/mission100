@@ -48,6 +48,11 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+# ProGuard mapping files (generated during build)
+android/app/mapping.txt
+android/app/seeds.txt
+android/app/usage.txt
+
 # Firebase configuration files (contain API keys)
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
