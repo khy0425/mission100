@@ -1,0 +1,228 @@
+=================================================
+미드저니 푸쉬업 가이드 이미지 - 바로 사용 가능한 프롬프트
+=================================================
+
+✅ v5.2 버전 사용 (개인화 스타일 오류 해결됨!)
+=================================================
+
+v6에서 발생하는 개인화 스타일 오류를 피하기 위해
+모든 프롬프트를 v5.2로 설정했습니다.
+
+v5.2 장점:
+- 개인화 스타일 설정 불필요
+- 안정적이고 고품질
+- 바로 사용 가능
+
+설정 변경 없이 바로 사용하세요!
+
+=================================================
+
+프롬프트 사용법 (웹 버전):
+1. 위의 설정 변경 완료 확인 ✅
+2. 상단의 프롬프트 입력창 클릭
+3. 아래 프롬프트 복사해서 붙여넣기 (명령어 없이 바로 프롬프트만!)
+4. Enter 또는 생성 버튼 클릭!
+
+=================================================
+✅ 올바른 자세 시리즈
+=================================================
+
+[1] 완벽한 푸쉬업 - 측면뷰
+----------------------------------------
+3D render of athletic male figure performing perfect push-up form, side view angle, highlighted chest muscles in glowing cyan blue, dark grey studio background, professional fitness illustration style, clean minimalist design, anatomical muscle visualization, high detail, photorealistic lighting, 4k quality --ar 1:1 --v 5.2 --style raw
+
+
+[2] 완벽한 푸쉬업 - 정면뷰
+----------------------------------------
+3D anatomical render of fit male doing push-up exercise, front view showing shoulder and arm muscles, highlighted deltoids and triceps in bright cyan glow, dark studio background, medical illustration style, precise anatomy, studio lighting, ultra detailed --ar 1:1 --v 5.2 --style raw
+
+
+[3] 플랭크 시작 자세
+----------------------------------------
+3D render athletic figure in plank position, perfect straight body alignment, side profile view, glowing cyan highlights on core and shoulder muscles, dark minimalist background, fitness app illustration style, clean professional design --ar 1:1 --v 5.2 --style raw
+
+
+[4] 하강 단계
+----------------------------------------
+3D anatomical model lowering body in push-up motion, elbows at 45 degrees, highlighted pectoralis major in cyan blue, side view angle, dark grey background, medical fitness illustration, high detail muscle definition --ar 1:1 --v 5.2 --style raw
+
+
+[5] 최하단 자세
+----------------------------------------
+3D render male figure at bottom of push-up, chest near ground, elbows bent 90 degrees, glowing cyan chest and triceps muscles, side profile, dark background, professional fitness diagram style --ar 1:1 --v 5.2 --style raw
+
+
+=================================================
+❌ 잘못된 자세 (실수) 시리즈
+=================================================
+
+[6] 등이 아치형 - 잘못된 자세
+----------------------------------------
+3D render incorrect push-up form with arched lower back, highlighted in red warning glow, X mark overlay, side view, educational fitness illustration, dark background, anatomical style showing poor posture --ar 1:1 --v 5.2 --style raw
+
+
+[7] 엉덩이 처짐 - 잘못된 자세
+----------------------------------------
+3D anatomical figure doing push-up with sagging hips, wrong posture highlighted in red, warning indicators, side profile view, medical illustration style, dark background, educational fitness diagram --ar 1:1 --v 5.2 --style raw
+
+
+[8] 팔꿈치 벌림 - 잘못된 자세
+----------------------------------------
+3D render push-up with elbows flared out at wrong angle, top-down view showing arm position, red warning highlights on shoulder strain, dark background, fitness education illustration, clear anatomical markers --ar 1:1 --v 5.2 --style raw
+
+
+[9] 머리 숙임 - 잘못된 자세
+----------------------------------------
+3D anatomical figure doing push-up with head dropped down, neck strain highlighted in red, side view, warning illustration style, dark background, educational fitness diagram showing poor form --ar 1:1 --v 5.2 --style raw
+
+
+=================================================
+💪 근육 강조 시리즈
+=================================================
+
+[10] 가슴 근육 강조
+----------------------------------------
+3D anatomical model in push-up position, x-ray style view of glowing pectoralis major muscles, bright cyan muscle highlights, side angle, dark background, medical fitness visualization, translucent skin showing muscle structure --ar 1:1 --v 5.2 --style raw
+
+
+[11] 삼두근 강조
+----------------------------------------
+3D render push-up exercise highlighting triceps brachii, neon cyan glow on back of arms, side view, anatomical muscle visualization, dark grey background, professional fitness illustration, clear muscle definition --ar 1:1 --v 5.2 --style raw
+
+
+[12] 코어 근육 강조
+----------------------------------------
+3D anatomical figure doing plank, highlighted core muscles in cyan blue, rectus abdominis and obliques glowing, side profile, medical illustration style, dark background, precise muscle anatomy --ar 1:1 --v 5.2 --style raw
+
+
+[13] 어깨 근육 강조
+----------------------------------------
+3D render push-up with highlighted deltoid muscles, bright cyan shoulder glow, side angle view, anatomical muscle visualization, dark studio background, professional fitness diagram, clear muscle definition --ar 1:1 --v 5.2 --style raw
+
+
+=================================================
+🔄 변형 운동 - 초급
+=================================================
+
+[14] 무릎 푸쉬업
+----------------------------------------
+3D render beginner knee push-up exercise, athletic figure with knees on ground, highlighted muscles in soft green glow, side view, beginner level indicator, dark background, friendly fitness illustration style --ar 1:1 --v 5.2 --style raw
+
+
+[15] 벽 푸쉬업
+----------------------------------------
+3D anatomical figure doing wall push-up exercise, standing position against vertical surface, highlighted chest and arm muscles in green, side view angle, beginner friendly illustration, dark background --ar 1:1 --v 5.2 --style raw
+
+
+[16] 인클라인 푸쉬업
+----------------------------------------
+3D render incline push-up using elevated surface, hands on bench, athletic figure highlighted muscles in green glow, side view, beginner level fitness illustration, dark background, clear form demonstration --ar 1:1 --v 5.2 --style raw
+
+
+=================================================
+🔄 변형 운동 - 중급
+=================================================
+
+[17] 와이드 푸쉬업
+----------------------------------------
+3D anatomical model doing wide-grip push-up, hands positioned wider than shoulders, glowing chest muscles in yellow, top-down angle view, dark background, intermediate level fitness diagram --ar 1:1 --v 5.2 --style raw
+
+
+[18] 다이아몬드 푸쉬업
+----------------------------------------
+3D render diamond push-up with hands forming triangle, highlighted triceps in bright yellow glow, close-up side view, dark background, intermediate technique illustration, anatomical muscle detail --ar 1:1 --v 5.2 --style raw
+
+
+[19] 디클라인 푸쉬업
+----------------------------------------
+3D anatomical figure doing decline push-up with feet elevated, highlighted upper chest muscles in yellow glow, side profile view, intermediate level illustration, dark background, professional fitness diagram --ar 1:1 --v 5.2 --style raw
+
+
+=================================================
+🔄 변형 운동 - 고급
+=================================================
+
+[20] 원암 푸쉬업
+----------------------------------------
+3D athletic figure performing one-arm push-up, extreme strength pose, multiple muscle groups highlighted in red glow, side profile, dark background, advanced level fitness visualization, dramatic lighting --ar 1:1 --v 5.2 --style raw
+
+
+[21] 플라이오메트릭 푸쉬업
+----------------------------------------
+3D render explosive plyometric push-up with hands off ground, dynamic motion blur, highlighted fast-twitch muscles in red, side view, advanced level illustration, dark background, power movement visualization --ar 1:1 --v 5.2 --style raw
+
+
+[22] 아처 푸쉬업
+----------------------------------------
+3D anatomical model doing archer push-up, asymmetric arm position, highlighted unilateral chest muscles in red glow, side angle view, advanced technique illustration, dark background, precise form demonstration --ar 1:1 --v 5.2 --style raw
+
+
+=================================================
+⚖️ 비교 이미지
+=================================================
+
+[23] 올바른 vs 잘못된 (Side by Side)
+----------------------------------------
+split screen comparison 3D render, left side correct push-up form with green checkmark and cyan highlights, right side incorrect form with red X and warning glow, both side view angles, dark background, educational fitness infographic style, clear visual distinction --ar 16:9 --v 5.2 --style raw
+
+
+[24] 근육 활성화 맵
+----------------------------------------
+3D anatomical figure in push-up position, full body muscle activation map, color-coded intensity from blue cool to red hot, showing all working muscles, dark background, scientific fitness visualization, medical illustration style --ar 1:1 --v 5.2 --style raw
+
+
+=================================================
+🎯 특별 각도
+=================================================
+
+[25] 3/4 각도 뷰
+----------------------------------------
+3D render perfect push-up form from three-quarter angle view, showing both side and front perspective, highlighted muscles in cyan blue, athletic male figure, dark studio background, professional fitness illustration, dynamic composition --ar 1:1 --v 5.2 --style raw
+
+
+[26] 탑다운 뷰 (위에서)
+----------------------------------------
+3D anatomical render push-up from bird's eye view, top-down perspective showing shoulder and back muscles, cyan muscle highlights, dark background, unique angle fitness illustration, clear form demonstration --ar 1:1 --v 5.2 --style raw
+
+
+=================================================
+💡 팁
+=================================================
+
+1. 첫 이미지 생성 후 마음에 들면 URL 복사
+2. 다음 프롬프트에 --cref [URL] --cw 100 추가하여 일관성 유지
+3. 색상이 마음에 안들면: 프롬프트에 "brighter", "more intense", "neon" 추가
+4. 배경이 밝으면: "darker background, pitch black, high contrast" 추가
+5. 자세가 부정확하면: "anatomically correct, precise form, professional" 추가
+
+예시:
+/imagine [위 프롬프트] --cref https://cdn.midjourney.com/abc123/0_0.png --cw 100
+
+
+=================================================
+⚙️ 파라미터 설명
+=================================================
+
+--ar 1:1         # 정사각형 (인스타그램, 앱)
+--ar 16:9        # 와이드 (비교 이미지, 웹)
+--v 5.2          # 버전 5.2 (안정적, 개인화 오류 없음) ✅
+--style raw      # 덜 스타일화, 더 현실적
+--s 50           # 스타일 강도 조절 (0-1000, 기본 100)
+--q 2            # 품질 최대
+--chaos 0        # 변화 없음 (일관성)
+
+제외할 요소 추가:
+--no text, watermark, logo, numbers, letters
+
+
+=================================================
+🚀 빠른 시작
+=================================================
+
+1단계: 프롬프트 [1] 복사 → 생성
+2단계: 4개 중 최고 선택 (U1~U4 클릭)
+3단계: 업스케일된 이미지 URL 복사
+4단계: 프롬프트 [2] + --cref [URL] --cw 100 추가
+5단계: 반복!
+
+성공적인 제작을 기원합니다! 💪
