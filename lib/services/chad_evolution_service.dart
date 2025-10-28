@@ -272,7 +272,7 @@ class ChadEvolutionService extends ChangeNotifier {
       }
 
       // 최종 진화인지 확인
-      if (evolvedChad.stage == ChadEvolutionStage.doubleChad) {
+      if (evolvedChad.stage == ChadEvolutionStage.godChad) {
         await NotificationService.showChadFinalEvolutionNotification();
       } else {
         await NotificationService.showChadEvolutionNotification(
@@ -407,7 +407,7 @@ class ChadEvolutionService extends ChangeNotifier {
     }).toList();
 
     _evolutionState = _evolutionState.copyWith(
-      currentStage: ChadEvolutionStage.doubleChad,
+      currentStage: ChadEvolutionStage.godChad,
       unlockedStages: allUnlocked,
       totalEvolutions: ChadEvolution.defaultStages.length - 1,
       lastEvolutionAt: DateTime.now(),
@@ -432,7 +432,7 @@ class ChadEvolutionService extends ChangeNotifier {
 
   /// 진화 진행률 계산 (0.0 - 1.0)
   double getEvolutionProgress([Progress? progress]) {
-    if (_evolutionState.currentStage == ChadEvolutionStage.doubleChad) {
+    if (_evolutionState.currentStage == ChadEvolutionStage.godChad) {
       return 1.0; // 최종 단계는 100%
     }
 
@@ -487,7 +487,7 @@ class ChadEvolutionService extends ChangeNotifier {
 
   /// 다음 진화까지 남은 주차 계산
   int getWeeksUntilNextEvolution([Progress? progress]) {
-    if (_evolutionState.currentStage == ChadEvolutionStage.doubleChad) {
+    if (_evolutionState.currentStage == ChadEvolutionStage.godChad) {
       return 0; // 최종 단계
     }
 
@@ -919,6 +919,71 @@ class ChadEvolutionService extends ChangeNotifier {
             'description': '레벨 $level 차드로 진화! 더욱 강력해진 파워를 느껴보세요!',
           };
         }
+    }
+  }
+
+  /// Chad 통계 계산 (Progress 데이터로부터)
+  Future<ChadStats> calculateChadStats(Progress progress) async {
+    try {
+      final currentLevel = _evolutionState.currentStage.index;
+      final streakDays = progress.consecutiveDays;
+      final completedMissions = progress.totalWorkouts;
+      final totalMinutes = progress.totalWorkouts * 30; // 평균 30분 가정
+      final shareCount = 0; // TODO: 공유 기능 구현 시 실제 값 사용
+
+      return ChadStats.fromWorkoutData(
+        level: currentLevel,
+        streakDays: streakDays,
+        completedMissions: completedMissions,
+        totalMinutes: totalMinutes,
+        shareCount: shareCount,
+      );
+    } catch (e) {
+      debugPrint('Chad 통계 계산 오류: $e');
+      // 기본값 반환
+      return const ChadStats(
+        chadLevel: 1,
+        brainjoltDegree: 1,
+        chadAura: 0.0,
+        jawlineSharpness: 0.0,
+        crowdAdmiration: 0,
+        brainjoltVoltage: 1000,
+        memePower: 'COMMON',
+        chadConsistency: 0,
+        totalChadHours: 0,
+      );
+    }
+  }
+
+  /// 현재 Chad 통계 가져오기
+  Future<ChadStats> getCurrentChadStats() async {
+    try {
+      // Progress 데이터 가져오기 (ProgressTrackerService 필요)
+      // 여기서는 임시로 기본값 사용
+      return const ChadStats(
+        chadLevel: 1,
+        brainjoltDegree: 1,
+        chadAura: 0.0,
+        jawlineSharpness: 0.0,
+        crowdAdmiration: 0,
+        brainjoltVoltage: 1000,
+        memePower: 'COMMON',
+        chadConsistency: 0,
+        totalChadHours: 0,
+      );
+    } catch (e) {
+      debugPrint('현재 Chad 통계 가져오기 오류: $e');
+      return const ChadStats(
+        chadLevel: 1,
+        brainjoltDegree: 1,
+        chadAura: 0.0,
+        jawlineSharpness: 0.0,
+        crowdAdmiration: 0,
+        brainjoltVoltage: 1000,
+        memePower: 'COMMON',
+        chadConsistency: 0,
+        totalChadHours: 0,
+      );
     }
   }
 }

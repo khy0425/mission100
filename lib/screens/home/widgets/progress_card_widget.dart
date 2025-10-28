@@ -19,7 +19,7 @@ class ProgressCardWidget extends StatelessWidget {
     final isDark = theme.brightness == Brightness.dark;
 
     return Container(
-      padding: const EdgeInsets.all(AppConstants.paddingL),
+      padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
         color: Color(isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
@@ -189,12 +189,15 @@ class ProgressCardWidget extends StatelessWidget {
               color: Color(AppColors.primaryColor),
             ),
             const SizedBox(width: 8),
-            Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '전체 프로그램 진행도'
-                  : 'Overall Program Progress',
-              style: theme.textTheme.titleMedium?.copyWith(
-                fontWeight: FontWeight.bold,
+            Flexible(
+              child: Text(
+                Localizations.localeOf(context).languageCode == 'ko'
+                    ? '전체 프로그램 진행도'
+                    : 'Overall Program Progress',
+                style: theme.textTheme.titleMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -242,21 +245,29 @@ class ProgressCardWidget extends StatelessWidget {
           style: theme.textTheme.bodyMedium?.copyWith(
             fontWeight: FontWeight.w600,
           ),
+          overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(height: 8),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              '$completedDaysThisWeek/$totalDaysThisWeek',
-              style: theme.textTheme.bodyMedium,
+            Flexible(
+              flex: 0,
+              child: Text(
+                '$completedDaysThisWeek/$totalDaysThisWeek',
+                style: theme.textTheme.bodyMedium,
+              ),
             ),
-            Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '일 완료'
-                  : 'days completed',
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: Colors.grey[600],
+            const SizedBox(width: 4),
+            Flexible(
+              child: Text(
+                Localizations.localeOf(context).languageCode == 'ko'
+                    ? '일 완료'
+                    : 'days completed',
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: Colors.grey[600],
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -294,12 +305,15 @@ class ProgressCardWidget extends StatelessWidget {
               size: 20,
             ),
             const SizedBox(width: 8),
-            Text(
-              Localizations.localeOf(context).languageCode == 'ko'
-                  ? '총 운동 세션'
-                  : 'Total Sessions',
-              style: theme.textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.w600,
+            Flexible(
+              child: Text(
+                Localizations.localeOf(context).languageCode == 'ko'
+                    ? '총 운동 세션'
+                    : 'Total Sessions',
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],
@@ -308,17 +322,24 @@ class ProgressCardWidget extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              '$completedSessions/$totalSessions',
-              style: theme.textTheme.bodyMedium?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: const Color(AppColors.primaryColor),
+            Flexible(
+              flex: 0,
+              child: Text(
+                '$completedSessions/$totalSessions',
+                style: theme.textTheme.bodyMedium?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: const Color(AppColors.primaryColor),
+                ),
               ),
             ),
-            Text(
-              '${totalSessions > 0 ? ((completedSessions / totalSessions) * 100).toStringAsFixed(1) : '0.0'}%',
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: Colors.grey[600],
+            const SizedBox(width: 4),
+            Flexible(
+              child: Text(
+                '${totalSessions > 0 ? ((completedSessions / totalSessions) * 100).toStringAsFixed(1) : '0.0'}%',
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: Colors.grey[600],
+                ),
+                overflow: TextOverflow.ellipsis,
               ),
             ),
           ],

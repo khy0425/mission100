@@ -73,9 +73,9 @@ class _WorkoutScreenState extends State<WorkoutScreen>
     _workoutStartTime = DateTime.now();
 
     // 타겟 횟수 설정
-    if (widget.workout.workout != null &&
-        (widget.workout.workout as List).isNotEmpty) {
-      _targetReps = List<int>.from(widget.workout.workout as List);
+    if (widget.workout.workoutSets != null &&
+        (widget.workout.workoutSets as List).isNotEmpty) {
+      _targetReps = (widget.workout.workoutSets as List).map((set) => set.reps as int).toList();
     } else {
       _targetReps = [10, 8, 6, 4, 2]; // 기본값
     }
@@ -601,7 +601,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                       child: Column(
                         children: [
                           Text(
-                            '🔥 내일도 BEAST MODE! 🔥',
+                            '🔥 TOMORROW: BEAST MODE AGAIN! 🔥',
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Colors.orange[700],

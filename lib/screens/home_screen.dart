@@ -8,7 +8,6 @@ import '../services/workout_history_service.dart';
 import '../services/chad_evolution_service.dart';
 import '../services/chad_condition_service.dart';
 import '../services/chad_recovery_service.dart';
-import '../services/chad_active_recovery_service.dart';
 import '../services/achievement_service.dart';
 import '../screens/workout_screen.dart';
 import '../screens/settings_screen.dart';
@@ -23,14 +22,13 @@ import '../widgets/ad_banner_widget.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 // 분리된 위젯들 import
-import 'home/widgets/chad_section_widget.dart';
-import 'home/widgets/chad_condition_widget.dart';
-import '../widgets/chad_recovery_widget.dart';
-import '../widgets/chad_active_recovery_widget.dart';
+import 'home/widgets/chad_status_compact_widget.dart';
 import 'home/widgets/today_mission_card_widget.dart';
 import 'home/widgets/progress_card_widget.dart';
 import 'home/widgets/achievement_stats_widget.dart';
 import 'home/widgets/action_buttons_widget.dart';
+import '../widgets/chad/chad_stats_card.dart';
+import '../models/chad_evolution.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -55,31 +53,16 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
   int _unlockedCount = 0;
   int _totalCount = 0;
 
+  // Chad 통계
+  ChadStats? _chadStats;
+
   // 반응형 디자인을 위한 변수들
   bool get _isTablet => MediaQuery.of(context).size.width > 600;
   bool get _isLargeTablet => MediaQuery.of(context).size.width > 900;
 
-  double get _chadImageSize {
-    if (_isLargeTablet) return 200.0;
-    if (_isTablet) return 160.0;
-    return 120.0;
-  }
-
-  double get _titleFontSize {
-    if (_isLargeTablet) return 32.0;
-    if (_isTablet) return 28.0;
-    return 24.0;
-  }
-
   double get _subtitleFontSize {
     if (_isLargeTablet) return 20.0;
     if (_isTablet) return 18.0;
-    return 16.0;
-  }
-
-  double get _cardPadding {
-    if (_isLargeTablet) return 32.0;
-    if (_isTablet) return 24.0;
     return 16.0;
   }
 
@@ -148,6 +131,24 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     }
   }
 
+  // Chad 통계 로드
+  Future<void> _loadChadStats() async {
+    try {
+      debugPrint('💪 Chad 통계 로드 시작');
+      final chadService = Provider.of<ChadEvolutionService>(
+        context,
+        listen: false,
+      );
+      final stats = await chadService.getCurrentChadStats();
+      setState(() {
+        _chadStats = stats;
+      });
+      debugPrint('✅ Chad 통계 로드 완료: Level ${stats.chadLevel}, 뇌절 ${stats.brainjoltDegree}도');
+    } catch (e) {
+      debugPrint('❌ Chad 통계 로드 실패: $e');
+    }
+  }
+
   Future<void> _loadUserData() async {
     if (!mounted) return;
 
@@ -161,6 +162,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
       // 업적 통계 먼저 로드
       await _loadAchievementStats();
+
+      // Chad 통계 로드
+      await _loadChadStats();
 
       // 사용자 프로필 로드
       final profile = await _databaseService.getUserProfile();
@@ -341,33 +345,32 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
                       else if (_userProfile == null)
                         _buildNoUserWidget() // 프로필 생성 필요
                       else ...[
-                        // Chad 컨디션 체크 위젯
-                        ChangeNotifierProvider<ChadConditionService>(
-                          create: (_) => ChadConditionService(),
-                          child: const ChadConditionWidget(),
+                        // 1. Chad 상태 간결 위젯 (컨디션 + 회복 점수)
+                        MultiProvider(
+                          providers: [
+                            ChangeNotifierProvider<ChadConditionService>(
+                              create: (_) => ChadConditionService(),
+                            ),
+                            ChangeNotifierProvider<ChadRecoveryService>(
+                              create: (_) => ChadRecoveryService(),
+                            ),
+                          ],
+                          child: const ChadStatusCompactWidget(),
                         ),
 
-                        // Chad 회복 점수 위젯
-                        ChangeNotifierProvider<ChadRecoveryService>(
-                          create: (_) => ChadRecoveryService(),
-                          child: const ChadRecoveryWidget(showDetails: false),
-                        ),
+                        const SizedBox(height: AppConstants.paddingL),
 
-                        // Chad 액티브 리커버리 위젯
-                        ChangeNotifierProvider<ChadActiveRecoveryService>(
-                          create: (_) => ChadActiveRecoveryService(),
-                          child: const ChadActiveRecoveryWidget(
-                              showFullDetails: false),
-                        ),
+                        // Chad 통계 카드 (컴팩트 버전)
+                        if (_chadStats != null)
+                          ChadStatsCard(
+                            stats: _chadStats!,
+                            compact: true,
+                          ),
 
-                        const SizedBox(height: AppConstants.paddingM),
+                        if (_chadStats != null)
+                          const SizedBox(height: AppConstants.paddingL),
 
-                        // Chad 이미지 및 환영 메시지
-                        ChadSectionWidget(chadImageSize: _chadImageSize),
-
-                        const SizedBox(height: AppConstants.paddingXL),
-
-                        // 오늘의 미션 카드
+                        // 2. 오늘의 미션 카드 (Hero Section)
                         TodayMissionCardWidget(
                           todayWorkout: _todayWorkout,
                           todayCompletedWorkout: _todayCompletedWorkout,
@@ -376,16 +379,25 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
                         const SizedBox(height: AppConstants.paddingL),
 
-                        // 진행 상황 카드
-                        ProgressCardWidget(programProgress: _programProgress),
-
-                        const SizedBox(height: AppConstants.paddingL),
-
-                        // 업적 통계 카드
-                        AchievementStatsWidget(
-                          totalXP: _totalXP,
-                          unlockedCount: _unlockedCount,
-                          totalCount: _totalCount,
+                        // 3. 2열 그리드: 진행률 + 업적
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // 진행 상황 카드
+                            Expanded(
+                              child: ProgressCardWidget(
+                                programProgress: _programProgress,
+                              ),
+                            ),
+                            // 업적 통계 카드
+                            Expanded(
+                              child: AchievementStatsWidget(
+                                totalXP: _totalXP,
+                                unlockedCount: _unlockedCount,
+                                totalCount: _totalCount,
+                              ),
+                            ),
+                          ],
                         ),
 
                         const SizedBox(height: AppConstants.paddingL),

@@ -26,7 +26,7 @@ class AchievementStatsWidget extends StatelessWidget {
     final isDark = theme.brightness == Brightness.dark;
 
     return Container(
-      padding: const EdgeInsets.all(AppConstants.paddingL),
+      padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
         color: Color(isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
@@ -71,37 +71,43 @@ class AchievementStatsWidget extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        _buildAchievementStat(
-          context,
-          theme,
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '달성한 업적'
-              : 'Unlocked',
-          '$unlockedCount/$totalCount',
-          Icons.military_tech,
-          Colors.amber,
+        Flexible(
+          child: _buildAchievementStat(
+            context,
+            theme,
+            Localizations.localeOf(context).languageCode == 'ko'
+                ? '달성한 업적'
+                : 'Unlocked',
+            '$unlockedCount/$totalCount',
+            Icons.military_tech,
+            Colors.amber,
+          ),
         ),
-        _buildAchievementStat(
-          context,
-          theme,
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '총 경험치'
-              : 'Total XP',
-          '$totalXP XP',
-          Icons.star,
-          Colors.purple,
+        Flexible(
+          child: _buildAchievementStat(
+            context,
+            theme,
+            Localizations.localeOf(context).languageCode == 'ko'
+                ? '총 경험치'
+                : 'Total XP',
+            '$totalXP XP',
+            Icons.star,
+            Colors.purple,
+          ),
         ),
-        _buildAchievementStat(
-          context,
-          theme,
-          Localizations.localeOf(context).languageCode == 'ko'
-              ? '완료율'
-              : 'Completion',
-          totalCount > 0
-              ? '${((unlockedCount / totalCount) * 100).toStringAsFixed(0)}%'
-              : '0%',
-          Icons.percent,
-          Colors.green,
+        Flexible(
+          child: _buildAchievementStat(
+            context,
+            theme,
+            Localizations.localeOf(context).languageCode == 'ko'
+                ? '완료율'
+                : 'Completion',
+            totalCount > 0
+                ? '${((unlockedCount / totalCount) * 100).toStringAsFixed(0)}%'
+                : '0%',
+            Icons.percent,
+            Colors.green,
+          ),
         ),
       ],
     );
@@ -118,30 +124,35 @@ class AchievementStatsWidget extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(4),
           decoration: BoxDecoration(
             color: color.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(4),
             border: Border.all(color: color.withValues(alpha: 0.3), width: 1),
           ),
-          child: Icon(icon, color: color, size: 24),
+          child: Icon(icon, color: color, size: 14),
         ),
-        const SizedBox(height: 8),
+        const SizedBox(height: 2),
         Text(
           value,
-          style: theme.textTheme.titleMedium?.copyWith(
+          style: theme.textTheme.titleSmall?.copyWith(
             fontWeight: FontWeight.bold,
             color: color,
+            fontSize: 11,
           ),
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
         ),
-        const SizedBox(height: 4),
+        const SizedBox(height: 2),
         Text(
           label,
           style: theme.textTheme.bodySmall?.copyWith(
             color: theme.textTheme.bodySmall?.color?.withValues(alpha: 0.7),
-            fontSize: 11,
+            fontSize: 8,
           ),
           textAlign: TextAlign.center,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
         ),
       ],
     );

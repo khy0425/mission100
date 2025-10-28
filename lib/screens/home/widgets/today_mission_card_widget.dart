@@ -117,10 +117,12 @@ class TodayMissionCardWidget extends StatelessWidget {
   }
 
   Widget _buildSetsList(BuildContext context, ThemeData theme) {
+    final workoutSets = todayWorkout!.workoutSets;
+
     return Column(
-      children: List.generate((todayWorkout!.workout as List).length, (index) {
+      children: List.generate(workoutSets.length, (index) {
         final setIndex = index + 1;
-        final reps = (todayWorkout!.workout as List)[index];
+        final reps = workoutSets[index].reps;
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 2),
           child: Row(
@@ -134,7 +136,7 @@ class TodayMissionCardWidget extends StatelessWidget {
               const SizedBox(width: 8),
               Text(
                 AppLocalizations.of(context)
-                    .setRepsFormat(setIndex, reps as int),
+                    .setRepsFormat(setIndex, reps),
                 style: TextStyle(
                   color: todayCompletedWorkout != null
                       ? Colors.green[700]
@@ -151,10 +153,7 @@ class TodayMissionCardWidget extends StatelessWidget {
   }
 
   Widget _buildTotalGoal(BuildContext context, ThemeData theme) {
-    final totalReps = (todayWorkout!.workout as List).fold<int>(
-      0,
-      (sum, reps) => sum + (reps as int),
-    );
+    final totalReps = todayWorkout!.totalReps;
 
     return Container(
       padding: const EdgeInsets.all(12),

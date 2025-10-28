@@ -393,4 +393,53 @@ class ChadImageService {
   static String _getChadImagePathStatic(ChadEvolutionStage stage) {
     return 'assets/images/chad/${stage.name}.png';
   }
+
+  // ========== Evolution GIF & Week Image Methods ==========
+
+  /// 진화 주차 여부 확인
+  static bool isEvolutionWeek(int week) {
+    return week == 4 || week == 8 || week == 12 || week == 14;
+  }
+
+  /// 진화 GIF 경로 반환
+  static String? getEvolutionGifPath(int week) {
+    final Map<int, String> evolutionGifs = {
+      4: 'assets/images/chad/진화/first_evolution.gif',
+      8: 'assets/images/chad/진화/second_evolution.gif',
+      12: 'assets/images/chad/진화/third_evolution.gif',
+      14: 'assets/images/chad/진화/last_evolution.gif',
+    };
+    return evolutionGifs[week];
+  }
+
+  /// 진화 단계 이름 반환
+  static String getEvolutionStageName(int week) {
+    final Map<int, String> stageNames = {
+      4: '첫 번째 진화',
+      8: '두 번째 진화',
+      12: '세 번째 진화',
+      14: '최종 진화',
+    };
+    return stageNames[week] ?? 'Evolution';
+  }
+
+  /// 주차별 GIF 경로 반환
+  static String getWeekGifPath(int week) {
+    return 'assets/images/${week}_week.gif';
+  }
+
+  /// 주차별 PNG 경로 반환
+  static String getWeekPngPath(int week) {
+    final weekStr = week.toString().padLeft(2, '0');
+    return 'assets/images/chad_week$weekStr.png';
+  }
+
+  /// 주차에 해당하는 이미지 경로 반환 (GIF 우선, PNG 폴백)
+  static String getWeekImagePath(int week, {bool preferGif = true}) {
+    if (preferGif) {
+      return getWeekGifPath(week);
+    } else {
+      return getWeekPngPath(week);
+    }
+  }
 }

@@ -13,6 +13,7 @@ import '../../../models/workout_history.dart';
 import '../../../models/achievement.dart';
 import '../../../models/challenge.dart';
 import '../../../models/workout_reminder_settings.dart';
+import '../../../data/chad_reward_dialogues.dart';
 
 class WorkoutCompletionHandler {
   final BuildContext context;
@@ -53,14 +54,18 @@ class WorkoutCompletionHandler {
       // 5. 챌린지 진행률 업데이트
       await _updateChallenges(history, result);
 
-      // 6. 업적 확인
+      // 6. Chad 보상 대화 생성
+      final rewardDialogue = await _generateRewardDialogue(history);
+      result.rewardDialogue = rewardDialogue;
+
+      // 7. 업적 확인
       final achievements = await _checkAchievements(history);
       result.newAchievements = achievements;
 
-      // 7. 세션 정리
+      // 8. 세션 정리
       await _cleanupSession();
 
-      // 8. 내일 휴식일인지 확인하고 알림
+      // 9. 내일 휴식일인지 확인하고 알림
       await _checkRestDayNotification();
 
       result.success = true;
@@ -285,6 +290,41 @@ class WorkoutCompletionHandler {
     }
   }
 
+  /// Chad 보상 대화 생성
+  Future<RewardDialogue> _generateRewardDialogue(WorkoutHistory history) async {
+    try {
+      debugPrint('💬 Chad 보상 대화 생성 시작');
+
+      // 현재 Chad 레벨 가져오기
+      final chadEvolutionService = ChadEvolutionService();
+      final currentLevel = chadEvolutionService.evolutionState.currentStage.index;
+
+      // 완료율 계산
+      final completionRate = history.completionRate;
+
+      // 보상 대화 가져오기
+      final dialogue = ChadRewardDialogues.getWorkoutReward(
+        chadLevel: currentLevel,
+        completionRate: completionRate,
+      );
+
+      debugPrint('✅ Chad 보상 대화 생성 완료');
+      debugPrint('   🎯 레벨: $currentLevel, 완료율: ${(completionRate * 100).toStringAsFixed(1)}%');
+      debugPrint('   💬 "${dialogue.title}" - ${dialogue.message}');
+
+      return dialogue;
+    } catch (e) {
+      debugPrint('❌ Chad 보상 대화 생성 실패: $e');
+      // 기본 대화 반환
+      return const RewardDialogue(
+        level: 1,
+        tier: PerformanceTier.normal,
+        title: '운동 완료!',
+        message: 'Chad는 완성형이다. 남은 것은 뇌절뿐.',
+      );
+    }
+  }
+
   /// 업적 확인
   Future<List<Achievement>> _checkAchievements(WorkoutHistory history) async {
     try {
@@ -419,7 +459,7 @@ class WorkoutCompletionHandler {
           await NotificationService.showRestDayNotification();
           debugPrint('😴 내일은 휴식일! CHAD도 쉬어야 강해진다! 💪');
         } else {
-          debugPrint('🔥 내일도 운동일! BEAST MODE CONTINUES! 💀');
+          debugPrint('🔥 TOMORROW: WORKOUT DAY! BEAST MODE CONTINUES! 💀');
         }
       } else {
         // 기본 설정: 월-금 운동, 주말 휴식
@@ -474,7 +514,9 @@ class WorkoutCompletionResult {
   List<Achievement> newAchievements = [];
   List<Challenge> completedChallenges = [];
   int xpGained = 0;
+  RewardDialogue? rewardDialogue; // Chad 보상 대화
 
   bool get hasNewAchievements => newAchievements.isNotEmpty;
   bool get hasCompletedChallenges => completedChallenges.isNotEmpty;
+  bool get hasRewardDialogue => rewardDialogue != null;
 }

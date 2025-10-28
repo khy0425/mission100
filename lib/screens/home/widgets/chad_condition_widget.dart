@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../../generated/app_localizations.dart';
 import '../../../services/chad_condition_service.dart';
 import '../../../utils/constants.dart';
 
@@ -198,7 +199,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      'Chad가 말해요',
+                      AppLocalizations.of(context)!.chadSays,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
@@ -232,7 +233,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
     return Column(
       children: [
         Text(
-          '오늘 컨디션을 선택해주세요',
+          AppLocalizations.of(context)!.selectTodayCondition,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -306,7 +307,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              '오늘 컨디션: ',
+              AppLocalizations.of(context)!.todayCondition,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -337,9 +338,9 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                '🎯 Chad 추천 운동',
-                style: TextStyle(
+              Text(
+                AppLocalizations.of(context)!.chadRecommendedWorkout,
+                style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: Color(AppColors.primaryColor),
@@ -363,7 +364,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
         TextButton.icon(
           onPressed: () => _resetCondition(chadService),
           icon: const Icon(Icons.refresh, size: 18),
-          label: const Text('컨디션 다시 체크'),
+          label: Text(AppLocalizations.of(context)!.recheckCondition),
           style: TextButton.styleFrom(
             foregroundColor: Colors.grey[600],
           ),
@@ -380,7 +381,9 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Chad가 ${condition.koreanName} 컨디션을 확인했어요!'),
+          content: Text(
+            AppLocalizations.of(context)!.chadConfirmedCondition(condition.koreanName),
+          ),
           backgroundColor: const Color(AppColors.primaryColor),
           behavior: SnackBarBehavior.floating,
           duration: const Duration(seconds: 2),
@@ -394,10 +397,10 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
 
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('컨디션을 다시 체크할 수 있어요!'),
+        SnackBar(
+          content: Text(AppLocalizations.of(context)!.canRecheckCondition),
           behavior: SnackBarBehavior.floating,
-          duration: Duration(seconds: 2),
+          duration: const Duration(seconds: 2),
         ),
       );
     }

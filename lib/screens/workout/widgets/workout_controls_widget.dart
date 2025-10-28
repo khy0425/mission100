@@ -171,7 +171,7 @@ class WorkoutControlsWidget extends StatelessWidget {
               ),
               SizedBox(width: padding / 2),
               Text(
-                '🔥 CHAD 자동 모드 🔥',
+                '🔥 AUTO MODE 🔥',
                 style: Theme.of(context).textTheme.titleMedium?.copyWith(
                       color: const Color(AppColors.primaryColor),
                       fontWeight: FontWeight.bold,
@@ -183,8 +183,8 @@ class WorkoutControlsWidget extends StatelessWidget {
           SizedBox(height: padding / 2),
           Text(
             currentReps > 0
-                ? '💪 횟수 입력 완료! 자동으로 휴식 타이머 시작! FXXK YEAH! 💪'
-                : '💀 횟수를 입력하면 자동으로 세트 완료! BEAST MODE! 💀',
+                ? '💪 REPS LOCKED IN! REST TIMER AUTO-START! FXXK YEAH! 💪'
+                : '💀 ENTER REPS TO AUTO-COMPLETE SET! BEAST MODE! 💀',
             style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: const Color(AppColors.primaryColor),
                   fontWeight: FontWeight.w600,

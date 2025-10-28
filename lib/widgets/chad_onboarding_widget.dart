@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import '../services/chad_onboarding_service.dart';
+import '../generated/app_localizations.dart';
 
 /// Chad가 진행하는 온보딩 위젯
 class ChadOnboardingWidget extends StatefulWidget {
@@ -10,7 +9,7 @@ class ChadOnboardingWidget extends StatefulWidget {
   final Widget? customContent;
   final VoidCallback? onNext;
   final VoidCallback? onSkip;
-  final String buttonText;
+  final String? buttonText;
 
   const ChadOnboardingWidget({
     super.key,
@@ -20,7 +19,7 @@ class ChadOnboardingWidget extends StatefulWidget {
     this.customContent,
     this.onNext,
     this.onSkip,
-    this.buttonText = '다음',
+    this.buttonText,
   });
 
   @override
@@ -64,12 +63,8 @@ class _ChadOnboardingWidgetState extends State<ChadOnboardingWidget>
       curve: Curves.easeOut,
     ));
 
-    // Chad 메시지 생성 및 애니메이션 시작
+    // 애니메이션 시작
     WidgetsBinding.instance.addPostFrameCallback((_) {
-      final chadService =
-          Provider.of<ChadOnboardingService>(context, listen: false);
-      chadService.getChadMessageForStep(widget.stepType);
-
       _fadeController.forward();
       Future.delayed(const Duration(milliseconds: 200), () {
         if (mounted) _slideController.forward();
@@ -86,265 +81,224 @@ class _ChadOnboardingWidgetState extends State<ChadOnboardingWidget>
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<ChadOnboardingService>(
-      builder: (context, chadService, child) {
-        return Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Column(
-            children: [
-              // Chad 이미지 + 말풍선 섹션
-              Expanded(
-                flex: 3,
-                child: FadeTransition(
-                  opacity: _fadeAnimation,
-                  child: _buildChadSection(chadService),
-                ),
-              ),
-
-              // 온보딩 내용 섹션
-              Expanded(
-                flex: 2,
-                child: SlideTransition(
-                  position: _slideAnimation,
-                  child: _buildContentSection(),
-                ),
-              ),
-
-              // 버튼 섹션
-              _buildButtonSection(),
-            ],
-          ),
-        );
-      },
-    );
-  }
-
-  Widget _buildChadSection(ChadOnboardingService chadService) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.all(20),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
-          colors: [
-            Colors.blue.shade50,
-            Colors.purple.shade50,
-          ],
-        ),
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.blue.withValues(alpha: 0.1),
-            blurRadius: 20,
-            offset: const Offset(0, 10),
-          ),
-        ],
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          // Chad 이미지
-          Hero(
-            tag: 'chad_onboarding',
-            child: Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(60),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    blurRadius: 15,
-                    offset: const Offset(0, 5),
-                  ),
-                ],
-              ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(60),
-                child: Image.asset(
-                  chadService.currentChadImage,
-                  fit: BoxFit.cover,
-                  errorBuilder: (context, error, stackTrace) {
-                    return Container(
-                      color: Colors.grey[300],
-                      child: const Icon(
-                        Icons.person,
-                        size: 60,
-                        color: Colors.grey,
-                      ),
-                    );
-                  },
-                ),
+          // 온보딩 내용 섹션
+          Expanded(
+            child: SlideTransition(
+              position: _slideAnimation,
+              child: FadeTransition(
+                opacity: _fadeAnimation,
+                child: _buildContentSection(),
               ),
             ),
           ),
 
-          const SizedBox(height: 20),
-
-          // Chad 말풍선
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              border: Border.all(
-                color: Theme.of(context).primaryColor.withValues(alpha: 0.2),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withValues(alpha: 0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 3),
-                ),
-              ],
-            ),
-            child: Column(
-              children: [
-                // Chad 라벨
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(
-                      Icons.chat_bubble,
-                      size: 16,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                    const SizedBox(width: 8),
-                    Text(
-                      'Chad가 말해요',
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 12),
-
-                // Chad 메시지
-                Text(
-                  chadService.currentChadMessage,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    height: 1.5,
-                    fontWeight: FontWeight.w500,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
+          // 버튼 섹션
+          _buildButtonSection(),
         ],
       ),
     );
   }
 
   Widget _buildContentSection() {
+    // 단계별 이미지/아이콘과 색상 매핑
+    String? imagePath;
+    IconData? iconData;
+    Color iconColor;
+
+    switch (widget.stepType) {
+      case 'welcome':
+        imagePath = 'assets/images/chad/basic/basicChad.png';
+        iconColor = const Color(0xFF4DABF7);
+        break;
+      case 'programIntroduction':
+        iconData = Icons.calendar_month;
+        iconColor = const Color(0xFF51CF66);
+        break;
+      case 'adaptiveTraining':
+        iconData = Icons.tune;
+        iconColor = const Color(0xFFFF6B6B);
+        break;
+      case 'chadEvolution':
+        imagePath = 'assets/images/chad/basic/basicChad.png';
+        iconColor = const Color(0xFFFFD43B);
+        break;
+      case 'initialTest':
+        iconData = Icons.fitness_center;
+        iconColor = const Color(0xFFFF8787);
+        break;
+      default:
+        iconData = Icons.info_outline;
+        iconColor = const Color(0xFF4DABF7);
+    }
+
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Column(
-        children: [
-          // 제목
-          Text(
-            widget.title,
-            style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.grey[800],
+      padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 24),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 20),
+
+            // 차드 이미지 또는 아이콘
+            if (imagePath != null)
+              // 차드 캐릭터 이미지
+              Container(
+                width: 200,
+                height: 200,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: iconColor.withValues(alpha: 0.3),
+                      blurRadius: 30,
+                      spreadRadius: 5,
+                    ),
+                  ],
                 ),
-            textAlign: TextAlign.center,
-          ),
-
-          const SizedBox(height: 12),
-
-          // 설명
-          Text(
-            widget.description,
-            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: Colors.grey[600],
-                  height: 1.5,
+                child: ClipOval(
+                  child: Image.asset(
+                    imagePath,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-            textAlign: TextAlign.center,
-          ),
+              )
+            else if (iconData != null)
+              // 아이콘
+              Container(
+                width: 140,
+                height: 140,
+                decoration: BoxDecoration(
+                  color: iconColor.withValues(alpha: 0.15),
+                  shape: BoxShape.circle,
+                ),
+                child: Icon(
+                  iconData,
+                  size: 80,
+                  color: iconColor,
+                ),
+              ),
 
-          const SizedBox(height: 20),
+            const SizedBox(height: 48),
 
-          // 커스텀 컨텐츠 (선택적)
-          if (widget.customContent != null)
-            Expanded(
-              child: widget.customContent!,
+            // 제목 - 더 크고 대담하게
+            Text(
+              widget.title,
+              style: const TextStyle(
+                fontSize: 36,
+                fontWeight: FontWeight.w900,
+                color: Color(0xFF212529),
+                height: 1.2,
+                letterSpacing: -0.5,
+              ),
+              textAlign: TextAlign.center,
             ),
-        ],
+
+            const SizedBox(height: 24),
+
+            // 설명 - 더 읽기 쉽게
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
+              child: Text(
+                widget.description,
+                style: const TextStyle(
+                  fontSize: 18,
+                  color: Color(0xFF495057),
+                  height: 1.6,
+                  fontWeight: FontWeight.w500,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+
+            if (widget.customContent != null) ...[
+              const SizedBox(height: 32),
+              widget.customContent!,
+            ],
+
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
     );
   }
 
-  Widget _buildButtonSection() {
+Widget _buildButtonSection() {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 20),
-      child: Row(
-        children: [
-          // 스킵 버튼 (있을 경우)
-          if (widget.onSkip != null)
-            Expanded(
-              child: OutlinedButton(
-                onPressed: widget.onSkip,
-                style: OutlinedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  side: BorderSide(color: Colors.grey[400]!),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12),
-                  ),
-                ),
-                child: Text(
-                  '건너뛰기',
-                  style: TextStyle(
-                    color: Colors.grey[600],
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ),
-
-          if (widget.onSkip != null) const SizedBox(width: 12),
-
-          // 다음 버튼
-          Expanded(
-            flex: widget.onSkip != null ? 2 : 1,
-            child: ElevatedButton(
-              onPressed: widget.onNext,
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Theme.of(context).primaryColor,
-                foregroundColor: Colors.white,
-                padding: const EdgeInsets.symmetric(vertical: 16),
-                elevation: 2,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    widget.buttonText,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+      ),
+      child: SafeArea(
+        top: false,
+        child: Row(
+          children: [
+            // 스킵 버튼 (있을 경우)
+            if (widget.onSkip != null)
+              Expanded(
+                child: OutlinedButton(
+                  onPressed: widget.onSkip,
+                  style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 20),
+                    side: BorderSide(color: Colors.grey[350]!, width: 1.5),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(16),
                     ),
                   ),
-                  const SizedBox(width: 8),
-                  const Icon(
-                    Icons.arrow_forward,
-                    size: 20,
+                  child: Text(
+                    AppLocalizations.of(context).skip,
+                    style: TextStyle(
+                      color: Colors.grey[700],
+                      fontWeight: FontWeight.w600,
+                      fontSize: 17,
+                    ),
                   ),
-                ],
+                ),
+              ),
+
+            if (widget.onSkip != null) const SizedBox(width: 16),
+
+            // 다음 버튼 - 훨씬 크고 눈에 띄게
+            Expanded(
+              flex: widget.onSkip != null ? 2 : 1,
+              child: ElevatedButton(
+                onPressed: widget.onNext,
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 22),
+                  elevation: 6,
+                  shadowColor: Theme.of(context).primaryColor.withValues(alpha: 0.4),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      widget.buttonText ?? AppLocalizations.of(context).next,
+                      style: const TextStyle(
+                        fontSize: 19,
+                        fontWeight: FontWeight.w800,
+                        letterSpacing: 0.5,
+                      ),
+                    ),
+                    const SizedBox(width: 10),
+                    const Icon(
+                      Icons.arrow_forward_rounded,
+                      size: 26,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -365,52 +319,31 @@ class ChadProgressWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final progress = (currentStep + 1) / totalSteps;
 
-    return Consumer<ChadOnboardingService>(
-      builder: (context, chadService, child) {
-        return Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-          child: Column(
-            children: [
-              // 진행률 바
-              Row(
-                children: [
-                  Expanded(
-                    child: LinearProgressIndicator(
-                      value: progress,
-                      backgroundColor: Colors.grey[300],
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        Theme.of(context).primaryColor,
-                      ),
-                      minHeight: 6,
-                    ),
-                  ),
-                  const SizedBox(width: 12),
-                  Text(
-                    '${currentStep + 1}/$totalSteps',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ],
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      child: Row(
+        children: [
+          Expanded(
+            child: LinearProgressIndicator(
+              value: progress,
+              backgroundColor: Colors.grey[300],
+              valueColor: AlwaysStoppedAnimation<Color>(
+                Theme.of(context).primaryColor,
               ),
-
-              const SizedBox(height: 8),
-
-              // Chad 진행률 메시지
-              Text(
-                chadService.getProgressMessage(currentStep, totalSteps),
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.grey[600],
-                ),
-                textAlign: TextAlign.center,
-              ),
-            ],
+              minHeight: 6,
+            ),
           ),
-        );
-      },
+          const SizedBox(width: 12),
+          Text(
+            '${currentStep + 1}/$totalSteps',
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: Theme.of(context).primaryColor,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
