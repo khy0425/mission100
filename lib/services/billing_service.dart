@@ -2,13 +2,20 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'payment_verification_service.dart';
-import 'subscription_service.dart';
+import 'cloud_sync_service.dart';
+import '../models/user_subscription.dart' as models;
 
 class BillingService {
   static final BillingService _instance = BillingService._internal();
   factory BillingService() => _instance;
   BillingService._internal();
+
+  // 콜백 함수들
+  Function? _onAccountRequired; // 회원가입 필요 시 호출
+  Function(String productId, String purchaseToken)? _onPurchaseSuccess; // 구매 성공 시
 
   final InAppPurchase _inAppPurchase = InAppPurchase.instance;
   late StreamSubscription<List<PurchaseDetails>> _subscription;
@@ -227,9 +234,7 @@ class BillingService {
       if (verificationResult.isValid) {
         debugPrint('BillingService: Purchase verification successful');
 
-        // 검증 성공 시 구독 서비스에 활성화 요청
-        await _notifySubscriptionService(purchaseDetails);
-
+        // 검증 성공 - 구독은 _activateSubscription에서 처리됨
         return true;
       } else {
         debugPrint(
@@ -242,44 +247,83 @@ class BillingService {
     }
   }
 
-  // 구독 서비스에 구매 완료 알림
-  Future<void> _notifySubscriptionService(
-      PurchaseDetails purchaseDetails) async {
-    try {
-      final subscriptionService = SubscriptionService();
+  // 구독 활성화
+  Future<void> _activateSubscription(String productId) async {
+    debugPrint('BillingService: Activating subscription: $productId');
 
-      // 구독 타입 결정
-      SubscriptionType subscriptionType;
-      switch (purchaseDetails.productID) {
-        case 'premium_monthly':
-          subscriptionType = SubscriptionType.monthly;
-          break;
-        case 'premium_yearly':
-          subscriptionType = SubscriptionType.yearly;
-          break;
-        case 'premium_lifetime':
-          subscriptionType = SubscriptionType.lifetime;
-          break;
-        default:
-          debugPrint(
-              'BillingService: Unknown product ID: ${purchaseDetails.productID}');
-          return;
+    try {
+      final auth = FirebaseAuth.instance;
+      final userId = auth.currentUser?.uid;
+
+      // 비회원인 경우 - 회원가입 유도 (구매는 진행됨)
+      if (userId == null) {
+        debugPrint('⚠️ 비회원 구매 - 회원가입 필요 알림');
+
+        // 구매 토큰 임시 저장 (회원가입 후 처리용)
+        final prefs = await SharedPreferences.getInstance();
+        await prefs.setString('pending_purchase_product_id', productId);
+        await prefs.setString('pending_purchase_time', DateTime.now().toIso8601String());
+
+        // 콜백으로 회원가입 화면 표시 유도
+        if (_onAccountRequired != null) {
+          _onAccountRequired!();
+        } else {
+          debugPrint('⚠️ 회원가입 콜백이 설정되지 않음');
+        }
+
+        return;
       }
 
-      // 구독 활성화
-      await subscriptionService.activateSubscription(purchaseDetails.productID);
+      // 회원인 경우 - Firestore에 저장
+      final cloudSyncService = CloudSyncService();
 
-      debugPrint('BillingService: Subscription service notified of purchase');
+      // 1. Firestore에 구독 정보 저장 (신뢰할 수 있는 원천)
+      final subscription = models.UserSubscription.createPremiumSubscription(userId);
+      await cloudSyncService.saveSubscription(subscription);
+
+      // 2. 로컬 캐시 (오프라인 UX 개선용만)
+      final prefs = await SharedPreferences.getInstance();
+      await cloudSyncService.saveSubscriptionLocally(subscription);
+      await prefs.setString('subscription_cache_product_id', productId);
+      await prefs.setString('subscription_cache_updated', DateTime.now().toIso8601String());
+
+      // 3. 대기 중인 구매 정보 삭제
+      await prefs.remove('pending_purchase_product_id');
+      await prefs.remove('pending_purchase_time');
+
+      debugPrint('✅ 구독 상태 Firestore 저장 완료: $productId');
+      debugPrint('📱 로컬 캐시 업데이트 완료 (오프라인 UX용)');
+
+      // TODO: Firebase Functions로 영수증 검증 구현 필요
+      // await _verifyPurchaseWithServer(productId, purchaseToken);
+
     } catch (e) {
-      debugPrint('BillingService: Error notifying subscription service: $e');
+      debugPrint('❌ 구독 활성화 오류: $e');
+      rethrow;
     }
   }
 
-  // 구독 활성화
-  void _activateSubscription(String productId) {
-    debugPrint('BillingService: Activating subscription: $productId');
-    // TODO: 구독 상태를 SharedPreferences 또는 데이터베이스에 저장
-    // TODO: 서버에 구독 상태 동기화
+  // 대기 중인 구매 완료 처리 (회원가입 후 호출)
+  Future<void> completePendingPurchase() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final pendingProductId = prefs.getString('pending_purchase_product_id');
+
+      if (pendingProductId == null) {
+        debugPrint('ℹ️ 대기 중인 구매 없음');
+        return;
+      }
+
+      debugPrint('🔄 대기 중인 구매 처리 시작: $pendingProductId');
+
+      // 회원가입 후 구독 활성화
+      await _activateSubscription(pendingProductId);
+
+      debugPrint('✅ 대기 중인 구매 처리 완료');
+
+    } catch (e) {
+      debugPrint('❌ 대기 중인 구매 처리 오류: $e');
+    }
   }
 
   // 구독 복원
@@ -300,9 +344,66 @@ class BillingService {
 
   // 현재 구독 상태 확인
   Future<bool> isSubscriptionActive(String productId) async {
-    // TODO: 실제 구독 상태 확인 로직 구현
-    // 현재는 false 반환
-    return false;
+    try {
+      final auth = FirebaseAuth.instance;
+      final userId = auth.currentUser?.uid;
+
+      if (userId == null) {
+        debugPrint('BillingService: No user - subscription not active');
+        return false;
+      }
+
+      final cloudSyncService = CloudSyncService();
+
+      // 1. Firestore에서 구독 상태 확인 (신뢰할 수 있는 원천)
+      final subscription = await cloudSyncService.loadSubscription(userId);
+
+      if (subscription == null) {
+        debugPrint('BillingService: No subscription found for user');
+
+        // 2. 로컬 캐시 확인 (오프라인 폴백)
+        final cachedSubscription = await cloudSyncService.loadSubscriptionLocally();
+        if (cachedSubscription != null && cachedSubscription.isValid) {
+          debugPrint('⚠️ 오프라인 모드: 캐시된 구독 사용');
+          return cachedSubscription.type == models.SubscriptionType.premium;
+        }
+
+        return false;
+      }
+
+      // 3. 구독 유효성 확인
+      final isValid = subscription.isValid;
+      final isMatchingProduct = subscription.type == models.SubscriptionType.premium;
+
+      if (isValid && isMatchingProduct) {
+        debugPrint('✅ 구독 활성: ${subscription.type}, 남은 일수: ${subscription.remainingDays}');
+
+        // 로컬 캐시 업데이트 (오프라인 대비)
+        await cloudSyncService.saveSubscriptionLocally(subscription);
+
+        return true;
+      }
+
+      debugPrint('❌ 구독 비활성 또는 만료');
+      return false;
+
+    } catch (e) {
+      debugPrint('❌ 구독 상태 확인 오류: $e');
+
+      // 오류 시 로컬 캐시 폴백 (네트워크 오류 대응)
+      try {
+        final cloudSyncService = CloudSyncService();
+        final cachedSubscription = await cloudSyncService.loadSubscriptionLocally();
+        if (cachedSubscription != null && cachedSubscription.isValid) {
+          debugPrint('⚠️ Firestore 오류 - 캐시 사용: ${cachedSubscription.type}');
+          return cachedSubscription.type == models.SubscriptionType.premium;
+        }
+      } catch (cacheError) {
+        debugPrint('❌ 캐시 읽기 오류: $cacheError');
+      }
+
+      return false;
+    }
   }
 
   // 콜백 설정
@@ -312,6 +413,16 @@ class BillingService {
   }) {
     _onPurchaseCompleted = onPurchaseCompleted;
     _onPurchaseError = onPurchaseError;
+  }
+
+  // 회원가입 필요 콜백 설정
+  void setAccountRequiredCallback(Function callback) {
+    _onAccountRequired = callback;
+  }
+
+  // 구매 성공 콜백 설정
+  void setPurchaseSuccessCallback(Function(String, String) callback) {
+    _onPurchaseSuccess = callback;
   }
 
   // 리소스 정리

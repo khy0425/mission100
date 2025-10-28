@@ -23,7 +23,7 @@ import 'services/database_service.dart';
 import 'services/challenge_service.dart';
 import 'services/auth_service.dart';
 import 'services/cloud_sync_service.dart';
-import 'services/subscription_service.dart';
+// import 'services/subscription_service.dart'; // 구형 시스템 - 제거됨
 import 'services/billing_service.dart';
 // MemoryManager import 제거됨
 
@@ -89,15 +89,8 @@ void main() async {
       debugPrint('❌ CloudSyncService 초기화 오류: $e');
     }));
 
-    // 구독 서비스 초기화 (백그라운드에서)
-    final subscriptionService = SubscriptionService();
-    unawaited(subscriptionService.initialize().then((_) {
-      debugPrint('✅ SubscriptionService 초기화 완료');
-    }).catchError((e) {
-      debugPrint('❌ SubscriptionService 초기화 오류: $e');
-    }));
-
     // 빌링 서비스 초기화 (백그라운드에서)
+    // 참고: 구독 관리는 AuthService에서 처리됨
     final billingService = BillingService();
     unawaited(billingService.initialize().then((_) {
       debugPrint('✅ BillingService 초기화 완료');
@@ -118,7 +111,7 @@ void main() async {
           ChangeNotifierProvider.value(value: chadRecoveryService),
           ChangeNotifierProvider.value(value: chadActiveRecoveryService),
           ChangeNotifierProvider.value(value: authService),
-          Provider.value(value: subscriptionService),
+          // Provider.value(value: subscriptionService), // 구형 시스템 - AuthService로 대체됨
           Provider.value(value: billingService),
         ],
         child: const MissionApp(),
@@ -229,9 +222,25 @@ void _initializeBackgroundServices() {
 
 // 로케일 변경을 위한 Notifier
 class LocaleNotifier extends ChangeNotifier {
-  Locale _locale = LocaleService.koreanLocale;
+  // 기본값을 시스템 언어로 즉시 설정 (동기)
+  Locale _locale = WidgetsBinding.instance.platformDispatcher.locales
+      .any((locale) => locale.languageCode == 'ko')
+      ? LocaleService.koreanLocale
+      : LocaleService.englishLocale;
+
+  LocaleNotifier() {
+    // 생성 후 SharedPreferences에서 저장된 언어 확인 및 적용
+    _initializeLocale();
+  }
 
   Locale get locale => _locale;
+
+  Future<void> _initializeLocale() async {
+    // 시스템 언어 기반으로 자동 설정
+    await LocaleService.initializeLocale();
+    _locale = await LocaleService.getLocale();
+    notifyListeners();
+  }
 
   Future<void> setLocale(Locale newLocale) async {
     if (_locale == newLocale) return;

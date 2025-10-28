@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../services/subscription_service.dart';
+import 'package:provider/provider.dart';
+import '../services/auth_service.dart';
+import '../models/user_subscription.dart';
 import '../screens/subscription_screen.dart';
 
 class PremiumGateWidget extends StatelessWidget {
@@ -20,15 +22,23 @@ class PremiumGateWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final subscriptionService = SubscriptionService();
+    final authService = Provider.of<AuthService>(context, listen: false);
+    final subscription = authService.currentSubscription;
 
-    // 프리미엄 기능에 접근 권한이 있으면 원본 위젯 표시
-    if (subscriptionService.hasFeatureAccess(requiredFeature)) {
-      return child;
+    // 새 시스템: 모든 사용자가 Week 1-14 접근 가능
+    // 프리미엄 기능은 광고 제거만 해당
+    final isPremium = subscription?.type == SubscriptionType.premium;
+
+    // 광고 제거 기능만 프리미엄 제한
+    if (requiredFeature == PremiumFeature.adFree) {
+      if (isPremium) {
+        return child;
+      }
+      return _buildLockedContent(context);
     }
 
-    // 프리미엄 권한이 없으면 잠금 상태 표시
-    return _buildLockedContent(context);
+    // 다른 모든 기능은 무료로 제공
+    return child;
   }
 
   Widget _buildLockedContent(BuildContext context) {
@@ -175,7 +185,7 @@ class PremiumUpgradeDialog extends StatelessWidget {
                   style: TextStyle(fontWeight: FontWeight.w600),
                 ),
                 const SizedBox(height: 8),
-                ...SubscriptionService().getSubscriptionBenefits().take(3).map(
+                ..._getPremiumBenefits().map(
                       (benefit) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 2),
                         child: Row(
@@ -219,17 +229,25 @@ class PremiumUpgradeDialog extends StatelessWidget {
   }
 
   String? _getRequiredPlan() {
+    // 새 구독 모델에서는 광고 제거만 프리미엄
     switch (requiredFeature) {
+      case PremiumFeature.adFree:
+        return '프리미엄 구독 (₩4,900/월)';
       case PremiumFeature.unlimitedWorkouts:
       case PremiumFeature.advancedStats:
-      case PremiumFeature.adFree:
       case PremiumFeature.premiumChads:
-        return '모든 프리미엄 플랜';
       case PremiumFeature.exclusiveChallenges:
-        return '연간 또는 평생 프리미엄';
       case PremiumFeature.prioritySupport:
-        return '평생 프리미엄';
+        return null; // 모두 무료
     }
+  }
+
+  List<String> _getPremiumBenefits() {
+    return [
+      '✨ 모든 광고 제거',
+      '⚡ VIP 빠른 로딩',
+      '☁️ 클라우드 백업',
+    ];
   }
 
   void _navigateToSubscription(BuildContext context) {
@@ -261,8 +279,12 @@ class PremiumFeatureButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final subscriptionService = SubscriptionService();
-    final hasAccess = subscriptionService.hasFeatureAccess(requiredFeature);
+    final authService = Provider.of<AuthService>(context, listen: false);
+    final subscription = authService.currentSubscription;
+    final isPremium = subscription?.type == SubscriptionType.premium;
+
+    // 새 구독 모델: 광고 제거만 프리미엄, 나머지는 모두 무료
+    final hasAccess = requiredFeature != PremiumFeature.adFree || isPremium;
 
     return ElevatedButton.icon(
       onPressed: hasAccess ? onPressed : () => _showUpgradeDialog(context),

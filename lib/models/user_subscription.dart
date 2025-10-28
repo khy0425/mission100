@@ -38,7 +38,7 @@ class UserSubscription {
     required this.updatedAt,
   });
 
-  // 무료 사용자 기본 구독
+  // 무료 사용자 기본 구독 (전체 프로그램 접근 가능)
   static UserSubscription createFreeSubscription(String userId) {
     final now = DateTime.now();
     return UserSubscription(
@@ -49,7 +49,7 @@ class UserSubscription {
       startDate: now,
       endDate: null, // 무제한
       hasAds: true,
-      allowedWeeks: 2, // 1-2주차만
+      allowedWeeks: 14, // 전체 프로그램 접근 (제한 없음)
       allowedFeatures: [
         'basic_workouts',
         'progress_tracking',
@@ -60,7 +60,7 @@ class UserSubscription {
     );
   }
 
-  // 런칭 프로모션 구독
+  // 런칭 프로모션 구독 (첫 30일 무료, 광고 있음)
   static UserSubscription createLaunchPromoSubscription(String userId) {
     final now = DateTime.now();
     final endDate = now.add(const Duration(days: 30)); // 1개월
@@ -72,8 +72,8 @@ class UserSubscription {
       status: SubscriptionStatus.active,
       startDate: now,
       endDate: endDate,
-      hasAds: true, // 광고는 여전히 있음
-      allowedWeeks: 14, // 전체 프로그램 접근
+      hasAds: true, // 무료 기간에도 광고 있음
+      allowedWeeks: 14, // 전체 프로그램 접근 (30일간)
       allowedFeatures: [
         'full_workouts',
         'progress_tracking',
@@ -221,4 +221,18 @@ class UserSubscription {
   String toString() {
     return 'UserSubscription(id: $id, type: $type, status: $status, remainingDays: $remainingDays)';
   }
+}
+
+/// 프리미엄 기능 열거형
+///
+/// 새 구독 모델 (V2):
+/// - 모든 사용자가 Week 1-14 전체 접근 가능
+/// - 프리미엄 구독은 광고 제거만 해당
+enum PremiumFeature {
+  unlimitedWorkouts, // 무제한 운동 (모두 무료)
+  advancedStats, // 고급 통계 (모두 무료)
+  adFree, // 광고 제거 (프리미엄만)
+  premiumChads, // 프리미엄 Chad (모두 무료)
+  exclusiveChallenges, // 독점 챌린지 (모두 무료)
+  prioritySupport, // 우선 지원 (모두 무료)
 }

@@ -8,11 +8,12 @@ import '../services/difficulty_service.dart';
 import '../services/locale_service.dart';
 import '../services/notification_service.dart';
 import '../services/chad_evolution_service.dart';
-import '../services/subscription_service.dart';
+import '../services/auth_service.dart';
+import '../models/user_subscription.dart';
 import '../generated/app_localizations.dart';
 import '../main.dart';
 import 'subscription_screen.dart';
-import 'subscription_management_screen.dart';
+// import 'subscription_management_screen.dart'; // 임시 비활성화 (구형 시스템)
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -38,8 +39,8 @@ class _SettingsScreenState extends State<SettingsScreen>
   Locale _currentLocale = LocaleService.koreanLocale;
   TimeOfDay _reminderTime = const TimeOfDay(hour: 19, minute: 0); // 기본 오후 7시
 
-  final SubscriptionService _subscriptionService = SubscriptionService();
-  SubscriptionType _currentSubscription = SubscriptionType.free;
+  // 새로운 구독 시스템 사용
+  UserSubscription? _currentSubscription;
 
   @override
   void initState() {
@@ -166,9 +167,9 @@ class _SettingsScreenState extends State<SettingsScreen>
 
   /// 구독 데이터 로드
   Future<void> _loadSubscriptionData() async {
-    await _subscriptionService.initialize();
+    final authService = Provider.of<AuthService>(context, listen: false);
     setState(() {
-      _currentSubscription = _subscriptionService.currentSubscription;
+      _currentSubscription = authService.currentSubscription;
     });
   }
 
@@ -186,18 +187,10 @@ class _SettingsScreenState extends State<SettingsScreen>
     }
   }
 
-  /// 구독 관리 화면으로 이동
+  /// 구독 관리 화면으로 이동 (새 시스템에서는 구독 화면으로 이동)
   Future<void> _navigateToSubscriptionManagement() async {
-    final result = await Navigator.of(context).push<bool>(
-      MaterialPageRoute(
-        builder: (context) => const SubscriptionManagementScreen(),
-      ),
-    );
-
-    // 구독 상태가 변경되었을 수 있으므로 다시 로드
-    if (result == true) {
-      await _loadSubscriptionData();
-    }
+    // 새 시스템에서는 구독 화면으로 이동
+    await _navigateToSubscription();
   }
 
   /// 리마인더 시간 저장
@@ -836,9 +829,24 @@ class _SettingsScreenState extends State<SettingsScreen>
 
   /// 구독 관리 카드 빌드
   Widget _buildSubscriptionCard(BuildContext context, bool isDark) {
-    final statusText = _subscriptionService.getSubscriptionStatusText();
-    final isPremium = _subscriptionService.isPremium;
-    final shouldShowRenewal = _subscriptionService.shouldShowRenewalReminder();
+    final subscription = _currentSubscription;
+    final isPremium = subscription?.type == SubscriptionType.premium;
+    final isLaunchPromo = subscription?.type == SubscriptionType.launchPromo;
+
+    // 구독 상태 텍스트
+    String statusText;
+    if (isPremium) {
+      statusText = '프리미엄 구독 활성';
+    } else if (isLaunchPromo) {
+      statusText = '런칭 프로모션 (30일 무료)';
+    } else {
+      statusText = '무료 사용 중';
+    }
+
+    // 만료 임박 확인 (7일 이내)
+    final shouldShowRenewal = subscription != null &&
+        subscription.endDate != null &&
+        subscription.endDate!.difference(DateTime.now()).inDays <= 7;
 
     return _buildSimpleSettingsCard(
       context,
@@ -903,7 +911,7 @@ class _SettingsScreenState extends State<SettingsScreen>
                   ),
                 ),
                 const SizedBox(height: 8),
-                ..._subscriptionService.getSubscriptionBenefits().map(
+                ..._getPremiumBenefits().map(
                       (benefit) => Padding(
                         padding: const EdgeInsets.symmetric(vertical: 2),
                         child: Row(
@@ -940,12 +948,23 @@ class _SettingsScreenState extends State<SettingsScreen>
           ListTile(
             leading: const Icon(Icons.star, color: Colors.amber),
             title: const Text('프리미엄으로 업그레이드'),
-            subtitle: const Text('모든 기능을 잠금 해제하세요'),
+            subtitle: const Text('광고 제거 및 VIP 경험'),
             trailing: const Icon(Icons.chevron_right),
             onTap: _navigateToSubscription,
           ),
         ],
       ],
     );
+  }
+
+  /// 프리미엄 혜택 목록
+  List<String> _getPremiumBenefits() {
+    return [
+      '✨ 모든 광고 제거',
+      '⚡ VIP 빠른 로딩 (10배)',
+      '☁️ 클라우드 자동 백업',
+      '📱 여러 기기 동기화',
+      '🎯 Week 1-14 전체 접근',
+    ];
   }
 }
