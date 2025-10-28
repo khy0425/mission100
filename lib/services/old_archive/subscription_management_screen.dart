@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../services/subscription_service.dart';
-import '../services/subscription_change_service.dart';
-import '../services/subscription_cancellation_service.dart';
+import 'subscription_service.dart';
+import 'subscription_change_service.dart';
+import 'subscription_cancellation_service.dart';
 
 /// 구독 관리 화면
 class SubscriptionManagementScreen extends StatefulWidget {

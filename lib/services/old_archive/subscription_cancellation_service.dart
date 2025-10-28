@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'subscription_service.dart';
-import 'notification_service.dart';
-import 'data_service.dart';
+import '../notification_service.dart';
+import '../data_service.dart';
 // import 'cloud_sync_service.dart';
 // import 'billing_service.dart';
 
