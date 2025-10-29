@@ -145,7 +145,7 @@ class _BrainjoltMeterState extends State<BrainjoltMeter>
                     shadows: [
                       Shadow(
                         color: _getBrainjoltColor(widget.brainjoltDegree)
-                            .withOpacity(0.5),
+                            .withValues(alpha: 0.5),
                         blurRadius: 10,
                       ),
                     ],
@@ -241,7 +241,7 @@ class _BrainjoltGaugePainter extends CustomPainter {
     final gaugePaint = Paint()
       ..shader = SweepGradient(
         colors: [
-          color.withOpacity(0.3),
+          color.withValues(alpha: 0.3),
           color,
           color,
         ],
@@ -346,14 +346,14 @@ class CompactBrainjoltMeter extends StatelessWidget {
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   colors: [
-                    color.withOpacity(0.6),
+                    color.withValues(alpha: 0.6),
                     color,
                   ],
                 ),
                 borderRadius: BorderRadius.circular(height / 2),
                 boxShadow: [
                   BoxShadow(
-                    color: color.withOpacity(0.4),
+                    color: color.withValues(alpha: 0.4),
                     blurRadius: 8,
                     spreadRadius: 1,
                   ),
@@ -372,7 +372,7 @@ class CompactBrainjoltMeter extends StatelessWidget {
                 shadows: totalProgress > 0.5
                     ? [
                         Shadow(
-                          color: Colors.black.withOpacity(0.3),
+                          color: Colors.black.withValues(alpha: 0.3),
                           blurRadius: 2,
                         ),
                       ]

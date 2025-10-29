@@ -225,10 +225,10 @@ class ChadStatsCard extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
-        color: color.withOpacity(0.1),
+        color: color.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: color.withOpacity(0.3),
+          color: color.withValues(alpha: 0.3),
           width: 2,
         ),
       ),
@@ -321,14 +321,14 @@ class ChadStatsCard extends StatelessWidget {
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
-                        color.withOpacity(0.6),
+                        color.withValues(alpha: 0.6),
                         color,
                       ],
                     ),
                     borderRadius: BorderRadius.circular(8),
                     boxShadow: [
                       BoxShadow(
-                        color: color.withOpacity(0.5),
+                        color: color.withValues(alpha: 0.5),
                         blurRadius: 8,
                         spreadRadius: 1,
                       ),
@@ -421,13 +421,13 @@ class ChadStatsCard extends StatelessWidget {
         gradient: LinearGradient(
           colors: [
             badgeColor,
-            badgeColor.withOpacity(0.7),
+            badgeColor.withValues(alpha: 0.7),
           ],
         ),
         borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: badgeColor.withOpacity(0.4),
+            color: badgeColor.withValues(alpha: 0.4),
             blurRadius: 8,
             spreadRadius: 1,
           ),
@@ -532,7 +532,7 @@ class ChadStatsGrid extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: color.withOpacity(0.3),
+          color: color.withValues(alpha: 0.3),
           width: 2,
         ),
       ),
