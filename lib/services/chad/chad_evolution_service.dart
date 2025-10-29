@@ -189,27 +189,27 @@ class ChadEvolutionService extends ChangeNotifier {
     }
   }
 
-  /// 현재 주차 계산
-  int _calculateCurrentWeek(Progress progress) {
-    // 완료된 주차 수 계산
-    int completedWeeks = 0;
-
-    for (int week = 1; week <= 6; week++) {
-      // weeklyProgress에서 해당 주차 찾기
-      final weekProgress = progress.weeklyProgress.firstWhere(
-        (wp) => wp.week == week,
-        orElse: () => WeeklyProgress(week: week),
-      );
-
-      if (weekProgress.isWeekCompleted) {
-        completedWeeks = week;
-      } else {
-        break; // 연속으로 완료되지 않은 주차가 있으면 중단
-      }
-    }
-
-    return completedWeeks;
-  }
+  /// 현재 주차 계산 (향후 진행률 계산 시 사용)
+  // int _calculateCurrentWeek(Progress progress) {
+  //   // 완료된 주차 수 계산
+  //   int completedWeeks = 0;
+  //
+  //   for (int week = 1; week <= 6; week++) {
+  //     // weeklyProgress에서 해당 주차 찾기
+  //     final weekProgress = progress.weeklyProgress.firstWhere(
+  //       (wp) => wp.week == week,
+  //       orElse: () => WeeklyProgress(week: week),
+  //     );
+  //
+  //     if (weekProgress.isWeekCompleted) {
+  //       completedWeeks = week;
+  //     } else {
+  //       break; // 연속으로 완료되지 않은 주차가 있으면 중단
+  //     }
+  //   }
+  //
+  //   return completedWeeks;
+  // }
 
   /// 특정 단계로 진화
   Future<ChadEvolution?> _evolveToStage(ChadEvolutionStage targetStage) async {

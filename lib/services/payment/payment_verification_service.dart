@@ -437,42 +437,42 @@ class PaymentVerificationService {
     return 'your-auth-token';
   }
 
-  /// 영수증 데이터 해시 검증
-  static bool _verifyReceiptHash(String receiptData, String expectedHash) {
-    try {
-      final bytes = base64Decode(receiptData);
-      final digest = sha256.convert(bytes);
-      return digest.toString() == expectedHash;
-    } catch (e) {
-      return false;
-    }
-  }
+  /// 영수증 데이터 해시 검증 (향후 서버 검증 구현 시 사용)
+  // static bool _verifyReceiptHash(String receiptData, String expectedHash) {
+  //   try {
+  //     final bytes = base64Decode(receiptData);
+  //     final digest = sha256.convert(bytes);
+  //     return digest.toString() == expectedHash;
+  //   } catch (e) {
+  //     return false;
+  //   }
+  // }
 
-  /// 중복 구매 방지를 위한 트랜잭션 ID 검증
-  static Future<bool> _isTransactionIdUnique(String transactionId) async {
-    try {
-      const url = '$_baseUrl/check-transaction';
-
-      final response = await http.post(
-        Uri.parse(url),
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': 'Bearer ${await _getAuthToken()}',
-        },
-        body: jsonEncode({'transaction_id': transactionId}),
-      );
-
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body) as Map<String, dynamic>;
-        return data['is_unique'] as bool? ?? false;
-      }
-
-      return false;
-    } catch (e) {
-      debugPrint('Transaction uniqueness check failed: $e');
-      return false;
-    }
-  }
+  /// 중복 구매 방지를 위한 트랜잭션 ID 검증 (향후 구현 시 사용)
+  // static Future<bool> _isTransactionIdUnique(String transactionId) async {
+  //   try {
+  //     const url = '$_baseUrl/check-transaction';
+  //
+  //     final response = await http.post(
+  //       Uri.parse(url),
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         'Authorization': 'Bearer ${await _getAuthToken()}',
+  //       },
+  //       body: jsonEncode({'transaction_id': transactionId}),
+  //     );
+  //
+  //     if (response.statusCode == 200) {
+  //       final data = jsonDecode(response.body) as Map<String, dynamic>;
+  //       return data['is_unique'] as bool? ?? false;
+  //     }
+  //
+  //     return false;
+  //   } catch (e) {
+  //     debugPrint('Transaction uniqueness check failed: $e');
+  //     return false;
+  //   }
+  // }
 }
 
 /// 검증 결과를 담는 클래스

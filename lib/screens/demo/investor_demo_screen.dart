@@ -144,15 +144,16 @@ class _InvestorDemoScreenState extends State<InvestorDemoScreen>
     _fadeController.forward();
   }
 
-  void _onRPESelected(RPEData rpe) {
-    HapticFeedback.mediumImpact();
-    Future.delayed(const Duration(milliseconds: 500), () {
-      _pageController.nextPage(
-        duration: const Duration(milliseconds: 300),
-        curve: Curves.easeInOut,
-      );
-    });
-  }
+  // RPE 선택 핸들러 (향후 인터랙션 추가 시 사용)
+  // void _onRPESelected(RPEData rpe) {
+  //   HapticFeedback.mediumImpact();
+  //   Future.delayed(const Duration(milliseconds: 500), () {
+  //     _pageController.nextPage(
+  //       duration: const Duration(milliseconds: 300),
+  //       curve: Curves.easeInOut,
+  //     );
+  //   });
+  // }
 
   WorkoutAdjustment _calculateDemoAdjustment() {
     final scenario = _scenarios[_currentScenario];

@@ -325,12 +325,12 @@ class UserPermissionManager {
     }
   }
 
-  /// 권한 로깅
-  void _logPermissionCheck(UserPermission permission, bool granted) {
-    if (kDebugMode) {
-      debugPrint('권한 확인: ${permission.toString()} -> ${granted ? '허용' : '거부'}');
-    }
-  }
+  /// 권한 로깅 (향후 디버깅 시 사용)
+  // void _logPermissionCheck(UserPermission permission, bool granted) {
+  //   if (kDebugMode) {
+  //     debugPrint('권한 확인: ${permission.toString()} -> ${granted ? '허용' : '거부'}');
+  //   }
+  // }
 
   /// 보안 이벤트 로깅
   Future<void> _logSecurityEvent(

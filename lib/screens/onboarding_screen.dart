@@ -388,8 +388,9 @@ class _OnboardingScreenState extends State<OnboardingScreen>
   }
 }
 
-// 성능 최적화를 위한 개별 위젯 분리
+// 성능 최적화를 위한 개별 위젯 분리 (향후 리팩토링 시 사용)
 
+// ignore: unused_element
 class _WelcomeStepWidget extends StatelessWidget {
   final OnboardingStep step;
   final OnboardingService onboardingService;
@@ -499,6 +500,7 @@ class _WelcomeStepWidget extends StatelessWidget {
   }
 }
 
+// ignore: unused_element
 class _ProgramIntroductionStepWidget extends StatelessWidget {
   final OnboardingStep step;
   final OnboardingService onboardingService;
@@ -596,6 +598,7 @@ class _ProgramIntroductionStepWidget extends StatelessWidget {
   }
 }
 
+// ignore: unused_element
 class _ChadEvolutionStepWidget extends StatelessWidget {
   final OnboardingStep step;
   final OnboardingService onboardingService;
@@ -719,6 +722,7 @@ class _ChadEvolutionStepWidget extends StatelessWidget {
   }
 }
 
+// ignore: unused_element
 class _InitialTestStepWidget extends StatelessWidget {
   final OnboardingStep step;
   final OnboardingService onboardingService;

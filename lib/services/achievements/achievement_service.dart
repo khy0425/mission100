@@ -744,16 +744,16 @@ class AchievementService {
     return prefs.getInt('tutorial_view_count') ?? 0;
   }
 
-  // 업적이 이미 잠금 해제되었는지 확인
-  static Future<bool> _isAchievementUnlocked(String achievementId) async {
-    final db = await database;
-    final result = await db.query(
-      tableName,
-      where: 'id = ? AND isUnlocked = ?',
-      whereArgs: [achievementId, 1],
-    );
-    return result.isNotEmpty;
-  }
+  // 업적이 이미 잠금 해제되었는지 확인 (향후 중복 체크 시 사용)
+  // static Future<bool> _isAchievementUnlocked(String achievementId) async {
+  //   final db = await database;
+  //   final result = await db.query(
+  //     tableName,
+  //     where: 'id = ? AND isUnlocked = ?',
+  //     whereArgs: [achievementId, 1],
+  //   );
+  //   return result.isNotEmpty;
+  // }
 
   // 총 XP 계산
   static Future<int> getTotalXP() async {
@@ -1564,23 +1564,23 @@ class AchievementService {
 
   // === 배치 처리 ===
 
-  /// 업데이트를 배치 처리 대기열에 추가
-  static void _addToBatch(String achievementId, int newValue) {
-    _pendingUpdates.add({
-      'id': achievementId,
-      'value': newValue,
-      'timestamp': DateTime.now().millisecondsSinceEpoch,
-    });
-
-    debugPrint(
-      '📝 배치 대기열에 추가: $achievementId = $newValue (대기열 크기: ${_pendingUpdates.length})',
-    );
-
-    // 배치 크기에 도달하면 처리
-    if (_pendingUpdates.length >= _batchSize) {
-      _processBatch();
-    }
-  }
+  /// 업데이트를 배치 처리 대기열에 추가 (향후 배치 처리 최적화 시 사용)
+  // static void _addToBatch(String achievementId, int newValue) {
+  //   _pendingUpdates.add({
+  //     'id': achievementId,
+  //     'value': newValue,
+  //     'timestamp': DateTime.now().millisecondsSinceEpoch,
+  //   });
+  //
+  //   debugPrint(
+  //     '📝 배치 대기열에 추가: $achievementId = $newValue (대기열 크기: ${_pendingUpdates.length})',
+  //   );
+  //
+  //   // 배치 크기에 도달하면 처리
+  //   if (_pendingUpdates.length >= _batchSize) {
+  //     _processBatch();
+  //   }
+  // }
 
   /// 배치 처리 실행
   static Future<void> _processBatch() async {
