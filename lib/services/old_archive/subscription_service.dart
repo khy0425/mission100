@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../billing_service.dart';
+import '../payment/billing_service.dart';
 import '../../models/subscription_tier.dart';
 
 enum SubscriptionType {
