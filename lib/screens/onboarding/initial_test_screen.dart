@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import '../generated/app_localizations.dart';
-import '../utils/constants.dart';
-import '../utils/workout_data.dart';
-import '../models/user_profile.dart';
-import '../services/database_service.dart';
-import '../services/workout_program_service.dart';
+import '../../generated/app_localizations.dart';
+import '../../utils/constants.dart';
+import '../../utils/workout_data.dart';
+import '../../models/user_profile.dart';
+import '../../services/database_service.dart';
+import '../../services/workout_program_service.dart';
 
-import 'workout_schedule_setup_screen.dart';
+import '../workout_schedule_setup_screen.dart';
 
 class InitialTestScreen extends StatefulWidget {
   const InitialTestScreen({super.key});

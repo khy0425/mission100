@@ -3,8 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:mission100/generated/app_localizations.dart';
 import 'dart:convert';
 
-import '../models/workout_reminder_settings.dart';
-import '../services/notification_service.dart';
+import '../../models/workout_reminder_settings.dart';
+import '../../services/notification_service.dart';
 
 class WorkoutReminderSettingsScreen extends StatefulWidget {
   const WorkoutReminderSettingsScreen({super.key});

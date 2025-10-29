@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mission100/services/billing_service.dart';
-import 'package:mission100/services/subscription_service.dart';
+import 'package:mission100/services/old_archive/subscription_service.dart';
 
 @GenerateMocks([BillingService, SubscriptionService])
 import 'billing_service_mock_test.mocks.dart';

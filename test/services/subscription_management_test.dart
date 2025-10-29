@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mission100/services/subscription_change_service.dart';
-import 'package:mission100/services/subscription_cancellation_service.dart';
-import 'package:mission100/services/subscription_service.dart';
+import 'package:mission100/services/old_archive/subscription_change_service.dart';
+import 'package:mission100/services/old_archive/subscription_cancellation_service.dart';
+import 'package:mission100/services/old_archive/subscription_service.dart';
 
 void main() {
   group('Subscription Management Tests', () {
