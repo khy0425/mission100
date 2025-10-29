@@ -26,7 +26,7 @@ class ReminderSettingsCard extends StatelessWidget {
           ),
         ],
         border: Border.all(
-          color: isDark ? theme.colorScheme.onSurface.withValues(alpha: 0.7)! : theme.colorScheme.outline,
+          color: isDark ? theme.colorScheme.onSurface.withValues(alpha: 0.7) : theme.colorScheme.outline,
           width: 1,
         ),
       ),

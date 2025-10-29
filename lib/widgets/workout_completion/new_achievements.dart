@@ -53,7 +53,7 @@ class NewAchievements extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 2),
                   child: Text(
                     '🌟 ${achievement.titleKey}',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                       color: Colors.amber,
                       fontWeight: FontWeight.w600,

@@ -7,7 +7,6 @@ import 'package:provider/provider.dart';
 import '../generated/app_localizations.dart';
 import '../utils/config/constants.dart';
 import '../models/achievement.dart';
-import '../models/challenge.dart';
 import '../widgets/common/ad_banner_widget.dart';
 import '../widgets/achievements/multiple_achievements_dialog.dart';
 // 분리된 위젯들 import

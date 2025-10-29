@@ -30,7 +30,7 @@ class ScheduleHeader extends StatelessWidget {
         children: [
           Row(
             children: [
-              Icon(Icons.calendar_month, color: Colors.orange, size: 32),
+              const Icon(Icons.calendar_month, color: Colors.orange, size: 32),
               const SizedBox(width: 12),
               Text(
                 AppLocalizations.of(context).setWorkoutSchedule,

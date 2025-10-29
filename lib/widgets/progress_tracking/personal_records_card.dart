@@ -74,23 +74,23 @@ class PersonalRecordsCard extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 16),
-              Row(
+              const Row(
                 children: [
                   Expanded(
                     child: RecordItem(
                       title: '연속 일수',
                       value: '7일', // 임시 값
                       icon: Icons.local_fire_department,
-                      color: const Color(0xFFFF6B6B),
+                      color: Color(0xFFFF6B6B),
                     ),
                   ),
-                  const SizedBox(width: 16),
+                  SizedBox(width: 16),
                   Expanded(
                     child: RecordItem(
                       title: '평균 점수',
                       value: '85점', // 임시 값
                       icon: Icons.grade,
-                      color: const Color(0xFF4DABF7),
+                      color: Color(0xFF4DABF7),
                     ),
                   ),
                 ],

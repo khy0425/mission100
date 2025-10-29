@@ -10,7 +10,7 @@ class NoSubscriptionView extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
+          const Icon(
             Icons.card_membership,
             size: 80,
             color: Colors.grey,

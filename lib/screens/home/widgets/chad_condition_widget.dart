@@ -199,7 +199,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
                     ),
                     const SizedBox(width: 8),
                     Text(
-                      AppLocalizations.of(context)!.chadSays,
+                      AppLocalizations.of(context).chadSays,
                       style: TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
@@ -233,7 +233,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
     return Column(
       children: [
         Text(
-          AppLocalizations.of(context)!.selectTodayCondition,
+          AppLocalizations.of(context).selectTodayCondition,
           style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -307,7 +307,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              AppLocalizations.of(context)!.todayCondition,
+              AppLocalizations.of(context).todayCondition,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
@@ -339,7 +339,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppLocalizations.of(context)!.chadRecommendedWorkout,
+                AppLocalizations.of(context).chadRecommendedWorkout,
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
@@ -364,7 +364,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
         TextButton.icon(
           onPressed: () => _resetCondition(chadService),
           icon: const Icon(Icons.refresh, size: 18),
-          label: Text(AppLocalizations.of(context)!.recheckCondition),
+          label: Text(AppLocalizations.of(context).recheckCondition),
           style: TextButton.styleFrom(
             foregroundColor: Colors.grey[600],
           ),
@@ -382,7 +382,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            AppLocalizations.of(context)!.chadConfirmedCondition(condition.koreanName),
+            AppLocalizations.of(context).chadConfirmedCondition(condition.koreanName),
           ),
           backgroundColor: const Color(AppColors.primaryColor),
           behavior: SnackBarBehavior.floating,
@@ -398,7 +398,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
     if (mounted) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(AppLocalizations.of(context)!.canRecheckCondition),
+          content: Text(AppLocalizations.of(context).canRecheckCondition),
           behavior: SnackBarBehavior.floating,
           duration: const Duration(seconds: 2),
         ),

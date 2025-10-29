@@ -98,7 +98,7 @@ class _BrainjoltMeterState extends State<BrainjoltMeter>
   }
 
   String _getBrainjoltLabel(int degree) {
-    return '뇌절 ${degree}도';
+    return '뇌절 $degree도';
   }
 
   @override
@@ -254,7 +254,7 @@ class _BrainjoltGaugePainter extends CustomPainter {
       ..strokeCap = StrokeCap.round;
 
     // 게이지 그리기
-    final startAngle = -math.pi / 2;
+    const startAngle = -math.pi / 2;
     final sweepAngle = totalProgress * 2 * math.pi;
 
     canvas.drawArc(
@@ -364,7 +364,7 @@ class CompactBrainjoltMeter extends StatelessWidget {
           // 라벨
           Center(
             child: Text(
-              '뇌절 ${brainjoltDegree}도 (${(intensity * 100).toInt()}%)',
+              '뇌절 $brainjoltDegree도 (${(intensity * 100).toInt()}%)',
               style: TextStyle(
                 fontSize: height * 0.4,
                 fontWeight: FontWeight.bold,

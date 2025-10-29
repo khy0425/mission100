@@ -89,16 +89,16 @@ class DailyWorkout {
   /// 계산: (세트 수 - 1) × 휴식시간 + 총 횟수 × 3초/회
   int get estimatedPushupDuration {
     if (pushupSetCount == 0) return 0;
-    int restTime = (pushupSetCount - 1) * pushupRestSeconds;
-    int exerciseTime = totalPushups * 3; // 1회당 평균 3초
+    final int restTime = (pushupSetCount - 1) * pushupRestSeconds;
+    final int exerciseTime = totalPushups * 3; // 1회당 평균 3초
     return restTime + exerciseTime;
   }
 
   /// 예상 피니셔 시간 (초)
   int get estimatedFinisherDuration {
     if (finisherSetCount == 0) return 0;
-    int restTime = (finisherSetCount - 1) * finisherRestSeconds;
-    int exerciseTime = totalFinisher * 4; // 버피는 1회당 평균 4초
+    final int restTime = (finisherSetCount - 1) * finisherRestSeconds;
+    final int exerciseTime = totalFinisher * 4; // 버피는 1회당 평균 4초
     return restTime + exerciseTime;
   }
 
@@ -116,9 +116,9 @@ class DailyWorkout {
 
   /// 운동 설명 텍스트
   String get description {
-    String pushup = '푸시업 $pushupSetCount세트 (총 $totalPushups개)';
+    final String pushup = '푸시업 $pushupSetCount세트 (총 $totalPushups개)';
     if (finisherSetCount > 0) {
-      String finisherName = _getFinisherName(finisherType);
+      final String finisherName = _getFinisherName(finisherType);
       return '$pushup + $finisherName $finisherSetCount세트 (총 $totalFinisher개)';
     }
     return pushup;
@@ -175,7 +175,7 @@ class DailyWorkout {
   String toString() {
     return 'DailyWorkout(pushup: $pushupSetCount세트/$totalPushups개, '
         'finisher: ${_getFinisherName(finisherType)} $finisherSetCount세트/$totalFinisher개, '
-        '예상시간: ${estimatedMinutes}분)';
+        '예상시간: $estimatedMinutes분)';
   }
 }
 

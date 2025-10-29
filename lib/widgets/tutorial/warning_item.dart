@@ -18,7 +18,7 @@ class WarningItem extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: AppConstants.paddingS),
       child: Row(
         children: [
-          Icon(Icons.close, color: Colors.red, size: 20),
+          const Icon(Icons.close, color: Colors.red, size: 20),
           const SizedBox(width: AppConstants.paddingS),
           Expanded(
             child: Text(

@@ -50,7 +50,7 @@ class RestDayMessage extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: Colors.orange, width: 2),
         ),
-        child: Column(
+        child: const Column(
           children: [
             Text(
               '🔥 TOMORROW: BEAST MODE AGAIN! 🔥',
@@ -60,7 +60,7 @@ class RestDayMessage extends StatelessWidget {
                 fontSize: 14,
               ),
             ),
-            const SizedBox(height: 4),
+            SizedBox(height: 4),
             Text(
               '💀 LEGENDARY 경지로의 여정은 계속된다! 💀',
               style: TextStyle(

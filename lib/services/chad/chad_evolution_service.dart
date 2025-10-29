@@ -929,7 +929,7 @@ class ChadEvolutionService extends ChangeNotifier {
       final streakDays = progress.consecutiveDays;
       final completedMissions = progress.totalWorkouts;
       final totalMinutes = progress.totalWorkouts * 30; // 평균 30분 가정
-      final shareCount = 0; // TODO: 공유 기능 구현 시 실제 값 사용
+      const shareCount = 0; // TODO: 공유 기능 구현 시 실제 값 사용
 
       return ChadStats.fromWorkoutData(
         level: currentLevel,

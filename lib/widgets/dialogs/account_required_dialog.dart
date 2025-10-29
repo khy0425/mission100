@@ -8,11 +8,11 @@ class AccountRequiredDialog extends StatelessWidget {
   final VoidCallback? onCancel;
 
   const AccountRequiredDialog({
-    Key? key,
+    super.key,
     required this.productName,
     required this.onSignUp,
     this.onCancel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

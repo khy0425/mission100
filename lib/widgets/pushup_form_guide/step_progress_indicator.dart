@@ -38,7 +38,7 @@ class StepProgressIndicator extends StatelessWidget {
                 ),
                 Text(
                   swipeHint,
-                  style: TextStyle(color: Colors.grey, fontSize: 12),
+                  style: const TextStyle(color: Colors.grey, fontSize: 12),
                 ),
               ],
             ),

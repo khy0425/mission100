@@ -10,9 +10,9 @@ class SignUpForPurchaseScreen extends StatefulWidget {
   final String productName;
 
   const SignUpForPurchaseScreen({
-    Key? key,
+    super.key,
     required this.productName,
-  }) : super(key: key);
+  });
 
   @override
   State<SignUpForPurchaseScreen> createState() => _SignUpForPurchaseScreenState();

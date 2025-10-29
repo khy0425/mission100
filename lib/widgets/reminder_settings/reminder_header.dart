@@ -22,7 +22,7 @@ class ReminderHeader extends StatelessWidget {
       decoration: BoxDecoration(
         gradient: isDark
             ? LinearGradient(
-                colors: [theme.colorScheme.onSurface!, theme.colorScheme.onSurface.withValues(alpha: 0.7)!],
+                colors: [theme.colorScheme.onSurface, theme.colorScheme.onSurface.withValues(alpha: 0.7)],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               )

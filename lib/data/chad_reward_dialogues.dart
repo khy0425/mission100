@@ -1,5 +1,6 @@
 /// Chad Evolution 보상 대화 시스템
 /// 9 Levels × 7 Performance Tiers = 63 대화
+library;
 
 /// 성과 등급 열거형
 enum PerformanceTier {

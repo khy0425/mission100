@@ -328,7 +328,7 @@ class WorkoutData {
     if (weekData == null) return 0;
 
     int total = 0;
-    for (var dayData in weekData.values) {
+    for (final dayData in weekData.values) {
       total += dayData.reduce((a, b) => a + b);
     }
     return total;
@@ -343,7 +343,7 @@ class WorkoutData {
     final weekData = workoutPrograms[level]?[week];
     if (weekData == null) return false;
 
-    for (var day in weekData.keys) {
+    for (final day in weekData.keys) {
       if (completedDays[day] != true) return false;
     }
     return true;

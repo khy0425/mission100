@@ -525,7 +525,7 @@ class ChadStats {
 
   @override
   String toString() {
-    return 'ChadStats(level: $chadLevel, brainjolt: ${brainjoltDegree}도, aura: ${chadAura.toStringAsFixed(1)}%)';
+    return 'ChadStats(level: $chadLevel, brainjolt: $brainjoltDegree도, aura: ${chadAura.toStringAsFixed(1)}%)';
   }
 
   @override

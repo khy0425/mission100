@@ -110,7 +110,7 @@ class RPETrendChart extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Icon(
+          const Icon(
             Icons.show_chart,
             size: 64,
             color: Colors.grey,

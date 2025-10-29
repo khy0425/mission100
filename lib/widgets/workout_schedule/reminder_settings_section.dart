@@ -129,7 +129,7 @@ class ReminderSettingsSection extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   child: Row(
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.access_time,
                         color: Colors.orange,
                         size: 28,
@@ -162,7 +162,7 @@ class ReminderSettingsSection extends StatelessWidget {
                           ],
                         ),
                       ),
-                      Icon(Icons.edit, color: Colors.orange, size: 20),
+                      const Icon(Icons.edit, color: Colors.orange, size: 20),
                     ],
                   ),
                 ),
@@ -182,7 +182,7 @@ class ReminderSettingsSection extends StatelessWidget {
             ),
             child: Row(
               children: [
-                Icon(Icons.info_outline, color: Colors.green, size: 20),
+                const Icon(Icons.info_outline, color: Colors.green, size: 20),
                 const SizedBox(width: 8),
                 Expanded(
                   child: Text(

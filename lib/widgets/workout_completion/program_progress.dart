@@ -24,7 +24,7 @@ class ProgramProgress extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Text(
+          const Text(
             '🚀 CHAD 진화 진행률',
             style: TextStyle(
               fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class ProgramProgress extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             '$progressPercentage% ($completedWorkouts/$totalDays일)',
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 12,
               color: Colors.green,

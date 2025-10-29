@@ -265,9 +265,7 @@ class AuthService extends ChangeNotifier {
       var subscription = await cloudSyncService.loadSubscription(userId);
 
       // Firestore에 구독 정보가 없으면 로컬에서 시도
-      if (subscription == null) {
-        subscription = await cloudSyncService.loadSubscriptionLocally();
-      }
+      subscription ??= await cloudSyncService.loadSubscriptionLocally();
 
       // 둘 다 없으면 런칭 이벤트 구독 생성
       if (subscription == null) {

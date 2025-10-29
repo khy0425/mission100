@@ -95,7 +95,7 @@ class RPERecoveryCard extends StatelessWidget {
                 ),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.lightbulb_outline,
                       color: Colors.amber,
                       size: 20,

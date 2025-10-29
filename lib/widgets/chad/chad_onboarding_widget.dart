@@ -230,7 +230,7 @@ class _ChadOnboardingWidgetState extends State<ChadOnboardingWidget>
 Widget _buildButtonSection() {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Colors.transparent,
       ),
       child: SafeArea(
