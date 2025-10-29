@@ -1,3 +1,6 @@
+// ignore_for_file: deprecated_member_use
+// TODO: Migrate Radio widgets to RadioGroup when refactoring onboarding screens
+
 import 'package:flutter/material.dart';
 import '../../utils/config/constants.dart';
 import '../auth/login_screen.dart';

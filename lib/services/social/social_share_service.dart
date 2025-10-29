@@ -1,3 +1,6 @@
+// ignore_for_file: deprecated_member_use
+// TODO: Migrate to SharePlus.instance.share() API when refactoring social features
+
 import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;

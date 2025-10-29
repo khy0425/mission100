@@ -16,6 +16,7 @@ analyzer:
     - lib/**/*.freezed.dart
     - lib/**/*.mocks.dart
     - test/**/*.mocks.dart
+    - lib/screens/archive_old/**
     - "*.dart"
     - "!lib/**"
     - "!test/**"
