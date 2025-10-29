@@ -473,7 +473,7 @@ class FirestoreQueryOptimizer {
     final totalQueries = _queryMetrics.length;
     final totalTime = _queryMetrics.fold<int>(
       0,
-      (sum, metric) => sum + metric.executionTime.inMilliseconds,
+      (acc, metric) => acc + metric.executionTime.inMilliseconds,
     );
     final averageTime = totalTime / totalQueries;
 
@@ -493,11 +493,11 @@ class FirestoreQueryOptimizer {
       'cache_hit_rate_percent': cacheHitRate.round(),
       'total_documents_read': _queryMetrics.fold<int>(
         0,
-        (sum, metric) => sum + metric.documentsRead,
+        (acc, metric) => acc + metric.documentsRead,
       ),
       'total_documents_written': _queryMetrics.fold<int>(
         0,
-        (sum, metric) => sum + metric.documentsWritten,
+        (acc, metric) => acc + metric.documentsWritten,
       ),
     };
   }

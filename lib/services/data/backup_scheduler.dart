@@ -406,7 +406,7 @@ class BackupScheduler {
   }
 
   /// Legacy 백업 성공 처리 (임시 구현)
-  Future<void> _handleBackupSuccessLegacy(result) async {
+  Future<void> _handleBackupSuccessLegacy(dynamic result) async {
     // 임시 구현 - 실제 로직은 _handleBackupSuccess 메서드 사용
     debugPrint('✅ Legacy 백업 성공 처리 (구버전 호환)');
   }

@@ -142,7 +142,7 @@ class WorkoutProgramService {
       day: workoutDay,
       workoutSets: workoutSets,
       totalReps: totalReps,
-      restTimeSeconds: dailyWorkout.restTimeSeconds ?? 60,
+      restTimeSeconds: dailyWorkout.restTimeSeconds,
       intensityMultiplier: intensityMultiplier,
     );
   }
@@ -245,7 +245,7 @@ class WorkoutProgramService {
       day: day,
       workoutSets: workoutSets,
       totalReps: totalReps,
-      restTimeSeconds: dailyWorkout.restTimeSeconds ?? 60,
+      restTimeSeconds: dailyWorkout.restTimeSeconds,
     );
   }
 

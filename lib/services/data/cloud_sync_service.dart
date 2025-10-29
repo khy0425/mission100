@@ -7,7 +7,7 @@ import 'dart:convert';
 
 import '../../models/user_profile.dart';
 import '../../models/firestore_achievement.dart';
-import '../../models/achievement.dart' as LocalAchievement;
+import '../../models/achievement.dart' as local_achievement;
 import '../../models/user_subscription.dart';
 import '../chad/chad_evolution_service.dart';
 import '../chad/chad_level_manager.dart';
@@ -254,29 +254,29 @@ class CloudSyncService {
 
   /// 로컬 Achievement를 FirestoreAchievement로 변환
   FirestoreAchievement _convertToFirestoreAchievement(
-      LocalAchievement.Achievement localAchievement, String userId) {
-    // 업적 타입 매핑 (LocalAchievement.AchievementType → FirestoreAchievement.AchievementType)
+      local_achievement.Achievement localAchievement, String userId) {
+    // 업적 타입 매핑 (local_achievement.AchievementType → FirestoreAchievement.AchievementType)
     AchievementType achievementType;
     switch (localAchievement.type) {
-      case LocalAchievement.AchievementType.first:
+      case local_achievement.AchievementType.first:
         achievementType = AchievementType.firstWorkout;
         break;
-      case LocalAchievement.AchievementType.streak:
+      case local_achievement.AchievementType.streak:
         achievementType = AchievementType.streakMilestone;
         break;
-      case LocalAchievement.AchievementType.volume:
+      case local_achievement.AchievementType.volume:
         achievementType = AchievementType.pushupMilestone;
         break;
-      case LocalAchievement.AchievementType.perfect:
+      case local_achievement.AchievementType.perfect:
         achievementType = AchievementType.perfectionStreak;
         break;
-      case LocalAchievement.AchievementType.special:
+      case local_achievement.AchievementType.special:
         achievementType = AchievementType.specialEvent;
         break;
-      case LocalAchievement.AchievementType.challenge:
+      case local_achievement.AchievementType.challenge:
         achievementType = AchievementType.weeklyComplete;
         break;
-      case LocalAchievement.AchievementType.statistics:
+      case local_achievement.AchievementType.statistics:
         achievementType = AchievementType.totalWorkouts;
         break;
     }

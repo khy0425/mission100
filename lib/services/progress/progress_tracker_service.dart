@@ -53,8 +53,7 @@ class ProgressTrackerService {
                 completedReps: daySession.completedReps.fold<int>(
                       0,
                       (sum, reps) => sum + reps,
-                    ) ??
-                    0,
+                    ),
                 completionRate: daySession.isCompleted ? 1.0 : 0.0,
                 completedDate: daySession.isCompleted ? daySession.date : null,
               ),

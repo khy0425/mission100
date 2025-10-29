@@ -19,8 +19,8 @@ class SettingsHeader extends StatelessWidget {
         gradient: isDark
             ? LinearGradient(
                 colors: [
-                  Colors.black87 ?? Colors.grey,
-                  Colors.black87.withValues(alpha: 0.7) ?? Colors.grey
+                  Colors.black87,
+                  Colors.black87.withValues(alpha: 0.7)
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,

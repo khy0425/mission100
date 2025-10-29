@@ -27,7 +27,7 @@ class SettingsCard extends StatelessWidget {
         border: Border.all(
           color: isDark
               ? Colors.black87.withValues(alpha: 0.7)
-              : Theme.of(context).colorScheme.outlineVariant ?? Colors.grey,
+              : Theme.of(context).colorScheme.outlineVariant,
           width: 1,
         ),
       ),

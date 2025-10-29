@@ -406,6 +406,7 @@ class DataBackupService {
 
     // 스트릭 데이터 초기화
     final streakService = StreakService();
+    // ignore: invalid_use_of_visible_for_testing_member
     await streakService.resetStreak();
   }
 

@@ -382,12 +382,12 @@ class BatchProcessor {
     }
 
     // 결과 집계
-    final totalSuccess = results.fold<int>(0, (sum, r) => sum + r.successCount);
-    final totalFailure = results.fold<int>(0, (sum, r) => sum + r.failureCount);
+    final totalSuccess = results.fold<int>(0, (acc, r) => acc + r.successCount);
+    final totalFailure = results.fold<int>(0, (acc, r) => acc + r.failureCount);
     final allErrors = results.expand((r) => r.errors).toList();
     final totalTime = results.fold<Duration>(
       Duration.zero,
-      (sum, r) => sum + r.processingTime,
+      (acc, r) => acc + r.processingTime,
     );
 
     return BatchResult(
@@ -456,12 +456,12 @@ class BatchProcessor {
     }
 
     // 결과 집계
-    final totalSuccess = results.fold<int>(0, (sum, r) => sum + r.successCount);
-    final totalFailure = results.fold<int>(0, (sum, r) => sum + r.failureCount);
+    final totalSuccess = results.fold<int>(0, (acc, r) => acc + r.successCount);
+    final totalFailure = results.fold<int>(0, (acc, r) => acc + r.failureCount);
     final allErrors = results.expand((r) => r.errors).toList();
     final totalTime = results.fold<Duration>(
       Duration.zero,
-      (sum, r) => sum + r.processingTime,
+      (acc, r) => acc + r.processingTime,
     );
 
     return BatchResult(

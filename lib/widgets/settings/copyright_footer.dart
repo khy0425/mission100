@@ -21,8 +21,8 @@ class CopyrightFooter extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(
           color: isDark
-              ? Colors.black.withValues(alpha: 0.7) ?? Colors.grey
-              : Colors.grey.withValues(alpha: 0.1) ?? Colors.grey,
+              ? Colors.black.withValues(alpha: 0.7)
+              : Colors.grey.withValues(alpha: 0.1),
           width: 1,
         ),
       ),

@@ -32,8 +32,8 @@ class AchievementService {
 
   // 배치 처리를 위한 대기열
   static final List<Map<String, dynamic>> _pendingUpdates = [];
-  static bool _isBatchProcessing = false;
-  static const int _batchSize = 10;
+  // static bool _isBatchProcessing = false; // 향후 배치 처리 최적화 시 사용
+  // static const int _batchSize = 10; // 향후 배치 처리 최적화 시 사용
 
   // 오류 복구를 위한 백업
   static Map<String, dynamic>? _lastKnownState;
@@ -872,7 +872,7 @@ class AchievementService {
       _achievementCache.clear();
       _lastCacheUpdate = null;
       _pendingUpdates.clear();
-      _isBatchProcessing = false;
+      // _isBatchProcessing = false; // 향후 배치 처리 최적화 시 사용
       _lastKnownState = null;
       debugPrint('📱 모든 static 참조 초기화 완료');
 
@@ -1582,70 +1582,70 @@ class AchievementService {
   //   }
   // }
 
-  /// 배치 처리 실행
-  static Future<void> _processBatch() async {
-    if (_isBatchProcessing || _pendingUpdates.isEmpty) return;
+  /// 배치 처리 실행 (향후 배치 처리 최적화 시 사용)
+  // static Future<void> _processBatch() async {
+  //   if (_isBatchProcessing || _pendingUpdates.isEmpty) return;
+  //
+  //   _isBatchProcessing = true;
+  //   final timer = _startPerformanceTimer('batch_processing');
+  //
+  //   try {
+  //     debugPrint('🔄 배치 처리 시작: ${_pendingUpdates.length}개 업데이트');
+  //
+  //     final db = await database;
+  //     await db.transaction((txn) async {
+  //       for (final update in _pendingUpdates) {
+  //         final updateValue = update['value'] as int? ?? 0;
+  //         final updateId = update['id'] as String? ?? '';
+  //         await txn.update(
+  //           tableName,
+  //           {'currentValue': updateValue},
+  //           where: 'id = ?',
+  //           whereArgs: [updateId],
+  //         );
+  //       }
+  //     });
+  //
+  //     // 캐시 업데이트
+  //     for (final update in _pendingUpdates) {
+  //       final updateId = update['id'] as String? ?? '';
+  //       final updateValue = update['value'] as int? ?? 0;
+  //       final cached = _getFromCache(updateId);
+  //       if (cached != null) {
+  //         final updated = cached.copyWith(currentValue: updateValue);
+  //         _updateCache(updated);
+  //       }
+  //     }
+  //
+  //     debugPrint('✅ 배치 처리 완료: ${_pendingUpdates.length}개 업데이트');
+  //     _pendingUpdates.clear();
+  //   } catch (e) {
+  //     debugPrint('❌ 배치 처리 실패: $e');
+  //     // 실패한 업데이트는 개별 처리로 재시도
+  //     await _retryFailedUpdates();
+  //   } finally {
+  //     _isBatchProcessing = false;
+  //     _endPerformanceTimer('batch_processing', timer);
+  //   }
+  // }
 
-    _isBatchProcessing = true;
-    final timer = _startPerformanceTimer('batch_processing');
-
-    try {
-      debugPrint('🔄 배치 처리 시작: ${_pendingUpdates.length}개 업데이트');
-
-      final db = await database;
-      await db.transaction((txn) async {
-        for (final update in _pendingUpdates) {
-          final updateValue = update['value'] as int? ?? 0;
-          final updateId = update['id'] as String? ?? '';
-          await txn.update(
-            tableName,
-            {'currentValue': updateValue},
-            where: 'id = ?',
-            whereArgs: [updateId],
-          );
-        }
-      });
-
-      // 캐시 업데이트
-      for (final update in _pendingUpdates) {
-        final updateId = update['id'] as String? ?? '';
-        final updateValue = update['value'] as int? ?? 0;
-        final cached = _getFromCache(updateId);
-        if (cached != null) {
-          final updated = cached.copyWith(currentValue: updateValue);
-          _updateCache(updated);
-        }
-      }
-
-      debugPrint('✅ 배치 처리 완료: ${_pendingUpdates.length}개 업데이트');
-      _pendingUpdates.clear();
-    } catch (e) {
-      debugPrint('❌ 배치 처리 실패: $e');
-      // 실패한 업데이트는 개별 처리로 재시도
-      await _retryFailedUpdates();
-    } finally {
-      _isBatchProcessing = false;
-      _endPerformanceTimer('batch_processing', timer);
-    }
-  }
-
-  /// 실패한 업데이트 재시도
-  static Future<void> _retryFailedUpdates() async {
-    debugPrint('🔄 실패한 업데이트 개별 재시도 시작');
-    final failedUpdates = List.from(_pendingUpdates);
-    _pendingUpdates.clear();
-
-    for (final update in failedUpdates) {
-      try {
-        final value = update['value'] as int? ?? 0;
-        final id = update['id'] as String? ?? '';
-        await updateAchievementProgress(id, value);
-        debugPrint('✅ 재시도 성공: $id');
-      } catch (e) {
-        debugPrint('❌ 재시도 실패: ${update['id']} - $e');
-      }
-    }
-  }
+  /// 실패한 업데이트 재시도 (향후 배치 처리 최적화 시 사용)
+  // static Future<void> _retryFailedUpdates() async {
+  //   debugPrint('🔄 실패한 업데이트 개별 재시도 시작');
+  //   final failedUpdates = List.from(_pendingUpdates);
+  //   _pendingUpdates.clear();
+  //
+  //   for (final update in failedUpdates) {
+  //     try {
+  //       final value = update['value'] as int? ?? 0;
+  //       final id = update['id'] as String? ?? '';
+  //       await updateAchievementProgress(id, value);
+  //       debugPrint('✅ 재시도 성공: $id');
+  //     } catch (e) {
+  //       debugPrint('❌ 재시도 실패: ${update['id']} - $e');
+  //     }
+  //   }
+  // }
 
   // === 상태 백업 및 복구 ===
 
