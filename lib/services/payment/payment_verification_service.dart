@@ -9,12 +9,12 @@ import 'package:crypto/crypto.dart';
 class PaymentVerificationService {
   static const String _baseUrl = 'https://your-backend-server.com/api';
 
-  // Google Play 공개 키 (실제 운영 시에는 환경 변수나 안전한 곳에 저장)
-  static const String _googlePlayPublicKey = '''
------BEGIN PUBLIC KEY-----
-YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
------END PUBLIC KEY-----
-''';
+  // Google Play 공개 키 (향후 서버 검증 구현 시 사용)
+  // static const String _googlePlayPublicKey = '''
+  // -----BEGIN PUBLIC KEY-----
+  // YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
+  // -----END PUBLIC KEY-----
+  // ''';
 
   // Apple App Store 공유 비밀 키
   static const String _appleSharedSecret = 'YOUR_APPLE_SHARED_SECRET';

@@ -25,7 +25,7 @@ class AchievementPerformanceService {
 
   // 임계값 설정
   static const Duration _slowOperationThreshold = Duration(milliseconds: 100);
-  static const int _maxCacheSize = 500;
+  // static const int _maxCacheSize = 500; // 향후 캐시 크기 제한 구현 시 사용
   static const double _cacheHitRateThreshold = 0.8; // 80%
 
   /// 성능 모니터링 초기화

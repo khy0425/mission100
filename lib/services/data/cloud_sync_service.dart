@@ -255,23 +255,30 @@ class CloudSyncService {
   /// 로컬 Achievement를 FirestoreAchievement로 변환
   FirestoreAchievement _convertToFirestoreAchievement(
       LocalAchievement.Achievement localAchievement, String userId) {
-    // 업적 타입 매핑
+    // 업적 타입 매핑 (LocalAchievement.AchievementType → FirestoreAchievement.AchievementType)
     AchievementType achievementType;
     switch (localAchievement.type) {
-      case 'workout':
-        achievementType = AchievementType.totalWorkouts;
+      case LocalAchievement.AchievementType.first:
+        achievementType = AchievementType.firstWorkout;
         break;
-      case 'streak':
+      case LocalAchievement.AchievementType.streak:
         achievementType = AchievementType.streakMilestone;
         break;
-      case 'milestone':
+      case LocalAchievement.AchievementType.volume:
         achievementType = AchievementType.pushupMilestone;
         break;
-      case 'special':
+      case LocalAchievement.AchievementType.perfect:
+        achievementType = AchievementType.perfectionStreak;
+        break;
+      case LocalAchievement.AchievementType.special:
         achievementType = AchievementType.specialEvent;
         break;
-      default:
+      case LocalAchievement.AchievementType.challenge:
+        achievementType = AchievementType.weeklyComplete;
+        break;
+      case LocalAchievement.AchievementType.statistics:
         achievementType = AchievementType.totalWorkouts;
+        break;
     }
 
     // 희귀도 매핑

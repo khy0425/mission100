@@ -1,0 +1,124 @@
+Analyzing mission100_v3...                                      
+
+   info - The parameter name 'sum' matches a visible type name - lib\core\batch\batch_processor.dart:385:48 - avoid_types_as_parameter_names
+   info - The parameter name 'sum' matches a visible type name - lib\core\batch\batch_processor.dart:386:48 - avoid_types_as_parameter_names
+   info - The parameter name 'sum' matches a visible type name - lib\core\batch\batch_processor.dart:390:8 - avoid_types_as_parameter_names
+   info - The parameter name 'sum' matches a visible type name - lib\core\batch\batch_processor.dart:459:48 - avoid_types_as_parameter_names
+   info - The parameter name 'sum' matches a visible type name - lib\core\batch\batch_processor.dart:460:48 - avoid_types_as_parameter_names
+   info - The parameter name 'sum' matches a visible type name - lib\core\batch\batch_processor.dart:464:8 - avoid_types_as_parameter_names
+warning - The value of the field '_maxDiskCacheSize' isn't used - lib\core\cache\cache_manager.dart:101:20 - unused_field
+   info - The parameter name 'sum' matches a visible type name - lib\core\database\firestore_query_optimizer.dart:476:8 - avoid_types_as_parameter_names
+   info - The parameter name 'sum' matches a visible type name - lib\core\database\firestore_query_optimizer.dart:496:10 - avoid_types_as_parameter_names
+   info - The parameter name 'sum' matches a visible type name - lib\core\database\firestore_query_optimizer.dart:500:10 - avoid_types_as_parameter_names
+warning - The value of the field '_saltKey' isn't used - lib\core\security\data_encryption_service.dart:82:23 - unused_field
+warning - The declaration '_logPermissionCheck' isn't referenced - lib\core\security\user_permission_manager.dart:329:8 - unused_element
+warning - The value of the field '_achievementNotifications' isn't used - lib\screens\archive_old\settings_screen.dart:32:8 - unused_field
+warning - The value of the field '_chadEvolutionNotifications' isn't used - lib\screens\archive_old\settings_screen.dart:35:8 - unused_field
+warning - The value of the field '_chadEvolutionPreviewNotifications' isn't used - lib\screens\archive_old\settings_screen.dart:36:8 - unused_field
+warning - The value of the field '_chadEvolutionEncouragementNotifications' isn't used - lib\screens\archive_old\settings_screen.dart:37:8 - unused_field
+warning - The value of the field '_workoutDaysOnlyNotifications' isn't used - lib\screens\archive_old\settings_screen.dart:38:8 - unused_field
+warning - The value of the field '_currentDifficulty' isn't used - lib\screens\archive_old\settings_screen.dart:39:19 - unused_field
+warning - The declaration '_buildHeader' isn't referenced - lib\screens\archive_old\settings_screen.dart:392:10 - unused_element
+warning - Dead code - lib\screens\archive_old\settings_screen.dart:427:5 - dead_code
+warning - The declaration '_buildNotificationSettingsSection' isn't referenced - lib\screens\archive_old\settings_screen.dart:485:10 - unused_element
+warning - The declaration '_buildAppearanceSettingsSection' isn't referenced - lib\screens\archive_old\settings_screen.dart:538:10 - unused_element
+warning - The declaration '_buildDataSettingsSection' isn't referenced - lib\screens\archive_old\settings_screen.dart:564:10 - unused_element
+warning - The declaration '_buildAboutSettingsSection' isn't referenced - lib\screens\archive_old\settings_screen.dart:585:10 - unused_element
+warning - The declaration '_buildBannerAd' isn't referenced - lib\screens\archive_old\settings_screen.dart:606:10 - unused_element
+warning - The declaration '_onAchievementNotificationsChanged' isn't referenced - lib\screens\archive_old\settings_screen.dart:661:8 - unused_element
+warning - The declaration '_onChadEvolutionNotificationsChanged' isn't referenced - lib\screens\archive_old\settings_screen.dart:671:8 - unused_element
+warning - The declaration '_onChadEvolutionPreviewNotificationsChanged' isn't referenced - lib\screens\archive_old\settings_screen.dart:681:8 - unused_element
+warning - The declaration '_onChadEvolutionEncouragementNotificationsChanged' isn't referenced - lib\screens\archive_old\settings_screen.dart:691:8 - unused_element
+warning - The declaration '_onWorkoutDaysOnlyNotificationsChanged' isn't referenced - lib\screens\archive_old\settings_screen.dart:701:8 - unused_element
+warning - The declaration '_onReminderTimeChanged' isn't referenced - lib\screens\archive_old\settings_screen.dart:706:8 - unused_element
+warning - The declaration '_showPermissionRequestDialog' isn't referenced - lib\screens\archive_old\settings_screen.dart:710:8 - unused_element
+warning - The declaration '_showLanguageDialog' isn't referenced - lib\screens\archive_old\settings_screen.dart:749:8 - unused_element
+warning - The value of the field '_messageService' isn't used - lib\screens\archive_old\workout_screen_backup.dart:58:36 - unused_field
+warning - The value of the field '_streakService' isn't used - lib\screens\archive_old\workout_screen_backup.dart:60:23 - unused_field
+warning - The value of the field '_workoutProgramService' isn't used - lib\screens\archive_old\workout_screen_backup.dart:61:31 - unused_field
+warning - The declaration '_onRPESelected' isn't referenced - lib\screens\demo\investor_demo_screen.dart:147:8 - unused_element
+warning - Dead code - lib\screens\exercise\pushup_tutorial_screen.dart:438:5 - dead_code
+   info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\goal_setup_widgets.dart:207:21 - deprecated_member_use
+   info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\goal_setup_widgets.dart:208:21 - deprecated_member_use
+   info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\goal_setup_widgets.dart:335:21 - deprecated_member_use
+   info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\goal_setup_widgets.dart:336:21 - deprecated_member_use
+   info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\goal_setup_widgets.dart:528:19 - deprecated_member_use
+   info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\goal_setup_widgets.dart:529:19 - deprecated_member_use
+   info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\goal_setup_widgets.dart:565:19 - deprecated_member_use
+   info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\goal_setup_widgets.dart:566:19 - deprecated_member_use
+warning - The value of the field '_targetWeight' isn't used - lib\screens\onboarding\user_goals_screen.dart:23:11 - unused_field
+   info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\user_goals_screen.dart:366:21 - deprecated_member_use
+   info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\user_goals_screen.dart:367:21 - deprecated_member_use
+   info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\user_goals_screen.dart:459:21 - deprecated_member_use
+   info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\user_goals_screen.dart:460:21 - deprecated_member_use
+   info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\user_goals_screen.dart:591:17 - deprecated_member_use
+   info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\user_goals_screen.dart:592:17 - deprecated_member_use
+   info - 'groupValue' is deprecated and shouldn't be used. Use a RadioGroup ancestor to manage group value instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\user_goals_screen.dart:619:17 - deprecated_member_use
+   info - 'onChanged' is deprecated and shouldn't be used. Use RadioGroup to handle value change instead. This feature was deprecated after v3.32.0-0.0.pre - lib\screens\onboarding\user_goals_screen.dart:620:17 - deprecated_member_use
+warning - The declaration '_WelcomeStepWidget' isn't referenced - lib\screens\onboarding_screen.dart:393:7 - unused_element
+warning - The declaration '_ProgramIntroductionStepWidget' isn't referenced - lib\screens\onboarding_screen.dart:502:7 - unused_element
+warning - The declaration '_ChadEvolutionStepWidget' isn't referenced - lib\screens\onboarding_screen.dart:599:7 - unused_element
+warning - The declaration '_InitialTestStepWidget' isn't referenced - lib\screens\onboarding_screen.dart:722:7 - unused_element
+warning - The value of the field '_totalWorkoutTime' isn't used - lib\screens\statistics\statistics_screen.dart:38:12 - unused_field
+warning - The value of the field '_periodOptions' isn't used - lib\screens\statistics\statistics_screen.dart:57:22 - unused_field
+warning - The value of the field '_channelNameConst' isn't used - lib\services\achievements\achievement_notification_service.dart:23:23 - unused_field
+warning - The value of the field '_maxCacheSize' isn't used - lib\services\achievements\achievement_performance_service.dart:28:20 - unused_field
+warning - The value of the field '_globalContext' isn't used - lib\services\achievements\achievement_service.dart:22:24 - unused_field
+warning - The declaration '_isAchievementUnlocked' isn't referenced - lib\services\achievements\achievement_service.dart:748:23 - unused_element
+warning - The declaration '_addToBatch' isn't referenced - lib\services\achievements\achievement_service.dart:1568:15 - unused_element
+warning - The value of the field '_tutorialStartMessageKeys' isn't used - lib\services\chad\chad_encouragement_service.dart:14:29 - unused_field
+warning - The declaration '_calculateCurrentWeek' isn't referenced - lib\services\chad\chad_evolution_service.dart:193:7 - unused_element
+   info - Missing type annotation - lib\services\data\backup_scheduler.dart:409:43 - strict_top_level_inference
+   info - The prefix 'LocalAchievement' isn't a lower_case_with_underscores identifier - lib\services\data\cloud_sync_service.dart:10:43 - library_prefixes
+warning - The matched value type 'AchievementType' can never be equal to this constant of type 'String' - lib\services\data\cloud_sync_service.dart:261:12 - constant_pattern_never_matches_value_type
+warning - The matched value type 'AchievementType' can never be equal to this constant of type 'String' - lib\services\data\cloud_sync_service.dart:264:12 - constant_pattern_never_matches_value_type
+warning - The matched value type 'AchievementType' can never be equal to this constant of type 'String' - lib\services\data\cloud_sync_service.dart:267:12 - constant_pattern_never_matches_value_type
+warning - The matched value type 'AchievementType' can never be equal to this constant of type 'String' - lib\services\data\cloud_sync_service.dart:270:12 - constant_pattern_never_matches_value_type
+warning - The value of the field '_backupVersionKey' isn't used - lib\services\data\data_backup_service.dart:29:23 - unused_field
+warning - The value of the field '_backupPasswordHashKey' isn't used - lib\services\data\data_backup_service.dart:34:23 - unused_field
+warning - The member 'resetStreak' can only be used within 'package:mission100/services/progress/streak_service.dart' or a test - lib\services\data\data_backup_service.dart:409:25 - invalid_use_of_visible_for_testing_member
+warning - The value of the field '_bannerAd' isn't used - lib\services\payment\ad_service.dart:49:13 - unused_field
+warning - The value of the field '_onPurchaseSuccess' isn't used - lib\services\payment\billing_service.dart:18:53 - unused_field
+warning - The value of the field '_googlePlayPublicKey' isn't used - lib\services\payment\payment_verification_service.dart:13:23 - unused_field
+warning - The declaration '_verifyReceiptHash' isn't referenced - lib\services\payment\payment_verification_service.dart:441:15 - unused_element
+warning - The declaration '_isTransactionIdUnique' isn't referenced - lib\services\payment\payment_verification_service.dart:452:23 - unused_element
+warning - The left operand can't be null, so the right operand is never executed - lib\services\progress\progress_tracker_service.dart:57:21 - dead_null_aware_expression
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:398:13 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:398:19 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:425:13 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:425:19 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:451:13 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:451:19 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:479:13 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:479:19 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:500:13 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:500:19 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:519:13 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:519:19 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:535:13 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:535:19 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:564:13 - deprecated_member_use
+   info - 'shareXFiles' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:564:19 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\services\social\social_share_service.dart:572:13 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\services\social\social_share_service.dart:572:19 - deprecated_member_use
+warning - The value of the field '_masteryProgressKey' isn't used - lib\services\workout\pushup_mastery_service.dart:6:23 - unused_field
+warning - The left operand can't be null, so the right operand is never executed - lib\services\workout\workout_program_service.dart:145:56 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\services\workout\workout_program_service.dart:248:56 - dead_null_aware_expression
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\brainjolt_meter_widget.dart:148:30 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\brainjolt_meter_widget.dart:244:17 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\brainjolt_meter_widget.dart:349:27 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\brainjolt_meter_widget.dart:356:34 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\brainjolt_meter_widget.dart:375:47 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\chad_stats_card.dart:228:22 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\chad_stats_card.dart:231:24 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\chad_stats_card.dart:324:31 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\chad_stats_card.dart:331:38 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\chad_stats_card.dart:424:24 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\chad_stats_card.dart:430:31 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\chad\chad_stats_card.dart:535:24 - deprecated_member_use
+warning - The left operand can't be null, so the right operand is never executed - lib\widgets\settings\copyright_footer.dart:24:56 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\widgets\settings\copyright_footer.dart:25:55 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\widgets\settings\settings_card.dart:30:65 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\widgets\settings\settings_header.dart:22:37 - dead_null_aware_expression
+warning - The left operand can't be null, so the right operand is never executed - lib\widgets\settings\settings_header.dart:23:60 - dead_null_aware_expression
+

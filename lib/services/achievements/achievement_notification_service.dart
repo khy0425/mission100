@@ -20,7 +20,7 @@ class AchievementNotificationService {
   // 알림 채널 정보
   static const String _channelId = 'achievement_notifications';
   static String _channelName = '업적 알림';
-  static const String _channelNameConst = '업적 알림';
+  // static const String _channelNameConst = '업적 알림'; // 중복: _channelName 사용
   static String _channelDescription = '업적 달성 및 진행률 알림';
 
   // 업적 달성 알림 표시 제한 (스팸 방지)

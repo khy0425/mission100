@@ -98,7 +98,7 @@ class CacheManager {
 
   // 캐시 설정
   static const int _maxMemoryCacheSize = 50;
-  static const int _maxDiskCacheSize = 200;
+  // static const int _maxDiskCacheSize = 200; // 향후 디스크 캐시 구현 시 사용
   static const Duration _defaultTtl = Duration(minutes: 30);
   static const String _cachePrefix = 'app_cache_';
 

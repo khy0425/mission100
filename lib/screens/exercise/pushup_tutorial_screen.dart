@@ -433,41 +433,5 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
       ),
       child: const AdBannerWidget(adSize: AdSize.banner, showOnError: true),
     );
-
-    // 광고가 로드되지 않은 경우 반응형 플레이스홀더
-    return Container(
-      height: adHeight,
-      width: double.infinity,
-      decoration: BoxDecoration(
-        color: const Color(0xFF1A1A1A),
-        border: Border(
-          top: BorderSide(
-            color: const Color(0xFF4DABF7).withValues(alpha: 0.3),
-            width: 1,
-          ),
-        ),
-      ),
-      child: Center(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(
-              Icons.ads_click,
-              color: const Color(0xFF4DABF7).withValues(alpha: 0.6),
-              size: adHeight * 0.4,
-            ),
-            const SizedBox(width: 8),
-            Text(
-              AppLocalizations.of(context).advertisement,
-              style: TextStyle(
-                color: const Color(0xFF4DABF7).withValues(alpha: 0.6),
-                fontSize: adHeight * 0.25,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
   }
 }
