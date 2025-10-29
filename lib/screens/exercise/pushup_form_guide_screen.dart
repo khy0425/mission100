@@ -4,9 +4,9 @@ import '../../generated/app_localizations.dart';
 import '../../models/pushup_form_guide.dart';
 import '../../services/workout/pushup_form_guide_service.dart';
 import '../../services/chad/chad_encouragement_service.dart';
-import '../../widgets/ad_banner_widget.dart';
-import '../../widgets/video_player_widget.dart';
-import '../../widgets/exercise_slideshow_widget.dart';
+import '../../widgets/common/ad_banner_widget.dart';
+import '../../widgets/common/video_player_widget.dart';
+import '../../widgets/exercise/exercise_slideshow_widget.dart';
 import '../../utils/accessibility_utils.dart';
 
 class PushupFormGuideScreen extends StatefulWidget {

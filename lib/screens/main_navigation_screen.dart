@@ -4,10 +4,10 @@ import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
 import '../services/achievements/achievement_service.dart';
 import '../services/chad/chad_evolution_service.dart';
-import '../widgets/chad_evolution_animation.dart';
+import '../widgets/chad/chad_evolution_animation.dart';
 
 import '../services/workout/workout_history_service.dart';
-import '../widgets/multiple_achievements_dialog.dart';
+import '../widgets/achievements/multiple_achievements_dialog.dart';
 import '../models/achievement.dart';
 import 'home_screen.dart';
 import 'calendar/calendar_screen.dart';

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../services/auth/auth_service.dart';
 import '../../services/chad/chad_onboarding_service.dart';
-import '../../widgets/chad_onboarding_widget.dart';
+import '../../widgets/chad/chad_onboarding_widget.dart';
 import '../../utils/constants.dart';
 import '../../generated/app_localizations.dart';
 import 'chad_signup_screen.dart';

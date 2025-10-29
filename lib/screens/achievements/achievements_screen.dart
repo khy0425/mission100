@@ -4,9 +4,9 @@ import '../../utils/constants.dart';
 import '../../models/achievement.dart';
 import '../../services/achievements/achievement_service.dart';
 import '../../services/payment/ad_service.dart';
-import '../../widgets/enhanced_achievement_card.dart';
-import '../../widgets/achievement_unlock_animation.dart';
-import '../../widgets/achievement_detail_dialog.dart';
+import '../../widgets/achievements/enhanced_achievement_card.dart';
+import '../../widgets/achievements/achievement_unlock_animation.dart';
+import '../../widgets/achievements/achievement_detail_dialog.dart';
 import '../../generated/app_localizations.dart';
 
 class AchievementsScreen extends StatefulWidget {

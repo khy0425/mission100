@@ -18,7 +18,7 @@ import '../models/user_profile.dart';
 
 import '../models/workout_history.dart';
 import '../utils/constants.dart';
-import '../widgets/ad_banner_widget.dart';
+import '../widgets/common/ad_banner_widget.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';
 // 분리된 위젯들 import
@@ -29,7 +29,7 @@ import 'home/widgets/achievement_stats_widget.dart';
 import 'home/widgets/action_buttons_widget.dart';
 import '../widgets/chad/chad_stats_card.dart';
 import '../models/chad_evolution.dart';
-import '../widgets/vip_badge_widget.dart';
+import '../widgets/common/vip_badge_widget.dart';
 import '../services/auth/auth_service.dart';
 
 class HomeScreen extends StatefulWidget {

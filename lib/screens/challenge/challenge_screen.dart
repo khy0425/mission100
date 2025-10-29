@@ -5,8 +5,8 @@ import '../../models/user_profile.dart';
 import '../../services/progress/challenge_service.dart';
 import '../../services/data/database_service.dart';
 
-import '../../widgets/challenge_card.dart';
-import '../../widgets/challenge_progress_widget.dart';
+import '../../widgets/challenge/challenge_card.dart';
+import '../../widgets/challenge/challenge_progress_widget.dart';
 
 class ChallengeScreen extends StatefulWidget {
   const ChallengeScreen({super.key});

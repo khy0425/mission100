@@ -6,7 +6,7 @@ import '../../models/user_profile.dart';
 import '../../models/workout_session.dart';
 import '../../services/workout/workout_program_service.dart';
 import '../../services/data/database_service.dart';
-import '../../widgets/ad_banner_widget.dart';
+import '../../widgets/common/ad_banner_widget.dart';
 import '../../widgets/chad/brainjolt_meter_widget.dart';
 
 class ProgressTrackingScreen extends StatefulWidget {

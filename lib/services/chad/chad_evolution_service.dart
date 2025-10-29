@@ -5,7 +5,7 @@ import '../../models/progress.dart';
 import '../notification/notification_service.dart';
 import 'chad_image_service.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/level_up_dialog.dart';
+import '../../widgets/dialogs/level_up_dialog.dart';
 
 /// Chad 진화 시스템을 관리하는 서비스
 class ChadEvolutionService extends ChangeNotifier {

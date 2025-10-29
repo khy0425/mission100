@@ -6,7 +6,7 @@ import '../../services/workout/pushup_tutorial_service.dart';
 import '../../services/chad/chad_encouragement_service.dart';
 import '../../services/workout/pushup_mastery_service.dart';
 
-import '../../widgets/ad_banner_widget.dart';
+import '../../widgets/common/ad_banner_widget.dart';
 import 'pushup_tutorial_detail_screen.dart';
 
 class PushupTutorialScreen extends StatefulWidget {

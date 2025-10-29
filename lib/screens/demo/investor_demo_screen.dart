@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../models/rpe_data.dart';
 import '../../models/user_profile.dart';
-import '../../widgets/rpe_input_widget.dart';
-import '../../widgets/recovery_dashboard_widget.dart';
-import '../../widgets/workout_adjustment_card.dart';
+import '../../widgets/rpe/rpe_input_widget.dart';
+import '../../widgets/common/recovery_dashboard_widget.dart';
+import '../../widgets/workout/workout_adjustment_card.dart';
 import '../../services/progress/rpe_adaptation_service.dart';
 
 /// 투자자용 데모 화면

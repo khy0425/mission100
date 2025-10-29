@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../models/onboarding_step.dart';
 import '../../services/core/onboarding_service.dart';
 import '../../services/chad/chad_onboarding_service.dart';
-import '../../widgets/chad_onboarding_widget.dart';
+import '../../widgets/chad/chad_onboarding_widget.dart';
 import '../../utils/constants.dart';
 
 // 체중 설정 위젯

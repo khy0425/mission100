@@ -8,7 +8,7 @@ import '../../services/chad/chad_encouragement_service.dart';
 import '../../services/achievements/achievement_service.dart';
 import '../../services/workout/pushup_mastery_service.dart';
 
-import '../../widgets/ad_banner_widget.dart';
+import '../../widgets/common/ad_banner_widget.dart';
 
 class PushupTutorialDetailScreen extends StatefulWidget {
   final PushupType pushupType;

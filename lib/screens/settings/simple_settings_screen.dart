@@ -5,7 +5,7 @@ import 'package:mission100/generated/app_localizations.dart';
 import '../../services/notification/notification_service.dart';
 import '../../services/auth/auth_service.dart';
 import '../../models/user_subscription.dart';
-import '../../widgets/vip_badge_widget.dart';
+import '../../widgets/common/vip_badge_widget.dart';
 import '../onboarding_screen.dart';
 import 'workout_reminder_settings_screen.dart';
 import '../subscription/subscription_screen.dart';

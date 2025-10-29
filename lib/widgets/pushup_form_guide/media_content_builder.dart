@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/pushup_form_guide.dart';
-import '../video_player_widget.dart';
-import '../exercise_slideshow_widget.dart';
+import '../common/video_player_widget.dart';
+import '../exercise/exercise_slideshow_widget.dart';
 
 /// 미디어 콘텐츠 빌더 클래스
 class MediaContentBuilder {

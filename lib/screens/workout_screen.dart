@@ -8,8 +8,8 @@ import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
 import '../models/achievement.dart';
 import '../models/challenge.dart';
-import '../widgets/ad_banner_widget.dart';
-import '../widgets/multiple_achievements_dialog.dart';
+import '../widgets/common/ad_banner_widget.dart';
+import '../widgets/achievements/multiple_achievements_dialog.dart';
 // 분리된 위젯들 import
 import 'workout/widgets/workout_header_widget.dart';
 import 'workout/widgets/rep_counter_widget.dart';
