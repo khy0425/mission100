@@ -281,8 +281,6 @@ class SubscriptionService {
 
   // 구독 상세 정보 반환
   String getSubscriptionDetailsText() {
-    final tier = getCurrentTier();
-
     String typeText;
     switch (_currentSubscription) {
       case SubscriptionType.monthly:

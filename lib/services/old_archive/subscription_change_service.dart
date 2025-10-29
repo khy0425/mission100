@@ -477,7 +477,6 @@ class SubscriptionChangeService {
 // 임시 모의 클래스들 (실제 서비스가 구현될 때까지 사용)
 class _MockPurchaseResult {
   final bool success;
-  final String? error;
   final _MockPurchaseDetails? purchaseDetails;
 
   _MockPurchaseResult({
