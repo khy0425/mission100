@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import 'onboarding_step_item.dart';
 
 /// 온보딩 시작 페이지

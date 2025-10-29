@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../models/achievement.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import '../../generated/app_localizations.dart';
 
 class MultipleAchievementsDialog extends StatefulWidget {

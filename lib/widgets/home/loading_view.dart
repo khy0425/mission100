@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 로딩 상태 화면
 class LoadingView extends StatelessWidget {

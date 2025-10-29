@@ -3,7 +3,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'dart:convert';
 import 'dart:typed_data';
 import '../../models/achievement.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import '../../generated/app_localizations.dart';
 import '../notification/notification_service.dart';
 

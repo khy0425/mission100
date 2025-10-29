@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import '../auth/login_screen.dart';
 import '../misc/permission_screen.dart';
 

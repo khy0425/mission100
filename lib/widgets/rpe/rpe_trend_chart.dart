@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../../models/rpe_data.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 📊 RPE 트렌드 차트 위젯
 ///

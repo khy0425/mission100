@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 개별 권한 섹션
 class PermissionSection extends StatelessWidget {

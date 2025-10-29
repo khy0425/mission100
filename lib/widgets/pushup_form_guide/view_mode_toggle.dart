@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/accessibility_utils.dart';
+import '../../utils/helpers/accessibility_utils.dart';
 
 /// 뷰 모드 전환 버튼 위젯
 class ViewModeToggle extends StatelessWidget {

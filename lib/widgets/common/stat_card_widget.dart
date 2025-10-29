@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 통계 정보를 표시하는 재사용 가능한 카드 위젯
 class StatCardWidget extends StatelessWidget {

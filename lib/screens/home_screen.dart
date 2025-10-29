@@ -17,7 +17,7 @@ import '../screens/progress/progress_tracking_screen.dart';
 import '../models/user_profile.dart';
 
 import '../models/workout_history.dart';
-import '../utils/constants.dart';
+import '../utils/config/constants.dart';
 import '../widgets/common/ad_banner_widget.dart';
 
 import 'package:shared_preferences/shared_preferences.dart';

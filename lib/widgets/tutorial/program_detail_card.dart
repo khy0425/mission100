@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 프로그램 상세 정보 카드
 class ProgramDetailCard extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 // kDebugMode 사용
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:fl_chart/fl_chart.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import '../../models/workout_history.dart';
 import '../../services/workout/workout_history_service.dart';
 import '../../services/achievements/achievement_service.dart';

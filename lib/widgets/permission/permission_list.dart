@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import '../../generated/app_localizations.dart';
 import 'permission_section.dart';
 

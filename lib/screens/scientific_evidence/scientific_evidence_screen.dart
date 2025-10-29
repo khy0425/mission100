@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 🔬 과학적 근거 화면
 ///

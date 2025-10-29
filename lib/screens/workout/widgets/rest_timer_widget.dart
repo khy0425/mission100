@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../generated/app_localizations.dart';
-import '../../../utils/constants.dart';
+import '../../../utils/config/constants.dart';
 
 /// 휴식 타이머를 표시하는 위젯
 ///

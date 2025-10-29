@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import '../../generated/app_localizations.dart';
 
 /// 운동 요일 선택 섹션

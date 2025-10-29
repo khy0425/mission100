@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../generated/app_localizations.dart';
-import '../../../utils/constants.dart';
+import '../../../utils/config/constants.dart';
 import '../../../services/notification/notification_service.dart';
 
 /// 알림 설정을 관리하는 위젯

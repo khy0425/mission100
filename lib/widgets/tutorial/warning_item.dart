@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 주의사항 아이템
 class WarningItem extends StatelessWidget {

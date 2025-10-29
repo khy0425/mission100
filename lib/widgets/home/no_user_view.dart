@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 사용자 프로필 없음 위젯
 class NoUserView extends StatelessWidget {

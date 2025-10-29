@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../models/user_profile.dart';
-import '../models/exercise_type.dart';
+import '../../models/user_profile.dart';
+import '../../models/exercise_type.dart';
 
 /// 🏋️ Mission100 운동 데이터 구조 (과학적 근거 기반)
 ///

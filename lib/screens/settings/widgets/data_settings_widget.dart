@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../generated/app_localizations.dart';
-import '../../../utils/constants.dart';
+import '../../../utils/config/constants.dart';
 import '../../../services/data/data_service.dart';
 import '../../../services/chad/chad_evolution_service.dart';
 import '../../data/backup_screen.dart';

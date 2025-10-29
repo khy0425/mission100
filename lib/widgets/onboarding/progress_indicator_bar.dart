@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 온보딩 진행 표시기
 class ProgressIndicatorBar extends StatelessWidget {

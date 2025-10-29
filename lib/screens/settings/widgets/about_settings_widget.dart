@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../generated/app_localizations.dart';
-import '../../../utils/constants.dart';
+import '../../../utils/config/constants.dart';
 import '../../legal/legal_document_screen.dart';
 
 /// 앱 정보 및 기타 설정을 담당하는 위젯

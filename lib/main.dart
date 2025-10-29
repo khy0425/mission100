@@ -5,7 +5,7 @@ import 'generated/app_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'utils/constants.dart';
+import 'utils/config/constants.dart';
 import 'screens/main_navigation_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'services/localization/theme_service.dart';

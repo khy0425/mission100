@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../generated/app_localizations.dart';
-import '../../../utils/constants.dart';
+import '../../../utils/config/constants.dart';
 import '../../../models/workout_history.dart';
 
 /// 오늘의 운동 미션을 표시하는 카드 위젯

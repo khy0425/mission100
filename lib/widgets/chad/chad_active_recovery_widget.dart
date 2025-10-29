@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../../services/chad/chad_active_recovery_service.dart';
 import '../../screens/recovery/chad_active_recovery_screen.dart';
 import '../../models/rpe_data.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// Chad 액티브 리커버리 위젯
 ///

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
 import '../../models/pushup_form_guide.dart';
-import '../../utils/accessibility_utils.dart';
+import '../../utils/helpers/accessibility_utils.dart';
 
 /// 확장 가능한 자세 단계 카드 위젯 (리스트 뷰용)
 class ExpandableFormStepCard extends StatelessWidget {

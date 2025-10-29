@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 온보딩 단계 아이템
 class OnboardingStepItem extends StatelessWidget {

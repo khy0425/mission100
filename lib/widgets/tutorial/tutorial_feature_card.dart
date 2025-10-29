@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 튜토리얼 기능 소개 카드
 class TutorialFeatureCard extends StatelessWidget {

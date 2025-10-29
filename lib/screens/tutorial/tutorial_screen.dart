@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../generated/app_localizations.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import '../../widgets/tutorial/tutorial_feature_card.dart';
 import '../../widgets/tutorial/program_detail_card.dart';
 import '../../widgets/tutorial/form_check_item.dart';

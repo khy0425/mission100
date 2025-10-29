@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 온보딩 페이지 헤더
 class PageHeader extends StatelessWidget {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../services/chad/chad_active_recovery_service.dart';
 import '../../widgets/chad/chad_active_recovery_widget.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// Chad 액티브 리커버리 전용 화면
 class ChadActiveRecoveryScreen extends StatefulWidget {

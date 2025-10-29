@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../services/chad/chad_evolution_service.dart';
-import '../../../utils/constants.dart';
-import '../../../utils/chad_translation_helper.dart';
+import '../../../utils/config/constants.dart';
+import '../../../utils/helpers/chad_translation_helper.dart';
 import '../../../generated/app_localizations.dart';
 
 /// Chad 진화 상태를 표시하는 섹션 위젯

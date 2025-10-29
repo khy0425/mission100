@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 운동 스케줄 설정 헤더
 class ScheduleHeader extends StatelessWidget {

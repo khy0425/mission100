@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../generated/app_localizations.dart';
-import '../models/chad_evolution.dart';
+import '../../generated/app_localizations.dart';
+import '../../models/chad_evolution.dart';
 
 /// Chad 진화 단계별 이름과 설명을 언어별로 제공하는 헬퍼 클래스
 class ChadTranslationHelper {

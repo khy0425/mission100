@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 권한 화면 아이콘
 class PermissionIcon extends StatelessWidget {

@@ -5,7 +5,7 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
 import '../generated/app_localizations.dart';
-import '../utils/constants.dart';
+import '../utils/config/constants.dart';
 import '../models/achievement.dart';
 import '../models/challenge.dart';
 import '../widgets/common/ad_banner_widget.dart';

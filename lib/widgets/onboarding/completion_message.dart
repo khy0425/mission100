@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 목표 설정 완료 메시지
 class CompletionMessage extends StatelessWidget {

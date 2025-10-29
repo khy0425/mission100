@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
 import '../../models/user_profile.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 class ShareCardWidget extends StatelessWidget {
   final ShareCardType type;

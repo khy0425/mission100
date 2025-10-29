@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/achievement.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 class AchievementNotificationOverlay extends StatefulWidget {
   final Achievement achievement;

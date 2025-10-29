@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 테마 색상 옵션
 enum ThemeColor {

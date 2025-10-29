@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/pushup_form_guide.dart';
-import '../../utils/accessibility_utils.dart';
+import '../../utils/helpers/accessibility_utils.dart';
 import 'section_header.dart';
 import 'view_mode_toggle.dart';
 import 'list_steps_view.dart';

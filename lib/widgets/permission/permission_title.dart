@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 권한 화면 타이틀
 class PermissionTitle extends StatelessWidget {

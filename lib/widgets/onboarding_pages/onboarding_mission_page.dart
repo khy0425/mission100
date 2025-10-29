@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import 'onboarding_level_badge.dart';
 
 /// 온보딩 미션 페이지

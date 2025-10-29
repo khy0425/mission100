@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 회원가입 안내 다이얼로그
 class SignupPromptDialog extends StatelessWidget {

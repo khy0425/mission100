@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 온보딩 레벨 뱃지
 class OnboardingLevelBadge extends StatelessWidget {

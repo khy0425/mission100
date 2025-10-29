@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import '../../models/workout_history.dart';
 import '../../services/workout/workout_history_service.dart';
 import '../../services/notification/notification_service.dart';

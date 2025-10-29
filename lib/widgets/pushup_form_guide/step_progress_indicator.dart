@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/accessibility_utils.dart';
+import '../../utils/helpers/accessibility_utils.dart';
 
 /// 단계 진행률 표시기 위젯
 class StepProgressIndicator extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 업적 통계 항목
 class AchievementsStatItem extends StatelessWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../generated/app_localizations.dart';
-import '../../../utils/constants.dart';
+import '../../../utils/config/constants.dart';
 
 /// 운동 컨트롤 버튼들을 표시하는 위젯
 ///

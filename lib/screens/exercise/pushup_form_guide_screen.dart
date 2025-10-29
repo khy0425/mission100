@@ -7,7 +7,7 @@ import '../../services/chad/chad_encouragement_service.dart';
 import '../../widgets/common/ad_banner_widget.dart';
 import '../../widgets/common/video_player_widget.dart';
 import '../../widgets/exercise/exercise_slideshow_widget.dart';
-import '../../utils/accessibility_utils.dart';
+import '../../utils/helpers/accessibility_utils.dart';
 
 class PushupFormGuideScreen extends StatefulWidget {
   const PushupFormGuideScreen({super.key});

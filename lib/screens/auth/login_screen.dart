@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../services/auth/auth_service.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 import 'signup_screen.dart';
 import '../misc/permission_screen.dart';
 

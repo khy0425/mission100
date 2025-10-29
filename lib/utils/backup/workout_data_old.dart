@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import '../models/user_profile.dart';
-import '../models/exercise_type.dart';
-import '../generated/app_localizations.dart';
+import '../../models/user_profile.dart';
+import '../../models/exercise_type.dart';
+import '../../generated/app_localizations.dart';
 
 /// 운동 세트 정보
 class ExerciseSet {

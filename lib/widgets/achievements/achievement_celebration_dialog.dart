@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'dart:math' as math;
 import '../../generated/app_localizations.dart';
 import '../../models/achievement.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 class AchievementCelebrationDialog extends StatefulWidget {
   final Achievement achievement;

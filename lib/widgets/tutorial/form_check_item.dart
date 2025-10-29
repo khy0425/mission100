@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 폼 체크 아이템 (올바른 자세 안내)
 class FormCheckItem extends StatelessWidget {

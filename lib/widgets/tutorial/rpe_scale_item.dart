@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// RPE 척도 아이템
 class RPEScaleItem extends StatelessWidget {

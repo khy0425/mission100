@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../utils/constants.dart';
+import '../utils/config/constants.dart';
 import '../services/data/database_service.dart';
 import '../services/workout/workout_program_service.dart';
 import '../models/user_profile.dart';

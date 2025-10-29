@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 설정 완료 버튼
 class FinishSetupButton extends StatelessWidget{

@@ -1,7 +1,7 @@
 import '../../models/user_profile.dart';
 import '../../models/workout_session.dart';
 import '../../models/exercise_type.dart';
-import '../../utils/workout_data.dart';
+import '../../utils/data/workout_data.dart';
 import '../data/database_service.dart';
 import '../progress/rpe_adaptation_service.dart';
 import 'package:flutter/foundation.dart';

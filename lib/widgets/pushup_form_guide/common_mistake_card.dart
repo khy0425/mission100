@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
 import '../../models/pushup_form_guide.dart';
 import '../../services/workout/pushup_form_guide_service.dart';
-import '../../utils/accessibility_utils.dart';
+import '../../utils/helpers/accessibility_utils.dart';
 
 /// 일반적인 실수 카드 위젯
 class CommonMistakeCard extends StatelessWidget {

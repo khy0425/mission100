@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../utils/constants.dart';
+import '../../utils/config/constants.dart';
 
 /// 업적 빈 상태
 class AchievementsEmptyState extends StatelessWidget {
