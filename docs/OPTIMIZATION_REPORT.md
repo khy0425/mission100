@@ -89,7 +89,7 @@ analyzer:
 - Radio API: Onboarding 화면 리팩토링 시 마이그레이션
 - 모든 TODO는 IDE에서 추적 가능
 
-## 🎯 TODO 항목 (21개)
+## 🎯 TODO 항목 (18개)
 
 향후 개발을 위해 주석 처리된 코드와 deprecated API에 TODO가 추가되어 있습니다.
 
@@ -103,13 +103,13 @@ analyzer:
 - 버전 관리, 비밀번호 백업
 
 ### 결제 및 광고 (2개)
-- 서버 검증
+- 액세스 토큰, 인증 토큰
 
 ### 진행률 및 통계 (3개)
 - 주차 계산, 운동 시간 통계
 
-### 사용자 기능 (3개)
-- 목표 체중, 튜토리얼 메시지
+### 사용자 기능 (1개)
+- 목표 체중
 
 ### API 마이그레이션 (3개)
 - Share API → SharePlus.instance.share()
@@ -132,7 +132,7 @@ analyzer:
 - **🏆 코드 품질 100% 개선 (완벽!)**
 - **✅ 146개 이슈 전부 해결**
 - **🔒 타입 안전성 대폭 향상**
-- **📝 21개 TODO를 통한 체계적 관리**
+- **📝 18개 TODO를 통한 체계적 관리**
 - **💡 명확한 코드 의도 표시**
 - **🚀 No issues found!**
 
@@ -145,13 +145,13 @@ IntelliJ: `Alt+6` (TODO 탭)
 ### 향후 개선 시 우선순위
 모든 주요 이슈가 해결되었습니다! ✅
 
-**TODO 항목 (21개)**:
+**TODO 항목 (18개)**:
 1. 🔧 배치 처리 최적화 (6개)
 2. 🔐 캐시 및 암호화 (2개)
 3. 💾 백업 및 데이터 관리 (2개)
 4. 💳 결제 및 광고 (2개)
 5. 📊 진행률 및 통계 (3개)
-6. 👤 사용자 기능 (3개)
+6. 👤 사용자 기능 (1개)
 7. 🔄 API 마이그레이션 (3개)
 
 ### 권장사항
@@ -183,6 +183,43 @@ flutter analyze --no-fatal-infos
 - 결제 시스템은 완전히 구현되어 있음
 
 **결과**: TODO 항목 22개 → 21개
+
+---
+
+### 2차 정리: 미사용 필드 및 주석 코드 제거
+
+#### AchievementService
+**파일**: `lib/services/achievements/achievement_service.dart`
+
+**제거된 코드**:
+- `_globalContext` 필드 (미사용)
+- `setGlobalContext()` 메서드 (미사용)
+- `main_navigation_screen.dart`의 호출 제거
+
+**이유**: setter만 있고 실제 사용처 없음 (다이얼로그 표시 기능 미구현)
+
+#### ChadEncouragementService
+**파일**: `lib/services/chad/chad_encouragement_service.dart`
+
+**제거된 코드**:
+- `_tutorialStartMessageKeys` 리스트 (미사용)
+
+**이유**: 다국어 지원 계획이었으나 `_defaultMessages` 사용 중
+
+#### PaymentVerificationService
+**파일**: `lib/services/payment/payment_verification_service.dart`
+
+**제거된 코드**:
+- `_googlePlayPublicKey` 주석 (미사용)
+- `_verifyReceiptHash()` 주석 함수 (중복 구현)
+- `_isTransactionIdUnique()` 주석 함수 (`_isRecentDuplicatePurchase`로 대체됨)
+
+**이유**:
+- Google Play Developer API 직접 사용 중
+- 포괄적인 검증 시스템 이미 구현됨
+- 주석 코드는 실제 구현과 중복
+
+**결과**: TODO 항목 21개 → 18개
 
 ---
 

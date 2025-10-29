@@ -19,8 +19,6 @@ class AchievementService {
   // 실시간 업데이트를 위한 콜백들
   static VoidCallback? _onAchievementUnlocked;
   static VoidCallback? _onStatsUpdated;
-  // TODO: 향후 다이얼로그 표시 기능 구현 시 사용
-  static BuildContext? _globalContext; // ignore: unused_field
 
   // 성능 최적화를 위한 캐싱
   static final Map<String, Achievement> _achievementCache = {};
@@ -44,11 +42,6 @@ class AchievementService {
   // 테스트용 데이터베이스 설정
   static void setTestDatabase(Database testDb) {
     _testDatabase = testDb;
-  }
-
-  // 전역 컨텍스트 설정 (알림 표시용)
-  static void setGlobalContext(BuildContext context) {
-    _globalContext = context;
   }
 
   // 업적 달성 콜백 설정

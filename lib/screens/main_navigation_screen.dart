@@ -51,8 +51,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         await _checkPendingAchievementEvents();
 
         // 업적 서비스 콜백 설정
-        AchievementService.setGlobalContext(context);
-
         AchievementService.setOnAchievementUnlocked(() {
           if (mounted) {
             debugPrint('🎯 업적 달성 콜백 호출 - 데이터만 새로고침 (다이얼로그는 워크아웃 완료 시에만)');

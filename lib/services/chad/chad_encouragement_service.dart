@@ -10,19 +10,6 @@ class ChadEncouragementService {
 
   final Random _random = Random();
 
-  /// 튜토리얼 시작 시 격려 메시지들 (다국어 지원을 위해 키값 사용)
-  // TODO: 향후 튜토리얼 격려 메시지 기능 추가 시 사용
-  // ignore: unused_field
-  static const List<String> _tutorialStartMessageKeys = [
-    'encouragement_tutorial_start_1',
-    'encouragement_tutorial_start_2',
-    'encouragement_tutorial_start_3',
-    'encouragement_tutorial_start_4',
-    'encouragement_tutorial_start_5',
-    'encouragement_tutorial_start_6',
-    'encouragement_tutorial_start_7',
-  ];
-
   /// 기본 격려 메시지들 (다국어 지원 전까지 임시 사용)
   static const List<String> _defaultMessages = [
     '💪 Great choice!',
