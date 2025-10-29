@@ -20,7 +20,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
 
   // 사용자 정보
   double? _currentWeight;
-  double? _targetWeight;
+  double? _targetWeight; // ignore: unused_field
   FitnessLevel? _fitnessLevel;
   FitnessGoal? _fitnessGoal;
   final List<String> _workoutTimes = [];

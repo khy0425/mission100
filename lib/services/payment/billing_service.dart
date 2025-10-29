@@ -15,7 +15,7 @@ class BillingService {
 
   // 콜백 함수들
   Function? _onAccountRequired; // 회원가입 필요 시 호출
-  Function(String productId, String purchaseToken)? _onPurchaseSuccess; // 구매 성공 시
+  Function(String productId, String purchaseToken)? _onPurchaseSuccess; // ignore: unused_field // 구매 성공 시
 
   final InAppPurchase _inAppPurchase = InAppPurchase.instance;
   late StreamSubscription<List<PurchaseDetails>> _subscription;

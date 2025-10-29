@@ -19,7 +19,7 @@ class AchievementService {
   // 실시간 업데이트를 위한 콜백들
   static VoidCallback? _onAchievementUnlocked;
   static VoidCallback? _onStatsUpdated;
-  static BuildContext? _globalContext;
+  static BuildContext? _globalContext; // ignore: unused_field
 
   // 성능 최적화를 위한 캐싱
   static final Map<String, Achievement> _achievementCache = {};
