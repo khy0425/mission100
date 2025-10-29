@@ -79,7 +79,8 @@ class DataEncryptionService {
   DataEncryptionService._internal();
 
   static const String _masterKeyPrefix = 'encryption_master_key_';
-  // static const String _saltKey = 'encryption_salt'; // 향후 salt 기반 암호화 시 사용
+  // TODO: 향후 salt 기반 암호화 시 사용
+  // static const String _saltKey = 'encryption_salt';
 
   // 앱별 고유 시드 (실제 운영에서는 더 복잡하게)
   static const String _appSeed = 'mission100_encryption_seed_2024';

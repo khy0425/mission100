@@ -46,7 +46,8 @@ class AdService {
     return const bool.fromEnvironment('dart.vm.product') == false;
   }
 
-  // BannerAd? _bannerAd; // AdBannerWidget 사용으로 대체
+  // TODO: AdBannerWidget 사용으로 대체됨 (삭제 고려)
+  // BannerAd? _bannerAd;
   InterstitialAd? _interstitialAd;
   RewardedAd? _rewardedAd;
 

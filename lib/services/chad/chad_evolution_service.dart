@@ -189,7 +189,8 @@ class ChadEvolutionService extends ChangeNotifier {
     }
   }
 
-  /// 현재 주차 계산 (향후 진행률 계산 시 사용)
+  /// 현재 주차 계산
+  // TODO: 향후 진행률 계산 시 사용
   // int _calculateCurrentWeek(Progress progress) {
   //   // 완료된 주차 수 계산
   //   int completedWeeks = 0;

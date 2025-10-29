@@ -19,6 +19,7 @@ class AchievementService {
   // 실시간 업데이트를 위한 콜백들
   static VoidCallback? _onAchievementUnlocked;
   static VoidCallback? _onStatsUpdated;
+  // TODO: 향후 다이얼로그 표시 기능 구현 시 사용
   static BuildContext? _globalContext; // ignore: unused_field
 
   // 성능 최적화를 위한 캐싱
@@ -32,8 +33,10 @@ class AchievementService {
 
   // 배치 처리를 위한 대기열
   static final List<Map<String, dynamic>> _pendingUpdates = [];
-  // static bool _isBatchProcessing = false; // 향후 배치 처리 최적화 시 사용
-  // static const int _batchSize = 10; // 향후 배치 처리 최적화 시 사용
+  // TODO: 향후 배치 처리 최적화 시 사용
+  // static bool _isBatchProcessing = false;
+  // TODO: 향후 배치 처리 최적화 시 사용
+  // static const int _batchSize = 10;
 
   // 오류 복구를 위한 백업
   static Map<String, dynamic>? _lastKnownState;
@@ -872,7 +875,8 @@ class AchievementService {
       _achievementCache.clear();
       _lastCacheUpdate = null;
       _pendingUpdates.clear();
-      // _isBatchProcessing = false; // 향후 배치 처리 최적화 시 사용
+      // TODO: 향후 배치 처리 최적화 시 사용
+      // _isBatchProcessing = false;
       _lastKnownState = null;
       debugPrint('📱 모든 static 참조 초기화 완료');
 
@@ -1582,7 +1586,8 @@ class AchievementService {
   //   }
   // }
 
-  /// 배치 처리 실행 (향후 배치 처리 최적화 시 사용)
+  /// 배치 처리 실행
+  // TODO: 향후 배치 처리 최적화 시 사용
   // static Future<void> _processBatch() async {
   //   if (_isBatchProcessing || _pendingUpdates.isEmpty) return;
   //
@@ -1629,7 +1634,8 @@ class AchievementService {
   //   }
   // }
 
-  /// 실패한 업데이트 재시도 (향후 배치 처리 최적화 시 사용)
+  /// 실패한 업데이트 재시도
+  // TODO: 향후 배치 처리 최적화 시 사용
   // static Future<void> _retryFailedUpdates() async {
   //   debugPrint('🔄 실패한 업데이트 개별 재시도 시작');
   //   final failedUpdates = List.from(_pendingUpdates);

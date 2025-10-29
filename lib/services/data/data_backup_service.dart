@@ -26,12 +26,14 @@ class DataBackupService {
   static const String _backupFileName = 'mission100_backup.json';
   static const String _encryptedBackupFileName =
       'mission100_backup_encrypted.json';
-  // static const String _backupVersionKey = 'backup_version'; // 향후 버전 관리 시 사용
+  // TODO: 향후 버전 관리 시 사용
+  // static const String _backupVersionKey = 'backup_version';
   static const String _lastBackupTimeKey = 'last_backup_time';
   static const String _autoBackupEnabledKey = 'auto_backup_enabled';
   static const String _backupFrequencyKey = 'backup_frequency';
   static const String _backupEncryptionEnabledKey = 'backup_encryption_enabled';
-  // static const String _backupPasswordHashKey = 'backup_password_hash'; // 향후 비밀번호 백업 시 사용
+  // TODO: 향후 비밀번호 백업 시 사용
+  // static const String _backupPasswordHashKey = 'backup_password_hash';
 
   // 백업 버전
   static const String currentBackupVersion = '2.0.0';

@@ -15,6 +15,7 @@ class BillingService {
 
   // 콜백 함수들
   Function? _onAccountRequired; // 회원가입 필요 시 호출
+  // TODO: 향후 구매 성공 콜백 기능 구현 시 사용
   Function(String productId, String purchaseToken)? _onPurchaseSuccess; // ignore: unused_field // 구매 성공 시
 
   final InAppPurchase _inAppPurchase = InAppPurchase.instance;

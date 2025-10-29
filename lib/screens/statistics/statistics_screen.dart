@@ -35,6 +35,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
   int _currentStreak = 0;
   int _bestStreak = 0;
   int _thisMonthWorkouts = 0;
+  // TODO: 향후 운동 시간 통계 표시 시 사용
   Duration _totalWorkoutTime = Duration.zero; // ignore: unused_field
 
   // 새로운 진행률 관련 변수들
@@ -54,6 +55,7 @@ class _StatisticsScreenState extends State<StatisticsScreen>
   final Map<String, double> _pieChartData = {};
 
   // 차트 필터링 옵션
+  // TODO: 향후 기간 필터 UI 추가 시 사용
   final List<String> _periodOptions = ['week', 'month', 'year']; // ignore: unused_field
 
   // 테스트 환경 감지 - 더 확실한 방법 사용

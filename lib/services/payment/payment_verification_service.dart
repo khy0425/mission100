@@ -8,7 +8,8 @@ import 'package:in_app_purchase/in_app_purchase.dart';
 class PaymentVerificationService {
   static const String _baseUrl = 'https://your-backend-server.com/api';
 
-  // Google Play 공개 키 (향후 서버 검증 구현 시 사용)
+  // Google Play 공개 키
+  // TODO: 향후 서버 검증 구현 시 사용
   // static const String _googlePlayPublicKey = '''
   // -----BEGIN PUBLIC KEY-----
   // YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE

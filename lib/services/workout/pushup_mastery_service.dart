@@ -3,7 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 /// 푸시업 마스터 진행률 추적 서비스
 class PushupMasteryService {
-  // static const String _masteryProgressKey = 'pushup_mastery_progress'; // 향후 진행률 저장 시 사용
+  // TODO: 향후 진행률 저장 시 사용
+  // static const String _masteryProgressKey = 'pushup_mastery_progress';
   static const String _completedGuidesKey = 'completed_pushup_guides';
   static const String _masteryLevelKey = 'pushup_mastery_level';
 
