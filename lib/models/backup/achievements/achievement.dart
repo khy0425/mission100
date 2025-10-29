@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../../generated/app_localizations.dart';
 import 'achievement_type.dart';
 
 class Achievement {
