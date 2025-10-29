@@ -4,7 +4,7 @@ import '../../services/auth_service.dart';
 import '../../services/chad_onboarding_service.dart';
 import '../../widgets/chad_onboarding_widget.dart';
 import '../../utils/constants.dart';
-import '../permission_screen.dart';
+import '../misc/permission_screen.dart';
 import 'chad_login_screen.dart';
 
 class ChadSignupScreen extends StatefulWidget {

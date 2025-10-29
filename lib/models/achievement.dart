@@ -987,9 +987,9 @@ class PredefinedAchievements {
 
         Achievement(
           id: 'total_workout_time_600',
-          titleKey: '10시간 운동 헌신자',
-          descriptionKey: '총 운동 시간 600분(10시간)을 달성했습니다',
-          motivationKey: '운동에 대한 헌신이 놀랍습니다!',
+          titleKey: 'achievementTotalWorkoutTime600Title',
+          descriptionKey: 'achievementTotalWorkoutTime600Desc',
+          motivationKey: 'achievementTotalWorkoutTime600Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 600,
@@ -999,9 +999,9 @@ class PredefinedAchievements {
 
         Achievement(
           id: 'total_workout_time_1200',
-          titleKey: '20시간 운동 전설',
-          descriptionKey: '총 운동 시간 1200분(20시간)을 달성했습니다',
-          motivationKey: '당신은 진정한 운동 전설입니다!',
+          titleKey: 'achievementTotalWorkoutTime1200Title',
+          descriptionKey: 'achievementTotalWorkoutTime1200Desc',
+          motivationKey: 'achievementTotalWorkoutTime1200Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 1200,
@@ -1012,9 +1012,9 @@ class PredefinedAchievements {
         // 평균 운동 시간 관련 업적
         Achievement(
           id: 'avg_workout_time_5',
-          titleKey: '효율적인 운동가',
-          descriptionKey: '평균 운동 시간 5분 이상을 달성했습니다',
-          motivationKey: '짧지만 효과적인 운동을 하고 있습니다!',
+          titleKey: 'achievementAvgWorkoutTime5Title',
+          descriptionKey: 'achievementAvgWorkoutTime5Desc',
+          motivationKey: 'achievementAvgWorkoutTime5Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.common,
           targetValue: 5,
@@ -1024,9 +1024,9 @@ class PredefinedAchievements {
 
         Achievement(
           id: 'avg_workout_time_10',
-          titleKey: '집중력 마스터',
-          descriptionKey: '평균 운동 시간 10분 이상을 달성했습니다',
-          motivationKey: '집중해서 운동하는 습관이 훌륭합니다!',
+          titleKey: 'achievementAvgWorkoutTime10Title',
+          descriptionKey: 'achievementAvgWorkoutTime10Desc',
+          motivationKey: 'achievementAvgWorkoutTime10Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.rare,
           targetValue: 10,
@@ -1036,9 +1036,9 @@ class PredefinedAchievements {
 
         Achievement(
           id: 'avg_workout_time_15',
-          titleKey: '지구력 챔피언',
-          descriptionKey: '평균 운동 시간 15분 이상을 달성했습니다',
-          motivationKey: '탁월한 지구력을 보여주고 있습니다!',
+          titleKey: 'achievementAvgWorkoutTime15Title',
+          descriptionKey: 'achievementAvgWorkoutTime15Desc',
+          motivationKey: 'achievementAvgWorkoutTime15Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 15,
@@ -1046,12 +1046,12 @@ class PredefinedAchievements {
           icon: Icons.sports_score,
         ),
 
-        // 주간 통계 관련 업적
+        // Weekly stats achievements
         Achievement(
           id: 'weekly_sessions_5',
-          titleKey: '주간 운동 달성자',
-          descriptionKey: '주 5회 이상 운동을 달성했습니다',
-          motivationKey: '규칙적인 운동 습관이 자리잡았습니다!',
+          titleKey: 'achievementWeeklySessions5Title',
+          descriptionKey: 'achievementWeeklySessions5Desc',
+          motivationKey: 'achievementWeeklySessions5Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.rare,
           targetValue: 5,
@@ -1061,9 +1061,9 @@ class PredefinedAchievements {
 
         Achievement(
           id: 'weekly_sessions_7',
-          titleKey: '매일 운동 챔피언',
-          descriptionKey: '매일 운동을 실천했습니다',
-          motivationKey: '완벽한 운동 루틴을 유지하고 있습니다!',
+          titleKey: 'achievementWeeklySessions7Title',
+          descriptionKey: 'achievementWeeklySessions7Desc',
+          motivationKey: 'achievementWeeklySessions7Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 7,
@@ -1071,12 +1071,12 @@ class PredefinedAchievements {
           icon: Icons.today,
         ),
 
-        // 월간 통계 관련 업적
+        // Monthly stats achievements
         Achievement(
           id: 'monthly_sessions_20',
-          titleKey: '월간 운동 마스터',
-          descriptionKey: '한 달에 20회 이상 운동을 완료했습니다',
-          motivationKey: '꾸준함의 힘을 보여주고 있습니다!',
+          titleKey: 'achievementMonthlySessions20Title',
+          descriptionKey: 'achievementMonthlySessions20Desc',
+          motivationKey: 'achievementMonthlySessions20Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 20,
@@ -1086,9 +1086,9 @@ class PredefinedAchievements {
 
         Achievement(
           id: 'monthly_pushups_1000',
-          titleKey: '월간 1000개 달성',
-          descriptionKey: '한 달에 1000개 이상의 푸쉬업을 완료했습니다',
-          motivationKey: '놀라운 운동량을 기록했습니다!',
+          titleKey: 'achievementMonthlyPushups1000Title',
+          descriptionKey: 'achievementMonthlyPushups1000Desc',
+          motivationKey: 'achievementMonthlyPushups1000Motivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 1000,
@@ -1096,12 +1096,12 @@ class PredefinedAchievements {
           icon: Icons.trending_up,
         ),
 
-        // 개인 기록 관련 업적
+        // Personal record achievements
         Achievement(
           id: 'personal_best_improvement',
-          titleKey: '개인 기록 갱신자',
-          descriptionKey: '개인 최고 기록을 갱신했습니다',
-          motivationKey: '한계를 뛰어넘는 성장을 보여주고 있습니다!',
+          titleKey: 'achievementPersonalBestTitle',
+          descriptionKey: 'achievementPersonalBestDesc',
+          motivationKey: 'achievementPersonalBestMotivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.rare,
           targetValue: 1,
@@ -1111,9 +1111,9 @@ class PredefinedAchievements {
 
         Achievement(
           id: 'consistency_score_high',
-          titleKey: '일관성 마스터',
-          descriptionKey: '높은 일관성 점수를 달성했습니다',
-          motivationKey: '꾸준한 운동 패턴이 인상적입니다!',
+          titleKey: 'achievementConsistencyScoreHighTitle',
+          descriptionKey: 'achievementConsistencyScoreHighDesc',
+          motivationKey: 'achievementConsistencyScoreHighMotivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 85,
@@ -1121,12 +1121,12 @@ class PredefinedAchievements {
           icon: Icons.timeline,
         ),
 
-        // 운동 빈도 관련 업적
+        // Workout frequency achievements
         Achievement(
           id: 'workout_frequency_daily',
-          titleKey: '데일리 운동 전문가',
-          descriptionKey: '하루도 빠짐없이 운동을 실천했습니다',
-          motivationKey: '완벽한 운동 일정을 지키고 있습니다!',
+          titleKey: 'achievementWorkoutFrequencyDailyTitle',
+          descriptionKey: 'achievementWorkoutFrequencyDailyDesc',
+          motivationKey: 'achievementWorkoutFrequencyDailyMotivation',
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 30,
@@ -1136,12 +1136,12 @@ class PredefinedAchievements {
 
         // === 챌린지 관련 업적들 ===
 
-        // 첫 번째 챌린지 완료
+        // First challenge completion
         Achievement(
           id: 'first_challenge_complete',
-          titleKey: '챌린지 도전자',
-          descriptionKey: '첫 번째 챌린지를 완료했습니다',
-          motivationKey: '챌린지의 첫 걸음을 뗀 CHAD! 멋지다! 💪',
+          titleKey: 'achievementFirstChallengeCompleteTitle',
+          descriptionKey: 'achievementFirstChallengeCompleteDesc',
+          motivationKey: 'achievementFirstChallengeCompleteMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.common,
           targetValue: 1,
@@ -1149,12 +1149,12 @@ class PredefinedAchievements {
           icon: Icons.flag,
         ),
 
-        // 일일 완벽 자세 챌린지 완료
+        // Daily perfect form challenge
         Achievement(
           id: 'daily_perfect_challenger',
-          titleKey: '완벽한 하루 CHAD',
-          descriptionKey: '일일 완벽 자세 챌린지를 완료했습니다',
-          motivationKey: '오늘 하루 완벽했다! CHAD의 자세가 빛났다! ✨',
+          titleKey: 'achievementDailyPerfectChallengerTitle',
+          descriptionKey: 'achievementDailyPerfectChallengerDesc',
+          motivationKey: 'achievementDailyPerfectChallengerMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.common,
           targetValue: 1,
@@ -1162,12 +1162,12 @@ class PredefinedAchievements {
           icon: Icons.stars,
         ),
 
-        // 스킬 챌린지 완료 (30개 또는 50개)
+        // Skill challenge (30 or 50 reps)
         Achievement(
           id: 'skill_master',
-          titleKey: '스킬 마스터 CHAD',
-          descriptionKey: '스킬 챌린지를 완료했습니다',
-          motivationKey: '한 번에 그 개수를? 당신은 진정한 BEAST! 🔥',
+          titleKey: 'achievementSkillMasterTitle',
+          descriptionKey: 'achievementSkillMasterDesc',
+          motivationKey: 'achievementSkillMasterMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 1,
@@ -1175,12 +1175,12 @@ class PredefinedAchievements {
           icon: Icons.local_fire_department,
         ),
 
-        // 완벽한 휴식 주기 챌린지 완료
+        // Perfect rest cycle challenge
         Achievement(
           id: 'perfect_cycle_champion',
-          titleKey: '완벽한 휴식 주기 마스터',
-          descriptionKey: '완벽한 휴식 주기 챌린지를 완료했습니다',
-          motivationKey: '운동→휴식→운동→휴식! 완벽한 패턴! 이것이 진정한 CHAD의 라이프스타일! 🔄',
+          titleKey: 'achievementPerfectCycleChampionTitle',
+          descriptionKey: 'achievementPerfectCycleChampionDesc',
+          motivationKey: 'achievementPerfectCycleChampionMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.epic,
           targetValue: 1,
@@ -1188,12 +1188,12 @@ class PredefinedAchievements {
           icon: Icons.refresh,
         ),
 
-        // 주간 완벽 스케줄 완료
+        // Weekly perfect schedule
         Achievement(
           id: 'weekly_schedule_master',
-          titleKey: '완벽한 주간 CHAD',
-          descriptionKey: '주간 완벽 스케줄 챌린지를 완료했습니다',
-          motivationKey: '휴식도 계획대로! 운동도 완벽하게! LEGENDARY! 👑',
+          titleKey: 'achievementWeeklyScheduleMasterTitle',
+          descriptionKey: 'achievementWeeklyScheduleMasterDesc',
+          motivationKey: 'achievementWeeklyScheduleMasterMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.epic,
           targetValue: 1,
@@ -1201,12 +1201,12 @@ class PredefinedAchievements {
           icon: Icons.calendar_view_week,
         ),
 
-        // 월요일 모티베이션 완료
+        // Monday motivation completion
         Achievement(
           id: 'monday_crusher',
-          titleKey: 'Monday Crusher',
-          descriptionKey: '월요일 모티베이션 챌린지를 완료했습니다',
-          motivationKey: '월요병? 그게 뭔가요? CHAD는 월요일도 CRUSH! 💥',
+          titleKey: 'achievementMondayCrusherTitle',
+          descriptionKey: 'achievementMondayCrusherDesc',
+          motivationKey: 'achievementMondayCrusherMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.common,
           targetValue: 1,
@@ -1214,12 +1214,12 @@ class PredefinedAchievements {
           icon: Icons.wb_sunny,
         ),
 
-        // 챌린지 연속 완료 (5개)
+        // Challenge streak (5 consecutive)
         Achievement(
           id: 'challenge_streak_5',
-          titleKey: '챌린지 스트리커',
-          descriptionKey: '5개의 챌린지를 연속으로 완료했습니다',
-          motivationKey: '연속 챌린지 완료! 당신의 의지력이 무섭다! 😤',
+          titleKey: 'achievementChallengeStreak5Title',
+          descriptionKey: 'achievementChallengeStreak5Desc',
+          motivationKey: 'achievementChallengeStreak5Motivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 5,
@@ -1227,25 +1227,25 @@ class PredefinedAchievements {
           icon: Icons.trending_up,
         ),
 
-        // 모든 타입의 챌린지 완료
+        // All challenge types completion
         Achievement(
           id: 'all_challenge_types',
-          titleKey: '챌린지 컬렉터',
-          descriptionKey: '모든 타입의 챌린지를 완료했습니다',
-          motivationKey: '일일, 주간, 스킬, 스프린트, 이벤트! 다 정복한 CHAD! 🏆',
+          titleKey: 'achievementAllChallengeTypesTitle',
+          descriptionKey: 'achievementAllChallengeTypesDesc',
+          motivationKey: 'achievementAllChallengeTypesMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.epic,
-          targetValue: 5, // 5가지 타입 모두 완료
+          targetValue: 5, // All 5 types completed
           xpReward: 800,
           icon: Icons.emoji_events,
         ),
 
-        // 챌린지 마스터 (10개 완료)
+        // Challenge master (10 completed)
         Achievement(
           id: 'challenge_master',
-          titleKey: '챌린지 마스터',
-          descriptionKey: '10개의 챌린지를 완료했습니다',
-          motivationKey: '10개 완료? 당신은 진정한 챌린지 마스터! GODLIKE! ⚡',
+          titleKey: 'achievementChallengeMaster2Title',
+          descriptionKey: 'achievementChallengeMaster2Desc',
+          motivationKey: 'achievementChallengeMaster2Motivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.legendary,
           targetValue: 10,
@@ -1253,12 +1253,12 @@ class PredefinedAchievements {
           icon: Icons.military_tech,
         ),
 
-        // 챌린지 레전드 (20개 완료)
+        // Challenge legend (20 completed)
         Achievement(
           id: 'challenge_legend',
-          titleKey: '챌린지 레전드',
-          descriptionKey: '20개의 챌린지를 완료했습니다',
-          motivationKey: '20개라고? 당신은 이미 전설이다! IMMORTAL CHAD! 👑',
+          titleKey: 'achievementChallengeLegendTitle',
+          descriptionKey: 'achievementChallengeLegendDesc',
+          motivationKey: 'achievementChallengeLegendMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.legendary,
           targetValue: 20,
@@ -1266,12 +1266,12 @@ class PredefinedAchievements {
           icon: Icons.workspace_premium,
         ),
 
-        // 동시 활성 챌린지 (3개 동시에)
+        // Simultaneous active challenges (3 at once)
         Achievement(
           id: 'multi_challenger',
-          titleKey: '멀티 챌린저',
-          descriptionKey: '3개의 챌린지를 동시에 진행했습니다',
-          motivationKey: '동시에 3개? 당신의 멀티태스킹 능력이 무섭다! 🤹',
+          titleKey: 'achievementMultiChallengerTitle',
+          descriptionKey: 'achievementMultiChallengerDesc',
+          motivationKey: 'achievementMultiChallengerMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 3,
@@ -1279,12 +1279,12 @@ class PredefinedAchievements {
           icon: Icons.layers,
         ),
 
-        // 빠른 챌린지 완료 (시작 후 24시간 내)
+        // Fast challenge completion (within 24 hours)
         Achievement(
           id: 'speed_challenger',
-          titleKey: '스피드 챌린저',
-          descriptionKey: '챌린지를 24시간 내에 완료했습니다',
-          motivationKey: '24시간 완료? 이 속도감! FLASH보다 빠르다! ⚡',
+          titleKey: 'achievementSpeedChallengerTitle',
+          descriptionKey: 'achievementSpeedChallengerDesc',
+          motivationKey: 'achievementSpeedChallengerMotivation',
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 1,

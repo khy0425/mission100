@@ -108,3 +108,7 @@ lib/core/error/
 lib/core/network/
 lib/core/performance/
 scripts/download_ios_config.bat
+
+# ARB 병합 파일 (자동 생성됨 - source 파일만 Git 추적)
+lib/l10n/app_*.arb
+lib/l10n/backup/

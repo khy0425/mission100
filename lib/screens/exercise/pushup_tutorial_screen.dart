@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../generated/app_localizations.dart';
-import '../models/pushup_type.dart';
-import '../services/pushup_tutorial_service.dart';
-import '../services/chad_encouragement_service.dart';
-import '../services/pushup_mastery_service.dart';
+import '../../generated/app_localizations.dart';
+import '../../models/pushup_type.dart';
+import '../../services/pushup_tutorial_service.dart';
+import '../../services/chad_encouragement_service.dart';
+import '../../services/pushup_mastery_service.dart';
 
-import '../widgets/ad_banner_widget.dart';
+import '../../widgets/ad_banner_widget.dart';
 import 'pushup_tutorial_detail_screen.dart';
 
 class PushupTutorialScreen extends StatefulWidget {

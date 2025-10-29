@@ -1,0 +1,168 @@
+MISSING KOREAN TRANSLATIONS: 91 keys
+================================================================================
+
+Domain: achievement (1 keys)
+--------------------------------------------------------------------------------
+  rewardText: Reward
+
+Domain: auth (6 keys)
+--------------------------------------------------------------------------------
+  btnSignInGoogle: Sign in with Google
+  btnStartGoogleQuick: Start in 3 seconds with Google
+  msgAlreadyHaveAccount: Already have a Chad account?
+  msgGuestMode: You are using guest mode. Please login to save your progress.
+  titleAccountInfo: Account Information
+  titleCreateAccount: Create Account
+
+Domain: chad (2 keys)
+--------------------------------------------------------------------------------
+  chadJourneyTagline: Join the journey to become Chad! 🔥
+  titleTomorrowChadActivity: Tomorrow's Chad Activity
+
+Domain: challenge (2 keys)
+--------------------------------------------------------------------------------
+  challengeCompletedTab: Completed
+  challengeTabTitle: Challenges
+
+Domain: common (39 keys)
+--------------------------------------------------------------------------------
+  abandonButton: Abandon
+  allowButton: Allow
+  btnCancel: Cancel
+  btnClose: Close
+  btnConfirm: OK
+  btnExpandAll: Expand All
+  btnLater: Later
+  btnPrevious: Previous
+  btnRetry: Try Again
+  btnSave: Save
+  btnSkip: Skip
+  btnSubscribe: Subscribe
+  calendarTab: Calendar
+  collapsedInfo: Collapsed. Tap to expand
+  completedStatus: Completed
+  confirmButton: Confirm
+  contactButton: Contact
+  currentStatus: Current
+  descriptionText: Description
+  difficultyExpertDesc: CHAD Legend
+  disabledStatus: Disabled
+  enabledStatus: Enabled
+  encryptionLabel: Encryption
+  expandedInfo: Expanded
+  finishButton: Finish
+  goodStatus: Good
+  laterButton: Later
+  licenseButton: License
+  msgLogoutConfirm: Are you sure you want to logout? Unsaved data may be lost.
+  msgTermsAndPrivacy: Terms of Service and Privacy Policy
+  perfectionist: Perfectionist
+  permissionAllowed: Allowed
+  quizButton: Quiz
+  selectAction: Select
+  selectedState: Selected
+  startButton: Start
+  targetText: Target
+  titleLogout: Logout
+  titleScientificEvidence: Scientific Evidence
+
+Domain: exercise (8 keys)
+--------------------------------------------------------------------------------
+  chadPerfectFormGuide: Chad's perfect pushup form guide! 💪
+  formGuideAdvancedLevel: Advanced
+  formGuideBeginnerLevel: Beginner
+  formGuideCategoryBreathing: Breathing
+  formGuideCategoryMotivation: Motivation
+  formGuideCategoryRecovery: Recovery
+  formGuideIntermediateLevel: Intermediate
+  perfectPerformance: Perfect performance!
+
+Domain: level (3 keys)
+--------------------------------------------------------------------------------
+  difficultyAdvancedDesc: True CHAD
+  difficultyBeginnerDesc: Slowly starting CHAD
+  difficultyIntermediateDesc: Consistent CHAD
+
+Domain: onboarding (3 keys)
+--------------------------------------------------------------------------------
+  btnGetStarted: Get Started
+  msgWelcome: Welcome!
+  titleTutorial: Tutorial
+
+Domain: premium (8 keys)
+--------------------------------------------------------------------------------
+  btnStartFree: Start for Free
+  btnStartSubscription: Start Subscription
+  msgCannotStartPurchase: Cannot start purchase.
+  msgLoadingSubscription: Loading subscription products...
+  msgSubscriptionSuccess: Subscription completed successfully!
+  titleManageSubscription: Manage Subscription
+  titlePremiumFeatures: Premium Features
+  titlePremiumSubscription: Premium Subscription
+
+Domain: progress (7 keys)
+--------------------------------------------------------------------------------
+  dataBackupProgress: Backing up data...
+  inProgressStatus: In Progress
+  optionPersonalRecordDesc: Focus on achieving personal goals and improving records
+  optionPersonalRecordTitle: Personal Records
+  progressText: Progress
+  statisticsBannerText: Check your Chad growth! 📊
+  statisticsTab: Statistics
+
+Domain: settings (1 keys)
+--------------------------------------------------------------------------------
+  languageKorean: Korean
+
+Domain: workout (11 keys)
+--------------------------------------------------------------------------------
+  dataResetError: An error occurred during data reset: {error}
+  dataResetProgress: Resetting data...
+  dataResetSuccess: All data has been successfully reset
+  dataResetWarning: The following data will be completely deleted:
+  dataRestoreConfirm: ⚠️ Data Restore
+  dataRestoreError: Data restore failed. Please check the backup file.
+  dataRestoreProgress: Restoring data...
+  dataRestoreSuccess: Data restore completed! Please restart the app.
+  durationDays: Duration
+  repsAndCompletion: {reps} reps • {percentage}% completed
+  restoreButton: Restore
+
+
+================================================================================
+MISSING ENGLISH TRANSLATIONS: 21 keys
+================================================================================
+
+Domain: achievement (2 keys)
+--------------------------------------------------------------------------------
+  achievementsCompleted: 달성한 업적: {completed}/{total}개
+  categoryAchievements: 카테고리별 업적
+
+Domain: auth (3 keys)
+--------------------------------------------------------------------------------
+  cannotOpenEmail: 이메일 앱을 열 수 없다
+  emailFeedback: 이메일로 의견을 보내주세요
+  feedbackEmail: 이메일로 피드백 보내기
+
+Domain: common (9 keys)
+--------------------------------------------------------------------------------
+  appInfoDesc: 버전 정보 및 개발자 정보
+  builtWithFlutter: Flutter로 제작됨
+  cannotOpenGithub: GitHub을 열 수 없다
+  dataManagementDesc: 운동 기록 백업 및 복원
+  developerContact: 개발자 연락처
+  githubRepository: GitHub 저장소
+  openGithub: GitHub에서 소스코드 보기
+  start: 시작
+  totalExpEarned: 총 획득 경험치
+
+Domain: level (7 keys)
+--------------------------------------------------------------------------------
+  avgExpPerDay: 일평균 경험치
+  expProgress: {current} / {required} XP
+  levelAndExperience: 레벨 & 경험치
+  levelProgressMax: 레벨 {currentLevel} (최대)
+  levelProgressNext: 레벨 {currentLevel} → {nextLevel}
+  levelUps: 레벨업 횟수
+  levelUpsCount: {count}회
+

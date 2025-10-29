@@ -40,8 +40,8 @@ class ChallengeService {
           rewardKey: 'daily_perfect_form_reward',
           isActive: false,
           currentProgress: 0,
-          title: '오늘 완벽한 자세로 운동하기',
-          description: '오늘 하루 완벽한 자세로 운동을 완료하세요',
+          title: 'Perfect Form Today',
+          description: 'Complete today\'s workout with perfect form',
           type: ChallengeType.dailyPerfect,
           targetValue: 1,
           status: ChallengeStatus.available,
@@ -60,22 +60,22 @@ class ChallengeService {
           rewardKey: 'weekly_perfect_schedule_reward',
           isActive: false,
           currentProgress: 0,
-          title: '완벽한 주간 운동 스케줄',
-          description: '휴식일 제외하고 모든 운동일에 운동하기',
-          detailedDescription: '휴식은 CHAD의 필수! 운동일에만 완벽하게 집중하세요!',
+          title: 'Perfect Weekly Schedule',
+          description: 'Complete all workout days excluding rest days',
+          detailedDescription: 'Rest is essential for CHAD! Focus perfectly on workout days only!',
           type: ChallengeType.weeklyGoal,
           difficulty: ChallengeDifficulty.hard,
           targetValue: 1, // 주 단위로 1번 달성
-          targetUnit: '주',
+          targetUnit: 'week',
           estimatedDuration: 7,
           rewards: [
             const ChallengeReward(
               type: 'badge',
               value: 'perfect_week_warrior',
-              description: '완벽한 주 워리어 배지',
+              description: 'Perfect Week Warrior Badge',
             ),
             const ChallengeReward(
-                type: 'xp', value: '350', description: '350 경험치'),
+                type: 'xp', value: '350', description: '350 XP'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -93,8 +93,8 @@ class ChallengeService {
           rewardKey: 'single_session_power_reward',
           isActive: false,
           currentProgress: 0,
-          title: '한 번에 30개 도전',
-          description: '한 세션에서 30개 푸시업을 달성하세요',
+          title: '30 Reps Challenge',
+          description: 'Complete 30 push-ups in a single session',
           type: ChallengeType.skillChallenge,
           targetValue: 30,
           status: ChallengeStatus.available,
@@ -112,8 +112,8 @@ class ChallengeService {
           rewardKey: 'single_session_beast_reward',
           isActive: false,
           currentProgress: 0,
-          title: '한 번에 50개 BEAST 도전',
-          description: '한 세션에서 50개 푸시업을 달성하세요',
+          title: '50 Reps BEAST Challenge',
+          description: 'Complete 50 push-ups in a single session',
           type: ChallengeType.skillChallenge,
           targetValue: 50,
           status: ChallengeStatus.locked,
@@ -133,22 +133,22 @@ class ChallengeService {
           rewardKey: 'perfect_rest_cycle_reward',
           isActive: false,
           currentProgress: 0,
-          title: '완벽한 휴식 주기 챌린지',
-          description: '운동→휴식 패턴을 3번 완벽하게 반복하기',
-          detailedDescription: '월운동→화휴식→수운동→목휴식→금운동→토휴식! 진정한 CHAD는 휴식도 계획적! 🔄',
+          title: 'Perfect Rest Cycle Challenge',
+          description: 'Repeat workout→rest pattern 3 times perfectly',
+          detailedDescription: 'Mon workout→Tue rest→Wed workout→Thu rest→Fri workout→Sat rest! True CHAD plans rest! 🔄',
           type: ChallengeType.sprintChallenge,
           difficulty: ChallengeDifficulty.medium,
           targetValue: 3,
-          targetUnit: '사이클',
+          targetUnit: 'cycle',
           estimatedDuration: 6,
           rewards: [
             const ChallengeReward(
               type: 'badge',
               value: 'perfect_cycle_master',
-              description: '완벽한 휴식 주기 마스터 배지',
+              description: 'Perfect Cycle Master Badge',
             ),
             const ChallengeReward(
-                type: 'xp', value: '500', description: '500 경험치'),
+                type: 'xp', value: '500', description: '500 XP'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -166,22 +166,22 @@ class ChallengeService {
           rewardKey: 'monday_motivation_reward',
           isActive: false,
           currentProgress: 0,
-          title: 'CHAD 월요일 모티베이션',
-          description: '월요일에 운동으로 한 주를 시작하세요!',
-          detailedDescription: '월요일 블루는 CHAD에게 통하지 않는다! 💪',
+          title: 'CHAD Monday Motivation',
+          description: 'Start your week with Monday workout!',
+          detailedDescription: 'Monday blues don\'t work on CHAD! 💪',
           type: ChallengeType.eventChallenge,
           difficulty: ChallengeDifficulty.easy,
           targetValue: 1,
-          targetUnit: '회',
+          targetUnit: 'time',
           estimatedDuration: 1,
           rewards: [
             const ChallengeReward(
               type: 'badge',
               value: 'monday_crusher',
-              description: 'Monday Crusher 배지',
+              description: 'Monday Crusher Badge',
             ),
             const ChallengeReward(
-                type: 'xp', value: '100', description: '100 경험치'),
+                type: 'xp', value: '100', description: '100 XP'),
           ],
           status: ChallengeStatus.available,
           lastUpdatedAt: DateTime.now(),
@@ -295,17 +295,17 @@ class ChallengeService {
   String getChallengeHint(ChallengeType type) {
     switch (type) {
       case ChallengeType.dailyPerfect:
-        return '오늘 하루 완벽한 운동을 완료하세요.';
+        return 'Complete today\'s workout perfectly.';
       case ChallengeType.weeklyGoal:
-        return '주간 목표를 달성하세요. 휴식일은 제외됩니다.';
+        return 'Achieve weekly goal. Rest days are excluded.';
       case ChallengeType.skillChallenge:
-        return '한 번의 운동으로 목표를 달성해야 하는 챌린지입니다.';
+        return 'Challenge to achieve the goal in one workout session.';
       case ChallengeType.sprintChallenge:
-        return '단기간 집중 도전입니다. 연속으로 완료하세요.';
+        return 'Short-term intensive challenge. Complete consecutively.';
       case ChallengeType.eventChallenge:
-        return '특별 이벤트 챌린지입니다. 기간 내에 완료하세요.';
+        return 'Special event challenge. Complete within the period.';
       default:
-        return '챌린지를 완료하여 보상을 획득하세요!';
+        return 'Complete the challenge to earn rewards!';
     }
   }
 

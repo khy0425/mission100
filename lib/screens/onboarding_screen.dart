@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../models/onboarding_step.dart';
 import '../services/onboarding_service.dart';
 import '../widgets/chad_onboarding_widget.dart';
-import '../screens/permission_screen.dart';
+import 'misc/permission_screen.dart';
 import '../screens/auth/chad_login_screen.dart';
 import '../generated/app_localizations.dart';
 import 'onboarding/goal_setup_widgets.dart';

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../utils/constants.dart';
-import '../models/achievement.dart';
-import '../services/achievement_service.dart';
-import '../services/ad_service.dart';
-import '../widgets/enhanced_achievement_card.dart';
-import '../widgets/achievement_unlock_animation.dart';
-import '../widgets/achievement_detail_dialog.dart';
-import '../generated/app_localizations.dart';
+import '../../utils/constants.dart';
+import '../../models/achievement.dart';
+import '../../services/achievement_service.dart';
+import '../../services/ad_service.dart';
+import '../../widgets/enhanced_achievement_card.dart';
+import '../../widgets/achievement_unlock_animation.dart';
+import '../../widgets/achievement_detail_dialog.dart';
+import '../../generated/app_localizations.dart';
 
 class AchievementsScreen extends StatefulWidget {
   const AchievementsScreen({super.key});

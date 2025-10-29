@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../generated/app_localizations.dart';
 import '../services/auth_service.dart';
 import '../models/user_subscription.dart';
-import '../screens/subscription_screen.dart';
+import '../screens/subscription/subscription_screen.dart';
 
 class PremiumGateWidget extends StatelessWidget {
   final Widget child;

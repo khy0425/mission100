@@ -25,6 +25,7 @@ import 'services/auth_service.dart';
 import 'services/cloud_sync_service.dart';
 // import 'services/subscription_service.dart'; // 구형 시스템 - 제거됨
 import 'services/billing_service.dart';
+import 'services/deep_link_handler.dart';
 // MemoryManager import 제거됨
 
 void main() async {
@@ -304,6 +305,7 @@ class _MissionAppState extends State<MissionApp> with WidgetsBindingObserver {
         return MaterialApp(
           title: 'Mission: 100',
           debugShowCheckedModeBanner: false,
+          navigatorKey: DeepLinkHandler.navigatorKey,
 
           // 테마 설정 - ThemeService의 커스터마이징된 테마 사용
           theme: themeService.getThemeData(),

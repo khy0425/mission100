@@ -142,13 +142,16 @@ run:
 ### ❌ 하지 말 것
 - `app_en.arb`, `app_ko.arb`를 직접 수정하지 마세요
   → 병합 스크립트 실행 시 덮어씌워집니다
+  → **이 파일들은 .gitignore에 등록되어 Git에 추적되지 않습니다**
 - `source/` 디렉토리를 삭제하지 마세요
   → 소스 파일이 손실됩니다
 
 ### ✅ 해야 할 것
 - 항상 `source/` 디렉토리 내 파일을 수정
 - 수정 후 병합 스크립트 실행
-- Git에 커밋 시 `source/` 디렉토리 포함
+- **Git에 커밋 시 `source/` 디렉토리만 포함됩니다**
+  - `app_*.arb`는 자동 생성 파일이므로 Git에서 제외됨
+  - 협업자는 pull 후 병합 스크립트를 실행하여 생성
 
 ## 🔧 트러블슈팅
 
@@ -188,9 +191,9 @@ python3 tools/merge_arb_files.py
 
 ```bash
 # 1. 번역 추가/수정
-vim lib/l10n/source/common_ko.arb
+vim lib/l10n/source/common/common_ko.arb
 
-# 2. 병합
+# 2. 병합 (로컬에서만 생성됨)
 python tools/merge_arb_files.py
 
 # 3. 다국어 생성
@@ -199,10 +202,28 @@ flutter gen-l10n
 # 4. 테스트
 flutter run
 
-# 5. 커밋
+# 5. 커밋 (source만 커밋됨!)
 git add lib/l10n/source/
-git add lib/l10n/app_*.arb
 git commit -m "feat: Add new translation keys"
+
+# ⚠️ 주의: app_*.arb는 .gitignore에 등록되어 있어 커밋되지 않음
+# 협업자는 pull 후 병합 스크립트를 실행하여 생성해야 함
+```
+
+## 🔄 협업자 워크플로우
+
+```bash
+# 1. 최신 코드 pull
+git pull
+
+# 2. ARB 파일 병합 (app_*.arb 생성)
+python tools/merge_arb_files.py
+
+# 3. 다국어 파일 생성
+flutter gen-l10n
+
+# 4. 빌드/실행
+flutter run
 ```
 
 ## 🚀 장점

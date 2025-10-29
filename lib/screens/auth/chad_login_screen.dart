@@ -6,7 +6,7 @@ import '../../widgets/chad_onboarding_widget.dart';
 import '../../utils/constants.dart';
 import '../../generated/app_localizations.dart';
 import 'chad_signup_screen.dart';
-import '../permission_screen.dart';
+import '../misc/permission_screen.dart';
 
 class ChadLoginScreen extends StatefulWidget {
   const ChadLoginScreen({super.key});

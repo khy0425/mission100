@@ -1470,6 +1470,123 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get abandonButton => '포기';
+
+  @override
+  String get allowButton => '허용';
+
+  @override
+  String get btnCancel => '취소';
+
+  @override
+  String get btnClose => '닫기';
+
+  @override
+  String get btnConfirm => '확인';
+
+  @override
+  String get btnExpandAll => '전체 확장';
+
+  @override
+  String get btnLater => '나중에';
+
+  @override
+  String get btnPrevious => '이전';
+
+  @override
+  String get btnRetry => '다시 시도';
+
+  @override
+  String get btnSave => '저장';
+
+  @override
+  String get btnSkip => '건너뛰기';
+
+  @override
+  String get btnSubscribe => '구독하기';
+
+  @override
+  String get calendarTab => '달력';
+
+  @override
+  String get collapsedInfo => '축소됨. 탭하여 확장';
+
+  @override
+  String get completedStatus => '완료';
+
+  @override
+  String get confirmButton => '확인';
+
+  @override
+  String get contactButton => '연락';
+
+  @override
+  String get currentStatus => '현재';
+
+  @override
+  String get descriptionText => '설명';
+
+  @override
+  String get difficultyExpertDesc => '차드 레전드';
+
+  @override
+  String get disabledStatus => '비활성화';
+
+  @override
+  String get enabledStatus => '활성화';
+
+  @override
+  String get encryptionLabel => '암호화';
+
+  @override
+  String get expandedInfo => '확장됨';
+
+  @override
+  String get finishButton => '완료';
+
+  @override
+  String get goodStatus => '좋음';
+
+  @override
+  String get laterButton => '나중에';
+
+  @override
+  String get licenseButton => '라이선스';
+
+  @override
+  String get msgLogoutConfirm => '정말로 로그아웃하시겠습니까? 저장되지 않은 데이터는 손실될 수 있습니다.';
+
+  @override
+  String get msgTermsAndPrivacy => '이용약관 및 개인정보처리방침';
+
+  @override
+  String get perfectionist => '완벽주의자';
+
+  @override
+  String get permissionAllowed => '허용됨';
+
+  @override
+  String get quizButton => '퀴즈';
+
+  @override
+  String get selectAction => '선택';
+
+  @override
+  String get selectedState => '선택됨';
+
+  @override
+  String get startButton => '시작';
+
+  @override
+  String get targetText => '목표';
+
+  @override
+  String get titleLogout => '로그아웃';
+
+  @override
+  String get titleScientificEvidence => '과학적 근거';
+
+  @override
   String get accountInfoTitle => '계정 정보';
 
   @override
@@ -1567,6 +1684,24 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get signupIn30Seconds => '회원가입 (30초)';
+
+  @override
+  String get btnSignInGoogle => '구글로 로그인';
+
+  @override
+  String get btnStartGoogleQuick => '구글로 3초만에 시작하기';
+
+  @override
+  String get msgAlreadyHaveAccount => '이미 차드 계정이 있나요?';
+
+  @override
+  String get msgGuestMode => '게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.';
+
+  @override
+  String get titleAccountInfo => '계정 정보';
+
+  @override
+  String get titleCreateAccount => '계정 생성';
 
   @override
   String get challengeTestYourLimits => '💪 오늘 너의 한계를 시험해볼까?';
@@ -1714,6 +1849,15 @@ class AppLocalizationsKo extends AppLocalizations {
   @override
   String get onboardingProgramIntroDescription =>
       '과학적으로 설계된 14주 프로그램으로\n100개 푸시업 달성을 목표로 합니다';
+
+  @override
+  String get btnGetStarted => '시작하기';
+
+  @override
+  String get msgWelcome => '환영합니다!';
+
+  @override
+  String get titleTutorial => '튜토리얼';
 
   @override
   String get aboutSettings => 'ℹ️ 앱 정보';
@@ -2689,6 +2833,43 @@ class AppLocalizationsKo extends AppLocalizations {
   String get exit => '종료';
 
   @override
+  String dataResetError(String error) {
+    return '데이터 초기화 중 오류가 발생했습니다: $error';
+  }
+
+  @override
+  String get dataResetProgress => '데이터를 초기화하는 중...';
+
+  @override
+  String get dataResetSuccess => '모든 데이터가 성공적으로 초기화되었습니다';
+
+  @override
+  String get dataResetWarning => '다음 데이터가 완전히 삭제됩니다:';
+
+  @override
+  String get dataRestoreConfirm => '⚠️ 데이터 복원';
+
+  @override
+  String get dataRestoreError => '데이터 복원에 실패했습니다. 백업 파일을 확인해주세요.';
+
+  @override
+  String get dataRestoreProgress => '데이터를 복원하는 중...';
+
+  @override
+  String get dataRestoreSuccess => '데이터 복원이 완료되었습니다! 앱을 재시작해주세요.';
+
+  @override
+  String get durationDays => '기간';
+
+  @override
+  String repsAndCompletion(int reps, int percentage) {
+    return '$reps회 • $percentage% 완료';
+  }
+
+  @override
+  String get restoreButton => '복원';
+
+  @override
   String get beginnerPushupQuiz => '초보자에게 가장 적합한 푸시업 변형은?';
 
   @override
@@ -3129,6 +3310,30 @@ class AppLocalizationsKo extends AppLocalizations {
   String get specialPushupForChads => '차드를 위한 특별한 푸시업';
 
   @override
+  String get chadPerfectFormGuide => '차드의 완벽한 푸시업 폼 가이드! 💪';
+
+  @override
+  String get formGuideAdvancedLevel => '고급';
+
+  @override
+  String get formGuideBeginnerLevel => '초급';
+
+  @override
+  String get formGuideCategoryBreathing => '호흡';
+
+  @override
+  String get formGuideCategoryMotivation => '동기부여';
+
+  @override
+  String get formGuideCategoryRecovery => '회복';
+
+  @override
+  String get formGuideIntermediateLevel => '중급';
+
+  @override
+  String get perfectPerformance => '완벽한 수행!';
+
+  @override
   String get canRecheckCondition => '컨디션을 다시 체크할 수 있어요!';
 
   @override
@@ -3332,6 +3537,27 @@ class AppLocalizationsKo extends AppLocalizations {
   String get totalSessions => '총 운동 세션';
 
   @override
+  String get dataBackupProgress => '데이터를 백업하는 중...';
+
+  @override
+  String get inProgressStatus => '진행 중';
+
+  @override
+  String get optionPersonalRecordDesc => '개인 목표 달성과 기록 향상에 집중합니다';
+
+  @override
+  String get optionPersonalRecordTitle => '개인 기록';
+
+  @override
+  String get progressText => '진행도';
+
+  @override
+  String get statisticsBannerText => '차드 성장을 확인하라! 📊';
+
+  @override
+  String get statisticsTab => '통계';
+
+  @override
   String get advancedLevel => '고급자';
 
   @override
@@ -3502,6 +3728,15 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get gigaGoalDesc => '21개 이상 → 100개+ 달성';
+
+  @override
+  String get difficultyAdvancedDesc => '진정한 차드';
+
+  @override
+  String get difficultyBeginnerDesc => '천천히 시작하는 차드';
+
+  @override
+  String get difficultyIntermediateDesc => '꾸준한 차드';
 
   @override
   String get achievementAllRounderDesc => '모든 푸시업 타입을 시도했다';
@@ -4292,6 +4527,9 @@ class AppLocalizationsKo extends AppLocalizations {
   }
 
   @override
+  String get rewardText => '보상';
+
+  @override
   String get bonusChallenge => '🔥 보너스 챌린지';
 
   @override
@@ -4475,6 +4713,12 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get startNewChallenge => '새 챌린지 시작하자! 🔥';
+
+  @override
+  String get challengeCompletedTab => '완료됨';
+
+  @override
+  String get challengeTabTitle => '챌린지';
 
   @override
   String get alphaChad => '알파 레벨';
@@ -4933,6 +5177,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get chadRecommendedWorkout => '차드 추천 운동';
 
   @override
+  String get chadJourneyTagline => '차드가 되는 여정에 함께하라! 🔥';
+
+  @override
+  String get titleTomorrowChadActivity => '내일의 차드 활동';
+
+  @override
   String get currentSubscription => '현재 구독';
 
   @override
@@ -5094,6 +5344,30 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get autoRenewalEnabled => '자동 갱신 활성화';
+
+  @override
+  String get btnStartFree => '무료로 시작하기';
+
+  @override
+  String get btnStartSubscription => '구독 시작하기';
+
+  @override
+  String get msgCannotStartPurchase => '구매를 시작할 수 없습니다.';
+
+  @override
+  String get msgLoadingSubscription => '구독 상품을 불러오는 중...';
+
+  @override
+  String get msgSubscriptionSuccess => '구독이 성공적으로 완료되었습니다!';
+
+  @override
+  String get titleManageSubscription => '구독 관리';
+
+  @override
+  String get titlePremiumFeatures => '프리미엄 기능';
+
+  @override
+  String get titlePremiumSubscription => '프리미엄 구독';
 
   @override
   String get adaptiveTheme => '적응형 테마';
@@ -5412,6 +5686,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String logoutErrorMessage(String error) {
     return '로그아웃 중 오류 발생: $error';
   }
+
+  @override
+  String get languageKorean => '한국어';
 
   @override
   String get autoBackupDescription => '정기적으로 자동 백업을 수행한다';

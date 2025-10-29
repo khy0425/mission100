@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../utils/constants.dart';
 import '../auth/login_screen.dart';
-import '../permission_screen.dart';
+import '../misc/permission_screen.dart';
 
 enum FitnessLevel { beginner, intermediate, advanced }
 

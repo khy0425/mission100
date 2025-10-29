@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../../services/auth_service.dart';
 import '../../utils/constants.dart';
 import 'signup_screen.dart';
-import '../permission_screen.dart';
+import '../misc/permission_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

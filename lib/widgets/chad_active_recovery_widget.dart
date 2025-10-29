@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../services/chad_active_recovery_service.dart';
-import '../screens/chad_active_recovery_screen.dart';
+import '../screens/recovery/chad_active_recovery_screen.dart';
 import '../models/rpe_data.dart';
 import '../utils/constants.dart';
 

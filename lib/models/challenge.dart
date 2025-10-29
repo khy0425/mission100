@@ -381,13 +381,13 @@ extension ChallengeDifficultyExtension on String {
   String get displayName {
     switch (this) {
       case 'easy':
-        return '쉬움';
+        return 'Easy';
       case 'medium':
-        return '보통';
+        return 'Medium';
       case 'hard':
-        return '어려움';
+        return 'Hard';
       case 'extreme':
-        return '극한';
+        return 'Extreme';
       default:
         throw Exception('Unknown difficulty: $this');
     }

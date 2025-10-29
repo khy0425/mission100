@@ -10,11 +10,11 @@ import '../services/workout_history_service.dart';
 import '../widgets/multiple_achievements_dialog.dart';
 import '../models/achievement.dart';
 import 'home_screen.dart';
-import 'calendar_screen.dart';
-import 'achievements_screen.dart';
-import 'challenge_screen.dart';
-import 'simple_settings_screen.dart';
-import 'statistics_screen.dart';
+import 'calendar/calendar_screen.dart';
+import 'achievements/achievements_screen.dart';
+import 'challenge/challenge_screen.dart';
+import 'settings/simple_settings_screen.dart';
+import 'statistics/statistics_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});

@@ -10,10 +10,10 @@ import '../services/chad_condition_service.dart';
 import '../services/chad_recovery_service.dart';
 import '../services/achievement_service.dart';
 import '../screens/workout_screen.dart';
-import '../screens/simple_settings_screen.dart';
-import '../screens/pushup_tutorial_screen.dart';
-import '../screens/pushup_form_guide_screen.dart';
-import '../screens/progress_tracking_screen.dart';
+import '../screens/settings/simple_settings_screen.dart';
+import '../screens/exercise/pushup_tutorial_screen.dart';
+import '../screens/exercise/pushup_form_guide_screen.dart';
+import '../screens/progress/progress_tracking_screen.dart';
 import '../models/user_profile.dart';
 
 import '../models/workout_history.dart';

@@ -2870,6 +2870,240 @@ abstract class AppLocalizations {
   /// **'완료일: {date}'**
   String completedDate(String date);
 
+  /// No description provided for @abandonButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'포기'**
+  String get abandonButton;
+
+  /// No description provided for @allowButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'허용'**
+  String get allowButton;
+
+  /// No description provided for @btnCancel.
+  ///
+  /// In ko, this message translates to:
+  /// **'취소'**
+  String get btnCancel;
+
+  /// No description provided for @btnClose.
+  ///
+  /// In ko, this message translates to:
+  /// **'닫기'**
+  String get btnClose;
+
+  /// No description provided for @btnConfirm.
+  ///
+  /// In ko, this message translates to:
+  /// **'확인'**
+  String get btnConfirm;
+
+  /// No description provided for @btnExpandAll.
+  ///
+  /// In ko, this message translates to:
+  /// **'전체 확장'**
+  String get btnExpandAll;
+
+  /// No description provided for @btnLater.
+  ///
+  /// In ko, this message translates to:
+  /// **'나중에'**
+  String get btnLater;
+
+  /// No description provided for @btnPrevious.
+  ///
+  /// In ko, this message translates to:
+  /// **'이전'**
+  String get btnPrevious;
+
+  /// No description provided for @btnRetry.
+  ///
+  /// In ko, this message translates to:
+  /// **'다시 시도'**
+  String get btnRetry;
+
+  /// No description provided for @btnSave.
+  ///
+  /// In ko, this message translates to:
+  /// **'저장'**
+  String get btnSave;
+
+  /// No description provided for @btnSkip.
+  ///
+  /// In ko, this message translates to:
+  /// **'건너뛰기'**
+  String get btnSkip;
+
+  /// No description provided for @btnSubscribe.
+  ///
+  /// In ko, this message translates to:
+  /// **'구독하기'**
+  String get btnSubscribe;
+
+  /// No description provided for @calendarTab.
+  ///
+  /// In ko, this message translates to:
+  /// **'달력'**
+  String get calendarTab;
+
+  /// No description provided for @collapsedInfo.
+  ///
+  /// In ko, this message translates to:
+  /// **'축소됨. 탭하여 확장'**
+  String get collapsedInfo;
+
+  /// No description provided for @completedStatus.
+  ///
+  /// In ko, this message translates to:
+  /// **'완료'**
+  String get completedStatus;
+
+  /// No description provided for @confirmButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'확인'**
+  String get confirmButton;
+
+  /// No description provided for @contactButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'연락'**
+  String get contactButton;
+
+  /// No description provided for @currentStatus.
+  ///
+  /// In ko, this message translates to:
+  /// **'현재'**
+  String get currentStatus;
+
+  /// No description provided for @descriptionText.
+  ///
+  /// In ko, this message translates to:
+  /// **'설명'**
+  String get descriptionText;
+
+  /// No description provided for @difficultyExpertDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'차드 레전드'**
+  String get difficultyExpertDesc;
+
+  /// No description provided for @disabledStatus.
+  ///
+  /// In ko, this message translates to:
+  /// **'비활성화'**
+  String get disabledStatus;
+
+  /// No description provided for @enabledStatus.
+  ///
+  /// In ko, this message translates to:
+  /// **'활성화'**
+  String get enabledStatus;
+
+  /// No description provided for @encryptionLabel.
+  ///
+  /// In ko, this message translates to:
+  /// **'암호화'**
+  String get encryptionLabel;
+
+  /// No description provided for @expandedInfo.
+  ///
+  /// In ko, this message translates to:
+  /// **'확장됨'**
+  String get expandedInfo;
+
+  /// No description provided for @finishButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'완료'**
+  String get finishButton;
+
+  /// No description provided for @goodStatus.
+  ///
+  /// In ko, this message translates to:
+  /// **'좋음'**
+  String get goodStatus;
+
+  /// No description provided for @laterButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'나중에'**
+  String get laterButton;
+
+  /// No description provided for @licenseButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'라이선스'**
+  String get licenseButton;
+
+  /// No description provided for @msgLogoutConfirm.
+  ///
+  /// In ko, this message translates to:
+  /// **'정말로 로그아웃하시겠습니까? 저장되지 않은 데이터는 손실될 수 있습니다.'**
+  String get msgLogoutConfirm;
+
+  /// No description provided for @msgTermsAndPrivacy.
+  ///
+  /// In ko, this message translates to:
+  /// **'이용약관 및 개인정보처리방침'**
+  String get msgTermsAndPrivacy;
+
+  /// No description provided for @perfectionist.
+  ///
+  /// In ko, this message translates to:
+  /// **'완벽주의자'**
+  String get perfectionist;
+
+  /// No description provided for @permissionAllowed.
+  ///
+  /// In ko, this message translates to:
+  /// **'허용됨'**
+  String get permissionAllowed;
+
+  /// No description provided for @quizButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'퀴즈'**
+  String get quizButton;
+
+  /// No description provided for @selectAction.
+  ///
+  /// In ko, this message translates to:
+  /// **'선택'**
+  String get selectAction;
+
+  /// No description provided for @selectedState.
+  ///
+  /// In ko, this message translates to:
+  /// **'선택됨'**
+  String get selectedState;
+
+  /// No description provided for @startButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'시작'**
+  String get startButton;
+
+  /// No description provided for @targetText.
+  ///
+  /// In ko, this message translates to:
+  /// **'목표'**
+  String get targetText;
+
+  /// No description provided for @titleLogout.
+  ///
+  /// In ko, this message translates to:
+  /// **'로그아웃'**
+  String get titleLogout;
+
+  /// No description provided for @titleScientificEvidence.
+  ///
+  /// In ko, this message translates to:
+  /// **'과학적 근거'**
+  String get titleScientificEvidence;
+
   /// No description provided for @accountInfoTitle.
   ///
   /// In ko, this message translates to:
@@ -3061,6 +3295,42 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'회원가입 (30초)'**
   String get signupIn30Seconds;
+
+  /// No description provided for @btnSignInGoogle.
+  ///
+  /// In ko, this message translates to:
+  /// **'구글로 로그인'**
+  String get btnSignInGoogle;
+
+  /// No description provided for @btnStartGoogleQuick.
+  ///
+  /// In ko, this message translates to:
+  /// **'구글로 3초만에 시작하기'**
+  String get btnStartGoogleQuick;
+
+  /// No description provided for @msgAlreadyHaveAccount.
+  ///
+  /// In ko, this message translates to:
+  /// **'이미 차드 계정이 있나요?'**
+  String get msgAlreadyHaveAccount;
+
+  /// No description provided for @msgGuestMode.
+  ///
+  /// In ko, this message translates to:
+  /// **'게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.'**
+  String get msgGuestMode;
+
+  /// No description provided for @titleAccountInfo.
+  ///
+  /// In ko, this message translates to:
+  /// **'계정 정보'**
+  String get titleAccountInfo;
+
+  /// No description provided for @titleCreateAccount.
+  ///
+  /// In ko, this message translates to:
+  /// **'계정 생성'**
+  String get titleCreateAccount;
 
   /// 한계 시험 챌린지 메시지
   ///
@@ -3343,6 +3613,24 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'과학적으로 설계된 14주 프로그램으로\n100개 푸시업 달성을 목표로 합니다'**
   String get onboardingProgramIntroDescription;
+
+  /// No description provided for @btnGetStarted.
+  ///
+  /// In ko, this message translates to:
+  /// **'시작하기'**
+  String get btnGetStarted;
+
+  /// No description provided for @msgWelcome.
+  ///
+  /// In ko, this message translates to:
+  /// **'환영합니다!'**
+  String get msgWelcome;
+
+  /// No description provided for @titleTutorial.
+  ///
+  /// In ko, this message translates to:
+  /// **'튜토리얼'**
+  String get titleTutorial;
 
   /// 앱 정보 섹션
   ///
@@ -5090,6 +5378,72 @@ abstract class AppLocalizations {
   /// **'종료'**
   String get exit;
 
+  /// Data reset error message
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터 초기화 중 오류가 발생했습니다: {error}'**
+  String dataResetError(String error);
+
+  /// No description provided for @dataResetProgress.
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터를 초기화하는 중...'**
+  String get dataResetProgress;
+
+  /// No description provided for @dataResetSuccess.
+  ///
+  /// In ko, this message translates to:
+  /// **'모든 데이터가 성공적으로 초기화되었습니다'**
+  String get dataResetSuccess;
+
+  /// No description provided for @dataResetWarning.
+  ///
+  /// In ko, this message translates to:
+  /// **'다음 데이터가 완전히 삭제됩니다:'**
+  String get dataResetWarning;
+
+  /// No description provided for @dataRestoreConfirm.
+  ///
+  /// In ko, this message translates to:
+  /// **'⚠️ 데이터 복원'**
+  String get dataRestoreConfirm;
+
+  /// No description provided for @dataRestoreError.
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터 복원에 실패했습니다. 백업 파일을 확인해주세요.'**
+  String get dataRestoreError;
+
+  /// No description provided for @dataRestoreProgress.
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터를 복원하는 중...'**
+  String get dataRestoreProgress;
+
+  /// No description provided for @dataRestoreSuccess.
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터 복원이 완료되었습니다! 앱을 재시작해주세요.'**
+  String get dataRestoreSuccess;
+
+  /// No description provided for @durationDays.
+  ///
+  /// In ko, this message translates to:
+  /// **'기간'**
+  String get durationDays;
+
+  /// Reps and completion percentage
+  ///
+  /// In ko, this message translates to:
+  /// **'{reps}회 • {percentage}% 완료'**
+  String repsAndCompletion(int reps, int percentage);
+
+  /// No description provided for @restoreButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'복원'**
+  String get restoreButton;
+
   /// Quiz question 3
   ///
   /// In ko, this message translates to:
@@ -5840,6 +6194,54 @@ abstract class AppLocalizations {
   /// **'차드를 위한 특별한 푸시업'**
   String get specialPushupForChads;
 
+  /// No description provided for @chadPerfectFormGuide.
+  ///
+  /// In ko, this message translates to:
+  /// **'차드의 완벽한 푸시업 폼 가이드! 💪'**
+  String get chadPerfectFormGuide;
+
+  /// No description provided for @formGuideAdvancedLevel.
+  ///
+  /// In ko, this message translates to:
+  /// **'고급'**
+  String get formGuideAdvancedLevel;
+
+  /// No description provided for @formGuideBeginnerLevel.
+  ///
+  /// In ko, this message translates to:
+  /// **'초급'**
+  String get formGuideBeginnerLevel;
+
+  /// No description provided for @formGuideCategoryBreathing.
+  ///
+  /// In ko, this message translates to:
+  /// **'호흡'**
+  String get formGuideCategoryBreathing;
+
+  /// No description provided for @formGuideCategoryMotivation.
+  ///
+  /// In ko, this message translates to:
+  /// **'동기부여'**
+  String get formGuideCategoryMotivation;
+
+  /// No description provided for @formGuideCategoryRecovery.
+  ///
+  /// In ko, this message translates to:
+  /// **'회복'**
+  String get formGuideCategoryRecovery;
+
+  /// No description provided for @formGuideIntermediateLevel.
+  ///
+  /// In ko, this message translates to:
+  /// **'중급'**
+  String get formGuideIntermediateLevel;
+
+  /// No description provided for @perfectPerformance.
+  ///
+  /// In ko, this message translates to:
+  /// **'완벽한 수행!'**
+  String get perfectPerformance;
+
   /// 컨디션 재체크 가능 안내 메시지
   ///
   /// In ko, this message translates to:
@@ -6218,6 +6620,48 @@ abstract class AppLocalizations {
   /// **'총 운동 세션'**
   String get totalSessions;
 
+  /// No description provided for @dataBackupProgress.
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터를 백업하는 중...'**
+  String get dataBackupProgress;
+
+  /// No description provided for @inProgressStatus.
+  ///
+  /// In ko, this message translates to:
+  /// **'진행 중'**
+  String get inProgressStatus;
+
+  /// No description provided for @optionPersonalRecordDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'개인 목표 달성과 기록 향상에 집중합니다'**
+  String get optionPersonalRecordDesc;
+
+  /// No description provided for @optionPersonalRecordTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'개인 기록'**
+  String get optionPersonalRecordTitle;
+
+  /// No description provided for @progressText.
+  ///
+  /// In ko, this message translates to:
+  /// **'진행도'**
+  String get progressText;
+
+  /// No description provided for @statisticsBannerText.
+  ///
+  /// In ko, this message translates to:
+  /// **'차드 성장을 확인하라! 📊'**
+  String get statisticsBannerText;
+
+  /// No description provided for @statisticsTab.
+  ///
+  /// In ko, this message translates to:
+  /// **'통계'**
+  String get statisticsTab;
+
   /// Advanced level label
   ///
   /// In ko, this message translates to:
@@ -6535,6 +6979,24 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'21개 이상 → 100개+ 달성'**
   String get gigaGoalDesc;
+
+  /// No description provided for @difficultyAdvancedDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'진정한 차드'**
+  String get difficultyAdvancedDesc;
+
+  /// No description provided for @difficultyBeginnerDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'천천히 시작하는 차드'**
+  String get difficultyBeginnerDesc;
+
+  /// No description provided for @difficultyIntermediateDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꾸준한 차드'**
+  String get difficultyIntermediateDesc;
 
   /// No description provided for @achievementAllRounderDesc.
   ///
@@ -8072,6 +8534,12 @@ abstract class AppLocalizations {
   /// **'총 {totalXP} XP 획득!'**
   String totalXpEarned(int totalXP);
 
+  /// No description provided for @rewardText.
+  ///
+  /// In ko, this message translates to:
+  /// **'보상'**
+  String get rewardText;
+
   /// 보너스 챌린지 제목
   ///
   /// In ko, this message translates to:
@@ -8425,6 +8893,18 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'새 챌린지 시작하자! 🔥'**
   String get startNewChallenge;
+
+  /// No description provided for @challengeCompletedTab.
+  ///
+  /// In ko, this message translates to:
+  /// **'완료됨'**
+  String get challengeCompletedTab;
+
+  /// No description provided for @challengeTabTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'챌린지'**
+  String get challengeTabTitle;
 
   /// Alpha title
   ///
@@ -9284,6 +9764,18 @@ abstract class AppLocalizations {
   /// **'차드 추천 운동'**
   String get chadRecommendedWorkout;
 
+  /// No description provided for @chadJourneyTagline.
+  ///
+  /// In ko, this message translates to:
+  /// **'차드가 되는 여정에 함께하라! 🔥'**
+  String get chadJourneyTagline;
+
+  /// No description provided for @titleTomorrowChadActivity.
+  ///
+  /// In ko, this message translates to:
+  /// **'내일의 차드 활동'**
+  String get titleTomorrowChadActivity;
+
   /// No description provided for @currentSubscription.
   ///
   /// In ko, this message translates to:
@@ -9571,6 +10063,54 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'자동 갱신 활성화'**
   String get autoRenewalEnabled;
+
+  /// No description provided for @btnStartFree.
+  ///
+  /// In ko, this message translates to:
+  /// **'무료로 시작하기'**
+  String get btnStartFree;
+
+  /// No description provided for @btnStartSubscription.
+  ///
+  /// In ko, this message translates to:
+  /// **'구독 시작하기'**
+  String get btnStartSubscription;
+
+  /// No description provided for @msgCannotStartPurchase.
+  ///
+  /// In ko, this message translates to:
+  /// **'구매를 시작할 수 없습니다.'**
+  String get msgCannotStartPurchase;
+
+  /// No description provided for @msgLoadingSubscription.
+  ///
+  /// In ko, this message translates to:
+  /// **'구독 상품을 불러오는 중...'**
+  String get msgLoadingSubscription;
+
+  /// No description provided for @msgSubscriptionSuccess.
+  ///
+  /// In ko, this message translates to:
+  /// **'구독이 성공적으로 완료되었습니다!'**
+  String get msgSubscriptionSuccess;
+
+  /// No description provided for @titleManageSubscription.
+  ///
+  /// In ko, this message translates to:
+  /// **'구독 관리'**
+  String get titleManageSubscription;
+
+  /// No description provided for @titlePremiumFeatures.
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 기능'**
+  String get titlePremiumFeatures;
+
+  /// No description provided for @titlePremiumSubscription.
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 구독'**
+  String get titlePremiumSubscription;
 
   /// Adaptive theme setting
   ///
@@ -10147,6 +10687,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'로그아웃 중 오류 발생: {error}'**
   String logoutErrorMessage(String error);
+
+  /// No description provided for @languageKorean.
+  ///
+  /// In ko, this message translates to:
+  /// **'한국어'**
+  String get languageKorean;
 
   /// 자동 백업 설정 설명
   ///

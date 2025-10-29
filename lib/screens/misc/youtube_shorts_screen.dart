@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import '../utils/constants.dart';
-import '../generated/app_localizations.dart';
+import '../../utils/constants.dart';
+import '../../generated/app_localizations.dart';
 
 class YoutubeShortsScreen extends StatefulWidget {
   const YoutubeShortsScreen({super.key});

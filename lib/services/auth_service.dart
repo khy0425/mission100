@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import '../models/user_subscription.dart';
+import '../widgets/dialogs/vip_welcome_dialog.dart';
 import 'cloud_sync_service.dart';
+import 'deep_link_handler.dart';
 
 class AuthResult {
   final bool success;
@@ -437,7 +439,7 @@ class AuthService extends ChangeNotifier {
       return;
     }
 
-    // 구독 타입별 환영 메시지
+    // 콘솔 로그
     switch (_currentSubscription!.type) {
       case SubscriptionType.premium:
         final days = _currentSubscription!.remainingDays;
@@ -454,6 +456,25 @@ class AuthService extends ChangeNotifier {
       case SubscriptionType.free:
         debugPrint('👋 $userName님, 환영합니다!');
         break;
+    }
+
+    // VIP 환영 다이얼로그 표시 (프리미엄/프로모션만)
+    if (_currentSubscription!.type == SubscriptionType.premium ||
+        _currentSubscription!.type == SubscriptionType.launchPromo) {
+      // 약간의 딜레이 후 표시 (UX 개선)
+      await Future.delayed(const Duration(milliseconds: 800));
+
+      final context = DeepLinkHandler.navigatorKey.currentContext;
+      if (context != null && context.mounted) {
+        showDialog(
+          context: context,
+          barrierDismissible: true,
+          builder: (context) => VIPWelcomeDialog(
+            userName: userName,
+            subscription: _currentSubscription!,
+          ),
+        );
+      }
     }
   }
 

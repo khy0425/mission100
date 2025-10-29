@@ -7,7 +7,7 @@ import '../../widgets/onboarding_pages/onboarding_welcome_page.dart';
 import '../../widgets/onboarding_pages/onboarding_mission_page.dart';
 import '../../widgets/onboarding_pages/onboarding_features_page.dart';
 import '../../widgets/onboarding_pages/onboarding_get_started_page.dart';
-import '../initial_test_screen.dart';
+import 'initial_test_screen.dart';
 
 /// 🚀 온보딩 화면
 ///

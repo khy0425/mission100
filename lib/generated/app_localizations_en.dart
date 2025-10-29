@@ -79,7 +79,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appInfo => 'App Information';
 
   @override
-  String get appInfoDesc => '버전 정보 및 개발자 정보';
+  String get appInfoDesc => 'Version and developer information';
 
   @override
   String get appRating => 'App Rating';
@@ -141,7 +141,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get builtWithFlutter => 'Flutter로 제작됨';
+  String get builtWithFlutter => 'Built with Flutter';
 
   @override
   String get calendar => 'Calendar';
@@ -167,7 +167,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get cannotLoadQuizData => 'Cannot load quiz data';
 
   @override
-  String get cannotOpenGithub => 'GitHub을 열 수 없다';
+  String get cannotOpenGithub => 'Cannot open GitHub';
 
   @override
   String get cannotOpenPrivacyPolicy => 'Cannot open Privacy Policy';
@@ -321,7 +321,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dataManagement => 'Data Management';
 
   @override
-  String get dataManagementDesc => '운동 기록 백업 및 복원';
+  String get dataManagementDesc => 'Workout data backup and restore';
 
   @override
   String get delete => 'Delete';
@@ -343,7 +343,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get developer => 'Developer';
 
   @override
-  String get developerContact => '개발자 연락처';
+  String get developerContact => 'Developer Contact';
 
   @override
   String get developerInfo => 'Developer Info';
@@ -526,7 +526,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get gigaShort => 'GIGA CHAD';
 
   @override
-  String get githubRepository => 'GitHub 저장소';
+  String get githubRepository => 'GitHub Repository';
 
   @override
   String get good => 'Good';
@@ -677,7 +677,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get okay => 'Okay';
 
   @override
-  String get openGithub => 'GitHub에서 소스코드 보기';
+  String get openGithub => 'View source code on GitHub';
 
   @override
   String get openInBrowser => 'Open in Browser';
@@ -1174,7 +1174,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get skipPermissions => 'Set Up Later';
 
   @override
-  String get start => '시작';
+  String get start => 'Start';
 
   @override
   String get status => 'Status';
@@ -1246,7 +1246,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get times => 'times';
 
   @override
-  String get totalExpEarned => '총 획득 경험치';
+  String get totalExpEarned => 'Total experience earned';
 
   @override
   String get totalExperience => 'Total XP';
@@ -1509,16 +1509,134 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get abandonButton => 'Abandon';
+
+  @override
+  String get allowButton => 'Allow';
+
+  @override
+  String get btnCancel => 'Cancel';
+
+  @override
+  String get btnClose => 'Close';
+
+  @override
+  String get btnConfirm => 'OK';
+
+  @override
+  String get btnExpandAll => 'Expand All';
+
+  @override
+  String get btnLater => 'Later';
+
+  @override
+  String get btnPrevious => 'Previous';
+
+  @override
+  String get btnRetry => 'Try Again';
+
+  @override
+  String get btnSave => 'Save';
+
+  @override
+  String get btnSkip => 'Skip';
+
+  @override
+  String get btnSubscribe => 'Subscribe';
+
+  @override
+  String get calendarTab => 'Calendar';
+
+  @override
+  String get collapsedInfo => 'Collapsed. Tap to expand';
+
+  @override
+  String get completedStatus => 'Completed';
+
+  @override
+  String get confirmButton => 'Confirm';
+
+  @override
+  String get contactButton => 'Contact';
+
+  @override
+  String get currentStatus => 'Current';
+
+  @override
+  String get descriptionText => 'Description';
+
+  @override
+  String get difficultyExpertDesc => 'CHAD Legend';
+
+  @override
+  String get disabledStatus => 'Disabled';
+
+  @override
+  String get enabledStatus => 'Enabled';
+
+  @override
+  String get encryptionLabel => 'Encryption';
+
+  @override
+  String get expandedInfo => 'Expanded';
+
+  @override
+  String get finishButton => 'Finish';
+
+  @override
+  String get goodStatus => 'Good';
+
+  @override
+  String get laterButton => 'Later';
+
+  @override
+  String get licenseButton => 'License';
+
+  @override
+  String get msgLogoutConfirm =>
+      'Are you sure you want to logout? Unsaved data may be lost.';
+
+  @override
+  String get msgTermsAndPrivacy => 'Terms of Service and Privacy Policy';
+
+  @override
+  String get perfectionist => 'Perfectionist';
+
+  @override
+  String get permissionAllowed => 'Allowed';
+
+  @override
+  String get quizButton => 'Quiz';
+
+  @override
+  String get selectAction => 'Select';
+
+  @override
+  String get selectedState => 'Selected';
+
+  @override
+  String get startButton => 'Start';
+
+  @override
+  String get targetText => 'Target';
+
+  @override
+  String get titleLogout => 'Logout';
+
+  @override
+  String get titleScientificEvidence => 'Scientific Evidence';
+
+  @override
   String get accountInfoTitle => 'Account Information';
 
   @override
   String get accountTypeLabel => 'Account Type';
 
   @override
-  String get cannotOpenEmail => '이메일 앱을 열 수 없다';
+  String get cannotOpenEmail => 'Cannot open email app';
 
   @override
-  String get emailFeedback => '이메일로 의견을 보내주세요';
+  String get emailFeedback => 'Send your feedback via email';
 
   @override
   String get emailLabel => 'Email';
@@ -1527,7 +1645,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get emailMethod => 'Email';
 
   @override
-  String get feedbackEmail => '이메일로 피드백 보내기';
+  String get feedbackEmail => 'Send feedback via email';
 
   @override
   String get freeAccountType => 'Free Account';
@@ -1609,6 +1727,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get signupIn30Seconds => 'Sign up (30 seconds)';
+
+  @override
+  String get btnSignInGoogle => 'Sign in with Google';
+
+  @override
+  String get btnStartGoogleQuick => 'Start in 3 seconds with Google';
+
+  @override
+  String get msgAlreadyHaveAccount => 'Already have a Chad account?';
+
+  @override
+  String get msgGuestMode =>
+      'You are using guest mode. Please login to save your progress.';
+
+  @override
+  String get titleAccountInfo => 'Account Information';
+
+  @override
+  String get titleCreateAccount => 'Create Account';
 
   @override
   String get challengeTestYourLimits => '💪 Test your limits today?';
@@ -1762,6 +1899,15 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get onboardingProgramIntroDescription =>
       'Scientifically designed 14-week program\nto help you achieve 100 pushups';
+
+  @override
+  String get btnGetStarted => 'Get Started';
+
+  @override
+  String get msgWelcome => 'Welcome!';
+
+  @override
+  String get titleTutorial => 'Tutorial';
 
   @override
   String get aboutSettings => 'ℹ️ App Info';
@@ -2766,6 +2912,46 @@ class AppLocalizationsEn extends AppLocalizations {
   String get exit => 'Exit';
 
   @override
+  String dataResetError(String error) {
+    return 'An error occurred during data reset: $error';
+  }
+
+  @override
+  String get dataResetProgress => 'Resetting data...';
+
+  @override
+  String get dataResetSuccess => 'All data has been successfully reset';
+
+  @override
+  String get dataResetWarning =>
+      'The following data will be completely deleted:';
+
+  @override
+  String get dataRestoreConfirm => '⚠️ Data Restore';
+
+  @override
+  String get dataRestoreError =>
+      'Data restore failed. Please check the backup file.';
+
+  @override
+  String get dataRestoreProgress => 'Restoring data...';
+
+  @override
+  String get dataRestoreSuccess =>
+      'Data restore completed! Please restart the app.';
+
+  @override
+  String get durationDays => 'Duration';
+
+  @override
+  String repsAndCompletion(int reps, int percentage) {
+    return '$reps reps • $percentage% completed';
+  }
+
+  @override
+  String get restoreButton => 'Restore';
+
+  @override
   String get beginnerPushupQuiz =>
       'What is the most suitable pushup variation for beginners?';
 
@@ -3230,6 +3416,30 @@ class AppLocalizationsEn extends AppLocalizations {
   String get specialPushupForChads => 'Special pushup for chads';
 
   @override
+  String get chadPerfectFormGuide => 'Chad\'s perfect pushup form guide! 💪';
+
+  @override
+  String get formGuideAdvancedLevel => 'Advanced';
+
+  @override
+  String get formGuideBeginnerLevel => 'Beginner';
+
+  @override
+  String get formGuideCategoryBreathing => 'Breathing';
+
+  @override
+  String get formGuideCategoryMotivation => 'Motivation';
+
+  @override
+  String get formGuideCategoryRecovery => 'Recovery';
+
+  @override
+  String get formGuideIntermediateLevel => 'Intermediate';
+
+  @override
+  String get perfectPerformance => 'Perfect performance!';
+
+  @override
   String get canRecheckCondition => 'You can recheck your condition!';
 
   @override
@@ -3329,12 +3539,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String levelProgressMax(int currentLevel) {
-    return '레벨 $currentLevel (최대)';
+    return 'Level $currentLevel (Max)';
   }
 
   @override
   String levelProgressNext(int currentLevel, int nextLevel) {
-    return '레벨 $currentLevel → $nextLevel';
+    return 'Level $currentLevel → $nextLevel';
   }
 
   @override
@@ -3436,6 +3646,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get totalSessions => 'Total Sessions';
+
+  @override
+  String get dataBackupProgress => 'Backing up data...';
+
+  @override
+  String get inProgressStatus => 'In Progress';
+
+  @override
+  String get optionPersonalRecordDesc =>
+      'Focus on achieving personal goals and improving records';
+
+  @override
+  String get optionPersonalRecordTitle => 'Personal Records';
+
+  @override
+  String get progressText => 'Progress';
+
+  @override
+  String get statisticsBannerText => 'Check your Chad growth! 📊';
+
+  @override
+  String get statisticsTab => 'Statistics';
 
   @override
   String get advancedLevel => 'Advanced';
@@ -3589,17 +3821,17 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get levelAndExperience => '레벨 & 경험치';
+  String get levelAndExperience => 'Level & Experience';
 
   @override
-  String get avgExpPerDay => '일평균 경험치';
+  String get avgExpPerDay => 'Average XP per day';
 
   @override
-  String get levelUps => '레벨업 횟수';
+  String get levelUps => 'Level Ups';
 
   @override
   String levelUpsCount(int count) {
-    return '$count회';
+    return '$count times';
   }
 
   @override
@@ -3613,6 +3845,15 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get gigaGoalDesc => '21+ reps → Achieve 100+';
+
+  @override
+  String get difficultyAdvancedDesc => 'True CHAD';
+
+  @override
+  String get difficultyBeginnerDesc => 'Slowly starting CHAD';
+
+  @override
+  String get difficultyIntermediateDesc => 'Consistent CHAD';
 
   @override
   String get achievementAllRounderDesc => 'Tried all pushup types';
@@ -4452,11 +4693,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String achievementsCompleted(int completed, int total) {
-    return '달성한 업적: $completed/$total개';
+    return 'Achievements completed: $completed/$total';
   }
 
   @override
-  String get categoryAchievements => '카테고리별 업적';
+  String get categoryAchievements => 'Achievements by category';
 
   @override
   String get newAchievementUnlocked => '🏆 New Achievement Unlocked! 🏆';
@@ -4490,6 +4731,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String totalXpEarned(int totalXP) {
     return 'Total $totalXP XP Earned!';
   }
+
+  @override
+  String get rewardText => 'Reward';
 
   @override
   String get bonusChallenge => '🔥 Bonus Challenge';
@@ -4681,6 +4925,12 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get startNewChallenge => 'Start a new challenge! 🔥';
+
+  @override
+  String get challengeCompletedTab => 'Completed';
+
+  @override
+  String get challengeTabTitle => 'Challenges';
 
   @override
   String get alphaChad => 'Alpha Level';
@@ -5177,6 +5427,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chadRecommendedWorkout => 'Chad\'s Recommended Workout';
 
   @override
+  String get chadJourneyTagline => 'Join the journey to become Chad! 🔥';
+
+  @override
+  String get titleTomorrowChadActivity => 'Tomorrow\'s Chad Activity';
+
+  @override
   String get currentSubscription => 'Current Subscription';
 
   @override
@@ -5347,6 +5603,30 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get autoRenewalEnabled => 'Auto Renewal Enabled';
+
+  @override
+  String get btnStartFree => 'Start for Free';
+
+  @override
+  String get btnStartSubscription => 'Start Subscription';
+
+  @override
+  String get msgCannotStartPurchase => 'Cannot start purchase.';
+
+  @override
+  String get msgLoadingSubscription => 'Loading subscription products...';
+
+  @override
+  String get msgSubscriptionSuccess => 'Subscription completed successfully!';
+
+  @override
+  String get titleManageSubscription => 'Manage Subscription';
+
+  @override
+  String get titlePremiumFeatures => 'Premium Features';
+
+  @override
+  String get titlePremiumSubscription => 'Premium Subscription';
 
   @override
   String get adaptiveTheme => 'Adaptive Theme';
@@ -5682,6 +5962,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String logoutErrorMessage(String error) {
     return 'Logout error: $error';
   }
+
+  @override
+  String get languageKorean => 'Korean';
 
   @override
   String get autoBackupDescription => 'Performs automatic backup regularly';

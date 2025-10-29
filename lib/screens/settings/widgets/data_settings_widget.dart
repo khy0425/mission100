@@ -4,7 +4,7 @@ import '../../../generated/app_localizations.dart';
 import '../../../utils/constants.dart';
 import '../../../services/data_service.dart';
 import '../../../services/chad_evolution_service.dart';
-import '../../../screens/backup_screen.dart';
+import '../../data/backup_screen.dart';
 
 /// 데이터 관리 설정을 담당하는 위젯
 ///
