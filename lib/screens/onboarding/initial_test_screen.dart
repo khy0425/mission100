@@ -5,8 +5,8 @@ import '../../generated/app_localizations.dart';
 import '../../utils/constants.dart';
 import '../../utils/workout_data.dart';
 import '../../models/user_profile.dart';
-import '../../services/database_service.dart';
-import '../../services/workout_program_service.dart';
+import '../../services/data/database_service.dart';
+import '../../services/workout/workout_program_service.dart';
 
 import '../workout_schedule_setup_screen.dart';
 

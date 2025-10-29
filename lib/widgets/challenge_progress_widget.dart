@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/challenge.dart';
-import '../services/challenge_service.dart';
+import '../services/progress/challenge_service.dart';
 import '../generated/app_localizations.dart';
 
 class ChallengeProgressWidget extends StatelessWidget {

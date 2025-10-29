@@ -8,24 +8,24 @@ import 'package:firebase_core/firebase_core.dart';
 import 'utils/constants.dart';
 import 'screens/main_navigation_screen.dart';
 import 'screens/onboarding_screen.dart';
-import 'services/theme_service.dart';
-import 'services/locale_service.dart';
-import 'services/notification_service.dart';
-import 'services/ad_service.dart';
-import 'services/onboarding_service.dart';
-import 'services/chad_evolution_service.dart';
-import 'services/chad_image_service.dart';
-import 'services/chad_condition_service.dart';
-import 'services/chad_recovery_service.dart';
-import 'services/chad_active_recovery_service.dart';
-import 'services/achievement_service.dart';
-import 'services/database_service.dart';
-import 'services/challenge_service.dart';
-import 'services/auth_service.dart';
-import 'services/cloud_sync_service.dart';
+import 'services/localization/theme_service.dart';
+import 'services/localization/locale_service.dart';
+import 'services/notification/notification_service.dart';
+import 'services/payment/ad_service.dart';
+import 'services/core/onboarding_service.dart';
+import 'services/chad/chad_evolution_service.dart';
+import 'services/chad/chad_image_service.dart';
+import 'services/chad/chad_condition_service.dart';
+import 'services/chad/chad_recovery_service.dart';
+import 'services/chad/chad_active_recovery_service.dart';
+import 'services/achievements/achievement_service.dart';
+import 'services/data/database_service.dart';
+import 'services/progress/challenge_service.dart';
+import 'services/auth/auth_service.dart';
+import 'services/data/cloud_sync_service.dart';
 // import 'services/subscription_service.dart'; // 구형 시스템 - 제거됨
-import 'services/billing_service.dart';
-import 'services/deep_link_handler.dart';
+import 'services/payment/billing_service.dart';
+import 'services/core/deep_link_handler.dart';
 // MemoryManager import 제거됨
 
 void main() async {

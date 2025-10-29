@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/pushup_form_guide.dart';
-import '../../services/pushup_form_guide_service.dart';
+import '../../services/workout/pushup_form_guide_service.dart';
 import 'section_header.dart';
 import 'difficulty_header.dart';
 import 'variation_card.dart';

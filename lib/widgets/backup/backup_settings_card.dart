@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
-import '../../services/backup_scheduler.dart';
-import '../../services/data_backup_service.dart';
+import '../../services/data/backup_scheduler.dart';
+import '../../services/data/data_backup_service.dart';
 
 /// 백업 설정 카드
 class BackupSettingsCard extends StatelessWidget {

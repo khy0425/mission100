@@ -3,8 +3,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../../generated/app_localizations.dart';
 import '../../utils/constants.dart';
-import '../../services/notification_service.dart';
-import '../../services/permission_service.dart';
+import '../../services/notification/notification_service.dart';
+import '../../services/auth/permission_service.dart';
 import '../main_navigation_screen.dart';
 import '../onboarding/initial_test_screen.dart';
 

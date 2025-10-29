@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../services/auth_service.dart';
-import '../../services/data_migration_service.dart';
-import '../../services/billing_service.dart';
+import '../../services/auth/auth_service.dart';
+import '../../services/data/data_migration_service.dart';
+import '../../services/payment/billing_service.dart';
 
 /// 구매를 위한 간단한 회원가입 화면
 class SignUpForPurchaseScreen extends StatefulWidget {

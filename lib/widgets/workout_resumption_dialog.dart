@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
-import '../services/workout_resumption_service.dart';
+import '../services/workout/workout_resumption_service.dart';
 
 /// 운동 재개 확인 다이얼로그
 class WorkoutResumptionDialog extends StatelessWidget {

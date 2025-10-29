@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/user_profile.dart';
-import '../../services/workout_program_service.dart';
+import '../../services/workout/workout_program_service.dart';
 
 /// 현재 Chad 상태 카드
 class CurrentChadCard extends StatelessWidget {

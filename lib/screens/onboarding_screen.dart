@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/onboarding_step.dart';
-import '../services/onboarding_service.dart';
+import '../services/core/onboarding_service.dart';
 import '../widgets/chad_onboarding_widget.dart';
 import 'misc/permission_screen.dart';
 import '../screens/auth/chad_login_screen.dart';

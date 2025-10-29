@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import '../generated/app_localizations.dart';
 import 'package:provider/provider.dart';
-import '../services/database_service.dart';
-import '../services/workout_program_service.dart';
-import '../services/notification_service.dart';
-import '../services/workout_history_service.dart';
-import '../services/chad_evolution_service.dart';
-import '../services/chad_condition_service.dart';
-import '../services/chad_recovery_service.dart';
-import '../services/achievement_service.dart';
+import '../services/data/database_service.dart';
+import '../services/workout/workout_program_service.dart';
+import '../services/notification/notification_service.dart';
+import '../services/workout/workout_history_service.dart';
+import '../services/chad/chad_evolution_service.dart';
+import '../services/chad/chad_condition_service.dart';
+import '../services/chad/chad_recovery_service.dart';
+import '../services/achievements/achievement_service.dart';
 import '../screens/workout_screen.dart';
 import '../screens/settings/simple_settings_screen.dart';
 import '../screens/exercise/pushup_tutorial_screen.dart';
@@ -30,7 +30,7 @@ import 'home/widgets/action_buttons_widget.dart';
 import '../widgets/chad/chad_stats_card.dart';
 import '../models/chad_evolution.dart';
 import '../widgets/vip_badge_widget.dart';
-import '../services/auth_service.dart';
+import '../services/auth/auth_service.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

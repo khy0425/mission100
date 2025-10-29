@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
 import '../../models/pushup_form_guide.dart';
-import '../../services/pushup_form_guide_service.dart';
+import '../../services/workout/pushup_form_guide_service.dart';
 
 /// 팔굽혀펴기 변형 운동 카드 위젯
 class VariationCard extends StatelessWidget {

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../generated/app_localizations.dart';
 import '../utils/constants.dart';
-import '../services/achievement_service.dart';
-import '../services/chad_evolution_service.dart';
+import '../services/achievements/achievement_service.dart';
+import '../services/chad/chad_evolution_service.dart';
 import '../widgets/chad_evolution_animation.dart';
 
-import '../services/workout_history_service.dart';
+import '../services/workout/workout_history_service.dart';
 import '../widgets/multiple_achievements_dialog.dart';
 import '../models/achievement.dart';
 import 'home_screen.dart';

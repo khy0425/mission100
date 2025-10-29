@@ -3,10 +3,10 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import '../../generated/app_localizations.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../../models/pushup_type.dart';
-import '../../services/pushup_tutorial_service.dart';
-import '../../services/chad_encouragement_service.dart';
-import '../../services/achievement_service.dart';
-import '../../services/pushup_mastery_service.dart';
+import '../../services/workout/pushup_tutorial_service.dart';
+import '../../services/chad/chad_encouragement_service.dart';
+import '../../services/achievements/achievement_service.dart';
+import '../../services/workout/pushup_mastery_service.dart';
 
 import '../../widgets/ad_banner_widget.dart';
 

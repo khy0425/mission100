@@ -4,9 +4,9 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../../utils/constants.dart';
 import '../../models/workout_history.dart';
-import '../../services/workout_history_service.dart';
-import '../../services/achievement_service.dart';
-import '../../services/ad_service.dart';
+import '../../services/workout/workout_history_service.dart';
+import '../../services/achievements/achievement_service.dart';
+import '../../services/payment/ad_service.dart';
 import '../../generated/app_localizations.dart';
 
 class StatisticsScreen extends StatefulWidget {

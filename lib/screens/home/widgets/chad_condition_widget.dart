@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../generated/app_localizations.dart';
-import '../../../services/chad_condition_service.dart';
+import '../../../services/chad/chad_condition_service.dart';
 import '../../../utils/constants.dart';
 
 /// Chad 컨디션 체크 위젯

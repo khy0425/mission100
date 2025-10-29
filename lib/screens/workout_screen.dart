@@ -17,8 +17,8 @@ import 'workout/widgets/rest_timer_widget.dart';
 import 'workout/widgets/workout_controls_widget.dart';
 import 'workout/handlers/workout_completion_handler.dart';
 // 회원가입 유도 관련
-import '../services/auth_service.dart';
-import '../services/signup_prompt_service.dart';
+import '../services/auth/auth_service.dart';
+import '../services/auth/signup_prompt_service.dart';
 import '../widgets/dialogs/gentle_signup_prompt_dialog.dart';
 import '../screens/onboarding/onboarding_screen.dart' as quick;
 

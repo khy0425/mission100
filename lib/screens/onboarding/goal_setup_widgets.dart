@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../models/onboarding_step.dart';
-import '../../services/onboarding_service.dart';
-import '../../services/chad_onboarding_service.dart';
+import '../../services/core/onboarding_service.dart';
+import '../../services/chad/chad_onboarding_service.dart';
 import '../../widgets/chad_onboarding_widget.dart';
 import '../../utils/constants.dart';
 

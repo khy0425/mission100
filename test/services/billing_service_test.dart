@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mission100/services/billing_service.dart'
+import 'package:mission100/services/payment/billing_service.dart'
     hide VerificationResult;
 import 'package:mission100/services/old_archive/subscription_service.dart';
-import 'package:mission100/services/payment_verification_service.dart';
+import 'package:mission100/services/payment/payment_verification_service.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
 
 void main() {

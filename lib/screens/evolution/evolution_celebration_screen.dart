@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../services/chad_image_service.dart';
+import '../../services/chad/chad_image_service.dart';
 
 /// Evolution Celebration Screen
 ///

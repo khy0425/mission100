@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
-import '../../services/workout_program_service.dart';
+import '../../services/workout/workout_program_service.dart';
 import 'stat_card_item.dart';
 
 /// 전체 통계 카드

@@ -5,7 +5,7 @@ import '../../models/user_profile.dart';
 import '../../widgets/rpe_input_widget.dart';
 import '../../widgets/recovery_dashboard_widget.dart';
 import '../../widgets/workout_adjustment_card.dart';
-import '../../services/rpe_adaptation_service.dart';
+import '../../services/progress/rpe_adaptation_service.dart';
 
 /// 투자자용 데모 화면
 class InvestorDemoScreen extends StatefulWidget {

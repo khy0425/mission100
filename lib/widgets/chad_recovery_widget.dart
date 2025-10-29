@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../services/chad_recovery_service.dart';
+import '../services/chad/chad_recovery_service.dart';
 import '../models/rpe_data.dart';
 import '../utils/constants.dart';
 

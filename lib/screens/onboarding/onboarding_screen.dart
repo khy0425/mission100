@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../generated/app_localizations.dart';
 import '../../utils/constants.dart';
-import '../../services/first_launch_service.dart';
+import '../../services/core/first_launch_service.dart';
 import '../../widgets/onboarding_pages/onboarding_welcome_page.dart';
 import '../../widgets/onboarding_pages/onboarding_mission_page.dart';
 import '../../widgets/onboarding_pages/onboarding_features_page.dart';

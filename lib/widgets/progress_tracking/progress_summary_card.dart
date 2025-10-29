@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../generated/app_localizations.dart';
-import '../../services/workout_program_service.dart';
+import '../../services/workout/workout_program_service.dart';
 import 'stat_item.dart';
 
 /// 프로그램 진행 요약 카드

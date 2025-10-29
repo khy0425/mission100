@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../generated/app_localizations.dart';
 import '../../../utils/constants.dart';
-import '../../../services/theme_service.dart';
-import '../../../services/locale_service.dart';
+import '../../../services/localization/theme_service.dart';
+import '../../../services/localization/locale_service.dart';
 
 /// 앱 외관 설정을 관리하는 위젯
 ///

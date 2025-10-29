@@ -4,8 +4,8 @@ import 'package:table_calendar/table_calendar.dart';
 import '../../generated/app_localizations.dart';
 import '../../models/user_profile.dart';
 import '../../models/workout_session.dart';
-import '../../services/workout_program_service.dart';
-import '../../services/database_service.dart';
+import '../../services/workout/workout_program_service.dart';
+import '../../services/data/database_service.dart';
 import '../../widgets/ad_banner_widget.dart';
 import '../../widgets/chad/brainjolt_meter_widget.dart';
 

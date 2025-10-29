@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import '../services/locale_service.dart';
+import '../services/localization/locale_service.dart';
 
 /// 현재 선택된 언어를 관리하는 Notifier
 class LocaleNotifier extends Notifier<Locale> {

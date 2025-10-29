@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import '../../generated/app_localizations.dart';
-import '../../services/backup_scheduler.dart';
-import '../../services/data_backup_service.dart';
+import '../../services/data/backup_scheduler.dart';
+import '../../services/data/data_backup_service.dart';
 import 'backup_status_row.dart';
 
 /// 백업 상태 카드

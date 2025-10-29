@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../models/chad_evolution.dart';
-import '../services/chad_evolution_service.dart';
+import '../services/chad/chad_evolution_service.dart';
 import '../generated/app_localizations.dart';
 import 'dart:math' as math;
 

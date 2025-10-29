@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mission100/generated/app_localizations.dart';
 import '../../models/challenge.dart';
 import '../../models/user_profile.dart';
-import '../../services/challenge_service.dart';
-import '../../services/database_service.dart';
+import '../../services/progress/challenge_service.dart';
+import '../../services/data/database_service.dart';
 
 import '../../widgets/challenge_card.dart';
 import '../../widgets/challenge_progress_widget.dart';
