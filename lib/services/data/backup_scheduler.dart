@@ -180,7 +180,6 @@ class BackupScheduler {
       await stopSchedule();
     } else {
       // 재시도 스케줄링 (1시간 후)
-      final settings = await _backupService.getBackupSettings();
       _schedulerTimer = Timer(const Duration(hours: 1), () async {
         await _performScheduledBackup();
       });

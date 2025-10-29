@@ -349,7 +349,7 @@ YOUR_GOOGLE_PLAY_PUBLIC_KEY_HERE
         if (status == 0) {
           // 검증 성공
           final receipt = data['receipt'] as Map<String, dynamic>? ?? {};
-          final latestReceiptInfo = data['latest_receipt_info'];
+          // final latestReceiptInfo = data['latest_receipt_info']; // 향후 사용 예정
 
           return VerificationResult(
             isValid: true,

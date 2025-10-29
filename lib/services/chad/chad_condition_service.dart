@@ -106,7 +106,6 @@ class ChadConditionService extends ChangeNotifier {
   /// Chad의 개인화된 컨디션 체크 메시지
   String getChadConditionMessage() {
     final goal = _personalizedData['fitness_goal'] as String?;
-    final level = _personalizedData['fitness_level'] as String?;
 
     String baseMessage = '안녕 Bro! Chad야! 💪\n';
 

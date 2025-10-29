@@ -114,8 +114,6 @@ class _YoutubeShortsScreenState extends State<YoutubeShortsScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(

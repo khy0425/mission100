@@ -32,8 +32,6 @@ class AppearanceSettingsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeService = Provider.of<ThemeService>(context);
-
     return _buildSettingsSection(
       AppLocalizations.of(context).appearanceSettings,
       [

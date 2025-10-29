@@ -354,7 +354,7 @@ class DataSettingsWidget extends StatelessWidget {
       );
 
       // DataService를 통한 데이터 리셋
-      final dataService = Provider.of<DataService>(context, listen: false);
+      // final dataService = Provider.of<DataService>(context, listen: false);
       // await dataService.resetProgress(); // 메서드가 없으므로 주석 처리
 
       // Chad Evolution 상태도 리셋

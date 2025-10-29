@@ -578,9 +578,8 @@ class NotificationService {
     ); // 25일 후 갱신
     const renewalNotificationId = 9999;
 
-    // 갱신용 데이터를 페이로드에 포함
-    final payload =
-        'renewal|${time.hour}|${time.minute}|${activeDays.join(',')}';
+    // 갱신용 데이터를 페이로드에 포함 (향후 사용 예정)
+    // final payload = 'renewal|${time.hour}|${time.minute}|${activeDays.join(',')}';
 
     await _safeScheduleNotification(
       id: renewalNotificationId,
@@ -779,9 +778,8 @@ class NotificationService {
   static Future<bool> hasPermission() async {
     try {
       final hasBasicPermission = await _hasNotificationPermission();
-      final hasExactAlarms = await canScheduleExactAlarms();
+      // Exact alarms는 체크하지만 기본 알림만 있어도 충분하다고 판단
 
-      // 기본 알림만 있어도 충분하다고 판단
       return hasBasicPermission;
     } catch (e) {
       debugPrint('권한 확인 오류: $e');

@@ -193,7 +193,6 @@ void main() {
       test('should simulate network state change handling', () async {
         // Given: 네트워크 상태 변화 시나리오
         var isOnline = true;
-        final changes = <Map<String, dynamic>>[];
 
         // When: 네트워크 상태에 따른 동작 시뮬레이션
 

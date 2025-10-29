@@ -304,8 +304,6 @@ class ChallengeService {
         return 'Short-term intensive challenge. Complete consecutively.';
       case ChallengeType.eventChallenge:
         return 'Special event challenge. Complete within the period.';
-      default:
-        return 'Complete the challenge to earn rewards!';
     }
   }
 

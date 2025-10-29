@@ -4,7 +4,6 @@ import '../../services/auth/auth_service.dart';
 import '../../services/chad/chad_onboarding_service.dart';
 import '../../widgets/chad/chad_onboarding_widget.dart';
 import '../../utils/config/constants.dart';
-import '../../generated/app_localizations.dart';
 import 'chad_signup_screen.dart';
 import '../misc/permission_screen.dart';
 
@@ -113,7 +112,6 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
 
   Widget _buildLoginContent(BuildContext context) {
     final theme = Theme.of(context);
-    final localizations = AppLocalizations.of(context);
 
     return Column(
       children: [

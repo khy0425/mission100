@@ -93,7 +93,6 @@ class ChadOnboardingService extends ChangeNotifier {
   String getPersonalizedChadMessage() {
     final goal = _collectedData['fitness_goal'] as String?;
     final level = _collectedData['fitness_level'] as String?;
-    final weight = _collectedData['current_weight'] as double?;
 
     String message = 'Chad가 분석한 결과! 🧠\n';
 

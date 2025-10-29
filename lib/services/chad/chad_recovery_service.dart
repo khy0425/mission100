@@ -95,10 +95,9 @@ class ChadRecoveryService extends ChangeNotifier {
   /// Chad 회복 점수 계산 (메인 로직)
   Future<void> _calculateRecoveryScore() async {
     try {
-      // 1. 기본 점수 (75점에서 시작)
-      const double baseScore = 75.0;
+      // 기본 점수는 75.0에서 시작하지만 변수가 필요없으므로 바로 계산에 사용
 
-      // 2. RPE 기반 점수 조정 (50% 가중치)
+      // 1. RPE 기반 점수 조정 (50% 가중치)
       final double rpeScore = _calculateRPEScore();
 
       // 3. 컨디션 기반 점수 조정 (30% 가중치)
@@ -234,7 +233,6 @@ class ChadRecoveryService extends ChangeNotifier {
   /// Chad 회복 메시지 생성
   String getChadRecoveryMessage() {
     final goal = _personalizedData['fitness_goal'] as String?;
-    final level = _personalizedData['fitness_level'] as String?;
 
     String baseMessage =
         'Chad가 분석한 회복 점수: $_recoveryScore점! ${_recoveryLevel.emoji}\n';

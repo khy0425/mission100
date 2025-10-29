@@ -79,9 +79,6 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-
     return Consumer<ChadConditionService>(
       builder: (context, chadService, child) {
         return FadeTransition(

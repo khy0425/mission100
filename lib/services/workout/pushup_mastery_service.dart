@@ -132,7 +132,6 @@ class PushupMasteryService {
 
   /// 마스터 진행률 가져오기 (0.0 ~ 1.0)
   static Future<double> getMasteryProgress() async {
-    final currentLevel = await getCurrentMasteryLevel();
     final nextLevel = await getNextMasteryLevelInfo();
 
     if (nextLevel == null) {

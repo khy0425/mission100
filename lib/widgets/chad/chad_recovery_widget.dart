@@ -82,8 +82,6 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Consumer<ChadRecoveryService>(
       builder: (context, recoveryService, child) {
         return Container(

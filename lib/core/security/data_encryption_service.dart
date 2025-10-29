@@ -305,13 +305,11 @@ class DataEncryptionService {
       for (final entry in backupData.entries) {
         try {
           final originalKey = entry.key.replaceFirst('secure_', '');
-          final oldEncryptionResult = EncryptionResult.fromJson(entry.value);
+          // final oldEncryptionResult = EncryptionResult.fromJson(entry.value);
+          // final dataType = _guessDataType(originalKey);
 
-          // 추정되는 데이터 타입 (실제로는 메타데이터에 저장해야 함)
-          final dataType = _guessDataType(originalKey);
-
-          // 구 키로 복호화 (실제로는 구 키를 별도 보관해야 함)
-          // 여기서는 간단한 구현을 위해 skip
+          // 구 키로 복호화 후 신 키로 재암호화 (향후 구현 예정)
+          // 현재는 간단한 구현을 위해 skip
           debugPrint('키 순환 완료: $originalKey');
         } catch (e) {
           debugPrint('키 순환 실패: ${entry.key} - $e');
@@ -324,22 +322,22 @@ class DataEncryptionService {
     }
   }
 
-  /// 키 이름으로 데이터 타입 추정
-  SensitiveDataType _guessDataType(String key) {
-    if (key.contains('user') || key.contains('credential')) {
-      return SensitiveDataType.userCredentials;
-    } else if (key.contains('payment') || key.contains('billing')) {
-      return SensitiveDataType.paymentInfo;
-    } else if (key.contains('health') || key.contains('workout')) {
-      return SensitiveDataType.healthData;
-    } else if (key.contains('api')) {
-      return SensitiveDataType.apiKeys;
-    } else if (key.contains('device')) {
-      return SensitiveDataType.deviceInfo;
-    } else {
-      return SensitiveDataType.personalInfo;
-    }
-  }
+  /// 키 이름으로 데이터 타입 추정 (향후 키 순환 기능에서 사용 예정)
+  // SensitiveDataType _guessDataType(String key) {
+  //   if (key.contains('user') || key.contains('credential')) {
+  //     return SensitiveDataType.userCredentials;
+  //   } else if (key.contains('payment') || key.contains('billing')) {
+  //     return SensitiveDataType.paymentInfo;
+  //   } else if (key.contains('health') || key.contains('workout')) {
+  //     return SensitiveDataType.healthData;
+  //   } else if (key.contains('api')) {
+  //     return SensitiveDataType.apiKeys;
+  //   } else if (key.contains('device')) {
+  //     return SensitiveDataType.deviceInfo;
+  //   } else {
+  //     return SensitiveDataType.personalInfo;
+  //   }
+  // }
 
   /// 암호화 이벤트 로깅
   void _logEncryptionEvent(

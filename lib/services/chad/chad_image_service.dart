@@ -199,10 +199,10 @@ class ChadImageService {
 
     for (final stage in ChadEvolutionStage.values) {
       futures.add(
-        getChadImage(stage, targetSize: targetSize, preload: true).catchError((
-          e,
-        ) {
+        getChadImage(stage, targetSize: targetSize, preload: true).catchError((e) {
           debugPrint('Chad 이미지 프리로드 오류 ($stage): $e');
+          // Return empty 1x1 transparent image as fallback
+          return MemoryImage(Uint8List.fromList([0, 0, 0, 0]));
         }),
       );
     }
@@ -225,10 +225,10 @@ class ChadImageService {
         i++) {
       final stage = ChadEvolutionStage.values[i];
       futures.add(
-        getChadImage(stage, targetSize: targetSize, preload: true).catchError((
-          e,
-        ) {
+        getChadImage(stage, targetSize: targetSize, preload: true).catchError((e) {
           debugPrint('Chad 이미지 프리로드 오류 ($stage): $e');
+          // Return empty 1x1 transparent image as fallback
+          return MemoryImage(Uint8List.fromList([0, 0, 0, 0]));
         }),
       );
     }

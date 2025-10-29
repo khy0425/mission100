@@ -294,7 +294,6 @@ void main() {
 
       test('should handle session refresh', () async {
         // Given: 갱신이 필요한 세션
-        final prefs = await SharedPreferences.getInstance();
         final refreshableSession = {
           'uid': 'test_user_123',
           'email': 'test@example.com',

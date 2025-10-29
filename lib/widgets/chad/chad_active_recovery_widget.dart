@@ -87,8 +87,6 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return Consumer<ChadActiveRecoveryService>(
       builder: (context, recoveryService, child) {
         return GestureDetector(

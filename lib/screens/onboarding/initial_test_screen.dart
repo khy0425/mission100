@@ -6,7 +6,6 @@ import '../../utils/config/constants.dart';
 import '../../utils/data/workout_data.dart';
 import '../../models/user_profile.dart';
 import '../../services/data/database_service.dart';
-import '../../services/workout/workout_program_service.dart';
 
 import '../workout_schedule_setup_screen.dart';
 
@@ -119,7 +118,6 @@ class _InitialTestScreenState extends State<InitialTestScreen>
 
   Future<void> _saveUserProfile() async {
     final databaseService = DatabaseService();
-    final workoutProgramService = WorkoutProgramService();
 
     try {
       // 난이도별 초기 푸시업 개수 설정
