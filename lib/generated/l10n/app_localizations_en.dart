@@ -1837,6 +1837,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dataRestore => '• Data restore';
 
   @override
+  String get progress => 'Progress';
+
+  @override
+  String get statisticsTab => 'Statistics';
+
+  @override
+  String get achievementsTab => '🏆 Achievements';
+
+  @override
   String get accountInfoTitle => 'Account Information';
 
   @override
@@ -4037,9 +4046,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get personalRecords => 'Personal Records';
 
   @override
-  String get progress => 'Progress';
-
-  @override
   String get progressLabel => '🚀 LEGEND PROGRESS 🚀';
 
   @override
@@ -4124,9 +4130,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get statisticsBannerText => 'Check your Chad growth! 📊';
-
-  @override
-  String get statisticsTab => 'Statistics';
 
   @override
   String get advancedLevel => 'Advanced';

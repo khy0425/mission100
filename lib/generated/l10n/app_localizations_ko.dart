@@ -1786,6 +1786,15 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dataRestore => '• 데이터 복원';
 
   @override
+  String get progress => '진행도';
+
+  @override
+  String get statisticsTab => '통계';
+
+  @override
+  String get achievementsTab => '🏆 업적';
+
+  @override
   String get accountInfoTitle => '계정 정보';
 
   @override
@@ -3902,9 +3911,6 @@ class AppLocalizationsKo extends AppLocalizations {
   String get personalRecords => '개인 기록';
 
   @override
-  String get progress => '진행도';
-
-  @override
   String get progressLabel => '🚀 전설 달성률 🚀';
 
   @override
@@ -3985,9 +3991,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get statisticsBannerText => '차드 성장을 확인하라! 📊';
-
-  @override
-  String get statisticsTab => '통계';
 
   @override
   String get advancedLevel => '고급자';

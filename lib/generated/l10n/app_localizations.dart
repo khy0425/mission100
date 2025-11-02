@@ -3482,6 +3482,24 @@ abstract class AppLocalizations {
   /// **'• 데이터 복원'**
   String get dataRestore;
 
+  /// 진행도 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'진행도'**
+  String get progress;
+
+  /// 진척도 화면의 통계 하위 탭
+  ///
+  /// In ko, this message translates to:
+  /// **'통계'**
+  String get statisticsTab;
+
+  /// 진척도 화면의 업적 하위 탭
+  ///
+  /// In ko, this message translates to:
+  /// **'🏆 업적'**
+  String get achievementsTab;
+
   /// No description provided for @accountInfoTitle.
   ///
   /// In ko, this message translates to:
@@ -7334,12 +7352,6 @@ abstract class AppLocalizations {
   /// **'개인 기록'**
   String get personalRecords;
 
-  /// 진행도 라벨
-  ///
-  /// In ko, this message translates to:
-  /// **'진행도'**
-  String get progress;
-
   /// 진행도 라벨 - 스타일
   ///
   /// In ko, this message translates to:
@@ -7495,12 +7507,6 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'차드 성장을 확인하라! 📊'**
   String get statisticsBannerText;
-
-  /// No description provided for @statisticsTab.
-  ///
-  /// In ko, this message translates to:
-  /// **'통계'**
-  String get statisticsTab;
 
   /// Advanced level label
   ///
