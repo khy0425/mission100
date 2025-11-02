@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'generated/app_localizations.dart';
+import 'generated/l10n/app_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -23,10 +23,8 @@ import 'services/data/database_service.dart';
 import 'services/progress/challenge_service.dart';
 import 'services/auth/auth_service.dart';
 import 'services/data/cloud_sync_service.dart';
-// import 'services/subscription_service.dart'; // 구형 시스템 - 제거됨
 import 'services/payment/billing_service.dart';
 import 'services/core/deep_link_handler.dart';
-// MemoryManager import 제거됨
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -137,23 +135,23 @@ void main() async {
                 const Icon(Icons.error, size: 64, color: Colors.red),
                 const SizedBox(height: 16),
                 const Text(
-                  '앱 초기화 중 오류가 발생했습니다.',
+                  'An error occurred during app initialization.',
                   style: TextStyle(fontSize: 18),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '오류: $e',
+                  'Error: $e',
                   style: const TextStyle(fontSize: 14, color: Colors.grey),
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 16),
                 ElevatedButton(
                   onPressed: () {
-                    debugPrint('앱 재시작 시도');
-                    // 앱 재시작 로직
+                    debugPrint('Retrying app startup');
+                    // App restart logic
                   },
-                  child: const Text('다시 시도'),
+                  child: const Text('Retry'),
                 ),
               ],
             ),
