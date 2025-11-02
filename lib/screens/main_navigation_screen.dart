@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../generated/app_localizations.dart';
+import '../generated/l10n/app_localizations.dart';
 import '../utils/config/constants.dart';
 import '../services/achievements/achievement_service.dart';
 import '../services/chad/chad_evolution_service.dart';
@@ -11,10 +11,9 @@ import '../widgets/achievements/multiple_achievements_dialog.dart';
 import '../models/achievement.dart';
 import 'home_screen.dart';
 import 'calendar/calendar_screen.dart';
-import 'achievements/achievements_screen.dart';
+import 'progress/progress_screen.dart';
 import 'challenge/challenge_screen.dart';
 import 'settings/simple_settings_screen.dart';
-import 'statistics/statistics_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -29,9 +28,8 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
   final List<Widget> _screens = [
     const HomeScreen(),
     const CalendarScreen(),
-    const AchievementsScreen(),
+    const ProgressScreen(),
     const ChallengeScreen(),
-    const StatisticsScreen(),
     const SimpleSettingsScreen(),
   ];
 
@@ -91,11 +89,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       } else if (_selectedIndex == 1) {
         // 달력 화면 새로고침 (필요시 구현)
       } else if (_selectedIndex == 2) {
-        // 업적 화면 새로고침 (필요시 구현)
+        // 진척도 화면 (통계+업적) 새로고침 (필요시 구현)
       } else if (_selectedIndex == 3) {
         // 챌린지 화면 새로고침 (필요시 구현)
-      } else if (_selectedIndex == 4) {
-        // 통계 화면 새로고침 (필요시 구현)
       }
 
       // 상태 업데이트로 UI 새로고침
@@ -246,9 +242,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // Chad Evolution Service 전역 컨텍스트 설정
-    ChadEvolutionService.setGlobalContext(context);
-
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
@@ -317,9 +310,9 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           ),
           _buildNavItem(
             2,
-            Icons.emoji_events_outlined,
-            Icons.emoji_events,
-            l10n.achievements,
+            Icons.trending_up_outlined,
+            Icons.trending_up,
+            l10n.progress,
           ),
           _buildNavItem(
             3,
@@ -329,12 +322,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
           ),
           _buildNavItem(
             4,
-            Icons.analytics_outlined,
-            Icons.analytics,
-            l10n.statistics,
-          ),
-          _buildNavItem(
-            5,
             Icons.settings_outlined,
             Icons.settings,
             l10n.settings,

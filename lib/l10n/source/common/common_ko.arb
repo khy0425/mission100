@@ -1237,7 +1237,7 @@
   "completionPercentage": "{percentage}%",
   "completionRate": "완료율",
   "confirm": "확인",
-  "congratulations": "축하한다! 🎉",
+  "congratulations": "축하합니다!",
   "congratulationsMessage": "완벽! 모든 권한 설정 완료! 🎉",
   "consistentStrengthImprovement": "꾸준한 운동으로 근력 향상",
   "continueOrStartNew": "이전 운동을 이어서 계속할래?\\n아니면 새 운동을 시작할래?",
@@ -1474,7 +1474,7 @@
   "scientificFact23Content": "고강도 푸시업은 뇌유래신경영양인자(BDNF)를 최대 300% 증가시켜 뇌 건강을 개선한다.",
   "scientificFact23Impact": "🌟 뇌의 젊음 회복 프로그램 가동!",
   "scientificFact23Title": "BDNF 분비 증가",
-  "scientificFact24Content": "6주간의 푸시업 훈련은 신경 전달 속도를 15% 향상시켜 반응 시간을 단축시킵니다.",
+  "scientificFact24Content": "14주간의 푸시업 훈련은 신경 전달 속도를 15% 향상시켜 반응 시간을 단축시킵니다.",
   "scientificFact24Impact": "⚡ 번개 같은 반사신경 획득!",
   "scientificFact24Title": "반응 속도 개선",
   "scientificFact25Content": "복합 운동인 푸시업은 척수 인터뉴런의 억제 기능을 25% 개선하여 동작의 정확성을 높이다.",
@@ -1498,7 +1498,7 @@
   "scientificFact7Content": "고강도 푸시업은 뇌유래신경영양인자(BDNF)를 최대 300% 증가시켜 뇌 건강을 개선한다.",
   "scientificFact7Impact": "🌟 뇌의 절음 회복 프로그램 가동!",
   "scientificFact7Title": "BDNF 분비 증가",
-  "scientificFact8Content": "6주간의 푸시업 훈련은 신경 전달 속도를 15% 향상시켜 반응 시간을 단축시킵니다.",
+  "scientificFact8Content": "14주간의 푸시업 훈련은 신경 전달 속도를 15% 향상시켜 반응 시간을 단축시킵니다.",
   "scientificFact8Impact": "⚡ 번개 같은 반사신경 획득!",
   "scientificFact8Title": "반응 속도 개선",
   "scientificFact9Content": "복합 운동인 푸시업은 척수 인터뉴런의 억제 기능을 25% 개선하여 동작의 정확성을 높이다.",
@@ -1569,7 +1569,6 @@
   "signInGoogleQuick": "구글로 3초만에 시작하기",
   "viewAchievements": "업적 보기",
   "expandAll": "전체 확장",
-  "previous": "이전",
   "getStarted": "시작하기",
   "error": "오류",
   "accountInfo": "계정 정보",
@@ -1604,7 +1603,6 @@
   "premiumBenefitCloudBackup": "☁️ 클라우드 백업",
   "thisFeature": "이 기능",
   "logout": "로그아웃",
-  "cancel": "취소",
   "days": "일",
   "consecutiveGoal": "연속 목표",
   "name": "이름",
@@ -1630,8 +1628,6 @@
   "fullscreenComingSoon": "풀스크린 기능은 추후 구현 예정입니다.",
   "pauseVideo": "비디오 일시정지",
   "playVideo": "비디오 재생",
-  "ok": "확인",
-  "congratulations": "축하합니다!",
   "completionInfo": "완료 정보",
   "completedDate": "완료일: {date}",
   "@completedDate": {
@@ -1680,5 +1676,115 @@
   "startButton": "시작",
   "targetText": "목표",
   "titleLogout": "로그아웃",
-  "titleScientificEvidence": "과학적 근거"
+  "titleScientificEvidence": "과학적 근거",
+  "welcomeTitle": "환영합니다!",
+  "signupThankYouMessage": "🎉 Mission: 100에 가입해주셔서 감사합니다!",
+  "launchEventBenefits": "런칭 이벤트 혜택:",
+  "benefit1MonthFree": "• 1개월 무료 프리미엄 기능",
+  "oneMonthFreePremium": "1개월 무료 프리미엄",
+  "benefit14WeeksProgram": "• 전체 14주 프로그램 접근",
+  "benefitAllChadStages": "• 모든 차드 진화 단계",
+  "benefitDetailedStats": "• 상세 통계 및 분석",
+  "startWorkoutNow": "지금 바로 운동을 시작해보세요! 💪",
+  "premiumFeaturesSummary": "전체 14주 프로그램 + 모든 차드 + 상세 통계",
+  "benefitPersonalizedPlan": "• 개인화된 운동 계획",
+  "benefitCloudBackup": "• 진행상황 클라우드 백업",
+  "benefitBodyAnalysis": "• 상세한 체성분 분석",
+  "competitionGoalDescription": "다른 사용자와 비교하고 순위를 확인하며 동기부여",
+  "personalRecordGoalDescription": "나만의 목표 달성과 개인 기록 향상에 집중",
+  "viewAllReferences": "전체 참고문헌 보기",
+  "tomorrowActivitiesMessage": "Chad가 내일 추천할 활동들이야! 미리 준비해두자! 💪",
+  "googleLogin": "구글로 로그인",
+  "googleSignin3Seconds": "구글로 3초만에 시작하기",
+  "alreadyHaveChadAccount": "이미 Chad 계정이 있나요?",
+  "googleQuickSignup": "구글로 빠른 가입",
+  "chadActivityCompleted": "{activityTitle} 완료! Chad가 자랑스러워해! 💪",
+  "todayWorkoutRecommendation": "오늘의 추천 운동",
+  "rpeDialogTitle": "운동 강도 평가",
+  "rpeDialogSubtitle": "오늘 운동이 얼마나 힘들었나요?",
+  "rpeLevel6Title": "매우 쉬움",
+  "rpeLevel7Title": "쉬움",
+  "rpeLevel8Title": "적당함",
+  "rpeLevel9Title": "힘듦",
+  "rpeLevel10Title": "최대 강도",
+  "rpeLevel6Description": "전혀 힘들지 않았어요",
+  "rpeLevel7Description": "조금 힘들었어요",
+  "rpeLevel8Description": "적당히 힘들었어요",
+  "rpeLevel9Description": "많이 힘들었어요",
+  "rpeLevel10Description": "최대로 힘들었어요",
+  "signupPromptTitle": "Mission: 100 시작하기",
+  "signupPromptMessage": "{goalText}\n\n가입하고 프리미엄 혜택을 받으세요!",
+  "@signupPromptMessage": {
+    "placeholders": {
+      "goalText": {
+        "type": "String"
+      }
+    }
+  },
+  "signupPromptLaunchEvent": "🎉 런칭 이벤트:",
+  "signupPromptBenefit1": "• 1개월 무료 프리미엄",
+  "signupPromptBenefit2": "• 전체 14주 프로그램 접근",
+  "signupPromptBenefit3": "• 모든 차드 진화 단계",
+  "signupPromptBenefit4": "• 상세 통계 및 분석",
+  "signupPromptCallToAction": "지금 가입하면 혜택을 받을 수 있어요!",
+  "expandAllSteps": "모든 단계 펼치기",
+  "noActiveSubscription": "활성화된 구독이 없습니다",
+  "subscribeForPremium": "프리미엄 기능을 이용하려면 구독하세요",
+  "startSubscriptionButton": "구독 시작하기",
+  "chadRecoveryTitle": "Chad 회복 가이드",
+  "chadRecoverySettingsTitle": "회복 설정",
+  "chadRecoverySettingsSubtitle": "회복 활동 맞춤 설정",
+  "chadWeeklyRecoveryReport": "주간 회복 리포트",
+  "tomorrowsChadActivity": "내일의 Chad 활동",
+  "chadActivityDuration": "{duration}분 활동",
+  "@chadActivityDuration": {
+    "placeholders": {
+      "duration": {
+        "type": "String"
+      }
+    }
+  },
+  "moreActivities": "+ {count}개 더 보기",
+  "chadRecoverySettings": "회복 설정",
+  "goalProgramReady": "{goalText}을(를) 위한 맞춤 프로그램이 준비되었습니다!",
+  "signupToAchieveGoal": "목표를 달성하려면 가입하세요",
+  "startForFree": "무료로 시작하기",
+  "viewAchievement": "업적 보기",
+  "chadLevelUpTitle": "Chad 레벨 업!",
+  "viewChad": "Chad 보기",
+  "continueWithGoogle": "Google로 계속하기",
+  "@chadActivityCompleted": {
+    "placeholders": {
+      "activityTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "@goalProgramReady": {
+    "placeholders": {
+      "goalText": {
+        "type": "String"
+      }
+    }
+  },
+  "@moreActivities": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "dataRestore": "• 데이터 복원",
+  "@progress": {
+    "description": "진척도 탭 제목 (통계 + 업적 통합)"
+  },
+  "progress": "진척도",
+  "@statisticsTab": {
+    "description": "진척도 화면의 통계 하위 탭"
+  },
+  "statisticsTab": "📊 통계",
+  "@achievementsTab": {
+    "description": "진척도 화면의 업적 하위 탭"
+  },
+  "achievementsTab": "🏆 업적"
 }

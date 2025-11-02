@@ -1244,6 +1244,7 @@
   "benefitsSection": "🚀 HOW YOU BECOME LEGENDARY BEAST 🚀",
   "brainjoltDegree": "Brainjolt Degree",
   "brainjoltWithDegree": "🧠 Brainjolt {degree}°",
+  "chadLevelWithBrainjolt": "Lv.{level} Brainjolt {degree}°",
   "breathingSection": "��️ ALPHA EMPEROR BREATHING 🌪️",
   "btnCancel": "Cancel",
   "btnClose": "Close",
@@ -1293,7 +1294,7 @@
   "completionRate": "Completion Rate",
   "confirm": "Confirm",
   "confirmButton": "Confirm",
-  "congratulations": "Congrats! 🎉",
+  "congratulations": "Congratulations!",
   "congratulationsMessage": "Perfect! All permissions set! 🎉",
   "consistentStrengthImprovement": "Improve strength through consistent exercise",
   "contactButton": "Contact",
@@ -1543,7 +1544,7 @@
   "scientificFact23Content": "High-intensity push-ups increase brain-derived neurotrophic factor (BDNF) by up to 300%, improving brain health.",
   "scientificFact23Impact": "🌟 Brain rejuvenation program activated!",
   "scientificFact23Title": "Increased BDNF Secretion",
-  "scientificFact24Content": "6 weeks of push-up training improves neural conduction velocity by 15%, shortening reaction time.",
+  "scientificFact24Content": "14 weeks of push-up training improves neural conduction velocity by 15%, shortening reaction time.",
   "scientificFact24Impact": "⚡ Lightning-fast reflexes acquired!",
   "scientificFact24Title": "Improved Reaction Speed",
   "scientificFact25Content": "Complex push-up exercises improve spinal interneuron inhibitory function by 25%, enhancing movement precision.",
@@ -1567,7 +1568,7 @@
   "scientificFact7Content": "High-intensity push-ups increase Brain-Derived Neurotrophic Factor (BDNF) by up to 300%, improving brain health.",
   "scientificFact7Impact": "🌟 Brain youth recovery program activated!",
   "scientificFact7Title": "Increased BDNF Secretion",
-  "scientificFact8Content": "6 weeks of push-up training improves nerve transmission speed by 15%, shortening reaction time.",
+  "scientificFact8Content": "14 weeks of push-up training improves nerve transmission speed by 15%, shortening reaction time.",
   "scientificFact8Impact": "⚡ Lightning-fast reflexes acquired!",
   "scientificFact8Title": "Improved Reaction Speed",
   "scientificFact9Content": "Complex movement push-ups improve spinal interneuron inhibitory function by 25%, enhancing movement precision.",
@@ -1678,7 +1679,6 @@
   "premiumBenefitCloudBackup": "☁️ Cloud backup",
   "thisFeature": "This feature",
   "logout": "Logout",
-  "cancel": "Cancel",
   "days": "days",
   "consecutiveGoal": "Consecutive Goal",
   "name": "Name",
@@ -1696,8 +1696,6 @@
   "fullscreenComingSoon": "Fullscreen feature will be implemented later.",
   "pauseVideo": "Pause video",
   "playVideo": "Play video",
-  "ok": "OK",
-  "congratulations": "Congratulations!",
   "completionInfo": "Completion Info",
   "completedDate": "Completed: {date}",
   "appInfoDesc": "Version and developer information",
@@ -1708,5 +1706,111 @@
   "githubRepository": "GitHub Repository",
   "openGithub": "View source code on GitHub",
   "start": "Start",
-  "totalExpEarned": "Total experience earned"
+  "totalExpEarned": "Total experience earned",
+  "todayWorkoutRecommendation": "Today's Workout Recommendation",
+  "rpeDialogTitle": "How hard was the workout?",
+  "rpeDialogSubtitle": "RPE (Rate of Perceived Exertion)",
+  "rpeLevel6Title": "Too Easy",
+  "rpeLevel7Title": "Just Right",
+  "rpeLevel8Title": "Hard",
+  "rpeLevel9Title": "Very Hard",
+  "rpeLevel10Title": "Maximum Effort!",
+  "rpeLevel6Description": "I can do more next time\\n→ Next workout intensity +5%",
+  "rpeLevel7Description": "Perfect difficulty\\n→ Maintain intensity",
+  "rpeLevel8Description": "Barely completed\\n→ Maintain intensity",
+  "rpeLevel9Description": "Almost impossible\\n→ Next workout intensity -5%",
+  "rpeLevel10Description": "Gave it my all\\n→ Next workout intensity -10%",
+  "signupPromptTitle": "Customized Program Ready!",
+  "signupPromptMessage": "Your personalized program for {goalText} is ready!",
+  "@signupPromptMessage": {
+    "placeholders": {
+      "goalText": {
+        "type": "String"
+      }
+    }
+  },
+  "signupPromptLaunchEvent": "🎁 Launch Event Benefits:",
+  "signupPromptBenefit1": "• 1 month free premium",
+  "signupPromptBenefit2": "• Personalized workout plan",
+  "signupPromptBenefit3": "• Cloud backup of progress",
+  "signupPromptBenefit4": "• Detailed body composition analysis",
+  "signupPromptCallToAction": "Sign up now and achieve your goals! 💪",
+  "startForFree": "Start for Free",
+  "chadActivityCompleted": "{activityTitle} completed! Chad is proud! 💪",
+  "@chadActivityCompleted": {
+    "placeholders": {
+      "activityTitle": {
+        "type": "String"
+      }
+    }
+  },
+  "continueWithGoogle": "Continue with Google",
+  "signupThankYouMessage": "🎉 Thank you for joining Mission: 100!",
+  "googleQuickSignup": "Quick Sign up with Google",
+  "googleLogin": "Sign in with Google",
+  "googleSignin3Seconds": "Start in 3 seconds with Google",
+  "chadRecoveryTitle": "Chad Active Recovery",
+  "chadWeeklyRecoveryReport": "Chad Weekly Recovery Report",
+  "tomorrowsChadActivity": "Tomorrow's Chad Activity",
+  "chadActivityDuration": "{minutes} minutes",
+  "@chadActivityDuration": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "chadRecoverySettings": "Chad Recovery Settings",
+  "expandAllSteps": "Expand All",
+  "startSubscriptionButton": "Start Subscription",
+  "newAchievementUnlocked": "🏆 New Achievement Unlocked!",
+  "chadLevelUpTitle": "🎉 Chad Level Up!",
+  "viewAchievement": "View Achievement",
+  "viewChad": "View Chad",
+  "noActiveSubscription": "No active subscription",
+  "subscribeForPremium": "Start a subscription to access premium features",
+  "competitionRankings": "Competition and Rankings",
+  "personalRecord": "Personal Records",
+  "welcomeTitle": "Welcome!",
+  "launchEventBenefits": "Launch Event Benefits:",
+  "benefit1MonthFree": "• 1 month free premium",
+  "oneMonthFreePremium": "1 Month Free Premium",
+  "benefit14WeeksProgram": "• Access to full 14-week program",
+  "benefitAllChadStages": "• All Chad evolution stages",
+  "benefitDetailedStats": "• Detailed statistics and analysis",
+  "startWorkoutNow": "Start your workout now! 💪",
+  "benefitPersonalizedPlan": "• Personalized workout plan",
+  "benefitCloudBackup": "• Cloud backup of progress",
+  "benefitBodyAnalysis": "• Detailed body composition analysis",
+  "competitionGoalDescription": "Compare with others and check rankings for motivation",
+  "personalRecordGoalDescription": "Focus on personal goals and improving your own records",
+  "viewAllReferences": "View All References",
+  "tomorrowActivitiesMessage": "These are the activities Chad recommends for tomorrow! Let's prepare! 💪",
+  "goalProgramReady": "Your personalized program for {goalText} is ready!",
+  "signupToAchieveGoal": "Sign up now and achieve your goals! 💪",
+  "chadRecoverySettingsTitle": "Chad Recovery Settings",
+  "chadRecoverySettingsSubtitle": "Adjust personalized recovery activities",
+  "moreActivities": "+ {count} more",
+  "premiumFeaturesSummary": "Full 14-week program + All Chads + Detailed stats",
+  "alreadyHaveChadAccount": "Already have a Chad account?",
+  "@moreActivities": {
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "dataRestore": "• Data restore",
+  "@progress": {
+    "description": "Progress tab title (combines statistics and achievements)"
+  },
+  "progress": "Progress",
+  "@statisticsTab": {
+    "description": "Statistics sub-tab within progress screen"
+  },
+  "statisticsTab": "📊 Statistics",
+  "@achievementsTab": {
+    "description": "Achievements sub-tab within progress screen"
+  },
+  "achievementsTab": "🏆 Achievements"
 }
