@@ -3,8 +3,9 @@
 
 import 'package:flutter/material.dart';
 import '../../utils/config/constants.dart';
-import '../auth/login_screen.dart';
+import '../auth/chad_login_screen.dart';
 import '../misc/permission_screen.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 enum FitnessLevel { beginner, intermediate, advanced }
 
@@ -61,11 +62,11 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
       context: context,
       barrierDismissible: false,
       builder: (context) => AlertDialog(
-        title: const Row(
+        title: Row(
           children: [
             Icon(Icons.stars, color: Color(AppColors.primaryColor)),
             SizedBox(width: 8),
-            Text('맞춤형 프로그램 준비완료!'),
+            Text(AppLocalizations.of(context)!.personalizedProgramReady),
           ],
         ),
         content: Column(
@@ -73,18 +74,18 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '${_getGoalText()}를 위한 개인화된 프로그램이 준비되었습니다!',
+              AppLocalizations.of(context)!.goalProgramReady(_getGoalText()),
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            const Text('🎁 런칭 이벤트 혜택:'),
-            const Text('• 1개월 무료 프리미엄'),
-            const Text('• 개인화된 운동 계획'),
-            const Text('• 진행상황 클라우드 백업'),
-            const Text('• 상세한 체성분 분석'),
+            Text(AppLocalizations.of(context)!.launchEventBenefits),
+            Text(AppLocalizations.of(context)!.benefit1MonthFree),
+            Text(AppLocalizations.of(context)!.benefitPersonalizedPlan),
+            Text(AppLocalizations.of(context)!.benefitCloudBackup),
+            Text(AppLocalizations.of(context)!.benefitBodyAnalysis),
             const SizedBox(height: 16),
-            const Text(
-              '지금 가입하고 목표를 달성해보세요! 💪',
+            Text(
+              AppLocalizations.of(context)!.signupToAchieveGoal,
               style: TextStyle(
                 color: Color(AppColors.primaryColor),
                 fontWeight: FontWeight.bold,
@@ -102,7 +103,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                     builder: (context) => const PermissionScreen()),
               );
             },
-            child: const Text('나중에'),
+            child: Text(AppLocalizations.of(context)!.later),
           ),
           ElevatedButton(
             onPressed: () {
@@ -110,7 +111,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               // 목표 설정 완료 후 로그인 화면으로 이동
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) => const LoginScreen(),
+                  builder: (context) => const ChadLoginScreen(),
                 ),
               );
             },
@@ -118,7 +119,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               backgroundColor: const Color(AppColors.primaryColor),
               foregroundColor: Colors.white,
             ),
-            child: const Text('무료로 시작하기'),
+            child: Text(AppLocalizations.of(context)!.startForFree),
           ),
         ],
       ),
@@ -151,7 +152,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             isDark ? Colors.grey[900] : const Color(AppColors.primaryColor),
         foregroundColor: Colors.white,
         elevation: 0,
-        title: const Text('목표 설정'),
+        title: Text(AppLocalizations.of(context)!.goalSettings),
         leading: _currentPage > 0
             ? IconButton(
                 icon: const Icon(Icons.arrow_back),
@@ -582,14 +583,14 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                 ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
                 : null,
             child: ListTile(
-              title: const Row(
+              title: Row(
                 children: [
                   Text('🏆', style: TextStyle(fontSize: 20)),
                   SizedBox(width: 8),
-                  Text('경쟁과 순위', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(AppLocalizations.of(context).competitionTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
                 ],
               ),
-              subtitle: const Text('다른 사용자와 비교하고 순위를 확인하며 동기부여'),
+              subtitle: Text(AppLocalizations.of(context)!.competitionDesc),
               leading: Radio<bool>(
                 value: true,
                 groupValue: _likesCompetition,
@@ -610,14 +611,14 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                 ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
                 : null,
             child: ListTile(
-              title: const Row(
+              title: Row(
                 children: [
                   Text('📈', style: TextStyle(fontSize: 20)),
                   SizedBox(width: 8),
-                  Text('개인 기록', style: TextStyle(fontWeight: FontWeight.bold)),
+                  Text(AppLocalizations.of(context).personalRecordTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
                 ],
               ),
-              subtitle: const Text('나만의 목표 달성과 개인 기록 향상에 집중'),
+              subtitle: Text(AppLocalizations.of(context)!.personalRecordDesc),
               leading: Radio<bool>(
                 value: false,
                 groupValue: _likesCompetition,
