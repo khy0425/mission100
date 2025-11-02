@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 class PermissionService {
   static const String _storagePermissionAskedKey = 'storage_permission_asked';
@@ -230,7 +230,7 @@ class PermissionService {
                   Text(AppLocalizations.of(context).storageAccess),
                 ],
               ),
-              content: const Column(
+              content: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -257,7 +257,7 @@ class PermissionService {
                       Icon(Icons.restore, color: Colors.blue, size: 20),
                       SizedBox(width: 8),
                       Expanded(
-                        child: Text('• 데이터 복원', style: TextStyle(fontSize: 14)),
+                        child: Text(AppLocalizations.of(context).dataRestore, style: TextStyle(fontSize: 14)),
                       ),
                     ],
                   ),
