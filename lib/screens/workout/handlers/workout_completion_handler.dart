@@ -108,6 +108,11 @@ class WorkoutCompletionHandler {
 
       // 클라우드 동기화 (비동기로 실행하여 UX 차단 방지)
       _syncWorkoutToCloud(history);
+
+      // 운동 완료 XP 지급 (주차별 차등 지급)
+      final week = workout.week ?? 1;
+      final day = workout.day ?? 1;
+      await ChadEvolutionService.addWorkoutCompletionXP(week, day);
     } catch (e) {
       debugPrint('❌ 운동 기록 저장 실패, 대체 방법 시도: $e');
       await _saveWorkoutHistoryFallback(history);
@@ -155,8 +160,8 @@ class WorkoutCompletionHandler {
         completedWorkouts.add(workoutKey);
         await prefs.setStringList('completed_workouts', completedWorkouts);
 
-        // 진행률 계산 (총 12주 * 7일 = 84일 기준)
-        const totalDays = 84;
+        // 진행률 계산 (총 14주 * 3일 = 42일 기준, 주 3회 운동)
+        const totalDays = 42;
         final progressPercentage =
             (completedWorkouts.length / totalDays * 100).round();
         await prefs.setInt('program_progress', progressPercentage);
@@ -330,31 +335,10 @@ class WorkoutCompletionHandler {
     try {
       debugPrint('🎯 업적 확인 시작');
 
+      // AchievementService가 업적 확인 및 pending_achievement_events 저장을 모두 처리함
+      // (unlockAchievement() -> _saveAchievementEvent() 호출)
       final achievements =
           await AchievementService.checkAndUpdateAchievements();
-
-      if (achievements.isNotEmpty) {
-        // 업적 이벤트 저장 (MainNavigationScreen에서 표시용)
-        final prefs = await SharedPreferences.getInstance();
-        final events = prefs.getStringList('pending_achievement_events') ?? [];
-
-        for (final achievement in achievements) {
-          final eventJson = jsonEncode({
-            'id': achievement.id,
-            'titleKey': achievement.titleKey,
-            'descriptionKey': achievement.descriptionKey,
-            'motivationKey': achievement.motivationKey,
-            'rarity': achievement.rarity.toString().split('.').last,
-            'xpReward': achievement.xpReward,
-            'type': achievement.type.toString().split('.').last,
-            'targetValue': achievement.targetValue,
-          });
-          events.add(eventJson);
-        }
-
-        await prefs.setStringList('pending_achievement_events', events);
-        debugPrint('✅ 업적 이벤트 저장 완료: ${achievements.length}개');
-      }
 
       debugPrint('✅ 업적 확인 완료: ${achievements.length}개 새로 달성');
       return achievements;
