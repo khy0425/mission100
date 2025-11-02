@@ -4,7 +4,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
-import '../generated/app_localizations.dart';
+import '../generated/l10n/app_localizations.dart';
 import '../utils/config/constants.dart';
 import '../models/achievement.dart';
 import '../widgets/common/ad_banner_widget.dart';
@@ -220,9 +220,14 @@ class _WorkoutScreenState extends State<WorkoutScreen>
       // 프로그램 진행률 및 내일 휴식일 정보 가져오기
       final prefs = await SharedPreferences.getInstance();
       final completedWorkouts = prefs.getStringList('completed_workouts') ?? [];
-      const totalDays = 84; // 12주 * 7일
+      const totalDays = 42; // 14주 * 3일 (주 3회 운동)
       final progressPercentage =
           (completedWorkouts.length / totalDays * 100).round();
+
+      // 레벨업 정보 확인
+      final levelUpOld = prefs.getInt('pending_level_up_old');
+      final levelUpNew = prefs.getInt('pending_level_up_new');
+      final hasLevelUp = levelUpOld != null && levelUpNew != null;
 
       // 내일 휴식일 여부 확인 (사용자 설정 고려)
       final tomorrow = DateTime.now().add(const Duration(days: 1));
@@ -290,6 +295,107 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                   ),
                   const SizedBox(height: 16),
 
+                  // 레벨업 정보 (레벨업 시만 표시)
+                  if (hasLevelUp) ...[
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          colors: [Color(0xFF4DABF7), Color(0xFF228BE6)],
+                        ),
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.blue.withValues(alpha: 0.3),
+                            blurRadius: 10,
+                            spreadRadius: 2,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        children: [
+                          const Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.star, color: Colors.amber, size: 24),
+                              SizedBox(width: 8),
+                              Text(
+                                '🎉 LEVEL UP! 🎉',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              SizedBox(width: 8),
+                              Icon(Icons.star, color: Colors.amber, size: 24),
+                            ],
+                          ),
+                          const SizedBox(height: 12),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 8,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white.withValues(alpha: 0.2),
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Text(
+                                  'Lv.$levelUpOld',
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white70,
+                                  ),
+                                ),
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 12),
+                                child: Icon(
+                                  Icons.arrow_forward,
+                                  color: Colors.white,
+                                  size: 24,
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                  horizontal: 16,
+                                  vertical: 8,
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Text(
+                                  'Lv.$levelUpNew',
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color(0xFF228BE6),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          const SizedBox(height: 8),
+                          Text(
+                            AppLocalizations.of(context).chadBecameStronger,
+                            style: const TextStyle(
+                              fontSize: 14,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 12),
+                  ],
+
                   // 운동 통계
                   Container(
                     padding: const EdgeInsets.all(12),
@@ -306,7 +412,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                             Column(
                               children: [
                                 Text(
-                                  '💀 파괴된 횟수',
+                                  AppLocalizations.of(context).repsDestroyed,
                                   style: TextStyle(
                                     fontSize: 10,
                                     color: Colors.blue[700],
@@ -326,7 +432,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                             Column(
                               children: [
                                 Text(
-                                  '💰 획득 XP',
+                                  AppLocalizations.of(context).xpGained,
                                   style: TextStyle(
                                     fontSize: 10,
                                     color: Colors.blue[700],
@@ -346,7 +452,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                             Column(
                               children: [
                                 Text(
-                                  '⏱️ 소멸 시간',
+                                  AppLocalizations.of(context).timeElapsed,
                                   style: TextStyle(
                                     fontSize: 10,
                                     color: Colors.blue[700],
@@ -511,7 +617,7 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                                     vertical: 2,
                                   ),
                                   child: Text(
-                                    '🌟 ${achievement.titleKey}',
+                                    '🌟 ${achievement.getTitle(context)}',
                                     style: TextStyle(
                                       fontSize: 12,
                                       color: Colors.amber[600],
@@ -545,9 +651,9 @@ class _WorkoutScreenState extends State<WorkoutScreen>
                                   color: Colors.amber,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: const Text(
-                                  '✨ 모든 업적 보기',
-                                  style: TextStyle(
+                                child: Text(
+                                  AppLocalizations.of(context).viewAllAchievements,
+                                  style: const TextStyle(
                                     fontSize: 10,
                                     color: Colors.white,
                                     fontWeight: FontWeight.bold,
@@ -630,9 +736,19 @@ class _WorkoutScreenState extends State<WorkoutScreen>
             ),
             actions: [
               TextButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                  _finishWorkout();
+                onPressed: () async {
+                  // 레벨업 플래그 제거
+                  await prefs.remove('pending_level_up_old');
+                  await prefs.remove('pending_level_up_new');
+
+                  // 업적 이벤트 클리어 (이미 이 다이얼로그에서 표시했으므로 중복 방지)
+                  await prefs.remove('pending_achievement_events');
+
+                  // 모든 다이얼로그와 운동 화면을 닫고 홈으로 돌아가기
+                  if (mounted) {
+                    Navigator.of(context).popUntil((route) => route.isFirst);
+                    widget.onWorkoutCompleted?.call();
+                  }
                 },
                 child: Container(
                   padding: const EdgeInsets.symmetric(
