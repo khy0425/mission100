@@ -4,7 +4,7 @@
       "stepNumber": 1,
       "title": "Starting Position",
       "description": "Start in a plank position and set the correct positions for your hands and feet.",
-      "imagePath": "assets/images/form_guide/step1_start_position.png",
+      "imagePath": null,
       "keyPoints": [
         "Hands directly under shoulders",
         "Fingers pointing forward",
@@ -12,14 +12,14 @@
         "Keep body in straight line"
       ],
       "animationPath": null,
-      "videoUrl": null,
+      "videoUrl": "https://youtube.com/shorts/4Bc1tPaYkOo?si=9kRAT-0liXtl5NwB",
       "videoAssetPath": null
     },
     {
       "stepNumber": 2,
       "title": "Descending Motion",
       "description": "Bend your elbows and slowly lower your body down.",
-      "imagePath": "assets/images/form_guide/step2_descending.png",
+      "imagePath": null,
       "keyPoints": [
         "Bend elbows at 45-degree angle",
         "Lower until chest nearly touches floor",
@@ -27,14 +27,14 @@
         "Inhale while descending"
       ],
       "animationPath": null,
-      "videoUrl": "https://example.com/pushup_descending.mp4",
+      "videoUrl": "https://youtube.com/shorts/4Bc1tPaYkOo?si=9kRAT-0liXtl5NwB",
       "videoAssetPath": null
     },
     {
       "stepNumber": 3,
       "title": "Bottom Position",
       "description": "Pause briefly at the bottom position where your chest nearly touches the floor.",
-      "imagePath": "assets/images/form_guide/step3_bottom_position.png",
+      "imagePath": null,
       "keyPoints": [
         "Fist-width gap between chest and floor",
         "Maintain straight body line",
@@ -42,14 +42,14 @@
         "Hold for 1-2 seconds"
       ],
       "animationPath": null,
-      "videoUrl": null,
+      "videoUrl": "https://youtube.com/shorts/4Bc1tPaYkOo?si=9kRAT-0liXtl5NwB",
       "videoAssetPath": null
     },
     {
       "stepNumber": 4,
       "title": "Ascending Motion",
       "description": "Push back up to the starting position by extending your arms.",
-      "imagePath": "assets/images/form_guide/step4_ascending.png",
+      "imagePath": null,
       "keyPoints": [
         "Push up powerfully",
         "Support body with core muscles",
@@ -57,14 +57,14 @@
         "Fully extend elbows"
       ],
       "animationPath": null,
-      "videoUrl": "https://example.com/pushup_ascending.mp4",
+      "videoUrl": "https://youtube.com/shorts/4Bc1tPaYkOo?si=9kRAT-0liXtl5NwB",
       "videoAssetPath": null
     },
     {
       "stepNumber": 5,
       "title": "Finish Position",
       "description": "Return completely to starting position and prepare for the next repetition.",
-      "imagePath": "assets/images/form_guide/step5_finish_position.png",
+      "imagePath": null,
       "keyPoints": [
         "Elbows fully extended",
         "Maintain straight body line",
@@ -72,70 +72,8 @@
         "Prepare for next rep"
       ],
       "animationPath": null,
-      "videoUrl": null,
+      "videoUrl": "https://youtube.com/shorts/4Bc1tPaYkOo?si=9kRAT-0liXtl5NwB",
       "videoAssetPath": null
-    }
-  ],
-  "commonMistakes": [
-    {
-      "title": "Hips too high",
-      "description": "Raising your hips too high reduces core muscle engagement and decreases effectiveness.",
-      "wrongImagePath": "assets/images/mistakes/high_hips_wrong.png",
-      "correctImagePath": "assets/images/mistakes/high_hips_correct.png",
-      "severity": "high",
-      "corrections": [
-        "Engage core muscles to maintain straight line",
-        "Check posture in mirror",
-        "Practice plank position to build foundation"
-      ]
-    },
-    {
-      "title": "Sagging hips",
-      "description": "Sagging hips puts strain on the lower back and increases injury risk.",
-      "wrongImagePath": "assets/images/mistakes/sagging_hips_wrong.png",
-      "correctImagePath": "assets/images/mistakes/sagging_hips_correct.png",
-      "severity": "high",
-      "corrections": [
-        "Contract abs and glutes simultaneously",
-        "Maintain neutral spine position",
-        "Include core strengthening exercises"
-      ]
-    },
-    {
-      "title": "Elbows flared too wide",
-      "description": "Flaring elbows to 90 degrees puts stress on shoulders and increases injury risk.",
-      "wrongImagePath": "assets/images/mistakes/wide_elbows_wrong.png",
-      "correctImagePath": "assets/images/mistakes/wide_elbows_correct.png",
-      "severity": "medium",
-      "corrections": [
-        "Keep elbows close to body (45-degree angle)",
-        "Stabilize shoulder blades",
-        "Strengthen triceps"
-      ]
-    },
-    {
-      "title": "Head forward",
-      "description": "Pushing your head forward creates tension in neck and shoulders and breaks proper form.",
-      "wrongImagePath": "assets/images/mistakes/forward_head_wrong.png",
-      "correctImagePath": "assets/images/mistakes/forward_head_correct.png",
-      "severity": "medium",
-      "corrections": [
-        "Keep neck in neutral position",
-        "Look down at floor",
-        "Improve neck flexibility with stretching"
-      ]
-    },
-    {
-      "title": "Partial range of motion",
-      "description": "Not lowering enough significantly reduces muscle development benefits.",
-      "wrongImagePath": "assets/images/mistakes/partial_range_wrong.png",
-      "correctImagePath": "assets/images/mistakes/partial_range_correct.png",
-      "severity": "medium",
-      "corrections": [
-        "Lower until chest nearly touches floor",
-        "Control movement slowly",
-        "Improve flexibility with stretching"
-      ]
     }
   ],
   "variations": [
@@ -154,7 +92,8 @@
         "Great for learning proper form",
         "Gradual upper body strength development",
         "Lower injury risk"
-      ]
+      ],
+      "videoUrl": "https://youtube.com/shorts/rrVwNeIpy-k?si=cO-m0ffZbhB9GvsD"
     },
     {
       "name": "Incline Push-ups",
@@ -171,7 +110,8 @@
         "Adjustable intensity",
         "Perfect form practice",
         "Progressive difficulty increase"
-      ]
+      ],
+      "videoUrl": "https://youtube.com/shorts/DORUKQ3zLIo?si=4hG1sHddRmmMSwa7"
     },
     {
       "name": "Diamond Push-ups",
@@ -188,7 +128,8 @@
         "Intense tricep strengthening",
         "Improved core stability",
         "Advanced strength development"
-      ]
+      ],
+      "videoUrl": "https://youtube.com/shorts/PPTj-MW2tcs?si=N1Ov2pDR8ewiPoSB"
     },
     {
       "name": "One-Arm Push-ups",
@@ -362,4 +303,4 @@
     "language": "en",
     "author": "Mission 100 Team"
   }
-} 
+}

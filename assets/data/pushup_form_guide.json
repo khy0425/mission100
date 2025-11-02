@@ -4,7 +4,7 @@
       "stepNumber": 1,
       "title": "시작 자세",
       "description": "플랭크 자세로 시작하여 손과 발의 위치를 정확히 설정합니다.",
-      "imagePath": "assets/images/pushup_forms/standard/pushup_animation.gif",
+      "imagePath": null,
       "keyPoints": [
         "손은 어깨 바로 아래 위치",
         "손가락은 앞을 향하게",
@@ -12,14 +12,14 @@
         "몸은 일직선 유지"
       ],
       "animationPath": null,
-      "videoUrl": null,
+      "videoUrl": "https://youtube.com/shorts/qeK3LrNRN2o?si=UpDjiIEcGBMZdRIw",
       "videoAssetPath": null
     },
     {
       "stepNumber": 2,
       "title": "하강 동작",
       "description": "팔꿈치를 구부리며 천천히 몸을 아래로 내립니다.",
-      "imagePath": "assets/images/pushup_forms/standard/biomechanics_pushup.png",
+      "imagePath": null,
       "keyPoints": [
         "팔꿈치는 45도 각도로 구부림",
         "가슴이 바닥에 거의 닿을 때까지",
@@ -27,14 +27,14 @@
         "호흡은 내려가면서 들이마시기"
       ],
       "animationPath": null,
-      "videoUrl": "https://example.com/pushup_descending.mp4",
+      "videoUrl": "https://youtube.com/shorts/qeK3LrNRN2o?si=UpDjiIEcGBMZdRIw",
       "videoAssetPath": null
     },
     {
       "stepNumber": 3,
       "title": "최하점 자세",
       "description": "가슴이 바닥에 거의 닿는 최하점에서 잠시 정지합니다.",
-      "imagePath": "assets/images/pushup_forms/standard/biomechanics_pushup.png",
+      "imagePath": null,
       "keyPoints": [
         "가슴과 바닥 사이 주먹 하나 간격",
         "몸의 일직선 유지",
@@ -42,14 +42,14 @@
         "1-2초간 정지"
       ],
       "animationPath": null,
-      "videoUrl": null,
+      "videoUrl": "https://youtube.com/shorts/qeK3LrNRN2o?si=UpDjiIEcGBMZdRIw",
       "videoAssetPath": null
     },
     {
       "stepNumber": 4,
       "title": "상승 동작",
       "description": "팔을 펴며 시작 자세로 돌아갑니다.",
-      "imagePath": "assets/images/pushup_forms/standard/pushup_animation.gif",
+      "imagePath": null,
       "keyPoints": [
         "팔을 힘차게 펴기",
         "코어 근육으로 몸 지지",
@@ -57,14 +57,14 @@
         "팔꿈치 완전히 펴기"
       ],
       "animationPath": null,
-      "videoUrl": "https://example.com/pushup_ascending.mp4",
+      "videoUrl": "https://youtube.com/shorts/qeK3LrNRN2o?si=UpDjiIEcGBMZdRIw",
       "videoAssetPath": null
     },
     {
       "stepNumber": 5,
       "title": "완료 자세",
       "description": "시작 자세로 완전히 돌아와 다음 반복을 준비합니다.",
-      "imagePath": "assets/images/pushup_forms/standard/biomechanics_pushup.png",
+      "imagePath": null,
       "keyPoints": [
         "팔꿈치 완전히 펴진 상태",
         "몸의 일직선 유지",
@@ -72,70 +72,8 @@
         "다음 반복 준비"
       ],
       "animationPath": null,
-      "videoUrl": null,
+      "videoUrl": "https://youtube.com/shorts/qeK3LrNRN2o?si=UpDjiIEcGBMZdRIw",
       "videoAssetPath": null
-    }
-  ],
-  "commonMistakes": [
-    {
-      "title": "엉덩이가 너무 높이 올라감",
-      "description": "엉덩이를 높이 들면 코어 근육 사용이 줄어들고 효과가 떨어집니다.",
-      "wrongImagePath": "assets/images/pushup_forms/standard/high_hips_wrong.png",
-      "correctImagePath": "assets/images/pushup_forms/standard/high_hips_correct.png",
-      "severity": "high",
-      "corrections": [
-        "코어 근육을 긴장시켜 몸을 일직선으로 유지",
-        "거울을 보며 자세 확인",
-        "플랭크 자세 연습으로 기본기 다지기"
-      ]
-    },
-    {
-      "title": "엉덩이가 너무 아래로 처짐",
-      "description": "엉덩이가 처지면 허리에 무리가 가고 부상 위험이 증가합니다.",
-      "wrongImagePath": "assets/images/pushup_forms/standard/sagging_hips_wrong.png",
-      "correctImagePath": "assets/images/pushup_forms/standard/sagging_hips_correct.png",
-      "severity": "high",
-      "corrections": [
-        "복근과 둔근을 동시에 수축",
-        "허리 중립 자세 유지",
-        "코어 강화 운동 병행"
-      ]
-    },
-    {
-      "title": "팔꿈치가 너무 벌어짐",
-      "description": "팔꿈치를 90도로 벌리면 어깨에 무리가 가고 부상 위험이 높아집니다.",
-      "wrongImagePath": "assets/images/mistakes/wide_elbows_wrong.png",
-      "correctImagePath": "assets/images/mistakes/wide_elbows_correct.png",
-      "severity": "medium",
-      "corrections": [
-        "팔꿈치를 몸에 가깝게 유지 (45도 각도)",
-        "어깨날 안정화",
-        "삼두근 강화 운동"
-      ]
-    },
-    {
-      "title": "목이 앞으로 나옴",
-      "description": "목을 앞으로 빼면 목과 어깨에 긴장이 생기고 자세가 무너집니다.",
-      "wrongImagePath": "assets/images/mistakes/forward_head_wrong.png",
-      "correctImagePath": "assets/images/mistakes/forward_head_correct.png",
-      "severity": "medium",
-      "corrections": [
-        "목을 중립 위치에 유지",
-        "시선은 바닥을 향하게",
-        "목 스트레칭으로 유연성 개선"
-      ]
-    },
-    {
-      "title": "가동범위가 부족함",
-      "description": "충분히 내려가지 않으면 근육 발달 효과가 크게 떨어집니다.",
-      "wrongImagePath": "assets/images/mistakes/partial_range_wrong.png",
-      "correctImagePath": "assets/images/mistakes/partial_range_correct.png",
-      "severity": "medium",
-      "corrections": [
-        "가슴이 바닥에 거의 닿을 때까지 내려가기",
-        "천천히 컨트롤하며 동작",
-        "유연성 향상을 위한 스트레칭"
-      ]
     }
   ],
   "variations": [
@@ -154,13 +92,14 @@
         "기본 자세 익히기에 좋음",
         "상체 근력 점진적 발달",
         "부상 위험 낮음"
-      ]
+      ],
+      "videoUrl": "https://youtube.com/shorts/S9_wN5w6J_s?si=kal2op6plWLIbrkq"
     },
     {
       "name": "인클라인 푸시업",
       "description": "벤치나 계단을 이용한 경사 푸시업",
       "difficulty": "beginner",
-      "imagePath": "assets/images/pushup_forms/standard/pushup_animation.gif",
+      "imagePath": null,
       "instructions": [
         "벤치나 계단에 손을 올림",
         "발은 바닥에 고정",
@@ -171,7 +110,8 @@
         "강도 조절 가능",
         "정확한 자세 연습",
         "점진적 난이도 증가"
-      ]
+      ],
+      "videoUrl": "https://youtube.com/shorts/DORUKQ3zLIo?si=WrLVks7iCQLkyU2X"
     },
     {
       "name": "다이아몬드 푸시업",
@@ -188,24 +128,8 @@
         "삼두근 집중 강화",
         "코어 안정성 향상",
         "상급자 근력 발달"
-      ]
-    },
-    {
-      "name": "파이크 푸시업",
-      "description": "어깨 근육을 집중적으로 강화하는 고급 푸시업",
-      "difficulty": "advanced",
-      "imagePath": "assets/images/pushup_forms/pike/pike_pushup.gif",
-      "instructions": [
-        "다운독 자세로 시작",
-        "엉덩이를 높이 들어올림",
-        "머리가 바닥에 가까워질 때까지 하강",
-        "어깨 힘으로만 밀어올리기"
       ],
-      "benefits": [
-        "어깨 근육 집중 강화",
-        "핸드스탠드 연습",
-        "상체 안정성 향상"
-      ]
+      "videoUrl": "https://youtube.com/shorts/PPTj-MW2tcs?si=N1Ov2pDR8ewiPoSB"
     },
     {
       "name": "와이드 그립 푸시업",
@@ -222,7 +146,8 @@
         "가슴 근육 집중 강화",
         "상체 폭 증가",
         "어깨 안정성 향상"
-      ]
+      ],
+      "videoUrl": "https://youtu.be/cmHZnB2QfFI?si=Vze3fmJ6qPGRIqTI"
     },
     {
       "name": "디클라인 푸시업",
@@ -239,7 +164,8 @@
         "상체 근력 대폭 강화",
         "어깨와 가슴 상부 발달",
         "고급 근력 발달"
-      ]
+      ],
+      "videoUrl": "https://youtu.be/AeDw1tlXczo?si=lu78SdsLr9Ba4ON7&t=9"
     }
   ],
   "improvementTips": [
@@ -396,4 +322,4 @@
     "language": "ko",
     "author": "Mission 100 Team"
   }
-} 
+}

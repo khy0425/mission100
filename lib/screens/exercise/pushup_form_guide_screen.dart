@@ -1,13 +1,14 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/pushup_form_guide.dart';
 import '../../services/workout/pushup_form_guide_service.dart';
 import '../../services/chad/chad_encouragement_service.dart';
 import '../../widgets/common/ad_banner_widget.dart';
 import '../../widgets/common/video_player_widget.dart';
-import '../../widgets/exercise/exercise_slideshow_widget.dart';
+import '../../widgets/exercise/youtube_player_inline_widget.dart';
 import '../../utils/helpers/accessibility_utils.dart';
+import '../../data/pushup_videos.dart';
 
 class PushupFormGuideScreen extends StatefulWidget {
   const PushupFormGuideScreen({super.key});
@@ -32,7 +33,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
 
     // 기본 데이터로 초기화 (로딩 중에도 화면이 표시되도록)
     _guideData = _formGuideService.getFormGuideData();
@@ -100,47 +101,25 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
               label: AccessibilityUtils.createTabLabel(
                 title: AppLocalizations.of(
                   context,
-                ).stepByStepGuide.replaceAll('\n', ' '),
+                ).perfectFormGuide.replaceAll('\n', ' '),
                 position: 1,
-                total: 4,
+                total: 2,
                 isSelected: _tabController.index == 0,
               ),
-              child: Tab(text: AppLocalizations.of(context).stepByStepGuide),
-            ),
-            Semantics(
-              label: AccessibilityUtils.createTabLabel(
-                title: AppLocalizations.of(
-                  context,
-                ).commonMistakes.replaceAll('\n', ' '),
-                position: 2,
-                total: 4,
-                isSelected: _tabController.index == 1,
-              ),
-              child: Tab(text: AppLocalizations.of(context).commonMistakes),
+              child: Tab(text: AppLocalizations.of(context).perfectFormGuide),
             ),
             Semantics(
               label: AccessibilityUtils.createTabLabel(
                 title: AppLocalizations.of(
                   context,
                 ).variationExercises.replaceAll('\n', ' '),
-                position: 3,
-                total: 4,
-                isSelected: _tabController.index == 2,
+                position: 2,
+                total: 2,
+                isSelected: _tabController.index == 1,
               ),
               child: Tab(
                 text: AppLocalizations.of(context).variationExercises,
               ),
-            ),
-            Semantics(
-              label: AccessibilityUtils.createTabLabel(
-                title: AppLocalizations.of(
-                  context,
-                ).improvementTips.replaceAll('\n', ' '),
-                position: 4,
-                total: 4,
-                isSelected: _tabController.index == 3,
-              ),
-              child: Tab(text: AppLocalizations.of(context).improvementTips),
             ),
           ],
         ),
@@ -152,10 +131,8 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
             child: TabBarView(
               controller: _tabController,
               children: [
-                _buildFormStepsTab(),
-                _buildCommonMistakesTab(),
+                _buildPerfectFormTab(),
                 _buildVariationsTab(),
-                _buildImprovementTipsTab(),
               ],
             ),
           ),
@@ -167,147 +144,151 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
     );
   }
 
-  Widget _buildFormStepsTab() {
+  Widget _buildPerfectFormTab() {
     return SafeArea(
       bottom: false,
-      child: Column(
-        children: [
-          // 헤더와 컨트롤
-          Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                // 헤더
-                _buildSectionHeader(
-                  AppLocalizations.of(context).correctPushupForm5Steps,
-                  AppLocalizations.of(context).chadPerfectPushupForm,
-                  Icons.fitness_center,
-                  const Color(0xFF4DABF7),
-                ),
+      child: CustomScrollView(
+        slivers: [
+          // 헤더와 단계별 가이드 컨트롤
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  // 헤더
+                  _buildSectionHeader(
+                    AppLocalizations.of(context).correctPushupForm5Steps,
+                    AppLocalizations.of(context).chadPerfectPushupForm,
+                    Icons.fitness_center,
+                    const Color(0xFF4DABF7),
+                  ),
 
-                const SizedBox(height: 16),
+                  const SizedBox(height: 16),
 
-                // 뷰 모드 전환 버튼들
-                Row(
-                  children: [
-                    Expanded(
-                      child: Semantics(
+                  // 뷰 모드 전환 버튼들
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Semantics(
+                          button: true,
+                          label: AccessibilityUtils.createButtonLabel(
+                            action: '목록 보기로 전환',
+                            target: '단계별 가이드',
+                            state: !_isStepViewMode ? '현재 선택됨' : null,
+                            hint: '단계별 가이드를 목록 형태로 표시합니다',
+                          ),
+                          child: ElevatedButton.icon(
+                            onPressed: () =>
+                                setState(() => _isStepViewMode = false),
+                            icon: const Icon(Icons.list, size: 18),
+                            label: Text(AppLocalizations.of(context).listView),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: !_isStepViewMode
+                                  ? const Color(0xFF4DABF7)
+                                  : Colors.grey,
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(vertical: 12),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Semantics(
+                          button: true,
+                          label: AccessibilityUtils.createButtonLabel(
+                            action: AppLocalizations.of(context).switchToSwipeView,
+                            target: '단계별 가이드',
+                            state: _isStepViewMode ? '현재 선택됨' : null,
+                            hint: AppLocalizations.of(context).swipeViewHint,
+                          ),
+                          child: ElevatedButton.icon(
+                            onPressed: () =>
+                                setState(() => _isStepViewMode = true),
+                            icon: const Icon(Icons.swipe, size: 18),
+                            label: Text(AppLocalizations.of(context).swipeView),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: _isStepViewMode
+                                  ? const Color(0xFF4DABF7)
+                                  : Colors.grey,
+                              foregroundColor: Colors.white,
+                              padding: const EdgeInsets.symmetric(vertical: 12),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Semantics(
                         button: true,
                         label: AccessibilityUtils.createButtonLabel(
-                          action: '목록 보기로 전환',
-                          target: '단계별 가이드',
-                          state: !_isStepViewMode ? '현재 선택됨' : null,
-                          hint: '단계별 가이드를 목록 형태로 표시합니다',
+                          action: '퀴즈 시작',
+                          target: '푸시업 폼 가이드',
+                          hint: '학습한 내용을 확인하는 퀴즈를 시작합니다',
                         ),
                         child: ElevatedButton.icon(
-                          onPressed: () =>
-                              setState(() => _isStepViewMode = false),
-                          icon: const Icon(Icons.list, size: 18),
-                          label: Text(AppLocalizations.of(context).listView),
+                          onPressed: _showQuiz,
+                          icon: const Icon(Icons.quiz, size: 18),
+                          label: Text(AppLocalizations.of(context).quiz),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: !_isStepViewMode
-                                ? const Color(0xFF4DABF7)
-                                : Colors.grey,
+                            backgroundColor: const Color(0xFF51CF66),
                             foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(vertical: 12),
+                            padding: const EdgeInsets.symmetric(
+                              vertical: 12,
+                              horizontal: 16,
+                            ),
                           ),
                         ),
                       ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Semantics(
-                        button: true,
-                        label: AccessibilityUtils.createButtonLabel(
-                          action: '스와이프 보기로 전환',
-                          target: '단계별 가이드',
-                          state: _isStepViewMode ? '현재 선택됨' : null,
-                          hint: '단계별 가이드를 스와이프 형태로 표시합니다',
-                        ),
-                        child: ElevatedButton.icon(
-                          onPressed: () =>
-                              setState(() => _isStepViewMode = true),
-                          icon: const Icon(Icons.swipe, size: 18),
-                          label: Text(AppLocalizations.of(context).swipeView),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: _isStepViewMode
-                                ? const Color(0xFF4DABF7)
-                                : Colors.grey,
-                            foregroundColor: Colors.white,
-                            padding: const EdgeInsets.symmetric(vertical: 12),
-                          ),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Semantics(
-                      button: true,
-                      label: AccessibilityUtils.createButtonLabel(
-                        action: '퀴즈 시작',
-                        target: '푸시업 폼 가이드',
-                        hint: '학습한 내용을 확인하는 퀴즈를 시작합니다',
-                      ),
-                      child: ElevatedButton.icon(
-                        onPressed: _showQuiz,
-                        icon: const Icon(Icons.quiz, size: 18),
-                        label: Text(AppLocalizations.of(context).quiz),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xFF51CF66),
-                          foregroundColor: Colors.white,
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 12,
-                            horizontal: 16,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
 
-          // 컨텐츠 영역
-          Expanded(
-            child: _isStepViewMode
-                ? _buildSwipeableStepsView()
-                : _buildListStepsView(),
-          ),
+          // 단계별 가이드 컨텐츠
+          if (_isStepViewMode)
+            SliverFillRemaining(
+              child: _buildSwipeableStepsView(),
+            )
+          else
+            SliverToBoxAdapter(
+              child: _buildListStepsView(),
+            ),
+
+          // 개선 팁 섹션
+          if (!_isStepViewMode) ...[
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 32, 16, 16),
+                child: _buildSectionHeader(
+                  AppLocalizations.of(context).chadSecretTips,
+                  AppLocalizations.of(context).becomeTrueChadTips,
+                  Icons.lightbulb,
+                  const Color(0xFFFFD43B),
+                ),
+              ),
+            ),
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 80),
+              sliver: SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) {
+                    final tip = _guideData.improvementTips[index];
+                    return _buildImprovementTipCard(
+                      tip,
+                      index == _guideData.improvementTips.length - 1,
+                    );
+                  },
+                  childCount: _guideData.improvementTips.length,
+                ),
+              ),
+            ),
+          ] else
+            SliverToBoxAdapter(
+              child: const SizedBox(height: 80), // 광고 공간 확보
+            ),
         ],
-      ),
-    );
-  }
-
-  Widget _buildCommonMistakesTab() {
-    return SafeArea(
-      bottom: false,
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // 헤더
-            _buildSectionHeader(
-              AppLocalizations.of(context).dontMakeTheseMistakes,
-              AppLocalizations.of(context).chadMistakesAdvice,
-              Icons.warning,
-              const Color(0xFFFF6B6B),
-            ),
-
-            const SizedBox(height: 20),
-
-            // 실수 목록
-            ...List.generate(_guideData.commonMistakes.length, (index) {
-              final mistake = _guideData.commonMistakes[index];
-              return _buildCommonMistakeCard(
-                mistake,
-                index == _guideData.commonMistakes.length - 1,
-              );
-            }),
-
-            const SizedBox(height: 80), // 광고 공간 확보
-          ],
-        ),
       ),
     );
   }
@@ -332,40 +313,6 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
             // 난이도별 그룹핑
             ..._buildVariationsByDifficulty(),
-
-            const SizedBox(height: 80), // 광고 공간 확보
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildImprovementTipsTab() {
-    return SafeArea(
-      bottom: false,
-      child: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // 헤더
-            _buildSectionHeader(
-              AppLocalizations.of(context).chadSecretTips,
-              AppLocalizations.of(context).becomeTrueChadTips,
-              Icons.lightbulb,
-              const Color(0xFFFFD43B),
-            ),
-
-            const SizedBox(height: 20),
-
-            // 개선 팁들
-            ...List.generate(_guideData.improvementTips.length, (index) {
-              final tip = _guideData.improvementTips[index];
-              return _buildImprovementTipCard(
-                tip,
-                index == _guideData.improvementTips.length - 1,
-              );
-            }),
 
             const SizedBox(height: 80), // 광고 공간 확보
           ],
@@ -414,172 +361,6 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
               textAlign: TextAlign.center,
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  // 나머지 메서드들은 다음 단계에서 추가하겠습니다
-  Widget _buildCommonMistakeCard(CommonMistake mistake, bool isLast) {
-    final severityColor = Color(
-      PushupFormGuideService.getSeverityColor(mistake.severity),
-    );
-    final corrections = mistake.corrections.join(', ');
-
-    return Semantics(
-      label: AccessibilityUtils.createCardLabel(
-        title: mistake.title,
-        content: mistake.description,
-        additionalInfo: '심각도: ${mistake.severity}. 교정 방법: $corrections',
-      ),
-      child: Container(
-        margin: EdgeInsets.only(bottom: isLast ? 0 : 16),
-        child: Card(
-          color: const Color(0xFF1A1A1A),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: BorderSide(color: severityColor, width: 1),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                // 제목과 심각도
-                Row(
-                  children: [
-                    Semantics(
-                      label: '경고 아이콘',
-                      child: Icon(
-                        Icons.warning,
-                        color: severityColor,
-                        size: 24,
-                      ),
-                    ),
-                    const SizedBox(width: 8),
-                    Expanded(
-                      child: Text(
-                        mistake.title,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    Semantics(
-                      label: '심각도 ${mistake.severity}',
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                          horizontal: 8,
-                          vertical: 4,
-                        ),
-                        decoration: BoxDecoration(
-                          color: severityColor.withValues(alpha: 0.2),
-                          borderRadius: BorderRadius.circular(12),
-                        ),
-                        child: Text(
-                          mistake.severity.toUpperCase(),
-                          style: TextStyle(
-                            color: severityColor,
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 12),
-
-                // 설명
-                Text(
-                  mistake.description,
-                  style: const TextStyle(
-                    color: Colors.white70,
-                    fontSize: 14,
-                    height: 1.5,
-                  ),
-                ),
-
-                const SizedBox(height: 16),
-
-                // 잘못된 자세 vs 올바른 자세 이미지
-                Row(
-                  children: [
-                    Expanded(
-                      child: Column(
-                        children: [
-                          _buildComparisonImage(
-                            mistake.wrongImagePath,
-                            const Color(0xFFFF6B6B),
-                            Icons.close,
-                            '잘못된 자세',
-                            '${mistake.title} 잘못된 자세 시연 이미지',
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: Column(
-                        children: [
-                          _buildComparisonImage(
-                            mistake.correctImagePath,
-                            const Color(0xFF51CF66),
-                            Icons.check,
-                            '올바른 자세',
-                            '${mistake.title} 올바른 자세 시연 이미지',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-
-                const SizedBox(height: 16),
-
-                // 교정 방법
-                Text(
-                  AppLocalizations.of(context).correctionMethod,
-                  style: const TextStyle(
-                    color: Color(0xFF51CF66),
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                ...mistake.corrections.map(
-                  (correction) => Padding(
-                    padding: const EdgeInsets.only(bottom: 4),
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          '✓ ',
-                          style: TextStyle(
-                            color: Color(0xFF51CF66),
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Expanded(
-                          child: Text(
-                            correction,
-                            style: const TextStyle(
-                              color: Colors.white70,
-                              fontSize: 14,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
         ),
       ),
     );
@@ -703,10 +484,34 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
               const SizedBox(height: 12),
 
-              // 운동 시연 이미지
-              _buildVariationImage(variation, difficultyColor),
+              // 인라인 YouTube 플레이어 (exerciseId가 있으면 우선 표시)
+              if (variation.exerciseId != null) ...[
+                Builder(
+                  builder: (context) {
+                    final video = getExerciseVideo(variation.exerciseId!);
+                    if (video != null) {
+                      return Column(
+                        children: [
+                          YoutubePlayerInlineWidget(
+                            video: video,
+                            title: variation.name,
+                            description: variation.description,
+                          ),
+                          const SizedBox(height: 12),
+                        ],
+                      );
+                    }
+                    return const SizedBox.shrink();
+                  },
+                ),
+              ],
 
-              const SizedBox(height: 12),
+              // 운동 시연 이미지 (비디오가 없을 때만 표시)
+              if (variation.exerciseId == null ||
+                  getExerciseVideo(variation.exerciseId!) == null) ...[
+                _buildVariationImage(variation, difficultyColor),
+                const SizedBox(height: 12),
+              ],
 
               // 실행 방법
               Text(
@@ -783,6 +588,47 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                   ),
                 ),
               ),
+
+              // 흔한 실수들 (있는 경우만 표시)
+              if (variation.commonMistakes != null &&
+                  variation.commonMistakes!.isNotEmpty) ...[
+                const SizedBox(height: 12),
+                Text(
+                  AppLocalizations.of(context).commonMistakes,
+                  style: const TextStyle(
+                    color: Color(0xFFFF6B6B),
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                ...variation.commonMistakes!.map(
+                  (mistake) => Padding(
+                    padding: const EdgeInsets.only(bottom: 2),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          '⚠ ',
+                          style: TextStyle(
+                            color: Color(0xFFFF6B6B),
+                            fontSize: 12,
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            mistake,
+                            style: const TextStyle(
+                              color: Colors.white70,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ],
           ),
         ),
@@ -946,7 +792,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                       ),
                     ),
                     Text(
-                      '좌우로 스와이프하세요',
+                      AppLocalizations.of(context).swipeToView,
                       style: TextStyle(color: Colors.grey[400], fontSize: 12),
                     ),
                   ],
@@ -1088,9 +934,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
                     // 주요 포인트
                     if (step.keyPoints.isNotEmpty) ...[
-                      const Text(
-                        '주요 포인트:',
-                        style: TextStyle(
+                      Text(
+                        AppLocalizations.of(context).keyPoints,
+                        style: const TextStyle(
                           color: Color(0xFF4DABF7),
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -1204,9 +1050,9 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
 
               // 주요 포인트
               if (step.keyPoints.isNotEmpty) ...[
-                const Text(
-                  '주요 포인트:',
-                  style: TextStyle(
+                Text(
+                  AppLocalizations.of(context).keyPoints,
+                  style: const TextStyle(
                     color: Color(0xFF4DABF7),
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -1249,7 +1095,17 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
   }
 
   Widget _buildMediaContent(FormStep step) {
-    // 비디오가 있으면 비디오 플레이어 표시
+    // YouTube 비디오 인라인 플레이어 표시 (standard_pushup 비디오 사용)
+    final video = getExerciseVideo('standard_pushup');
+    if (video != null) {
+      return YoutubePlayerInlineWidget(
+        video: video,
+        title: AppLocalizations.of(context).perfectPushupForm,
+        description: AppLocalizations.of(context).watchVideo,
+      );
+    }
+
+    // 비디오가 없으면 VideoPlayerWidget 시도 (하위 호환성)
     if (step.videoUrl != null && step.videoUrl!.isNotEmpty) {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1278,25 +1134,8 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
       );
     }
 
-    // step1~3 이미지가 있는지 확인하고 슬라이드쇼로 표시
-    final stepImages = [
-      'assets/images/pushup_forms/knee/knee_step1.jpg',
-      'assets/images/pushup_forms/knee/knee_step2.jpg',
-      'assets/images/pushup_forms/knee/knee_step3.jpg',
-    ];
-
-    // 첫 번째 단계에서 슬라이드쇼 표시
-    if (step.stepNumber == 1) {
-      return Semantics(
-        label: '${step.title} 자세 시연 슬라이드쇼',
-        child: ExerciseSlideshowWidget(
-          imagePaths: stepImages,
-          slideDuration: const Duration(seconds: 2),
-          height: 250,
-          fit: BoxFit.contain,
-        ),
-      );
-    }
+    // knee_step1.jpg만 표시 (step2, step3 이미지가 없음)
+    // 나중에 이미지가 추가되면 슬라이드쇼로 변경 가능
 
     // 이미지가 있으면 실제 이미지 표시, 없으면 플레이스홀더 표시
     if (step.imagePath.isNotEmpty && !step.imagePath.contains('placeholder')) {
@@ -1317,18 +1156,18 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
               errorBuilder: (context, error, stackTrace) {
                 return Container(
                   color: const Color(0xFF2A2A2A),
-                  child: const Column(
+                  child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(
+                      const Icon(
                         Icons.broken_image,
                         color: Color(0xFFFF6B6B),
                         size: 48,
                       ),
-                      SizedBox(height: 8),
+                      const SizedBox(height: 8),
                       Text(
-                        '이미지 로드 실패',
-                        style: TextStyle(
+                        AppLocalizations.of(context).imageLoadFailed,
+                        style: const TextStyle(
                           color: Color(0xFFFF6B6B),
                           fontSize: 14,
                         ),
@@ -1369,40 +1208,43 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
     );
   }
 
-  Widget _buildComparisonImage(
-    String imagePath,
-    Color borderColor,
-    IconData fallbackIcon,
-    String fallbackText,
-    String semanticsLabel,
+  Widget _buildVariationImage(
+    PushupVariation variation,
+    Color difficultyColor,
   ) {
-    // 이미지가 있고 placeholder가 아니면 실제 이미지 표시
-    if (imagePath.isNotEmpty && !imagePath.contains('placeholder')) {
+    // 무릎 푸시업의 경우 단일 이미지 표시 (step2, step3 이미지가 없음)
+    if (variation.name.toLowerCase().contains('knee') ||
+        variation.name.contains('니') ||
+        variation.name.contains('무릎')) {
       return Semantics(
-        label: semanticsLabel,
+        label: '${variation.name} 시연 이미지',
         child: Container(
           width: double.infinity,
-          height: 100,
+          height: 200,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
-            border: Border.all(color: borderColor, width: 1),
+            border: Border.all(color: difficultyColor, width: 1),
           ),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(7),
             child: Image.asset(
-              imagePath,
-              fit: BoxFit.cover,
+              'assets/images/pushup_forms/knee/knee_step1.jpg',
+              fit: BoxFit.contain,
               errorBuilder: (context, error, stackTrace) {
                 return Container(
                   color: const Color(0xFF2A2A2A),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Icon(fallbackIcon, color: borderColor, size: 24),
+                      Icon(
+                        Icons.fitness_center,
+                        color: difficultyColor,
+                        size: 32,
+                      ),
                       const SizedBox(height: 4),
                       Text(
-                        fallbackText,
-                        style: TextStyle(color: borderColor, fontSize: 10),
+                        AppLocalizations.of(context).imageLoadFailed,
+                        style: TextStyle(color: difficultyColor, fontSize: 12),
                       ),
                     ],
                   ),
@@ -1410,57 +1252,6 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
               },
             ),
           ),
-        ),
-      );
-    }
-
-    // 이미지가 없으면 플레이스홀더 표시
-    return Semantics(
-      label: semanticsLabel,
-      child: Container(
-        width: double.infinity,
-        height: 100,
-        decoration: BoxDecoration(
-          color: const Color(0xFF2A2A2A),
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: borderColor, width: 1),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(fallbackIcon, color: borderColor, size: 24),
-            const SizedBox(height: 4),
-            Text(
-              fallbackText,
-              style: TextStyle(color: borderColor, fontSize: 10),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _buildVariationImage(
-    PushupVariation variation,
-    Color difficultyColor,
-  ) {
-    // 니 푸시업의 경우 슬라이드쇼 사용
-    if (variation.name.toLowerCase().contains('knee') ||
-        variation.name.contains('니') ||
-        variation.name.contains('무릎')) {
-      final kneeStepImages = [
-        'assets/images/pushup_forms/knee/knee_step1.jpg',
-        'assets/images/pushup_forms/knee/knee_step2.jpg',
-        'assets/images/pushup_forms/knee/knee_step3.jpg',
-      ];
-
-      return Semantics(
-        label: '${variation.name} 시연 슬라이드쇼',
-        child: ExerciseSlideshowWidget(
-          imagePaths: kneeStepImages,
-          slideDuration: const Duration(seconds: 2),
-          height: 180,
-          fit: BoxFit.contain,
         ),
       );
     }
@@ -1495,7 +1286,7 @@ class _PushupFormGuideScreenState extends State<PushupFormGuideScreen>
                       ),
                       const SizedBox(height: 4),
                       Text(
-                        '이미지 로드 실패',
+                        AppLocalizations.of(context).imageLoadFailed,
                         style: TextStyle(color: difficultyColor, fontSize: 12),
                       ),
                     ],

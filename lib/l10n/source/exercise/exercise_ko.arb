@@ -542,5 +542,14 @@
   "formGuideCategoryMotivation": "동기부여",
   "formGuideCategoryRecovery": "회복",
   "formGuideIntermediateLevel": "중급",
-  "perfectPerformance": "완벽한 수행!"
+  "perfectPerformance": "완벽한 수행!",
+  "keyPoints": "주요 포인트:",
+  "swipeToView": "좌우로 스와이프하세요",
+  "imageLoadFailed": "이미지 로드 실패",
+  "switchToSwipeView": "스와이프 보기로 전환",
+  "swipeViewHint": "단계별 가이드를 스와이프 형태로 표시합니다",
+  "@perfectFormGuide": {
+    "description": "Tab title for perfect form guide (combines steps + tips)"
+  },
+  "perfectFormGuide": "완벽한\n자세"
 }

@@ -389,5 +389,14 @@
   "variationExercises": "Variation\nExercises",
   "variousPushupStimulation": "Stimulate muscles with various pushup variations",
   "watchVideo": "Watch Video",
-  "specialPushupForChads": "Special pushup for chads"
+  "specialPushupForChads": "Special pushup for chads",
+  "keyPoints": "Key Points:",
+  "swipeToView": "Swipe left or right",
+  "imageLoadFailed": "Image load failed",
+  "switchToSwipeView": "Switch to swipe view",
+  "swipeViewHint": "Display step-by-step guide in swipe format",
+  "@perfectFormGuide": {
+    "description": "Tab title for perfect form guide (combines steps + tips)"
+  },
+  "perfectFormGuide": "Perfect\nForm"
 }
