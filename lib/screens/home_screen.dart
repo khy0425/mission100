@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../generated/app_localizations.dart';
+import '../generated/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../services/data/database_service.dart';
 import '../services/workout/workout_program_service.dart';
@@ -181,9 +181,9 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             startDate: DateTime.now(),
           );
 
-      // 오늘의 운동 로드
-      final workout = await _workoutProgramService.getTodayWorkout(userProfile);
-      debugPrint('🏋️ 오늘의 운동: $workout');
+      // 다음 운동 로드 (완료 기반)
+      final workout = await _workoutProgramService.getNextWorkout(userProfile);
+      debugPrint('🏋️ 다음 운동: $workout');
 
       // 프로그램 진행률 로드
       final progress = await _workoutProgramService.getProgress(userProfile);
@@ -568,15 +568,29 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
 
   void _startTodayWorkout(BuildContext context) async {
     if (_todayWorkout != null) {
-      // 연속 운동 차단 로직 확인
-      final canWorkoutToday = await _checkIfCanWorkoutToday();
+      // 연속 운동 경고 확인 (권유만 함)
+      final workedOutYesterday = await _checkIfWorkedOutYesterday();
 
-      if (!canWorkoutToday) {
-        // 연속 운동 차단 다이얼로그 표시
-        _showConsecutiveWorkoutBlockDialog(context);
-        return;
+      if (workedOutYesterday) {
+        // 연속 운동 경고 다이얼로그 표시 (그래도 진행 가능)
+        final shouldProceed = await _showConsecutiveWorkoutWarningDialog(context);
+        if (shouldProceed != true) {
+          return; // 사용자가 취소
+        }
       }
 
+      // 휴식일 경고 확인 (권유만 함)
+      final isRestDay = _checkIfRestDay();
+
+      if (isRestDay) {
+        // 휴식일 경고 다이얼로그 표시 (그래도 진행 가능)
+        final shouldProceed = await _showRestDayWarningDialog(context);
+        if (shouldProceed != true) {
+          return; // 사용자가 취소
+        }
+      }
+
+      // 모든 경고를 확인했으면 운동 시작
       Navigator.push(
         context,
         MaterialPageRoute<void>(
@@ -598,8 +612,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
     }
   }
 
-  /// 오늘 운동할 수 있는지 확인 (연속 운동 차단)
-  Future<bool> _checkIfCanWorkoutToday() async {
+  /// 어제 운동했는지 확인
+  Future<bool> _checkIfWorkedOutYesterday() async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final today = DateTime.now();
@@ -611,26 +625,180 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       final dailyCompletedWorkouts =
           prefs.getStringList('daily_completed_workouts') ?? [];
 
-      // 어제 운동했으면 오늘은 운동 불가
       if (dailyCompletedWorkouts.contains(yesterdayKey)) {
         debugPrint(
-          '🚫 연속 운동 차단: 어제 ${yesterday.toString().split(' ')[0]}에 운동함',
+          '⚠️ 연속 운동 감지: 어제 ${yesterday.toString().split(' ')[0]}에 운동함',
         );
-        return false;
+        return true;
       }
 
-      debugPrint(
-        '✅ 운동 가능: 어제 운동하지 않음 (${dailyCompletedWorkouts.length}개 기록 확인함)',
-      );
-      return true;
+      debugPrint('✅ 어제 운동하지 않음');
+      return false;
     } catch (e) {
-      debugPrint('❌ 연속 운동 확인 실패: $e');
-      // 오류 시에는 안전하게 운동 허용
-      return true;
+      debugPrint('❌ 어제 운동 확인 실패: $e');
+      return false;
     }
   }
 
-  /// 연속 운동 차단 다이얼로그 표시
+  /// 오늘이 휴식일인지 확인 (프로그램 시작일 기준)
+  bool _checkIfRestDay() {
+    if (_userProfile == null) return false;
+
+    final startDate = _userProfile!.startDate;
+    final today = DateTime.now();
+    final daysSinceStart = today.difference(startDate).inDays;
+    final dayInWeek = daysSinceStart % 7;
+
+    // 운동일: 월(0), 수(2), 금(4)
+    // 휴식일: 화(1), 목(3), 토(5), 일(6)
+    final isRestDay = dayInWeek != 0 && dayInWeek != 2 && dayInWeek != 4;
+
+    if (isRestDay) {
+      debugPrint('⚠️ 오늘은 휴식일 (주 내 ${dayInWeek}일차)');
+    }
+
+    return isRestDay;
+  }
+
+  /// 연속 운동 경고 다이얼로그 표시 (권유형 - 진행 가능)
+  Future<bool?> _showConsecutiveWorkoutWarningDialog(BuildContext context) async {
+    return await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            const Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 28),
+            const SizedBox(width: 8),
+            const Text(
+              '⚠️ 연속 운동 주의',
+              style: TextStyle(
+                color: Colors.orange,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              '어제 운동하셨네요! 💪',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              '충분한 회복 시간이 근육 성장에 중요합니다.\n\n'
+              '권장 사항:\n'
+              '• 하루 이상 휴식 후 운동\n'
+              '• 과훈련 방지\n'
+              '• 부상 위험 감소',
+              style: TextStyle(
+                fontSize: 14,
+                height: 1.5,
+                color: Theme.of(context).textTheme.bodyMedium?.color,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text(
+              '휴식하기',
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.orange,
+            ),
+            child: const Text(
+              '그래도 진행',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      ),
+    );
+  }
+
+  /// 휴식일 경고 다이얼로그 표시 (권유형 - 진행 가능)
+  Future<bool?> _showRestDayWarningDialog(BuildContext context) async {
+    return await showDialog<bool>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            const Icon(Icons.hotel_rounded, color: Colors.blue, size: 28),
+            const SizedBox(width: 8),
+            const Text(
+              '🛌 오늘은 휴식일입니다',
+              style: TextStyle(
+                color: Colors.blue,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              '권장 운동 스케줄: 월/수/금',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Text(
+              '휴식일의 중요성:\n\n'
+              '• 근육 회복 및 성장\n'
+              '• 에너지 재충전\n'
+              '• 부상 예방\n'
+              '• 지속 가능한 운동 습관',
+              style: TextStyle(
+                fontSize: 14,
+                height: 1.5,
+                color: Theme.of(context).textTheme.bodyMedium?.color,
+              ),
+            ),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(false),
+            child: const Text(
+              '휴식하기',
+              style: TextStyle(fontSize: 16, color: Colors.grey),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(true),
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.blue,
+            ),
+            child: const Text(
+              '그래도 운동하기',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      ),
+    );
+  }
+
+  /// 연속 운동 차단 다이얼로그 표시 (사용 안 함 - 권유형으로 대체)
   void _showConsecutiveWorkoutBlockDialog(BuildContext context) {
     showDialog<void>(
       context: context,
