@@ -668,10 +668,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       builder: (context) => AlertDialog(
         title: Row(
           children: [
-            const Icon(Icons.warning_amber_rounded, color: Colors.orange, size: 28),
+            const Icon(Icons.local_fire_department, color: Colors.orange, size: 28),
             const SizedBox(width: 8),
             const Text(
-              '⚠️ 연속 운동 주의',
+              '💪 연속 운동이라니!',
               style: TextStyle(
                 color: Colors.orange,
                 fontWeight: FontWeight.bold,
@@ -684,7 +684,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              '어제 운동하셨네요! 💪',
+              '어제도 운동했는데 오늘도?',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -692,14 +692,14 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             ),
             const SizedBox(height: 12),
             Text(
-              '충분한 회복 시간이 근육 성장에 중요합니다.\n\n'
-              '권장 사항:\n'
-              '• 하루 이상 휴식 후 운동\n'
-              '• 과훈련 방지\n'
-              '• 부상 위험 감소',
+              '대단한데요! 💪\n\n'
+              '하지만 휴식도 챔피언의 비밀이랍니다.\n'
+              '근육은 쉬는 동안 자라거든요!\n\n'
+              '그래도... 너가 진짜 원한다면?\n'
+              '함께 해보죠! 🔥',
               style: TextStyle(
                 fontSize: 14,
-                height: 1.5,
+                height: 1.6,
                 color: Theme.of(context).textTheme.bodyMedium?.color,
               ),
             ),
@@ -709,7 +709,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
             child: const Text(
-              '휴식하기',
+              '휴식할래!',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
           ),
@@ -719,7 +719,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               backgroundColor: Colors.orange,
             ),
             child: const Text(
-              '그래도 진행',
+              '하드워킹! 💪',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ),
@@ -737,10 +737,10 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
       builder: (context) => AlertDialog(
         title: Row(
           children: [
-            const Icon(Icons.hotel_rounded, color: Colors.blue, size: 28),
+            const Icon(Icons.bedroom_baby_outlined, color: Colors.blue, size: 28),
             const SizedBox(width: 8),
             const Text(
-              '🛌 오늘은 휴식일입니다',
+              '😏 오늘은 쉬는 날인데?',
               style: TextStyle(
                 color: Colors.blue,
                 fontWeight: FontWeight.bold,
@@ -753,7 +753,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              '권장 운동 스케줄: 월/수/금',
+              '프로 차드의 비밀!',
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
@@ -761,14 +761,15 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
             ),
             const SizedBox(height: 12),
             Text(
-              '휴식일의 중요성:\n\n'
-              '• 근육 회복 및 성장\n'
-              '• 에너지 재충전\n'
-              '• 부상 예방\n'
-              '• 지속 가능한 운동 습관',
+              '휴식도 훈련의 일부랍니다! 💤\n\n'
+              '근육 회복, 에너지 충전...\n'
+              '다 중요한 성장 과정이에요!\n\n'
+              '권장 스케줄: 월/수/금 🗓️\n\n'
+              '그래도 운동하고 싶다면...\n'
+              '말리진 않을게요! 가보자고! 🚀',
               style: TextStyle(
                 fontSize: 14,
-                height: 1.5,
+                height: 1.6,
                 color: Theme.of(context).textTheme.bodyMedium?.color,
               ),
             ),
@@ -778,7 +779,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
           TextButton(
             onPressed: () => Navigator.of(context).pop(false),
             child: const Text(
-              '휴식하기',
+              '쉴래!',
               style: TextStyle(fontSize: 16, color: Colors.grey),
             ),
           ),
@@ -788,57 +789,8 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver {
               backgroundColor: Colors.blue,
             ),
             child: const Text(
-              '그래도 운동하기',
+              '운동할래! 🔥',
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-            ),
-          ),
-        ],
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
-      ),
-    );
-  }
-
-  /// 연속 운동 차단 다이얼로그 표시 (사용 안 함 - 권유형으로 대체)
-  void _showConsecutiveWorkoutBlockDialog(BuildContext context) {
-    showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => AlertDialog(
-        title: Row(
-          children: [
-            const Icon(Icons.warning, color: Colors.orange, size: 28),
-            const SizedBox(width: 8),
-            Text(
-              AppLocalizations.of(context).consecutiveWorkoutBlocked,
-              style: const TextStyle(
-                color: Colors.orange,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              AppLocalizations.of(
-                context,
-              ).consecutiveWorkoutMessage.replaceAll('\\n', '\n'),
-              style: TextStyle(
-                fontSize: 16,
-                height: 1.5,
-                color: Theme.of(context).textTheme.bodyMedium?.color,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: Text(
-              AppLocalizations.of(context).chadRestModeToday,
-              style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
             ),
           ),
         ],
