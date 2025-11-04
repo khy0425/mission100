@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../generated/app_localizations.dart';
+import '../generated/l10n/app_localizations.dart';
 
 enum AchievementType {
   first, // 첫 번째 달성
@@ -428,7 +428,7 @@ class PredefinedAchievements {
           type: AchievementType.first,
           rarity: AchievementRarity.common,
           targetValue: 1,
-          xpReward: 100,
+          xpReward: 50,
           icon: Icons.play_arrow,
         ),
 
@@ -440,7 +440,7 @@ class PredefinedAchievements {
           type: AchievementType.first,
           rarity: AchievementRarity.common,
           targetValue: 1,
-          xpReward: 150,
+          xpReward: 50,
           icon: Icons.fitness_center,
         ),
 
@@ -452,7 +452,7 @@ class PredefinedAchievements {
           type: AchievementType.first,
           rarity: AchievementRarity.epic,
           targetValue: 1,
-          xpReward: 500,
+          xpReward: 200,
           icon: Icons.flash_on,
         ),
 
@@ -464,11 +464,11 @@ class PredefinedAchievements {
           type: AchievementType.first,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 300,
+          xpReward: 100,
           icon: Icons.trending_up,
         ),
 
-        // 연속 달성 시리즈
+        // 연속 달성 시리즈 (주차 연속 완료 기준)
         Achievement(
           id: 'streak_3_days',
           titleKey: 'achievementStreak3Title',
@@ -477,7 +477,7 @@ class PredefinedAchievements {
           type: AchievementType.streak,
           rarity: AchievementRarity.common,
           targetValue: 3,
-          xpReward: 300,
+          xpReward: 150,
           icon: Icons.local_fire_department,
         ),
 
@@ -489,7 +489,7 @@ class PredefinedAchievements {
           type: AchievementType.streak,
           rarity: AchievementRarity.rare,
           targetValue: 7,
-          xpReward: 500,
+          xpReward: 350,
           icon: Icons.fitness_center,
         ),
 
@@ -501,7 +501,7 @@ class PredefinedAchievements {
           type: AchievementType.streak,
           rarity: AchievementRarity.epic,
           targetValue: 14,
-          xpReward: 800,
+          xpReward: 700,
           icon: Icons.directions_run,
         ),
 
@@ -525,7 +525,7 @@ class PredefinedAchievements {
           type: AchievementType.streak,
           rarity: AchievementRarity.legendary,
           targetValue: 60,
-          xpReward: 2500,
+          xpReward: 3000,
           icon: Icons.military_tech,
         ),
 
@@ -550,7 +550,7 @@ class PredefinedAchievements {
           type: AchievementType.volume,
           rarity: AchievementRarity.common,
           targetValue: 50,
-          xpReward: 100,
+          xpReward: 50,
           icon: Icons.eco,
         ),
 
@@ -562,7 +562,7 @@ class PredefinedAchievements {
           type: AchievementType.volume,
           rarity: AchievementRarity.common,
           targetValue: 100,
-          xpReward: 200,
+          xpReward: 50,
           icon: Icons.sports_score,
         ),
 
@@ -574,7 +574,7 @@ class PredefinedAchievements {
           type: AchievementType.volume,
           rarity: AchievementRarity.common,
           targetValue: 250,
-          xpReward: 300,
+          xpReward: 50,
           icon: Icons.gps_fixed,
         ),
 
@@ -586,7 +586,7 @@ class PredefinedAchievements {
           type: AchievementType.volume,
           rarity: AchievementRarity.rare,
           targetValue: 500,
-          xpReward: 500,
+          xpReward: 150,
           icon: Icons.rocket_launch,
         ),
 
@@ -598,7 +598,7 @@ class PredefinedAchievements {
           type: AchievementType.volume,
           rarity: AchievementRarity.epic,
           targetValue: 1000,
-          xpReward: 1000,
+          xpReward: 300,
           icon: Icons.bolt,
         ),
 
@@ -610,7 +610,7 @@ class PredefinedAchievements {
           type: AchievementType.volume,
           rarity: AchievementRarity.epic,
           targetValue: 2500,
-          xpReward: 1500,
+          xpReward: 500,
           icon: Icons.local_fire_department,
         ),
 
@@ -622,7 +622,7 @@ class PredefinedAchievements {
           type: AchievementType.volume,
           rarity: AchievementRarity.legendary,
           targetValue: 5000,
-          xpReward: 2000,
+          xpReward: 1000,
           icon: Icons.stars,
         ),
 
@@ -634,7 +634,7 @@ class PredefinedAchievements {
           type: AchievementType.volume,
           rarity: AchievementRarity.legendary,
           targetValue: 10000,
-          xpReward: 5000,
+          xpReward: 2000,
           icon: Icons.emoji_events,
         ),
 
@@ -647,7 +647,7 @@ class PredefinedAchievements {
           type: AchievementType.perfect,
           rarity: AchievementRarity.common,
           targetValue: 3,
-          xpReward: 250,
+          xpReward: 100,
           icon: Icons.gps_fixed,
         ),
 
@@ -659,7 +659,7 @@ class PredefinedAchievements {
           type: AchievementType.perfect,
           rarity: AchievementRarity.rare,
           targetValue: 5,
-          xpReward: 400,
+          xpReward: 150,
           icon: Icons.verified,
         ),
 
@@ -671,7 +671,7 @@ class PredefinedAchievements {
           type: AchievementType.perfect,
           rarity: AchievementRarity.epic,
           targetValue: 10,
-          xpReward: 750,
+          xpReward: 300,
           icon: Icons.workspace_premium,
         ),
 
@@ -683,7 +683,7 @@ class PredefinedAchievements {
           type: AchievementType.perfect,
           rarity: AchievementRarity.legendary,
           targetValue: 20,
-          xpReward: 1200,
+          xpReward: 500,
           icon: Icons.diamond,
         ),
 
@@ -696,7 +696,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.common,
           targetValue: 1,
-          xpReward: 200,
+          xpReward: 50,
           icon: Icons.explore,
         ),
 
@@ -708,7 +708,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.rare,
           targetValue: 3,
-          xpReward: 300,
+          xpReward: 150,
           icon: Icons.school,
         ),
 
@@ -720,7 +720,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.legendary,
           targetValue: 5,
-          xpReward: 1000,
+          xpReward: 500,
           icon: Icons.psychology,
         ),
 
@@ -733,7 +733,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 300,
+          xpReward: 150,
           icon: Icons.wb_sunny,
         ),
 
@@ -745,7 +745,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 300,
+          xpReward: 150,
           icon: Icons.nightlight,
         ),
 
@@ -757,7 +757,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.common,
           targetValue: 1,
-          xpReward: 200,
+          xpReward: 50,
           icon: Icons.weekend,
         ),
 
@@ -769,7 +769,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.common,
           targetValue: 1,
-          xpReward: 150,
+          xpReward: 50,
           icon: Icons.lunch_dining,
         ),
 
@@ -782,7 +782,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.epic,
           targetValue: 1,
-          xpReward: 500,
+          xpReward: 300,
           icon: Icons.speed,
         ),
 
@@ -794,7 +794,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.epic,
           targetValue: 1,
-          xpReward: 500,
+          xpReward: 300,
           icon: Icons.timer,
         ),
 
@@ -806,7 +806,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 400,
+          xpReward: 150,
           icon: Icons.refresh,
         ),
 
@@ -818,7 +818,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.epic,
           targetValue: 1,
-          xpReward: 600,
+          xpReward: 300,
           icon: Icons.trending_up,
         ),
 
@@ -830,7 +830,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 350,
+          xpReward: 150,
           icon: Icons.double_arrow,
         ),
 
@@ -842,7 +842,7 @@ class PredefinedAchievements {
           type: AchievementType.special,
           rarity: AchievementRarity.legendary,
           targetValue: 1,
-          xpReward: 1000,
+          xpReward: 500,
           icon: Icons.timeline,
         ),
 
@@ -855,7 +855,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 500,
+          xpReward: 150,
           icon: Icons.calendar_today,
         ),
 
@@ -867,7 +867,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.epic,
           targetValue: 1,
-          xpReward: 750,
+          xpReward: 300,
           icon: Icons.fitness_center,
         ),
 
@@ -879,7 +879,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 400,
+          xpReward: 150,
           icon: Icons.trending_up,
         ),
 
@@ -891,7 +891,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.epic,
           targetValue: 1,
-          xpReward: 800,
+          xpReward: 300,
           icon: Icons.emoji_events,
         ),
 
@@ -903,7 +903,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.legendary,
           targetValue: 1,
-          xpReward: 1200,
+          xpReward: 500,
           icon: Icons.military_tech,
         ),
 
@@ -915,7 +915,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.legendary,
           targetValue: 5, // 5개 챌린지 모두 완료
-          xpReward: 2000,
+          xpReward: 500,
           icon: Icons.workspace_premium,
         ),
 
@@ -932,7 +932,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.rare,
           targetValue: 80,
-          xpReward: 400,
+          xpReward: 150,
           icon: Icons.percent,
         ),
 
@@ -944,7 +944,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 90,
-          xpReward: 600,
+          xpReward: 300,
           icon: Icons.verified_user,
         ),
 
@@ -956,7 +956,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 95,
-          xpReward: 1000,
+          xpReward: 500,
           icon: Icons.stars,
         ),
 
@@ -969,7 +969,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.common,
           targetValue: 60,
-          xpReward: 200,
+          xpReward: 50,
           icon: Icons.timer,
         ),
 
@@ -981,7 +981,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.rare,
           targetValue: 300,
-          xpReward: 500,
+          xpReward: 150,
           icon: Icons.fitness_center,
         ),
 
@@ -993,7 +993,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 600,
-          xpReward: 800,
+          xpReward: 300,
           icon: Icons.schedule,
         ),
 
@@ -1005,7 +1005,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 1200,
-          xpReward: 1500,
+          xpReward: 500,
           icon: Icons.emoji_events,
         ),
 
@@ -1018,7 +1018,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.common,
           targetValue: 5,
-          xpReward: 150,
+          xpReward: 50,
           icon: Icons.speed,
         ),
 
@@ -1030,7 +1030,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.rare,
           targetValue: 10,
-          xpReward: 300,
+          xpReward: 150,
           icon: Icons.psychology,
         ),
 
@@ -1042,7 +1042,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 15,
-          xpReward: 500,
+          xpReward: 300,
           icon: Icons.sports_score,
         ),
 
@@ -1055,7 +1055,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.rare,
           targetValue: 5,
-          xpReward: 400,
+          xpReward: 150,
           icon: Icons.date_range,
         ),
 
@@ -1067,7 +1067,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 7,
-          xpReward: 1000,
+          xpReward: 500,
           icon: Icons.today,
         ),
 
@@ -1080,7 +1080,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 20,
-          xpReward: 800,
+          xpReward: 300,
           icon: Icons.calendar_today,
         ),
 
@@ -1092,7 +1092,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 1000,
-          xpReward: 1200,
+          xpReward: 500,
           icon: Icons.trending_up,
         ),
 
@@ -1105,7 +1105,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 350,
+          xpReward: 150,
           icon: Icons.trending_up,
         ),
 
@@ -1117,7 +1117,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.epic,
           targetValue: 85,
-          xpReward: 600,
+          xpReward: 300,
           icon: Icons.timeline,
         ),
 
@@ -1130,7 +1130,7 @@ class PredefinedAchievements {
           type: AchievementType.statistics,
           rarity: AchievementRarity.legendary,
           targetValue: 30,
-          xpReward: 2000,
+          xpReward: 500,
           icon: Icons.event_available,
         ),
 
@@ -1145,7 +1145,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.common,
           targetValue: 1,
-          xpReward: 100,
+          xpReward: 50,
           icon: Icons.flag,
         ),
 
@@ -1158,7 +1158,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.common,
           targetValue: 1,
-          xpReward: 150,
+          xpReward: 50,
           icon: Icons.stars,
         ),
 
@@ -1171,7 +1171,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 300,
+          xpReward: 150,
           icon: Icons.local_fire_department,
         ),
 
@@ -1184,7 +1184,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.epic,
           targetValue: 1,
-          xpReward: 500,
+          xpReward: 300,
           icon: Icons.refresh,
         ),
 
@@ -1197,7 +1197,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.epic,
           targetValue: 1,
-          xpReward: 500,
+          xpReward: 300,
           icon: Icons.calendar_view_week,
         ),
 
@@ -1210,7 +1210,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.common,
           targetValue: 1,
-          xpReward: 200,
+          xpReward: 50,
           icon: Icons.wb_sunny,
         ),
 
@@ -1223,7 +1223,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 5,
-          xpReward: 600,
+          xpReward: 150,
           icon: Icons.trending_up,
         ),
 
@@ -1236,7 +1236,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.epic,
           targetValue: 5, // All 5 types completed
-          xpReward: 800,
+          xpReward: 300,
           icon: Icons.emoji_events,
         ),
 
@@ -1249,7 +1249,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.legendary,
           targetValue: 10,
-          xpReward: 1000,
+          xpReward: 500,
           icon: Icons.military_tech,
         ),
 
@@ -1262,7 +1262,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.legendary,
           targetValue: 20,
-          xpReward: 2000,
+          xpReward: 500,
           icon: Icons.workspace_premium,
         ),
 
@@ -1275,7 +1275,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 3,
-          xpReward: 400,
+          xpReward: 150,
           icon: Icons.layers,
         ),
 
@@ -1288,7 +1288,7 @@ class PredefinedAchievements {
           type: AchievementType.challenge,
           rarity: AchievementRarity.rare,
           targetValue: 1,
-          xpReward: 350,
+          xpReward: 150,
           icon: Icons.flash_on,
         ),
       ];

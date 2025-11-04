@@ -353,8 +353,8 @@ class AchievementService {
       final statistics = await WorkoutHistoryService.getStatistics();
       debugPrint('📈 운동 통계: $statistics');
 
-      final currentStreak = await WorkoutHistoryService.getCurrentStreak();
-      debugPrint('🔥 현재 스트릭: $currentStreak일');
+      final consecutiveWeeks = await WorkoutHistoryService.getConsecutiveWeeksCompleted();
+      debugPrint('🔥 연속 완료 주차: $consecutiveWeeks주');
       _endPerformanceTimer('data_collection', dataTimer);
 
       // 캐시된 업적 조회
@@ -388,7 +388,7 @@ class AchievementService {
               );
               break;
             case AchievementType.streak:
-              currentValue = currentStreak;
+              currentValue = consecutiveWeeks;
               break;
             case AchievementType.volume:
               currentValue = statistics['totalReps'] as int? ?? 0;
@@ -1382,9 +1382,9 @@ class AchievementService {
 
       final workouts = await WorkoutHistoryService.getAllWorkouts();
       final statistics = await WorkoutHistoryService.getStatistics();
-      final currentStreak = await WorkoutHistoryService.getCurrentStreak();
+      final consecutiveWeeks = await WorkoutHistoryService.getConsecutiveWeeksCompleted();
 
-      debugPrint('📊 기준 데이터: 운동 ${workouts.length}회, 스트릭 $currentStreak일');
+      debugPrint('📊 기준 데이터: 운동 ${workouts.length}회, 연속 완료 주차 $consecutiveWeeks주');
 
       // 모든 업적의 진행도를 다시 계산
       for (final achievement in PredefinedAchievements.all) {
@@ -1399,7 +1399,7 @@ class AchievementService {
               );
               break;
             case AchievementType.streak:
-              currentValue = currentStreak;
+              currentValue = consecutiveWeeks;
               break;
             case AchievementType.volume:
               currentValue = statistics['totalReps'] as int? ?? 0;

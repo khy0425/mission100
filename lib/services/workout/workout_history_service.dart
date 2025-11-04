@@ -629,6 +629,47 @@ class WorkoutHistoryService {
         .length;
   }
 
+  // 연속으로 완료한 주차 수 계산 (14주 프로그램용)
+  // 1주차(3/3) → 2주차(3/3) → 3주차(3/3) = 3주 연속
+  static Future<int> getConsecutiveWeeksCompleted() async {
+    final workouts = await getAllWorkouts();
+    if (workouts.isEmpty) return 0;
+
+    // 주차별로 그룹화 (workoutTitle에서 파싱)
+    final weekMap = <int, Set<int>>{};
+
+    for (final workout in workouts) {
+      // workoutTitle 형식: "1주차 - 1일차" 또는 "1주차 1일차"
+      final titleMatch = RegExp(r'(\d+)주차\s*-?\s*(\d+)일차').firstMatch(workout.workoutTitle);
+
+      if (titleMatch != null) {
+        final week = int.tryParse(titleMatch.group(1) ?? '0') ?? 0;
+        final day = int.tryParse(titleMatch.group(2) ?? '0') ?? 0;
+
+        if (week > 0 && day > 0) {
+          weekMap.putIfAbsent(week, () => {}).add(day);
+        }
+      }
+    }
+
+    // 1주차부터 시작해서 연속으로 완료된 주차 수 계산
+    int consecutiveWeeks = 0;
+
+    for (int week = 1; week <= 14; week++) {
+      final daysInWeek = weekMap[week] ?? {};
+
+      // 주차가 완료되었는지 확인 (3일 모두 완료)
+      if (daysInWeek.length >= 3) {
+        consecutiveWeeks = week;
+      } else {
+        // 연속성이 끊어지면 중단
+        break;
+      }
+    }
+
+    return consecutiveWeeks;
+  }
+
   // 날짜를 문자열로 변환 (YYYY-MM-DD)
   static String _dateToString(DateTime date) {
     return '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';
