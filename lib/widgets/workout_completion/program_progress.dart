@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 프로그램 진행률 위젯
 class ProgramProgress extends StatelessWidget {
@@ -15,6 +16,8 @@ class ProgramProgress extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -24,9 +27,9 @@ class ProgramProgress extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const Text(
-            '🚀 CHAD 진화 진행률',
-            style: TextStyle(
+          Text(
+            l10n.chadEvolutionProgress,
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               color: Colors.green,
               fontSize: 14,
@@ -42,7 +45,7 @@ class ProgramProgress extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            '$progressPercentage% ($completedWorkouts/$totalDays일)',
+            '$progressPercentage% ($completedWorkouts/$totalDays ${l10n.days})',
             style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 12,

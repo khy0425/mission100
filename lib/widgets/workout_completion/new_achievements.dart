@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/achievement.dart';
 
 /// 새로운 업적 위젯
@@ -52,7 +52,7 @@ class NewAchievements extends StatelessWidget {
                 (achievement) => Padding(
                   padding: const EdgeInsets.symmetric(vertical: 2),
                   child: Text(
-                    '🌟 ${achievement.titleKey}',
+                    '🌟 ${achievement.getTitle(context)}',
                     style: const TextStyle(
                       fontSize: 12,
                       color: Colors.amber,

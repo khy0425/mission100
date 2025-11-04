@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 부드러운 회원가입 유도 다이얼로그
 ///

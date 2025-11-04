@@ -6,6 +6,7 @@ import '../../widgets/chad/chad_onboarding_widget.dart';
 import '../../utils/config/constants.dart';
 import '../misc/permission_screen.dart';
 import 'chad_login_screen.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 class ChadSignupScreen extends StatefulWidget {
   const ChadSignupScreen({super.key});
@@ -212,7 +213,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
                   return const Icon(Icons.login, size: 24);
                 },
               ),
-              label: const Text('구글로 3초만에 시작하기'),
+              label: Text(AppLocalizations.of(context).googleSignin3Seconds),
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(AppColors.primaryColor),
                 foregroundColor: Colors.white,
@@ -417,7 +418,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text('이미 Chad 계정이 있나요?'),
+              Text(AppLocalizations.of(context).alreadyHaveAccount),
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(

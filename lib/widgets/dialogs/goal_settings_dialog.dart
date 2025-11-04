@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/user_goals.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 목표 설정 다이얼로그
 class GoalSettingsDialog extends StatefulWidget {

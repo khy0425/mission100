@@ -1,0 +1,89 @@
+{
+  "@@locale": "ko",
+
+  "tutorialWelcomeTitle": "🏋️ Mission 100",
+  "tutorialWelcomeSubtitle": "14주 만에 푸시업 100개 달성",
+
+  "tutorialFeature1Title": "과학적 근거 기반",
+  "tutorialFeature1Desc": "최신 스포츠 과학 논문(2016-2024)을\n바탕으로 설계된 프로그램",
+
+  "tutorialFeature2Title": "점진적 과부하",
+  "tutorialFeature2Desc": "매주 체계적으로 증가하는 운동량으로\n안전하고 효과적인 성장",
+
+  "tutorialFeature3Title": "개인화된 프로그램",
+  "tutorialFeature3Desc": "당신의 레벨에 맞춘\n맞춤형 운동 계획",
+
+  "tutorialProgramTitle": "📋 프로그램 구성",
+
+  "tutorialDurationTitle": "⏱️ 기간",
+  "tutorialDurationSubtitle": "14주 (총 42회)",
+  "tutorialDurationDesc": "주 3회 운동 (월, 수, 금)\n48시간 회복 시간 보장",
+
+  "tutorialStructureTitle": "💪 구성",
+  "tutorialStructureSubtitle": "푸시업 + 피니셔",
+  "tutorialStructureDesc": "메인: 푸시업 5-9세트\n피니셔: 버피/점프스쿼트 등",
+
+  "tutorialRestTitle": "⏳ 휴식 시간",
+  "tutorialRestSubtitle": "과학적 최적화",
+  "tutorialRestDesc": "세트간: 45-120초\n레벨/주차별 자동 조정",
+
+  "tutorialTipTitle": "💡 꿀팁",
+  "tutorialTipDesc": "매 운동 후 RPE(운동자각도)를 기록하면\n다음 운동 강도가 자동으로 조정됩니다!",
+
+  "tutorialFormTitle": "✅ 올바른 푸시업 자세",
+
+  "tutorialForm1Title": "1. 시작 자세",
+  "tutorialForm1Desc": "손을 어깨 너비로 벌리고\n몸을 일직선으로 유지",
+
+  "tutorialForm2Title": "2. 내려가기",
+  "tutorialForm2Desc": "가슴이 바닥에 닿을 때까지\n팔꿈치를 45도 각도로 구부리기",
+
+  "tutorialForm3Title": "3. 올라오기",
+  "tutorialForm3Desc": "가슴과 코어에 힘을 주고\n폭발적으로 밀어올리기",
+
+  "tutorialWarningTitle": "⚠️ 주의사항",
+  "tutorialWarning1": "허리가 처지지 않도록 코어에 힘주기",
+  "tutorialWarning2": "목을 과도하게 젖히지 않기",
+  "tutorialWarning3": "팔꿈치를 몸에 너무 붙이지 않기",
+  "tutorialWarning4": "통증이 느껴지면 즉시 중단",
+
+  "tutorialRpeTitle": "📊 RPE란?",
+  "tutorialRpeSubtitle": "Rate of Perceived Exertion\n(운동자각도)",
+
+  "tutorialRpe6": "😊 너무 쉬워요",
+  "tutorialRpe6Desc": "다음엔 더 할 수 있어요",
+
+  "tutorialRpe7": "🙂 적당해요",
+  "tutorialRpe7Desc": "딱 좋은 난이도예요",
+
+  "tutorialRpe8": "😤 힘들어요",
+  "tutorialRpe8Desc": "완료하기 버거웠어요",
+
+  "tutorialRpe9": "😫 너무 힘들어요",
+  "tutorialRpe9Desc": "거의 불가능했어요",
+
+  "tutorialRpe10": "🤯 한계 돌파!",
+  "tutorialRpe10Desc": "정말 최선을 다했어요",
+
+  "tutorialAutoAdjustTitle": "🎯 똑똑한 자동 조정",
+  "tutorialAutoAdjustDesc": "RPE를 기록하면 다음 운동 강도가\n자동으로 최적화됩니다!\n\n• RPE 6-7: 난이도 +5%\n• RPE 8: 유지\n• RPE 9-10: 난이도 -5%",
+
+  "tutorialScienceTitle": "🔬 과학적 근거",
+  "tutorialScienceSubtitle": "최신 연구 결과를 바탕으로 설계되었습니다",
+
+  "tutorialResearch1Author": "Schoenfeld et al. (2016, 2019)",
+  "tutorialResearch1Topic": "근비대와 훈련 빈도",
+  "tutorialResearch1Finding": "주 3회 훈련이 근육 성장에 최적\n48시간 회복 시간 권장",
+
+  "tutorialResearch2Author": "Grgic et al. (2018)",
+  "tutorialResearch2Topic": "세트간 휴식 시간",
+  "tutorialResearch2Finding": "60-120초 휴식이\n근비대에 가장 효과적",
+
+  "tutorialResearch3Author": "Plotkin et al. (2022)",
+  "tutorialResearch3Topic": "점진적 과부하",
+  "tutorialResearch3Finding": "점진적 반복 증가가\n근력 향상에 효과적",
+
+  "tutorialResearch4Author": "Wang et al. (2024)",
+  "tutorialResearch4Topic": "HIIT + 저항운동 병행",
+  "tutorialResearch4Finding": "유산소와 근력운동 병행 시\n체력과 근력 동시 향상"
+}

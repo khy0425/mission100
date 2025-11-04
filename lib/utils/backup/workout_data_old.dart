@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/user_profile.dart';
 import '../../models/exercise_type.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 운동 세트 정보
 class ExerciseSet {
@@ -249,13 +249,13 @@ class WorkoutData {
 
   // 차드 진화 단계별 이미지 경로
   static List<String> get chadImagePaths => [
-        'assets/images/기본차드.jpg', // 0단계 - 시작
-        'assets/images/기본차드.jpg', // 1단계 - 1주차
-        'assets/images/기본차드.jpg', // 2단계 - 2주차
-        'assets/images/기본차드.jpg', // 3단계 - 3주차
-        'assets/images/기본차드.jpg', // 4단계 - 4주차
-        'assets/images/기본차드.jpg', // 5단계 - 5주차
-        'assets/images/기본차드.jpg', // 6단계 - 6주차 완료
+        'assets/images/chad/basic/basicChad.png', // 0단계 - 시작
+        'assets/images/chad/basic/basicChad.png', // 1단계 - 1주차
+        'assets/images/chad/basic/basicChad.png', // 2단계 - 2주차
+        'assets/images/chad/basic/basicChad.png', // 3단계 - 3주차
+        'assets/images/chad/basic/basicChad.png', // 4단계 - 4주차
+        'assets/images/chad/basic/basicChad.png', // 5단계 - 5주차
+        'assets/images/chad/basic/basicChad.png', // 6단계 - 6주차 완료
       ];
 
   // 차드 레벨에 따른 이미지 경로 반환

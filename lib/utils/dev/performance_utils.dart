@@ -71,9 +71,9 @@ class PerformanceUtils {
   /// 이미지 프리로딩 최적화
   static Future<void> preloadCriticalImages(BuildContext context) async {
     final criticalImages = [
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
     ];
 
     for (final imagePath in criticalImages) {

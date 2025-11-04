@@ -30,6 +30,7 @@ def merge_arb_files(lang):
         'common',       # 공통 (먼저)
         'auth',
         'onboarding',
+        'tutorial',
         'workout',
         'exercise',
         'recovery',

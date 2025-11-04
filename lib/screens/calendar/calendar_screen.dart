@@ -7,7 +7,7 @@ import '../../services/workout/workout_history_service.dart';
 import '../../services/notification/notification_service.dart';
 import '../../services/achievements/achievement_service.dart';
 import '../../services/payment/ad_service.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});
@@ -138,28 +138,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
   List<WorkoutHistory> _getEventsForDay(DateTime day) {
     final normalizedDay = DateTime(day.year, day.month, day.day);
-    final events = _workoutEvents[normalizedDay] ?? [];
-
-    // 오늘과 며칠 전의 데이터만 로그 출력 (너무 많은 로그 방지)
-    final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
-    final daysDiff = today.difference(normalizedDay).inDays.abs();
-
-    if (daysDiff <= 7) {
-      // 일주일 이내의 날짜만 로그
-      debugPrint(
-        '📅 [CalendarScreen] _getEventsForDay($day) -> 정규화: $normalizedDay, 이벤트 수: ${events.length}',
-      );
-      if (events.isNotEmpty) {
-        for (final event in events) {
-          debugPrint(
-            '  📋 이벤트: ${event.workoutTitle} (${event.totalReps}회, ${(event.completionRate * 100).toStringAsFixed(1)}%)',
-          );
-        }
-      }
-    }
-
-    return events;
+    return _workoutEvents[normalizedDay] ?? [];
   }
 
   int _getCurrentStreak() {
@@ -185,19 +164,8 @@ class _CalendarScreenState extends State<CalendarScreen> {
     return streak;
   }
 
-  Color _getDayColor(DateTime day) {
-    final events = _getEventsForDay(day);
-
-    // 오늘과 며칠 전의 데이터만 로그 출력
-    final now = DateTime.now();
-    final today = DateTime(now.year, now.month, now.day);
-    final daysDiff =
-        today.difference(DateTime(day.year, day.month, day.day)).inDays.abs();
-
+  Color _getDayColor(DateTime day, List<WorkoutHistory> events) {
     if (events.isEmpty) {
-      if (daysDiff <= 7) {
-        debugPrint('📅 [CalendarScreen] _getDayColor($day): 이벤트 없음 -> 투명');
-      }
       return Colors.transparent;
     }
 
@@ -236,30 +204,15 @@ class _CalendarScreenState extends State<CalendarScreen> {
 
     final avgCompletionRate = totalCompletionRate / events.length;
 
-    Color resultColor;
-    String colorName;
-
     if (avgCompletionRate >= 1.0) {
-      resultColor = Colors.green.shade400; // 완벽 완료 (모든 세트 목표 달성)
-      colorName = '초록색 (완벽)';
+      return Colors.green.shade400; // 완벽 완료 (모든 세트 목표 달성)
     } else if (avgCompletionRate >= 0.8) {
-      resultColor = Colors.blue.shade400; // 좋음 (80% 이상)
-      colorName = '파란색 (좋음)';
+      return Colors.blue.shade400; // 좋음 (80% 이상)
     } else if (avgCompletionRate >= 0.5) {
-      resultColor = Colors.orange.shade400; // 보통 (50% 이상)
-      colorName = '주황색 (보통)';
+      return Colors.orange.shade400; // 보통 (50% 이상)
     } else {
-      resultColor = Colors.red.shade400; // 부족 (50% 미만)
-      colorName = '빨간색 (부족)';
+      return Colors.red.shade400; // 부족 (50% 미만)
     }
-
-    if (daysDiff <= 7) {
-      debugPrint(
-        '📅 [CalendarScreen] _getDayColor($day): 평균 완료율 ${(avgCompletionRate * 100).toStringAsFixed(1)}% -> $colorName',
-      );
-    }
-
-    return resultColor;
   }
 
   @override
@@ -456,7 +409,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     bool isToday = false,
   }) {
     final events = _getEventsForDay(day);
-    final dayColor = _getDayColor(day);
+    final dayColor = _getDayColor(day, events);
 
     return Container(
       margin: const EdgeInsets.all(4),

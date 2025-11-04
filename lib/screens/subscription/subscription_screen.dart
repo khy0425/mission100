@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:in_app_purchase/in_app_purchase.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../services/payment/billing_service.dart';
 
 class SubscriptionScreen extends StatefulWidget {
@@ -75,8 +76,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     });
 
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('구독이 성공적으로 완료되었습니다!'),
+      SnackBar(
+        content: Text(AppLocalizations.of(context).subscriptionSuccess),
         backgroundColor: Colors.green,
       ),
     );
@@ -112,8 +113,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         _isProcessingPurchase = false;
       });
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('구매를 시작할 수 없습니다.'),
+        SnackBar(
+          content: Text(AppLocalizations.of(context).cannotStartPurchase),
           backgroundColor: Colors.red,
         ),
       );
@@ -123,8 +124,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
   Future<void> _restorePurchases() async {
     await _billingService.restorePurchases();
     ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        content: Text('구매 복원을 시도했습니다.'),
+      SnackBar(
+        content: Text(AppLocalizations.of(context).restorePurchases),
       ),
     );
   }
@@ -172,7 +173,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('프리미엄 구독'),
+        title: Text(AppLocalizations.of(context).premiumSubscription),
         backgroundColor: Theme.of(context).primaryColor,
         foregroundColor: Colors.white,
         actions: [
@@ -189,13 +190,13 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
   Widget _buildBody() {
     if (_isLoading) {
-      return const Center(
+      return Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CircularProgressIndicator(),
-            SizedBox(height: 16),
-            Text('구독 상품을 불러오는 중...'),
+            const CircularProgressIndicator(),
+            const SizedBox(height: 16),
+            Text(AppLocalizations.of(context).loadingSubscription),
           ],
         ),
       );
@@ -220,7 +221,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             const SizedBox(height: 16),
             ElevatedButton(
               onPressed: _initializeBilling,
-              child: const Text('다시 시도'),
+              child: Text(AppLocalizations.of(context).retry),
             ),
           ],
         ),
@@ -301,7 +302,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                 onPressed: () {
                   // 이용약관 표시
                 },
-                child: const Text('이용약관 및 개인정보처리방침'),
+                child: Text(AppLocalizations.of(context).termsPrivacy),
               ),
             ],
           ),

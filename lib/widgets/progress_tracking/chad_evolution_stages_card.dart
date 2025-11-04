@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/user_profile.dart';
 import 'chad_stage_item.dart';
 
@@ -20,37 +20,37 @@ class ChadEvolutionStagesCard extends StatelessWidget {
     final chadStages = [
       {
         'name': 'Rookie Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '프로그램 시작',
       },
       {
         'name': 'Rising Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '1주차 완료',
       },
       {
         'name': 'Alpha Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '2주차 완료',
       },
       {
         'name': 'Sigma Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '3주차 완료',
       },
       {
         'name': 'Giga Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '4주차 완료',
       },
       {
         'name': 'Ultra Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '5주차 완료',
       },
       {
         'name': 'Legendary Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '6주차 완료',
       },
     ];

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import '../../models/chad_evolution.dart';
 
 class LevelUpDialog extends StatefulWidget {
   final int oldLevel;
   final int newLevel;
+  final ChadEvolutionStage? newChadStage;
   final String rewardTitle;
   final String rewardDescription;
 
@@ -11,6 +13,7 @@ class LevelUpDialog extends StatefulWidget {
     super.key,
     required this.oldLevel,
     required this.newLevel,
+    this.newChadStage,
     this.rewardTitle = '새로운 기능 해제!',
     this.rewardDescription = '더 강력한 차드로 진화했습니다!',
   });
@@ -152,30 +155,45 @@ class _LevelUpDialogState extends State<LevelUpDialog>
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      // 레벨업 아이콘
+                      // 레벨업 Chad 이미지
                       AnimatedBuilder(
                         animation: _rotationAnimation,
                         builder: (context, child) {
                           return Transform.rotate(
                             angle: _rotationAnimation.value * 3.14159,
                             child: Container(
-                              width: 80,
-                              height: 80,
+                              width: 120,
+                              height: 120,
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 shape: BoxShape.circle,
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withValues(alpha: 0.2),
-                                    blurRadius: 10,
-                                    spreadRadius: 2,
+                                    color: Colors.black.withValues(alpha: 0.3),
+                                    blurRadius: 15,
+                                    spreadRadius: 3,
                                   ),
                                 ],
                               ),
-                              child: const Icon(
-                                Icons.star,
-                                size: 50,
-                                color: Colors.amber,
+                              child: ClipOval(
+                                child: widget.newChadStage != null
+                                    ? Image.asset(
+                                        'assets/images/chad/${widget.newChadStage!.name}.png',
+                                        fit: BoxFit.cover,
+                                        errorBuilder: (context, error, stackTrace) {
+                                          // Chad 이미지 로드 실패 시 placeholder 아이콘 표시
+                                          return const Icon(
+                                            Icons.fitness_center,
+                                            size: 60,
+                                            color: Colors.amber,
+                                          );
+                                        },
+                                      )
+                                    : const Icon(
+                                        Icons.star,
+                                        size: 60,
+                                        color: Colors.amber,
+                                      ),
                               ),
                             ),
                           );

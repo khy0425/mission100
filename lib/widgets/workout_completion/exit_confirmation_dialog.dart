@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 운동 종료 확인 다이얼로그
 class ExitConfirmationDialog extends StatelessWidget {

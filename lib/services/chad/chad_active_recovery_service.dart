@@ -129,7 +129,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
         title: 'Chad 가벼운 푸시업',
         description: '무릎 대고 천천히 하는 Chad 스타일 푸시업',
         chadMessage: '🔥 완벽한 컨디션이야! Chad와 가벼운 움직임으로 몸 풀어보자!',
-        chadImagePath: 'assets/images/기본차드.jpg',
+        chadImagePath: 'assets/images/chad/basic/basicChad.png',
         durationMinutes: 10,
         instructions: [
           '1. 무릎을 바닥에 대고 엎드려요',
@@ -146,7 +146,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
         title: 'Chad 상체 스트레칭',
         description: '어깨와 가슴 근육을 풀어주는 Chad 스트레칭',
         chadMessage: '💪 강한 너도 유연성이 중요해! Chad와 함께 몸을 풀어보자!',
-        chadImagePath: 'assets/images/기본차드.jpg',
+        chadImagePath: 'assets/images/chad/basic/basicChad.png',
         durationMinutes: 15,
         instructions: [
           '1. 양팔을 벽에 대고 가슴 스트레칭 (30초)',
@@ -169,7 +169,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
         title: 'Chad 산책 타임',
         description: 'Chad와 함께하는 가벼운 동네 산책',
         chadMessage: '⚡ 좋은 컨디션이네! Chad와 산책하면서 몸도 마음도 리프레시!',
-        chadImagePath: 'assets/images/기본차드.jpg',
+        chadImagePath: 'assets/images/chad/basic/basicChad.png',
         durationMinutes: 20,
         instructions: [
           '1. 편안한 속도로 20분간 걷기',
@@ -186,7 +186,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
         title: 'Chad 호흡 운동',
         description: '4-7-8 호흡법으로 몸과 마음 진정시키기',
         chadMessage: '🧘‍♂️ Chad도 명상해! 깊게 숨쉬면서 에너지 충전하자!',
-        chadImagePath: 'assets/images/기본차드.jpg',
+        chadImagePath: 'assets/images/chad/basic/basicChad.png',
         durationMinutes: 10,
         instructions: [
           '1. 편안히 앉아 눈을 감아요',
@@ -210,7 +210,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
         title: 'Chad 젠틀 스트레칭',
         description: '부드럽고 느린 전신 스트레칭',
         chadMessage: '😊 무리하지 말고 Chad와 천천히 몸을 풀어보자!',
-        chadImagePath: 'assets/images/기본차드.jpg',
+        chadImagePath: 'assets/images/chad/basic/basicChad.png',
         durationMinutes: 15,
         instructions: [
           '1. 목과 어깨 천천히 돌리기',
@@ -227,7 +227,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
         title: 'Chad 마음챙김',
         description: '현재 순간에 집중하는 Chad 스타일 명상',
         chadMessage: '🧘‍♂️ Chad와 함께 마음의 평화를 찾아보자!',
-        chadImagePath: 'assets/images/기본차드.jpg',
+        chadImagePath: 'assets/images/chad/basic/basicChad.png',
         durationMinutes: 10,
         instructions: [
           '1. 편안한 자세로 앉아요',
@@ -250,7 +250,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
         title: 'Chad 완전 휴식',
         description: 'Chad가 추천하는 완전한 휴식과 회복',
         chadMessage: '😴 Bro, 오늘은 완전 휴식이 최고야! Chad도 쉴 때는 확실히 쉬어!',
-        chadImagePath: 'assets/images/기본차드.jpg',
+        chadImagePath: 'assets/images/chad/basic/basicChad.png',
         durationMinutes: 30,
         instructions: [
           '1. 편안한 곳에 누워요',
@@ -267,7 +267,7 @@ class ChadActiveRecoveryService extends ChangeNotifier {
         title: 'Chad 치유 호흡',
         description: '몸과 마음을 치유하는 Chad 호흡법',
         chadMessage: '💨 깊게 숨쉬어! Chad가 함께 회복 에너지를 충전해줄게!',
-        chadImagePath: 'assets/images/기본차드.jpg',
+        chadImagePath: 'assets/images/chad/basic/basicChad.png',
         durationMinutes: 8,
         instructions: [
           '1. 편안히 앉거나 누워요',

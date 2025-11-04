@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 휴식일/운동일 메시지 위젯
 class RestDayMessage extends StatelessWidget {
@@ -11,6 +12,8 @@ class RestDayMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     if (isTomorrowRestDay) {
       return Container(
         padding: const EdgeInsets.all(12),
@@ -22,7 +25,7 @@ class RestDayMessage extends StatelessWidget {
         child: Column(
           children: [
             Text(
-              '😴 내일은 CHAD 휴식일! 😴',
+              l10n.tomorrowIsRestDay,
               style: TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.purple[700],
@@ -31,7 +34,7 @@ class RestDayMessage extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              '🌴 완전한 회복으로 더 강한 CHAD가 되자! 💪',
+              l10n.recoverToBeStronger,
               style: TextStyle(
                 fontSize: 12,
                 color: Colors.purple[600],
@@ -50,20 +53,20 @@ class RestDayMessage extends StatelessWidget {
           borderRadius: BorderRadius.circular(8),
           border: Border.all(color: Colors.orange, width: 2),
         ),
-        child: const Column(
+        child: Column(
           children: [
             Text(
-              '🔥 TOMORROW: BEAST MODE AGAIN! 🔥',
-              style: TextStyle(
+              l10n.tomorrowBeastMode,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 color: Colors.orange,
                 fontSize: 14,
               ),
             ),
-            SizedBox(height: 4),
+            const SizedBox(height: 4),
             Text(
-              '💀 LEGENDARY 경지로의 여정은 계속된다! 💀',
-              style: TextStyle(
+              l10n.legendaryJourneyContinues,
+              style: const TextStyle(
                 fontSize: 12,
                 color: Colors.orange,
                 fontWeight: FontWeight.w600,

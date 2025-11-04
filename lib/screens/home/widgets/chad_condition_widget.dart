@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../generated/app_localizations.dart';
+import '../../../generated/l10n/app_localizations.dart';
 import '../../../services/chad/chad_condition_service.dart';
 import '../../../utils/config/constants.dart';
 
@@ -210,7 +210,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
 
                 // Chad 메시지
                 Text(
-                  chadService.getChadConditionMessage(),
+                  chadService.getChadConditionMessage(context),
                   style: const TextStyle(
                     fontSize: 14,
                     height: 1.4,
@@ -283,7 +283,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
             ),
             const SizedBox(height: 4),
             Text(
-              condition.koreanName,
+              condition.getLocalizedName(context),
               style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w500,
@@ -310,7 +310,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
                   ),
             ),
             Text(
-              '${chadService.currentCondition?.emoji} ${chadService.currentCondition?.koreanName}',
+              '${chadService.currentCondition?.emoji} ${chadService.currentCondition?.getLocalizedName(context)}',
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.bold,
                     color: const Color(AppColors.primaryColor),
@@ -345,7 +345,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
               ),
               const SizedBox(height: 8),
               Text(
-                chadService.getTodayWorkoutRecommendation(),
+                chadService.getTodayWorkoutRecommendation(context),
                 style: const TextStyle(
                   fontSize: 14,
                   height: 1.4,
@@ -379,7 +379,7 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
-            AppLocalizations.of(context).chadConfirmedCondition(condition.koreanName),
+            AppLocalizations.of(context).chadConfirmedCondition(condition.getLocalizedName(context)),
           ),
           backgroundColor: const Color(AppColors.primaryColor),
           behavior: SnackBarBehavior.floating,

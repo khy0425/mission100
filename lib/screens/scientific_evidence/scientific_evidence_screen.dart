@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../utils/config/constants.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 🔬 과학적 근거 화면
 ///
@@ -17,7 +18,7 @@ class ScientificEvidenceScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('과학적 근거'),
+        title: Text(AppLocalizations.of(context).scientificEvidence),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

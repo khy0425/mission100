@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 설정 화면 헤더
 class SettingsHeader extends StatelessWidget {

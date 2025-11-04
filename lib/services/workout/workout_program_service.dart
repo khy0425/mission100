@@ -4,14 +4,15 @@ import '../../models/exercise_type.dart';
 import '../../utils/data/workout_data.dart';
 import '../data/database_service.dart';
 import '../progress/rpe_adaptation_service.dart';
+import 'workout_history_service.dart';
 import 'package:flutter/foundation.dart';
 
-/// 사용자 레벨에 따른 6주 워크아웃 프로그램 생성 및 관리 서비스
+/// 사용자 레벨에 따른 14주 워크아웃 프로그램 생성 및 관리 서비스
 class WorkoutProgramService {
   final DatabaseService _databaseService = DatabaseService();
   final RPEAdaptationService _rpeService = RPEAdaptationService();
 
-  /// 사용자 레벨에 따른 완전한 6주 워크아웃 프로그램 생성
+  /// 사용자 레벨에 따른 완전한 14주 워크아웃 프로그램 생성
   ///
   /// [level] - 사용자의 현재 레벨 (Rookie, Rising, Alpha, Giga)
   /// Returns: 주차 -> 일차 -> 세트별 횟수 맵
@@ -51,7 +52,7 @@ class WorkoutProgramService {
     return WorkoutData.getWeeklyTotal(level, week);
   }
 
-  /// 전체 6주 프로그램의 총 운동량 계산
+  /// 전체 14주 프로그램의 총 운동량 계산
   int getTotalRepsForProgram(UserLevel level) {
     return WorkoutData.getProgramTotal(level);
   }
@@ -70,9 +71,9 @@ class WorkoutProgramService {
     debugPrint('📅 오늘: $today');
     debugPrint('📅 시작한지 $daysSinceStart일 경과');
 
-    // 프로그램 완료 확인 (18일 = 6주 * 3일)
-    if (daysSinceStart >= 18) {
-      debugPrint('✅ 프로그램 완료 (18일 초과)');
+    // 프로그램 완료 확인 (42일 = 14주 * 3일)
+    if (daysSinceStart >= 42) {
+      debugPrint('✅ 프로그램 완료 (42일 초과)');
       return null; // 프로그램 완료
     }
 
@@ -183,14 +184,11 @@ class WorkoutProgramService {
   /// Returns: 전체 프로그램 진행 상황 정보
   Future<ProgramProgress> getProgramProgress(UserProfile userProfile) async {
     final weeklyProgress = await getWeeklyProgress(userProfile);
-    final allSessions = await _databaseService.getWorkoutSessionsByUserId(
-      1,
-    ); // 현재는 단일 사용자
+    final allWorkouts = await WorkoutHistoryService.getAllWorkouts();
 
-    final completedSessions = allSessions.where((s) => s.isCompleted).length;
-    final totalCompletedReps = allSessions
-        .where((s) => s.isCompleted)
-        .fold<int>(0, (sum, session) => sum + session.totalReps);
+    final completedSessions = allWorkouts.length;
+    final totalCompletedReps = allWorkouts
+        .fold<int>(0, (sum, workout) => sum + workout.totalReps);
 
     final programTarget = getTotalRepsForProgram(userProfile.level);
     final progressPercentage = (totalCompletedReps / programTarget).clamp(
@@ -201,11 +199,11 @@ class WorkoutProgramService {
     return ProgramProgress(
       weeklyProgress: weeklyProgress,
       completedSessions: completedSessions,
-      totalSessions: 18,
+      totalSessions: 42,
       totalCompletedReps: totalCompletedReps,
       programTarget: programTarget,
       progressPercentage: progressPercentage,
-      isCompleted: completedSessions >= 18,
+      isCompleted: completedSessions >= 42,
     );
   }
 
@@ -214,10 +212,10 @@ class WorkoutProgramService {
   /// [userProfile] - 사용자 프로필
   /// Returns: 다음 워크아웃 정보 또는 null (프로그램 완료)
   Future<TodayWorkout?> getNextWorkout(UserProfile userProfile) async {
-    final allSessions = await _databaseService.getWorkoutSessionsByUserId(1);
-    final completedSessions = allSessions.where((s) => s.isCompleted).length;
+    final allWorkouts = await WorkoutHistoryService.getAllWorkouts();
+    final completedSessions = allWorkouts.length;
 
-    if (completedSessions >= 18) {
+    if (completedSessions >= 42) {
       return null; // 프로그램 완료
     }
 
@@ -321,7 +319,7 @@ class WorkoutProgramService {
   /// Returns: 초기화 여부
   Future<bool> isProgramInitialized(int userId) async {
     final sessions = await _databaseService.getWorkoutSessionsByUserId(userId);
-    return sessions.length >= 18; // 6주 * 3일 = 18세션
+    return sessions.length >= 42; // 6주 * 3일 = 42세션
   }
 
   /// 사용자 프로그램 재초기화 (레벨 변경 시 사용)
@@ -469,7 +467,7 @@ class ProgramProgress {
   /// 완료된 주차 수 (weeklyProgress에서 가져옴)
   int get completedWeeks => weeklyProgress.completedWeeks;
 
-  /// 전체 주차 수 (고정값 6주)
+  /// 전체 주차 수 (고정값 14주)
   int get totalWeeks => 6;
 
   /// 이번 주 완료된 운동일 수

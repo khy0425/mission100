@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import '../../../services/chad/chad_evolution_service.dart';
 import '../../../utils/config/constants.dart';
 import '../../../utils/helpers/chad_translation_helper.dart';
-import '../../../generated/app_localizations.dart';
+import '../../../generated/l10n/app_localizations.dart';
 
 /// Chad 진화 상태를 표시하는 섹션 위젯
 ///
@@ -108,13 +108,13 @@ class ChadSectionWidget extends StatelessWidget {
                 fit: BoxFit.cover,
                 errorBuilder: (context, error, stackTrace) {
                   return Image.asset(
-                    'assets/images/기본차드.jpg',
+                    'assets/images/chad/basic/basicChad.png',
                     fit: BoxFit.cover,
                   );
                 },
               );
             } else if (snapshot.hasError) {
-              return Image.asset('assets/images/기본차드.jpg', fit: BoxFit.cover);
+              return Image.asset('assets/images/chad/basic/basicChad.png', fit: BoxFit.cover);
             } else {
               return Container(
                 color: Colors.grey[300],

@@ -66,7 +66,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
           children: [
             Icon(Icons.stars, color: Color(AppColors.primaryColor)),
             SizedBox(width: 8),
-            Text(AppLocalizations.of(context)!.personalizedProgramReady),
+            Text(AppLocalizations.of(context).personalizedProgramReady),
           ],
         ),
         content: Column(
@@ -74,18 +74,18 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              AppLocalizations.of(context)!.goalProgramReady(_getGoalText()),
+              AppLocalizations.of(context).goalProgramReady(_getGoalText()),
               style: const TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
-            Text(AppLocalizations.of(context)!.launchEventBenefits),
-            Text(AppLocalizations.of(context)!.benefit1MonthFree),
-            Text(AppLocalizations.of(context)!.benefitPersonalizedPlan),
-            Text(AppLocalizations.of(context)!.benefitCloudBackup),
-            Text(AppLocalizations.of(context)!.benefitBodyAnalysis),
+            Text(AppLocalizations.of(context).launchEventBenefits),
+            Text(AppLocalizations.of(context).benefit1MonthFree),
+            Text(AppLocalizations.of(context).benefitPersonalizedPlan),
+            Text(AppLocalizations.of(context).benefitCloudBackup),
+            Text(AppLocalizations.of(context).benefitBodyAnalysis),
             const SizedBox(height: 16),
             Text(
-              AppLocalizations.of(context)!.signupToAchieveGoal,
+              AppLocalizations.of(context).signupToAchieveGoal,
               style: TextStyle(
                 color: Color(AppColors.primaryColor),
                 fontWeight: FontWeight.bold,
@@ -103,7 +103,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                     builder: (context) => const PermissionScreen()),
               );
             },
-            child: Text(AppLocalizations.of(context)!.later),
+            child: Text(AppLocalizations.of(context).later),
           ),
           ElevatedButton(
             onPressed: () {
@@ -119,7 +119,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
               backgroundColor: const Color(AppColors.primaryColor),
               foregroundColor: Colors.white,
             ),
-            child: Text(AppLocalizations.of(context)!.startForFree),
+            child: Text(AppLocalizations.of(context).startForFree),
           ),
         ],
       ),
@@ -152,7 +152,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
             isDark ? Colors.grey[900] : const Color(AppColors.primaryColor),
         foregroundColor: Colors.white,
         elevation: 0,
-        title: Text(AppLocalizations.of(context)!.goalSettings),
+        title: Text(AppLocalizations.of(context).goalSettings),
         leading: _currentPage > 0
             ? IconButton(
                 icon: const Icon(Icons.arrow_back),
@@ -590,7 +590,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                   Text(AppLocalizations.of(context).competitionTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
                 ],
               ),
-              subtitle: Text(AppLocalizations.of(context)!.competitionDesc),
+              subtitle: Text(AppLocalizations.of(context).competitionDesc),
               leading: Radio<bool>(
                 value: true,
                 groupValue: _likesCompetition,
@@ -618,7 +618,7 @@ class _UserGoalsScreenState extends State<UserGoalsScreen> {
                   Text(AppLocalizations.of(context).personalRecordTitle, style: const TextStyle(fontWeight: FontWeight.bold)),
                 ],
               ),
-              subtitle: Text(AppLocalizations.of(context)!.personalRecordDesc),
+              subtitle: Text(AppLocalizations.of(context).personalRecordDesc),
               leading: Radio<bool>(
                 value: false,
                 groupValue: _likesCompetition,

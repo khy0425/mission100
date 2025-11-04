@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// Chad가 진행하는 온보딩 위젯
 class ChadOnboardingWidget extends StatefulWidget {

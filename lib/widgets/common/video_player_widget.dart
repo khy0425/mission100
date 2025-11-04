@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 푸시업 폼 가이드용 커스텀 비디오 플레이어 위젯
 class VideoPlayerWidget extends StatefulWidget {

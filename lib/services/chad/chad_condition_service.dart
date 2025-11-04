@@ -1,19 +1,36 @@
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// Chad 컨디션 상태 열거형
 enum ChadCondition {
-  veryTired(0, '😴', '매우 피곤'),
-  good(1, '😊', '좋음'),
-  strong(2, '💪', '강함'),
-  sweaty(3, '😅', '땀남'),
-  onFire(4, '🥵', '불타는 중');
+  veryTired(0, '😴'),
+  good(1, '😊'),
+  strong(2, '💪'),
+  sweaty(3, '😅'),
+  onFire(4, '🥵');
 
-  const ChadCondition(this.score, this.emoji, this.koreanName);
+  const ChadCondition(this.score, this.emoji);
 
   final int score;
   final String emoji;
-  final String koreanName;
+
+  /// 로컬라이즈된 이름 가져오기
+  String getLocalizedName(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    switch (this) {
+      case ChadCondition.veryTired:
+        return l10n.conditionVeryTired;
+      case ChadCondition.good:
+        return l10n.conditionGood;
+      case ChadCondition.strong:
+        return l10n.conditionStrong;
+      case ChadCondition.sweaty:
+        return l10n.conditionSweaty;
+      case ChadCondition.onFire:
+        return l10n.conditionOnFire;
+    }
+  }
 }
 
 /// Chad 컨디션 관리 서비스
@@ -96,7 +113,7 @@ class ChadConditionService extends ChangeNotifier {
       await prefs.setInt(
           'last_condition_check', _lastConditionCheck!.millisecondsSinceEpoch);
 
-      debugPrint('Chad 컨디션 업데이트: ${condition.koreanName}');
+      debugPrint('Chad 컨디션 업데이트: ${condition.name} (score: ${condition.score})');
       notifyListeners();
     } catch (e) {
       debugPrint('Chad 컨디션 저장 실패: $e');
@@ -104,112 +121,115 @@ class ChadConditionService extends ChangeNotifier {
   }
 
   /// Chad의 개인화된 컨디션 체크 메시지
-  String getChadConditionMessage() {
+  String getChadConditionMessage(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     final goal = _personalizedData['fitness_goal'] as String?;
 
-    String baseMessage = '안녕 Bro! Chad야! 💪\n';
+    String baseMessage = '${l10n.chadGreeting}\n';
 
     if (!hasCheckedToday) {
-      baseMessage += '오늘 컨디션은 어때?\n';
+      baseMessage += '${l10n.howIsYourConditionToday}\n';
 
       // 목표별 개인화 메시지
       switch (goal) {
         case 'weightLoss':
-          baseMessage += '체중감량을 위해 Chad가 최적의 운동 강도를 맞춰줄게!';
+          baseMessage += l10n.chadWillMatchWorkoutIntensityForWeightLoss;
           break;
         case 'muscleGain':
-          baseMessage += '근육 증가를 위해 Chad가 완벽한 루틴을 짜줄게!';
+          baseMessage += l10n.chadWillCreatePerfectRoutineForMuscleGain;
           break;
         case 'endurance':
-          baseMessage += '체력 향상을 위해 Chad가 맞춤 계획 세워줄게!';
+          baseMessage += l10n.chadWillMakeCustomPlanForEndurance;
           break;
         default:
-          baseMessage += 'Chad가 너에게 맞는 운동을 추천해줄게!';
+          baseMessage += l10n.chadWillRecommendWorkoutForYou;
       }
     } else {
-      baseMessage += _getConditionBasedMessage();
+      baseMessage += _getConditionBasedMessage(context);
     }
 
     return baseMessage;
   }
 
   /// 현재 컨디션에 따른 Chad 메시지
-  String _getConditionBasedMessage() {
-    if (_currentCondition == null) return '컨디션을 체크해줘!';
+  String _getConditionBasedMessage(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    if (_currentCondition == null) return l10n.pleaseCheckYourCondition;
 
     final goal = _personalizedData['fitness_goal'] as String?;
 
     switch (_currentCondition!) {
       case ChadCondition.veryTired:
-        return '휴식이 필요해 보이네!\nChad가 가벼운 스트레칭 추천해줄게! 🧘‍♂️';
+        return l10n.needRestChadRecommendsStretching;
 
       case ChadCondition.good:
         switch (goal) {
           case 'weightLoss':
-            return '좋은 컨디션이야!\nChad와 칼로리 태우러 가자! 🔥';
+            return l10n.goodConditionLetsBurnCalories;
           case 'muscleGain':
-            return '완벽한 상태네!\nChad와 근육 만들러 가자! 💪';
+            return l10n.perfectConditionLetsBuildMuscle;
           default:
-            return '좋은 컨디션이야!\nChad와 운동하러 가자!';
+            return l10n.goodConditionLetsWorkout;
         }
 
       case ChadCondition.strong:
-        return '엄청 강해 보이는데?\nChad도 더 강한 운동 준비했어! 🚀';
+        return l10n.lookingVeryStrongChadPreparedStrongerWorkout;
 
       case ChadCondition.sweaty:
-        return '이미 땀이 나고 있네!\nChad가 워밍업은 짧게 갈게! 🏃‍♂️';
+        return l10n.alreadySweatyChadWillShortWarmup;
 
       case ChadCondition.onFire:
-        return '완전 불타고 있네!\nChad도 Beast Mode로 갈게! 🔥💪';
+        return l10n.totallyOnFireChadBeastMode;
     }
   }
 
   /// Chad 이미지 경로 (컨디션에 따라)
   String getChadImageForCondition() {
-    if (_currentCondition == null) return 'assets/images/기본차드.jpg';
+    if (_currentCondition == null) return 'assets/images/chad/basic/basicChad.png';
 
     switch (_currentCondition!) {
       case ChadCondition.veryTired:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
       case ChadCondition.good:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
       case ChadCondition.strong:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
       case ChadCondition.sweaty:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
       case ChadCondition.onFire:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
     }
   }
 
   /// 컨디션에 따른 오늘의 운동 추천
-  String getTodayWorkoutRecommendation() {
-    if (_currentCondition == null) return '컨디션을 먼저 체크해줘!';
+  String getTodayWorkoutRecommendation(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    if (_currentCondition == null) return l10n.pleaseCheckConditionFirst;
 
     final level = _personalizedData['fitness_level'] as String?;
 
     switch (_currentCondition!) {
       case ChadCondition.veryTired:
-        return '🧘‍♂️ Chad 액티브 리커버리\n• 가벼운 스트레칭 10분\n• 심호흡 운동\n• 충분한 휴식';
+        return l10n.chadActiveRecovery;
 
       case ChadCondition.good:
         switch (level) {
           case 'beginner':
-            return '🎯 Chad 기본 루틴\n• 워밍업 5분\n• 푸시업 기본 세트\n• 마무리 스트레칭';
+            return l10n.chadBasicRoutine;
           case 'intermediate':
-            return '💪 Chad 중급 루틴\n• 워밍업 5분\n• 푸시업 강화 세트\n• 코어 운동 추가';
+            return l10n.chadIntermediateRoutine;
           default:
-            return '🚀 Chad 고급 루틴\n• 워밍업 10분\n• 푸시업 고강도 세트\n• 전신 운동 포함';
+            return l10n.chadAdvancedRoutine;
         }
 
       case ChadCondition.strong:
-        return '💪 Chad 파워 루틴\n• 기본 루틴 + 20% 추가\n• 새로운 변형 동작\n• 강도 업그레이드';
+        return l10n.chadPowerRoutine;
 
       case ChadCondition.sweaty:
-        return '🏃‍♂️ Chad 빠른 시작\n• 워밍업 단축\n• 바로 메인 운동\n• 효율적인 루틴';
+        return l10n.chadQuickStart;
 
       case ChadCondition.onFire:
-        return '🔥 Chad Beast Mode\n• 최고 강도 운동\n• 도전적인 목표\n• 한계 돌파 세션';
+        return l10n.chadBeastMode;
     }
   }
 

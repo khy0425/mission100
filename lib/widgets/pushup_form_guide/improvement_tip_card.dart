@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/pushup_form_guide.dart';
 
 /// 개선 팁 카드 위젯

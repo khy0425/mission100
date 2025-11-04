@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/exercise_video.dart';
 
 /// 운동 영상을 외부 앱(YouTube)에서 재생하는 버튼 위젯

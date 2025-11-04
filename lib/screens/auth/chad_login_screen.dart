@@ -6,6 +6,7 @@ import '../../widgets/chad/chad_onboarding_widget.dart';
 import '../../utils/config/constants.dart';
 import 'chad_signup_screen.dart';
 import '../misc/permission_screen.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 class ChadLoginScreen extends StatefulWidget {
   const ChadLoginScreen({super.key});
@@ -290,7 +291,7 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
                       return const Icon(Icons.login, size: 20);
                     },
                   ),
-                  label: const Text('구글로 로그인'),
+                  label: Text(AppLocalizations.of(context).googleLogin),
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(color: Colors.grey[400]!),
                     shape: RoundedRectangleBorder(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/pushup_type.dart';
 import '../../services/workout/pushup_tutorial_service.dart';
 import '../../services/chad/chad_encouragement_service.dart';
@@ -259,9 +259,9 @@ class _PushupTutorialScreenState extends State<PushupTutorialScreen> {
                                   color: Colors.green,
                                   borderRadius: BorderRadius.circular(12),
                                 ),
-                                child: const Text(
-                                  '완료',
-                                  style: TextStyle(
+                                child: Text(
+                                  AppLocalizations.of(context).completed,
+                                  style: const TextStyle(
                                     color: Colors.white,
                                     fontSize: 10,
                                     fontWeight: FontWeight.bold,

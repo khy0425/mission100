@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/pushup_form_guide.dart';
 import '../common/video_player_widget.dart';
-import '../exercise/exercise_slideshow_widget.dart';
 
 /// 미디어 콘텐츠 빌더 클래스
 class MediaContentBuilder {
@@ -36,25 +35,8 @@ class MediaContentBuilder {
       );
     }
 
-    // step1~3 이미지가 있는지 확인하고 슬라이드쇼로 표시
-    final stepImages = [
-      'assets/images/pushup_forms/knee/knee_step1.jpg',
-      'assets/images/pushup_forms/knee/knee_step2.jpg',
-      'assets/images/pushup_forms/knee/knee_step3.jpg',
-    ];
-
-    // 첫 번째 단계에서 슬라이드쇼 표시
-    if (step.stepNumber == 1) {
-      return Semantics(
-        label: '${step.title} 자세 시연 슬라이드쇼',
-        child: ExerciseSlideshowWidget(
-          imagePaths: stepImages,
-          slideDuration: const Duration(seconds: 2),
-          height: 250,
-          fit: BoxFit.contain,
-        ),
-      );
-    }
+    // knee_step1.jpg만 표시 (step2, step3 이미지가 없음)
+    // 나중에 이미지가 추가되면 슬라이드쇼로 변경 가능
 
     // 이미지가 있으면 실제 이미지 표시, 없으면 플레이스홀더 표시
     if (step.imagePath.isNotEmpty && !step.imagePath.contains('placeholder')) {

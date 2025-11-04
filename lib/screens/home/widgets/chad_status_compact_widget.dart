@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../generated/app_localizations.dart';
+import '../../../generated/l10n/app_localizations.dart';
 import '../../../services/chad/chad_condition_service.dart';
 import '../../../services/chad/chad_recovery_service.dart';
 import '../../../models/rpe_data.dart';
@@ -71,7 +71,7 @@ class ChadStatusCompactWidget extends StatelessWidget {
                             const SizedBox(width: 4),
                             Expanded(
                               child: Text(
-                                conditionService.currentCondition!.koreanName,
+                                conditionService.currentCondition!.getLocalizedName(context),
                                 style: theme.textTheme.titleSmall?.copyWith(
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -240,7 +240,7 @@ class ChadStatusCompactWidget extends StatelessWidget {
                                 children: [
                                   Text(condition.emoji),
                                   const SizedBox(width: 4),
-                                  Text(condition.koreanName),
+                                  Text(condition.getLocalizedName(context)),
                                 ],
                               ),
                               selected: isSelected,

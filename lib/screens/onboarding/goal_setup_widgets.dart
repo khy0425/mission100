@@ -9,6 +9,7 @@ import '../../services/core/onboarding_service.dart';
 import '../../services/chad/chad_onboarding_service.dart';
 import '../../widgets/chad/chad_onboarding_widget.dart';
 import '../../utils/config/constants.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 // 체중 설정 위젯
 class GoalSetupWeightWidget extends StatefulWidget {
@@ -517,15 +518,15 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
                   ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
                   : null,
               child: ListTile(
-                title: const Row(
+                title: Row(
                   children: [
                     Text('🏆', style: TextStyle(fontSize: 20)),
                     SizedBox(width: 8),
-                    Text('경쟁과 순위',
+                    Text(AppLocalizations.of(context).competitionTitle,
                         style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
-                subtitle: const Text('다른 사용자와 비교하고 순위를 확인하며 동기부여'),
+                subtitle: Text(AppLocalizations.of(context).competitionGoalDescription),
                 leading: Radio<bool>(
                   value: true,
                   groupValue: _likesCompetition,
@@ -554,15 +555,15 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
                   ? const Color(AppColors.primaryColor).withValues(alpha: 0.1)
                   : null,
               child: ListTile(
-                title: const Row(
+                title: Row(
                   children: [
                     Text('📈', style: TextStyle(fontSize: 20)),
                     SizedBox(width: 8),
-                    Text('개인 기록',
+                    Text(AppLocalizations.of(context).personalRecordTitle,
                         style: TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
-                subtitle: const Text('나만의 목표 달성과 개인 기록 향상에 집중'),
+                subtitle: Text(AppLocalizations.of(context).personalRecordGoalDescription),
                 leading: Radio<bool>(
                   value: false,
                   groupValue: _likesCompetition,

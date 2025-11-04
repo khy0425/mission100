@@ -4,7 +4,7 @@ import '../services/data/database_service.dart';
 import '../services/workout/workout_program_service.dart';
 import '../models/user_profile.dart';
 import 'main_navigation_screen.dart';
-import '../generated/app_localizations.dart';
+import '../generated/l10n/app_localizations.dart';
 
 class WorkoutScheduleSetupScreen extends StatefulWidget {
   final UserProfile userProfile;
@@ -289,12 +289,16 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
             children: [
               Icon(Icons.calendar_month, color: Colors.orange[700], size: 32),
               const SizedBox(width: 12),
-              Text(
-                AppLocalizations.of(context).setYourWorkoutSchedule,
-                style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.orange[700],
-                    ),
+              Flexible(
+                child: Text(
+                  AppLocalizations.of(context).setYourWorkoutSchedule,
+                  style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
+                        color: Colors.orange[700],
+                      ),
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                ),
               ),
             ],
           ),

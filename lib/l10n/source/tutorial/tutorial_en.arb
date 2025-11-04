@@ -1,0 +1,89 @@
+{
+  "@@locale": "en",
+
+  "tutorialWelcomeTitle": "🏋️ Mission 100",
+  "tutorialWelcomeSubtitle": "Achieve 100 Push-ups in 14 Weeks",
+
+  "tutorialFeature1Title": "Science-Based",
+  "tutorialFeature1Desc": "Program designed based on\nlatest sports science research (2016-2024)",
+
+  "tutorialFeature2Title": "Progressive Overload",
+  "tutorialFeature2Desc": "Systematically increasing volume each week\nfor safe and effective growth",
+
+  "tutorialFeature3Title": "Personalized Program",
+  "tutorialFeature3Desc": "Customized workout plan\ntailored to your level",
+
+  "tutorialProgramTitle": "📋 Program Structure",
+
+  "tutorialDurationTitle": "⏱️ Duration",
+  "tutorialDurationSubtitle": "14 weeks (42 sessions total)",
+  "tutorialDurationDesc": "3x per week (Mon, Wed, Fri)\n48-hour recovery guaranteed",
+
+  "tutorialStructureTitle": "💪 Structure",
+  "tutorialStructureSubtitle": "Push-ups + Finisher",
+  "tutorialStructureDesc": "Main: 5-9 sets of push-ups\nFinisher: Burpees/Jump Squats etc.",
+
+  "tutorialRestTitle": "⏳ Rest Time",
+  "tutorialRestSubtitle": "Scientifically Optimized",
+  "tutorialRestDesc": "Between sets: 45-120 seconds\nAuto-adjusted by level/week",
+
+  "tutorialTipTitle": "💡 Pro Tip",
+  "tutorialTipDesc": "Record your RPE after each workout\nand the next workout intensity will auto-adjust!",
+
+  "tutorialFormTitle": "✅ Proper Push-up Form",
+
+  "tutorialForm1Title": "1. Starting Position",
+  "tutorialForm1Desc": "Hands shoulder-width apart\nBody in straight line",
+
+  "tutorialForm2Title": "2. Descending",
+  "tutorialForm2Desc": "Lower until chest touches floor\nElbows at 45-degree angle",
+
+  "tutorialForm3Title": "3. Ascending",
+  "tutorialForm3Desc": "Engage chest and core\nExplode upward",
+
+  "tutorialWarningTitle": "⚠️ Warnings",
+  "tutorialWarning1": "Keep core engaged to prevent sagging",
+  "tutorialWarning2": "Don't hyperextend your neck",
+  "tutorialWarning3": "Don't tuck elbows too close to body",
+  "tutorialWarning4": "Stop immediately if you feel pain",
+
+  "tutorialRpeTitle": "📊 What is RPE?",
+  "tutorialRpeSubtitle": "Rate of Perceived Exertion",
+
+  "tutorialRpe6": "😊 Too Easy",
+  "tutorialRpe6Desc": "I can do more next time",
+
+  "tutorialRpe7": "🙂 Moderate",
+  "tutorialRpe7Desc": "Just right difficulty",
+
+  "tutorialRpe8": "😤 Hard",
+  "tutorialRpe8Desc": "Struggled to complete",
+
+  "tutorialRpe9": "😫 Very Hard",
+  "tutorialRpe9Desc": "Nearly impossible",
+
+  "tutorialRpe10": "🤯 Max Effort!",
+  "tutorialRpe10Desc": "Gave it everything I had",
+
+  "tutorialAutoAdjustTitle": "🎯 Smart Auto-Adjustment",
+  "tutorialAutoAdjustDesc": "Record your RPE and the next workout\nautomatically optimizes!\n\n• RPE 6-7: Difficulty +5%\n• RPE 8: Maintain\n• RPE 9-10: Difficulty -5%",
+
+  "tutorialScienceTitle": "🔬 Scientific Evidence",
+  "tutorialScienceSubtitle": "Designed based on latest research findings",
+
+  "tutorialResearch1Author": "Schoenfeld et al. (2016, 2019)",
+  "tutorialResearch1Topic": "Hypertrophy & Training Frequency",
+  "tutorialResearch1Finding": "3x weekly training optimal for muscle growth\n48-hour recovery recommended",
+
+  "tutorialResearch2Author": "Grgic et al. (2018)",
+  "tutorialResearch2Topic": "Inter-set Rest Periods",
+  "tutorialResearch2Finding": "60-120 second rest\nmost effective for hypertrophy",
+
+  "tutorialResearch3Author": "Plotkin et al. (2022)",
+  "tutorialResearch3Topic": "Progressive Overload",
+  "tutorialResearch3Finding": "Progressive rep increase\neffective for strength gains",
+
+  "tutorialResearch4Author": "Wang et al. (2024)",
+  "tutorialResearch4Topic": "HIIT + Resistance Training",
+  "tutorialResearch4Finding": "Combined cardio and strength training\nimproves both fitness and strength"
+}

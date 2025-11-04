@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import 'weekly_growth_chart.dart';
 
 /// 주간 성장 차트 카드

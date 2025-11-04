@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../utils/config/constants.dart';
-import '../../../generated/app_localizations.dart';
+import '../../../generated/l10n/app_localizations.dart';
 
 /// 프로그램 진행률을 표시하는 카드 위젯
 ///
@@ -108,14 +108,14 @@ class ProgressCardWidget extends StatelessWidget {
   Widget _buildProgressContent(BuildContext context, ThemeData theme) {
     final currentWeek =
         (programProgress?.weeklyProgress.currentWeek ?? 1) as int;
-    final totalWeeks = (programProgress?.totalWeeks ?? 6) as int;
+    final totalWeeks = (programProgress?.totalWeeks ?? 14) as int;
     final progressPercentage =
         (programProgress?.progressPercentage ?? 0.0) as double;
     final completedDaysThisWeek =
         (programProgress?.completedDaysThisWeek ?? 0) as int;
     final totalDaysThisWeek = (programProgress?.totalDaysThisWeek ?? 3) as int;
     final completedSessions = (programProgress?.completedSessions ?? 0) as int;
-    final totalSessions = (programProgress?.totalSessions ?? 18) as int;
+    final totalSessions = (programProgress?.totalSessions ?? 42) as int;
 
     return Container(
       padding: const EdgeInsets.all(16),

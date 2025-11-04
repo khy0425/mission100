@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../../generated/app_localizations.dart';
+import '../../../generated/l10n/app_localizations.dart';
 import '../../../utils/config/constants.dart';
 
 /// 운동 횟수 카운터를 표시하는 위젯

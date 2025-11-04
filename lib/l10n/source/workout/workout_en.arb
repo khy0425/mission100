@@ -1377,5 +1377,17 @@
   "processingCompletion": "Processing workout completion...",
   "cannotShowCompletionDialog": "Cannot show completion dialog. Returning to home.",
   "exitWorkoutSaved": "Are you sure you want to exit? Your progress will be saved.",
-  "exit": "Exit"
+  "exit": "Exit",
+  "chadBecameStronger": "💪 Chad became stronger!",
+  "repsDestroyed": "💀 Reps Destroyed",
+  "xpGained": "💰 XP Gained",
+  "timeElapsed": "⏱️ Time Elapsed",
+  "workoutDestroyed": "💀 WORKOUT DESTROYED! 💀",
+  "workoutDestroyedMessage": "You absolutely crushed today's workout!",
+  "timeDestroyed": "⏱️ TIME DESTROYED",
+  "tomorrowIsRestDay": "😴 Tomorrow is CHAD Rest Day! 😴",
+  "recoverToBeStronger": "🌴 Recover fully to become a stronger CHAD! 💪",
+  "tomorrowBeastMode": "🔥 TOMORROW: BEAST MODE AGAIN! 🔥",
+  "legendaryJourneyContinues": "💀 The journey to LEGENDARY continues! 💀",
+  "chadEvolutionProgress": "💪 Chad Evolution Progress"
 }

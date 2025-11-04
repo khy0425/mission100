@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:async';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../utils/config/constants.dart';
 import '../../utils/data/workout_data.dart';
 import '../../models/user_profile.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mission100/generated/app_localizations.dart';
+import 'package:mission100/generated/l10n/app_localizations.dart';
 
 /// 과학적 연구 기반 푸시업 팩트 데이터베이스
 /// Claude AI가 실제 논문과 연구를 분석하여 생성한 검증된 정보

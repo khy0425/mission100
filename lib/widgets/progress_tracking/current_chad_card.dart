@@ -20,13 +20,13 @@ class CurrentChadCard extends StatelessWidget {
 
     // Chad 레벨에 따른 이미지 및 정보
     final chadImages = [
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
     ];
 
     final chadTitles = [

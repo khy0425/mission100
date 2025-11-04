@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/achievement.dart';
 import '../../utils/config/constants.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import 'achievement_progress_bar.dart';
 
 class EnhancedAchievementCard extends StatefulWidget {

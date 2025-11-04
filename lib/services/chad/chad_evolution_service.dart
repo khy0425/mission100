@@ -5,15 +5,11 @@ import '../../models/progress.dart';
 import '../notification/notification_service.dart';
 import 'chad_image_service.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/dialogs/level_up_dialog.dart';
 
 /// Chad 진화 시스템을 관리하는 서비스
 class ChadEvolutionService extends ChangeNotifier {
   static const String _evolutionStateKey = 'chad_evolution_state';
   static const String _unlockedStagesKey = 'chad_unlocked_stages';
-
-  // 레벨업 다이얼로그 표시를 위한 전역 컨텍스트
-  static BuildContext? _globalContext;
 
   ChadEvolutionState _evolutionState = const ChadEvolutionState(
     currentStage: ChadEvolutionStage.sleepCapChad,
@@ -704,16 +700,26 @@ class ChadEvolutionService extends ChangeNotifier {
     ChadImageService().onMemoryPressure();
   }
 
-  /// 전역 컨텍스트 설정 (레벨업 다이얼로그 표시용)
-  static void setGlobalContext(BuildContext context) {
-    _globalContext = context;
-  }
-
-  /// 현재 Chad 레벨 가져오기 (static 메서드)
+  /// 현재 Chad 레벨 가져오기 (XP 기반 자동 계산)
   static Future<int> getCurrentLevel() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      return prefs.getInt('chad_level') ?? 1;
+      final currentXP = prefs.getInt('chad_experience') ?? 0;
+      
+      // XP 기반으로 레벨 자동 계산
+      int level = 1;
+      while (level < 14 && currentXP >= _calculateRequiredXP(level + 1)) {
+        level++;
+      }
+      
+      // 계산된 레벨 저장 (동기화)
+      final savedLevel = prefs.getInt('chad_level') ?? 1;
+      if (savedLevel != level) {
+        await prefs.setInt('chad_level', level);
+        debugPrint('🔄 레벨 동기화: $savedLevel → $level (XP: $currentXP)');
+      }
+      
+      return level;
     } catch (e) {
       debugPrint('현재 레벨 로드 오류: $e');
       return 1;
@@ -759,6 +765,31 @@ class ChadEvolutionService extends ChangeNotifier {
     }
   }
 
+  /// 주차별 운동 완료 XP 계산
+  ///
+  /// [week] - 주차 (1-14)
+  /// Returns: 해당 주차의 세션당 XP
+  static int calculateWorkoutXP(int week) {
+    // 주차 N의 세션당 XP = 50 × (N + 1)
+    // 1주차: 100 XP, 2주차: 150 XP, 3주차: 200 XP, ...
+    if (week < 1) return 100; // 최소 100 XP
+    if (week > 14) return 750; // 최대 750 XP (14주차)
+
+    return 50 * (week + 1);
+  }
+
+  /// 주차와 일차를 기반으로 운동 완료 XP 지급
+  ///
+  /// [week] - 주차 (1-14)
+  /// [day] - 일차 (1-3)
+  /// Returns: 지급된 XP
+  static Future<int> addWorkoutCompletionXP(int week, int day) async {
+    final xp = calculateWorkoutXP(week);
+    await addExperience(xp);
+    debugPrint('💪 운동 완료 XP 지급: $week주차 $day일차 → +$xp XP');
+    return xp;
+  }
+
   /// 다음 레벨까지 필요한 경험치 계산
   static Future<int> getExperienceNeededForNextLevel(int currentLevel) async {
     // 레벨별 필요 경험치 (예: 100, 250, 450, 700, 1000, ...)
@@ -768,60 +799,49 @@ class ChadEvolutionService extends ChangeNotifier {
     return (requiredXP - currentXP).clamp(0, double.infinity).toInt();
   }
 
-  /// 레벨별 총 필요 경험치 계산
+  /// 레벨별 총 필요 경험치 계산 (14주 시스템)
   static int _calculateRequiredXP(int level) {
     // 레벨 1: 0 XP (시작점)
-    // 레벨 2: 100 XP
-    // 레벨 3: 250 XP (150 추가)
-    // 레벨 4: 450 XP (200 추가)
-    // 레벨 5: 700 XP (250 추가)
+    // 레벨 2: 300 XP (1주차 3세션 완료)
+    // 레벨 3: 750 XP (2주차 3세션 완료, 누적)
+    // 레벨 4: 1,350 XP (3주차 3세션 완료, 누적)
+    // ...
+    // 레벨 14: 13,650 XP (14주차 3세션 완료, 누적)
+
+    // 공식: 150 × ((level × (level + 1) / 2) - 1)
+    // 각 주차 N의 총 XP: 150 × (N + 1)
     if (level <= 1) return 0;
 
-    int totalXP = 0;
-    for (int i = 2; i <= level; i++) {
-      totalXP += 50 + (i * 50); // 점진적 증가
-    }
-    return totalXP;
+    return 150 * (((level * (level + 1)) ~/ 2) - 1);
   }
 
-  /// 레벨업 확인 및 처리
+  /// 레벨업 확인 및 처리 (모든 레벨업을 한 번에 처리)
   static Future<bool> _checkLevelUp(int currentXP) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final currentLevel = await getCurrentLevel();
-      final requiredXP = _calculateRequiredXP(currentLevel + 1);
 
-      if (currentXP >= requiredXP) {
-        // 레벨업!
-        final newLevel = currentLevel + 1;
+      // 현재 XP로 도달할 수 있는 최대 레벨 계산
+      int newLevel = currentLevel;
+      while (currentXP >= _calculateRequiredXP(newLevel + 1)) {
+        newLevel++;
+        if (newLevel >= 14) break; // 최대 레벨 14
+      }
+
+      // 레벨이 실제로 올랐을 때만 처리
+      if (newLevel > currentLevel) {
         await prefs.setInt('chad_level', newLevel);
-
         debugPrint('🎉 레벨업! 레벨 $currentLevel → $newLevel');
 
-        // 레벨업 다이얼로그 표시
-        if (_globalContext != null && _globalContext!.mounted) {
-          try {
-            final rewardInfo = _getLevelUpReward(newLevel);
-            showDialog(
-              context: _globalContext!,
-              barrierDismissible: false,
-              builder: (context) => LevelUpDialog(
-                oldLevel: currentLevel,
-                newLevel: newLevel,
-                rewardTitle: rewardInfo['title']!,
-                rewardDescription: rewardInfo['description']!,
-              ),
-            );
-          } catch (e) {
-            debugPrint('레벨업 다이얼로그 표시 오류: $e');
-          }
-        }
+        // 레벨업 정보를 SharedPreferences에 저장 (운동 완료 다이얼로그에서 표시용)
+        await prefs.setInt('pending_level_up_old', currentLevel);
+        await prefs.setInt('pending_level_up_new', newLevel);
 
-        // 레벨업 알림 전송 (백그라운드용)
+        // 레벨업 알림 전송
         try {
           await NotificationService.showChadEvolutionNotification(
             '레벨 $newLevel Chad',
-            '업적을 통해 성장했습니다!',
+            '운동을 통해 성장했습니다!',
           );
         } catch (e) {
           debugPrint('레벨업 알림 전송 오류: $e');
@@ -867,59 +887,6 @@ class ChadEvolutionService extends ChangeNotifier {
       debugPrint('경험치 시스템 리셋 완료');
     } catch (e) {
       debugPrint('경험치 시스템 리셋 오류: $e');
-    }
-  }
-
-  /// 레벨별 보상 정보 반환
-  static Map<String, String> _getLevelUpReward(int level) {
-    switch (level) {
-      case 2:
-        return {
-          'title': '🎯 기본 차드 해제!',
-          'description': '첫 번째 진화 완료! 기본 차드가 되었습니다.',
-        };
-      case 3:
-        return {
-          'title': '☕ 커피 차드 해제!',
-          'description': '카페인 파워 업! 더 강력한 운동이 가능합니다.',
-        };
-      case 5:
-        return {
-          'title': '🕶️ 선글라스 차드 해제!',
-          'description': '쿨한 차드 모드 활성화! 스타일과 실력을 겸비했습니다.',
-        };
-      case 7:
-        return {
-          'title': '👀 레이저 차드 해제!',
-          'description': '눈빔 차드 등장! 강력한 레이저로 모든 것을 파괴합니다!',
-        };
-      case 10:
-        return {
-          'title': '👥 더블 차드 해제!',
-          'description': '최강의 더블 차드! 두 배의 파워로 무적 모드 돌입!',
-        };
-      case 15:
-        return {
-          'title': '🎖️ 마스터 차드 해제!',
-          'description': '모든 차드의 정점! 전설적인 마스터 차드가 되었습니다!',
-        };
-      case 20:
-        return {
-          'title': '👑 레전드 차드 해제!',
-          'description': '차드 중의 차드! 이제 누구도 당신을 막을 수 없습니다!',
-        };
-      default:
-        if (level >= 25) {
-          return {
-            'title': '🌟 MEGA CHAD 모드!',
-            'description': '한계를 초월한 MEGA CHAD! 우주적 파워를 손에 넣었습니다!',
-          };
-        } else {
-          return {
-            'title': '💪 파워 업 완료!',
-            'description': '레벨 $level 차드로 진화! 더욱 강력해진 파워를 느껴보세요!',
-          };
-        }
     }
   }
 

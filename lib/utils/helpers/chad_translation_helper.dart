@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/chad_evolution.dart';
 
 /// Chad 진화 단계별 이름과 설명을 언어별로 제공하는 헬퍼 클래스
@@ -15,14 +15,24 @@ class ChadTranslationHelper {
         return l10n.chadBasic;
       case ChadEvolutionStage.coffeeChad:
         return l10n.chadCoffee;
+      case ChadEvolutionStage.frontFacingChad:
+        return l10n.chadFrontFacing;
       case ChadEvolutionStage.confidentChad:
         return l10n.chadConfident;
       case ChadEvolutionStage.sunglassesChad:
         return l10n.chadSunglasses;
+      case ChadEvolutionStage.smilingChad:
+        return l10n.chadSmiling;
+      case ChadEvolutionStage.winkChad:
+        return l10n.chadWink;
+      case ChadEvolutionStage.gamerChad:
+        return l10n.chadGamer;
       case ChadEvolutionStage.laserEyesChad:
         return l10n.chadLaserEyes;
       case ChadEvolutionStage.laserEyesHudChad:
         return l10n.chadLaserEyesHud;
+      case ChadEvolutionStage.glowingEyesChad:
+        return l10n.chadGlowingEyes;
       case ChadEvolutionStage.doubleChad:
         return l10n.chadDouble;
       case ChadEvolutionStage.tripleChad:
@@ -43,14 +53,24 @@ class ChadTranslationHelper {
         return l10n.chadBasicDesc;
       case ChadEvolutionStage.coffeeChad:
         return l10n.chadCoffeeDesc;
+      case ChadEvolutionStage.frontFacingChad:
+        return l10n.chadFrontFacingDesc;
       case ChadEvolutionStage.confidentChad:
         return l10n.chadConfidentDesc;
       case ChadEvolutionStage.sunglassesChad:
         return l10n.chadSunglassesDesc;
+      case ChadEvolutionStage.smilingChad:
+        return l10n.chadSmilingDesc;
+      case ChadEvolutionStage.winkChad:
+        return l10n.chadWinkDesc;
+      case ChadEvolutionStage.gamerChad:
+        return l10n.chadGamerDesc;
       case ChadEvolutionStage.laserEyesChad:
         return l10n.chadLaserEyesDesc;
       case ChadEvolutionStage.laserEyesHudChad:
         return l10n.chadLaserEyesHudDesc;
+      case ChadEvolutionStage.glowingEyesChad:
+        return l10n.chadGlowingEyesDesc;
       case ChadEvolutionStage.doubleChad:
         return l10n.chadDoubleDesc;
       case ChadEvolutionStage.tripleChad:

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 import '../../services/auth/auth_service.dart';
 import '../../services/data/data_migration_service.dart';
@@ -40,7 +41,7 @@ class _SignUpForPurchaseScreenState extends State<SignUpForPurchaseScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('계정 생성'),
+        title: Text(AppLocalizations.of(context).createAccount),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -219,7 +220,7 @@ class _SignUpForPurchaseScreenState extends State<SignUpForPurchaseScreen> {
                     errorBuilder: (context, error, stackTrace) =>
                         const Icon(Icons.g_mobiledata, size: 24),
                   ),
-                  label: const Text('Google로 계속하기'),
+                  label: Text(AppLocalizations.of(context).continueWithGoogle),
                   style: OutlinedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(

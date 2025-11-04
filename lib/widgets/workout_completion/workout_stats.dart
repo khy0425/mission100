@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 운동 통계 위젯
 class WorkoutStats extends StatelessWidget {
@@ -17,6 +18,8 @@ class WorkoutStats extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return Container(
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
@@ -30,7 +33,7 @@ class WorkoutStats extends StatelessWidget {
           Column(
             children: [
               Text(
-                '💀 파괴된 횟수',
+                l10n.repsDestroyed,
                 style: TextStyle(
                   fontSize: 10,
                   color: Colors.blue[700],
@@ -50,7 +53,7 @@ class WorkoutStats extends StatelessWidget {
           Column(
             children: [
               Text(
-                '💰 획득 XP',
+                l10n.xpGained,
                 style: TextStyle(
                   fontSize: 10,
                   color: Colors.blue[700],
@@ -70,7 +73,7 @@ class WorkoutStats extends StatelessWidget {
           Column(
             children: [
               Text(
-                '⏱️ 소멸 시간',
+                l10n.timeDestroyed,
                 style: TextStyle(
                   fontSize: 10,
                   color: Colors.blue[700],
@@ -78,7 +81,7 @@ class WorkoutStats extends StatelessWidget {
                 ),
               ),
               Text(
-                '$minutes분 $seconds초',
+                '$minutes${l10n.minutes} $seconds${l10n.seconds}',
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 16,

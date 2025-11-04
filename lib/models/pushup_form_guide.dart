@@ -50,6 +50,9 @@ class PushupVariation {
   final String imagePath;
   final List<String> instructions;
   final List<String> benefits;
+  final String? videoUrl; // YouTube 비디오 URL (선택사항)
+  final String? exerciseId; // pushup_videos.dart에서 비디오를 가져오기 위한 ID
+  final List<String>? commonMistakes; // 흔한 실수들 (선택사항)
 
   const PushupVariation({
     required this.name,
@@ -58,6 +61,9 @@ class PushupVariation {
     required this.imagePath,
     required this.instructions,
     required this.benefits,
+    this.videoUrl,
+    this.exerciseId,
+    this.commonMistakes,
   });
 }
 

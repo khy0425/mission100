@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:path_provider/path_provider.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/user_profile.dart';
 
 class SocialShareService {
@@ -260,7 +260,7 @@ $downloadMessage
 
 ${userName.isNotEmpty ? userName : '진정한 ALPHA EMPEROR'}가 너에게 도전장을 던진다!
 
-⚡ 미션: 6주 만에 푸시업 100개 연속 달성
+⚡ 미션: 14주 만에 푸시업 100개 연속 달성
 🎯 목표: 베이비차드 → 기가차드 진화
 💀 각오: 포기는 없다. 오직 차드만이 살아남는다, 만삣삐!
 
@@ -279,7 +279,7 @@ $downloadMessage
 
 ${userName.isNotEmpty ? userName : 'A TRUE ALPHA EMPEROR'} throws down the gauntlet to you!
 
-⚡ Mission: Achieve 100 consecutive push-ups in 6 weeks
+⚡ Mission: Achieve 100 consecutive push-ups in 14 weeks
 🎯 Goal: Baby Chad → Giga Chad Evolution
 💀 Resolve: No giving up. Only CHADs survive!
 

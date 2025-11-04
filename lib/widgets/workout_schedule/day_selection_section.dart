@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../utils/config/constants.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 운동 요일 선택 섹션
 class DaySelectionSection extends StatelessWidget {

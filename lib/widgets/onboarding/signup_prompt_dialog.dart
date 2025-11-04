@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../utils/config/constants.dart';
 
 /// 회원가입 안내 다이얼로그
@@ -33,12 +34,13 @@ class SignupPromptDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final localizations = AppLocalizations.of(context);
     return AlertDialog(
-      title: const Row(
+      title: Row(
         children: [
-          Icon(Icons.stars, color: Color(AppColors.primaryColor)),
-          SizedBox(width: 8),
-          Text('맞춤형 프로그램 준비완료!'),
+          const Icon(Icons.stars, color: Color(AppColors.primaryColor)),
+          const SizedBox(width: 8),
+          Text(localizations.signupPromptTitle),
         ],
       ),
       content: Column(
@@ -46,19 +48,19 @@ class SignupPromptDialog extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            '$goalText를 위한 개인화된 프로그램이 준비되었습니다!',
+            localizations.signupPromptMessage(goalText),
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 16),
-          const Text('🎁 런칭 이벤트 혜택:'),
-          const Text('• 1개월 무료 프리미엄'),
-          const Text('• 개인화된 운동 계획'),
-          const Text('• 진행상황 클라우드 백업'),
-          const Text('• 상세한 체성분 분석'),
+          Text(localizations.signupPromptLaunchEvent),
+          Text(localizations.signupPromptBenefit1),
+          Text(localizations.signupPromptBenefit2),
+          Text(localizations.signupPromptBenefit3),
+          Text(localizations.signupPromptBenefit4),
           const SizedBox(height: 16),
-          const Text(
-            '지금 가입하고 목표를 달성해보세요! 💪',
-            style: TextStyle(
+          Text(
+            localizations.signupPromptCallToAction,
+            style: const TextStyle(
               color: Color(AppColors.primaryColor),
               fontWeight: FontWeight.bold,
             ),
@@ -68,7 +70,7 @@ class SignupPromptDialog extends StatelessWidget {
       actions: [
         TextButton(
           onPressed: onSkip,
-          child: const Text('나중에'),
+          child: Text(localizations.later),
         ),
         ElevatedButton(
           onPressed: onSignup,
@@ -76,7 +78,7 @@ class SignupPromptDialog extends StatelessWidget {
             backgroundColor: const Color(AppColors.primaryColor),
             foregroundColor: Colors.white,
           ),
-          child: const Text('무료로 시작하기'),
+          child: Text(localizations.startForFree),
         ),
       ],
     );

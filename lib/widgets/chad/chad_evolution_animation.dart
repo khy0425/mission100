@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../models/chad_evolution.dart';
 import '../../services/chad/chad_evolution_service.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import 'dart:math' as math;
 
 /// Chad 진화 애니메이션 위젯

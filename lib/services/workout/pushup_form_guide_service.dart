@@ -255,11 +255,13 @@ class PushupFormGuideService {
   /// 난이도별 푸시업 변형을 반환
   List<PushupVariation> getVariations() {
     return [
+      // Beginner level
       const PushupVariation(
         name: '무릎 푸시업',
         description: '무릎을 바닥에 대고 하는 초보자용 푸시업',
         difficulty: 'beginner',
         imagePath: 'assets/images/variations/knee_pushup.png',
+        exerciseId: 'knee_pushup',
         instructions: [
           '무릎을 바닥에 대고 시작',
           '손은 어깨 바로 아래 위치',
@@ -269,10 +271,25 @@ class PushupFormGuideService {
         benefits: ['기본 자세 익히기에 좋음', '상체 근력 점진적 발달', '부상 위험 낮음'],
       ),
       const PushupVariation(
+        name: '벽 푸시업',
+        description: '벽을 이용한 가장 쉬운 초보자용 푸시업',
+        difficulty: 'beginner',
+        imagePath: 'assets/images/variations/wall_pushup.png',
+        exerciseId: 'wall_pushup',
+        instructions: [
+          '벽 앞에 서서 팔 길이만큼 떨어짐',
+          '손을 어깨 높이로 벽에 댐',
+          '몸을 일직선으로 유지',
+          '벽 쪽으로 천천히 기울이기',
+        ],
+        benefits: ['완전 초보자에게 이상적', '부담 없이 시작 가능', '자세 익히기 좋음'],
+      ),
+      const PushupVariation(
         name: '인클라인 푸시업',
         description: '벤치나 계단을 이용한 경사 푸시업',
         difficulty: 'beginner',
         imagePath: 'assets/images/variations/incline_pushup.png',
+        exerciseId: 'incline_pushup',
         instructions: [
           '벤치나 계단에 손을 올림',
           '발은 바닥에 고정',
@@ -281,24 +298,111 @@ class PushupFormGuideService {
         ],
         benefits: ['강도 조절 가능', '정확한 자세 연습', '점진적 난이도 증가'],
       ),
+
+      // Intermediate level
+      const PushupVariation(
+        name: '스탠다드 푸시업',
+        description: '가장 기본이 되는 정석 푸시업',
+        difficulty: 'intermediate',
+        imagePath: 'assets/images/pushup_forms/standard/standard_pushup.png',
+        exerciseId: 'standard_pushup',
+        instructions: [
+          '플랭크 자세에서 시작',
+          '손은 어깨 너비로 벌림',
+          '몸 전체를 일직선으로 유지',
+          '가슴이 바닥에 거의 닿을 때까지',
+        ],
+        benefits: ['전신 근력 발달', '코어 강화', '기본 체력 향상'],
+        commonMistakes: [
+          '엉덩이가 너무 높거나 낮음 - 몸을 일직선으로 유지',
+          '팔꿈치가 너무 벌어짐 - 45도 각도 유지',
+          '목이 앞으로 나옴 - 중립 자세 유지',
+          '동작이 너무 빠름 - 천천히 컨트롤',
+        ],
+      ),
+      const PushupVariation(
+        name: '와이드 푸시업',
+        description: '손을 넓게 벌려 가슴 근육을 집중 자극',
+        difficulty: 'intermediate',
+        imagePath: 'assets/images/pushup_forms/wide/wide_pushup.png',
+        exerciseId: 'wide_pushup',
+        instructions: [
+          '손을 어깨 너비보다 넓게',
+          '가슴 근육 자극에 집중',
+          '팔꿈치를 바깥쪽으로',
+          '천천히 컨트롤하며 동작',
+        ],
+        benefits: ['가슴 근육 집중 강화', '어깨 안정성 향상', '상체 폭 발달'],
+      ),
       const PushupVariation(
         name: '다이아몬드 푸시업',
         description: '손을 다이아몬드 모양으로 모은 고난도 푸시업',
-        difficulty: 'advanced',
-        imagePath: 'assets/images/variations/diamond_pushup.png',
+        difficulty: 'intermediate',
+        imagePath: 'assets/images/pushup_forms/diamond/diamond_pushup.png',
+        exerciseId: 'diamond_pushup',
         instructions: [
           '양손을 가슴 아래에서 다이아몬드 모양으로',
           '엄지와 검지로 삼각형 만들기',
           '팔꿈치를 몸에 가깝게 유지',
           '천천히 컨트롤하며 동작',
         ],
-        benefits: ['삼두근 집중 강화', '코어 안정성 향상', '상급자 근력 발달'],
+        benefits: ['삼두근 집중 강화', '코어 안정성 향상', '팔 근력 발달'],
+        commonMistakes: [
+          '손 위치가 너무 아래쪽 - 가슴 중앙에 위치',
+          '팔꿈치가 벌어짐 - 몸에 붙여서 유지',
+          '내려갈 때 가슴이 손에 닿지 않음 - 충분히 깊게',
+        ],
+      ),
+      const PushupVariation(
+        name: '디클라인 푸시업',
+        description: '발을 높여 상부 가슴과 어깨 집중 자극',
+        difficulty: 'intermediate',
+        imagePath: 'assets/images/pushup_forms/decline/decline_pushup.jpg',
+        exerciseId: 'decline_pushup',
+        instructions: [
+          '발을 벤치나 계단에 올림',
+          '손은 바닥에 고정',
+          '몸을 역경사로 유지',
+          '상부 가슴에 집중',
+        ],
+        benefits: ['상부 가슴 발달', '어깨 근력 강화', '난이도 증가'],
+      ),
+
+      // Advanced level
+      const PushupVariation(
+        name: '아처 푸시업',
+        description: '한쪽 팔에 집중하는 고난도 푸시업',
+        difficulty: 'advanced',
+        imagePath: 'assets/images/pushup_forms/archer/archer_pushup.png',
+        exerciseId: 'archer_pushup',
+        instructions: [
+          '손을 매우 넓게 벌림',
+          '한쪽 팔로 몸을 내림',
+          '반대편 팔은 쭉 펴기',
+          '좌우 번갈아 가며 실시',
+        ],
+        benefits: ['원암 푸시업 준비', '편측 근력 발달', '균형 감각 향상'],
+      ),
+      const PushupVariation(
+        name: '플라이오메트릭 푸시업',
+        description: '박수나 점프를 포함한 폭발적 푸시업',
+        difficulty: 'advanced',
+        imagePath: 'assets/images/variations/plyometric_pushup.png',
+        exerciseId: 'plyometric_pushup',
+        instructions: [
+          '기본 푸시업 자세에서 시작',
+          '폭발적으로 몸을 밀어올림',
+          '손이 바닥에서 떨어질 정도로',
+          '공중에서 박수치기 (선택)',
+        ],
+        benefits: ['폭발적 파워 발달', '순발력 향상', '상급자 근력 강화'],
       ),
       const PushupVariation(
         name: '원암 푸시업',
         description: '한 팔로만 하는 최고 난이도 푸시업',
         difficulty: 'advanced',
         imagePath: 'assets/images/variations/one_arm_pushup.png',
+        exerciseId: 'one_arm_pushup',
         instructions: [
           '한 손은 등 뒤로',
           '다리를 넓게 벌려 균형 유지',
@@ -599,11 +703,13 @@ class PushupFormGuideService {
   /// 영어용 난이도별 푸시업 변형을 반환
   List<PushupVariation> getVariationsEn() {
     return [
+      // Beginner level
       const PushupVariation(
         name: 'Knee Push-ups',
         description: 'Beginner push-ups performed with knees on the ground',
         difficulty: 'beginner',
         imagePath: 'assets/images/variations/knee_pushup.png',
+        exerciseId: 'knee_pushup',
         instructions: [
           'Start with knees on ground',
           'Hands directly under shoulders',
@@ -617,10 +723,25 @@ class PushupFormGuideService {
         ],
       ),
       const PushupVariation(
+        name: 'Wall Push-ups',
+        description: 'Easiest beginner push-ups using a wall',
+        difficulty: 'beginner',
+        imagePath: 'assets/images/variations/wall_pushup.png',
+        exerciseId: 'wall_pushup',
+        instructions: [
+          'Stand arm\'s length from wall',
+          'Place hands on wall at shoulder height',
+          'Keep body in straight line',
+          'Lean toward wall slowly',
+        ],
+        benefits: ['Perfect for complete beginners', 'Low intensity start', 'Form learning'],
+      ),
+      const PushupVariation(
         name: 'Incline Push-ups',
         description: 'Push-ups using bench or stairs for elevation',
         difficulty: 'beginner',
         imagePath: 'assets/images/variations/incline_pushup.png',
+        exerciseId: 'incline_pushup',
         instructions: [
           'Place hands on bench or stairs',
           'Keep feet on ground',
@@ -633,11 +754,48 @@ class PushupFormGuideService {
           'Progressive difficulty increase',
         ],
       ),
+
+      // Intermediate level
+      const PushupVariation(
+        name: 'Standard Push-ups',
+        description: 'The classic, fundamental push-up form',
+        difficulty: 'intermediate',
+        imagePath: 'assets/images/pushup_forms/standard/standard_pushup.png',
+        exerciseId: 'standard_pushup',
+        instructions: [
+          'Start in plank position',
+          'Hands shoulder-width apart',
+          'Keep entire body in straight line',
+          'Lower until chest nearly touches floor',
+        ],
+        benefits: ['Full body strength', 'Core strengthening', 'Basic fitness improvement'],
+        commonMistakes: [
+          'Hips too high or low - keep body straight',
+          'Elbows flaring out - maintain 45-degree angle',
+          'Neck jutting forward - keep neutral position',
+          'Moving too fast - control the movement',
+        ],
+      ),
+      const PushupVariation(
+        name: 'Wide Push-ups',
+        description: 'Wide hand placement for chest muscle focus',
+        difficulty: 'intermediate',
+        imagePath: 'assets/images/pushup_forms/wide/wide_pushup.png',
+        exerciseId: 'wide_pushup',
+        instructions: [
+          'Place hands wider than shoulders',
+          'Focus on chest muscle activation',
+          'Elbows point outward',
+          'Control movement slowly',
+        ],
+        benefits: ['Intense chest focus', 'Shoulder stability', 'Upper body width'],
+      ),
       const PushupVariation(
         name: 'Diamond Push-ups',
         description: 'Advanced push-ups with hands in diamond shape',
-        difficulty: 'advanced',
-        imagePath: 'assets/images/variations/diamond_pushup.png',
+        difficulty: 'intermediate',
+        imagePath: 'assets/images/pushup_forms/diamond/diamond_pushup.png',
+        exerciseId: 'diamond_pushup',
         instructions: [
           'Form diamond shape with hands under chest',
           'Create triangle with thumbs and index fingers',
@@ -647,14 +805,64 @@ class PushupFormGuideService {
         benefits: [
           'Intense tricep strengthening',
           'Improved core stability',
-          'Advanced strength development',
+          'Arm strength development',
         ],
+        commonMistakes: [
+          'Hands positioned too low - place at chest center',
+          'Elbows flaring out - keep tucked to body',
+          'Not lowering chest to hands - go deep enough',
+        ],
+      ),
+      const PushupVariation(
+        name: 'Decline Push-ups',
+        description: 'Elevated feet for upper chest and shoulder focus',
+        difficulty: 'intermediate',
+        imagePath: 'assets/images/pushup_forms/decline/decline_pushup.jpg',
+        exerciseId: 'decline_pushup',
+        instructions: [
+          'Place feet on bench or stairs',
+          'Hands on ground',
+          'Maintain reverse angle position',
+          'Focus on upper chest',
+        ],
+        benefits: ['Upper chest development', 'Shoulder strengthening', 'Increased difficulty'],
+      ),
+
+      // Advanced level
+      const PushupVariation(
+        name: 'Archer Push-ups',
+        description: 'Advanced one-arm focused push-ups',
+        difficulty: 'advanced',
+        imagePath: 'assets/images/pushup_forms/archer/archer_pushup.png',
+        exerciseId: 'archer_pushup',
+        instructions: [
+          'Place hands very wide',
+          'Lower body with one arm',
+          'Extend opposite arm straight',
+          'Alternate sides',
+        ],
+        benefits: ['One-arm preparation', 'Unilateral strength', 'Balance improvement'],
+      ),
+      const PushupVariation(
+        name: 'Plyometric Push-ups',
+        description: 'Explosive push-ups with clap or jump',
+        difficulty: 'advanced',
+        imagePath: 'assets/images/variations/plyometric_pushup.png',
+        exerciseId: 'plyometric_pushup',
+        instructions: [
+          'Start in standard push-up position',
+          'Explosively push body up',
+          'Hands leave the ground',
+          'Clap in mid-air (optional)',
+        ],
+        benefits: ['Explosive power', 'Speed development', 'Advanced strength'],
       ),
       const PushupVariation(
         name: 'One-Arm Push-ups',
         description: 'Maximum difficulty push-ups using only one arm',
         difficulty: 'advanced',
         imagePath: 'assets/images/variations/one_arm_pushup.png',
+        exerciseId: 'one_arm_pushup',
         instructions: [
           'Place one hand behind back',
           'Spread legs wide for balance',

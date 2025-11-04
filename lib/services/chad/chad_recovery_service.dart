@@ -279,13 +279,13 @@ class ChadRecoveryService extends ChangeNotifier {
   String getChadImageForRecovery() {
     switch (_recoveryLevel) {
       case RecoveryLevel.excellent:
-        return 'assets/images/기본차드.jpg'; // Beast Chad
+        return 'assets/images/chad/basic/basicChad.png'; // Beast Chad
       case RecoveryLevel.good:
-        return 'assets/images/기본차드.jpg'; // Cool Chad
+        return 'assets/images/chad/basic/basicChad.png'; // Cool Chad
       case RecoveryLevel.fair:
-        return 'assets/images/기본차드.jpg'; // Normal Chad
+        return 'assets/images/chad/basic/basicChad.png'; // Normal Chad
       case RecoveryLevel.poor:
-        return 'assets/images/기본차드.jpg'; // Rest Chad
+        return 'assets/images/chad/basic/basicChad.png'; // Rest Chad
     }
   }
 

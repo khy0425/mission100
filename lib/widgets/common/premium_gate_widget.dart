@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../services/auth/auth_service.dart';
 import '../../models/user_subscription.dart';
 import '../../screens/subscription/subscription_screen.dart';

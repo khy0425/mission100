@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../generated/app_localizations.dart';
+import '../generated/l10n/app_localizations.dart';
 
 /// 피트니스 목표 열거형
 enum FitnessGoal {

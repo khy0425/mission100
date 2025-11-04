@@ -105,7 +105,7 @@ class ProgressTrackerService {
       final consecutiveDays = await _calculateConsecutiveDays(allSessions);
 
       // 전체 완료율 계산
-      const totalPossibleWorkouts = 18; // 6주 * 3일
+      const totalPossibleWorkouts = 42; // 14주 * 3일
       final completionRate = totalWorkouts / totalPossibleWorkouts;
 
       final progress = Progress(

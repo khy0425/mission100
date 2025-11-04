@@ -1,0 +1,119 @@
+# YouTube 링크 수집 템플릿
+# 각 항목 옆에 YouTube URL을 붙여넣으세요
+# 형식: https://www.youtube.com/watch?v=XXXXXXXXXXX
+
+# ============================================
+# 🇰🇷 한국어 영상 (Korean Videos)
+# ============================================
+
+## 1. 기본 푸시업 자세 (Form Steps) - 5개
+
+# 옵션 A: 전체를 하나의 영상으로 (추천)
+KO_FORM_ALL_STEPS=
+
+# 옵션 B: 각 스텝별로 (선택사항)
+KO_FORM_STEP_1_시작자세=
+KO_FORM_STEP_2_하강동작=
+KO_FORM_STEP_3_최하점자세=
+KO_FORM_STEP_4_상승동작=
+KO_FORM_STEP_5_완료자세=
+
+
+## 2. 흔한 실수 (Common Mistakes) - 5개
+
+# 옵션 A: 전체 실수를 하나의 영상으로 (추천)
+KO_MISTAKES_ALL=
+
+# 옵션 B: 각 실수별로 (선택사항)
+KO_MISTAKE_1_엉덩이가_너무_높이_올라감=
+KO_MISTAKE_2_엉덩이가_너무_아래로_처짐=
+KO_MISTAKE_3_팔꿈치가_너무_벌어짐=
+KO_MISTAKE_4_목이_앞으로_나옴=
+KO_MISTAKE_5_가동범위가_부족함=
+
+
+## 3. 푸시업 변형 (Variations) - 6개
+
+KO_VARIATION_1_무릎_푸시업=
+KO_VARIATION_2_인클라인_푸시업=
+KO_VARIATION_3_다이아몬드_푸시업=
+KO_VARIATION_4_파이크_푸시업=
+KO_VARIATION_5_와이드_그립_푸시업=
+KO_VARIATION_6_디클라인_푸시업=
+
+
+# ============================================
+# 🇺🇸 영어 영상 (English Videos)
+# ============================================
+
+## 1. Basic Pushup Form Steps - 5
+
+# Option A: One video covering all steps (Recommended)
+EN_FORM_ALL_STEPS=
+
+# Option B: Each step separately (Optional)
+EN_FORM_STEP_1_STARTING_POSITION=
+EN_FORM_STEP_2_DESCENDING_MOTION=
+EN_FORM_STEP_3_BOTTOM_POSITION=
+EN_FORM_STEP_4_ASCENDING_MOTION=
+EN_FORM_STEP_5_FINISHING_POSITION=
+
+
+## 2. Common Mistakes - 5
+
+# Option A: One video covering all mistakes (Recommended)
+EN_MISTAKES_ALL=
+
+# Option B: Each mistake separately (Optional)
+EN_MISTAKE_1_HIPS_TOO_HIGH=
+EN_MISTAKE_2_HIPS_SAGGING=
+EN_MISTAKE_3_ELBOWS_TOO_WIDE=
+EN_MISTAKE_4_FORWARD_HEAD=
+EN_MISTAKE_5_PARTIAL_RANGE=
+
+
+## 3. Pushup Variations - 6
+
+EN_VARIATION_1_KNEE_PUSHUP=
+EN_VARIATION_2_INCLINE_PUSHUP=
+EN_VARIATION_3_DIAMOND_PUSHUP=
+EN_VARIATION_4_PIKE_PUSHUP=
+EN_VARIATION_5_WIDE_GRIP_PUSHUP=
+EN_VARIATION_6_DECLINE_PUSHUP=
+
+
+# ============================================
+# 📝 추천 검색 키워드
+# ============================================
+
+# 🇰🇷 한국어:
+# - "푸시업 완벽 가이드"
+# - "푸시업 자세 교정"
+# - "푸시업 흔한 실수 5가지"
+# - "다이아몬드 푸시업 방법"
+# - "파이크 푸시업 튜토리얼"
+# 추천 채널: 핏블리, 스트릿워크아웃, 칼로리킹
+
+# 🇺🇸 English:
+# - "perfect pushup form tutorial"
+# - "pushup mistakes to avoid"
+# - "diamond pushup guide"
+# - "pike pushup tutorial"
+# - "decline pushup form"
+# Recommended channels: Calisthenicmovement, FitnessFAQs, Jeff Nippard
+
+
+# ============================================
+# ⭐ 우선순위 (최소한 이것만이라도!)
+# ============================================
+
+# 필수 6개:
+# 1. KO_FORM_ALL_STEPS - 한국어 기본 자세
+# 2. EN_FORM_ALL_STEPS - 영어 기본 자세
+# 3. KO_MISTAKES_ALL - 한국어 실수 모음
+# 4. EN_MISTAKES_ALL - 영어 실수 모음
+# 5. KO_VARIATION_3_다이아몬드_푸시업
+# 6. EN_VARIATION_3_DIAMOND_PUSHUP
+
+# 권장 추가 6개:
+# 7-12. 나머지 변형 동작들 (한/영 각각)

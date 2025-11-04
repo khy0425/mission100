@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
+import '../../generated/l10n/app_localizations.dart';
 
 /// 뇌절 미터 위젯 - Chad 레벨의 뇌절 도수를 시각적으로 표시
 class BrainjoltMeter extends StatefulWidget {
@@ -97,8 +98,9 @@ class _BrainjoltMeterState extends State<BrainjoltMeter>
     }
   }
 
-  String _getBrainjoltLabel(int degree) {
-    return '뇌절 $degree도';
+  String _getBrainjoltLabel(BuildContext context, int degree) {
+    final l10n = AppLocalizations.of(context);
+    return l10n.brainjoltWithDegree(degree);
   }
 
   @override
@@ -154,7 +156,7 @@ class _BrainjoltMeterState extends State<BrainjoltMeter>
                 const SizedBox(height: 4),
                 // 라벨
                 Text(
-                  _getBrainjoltLabel(widget.brainjoltDegree),
+                  _getBrainjoltLabel(context, widget.brainjoltDegree),
                   style: TextStyle(
                     fontSize: widget.size * 0.08,
                     fontWeight: FontWeight.w600,
@@ -364,7 +366,7 @@ class CompactBrainjoltMeter extends StatelessWidget {
           // 라벨
           Center(
             child: Text(
-              '뇌절 $brainjoltDegree도 (${(intensity * 100).toInt()}%)',
+              '${AppLocalizations.of(context).brainjoltWithDegree(brainjoltDegree)} (${(intensity * 100).toInt()}%)',
               style: TextStyle(
                 fontSize: height * 0.4,
                 fontWeight: FontWeight.bold,

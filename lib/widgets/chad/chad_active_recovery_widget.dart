@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../services/chad/chad_active_recovery_service.dart';
 import '../../screens/recovery/chad_active_recovery_screen.dart';
 import '../../models/rpe_data.dart';
@@ -662,10 +663,11 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
   void _completeActivity(BuildContext context, ActiveRecoveryActivity activity,
       ChadActiveRecoveryService recoveryService) {
     recoveryService.completeActivity(activity.id);
+    final localizations = AppLocalizations.of(context);
 
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('${activity.title} 완료! Chad가 자랑스러워해! 💪'),
+        content: Text(localizations.chadActivityCompleted(activity.title)),
         backgroundColor: Colors.green[600],
         duration: const Duration(seconds: 2),
       ),
@@ -703,13 +705,13 @@ class _ChadActiveRecoveryWidgetState extends State<ChadActiveRecoveryWidget>
   String _getChadImageForLevel(RecoveryLevel level) {
     switch (level) {
       case RecoveryLevel.excellent:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
       case RecoveryLevel.good:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
       case RecoveryLevel.fair:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
       case RecoveryLevel.poor:
-        return 'assets/images/기본차드.jpg';
+        return 'assets/images/chad/basic/basicChad.png';
     }
   }
 

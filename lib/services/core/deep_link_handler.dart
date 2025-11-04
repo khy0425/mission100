@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 딥링크 핸들러 - 푸시 알림 등에서 화면 라우팅 처리
 class DeepLinkHandler {
@@ -155,7 +156,7 @@ class DeepLinkHandler {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('🏆 새로운 업적 달성!'),
+        title: Text(AppLocalizations.of(context).newAchievementUnlocked),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -185,11 +186,11 @@ class DeepLinkHandler {
               Navigator.of(context).pop();
               Navigator.of(context).pushNamed('/achievements');
             },
-            child: const Text('업적 보기'),
+            child: Text(AppLocalizations.of(context).viewAchievement),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('닫기'),
+            child: Text(AppLocalizations.of(context).close),
           ),
         ],
       ),
@@ -201,7 +202,7 @@ class DeepLinkHandler {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('🎉 Chad 레벨 업!'),
+        title: Text(AppLocalizations.of(context).chadLevelUpTitle),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -233,11 +234,11 @@ class DeepLinkHandler {
               Navigator.of(context).pop();
               Navigator.of(context).pushNamed('/chad');
             },
-            child: const Text('Chad 보기'),
+            child: Text(AppLocalizations.of(context).viewChad),
           ),
           TextButton(
             onPressed: () => Navigator.of(context).pop(),
-            child: const Text('닫기'),
+            child: Text(AppLocalizations.of(context).close),
           ),
         ],
       ),

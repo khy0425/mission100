@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/achievement.dart';
 import 'workout_stats.dart';
 import 'program_progress.dart';
@@ -39,19 +40,21 @@ class WorkoutCompleteDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return AlertDialog(
-      title: const Row(
+      title: Row(
         children: [
-          Icon(
+          const Icon(
             Icons.local_fire_department,
             color: Colors.red,
             size: 28,
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Expanded(
             child: Text(
-              '💀 WORKOUT DESTROYED! 💀',
-              style: TextStyle(
+              l10n.workoutDestroyed,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
               ),
@@ -63,9 +66,9 @@ class WorkoutCompleteDialog extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Text(
-              '🔥 FXXK YEAH! 오늘의 운동 완전 파괴! 만삣삐! 💪',
-              style: TextStyle(
+            Text(
+              l10n.workoutDestroyedMessage,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),

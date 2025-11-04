@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// Chad 진화 단계 아이템 위젯
 class ChadStageItem extends StatelessWidget {

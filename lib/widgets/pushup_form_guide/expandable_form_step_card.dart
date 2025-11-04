@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/pushup_form_guide.dart';
 import '../../utils/helpers/accessibility_utils.dart';
 
@@ -114,9 +114,9 @@ class ExpandableFormStepCard extends StatelessWidget {
 
                     // 주요 포인트
                     if (step.keyPoints.isNotEmpty) ...[
-                      const Text(
-                        '주요 포인트:',
-                        style: TextStyle(
+                      Text(
+                        AppLocalizations.of(context).keyPoints,
+                        style: const TextStyle(
                           color: Color(0xFF4DABF7),
                           fontSize: 16,
                           fontWeight: FontWeight.bold,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../utils/config/constants.dart';
 import '../../models/achievement.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import 'achievements_stat_item.dart';
 import 'achievements_rarity_badge.dart';
 

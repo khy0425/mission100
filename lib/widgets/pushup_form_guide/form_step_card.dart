@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../models/pushup_form_guide.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 자세 단계 카드 위젯 (스와이프 뷰용)
 class FormStepCard extends StatelessWidget {
@@ -84,9 +85,9 @@ class FormStepCard extends StatelessWidget {
 
               // 주요 포인트
               if (step.keyPoints.isNotEmpty) ...[
-                const Text(
-                  '주요 포인트:',
-                  style: TextStyle(
+                Text(
+                  AppLocalizations.of(context).keyPoints,
+                  style: const TextStyle(
                     color: Color(0xFF4DABF7),
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

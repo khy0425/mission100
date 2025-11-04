@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/user_profile.dart';
 import '../config/constants.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 사용자 레벨 분류 유틸리티 클래스
 class LevelClassifier {

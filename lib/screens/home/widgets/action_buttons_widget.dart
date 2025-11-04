@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../generated/app_localizations.dart';
+import '../../../generated/l10n/app_localizations.dart';
 import '../../../utils/config/constants.dart';
 
 /// 홈 화면의 주요 액션 버튼들을 표시하는 위젯

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../services/chad/chad_evolution_service.dart';
 
 /// 레벨 섹션 빌더

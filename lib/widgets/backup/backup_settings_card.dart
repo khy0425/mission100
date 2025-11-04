@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../services/data/backup_scheduler.dart';
 import '../../services/data/data_backup_service.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/achievement.dart';
 import '../../utils/config/constants.dart';
 

@@ -5,7 +5,7 @@ import '../services/core/onboarding_service.dart';
 import '../widgets/chad/chad_onboarding_widget.dart';
 import 'misc/permission_screen.dart';
 import '../screens/auth/chad_login_screen.dart';
-import '../generated/app_localizations.dart';
+import '../generated/l10n/app_localizations.dart';
 import 'onboarding/goal_setup_widgets.dart';
 
 class OnboardingScreen extends StatefulWidget {

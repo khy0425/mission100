@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:mission100/generated/app_localizations.dart';
+import 'package:mission100/generated/l10n/app_localizations.dart';
 import 'dart:convert';
 
 import '../../models/workout_reminder_settings.dart';

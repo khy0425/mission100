@@ -5,6 +5,7 @@ import 'section_header.dart';
 import 'view_mode_toggle.dart';
 import 'list_steps_view.dart';
 import 'swipeable_steps_view.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 폼 단계 탭 위젯
 class FormStepsTab extends StatefulWidget {
@@ -79,7 +80,7 @@ class _FormStepsTabState extends State<FormStepsTab> {
                       setState(() => _isStepViewMode = false);
                     },
                     icon: const Icon(Icons.unfold_more, size: 18),
-                    label: const Text('전체 확장'),
+                    label: Text(AppLocalizations.of(context).expandAllSteps),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.black87.withValues(alpha: 0.7),
                       foregroundColor: Colors.white,

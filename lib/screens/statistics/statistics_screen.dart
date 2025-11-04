@@ -7,7 +7,7 @@ import '../../models/workout_history.dart';
 import '../../services/workout/workout_history_service.dart';
 import '../../services/achievements/achievement_service.dart';
 import '../../services/payment/ad_service.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 class StatisticsScreen extends StatefulWidget {
   const StatisticsScreen({super.key});

@@ -1239,7 +1239,7 @@
   "week3Completed": "3주차 완료",
   "week4Completed": "4주차 완료",
   "week5Completed": "5주차 완료",
-  "week6Completed": "6주차 완료",
+  "week6Completed": "14주차 완료",
   "weekCompleted": "주차",
   "weekCompletedMessage": "주차 완료! 축하드립니다!",
   "weekDayFormat": "{week}주차 {day}일차",
@@ -1268,7 +1268,7 @@
   "workoutCalendar": "워크아웃 캘린더",
   "workoutChart": "운동 차트",
   "workoutCompleteButton": "레전드다, 만삣삐!",
-  "workoutCompleteMessage": "{title} 완전 파괴!\n총 파워 해방: {totalReps}회! you did it! ⚡",
+  "workoutCompleteMessage": "{title} 완전 파괴!\n총 파워 해방: {totalReps}회! 해냈다! ⚡",
   "workoutCompleteTitle": "🔥 굿 잡, 만삣삐! 야수 모드 완료! 👑",
   "workoutCompleted": "완료",
   "workoutCompletionChannelDescription": "운동 완료 축하 알림",
@@ -1375,5 +1375,17 @@
       }
     }
   },
-  "restoreButton": "복원"
+  "restoreButton": "복원",
+  "chadBecameStronger": "💪 Chad가 더 강해졌다!",
+  "repsDestroyed": "💀 파괴된 횟수",
+  "xpGained": "💰 획득 XP",
+  "timeElapsed": "⏱️ 소멸 시간",
+  "workoutDestroyed": "💀 운동 파괴 완료! 💀",
+  "workoutDestroyedMessage": "오늘 운동을 완전히 박살냈다!",
+  "timeDestroyed": "⏱️ 소멸 시간",
+  "tomorrowIsRestDay": "😴 내일은 CHAD 휴식일! 😴",
+  "recoverToBeStronger": "🌴 완전한 회복으로 더 강한 CHAD가 되자! 💪",
+  "tomorrowBeastMode": "🔥 내일: 다시 야수 모드! 🔥",
+  "legendaryJourneyContinues": "💀 LEGENDARY 경지로의 여정은 계속된다! 💀",
+  "chadEvolutionProgress": "💪 Chad 진화 진행률"
 }

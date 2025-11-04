@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../models/achievement.dart';
 import '../../utils/config/constants.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 class AchievementProgressBar extends StatefulWidget {
   final Achievement achievement;

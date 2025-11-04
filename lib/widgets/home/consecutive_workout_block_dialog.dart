@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 연속 운동 차단 다이얼로그
 class ConsecutiveWorkoutBlockDialog extends StatelessWidget {

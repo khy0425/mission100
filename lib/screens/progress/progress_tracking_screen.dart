@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:table_calendar/table_calendar.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/user_profile.dart';
 import '../../models/workout_session.dart';
 import '../../services/workout/workout_program_service.dart';
@@ -1035,7 +1035,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: Image.asset(
-                        'assets/images/기본차드.jpg', // 현재 Chad 레벨에 맞는 이미지
+                        'assets/images/chad/basic/basicChad.png', // 현재 Chad 레벨에 맞는 이미지
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -1425,13 +1425,13 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
 
     // Chad 레벨에 따른 이미지 및 정보
     final chadImages = [
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
-      'assets/images/기본차드.jpg',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
+      'assets/images/chad/basic/basicChad.png',
     ];
 
     final chadTitles = [
@@ -1608,37 +1608,37 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
     final chadStages = [
       {
         'name': 'Rookie Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '프로그램 시작',
       },
       {
         'name': 'Rising Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '1주차 완료',
       },
       {
         'name': 'Alpha Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '2주차 완료',
       },
       {
         'name': 'Sigma Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '3주차 완료',
       },
       {
         'name': 'Giga Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '4주차 완료',
       },
       {
         'name': 'Ultra Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '5주차 완료',
       },
       {
         'name': 'Legendary Chad',
-        'image': 'assets/images/기본차드.jpg',
+        'image': 'assets/images/chad/basic/basicChad.png',
         'requirement': '6주차 완료',
       },
     ];

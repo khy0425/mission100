@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/pushup_form_guide.dart';
 import '../../services/workout/pushup_form_guide_service.dart';
 import '../../utils/helpers/accessibility_utils.dart';

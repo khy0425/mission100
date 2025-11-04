@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../utils/config/constants.dart';
 import '../../models/achievement.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 업적 레어도 뱃지
 class AchievementsRarityBadge extends StatelessWidget {

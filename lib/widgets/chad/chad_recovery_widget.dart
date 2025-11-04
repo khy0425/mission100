@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../services/chad/chad_recovery_service.dart';
 import '../../models/rpe_data.dart';
 import '../../utils/config/constants.dart';
@@ -302,7 +303,7 @@ class _ChadRecoveryWidgetState extends State<ChadRecoveryWidget>
               ),
               const SizedBox(width: 8),
               Text(
-                '오늘의 운동 추천',
+                AppLocalizations.of(context).todayWorkoutRecommendation,
                 style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.bold,

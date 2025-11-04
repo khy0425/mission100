@@ -92,6 +92,24 @@
   "@chadGlowingEyesDesc": {
     "description": "Glowing Eyes Chad description"
   },
+  "@chadSmiling": {
+    "description": "Smiling Chad name"
+  },
+  "@chadSmilingDesc": {
+    "description": "Smiling Chad description"
+  },
+  "@chadWink": {
+    "description": "Wink Chad name"
+  },
+  "@chadWinkDesc": {
+    "description": "Wink Chad description"
+  },
+  "@chadGamer": {
+    "description": "Gamer Chad name"
+  },
+  "@chadGamerDesc": {
+    "description": "Gamer Chad description"
+  },
   "@chadHashtag": {
     "description": "Chad hashtag"
   },
@@ -397,6 +415,12 @@
   "chadFrontFacingDesc": "Confidence overload!\nReady to face anything! 💪",
   "chadGlowingEyes": "Glowing Eyes Chad",
   "chadGlowingEyesDesc": "Chad with incredible power.\nEyes glow with tremendous energy!",
+  "chadSmiling": "Smiling Chad",
+  "chadSmilingDesc": "Chad with a relaxed smile.\nTrue warrior's composure!",
+  "chadWink": "Wink Chad",
+  "chadWinkDesc": "Winking Chad.\nUltimate confidence and charm!",
+  "chadGamer": "Gamer Chad",
+  "chadGamerDesc": "Chad wearing gaming headset.\nMaximum focus and reaction speed!",
   "chadGod": "God Chad",
   "chadGodDesc": "Legendary completion! Divine realm!\nThe ultimate Chad transcending everything! 👑✨",
   "chadHashtag": "#Chad",
@@ -445,6 +469,16 @@
   "chadTitleLaser": "Laser Chad",
   "chadTriple": "Triple Chad",
   "chadTripleDesc": "Triple power explosion!\nOne person doing the work of three! 💥",
+  "chadQuadruple": "Glowing Eyes Chad",
+  "chadQuadrupleDesc": "✨ Glowing Eyes Chad!\nInner power explodes! ✨",
+  "chadPenta": "Double Chad",
+  "chadPentaDesc": "🔥 Double the power!\nOne person doing the work of two! 🔥",
+  "chadHexa": "Triple Chad",
+  "chadHexaDesc": "💥 Triple the power!\nTrue warrior vibes! 💥",
+  "chadUltra": "Ultra Chad",
+  "chadUltraDesc": "🚀 Maximum level power!\nOverwhelming presence! 🚀",
+  "chadSupreme": "Supreme Chad",
+  "chadSupremeDesc": "👑 Supreme Chad!\nGod-like power! 👑",
   "checkChadGrowth": "Check Chad's growth! 📊",
   "congratulationsChad": "Congrats! True warrior status! 🎉",
   "consistentChad": "Consistent Chad!",
@@ -484,8 +518,8 @@
   "motivationMessages": "Motivation Messages",
   "motivationMessagesDesc": "Show motivational messages during workout",
   "motivationStrong": "QUITTING IS EXCUSE FOR THE WEAK. GO HARDER! 🔱💪",
-  "onboardingChadEvolutionDescription": "Every workout = Level up!\n\n🏃 Rookie → 💪 Giga → 👑 Legendary\n\nUnlock new achievements at each stage! 🏆",
-  "onboardingChadEvolutionTitle": "Level Up Non-Stop 🚀",
+  "onboardingChadEvolutionDescription": "14-week evolution with Chad!\n\n💪 Level up every week → Level 1~14\n\nFinally become GOD CHAD! 👑",
+  "onboardingChadEvolutionTitle": "14-Week Chad Evolution 🚀",
   "perfectChadExperience": "Adjust settings for the perfect Chad experience",
   "quickInputStrong": "👑 EMPEROR POWER 👑",
   "rarityLegendary": "Legendary",
@@ -508,5 +542,36 @@
   "currentLevel": "Current Level",
   "selectTodayCondition": "Select today's condition",
   "todayCondition": "Today's Condition",
-  "chadRecommendedWorkout": "Chad's Recommended Workout"
+  "chadRecommendedWorkout": "Chad's Recommended Workout",
+
+  "conditionVeryTired": "Very Tired",
+  "conditionGood": "Good",
+  "conditionStrong": "Strong",
+  "conditionSweaty": "Sweaty",
+  "conditionOnFire": "On Fire",
+
+  "chadGreeting": "Hey Bro! It's Chad! 💪",
+  "howIsYourConditionToday": "How's your condition today?",
+  "chadWillMatchWorkoutIntensityForWeightLoss": "Chad will match the optimal workout intensity for weight loss!",
+  "chadWillCreatePerfectRoutineForMuscleGain": "Chad will create the perfect routine for muscle gain!",
+  "chadWillMakeCustomPlanForEndurance": "Chad will make a custom plan for endurance!",
+  "chadWillRecommendWorkoutForYou": "Chad will recommend the right workout for you!",
+  "pleaseCheckYourCondition": "Please check your condition!",
+
+  "needRestChadRecommendsStretching": "Looks like you need rest!\nChad recommends light stretching! 🧘‍♂️",
+  "goodConditionLetsBurnCalories": "Good condition!\nLet's burn calories with Chad! 🔥",
+  "perfectConditionLetsBuildMuscle": "Perfect condition!\nLet's build muscle with Chad! 💪",
+  "goodConditionLetsWorkout": "Good condition!\nLet's workout with Chad!",
+  "lookingVeryStrongChadPreparedStrongerWorkout": "Looking very strong!\nChad prepared a stronger workout! 🚀",
+  "alreadySweatyChadWillShortWarmup": "Already sweaty!\nChad will keep warmup short! 🏃‍♂️",
+  "totallyOnFireChadBeastMode": "Totally on fire!\nChad going Beast Mode too! 🔥💪",
+
+  "pleaseCheckConditionFirst": "Please check your condition first!",
+  "chadActiveRecovery": "🧘‍♂️ Chad Active Recovery\n• Light stretching 10min\n• Deep breathing\n• Sufficient rest",
+  "chadBasicRoutine": "🎯 Chad Basic Routine\n• Warmup 5min\n• Push-up basic sets\n• Cooldown stretching",
+  "chadIntermediateRoutine": "💪 Chad Intermediate Routine\n• Warmup 5min\n• Push-up intensive sets\n• Core exercises added",
+  "chadAdvancedRoutine": "🚀 Chad Advanced Routine\n• Warmup 10min\n• Push-up high intensity sets\n• Full body workout",
+  "chadPowerRoutine": "💪 Chad Power Routine\n• Basic routine + 20% more\n• New variation movements\n• Intensity upgrade",
+  "chadQuickStart": "🏃‍♂️ Chad Quick Start\n• Shortened warmup\n• Straight to main workout\n• Efficient routine",
+  "chadBeastMode": "🔥 Chad Beast Mode\n• Maximum intensity workout\n• Challenging goals\n• Limit-breaking session"
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../models/achievement.dart';
 import '../../utils/config/constants.dart';
 import 'achievement_progress_bar.dart';

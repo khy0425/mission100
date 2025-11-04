@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../../utils/config/constants.dart';
 
 /// 📊 RPE (운동자각도) 입력 다이얼로그
@@ -78,6 +79,7 @@ class _RPEInputDialogState extends State<RPEInputDialog>
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final localizations = AppLocalizations.of(context);
 
     return ScaleTransition(
       scale: _scaleAnimation,
@@ -112,14 +114,14 @@ class _RPEInputDialogState extends State<RPEInputDialog>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          '운동이 얼마나 힘들었나요?',
+                          localizations.rpeDialogTitle,
                           style: theme.textTheme.titleLarge?.copyWith(
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          'RPE (운동자각도)',
+                          localizations.rpeDialogSubtitle,
                           style: theme.textTheme.bodyMedium?.copyWith(
                             color: theme.colorScheme.onSurface.withValues(alpha: 0.6),
                           ),
@@ -182,7 +184,7 @@ class _RPEInputDialogState extends State<RPEInputDialog>
                       ),
                       const SizedBox(height: AppConstants.paddingS),
                       Text(
-                        _getRPETitle(_selectedRPE!),
+                        _getRPETitle(_selectedRPE!, context),
                         style: theme.textTheme.titleMedium?.copyWith(
                           fontWeight: FontWeight.bold,
                           color: _getRPEColor(_selectedRPE!),
@@ -191,7 +193,7 @@ class _RPEInputDialogState extends State<RPEInputDialog>
                       ),
                       const SizedBox(height: AppConstants.paddingXS),
                       Text(
-                        _getRPEDescription(_selectedRPE!),
+                        _getRPEDescription(_selectedRPE!, context),
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                         ),
@@ -214,7 +216,7 @@ class _RPEInputDialogState extends State<RPEInputDialog>
                           vertical: AppConstants.paddingM,
                         ),
                       ),
-                      child: const Text('건너뛰기'),
+                      child: Text(localizations.skip),
                     ),
                   ),
                   const SizedBox(width: AppConstants.paddingM),
@@ -229,9 +231,9 @@ class _RPEInputDialogState extends State<RPEInputDialog>
                           vertical: AppConstants.paddingM,
                         ),
                       ),
-                      child: const Text(
-                        '확인',
-                        style: TextStyle(
+                      child: Text(
+                        localizations.confirm,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -348,35 +350,37 @@ class _RPEInputDialogState extends State<RPEInputDialog>
     }
   }
 
-  String _getRPETitle(int rpe) {
+  String _getRPETitle(int rpe, BuildContext context) {
+    final localizations = AppLocalizations.of(context);
     switch (rpe) {
       case 6:
-        return '너무 쉬워요';
+        return localizations.rpeLevel6Title;
       case 7:
-        return '적당해요';
+        return localizations.rpeLevel7Title;
       case 8:
-        return '힘들어요';
+        return localizations.rpeLevel8Title;
       case 9:
-        return '너무 힘들어요';
+        return localizations.rpeLevel9Title;
       case 10:
-        return '한계 돌파!';
+        return localizations.rpeLevel10Title;
       default:
         return '';
     }
   }
 
-  String _getRPEDescription(int rpe) {
+  String _getRPEDescription(int rpe, BuildContext context) {
+    final localizations = AppLocalizations.of(context);
     switch (rpe) {
       case 6:
-        return '다음엔 더 할 수 있을 것 같아요\n→ 다음 운동 강도 +5%';
+        return localizations.rpeLevel6Description;
       case 7:
-        return '딱 좋은 난이도였어요\n→ 다음 운동 강도 유지';
+        return localizations.rpeLevel7Description;
       case 8:
-        return '완료하기 버거웠어요\n→ 다음 운동 강도 유지';
+        return localizations.rpeLevel8Description;
       case 9:
-        return '거의 불가능했어요\n→ 다음 운동 강도 -5%';
+        return localizations.rpeLevel9Description;
       case 10:
-        return '정말 최선을 다했어요\n→ 다음 운동 강도 -10%';
+        return localizations.rpeLevel10Description;
       default:
         return '';
     }

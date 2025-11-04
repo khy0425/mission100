@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import '../../services/chad/chad_active_recovery_service.dart';
 import '../../widgets/chad/chad_active_recovery_widget.dart';
 import '../../utils/config/constants.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// Chad 액티브 리커버리 전용 화면
 class ChadActiveRecoveryScreen extends StatefulWidget {
@@ -53,7 +54,7 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
       create: (_) => ChadActiveRecoveryService(),
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Chad 액티브 리커버리'),
+          title: Text(AppLocalizations.of(context).chadRecoveryTitle),
           elevation: 0,
           backgroundColor: Colors.transparent,
           foregroundColor: Colors.black87,
@@ -157,8 +158,8 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
                 _buildFeatureCard(
                   context,
                   icon: Icons.settings,
-                  title: 'Chad 회복 설정',
-                  subtitle: '개인화된 회복 활동 조정',
+                  title: AppLocalizations.of(context).chadRecoverySettingsTitle,
+                  subtitle: AppLocalizations.of(context).chadRecoverySettingsSubtitle,
                   onTap: () => _showRecoverySettings(context),
                 ),
               ],
@@ -320,7 +321,7 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Chad 주간 회복 리포트'),
+        title: Text(AppLocalizations.of(context).chadWeeklyRecoveryReport),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -346,7 +347,7 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('확인'),
+            child: Text(AppLocalizations.of(context).confirm),
           ),
         ],
       ),
@@ -360,23 +361,23 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('내일의 Chad 활동'),
+        title: Text(AppLocalizations.of(context).tomorrowsChadActivity),
         content: SizedBox(
           width: double.maxFinite,
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Text('Chad가 내일 추천할 활동들이야! 미리 준비해두자! 💪'),
+              Text(AppLocalizations.of(context).tomorrowActivitiesMessage),
               const SizedBox(height: 16),
               ...tomorrowActivities.take(2).map((activity) => ListTile(
                     leading: Icon(_getIconForActivityType(activity.type)),
                     title: Text(activity.title),
-                    subtitle: Text('${activity.durationMinutes}분'),
+                    subtitle: Text(AppLocalizations.of(context).chadActivityDuration('${activity.durationMinutes}')),
                     dense: true,
                   )),
               if (tomorrowActivities.length > 2)
                 Text(
-                  '외 ${tomorrowActivities.length - 2}개 활동...',
+                  AppLocalizations.of(context).moreActivities('${tomorrowActivities.length - 2}'),
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.grey[600],
@@ -388,7 +389,7 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('확인'),
+            child: Text(AppLocalizations.of(context).confirm),
           ),
         ],
       ),
@@ -399,7 +400,7 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: const Text('Chad 회복 설정'),
+        title: Text(AppLocalizations.of(context).chadRecoverySettings),
         content: const Text(
           'Chad 회복 설정 기능은 곧 추가될 예정이야!\n\n'
           '• 개인화된 활동 강도 조정\n'
@@ -410,7 +411,7 @@ class _ChadActiveRecoveryScreenState extends State<ChadActiveRecoveryScreen>
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('확인'),
+            child: Text(AppLocalizations.of(context).confirm),
           ),
         ],
       ),

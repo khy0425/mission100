@@ -60,7 +60,7 @@ class ChadEvolutionStatsCard extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
                       child: Image.asset(
-                        'assets/images/기본차드.jpg', // 현재 Chad 레벨에 맞는 이미지
+                        'assets/images/chad/basic/basicChad.png', // 현재 Chad 레벨에 맞는 이미지
                         fit: BoxFit.cover,
                       ),
                     ),

@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'dart:typed_data';
 import '../../models/achievement.dart';
 import '../../utils/config/constants.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 import '../notification/notification_service.dart';
 
 /// 업적 전용 알림 서비스

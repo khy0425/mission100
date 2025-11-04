@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../generated/app_localizations.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 완료된 챌린지 위젯
 class CompletedChallenges extends StatelessWidget {
