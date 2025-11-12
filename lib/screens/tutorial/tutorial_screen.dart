@@ -187,14 +187,20 @@ class _TutorialScreenState extends State<TutorialScreen> {
       child: Column(
         children: [
           const SizedBox(height: AppConstants.paddingXL),
-          const Icon(
-            Icons.fitness_center,
-            size: 120,
-            color: Color(AppColors.primaryColor),
+          Image.asset(
+            'assets/images/logo/logo_light.png',
+            width: 200,
+            height: 120,
+            fit: BoxFit.contain,
+            errorBuilder: (context, error, stackTrace) => const Icon(
+              Icons.nightlight_round,
+              size: 120,
+              color: Color(AppColors.primaryColor),
+            ),
           ),
-          const SizedBox(height: AppConstants.paddingXL),
+          const SizedBox(height: AppConstants.paddingL),
           Text(
-            '🏋️ Mission 100',
+            'Lucid Dream 100',
             style: theme.textTheme.displaySmall?.copyWith(
               fontWeight: FontWeight.bold,
               color: const Color(AppColors.primaryColor),

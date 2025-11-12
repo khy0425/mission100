@@ -40,10 +40,10 @@ class AchievementsStatsHeader extends StatelessWidget {
       padding: const EdgeInsets.all(AppConstants.paddingL),
       decoration: BoxDecoration(
         gradient: isDark
-            ? LinearGradient(
+            ? const LinearGradient(
                 colors: [
-                  Color(AppColors.chadGradient[0]),
-                  Color(AppColors.chadGradient[1]),
+                  Color(0xFF3F51B5), // Indigo
+                  Color(0xFF1A237E), // Deep Indigo
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,

@@ -82,7 +82,7 @@ class _InitialTestScreenState extends State<InitialTestScreen>
       }
     } catch (e) {
       // 애니메이션 중 에러 발생 시 무시 (사용자가 스크롤하는 경우 등)
-      debugPrint('스크롤 힌트 애니메이션 에러: $e');
+      debugPrint('Scroll hint animation error: $e');
     }
   }
 

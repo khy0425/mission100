@@ -412,15 +412,20 @@ class ChadImageService {
     return evolutionGifs[week];
   }
 
-  /// 진화 단계 이름 반환
-  static String getEvolutionStageName(int week) {
-    final Map<int, String> stageNames = {
-      4: '첫 번째 진화',
-      8: '두 번째 진화',
-      12: '세 번째 진화',
-      14: '최종 진화',
-    };
-    return stageNames[week] ?? 'Evolution';
+  /// 진화 단계 이름 반환 (Localized)
+  static String getEvolutionStageName(int week, BuildContext context) {
+    switch (week) {
+      case 4:
+        return 'Dream Awareness';
+      case 8:
+        return 'Reality Checker';
+      case 12:
+        return 'Lucid Dreamer';
+      case 14:
+        return 'Lucid Master';
+      default:
+        return 'Dream Explorer';
+    }
   }
 
   /// 주차별 GIF 경로 반환
