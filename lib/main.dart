@@ -5,34 +5,51 @@ import 'generated/l10n/app_localizations.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'utils/config/constants.dart';
-import 'screens/main_navigation_screen.dart';
+import 'screens/home_screen.dart';
 import 'screens/onboarding_screen.dart';
 import 'services/localization/theme_service.dart';
 import 'services/localization/locale_service.dart';
 import 'services/notification/notification_service.dart';
 import 'services/payment/ad_service.dart';
+import 'services/payment/rewarded_ad_reward_service.dart';
 import 'services/core/onboarding_service.dart';
-import 'services/chad/chad_evolution_service.dart';
+// DreamFlow - Chad 서비스 제거됨 (운동 앱 전용)
+// import 'services/chad/chad_evolution_service.dart';
 import 'services/chad/chad_image_service.dart';
-import 'services/chad/chad_condition_service.dart';
-import 'services/chad/chad_recovery_service.dart';
-import 'services/chad/chad_active_recovery_service.dart';
+// import 'services/chad/chad_condition_service.dart';
+// import 'services/chad/chad_recovery_service.dart';
+// import 'services/chad/chad_active_recovery_service.dart';
 import 'services/achievements/achievement_service.dart';
 import 'services/data/database_service.dart';
 import 'services/progress/challenge_service.dart';
 import 'services/auth/auth_service.dart';
-import 'services/data/cloud_sync_service.dart';
+import 'services/data/cloud_sync_service.dart'; // Using stub version for testing
 import 'services/payment/billing_service.dart';
 import 'services/core/deep_link_handler.dart';
+import 'services/ai/conversation_token_service.dart';
+import 'services/ai/openrouter_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   try {
-    // Firebase 초기화
-    await Firebase.initializeApp();
-    debugPrint('✅ Firebase 초기화 완료');
+    // 환경 변수 로드 (.env 파일)
+    try {
+      await dotenv.load(fileName: ".env");
+      debugPrint('✅ 환경 변수 로드 완료');
+    } catch (e) {
+      debugPrint('⚠️ 환경 변수 로드 실패: $e');
+    }
+
+    // Firebase 초기화 (선택적)
+    try {
+      await Firebase.initializeApp();
+      debugPrint('✅ Firebase 초기화 완료');
+    } catch (e) {
+      debugPrint('⚠️ Firebase 초기화 실패 (계속 진행): $e');
+    }
 
     // 화면 방향 고정 (세로) - 필수
     await SystemChrome.setPreferredOrientations([
@@ -57,30 +74,37 @@ void main() async {
     await onboardingService.initialize();
     debugPrint('✅ OnboardingService 초기화 완료');
 
-    // Chad 진화 서비스 초기화 (메인 UI에 필요)
-    final chadEvolutionService = ChadEvolutionService();
-    await chadEvolutionService.initialize();
-    debugPrint('✅ ChadEvolutionService 초기화 완료');
+    // OpenRouter AI 서비스 초기화 (Firebase Remote Config 사용)
+    try {
+      final openRouterService = OpenRouterService();
+      await openRouterService.initialize();
+      debugPrint('✅ OpenRouterService 초기화 완료');
+    } catch (e) {
+      debugPrint('⚠️ OpenRouterService 초기화 실패: $e');
+    }
 
-    // Chad 관련 서비스들 초기화
-    final chadConditionService = ChadConditionService();
-    await chadConditionService.initialize();
-    debugPrint('✅ ChadConditionService 초기화 완료');
-
-    final chadRecoveryService = ChadRecoveryService();
-    await chadRecoveryService.initialize();
-    debugPrint('✅ ChadRecoveryService 초기화 완료');
-
-    final chadActiveRecoveryService = ChadActiveRecoveryService();
-    await chadActiveRecoveryService.initialize();
-    debugPrint('✅ ChadActiveRecoveryService 초기화 완료');
+    // DreamFlow - Chad 서비스 제거됨 (운동 앱 전용)
+    // 자각몽 앱에는 Chad 캐릭터 불필요
+    // final chadEvolutionService = ChadEvolutionService();
+    // await chadEvolutionService.initialize();
+    // final chadConditionService = ChadConditionService();
+    // await chadConditionService.initialize();
+    // final chadRecoveryService = ChadRecoveryService();
+    // await chadRecoveryService.initialize();
+    // final chadActiveRecoveryService = ChadActiveRecoveryService();
+    // await chadActiveRecoveryService.initialize();
 
     // Auth 서비스 초기화
     final authService = AuthService();
     await authService.initialize();
     debugPrint('✅ AuthService 초기화 완료');
 
-    // CloudSync 서비스 초기화 (백그라운드에서)
+    // Conversation Token 서비스 초기화
+    final conversationTokenService = ConversationTokenService();
+    await conversationTokenService.initialize();
+    debugPrint('✅ ConversationTokenService 초기화 완료');
+
+    // CloudSync 서비스 초기화 (백그라운드에서) - Using stub for testing
     final cloudSyncService = CloudSyncService();
     unawaited(cloudSyncService.initialize().then((_) {
       debugPrint('✅ CloudSyncService 초기화 완료');
@@ -97,6 +121,14 @@ void main() async {
       debugPrint('❌ BillingService 초기화 오류: $e');
     }));
 
+    // 리워드 광고 서비스 초기화 (백그라운드에서)
+    final rewardedAdRewardService = RewardedAdRewardService();
+    unawaited(rewardedAdRewardService.initialize().then((_) {
+      debugPrint('✅ RewardedAdRewardService 초기화 완료');
+    }).catchError((e) {
+      debugPrint('❌ RewardedAdRewardService 초기화 오류: $e');
+    }));
+
     debugPrint('🚀 앱 기본 초기화 완료 - 빠른 시작!');
 
     runApp(
@@ -105,11 +137,14 @@ void main() async {
           ChangeNotifierProvider.value(value: themeService),
           ChangeNotifierProvider.value(value: localeNotifier),
           ChangeNotifierProvider.value(value: onboardingService),
-          ChangeNotifierProvider.value(value: chadEvolutionService),
-          ChangeNotifierProvider.value(value: chadConditionService),
-          ChangeNotifierProvider.value(value: chadRecoveryService),
-          ChangeNotifierProvider.value(value: chadActiveRecoveryService),
+          // DreamFlow - Chad 서비스 제거됨 (운동 앱 전용)
+          // ChangeNotifierProvider.value(value: chadEvolutionService),
+          // ChangeNotifierProvider.value(value: chadConditionService),
+          // ChangeNotifierProvider.value(value: chadRecoveryService),
+          // ChangeNotifierProvider.value(value: chadActiveRecoveryService),
           ChangeNotifierProvider.value(value: authService),
+          ChangeNotifierProvider.value(value: conversationTokenService),
+          ChangeNotifierProvider.value(value: rewardedAdRewardService),
           // Provider.value(value: subscriptionService), // 구형 시스템 - AuthService로 대체됨
           Provider.value(value: billingService),
         ],
@@ -126,7 +161,7 @@ void main() async {
     // 앱이 완전히 중단되지 않도록 기본 앱으로 실행
     runApp(
       MaterialApp(
-        title: 'Mission: 100',
+        title: 'DreamFlow',
         home: Scaffold(
           body: Center(
             child: Column(
@@ -179,7 +214,7 @@ void _initializeBackgroundServices() {
     debugPrint('❌ NotificationService 초기화 오류: $e');
   });
 
-  // Chad 이미지 서비스 초기화 (백그라운드)
+  // Chad 이미지 서비스 초기화 (백그라운드) - 내부 참조용으로 유지
   ChadImageService().initialize().then((_) {
     debugPrint('✅ ChadImageService 백그라운드 초기화 완료');
   }).catchError((Object e) {
@@ -208,15 +243,8 @@ void _initializeBackgroundServices() {
     });
   });
 
-  // Chad 이미지 프리로드 (더 늦게, 메모리 부담 줄이기)
-  Future.delayed(const Duration(seconds: 2), () {
-    final chadEvolutionService = ChadEvolutionService();
-    chadEvolutionService
-        .preloadAllImages(targetSize: 150)
-        .catchError((Object e) {
-      debugPrint('Chad 이미지 프리로드 오류: $e');
-    });
-  });
+  // DreamFlow - Chad 이미지 프리로드 제거됨 (자각몽 앱에는 Chad 캐릭터 불필요)
+  // 자각몽 앱은 Lumi AI 캐릭터를 사용합니다
 }
 
 // 로케일 변경을 위한 Notifier
@@ -301,7 +329,7 @@ class _MissionAppState extends State<MissionApp> with WidgetsBindingObserver {
     return Consumer2<ThemeService, LocaleNotifier>(
       builder: (context, themeService, localeService, child) {
         return MaterialApp(
-          title: 'Mission: 100',
+          title: 'DreamFlow',
           debugShowCheckedModeBanner: false,
           navigatorKey: DeepLinkHandler.navigatorKey,
 
@@ -441,7 +469,7 @@ class _SplashScreenState extends State<SplashScreen>
         if (mounted) {
           await Navigator.of(context).pushReplacement(
             MaterialPageRoute<void>(
-              builder: (context) => const MainNavigationScreen(),
+              builder: (context) => const HomeScreen(),
             ),
           );
         }
@@ -451,7 +479,7 @@ class _SplashScreenState extends State<SplashScreen>
         if (mounted) {
           await Navigator.of(context).pushReplacement(
             MaterialPageRoute<void>(
-              builder: (context) => const MainNavigationScreen(),
+              builder: (context) => const HomeScreen(),
             ),
           );
         }
@@ -483,44 +511,63 @@ class _SplashScreenState extends State<SplashScreen>
     final isDark = theme.brightness == Brightness.dark;
 
     return Scaffold(
-      backgroundColor: Color(
-        isDark ? AppColors.backgroundDark : AppColors.backgroundLight,
-      ),
-      body: Center(
-        child: FadeTransition(
-          opacity: _fadeAnimation,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              // 앱 로고/아이콘 (회전 및 스케일 애니메이션 적용)
-              ScaleTransition(
-                scale: _scaleAnimation,
-                child: RotationTransition(
-                  turns: _rotationAnimation,
-                  child: Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      color: const Color(AppColors.primaryColor),
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: const Color(
-                            AppColors.primaryColor,
-                          ).withValues(alpha: 0.3),
-                          blurRadius: 20,
-                          offset: const Offset(0, 5),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: isDark
+                ? [
+                    Color(AppColors.nightGradient[0]),
+                    Color(AppColors.nightGradient[1]),
+                  ]
+                : [
+                    Color(AppColors.lucidGradient[0]),
+                    Color(AppColors.lucidGradient[1]),
+                  ],
+          ),
+        ),
+        child: Center(
+          child: FadeTransition(
+            opacity: _fadeAnimation,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                // 앱 로고/아이콘 (회전 및 스케일 애니메이션 적용)
+                ScaleTransition(
+                  scale: _scaleAnimation,
+                  child: RotationTransition(
+                    turns: _rotationAnimation,
+                    child: Container(
+                      width: 120,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        gradient: RadialGradient(
+                          colors: [
+                            Colors.white.withOpacity(0.9),
+                            Color(AppColors.accentColor).withOpacity(0.8),
+                          ],
                         ),
-                      ],
-                    ),
-                    child: const Icon(
-                      Icons.fitness_center,
-                      size: 60,
-                      color: Colors.white,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Color(AppColors.accentColor).withValues(alpha: 0.5),
+                            blurRadius: 30,
+                            spreadRadius: 5,
+                            offset: const Offset(0, 5),
+                          ),
+                        ],
+                      ),
+                      child: const Icon(
+                        Icons.nightlight_round,
+                        size: 60,
+                        color: Color(0xFF4A5568),
+                      ),
                     ),
                   ),
                 ),
-              ),
 
               const SizedBox(height: 32),
 
@@ -531,11 +578,18 @@ class _SplashScreenState extends State<SplashScreen>
                   curve: const Interval(0.4, 1.0, curve: Curves.easeInOut),
                 ),
                 child: Text(
-                  'MISSION: 100',
+                  'DREAMFLOW',
                   style: theme.textTheme.headlineMedium?.copyWith(
                     fontWeight: FontWeight.bold,
-                    color: const Color(AppColors.primaryColor),
+                    color: Colors.white,
                     letterSpacing: 2,
+                    shadows: [
+                      Shadow(
+                        color: Color(AppColors.accentColor).withOpacity(0.5),
+                        blurRadius: 10,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -551,33 +605,32 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Text(
                   AppLocalizations.of(context).appSlogan,
                   style: theme.textTheme.titleMedium?.copyWith(
-                    color: theme.textTheme.bodyLarge?.color?.withValues(
-                      alpha: 0.7,
-                    ),
+                    color: Colors.white.withOpacity(0.9),
                   ),
                 ),
               ),
 
               const SizedBox(height: 40),
 
-              // 로딩 인디케이터 (페이드 인 애니메이션)
-              FadeTransition(
-                opacity: CurvedAnimation(
-                  parent: _animationController,
-                  curve: const Interval(0.8, 1.0, curve: Curves.easeInOut),
-                ),
-                child: const SizedBox(
-                  width: 40,
-                  height: 40,
-                  child: CircularProgressIndicator(
-                    strokeWidth: 3,
-                    valueColor: AlwaysStoppedAnimation<Color>(
-                      Color(AppColors.primaryColor),
+                // 로딩 인디케이터 (페이드 인 애니메이션)
+                FadeTransition(
+                  opacity: CurvedAnimation(
+                    parent: _animationController,
+                    curve: const Interval(0.8, 1.0, curve: Curves.easeInOut),
+                  ),
+                  child: const SizedBox(
+                    width: 40,
+                    height: 40,
+                    child: CircularProgressIndicator(
+                      strokeWidth: 3,
+                      valueColor: AlwaysStoppedAnimation<Color>(
+                        Color(AppColors.accentColor),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

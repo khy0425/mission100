@@ -3,7 +3,7 @@ import '../utils/config/constants.dart';
 import '../services/data/database_service.dart';
 import '../services/workout/workout_program_service.dart';
 import '../models/user_profile.dart';
-import 'main_navigation_screen.dart';
+import 'home_screen.dart';
 import '../generated/l10n/app_localizations.dart';
 
 class WorkoutScheduleSetupScreen extends StatefulWidget {
@@ -191,7 +191,7 @@ class _WorkoutScheduleSetupScreenState extends State<WorkoutScheduleSetupScreen>
 
         // 메인 화면으로 이동
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const MainNavigationScreen()),
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
         );
       }
     } catch (e) {

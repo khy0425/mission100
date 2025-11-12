@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
-import 'package:mission100/generated/l10n/app_localizations.dart';
+import 'package:lucid_dream_100/generated/l10n/app_localizations.dart';
 import '../../services/notification/notification_service.dart';
 import '../../services/auth/auth_service.dart';
 import '../../models/user_subscription.dart';
 import '../../widgets/common/vip_badge_widget.dart';
 import '../onboarding_screen.dart';
 import 'workout_reminder_settings_screen.dart';
-import '../subscription/subscription_screen.dart';
 
 class SimpleSettingsScreen extends StatefulWidget {
   const SimpleSettingsScreen({super.key});
@@ -427,12 +426,13 @@ class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
                         ? const Icon(Icons.verified, color: Colors.green)
                         : const Icon(Icons.chevron_right),
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute<void>(
-                          builder: (context) => const SubscriptionScreen(),
-                        ),
-                      );
+                      // TODO: Implement subscription management screen
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute<void>(
+                      //     builder: (context) => const SubscriptionScreen(),
+                      //   ),
+                      // );
                     },
                   ),
                 ]);

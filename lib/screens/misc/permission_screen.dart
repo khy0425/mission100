@@ -5,7 +5,7 @@ import '../../generated/l10n/app_localizations.dart';
 import '../../utils/config/constants.dart';
 import '../../services/notification/notification_service.dart';
 import '../../services/auth/permission_service.dart';
-import '../main_navigation_screen.dart';
+import '../home_screen.dart';
 import '../onboarding/initial_test_screen.dart';
 
 class PermissionScreen extends StatefulWidget {
@@ -529,7 +529,7 @@ class _PermissionScreenState extends State<PermissionScreen>
       if (hasSelectedDifficulty) {
         // 이미 난이도를 선택한 사용자는 바로 메인 화면으로
         Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => const MainNavigationScreen()),
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
         );
       } else {
         // 처음 사용자는 난이도 선택 화면으로
