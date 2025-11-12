@@ -26,8 +26,8 @@ class LoadingView extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: isDark
               ? [
-                  Color(AppColors.chadGradient[0]),
-                  Color(AppColors.chadGradient[1]),
+                  Color(AppColors.dreamGradient[0]),
+                  Color(AppColors.dreamGradient[1]),
                 ]
               : [theme.colorScheme.surface, const Color(0xFFF5F5F5)],
         ),
