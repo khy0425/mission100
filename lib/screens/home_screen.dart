@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart'; // For kDebugMode
 import '../generated/l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import '../services/data/database_service.dart';
