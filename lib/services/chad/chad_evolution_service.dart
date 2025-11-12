@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 class ChadEvolutionService extends ChangeNotifier {
   static const String _evolutionStateKey = 'chad_evolution_state';
   static const String _unlockedStagesKey = 'chad_unlocked_stages';
+  static const String _evolutionBoostDaysKey = 'evolution_boost_days';
 
   ChadEvolutionState _evolutionState = const ChadEvolutionState(
     currentStage: ChadEvolutionStage.sleepCapChad,
@@ -18,6 +19,7 @@ class ChadEvolutionService extends ChangeNotifier {
   );
 
   bool _isInitialized = false;
+  int _evolutionBoostDays = 0; // 진화 가속 적용된 일수
 
   /// 진화 애니메이션 표시 여부
   bool _showEvolutionAnimation = false;
@@ -55,6 +57,7 @@ class ChadEvolutionService extends ChangeNotifier {
     }
 
     await _loadEvolutionState();
+    await _loadEvolutionBoostDays();
     _isInitialized = true;
     debugPrint('ChadEvolutionService 초기화 완료');
   }
@@ -953,5 +956,84 @@ class ChadEvolutionService extends ChangeNotifier {
         totalChadHours: 0,
       );
     }
+  }
+
+  /// 진화 가속 일수 로드
+  Future<void> _loadEvolutionBoostDays() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      _evolutionBoostDays = prefs.getInt(_evolutionBoostDaysKey) ?? 0;
+      debugPrint('✅ 진화 가속 일수 로드: $_evolutionBoostDays일');
+    } catch (e) {
+      debugPrint('❌ 진화 가속 일수 로드 오류: $e');
+      _evolutionBoostDays = 0;
+    }
+  }
+
+  /// 진화 가속 일수 저장
+  Future<void> _saveEvolutionBoostDays() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setInt(_evolutionBoostDaysKey, _evolutionBoostDays);
+      debugPrint('✅ 진화 가속 일수 저장: $_evolutionBoostDays일');
+    } catch (e) {
+      debugPrint('❌ 진화 가속 일수 저장 오류: $e');
+    }
+  }
+
+  /// 진화 가속권 적용 (1일 단축)
+  Future<bool> applyEvolutionBoost() async {
+    try {
+      if (!_isInitialized) {
+        await initialize();
+      }
+
+      // 이미 최대 진화 상태인지 확인
+      if (_evolutionState.currentStage == ChadEvolutionStage.godChad) {
+        debugPrint('⚠️ 이미 최대 진화 상태입니다');
+        return false;
+      }
+
+      // 진화 가속 일수 증가
+      _evolutionBoostDays += 1;
+      await _saveEvolutionBoostDays();
+      notifyListeners();
+
+      debugPrint('⚡ 진화 가속권 적용! 다음 진화까지 1일 단축 (총: $_evolutionBoostDays일)');
+      return true;
+    } catch (e) {
+      debugPrint('❌ 진화 가속권 적용 오류: $e');
+      return false;
+    }
+  }
+
+  /// 현재 적용된 진화 가속 일수
+  int get evolutionBoostDays => _evolutionBoostDays;
+
+  /// 다음 진화까지 남은 일수 (가속 적용)
+  int getDaysUntilNextEvolution(int completedDays) {
+    if (_evolutionState.currentStage == ChadEvolutionStage.godChad) {
+      return 0; // 최종 진화 완료
+    }
+
+    // 다음 진화 단계 찾기
+    final currentStageIndex = _evolutionState.currentStage.index;
+    if (currentStageIndex >= ChadEvolutionStage.values.length - 1) {
+      return 0;
+    }
+
+    final nextStage = ChadEvolutionStage.values[currentStageIndex + 1];
+    final nextEvolution = ChadEvolution.defaultStages.firstWhere(
+      (chad) => chad.stage == nextStage,
+    );
+
+    // requiredWeek을 일수로 변환 (1주 = 5일 완료 기준)
+    final requiredDays = nextEvolution.requiredWeek * 5;
+
+    // 가속 적용: 완료 일수에 부스트 일수를 더함
+    final effectiveDays = completedDays + _evolutionBoostDays;
+
+    final daysLeft = requiredDays - effectiveDays;
+    return daysLeft > 0 ? daysLeft : 0;
   }
 }
