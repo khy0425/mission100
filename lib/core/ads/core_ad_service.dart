@@ -160,7 +160,14 @@ class CoreAdService {
   Future<void> showInterstitialAd({
     VoidCallback? onAdDismissed,
     VoidCallback? onAdFailedToShow,
+    bool isPremium = false,
   }) async {
+    // 프리미엄 사용자는 광고 표시하지 않음
+    if (isPremium) {
+      onAdDismissed?.call();
+      return;
+    }
+
     if (_config == null || !_config!.enableInterstitialAds) {
       onAdFailedToShow?.call();
       return;

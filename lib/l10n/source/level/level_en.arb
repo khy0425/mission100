@@ -21,22 +21,22 @@
     "description": "Variations section subtitle"
   },
   "@chadLevel": {
-    "description": "Chad level label"
+    "description": "Dream Spirit level label"
   },
   "@difficultyAdvanced": {
-    "description": "Advanced difficulty level for pushups"
+    "description": "Advanced difficulty level for lucid dream practice"
   },
   "@difficultyAdvancedDesc": {
     "description": "Advanced difficulty description"
   },
   "@difficultyBeginner": {
-    "description": "Beginner difficulty level for pushups"
+    "description": "Beginner difficulty level for lucid dream practice"
   },
   "@difficultyBeginnerDesc": {
     "description": "Beginner difficulty description"
   },
   "@difficultyIntermediate": {
-    "description": "Intermediate difficulty level for pushups"
+    "description": "Intermediate difficulty level for lucid dream practice"
   },
   "@difficultyIntermediateDesc": {
     "description": "Intermediate difficulty description"
@@ -108,7 +108,7 @@
     "description": "Maximum level achieved message"
   },
   "@newChadLevel": {
-    "description": "New Chad level text"
+    "description": "New Dream Spirit level text"
   },
   "@nextLevel": {
     "description": "Progress to next level label"
@@ -146,14 +146,14 @@
     }
   },
   "advancedLevel": "Advanced",
-  "alphaLevelDescription": "Ultimate Chad",
-  "alphaLevelSubtitle": "11+ pushups - Already chad material",
+  "alphaLevelDescription": "Ultimate Dream Spirit",
+  "alphaLevelSubtitle": "11+ days practice - Already Dream Spirit material",
   "alphaLevelTitle": "Alpha",
   "beginnerLevel": "Beginner",
   "beginnerMode": "Beginner Mode",
-  "beginnerToChad": "From beginner to Chad! Challenge yourself step by step! 🚀",
-  "chadLevel": "Chad Level",
-  "difficultyAdvanced": "Chad - Powerful Gigas",
+  "beginnerToChad": "From beginner to Dream Spirit! Challenge yourself step by step! 🚀",
+  "chadLevel": "Dream Spirit Level",
+  "difficultyAdvanced": "Dream Spirit - Powerful Gigas",
   "difficultyAdvancedDesc": "True CHAD",
   "difficultyBeginner": "PUSH - Starting Alphas",
   "difficultyBeginnerDesc": "Slowly starting CHAD",
@@ -164,11 +164,11 @@
   "levelDescAlpha": "👑 ALPHA CHAD WITH CONSIDERABLE ALPHA EMPEROR SKILLS.\nALREADY ACHIEVED MANY LEGENDARY ACCOMPLISHMENTS! 👑",
   "levelDescGiga": "🚀 Reached ULTRA GIGA level.\nWielding GODLIKE POWER! 🚀",
   "levelDescRising": "⚡ Rising ALPHA level with solid basics.\nDOMINATING towards higher goals! ⚡",
-  "levelDescRookie": "🔥 ROOKIE level. Starting point of the pushup empire.\nThe awakening journey begins. 🔥",
+  "levelDescRookie": "🔥 ROOKIE level. Starting point of the lucid dream empire.\nThe awakening journey begins. 🔥",
   "levelGoalAlpha": "👑 GOAL: PERFECT FORM 100 REPS PERFECT EXECUTION! 👑",
   "levelGoalGiga": "🚀 Goal: ULTIMATE MASTER - UNIVERSE DOMINATION! 🚀",
   "levelGoalRising": "⚡ Goal: Stronger ALPHA - LEGENDARY EVOLUTION! ⚡",
-  "levelGoalRookie": "🔥 GOAL: 100 CONSECUTIVE PUSHUPS ABSOLUTE DOMINATION AFTER 14 WEEKS! 🔥",
+  "levelGoalRookie": "🔥 GOAL: LUCID DREAM MASTERY ABSOLUTE DOMINATION IN 30 DAYS! 🔥",
   "levelLabel": "🏆 Level",
   "levelMotivationAlpha": "👑 OUTSTANDING PERFORMANCE!\nDOMINATE TO 100 TARGET, FXXK LIMITS! 👑",
   "levelMotivationGiga": "🚀 Already at powerful GIGA level!\nCONQUER THE UNIVERSE towards perfect 100! 🚀",
@@ -178,25 +178,25 @@
   "levelNameGiga": "GIGA CHAD",
   "levelNameRising": "Rising",
   "levelNameRookie": "Rookie",
-  "levelSelectionDescription": "Select your current max pushup count level!\nCustom 14-week program for goal achievement!",
+  "levelSelectionDescription": "Select your current lucid dream practice experience level!\nCustom 30-day program for dream mastery!",
   "levelSelectionHeader": "🏋️‍♂️ CHOOSE YOUR LEVEL NOW!",
   "levelSelectionTitle": "💪 LEVEL CHECK",
   "maxLevelAchieved": "Maximum level achieved!",
-  "newChadLevel": "New Chad Level",
+  "newChadLevel": "New Dream Spirit Level",
   "nextLevel": "Until next level",
   "nextLevelIn": "30% remaining to next level",
-  "risingLevelDescription": "Chad who is growing",
-  "risingLevelSubtitle": "6-10 pushups - Growing into chad",
+  "risingLevelDescription": "Dream Spirit who is growing",
+  "risingLevelSubtitle": "6-10 days practice - Growing into Dream Spirit",
   "risingLevelTitle": "Rising",
-  "rookieLevelDescription": "Chad who starts slowly",
-  "rookieLevelSubtitle": "Under 6 pushups - Build from basics",
+  "rookieLevelDescription": "Dream Spirit who starts slowly",
+  "rookieLevelSubtitle": "Under 6 days practice - Build from basics",
   "rookieLevelTitle": "Rookie",
   "selectLevelButton": "🔥 CHOOSE YOUR LEVEL, FUTURE EMPEROR! 🔥",
   "startWithLevel": "💥 START EMPEROR JOURNEY AS {level}! 💥",
-  "rookieGoalDesc": "≤5 reps → Achieve 100",
-  "risingGoalDesc": "6-10 reps → Achieve 100",
-  "alphaGoalDesc": "11-20 reps → Achieve 100",
-  "gigaGoalDesc": "21+ reps → Achieve 100+",
+  "rookieGoalDesc": "≤5 days → Master in 30 days",
+  "risingGoalDesc": "6-10 days → Master in 30 days",
+  "alphaGoalDesc": "11-20 days → Master in 30 days",
+  "gigaGoalDesc": "21+ days → Master in 30+ days",
   "avgExpPerDay": "Average XP per day",
   "expProgress": "{current} / {required} XP",
   "levelAndExperience": "Level & Experience",

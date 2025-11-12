@@ -42,6 +42,10 @@ def merge_arb_files(lang):
         'premium',
         'settings',
         'sync',
+        'ads',          # 광고
+        'ai',           # AI 관련
+        'checklist',    # 체크리스트
+        'legal',        # 법적 문서
         'error',        # 에러 (나중)
     ]
 

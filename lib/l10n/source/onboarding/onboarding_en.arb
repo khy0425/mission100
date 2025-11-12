@@ -15,22 +15,46 @@
     "description": "Onboarding adaptive training title"
   },
   "@onboardingButtonGotIt": {
-    "description": "Onboarding adaptive training confirmation button (Chad tone without name)"
+    "description": "Onboarding adaptive training confirmation button (Dream Spirit tone without name)"
   },
   "@onboardingButtonGreat": {
-    "description": "Onboarding Chad evolution confirmation button (Chad tone without name)"
+    "description": "Onboarding Dream Spirit evolution confirmation button (Dream Spirit tone without name)"
   },
   "@onboardingButtonNext": {
-    "description": "Onboarding next button (Chad tone without name)"
+    "description": "Onboarding next button (Dream Spirit tone without name)"
   },
   "@onboardingButtonStart": {
-    "description": "Onboarding start button (Chad tone without name)"
+    "description": "Onboarding start button (Dream Spirit tone without name)"
   },
   "@onboardingButtonStartTest": {
-    "description": "Onboarding test start button (Chad tone without name)"
+    "description": "Onboarding test start button (Dream Spirit tone without name)"
   },
   "@onboardingInitialTestDescription": {
     "description": "Onboarding initial test description"
+  },
+  "@onboardingMissionAdvancedDesc": {
+    "description": "Mission personalized program advanced level description"
+  },
+  "@onboardingMissionAdvancedTitle": {
+    "description": "Mission personalized program advanced level title"
+  },
+  "@onboardingMissionAssurance": {
+    "description": "Mission personalized program assurance message"
+  },
+  "@onboardingMissionBeginnerDesc": {
+    "description": "Mission personalized program beginner level description"
+  },
+  "@onboardingMissionBeginnerTitle": {
+    "description": "Mission personalized program beginner level title"
+  },
+  "@onboardingMissionIntermediateDesc": {
+    "description": "Mission personalized program intermediate level description"
+  },
+  "@onboardingMissionIntermediateTitle": {
+    "description": "Mission personalized program intermediate level title"
+  },
+  "@onboardingMissionPersonalizedProgram": {
+    "description": "Mission personalized program title"
   },
   "@onboardingInitialTestTitle": {
     "description": "Onboarding initial test title"
@@ -42,8 +66,8 @@
     "description": "Onboarding welcome screen title"
   },
   "btnGetStarted": "Get Started",
-  "challengeTestYourLimits": "💪 Test your limits today?",
-  "completeInitialTest": "Complete initial test to create your profile",
+  "challengeTestYourLimits": "🌙 Start your lucid dream journey today?",
+  "completeInitialTest": "Create your profile and start lucid dream training",
   "getStarted": "Get Started 🚀",
   "getStartedButton": "Get Started",
   "msgWelcome": "Welcome!",
@@ -54,42 +78,78 @@
   "onboardingButtonNext": "Keep Going! 💪",
   "onboardingButtonStart": "Let's Go! 🔥",
   "onboardingButtonStartTest": "Let's Check! 🎯",
-  "onboardingInitialTestDescription": "Check your current level.\nGet your personalized program.\n\n• Push to your max\n• Keep perfect form\n• Get your custom plan",
-  "onboardingInitialTestTitle": "Skill Check Time ⏱️",
+  "onboardingInitialTestDescription": "Start your lucid dream journey.\n\n• Set your goals\n• Prepare dream journal\n• Learn your first technique",
+  "onboardingInitialTestTitle": "Journey Prep Time ⏱️",
+  "onboardingMissionAdvancedDesc": "Week 11-14",
+  "onboardingMissionAdvancedTitle": "Advanced",
+  "onboardingMissionAssurance": "Proven results guaranteed",
+  "onboardingMissionBeginnerDesc": "Week 1-6",
+  "onboardingMissionBeginnerTitle": "Beginner",
+  "onboardingMissionIntermediateDesc": "Week 7-10",
+  "onboardingMissionIntermediateTitle": "Intermediate",
+  "onboardingMissionPersonalizedProgram": "Personalized 14-Week Program",
   "onboardingNext": "Next",
   "onboardingSkip": "Skip",
   "onboardingStart": "Start",
-  "onboardingWelcomeDescription": "14 weeks is all you need. You got this.\nLet's crush it! 💪",
-  "onboardingWelcomeTitle": "14 Weeks, 100 Reps. Let's Go! 🔥",
-  "startTestButton": "Start Test",
+  "onboardingWelcomeDescription": "30 days is all you need. You got this.\nLet's master lucid dreaming! 🌙",
+  "onboardingWelcomeTitle": "30 Days to Lucid Dreams! 🔥",
+  "startTestButton": "Get Started",
   "stepByStepGuide": "Step-by-Step\nGuide",
-  "testAdMessage": "Test Ad - Fitness App",
+  "testAdMessage": "Test Ad - Lucid Dream App",
   "titleTutorial": "Tutorial",
-  "tutorialButton": "💥 BECOME PUSHUP MASTER 💥",
-  "tutorialDetailTitle": "💥 MASTER THE EMPEROR FORM 💥",
-  "tutorialSubtitle": "Real EMPERORS perfect their form! 💪",
-  "tutorialTitle": "🔥 ALPHA EMPEROR PUSHUP DOJO 🔥",
-  "welcomeMessage": "🔥 WELCOME,\nFUTURE EMPEROR! 🔥\nTime to conquer!",
+  "tutorialButton": "💥 BECOME LUCID DREAM MASTER 💥",
+  "tutorialDetailTitle": "💥 MASTER THE DREAM TECHNIQUES 💥",
+  "tutorialSubtitle": "Real DREAM MASTERS perfect their techniques! 🌙",
+  "tutorialTitle": "🔥 LUCID DREAM MASTERY DOJO 🔥",
+  "welcomeMessage": "🔥 WELCOME,\nFUTURE DREAM MASTER! 🔥\nTime to awaken!",
   "startJourney": "Start the Journey! 🚀",
-  "setWorkoutSchedule": "🔥 Set Your Workout Schedule!",
-  "workoutScheduleDescription": "To become a true champion, you need consistency!\nYou must work out at least 3 days a week. 💪\n\nChoose days that fit your lifestyle,\nand block excuses with reminder notifications! 🚀",
+  "setWorkoutSchedule": "🔥 Set Your Practice Schedule!",
+  "workoutScheduleDescription": "To become a lucid dream master, you need consistency!\nDaily practice is key. 💪\n\nChoose days that fit your lifestyle,\nand get reminders with notifications! 🚀",
   "goalSetupComplete": "🎉 Goal Setup Complete!",
-  "goalSetupCompleteMessage": "Your personalized Mission: 100 begins now.\nTry 1 month free with our launch event!",
+  "goalSetupCompleteMessage": "Your personalized DreamFlow journey begins now.\nTry 1 month free with our launch event!",
   "keyFeatures": "✨ Key Features",
   "scientificBasisTitle": "Science-Based",
-  "scientificBasisDesc": "Program designed based on\nlatest sports science research",
-  "progressiveOverloadTitle": "Progressive Overload",
-  "progressiveOverloadDesc": "Systematically increasing\nworkload for safe growth",
-  "rpeAdaptationTitle": "RPE-Based Adaptation",
-  "rpeAdaptationDesc": "Automatically adjusts difficulty\nbased on your workout intensity",
-  "chadEvolutionTitle": "Chad Evolution System",
-  "chadEvolutionDesc": "Your character grows\nas you work out",
+  "scientificBasisDesc": "Program designed based on\nlatest lucid dreaming research",
+  "progressiveOverloadTitle": "Daily Checklist System",
+  "progressiveOverloadDesc": "Proven techniques like\nWBTB + MILD (46% success rate)",
+  "rpeAdaptationTitle": "Dream Journal Tracking",
+  "rpeAdaptationDesc": "Track your dream recall\nand lucid dream experiences",
+  "chadEvolutionTitle": "Dream Spirit Evolution",
+  "chadEvolutionDesc": "Your spirit guide grows\nas you master lucid dreaming",
   "readyToStart": "Ready to Start?",
-  "findYourLevel": "First, find your starting point\nwith a quick level test",
-  "step1LevelTest": "Level Test (30 seconds)",
-  "step2SetStartDate": "Set Workout Start Date",
-  "step3StartJourney": "Start 14-Week Journey!",
+  "findYourLevel": "First, find your starting point\nwith a quick setup",
+  "step1LevelTest": "Goal Setting (1 minute)",
+  "step2SetStartDate": "Set Practice Start Date",
+  "step3StartJourney": "Start 30-Day Journey!",
   "awesome": "Awesome!",
-  "onboardingProgramIntroTitle": "14-Week Program Introduction",
-  "onboardingProgramIntroDescription": "Scientifically designed 14-week program\nto help you achieve 100 pushups"
+  "onboardingProgramIntroTitle": "30-Day Lucid Dream Program",
+  "onboardingProgramIntroDescription": "Scientifically designed 30-day program\nto help you master lucid dreaming",
+  "goalSetupCurrentWeight": "Current Weight (kg)",
+  "goalSetupTargetWeight": "Target Weight (kg, optional)",
+  "goalSetupNextButton": "Next",
+  "goalSetupStartButton": "Start",
+  "goalSetupLevelBeginnerTitle": "Beginner",
+  "goalSetupLevelBeginnerDesc": "If you're starting lucid dreaming for the first time or after a long break",
+  "goalSetupLevelIntermediateTitle": "Intermediate",
+  "goalSetupLevelIntermediateDesc": "If you've been practicing consistently and are familiar with basic techniques",
+  "goalSetupLevelAdvancedTitle": "Advanced",
+  "goalSetupLevelAdvancedDesc": "If you want intensive training and want to try various advanced techniques",
+  "goalSetupGoalWeightLossTitle": "Weight Loss",
+  "goalSetupGoalWeightLossDesc": "Reduce body fat and create a lean physique",
+  "goalSetupGoalMuscleGainTitle": "Muscle Gain",
+  "goalSetupGoalMuscleGainDesc": "Build solid muscles and attractive upper body lines",
+  "goalSetupGoalStaminaTitle": "Stamina Improvement",
+  "goalSetupGoalStaminaDesc": "Improve endurance and overall fitness",
+  "goalSetupGoalHealthTitle": "Overall Health",
+  "goalSetupGoalHealthDesc": "Healthy lifestyle habits and balanced body building",
+  "goalSetupTimeDawn": "Dawn (5-7 AM)",
+  "goalSetupTimeMorning": "Morning (7-9 AM)",
+  "goalSetupTimeLateMorning": "Late Morning (9 AM-12 PM)",
+  "goalSetupTimeLunch": "Lunch (12-2 PM)",
+  "goalSetupTimeAfternoon": "Afternoon (2-5 PM)",
+  "goalSetupTimeEvening": "Evening (5-8 PM)",
+  "goalSetupTimeNight": "Night (8-10 PM)",
+  "goalSetupWelcomeMessage": "Your personalized lucid dream journey begins now.\nTry 1 month free with our launch event!",
+  "goalSetupStartJourney": "Start Your Journey",
+  "goalSetupCompleteTitle": "🎉 Goal Setup Complete!"
 }

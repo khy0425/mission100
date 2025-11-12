@@ -117,7 +117,7 @@
   "backupActions": "백업 작업",
   "backupHistory": "백업 기록",
   "backupCompletedBody": "데이터 백업 성공! ({size}) 💪",
-  "backupCompletedTitle": "Mission 100 백업 완료",
+  "backupCompletedTitle": "Lucid Dream 100 백업 완료",
   "backupCompletedWithPath": "백업 완료!\n저장 위치: {path}",
   "backupCreatedSuccessfully": "백업이 성공적으로 생성되었다",
   "backupCreationError": "백업 생성 중 오류 발생: {error}",
@@ -126,21 +126,21 @@
   "backupExportFailed": "백업 내보내기 실패: {error}",
   "backupFailed": "백업 실패! 다시 시도! 💪",
   "backupFailedBody": "백업 중 오류 발생! 설정 확인! ⚠️",
-  "backupFailedTitle": "Mission 100 백업 실패",
+  "backupFailedTitle": "Lucid Dream 100 백업 실패",
   "backupFileName": "백업 파일명",
   "backupFileSaved": "백업 파일이 저장되었다:\n{filePath}",
   "backupFrequency": "백업 빈도",
   "backupManagement": "백업 관리",
   "backupManagementDesc": "데이터 백업, 복원 및 자동 백업 설정을 관리한다.",
   "backupScheduleSuspendedBody": "연속 실패로 인해 자동 백업이 중단되었다.",
-  "backupScheduleSuspendedTitle": "Mission 100 백업 중단",
+  "backupScheduleSuspendedTitle": "Lucid Dream 100 백업 중단",
   "backupStatusLoadFailed": "백업 상태를 불러오는데 실패했다: {error}",
   "backupSuccess": "데이터 백업이 성공적으로 완료되었다",
   "backupWaitingStatus": "백업 대기 중",
   "createBackup": "백업 생성",
   "dataBackup": "데이터 백업",
   "dataBackupComingSoon": "데이터 백업 기능은 준비 중이다",
-  "dataBackupDesc": "💾 너의 차드 전설을 영원히 보존한다!",
+  "dataBackupDesc": "💾 너의 드림 스피릿 전설을 영원히 보존한다!",
   "encryptedBackup": "암호화 백업",
   "encryptedBackupCreated": "암호화된 백업이 생성되었다",
   "encryptedBackupError": "암호화된 백업 생성 중 오류 발생: {error}",
@@ -152,9 +152,9 @@
   "backupSettings": "백업 설정",
   "failureCount": "실패 횟수",
   "manualBackupCompletedBody": "백업이 성공적으로 생성되었다",
-  "manualBackupCompletedTitle": "Mission 100 수동 백업 완료",
+  "manualBackupCompletedTitle": "Lucid Dream 100 수동 백업 완료",
   "manualBackupFailedBody": "백업 생성 중 오류가 발생했다",
-  "manualBackupFailedTitle": "Mission 100 수동 백업 실패",
+  "manualBackupFailedTitle": "Lucid Dream 100 수동 백업 실패",
   "noBackupCreated": "아직 백업을 생성하지 않았다",
   "selectBackupFrequency": "백업 빈도 선택",
   "backupEncryption": "백업 암호화",
@@ -165,5 +165,67 @@
   "frequencyWeekly": "매주",
   "frequencyMonthly": "매월",
   "frequencyManual": "수동",
-  "noBackupRecord": "백업 기록 없음"
+  "noBackupRecord": "백업 기록 없음",
+  "@backupActionsTitle": {
+    "description": "백업 작업 섹션 타이틀"
+  },
+  "backupActionsTitle": "백업 작업",
+  "@backupAutoBackupDisabled": {
+    "description": "자동 백업 비활성화 상태 메시지"
+  },
+  "backupAutoBackupDisabled": "자동 백업이 현재 비활성화되어 있다",
+  "@backupAutoBackupEnabled": {
+    "description": "자동 백업 활성화 상태 메시지"
+  },
+  "backupAutoBackupEnabled": "자동 백업이 활성화되어 있다",
+  "@backupFailureCountLabel": {
+    "description": "백업 실패 횟수 레이블"
+  },
+  "backupFailureCountLabel": "실패 횟수",
+  "@backupFailureCountValue": {
+    "description": "백업 실패 횟수 값 표시",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "backupFailureCountValue": "{count}회 실패",
+  "@backupFrequencyChanged": {
+    "description": "백업 빈도 변경 성공 메시지"
+  },
+  "backupFrequencyChanged": "백업 빈도가 업데이트되었다",
+  "@backupFrequencyLabel": {
+    "description": "백업 빈도 레이블"
+  },
+  "backupFrequencyLabel": "빈도",
+  "@backupHistoryTitle": {
+    "description": "백업 기록 섹션 타이틀"
+  },
+  "backupHistoryTitle": "백업 기록",
+  "@backupLastBackupLabel": {
+    "description": "마지막 백업 레이블"
+  },
+  "backupLastBackupLabel": "마지막 백업",
+  "@backupNextBackupLabel": {
+    "description": "다음 백업 레이블"
+  },
+  "backupNextBackupLabel": "다음 백업",
+  "@backupSettingsChangeFailed": {
+    "description": "백업 설정 변경 실패 메시지",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "backupSettingsChangeFailed": "백업 설정 업데이트에 실패했다: {error}",
+  "@backupSettingsTitle": {
+    "description": "백업 설정 섹션 타이틀"
+  },
+  "backupSettingsTitle": "백업 설정",
+  "@backupStatusLabel": {
+    "description": "백업 상태 레이블"
+  },
+  "backupStatusLabel": "상태"
 }

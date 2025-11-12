@@ -19,7 +19,7 @@
   "loginButton": "Login",
   "loginMethodLabel": "Login Method",
   "logoutFromAccount": "Logout from account",
-  "msgAlreadyHaveAccount": "Already have a Chad account?",
+  "msgAlreadyHaveAccount": "Already have a Dream Spirit account?",
   "msgGuestMode": "You are using guest mode. Please login to save your progress.",
   "noUserProfile": "No user profile found",
   "premiumAccountType": "Premium Account",
@@ -44,5 +44,153 @@
   "signupIn30Seconds": "Sign up (30 seconds)",
   "cannotOpenEmail": "Cannot open email app",
   "emailFeedback": "Send your feedback via email",
-  "feedbackEmail": "Send feedback via email"
+  "feedbackEmail": "Send feedback via email",
+  "@loginGoogleSignInFailed": {
+    "description": "Google sign in failed message"
+  },
+  "loginGoogleSignInFailed": "Google sign in failed. Please try again.",
+  "@loginReadyToStartWithChad": {
+    "description": "Ready to start with Dream Spirit title"
+  },
+  "loginReadyToStartWithChad": "Ready to Start Your Lucid Dream Journey?",
+  "@loginStartDreamflowJourney": {
+    "description": "Start dreamflow journey message"
+  },
+  "loginStartDreamflowJourney": "Begin your path to conscious dreaming",
+  "@loginStartWithChad": {
+    "description": "Start with Dream Spirit button"
+  },
+  "loginStartWithChad": "Start with Dream Spirit",
+  "@loginChadLaunchSpecial": {
+    "description": "Launch special event message"
+  },
+  "loginChadLaunchSpecial": "🎉 Launch Special Event",
+  "@loginChadFreeTrialOffer": {
+    "description": "Free trial offer message"
+  },
+  "loginChadFreeTrialOffer": "Try Premium free for 30 days",
+  "@loginAlreadyHaveChadAccount": {
+    "description": "Already have account text"
+  },
+  "loginAlreadyHaveChadAccount": "Already have an account?",
+  "@loginEmail": {
+    "description": "Email field label"
+  },
+  "loginEmail": "Email",
+  "@loginEmailRequired": {
+    "description": "Email required validation"
+  },
+  "loginEmailRequired": "Please enter your email",
+  "@loginEmailInvalid": {
+    "description": "Email invalid validation"
+  },
+  "loginEmailInvalid": "Please enter a valid email",
+  "@loginPassword": {
+    "description": "Password field label"
+  },
+  "loginPassword": "Password",
+  "@loginPasswordRequired": {
+    "description": "Password required validation"
+  },
+  "loginPasswordRequired": "Please enter your password",
+  "@loginPasswordMinLength": {
+    "description": "Password min length validation"
+  },
+  "loginPasswordMinLength": "Password must be at least 6 characters",
+  "@loginLoginButton": {
+    "description": "Login button text"
+  },
+  "loginLoginButton": "Login",
+  "@signupChadTermsAgreementRequired": {
+    "description": "Terms agreement required validation"
+  },
+  "signupChadTermsAgreementRequired": "Please agree to the terms and conditions",
+  "@signupChadWelcomeMessage": {
+    "description": "Welcome message"
+  },
+  "signupChadWelcomeMessage": "Welcome to your lucid dreaming journey!",
+  "@signupChadGoogleSignupFailed": {
+    "description": "Google signup failed message"
+  },
+  "signupChadGoogleSignupFailed": "Google signup failed. Please try again.",
+  "@signupChadScreenTitle": {
+    "description": "Signup screen title"
+  },
+  "signupChadScreenTitle": "Create Your Account",
+  "@signupChadSigningUp": {
+    "description": "Signing up progress message"
+  },
+  "signupChadSigningUp": "Creating your account...",
+  "@signupChadStartFreeMonth": {
+    "description": "Start free month button"
+  },
+  "signupChadStartFreeMonth": "Start Free Month",
+  "@signupChadLaunchSpecialEvent": {
+    "description": "Launch special event title"
+  },
+  "signupChadLaunchSpecialEvent": "🎊 Launch Special Event",
+  "@signupChadBenefitsList": {
+    "description": "Benefits list title"
+  },
+  "signupChadBenefitsList": "Premium Benefits",
+  "@signupChadOrEmailSignup": {
+    "description": "Or email signup divider"
+  },
+  "signupChadOrEmailSignup": "Or sign up with email",
+  "@signupChadNameLabel": {
+    "description": "Name field label"
+  },
+  "signupChadNameLabel": "Name",
+  "@signupChadNameRequired": {
+    "description": "Name required validation"
+  },
+  "signupChadNameRequired": "Please enter your name",
+  "@signupChadNameMinLength": {
+    "description": "Name min length validation"
+  },
+  "signupChadNameMinLength": "Name must be at least 2 characters",
+  "@signupChadEmailLabel": {
+    "description": "Email field label"
+  },
+  "signupChadEmailLabel": "Email",
+  "@signupChadEmailRequired": {
+    "description": "Email required validation"
+  },
+  "signupChadEmailRequired": "Please enter your email",
+  "@signupChadEmailInvalid": {
+    "description": "Email invalid validation"
+  },
+  "signupChadEmailInvalid": "Please enter a valid email",
+  "@signupChadPasswordLabel": {
+    "description": "Password field label"
+  },
+  "signupChadPasswordLabel": "Password",
+  "@signupChadPasswordRequired": {
+    "description": "Password required validation"
+  },
+  "signupChadPasswordRequired": "Please enter a password",
+  "@signupChadPasswordMinLength": {
+    "description": "Password min length validation"
+  },
+  "signupChadPasswordMinLength": "Password must be at least 6 characters",
+  "@signupChadConfirmPasswordLabel": {
+    "description": "Confirm password field label"
+  },
+  "signupChadConfirmPasswordLabel": "Confirm Password",
+  "@signupChadConfirmPasswordRequired": {
+    "description": "Confirm password required validation"
+  },
+  "signupChadConfirmPasswordRequired": "Please confirm your password",
+  "@signupChadPasswordsNotMatch": {
+    "description": "Passwords not match validation"
+  },
+  "signupChadPasswordsNotMatch": "Passwords do not match",
+  "@signupChadTermsAgreement": {
+    "description": "Terms agreement checkbox text"
+  },
+  "signupChadTermsAgreement": "I agree to the Terms and Conditions",
+  "@signupChadLoginButton": {
+    "description": "Login button text on signup screen"
+  },
+  "signupChadLoginButton": "Login"
 }

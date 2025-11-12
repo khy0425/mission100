@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 class LegalDocumentScreen extends StatelessWidget {
   final String title;
@@ -15,6 +16,7 @@ class LegalDocumentScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
@@ -43,7 +45,7 @@ class LegalDocumentScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    '문서를 불러올 수 없습니다',
+                    l10n.legalDocumentLoadError,
                     style: Theme.of(context).textTheme.titleMedium,
                   ),
                   const SizedBox(height: 8),
@@ -110,7 +112,7 @@ class LegalDocumentScreen extends StatelessWidget {
     try {
       return await rootBundle.loadString(documentPath);
     } catch (e) {
-      throw Exception('문서를 찾을 수 없습니다: $documentPath');
+      throw Exception('Document not found: $documentPath');
     }
   }
 

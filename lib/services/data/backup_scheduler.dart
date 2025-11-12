@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:mission100/generated/l10n/app_localizations.dart';
+import 'package:lucid_dream_100/generated/l10n/app_localizations.dart';
 import 'data_backup_service.dart';
 
 /// 자동 백업 스케줄링 서비스

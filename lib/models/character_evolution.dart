@@ -34,7 +34,7 @@ class CharacterEvolution {
 
   /// All evolution stages
   static List<CharacterStage> get stages => [
-    CharacterStage(
+    const CharacterStage(
       id: 'stage0',
       name: 'Sleepy Ghost',
       nameShort: 'Sleepy',
@@ -45,7 +45,7 @@ class CharacterEvolution {
       color: '#94A3B8',
       traits: ['unconscious', 'beginner', 'foggy'],
     ),
-    CharacterStage(
+    const CharacterStage(
       id: 'stage1',
       name: 'Aware Wisp',
       nameShort: 'Aware',
@@ -56,7 +56,7 @@ class CharacterEvolution {
       color: '#7DD3FC',
       traits: ['awakening', 'curious', 'learning'],
     ),
-    CharacterStage(
+    const CharacterStage(
       id: 'stage2',
       name: 'Lucid Sprite',
       nameShort: 'Lucid',
@@ -67,7 +67,7 @@ class CharacterEvolution {
       color: '#A78BFA',
       traits: ['aware', 'developing', 'excited'],
     ),
-    CharacterStage(
+    const CharacterStage(
       id: 'stage3',
       name: 'Dream Walker',
       nameShort: 'Walker',
@@ -78,7 +78,7 @@ class CharacterEvolution {
       color: '#34D399',
       traits: ['confident', 'stable', 'balanced'],
     ),
-    CharacterStage(
+    const CharacterStage(
       id: 'stage4',
       name: 'Astral Traveler',
       nameShort: 'Traveler',
@@ -89,7 +89,7 @@ class CharacterEvolution {
       color: '#F472B6',
       traits: ['explorer', 'adventurous', 'powerful'],
     ),
-    CharacterStage(
+    const CharacterStage(
       id: 'stage5',
       name: 'Oneiroi Oracle',
       nameShort: 'Oracle',
@@ -100,7 +100,7 @@ class CharacterEvolution {
       color: '#FCD34D',
       traits: ['wise', 'prophetic', 'enlightened'],
     ),
-    CharacterStage(
+    const CharacterStage(
       id: 'stage6',
       name: 'Master of Dreams',
       nameShort: 'Master',

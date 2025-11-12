@@ -1,0 +1,513 @@
+{
+  "@aiAssistantTitle": {
+    "description": "AI 어시스턴트 화면 타이틀"
+  },
+  "aiAssistantTitle": "AI 꿈 어시스턴트",
+  "@aiAssistantEmptyQuestion": {
+    "description": "질문이 선택되지 않았을 때 플레이스홀더"
+  },
+  "aiAssistantEmptyQuestion": "위의 기능을 선택하여 시작하세요",
+  "@aiAssistantEmptyInput": {
+    "description": "입력이 비었을 때 경고"
+  },
+  "aiAssistantEmptyInput": "질문이나 꿈을 입력해주세요",
+  "@aiAssistantQuestion": {
+    "description": "질문 레이블"
+  },
+  "aiAssistantQuestion": "당신의 질문",
+  "@aiAssistantResponse": {
+    "description": "응답 레이블"
+  },
+  "aiAssistantResponse": "Lumi의 답변",
+  "@aiAssistantGenerating": {
+    "description": "응답 생성 중 메시지"
+  },
+  "aiAssistantGenerating": "답변 생성 중...",
+  "@aiAssistantUsageToday": {
+    "description": "오늘 사용량",
+    "placeholders": {
+      "used": {
+        "type": "Object"
+      },
+      "limit": {
+        "type": "Object"
+      },
+      "remaining": {
+        "type": "Object"
+      }
+    }
+  },
+  "aiAssistantUsageToday": "오늘: {used}/{limit} 사용 ({remaining}개 남음)",
+  "@aiAssistantUsageWarning": {
+    "description": "사용량 한도 경고",
+    "placeholders": {
+      "percentage": {
+        "type": "Object"
+      }
+    }
+  },
+  "aiAssistantUsageWarning": "일일 한도의 {percentage}%를 사용했습니다!",
+  "@aiAssistantFree": {
+    "description": "무료 티어 배지"
+  },
+  "aiAssistantFree": "무료",
+  "@aiAssistantPremium": {
+    "description": "프리미엄 티어 배지"
+  },
+  "aiAssistantPremium": "프리미엄",
+  "@aiFeatureDreamJournalTitle": {
+    "description": "꿈 일기 기능 타이틀"
+  },
+  "aiFeatureDreamJournalTitle": "꿈 일기",
+  "@aiFeatureDreamJournalSubtitle": {
+    "description": "꿈 일기 기능 서브타이틀"
+  },
+  "aiFeatureDreamJournalSubtitle": "꿈 분석하기",
+  "@aiFeatureDreamJournalDesc": {
+    "description": "꿈 일기 기능 설명"
+  },
+  "aiFeatureDreamJournalDesc": "꿈 상징과 의미에 대한 깊은 통찰 얻기",
+  "@aiFeatureDreamJournalInputLabel": {
+    "description": "꿈 일기 입력 레이블"
+  },
+  "aiFeatureDreamJournalInputLabel": "꿈을 설명하세요",
+  "@aiFeatureDreamJournalInputHint": {
+    "description": "꿈 일기 입력 힌트"
+  },
+  "aiFeatureDreamJournalInputHint": "당신의 꿈에 대해 말해주세요...",
+  "@aiFeatureRealityCheckTitle": {
+    "description": "현실 확인 기능 타이틀"
+  },
+  "aiFeatureRealityCheckTitle": "현실 확인",
+  "@aiFeatureRealityCheckSubtitle": {
+    "description": "현실 확인 기능 서브타이틀"
+  },
+  "aiFeatureRealityCheckSubtitle": "자각 훈련",
+  "@aiFeatureRealityCheckDesc": {
+    "description": "현실 확인 기능 설명"
+  },
+  "aiFeatureRealityCheckDesc": "자각몽을 위한 효과적인 현실 확인 기법 배우기",
+  "@aiFeatureRealityCheckInputLabel": {
+    "description": "현실 확인 입력 레이블"
+  },
+  "aiFeatureRealityCheckInputLabel": "현실 확인에 대해 질문하기",
+  "@aiFeatureRealityCheckInputHint": {
+    "description": "현실 확인 입력 힌트"
+  },
+  "aiFeatureRealityCheckInputHint": "효과적인 현실 확인은 어떻게 하나요?",
+  "@aiFeatureTechniqueTitle": {
+    "description": "기법 기능 타이틀"
+  },
+  "aiFeatureTechniqueTitle": "기법",
+  "@aiFeatureTechniqueSubtitle": {
+    "description": "기법 기능 서브타이틀"
+  },
+  "aiFeatureTechniqueSubtitle": "WILD, MILD, WBTB",
+  "@aiFeatureTechniqueDesc": {
+    "description": "기법 기능 설명"
+  },
+  "aiFeatureTechniqueDesc": "고급 자각몽 기법 마스터하기",
+  "@aiFeatureTechniqueInputLabel": {
+    "description": "기법 입력 레이블"
+  },
+  "aiFeatureTechniqueInputLabel": "기법에 대해 질문하기",
+  "@aiFeatureTechniqueInputHint": {
+    "description": "기법 입력 힌트"
+  },
+  "aiFeatureTechniqueInputHint": "WILD 기법은 어떻게 작동하나요?",
+  "@aiFeatureMeditationTitle": {
+    "description": "명상 기능 타이틀"
+  },
+  "aiFeatureMeditationTitle": "명상",
+  "@aiFeatureMeditationSubtitle": {
+    "description": "명상 기능 서브타이틀"
+  },
+  "aiFeatureMeditationSubtitle": "마음챙김 연습",
+  "@aiFeatureMeditationDesc": {
+    "description": "명상 기능 설명"
+  },
+  "aiFeatureMeditationDesc": "꿈 자각을 향상시키는 명상 기법",
+  "@aiFeatureMeditationInputLabel": {
+    "description": "명상 입력 레이블"
+  },
+  "aiFeatureMeditationInputLabel": "명상에 대해 질문하기",
+  "@aiFeatureMeditationInputHint": {
+    "description": "명상 입력 힌트"
+  },
+  "aiFeatureMeditationInputHint": "자각몽에 도움이 되는 명상은 무엇인가요?",
+  "@aiFeatureFreeChatTitle": {
+    "description": "자유 대화 기능 타이틀"
+  },
+  "aiFeatureFreeChatTitle": "자유 대화",
+  "@aiFeatureFreeChatSubtitle": {
+    "description": "자유 대화 기능 서브타이틀"
+  },
+  "aiFeatureFreeChatSubtitle": "무엇이든 질문",
+  "@aiFeatureFreeChatDesc": {
+    "description": "자유 대화 기능 설명"
+  },
+  "aiFeatureFreeChatDesc": "자각몽 주제에 대해 자유롭게 대화하기",
+  "@aiFeatureFreeChatInputLabel": {
+    "description": "자유 대화 입력 레이블"
+  },
+  "aiFeatureFreeChatInputLabel": "무엇이든 질문하세요",
+  "@aiFeatureFreeChatInputHint": {
+    "description": "자유 대화 입력 힌트"
+  },
+  "aiFeatureFreeChatInputHint": "자각몽에 대해 무엇이든 물어보세요...",
+  "@analysisModeTitle": {
+    "description": "분석 모드 선택 타이틀"
+  },
+  "analysisModeTitle": "분석 모드 선택",
+  "@analysisModeHeader": {
+    "description": "분석 모드 헤더"
+  },
+  "analysisModeHeader": "꿈 분석",
+  "@analysisQuickTitle": {
+    "description": "빠른 분석 타이틀"
+  },
+  "analysisQuickTitle": "빠른 분석",
+  "@analysisQuickBadge": {
+    "description": "빠른 분석 배지"
+  },
+  "analysisQuickBadge": "빠르고 무료",
+  "@analysisQuickDesc": {
+    "description": "빠른 분석 설명"
+  },
+  "analysisQuickDesc": "즉시 기본 꿈 해석 받기",
+  "@analysisQuickFeature": {
+    "description": "빠른 분석 기능들",
+    "placeholders": {
+      "index": {
+        "type": "Object"
+      }
+    }
+  },
+  "analysisQuickFeature1": "즉시 결과",
+  "analysisQuickFeature2": "기본 해석",
+  "analysisQuickFeature3": "토큰 불필요",
+  "@analysisQuickButton": {
+    "description": "빠른 분석 버튼"
+  },
+  "analysisQuickButton": "빠른 분석 시작",
+  "@analysisLumiTitle": {
+    "description": "Lumi 분석 타이틀"
+  },
+  "analysisLumiTitle": "Lumi 깊은 분석",
+  "@analysisLumiTokens": {
+    "description": "Lumi 필요 토큰",
+    "placeholders": {
+      "tokens": {
+        "type": "Object"
+      }
+    }
+  },
+  "analysisLumiTokens": "토큰 {tokens}개",
+  "@analysisLumiDesc": {
+    "description": "Lumi 분석 설명"
+  },
+  "analysisLumiDesc": "AI 대화와 함께하는 깊은 꿈 분석",
+  "@analysisLumiFeature": {
+    "description": "Lumi 분석 기능들"
+  },
+  "analysisLumiFeature1": "깊은 해석",
+  "analysisLumiFeature2": "상징 분석",
+  "analysisLumiFeature3": "패턴 감지",
+  "analysisLumiFeature4": "후속 대화",
+  "@analysisLumiButtonStart": {
+    "description": "Lumi 분석 시작 버튼"
+  },
+  "analysisLumiButtonStart": "분석 시작",
+  "@analysisLumiButtonNeedTokens": {
+    "description": "토큰 필요 버튼"
+  },
+  "analysisLumiButtonNeedTokens": "토큰 얻기",
+  "@analysisComparisonTitle": {
+    "description": "비교 섹션 타이틀"
+  },
+  "analysisComparisonTitle": "기능 비교",
+  "@analysisComparisonSpeed": {
+    "description": "속도 비교 레이블"
+  },
+  "analysisComparisonSpeed": "속도",
+  "@analysisComparisonSpeedQuick": {
+    "description": "빠른 분석 속도"
+  },
+  "analysisComparisonSpeedQuick": "즉시",
+  "@analysisComparisonSpeedLumi": {
+    "description": "Lumi 분석 속도"
+  },
+  "analysisComparisonSpeedLumi": "30-60초",
+  "@analysisComparisonDepth": {
+    "description": "깊이 비교 레이블"
+  },
+  "analysisComparisonDepth": "분석 깊이",
+  "@analysisComparisonDepthQuick": {
+    "description": "빠른 분석 깊이"
+  },
+  "analysisComparisonDepthQuick": "기본",
+  "@analysisComparisonDepthLumi": {
+    "description": "Lumi 분석 깊이"
+  },
+  "analysisComparisonDepthLumi": "종합",
+  "@analysisComparisonFollowUp": {
+    "description": "후속 대화 비교 레이블"
+  },
+  "analysisComparisonFollowUp": "후속 대화",
+  "@analysisComparisonFollowUpQuick": {
+    "description": "빠른 분석 후속 대화"
+  },
+  "analysisComparisonFollowUpQuick": "불가능",
+  "@analysisComparisonFollowUpLumi": {
+    "description": "Lumi 분석 후속 대화"
+  },
+  "analysisComparisonFollowUpLumi": "가능",
+  "@analysisComparisonCost": {
+    "description": "비용 비교 레이블"
+  },
+  "analysisComparisonCost": "비용",
+  "@analysisComparisonCostQuick": {
+    "description": "빠른 분석 비용"
+  },
+  "analysisComparisonCostQuick": "무료",
+  "@analysisComparisonCostLumi": {
+    "description": "Lumi 분석 비용"
+  },
+  "analysisComparisonCostLumi": "토큰 1개",
+  "@analysisNoTokensTitle": {
+    "description": "토큰 부족 다이얼로그 타이틀"
+  },
+  "analysisNoTokensTitle": "토큰이 부족합니다",
+  "@analysisNoTokensMessage": {
+    "description": "토큰 부족 메시지"
+  },
+  "analysisNoTokensMessage": "Lumi 깊은 분석에는 토큰이 필요합니다",
+  "@analysisNoTokensDaily": {
+    "description": "일일 무료 토큰 정보"
+  },
+  "analysisNoTokensDaily": "일일 무료 토큰",
+  "@analysisNoTokensDailyFree": {
+    "description": "무료 티어 일일 토큰"
+  },
+  "analysisNoTokensDailyFree": "하루 1개 토큰",
+  "@analysisNoTokensDailyPremium": {
+    "description": "프리미엄 티어 일일 토큰"
+  },
+  "analysisNoTokensDailyPremium": "하루 5개 토큰",
+  "@analysisNoTokensPremium": {
+    "description": "프리미엄 무제한 정보"
+  },
+  "analysisNoTokensPremium": "프리미엄: 무제한",
+  "@analysisNoTokensPremiumBonus": {
+    "description": "프리미엄 보너스"
+  },
+  "analysisNoTokensPremiumBonus": "일일 토큰 5배",
+  "@analysisNoTokensAd": {
+    "description": "토큰을 위한 광고 시청"
+  },
+  "analysisNoTokensAd": "광고 보고 토큰 받기",
+  "@analysisNoTokensAdReward": {
+    "description": "광고 보상 양"
+  },
+  "analysisNoTokensAdReward": "+1 토큰",
+  "@analysisNoTokensClaim": {
+    "description": "일일 토큰 받기 버튼"
+  },
+  "analysisNoTokensClaim": "일일 토큰 받기",
+  "@analysisNoTokensClaimedSnackbar": {
+    "description": "토큰 받기 완료 메시지"
+  },
+  "analysisNoTokensClaimedSnackbar": "일일 토큰을 받았습니다!",
+  "@analysisNoTokensClose": {
+    "description": "다이얼로그 닫기 버튼"
+  },
+  "analysisNoTokensClose": "닫기",
+  "@quickAnalysisAppBar": {
+    "description": "빠른 분석 앱바 타이틀"
+  },
+  "quickAnalysisAppBar": "빠른 꿈 분석",
+  "@quickAnalysisInputTitle": {
+    "description": "입력 섹션 타이틀"
+  },
+  "quickAnalysisInputTitle": "꿈을 설명하세요",
+  "@quickAnalysisInputHint": {
+    "description": "입력 필드 힌트"
+  },
+  "quickAnalysisInputHint": "여기에 꿈을 입력하세요...",
+  "@quickAnalysisInputCounter": {
+    "description": "글자 수 카운터",
+    "placeholders": {
+      "current": {
+        "type": "Object"
+      },
+      "max": {
+        "type": "Object"
+      }
+    }
+  },
+  "quickAnalysisInputCounter": "{current}/{max} 자",
+  "@quickAnalysisButtonStart": {
+    "description": "분석 시작 버튼"
+  },
+  "quickAnalysisButtonStart": "꿈 분석하기",
+  "@quickAnalysisGuideTitle": {
+    "description": "가이드 섹션 타이틀"
+  },
+  "quickAnalysisGuideTitle": "사용 방법",
+  "@quickAnalysisGuideBadge": {
+    "description": "가이드 기능 배지"
+  },
+  "quickAnalysisGuideBadge": "무료",
+  "@quickAnalysisGuideDescription": {
+    "description": "가이드 설명"
+  },
+  "quickAnalysisGuideDescription": "빠른 분석은 즉시 기본 꿈 해석을 제공합니다",
+  "@quickAnalysisGuideInstantResults": {
+    "description": "즉시 결과 기능"
+  },
+  "quickAnalysisGuideInstantResults": "즉시 결과",
+  "@quickAnalysisGuideBasicInterpretation": {
+    "description": "기본 해석 기능"
+  },
+  "quickAnalysisGuideBasicInterpretation": "기본 해석",
+  "@quickAnalysisGuideNoTokens": {
+    "description": "토큰 불필요 기능"
+  },
+  "quickAnalysisGuideNoTokens": "토큰 불필요",
+  "@quickAnalysisLoadingTitle": {
+    "description": "로딩 타이틀"
+  },
+  "quickAnalysisLoadingTitle": "꿈 분석 중",
+  "@quickAnalysisLoadingSubtitle": {
+    "description": "로딩 서브타이틀"
+  },
+  "quickAnalysisLoadingSubtitle": "잠시만 기다려주세요...",
+  "@quickAnalysisResultTitle": {
+    "description": "결과 섹션 타이틀"
+  },
+  "quickAnalysisResultTitle": "분석 결과",
+  "@quickAnalysisDeeperTitle": {
+    "description": "더 깊은 분석 타이틀"
+  },
+  "quickAnalysisDeeperTitle": "더 깊은 분석을 원하시나요?",
+  "@quickAnalysisDeeperDescription": {
+    "description": "더 깊은 분석 설명"
+  },
+  "quickAnalysisDeeperDescription": "종합적인 통찰을 위해 Lumi 깊은 분석을 시도하세요",
+  "@quickAnalysisButtonChatWithLumi": {
+    "description": "Lumi와 대화 버튼"
+  },
+  "quickAnalysisButtonChatWithLumi": "Lumi와 대화하기",
+  "@quickAnalysisButtonAnalyzeAgain": {
+    "description": "다시 분석하기 버튼"
+  },
+  "quickAnalysisButtonAnalyzeAgain": "다른 꿈 분석하기",
+  "@quickAnalysisErrorEmpty": {
+    "description": "빈 입력 에러"
+  },
+  "quickAnalysisErrorEmpty": "꿈을 설명해주세요",
+  "@quickAnalysisErrorTooShort": {
+    "description": "너무 짧은 입력 에러"
+  },
+  "quickAnalysisErrorTooShort": "더 자세히 설명해주세요 (최소 20자)",
+  "@quickAnalysisRefreshTooltip": {
+    "description": "새로고침 버튼 툴팁"
+  },
+  "quickAnalysisRefreshTooltip": "지우고 다시 시작",
+  "@lumiConversationAppBar": {
+    "description": "Lumi 대화 앱바 타이틀"
+  },
+  "lumiConversationAppBar": "Lumi와 대화",
+  "@lumiConversationEmptyTitle": {
+    "description": "빈 대화 타이틀"
+  },
+  "lumiConversationEmptyTitle": "꿈 대화 시작하기",
+  "@lumiConversationEmptySubtitle": {
+    "description": "빈 대화 서브타이틀"
+  },
+  "lumiConversationEmptySubtitle": "Lumi에게 꿈에 대해 무엇이든 물어보세요",
+  "@lumiConversationInputHint": {
+    "description": "입력 필드 힌트"
+  },
+  "lumiConversationInputHint": "꿈에 대해 질문하세요...",
+  "@lumiConversationThinking": {
+    "description": "생각 중 메시지"
+  },
+  "lumiConversationThinking": "Lumi가 생각하는 중...",
+  "@lumiConversationLoadError": {
+    "description": "로드 에러 메시지"
+  },
+  "lumiConversationLoadError": "대화를 불러오지 못했습니다",
+  "@lumiConversationTokenDialogTitle": {
+    "description": "토큰 다이얼로그 타이틀"
+  },
+  "lumiConversationTokenDialogTitle": "토큰 1개 필요",
+  "@lumiConversationTokenDialogContent": {
+    "description": "토큰 다이얼로그 내용"
+  },
+  "lumiConversationTokenDialogContent": "이 대화는 토큰 1개를 사용합니다",
+  "@lumiConversationTokenDialogClose": {
+    "description": "토큰 다이얼로그 닫기 버튼"
+  },
+  "lumiConversationTokenDialogClose": "취소",
+  "@dreamAnalysisAppBar": {
+    "description": "꿈 분석 화면 앱바 타이틀"
+  },
+  "dreamAnalysisAppBar": "꿈 분석",
+  "@dreamAnalysisKeywordsTitle": {
+    "description": "키워드 섹션 타이틀"
+  },
+  "dreamAnalysisKeywordsTitle": "주요 테마",
+  "@dreamAnalysisEmotionsTitle": {
+    "description": "감정 섹션 타이틀"
+  },
+  "dreamAnalysisEmotionsTitle": "감정",
+  "@dreamAnalysisSymbolsTitle": {
+    "description": "상징 섹션 타이틀"
+  },
+  "dreamAnalysisSymbolsTitle": "상징",
+  "@dreamAnalysisInterpretationTitle": {
+    "description": "해석 섹션 타이틀"
+  },
+  "dreamAnalysisInterpretationTitle": "해석",
+  "@dreamAnalysisRecommendationsTitle": {
+    "description": "권장사항 섹션 타이틀"
+  },
+  "dreamAnalysisRecommendationsTitle": "자각몽 팁",
+  "@dreamAnalysisHeaderTitle": {
+    "description": "분석 헤더 타이틀"
+  },
+  "dreamAnalysisHeaderTitle": "당신의 꿈 분석",
+  "@dreamAnalysisHeaderSubtitle": {
+    "description": "분석 헤더 서브타이틀"
+  },
+  "dreamAnalysisHeaderSubtitle": "Lumi AI 제공",
+  "@dreamAnalysisLucidPotentialTitle": {
+    "description": "자각몽 가능성 섹션 타이틀"
+  },
+  "dreamAnalysisLucidPotentialTitle": "자각몽 가능성",
+  "@dreamAnalysisLucidPotentialHigh": {
+    "description": "높은 자각몽 가능성 레이블"
+  },
+  "dreamAnalysisLucidPotentialHigh": "높음",
+  "@dreamAnalysisLucidPotentialMedium": {
+    "description": "중간 자각몽 가능성 레이블"
+  },
+  "dreamAnalysisLucidPotentialMedium": "중간",
+  "@dreamAnalysisLucidPotentialLow": {
+    "description": "낮은 자각몽 가능성 레이블"
+  },
+  "dreamAnalysisLucidPotentialLow": "낮음",
+  "@dreamAnalysisPremiumPromoTitle": {
+    "description": "프리미엄 프로모션 타이틀"
+  },
+  "dreamAnalysisPremiumPromoTitle": "더 깊은 분석 잠금 해제",
+  "@dreamAnalysisPremiumFeatures": {
+    "description": "프리미엄 기능 목록"
+  },
+  "dreamAnalysisPremiumFeatures": "프리미엄 회원은 상세한 상징 해석, 개인화된 통찰, 무제한 분석을 받습니다",
+  "@dreamAnalysisPremiumButton": {
+    "description": "프리미엄 업그레이드 버튼"
+  },
+  "dreamAnalysisPremiumButton": "프리미엄 가입"
+}

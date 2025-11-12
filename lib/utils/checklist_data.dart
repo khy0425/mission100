@@ -33,7 +33,7 @@ class ChecklistItem {
 class ChecklistData {
   /// Daily checklist items
   static List<ChecklistItem> get dailyChecklist => [
-    ChecklistItem(
+    const ChecklistItem(
       id: 'dream_journal',
       name: 'Dream Journal (PRIORITY #1)',
       nameKo: '꿈 일기 작성 (최우선)',
@@ -43,7 +43,7 @@ class ChecklistData {
       priority: 1,
       researchNote: 'Superior dream recall = higher success rate',
     ),
-    ChecklistItem(
+    const ChecklistItem(
       id: 'reality_check_2hr',
       name: 'Reality Checks (5x, every 2hrs)',
       nameKo: '현실 확인 (5회, 2시간마다)',
@@ -53,7 +53,7 @@ class ChecklistData {
       intervalMinutes: 120,
       researchNote: 'Reality checks alone are NOT effective. Must combine with WBTB+MILD',
     ),
-    ChecklistItem(
+    const ChecklistItem(
       id: 'wbtb_alarm',
       name: 'WBTB Alarm (Wake Back to Bed)',
       nameKo: 'WBTB 알람 (5시간 후)',
@@ -63,7 +63,7 @@ class ChecklistData {
       priority: 2,
       researchNote: 'WBTB + MILD = highest success rate (46%)',
     ),
-    ChecklistItem(
+    const ChecklistItem(
       id: 'mild_wbtb',
       name: 'MILD Technique (during WBTB)',
       nameKo: 'MILD 기법 (WBTB 중)',
@@ -73,7 +73,7 @@ class ChecklistData {
       priority: 2,
       researchNote: 'Fall asleep within 10min after MILD = success predictor',
     ),
-    ChecklistItem(
+    const ChecklistItem(
       id: 'bedtime_preparation',
       name: 'Bedtime Dream Prep',
       nameKo: '취침 전 준비',
@@ -81,7 +81,7 @@ class ChecklistData {
       icon: '🌙',
       defaultTime: '22:30',
     ),
-    ChecklistItem(
+    const ChecklistItem(
       id: 'ssild_technique',
       name: 'SSILD Technique (Advanced, Optional)',
       nameKo: 'SSILD 기법 (고급, 선택)',

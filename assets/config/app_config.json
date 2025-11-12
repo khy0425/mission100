@@ -41,5 +41,23 @@
     "one_time_purchase_enabled": false,
     "subscription_product_ids": [],
     "one_time_product_ids": []
+  },
+  "ai": {
+    "openai_api_key": "YOUR_OPENAI_API_KEY_HERE",
+    "model": "gpt-4o-mini",
+    "max_input_characters": 500,
+    "max_output_tokens": 500,
+    "use_real_ai": false,
+    "note": "Set use_real_ai to true and add your OpenAI API key to enable real AI analysis"
+  },
+  "conversation": {
+    "enable_conversation": true,
+    "free_daily_tokens": 1,
+    "premium_daily_tokens": 5,
+    "max_free_tokens": 5,
+    "max_premium_tokens": 30,
+    "messages_per_token": 5,
+    "token_cost_per_conversation": 1,
+    "note": "Conversation tokens allow users to have ongoing dialogue with Lumi"
   }
 }

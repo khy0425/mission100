@@ -2,26 +2,28 @@ import 'package:flutter/material.dart';
 
 class AppConstants {
   // 앱 정보
-  static const String appName = 'Mission: 100 Push-Ups';
-  static const String appSubtitle = '100일 푸시업 챌린지';
-  static const String appSlogan = '100일 동안, 연속 100개를 목표로!';
+  static const String appName = '드림플로 (DreamFlow)';
+  static const String appSubtitle = '자각몽의 흐름 속으로';
+  static const String appSlogan = '30일 프로그램으로 자각몽을 마스터하세요!';
   static const String appDescription =
-      '14주 과학적 프로그램으로 연속 100개 푸시업 마스터하기';
+      '과학적으로 검증된 30일 프로그램으로 자각몽 능력 개발하기';
 
-  // 운동 프로그램 관련
-  static const int totalWeeks = 14; // 6주 → 14주로 확장
-  static const int daysPerWeek = 3;
-  static const int totalWorkoutDays = totalWeeks * daysPerWeek; // 42일
-  static const int targetReps = 100; // 최종 목표: 연속 100개
+  // 자각몽 프로그램 관련
+  static const int totalDays = 30; // 30일 자각몽 마스터 프로그램 (기본)
+  static const int extendedTotalDays = 60; // 60일 확장 프로그램 (프리미엄)
+  static const int totalWeeks = 14; // 레거시 호환성 (추후 제거 예정)
+  static const int daysPerWeek = 3; // 레거시 호환성 (추후 제거 예정)
+  static const int totalWorkoutDays = totalDays; // 30일
+  static const int targetLevel = 100; // 최종 목표: 자각몽 마스터 레벨
 
-  // 차드 레벨 관련
-  static const int maxChadLevel = 6;
+  // Lumi AI 코치 레벨 관련
+  static const int maxLumiLevel = 6;
 
   // 알림 관련
-  static const String notificationChannelId = 'workout_reminders';
-  static const String notificationChannelName = 'Workout Reminders';
+  static const String notificationChannelId = 'lucid_dream_reminders';
+  static const String notificationChannelName = 'Lucid Dream Reminders';
   static const String notificationChannelDesc =
-      'Notifications for workout reminders and motivation';
+      'Notifications for lucid dream practice reminders and motivation';
 
   // 공유 프리퍼런스 키
   static const String keyFirstLaunch = 'first_launch';
@@ -108,16 +110,16 @@ class AppConstants {
 
 // 앱 색상 정의
 class AppColors {
-  // 기본 브랜드 색상 - 기가차드 테마 (검정/금색 기반)
-  static const int primaryColor = 0xFFFFB000; // 금색 (Chad의 상징색)
-  static const int secondaryColor = 0xFFFF6B35; // 주황/빨강 (파워풀한 느낌)
-  static const int accentColor = 0xFFE53E3E; // 빨간색 (강렬함)
+  // 기본 브랜드 색상 - 자각몽 밤하늘 테마
+  static const int primaryColor = 0xFF7B68EE; // 진한 보라 (자각몽 테마)
+  static const int secondaryColor = 0xFF4A90E2; // 밝은 파랑 (꿈의 청명함)
+  static const int accentColor = 0xFFFFD700; // 금빛 (별/달빛)
 
   // 배경 색상 - 라이트/다크 테마 구분
   static const int backgroundLight = 0xFFF5F5F5; // 밝은 회색 (라이트 테마)
-  static const int backgroundDark = 0xFF000000; // 순수 검정 (다크 테마)
+  static const int backgroundDark = 0xFF1E1E2E; // 깊은 밤하늘 (다크 테마)
   static const int surfaceLight = 0xFFFFFFFF; // 흰색 (라이트 테마)
-  static const int surfaceDark = 0xFF0F0F0F; // 매우 어두운 회색 (다크 테마)
+  static const int surfaceDark = 0xFF2D2D44; // 밤하늘 표면 (다크 테마)
 
   // 텍스트 색상 - 라이트/다크 테마 구분
   static const int textPrimaryLight = 0xFF212121; // 어두운 회색 (라이트 테마)
@@ -125,47 +127,48 @@ class AppColors {
   static const int textSecondaryLight = 0xFF757575; // 중간 회색 (라이트 테마)
   static const int textSecondaryDark = 0xFFBDBDBD; // 밝은 회색 (다크 테마)
 
-  // 상태별 색상 - Chad 테마에 맞게 조정
-  static const int successColor = 0xFFFFB000; // 금색 (성공)
-  static const int warningColor = 0xFFFF8C42; // 주황색 (경고)
-  static const int errorColor = 0xFFE53E3E; // 빨간색 (에러)
-  static const int infoColor = 0xFF4DABF7; // 밝은 파란색 (정보)
+  // 상태별 색상 - 자각몽 테마에 맞게 조정
+  static const int successColor = 0xFF7B68EE; // 진한 보라 (성공 - 자각몽 달성)
+  static const int warningColor = 0xFFFFD700; // 금빛 (경고 - 달/별빛)
+  static const int errorColor = 0xFFE76F51; // 부드러운 빨강 (에러)
+  static const int infoColor = 0xFF4A90E2; // 밝은 파랑 (정보 - 청명한 꿈)
 
-  // 차드 레벨별 색상 - 더 강렬하고 Chad다운 색상
-  static const int rookieColor = 0xFF4DABF7; // 파란색 (초보)
-  static const int risingColor = 0xFF51CF66; // 초록색 (상승)
-  static const int alphaColor = 0xFFFFB000; // 금색 (알파)
-  static const int gigaColor = 0xFFE53E3E; // 빨간색 (기가)
+  // Dream Spirit 레벨별 색상 - 꿈의 단계를 나타내는 색상
+  static const int rookieColor = 0xFF4A90E2; // 밝은 파랑 (초보 - 얕은 잠)
+  static const int risingColor = 0xFF7B68EE; // 진보라 (상승 - REM 수면)
+  static const int alphaColor = 0xFF9B7EDE; // 연보라 (알파 - 자각몽 시작)
+  static const int gigaColor = 0xFFFFD700; // 금빛 (기가 - 완전한 자각)
 
-  // 그라데이션 색상 - Chad 테마
-  static const List<int> chadGradient = [0xFF000000, 0xFF1A1A1A]; // 검정 그라데이션
-  static const List<int> fireGradient = [0xFFE53E3E, 0xFFFF6B35]; // 불타는 빨간색
-  static const List<int> goldGradient = [0xFFFFB000, 0xFFFFD700]; // 금색 그라데이션
-  static const List<int> successGradient = [0xFFFFB000, 0xFFFFD700]; // 성공 금색
+  // 그라데이션 색상 - 자각몽 밤하늘 테마
+  static const List<int> dreamGradient = [0xFF1E1E2E, 0xFF2D2D44]; // 밤하늘 그라디언트
+  static const List<int> lucidGradient = [0xFF7B68EE, 0xFF4A90E2]; // 보라→파랑 그라데이션 (자각몽)
+  static const List<int> nightGradient = [0xFF1E1E2E, 0xFF3D2B69]; // 밤하늘 → 진한 보라 (깊은 밤)
+  static const List<int> successGradient = [0xFF7B68EE, 0xFFFFD700]; // 성공: 보라→금빛
+  static const List<int> wbtbGradient = [0xFFFF6B6B, 0xFFFFB347]; // WBTB: 빨강→주황 (새벽)
 }
 
-// 차드 관련 상수
+// Dream Spirit 관련 상수 (내부적으로는 Chad 변수명 유지, MVP 이후 리팩토링 예정)
 class ChadConstants {
-  // 차드 진화 조건 (완료된 주차 기준)
+  // Dream Spirit 진화 조건 (완료된 일수 기준)
   static const Map<int, int> evolutionThresholds = {
-    0: 0, // 시작 - 수면모자차드
-    1: 1, // 1주차 완료 - 기본차드
-    2: 2, // 2주차 완료 - 커피차드
-    3: 3, // 3주차 완료 - 정면차드
-    4: 4, // 4주차 완료 - 썬글차드
-    5: 5, // 5주차 완료 - 눈빨차드
-    6: 6, // 6주차 완료 - 더블차드
+    0: 0, // 시작 - 꿈모자 스피릿
+    1: 5, // 5일 완료 - 기본 스피릿
+    2: 10, // 10일 완료 - 각성 스피릿
+    3: 15, // 15일 완료 - 명료 스피릿
+    4: 20, // 20일 완료 - 빛나는 스피릿
+    5: 25, // 25일 완료 - 자각 스피릿
+    6: 30, // 30일 완료 - 마스터 스피릿
   };
 
-  // 차드 타이틀 키들 (AppLocalizations에서 가져오기 위함)
+  // Dream Spirit 타이틀 키들 (AppLocalizations에서 가져오기 위함)
   static const List<String> chadTitleKeys = [
-    'chadTitleSleepy', // 수면모자차드
-    'chadTitleBasic', // 기본차드
-    'chadTitleCoffee', // 커피차드
-    'chadTitleFront', // 정면차드
-    'chadTitleCool', // 썬글차드
-    'chadTitleLaser', // 눈빨차드
-    'chadTitleDouble', // 더블차드
+    'chadTitleSleepy', // 꿈모자 스피릿
+    'chadTitleBasic', // 기본 스피릿
+    'chadTitleCoffee', // 각성 스피릿
+    'chadTitleFront', // 명료 스피릿
+    'chadTitleCool', // 빛나는 스피릿
+    'chadTitleLaser', // 자각 스피릿
+    'chadTitleDouble', // 마스터 스피릿
   ];
 
   // 특별 이벤트 메시지 키들 (AppLocalizations에서 가져오기 위함)

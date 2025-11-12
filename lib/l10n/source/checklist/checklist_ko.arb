@@ -1,0 +1,288 @@
+{
+  "@checklistAnalysisError": {
+    "description": "분석 실패 에러 메시지",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistAnalysisError": "분석 실패: {error}",
+  "@checklistAnalyzing": {
+    "description": "꿈 분석 중 메시지"
+  },
+  "checklistAnalyzing": "꿈을 분석하는 중...",
+  "@checklistCancel": {
+    "description": "취소 버튼"
+  },
+  "checklistCancel": "취소",
+  "@checklistCompletedTasks": {
+    "description": "완료된 태스크 레이블"
+  },
+  "checklistCompletedTasks": "완료된 태스크",
+  "@checklistCompletedTasksValue": {
+    "description": "완료된 태스크 수 표시",
+    "placeholders": {
+      "completed": {
+        "type": "Object"
+      },
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistCompletedTasksValue": "{completed}/{total}",
+  "@checklistCompleteMessage": {
+    "description": "체크리스트 완료 메시지"
+  },
+  "checklistCompleteMessage": "잘하셨어요! 오늘의 훈련을 완료했습니다!",
+  "@checklistCompleteRequired": {
+    "description": "필수 태스크 미완료 경고 메시지"
+  },
+  "checklistCompleteRequired": "모든 필수 태스크를 완료해주세요",
+  "@checklistCompleteRequiredFirst": {
+    "description": "필수 태스크 먼저 완료 경고"
+  },
+  "checklistCompleteRequiredFirst": "필수 태스크를 먼저 완료하세요",
+  "@checklistCompleteTraining": {
+    "description": "훈련 완료 버튼"
+  },
+  "checklistCompleteTraining": "훈련 완료",
+  "@checklistConfirm": {
+    "description": "확인 버튼"
+  },
+  "checklistConfirm": "확인",
+  "@checklistDayComplete": {
+    "description": "일차 완료 타이틀 with 일차 번호",
+    "placeholders": {
+      "day": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistDayComplete": "{day}일차 완료! 🎉",
+  "@checklistDayTitle": {
+    "description": "앱바 일차 타이틀",
+    "placeholders": {
+      "day": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistDayTitle": "{day}일차 훈련",
+  "@checklistDreamAnalysisAvailable": {
+    "description": "꿈 분석 가능 메시지"
+  },
+  "checklistDreamAnalysisAvailable": "오늘 무료 분석 1회 가능",
+  "@checklistDreamAnalysisPremiumUnlimited": {
+    "description": "프리미엄 무제한 분석 배지"
+  },
+  "checklistDreamAnalysisPremiumUnlimited": "프리미엄: 무제한",
+  "@checklistDreamAnalysisTitle": {
+    "description": "꿈 분석 섹션 타이틀"
+  },
+  "checklistDreamAnalysisTitle": "꿈 분석",
+  "@checklistDreamAnalysisWatchAd": {
+    "description": "광고 시청으로 분석 추가 메시지"
+  },
+  "checklistDreamAnalysisWatchAd": "광고 보고 분석 1회 더 받기",
+  "@checklistDreamInputHint": {
+    "description": "꿈 입력 필드 힌트"
+  },
+  "checklistDreamInputHint": "꿈을 자세히 설명해주세요...",
+  "@checklistEnterDream": {
+    "description": "꿈 입력 버튼"
+  },
+  "checklistEnterDream": "꿈 입력",
+  "@checklistExit": {
+    "description": "나가기 버튼"
+  },
+  "checklistExit": "나가기",
+  "@checklistExitMessage": {
+    "description": "나가기 확인 메시지"
+  },
+  "checklistExitMessage": "진행 상황이 저장되지 않습니다. 정말 나가시겠습니까?",
+  "@checklistExitTitle": {
+    "description": "나가기 확인 타이틀"
+  },
+  "checklistExitTitle": "훈련 종료?",
+  "@checklistFreeAnalysisAvailable": {
+    "description": "무료 분석 가능 횟수"
+  },
+  "checklistFreeAnalysisAvailable": "오늘 무료 분석 가능",
+  "@checklistFreeAnalysisStart": {
+    "description": "무료 분석 시작 버튼"
+  },
+  "checklistFreeAnalysisStart": "무료 분석 시작",
+  "@checklistLater": {
+    "description": "나중에 버튼"
+  },
+  "checklistLater": "나중에",
+  "@checklistPremiumAnalysisStart": {
+    "description": "프리미엄 분석 시작 버튼"
+  },
+  "checklistPremiumAnalysisStart": "꿈 분석 (프리미엄)",
+  "@checklistPremiumUnlimited": {
+    "description": "프리미엄 무제한 배지"
+  },
+  "checklistPremiumUnlimited": "프리미엄: 무제한",
+  "@checklistProgressPercent": {
+    "description": "진행률 퍼센트",
+    "placeholders": {
+      "percent": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistProgressPercent": "{percent}%",
+  "@checklistRequiredTasks": {
+    "description": "필수 태스크 레이블"
+  },
+  "checklistRequiredTasks": "필수 태스크",
+  "@checklistRequiredTasksValue": {
+    "description": "필수 태스크 완료 수",
+    "placeholders": {
+      "completed": {
+        "type": "Object"
+      },
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistRequiredTasksValue": "{completed}/{total} 완료",
+  "@checklistTaskGoal": {
+    "description": "태스크 목표와 횟수",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistTaskGoal": "목표: {count}회",
+  "@checklistTaskOptional": {
+    "description": "선택 태스크 배지"
+  },
+  "checklistTaskOptional": "선택",
+  "@checklistTaskRequired": {
+    "description": "필수 태스크 배지"
+  },
+  "checklistTaskRequired": "필수",
+  "@checklistTimeSpent": {
+    "description": "소요 시간 레이블"
+  },
+  "checklistTimeSpent": "소요 시간",
+  "@checklistTimeSpentValue": {
+    "description": "소요 시간 분 표시",
+    "placeholders": {
+      "minutes": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistTimeSpentValue": "{minutes}분",
+  "@checklistWatchAdAnalysis": {
+    "description": "광고 보고 분석 받기 버튼"
+  },
+  "checklistWatchAdAnalysis": "광고 보고 분석 받기",
+  "@checklistWatchAdForAnalysis": {
+    "description": "광고 보고 추가 분석 얻기"
+  },
+  "checklistWatchAdForAnalysis": "광고 보고 분석 1회 더 받기",
+  "@checklistWbtbBusy": {
+    "description": "WBTB 바쁨 상태"
+  },
+  "checklistWbtbBusy": "바쁜 날 - WBTB 건너뜀",
+  "@checklistWbtbCompleted": {
+    "description": "WBTB 완료 상태"
+  },
+  "checklistWbtbCompleted": "WBTB 완료",
+  "@checklistWbtbDayBadge": {
+    "description": "WBTB 날 배지"
+  },
+  "checklistWbtbDayBadge": "🌙 WBTB 날",
+  "@checklistWbtbRemainingSkips": {
+    "description": "WBTB 남은 건너뛰기 횟수",
+    "placeholders": {
+      "remaining": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistWbtbRemainingSkips": "이번 주 건너뛰기 {remaining}회 남음",
+  "@checklistWbtbSkipped": {
+    "description": "WBTB 건너뜀 상태"
+  },
+  "checklistWbtbSkipped": "WBTB 건너뜀",
+  "@checklistWbtbSkipWithAd": {
+    "description": "광고 보고 WBTB 건너뛰기"
+  },
+  "checklistWbtbSkipWithAd": "광고 보고 오늘 WBTB 건너뛰기",
+  "@dailyChecklistAppBar": {
+    "description": "일일 체크리스트 앱바 제목"
+  },
+  "dailyChecklistAppBar": "일일 체크리스트",
+  "@dailyChecklistComplete": {
+    "description": "일일 체크리스트 완료 상태"
+  },
+  "dailyChecklistComplete": "완료",
+  "@dailyChecklistPriority1": {
+    "description": "우선순위 1 작업 섹션 제목"
+  },
+  "dailyChecklistPriority1": "🔥 우선순위 1 - 필수",
+  "@dailyChecklistPriority2": {
+    "description": "우선순위 2 작업 섹션 제목"
+  },
+  "dailyChecklistPriority2": "💪 우선순위 2 - 중요",
+  "@dailyChecklistRegular": {
+    "description": "일반 작업 섹션 제목"
+  },
+  "dailyChecklistRegular": "📝 일반 연습",
+  "@dailyChecklistOptional": {
+    "description": "선택 작업 섹션 제목"
+  },
+  "dailyChecklistOptional": "⭐ 선택 - 보너스",
+  "@dailyChecklistCounterProgress": {
+    "description": "카운터 진행률 표시",
+    "placeholders": {
+      "current": {
+        "type": "Object"
+      },
+      "target": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyChecklistCounterProgress": "{current}/{target}",
+  "@dailyChecklistPracticeInterval": {
+    "description": "연습 간격 안내",
+    "placeholders": {
+      "minutes": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyChecklistPracticeInterval": "{minutes}분마다 연습하기",
+  "@dailyChecklistCompletionDialogTitle": {
+    "description": "완료 대화상자 제목과 아이콘",
+    "placeholders": {
+      "icon": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyChecklistCompletionDialogTitle": "{icon} 작업 완료!",
+  "@dailyChecklistCompletionDialogContent": {
+    "description": "완료 대화상자 내용",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyChecklistCompletionDialogContent": "잘했어! {name}을(를) 완료했다!",
+  "@dailyChecklistConfirmButton": {
+    "description": "대화상자 확인 버튼"
+  },
+  "dailyChecklistConfirmButton": "확인"
+}

@@ -58,6 +58,7 @@ class _GoalSetupWeightWidgetState extends State<GoalSetupWeightWidget> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
 
     return MultiProvider(
       providers: [
@@ -75,7 +76,7 @@ class _GoalSetupWeightWidgetState extends State<GoalSetupWeightWidget> {
               controller: _currentWeightController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: '현재 체중 (kg)',
+                labelText: l10n.goalSetupCurrentWeight,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -97,7 +98,7 @@ class _GoalSetupWeightWidgetState extends State<GoalSetupWeightWidget> {
               controller: _targetWeightController,
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
-                labelText: '목표 체중 (kg, 선택사항)',
+                labelText: l10n.goalSetupTargetWeight,
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
@@ -117,7 +118,7 @@ class _GoalSetupWeightWidgetState extends State<GoalSetupWeightWidget> {
           ],
         ),
         onNext: _currentWeightController.text.isNotEmpty ? _saveAndNext : null,
-        buttonText: '다음',
+        buttonText: l10n.goalSetupNextButton,
       ),
     );
   }
@@ -147,23 +148,25 @@ class _GoalSetupFitnessLevelWidgetState
     extends State<GoalSetupFitnessLevelWidget> {
   String? _selectedLevel;
 
-  final List<Map<String, String>> _levels = [
-    {
-      'key': 'beginner',
-      'title': '초보자',
-      'description': '운동을 처음 시작하거나 오랜만에 하는 경우',
-    },
-    {
-      'key': 'intermediate',
-      'title': '중급자',
-      'description': '꾸준히 운동을 해왔고 기본 동작에 익숙한 경우',
-    },
-    {
-      'key': 'advanced',
-      'title': '고급자',
-      'description': '강도 높은 운동을 원하고 다양한 변형을 시도하고 싶은 경우',
-    },
-  ];
+  List<Map<String, String>> _getLevels(AppLocalizations l10n) {
+    return [
+      {
+        'key': 'beginner',
+        'title': l10n.goalSetupLevelBeginnerTitle,
+        'description': l10n.goalSetupLevelBeginnerDesc,
+      },
+      {
+        'key': 'intermediate',
+        'title': l10n.goalSetupLevelIntermediateTitle,
+        'description': l10n.goalSetupLevelIntermediateDesc,
+      },
+      {
+        'key': 'advanced',
+        'title': l10n.goalSetupLevelAdvancedTitle,
+        'description': l10n.goalSetupLevelAdvancedDesc,
+      },
+    ];
+  }
 
   Future<void> _saveAndNext() async {
     if (_selectedLevel != null) {
@@ -175,6 +178,9 @@ class _GoalSetupFitnessLevelWidgetState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final levels = _getLevels(l10n);
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ChadOnboardingService>(
@@ -186,7 +192,7 @@ class _GoalSetupFitnessLevelWidgetState
         title: widget.step.title,
         description: widget.step.description,
         customContent: Column(
-          children: _levels.map((level) {
+          children: levels.map((level) {
             final isSelected = _selectedLevel == level['key'];
             return Container(
               margin: const EdgeInsets.only(bottom: 12),
@@ -231,7 +237,7 @@ class _GoalSetupFitnessLevelWidgetState
           }).toList(),
         ),
         onNext: _selectedLevel != null ? _saveAndNext : null,
-        buttonText: '다음',
+        buttonText: l10n.goalSetupNextButton,
       ),
     );
   }
@@ -259,32 +265,34 @@ class GoalSetupGoalWidget extends StatefulWidget {
 class _GoalSetupGoalWidgetState extends State<GoalSetupGoalWidget> {
   String? _selectedGoal;
 
-  final List<Map<String, String>> _goals = [
-    {
-      'key': 'weightLoss',
-      'title': '체중 감량',
-      'description': '체지방을 줄이고 날씬한 몸매 만들기',
-      'emoji': '🔥',
-    },
-    {
-      'key': 'muscleGain',
-      'title': '근육 증가',
-      'description': '탄탄한 근육과 매력적인 상체 라인 만들기',
-      'emoji': '💪',
-    },
-    {
-      'key': 'endurance',
-      'title': '체력 향상',
-      'description': '지구력과 전반적인 체력 개선하기',
-      'emoji': '⚡',
-    },
-    {
-      'key': 'general',
-      'title': '전반적인 건강',
-      'description': '건강한 생활습관과 균형잡힌 몸만들기',
-      'emoji': '🌟',
-    },
-  ];
+  List<Map<String, String>> _getGoals(AppLocalizations l10n) {
+    return [
+      {
+        'key': 'weightLoss',
+        'title': l10n.goalSetupGoalWeightLossTitle,
+        'description': l10n.goalSetupGoalWeightLossDesc,
+        'emoji': '🔥',
+      },
+      {
+        'key': 'muscleGain',
+        'title': l10n.goalSetupGoalMuscleGainTitle,
+        'description': l10n.goalSetupGoalMuscleGainDesc,
+        'emoji': '💪',
+      },
+      {
+        'key': 'endurance',
+        'title': l10n.goalSetupGoalStaminaTitle,
+        'description': l10n.goalSetupGoalStaminaDesc,
+        'emoji': '⚡',
+      },
+      {
+        'key': 'general',
+        'title': l10n.goalSetupGoalHealthTitle,
+        'description': l10n.goalSetupGoalHealthDesc,
+        'emoji': '🌟',
+      },
+    ];
+  }
 
   Future<void> _saveAndNext() async {
     if (_selectedGoal != null) {
@@ -296,6 +304,9 @@ class _GoalSetupGoalWidgetState extends State<GoalSetupGoalWidget> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final goals = _getGoals(l10n);
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ChadOnboardingService>(
@@ -307,7 +318,7 @@ class _GoalSetupGoalWidgetState extends State<GoalSetupGoalWidget> {
         title: widget.step.title,
         description: widget.step.description,
         customContent: Column(
-          children: _goals.map((goal) {
+          children: goals.map((goal) {
             final isSelected = _selectedGoal == goal['key'];
             return Container(
               margin: const EdgeInsets.only(bottom: 12),
@@ -359,7 +370,7 @@ class _GoalSetupGoalWidgetState extends State<GoalSetupGoalWidget> {
           }).toList(),
         ),
         onNext: _selectedGoal != null ? _saveAndNext : null,
-        buttonText: '다음',
+        buttonText: l10n.goalSetupNextButton,
       ),
     );
   }
@@ -389,15 +400,17 @@ class _GoalSetupWorkoutTimeWidgetState
     extends State<GoalSetupWorkoutTimeWidget> {
   final List<String> _selectedTimes = [];
 
-  final List<String> _times = [
-    '새벽 (5-7시)',
-    '아침 (7-9시)',
-    '오전 (9-12시)',
-    '점심 (12-14시)',
-    '오후 (14-17시)',
-    '저녁 (17-20시)',
-    '밤 (20-22시)',
-  ];
+  List<String> _getTimes(AppLocalizations l10n) {
+    return [
+      l10n.goalSetupTimeDawn,
+      l10n.goalSetupTimeMorning,
+      l10n.goalSetupTimeLateMorning,
+      l10n.goalSetupTimeLunch,
+      l10n.goalSetupTimeAfternoon,
+      l10n.goalSetupTimeEvening,
+      l10n.goalSetupTimeNight,
+    ];
+  }
 
   Future<void> _saveAndNext() async {
     if (_selectedTimes.isNotEmpty) {
@@ -409,6 +422,9 @@ class _GoalSetupWorkoutTimeWidgetState
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    final times = _getTimes(l10n);
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ChadOnboardingService>(
@@ -420,7 +436,7 @@ class _GoalSetupWorkoutTimeWidgetState
         title: widget.step.title,
         description: widget.step.description,
         customContent: Column(
-          children: _times.map((time) {
+          children: times.map((time) {
             final isSelected = _selectedTimes.contains(time);
             return Container(
               margin: const EdgeInsets.only(bottom: 8),
@@ -461,7 +477,7 @@ class _GoalSetupWorkoutTimeWidgetState
           }).toList(),
         ),
         onNext: _selectedTimes.isNotEmpty ? _saveAndNext : null,
-        buttonText: '다음',
+        buttonText: l10n.goalSetupNextButton,
       ),
     );
   }
@@ -520,10 +536,10 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
               child: ListTile(
                 title: Row(
                   children: [
-                    Text('🏆', style: TextStyle(fontSize: 20)),
-                    SizedBox(width: 8),
+                    const Text('🏆', style: TextStyle(fontSize: 20)),
+                    const SizedBox(width: 8),
                     Text(AppLocalizations.of(context).competitionTitle,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
                 subtitle: Text(AppLocalizations.of(context).competitionGoalDescription),
@@ -557,10 +573,10 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
               child: ListTile(
                 title: Row(
                   children: [
-                    Text('📈', style: TextStyle(fontSize: 20)),
-                    SizedBox(width: 8),
+                    const Text('📈', style: TextStyle(fontSize: 20)),
+                    const SizedBox(width: 8),
                     Text(AppLocalizations.of(context).personalRecordTitle,
-                        style: TextStyle(fontWeight: FontWeight.bold)),
+                        style: const TextStyle(fontWeight: FontWeight.bold)),
                   ],
                 ),
                 subtitle: Text(AppLocalizations.of(context).personalRecordGoalDescription),
@@ -588,7 +604,7 @@ class _GoalSetupMotivationWidgetState extends State<GoalSetupMotivationWidget> {
           ],
         ),
         onNext: _likesCompetition != null ? _saveAndNext : null,
-        buttonText: '다음',
+        buttonText: AppLocalizations.of(context).goalSetupNextButton,
       ),
     );
   }
@@ -611,6 +627,8 @@ class GoalSetupCompleteWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ChadOnboardingService>(
@@ -630,19 +648,19 @@ class GoalSetupCompleteWidget extends StatelessWidget {
               color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
             ),
           ),
-          child: const Column(
+          child: Column(
             children: [
               Text(
-                '🎉 목표 설정 완료!',
-                style: TextStyle(
+                l10n.goalSetupCompleteTitle,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Color(AppColors.primaryColor),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
-                '이제 당신만의 맞춤형 Mission: 100이 시작됩니다.\n런칭 이벤트로 1개월 무료 체험해보세요!',
+                l10n.goalSetupWelcomeMessage,
                 textAlign: TextAlign.center,
               ),
             ],
@@ -654,7 +672,7 @@ class GoalSetupCompleteWidget extends StatelessWidget {
           await chadService.applyPersonalizationImmediately();
           onNext();
         },
-        buttonText: '시작하기',
+        buttonText: l10n.goalSetupStartJourney,
       ),
     );
   }

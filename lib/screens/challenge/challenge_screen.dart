@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mission100/generated/l10n/app_localizations.dart';
+import 'package:lucid_dream_100/generated/l10n/app_localizations.dart';
 import '../../models/challenge.dart';
 import '../../models/user_profile.dart';
 import '../../services/progress/challenge_service.dart';

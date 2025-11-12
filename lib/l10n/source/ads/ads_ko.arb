@@ -1,0 +1,196 @@
+{
+  "@evolutionBoostApplied": {
+    "description": "가속 적용 메시지 (일수 포함)",
+    "placeholders": {
+      "days": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostApplied": "가속 적용: {days}일",
+  "@evolutionBoostComingSoon": {
+    "description": "진화 가속 기능 곧 사용 가능 메시지"
+  },
+  "evolutionBoostComingSoon": "곧 사용 가능",
+  "@evolutionBoostCooldownDays": {
+    "description": "다음 진화 가속까지 일수 표시",
+    "placeholders": {
+      "days": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostCooldownDays": "{days}일 후 사용 가능",
+  "@evolutionBoostCooldownHours": {
+    "description": "다음 진화 가속까지 시간 표시",
+    "placeholders": {
+      "hours": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostCooldownHours": "{hours}시간 후 사용 가능",
+  "@evolutionBoostDaysLeft": {
+    "description": "다음 진화까지 남은 일수",
+    "placeholders": {
+      "days": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostDaysLeft": "{days}일 남음",
+  "@evolutionBoostDescription": {
+    "description": "진화 가속 기능 설명"
+  },
+  "evolutionBoostDescription": "광고로 진화 가속",
+  "@evolutionBoostMaxLevel": {
+    "description": "이미 최종 진화 상태일 때 메시지"
+  },
+  "evolutionBoostMaxLevel": "이미 최종 진화입니다",
+  "@evolutionBoostNextEvolution": {
+    "description": "다음 진화 단계 레이블"
+  },
+  "evolutionBoostNextEvolution": "다음 진화",
+  "@evolutionBoostRemaining": {
+    "description": "남은 가속 횟수 표시",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostRemaining": "남은 횟수: {count}/3",
+  "@evolutionBoostSuccess": {
+    "description": "진화 가속 성공 메시지"
+  },
+  "evolutionBoostSuccess": "진화가 가속되었습니다!",
+  "@evolutionBoostTitle": {
+    "description": "진화 가속 기능 제목"
+  },
+  "evolutionBoostTitle": "진화 가속권",
+  "@evolutionBoostWatchAd": {
+    "description": "광고 보고 진화 가속 버튼 텍스트"
+  },
+  "evolutionBoostWatchAd": "광고 보고 가속하기",
+  "@rewardedAdWatchAndGet": {
+    "description": "광고 보고 보상 받기 버튼 텍스트",
+    "placeholders": {
+      "reward": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardedAdWatchAndGet": "광고 보고 {reward} 받기",
+  "@rewardedAdRemainingUses": {
+    "description": "리워드 광고 남은 사용 횟수",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "rewardedAdRemainingUses": "남은 횟수: {remaining}/{max}",
+  "@rewardedAdWatchButton": {
+    "description": "광고 보기 짧은 버튼 텍스트"
+  },
+  "rewardedAdWatchButton": "광고 보고 받기",
+  "@rewardedAdComingSoon": {
+    "description": "광고가 곧 사용 가능할 때 메시지"
+  },
+  "rewardedAdComingSoon": "곧 사용 가능",
+  "@rewardedAdRewardGranted": {
+    "description": "보상 지급 시 스낵바 메시지",
+    "placeholders": {
+      "icon": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardedAdRewardGranted": "{icon} {title} 획득!",
+  "@rewardedAdAvailableInHours": {
+    "description": "다음 사용까지 시간과 분 표시",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "rewardedAdAvailableInHours": "{hours}시간 {minutes}분 후 사용 가능",
+  "@rewardedAdAvailableInMinutes": {
+    "description": "다음 사용까지 분 표시",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "rewardedAdAvailableInMinutes": "{minutes}분 후 사용 가능",
+  "@tokenBalanceAdComingSoon": {
+    "description": "토큰 광고 기능 준비 중 메시지"
+  },
+  "tokenBalanceAdComingSoon": "광고 기능 준비 중",
+  "@tokenBalanceClaimReward": {
+    "description": "일일 토큰 보상 받기 버튼 텍스트",
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "tokenBalanceClaimReward": "보상 받기 (+{amount} 토큰)",
+  "@tokenBalanceDailyReward": {
+    "description": "일일 토큰 보상 섹션 레이블"
+  },
+  "tokenBalanceDailyReward": "일일 보상",
+  "@tokenBalanceNextReward": {
+    "description": "다음 보상 카운트다운 레이블"
+  },
+  "tokenBalanceNextReward": "다음 보상",
+  "@tokenBalancePremium": {
+    "description": "프리미엄 상태 배지 레이블"
+  },
+  "tokenBalancePremium": "프리미엄",
+  "@tokenBalanceRewardFailed": {
+    "description": "보상 받기 실패 에러 메시지",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "tokenBalanceRewardFailed": "보상 받기 실패: {error}",
+  "@tokenBalanceRewardReceived": {
+    "description": "보상 받기 성공 메시지"
+  },
+  "tokenBalanceRewardReceived": "보상을 받았습니다!",
+  "@tokenBalanceRewardAmount": {
+    "description": "보상 토큰 양 표시",
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "tokenBalanceRewardAmount": "+{amount} 토큰",
+  "@tokenBalanceTitle": {
+    "description": "토큰 잔액 섹션 제목"
+  },
+  "tokenBalanceTitle": "토큰 잔액",
+  "@tokenBalanceUsageInfo": {
+    "description": "대화당 토큰 사용량 안내 메시지"
+  },
+  "tokenBalanceUsageInfo": "Lumi와 대화 한 번당 토큰 1개 소모",
+  "@tokenBalanceWatchAd": {
+    "description": "광고 보고 토큰 받기 버튼 텍스트"
+  },
+  "tokenBalanceWatchAd": "광고 보고 토큰 받기"
+}

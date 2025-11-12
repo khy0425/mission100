@@ -7,7 +7,7 @@ import '../../../services/achievements/achievement_service.dart';
 import '../../../services/chad/chad_evolution_service.dart';
 import '../../../services/notification/notification_service.dart';
 import '../../../services/progress/challenge_service.dart';
-import '../../../services/workout/pushup_mastery_service.dart';
+// import '../../../services/workout/pushup_mastery_service.dart'; // Archived - not used in lucid dream app
 import '../../../services/data/cloud_sync_service.dart';
 import '../../../models/workout_history.dart';
 import '../../../models/achievement.dart';
@@ -408,14 +408,14 @@ class WorkoutCompletionHandler {
     try {
       debugPrint('💪 푸시업 마스터 진행률 업데이트 시작');
 
-      // 푸시업 운동인지 확인 (제목에 "pushup" 또는 "푸시업" 포함)
-      final workoutTitle = history.workoutTitle.toLowerCase();
-      if (workoutTitle.contains('pushup') || workoutTitle.contains('푸시업')) {
-        await PushupMasteryService.updateTotalPushupReps(history.totalReps);
-        debugPrint('✅ 푸시업 마스터 진행률 업데이트 완료: +${history.totalReps}회');
-      } else {
-        debugPrint('ℹ️ 푸시업 운동이 아니므로 마스터 진행률 업데이트 안함');
-      }
+      // Legacy pushup tracking - not used in lucid dream app
+      // final workoutTitle = history.workoutTitle.toLowerCase();
+      // if (workoutTitle.contains('pushup') || workoutTitle.contains('푸시업')) {
+      //   await PushupMasteryService.updateTotalPushupReps(history.totalReps);
+      //   debugPrint('✅ 푸시업 마스터 진행률 업데이트 완료: +${history.totalReps}회');
+      // } else {
+      //   debugPrint('ℹ️ 푸시업 운동이 아니므로 마스터 진행률 업데이트 안함');
+      // }
     } catch (e) {
       debugPrint('❌ 푸시업 마스터 업데이트 실패: $e');
     }

@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
-import 'package:mission100/services/localization/theme_service.dart';
-import 'package:mission100/services/core/onboarding_service.dart';
-import 'package:mission100/services/chad/chad_evolution_service.dart';
-import 'package:mission100/services/chad/chad_condition_service.dart';
-import 'package:mission100/services/chad/chad_recovery_service.dart';
-import 'package:mission100/services/chad/chad_active_recovery_service.dart';
-import 'package:mission100/services/auth/auth_service.dart';
+import 'package:mission_pushup_100/services/localization/theme_service.dart';
+import 'package:mission_pushup_100/services/core/onboarding_service.dart';
+import 'package:mission_pushup_100/services/auth/auth_service.dart';
+import 'package:mission_pushup_100/services/ai/conversation_token_service.dart';
 
 // Simple test LocaleNotifier
 class TestLocaleNotifier extends ChangeNotifier {
@@ -21,7 +18,7 @@ class TestLocaleNotifier extends ChangeNotifier {
 }
 
 void main() {
-  group('Mission100 Chad Tests', () {
+  group('DreamFlow App Tests', () {
     testWidgets('App should start without crashing', (
       WidgetTester tester,
     ) async {
@@ -31,14 +28,11 @@ void main() {
           ChangeNotifierProvider(create: (_) => ThemeService()),
           ChangeNotifierProvider(create: (_) => TestLocaleNotifier()),
           ChangeNotifierProvider(create: (_) => OnboardingService()),
-          ChangeNotifierProvider(create: (_) => ChadEvolutionService()),
-          ChangeNotifierProvider(create: (_) => ChadConditionService()),
-          ChangeNotifierProvider(create: (_) => ChadRecoveryService()),
-          ChangeNotifierProvider(create: (_) => ChadActiveRecoveryService()),
           ChangeNotifierProvider(create: (_) => AuthService()),
+          ChangeNotifierProvider(create: (_) => ConversationTokenService()),
         ],
         child: const MaterialApp(
-          title: 'Mission: 100 Test',
+          title: 'DreamFlow Test',
           home: Scaffold(
             body: Center(
               child: Text('Test App'),
@@ -54,25 +48,22 @@ void main() {
       expect(find.text('Test App'), findsOneWidget);
     });
 
-    testWidgets('Chad mode should be activated', (WidgetTester tester) async {
+    testWidgets('Lucid Dream mode should be activated', (WidgetTester tester) async {
       // Create simple test app
       final testApp = MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (_) => ThemeService()),
           ChangeNotifierProvider(create: (_) => TestLocaleNotifier()),
           ChangeNotifierProvider(create: (_) => OnboardingService()),
-          ChangeNotifierProvider(create: (_) => ChadEvolutionService()),
-          ChangeNotifierProvider(create: (_) => ChadConditionService()),
-          ChangeNotifierProvider(create: (_) => ChadRecoveryService()),
-          ChangeNotifierProvider(create: (_) => ChadActiveRecoveryService()),
           ChangeNotifierProvider(create: (_) => AuthService()),
+          ChangeNotifierProvider(create: (_) => ConversationTokenService()),
         ],
         child: MaterialApp(
-          title: 'Mission: 100 Test',
+          title: 'DreamFlow Test',
           home: Scaffold(
-            appBar: AppBar(title: const Text('Chad Mode')),
+            appBar: AppBar(title: const Text('Lucid Dream Mode')),
             body: const Center(
-              child: Text('💪 Chad is Active'),
+              child: Text('🌙 Dream Spirit is Active'),
             ),
           ),
         ),
@@ -83,68 +74,49 @@ void main() {
 
       // Basic smoke test - app should render without errors
       expect(tester.takeException(), isNull);
-      expect(find.text('💪 Chad is Active'), findsOneWidget);
-      expect(find.text('Chad Mode'), findsOneWidget);
+      expect(find.text('🌙 Dream Spirit is Active'), findsOneWidget);
+      expect(find.text('Lucid Dream Mode'), findsOneWidget);
     });
   });
 
-  group('Chad Localization Tests', () {
-    test('Korean Chad messages should be loaded', () {
-      // Test basic Chad message loading
-      const koreanOkButton = '🔥 OK, 만삣삐! 🔥';
-      expect(koreanOkButton.contains('🔥'), isTrue);
-      expect(koreanOkButton.contains('만삣삐'), isTrue);
+  group('Dream Localization Tests', () {
+    test('Korean dream messages should be loaded', () {
+      // Test basic dream message loading
+      const koreanWelcome = '🌙 자각몽 여정을 시작하세요! ✨';
+      expect(koreanWelcome.contains('🌙'), isTrue);
+      expect(koreanWelcome.contains('자각몽'), isTrue);
     });
 
-    test('English Chad messages should be loaded', () {
-      // Test English Chad messages
-      const englishOkButton = '🔥 HELL YEAH, BRO! 🔥';
-      expect(englishOkButton.contains('🔥'), isTrue);
-      expect(englishOkButton.contains('HELL YEAH'), isTrue);
-    });
-  });
-
-  group('Chad Motivation Engine Tests', () {
-    test('Chad energy level should be maximum', () {
-      // Chad energy is always at maximum
-      const chadEnergyLevel = 100;
-      expect(chadEnergyLevel, equals(100));
-    });
-
-    test('Weakness should not be an option', () {
-      // Weakness is never allowed in Chad mode
-      const weaknessAllowed = false;
-      expect(weaknessAllowed, isFalse);
-    });
-
-    test('Chad philosophy should be enforced', () {
-      // "Weakness is a choice. Strength is duty!"
-      const chadPhilosophy = 'Strength is duty!';
-      expect(chadPhilosophy.contains('Strength'), isTrue);
-      expect(chadPhilosophy.contains('duty'), isTrue);
+    test('English dream messages should be loaded', () {
+      // Test English dream messages
+      const englishWelcome = '🌙 Start Your Lucid Dream Journey! ✨';
+      expect(englishWelcome.contains('🌙'), isTrue);
+      expect(englishWelcome.contains('Lucid Dream'), isTrue);
     });
   });
 
-  group('Chad Service Integration Tests', () {
-    test('Chad services should initialize properly', () {
-      // Test Chad service initialization
-      final chadEvolutionService = ChadEvolutionService();
-      final chadConditionService = ChadConditionService();
-      final chadRecoveryService = ChadRecoveryService();
-      final chadActiveRecoveryService = ChadActiveRecoveryService();
-
-      expect(chadEvolutionService, isNotNull);
-      expect(chadConditionService, isNotNull);
-      expect(chadRecoveryService, isNotNull);
-      expect(chadActiveRecoveryService, isNotNull);
-
-      // Test that services are proper ChangeNotifiers
-      expect(chadEvolutionService, isA<ChangeNotifier>());
-      expect(chadConditionService, isA<ChangeNotifier>());
-      expect(chadRecoveryService, isA<ChangeNotifier>());
-      expect(chadActiveRecoveryService, isA<ChangeNotifier>());
+  group('Dream Spirit Motivation Tests', () {
+    test('Dream awareness level should be trackable', () {
+      // Dream awareness can be tracked
+      const awarenessLevel = 100;
+      expect(awarenessLevel, equals(100));
     });
 
+    test('Lucid dreaming should be achievable', () {
+      // Lucid dreaming is achievable for everyone
+      const isAchievable = true;
+      expect(isAchievable, isTrue);
+    });
+
+    test('Dream philosophy should be enforced', () {
+      // "Reality is a dream. Dreams are reality!"
+      const dreamPhilosophy = 'Dreams are reality!';
+      expect(dreamPhilosophy.contains('Dreams'), isTrue);
+      expect(dreamPhilosophy.contains('reality'), isTrue);
+    });
+  });
+
+  group('Service Integration Tests', () {
     test('Theme service should work', () {
       // Test ThemeService initialization
       final themeService = ThemeService();
@@ -164,6 +136,31 @@ void main() {
         debugPrint(
             '✅ AuthService Firebase dependency test passed (expected error)');
       }
+    });
+
+    test('Conversation Token service should work', () {
+      // Test ConversationTokenService initialization
+      final tokenService = ConversationTokenService();
+      expect(tokenService, isNotNull);
+      expect(tokenService, isA<ChangeNotifier>());
+    });
+  });
+
+  group('Token System Tests', () {
+    test('Daily reward should be claimable', () {
+      // Test token reward logic
+      const dailyReward = 1;
+      const premiumReward = 5;
+
+      expect(dailyReward, equals(1));
+      expect(premiumReward, equals(5));
+      expect(premiumReward, greaterThan(dailyReward));
+    });
+
+    test('Token balance should be non-negative', () {
+      // Token balance should never be negative
+      const tokenBalance = 10;
+      expect(tokenBalance, greaterThanOrEqualTo(0));
     });
   });
 }

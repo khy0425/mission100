@@ -9,10 +9,10 @@
     "description": "업적 달성 축하 다이얼로그 메시지"
   },
   "@achievementCenturion": {
-    "description": "100회 업적 제목"
+    "description": "100일 훈련 업적 제목"
   },
   "@achievementCenturionDesc": {
-    "description": "100회 업적 설명"
+    "description": "100일 훈련 업적 설명"
   },
   "@achievementChallenge100CumulativeDesc": {
     "description": "100개 누적 챌린지 완료 업적 설명"
@@ -69,31 +69,31 @@
     "description": "챌린지 마스터 업적 제목"
   },
   "@achievementCompletionRate80Desc": {
-    "description": "완료율 80% 업적 설명"
+    "description": "달성률 80% 업적 설명"
   },
   "@achievementCompletionRate80Motivation": {
-    "description": "완료율 80% 업적 동기부여"
+    "description": "달성률 80% 업적 동기부여"
   },
   "@achievementCompletionRate80Title": {
-    "description": "완료율 80% 업적 제목"
+    "description": "달성률 80% 업적 제목"
   },
   "@achievementCompletionRate90Desc": {
-    "description": "완료율 90% 업적 설명"
+    "description": "달성률 90% 업적 설명"
   },
   "@achievementCompletionRate90Motivation": {
-    "description": "완료율 90% 업적 동기부여"
+    "description": "달성률 90% 업적 동기부여"
   },
   "@achievementCompletionRate90Title": {
-    "description": "완료율 90% 업적 제목"
+    "description": "달성률 90% 업적 제목"
   },
   "@achievementCompletionRate95Desc": {
-    "description": "완료율 95% 업적 설명"
+    "description": "달성률 95% 업적 설명"
   },
   "@achievementCompletionRate95Motivation": {
-    "description": "완료율 95% 업적 동기부여"
+    "description": "달성률 95% 업적 동기부여"
   },
   "@achievementCompletionRate95Title": {
-    "description": "완료율 95% 업적 제목"
+    "description": "달성률 95% 업적 제목"
   },
   "@achievementConsistency": {
     "description": "30일 연속 업적 제목"
@@ -108,16 +108,16 @@
     "description": "100일 연속 업적 설명"
   },
   "@achievementEarlyBird": {
-    "description": "아침 운동 업적 제목"
+    "description": "아침 자각몽 훈련 업적 제목"
   },
   "@achievementEarlyBirdDesc": {
-    "description": "아침 운동 업적 설명"
+    "description": "아침 자각몽 훈련 업적 설명"
   },
   "@achievementEndurance": {
-    "description": "긴 운동 업적 제목"
+    "description": "긴 자각몽 훈련 업적 제목"
   },
   "@achievementEnduranceDesc": {
-    "description": "긴 운동 업적 설명"
+    "description": "긴 자각몽 훈련 업적 설명"
   },
   "@achievementFirstJourney": {
     "description": "첫 번째 업적 제목"
@@ -138,22 +138,22 @@
     "description": "어려운 난이도 업적 설명"
   },
   "@achievementLegend": {
-    "description": "10000회 업적 제목"
+    "description": "10000일 훈련 업적 제목"
   },
   "@achievementLegendDesc": {
-    "description": "10000회 업적 설명"
+    "description": "10000일 훈련 업적 설명"
   },
   "@achievementMarathoner": {
-    "description": "5000회 업적 제목"
+    "description": "5000일 훈련 업적 제목"
   },
   "@achievementMarathonerDesc": {
-    "description": "5000회 업적 설명"
+    "description": "5000일 훈련 업적 설명"
   },
   "@achievementNightOwl": {
-    "description": "밤 운동 업적 제목"
+    "description": "밤 자각몽 훈련 업적 제목"
   },
   "@achievementNightOwlDesc": {
-    "description": "밤 운동 업적 설명"
+    "description": "밤 자각몽 훈련 업적 설명"
   },
   "@achievementNotificationChannelDescription": {
     "description": "업적 알림 채널 설명"
@@ -171,10 +171,10 @@
     "description": "업적 알림 설명"
   },
   "@achievementOverachiever": {
-    "description": "목표 초과 5회 업적 제목"
+    "description": "목표 초과 5일 훈련 업적 제목"
   },
   "@achievementOverachieverDesc": {
-    "description": "목표 초과 5회 업적 설명"
+    "description": "목표 초과 5일 훈련 업적 설명"
   },
   "@achievementPerfectSet": {
     "description": "완벽한 세트 업적 제목"
@@ -189,10 +189,10 @@
     "description": "완벽한 세트 10개 업적 설명"
   },
   "@achievementPushupMaster": {
-    "description": "1000회 업적 제목"
+    "description": "1000일 훈련 업적 제목"
   },
   "@achievementPushupMasterDesc": {
-    "description": "1000회 업적 설명"
+    "description": "1000일 훈련 업적 설명"
   },
   "@achievementRarityCommon": {
     "description": "일반 등급"
@@ -261,22 +261,22 @@
     "description": "7일 연속 업적 설명"
   },
   "@achievementWorkoutTime300Desc": {
-    "description": "5시간 운동 업적 설명"
+    "description": "5시간 자각몽 훈련 업적 설명"
   },
   "@achievementWorkoutTime300Motivation": {
-    "description": "5시간 운동 업적 동기부여"
+    "description": "5시간 자각몽 훈련 업적 동기부여"
   },
   "@achievementWorkoutTime300Title": {
-    "description": "5시간 운동 업적 제목"
+    "description": "5시간 자각몽 훈련 업적 제목"
   },
   "@achievementWorkoutTime60Desc": {
-    "description": "1시간 운동 업적 설명"
+    "description": "1시간 자각몽 훈련 업적 설명"
   },
   "@achievementWorkoutTime60Motivation": {
-    "description": "1시간 운동 업적 동기부여"
+    "description": "1시간 자각몽 훈련 업적 동기부여"
   },
   "@achievementWorkoutTime60Title": {
-    "description": "1시간 운동 업적 제목"
+    "description": "1시간 자각몽 훈련 업적 제목"
   },
   "@achievements": {
     "description": "업적 탭"
@@ -358,109 +358,109 @@
       }
     }
   },
-  "achievementAllRounderDesc": "모든 푸시업 타입을 시도했다",
-  "achievementAllRounderMotivation": "모든 타입 마스터! 올라운더 차드! 🌈",
+  "achievementAllRounderDesc": "모든 자각몽 체크리스트 타입을 시도했다",
+  "achievementAllRounderMotivation": "모든 타입 마스터! 올라운더 드림 스피릿! 🌈",
   "achievementAllRounderTitle": "올라운더",
   "achievementBeastMode": "야수 모드",
   "achievementBeastModeDesc": "목표를 150% 초과 달성하다",
   "achievementCelebrationMessage": "나만의 힘을 느꼈다! 💪",
   "achievementCenturion": "센츄리온",
-  "achievementCenturionDesc": "총 100회의 푸쉬업을 달성하다",
-  "achievementChallenge100CumulativeDesc": "100개 누적 푸쉬업 챌린지를 완료했다",
+  "achievementCenturionDesc": "총 100일 자각몽 연습을 달성하다",
+  "achievementChallenge100CumulativeDesc": "100일 누적 자각몽 챌린지를 완료했다",
   "achievementChallenge100CumulativeMotivation": "작은 노력들이 큰 성과를 만듭니다!",
-  "achievementChallenge100CumulativeTitle": "100개 누적 챌린지 완료",
-  "achievementChallenge14DaysDesc": "14일 연속 운동 챌린지를 완료했다",
+  "achievementChallenge100CumulativeTitle": "100일 누적 챌린지 완료",
+  "achievementChallenge14DaysDesc": "14일 연속 자각몽 연습 챌린지를 완료했다",
   "achievementChallenge14DaysMotivation": "불굴의 의지! 대단하다! 💪",
   "achievementChallenge14DaysTitle": "14일 연속 챌린지 완료",
-  "achievementChallenge200CumulativeDesc": "200개 누적 푸쉬업 챌린지를 완료했다",
+  "achievementChallenge200CumulativeDesc": "200일 누적 자각몽 챌린지를 완료했다",
   "achievementChallenge200CumulativeMotivation": "진정한 챔피언의 모습이다!",
-  "achievementChallenge200CumulativeTitle": "200개 누적 챌린지 완료",
-  "achievementChallenge50SingleDesc": "한 번에 50개 푸쉬업 챌린지를 완료했다",
+  "achievementChallenge200CumulativeTitle": "200일 누적 챌린지 완료",
+  "achievementChallenge50SingleDesc": "한 번에 50개 자각몽 기법 챌린지를 완료했다",
   "achievementChallenge50SingleMotivation": "한계 돌파! 미쳤다! 🔥",
-  "achievementChallenge50SingleTitle": "50개 한번에 챌린지 완료",
-  "achievementChallenge7DaysDesc": "7일 연속 운동 챌린지를 완료했다",
+  "achievementChallenge50SingleTitle": "50개 기법 한번에 챌린지 완료",
+  "achievementChallenge7DaysDesc": "7일 연속 자각몽 연습 챌린지를 완료했다",
   "achievementChallenge7DaysMotivation": "꾸준함이 최고의 무기이다!",
   "achievementChallenge7DaysTitle": "7일 연속 챌린지 완료",
   "achievementChallengeMasterDesc": "모든 챌린지를 완료했다",
   "achievementChallengeMasterMotivation": "당신은 진정한 챌린지 마스터이다!",
   "achievementChallengeMasterTitle": "챌린지 마스터",
-  "achievementComebackKidDesc": "7일 이상 쉰 후 다시 운동을 시작했다",
-  "achievementComebackKidMotivation": "포기하지 않는 마음! 컴백의 차드! 🔄",
+  "achievementComebackKidDesc": "7일 이상 쉰 후 다시 꿈 연습을 시작했다",
+  "achievementComebackKidMotivation": "포기하지 않는 마음! 컴백의 드림 스피릿! 🔄",
   "achievementComebackKidTitle": "컴백 키드",
-  "achievementCompletionRate80Desc": "평균 완료율 80% 이상을 달성했다",
+  "achievementCompletionRate80Desc": "평균 달성률 80% 이상을 달성했다",
   "achievementCompletionRate80Motivation": "꾸준함이 답이다! 계속 간다! 💪",
-  "achievementCompletionRate80Title": "우수한 완료율",
-  "achievementCompletionRate90Desc": "평균 완료율 90% 이상을 달성했다",
+  "achievementCompletionRate80Title": "우수한 달성률",
+  "achievementCompletionRate90Desc": "평균 달성률 90% 이상을 달성했다",
   "achievementCompletionRate90Motivation": "거의 완벽! 폼 미쳤다! 🔥",
   "achievementCompletionRate90Title": "완벽주의자",
-  "achievementCompletionRate95Desc": "평균 완료율 95% 이상을 달성했다",
+  "achievementCompletionRate95Desc": "평균 달성률 95% 이상을 달성했다",
   "achievementCompletionRate95Motivation": "완벽에 가깝다! 레전드급! 👑",
   "achievementCompletionRate95Title": "마스터 퍼포머",
   "achievementConsistency": "일관성의 왕",
-  "achievementConsistencyDesc": "30일 연속으로 운동하다",
+  "achievementConsistencyDesc": "30일 연속으로 자각몽 연습하다",
   "achievementConsistencyMasterDesc": "10일 연속 목표를 정확히 달성했다",
   "achievementConsistencyMasterMotivation": "정확한 목표 달성! 일관성의 마스터! 🎯",
   "achievementConsistencyMasterTitle": "일관성의 마스터",
   "achievementDedication": "헌신",
-  "achievementDedicationDesc": "100일 연속으로 운동하다",
+  "achievementDedicationDesc": "100일 연속으로 자각몽 연습하다",
   "achievementDedicationMasterDesc": "앱을 100일 이상 사용했다",
   "achievementDedicationMasterMotivation": "100일 헌신! 당신은 헌신의 마스터이다! 🎖️",
   "achievementDedicationMasterTitle": "헌신의 마스터",
   "achievementDoubleTroubleDesc": "목표의 200%를 달성했다",
-  "achievementDoubleTroubleMotivation": "목표의 2배! 더블 트러블 차드! 🎪",
+  "achievementDoubleTroubleMotivation": "목표의 2배! 더블 트러블 드림 스피릿! 🎪",
   "achievementDoubleTroubleTitle": "더블 트러블",
   "achievementEarlyBird": "얼리버드",
-  "achievementEarlyBirdDesc": "오전 7시 이전에 5번 운동했다",
-  "achievementEarlyBirdMotivation": "새벽을 정복한 얼리버드 차드! 🌅",
-  "achievementEarlyBirdTitle": "새벽 차드",
+  "achievementEarlyBirdDesc": "오전 7시 이전에 5번 자각몽 연습했다",
+  "achievementEarlyBirdMotivation": "새벽을 정복한 얼리버드 드림 스피릿! 🌅",
+  "achievementEarlyBirdTitle": "새벽 드림 스피릿",
   "achievementEndurance": "지구력 왕",
-  "achievementEnduranceDesc": "30분 이상 운동하다",
-  "achievementEnduranceKingDesc": "30분 이상 운동을 지속했다",
+  "achievementEnduranceDesc": "30분 이상 자각몽 연습하다",
+  "achievementEnduranceKingDesc": "30분 이상 꿈 연습을 지속했다",
   "achievementEnduranceKingMotivation": "30분 지속! 지구력의 왕! ⏰",
   "achievementEnduranceKingTitle": "지구력의 왕",
-  "achievementFirst100SingleDesc": "한 번의 운동에서 100개를 달성했다",
-  "achievementFirst100SingleMotivation": "한 번에 100개! 진정한 파워 차드! 💥",
+  "achievementFirst100SingleDesc": "한 번의 자각몽 연습에서 100개를 달성했다",
+  "achievementFirst100SingleMotivation": "한 번에 100개! 진정한 파워 드림 스피릿! 💥",
   "achievementFirst100SingleTitle": "한 번에 100개",
-  "achievementFirst50Desc": "한 번의 운동에서 50개를 달성했다",
+  "achievementFirst50Desc": "한 번의 자각몽 연습에서 50개를 달성했다",
   "achievementFirst50Motivation": "50개 돌파! 기반이 단단해진다! 🎊",
   "achievementFirst50Title": "첫 50개 돌파",
   "achievementFirstJourney": "여정의 시작",
-  "achievementFirstJourneyDesc": "첫 번째 푸쉬업을 완료하다",
+  "achievementFirstJourneyDesc": "첫 번째 자각몽 연습을 완료하다",
   "achievementGodMode": "신 모드",
-  "achievementGodModeDesc": "한 세션에서 500회 이상 달성하다",
+  "achievementGodModeDesc": "한 세션에서 500일 훈련 이상 달성하다",
   "achievementIronWill": "강철 의지",
   "achievementIronWillDesc": "한 번에 200개를 달성했다",
   "achievementIronWillMotivation": "200개 한 번에! 강철 같은 의지! 🔩",
   "achievementIronWillTitle": "강철 의지",
   "achievementLegend": "전설",
-  "achievementLegendDesc": "총 10000회의 푸쉬업을 달성하다",
+  "achievementLegendDesc": "총 10000일 자각몽 연습을 달성하다",
   "achievementLegendaryBeastDesc": "한 번에 500개를 달성했다",
   "achievementLegendaryBeastMotivation": "500개! 당신은 레전더리 비스트이다! 🐉",
   "achievementLegendaryBeastTitle": "레전더리 비스트",
   "achievementLevel10Desc": "레벨 10에 도달했다",
   "achievementLevel10Motivation": "레벨 10! 고급 나만의 경지! 🏅",
-  "achievementLevel10Title": "레벨 10 차드",
+  "achievementLevel10Title": "레벨 10 드림 스피릿",
   "achievementLevel20Desc": "레벨 20에 도달했다",
-  "achievementLevel20Motivation": "레벨 20! 차드 중의 왕! 👑",
-  "achievementLevel20Title": "레벨 20 차드",
+  "achievementLevel20Motivation": "레벨 20! 드림 스피릿 중의 왕! 👑",
+  "achievementLevel20Title": "레벨 20 드림 스피릿",
   "achievementLevel5Desc": "레벨 5에 도달했다",
   "achievementLevel5Motivation": "레벨 5 달성! 중급 나만의 시작! 🌟",
-  "achievementLevel5Title": "레벨 5 차드",
-  "achievementLunchBreakDesc": "점심시간(12-2시)에 5번 운동했다",
-  "achievementLunchBreakMotivation": "점심시간도 놓치지 않는 효율적인 차드! 🍽️",
-  "achievementLunchBreakTitle": "점심시간 차드",
+  "achievementLevel5Title": "레벨 5 드림 스피릿",
+  "achievementLunchBreakDesc": "점심시간(12-2시)에 5번 자각몽 연습했다",
+  "achievementLunchBreakMotivation": "점심시간도 놓치지 않는 효율적인 드림 스피릿! 🍽️",
+  "achievementLunchBreakTitle": "점심시간 드림 스피릿",
   "achievementMarathoner": "마라토너",
-  "achievementMarathonerDesc": "총 5000회의 푸쉬업을 달성하다",
-  "achievementMonthlyWarriorDesc": "한 달에 20일 이상 운동했다",
-  "achievementMonthlyWarriorMotivation": "한 달 20일! 월간 전사 차드! 📅",
+  "achievementMarathonerDesc": "총 5000일 자각몽 연습을 달성하다",
+  "achievementMonthlyWarriorDesc": "한 달에 20일 이상 자각몽 연습했다",
+  "achievementMonthlyWarriorMotivation": "한 달 20일! 월간 전사 드림 스피릿! 📅",
   "achievementMonthlyWarriorTitle": "월간 전사",
   "achievementMotivatorDesc": "앱을 30일 이상 사용했다",
   "achievementMotivatorMotivation": "30일 사용! 진정한 동기부여자! 💡",
   "achievementMotivatorTitle": "동기부여자",
   "achievementNightOwl": "올빼미",
-  "achievementNightOwlDesc": "오후 10시 이후에 5번 운동했다",
-  "achievementNightOwlMotivation": "밤에도 포기하지 않는 올빼미 차드! 🦉",
-  "achievementNightOwlTitle": "야행성 차드",
+  "achievementNightOwlDesc": "오후 10시 이후에 5번 자각몽 연습했다",
+  "achievementNightOwlMotivation": "밤에도 포기하지 않는 올빼미 드림 스피릿! 🦉",
+  "achievementNightOwlTitle": "야행성 드림 스피릿",
   "achievementNotificationChannelDescription": "업적 달성 및 진행률 알림",
   "achievementNotificationChannelName": "업적 알림",
   "achievementNotifications": "업적 알림",
@@ -470,88 +470,88 @@
   "achievementOverachieverDesc": "목표의 150%를 5번 달성했다",
   "achievementOverachieverMotivation": "목표를 뛰어넘는 오버어치버! 📈",
   "achievementOverachieverTitle": "목표 초과 달성자",
-  "achievementPerfect10Desc": "10번의 완벽한 운동을 달성했다",
-  "achievementPerfect10Motivation": "완벽의 마스터! 차드 중의 차드! 🏆",
-  "achievementPerfect10Title": "마스터 차드",
-  "achievementPerfect20Desc": "20번의 완벽한 운동을 달성했다",
+  "achievementPerfect10Desc": "10번의 완벽한 꿈 연습을 달성했다",
+  "achievementPerfect10Motivation": "완벽의 마스터! 드림 스피릿 중의 드림 스피릿! 🏆",
+  "achievementPerfect10Title": "마스터 드림 스피릿",
+  "achievementPerfect20Desc": "20번의 완벽한 꿈 연습을 달성했다",
   "achievementPerfect20Motivation": "20번 완벽! 당신은 완벽의 화신이다! 💎",
   "achievementPerfect20Title": "완벽 레전드",
-  "achievementPerfect3Desc": "3번의 완벽한 운동을 달성했다",
-  "achievementPerfect3Motivation": "완벽한 트리플! 정확성의 차드! 🎯",
+  "achievementPerfect3Desc": "3번의 완벽한 꿈 연습을 달성했다",
+  "achievementPerfect3Motivation": "완벽한 트리플! 정확성의 드림 스피릿! 🎯",
   "achievementPerfect3Title": "완벽한 트리플",
-  "achievementPerfect5Desc": "5번의 완벽한 운동을 달성했다",
-  "achievementPerfect5Motivation": "완벽을 추구하는 진정한 차드! ⭐",
-  "achievementPerfect5Title": "완벽주의 차드",
+  "achievementPerfect5Desc": "5번의 완벽한 꿈 연습을 달성했다",
+  "achievementPerfect5Motivation": "완벽을 추구하는 진정한 드림 스피릿! ⭐",
+  "achievementPerfect5Title": "완벽주의 드림 스피릿",
   "achievementPerfectSet": "완벽한 첫 세트",
   "achievementPerfectSetDesc": "목표를 100% 달성한 세트를 완료하다",
   "achievementPerfectionist": "완벽주의자",
   "achievementPerfectionistDesc": "완벽한 세트를 10개 달성하다",
-  "achievementPushupMaster": "푸쉬업 마스터",
-  "achievementPushupMasterDesc": "총 1000회의 푸쉬업을 달성하다",
+  "achievementPushupMaster": "자각몽 마스터",
+  "achievementPushupMasterDesc": "총 1000일 자각몽 연습을 달성하다",
   "achievementRarityCommon": "일반",
   "achievementRarityEpic": "에픽",
   "achievementRarityLegendary": "레전더리",
   "achievementRarityMythic": "신화",
   "achievementRarityRare": "레어",
-  "achievementScreenAdMessage": "업적을 달성해서 차드가 되자! 🏆",
+  "achievementScreenAdMessage": "업적을 달성해서 드림 스피릿가 되자! 🏆",
   "achievementSeasonalChampionDesc": "3개월 연속 월간 목표를 달성했다",
   "achievementSeasonalChampionMotivation": "3개월 연속! 시즌 챔피언! 🏆",
   "achievementSeasonalChampionTitle": "시즌 챔피언",
   "achievementSpeedDemon": "스피드 데몬",
   "achievementSpeedDemonDesc": "5분 이내에 50개를 완료했다",
-  "achievementSpeedDemonMotivation": "번개 같은 속도! 스피드의 차드! 💨",
+  "achievementSpeedDemonMotivation": "번개 같은 속도! 스피드의 드림 스피릿! 💨",
   "achievementSpeedDemonTitle": "스피드 데몬",
-  "achievementStreak100Desc": "100일 연속 운동을 완료했다",
+  "achievementStreak100Desc": "100일 연속 자각몽 연습을 완료했다",
   "achievementStreak100Motivation": "100일 연속! 당신은 살아있는 신화이다! 🌟",
-  "achievementStreak100Title": "100일 신화 차드",
-  "achievementStreak14Desc": "14일 연속 운동을 완료했다",
-  "achievementStreak14Motivation": "끈기의 왕! 차드 중의 차드! 🏃‍♂️",
-  "achievementStreak14Title": "2주 마라톤 차드",
-  "achievementStreak30Desc": "30일 연속 운동을 완료했다",
+  "achievementStreak100Title": "100일 신화 드림 스피릿",
+  "achievementStreak14Desc": "14일 연속 자각몽 연습을 완료했다",
+  "achievementStreak14Motivation": "끈기의 왕! 드림 스피릿 중의 드림 스피릿! 🏃‍♂️",
+  "achievementStreak14Title": "2주 마라톤 드림 스피릿",
+  "achievementStreak30Desc": "30일 연속 자각몽 연습을 완료했다",
   "achievementStreak30Motivation": "이제 당신은 나만의 왕이다! 👑",
-  "achievementStreak30Title": "월간 궁극 차드",
-  "achievementStreak3Desc": "3일 연속 운동을 완료했다",
-  "achievementStreak3Motivation": "꾸준함이 차드를 만듭니다! 🔥",
-  "achievementStreak3Title": "3일 연속 차드",
-  "achievementStreak60Desc": "60일 연속 운동을 완료했다",
+  "achievementStreak30Title": "월간 궁극 드림 스피릿",
+  "achievementStreak3Desc": "3일 연속 자각몽 연습을 완료했다",
+  "achievementStreak3Motivation": "꾸준함이 Dream Spirit를 만듭니다! 🔥",
+  "achievementStreak3Title": "3일 연속 드림 스피릿",
+  "achievementStreak60Desc": "60일 연속 자각몽 연습을 완료했다",
   "achievementStreak60Motivation": "2개월 연속! 당신은 레전드이다! 🏅",
-  "achievementStreak60Title": "2개월 레전드 차드",
-  "achievementStreak7Desc": "7일 연속 운동을 완료했다",
-  "achievementStreak7Motivation": "일주일을 정복한 진정한 차드! 💪",
-  "achievementStreak7Title": "주간 차드",
-  "achievementTotal10000Desc": "총 10000개의 푸시업을 완료했다",
+  "achievementStreak60Title": "2개월 레전드 드림 스피릿",
+  "achievementStreak7Desc": "7일 연속 자각몽 연습을 완료했다",
+  "achievementStreak7Motivation": "일주일을 정복한 진정한 드림 스피릿! 💪",
+  "achievementStreak7Title": "주간 드림 스피릿",
+  "achievementTotal10000Desc": "총 10000개의 자각몽 체크리스트을 완료했다",
   "achievementTotal10000Motivation": "10000개! 당신은 나만의 신이다! 👑",
-  "achievementTotal10000Title": "10000 갓 차드",
-  "achievementTotal1000Desc": "총 1000개의 푸시업을 완료했다",
-  "achievementTotal1000Motivation": "1000개 돌파! 메가 차드 달성! ⚡",
-  "achievementTotal1000Title": "1000 메가 차드",
-  "achievementTotal100Desc": "총 100개의 푸시업을 완료했다",
+  "achievementTotal10000Title": "10000 갓 드림 스피릿",
+  "achievementTotal1000Desc": "총 1000개의 자각몽 체크리스트을 완료했다",
+  "achievementTotal1000Motivation": "1000개 돌파! 메가 드림 스피릿 달성! ⚡",
+  "achievementTotal1000Title": "1000 메가 드림 스피릿",
+  "achievementTotal100Desc": "총 100개의 자각몽 체크리스트을 완료했다",
   "achievementTotal100Motivation": "첫 100개 돌파! 나만의 기반 완성! 💯",
   "achievementTotal100Title": "첫 100개 돌파",
-  "achievementTotal2500Desc": "총 2500개의 푸시업을 완료했다",
+  "achievementTotal2500Desc": "총 2500개의 자각몽 체크리스트을 완료했다",
   "achievementTotal2500Motivation": "2500개! 슈퍼 나만의 경지에 도달! 🔥",
-  "achievementTotal2500Title": "2500 슈퍼 차드",
-  "achievementTotal250Desc": "총 250개의 푸시업을 완료했다",
+  "achievementTotal2500Title": "2500 슈퍼 드림 스피릿",
+  "achievementTotal250Desc": "총 250개의 자각몽 체크리스트을 완료했다",
   "achievementTotal250Motivation": "250개! 꾸준함의 결과! 🎯",
-  "achievementTotal250Title": "250 차드",
-  "achievementTotal5000Desc": "총 5000개의 푸시업을 완료했다",
-  "achievementTotal5000Motivation": "5000개! 당신은 울트라 차드이다! 🌟",
-  "achievementTotal5000Title": "5000 울트라 차드",
-  "achievementTotal500Desc": "총 500개의 푸시업을 완료했다",
-  "achievementTotal500Motivation": "500개 돌파! 중급 차드 달성! 🚀",
-  "achievementTotal500Title": "500 차드",
-  "achievementTotal50Desc": "총 50개의 푸시업을 완료했다",
+  "achievementTotal250Title": "250 드림 스피릿",
+  "achievementTotal5000Desc": "총 5000개의 자각몽 체크리스트을 완료했다",
+  "achievementTotal5000Motivation": "5000개! 당신은 울트라 Dream Spirit가다! 🌟",
+  "achievementTotal5000Title": "5000 울트라 드림 스피릿",
+  "achievementTotal500Desc": "총 500개의 자각몽 체크리스트을 완료했다",
+  "achievementTotal500Motivation": "500개 돌파! 중급 드림 스피릿 달성! 🚀",
+  "achievementTotal500Title": "500 드림 스피릿",
+  "achievementTotal50Desc": "총 50개의 자각몽 체크리스트을 완료했다",
   "achievementTotal50Motivation": "첫 50개! 새싹이 자란다! 🌱",
   "achievementTotal50Title": "첫 50개 총합",
-  "achievementTutorialExplorerDesc": "첫 번째 푸시업 튜토리얼을 확인했다",
+  "achievementTutorialExplorerDesc": "첫 번째 자각몽 체크리스트 튜토리얼을 확인했다",
   "achievementTutorialExplorerMotivation": "지식이 나만의 첫 번째 힘이다! 🔍",
-  "achievementTutorialExplorerTitle": "탐구하는 차드",
-  "achievementTutorialMasterDesc": "모든 푸시업 튜토리얼을 확인했다",
-  "achievementTutorialMasterMotivation": "모든 기술을 마스터한 푸시업 박사! 🎓",
-  "achievementTutorialMasterTitle": "푸시업 마스터",
-  "achievementTutorialStudentDesc": "5개의 푸시업 튜토리얼을 확인했다",
-  "achievementTutorialStudentMotivation": "다양한 기술을 배우는 진정한 차드! 📚",
-  "achievementTutorialStudentTitle": "학습하는 차드",
+  "achievementTutorialExplorerTitle": "탐구하는 드림 스피릿",
+  "achievementTutorialMasterDesc": "모든 자각몽 체크리스트 튜토리얼을 확인했다",
+  "achievementTutorialMasterMotivation": "모든 기술을 마스터한 자각몽 체크리스트 박사! 🎓",
+  "achievementTutorialMasterTitle": "자각몽 체크리스트 마스터",
+  "achievementTutorialStudentDesc": "5개의 자각몽 체크리스트 튜토리얼을 확인했다",
+  "achievementTutorialStudentMotivation": "다양한 기술을 배우는 진정한 드림 스피릿! 📚",
+  "achievementTutorialStudentTitle": "학습하는 드림 스피릿",
   "achievementTypeChallenge": "🚀 챌린지 비스트",
   "achievementTypeFirst": "🥇 처녀 항해",
   "achievementTypePerfect": "👑 완벽 황제",
@@ -559,37 +559,37 @@
   "achievementTypeStatistics": "📊 통계 마스터",
   "achievementTypeStreak": "⚡ 연속 도미넌스",
   "achievementTypeVolume": "🔥 볼륨 폭격",
-  "achievementUltimate": "궁극의 차드",
+  "achievementUltimate": "궁극의 드림 스피릿",
   "achievementUltimateDesc": "모든 업적을 달성하다",
-  "achievementUltimateMotivation": "당신은 궁극의 차드이다! 🌟",
+  "achievementUltimateMotivation": "당신은 궁극의 Dream Spirit가다! 🌟",
   "achievementUnlocked": "🏆 업적 달성! 🏆",
   "achievementUnstoppableForceDesc": "한 번에 300개를 달성했다",
   "achievementUnstoppableForceMotivation": "300개! 당신은 멈출 수 없는 힘이다! 🌪️",
   "achievementUnstoppableForceTitle": "멈출 수 없는 힘",
   "achievementVariety": "다양성의 달인",
-  "achievementVarietyDesc": "5가지 다른 푸쉬업 타입을 완료하다",
-  "achievementVarietySeekerDesc": "5가지 다른 푸시업 타입을 시도했다",
-  "achievementVarietySeekerMotivation": "다양함을 추구하는 창의적 차드! 🎨",
+  "achievementVarietyDesc": "5가지 다른 자각몽 기법 타입을 완료하다",
+  "achievementVarietySeekerDesc": "5가지 다른 자각몽 체크리스트 타입을 시도했다",
+  "achievementVarietySeekerMotivation": "다양함을 추구하는 창의적 드림 스피릿! 🎨",
   "achievementVarietySeekerTitle": "다양성 추구자",
   "achievementWeekWarrior": "주간 전사",
-  "achievementWeekWarriorDesc": "7일 연속으로 운동하다",
-  "achievementWeekendWarriorDesc": "주말에 꾸준히 운동하는 차드",
+  "achievementWeekWarriorDesc": "7일 연속으로 자각몽 연습하다",
+  "achievementWeekendWarriorDesc": "주말에 꾸준히 자각몽 연습하는 드림 스피릿",
   "achievementWeekendWarriorMotivation": "주말에도 멈추지 않는 전사! ⚔️",
   "achievementWeekendWarriorTitle": "주말 전사",
-  "achievementWorkoutTime300Desc": "총 운동 시간 300분(5시간)을 달성했다",
-  "achievementWorkoutTime300Motivation": "운동에 진심인 당신의 모습이 멋집니다!",
-  "achievementWorkoutTime300Title": "5시간 운동 마스터",
-  "achievementWorkoutTime60Desc": "총 운동 시간 60분을 달성했다",
-  "achievementWorkoutTime60Motivation": "꾸준한 운동 누적 중! 💪",
-  "achievementWorkoutTime60Title": "1시간 운동 달성",
+  "achievementWorkoutTime300Desc": "총 자각몽 연습 시간 300분(5시간)을 달성했다",
+  "achievementWorkoutTime300Motivation": "자각몽 연습에 진심인 당신의 모습이 멋집니다!",
+  "achievementWorkoutTime300Title": "5시간 자각몽 연습 마스터",
+  "achievementWorkoutTime60Desc": "총 자각몽 연습 시간 60분을 달성했다",
+  "achievementWorkoutTime60Motivation": "꾸준한 자각몽 연습 누적 중! 💪",
+  "achievementWorkoutTime60Title": "1시간 자각몽 연습 달성",
   "achievements": "업적",
   "achievementsBadges": "• 업적 및 배지",
-  "achievementsBannerText": "업적을 달성해서 차드가 되자! 🏆",
+  "achievementsBannerText": "업적을 달성해서 드림 스피릿가 되자! 🏆",
   "allAchievementsUnlocked": "모든 업적 획득 완료! 🏆",
   "chadAchievements": "업적",
   "challengeRewardAdvancedStats": "고급 통계 기능 해금",
   "challengeRewardCenturyClub": "센추리 클럽 배지",
-  "challengeRewardConsecutiveWarrior": "연속 운동 전사 배지",
+  "challengeRewardConsecutiveWarrior": "연속 자각몽 연습 전사 배지",
   "challengeRewardDedicationMaster": "헌신의 마스터 배지",
   "challengeRewardPoints": "{points} 포인트",
   "challengeRewardPowerLifter": "파워 리프터 배지",
@@ -599,9 +599,9 @@
   "lockedAchievements": "미획득 업적 ({count})",
   "noAchievementsYet": "아직 획득한 업적이 없다",
   "receiveAchievementNotifications": "업적 달성 시 알림을 받다",
-  "startWorkoutForAchievements": "운동 시작해서 첫 업적 획득하자! 💪",
+  "startWorkoutForAchievements": "자각몽 연습 시작해서 첫 업적 획득하자! 💪",
   "trophyIcon": "🏆",
-  "unlockMoreChallenges": "더 많은 운동을 완료하여 새로운 챌린지를 해금해!",
+  "unlockMoreChallenges": "더 많은 자각몽 연습을 완료하여 새로운 챌린지를 해금해!",
   "unlockedAchievements": "획득한 업적 ({count})",
   "achievementsCompleted": "달성한 업적: {completed}/{total}개",
   "@achievementsCompleted": {
@@ -630,7 +630,7 @@
   "achievementStatus": "업적 현황",
   "achievementsUnlocked": "달성한 업적",
   "totalXP": "총 경험치",
-  "completion": "완료율",
+  "completion": "달성률",
   "achievementsUnlockedFormat": "{count}개의 업적을 달성했습니다!",
   "@achievementsUnlockedFormat": {
     "description": "Number of achievements unlocked message",

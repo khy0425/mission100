@@ -1,0 +1,288 @@
+{
+  "@checklistAnalysisError": {
+    "description": "Error message when analysis fails",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistAnalysisError": "Analysis failed: {error}",
+  "@checklistAnalyzing": {
+    "description": "Analyzing dream message"
+  },
+  "checklistAnalyzing": "Analyzing your dream...",
+  "@checklistCancel": {
+    "description": "Cancel button"
+  },
+  "checklistCancel": "Cancel",
+  "@checklistCompletedTasks": {
+    "description": "Completed tasks label"
+  },
+  "checklistCompletedTasks": "Completed Tasks",
+  "@checklistCompletedTasksValue": {
+    "description": "Completed tasks count value",
+    "placeholders": {
+      "completed": {
+        "type": "Object"
+      },
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistCompletedTasksValue": "{completed}/{total}",
+  "@checklistCompleteMessage": {
+    "description": "Checklist completion message"
+  },
+  "checklistCompleteMessage": "Great work! You completed today's training!",
+  "@checklistCompleteRequired": {
+    "description": "Warning message for uncompleted required tasks"
+  },
+  "checklistCompleteRequired": "Please complete all required tasks",
+  "@checklistCompleteRequiredFirst": {
+    "description": "Warning to complete required tasks first"
+  },
+  "checklistCompleteRequiredFirst": "Complete required tasks first",
+  "@checklistCompleteTraining": {
+    "description": "Complete training button"
+  },
+  "checklistCompleteTraining": "Complete Training",
+  "@checklistConfirm": {
+    "description": "Confirm button"
+  },
+  "checklistConfirm": "Confirm",
+  "@checklistDayComplete": {
+    "description": "Day completion title with day number",
+    "placeholders": {
+      "day": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistDayComplete": "Day {day} Complete! 🎉",
+  "@checklistDayTitle": {
+    "description": "Day title in app bar",
+    "placeholders": {
+      "day": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistDayTitle": "Day {day} Training",
+  "@checklistDreamAnalysisAvailable": {
+    "description": "Dream analysis available message"
+  },
+  "checklistDreamAnalysisAvailable": "1 free analysis available today",
+  "@checklistDreamAnalysisPremiumUnlimited": {
+    "description": "Premium unlimited analysis badge"
+  },
+  "checklistDreamAnalysisPremiumUnlimited": "Premium: Unlimited",
+  "@checklistDreamAnalysisTitle": {
+    "description": "Dream analysis section title"
+  },
+  "checklistDreamAnalysisTitle": "Dream Analysis",
+  "@checklistDreamAnalysisWatchAd": {
+    "description": "Watch ad for analysis message"
+  },
+  "checklistDreamAnalysisWatchAd": "Watch ad for 1 more analysis",
+  "@checklistDreamInputHint": {
+    "description": "Dream input field hint"
+  },
+  "checklistDreamInputHint": "Describe your dream in detail...",
+  "@checklistEnterDream": {
+    "description": "Enter dream button"
+  },
+  "checklistEnterDream": "Enter Dream",
+  "@checklistExit": {
+    "description": "Exit button"
+  },
+  "checklistExit": "Exit",
+  "@checklistExitMessage": {
+    "description": "Exit confirmation message"
+  },
+  "checklistExitMessage": "Your progress will not be saved. Are you sure?",
+  "@checklistExitTitle": {
+    "description": "Exit confirmation title"
+  },
+  "checklistExitTitle": "Exit Training?",
+  "@checklistFreeAnalysisAvailable": {
+    "description": "Free analysis count available"
+  },
+  "checklistFreeAnalysisAvailable": "Free analysis available today",
+  "@checklistFreeAnalysisStart": {
+    "description": "Start free analysis button"
+  },
+  "checklistFreeAnalysisStart": "Start Free Analysis",
+  "@checklistLater": {
+    "description": "Later button"
+  },
+  "checklistLater": "Later",
+  "@checklistPremiumAnalysisStart": {
+    "description": "Start premium analysis button"
+  },
+  "checklistPremiumAnalysisStart": "Analyze Dream (Premium)",
+  "@checklistPremiumUnlimited": {
+    "description": "Premium unlimited badge"
+  },
+  "checklistPremiumUnlimited": "Premium: Unlimited",
+  "@checklistProgressPercent": {
+    "description": "Progress percentage",
+    "placeholders": {
+      "percent": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistProgressPercent": "{percent}%",
+  "@checklistRequiredTasks": {
+    "description": "Required tasks label"
+  },
+  "checklistRequiredTasks": "Required Tasks",
+  "@checklistRequiredTasksValue": {
+    "description": "Required tasks completion count",
+    "placeholders": {
+      "completed": {
+        "type": "Object"
+      },
+      "total": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistRequiredTasksValue": "{completed}/{total} completed",
+  "@checklistTaskGoal": {
+    "description": "Task goal with count",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistTaskGoal": "Goal: {count} times",
+  "@checklistTaskOptional": {
+    "description": "Optional task badge"
+  },
+  "checklistTaskOptional": "Optional",
+  "@checklistTaskRequired": {
+    "description": "Required task badge"
+  },
+  "checklistTaskRequired": "Required",
+  "@checklistTimeSpent": {
+    "description": "Time spent label"
+  },
+  "checklistTimeSpent": "Time Spent",
+  "@checklistTimeSpentValue": {
+    "description": "Time spent value in minutes",
+    "placeholders": {
+      "minutes": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistTimeSpentValue": "{minutes} min",
+  "@checklistWatchAdAnalysis": {
+    "description": "Watch ad for analysis button"
+  },
+  "checklistWatchAdAnalysis": "Watch Ad for Analysis",
+  "@checklistWatchAdForAnalysis": {
+    "description": "Watch ad to get extra analysis"
+  },
+  "checklistWatchAdForAnalysis": "Watch ad for 1 more analysis",
+  "@checklistWbtbBusy": {
+    "description": "WBTB busy status"
+  },
+  "checklistWbtbBusy": "Busy day - WBTB skipped",
+  "@checklistWbtbCompleted": {
+    "description": "WBTB completed status"
+  },
+  "checklistWbtbCompleted": "WBTB Completed",
+  "@checklistWbtbDayBadge": {
+    "description": "WBTB day badge"
+  },
+  "checklistWbtbDayBadge": "🌙 WBTB Day",
+  "@checklistWbtbRemainingSkips": {
+    "description": "WBTB remaining skips count",
+    "placeholders": {
+      "remaining": {
+        "type": "Object"
+      }
+    }
+  },
+  "checklistWbtbRemainingSkips": "{remaining} skips remaining this week",
+  "@checklistWbtbSkipped": {
+    "description": "WBTB skipped status"
+  },
+  "checklistWbtbSkipped": "WBTB Skipped",
+  "@checklistWbtbSkipWithAd": {
+    "description": "Skip WBTB by watching ad"
+  },
+  "checklistWbtbSkipWithAd": "Watch ad to skip WBTB today",
+  "@dailyChecklistAppBar": {
+    "description": "Daily checklist app bar title"
+  },
+  "dailyChecklistAppBar": "Daily Checklist",
+  "@dailyChecklistComplete": {
+    "description": "Daily checklist completion status"
+  },
+  "dailyChecklistComplete": "Complete",
+  "@dailyChecklistPriority1": {
+    "description": "Priority 1 tasks section title"
+  },
+  "dailyChecklistPriority1": "🔥 Priority 1 - Essential",
+  "@dailyChecklistPriority2": {
+    "description": "Priority 2 tasks section title"
+  },
+  "dailyChecklistPriority2": "💪 Priority 2 - Important",
+  "@dailyChecklistRegular": {
+    "description": "Regular tasks section title"
+  },
+  "dailyChecklistRegular": "📝 Regular Practice",
+  "@dailyChecklistOptional": {
+    "description": "Optional tasks section title"
+  },
+  "dailyChecklistOptional": "⭐ Optional - Bonus",
+  "@dailyChecklistCounterProgress": {
+    "description": "Counter progress display",
+    "placeholders": {
+      "current": {
+        "type": "Object"
+      },
+      "target": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyChecklistCounterProgress": "{current}/{target}",
+  "@dailyChecklistPracticeInterval": {
+    "description": "Practice interval instruction",
+    "placeholders": {
+      "minutes": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyChecklistPracticeInterval": "Practice every {minutes} minutes",
+  "@dailyChecklistCompletionDialogTitle": {
+    "description": "Completion dialog title with icon",
+    "placeholders": {
+      "icon": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyChecklistCompletionDialogTitle": "{icon} Task Complete!",
+  "@dailyChecklistCompletionDialogContent": {
+    "description": "Completion dialog content",
+    "placeholders": {
+      "name": {
+        "type": "Object"
+      }
+    }
+  },
+  "dailyChecklistCompletionDialogContent": "Great job! You completed {name}!",
+  "@dailyChecklistConfirmButton": {
+    "description": "Confirm button in dialog"
+  },
+  "dailyChecklistConfirmButton": "OK"
+}

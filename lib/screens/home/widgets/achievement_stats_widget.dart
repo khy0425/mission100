@@ -29,7 +29,17 @@ class AchievementStatsWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(6),
       decoration: BoxDecoration(
-        color: Color(isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
+        gradient: isDark
+            ? LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(AppColors.dreamGradient[0]),
+                  Color(AppColors.dreamGradient[1]),
+                ],
+              )
+            : null,
+        color: isDark ? null : const Color(AppColors.surfaceLight),
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
         boxShadow: [
           BoxShadow(

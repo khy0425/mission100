@@ -27,16 +27,16 @@
     "description": "Best week label"
   },
   "@chadDays": {
-    "description": "Subtitle for total workouts"
+    "description": "Subtitle for total lucid dream practice sessions"
   },
   "@chadNotificationSettings": {
-    "description": "Chad notification settings section title"
+    "description": "Dream Spirit notification settings section title"
   },
   "@chadRestModeToday": {
     "description": "CHAD rest mode confirmation button"
   },
   "@chadTimeSettings": {
-    "description": "Chad time settings section"
+    "description": "Dream Spirit time settings section"
   },
   "@challenge14DaysDescription": {
     "description": "14 consecutive days challenge description"
@@ -104,25 +104,25 @@
     "description": "Consecutive days label"
   },
   "@consecutiveWorkoutBlocked": {
-    "description": "Consecutive workout blocked title"
+    "description": "Consecutive practice blocked title"
   },
   "@consecutiveWorkoutMessage": {
-    "description": "Consecutive workout blocked message"
+    "description": "Consecutive practice blocked message"
   },
   "@customWorkoutDays": {
-    "description": "Custom workout days setting"
+    "description": "Custom practice days setting"
   },
   "@customWorkoutDaysDesc": {
-    "description": "Custom workout days description"
+    "description": "Custom practice days description"
   },
   "@dailyNotificationSet": {
     "description": "Daily notification setup success message"
   },
   "@dailyWorkoutAlarm": {
-    "description": "Daily workout time alarm message"
+    "description": "Daily lucid dream practice time alarm message"
   },
   "@dailyWorkoutReminder": {
-    "description": "Daily workout reminder setting"
+    "description": "Daily lucid dream practice reminder setting"
   },
   "@dataReset": {
     "description": "Data reset title"
@@ -255,10 +255,10 @@
     "description": "Error occurred, please retry message"
   },
   "@firstWorkoutCompleted": {
-    "description": "First workout completed description"
+    "description": "First lucid dream practice completed description"
   },
   "@firstWorkoutMessage": {
-    "description": "First workout start message"
+    "description": "First lucid dream practice start message"
   },
   "@foundWorkout": {
     "description": "Found workout title"
@@ -268,9 +268,6 @@
   },
   "@goToSettings": {
     "description": "Go to settings screen button"
-  },
-  "@homeWorkoutPushups": {
-    "description": "Video title 5"
   },
   "@hundredRepsInOneSession": {
     "description": "Hundred reps in one session description"
@@ -303,7 +300,7 @@
     "description": "Minimum one day rest required message"
   },
   "@mission100Settings": {
-    "description": "Mission 100 settings title"
+    "description": "Lucid Dream 100 settings title"
   },
   "@mondayShort": {
     "description": "Monday short form"
@@ -321,19 +318,19 @@
     "description": "Decision to workout button"
   },
   "@noWorkoutHistory": {
-    "description": "Message when there is no workout history"
+    "description": "Message when there is no lucid dream practice history"
   },
   "@noWorkoutRecordForDate": {
-    "description": "No workout record for selected date"
+    "description": "No lucid dream practice record for selected date"
   },
   "@noWorkoutRecords": {
-    "description": "No workout records title"
+    "description": "No lucid dream practice records title"
   },
   "@noWorkoutThisDay": {
-    "description": "No workout records message"
+    "description": "No lucid dream practice records message"
   },
   "@noWorkoutToday": {
-    "description": "No workout today message - Chad style"
+    "description": "No workout today message - Dream Spirit style"
   },
   "@noWorkoutsToday": {
     "description": "No workouts today message"
@@ -394,7 +391,7 @@
     }
   },
   "@recentWorkouts": {
-    "description": "Recent workouts section title"
+    "description": "Recent lucid dream practice sessions section title"
   },
   "@repsAchieved": {
     "description": "Workout item description format",
@@ -408,7 +405,7 @@
     }
   },
   "@repsAndCompletion": {
-    "description": "Workout record format",
+    "description": "Lucid dream practice record format",
     "placeholders": {
       "percentage": {
         "type": "int"
@@ -471,7 +468,7 @@
     "description": "Rest day description message"
   },
   "@restDayMessage": {
-    "description": "Rest day message for non-workout days"
+    "description": "Rest day message for non-practice days"
   },
   "@restDayTeasing": {
     "description": "Rest day teasing message"
@@ -518,7 +515,7 @@
     "description": "Saturday short form"
   },
   "@selectWorkoutDays": {
-    "description": "Workout day selection guide"
+    "description": "Practice day selection guide"
   },
   "@selectedDaysFormat": {
     "description": "Selected days display format",
@@ -667,7 +664,7 @@
     "description": "Start today's workout button"
   },
   "@startWorkout": {
-    "description": "Start workout button"
+    "description": "Start lucid dream practice button"
   },
   "@streakDays": {
     "description": "Streak days format",
@@ -707,7 +704,7 @@
     "description": "Theme and language settings description"
   },
   "@thisMonthWorkouts": {
-    "description": "This month workouts count label"
+    "description": "This month lucid dream practice count label"
   },
   "@thisWeekProgress": {
     "description": "This week progress display",
@@ -758,7 +755,7 @@
     }
   },
   "@totalWorkouts": {
-    "description": "Total workouts count label"
+    "description": "Total lucid dream practice sessions count label"
   },
   "@trueChadMindset": {
     "description": "Video description 3"
@@ -860,7 +857,7 @@
     "description": "Weekly report title"
   },
   "@weeklyWorkoutSchedule": {
-    "description": "Weekly workout schedule description"
+    "description": "Weekly lucid dream practice schedule description"
   },
   "@weeksCompleted": {
     "description": "Number of completed weeks",
@@ -891,10 +888,10 @@
     "description": "Workout already completed message"
   },
   "@workoutAutoRenewalBody": {
-    "description": "Workout reminder auto renewal notification body"
+    "description": "Lucid dream practice reminder auto renewal notification body"
   },
   "@workoutAutoRenewalTitle": {
-    "description": "Workout reminder auto renewal notification title"
+    "description": "Lucid dream practice reminder auto renewal notification title"
   },
   "@workoutButtonConquer": {
     "description": "Regular set completion button"
@@ -906,7 +903,7 @@
     "description": "Workout calendar title"
   },
   "@workoutChart": {
-    "description": "Workout chart title"
+    "description": "Lucid dream practice chart title"
   },
   "@workoutCompleteButton": {
     "description": "Workout completion confirmation button"
@@ -959,19 +956,19 @@
     }
   },
   "@workoutDayNotification": {
-    "description": "Workout day notification"
+    "description": "Practice day notification"
   },
   "@workoutDaySelection": {
-    "description": "Workout day selection title"
+    "description": "Practice day selection title"
   },
   "@workoutDaysModeActivated": {
-    "description": "Workout days mode activated message"
+    "description": "Practice days mode activated message"
   },
   "@workoutDaysOnlyNotifications": {
-    "description": "Workout days only notification setting title"
+    "description": "Practice days only notification setting title"
   },
   "@workoutDaysOnlyNotificationsDesc": {
-    "description": "Workout days only notification setting description"
+    "description": "Practice days only notification setting description"
   },
   "@workoutDetailsWithStats": {
     "description": "Workout details with stats",
@@ -988,7 +985,7 @@
     }
   },
   "@workoutHistoryLoadError": {
-    "description": "Error message when loading workout history fails",
+    "description": "Error message when loading lucid dream practice history fails",
     "placeholders": {
       "error": {
         "type": "String"
@@ -1005,7 +1002,7 @@
     "description": "Workout completion processing message"
   },
   "@workoutRecordForDate": {
-    "description": "Selected date workout record",
+    "description": "Selected date lucid dream practice record",
     "placeholders": {
       "day": {
         "type": "int"
@@ -1016,43 +1013,43 @@
     }
   },
   "@workoutRecordsStats": {
-    "description": "Workout records and statistics item"
+    "description": "Lucid dream practice records and statistics item"
   },
   "@workoutReminder": {
-    "description": "Workout reminder setting"
+    "description": "Lucid dream practice reminder setting"
   },
   "@workoutReminderDefaultBody": {
-    "description": "Default workout reminder notification body"
+    "description": "Default lucid dream practice reminder notification body"
   },
   "@workoutReminderDisabled": {
-    "description": "Workout reminder disabled message"
+    "description": "Lucid dream practice reminder disabled message"
   },
   "@workoutReminderEnabled": {
-    "description": "Workout reminder enabled message"
+    "description": "Lucid dream practice reminder enabled message"
   },
   "@workoutReminderSettings": {
-    "description": "Workout reminder settings title"
+    "description": "Lucid dream practice reminder settings title"
   },
   "@workoutReminders": {
-    "description": "Workout reminders option"
+    "description": "Lucid dream practice reminders option"
   },
   "@workoutRemindersChannelDescription": {
-    "description": "Workout reminders notification channel description"
+    "description": "Lucid dream practice reminders notification channel description"
   },
   "@workoutRemindersDesc": {
-    "description": "Workout reminders description"
+    "description": "Lucid dream practice reminders description"
   },
   "@workoutSaveError": {
-    "description": "Workout record save failure error message"
+    "description": "Lucid dream practice record save failure error message"
   },
   "@workoutScreenAdMessage": {
     "description": "Workout screen advertisement fallback message"
   },
   "@workoutSettings": {
-    "description": "Workout settings section"
+    "description": "Lucid dream practice settings section"
   },
   "@workoutStartError": {
-    "description": "Workout start error message",
+    "description": "Lucid dream practice start error message",
     "placeholders": {
       "error": {
         "type": "String"
@@ -1060,19 +1057,19 @@
     }
   },
   "@workoutStartMessage": {
-    "description": "Workout start action message"
+    "description": "Lucid dream practice start action message"
   },
   "@workoutTime": {
     "description": "Workout time statistics title"
   },
   "@workoutTips": {
-    "description": "Workout tips title"
+    "description": "Lucid dream practice tips title"
   },
   "@workoutTipsContent": {
-    "description": "Workout tips content"
+    "description": "Lucid dream practice tips content"
   },
   "@workoutTitle": {
-    "description": "Workout title - Chad style"
+    "description": "Workout title - Dream Spirit style"
   },
   "aboutSettings": "ℹ️ App Info",
   "allDataResetSuccessfully": "All data has been successfully reset",
@@ -1084,16 +1081,16 @@
   "backupRestoreError": "Error occurred during backup restore: {error}",
   "backupRestoreFailed": "Backup restore failed",
   "backupRestoredSuccessfully": "Backup restored successfully",
-  "backupWorkoutRecords": "Backup workout records",
+  "backupWorkoutRecords": "Backup lucid dream practice records",
   "bestWeek": "Best Week",
-  "chadDays": "Chad days!",
-  "chadNotificationSettings": "🔔 Chad Notification Settings",
+  "chadDays": "Dream Spirit days!",
+  "chadNotificationSettings": "🔔 Dream Spirit Notification Settings",
   "chadRestModeToday": "Okay! Today's rest mode! 💪😎",
-  "chadTimeSettings": "⏰ Chad Time Settings",
-  "challenge14DaysDescription": "Work out for 14 consecutive days",
+  "chadTimeSettings": "⏰ Dream Spirit Time Settings",
+  "challenge14DaysDescription": "Practice lucid dreaming for 14 consecutive days",
   "challenge14DaysDetailedDescription": "14 days straight, no skips! Clear 7-day first! 💪",
   "challenge14DaysTitle": "14 Consecutive Days",
-  "challenge7DaysDescription": "Work out for 7 consecutive days",
+  "challenge7DaysDescription": "Practice lucid dreaming for 7 consecutive days",
   "challenge7DaysDetailedDescription": "7 days straight, no skips! Min 1 set daily! 🔥",
   "challenge7DaysTitle": "7 Consecutive Days",
   "challengeHintConsecutiveDays": "Every single day! Miss one = Start over! 💪",
@@ -1111,11 +1108,11 @@
   "confirmDataReset": "Confirm Data Reset",
   "consecutiveDays": "Consecutive Days",
   "consecutiveWorkoutBlocked": "STOP! No Consecutive Workouts!",
-  "consecutiveWorkoutMessage": "Yo! You worked out yesterday! 🔥\n\nWhat are you doing? Back-to-back?\nReal warriors rest when it's time!\n\n💀 Overtraining = NO GO!\n😎 Chill today, crush it tomorrow! 💪",
+  "consecutiveWorkoutMessage": "Yo! You worked out yesterday! 🔥\n\nWhat are you doing? Back-to-back?\nReal warriors rest when it's time!\n\n💀 Excessive practice = NO GO!\n😎 Chill today, crush it tomorrow! 💪",
   "customWorkoutDays": "Workout Days Settings",
-  "customWorkoutDaysDesc": "Set your preferred workout days",
-  "dailyNotificationSet": "Daily {time} workout reminder set! 💪",
-  "dailyWorkoutAlarm": "Daily workout time alarm! Miss it and you're WEAK! 💪",
+  "customWorkoutDaysDesc": "Set your preferred practice days",
+  "dailyNotificationSet": "Daily {time} lucid dream practice reminder set! 💪",
+  "dailyWorkoutAlarm": "Daily lucid dream practice time alarm! Miss it and you're WEAK! 💪",
   "dailyWorkoutReminder": "Daily Workout Reminder",
   "dataReset": "Data Reset",
   "dataResetComingSoon": "Data reset feature is coming soon",
@@ -1143,20 +1140,19 @@
   "dayX": "Day {day}",
   "days": "days",
   "daysFormat": "{days} days",
-  "deleteAllWorkoutRecords": "Delete all workout records",
+  "deleteAllWorkoutRecords": "Delete all lucid dream practice records",
   "detailedReminderSettings": "Detailed Reminder Settings",
   "difficultySettings": "Difficulty Settings",
   "difficultySettingsComingSoon": "Difficulty settings feature is coming soon",
   "difficultySettingsTitle": "💪 Difficulty Settings",
   "durationDays": "Duration",
   "errorPleaseTryAgain": "An error occurred. Please try again",
-  "firstWorkoutCompleted": "First workout completed",
+  "firstWorkoutCompleted": "First lucid dream practice completed",
   "firstWorkoutMessage": "Starting your first workout! Let's go!",
   "foundWorkout": "🔍 Found Workout",
   "fridayFull": "Friday",
   "fridayShort": "Fri",
   "goToSettings": "Go to Settings",
-  "homeWorkoutPushups": "Home Workout Pushups 🏠",
   "hundredRepsInOneSession": "100 reps in one session",
   "incompleteWorkoutFound": "Incomplete workout found!",
   "languageSettings": "Language Settings",
@@ -1167,17 +1163,17 @@
   "manageAppSettings": "Manage your app settings",
   "maxSixDaysWorkout": "Maximum 6 days workout allowed (one day must be rest)",
   "minOneDayRest": "At least one rest day is required",
-  "mission100Settings": "Mission 100 Settings",
+  "mission100Settings": "Lucid Dream 100 Settings",
   "mondayFull": "Monday",
   "mondayShort": "Mon",
   "nextSetButton": "UNIVERSE CONQUERED!",
   "nextSetContinue": "BRING THE NEXT SACRIFICE!",
   "noConsecutiveSixDays": "Maximum 4 workouts per week allowed. Adequate rest is essential!",
-  "noWorkout": "No! I'll work out!",
-  "noWorkoutHistory": "No workout history",
-  "noWorkoutRecordForDate": "No workout record for this date",
-  "noWorkoutRecords": "No workout records yet!",
-  "noWorkoutThisDay": "No workout records for this day",
+  "noWorkout": "No! I'll practice lucid dreaming!",
+  "noWorkoutHistory": "No lucid dream practice history",
+  "noWorkoutRecordForDate": "No lucid dream practice record for this date",
+  "noWorkoutRecords": "No lucid dream practice records yet!",
+  "noWorkoutThisDay": "No lucid dream practice records for this day",
   "noWorkoutToday": "🤷‍♂️ REST DAY? TOMORROW WE DESTROY! 🔥",
   "noWorkoutsToday": "No workouts on this day",
   "notificationSettings": "Notification Settings",
@@ -1225,7 +1221,7 @@
   "resumeWorkout": "💪 Resume Workout",
   "saturdayFull": "Saturday",
   "saturdayShort": "Sat",
-  "selectWorkoutDays": "Select workout days (maximum 6 days)",
+  "selectWorkoutDays": "Select practice days (maximum 6 days)",
   "selectedDaysFormat": "Selected: {days} ({count}/6 days)",
   "sessions": "Sessions",
   "sessionsCompleted": "Sessions Completed",
@@ -1241,11 +1237,11 @@
   "setRepsDisplayFormat": "Sets × Reps",
   "setRepsFormat": "Set {setIndex}: {reps} reps",
   "settings": "Settings",
-  "settingsBannerText": "Customize Chad's settings! ⚙️",
+  "settingsBannerText": "Customize Dream Spirit's settings! ⚙️",
   "settingsSaveFailed": "Failed to save settings",
   "settingsSaved": "Settings have been saved",
-  "settingsSubtitle": "Customize your Chad journey",
-  "settingsTitle": "⚙️ Chad Settings",
+  "settingsSubtitle": "Customize your Dream Spirit journey",
+  "settingsTitle": "⚙️ Dream Spirit Settings",
   "sevenDayStreak": "🔄 7-day streak challenge started! Miss a day, start over! 🚀",
   "sevenDaysExercise": "7 consecutive days",
   "shareWorkout": "Share",
@@ -1254,7 +1250,7 @@
   "skipRestButton": "REST? ONLY FOR THE WEAK! BRING THE NEXT VICTIM!",
   "soundSettings": "Sound Settings",
   "soundSettingsDesc": "Enable workout sound effects",
-  "startFirstWorkout": "Start your first workout and\\ncreate your Chad legend! 🔥",
+  "startFirstWorkout": "Start your first workout and\\ncreate your Dream Spirit legend! 🔥",
   "startNewWorkout": "Start New Workout",
   "startTodayWorkout": "🚀 START TODAY'S DOMINATION! 🚀",
   "startWorkout": "Start Workout",
@@ -1282,7 +1278,7 @@
   "totalCompletedReps": "Total completed: {reps} reps",
   "totalRepsFormat": "{totalReps} reps",
   "totalWorkouts": "Total Workouts",
-  "trueChadMindset": "Mindset to become a true Chad",
+  "trueChadMindset": "Mindset to become a true Dream Spirit",
   "tuesdayFull": "Tuesday",
   "tuesdayShort": "Tue",
   "vibrationSettings": "Vibration Settings",
@@ -1311,13 +1307,13 @@
   "weeklyGrowthChart": "Weekly Growth Chart",
   "weeklyPerformance": "Weekly Performance",
   "weeklyReport": "📊 Weekly Report 📊",
-  "weeklyWorkoutSchedule": "Set weekly workout schedule",
+  "weeklyWorkoutSchedule": "Set weekly lucid dream practice schedule",
   "weeksCompleted": "{completed}/{total} weeks completed",
   "weeksRemaining": "{weeks} weeks left",
   "workout": "Workout",
   "workoutAchieved": "Achieved",
   "workoutAlreadyCompleted": "Today's workout is already completed! 💪",
-  "workoutAutoRenewalBody": "Workout reminders have been automatically renewed. Keep up your healthy exercise habits! 💪",
+  "workoutAutoRenewalBody": "Lucid dream practice reminders have been automatically renewed. Keep up your healthy exercise habits! 💪",
   "workoutAutoRenewalTitle": "⏰ Workout Reminder Auto Renewal",
   "workoutButtonConquer": "CONQUER THIS SET!",
   "workoutButtonUltimate": "CLAIM ULTIMATE VICTORY!",
@@ -1333,30 +1329,30 @@
   "workoutDate": "{month}/{day} Workout",
   "workoutDayNotification": "Workout Day Notification",
   "workoutDaySelection": "Select Workout Days",
-  "workoutDaysModeActivated": "💪 Workout days only mode activated! Notifications will come only on Mon, Wed, Fri!",
+  "workoutDaysModeActivated": "💪 Practice days only mode activated! Notifications will come only on Mon, Wed, Fri!",
   "workoutDaysOnlyNotifications": "🔥 Workout Days Only Alerts",
-  "workoutDaysOnlyNotificationsDesc": "Receive notifications only on workout days (Mon, Wed, Fri). No disturbance on rest days!",
+  "workoutDaysOnlyNotificationsDesc": "Receive notifications only on practice days (Mon, Wed, Fri). No disturbance on rest days!",
   "workoutDetailsWithStats": "Workout: {title}\\nCompleted sets: {sets}\\nTotal reps: {reps}",
-  "workoutHistoryLoadError": "Error loading workout history: {error}",
+  "workoutHistoryLoadError": "Error loading lucid dream practice history: {error}",
   "workoutInterruptionDetected": "⚠️ Workout Interruption Detected",
   "workoutNotificationPermission": "🔔 Workout Notification Permission",
   "workoutPrecautions": "• At least one rest day is required\n• Cannot workout more than 6 consecutive days\n• Adequate rest is essential for muscle growth",
   "workoutProcessing": "Processing workout completion...",
   "workoutRecordForDate": "{month}/{day} Workout Record",
-  "workoutRecordsStats": "• Workout records and statistics",
+  "workoutRecordsStats": "• Lucid dream practice records and statistics",
   "workoutReminder": "Workout Reminder",
-  "workoutReminderDefaultBody": "💪 MISSION 100 workout time! LEGENDARY MODE activated! 💪",
-  "workoutReminderDisabled": "Workout reminders have been disabled",
-  "workoutReminderEnabled": "Workout reminders have been enabled",
+  "workoutReminderDefaultBody": "💪 LUCID DREAM 100 workout time! LEGENDARY MODE activated! 💪",
+  "workoutReminderDisabled": "Lucid dream practice reminders have been disabled",
+  "workoutReminderEnabled": "Lucid dream practice reminders have been enabled",
   "workoutReminderSettings": "Workout Reminder Settings",
   "workoutReminders": "Workout Reminders",
-  "workoutRemindersChannelDescription": "Weekly workout reminders",
+  "workoutRemindersChannelDescription": "Weekly lucid dream practice reminders",
   "workoutRemindersDesc": "Daily reminders at your set time",
-  "workoutSaveError": "An error occurred while saving workout record. Please try again.",
-  "workoutScreenAdMessage": "Feel the power of Chad! 💪",
+  "workoutSaveError": "An error occurred while saving lucid dream practice record. Please try again.",
+  "workoutScreenAdMessage": "Feel the power of Dream Spirit! 💪",
   "workoutSettings": "💪 Workout Settings",
   "workoutStartError": "⚡ ALPHA SYSTEM ERROR! RETRY, FUTURE EMPEROR: {error} ⚡",
-  "workoutStartMessage": "Workout started! 🔥",
+  "workoutStartMessage": "Lucid dream practice started! 🔥",
   "workoutTime": "Workout Time",
   "workoutTips": "Workout Tips",
   "workoutTipsContent": "• Stretch sufficiently before and after workouts\\n• Proper form is more important than quantity\\n• Consistency is the most important success factor",
@@ -1364,7 +1360,7 @@
   "exitWorkout": "Exit Workout",
   "exitWorkoutConfirm": "Are you sure you want to exit? Your progress will not be saved.",
   "selectMinimum3Days": "You need to select at least 3 days! 💪",
-  "championNeedsConsistency": "True champions need consistency!\n\nYou need to work out at least 3 days a week to see real change!\n\nSelect more and try again! 💪",
+  "championNeedsConsistency": "True champions need consistency!\n\nYou need to practice lucid dreaming at least 3 days a week to see real change!\n\nSelect more and try again! 💪",
   "scheduleSetupComplete": "🎉 Schedule setup complete!\n\n{sessionsCreated} workout sessions have been created!\nLET'S GO! 💪🔥",
   "scheduleSetupError": "Error during schedule setup:\n{error}",
   "workoutScheduleSetup": "Workout Schedule Setup",
@@ -1378,16 +1374,64 @@
   "cannotShowCompletionDialog": "Cannot show completion dialog. Returning to home.",
   "exitWorkoutSaved": "Are you sure you want to exit? Your progress will be saved.",
   "exit": "Exit",
-  "chadBecameStronger": "💪 Chad became stronger!",
-  "repsDestroyed": "💀 Reps Destroyed",
-  "xpGained": "💰 XP Gained",
-  "timeElapsed": "⏱️ Time Elapsed",
-  "workoutDestroyed": "💀 WORKOUT DESTROYED! 💀",
-  "workoutDestroyedMessage": "You absolutely crushed today's workout!",
-  "timeDestroyed": "⏱️ TIME DESTROYED",
-  "tomorrowIsRestDay": "😴 Tomorrow is CHAD Rest Day! 😴",
-  "recoverToBeStronger": "🌴 Recover fully to become a stronger CHAD! 💪",
-  "tomorrowBeastMode": "🔥 TOMORROW: BEAST MODE AGAIN! 🔥",
-  "legendaryJourneyContinues": "💀 The journey to LEGENDARY continues! 💀",
-  "chadEvolutionProgress": "💪 Chad Evolution Progress"
+  "chadBecameStronger": "✨ Dream Spirit has grown",
+  "repsDestroyed": "✓ Tasks Completed",
+  "xpGained": "⭐ XP Gained",
+  "timeElapsed": "⏱️ Time Spent",
+  "workoutDestroyed": "🌙 Today's Practice Complete! ✨",
+  "workoutDestroyedMessage": "You've successfully completed today's lucid dream training",
+  "timeDestroyed": "⏱️ Practice Time",
+  "tomorrowIsRestDay": "🌙 Your dream journey continues tomorrow ✨",
+  "recoverToBeStronger": "😴 Sweet dreams tonight ✨",
+  "tomorrowBeastMode": "✨ Let's practice lucid dreaming together tomorrow 🌙",
+  "legendaryJourneyContinues": "🌟 The journey to lucid dream mastery continues 🌟",
+  "chadEvolutionProgress": "✨ Dream Spirit Growth Progress",
+  "taskDreamJournalTitle": "Dream Journal",
+  "@taskDreamJournalTitle": {
+    "description": "Dream journal task title"
+  },
+  "taskDreamJournalDesc": "Record your dreams immediately upon waking each morning. Dream recall is the first step to lucid dreaming.",
+  "@taskDreamJournalDesc": {
+    "description": "Dream journal task description"
+  },
+  "taskRealityCheckTitle": "Reality Check",
+  "@taskRealityCheckTitle": {
+    "description": "Reality check task title"
+  },
+  "taskRealityCheckDesc": "5+ times daily, look at your hands and ask \"Am I dreaming?\" Practice trying to push fingers through your palm.",
+  "@taskRealityCheckDesc": {
+    "description": "Reality check task description"
+  },
+  "taskMildTitle": "MILD Affirmation",
+  "@taskMildTitle": {
+    "description": "MILD affirmation task title"
+  },
+  "taskMildDesc": "Before sleep, repeat \"In my next dream, I will be aware\" to solidify your lucid dreaming intention.",
+  "@taskMildDesc": {
+    "description": "MILD affirmation task description"
+  },
+  "taskSleepHygieneTitle": "Sleep Hygiene Check",
+  "@taskSleepHygieneTitle": {
+    "description": "Sleep hygiene task title"
+  },
+  "taskSleepHygieneDesc": "Create quality sleep environment: regular sleep time, dark room, limit caffeine, etc.",
+  "@taskSleepHygieneDesc": {
+    "description": "Sleep hygiene task description"
+  },
+  "taskWbtbTitle": "WBTB (Wake Back To Bed)",
+  "@taskWbtbTitle": {
+    "description": "WBTB task title"
+  },
+  "taskWbtbDesc": "Set alarm for 5 hours of sleep, stay awake 20-30 min, then return to sleep to induce REM entry.",
+  "@taskWbtbDesc": {
+    "description": "WBTB task description"
+  },
+  "taskMeditationTitle": "Meditation (Optional)",
+  "@taskMeditationTitle": {
+    "description": "Meditation task title"
+  },
+  "taskMeditationDesc": "Practice 10+ minutes of mindfulness meditation to enhance awareness. Great for lucid dreaming.",
+  "@taskMeditationDesc": {
+    "description": "Meditation task description"
+  }
 }

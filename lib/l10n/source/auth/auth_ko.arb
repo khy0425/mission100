@@ -50,8 +50,156 @@
   "signupIn30Seconds": "회원가입 (30초)",
   "btnSignInGoogle": "구글로 로그인",
   "btnStartGoogleQuick": "구글로 3초만에 시작하기",
-  "msgAlreadyHaveAccount": "이미 차드 계정이 있나요?",
+  "msgAlreadyHaveAccount": "이미 드림 스피릿 계정이 있나요?",
   "msgGuestMode": "게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.",
   "titleAccountInfo": "계정 정보",
-  "titleCreateAccount": "계정 생성"
+  "titleCreateAccount": "계정 생성",
+  "@loginGoogleSignInFailed": {
+    "description": "구글 로그인 실패 메시지"
+  },
+  "loginGoogleSignInFailed": "구글 로그인에 실패했습니다. 다시 시도해주세요.",
+  "@loginReadyToStartWithChad": {
+    "description": "드림 스피릿과 시작 준비 타이틀"
+  },
+  "loginReadyToStartWithChad": "자각몽 여정을 시작할 준비가 되셨나요?",
+  "@loginStartDreamflowJourney": {
+    "description": "드림플로우 여정 시작 메시지"
+  },
+  "loginStartDreamflowJourney": "의식적인 꿈의 세계로 떠나세요",
+  "@loginStartWithChad": {
+    "description": "드림 스피릿과 시작 버튼"
+  },
+  "loginStartWithChad": "드림 스피릿과 시작하기",
+  "@loginChadLaunchSpecial": {
+    "description": "런칭 특별 이벤트 메시지"
+  },
+  "loginChadLaunchSpecial": "🎉 런칭 특별 이벤트",
+  "@loginChadFreeTrialOffer": {
+    "description": "무료 체험 제안 메시지"
+  },
+  "loginChadFreeTrialOffer": "프리미엄을 30일 무료로 사용해보세요",
+  "@loginAlreadyHaveChadAccount": {
+    "description": "이미 계정이 있음 텍스트"
+  },
+  "loginAlreadyHaveChadAccount": "이미 계정이 있으신가요?",
+  "@loginEmail": {
+    "description": "이메일 필드 라벨"
+  },
+  "loginEmail": "이메일",
+  "@loginEmailRequired": {
+    "description": "이메일 필수 검증"
+  },
+  "loginEmailRequired": "이메일을 입력해주세요",
+  "@loginEmailInvalid": {
+    "description": "이메일 유효하지 않음 검증"
+  },
+  "loginEmailInvalid": "올바른 이메일을 입력해주세요",
+  "@loginPassword": {
+    "description": "비밀번호 필드 라벨"
+  },
+  "loginPassword": "비밀번호",
+  "@loginPasswordRequired": {
+    "description": "비밀번호 필수 검증"
+  },
+  "loginPasswordRequired": "비밀번호를 입력해주세요",
+  "@loginPasswordMinLength": {
+    "description": "비밀번호 최소 길이 검증"
+  },
+  "loginPasswordMinLength": "비밀번호는 최소 6자 이상이어야 합니다",
+  "@loginLoginButton": {
+    "description": "로그인 버튼 텍스트"
+  },
+  "loginLoginButton": "로그인",
+  "@signupChadTermsAgreementRequired": {
+    "description": "약관 동의 필수 검증"
+  },
+  "signupChadTermsAgreementRequired": "이용약관에 동의해주세요",
+  "@signupChadWelcomeMessage": {
+    "description": "환영 메시지"
+  },
+  "signupChadWelcomeMessage": "자각몽 여정에 오신 것을 환영합니다!",
+  "@signupChadGoogleSignupFailed": {
+    "description": "구글 회원가입 실패 메시지"
+  },
+  "signupChadGoogleSignupFailed": "구글 회원가입에 실패했습니다. 다시 시도해주세요.",
+  "@signupChadScreenTitle": {
+    "description": "회원가입 화면 타이틀"
+  },
+  "signupChadScreenTitle": "계정 만들기",
+  "@signupChadSigningUp": {
+    "description": "회원가입 진행 중 메시지"
+  },
+  "signupChadSigningUp": "계정을 생성하는 중...",
+  "@signupChadStartFreeMonth": {
+    "description": "무료 한 달 시작 버튼"
+  },
+  "signupChadStartFreeMonth": "무료로 한 달 시작하기",
+  "@signupChadLaunchSpecialEvent": {
+    "description": "런칭 특별 이벤트 타이틀"
+  },
+  "signupChadLaunchSpecialEvent": "🎊 런칭 특별 이벤트",
+  "@signupChadBenefitsList": {
+    "description": "혜택 목록 타이틀"
+  },
+  "signupChadBenefitsList": "프리미엄 혜택",
+  "@signupChadOrEmailSignup": {
+    "description": "또는 이메일 회원가입 구분선"
+  },
+  "signupChadOrEmailSignup": "또는 이메일로 가입하기",
+  "@signupChadNameLabel": {
+    "description": "이름 필드 라벨"
+  },
+  "signupChadNameLabel": "이름",
+  "@signupChadNameRequired": {
+    "description": "이름 필수 검증"
+  },
+  "signupChadNameRequired": "이름을 입력해주세요",
+  "@signupChadNameMinLength": {
+    "description": "이름 최소 길이 검증"
+  },
+  "signupChadNameMinLength": "이름은 최소 2자 이상이어야 합니다",
+  "@signupChadEmailLabel": {
+    "description": "이메일 필드 라벨"
+  },
+  "signupChadEmailLabel": "이메일",
+  "@signupChadEmailRequired": {
+    "description": "이메일 필수 검증"
+  },
+  "signupChadEmailRequired": "이메일을 입력해주세요",
+  "@signupChadEmailInvalid": {
+    "description": "이메일 유효하지 않음 검증"
+  },
+  "signupChadEmailInvalid": "올바른 이메일을 입력해주세요",
+  "@signupChadPasswordLabel": {
+    "description": "비밀번호 필드 라벨"
+  },
+  "signupChadPasswordLabel": "비밀번호",
+  "@signupChadPasswordRequired": {
+    "description": "비밀번호 필수 검증"
+  },
+  "signupChadPasswordRequired": "비밀번호를 입력해주세요",
+  "@signupChadPasswordMinLength": {
+    "description": "비밀번호 최소 길이 검증"
+  },
+  "signupChadPasswordMinLength": "비밀번호는 최소 6자 이상이어야 합니다",
+  "@signupChadConfirmPasswordLabel": {
+    "description": "비밀번호 확인 필드 라벨"
+  },
+  "signupChadConfirmPasswordLabel": "비밀번호 확인",
+  "@signupChadConfirmPasswordRequired": {
+    "description": "비밀번호 확인 필수 검증"
+  },
+  "signupChadConfirmPasswordRequired": "비밀번호를 다시 입력해주세요",
+  "@signupChadPasswordsNotMatch": {
+    "description": "비밀번호 불일치 검증"
+  },
+  "signupChadPasswordsNotMatch": "비밀번호가 일치하지 않습니다",
+  "@signupChadTermsAgreement": {
+    "description": "약관 동의 체크박스 텍스트"
+  },
+  "signupChadTermsAgreement": "이용약관에 동의합니다",
+  "@signupChadLoginButton": {
+    "description": "회원가입 화면의 로그인 버튼 텍스트"
+  },
+  "signupChadLoginButton": "로그인"
 }

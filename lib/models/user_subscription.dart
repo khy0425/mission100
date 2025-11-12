@@ -1,7 +1,7 @@
 enum SubscriptionType {
-  free, // 무료 사용자 (1-2주차만)
-  launchPromo, // 런칭 이벤트 (1개월 무료, 광고 포함)
-  premium, // 정식 프리미엄 (₩4,900/월, 광고 없음)
+  free, // 무료 사용자 (30일 프로그램, Week 1-4, 광고 있음)
+  launchPromo, // 런칭 이벤트 (60일 확장, 30일간, 광고 포함)
+  premium, // 프리미엄 (60일 확장, 광고 없음, 일회성 결제)
 }
 
 enum SubscriptionStatus {
@@ -38,7 +38,7 @@ class UserSubscription {
     required this.updatedAt,
   });
 
-  // 무료 사용자 기본 구독 (전체 프로그램 접근 가능)
+  // 무료 사용자 기본 구독 (30일 프로그램)
   static UserSubscription createFreeSubscription(String userId) {
     final now = DateTime.now();
     return UserSubscription(
@@ -49,7 +49,7 @@ class UserSubscription {
       startDate: now,
       endDate: null, // 무제한
       hasAds: true,
-      allowedWeeks: 14, // 전체 프로그램 접근 (제한 없음)
+      allowedWeeks: 4, // 30일 프로그램 (Week 1-4, Evolution Stage 0-6)
       allowedFeatures: [
         'basic_workouts',
         'progress_tracking',
@@ -60,7 +60,7 @@ class UserSubscription {
     );
   }
 
-  // 런칭 프로모션 구독 (첫 30일 무료, 광고 있음)
+  // 런칭 프로모션 구독 (첫 30일 무료, 광고 있음, 60일 프로그램 접근)
   static UserSubscription createLaunchPromoSubscription(String userId) {
     final now = DateTime.now();
     final endDate = now.add(const Duration(days: 30)); // 1개월
@@ -72,8 +72,8 @@ class UserSubscription {
       status: SubscriptionStatus.active,
       startDate: now,
       endDate: endDate,
-      hasAds: true, // 무료 기간에도 광고 있음
-      allowedWeeks: 14, // 전체 프로그램 접근 (30일간)
+      hasAds: true, // 프로모션 기간에도 광고 있음
+      allowedWeeks: 8, // 60일 확장 프로그램 접근 (Week 1-8, Evolution Stage 0-13)
       allowedFeatures: [
         'full_workouts',
         'progress_tracking',
@@ -86,10 +86,9 @@ class UserSubscription {
     );
   }
 
-  // 프리미엄 구독
+  // 프리미엄 구독 (광고 없음, 60일 확장 프로그램, 14단계 진화)
   static UserSubscription createPremiumSubscription(String userId) {
     final now = DateTime.now();
-    final endDate = now.add(const Duration(days: 30)); // 월간 구독
 
     return UserSubscription(
       id: 'premium_${userId}_${now.millisecondsSinceEpoch}',
@@ -97,9 +96,9 @@ class UserSubscription {
       type: SubscriptionType.premium,
       status: SubscriptionStatus.active,
       startDate: now,
-      endDate: endDate,
-      hasAds: false, // 광고 없음
-      allowedWeeks: 14, // 전체 프로그램 접근
+      endDate: null, // 일회성 결제 (평생 - 무제한)
+      hasAds: false, // 광고 제거
+      allowedWeeks: 8, // 60일 확장 프로그램 (Week 1-8, Evolution Stage 0-13)
       allowedFeatures: [
         'full_workouts',
         'progress_tracking',
@@ -109,6 +108,9 @@ class UserSubscription {
         'premium_features',
         'advanced_analytics',
         'export_data',
+        'unlimited_ai_analysis',
+        'extended_program_60days',
+        'lumi_full_evolution',
       ],
       createdAt: now,
       updatedAt: now,
@@ -225,14 +227,15 @@ class UserSubscription {
 
 /// 프리미엄 기능 열거형
 ///
-/// 새 구독 모델 (V2):
-/// - 모든 사용자가 Week 1-14 전체 접근 가능
-/// - 프리미엄 구독은 광고 제거만 해당
+/// 새 구독 모델 (V3):
+/// - 무료 사용자: Week 1-4 (30일), Lumi 진화 0-6단계 (7단계), 광고 있음
+/// - 프리미엄 사용자: Week 1-8 (60일), Lumi 진화 0-13단계 (14단계), 광고 제거
+/// - 프리미엄 혜택: 광고 제거 + 무제한 AI 분석 + 고급 통계 + 60일 확장
 enum PremiumFeature {
-  unlimitedWorkouts, // 무제한 운동 (모두 무료)
-  advancedStats, // 고급 통계 (모두 무료)
   adFree, // 광고 제거 (프리미엄만)
-  premiumChads, // 프리미엄 Chad (모두 무료)
-  exclusiveChallenges, // 독점 챌린지 (모두 무료)
-  prioritySupport, // 우선 지원 (모두 무료)
+  unlimitedAiAnalysis, // 무제한 Lumi 꿈 분석 (프리미엄만)
+  advancedStats, // 고급 통계 분석 (프리미엄만)
+  extendedProgram, // 60일 확장 프로그램 (프리미엄만)
+  lumiFullEvolution, // Lumi 14단계 진화 (프리미엄만)
+  prioritySupport, // 우선 지원 (프리미엄만)
 }

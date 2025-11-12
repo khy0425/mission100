@@ -460,6 +460,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
     if (_selectedDay == null) return const SizedBox.shrink();
 
     final events = _getEventsForDay(_selectedDay!);
+    final l10n = AppLocalizations.of(context);
 
     return Card(
       margin: const EdgeInsets.symmetric(horizontal: 16),
@@ -471,7 +472,11 @@ class _CalendarScreenState extends State<CalendarScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              '${_selectedDay!.year}년 ${_selectedDay!.month}월 ${_selectedDay!.day}일',
+              l10n.calendarSelectedDate(
+                _selectedDay!.day,
+                _selectedDay!.month,
+                _selectedDay!.year,
+              ),
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 12),

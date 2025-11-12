@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mission100/screens/subscription/subscription_screen.dart';
-import 'package:mission100/widgets/common/premium_gate_widget.dart';
-import 'package:mission100/models/user_subscription.dart';
+import 'package:mission_pushup_100/screens/subscription/subscription_screen.dart';
+import 'package:mission_pushup_100/widgets/common/premium_gate_widget.dart';
+import 'package:mission_pushup_100/models/user_subscription.dart';
 
 void main() {
   group('Subscription UI Tests', () {

@@ -32,7 +32,13 @@ class AboutSettingsWidget extends StatelessWidget {
         Icons.code,
         () => _showDeveloperDialog(context),
       ),
-      _buildTapSetting(
+            _buildTapSetting(
+        AppLocalizations.of(context).aboutSettingsScientificBasisTitle,
+        AppLocalizations.of(context).aboutSettingsScientificBasisDesc,
+        Icons.science,
+        () => _showScientificReferenceDialog(context),
+      ),
+_buildTapSetting(
         AppLocalizations.of(context).licenseInfo,
         AppLocalizations.of(context).licenseInfoDesc,
         Icons.description,
@@ -272,9 +278,9 @@ class AboutSettingsWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    '💪 Mission: 100',
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  Text(
+                    '✨ ${AppLocalizations.of(context).aboutSettingsAppName}',
+                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 4),
                   Text(
@@ -344,16 +350,24 @@ class AboutSettingsWidget extends StatelessWidget {
   void _showLicensePage(BuildContext context) {
     showLicensePage(
       context: context,
-      applicationName: 'Mission: 100 Chad Pushup',
+      applicationName: AppLocalizations.of(context).aboutSettingsAppName,
       applicationVersion: '1.0.0',
-      applicationIcon: Container(
-        width: 64,
-        height: 64,
-        decoration: const BoxDecoration(
-          color: Color(AppColors.primaryColor),
-          shape: BoxShape.circle,
+      applicationIcon: ClipRRect(
+        borderRadius: BorderRadius.circular(12),
+        child: Image.asset(
+          'assets/images/logo/logo_dark.png',
+          width: 64,
+          height: 64,
+          errorBuilder: (context, error, stackTrace) => Container(
+            width: 64,
+            height: 64,
+            decoration: const BoxDecoration(
+              color: Color(AppColors.primaryColor),
+              shape: BoxShape.circle,
+            ),
+            child: const Icon(Icons.nightlight_round, size: 32, color: Colors.white),
+          ),
         ),
-        child: const Icon(Icons.fitness_center, size: 32, color: Colors.white),
       ),
     );
   }
@@ -364,7 +378,7 @@ class AboutSettingsWidget extends StatelessWidget {
       context,
       MaterialPageRoute(
         builder: (context) => LegalDocumentScreen(
-          title: '개인정보처리방침',
+          title: AppLocalizations.of(context).aboutSettingsPrivacyPolicy,
           documentPath: 'assets/legal/privacy_policy_$locale.md',
         ),
       ),
@@ -377,7 +391,7 @@ class AboutSettingsWidget extends StatelessWidget {
       context,
       MaterialPageRoute(
         builder: (context) => LegalDocumentScreen(
-          title: '이용약관',
+          title: AppLocalizations.of(context).aboutSettingsTermsOfService,
           documentPath: 'assets/legal/terms_of_service_$locale.md',
         ),
       ),
@@ -414,6 +428,219 @@ class AboutSettingsWidget extends StatelessWidget {
       }
     }
   }
+
+
+  /// 과학적 근거 다이얼로그
+  void _showScientificReferenceDialog(BuildContext context) {
+    showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Row(
+          children: [
+            const Icon(
+              Icons.science,
+              color: Color(AppColors.primaryColor),
+            ),
+            const SizedBox(width: 8),
+            Text(AppLocalizations.of(context).aboutSettingsScientificDialogTitle),
+          ],
+        ),
+        content: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // 논문 정보
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: const Color(
+                    AppColors.primaryColor,
+                  ).withValues(alpha: 0.1),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      '📚 Research Paper',
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    const Text(
+                      'Calatayud J, et al. (2017)',
+                      style: TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'Progressive Resistance Training for Upper Body',
+                      style: TextStyle(
+                        fontSize: 13,
+                        color: Colors.grey[700],
+                      ),
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      'IJERPH. 14(5):358',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.grey[600],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // 주요 발견
+              const Text(
+                '🔬 주요 발견',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                AppLocalizations.of(context).aboutSettingsResearchDescription,
+                style: const TextStyle(fontSize: 13, height: 1.5),
+              ),
+              const SizedBox(height: 16),
+
+              // 훈련 파라미터 (NEW!)
+              Container(
+                padding: const EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                  color: Colors.orange[50],
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(color: Colors.orange[200]!),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(Icons.fitness_center, size: 18, color: Colors.orange),
+                        const SizedBox(width: 6),
+                        Text(
+                          AppLocalizations.of(context).aboutSettingsTrainingGuidelines,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    _buildTrainingParam(
+                      AppLocalizations.of(context).aboutSettingsWeeklyFrequency,
+                      AppLocalizations.of(context).aboutSettingsWeeklyFrequencyValue,
+                    ),
+                    const SizedBox(height: 8),
+                    _buildTrainingParam(
+                      AppLocalizations.of(context).aboutSettingsRestBetweenSets,
+                      AppLocalizations.of(context).aboutSettingsRestBetweenSetsValue,
+                    ),
+                    const SizedBox(height: 8),
+                    _buildTrainingParam(
+                      AppLocalizations.of(context).aboutSettingsRecoveryTime,
+                      AppLocalizations.of(context).aboutSettingsRecoveryTimeValue,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // DOI 링크
+              const Text(
+                '🔗 논문 링크',
+                style: TextStyle(
+                  fontSize: 14,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 8),
+              GestureDetector(
+                onTap: () async {
+                  final uri = Uri.parse('https://doi.org/10.3390/ijerph14050358');
+                  if (await canLaunchUrl(uri)) {
+                    await launchUrl(uri, mode: LaunchMode.externalApplication);
+                  }
+                },
+                child: const Text(
+                  'https://doi.org/10.3390/ijerph14050358',
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16),
+
+              // 프로그램 설명
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(
+                  AppLocalizations.of(context).aboutSettingsProgramExplanation,
+                  style: const TextStyle(
+                    fontSize: 11,
+                    color: Colors.black87,
+                    height: 1.4,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text(AppLocalizations.of(context).aboutSettingsConfirmButton),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// 훈련 파라미터 행 위젯
+  Widget _buildTrainingParam(String label, String value) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SizedBox(
+          width: 100,
+          child: Text(
+            label,
+            style: TextStyle(
+              fontSize: 12,
+              color: Colors.grey[700],
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ),
+        Expanded(
+          child: Text(
+            value,
+            style: const TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
+
+
 
   /// 피드백 이메일 보내기
   Future<void> _sendFeedback(BuildContext context) async {

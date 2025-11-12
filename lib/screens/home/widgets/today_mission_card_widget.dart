@@ -31,7 +31,17 @@ class TodayMissionCardWidget extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(AppConstants.paddingL),
       decoration: BoxDecoration(
-        color: Color(isDark ? AppColors.surfaceDark : AppColors.surfaceLight),
+        gradient: isDark
+            ? LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  Color(AppColors.dreamGradient[0]),
+                  Color(AppColors.dreamGradient[1]),
+                ],
+              )
+            : null,
+        color: isDark ? null : const Color(AppColors.surfaceLight),
         borderRadius: BorderRadius.circular(AppConstants.radiusL),
         boxShadow: [
           BoxShadow(
@@ -65,9 +75,14 @@ class TodayMissionCardWidget extends StatelessWidget {
   }
 
   Widget _buildHeader(AppLocalizations l10n, ThemeData theme) {
+    final isDark = theme.brightness == Brightness.dark;
     return Row(
       children: [
-        const Icon(Icons.today, color: Color(AppColors.primaryColor), size: 24),
+        Icon(
+          isDark ? Icons.nightlight_round : Icons.today,
+          color: const Color(AppColors.accentColor),
+          size: 24,
+        ),
         const SizedBox(width: AppConstants.paddingS),
         Text(
           l10n.todayMissionTitle,

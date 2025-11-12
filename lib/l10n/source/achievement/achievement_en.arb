@@ -9,10 +9,10 @@
     "description": "Achievement celebration dialog message"
   },
   "@achievementCenturion": {
-    "description": "Achievement title for reaching 100 total pushups"
+    "description": "Achievement title for reaching 100 total dream tasks"
   },
   "@achievementCenturionDesc": {
-    "description": "Achievement description for reaching 100 total pushups"
+    "description": "Achievement description for reaching 100 total dream tasks"
   },
   "@achievementChallenge100CumulativeDesc": {
     "description": "100 cumulative challenge complete achievement description"
@@ -69,43 +69,43 @@
     "description": "Challenge master achievement title"
   },
   "@achievementCompletionRate80Desc": {
-    "description": "80% completion rate achievement description"
+    "description": "80% achievement rate achievement description"
   },
   "@achievementCompletionRate80Motivation": {
-    "description": "80% completion rate achievement motivation"
+    "description": "80% achievement rate achievement motivation"
   },
   "@achievementCompletionRate80Title": {
-    "description": "80% completion rate achievement title"
+    "description": "80% achievement rate achievement title"
   },
   "@achievementCompletionRate90Desc": {
-    "description": "90% completion rate achievement description"
+    "description": "90% achievement rate achievement description"
   },
   "@achievementCompletionRate90Motivation": {
-    "description": "90% completion rate achievement motivation"
+    "description": "90% achievement rate achievement motivation"
   },
   "@achievementCompletionRate90Title": {
-    "description": "90% completion rate achievement title"
+    "description": "90% achievement rate achievement title"
   },
   "@achievementCompletionRate95Desc": {
-    "description": "95% completion rate achievement description"
+    "description": "95% achievement rate achievement description"
   },
   "@achievementCompletionRate95Motivation": {
-    "description": "95% completion rate achievement motivation"
+    "description": "95% achievement rate achievement motivation"
   },
   "@achievementCompletionRate95Title": {
-    "description": "95% completion rate achievement title"
+    "description": "95% achievement rate achievement title"
   },
   "@achievementConsistency": {
-    "description": "Achievement title for 30 consecutive workout days"
+    "description": "Achievement title for 30 consecutive lucid dream practice days"
   },
   "@achievementConsistencyDesc": {
-    "description": "Achievement description for 30 consecutive workout days"
+    "description": "Achievement description for 30 consecutive lucid dream practice days"
   },
   "@achievementDedication": {
-    "description": "Achievement title for 100 consecutive workout days"
+    "description": "Achievement title for 100 consecutive lucid dream practice days"
   },
   "@achievementDedicationDesc": {
-    "description": "Achievement description for 100 consecutive workout days"
+    "description": "Achievement description for 100 consecutive lucid dream practice days"
   },
   "@achievementEarlyBird": {
     "description": "Achievement title for working out before 6 AM"
@@ -120,16 +120,16 @@
     "description": "Achievement description for working out for over 30 minutes"
   },
   "@achievementFirstJourney": {
-    "description": "Achievement title for completing first pushup"
+    "description": "Achievement title for completing first dream tasks"
   },
   "@achievementFirstJourneyDesc": {
-    "description": "Achievement description for completing first pushup"
+    "description": "Achievement description for completing first dream tasks"
   },
   "@achievementGodMode": {
-    "description": "Achievement title for achieving over 500 reps in one session"
+    "description": "Achievement title for achieving over 500 tasks in one session"
   },
   "@achievementGodModeDesc": {
-    "description": "Achievement description for achieving over 500 reps in one session"
+    "description": "Achievement description for achieving over 500 tasks in one session"
   },
   "@achievementIronWill": {
     "description": "Achievement title for completing hard difficulty"
@@ -138,16 +138,16 @@
     "description": "Achievement description for completing hard difficulty"
   },
   "@achievementLegend": {
-    "description": "Achievement title for reaching 10000 total pushups"
+    "description": "Achievement title for reaching 10000 total dream tasks"
   },
   "@achievementLegendDesc": {
-    "description": "Achievement description for reaching 10000 total pushups"
+    "description": "Achievement description for reaching 10000 total dream tasks"
   },
   "@achievementMarathoner": {
-    "description": "Achievement title for reaching 5000 total pushups"
+    "description": "Achievement title for reaching 5000 total dream tasks"
   },
   "@achievementMarathonerDesc": {
-    "description": "Achievement description for reaching 5000 total pushups"
+    "description": "Achievement description for reaching 5000 total dream tasks"
   },
   "@achievementNightOwl": {
     "description": "Achievement title for working out after 10 PM"
@@ -189,10 +189,10 @@
     "description": "Achievement description for achieving 10 perfect sets"
   },
   "@achievementPushupMaster": {
-    "description": "Achievement title for reaching 1000 total pushups"
+    "description": "Achievement title for reaching 1000 total dream tasks"
   },
   "@achievementPushupMasterDesc": {
-    "description": "Achievement description for reaching 1000 total pushups"
+    "description": "Achievement description for reaching 1000 total dream tasks"
   },
   "@achievementRarityCommon": {
     "description": "Common achievement rarity"
@@ -213,31 +213,31 @@
     "description": "Achievement screen advertisement fallback message"
   },
   "@achievementSpeedDemon": {
-    "description": "Achievement title for completing workout in under 5 minutes"
+    "description": "Achievement title for completing lucid dream practice in under 5 minutes"
   },
   "@achievementSpeedDemonDesc": {
-    "description": "Achievement description for completing workout in under 5 minutes"
+    "description": "Achievement description for completing lucid dream practice in under 5 minutes"
   },
   "@achievementTypeChallenge": {
-    "description": "Challenge achievement type - Chad style"
+    "description": "Challenge achievement type - Dream Spirit style"
   },
   "@achievementTypeFirst": {
-    "description": "First achievement type - Chad style"
+    "description": "First achievement type - Dream Spirit style"
   },
   "@achievementTypePerfect": {
-    "description": "Perfect achievement type - Chad style"
+    "description": "Perfect achievement type - Dream Spirit style"
   },
   "@achievementTypeSpecial": {
-    "description": "Special achievement type - Chad style"
+    "description": "Special achievement type - Dream Spirit style"
   },
   "@achievementTypeStatistics": {
-    "description": "Statistics achievement type - Chad style"
+    "description": "Statistics achievement type - Dream Spirit style"
   },
   "@achievementTypeStreak": {
-    "description": "Streak achievement type - Chad style"
+    "description": "Streak achievement type - Dream Spirit style"
   },
   "@achievementTypeVolume": {
-    "description": "Volume achievement type - Chad style"
+    "description": "Volume achievement type - Dream Spirit style"
   },
   "@achievementUltimate": {
     "description": "Achievement title for achieving all achievements"
@@ -249,34 +249,34 @@
     "description": "Achievement unlocked title"
   },
   "@achievementVariety": {
-    "description": "Achievement title for completing 5 different pushup types"
+    "description": "Achievement title for completing 5 different dream tasks types"
   },
   "@achievementVarietyDesc": {
-    "description": "Achievement description for completing 5 different pushup types"
+    "description": "Achievement description for completing 5 different dream tasks types"
   },
   "@achievementWeekWarrior": {
-    "description": "Achievement title for 7 consecutive workout days"
+    "description": "Achievement title for 7 consecutive lucid dream practice days"
   },
   "@achievementWeekWarriorDesc": {
-    "description": "Achievement description for 7 consecutive workout days"
+    "description": "Achievement description for 7 consecutive lucid dream practice days"
   },
   "@achievementWorkoutTime300Desc": {
-    "description": "5 hour workout achievement description"
+    "description": "5 hour lucid dream practice achievement description"
   },
   "@achievementWorkoutTime300Motivation": {
-    "description": "5 hour workout achievement motivation"
+    "description": "5 hour lucid dream practice achievement motivation"
   },
   "@achievementWorkoutTime300Title": {
-    "description": "5 hour workout achievement title"
+    "description": "5 hour lucid dream practice achievement title"
   },
   "@achievementWorkoutTime60Desc": {
-    "description": "1 hour workout achievement description"
+    "description": "1 hour lucid dream practice achievement description"
   },
   "@achievementWorkoutTime60Motivation": {
-    "description": "1 hour workout achievement motivation"
+    "description": "1 hour lucid dream practice achievement motivation"
   },
   "@achievementWorkoutTime60Title": {
-    "description": "1 hour workout achievement title"
+    "description": "1 hour lucid dream practice achievement title"
   },
   "@achievements": {
     "description": "Achievements tab"
@@ -291,7 +291,7 @@
     "description": "All achievements unlocked title"
   },
   "@chadAchievements": {
-    "description": "Chad achievements title"
+    "description": "Dream Spirit achievements title"
   },
   "@challengeRewardAdvancedStats": {
     "description": "Advanced stats feature unlock reward"
@@ -361,109 +361,109 @@
       }
     }
   },
-  "achievementAllRounderDesc": "Tried all pushup types",
-  "achievementAllRounderMotivation": "Master of all types! All-rounder Chad! 🌈",
+  "achievementAllRounderDesc": "Tried all dream tasks types",
+  "achievementAllRounderMotivation": "Master of all types! All-rounder Dream Spirit! 🌈",
   "achievementAllRounderTitle": "All-Rounder",
   "achievementBeastMode": "Beast Mode",
   "achievementBeastModeDesc": "Exceed target by 150%",
-  "achievementCelebrationMessage": "Feel the power of Chad! 💪",
+  "achievementCelebrationMessage": "Feel the power of Dream Spirit! 💪",
   "achievementCenturion": "Centurion",
-  "achievementCenturionDesc": "Achieve a total of 100 pushups",
-  "achievementChallenge100CumulativeDesc": "Completed 100 cumulative pushups challenge",
+  "achievementCenturionDesc": "Achieve a total of 100 dream tasks",
+  "achievementChallenge100CumulativeDesc": "Completed 100 cumulative dream tasks challenge",
   "achievementChallenge100CumulativeMotivation": "Small efforts create great results!",
   "achievementChallenge100CumulativeTitle": "100 Cumulative Challenge Complete",
-  "achievementChallenge14DaysDesc": "Completed 14 consecutive days workout challenge",
+  "achievementChallenge14DaysDesc": "Completed 14 consecutive days lucid dream practice challenge",
   "achievementChallenge14DaysMotivation": "Unbreakable will! Amazing! 💪",
   "achievementChallenge14DaysTitle": "14 Days Streak Challenge Complete",
-  "achievementChallenge200CumulativeDesc": "Completed 200 cumulative pushups challenge",
+  "achievementChallenge200CumulativeDesc": "Completed 200 cumulative dream tasks challenge",
   "achievementChallenge200CumulativeMotivation": "True champion performance!",
   "achievementChallenge200CumulativeTitle": "200 Cumulative Challenge Complete",
-  "achievementChallenge50SingleDesc": "Completed 50 pushups in one session challenge",
+  "achievementChallenge50SingleDesc": "Completed 50 dream tasks in one session challenge",
   "achievementChallenge50SingleMotivation": "Limits shattered! Insane! 🔥",
   "achievementChallenge50SingleTitle": "50 Single Session Challenge Complete",
-  "achievementChallenge7DaysDesc": "Completed 7 consecutive days workout challenge",
+  "achievementChallenge7DaysDesc": "Completed 7 consecutive days lucid dream practice challenge",
   "achievementChallenge7DaysMotivation": "Consistency is your greatest weapon!",
   "achievementChallenge7DaysTitle": "7 Days Streak Challenge Complete",
   "achievementChallengeMasterDesc": "Completed all challenges",
   "achievementChallengeMasterMotivation": "You are a true challenge master!",
   "achievementChallengeMasterTitle": "Challenge Master",
-  "achievementComebackKidDesc": "Restarted workout after resting for 7+ days",
-  "achievementComebackKidMotivation": "Never-give-up spirit! Comeback Chad! 🔄",
+  "achievementComebackKidDesc": "Restarted lucid dream practice after resting for 7+ days",
+  "achievementComebackKidMotivation": "Never-give-up spirit! Comeback Dream Spirit! 🔄",
   "achievementComebackKidTitle": "Comeback Kid",
-  "achievementCompletionRate80Desc": "Achieved average completion rate of 80% or higher",
+  "achievementCompletionRate80Desc": "Achieved average achievement rate of 80% or higher",
   "achievementCompletionRate80Motivation": "Consistency is key! Keep going! 💪",
-  "achievementCompletionRate80Title": "Excellent Completion Rate",
-  "achievementCompletionRate90Desc": "Achieved average completion rate of 90% or higher",
+  "achievementCompletionRate80Title": "Excellent Achievement Rate",
+  "achievementCompletionRate90Desc": "Achieved average achievement rate of 90% or higher",
   "achievementCompletionRate90Motivation": "Near perfect! Killing it! 🔥",
   "achievementCompletionRate90Title": "Perfectionist",
-  "achievementCompletionRate95Desc": "Achieved average completion rate of 95% or higher",
+  "achievementCompletionRate95Desc": "Achieved average achievement rate of 95% or higher",
   "achievementCompletionRate95Motivation": "Almost perfect! Legend status! 👑",
   "achievementCompletionRate95Title": "Master Performer",
   "achievementConsistency": "King of Consistency",
-  "achievementConsistencyDesc": "Work out for 30 consecutive days",
+  "achievementConsistencyDesc": "Practice lucid dreaming for 30 consecutive days",
   "achievementConsistencyMasterDesc": "Achieved goal exactly for 10 consecutive days",
   "achievementConsistencyMasterMotivation": "Precise goal achievement! Master of consistency! 🎯",
   "achievementConsistencyMasterTitle": "Master of Consistency",
   "achievementDedication": "Dedication",
-  "achievementDedicationDesc": "Work out for 100 consecutive days",
+  "achievementDedicationDesc": "Practice lucid dreaming for 100 consecutive days",
   "achievementDedicationMasterDesc": "Used the app for 100+ days",
   "achievementDedicationMasterMotivation": "100 days of dedication! You are the master of dedication! 🎖️",
   "achievementDedicationMasterTitle": "Master of Dedication",
   "achievementDoubleTroubleDesc": "Achieved 200% of goal",
-  "achievementDoubleTroubleMotivation": "Double the goal! Double Trouble Chad! 🎪",
+  "achievementDoubleTroubleMotivation": "Double the goal! Double Trouble Dream Spirit! 🎪",
   "achievementDoubleTroubleTitle": "Double Trouble",
   "achievementEarlyBird": "Early Bird",
-  "achievementEarlyBirdDesc": "Worked out 5 times before 7 AM",
-  "achievementEarlyBirdMotivation": "Early bird Chad who conquered the dawn! 🌅",
-  "achievementEarlyBirdTitle": "Dawn Chad",
+  "achievementEarlyBirdDesc": "Practiced lucid dreaming 5 times before 7 AM",
+  "achievementEarlyBirdMotivation": "Early bird Dream Spirit who conquered the dawn! 🌅",
+  "achievementEarlyBirdTitle": "Dawn Dream Spirit",
   "achievementEndurance": "Endurance King",
-  "achievementEnduranceDesc": "Work out for over 30 minutes",
-  "achievementEnduranceKingDesc": "Sustained workout for over 30 minutes",
+  "achievementEnduranceDesc": "Practice lucid dreaming for over 30 minutes",
+  "achievementEnduranceKingDesc": "Sustained lucid dream practice for over 30 minutes",
   "achievementEnduranceKingMotivation": "30 minutes sustained! King of endurance! ⏰",
   "achievementEnduranceKingTitle": "King of Endurance",
-  "achievementFirst100SingleDesc": "Achieved 100 pushups in a single workout",
-  "achievementFirst100SingleMotivation": "100 in one go! True power Chad! 💥",
+  "achievementFirst100SingleDesc": "Achieved 100 dream tasks in a single lucid dream practice",
+  "achievementFirst100SingleMotivation": "100 in one go! True power Dream Spirit! 💥",
   "achievementFirst100SingleTitle": "100 in One Go",
-  "achievementFirst50Desc": "Achieved 50 pushups in a single workout",
-  "achievementFirst50Motivation": "50 reps breakthrough! Foundation getting solid! 🎊",
+  "achievementFirst50Desc": "Achieved 50 dream tasks in a single lucid dream practice",
+  "achievementFirst50Motivation": "50 tasks breakthrough! Foundation getting solid! 🎊",
   "achievementFirst50Title": "First 50 Breakthrough",
-  "achievementFirstJourney": "Chad Journey Begins",
-  "achievementFirstJourneyDesc": "Complete your first pushup",
+  "achievementFirstJourney": "Dream Spirit Journey Begins",
+  "achievementFirstJourneyDesc": "Complete your first dream tasks",
   "achievementGodMode": "God Mode",
-  "achievementGodModeDesc": "Achieve over 500 reps in one session",
+  "achievementGodModeDesc": "Achieve over 500 tasks in one session",
   "achievementIronWill": "Iron Will",
-  "achievementIronWillDesc": "Achieved 200 pushups in one go",
+  "achievementIronWillDesc": "Achieved 200 dream tasks in one go",
   "achievementIronWillMotivation": "200 in one go! Iron-like will! 🔩",
   "achievementIronWillTitle": "Iron Will",
   "achievementLegend": "Legend",
-  "achievementLegendDesc": "Achieve a total of 10000 pushups",
-  "achievementLegendaryBeastDesc": "Achieved 500 pushups in one go",
+  "achievementLegendDesc": "Achieve a total of 10000 dream tasks",
+  "achievementLegendaryBeastDesc": "Achieved 500 dream tasks in one go",
   "achievementLegendaryBeastMotivation": "500! You are a legendary beast! 🐉",
   "achievementLegendaryBeastTitle": "Legendary Beast",
   "achievementLevel10Desc": "Reached level 10",
-  "achievementLevel10Motivation": "Level 10! Realm of advanced Chad! 🏅",
-  "achievementLevel10Title": "Level 10 Chad",
+  "achievementLevel10Motivation": "Level 10! Realm of advanced Dream Spirit! 🏅",
+  "achievementLevel10Title": "Level 10 Dream Spirit",
   "achievementLevel20Desc": "Reached level 20",
   "achievementLevel20Motivation": "Level 20! King among Chads! 👑",
-  "achievementLevel20Title": "Level 20 Chad",
+  "achievementLevel20Title": "Level 20 Dream Spirit",
   "achievementLevel5Desc": "Reached level 5",
-  "achievementLevel5Motivation": "Level 5 achieved! Beginning of intermediate Chad! 🌟",
-  "achievementLevel5Title": "Level 5 Chad",
-  "achievementLunchBreakDesc": "Worked out 5 times during lunch break (12-2 PM)",
-  "achievementLunchBreakMotivation": "Efficient Chad who doesn't miss lunch break! 🍽️",
-  "achievementLunchBreakTitle": "Lunch Break Chad",
+  "achievementLevel5Motivation": "Level 5 achieved! Beginning of intermediate Dream Spirit! 🌟",
+  "achievementLevel5Title": "Level 5 Dream Spirit",
+  "achievementLunchBreakDesc": "Practiced lucid dreaming 5 times during lunch break (12-2 PM)",
+  "achievementLunchBreakMotivation": "Efficient Dream Spirit who doesn't miss lunch break! 🍽️",
+  "achievementLunchBreakTitle": "Lunch Break Dream Spirit",
   "achievementMarathoner": "Marathoner",
-  "achievementMarathonerDesc": "Achieve a total of 5000 pushups",
-  "achievementMonthlyWarriorDesc": "Worked out 20+ days in a month",
-  "achievementMonthlyWarriorMotivation": "20 days a month! Monthly warrior Chad! 📅",
+  "achievementMarathonerDesc": "Achieve a total of 5000 dream tasks",
+  "achievementMonthlyWarriorDesc": "Practiced lucid dreaming 20+ days in a month",
+  "achievementMonthlyWarriorMotivation": "20 days a month! Monthly warrior Dream Spirit! 📅",
   "achievementMonthlyWarriorTitle": "Monthly Warrior",
   "achievementMotivatorDesc": "Used the app for 30+ days",
   "achievementMotivatorMotivation": "30 days of use! True motivator! 💡",
   "achievementMotivatorTitle": "Motivator",
   "achievementNightOwl": "Night Owl",
-  "achievementNightOwlDesc": "Worked out 5 times after 10 PM",
-  "achievementNightOwlMotivation": "Owl Chad who never gives up even at night! 🦉",
-  "achievementNightOwlTitle": "Nocturnal Chad",
+  "achievementNightOwlDesc": "Practiced lucid dreaming 5 times after 10 PM",
+  "achievementNightOwlMotivation": "Owl Dream Spirit who never gives up even at night! 🦉",
+  "achievementNightOwlTitle": "Nocturnal Dream Spirit",
   "achievementNotificationChannelDescription": "Achievement unlock and progress notifications",
   "achievementNotificationChannelName": "Achievement Notifications",
   "achievementNotifications": "Achievement Notifications",
@@ -473,88 +473,88 @@
   "achievementOverachieverDesc": "Achieved 150% of goal 5 times",
   "achievementOverachieverMotivation": "Overachiever who surpasses goals! 📈",
   "achievementOverachieverTitle": "Overachiever",
-  "achievementPerfect10Desc": "Achieved 10 perfect workouts",
-  "achievementPerfect10Motivation": "Master of perfection! Chad among Chads! 🏆",
-  "achievementPerfect10Title": "Master Chad",
-  "achievementPerfect20Desc": "Achieved 20 perfect workouts",
+  "achievementPerfect10Desc": "Achieved 10 perfect lucid dream practices",
+  "achievementPerfect10Motivation": "Master of perfection! Dream Spirit among Chads! 🏆",
+  "achievementPerfect10Title": "Master Dream Spirit",
+  "achievementPerfect20Desc": "Achieved 20 perfect lucid dream practices",
   "achievementPerfect20Motivation": "20 perfects! You are the embodiment of perfection! 💎",
   "achievementPerfect20Title": "Perfect Legend",
-  "achievementPerfect3Desc": "Achieved 3 perfect workouts",
-  "achievementPerfect3Motivation": "Perfect triple! Chad of accuracy! 🎯",
+  "achievementPerfect3Desc": "Achieved 3 perfect lucid dream practices",
+  "achievementPerfect3Motivation": "Perfect triple! Dream Spirit of accuracy! 🎯",
   "achievementPerfect3Title": "Perfect Triple",
-  "achievementPerfect5Desc": "Achieved 5 perfect workouts",
-  "achievementPerfect5Motivation": "True Chad who pursues perfection! ⭐",
-  "achievementPerfect5Title": "Perfectionist Chad",
+  "achievementPerfect5Desc": "Achieved 5 perfect lucid dream practices",
+  "achievementPerfect5Motivation": "True Dream Spirit who pursues perfection! ⭐",
+  "achievementPerfect5Title": "Perfectionist Dream Spirit",
   "achievementPerfectSet": "Perfect First Set",
   "achievementPerfectSetDesc": "Complete a set achieving 100% of target",
   "achievementPerfectionist": "Perfectionist",
   "achievementPerfectionistDesc": "Achieve 10 perfect sets",
-  "achievementPushupMaster": "Pushup Master",
-  "achievementPushupMasterDesc": "Achieve a total of 1000 pushups",
+  "achievementPushupMaster": "Dream Tasks Master",
+  "achievementPushupMasterDesc": "Achieve a total of 1000 dream tasks",
   "achievementRarityCommon": "Common",
   "achievementRarityEpic": "Epic",
   "achievementRarityLegendary": "Legendary",
   "achievementRarityMythic": "Mythic",
   "achievementRarityRare": "Rare",
-  "achievementScreenAdMessage": "Achieve and become Chad! 🏆",
+  "achievementScreenAdMessage": "Achieve and become Dream Spirit! 🏆",
   "achievementSeasonalChampionDesc": "Achieved monthly goals for 3 consecutive months",
   "achievementSeasonalChampionMotivation": "3 months straight! Seasonal champion! 🏆",
   "achievementSeasonalChampionTitle": "Seasonal Champion",
   "achievementSpeedDemon": "Speed Demon",
-  "achievementSpeedDemonDesc": "Completed 50 pushups in under 5 minutes",
-  "achievementSpeedDemonMotivation": "Lightning speed! Chad of speed! 💨",
+  "achievementSpeedDemonDesc": "Completed 50 dream tasks in under 5 minutes",
+  "achievementSpeedDemonMotivation": "Lightning speed! Dream Spirit of speed! 💨",
   "achievementSpeedDemonTitle": "Speed Demon",
-  "achievementStreak100Desc": "Completed workouts for 100 consecutive days",
+  "achievementStreak100Desc": "Completed lucid dream practices for 100 consecutive days",
   "achievementStreak100Motivation": "100 days straight! You are a living myth! 🌟",
-  "achievementStreak100Title": "100-Day Mythical Chad",
-  "achievementStreak14Desc": "Completed workouts for 14 consecutive days",
-  "achievementStreak14Motivation": "King of persistence! Chad among Chads! 🏃‍♂️",
-  "achievementStreak14Title": "2-Week Marathon Chad",
-  "achievementStreak30Desc": "Completed workouts for 30 consecutive days",
+  "achievementStreak100Title": "100-Day Mythical Dream Spirit",
+  "achievementStreak14Desc": "Completed lucid dream practices for 14 consecutive days",
+  "achievementStreak14Motivation": "King of persistence! Dream Spirit among Chads! 🏃‍♂️",
+  "achievementStreak14Title": "2-Week Marathon Dream Spirit",
+  "achievementStreak30Desc": "Completed lucid dream practices for 30 consecutive days",
   "achievementStreak30Motivation": "You are now the King of Chads! 👑",
-  "achievementStreak30Title": "Monthly Ultimate Chad",
-  "achievementStreak3Desc": "Completed workouts for 3 consecutive days",
-  "achievementStreak3Motivation": "Consistency makes a Chad! 🔥",
-  "achievementStreak3Title": "3-Day Streak Chad",
-  "achievementStreak60Desc": "Completed workouts for 60 consecutive days",
+  "achievementStreak30Title": "Monthly Ultimate Dream Spirit",
+  "achievementStreak3Desc": "Completed lucid dream practices for 3 consecutive days",
+  "achievementStreak3Motivation": "Consistency makes a Dream Spirit! 🔥",
+  "achievementStreak3Title": "3-Day Streak Dream Spirit",
+  "achievementStreak60Desc": "Completed lucid dream practices for 60 consecutive days",
   "achievementStreak60Motivation": "2 months straight! You are a legend! 🏅",
-  "achievementStreak60Title": "2-Month Legend Chad",
-  "achievementStreak7Desc": "Completed workouts for 7 consecutive days",
-  "achievementStreak7Motivation": "True Chad who conquered the week! 💪",
-  "achievementStreak7Title": "Weekly Chad",
-  "achievementTotal10000Desc": "Completed a total of 10000 pushups",
+  "achievementStreak60Title": "2-Month Legend Dream Spirit",
+  "achievementStreak7Desc": "Completed lucid dream practices for 7 consecutive days",
+  "achievementStreak7Motivation": "True Dream Spirit who conquered the week! 💪",
+  "achievementStreak7Title": "Weekly Dream Spirit",
+  "achievementTotal10000Desc": "Completed a total of 10000 dream tasks",
   "achievementTotal10000Motivation": "10000! You are the God of Chads! 👑",
-  "achievementTotal10000Title": "10000 God Chad",
-  "achievementTotal1000Desc": "Completed a total of 1000 pushups",
-  "achievementTotal1000Motivation": "1000 breakthrough! Mega Chad achieved! ⚡",
-  "achievementTotal1000Title": "1000 Mega Chad",
-  "achievementTotal100Desc": "Completed a total of 100 pushups",
-  "achievementTotal100Motivation": "First 100 breakthrough! Chad's foundation complete! 💯",
+  "achievementTotal10000Title": "10000 God Dream Spirit",
+  "achievementTotal1000Desc": "Completed a total of 1000 dream tasks",
+  "achievementTotal1000Motivation": "1000 breakthrough! Mega Dream Spirit achieved! ⚡",
+  "achievementTotal1000Title": "1000 Mega Dream Spirit",
+  "achievementTotal100Desc": "Completed a total of 100 dream tasks",
+  "achievementTotal100Motivation": "First 100 breakthrough! Dream Spirit's foundation complete! 💯",
   "achievementTotal100Title": "First 100 Breakthrough",
-  "achievementTotal2500Desc": "Completed a total of 2500 pushups",
-  "achievementTotal2500Motivation": "2500! Reached the realm of Super Chad! 🔥",
-  "achievementTotal2500Title": "2500 Super Chad",
-  "achievementTotal250Desc": "Completed a total of 250 pushups",
+  "achievementTotal2500Desc": "Completed a total of 2500 dream tasks",
+  "achievementTotal2500Motivation": "2500! Reached the realm of Super Dream Spirit! 🔥",
+  "achievementTotal2500Title": "2500 Super Dream Spirit",
+  "achievementTotal250Desc": "Completed a total of 250 dream tasks",
   "achievementTotal250Motivation": "250! Result of consistency! 🎯",
-  "achievementTotal250Title": "250 Chad",
-  "achievementTotal5000Desc": "Completed a total of 5000 pushups",
-  "achievementTotal5000Motivation": "5000! You are an Ultra Chad! 🌟",
-  "achievementTotal5000Title": "5000 Ultra Chad",
-  "achievementTotal500Desc": "Completed a total of 500 pushups",
-  "achievementTotal500Motivation": "500 breakthrough! Intermediate Chad achieved! 🚀",
-  "achievementTotal500Title": "500 Chad",
-  "achievementTotal50Desc": "Completed a total of 50 pushups",
+  "achievementTotal250Title": "250 Dream Spirit",
+  "achievementTotal5000Desc": "Completed a total of 5000 dream tasks",
+  "achievementTotal5000Motivation": "5000! You are an Ultra Dream Spirit! 🌟",
+  "achievementTotal5000Title": "5000 Ultra Dream Spirit",
+  "achievementTotal500Desc": "Completed a total of 500 dream tasks",
+  "achievementTotal500Motivation": "500 breakthrough! Intermediate Dream Spirit achieved! 🚀",
+  "achievementTotal500Title": "500 Dream Spirit",
+  "achievementTotal50Desc": "Completed a total of 50 dream tasks",
   "achievementTotal50Motivation": "First 50! The seed is growing! 🌱",
   "achievementTotal50Title": "First 50 Total",
-  "achievementTutorialExplorerDesc": "Checked the first pushup tutorial",
-  "achievementTutorialExplorerMotivation": "Knowledge is Chad's first power! 🔍",
-  "achievementTutorialExplorerTitle": "Exploring Chad",
-  "achievementTutorialMasterDesc": "Checked all pushup tutorials",
-  "achievementTutorialMasterMotivation": "Pushup doctor who mastered all techniques! 🎓",
-  "achievementTutorialMasterTitle": "Pushup Master",
-  "achievementTutorialStudentDesc": "Checked 5 pushup tutorials",
-  "achievementTutorialStudentMotivation": "True Chad learning various techniques! 📚",
-  "achievementTutorialStudentTitle": "Learning Chad",
+  "achievementTutorialExplorerDesc": "Checked the first dream tasks tutorial",
+  "achievementTutorialExplorerMotivation": "Knowledge is Dream Spirit's first power! 🔍",
+  "achievementTutorialExplorerTitle": "Exploring Dream Spirit",
+  "achievementTutorialMasterDesc": "Checked all dream tasks tutorials",
+  "achievementTutorialMasterMotivation": "Dream Tasks doctor who mastered all techniques! 🎓",
+  "achievementTutorialMasterTitle": "Dream Tasks Master",
+  "achievementTutorialStudentDesc": "Checked 5 dream tasks tutorials",
+  "achievementTutorialStudentMotivation": "True Dream Spirit learning various techniques! 📚",
+  "achievementTutorialStudentTitle": "Learning Dream Spirit",
   "achievementTypeChallenge": "🚀 CHALLENGE BEAST",
   "achievementTypeFirst": "🥇 VIRGIN VOYAGE",
   "achievementTypePerfect": "👑 PERFECT EMPEROR",
@@ -562,32 +562,32 @@
   "achievementTypeStatistics": "📊 STATS MASTER",
   "achievementTypeStreak": "⚡ STREAK DOMINANCE",
   "achievementTypeVolume": "🔥 VOLUME BOMBING",
-  "achievementUltimate": "Ultimate Chad",
+  "achievementUltimate": "Ultimate Dream Spirit",
   "achievementUltimateDesc": "Achieve all achievements",
-  "achievementUltimateMotivation": "You are the ultimate Chad! 🌟",
+  "achievementUltimateMotivation": "You are the ultimate Dream Spirit! 🌟",
   "achievementUnlocked": "🏆 Achievement Unlocked! 🏆",
-  "achievementUnstoppableForceDesc": "Achieved 300 pushups in one go",
+  "achievementUnstoppableForceDesc": "Achieved 300 dream tasks in one go",
   "achievementUnstoppableForceMotivation": "300! You are an unstoppable force! 🌪️",
   "achievementUnstoppableForceTitle": "Unstoppable Force",
   "achievementVariety": "Master of Variety",
-  "achievementVarietyDesc": "Complete 5 different pushup types",
-  "achievementVarietySeekerDesc": "Tried 5 different pushup types",
-  "achievementVarietySeekerMotivation": "Creative Chad seeking variety! 🎨",
+  "achievementVarietyDesc": "Complete 5 different dream tasks types",
+  "achievementVarietySeekerDesc": "Tried 5 different dream tasks types",
+  "achievementVarietySeekerMotivation": "Creative Dream Spirit seeking variety! 🎨",
   "achievementVarietySeekerTitle": "Variety Seeker",
   "achievementWeekWarrior": "Week Warrior",
-  "achievementWeekWarriorDesc": "Work out for 7 consecutive days",
-  "achievementWeekendWarriorDesc": "Chad who consistently works out on weekends",
+  "achievementWeekWarriorDesc": "Practice lucid dreaming for 7 consecutive days",
+  "achievementWeekendWarriorDesc": "Dream Spirit who consistently practices lucid dreaming on weekends",
   "achievementWeekendWarriorMotivation": "Warrior who doesn't stop even on weekends! ⚔️",
   "achievementWeekendWarriorTitle": "Weekend Warrior",
-  "achievementWorkoutTime300Desc": "Achieved total workout time of 300 minutes (5 hours)",
-  "achievementWorkoutTime300Motivation": "Your dedication to fitness is amazing!",
-  "achievementWorkoutTime300Title": "5 Hour Workout Master",
-  "achievementWorkoutTime60Desc": "Achieved total workout time of 60 minutes",
-  "achievementWorkoutTime60Motivation": "Consistent work stacking up! 💪",
-  "achievementWorkoutTime60Title": "1 Hour Workout Achievement",
+  "achievementWorkoutTime300Desc": "Achieved total lucid dream practice time of 300 minutes (5 hours)",
+  "achievementWorkoutTime300Motivation": "Your dedication to lucid dreaming is amazing!",
+  "achievementWorkoutTime300Title": "5 Hour Lucid Dream Practice Master",
+  "achievementWorkoutTime60Desc": "Achieved total lucid dream practice time of 60 minutes",
+  "achievementWorkoutTime60Motivation": "Consistent practice stacking up! 💪",
+  "achievementWorkoutTime60Title": "1 Hour Lucid Dream Practice Achievement",
   "achievements": "Achievements",
   "achievementsBadges": "• Achievements and badges",
-  "achievementsBannerText": "Unlock achievements and become a Chad! 🏆",
+  "achievementsBannerText": "Unlock achievements and become a Dream Spirit! 🏆",
   "allAchievementsUnlocked": "All achievements unlocked! 🏆",
   "chadAchievements": "Achievements",
   "challengeRewardAdvancedStats": "Advanced Stats Feature Unlock",
@@ -603,9 +603,9 @@
   "noAchievementsYet": "No achievements yet",
   "receiveAchievementNotifications": "Receive notifications when achievements are unlocked",
   "rewardText": "Reward",
-  "startWorkoutForAchievements": "Start working out to unlock first achievement! 💪",
+  "startWorkoutForAchievements": "Start lucid dream practice to unlock first achievement! 💪",
   "trophyIcon": "🏆",
-  "unlockMoreChallenges": "Complete more workouts to unlock new challenges!",
+  "unlockMoreChallenges": "Complete more lucid dream practices to unlock new challenges!",
   "unlockedAchievements": "Unlocked Achievements ({count})",
   "newAchievementUnlocked": "🏆 New Achievement Unlocked! 🏆",
   "viewAllAchievements": "✨ View All Achievements",

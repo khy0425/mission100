@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'investor_demo_screen.dart';
+import '../ai/lucid_dream_ai_assistant_screen.dart';
 
 /// 투자자용 데모 런처 (개발용)
 class DemoLauncher extends StatelessWidget {
@@ -57,7 +58,7 @@ class DemoLauncher extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
-                              'Mission: 100 AI Platform',
+                              '드림플로 AI Platform',
                               style: TextStyle(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
@@ -124,6 +125,29 @@ class DemoLauncher extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                           builder: (context) => const InvestorDemoScreen(),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(height: 16),
+                  _buildDemoCard(
+                    context,
+                    title: 'AI 어시스턴트',
+                    subtitle: '자각몽 전용 AI 도우미',
+                    description: '꿈 일기, 기법 추천, 명상 스크립트 등 다양한 AI 기능',
+                    features: [
+                      '📝 꿈 일기 구조화 도우미',
+                      '💡 맞춤형 자각몽 기법 추천',
+                      '🧘 명상 스크립트 생성',
+                      '✋ Reality Check 아이디어',
+                    ],
+                    gradient: LinearGradient(
+                      colors: [Colors.green.shade400, Colors.teal.shade400],
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const LucidDreamAIAssistantScreen(),
                         ),
                       );
                     },

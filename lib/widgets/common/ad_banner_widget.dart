@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:provider/provider.dart';
 import '../../services/payment/ad_service.dart';
+import '../../services/auth/auth_service.dart';
 import '../../generated/l10n/app_localizations.dart';
 
 class AdBannerWidget extends StatefulWidget {
@@ -31,6 +33,12 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
   }
 
   void _loadBannerAd() {
+    // 프리미엄 사용자는 광고 로드하지 않음
+    final authService = context.read<AuthService>();
+    if (!authService.hasAds) {
+      return;
+    }
+
     _bannerAd = AdService().createBannerAd();
     _bannerAd?.load();
   }
@@ -43,6 +51,12 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
+    // 프리미엄 사용자는 광고 표시하지 않음
+    final authService = context.watch<AuthService>();
+    if (!authService.hasAds) {
+      return const SizedBox.shrink();
+    }
+
     // 광고 로드 실패 시 에러 표시 여부에 따라 처리
     if (_hasError && !widget.showOnError) {
       return const SizedBox.shrink();

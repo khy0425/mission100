@@ -27,7 +27,7 @@
     "description": "Best week label"
   },
   "@chadDays": {
-    "description": "총 운동 횟수 부제목"
+    "description": "총 자각몽 연습 횟수 부제목"
   },
   "@chadNotificationSettings": {
     "description": "알림 설정 섹션 제목"
@@ -109,10 +109,10 @@
     "description": "Consecutive days label"
   },
   "@consecutiveWorkoutBlocked": {
-    "description": "연속 운동 차단 제목"
+    "description": "연속 연습 차단 제목"
   },
   "@consecutiveWorkoutMessage": {
-    "description": "연속 운동 차단 메시지"
+    "description": "연속 연습 차단 메시지"
   },
   "@customWorkoutDays": {
     "description": "Custom workout days setting"
@@ -127,7 +127,7 @@
     "description": "매일 운동 시간 알림 메시지"
   },
   "@dailyWorkoutReminder": {
-    "description": "일일 운동 알림 설정"
+    "description": "일일 자각몽 연습 알림 설정"
   },
   "@dataReset": {
     "description": "데이터 초기화 제목"
@@ -231,10 +231,10 @@
     "description": "First workout completed description"
   },
   "@firstWorkoutMessage": {
-    "description": "첫 운동 시작 메시지"
+    "description": "첫 자각몽 연습 시작 메시지"
   },
   "@foundWorkout": {
-    "description": "발견된 운동 제목"
+    "description": "발견된 자각몽 연습 제목"
   },
   "@fridayShort": {
     "description": "Friday short form"
@@ -276,7 +276,7 @@
     "description": "최소 하루 쉬는 날 필요 메시지"
   },
   "@mission100Settings": {
-    "description": "Mission 100 설정 제목"
+    "description": "Lucid Dream 100 설정 제목"
   },
   "@mondayShort": {
     "description": "Monday short form"
@@ -291,19 +291,19 @@
     "description": "주 4회 운동 제한 메시지"
   },
   "@noWorkout": {
-    "description": "운동하기로 결정 버튼"
+    "description": "자각몽 연습하기로 결정 버튼"
   },
   "@noWorkoutHistory": {
-    "description": "운동 기록이 없을 때 메시지"
+    "description": "자각몽 연습 기록이 없을 때 메시지"
   },
   "@noWorkoutRecordForDate": {
-    "description": "선택된 날짜에 운동 기록 없음"
+    "description": "선택된 날짜에 자각몽 연습 기록 없음"
   },
   "@noWorkoutRecords": {
-    "description": "운동 기록 없음 제목"
+    "description": "자각몽 연습 기록 없음 제목"
   },
   "@noWorkoutThisDay": {
-    "description": "운동 기록이 없는 날 메시지"
+    "description": "자각몽 연습 기록이 없는 날 메시지"
   },
   "@noWorkoutToday": {
     "description": "오늘의 운동 없음 메시지 - 스타일"
@@ -364,10 +364,10 @@
     }
   },
   "@recentWorkouts": {
-    "description": "최근 운동 기록 제목"
+    "description": "최근 자각몽 연습 기록 제목"
   },
   "@repsAchieved": {
-    "description": "운동 기록 형식",
+    "description": "자각몽 연습 기록 형식",
     "placeholders": {
       "percentage": {
         "type": "int"
@@ -614,16 +614,16 @@
     "description": "사운드 설정 설명"
   },
   "@startFirstWorkout": {
-    "description": "첫 운동 시작 메시지"
+    "description": "첫 자각몽 연습 시작 메시지"
   },
   "@startNewWorkout": {
-    "description": "새 운동 시작 버튼"
+    "description": "새 자각몽 연습 시작 버튼"
   },
   "@startTodayWorkout": {
-    "description": "오늘 운동 시작 버튼"
+    "description": "오늘 자각몽 연습 시작 버튼"
   },
   "@startWorkout": {
-    "description": "운동 시작 버튼"
+    "description": "자각몽 연습 시작 버튼"
   },
   "@streakDays": {
     "description": "연속 일수 형식",
@@ -634,13 +634,13 @@
     }
   },
   "@streakNotificationSet": {
-    "description": "연속 운동 알림 설정 성공 메시지"
+    "description": "연속 자각몽 연습 알림 설정 성공 메시지"
   },
   "@successSettingsSaved": {
     "description": "설정 저장 성공 메시지"
   },
   "@successWorkoutCompleted": {
-    "description": "운동 완료 성공 메시지"
+    "description": "자각몽 연습 완료 성공 메시지"
   },
   "@sundayShort": {
     "description": "Sunday short form"
@@ -663,7 +663,7 @@
     "description": "테마 및 언어 설정 설명"
   },
   "@thisMonthWorkouts": {
-    "description": "이번 달 운동 횟수"
+    "description": "이번 달 자각몽 연습 횟수"
   },
   "@thisWeekProgress": {
     "description": "이번 주 진행률 표시",
@@ -689,7 +689,7 @@
     "description": "Today's target label"
   },
   "@todayWorkoutCompleted": {
-    "description": "오늘 운동 완료 축하 메시지"
+    "description": "오늘 자각몽 연습 완료 축하 메시지"
   },
   "@todayWorkoutNotAvailable": {
     "description": "오늘의 운동 불가 메시지"
@@ -714,7 +714,7 @@
     }
   },
   "@totalWorkouts": {
-    "description": "총 운동 횟수"
+    "description": "총 자각몽 연습 횟수"
   },
   "@trueChadMindset": {
     "description": "영상 설명 3"
@@ -789,7 +789,7 @@
     }
   },
   "@weekendRestWeekdayInvincible": {
-    "description": "직장인 차드 모드 설명"
+    "description": "직장인 드림 스피릿 모드 설명"
   },
   "@weekly": {
     "description": "주간 필터 옵션"
@@ -816,7 +816,7 @@
     "description": "주간 리포트 타이틀"
   },
   "@weeklyWorkoutSchedule": {
-    "description": "요일별 운동 설정 설명"
+    "description": "요일별 자각몽 연습 설정 설명"
   },
   "@weeksCompleted": {
     "description": "완료된 주차 수",
@@ -847,10 +847,10 @@
     "description": "운동 이미 완료 메시지"
   },
   "@workoutAutoRenewalBody": {
-    "description": "운동 리마인더 자동 갱신 알림 내용"
+    "description": "자각몽 연습 리마인더 자동 갱신 알림 내용"
   },
   "@workoutAutoRenewalTitle": {
-    "description": "운동 리마인더 자동 갱신 알림 제목"
+    "description": "자각몽 연습 리마인더 자동 갱신 알림 제목"
   },
   "@workoutButtonConquer": {
     "description": "일반 세트 완료 버튼"
@@ -865,10 +865,10 @@
     "description": "운동 차트 제목"
   },
   "@workoutCompleteButton": {
-    "description": "운동 완료 확인 버튼"
+    "description": "자각몽 연습 완료 확인 버튼"
   },
   "@workoutCompleteMessage": {
-    "description": "운동 완료 메시지",
+    "description": "자각몽 연습 완료 메시지",
     "placeholders": {
       "title": {
         "type": "String"
@@ -879,16 +879,16 @@
     }
   },
   "@workoutCompleteTitle": {
-    "description": "운동 완료 다이얼로그 제목"
+    "description": "자각몽 연습 완료 다이얼로그 제목"
   },
   "@workoutCompleted": {
-    "description": "운동 완료 상태"
+    "description": "자각몽 연습 완료 상태"
   },
   "@workoutCompletionChannelDescription": {
     "description": "운동 완룀 축하 알림 채널 설명"
   },
   "@workoutCompletionMessage": {
-    "description": "운동 완료 성취 메시지",
+    "description": "자각몽 연습 완료 성취 메시지",
     "placeholders": {
       "percentage": {
         "type": "int"
@@ -921,13 +921,13 @@
     "description": "Workout day selection title"
   },
   "@workoutDaysModeActivated": {
-    "description": "운동일 전용 모드 활성화 메시지"
+    "description": "연습일 전용 모드 활성화 메시지"
   },
   "@workoutDaysOnlyNotifications": {
-    "description": "운동일 전용 알림 설정 제목"
+    "description": "연습일 전용 알림 설정 제목"
   },
   "@workoutDaysOnlyNotificationsDesc": {
-    "description": "운동일 전용 알림 설정 설명"
+    "description": "연습일 전용 알림 설정 설명"
   },
   "@workoutDetailsWithStats": {
     "description": "운동 상세 정보",
@@ -944,7 +944,7 @@
     }
   },
   "@workoutHistoryLoadError": {
-    "description": "운동 기록 로딩 실패 오류 메시지",
+    "description": "자각몽 연습 기록 로딩 실패 오류 메시지",
     "placeholders": {
       "error": {
         "type": "String"
@@ -958,10 +958,10 @@
     "description": "운동 주의사항"
   },
   "@workoutProcessing": {
-    "description": "운동 완료 처리 상태 메시지"
+    "description": "자각몽 연습 완료 처리 상태 메시지"
   },
   "@workoutRecordForDate": {
-    "description": "선택된 날짜의 운동 기록",
+    "description": "선택된 날짜의 자각몽 연습 기록",
     "placeholders": {
       "day": {
         "type": "int"
@@ -972,31 +972,31 @@
     }
   },
   "@workoutRecordsStats": {
-    "description": "운동 기록 및 통계 항목"
+    "description": "자각몽 연습 기록 및 통계 항목"
   },
   "@workoutReminder": {
-    "description": "운동 리마인더 설정"
+    "description": "자각몽 연습 리마인더 설정"
   },
   "@workoutReminderDefaultBody": {
-    "description": "기본 운동 리마인더 알림 내용"
+    "description": "기본 자각몽 연습 리마인더 알림 내용"
   },
   "@workoutReminderDisabled": {
-    "description": "운동 리마인더 비활성화 메시지"
+    "description": "자각몽 연습 리마인더 비활성화 메시지"
   },
   "@workoutReminderEnabled": {
-    "description": "운동 리마인더 활성화 메시지"
+    "description": "자각몽 연습 리마인더 활성화 메시지"
   },
   "@workoutReminderSettings": {
-    "description": "운동 리마인더 설정 제목"
+    "description": "자각몽 연습 리마인더 설정 제목"
   },
   "@workoutReminders": {
-    "description": "운동 리마인더 옵션"
+    "description": "자각몽 연습 리마인더 옵션"
   },
   "@workoutRemindersChannelDescription": {
-    "description": "운동 리마인더 알림 채널 설명"
+    "description": "자각몽 연습 리마인더 알림 채널 설명"
   },
   "@workoutRemindersDesc": {
-    "description": "운동 리마인더 설명"
+    "description": "자각몽 연습 리마인더 설명"
   },
   "@workoutSaveError": {
     "description": "운동 저장 오류 메시지"
@@ -1008,7 +1008,7 @@
     "description": "운동 설정 섹션"
   },
   "@workoutStartError": {
-    "description": "운동 시작 오류 메시지",
+    "description": "자각몽 연습 시작 오류 메시지",
     "placeholders": {
       "error": {
         "type": "String"
@@ -1016,7 +1016,7 @@
     }
   },
   "@workoutStartMessage": {
-    "description": "운동 시작 액션 메시지"
+    "description": "자각몽 연습 시작 액션 메시지"
   },
   "@workoutTime": {
     "description": "운동 시간 통계 제목"
@@ -1040,18 +1040,18 @@
   "backupRestoreError": "백업 복원 중 오류 발생: {error}",
   "backupRestoreFailed": "백업 복원에 실패했다",
   "backupRestoredSuccessfully": "백업이 성공적으로 복원되었다",
-  "backupWorkoutRecords": "운동 기록을 백업한다",
+  "backupWorkoutRecords": "자각몽 연습 기록을 백업한다",
   "bestWeek": "최고 주차",
-  "chadDays": "강자가 된 날들!",
+  "chadDays": "자각몽 마스터가 된 날들!",
   "chadNotificationSettings": "🔔 알림 설정",
   "chadRestModeToday": "오케이! 오늘은 휴식모드다! 💪😎",
   "chadTimeSettings": "⏰ 시간 설정",
-  "challenge14DaysDescription": "14일 동안 연속으로 운동하기",
+  "challenge14DaysDescription": "14일 동안 연속으로 자각몽 연습하기",
   "challenge14DaysDetailedDescription": "하루도 안 빠지고 14일 연속! 7일 챌린지 클리어 후 도전! 💪",
-  "challenge14DaysTitle": "14일 연속 운동",
-  "challenge7DaysDescription": "7일 동안 연속으로 운동하기",
+  "challenge14DaysTitle": "14일 연속 연습",
+  "challenge7DaysDescription": "7일 동안 연속으로 자각몽 연습하기",
   "challenge7DaysDetailedDescription": "하루도 안 빠지고 7일 연속! 매일 최소 1세트! 🔥",
-  "challenge7DaysTitle": "7일 연속 운동",
+  "challenge7DaysTitle": "7일 연속 연습",
   "challengeHintConsecutiveDays": "매일 꾸준히! 하루라도 빠뜨리면 처음부터 다시! 💪",
   "challengeHintSingleSession": "한 번에 목표 개수! 중간에 쉬면 안 돼! 🔥",
   "challengeRestartButton": "다시 시작",
@@ -1066,13 +1066,13 @@
   "completedSetsCount": "완료된 세트: {count}개",
   "confirmDataReset": "데이터 초기화 확인",
   "consecutiveDays": "연속 일수",
-  "consecutiveWorkoutBlocked": "STOP! 연속 운동 금지!",
-  "consecutiveWorkoutMessage": "야야야! 어제 운동했잖아! 🔥\n\n지금 뭘 하려는거야? 연속 운동이야?\n진짜 강자라면 쉴 때 확실히 쉬는 거다!\n\n💀 오버트레이닝은 노답이야!\n😎 오늘은 쿨하게 쉬고 내일 다시 가자! 💪",
-  "customWorkoutDays": "운동일 설정",
-  "customWorkoutDaysDesc": "원하는 요일에 운동하도록 설정해",
-  "dailyNotificationSet": "매일 {time} 운동 알림 설정 완료! 💪",
+  "consecutiveWorkoutBlocked": "STOP! 연속 연습 금지!",
+  "consecutiveWorkoutMessage": "야야야! 어제 운동했잖아! 🔥\n\n지금 뭘 하려는거야? 연속 연습이야?\n진짜 강자라면 쉴 때 확실히 쉬는 거다!\n\n💀 과도한 연습은 노답이야!\n😎 오늘은 쿨하게 쉬고 내일 다시 가자! 💪",
+  "customWorkoutDays": "연습일 설정",
+  "customWorkoutDaysDesc": "원하는 요일에 자각몽 연습하도록 설정해",
+  "dailyNotificationSet": "매일 {time} 자각몽 연습 알림 설정 완료! 💪",
   "dailyWorkoutAlarm": "매일 운동 시간 알림! 놓치면 WEAK! 💪",
-  "dailyWorkoutReminder": "일일 운동 알림",
+  "dailyWorkoutReminder": "일일 자각몽 연습 알림",
   "dataReset": "데이터 초기화",
   "dataResetComingSoon": "데이터 초기화 기능은 준비 중이다",
   "dataResetConfirm": "정말로 모든 데이터를 삭제할래? 이 작업은 되돌릴 수 없다.",
@@ -1091,55 +1091,55 @@
   "dayX": "{day}일차",
   "days": "일",
   "daysFormat": "{days}일",
-  "deleteAllWorkoutRecords": "모든 운동 기록을 삭제한다",
+  "deleteAllWorkoutRecords": "모든 자각몽 연습 기록을 삭제한다",
   "detailedReminderSettings": "상세 리마인더 설정",
   "difficultySettings": "난이도 설정",
   "difficultySettingsComingSoon": "난이도 설정 기능은 준비 중이다",
   "difficultySettingsTitle": "💪 난이도 설정",
   "errorPleaseTryAgain": "오류가 발생했다. 다시 시도해주세요",
-  "firstWorkoutCompleted": "첫 번째 워크아웃 완료",
-  "firstWorkoutMessage": "첫 번째 운동을 시작한다! 화이팅!",
-  "foundWorkout": "🔍 발견된 운동",
+  "firstWorkoutCompleted": "첫 번째 자각몽 연습 완료",
+  "firstWorkoutMessage": "첫 번째 자각몽 연습을 시작한다! 화이팅!",
+  "foundWorkout": "🔍 발견된 자각몽 연습",
   "fridayFull": "금요일",
   "fridayShort": "금",
   "goToSettings": "설정으로 이동",
-  "homeWorkoutPushups": "홈트 팔굽혀펴기 🏠",
+  "homeWorkoutPushups": "집에서 하는 자각몽 연습 🏠",
   "hundredRepsInOneSession": "한 세션에 100회 달성",
-  "incompleteWorkoutFound": "미완료된 운동이 발견되었다!",
+  "incompleteWorkoutFound": "미완료된 자각몽 연습이 발견되었다!",
   "languageSettings": "언어 설정",
   "languageSettingsComingSoon": "언어 설정 기능은 준비 중이다",
   "levelReset": "레벨 리셋",
   "levelResetConfirm": "레벨 리셋 확인",
   "levelResetDesc": "모든 진행 상황을 초기화하고 처음부터 시작한다.",
   "manageAppSettings": "앱 설정을 관리해",
-  "maxSixDaysWorkout": "최대 6일까지만 운동할 수 있다 (하루는 쉬어야 함)",
+  "maxSixDaysWorkout": "최대 6일까지만 자각몽 연습할 수 있다 (하루는 쉬어야 함)",
   "minOneDayRest": "최소 하루는 쉬는 날이 있어야 한다",
-  "mission100Settings": "Mission 100 설정",
+  "mission100Settings": "Lucid Dream 100 설정",
   "mondayFull": "월요일",
   "mondayShort": "월",
   "nextSetButton": "굿 잡! 우주 정복 완료!",
   "nextSetContinue": "다음 희생양을 가져와라, 만삣삐!",
-  "noConsecutiveSixDays": "주 4회까지만 운동할 수 있다. 충분한 휴식이 필요한다!",
-  "noWorkout": "아니다! 운동할래!",
-  "noWorkoutHistory": "운동 기록이 없다",
-  "noWorkoutRecordForDate": "이 날에는 운동 기록이 없다",
-  "noWorkoutRecords": "아직 운동 기록이 없어!",
-  "noWorkoutThisDay": "이 날에는 운동 기록이 없다",
-  "noWorkoutToday": "🤷‍♂️ 오늘은 휴식? 내일은 더 파괴적으로! 🔥",
-  "noWorkoutsToday": "이 날에는 워크아웃이 없다",
+  "noConsecutiveSixDays": "주 4회까지만 자각몽 연습할 수 있다. 충분한 휴식이 필요한다!",
+  "noWorkout": "아니다! 자각몽 연습할래!",
+  "noWorkoutHistory": "자각몽 연습 기록이 없다",
+  "noWorkoutRecordForDate": "이 날에는 자각몽 연습 기록이 없다",
+  "noWorkoutRecords": "아직 자각몽 연습 기록이 없어!",
+  "noWorkoutThisDay": "이 날에는 자각몽 연습 기록이 없다",
+  "noWorkoutToday": "🤷‍♂️ 오늘은 휴식? 내일은 더 강력하게! 🔥",
+  "noWorkoutsToday": "이 날에는 자각몽 연습이 없다",
   "notificationSettings": "알림 설정",
   "notificationSetupFailed": "알림 설정에 실패했다",
   "notificationsSettings": "알림 설정",
   "oneWeekChallenge": "일주일 챌린지",
   "oneWeekCompleted": "한 주 100% 완료",
-  "perfectHomeWorkout": "집에서 할 수 있는 완벽한 운동",
+  "perfectHomeWorkout": "집에서 할 수 있는 완벽한 자각몽 연습",
   "perfectWeek": "완벽주의자",
   "programCompletedMessage": "프로그램 완료! 정말 대단한다!",
   "programProgress": "프로그램 진행률",
   "programStart": "프로그램 시작",
   "progressSetReady": "진행: {set}세트 준비 중",
   "progressWeekDay": "{week}주차 - {totalDays}일 중 {completedDays}일 완료",
-  "recentWorkouts": "최근 운동 기록",
+  "recentWorkouts": "최근 자각몽 연습 기록",
   "repsAchieved": "{reps}개 • {percentage}% 달성",
   "repsCompleted": "회 완료",
   "repsCount": "{count}개",
@@ -1151,13 +1151,13 @@
   "resetSuccess": "모든 데이터가 성공적으로 초기화되었다",
   "resettingData": "데이터를 초기화하는 중...",
   "restDayAccept": "휴식일을 받아들이을래?",
-  "restDayBonusChallenge": "휴식일 보너스 챌린지! 💪\n\n• 플랭크 30초 x 3세트\n• 스쿼트 20개 x 2세트\n• 푸시업 10개 (완벽한 자세로!)\n\n준비됐어? 진짜 챔피언만 할 수 있어! 🏆",
+  "restDayBonusChallenge": "휴식일 보너스 챌린지! 💪\n\n• 명상 10분 x 3회\n• 현실 확인 20회\n• 꿈 일기 완벽하게 작성 (완벽한 자세로!)\n\n준비됐어? 진짜 자각몽 마스터만 할 수 있어! 🏆",
   "restDayChallenge": "휴식일이라고? 그런 건 약한 놈들이나 하는 거야!\n진짜 챔피언들은 매일이 전쟁이다! 🥊\n\n간단한 추가 챌린지로 너의 정신력을 증명해봐!",
   "restDayChampionTitle": "🔥 진짜 챔피언의 선택",
   "restDayDescription": "오늘은 프로그램상 휴식일이지만...\n진짜 챔피언들은 쉬지 않는다! 🔥\n\n추가 챌린지를 진행할래?",
   "restDayMessage": "오늘은 회복의 날. 진정한 강함은 휴식에서 나온다.",
-  "restDayTeasing": "누군가는 100개 푸시업하고 있어! 💪\n\n정말 오늘은 쉬실 건가요?",
-  "restMessage": "쉬는 것도 성장이야. 다음은 더 파괴적으로 가자, 만삣삐 🦍",
+  "restDayTeasing": "누군가는 100일 자각몽 연습하고 있어! 💪\n\n정말 오늘은 쉬실 건가요?",
+  "restMessage": "쉬는 것도 성장이야. 다음은 더 강력하게 가자, 만삣삐 🦍",
   "restTimeDesc": "세트 간 휴식 시간 설정",
   "restTimeSettings": "휴식 시간 설정",
   "restTimeTitle": "강자들의 재충전 타임, 만삣삐 ⚡",
@@ -1166,10 +1166,10 @@
   "restoreErrorOccurred": "복원 중 오류가 발생했다: {error}",
   "restoreSuccess": "데이터 복원이 성공적으로 완료되었다",
   "restoringData": "데이터를 복원하는 중...",
-  "resumeWorkout": "💪 운동 재개",
+  "resumeWorkout": "💪 자각몽 연습 재개",
   "saturdayFull": "토요일",
   "saturdayShort": "토",
-  "selectWorkoutDays": "운동할 요일을 선택해 (최대 6일)",
+  "selectWorkoutDays": "자각몽 연습할 요일을 선택해 (최대 6일)",
   "selectedDaysFormat": "선택됨: {days} ({count}/6일)",
   "sessions": "세션",
   "sessionsCompleted": "세션 완료",
@@ -1191,19 +1191,19 @@
   "settingsSubtitle": "당신의 여정을 커스터마이즈해",
   "settingsTitle": "⚙️ 설정",
   "sevenDayStreak": "🔄 7일 연속 챌린지 시작! 하루라도 빠지면 처음부터! 🚀",
-  "sevenDaysExercise": "7일 연속 운동",
+  "sevenDaysExercise": "7일 연속 연습",
   "shareWorkout": "공유하기",
   "singleSessionChallenge": "단일 세션 챌린지",
   "skipRest": "휴식 건너뛰기",
   "skipRestButton": "휴식? 약자나 해라, 만삣삐! 다음 희생양 가져와!",
   "soundSettings": "사운드 설정",
-  "soundSettingsDesc": "운동 효과음 활성화",
-  "startFirstWorkout": "첫 운동을 시작하고\\n나만의 전설을 만들어보자! 🔥",
-  "startNewWorkout": "새 운동 시작",
+  "soundSettingsDesc": "운동 피드백음 활성화",
+  "startFirstWorkout": "첫 자각몽 연습을 시작하고\\n나만의 전설을 만들어보자! 🔥",
+  "startNewWorkout": "새 자각몽 연습 시작",
   "startTodayWorkout": "🚀 오늘의 DOMINATION 시작! 🚀",
-  "startWorkout": "운동 시작",
+  "startWorkout": "자각몽 연습 시작",
   "streakDays": "{days}일",
-  "streakNotificationSet": "연속 운동 격려 알림이 설정되었다!",
+  "streakNotificationSet": "연속 연습 격려 알림이 설정되었다!",
   "successSettingsSaved": "⚡ ALPHA SETTINGS LOCKED! 완벽한 설정으로 무장 완료! ⚡",
   "successWorkoutCompleted": "🚀 WORKOUT DOMINATION COMPLETE! 또 하나의 LEGENDARY ACHIEVEMENT 달성! 🚀",
   "sundayFull": "일요일",
@@ -1212,7 +1212,7 @@
   "themeChangeAfterRestart": "테마 변경은 앱 재시작 후 적용된다",
   "themeChangeRestart": "테마 변경은 앱 재시작 후 적용된다",
   "themeLanguageSettings": "테마 및 언어 설정",
-  "thisMonthWorkouts": "이번 달 운동",
+  "thisMonthWorkouts": "이번 달 자각몽 연습",
   "thisWeekProgress": "이번 주 ({current}주차)",
   "thursdayFull": "목요일",
   "thursdayShort": "목",
@@ -1220,13 +1220,13 @@
   "todayMission": "오늘의 미션",
   "todayMissionTitle": "오늘의 미션",
   "todayTarget": "오늘의 목표:",
-  "todayWorkoutCompleted": "🎉 오늘 운동 완료! 🎉",
+  "todayWorkoutCompleted": "🎉 오늘 자각몽 연습 완료! 🎉",
   "todayWorkoutNotAvailable": "오늘의 운동을 불러올 수 없다",
   "todaysGoal": "오늘의 목표",
   "totalCompletedReps": "총 완료 횟수: {reps}회",
   "totalRepsFormat": "{totalReps}개",
-  "totalWorkouts": "총 운동 횟수",
-  "trueChadMindset": "진정한 차드가 되는 마인드셋",
+  "totalWorkouts": "총 자각몽 연습 횟수",
+  "trueChadMindset": "진정한 드림 스피릿가 되는 마인드셋",
   "tuesdayFull": "화요일",
   "tuesdayShort": "화",
   "vibrationSettings": "진동 설정",
@@ -1249,58 +1249,58 @@
   "weekendRestWeekdayInvincible": "주말엔 휴식, 평일엔 무적! 💪",
   "weekly": "주간",
   "weeklyChallenge": "일주일 챌린지",
-  "weeklyChallengeDesc": "7일 연속 운동",
+  "weeklyChallengeDesc": "7일 연속 연습",
   "weeklyDetails": "주차별 상세",
   "weeklyGoal": "주간 목표",
   "weeklyGrowthChart": "주간 성장 차트",
   "weeklyPerformance": "주간별 성과",
   "weeklyReport": "📊 주간 리포트 📊",
-  "weeklyWorkoutSchedule": "요일별 운동 시간 설정",
+  "weeklyWorkoutSchedule": "요일별 자각몽 연습 시간 설정",
   "weeksCompleted": "{completed}/{total} 주 완료",
   "weeksRemaining": "{weeks}주 남음",
   "workout": "운동",
   "workoutAchieved": "달성",
   "workoutAlreadyCompleted": "오늘의 운동은 이미 완료했다! 💪",
-  "workoutAutoRenewalBody": "운동 리마인더가 자동으로 갱신되었다. 계속해서 건강한 운동 습관을 유지해! 💪",
-  "workoutAutoRenewalTitle": "⏰ 운동 리마인더 자동 갱신",
+  "workoutAutoRenewalBody": "자각몽 연습 리마인더가 자동으로 갱신되었다. 계속해서 건강한 운동 습관을 유지해! 💪",
+  "workoutAutoRenewalTitle": "⏰ 자각몽 연습 리마인더 자동 갱신",
   "workoutButtonConquer": "이 세트를 정복하라, 만삣삐!",
   "workoutButtonUltimate": "궁극의 승리 차지하라!",
-  "workoutCalendar": "워크아웃 캘린더",
+  "workoutCalendar": "자각몽 연습 캘린더",
   "workoutChart": "운동 차트",
   "workoutCompleteButton": "레전드다, 만삣삐!",
   "workoutCompleteMessage": "{title} 완전 파괴!\n총 파워 해방: {totalReps}회! 해냈다! ⚡",
   "workoutCompleteTitle": "🔥 굿 잡, 만삣삐! 야수 모드 완료! 👑",
   "workoutCompleted": "완료",
-  "workoutCompletionChannelDescription": "운동 완료 축하 알림",
+  "workoutCompletionChannelDescription": "자각몽 연습 완료 축하 알림",
   "workoutCompletionMessage": "목표의 {percentage}% 파괴! 강자의 길을 걷고 있다! KEEP GRINDING! 🔥💪",
   "workoutCount": "{count}회",
-  "workoutDate": "{month}월 {day}일 워크아웃",
-  "workoutDayNotification": "운동일 전용 알림",
+  "workoutDate": "{month}월 {day}일 자각몽 연습",
+  "workoutDayNotification": "연습일 전용 알림",
   "workoutDaySelection": "운동 요일 선택",
-  "workoutDaysModeActivated": "💪 운동일 전용 알림 모드 활성화! 월,수,금에만 알림이 옵니다!",
-  "workoutDaysOnlyNotifications": "🔥 운동일 전용 알림",
-  "workoutDaysOnlyNotificationsDesc": "매일이 아닌 운동일(월,수,금)에만 알림을 받다. 휴식일엔 방해받지 않아요!",
+  "workoutDaysModeActivated": "💪 연습일 전용 알림 모드 활성화! 월,수,금에만 알림이 옵니다!",
+  "workoutDaysOnlyNotifications": "🔥 연습일 전용 알림",
+  "workoutDaysOnlyNotificationsDesc": "매일이 아닌 연습일(월,수,금)에만 알림을 받다. 휴식일엔 방해받지 않아요!",
   "workoutDetailsWithStats": "운동: {title}\\n완료된 세트: {sets}개\\n총 횟수: {reps}회",
-  "workoutHistoryLoadError": "운동 기록을 불러오는 중 오류가 발생했다: {error}",
+  "workoutHistoryLoadError": "자각몽 연습 기록을 불러오는 중 오류가 발생했다: {error}",
   "workoutInterruptionDetected": "⚠️ 운동 중단 발견",
-  "workoutNotificationPermission": "🔔 운동 알림 권한",
-  "workoutPrecautions": "• 최소 하루는 쉬는 날이 있어야 한다\n• 연속으로 6일 이상 운동할 수 없다\n• 충분한 휴식은 근육 성장에 필수이다",
-  "workoutProcessing": "운동 완료 처리 중...",
-  "workoutRecordForDate": "{month}/{day} 운동 기록",
-  "workoutRecordsStats": "• 운동 기록 및 통계",
-  "workoutReminder": "운동 리마인더",
-  "workoutReminderDefaultBody": "💪 MISSION 100 운동 시간! LEGENDARY MODE 활성화! 💪",
-  "workoutReminderDisabled": "운동 리마인더가 비활성화되었다",
-  "workoutReminderEnabled": "운동 리마인더가 활성화되었다",
-  "workoutReminderSettings": "운동 리마인더 설정",
-  "workoutReminders": "운동 리마인더",
-  "workoutRemindersChannelDescription": "요일별 운동 알림",
+  "workoutNotificationPermission": "🔔 자각몽 연습 알림 권한",
+  "workoutPrecautions": "• 최소 하루는 쉬는 날이 있어야 한다\n• 연속으로 6일 이상 자각몽 연습할 수 없다\n• 충분한 휴식은 근육 성장에 필수이다",
+  "workoutProcessing": "자각몽 연습 완료 처리 중...",
+  "workoutRecordForDate": "{month}/{day} 자각몽 연습 기록",
+  "workoutRecordsStats": "• 자각몽 연습 기록 및 통계",
+  "workoutReminder": "자각몽 연습 리마인더",
+  "workoutReminderDefaultBody": "💪 LUCID DREAM 100 운동 시간! LEGENDARY MODE 활성화! 💪",
+  "workoutReminderDisabled": "자각몽 연습 리마인더가 비활성화되었다",
+  "workoutReminderEnabled": "자각몽 연습 리마인더가 활성화되었다",
+  "workoutReminderSettings": "자각몽 연습 리마인더 설정",
+  "workoutReminders": "자각몽 연습 리마인더",
+  "workoutRemindersChannelDescription": "요일별 자각몽 연습 알림",
   "workoutRemindersDesc": "💀 매일 너를 깨워서 운동시켜줄 거야! 도망갈 생각 마라!",
   "workoutSaveError": "운동 저장 중 오류가 발생했다.",
   "workoutScreenAdMessage": "나만의 힘을 느껴라! 💪",
-  "workoutSettings": "💪 운동 설정",
+  "workoutSettings": "💪 자각몽 연습 설정",
   "workoutStartError": "⚡ ALPHA SYSTEM ERROR! 재시도하라, 만삣삐: {error} ⚡",
-  "workoutStartMessage": "운동 시작! 🔥",
+  "workoutStartMessage": "자각몽 연습 시작! 🔥",
   "workoutTime": "운동 시간",
   "workoutTips": "운동 팁",
   "workoutTipsContent": "• 운동 전후 충분한 스트레칭을 해\\n• 정확한 자세가 횟수보다 중요한다\\n• 꾸준함이 가장 중요한 성공 요소이다",
@@ -1330,7 +1330,7 @@
   "workoutScheduleSetup": "운동 스케줄 설정",
   "setYourWorkoutSchedule": "🔥 운동 스케줄을 설정하세요!",
   "startTheJourney": "여정 시작하기! 🚀",
-  "workoutCompleteSimple": "운동 완료!",
+  "workoutCompleteSimple": "자각몽 연습 완료!",
   "workoutCompleteGreatJob": "훌륭합니다! 오늘의 운동을 완료했습니다.",
   "totalRepsCount": "총 횟수: {count}개",
   "@totalRepsCount": {
@@ -1341,9 +1341,9 @@
       }
     }
   },
-  "letsStartWorkout": "💪 운동을 시작합니다! 화이팅!",
-  "processingCompletion": "운동 완료 처리 중...",
-  "cannotShowCompletionDialog": "운동 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.",
+  "letsStartWorkout": "💪 자각몽 연습을 시작합니다! 화이팅!",
+  "processingCompletion": "자각몽 연습 완료 처리 중...",
+  "cannotShowCompletionDialog": "자각몽 연습 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.",
   "exitWorkoutSaved": "정말로 운동을 종료하시겠습니까? 진행률이 저장됩니다.",
   "exit": "종료",
   "dataResetError": "데이터 초기화 중 오류가 발생했습니다: {error}",
@@ -1376,16 +1376,64 @@
     }
   },
   "restoreButton": "복원",
-  "chadBecameStronger": "💪 Chad가 더 강해졌다!",
-  "repsDestroyed": "💀 파괴된 횟수",
-  "xpGained": "💰 획득 XP",
-  "timeElapsed": "⏱️ 소멸 시간",
-  "workoutDestroyed": "💀 운동 파괴 완료! 💀",
-  "workoutDestroyedMessage": "오늘 운동을 완전히 박살냈다!",
-  "timeDestroyed": "⏱️ 소멸 시간",
-  "tomorrowIsRestDay": "😴 내일은 CHAD 휴식일! 😴",
-  "recoverToBeStronger": "🌴 완전한 회복으로 더 강한 CHAD가 되자! 💪",
-  "tomorrowBeastMode": "🔥 내일: 다시 야수 모드! 🔥",
-  "legendaryJourneyContinues": "💀 LEGENDARY 경지로의 여정은 계속된다! 💀",
-  "chadEvolutionProgress": "💪 Chad 진화 진행률"
+  "chadBecameStronger": "✨ Dream Spirit가 성장했습니다",
+  "repsDestroyed": "✓ 완료한 태스크",
+  "xpGained": "⭐ 획득 경험치",
+  "timeElapsed": "⏱️ 소요 시간",
+  "workoutDestroyed": "🌙 오늘의 연습 완료! ✨",
+  "workoutDestroyedMessage": "오늘의 자각몽 연습을 성공적으로 마쳤습니다",
+  "timeDestroyed": "⏱️ 연습 시간",
+  "tomorrowIsRestDay": "🌙 내일도 꿈의 여정이 계속됩니다 ✨",
+  "recoverToBeStronger": "😴 오늘 밤 좋은 꿈 꾸세요 ✨",
+  "tomorrowBeastMode": "✨ 내일도 함께 자각몽을 연습해요 🌙",
+  "legendaryJourneyContinues": "🌟 자각몽 마스터로의 여정은 계속됩니다 🌟",
+  "chadEvolutionProgress": "✨ Dream Spirit 성장 진행률",
+  "taskDreamJournalTitle": "꿈 일기 작성",
+  "@taskDreamJournalTitle": {
+    "description": "Dream journal task title"
+  },
+  "taskDreamJournalDesc": "매일 아침 기상 직후 꿈을 기록하세요. 꿈 회상 능력은 자각몽의 첫걸음입니다.",
+  "@taskDreamJournalDesc": {
+    "description": "Dream journal task description"
+  },
+  "taskRealityCheckTitle": "현실 확인 (Reality Check)",
+  "@taskRealityCheckTitle": {
+    "description": "Reality check task title"
+  },
+  "taskRealityCheckDesc": "하루 5회 이상 손바닥을 보며 \"지금 꿈인가?\"를 자문하세요. 손가락을 꿰뚫어보는 연습도 좋습니다.",
+  "@taskRealityCheckDesc": {
+    "description": "Reality check task description"
+  },
+  "taskMildTitle": "MILD 확언",
+  "@taskMildTitle": {
+    "description": "MILD affirmation task title"
+  },
+  "taskMildDesc": "취침 전 \"다음 꿈에서 나는 깨어있을 것이다\"를 반복하며 자각몽 의도를 확고히 하세요.",
+  "@taskMildDesc": {
+    "description": "MILD affirmation task description"
+  },
+  "taskSleepHygieneTitle": "수면 위생 체크",
+  "@taskSleepHygieneTitle": {
+    "description": "Sleep hygiene task title"
+  },
+  "taskSleepHygieneDesc": "규칙적인 수면 시간, 어두운 방, 카페인 제한 등 양질의 수면을 위한 환경을 조성하세요.",
+  "@taskSleepHygieneDesc": {
+    "description": "Sleep hygiene task description"
+  },
+  "taskWbtbTitle": "WBTB (Wake Back To Bed)",
+  "@taskWbtbTitle": {
+    "description": "WBTB task title"
+  },
+  "taskWbtbDesc": "5시간 수면 후 알람으로 깨어나 20-30분 각성 상태 유지 후 다시 잠들어 REM 수면 진입을 유도하세요.",
+  "@taskWbtbDesc": {
+    "description": "WBTB task description"
+  },
+  "taskMeditationTitle": "명상 (선택)",
+  "@taskMeditationTitle": {
+    "description": "Meditation task title"
+  },
+  "taskMeditationDesc": "10분 이상 마음챙김 명상으로 자각 능력을 키우세요. 자각몽에 큰 도움이 됩니다.",
+  "@taskMeditationDesc": {
+    "description": "Meditation task description"
+  }
 }

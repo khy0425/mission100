@@ -1,0 +1,4 @@
+{
+  "legalDocumentLoadError": "문서를 불러올 수 없습니다",
+  "legalDocumentNotFound": "문서를 찾을 수 없습니다: {path}"
+}

@@ -210,8 +210,8 @@ class _AchievementsScreenState extends State<AchievementsScreen>
         gradient: isDark
             ? LinearGradient(
                 colors: [
-                  Color(AppColors.chadGradient[0]),
-                  Color(AppColors.chadGradient[1]),
+                  Color(AppColors.lucidGradient[0]),
+                  Color(AppColors.lucidGradient[1]),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -505,6 +505,8 @@ class _AchievementsScreenState extends State<AchievementsScreen>
   }
 
   Widget _buildBannerAd() {
+    final l10n = AppLocalizations.of(context);
+
     return Container(
       height: 60,
       width: double.infinity,
@@ -519,19 +521,19 @@ class _AchievementsScreenState extends State<AchievementsScreen>
           : Container(
               height: 60,
               color: const Color(0xFF1A1A1A),
-              child: const Center(
+              child: Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.emoji_events,
                       color: Color(AppColors.primaryColor),
                       size: 18,
                     ),
-                    SizedBox(width: 6),
+                    const SizedBox(width: 6),
                     Text(
-                      'Achieve and become CHAD! 🏆',
-                      style: TextStyle(
+                      l10n.achievementsBannerText,
+                      style: const TextStyle(
                         color: Colors.white70,
                         fontSize: 13,
                         fontWeight: FontWeight.w500,

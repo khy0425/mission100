@@ -93,14 +93,14 @@ class _ChadConditionWidgetState extends State<ChadConditionWidget>
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
                   colors: [
-                    Colors.blue.shade50,
-                    Colors.purple.shade50,
+                    Color(AppColors.lucidGradient[0]),
+                    Color(AppColors.lucidGradient[1]),
                   ],
                 ),
                 borderRadius: BorderRadius.circular(AppConstants.radiusL),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.blue.withValues(alpha: 0.1),
+                    color: const Color(AppColors.primaryColor).withValues(alpha: 0.2),
                     blurRadius: 20,
                     offset: const Offset(0, 10),
                   ),

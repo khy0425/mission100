@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 권한 요청을 위한 하단 시트 다이얼로그
 class PermissionBottomSheet extends StatelessWidget {
@@ -84,9 +85,9 @@ class PermissionBottomSheet extends StatelessWidget {
 
                 // 혜택 목록
                 if (benefits.isNotEmpty) ...[
-                  const Text(
-                    '허용하면 다음 기능을 이용할 수 있습니다:',
-                    style: TextStyle(
+                  Text(
+                    AppLocalizations.of(context).permissionBenefitsPrompt,
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                       color: Colors.black87,
@@ -138,9 +139,9 @@ class PermissionBottomSheet extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        child: const Text(
-                          '나중에',
-                          style: TextStyle(
+                        child: Text(
+                          AppLocalizations.of(context).later,
+                          style: const TextStyle(
                             fontSize: 16,
                             color: Colors.grey,
                             fontWeight: FontWeight.w600,
@@ -164,9 +165,9 @@ class PermissionBottomSheet extends StatelessWidget {
                           ),
                           elevation: 2,
                         ),
-                        child: const Text(
-                          '허용',
-                          style: TextStyle(
+                        child: Text(
+                          AppLocalizations.of(context).permissionAllowButton,
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
@@ -216,48 +217,65 @@ class PermissionBottomSheet extends StatelessWidget {
 
   /// 알림 권한 요청 시트 표시
   static Future<bool?> showNotificationPermissionSheet(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       isDismissible: false,
-      builder: (context) => const PermissionBottomSheet(
+      builder: (context) => PermissionBottomSheet(
         permission: Permission.notification,
-        title: '🔔 알림 허용',
-        description: '운동 알림을 받기 위해 알림 권한이 필요합니다.',
-        benefits: ['일일 운동 리마인더', '목표 달성 축하 알림', '연속 기록 유지 알림', '새로운 도전과제 알림'],
+        title: l10n.notificationPermissionTitle,
+        description: l10n.notificationPermissionDesc,
+        benefits: [
+          l10n.notificationBenefit1,
+          l10n.notificationBenefit2,
+          l10n.notificationBenefit3,
+          l10n.notificationBenefit4,
+        ],
       ),
     );
   }
 
   /// 백업 권한 요청 시트 표시
   static Future<bool?> showBackupPermissionSheet(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       isDismissible: false,
-      builder: (context) => const PermissionBottomSheet(
+      builder: (context) => PermissionBottomSheet(
         permission: Permission.storage,
-        title: '💾 백업 기능',
-        description: '운동 데이터를 안전하게 백업하기 위해 저장소 접근이 필요합니다.',
-        benefits: ['운동 기록 자동 백업', '기기 변경 시 데이터 복원', '데이터 손실 방지', '안전한 데이터 보관'],
+        title: l10n.backupPermissionTitle,
+        description: l10n.backupPermissionDesc,
+        benefits: [
+          l10n.backupBenefit1,
+          l10n.backupBenefit2,
+          l10n.backupBenefit3,
+          l10n.backupBenefit4,
+        ],
       ),
     );
   }
 
   /// 저장소 권한 요청 시트 표시
   static Future<bool?> showStoragePermissionSheet(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     return showModalBottomSheet<bool>(
       context: context,
       isScrollControlled: true,
       backgroundColor: Colors.transparent,
       isDismissible: false,
-      builder: (context) => const PermissionBottomSheet(
+      builder: (context) => PermissionBottomSheet(
         permission: Permission.storage,
-        title: '📁 저장소 접근',
-        description: '운동 데이터 백업/복원을 위해 저장소 접근 권한이 필요합니다.',
-        benefits: ['운동 기록 백업', '데이터 복원', '운동 사진 저장', '공유 기능 활용'],
+        title: l10n.storagePermissionTitle,
+        description: l10n.storagePermissionDesc,
+        benefits: [
+          l10n.storageBenefit1,
+          l10n.storageBenefit2,
+          l10n.storageBenefit3,
+        ],
       ),
     );
   }

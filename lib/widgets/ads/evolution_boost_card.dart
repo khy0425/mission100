@@ -32,7 +32,7 @@ class EvolutionBoostCard extends StatelessWidget {
 
     // 이미 최종 진화 완료
     if (evolutionService.isMaxEvolution) {
-      return SizedBox.shrink();
+      return const SizedBox.shrink();
     }
 
     return Card(
@@ -115,7 +115,7 @@ class EvolutionBoostCard extends StatelessWidget {
                       ),
                       Text(
                         l10n.evolutionBoostDaysLeft(daysLeft),
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,

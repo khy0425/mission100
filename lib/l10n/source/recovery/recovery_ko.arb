@@ -17,7 +17,7 @@
     "description": "수면모자 Chad 설명"
   },
   "@chadTitleSleepy": {
-    "description": "수면모자 차드 타이틀"
+    "description": "수면모자 드림 스피릿 타이틀"
   },
   "@factCategoryMuscle": {
     "description": "근육 생리학 카테고리"
@@ -41,10 +41,10 @@
     "description": "회복 레벨 - 휴식 필요"
   },
   "@scientificRecovery": {
-    "description": "전략적 차드 모드 설명"
+    "description": "전략적 드림 스피릿 모드 설명"
   },
   "@sleepyChadEvolution": {
-    "description": "수면모자 차드 진화 상태"
+    "description": "수면모자 드림 스피릿 진화 상태"
   },
   "@sleepyHatChad": {
     "description": "Sleepy hat chad name"

@@ -24,7 +24,7 @@ class ChecklistNotificationService {
   Future<void> scheduleAllNotifications() async {
     await _notifications.cancelAll();
 
-    for (var item in ChecklistData.dailyChecklist) {
+    for (final item in ChecklistData.dailyChecklist) {
       if (item.defaultTime != null) {
         await _scheduleNotification(
           id: item.id.hashCode,

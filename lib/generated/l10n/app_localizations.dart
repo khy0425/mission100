@@ -143,7 +143,7 @@ abstract class AppLocalizations {
   /// 광고가 없을 때 표시되는 대체 메시지
   ///
   /// In ko, this message translates to:
-  /// **'차드가 되는 여정, 함께 간다! 💪'**
+  /// **'드림 스피릿가 되는 여정, 함께 간다! 💪'**
   String get adFallbackMessage;
 
   /// 광고 라벨
@@ -185,13 +185,13 @@ abstract class AppLocalizations {
   /// 고급 특징 4
   ///
   /// In ko, this message translates to:
-  /// **'기가차드 완성 코스'**
+  /// **'기가드림 스피릿 완성 코스'**
   String get alphaFeature4;
 
   /// 고급 짧은 이름
   ///
   /// In ko, this message translates to:
-  /// **'차드'**
+  /// **'드림 스피릿'**
   String get alphaShort;
 
   /// Animation effect setting
@@ -257,7 +257,7 @@ abstract class AppLocalizations {
   /// No description provided for @appSlogan.
   ///
   /// In ko, this message translates to:
-  /// **'차드가 되는 여정'**
+  /// **'드림 스피릿가 되는 여정'**
   String get appSlogan;
 
   /// 앱 바 제목
@@ -503,19 +503,19 @@ abstract class AppLocalizations {
   /// 완료 메시지 3
   ///
   /// In ko, this message translates to:
-  /// **'👑 차드에 가까워진 게 아니다... 이제 차드를 넘어섰다! 👑'**
+  /// **'👑 드림 스피릿에 가까워진 게 아니다... 이제 드림 스피릿를 넘어섰다! 👑'**
   String get completionMessage3;
 
   /// 완료 메시지 4
   ///
   /// In ko, this message translates to:
-  /// **'🚀 차드답다고? 틀렸다! 이제 LEGENDARY BEAST MODE다, YOU MONSTER! 🚀'**
+  /// **'🚀 드림 스피릿답다고? 틀렸다! 이제 LEGENDARY BEAST MODE다, YOU MONSTER! 🚀'**
   String get completionMessage4;
 
   /// 완료 메시지 5
   ///
   /// In ko, this message translates to:
-  /// **'⚡ 차드 에너지 레벨: ∞ 무한대 돌파! 우주가 경배한다! ⚡'**
+  /// **'⚡ 드림 스피릿 에너지 레벨: ∞ 무한대 돌파! 우주가 경배한다! ⚡'**
   String get completionMessage5;
 
   /// 완료 메시지 6
@@ -527,19 +527,19 @@ abstract class AppLocalizations {
   /// 완료 메시지 7
   ///
   /// In ko, this message translates to:
-  /// **'🔱 차드가 승인했다고? 아니다! GOD TIER가 탄생을 인정했다! 🔱'**
+  /// **'🔱 드림 스피릿가 승인했다고? 아니다! GOD TIER가 탄생을 인정했다! 🔱'**
   String get completionMessage7;
 
   /// 완료 메시지 8
   ///
   /// In ko, this message translates to:
-  /// **'🌪️ 차드 게임 레벨업? 틀렸다! ALPHA DIMENSION을 정복했다, FXXK BEAST! 🌪️'**
+  /// **'🌪️ 드림 스피릿 게임 레벨업? 틀렸다! ALPHA DIMENSION을 정복했다, FXXK BEAST! 🌪️'**
   String get completionMessage8;
 
   /// 완료 메시지 9
   ///
   /// In ko, this message translates to:
-  /// **'💥 순수한 차드 퍼포먼스가 아니다... 이제 PURE LEGENDARY DOMINANCE! 💥'**
+  /// **'💥 순수한 드림 스피릿 퍼포먼스가 아니다... 이제 PURE LEGENDARY DOMINANCE! 💥'**
   String get completionMessage9;
 
   /// 달성률 퍼센트 형식
@@ -581,13 +581,13 @@ abstract class AppLocalizations {
   /// 운동 계속 또는 새 운동 시작 선택
   ///
   /// In ko, this message translates to:
-  /// **'이전 운동을 이어서 계속할래?\\n아니면 새 운동을 시작할래?'**
+  /// **'이전 훈련을 이어서 계속할래?\\n아니면 새 훈련을 시작할래?'**
   String get continueOrStartNew;
 
   /// 저작권 및 슬로건
   ///
   /// In ko, this message translates to:
-  /// **'© 2024 Mission 100 Team\n모든 권리 보유\n\n💪 강자가 되는 그 날까지!'**
+  /// **'© 2024 Lucid Dream Team\n모든 권리 보유\n\n💪 자각몽 마스터가 되는 그 날까지!'**
   String get copyrightMission100;
 
   /// 코어 근육군
@@ -725,7 +725,7 @@ abstract class AppLocalizations {
   /// 개발자 정보 설명
   ///
   /// In ko, this message translates to:
-  /// **'차드가 되는 여정을 함께해'**
+  /// **'드림 스피릿가 되는 여정을 함께해'**
   String get developerInfoDesc;
 
   /// 난이도 변경 성공 메시지
@@ -749,7 +749,7 @@ abstract class AppLocalizations {
   /// 푸시업 극한 난이도
   ///
   /// In ko, this message translates to:
-  /// **'기가 차드 - 전설의 영역'**
+  /// **'기가 드림 스피릿 - 전설의 영역'**
   String get difficultyExtreme;
 
   /// 어려움 난이도
@@ -776,10 +776,10 @@ abstract class AppLocalizations {
   /// **'이런 실수는 하지 마라!'**
   String get dontMakeTheseMistakes;
 
-  /// Mission 100 앱 다운로드 메시지
+  /// Lucid Dream 앱 다운로드 메시지
   ///
   /// In ko, this message translates to:
-  /// **'Mission: 100 앱 다운로드해라! 약자는 도망가라!'**
+  /// **'Lucid Dream 100 앱 다운로드해라! 당신의 꿈을 응원합니다!'**
   String get downloadMission100;
 
   /// 소요일 레이블
@@ -1043,7 +1043,7 @@ abstract class AppLocalizations {
   /// 최고급 짧은 이름
   ///
   /// In ko, this message translates to:
-  /// **'기가차드'**
+  /// **'기가드림 스피릿'**
   String get gigaShort;
 
   /// GitHub repository link
@@ -1247,7 +1247,7 @@ abstract class AppLocalizations {
   /// 사랑으로 제작 메시지
   ///
   /// In ko, this message translates to:
-  /// **'차드를 위해 ❤️로 제작'**
+  /// **'드림 스피릿를 위해 ❤️로 제작'**
   String get madeWithLove;
 
   /// 분 단위
@@ -1259,7 +1259,7 @@ abstract class AppLocalizations {
   /// 개발팀 이름
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100 Team'**
+  /// **'Lucid Dream Team'**
   String get mission100Team;
 
   /// 미션 완료 메시지
@@ -1382,7 +1382,7 @@ abstract class AppLocalizations {
   /// **'완벽!'**
   String get perfect;
 
-  /// 밸런스 차드 모드 설명
+  /// 밸런스 드림 스피릿 모드 설명
   ///
   /// In ko, this message translates to:
   /// **'완벽한 균형! 주중+주말 최적화 패턴! ⚖️🔥'**
@@ -1412,6 +1412,90 @@ abstract class AppLocalizations {
   /// **'이 권한들을 허용하면:'**
   String get permissionBenefits;
 
+  /// No description provided for @permissionBenefitsPrompt.
+  ///
+  /// In ko, this message translates to:
+  /// **'허용하면 다음 기능을 이용할 수 있습니다:'**
+  String get permissionBenefitsPrompt;
+
+  /// No description provided for @permissionAllowButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'허용'**
+  String get permissionAllowButton;
+
+  /// 알림 권한 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'🔔 알림 권한'**
+  String get notificationPermissionTitle;
+
+  /// 알림 권한 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'연습 리마인더와 업적 알림을 받기 위해 필요한다'**
+  String get notificationPermissionDesc;
+
+  /// 알림 혜택 1
+  ///
+  /// In ko, this message translates to:
+  /// **'💪 매일 연습 리마인더'**
+  String get notificationBenefit1;
+
+  /// 알림 혜택 2
+  ///
+  /// In ko, this message translates to:
+  /// **'🏆 업적 달성 축하 알림'**
+  String get notificationBenefit2;
+
+  /// 알림 혜택 3
+  ///
+  /// In ko, this message translates to:
+  /// **'🔥 동기부여 메시지'**
+  String get notificationBenefit3;
+
+  /// No description provided for @notificationBenefit4.
+  ///
+  /// In ko, this message translates to:
+  /// **'✨ 새로운 도전과제 알림'**
+  String get notificationBenefit4;
+
+  /// No description provided for @backupPermissionTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'💾 백업 기능'**
+  String get backupPermissionTitle;
+
+  /// No description provided for @backupPermissionDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 데이터를 안전하게 백업하기 위해 저장소 접근이 필요합니다.'**
+  String get backupPermissionDesc;
+
+  /// No description provided for @backupBenefit1.
+  ///
+  /// In ko, this message translates to:
+  /// **'📁 꿈 일기 자동 백업'**
+  String get backupBenefit1;
+
+  /// No description provided for @backupBenefit2.
+  ///
+  /// In ko, this message translates to:
+  /// **'🔄 기기 변경 시 데이터 복원'**
+  String get backupBenefit2;
+
+  /// No description provided for @backupBenefit3.
+  ///
+  /// In ko, this message translates to:
+  /// **'💾 데이터 손실 방지'**
+  String get backupBenefit3;
+
+  /// No description provided for @backupBenefit4.
+  ///
+  /// In ko, this message translates to:
+  /// **'☁️ 안전한 데이터 보관'**
+  String get backupBenefit4;
+
   /// 저장소 권한 요청 메시지
   ///
   /// In ko, this message translates to:
@@ -1421,7 +1505,7 @@ abstract class AppLocalizations {
   /// 권한 요청 설명
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100에서 최고의 경험을 위해\n다음 권한들이 필요한다:'**
+  /// **'Lucid Dream에서 최상의 경험을 위해\n다음 권한들이 필요한다:'**
   String get permissionsDescription;
 
   /// 프로필 생성 요청 메시지
@@ -1715,451 +1799,451 @@ abstract class AppLocalizations {
   /// 과학적 팩트 10번 내용
   ///
   /// In ko, this message translates to:
-  /// **'정기적인 푸시업은 심박출량을 20% 증가시켜 전신 순환을 개선한다.'**
+  /// **'자각몽 훈련으로 인지 유연성이 42% 증가하여 다양한 관점에서 사고할 수 있게 됩니다.'**
   String get scientificFact10Content;
 
   /// 과학적 팩트 10번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'❤️ 강력한 심장 펀프 업그레이드!'**
+  /// **'🌈 사고의 유연성이 폭발적으로 증가합니다!'**
   String get scientificFact10Impact;
 
   /// 과학적 팩트 10번 - 심박출량 증가 제목
   ///
   /// In ko, this message translates to:
-  /// **'심박출량 증가'**
+  /// **'인지 유연성 향상'**
   String get scientificFact10Title;
 
   /// 과학적 팩트 11번 내용
   ///
   /// In ko, this message translates to:
-  /// **'푸시업은 모세혈관 밀도를 30% 증가시켜 근육과 뇌로의 산소 공급을 개선한다.'**
+  /// **'REM 수면의 질이 30% 향상되어 더 깊고 효율적인 자각몽 훈련이 가능해집니다.'**
   String get scientificFact11Content;
 
   /// 과학적 팩트 11번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🌊 생명의 고속도로 확장 공사!'**
+  /// **'🌙 최상의 꿈 상태를 경험하고 있습니다!'**
   String get scientificFact11Impact;
 
   /// 과학적 팩트 11번 - 혈관신생 촉진 제목
   ///
   /// In ko, this message translates to:
-  /// **'혈관신생 촉진'**
+  /// **'REM 수면 질 향상'**
   String get scientificFact11Title;
 
   /// 과학적 팩트 12번 내용
   ///
   /// In ko, this message translates to:
-  /// **'12주간의 푸시업 프로그램은 수축기 혈압을 평균 8mmHg 감소시킵니다.'**
+  /// **'자각몽 훈련으로 수면 주기가 최적화되어 90분 주기가 규칙적으로 유지됩니다.'**
   String get scientificFact12Content;
 
   /// 과학적 팩트 12번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'📉 혈압의 자연스러운 정상화!'**
+  /// **'⏰ 완벽한 수면 리듬을 획득했습니다!'**
   String get scientificFact12Impact;
 
   /// 과학적 팩트 12번 - 혈압 정상화 제목
   ///
   /// In ko, this message translates to:
-  /// **'혈압 정상화'**
+  /// **'수면 주기 최적화'**
   String get scientificFact12Title;
 
   /// 과학적 팩트 13번 내용
   ///
   /// In ko, this message translates to:
-  /// **'규칙적인 푸시업은 심박변이도를 35% 향상시켜 스트레스 저항력을 증가시킵니다.'**
+  /// **'깊은 수면 단계(N3)가 20% 증가하여 신체 회복과 성장 호르몬 분비가 촉진됩니다.'**
   String get scientificFact13Content;
 
   /// 과학적 팩트 13번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'💎 다이아몬드 같은 심장 리듬!'**
+  /// **'💤 최고의 회복 수면을 취하고 있습니다!'**
   String get scientificFact13Impact;
 
   /// 과학적 팩트 13번 - 심박변이도 향상 제목
   ///
   /// In ko, this message translates to:
-  /// **'심박변이도 향상'**
+  /// **'깊은 수면 증가'**
   String get scientificFact13Title;
 
   /// 과학적 팩트 14번 내용
   ///
   /// In ko, this message translates to:
-  /// **'고강도 푸시업은 혈관 내피세포 기능을 25% 개선하여 혈관 건강을 증진시킵니다.'**
+  /// **'자각몽 훈련이 체내 시계를 조절하여 일주기 리듬이 15% 개선됩니다.'**
   String get scientificFact14Content;
 
   /// 과학적 팩트 14번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'✨ 혈관의 절음 회복!'**
+  /// **'🌍 자연스러운 생체 리듬을 되찾았습니다!'**
   String get scientificFact14Impact;
 
   /// 과학적 팩트 14번 - 내피세포 기능 개선 제목
   ///
   /// In ko, this message translates to:
-  /// **'내피세포 기능 개선'**
+  /// **'일주기 리듬 정렬'**
   String get scientificFact14Title;
 
   /// 과학적 팩트 15번 내용
   ///
   /// In ko, this message translates to:
-  /// **'근력 운동인 푸시업은 기초대사율을 15% 증가시켜 24시간 칼로리 소모를 늘립니다.'**
+  /// **'수면 효율성이 25% 증가하여 같은 시간에 더 많은 휴식을 취할 수 있습니다.'**
   String get scientificFact15Content;
 
   /// 과학적 팩트 15번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🔥 24시간 지방 연소 시스템!'**
+  /// **'⚡ 수면의 질이 비약적으로 향상되고 있습니다!'**
   String get scientificFact15Impact;
 
   /// 과학적 팩트 15번 - 기초대사율 증가 제목
   ///
   /// In ko, this message translates to:
-  /// **'기초대사율 증가'**
+  /// **'수면 효율성 증가'**
   String get scientificFact15Title;
 
   /// 과학적 팩트 16번 내용
   ///
   /// In ko, this message translates to:
-  /// **'8주간의 푸시업 훈련은 인슐린 감수성을 40% 향상시켜 혈당 조절을 개선한다.'**
+  /// **'자각몽 중 빠른 안구 운동(REM)이 분당 60-70회로 증가하여 생생한 시각적 경험을 만듭니다.'**
   String get scientificFact16Content;
 
   /// 과학적 팩트 16번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'📊 완벽한 혈당 제어 시스템!'**
+  /// **'👁️ 꿈의 세계가 초고화질로 펼쳐집니다!'**
   String get scientificFact16Impact;
 
   /// 과학적 팩트 16번 - 인슐린 감수성 향상 제목
   ///
   /// In ko, this message translates to:
-  /// **'인슐린 감수성 향상'**
+  /// **'안구 운동 패턴'**
   String get scientificFact16Title;
 
   /// 과학적 팩트 17번 내용
   ///
   /// In ko, this message translates to:
-  /// **'푸시업은 지방 산화 효소 활성을 50% 증가시켜 체지방 감소를 가속화한다.'**
+  /// **'REM 수면 중 뇌 활동이 깨어있을 때와 유사한 수준으로 증가하여 의식적 사고가 가능합니다.'**
   String get scientificFact17Content;
 
   /// 과학적 팩트 17번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🔥 지방 용해 터보 엔진!'**
+  /// **'🧠 잠자는 동안 뇌가 깨어있습니다!'**
   String get scientificFact17Impact;
 
   /// 과학적 팩트 17번 - 지방 산화 증진 제목
   ///
   /// In ko, this message translates to:
-  /// **'지방 산화 증진'**
+  /// **'REM 뇌 활성화'**
   String get scientificFact17Title;
 
   /// 과학적 팩트 18번 내용
   ///
   /// In ko, this message translates to:
-  /// **'고강도 운동은 갈색지방을 활성화시켜 열 생성을 통한 칼로리 소모를 증가시킵니다.'**
+  /// **'자각몽 훈련이 세로토닌과 도파민 균형을 맞춰 기분과 동기를 개선합니다.'**
   String get scientificFact18Content;
 
   /// 과학적 팩트 18번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'♨️ 내장 난방 시스템 가동!'**
+  /// **'😊 행복 호르몬이 최적화되고 있습니다!'**
   String get scientificFact18Impact;
 
   /// 과학적 팩트 18번 - 갈색지방 활성화 제목
   ///
   /// In ko, this message translates to:
-  /// **'갈색지방 활성화'**
+  /// **'신경전달물질 조절'**
   String get scientificFact18Title;
 
   /// 과학적 팩트 19번 내용
   ///
   /// In ko, this message translates to:
-  /// **'고강도 푸시업은 운동 후 최대 24시간 동안 산소 소비량을 증가시켜 추가 칼로리를 소모한다.'**
+  /// **'자각몽 중 아세틸콜린 수치가 30% 증가하여 명료한 의식과 생생한 기억을 만듭니다.'**
   String get scientificFact19Content;
 
   /// 과학적 팩트 19번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🌪️ 24시간 애프터번 효과!'**
+  /// **'💡 꿈이 현실처럼 선명해지고 있습니다!'**
   String get scientificFact19Impact;
 
   /// 과학적 팩트 19번 - 운동 후 산소 소비량 제목
   ///
   /// In ko, this message translates to:
-  /// **'운동 후 산소 소비량'**
+  /// **'아세틸콜린 증가'**
   String get scientificFact19Title;
 
   /// 과학적 팩트 1 내용
   ///
   /// In ko, this message translates to:
-  /// **'정기적인 푸시업은 느린 근섬유(Type I)를 빠른 근섬유(Type II)로 변환시켜 폭발적인 힘을 증가시킵니다.'**
+  /// **'자각몽 중 전두엽 피질의 활동이 일반 꿈 대비 40% 증가하여 자기 인식과 메타인지를 가능하게 합니다.'**
   String get scientificFact1Content;
 
   /// 과학적 팩트 1 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'💪 근육의 질적 변화가 일어나고 있다!'**
+  /// **'🧠 의식의 확장이 일어나고 있습니다!'**
   String get scientificFact1Impact;
 
   /// 과학적 팩트 1 제목
   ///
   /// In ko, this message translates to:
-  /// **'근섬유 타입의 변화'**
+  /// **'전두엽 활성화'**
   String get scientificFact1Title;
 
   /// 과학적 팩트 20번 내용
   ///
   /// In ko, this message translates to:
-  /// **'고강도 푸시업은 성장호르몬 분비를 최대 500% 증가시켜 근육 성장과 회복을 촉진한다.'**
+  /// **'규칙적인 자각몽 훈련이 멜라토닌과 세로토닌 균형을 맞춰 수면-각성 주기를 최적화합니다.'**
   String get scientificFact20Content;
 
   /// 과학적 팩트 20번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🚀 청춘의 호르몬 폭발!'**
+  /// **'🌗 완벽한 수면 호르몬 균형을 달성했습니다!'**
   String get scientificFact20Impact;
 
   /// 과학적 팩트 20번 - 성장호르몬 급증 제목
   ///
   /// In ko, this message translates to:
-  /// **'성장호르몬 급증'**
+  /// **'세로토닌 균형'**
   String get scientificFact20Title;
 
   /// 과학적 팩트 21번 내용
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 훈련은 운동 단위 간 동조화를 70% 향상시켜 폭발적인 힘 발휘를 가능하게 한다.'**
+  /// **'자각몽 훈련으로 불안 증상이 55% 감소하여 정서적 안정감을 얻을 수 있습니다.'**
   String get scientificFact21Content;
 
   /// 과학적 팩트 21번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'⚡ 신경과 근육의 완벽한 하모니!'**
+  /// **'☮️ 마음의 평화를 찾고 있습니다!'**
   String get scientificFact21Impact;
 
   /// 과학적 팩트 21번 - 운동 단위 동조화 제목
   ///
   /// In ko, this message translates to:
-  /// **'운동 단위 동조화'**
+  /// **'불안 감소'**
   String get scientificFact21Title;
 
   /// 과학적 팩트 22번 내용
   ///
   /// In ko, this message translates to:
-  /// **'규칙적인 푸시업은 운동 피질의 신경가소성을 45% 증가시켜 학습 능력을 향상시킵니다.'**
+  /// **'자각몽에서 스트레스를 처리하고 관리하는 능력이 40% 향상됩니다.'**
   String get scientificFact22Content;
 
   /// 과학적 팩트 22번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🧠 뇌도 함께 진화하고 있다!'**
+  /// **'🛡️ 스트레스에 대한 저항력이 생기고 있습니다!'**
   String get scientificFact22Impact;
 
   /// 과학적 팩트 22번 - 신경가소성 증진 제목
   ///
   /// In ko, this message translates to:
-  /// **'신경가소성 증진'**
+  /// **'스트레스 관리 능력'**
   String get scientificFact22Title;
 
   /// 과학적 팩트 23번 내용
   ///
   /// In ko, this message translates to:
-  /// **'고강도 푸시업은 뇌유래신경영양인자(BDNF)를 최대 300% 증가시켜 뇌 건강을 개선한다.'**
+  /// **'자각몽을 통해 감정을 처리하고 정리하는 능력이 60% 향상되어 심리적 치유가 일어납니다.'**
   String get scientificFact23Content;
 
   /// 과학적 팩트 23번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🌟 뇌의 젊음 회복 프로그램 가동!'**
+  /// **'💖 감정의 치유가 일어나고 있습니다!'**
   String get scientificFact23Impact;
 
   /// 과학적 팩트 23번 - BDNF 분비 증가 제목
   ///
   /// In ko, this message translates to:
-  /// **'BDNF 분비 증가'**
+  /// **'감정 처리 능력'**
   String get scientificFact23Title;
 
   /// 과학적 팩트 24번 내용
   ///
   /// In ko, this message translates to:
-  /// **'14주간의 푸시업 훈련은 신경 전달 속도를 15% 향상시켜 반응 시간을 단축시킵니다.'**
+  /// **'PTSD 환자의 70%가 자각몽 훈련으로 악몽 빈도 감소와 증상 완화를 경험합니다.'**
   String get scientificFact24Content;
 
   /// 과학적 팩트 24번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'⚡ 번개 같은 반사신경 획득!'**
+  /// **'🌈 트라우마로부터 회복하고 있습니다!'**
   String get scientificFact24Impact;
 
   /// 과학적 팩트 24번 - 반응 속도 개선 제목
   ///
   /// In ko, this message translates to:
-  /// **'반응 속도 개선'**
+  /// **'PTSD 증상 완화'**
   String get scientificFact24Title;
 
   /// 과학적 팩트 25번 내용
   ///
   /// In ko, this message translates to:
-  /// **'복합 운동인 푸시업은 척수 인터뉴런의 억제 기능을 25% 개선하여 동작의 정확성을 높이다.'**
+  /// **'자각몽 훈련이 우울증 증상을 32% 감소시켜 전반적인 기분과 삶의 질을 향상시킵니다.'**
   String get scientificFact25Content;
 
   /// 과학적 팩트 25번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🎯 완벽한 동작 제어 시스템 구축!'**
+  /// **'✨ 희망과 긍정의 에너지가 충전되고 있습니다!'**
   String get scientificFact25Impact;
 
   /// 과학적 팩트 25번 - 인터뉴런 활성화 제목
   ///
   /// In ko, this message translates to:
-  /// **'인터뉴런 활성화'**
+  /// **'우울증 개선'**
   String get scientificFact25Title;
 
   /// 과학적 팩트 2 내용
   ///
   /// In ko, this message translates to:
-  /// **'푸시업은 근육 내 미토콘드리아 밀도를 최대 40% 증가시켜 에너지 생산을 극대화한다.'**
+  /// **'자각몽 상태에서 40Hz 감마파가 75% 증가하여 높은 수준의 의식 상태를 나타냅니다.'**
   String get scientificFact2Content;
 
   /// 과학적 팩트 2 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'⚡ 무한 에너지 시스템이 구축되고 있다!'**
+  /// **'⚡ 초월적 의식 상태에 진입하고 있습니다!'**
   String get scientificFact2Impact;
 
   /// 과학적 팩트 2 제목
   ///
   /// In ko, this message translates to:
-  /// **'미토콘드리아 밀도 증가'**
+  /// **'감마파 패턴 증가'**
   String get scientificFact2Title;
 
   /// 과학적 팩트 3번 내용
   ///
   /// In ko, this message translates to:
-  /// **'푸시업은 근육 성장의 핵심인 mTOR 신호전달을 300% 활성화시킵니다.'**
+  /// **'자각몽 훈련 8주 후 전전두엽 피질의 회백질 밀도가 5% 증가합니다.'**
   String get scientificFact3Content;
 
   /// 과학적 팩트 3번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🚀 근육 성장 터보 엔진이 작동한다!'**
+  /// **'🧠 두뇌가 물리적으로 강화되고 있습니다!'**
   String get scientificFact3Impact;
 
   /// 과학적 팩트 3번 - mTOR 신호전달 활성화 제목
   ///
   /// In ko, this message translates to:
-  /// **'mTOR 신호전달 활성화'**
+  /// **'전전두엽 피질 증가'**
   String get scientificFact3Title;
 
   /// 과학적 팩트 4번 내용
   ///
   /// In ko, this message translates to:
-  /// **'한 번 발달한 근육은 운동을 중단해도 핵 도메인이 유지되어 10년 후에도 빠른 회복이 가능한다.'**
+  /// **'자각몽 연습을 통해 메타 인지 능력이 34% 향상되어 깨어있을 때도 자기 인식이 증가합니다.'**
   String get scientificFact4Content;
 
   /// 과학적 팩트 4번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🧐 영원한 근육 기억이 새겨지고 있다!'**
+  /// **'🎯 현실에서도 자각력이 강화되고 있습니다!'**
   String get scientificFact4Impact;
 
   /// 과학적 팩트 4번 - 근육 기억의 영속성 제목
   ///
   /// In ko, this message translates to:
-  /// **'근육 기억의 영속성'**
+  /// **'메타인지 능력 향상'**
   String get scientificFact4Title;
 
   /// 과학적 팩트 5번 내용
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 훈련은 운동 단위 간 동조화를 70% 향상시켜 폭발적인 힘 발휘를 가능하게 한다.'**
+  /// **'자각몽 중 알파파(8-13Hz)와 베타파(13-30Hz)가 동시에 활성화되는 독특한 의식 상태가 나타납니다.'**
   String get scientificFact5Content;
 
   /// 과학적 팩트 5번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'⚡ 신경과 근육의 완벽한 하모니!'**
+  /// **'✨ 깨어있는 꿈의 상태를 경험하고 있습니다!'**
   String get scientificFact5Impact;
 
   /// 과학적 팩트 5번 - 운동 단위 동조화 제목
   ///
   /// In ko, this message translates to:
-  /// **'운동 단위 동조화'**
+  /// **'혼합 뇌파 상태'**
   String get scientificFact5Title;
 
   /// 과학적 팩트 6번 내용
   ///
   /// In ko, this message translates to:
-  /// **'규칙적인 푸시업은 운동 피질의 신경가소성을 45% 증가시켜 학습 능력을 향상시킵니다.'**
+  /// **'자각몽 훈련으로 꿈 회상 능력이 300% 향상되어 더 많은 꿈을 기억할 수 있게 됩니다.'**
   String get scientificFact6Content;
 
   /// 과학적 팩트 6번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🧐 뇌도 함께 진화하고 있다!'**
+  /// **'💭 꿈의 세계가 선명하게 열리고 있습니다!'**
   String get scientificFact6Impact;
 
   /// 과학적 팩트 6번 - 신경가소성 증진 제목
   ///
   /// In ko, this message translates to:
-  /// **'신경가소성 증진'**
+  /// **'꿈 회상력 증가'**
   String get scientificFact6Title;
 
   /// 과학적 팩트 7번 내용
   ///
   /// In ko, this message translates to:
-  /// **'고강도 푸시업은 뇌유래신경영양인자(BDNF)를 최대 300% 증가시켜 뇌 건강을 개선한다.'**
+  /// **'자각몽 중 작업 기억 용량이 25% 증가하여 복잡한 사고와 계획이 가능해집니다.'**
   String get scientificFact7Content;
 
   /// 과학적 팩트 7번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🌟 뇌의 절음 회복 프로그램 가동!'**
+  /// **'🧠 꿈 속에서 천재가 되고 있습니다!'**
   String get scientificFact7Impact;
 
   /// 과학적 팩트 7번 - BDNF 분비 증가 제목
   ///
   /// In ko, this message translates to:
-  /// **'BDNF 분비 증가'**
+  /// **'작업 기억력 향상'**
   String get scientificFact7Title;
 
   /// 과학적 팩트 8번 내용
   ///
   /// In ko, this message translates to:
-  /// **'14주간의 푸시업 훈련은 신경 전달 속도를 15% 향상시켜 반응 시간을 단축시킵니다.'**
+  /// **'REM 수면 중 기억 통합 과정이 50% 효율적으로 진행되어 학습 내용이 장기 기억으로 전환됩니다.'**
   String get scientificFact8Content;
 
   /// 과학적 팩트 8번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'⚡ 번개 같은 반사신경 획득!'**
+  /// **'📚 잠자는 동안 지식이 뇌에 각인됩니다!'**
   String get scientificFact8Impact;
 
   /// 과학적 팩트 8번 - 반응 속도 개선 제목
   ///
   /// In ko, this message translates to:
-  /// **'반응 속도 개선'**
+  /// **'기억 통합 촉진'**
   String get scientificFact8Title;
 
   /// 과학적 팩트 9번 내용
   ///
   /// In ko, this message translates to:
-  /// **'복합 운동인 푸시업은 척수 인터뉴런의 억제 기능을 25% 개선하여 동작의 정확성을 높이다.'**
+  /// **'자각몽에서 문제 해결 능력이 23% 향상되어 창의적인 통찰을 얻을 수 있습니다.'**
   String get scientificFact9Content;
 
   /// 과학적 팩트 9번 임팩트 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🎯 완벽한 동작 제어 시스템 구축!'**
+  /// **'💡 꿈 속에서 해결책을 발견하고 있습니다!'**
   String get scientificFact9Impact;
 
   /// 과학적 팩트 9번 - 인터뉴런 활성화 제목
   ///
   /// In ko, this message translates to:
-  /// **'인터뉴런 활성화'**
+  /// **'창의적 문제 해결'**
   String get scientificFact9Title;
 
   /// 초 단위
@@ -2195,7 +2279,7 @@ abstract class AppLocalizations {
   /// 피드백 보내기 설명
   ///
   /// In ko, this message translates to:
-  /// **'💬 너의 의견을 들려달라! 차드들의 목소리가 필요하다!'**
+  /// **'💬 너의 의견을 들려달라! 드림 스피릿들의 목소리가 필요하다!'**
   String get sendFeedbackDesc;
 
   /// 공유 버튼 라벨
@@ -2279,7 +2363,7 @@ abstract class AppLocalizations {
   /// 저장소 혜택 1
   ///
   /// In ko, this message translates to:
-  /// **'📁 운동 데이터 안전 백업'**
+  /// **'📁 꿈 일기 데이터 안전 백업'**
   String get storageBenefit1;
 
   /// 저장소 혜택 2
@@ -2297,7 +2381,7 @@ abstract class AppLocalizations {
   /// 저장소 권한 설명
   ///
   /// In ko, this message translates to:
-  /// **'운동 데이터 백업 및 복원을 위해 필요한다'**
+  /// **'꿈 일기 데이터 백업 및 복원을 위해 필요한다'**
   String get storagePermissionDesc;
 
   /// 저장소 권한 제목
@@ -2441,7 +2525,7 @@ abstract class AppLocalizations {
   /// 버전 정보 설명
   ///
   /// In ko, this message translates to:
-  /// **'Mission: 100 v1.0.0'**
+  /// **'Lucid Dream 100 v1.0.0'**
   String get versionInfoDesc;
 
   /// 승리의 시간 표시
@@ -2987,7 +3071,7 @@ abstract class AppLocalizations {
   /// No description provided for @difficultyExpertDesc.
   ///
   /// In ko, this message translates to:
-  /// **'차드 레전드'**
+  /// **'드림 스피릿 레전드'**
   String get difficultyExpertDesc;
 
   /// No description provided for @disabledStatus.
@@ -3113,7 +3197,7 @@ abstract class AppLocalizations {
   /// No description provided for @signupThankYouMessage.
   ///
   /// In ko, this message translates to:
-  /// **'🎉 Mission: 100에 가입해주셔서 감사합니다!'**
+  /// **'🎉 Lucid Dream 100에 가입해주셔서 감사합니다!'**
   String get signupThankYouMessage;
 
   /// No description provided for @launchEventBenefits.
@@ -3137,13 +3221,13 @@ abstract class AppLocalizations {
   /// No description provided for @benefit14WeeksProgram.
   ///
   /// In ko, this message translates to:
-  /// **'• 전체 14주 프로그램 접근'**
+  /// **'• 전체 30일 프로그램 접근'**
   String get benefit14WeeksProgram;
 
   /// No description provided for @benefitAllChadStages.
   ///
   /// In ko, this message translates to:
-  /// **'• 모든 차드 진화 단계'**
+  /// **'• 모든 드림 스피릿 진화 단계'**
   String get benefitAllChadStages;
 
   /// No description provided for @benefitDetailedStats.
@@ -3161,7 +3245,7 @@ abstract class AppLocalizations {
   /// No description provided for @premiumFeaturesSummary.
   ///
   /// In ko, this message translates to:
-  /// **'전체 14주 프로그램 + 모든 차드 + 상세 통계'**
+  /// **'전체 30일 프로그램 + 모든 드림 스피릿 + 상세 통계'**
   String get premiumFeaturesSummary;
 
   /// No description provided for @benefitPersonalizedPlan.
@@ -3187,6 +3271,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'다른 사용자와 비교하고 순위를 확인하며 동기부여'**
   String get competitionGoalDescription;
+
+  /// No description provided for @personalRecord.
+  ///
+  /// In ko, this message translates to:
+  /// **'개인 기록'**
+  String get personalRecord;
 
   /// No description provided for @personalRecordGoalDescription.
   ///
@@ -3317,7 +3407,7 @@ abstract class AppLocalizations {
   /// No description provided for @signupPromptTitle.
   ///
   /// In ko, this message translates to:
-  /// **'Mission: 100 시작하기'**
+  /// **'Lucid Dream 100 시작하기'**
   String get signupPromptTitle;
 
   /// No description provided for @signupPromptMessage.
@@ -3341,13 +3431,13 @@ abstract class AppLocalizations {
   /// No description provided for @signupPromptBenefit2.
   ///
   /// In ko, this message translates to:
-  /// **'• 전체 14주 프로그램 접근'**
+  /// **'• 전체 30일 프로그램 접근'**
   String get signupPromptBenefit2;
 
   /// No description provided for @signupPromptBenefit3.
   ///
   /// In ko, this message translates to:
-  /// **'• 모든 차드 진화 단계'**
+  /// **'• 모든 드림 스피릿 진화 단계'**
   String get signupPromptBenefit3;
 
   /// No description provided for @signupPromptBenefit4.
@@ -3499,6 +3589,78 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'🏆 업적'**
   String get achievementsTab;
+
+  /// 캘린더 선택된 날짜 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{year}년 {month}월 {day}일'**
+  String calendarSelectedDate(Object day, Object month, Object year);
+
+  /// 체크리스트 로드 실패 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'체크리스트를 불러오지 못했습니다'**
+  String get homeChecklistLoadError;
+
+  /// AI 꿈 분석 카드 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'AI 꿈 분석'**
+  String get homeAIDreamAnalysisTitle;
+
+  /// AI 꿈 분석 카드 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'당신의 꿈의 비밀을 풀어보세요'**
+  String get homeAIDreamAnalysisSubtitle;
+
+  /// AI 어시스턴트 카드 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi와 자각몽에 대해 대화하기'**
+  String get aiAssistantSubtitle;
+
+  /// 일일 보상 다이얼로그 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 로그인 보상'**
+  String get homeDailyRewardTitle;
+
+  /// 일일 보상 다이얼로그 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 여정에서 멋진 노력을 계속하세요!'**
+  String get homeDailyRewardMessage;
+
+  /// 프리미엄 보너스 적용 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 보너스 적용!'**
+  String get homePremiumBonusApplied;
+
+  /// Lumi와 대화 메시지 (보상 개수 포함)
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi와 대화하고 +{amount} 토큰 받기'**
+  String homeChatWithLumiMessage(Object amount);
+
+  /// 나중에 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'나중에'**
+  String get homeLaterButton;
+
+  /// 받기 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'받기'**
+  String get homeClaimButton;
+
+  /// 일일 보상 받음 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'+{amount} 토큰을 받았습니다!'**
+  String homeDailyRewardReceived(Object amount);
 
   /// No description provided for @accountInfoTitle.
   ///
@@ -3707,7 +3869,7 @@ abstract class AppLocalizations {
   /// No description provided for @msgAlreadyHaveAccount.
   ///
   /// In ko, this message translates to:
-  /// **'이미 차드 계정이 있나요?'**
+  /// **'이미 드림 스피릿 계정이 있나요?'**
   String get msgAlreadyHaveAccount;
 
   /// No description provided for @msgGuestMode.
@@ -3728,16 +3890,238 @@ abstract class AppLocalizations {
   /// **'계정 생성'**
   String get titleCreateAccount;
 
+  /// 구글 로그인 실패 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'구글 로그인에 실패했습니다. 다시 시도해주세요.'**
+  String get loginGoogleSignInFailed;
+
+  /// 드림 스피릿과 시작 준비 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 여정을 시작할 준비가 되셨나요?'**
+  String get loginReadyToStartWithChad;
+
+  /// 드림플로우 여정 시작 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'의식적인 꿈의 세계로 떠나세요'**
+  String get loginStartDreamflowJourney;
+
+  /// 드림 스피릿과 시작 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'드림 스피릿과 시작하기'**
+  String get loginStartWithChad;
+
+  /// 런칭 특별 이벤트 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'🎉 런칭 특별 이벤트'**
+  String get loginChadLaunchSpecial;
+
+  /// 무료 체험 제안 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄을 30일 무료로 사용해보세요'**
+  String get loginChadFreeTrialOffer;
+
+  /// 이미 계정이 있음 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'이미 계정이 있으신가요?'**
+  String get loginAlreadyHaveChadAccount;
+
+  /// 이메일 필드 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'이메일'**
+  String get loginEmail;
+
+  /// 이메일 필수 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'이메일을 입력해주세요'**
+  String get loginEmailRequired;
+
+  /// 이메일 유효하지 않음 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'올바른 이메일을 입력해주세요'**
+  String get loginEmailInvalid;
+
+  /// 비밀번호 필드 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호'**
+  String get loginPassword;
+
+  /// 비밀번호 필수 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호를 입력해주세요'**
+  String get loginPasswordRequired;
+
+  /// 비밀번호 최소 길이 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호는 최소 6자 이상이어야 합니다'**
+  String get loginPasswordMinLength;
+
+  /// 로그인 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'로그인'**
+  String get loginLoginButton;
+
+  /// 약관 동의 필수 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'이용약관에 동의해주세요'**
+  String get signupChadTermsAgreementRequired;
+
+  /// 환영 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 여정에 오신 것을 환영합니다!'**
+  String get signupChadWelcomeMessage;
+
+  /// 구글 회원가입 실패 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'구글 회원가입에 실패했습니다. 다시 시도해주세요.'**
+  String get signupChadGoogleSignupFailed;
+
+  /// 회원가입 화면 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'계정 만들기'**
+  String get signupChadScreenTitle;
+
+  /// 회원가입 진행 중 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'계정을 생성하는 중...'**
+  String get signupChadSigningUp;
+
+  /// 무료 한 달 시작 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'무료로 한 달 시작하기'**
+  String get signupChadStartFreeMonth;
+
+  /// 런칭 특별 이벤트 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'🎊 런칭 특별 이벤트'**
+  String get signupChadLaunchSpecialEvent;
+
+  /// 혜택 목록 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 혜택'**
+  String get signupChadBenefitsList;
+
+  /// 또는 이메일 회원가입 구분선
+  ///
+  /// In ko, this message translates to:
+  /// **'또는 이메일로 가입하기'**
+  String get signupChadOrEmailSignup;
+
+  /// 이름 필드 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'이름'**
+  String get signupChadNameLabel;
+
+  /// 이름 필수 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'이름을 입력해주세요'**
+  String get signupChadNameRequired;
+
+  /// 이름 최소 길이 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'이름은 최소 2자 이상이어야 합니다'**
+  String get signupChadNameMinLength;
+
+  /// 이메일 필드 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'이메일'**
+  String get signupChadEmailLabel;
+
+  /// 이메일 필수 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'이메일을 입력해주세요'**
+  String get signupChadEmailRequired;
+
+  /// 이메일 유효하지 않음 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'올바른 이메일을 입력해주세요'**
+  String get signupChadEmailInvalid;
+
+  /// 비밀번호 필드 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호'**
+  String get signupChadPasswordLabel;
+
+  /// 비밀번호 필수 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호를 입력해주세요'**
+  String get signupChadPasswordRequired;
+
+  /// 비밀번호 최소 길이 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호는 최소 6자 이상이어야 합니다'**
+  String get signupChadPasswordMinLength;
+
+  /// 비밀번호 확인 필드 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호 확인'**
+  String get signupChadConfirmPasswordLabel;
+
+  /// 비밀번호 확인 필수 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호를 다시 입력해주세요'**
+  String get signupChadConfirmPasswordRequired;
+
+  /// 비밀번호 불일치 검증
+  ///
+  /// In ko, this message translates to:
+  /// **'비밀번호가 일치하지 않습니다'**
+  String get signupChadPasswordsNotMatch;
+
+  /// 약관 동의 체크박스 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'이용약관에 동의합니다'**
+  String get signupChadTermsAgreement;
+
+  /// 회원가입 화면의 로그인 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'로그인'**
+  String get signupChadLoginButton;
+
   /// 한계 시험 챌린지 메시지
   ///
   /// In ko, this message translates to:
-  /// **'💪 오늘 너의 한계를 시험해볼까?'**
+  /// **'🌙 오늘부터 자각몽 여정을 시작할까요?'**
   String get challengeTestYourLimits;
 
   /// 초기 테스트 완료 안내
   ///
   /// In ko, this message translates to:
-  /// **'초기 테스트를 완료하여 프로필을 생성해주세요'**
+  /// **'프로필을 생성하고 자각몽 훈련을 시작해주세요'**
   String get completeInitialTest;
 
   /// No description provided for @getStartedButton.
@@ -3749,13 +4133,13 @@ abstract class AppLocalizations {
   /// 온보딩 적응형 훈련 설명
   ///
   /// In ko, this message translates to:
-  /// **'힘들면? → 강도 낮춘다 ⬇️\n쉬우면? → 강도 올린다 ⬆️\n\n너한테 딱 맞는 난이도로 간다! 🔥'**
+  /// **'어려우면? → 난이도 조정 ⬇️\n쉬우면? → 새로운 기법 추가 ⬆️\n\n당신에게 맞는 난이도로 간다! 🔥'**
   String get onboardingAdaptiveTrainingDescription;
 
   /// 온보딩 적응형 훈련 제목
   ///
   /// In ko, this message translates to:
-  /// **'🎯 너한테 딱 맞춰준다'**
+  /// **'🎯 당신에게 맞춰드려요'**
   String get onboardingAdaptiveTrainingTitle;
 
   /// 온보딩 적응형 훈련 확인 버튼
@@ -3767,38 +4151,86 @@ abstract class AppLocalizations {
   /// 온보딩 진화 확인 버튼
   ///
   /// In ko, this message translates to:
-  /// **'각 잡혔다! 💪'**
+  /// **'준비됐어요! 💪'**
   String get onboardingButtonGreat;
 
   /// 온보딩 다음 버튼
   ///
   /// In ko, this message translates to:
-  /// **'계속 간다! 💪'**
+  /// **'계속할게요! 💪'**
   String get onboardingButtonNext;
 
   /// 온보딩 시작 버튼
   ///
   /// In ko, this message translates to:
-  /// **'바로 간다! 🔥'**
+  /// **'시작할게요! 🔥'**
   String get onboardingButtonStart;
 
   /// 온보딩 테스트 시작 버튼
   ///
   /// In ko, this message translates to:
-  /// **'바로 체크! 🎯'**
+  /// **'시작할게요! 🎯'**
   String get onboardingButtonStartTest;
 
   /// 온보딩 초기 테스트 설명
   ///
   /// In ko, this message translates to:
-  /// **'지금 실력 체크하고\n너한테 딱 맞는 프로그램 시작한다.\n\n• 최대한 많이 해봐\n• 정확한 자세로\n• 결과로 맞춤 프로그램 완성'**
+  /// **'당신만의 자각몽 여정을 시작하세요.\n\n• 목표 설정하기\n• 꿈 일기 준비\n• 첫 번째 기법 배우기'**
   String get onboardingInitialTestDescription;
 
   /// 온보딩 초기 테스트 제목
   ///
   /// In ko, this message translates to:
-  /// **'실력 체크 타임 ⏱️'**
+  /// **'여정 시작 준비 ⏱️'**
   String get onboardingInitialTestTitle;
+
+  /// 미션 맞춤형 프로그램 고급 레벨 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'11-14주차'**
+  String get onboardingMissionAdvancedDesc;
+
+  /// 미션 맞춤형 프로그램 고급 레벨 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'고급자'**
+  String get onboardingMissionAdvancedTitle;
+
+  /// 미션 맞춤형 프로그램 보장 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'검증된 결과 보장'**
+  String get onboardingMissionAssurance;
+
+  /// 미션 맞춤형 프로그램 초급 레벨 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'1-6주차'**
+  String get onboardingMissionBeginnerDesc;
+
+  /// 미션 맞춤형 프로그램 초급 레벨 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'초급자'**
+  String get onboardingMissionBeginnerTitle;
+
+  /// 미션 맞춤형 프로그램 중급 레벨 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'7-10주차'**
+  String get onboardingMissionIntermediateDesc;
+
+  /// 미션 맞춤형 프로그램 중급 레벨 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'중급자'**
+  String get onboardingMissionIntermediateTitle;
+
+  /// 미션 맞춤형 프로그램 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'맞춤형 14주 프로그램'**
+  String get onboardingMissionPersonalizedProgram;
 
   /// No description provided for @onboardingNext.
   ///
@@ -3821,19 +4253,19 @@ abstract class AppLocalizations {
   /// 온보딩 환영 화면 설명
   ///
   /// In ko, this message translates to:
-  /// **'14주면 충분해. 너도 100개 간다.\n각 잡고 시작하자! 💪'**
+  /// **'30일이면 충분해. 당신도 자각몽을 경험할 수 있어요.\n함께 시작해봐요! 🌙'**
   String get onboardingWelcomeDescription;
 
   /// 온보딩 환영 화면 제목
   ///
   /// In ko, this message translates to:
-  /// **'14주, 100개. 가능하다! 🔥'**
+  /// **'30일, 자각몽 마스터! 🔥'**
   String get onboardingWelcomeTitle;
 
   /// No description provided for @startTestButton.
   ///
   /// In ko, this message translates to:
-  /// **'테스트 시작'**
+  /// **'시작하기'**
   String get startTestButton;
 
   /// No description provided for @stepByStepGuide.
@@ -3845,37 +4277,37 @@ abstract class AppLocalizations {
   /// No description provided for @testAdMessage.
   ///
   /// In ko, this message translates to:
-  /// **'테스트 광고 - 피트니스 앱'**
+  /// **'테스트 광고 - 자각몽 앱'**
   String get testAdMessage;
 
   /// No description provided for @tutorialButton.
   ///
   /// In ko, this message translates to:
-  /// **'💥 PUSHUP MASTER 되기 💥'**
+  /// **'💥 자각몽 MASTER 되기 💥'**
   String get tutorialButton;
 
   /// No description provided for @tutorialDetailTitle.
   ///
   /// In ko, this message translates to:
-  /// **'💥 EMPEROR 자세 MASTER하기 💥'**
+  /// **'💥 꿈 기법 MASTER하기 💥'**
   String get tutorialDetailTitle;
 
   /// No description provided for @tutorialSubtitle.
   ///
   /// In ko, this message translates to:
-  /// **'진짜 EMPEROR는 자세부터 다르다! 💪'**
+  /// **'진짜 DREAM MASTER는 기법부터 다르다! 🌙'**
   String get tutorialSubtitle;
 
   /// No description provided for @tutorialTitle.
   ///
   /// In ko, this message translates to:
-  /// **'🔥 ALPHA EMPEROR PUSHUP DOJO 🔥'**
+  /// **'🔥 자각몽 MASTERY DOJO 🔥'**
   String get tutorialTitle;
 
   /// No description provided for @welcomeMessage.
   ///
   /// In ko, this message translates to:
-  /// **'🔥 WELCOME,\nFUTURE EMPEROR! 🔥\n정복의 시간이다!'**
+  /// **'🔥 WELCOME,\nFUTURE DREAM MASTER! 🔥\n각성의 시간이다!'**
   String get welcomeMessage;
 
   /// No description provided for @startJourney.
@@ -3887,13 +4319,13 @@ abstract class AppLocalizations {
   /// No description provided for @setWorkoutSchedule.
   ///
   /// In ko, this message translates to:
-  /// **'🔥 운동 스케줄을 설정하세요!'**
+  /// **'🔥 꿈 연습 스케줄을 설정하세요!'**
   String get setWorkoutSchedule;
 
   /// No description provided for @workoutScheduleDescription.
   ///
   /// In ko, this message translates to:
-  /// **'진정한 챔피언이 되려면 일관성이 필요합니다!\n주 3일 이상 운동해야 합니다. 💪\n\n라이프스타일에 맞는 날을 선택하고,\n알림으로 핑계를 차단하세요! 🚀'**
+  /// **'자각몽 마스터가 되려면 꾸준한 연습이 필요합니다!\n매일 꾸준한 연습해야 합니다. 💪\n\n라이프스타일에 맞는 날을 선택하고,\n알림으로 리마인더하세요! 🚀'**
   String get workoutScheduleDescription;
 
   /// No description provided for @goalSetupComplete.
@@ -3905,7 +4337,7 @@ abstract class AppLocalizations {
   /// No description provided for @goalSetupCompleteMessage.
   ///
   /// In ko, this message translates to:
-  /// **'이제 당신만의 맞춤형 Mission: 100이 시작됩니다.\n런칭 이벤트로 1개월 무료 체험해보세요!'**
+  /// **'이제 당신만의 맞춤형 DreamFlow 여정이 시작됩니다.\n런칭 이벤트로 1개월 무료 체험해보세요!'**
   String get goalSetupCompleteMessage;
 
   /// No description provided for @keyFeatures.
@@ -3923,43 +4355,43 @@ abstract class AppLocalizations {
   /// No description provided for @scientificBasisDesc.
   ///
   /// In ko, this message translates to:
-  /// **'최신 스포츠 과학 논문을\n바탕으로 설계된 프로그램'**
+  /// **'최신 자각몽 연구 논문을\n바탕으로 설계된 프로그램'**
   String get scientificBasisDesc;
 
   /// No description provided for @progressiveOverloadTitle.
   ///
   /// In ko, this message translates to:
-  /// **'점진적 과부하'**
+  /// **'일일 체크리스트 시스템'**
   String get progressiveOverloadTitle;
 
   /// No description provided for @progressiveOverloadDesc.
   ///
   /// In ko, this message translates to:
-  /// **'매주 체계적으로 증가하는\n운동량으로 안전한 성장'**
+  /// **'WBTB + MILD 기법 등\n46% 성공률 검증된 기법'**
   String get progressiveOverloadDesc;
 
   /// No description provided for @rpeAdaptationTitle.
   ///
   /// In ko, this message translates to:
-  /// **'RPE 기반 적응'**
+  /// **'꿈 일기 추적'**
   String get rpeAdaptationTitle;
 
   /// No description provided for @rpeAdaptationDesc.
   ///
   /// In ko, this message translates to:
-  /// **'운동 강도를 기록하면\n자동으로 난이도 조정'**
+  /// **'꿈 회상과\n자각몽 경험을 기록'**
   String get rpeAdaptationDesc;
 
   /// No description provided for @chadEvolutionTitle.
   ///
   /// In ko, this message translates to:
-  /// **'차드 진화 시스템'**
+  /// **'Dream Spirit 진화'**
   String get chadEvolutionTitle;
 
   /// No description provided for @chadEvolutionDesc.
   ///
   /// In ko, this message translates to:
-  /// **'운동할수록 성장하는\n나만의 캐릭터'**
+  /// **'자각몽을 마스터할수록\n성장하는 영혼 가이드'**
   String get chadEvolutionDesc;
 
   /// No description provided for @readyToStart.
@@ -3971,25 +4403,25 @@ abstract class AppLocalizations {
   /// No description provided for @findYourLevel.
   ///
   /// In ko, this message translates to:
-  /// **'먼저 간단한 레벨 테스트로\n당신의 시작점을 찾아보세요'**
+  /// **'먼저 간단한 설정으로\n당신의 시작점을 찾아보세요'**
   String get findYourLevel;
 
   /// No description provided for @step1LevelTest.
   ///
   /// In ko, this message translates to:
-  /// **'레벨 테스트 (30초)'**
+  /// **'목표 설정 (1분)'**
   String get step1LevelTest;
 
   /// No description provided for @step2SetStartDate.
   ///
   /// In ko, this message translates to:
-  /// **'운동 시작일 설정'**
+  /// **'연습 시작일 설정'**
   String get step2SetStartDate;
 
   /// No description provided for @step3StartJourney.
   ///
   /// In ko, this message translates to:
-  /// **'14주 여정 시작!'**
+  /// **'30일 여정 시작!'**
   String get step3StartJourney;
 
   /// No description provided for @awesome.
@@ -4001,13 +4433,13 @@ abstract class AppLocalizations {
   /// No description provided for @onboardingProgramIntroTitle.
   ///
   /// In ko, this message translates to:
-  /// **'14주 프로그램 소개'**
+  /// **'30일 자각몽 프로그램'**
   String get onboardingProgramIntroTitle;
 
   /// No description provided for @onboardingProgramIntroDescription.
   ///
   /// In ko, this message translates to:
-  /// **'과학적으로 설계된 14주 프로그램으로\n100개 푸시업 달성을 목표로 합니다'**
+  /// **'과학적으로 설계된 30일 프로그램으로\n자각몽 마스터를 목표로 합니다'**
   String get onboardingProgramIntroDescription;
 
   /// No description provided for @btnGetStarted.
@@ -4028,16 +4460,184 @@ abstract class AppLocalizations {
   /// **'튜토리얼'**
   String get titleTutorial;
 
+  /// No description provided for @goalSetupCurrentWeight.
+  ///
+  /// In ko, this message translates to:
+  /// **'현재 체중 (kg)'**
+  String get goalSetupCurrentWeight;
+
+  /// No description provided for @goalSetupTargetWeight.
+  ///
+  /// In ko, this message translates to:
+  /// **'목표 체중 (kg, 선택사항)'**
+  String get goalSetupTargetWeight;
+
+  /// No description provided for @goalSetupNextButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'다음'**
+  String get goalSetupNextButton;
+
+  /// No description provided for @goalSetupStartButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'시작하기'**
+  String get goalSetupStartButton;
+
+  /// No description provided for @goalSetupLevelBeginnerTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'초보자'**
+  String get goalSetupLevelBeginnerTitle;
+
+  /// No description provided for @goalSetupLevelBeginnerDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽을 처음 시작하거나 오랜만에 하는 경우'**
+  String get goalSetupLevelBeginnerDesc;
+
+  /// No description provided for @goalSetupLevelIntermediateTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'중급자'**
+  String get goalSetupLevelIntermediateTitle;
+
+  /// No description provided for @goalSetupLevelIntermediateDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꾸준히 연습을 해왔고 기본 기법에 익숙한 경우'**
+  String get goalSetupLevelIntermediateDesc;
+
+  /// No description provided for @goalSetupLevelAdvancedTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'고급자'**
+  String get goalSetupLevelAdvancedTitle;
+
+  /// No description provided for @goalSetupLevelAdvancedDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'강도 높은 훈련을 원하고 다양한 고급 기법을 시도하고 싶은 경우'**
+  String get goalSetupLevelAdvancedDesc;
+
+  /// No description provided for @goalSetupGoalWeightLossTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'체중 감량'**
+  String get goalSetupGoalWeightLossTitle;
+
+  /// No description provided for @goalSetupGoalWeightLossDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'체지방을 줄이고 날씬한 몸매 만들기'**
+  String get goalSetupGoalWeightLossDesc;
+
+  /// No description provided for @goalSetupGoalMuscleGainTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'근육 증가'**
+  String get goalSetupGoalMuscleGainTitle;
+
+  /// No description provided for @goalSetupGoalMuscleGainDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'탄탄한 근육과 매력적인 상체 라인 만들기'**
+  String get goalSetupGoalMuscleGainDesc;
+
+  /// No description provided for @goalSetupGoalStaminaTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'체력 향상'**
+  String get goalSetupGoalStaminaTitle;
+
+  /// No description provided for @goalSetupGoalStaminaDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'지구력과 전반적인 체력 개선하기'**
+  String get goalSetupGoalStaminaDesc;
+
+  /// No description provided for @goalSetupGoalHealthTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'전반적인 건강'**
+  String get goalSetupGoalHealthTitle;
+
+  /// No description provided for @goalSetupGoalHealthDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'건강한 생활습관과 균형잡힌 몸만들기'**
+  String get goalSetupGoalHealthDesc;
+
+  /// No description provided for @goalSetupTimeDawn.
+  ///
+  /// In ko, this message translates to:
+  /// **'새벽 (5-7시)'**
+  String get goalSetupTimeDawn;
+
+  /// No description provided for @goalSetupTimeMorning.
+  ///
+  /// In ko, this message translates to:
+  /// **'아침 (7-9시)'**
+  String get goalSetupTimeMorning;
+
+  /// No description provided for @goalSetupTimeLateMorning.
+  ///
+  /// In ko, this message translates to:
+  /// **'오전 (9-12시)'**
+  String get goalSetupTimeLateMorning;
+
+  /// No description provided for @goalSetupTimeLunch.
+  ///
+  /// In ko, this message translates to:
+  /// **'점심 (12-14시)'**
+  String get goalSetupTimeLunch;
+
+  /// No description provided for @goalSetupTimeAfternoon.
+  ///
+  /// In ko, this message translates to:
+  /// **'오후 (14-17시)'**
+  String get goalSetupTimeAfternoon;
+
+  /// No description provided for @goalSetupTimeEvening.
+  ///
+  /// In ko, this message translates to:
+  /// **'저녁 (17-20시)'**
+  String get goalSetupTimeEvening;
+
+  /// No description provided for @goalSetupTimeNight.
+  ///
+  /// In ko, this message translates to:
+  /// **'밤 (20-22시)'**
+  String get goalSetupTimeNight;
+
+  /// No description provided for @goalSetupWelcomeMessage.
+  ///
+  /// In ko, this message translates to:
+  /// **'이제 당신만의 맞춤형 자각몽 여정이 시작됩니다.\n런칭 이벤트로 1개월 무료 체험해보세요!'**
+  String get goalSetupWelcomeMessage;
+
+  /// No description provided for @goalSetupStartJourney.
+  ///
+  /// In ko, this message translates to:
+  /// **'시작하기'**
+  String get goalSetupStartJourney;
+
+  /// No description provided for @goalSetupCompleteTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'🎉 목표 설정 완료!'**
+  String get goalSetupCompleteTitle;
+
   /// No description provided for @tutorialWelcomeTitle.
   ///
   /// In ko, this message translates to:
-  /// **'🏋️ Mission 100'**
+  /// **'🌙 Lucid Dream 100'**
   String get tutorialWelcomeTitle;
 
   /// No description provided for @tutorialWelcomeSubtitle.
   ///
   /// In ko, this message translates to:
-  /// **'14주 만에 푸시업 100개 달성'**
+  /// **'30일 만에 자각몽 마스터 되기'**
   String get tutorialWelcomeSubtitle;
 
   /// No description provided for @tutorialFeature1Title.
@@ -4049,31 +4649,31 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialFeature1Desc.
   ///
   /// In ko, this message translates to:
-  /// **'최신 스포츠 과학 논문(2016-2024)을\n바탕으로 설계된 프로그램'**
+  /// **'최신 자각몽 연구(2014-2024)를\n바탕으로 설계된 프로그램'**
   String get tutorialFeature1Desc;
 
   /// No description provided for @tutorialFeature2Title.
   ///
   /// In ko, this message translates to:
-  /// **'점진적 과부하'**
+  /// **'단계별 훈련'**
   String get tutorialFeature2Title;
 
   /// No description provided for @tutorialFeature2Desc.
   ///
   /// In ko, this message translates to:
-  /// **'매주 체계적으로 증가하는 운동량으로\n안전하고 효과적인 성장'**
+  /// **'매일 체계적으로 증가하는 난이도로\n안전하고 효과적인 성장'**
   String get tutorialFeature2Desc;
 
   /// No description provided for @tutorialFeature3Title.
   ///
   /// In ko, this message translates to:
-  /// **'개인화된 프로그램'**
+  /// **'맞춤형 프로그램'**
   String get tutorialFeature3Title;
 
   /// No description provided for @tutorialFeature3Desc.
   ///
   /// In ko, this message translates to:
-  /// **'당신의 레벨에 맞춘\n맞춤형 운동 계획'**
+  /// **'당신의 진행도에 맞춘\n맞춤형 훈련 계획'**
   String get tutorialFeature3Desc;
 
   /// No description provided for @tutorialProgramTitle.
@@ -4091,49 +4691,49 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialDurationSubtitle.
   ///
   /// In ko, this message translates to:
-  /// **'14주 (총 42회)'**
+  /// **'30일 (매일)'**
   String get tutorialDurationSubtitle;
 
   /// No description provided for @tutorialDurationDesc.
   ///
   /// In ko, this message translates to:
-  /// **'주 3회 운동 (월, 수, 금)\n48시간 회복 시간 보장'**
+  /// **'매일 꾸준한 연습\n매일 5-10분 투자'**
   String get tutorialDurationDesc;
 
   /// No description provided for @tutorialStructureTitle.
   ///
   /// In ko, this message translates to:
-  /// **'💪 구성'**
+  /// **'🌙 구성'**
   String get tutorialStructureTitle;
 
   /// No description provided for @tutorialStructureSubtitle.
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 + 피니셔'**
+  /// **'체크리스트 + 꿈 일기'**
   String get tutorialStructureSubtitle;
 
   /// No description provided for @tutorialStructureDesc.
   ///
   /// In ko, this message translates to:
-  /// **'메인: 푸시업 5-9세트\n피니셔: 버피/점프스쿼트 등'**
+  /// **'메인: 일일 체크리스트\n기록: 꿈 일기 작성'**
   String get tutorialStructureDesc;
 
   /// No description provided for @tutorialRestTitle.
   ///
   /// In ko, this message translates to:
-  /// **'⏳ 휴식 시간'**
+  /// **'⏳ 소요 시간'**
   String get tutorialRestTitle;
 
   /// No description provided for @tutorialRestSubtitle.
   ///
   /// In ko, this message translates to:
-  /// **'과학적 최적화'**
+  /// **'최적화된 시간'**
   String get tutorialRestSubtitle;
 
   /// No description provided for @tutorialRestDesc.
   ///
   /// In ko, this message translates to:
-  /// **'세트간: 45-120초\n레벨/주차별 자동 조정'**
+  /// **'하루: 5-10분\n진행도에 따라 조정'**
   String get tutorialRestDesc;
 
   /// No description provided for @tutorialTipTitle.
@@ -4145,49 +4745,49 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialTipDesc.
   ///
   /// In ko, this message translates to:
-  /// **'매 운동 후 RPE(운동자각도)를 기록하면\n다음 운동 강도가 자동으로 조정됩니다!'**
+  /// **'매일 완료율을 기록하면\n다음 체크리스트가 자동으로 조정됩니다!'**
   String get tutorialTipDesc;
 
   /// No description provided for @tutorialFormTitle.
   ///
   /// In ko, this message translates to:
-  /// **'✅ 올바른 푸시업 자세'**
+  /// **'✅ 핵심 자각몽 기법'**
   String get tutorialFormTitle;
 
   /// No description provided for @tutorialForm1Title.
   ///
   /// In ko, this message translates to:
-  /// **'1. 시작 자세'**
+  /// **'1. WBTB 기법'**
   String get tutorialForm1Title;
 
   /// No description provided for @tutorialForm1Desc.
   ///
   /// In ko, this message translates to:
-  /// **'손을 어깨 너비로 벌리고\n몸을 일직선으로 유지'**
+  /// **'일찍 잠들고 4-6시간 후 깨어나\n20-30분 깨어있기'**
   String get tutorialForm1Desc;
 
   /// No description provided for @tutorialForm2Title.
   ///
   /// In ko, this message translates to:
-  /// **'2. 내려가기'**
+  /// **'2. MILD 기법'**
   String get tutorialForm2Title;
 
   /// No description provided for @tutorialForm2Desc.
   ///
   /// In ko, this message translates to:
-  /// **'가슴이 바닥에 닿을 때까지\n팔꿈치를 45도 각도로 구부리기'**
+  /// **'잠들기 전 \"나는 꿈이라는 걸 알아차릴 거야\"\n반복하며 자각 의도 강화'**
   String get tutorialForm2Desc;
 
   /// No description provided for @tutorialForm3Title.
   ///
   /// In ko, this message translates to:
-  /// **'3. 올라오기'**
+  /// **'3. Reality Check'**
   String get tutorialForm3Title;
 
   /// No description provided for @tutorialForm3Desc.
   ///
   /// In ko, this message translates to:
-  /// **'가슴과 코어에 힘을 주고\n폭발적으로 밀어올리기'**
+  /// **'하루 10번 이상\n\"지금 꿈인가?\" 확인하기'**
   String get tutorialForm3Desc;
 
   /// No description provided for @tutorialWarningTitle.
@@ -4199,37 +4799,37 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialWarning1.
   ///
   /// In ko, this message translates to:
-  /// **'허리가 처지지 않도록 코어에 힘주기'**
+  /// **'무리하지 말고 자신의 페이스 유지'**
   String get tutorialWarning1;
 
   /// No description provided for @tutorialWarning2.
   ///
   /// In ko, this message translates to:
-  /// **'목을 과도하게 젖히지 않기'**
+  /// **'충분한 수면 시간 확보(7-8시간)'**
   String get tutorialWarning2;
 
   /// No description provided for @tutorialWarning3.
   ///
   /// In ko, this message translates to:
-  /// **'팔꿈치를 몸에 너무 붙이지 않기'**
+  /// **'스트레스 받지 않고 즐기기'**
   String get tutorialWarning3;
 
   /// No description provided for @tutorialWarning4.
   ///
   /// In ko, this message translates to:
-  /// **'통증이 느껴지면 즉시 중단'**
+  /// **'수면 장애 있으면 전문가 상담'**
   String get tutorialWarning4;
 
   /// No description provided for @tutorialRpeTitle.
   ///
   /// In ko, this message translates to:
-  /// **'📊 RPE란?'**
+  /// **'📊 완료율이란?'**
   String get tutorialRpeTitle;
 
   /// No description provided for @tutorialRpeSubtitle.
   ///
   /// In ko, this message translates to:
-  /// **'Rate of Perceived Exertion\n(운동자각도)'**
+  /// **'일일 체크리스트 달성도'**
   String get tutorialRpeSubtitle;
 
   /// No description provided for @tutorialRpe6.
@@ -4241,7 +4841,7 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialRpe6Desc.
   ///
   /// In ko, this message translates to:
-  /// **'다음엔 더 할 수 있어요'**
+  /// **'더 많은 기법을 추가할 수 있어요'**
   String get tutorialRpe6Desc;
 
   /// No description provided for @tutorialRpe7.
@@ -4283,13 +4883,13 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialRpe10.
   ///
   /// In ko, this message translates to:
-  /// **'🤯 한계 돌파!'**
+  /// **'🤯 완벽!'**
   String get tutorialRpe10;
 
   /// No description provided for @tutorialRpe10Desc.
   ///
   /// In ko, this message translates to:
-  /// **'정말 최선을 다했어요'**
+  /// **'모든 항목 완료했어요'**
   String get tutorialRpe10Desc;
 
   /// No description provided for @tutorialAutoAdjustTitle.
@@ -4301,7 +4901,7 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialAutoAdjustDesc.
   ///
   /// In ko, this message translates to:
-  /// **'RPE를 기록하면 다음 운동 강도가\n자동으로 최적화됩니다!\n\n• RPE 6-7: 난이도 +5%\n• RPE 8: 유지\n• RPE 9-10: 난이도 -5%'**
+  /// **'완료율을 기록하면 다음 체크리스트가\n자동으로 최적화됩니다!\n\n• 80% 이상: 새 기법 추가\n• 60-80%: 유지\n• 60% 미만: 난이도 조정'**
   String get tutorialAutoAdjustDesc;
 
   /// No description provided for @tutorialScienceTitle.
@@ -4313,79 +4913,79 @@ abstract class AppLocalizations {
   /// No description provided for @tutorialScienceSubtitle.
   ///
   /// In ko, this message translates to:
-  /// **'최신 연구 결과를 바탕으로 설계되었습니다'**
+  /// **'최신 자각몽 연구를 바탕으로 설계되었습니다'**
   String get tutorialScienceSubtitle;
 
   /// No description provided for @tutorialResearch1Author.
   ///
   /// In ko, this message translates to:
-  /// **'Schoenfeld et al. (2016, 2019)'**
+  /// **'Stumbrys et al. (2012)'**
   String get tutorialResearch1Author;
 
   /// No description provided for @tutorialResearch1Topic.
   ///
   /// In ko, this message translates to:
-  /// **'근비대와 훈련 빈도'**
+  /// **'자각몽 유도 기법 효과'**
   String get tutorialResearch1Topic;
 
   /// No description provided for @tutorialResearch1Finding.
   ///
   /// In ko, this message translates to:
-  /// **'주 3회 훈련이 근육 성장에 최적\n48시간 회복 시간 권장'**
+  /// **'MILD + WBTB 조합이 가장 효과적\n46% 성공률 입증'**
   String get tutorialResearch1Finding;
 
   /// No description provided for @tutorialResearch2Author.
   ///
   /// In ko, this message translates to:
-  /// **'Grgic et al. (2018)'**
+  /// **'LaBerge et al. (2018)'**
   String get tutorialResearch2Author;
 
   /// No description provided for @tutorialResearch2Topic.
   ///
   /// In ko, this message translates to:
-  /// **'세트간 휴식 시간'**
+  /// **'자각몽 빈도'**
   String get tutorialResearch2Topic;
 
   /// No description provided for @tutorialResearch2Finding.
   ///
   /// In ko, this message translates to:
-  /// **'60-120초 휴식이\n근비대에 가장 효과적'**
+  /// **'주 2-4회 자각몽이\n일반적인 빈도'**
   String get tutorialResearch2Finding;
 
   /// No description provided for @tutorialResearch3Author.
   ///
   /// In ko, this message translates to:
-  /// **'Plotkin et al. (2022)'**
+  /// **'Aspy et al. (2017)'**
   String get tutorialResearch3Author;
 
   /// No description provided for @tutorialResearch3Topic.
   ///
   /// In ko, this message translates to:
-  /// **'점진적 과부하'**
+  /// **'MILD 기법 효과'**
   String get tutorialResearch3Topic;
 
   /// No description provided for @tutorialResearch3Finding.
   ///
   /// In ko, this message translates to:
-  /// **'점진적 반복 증가가\n근력 향상에 효과적'**
+  /// **'MILD 기법 사용 시\n자각몽 확률 크게 증가'**
   String get tutorialResearch3Finding;
 
   /// No description provided for @tutorialResearch4Author.
   ///
   /// In ko, this message translates to:
-  /// **'Wang et al. (2024)'**
+  /// **'Voss et al. (2014)'**
   String get tutorialResearch4Author;
 
   /// No description provided for @tutorialResearch4Topic.
   ///
   /// In ko, this message translates to:
-  /// **'HIIT + 저항운동 병행'**
+  /// **'Reality Check'**
   String get tutorialResearch4Topic;
 
   /// No description provided for @tutorialResearch4Finding.
   ///
   /// In ko, this message translates to:
-  /// **'유산소와 근력운동 병행 시\n체력과 근력 동시 향상'**
+  /// **'Reality Check 연습이\n자각몽 유도에 도움'**
   String get tutorialResearch4Finding;
 
   /// 앱 정보 섹션
@@ -4451,7 +5051,7 @@ abstract class AppLocalizations {
   /// 데이터 백업 설명
   ///
   /// In ko, this message translates to:
-  /// **'운동 기록을 백업한다'**
+  /// **'자각몽 연습 기록을 백업한다'**
   String get backupWorkoutRecords;
 
   /// Best week label
@@ -4460,10 +5060,10 @@ abstract class AppLocalizations {
   /// **'최고 주차'**
   String get bestWeek;
 
-  /// 총 운동 횟수 부제목
+  /// 총 자각몽 연습 횟수 부제목
   ///
   /// In ko, this message translates to:
-  /// **'강자가 된 날들!'**
+  /// **'자각몽 마스터가 된 날들!'**
   String get chadDays;
 
   /// 알림 설정 섹션 제목
@@ -4487,7 +5087,7 @@ abstract class AppLocalizations {
   /// 14 consecutive days challenge description
   ///
   /// In ko, this message translates to:
-  /// **'14일 동안 연속으로 운동하기'**
+  /// **'14일 동안 연속으로 자각몽 연습하기'**
   String get challenge14DaysDescription;
 
   /// 14 consecutive days challenge detailed description
@@ -4499,13 +5099,13 @@ abstract class AppLocalizations {
   /// 14 consecutive days challenge title
   ///
   /// In ko, this message translates to:
-  /// **'14일 연속 운동'**
+  /// **'14일 연속 연습'**
   String get challenge14DaysTitle;
 
   /// 7 consecutive days challenge description
   ///
   /// In ko, this message translates to:
-  /// **'7일 동안 연속으로 운동하기'**
+  /// **'7일 동안 연속으로 자각몽 연습하기'**
   String get challenge7DaysDescription;
 
   /// 7 consecutive days challenge detailed description
@@ -4517,7 +5117,7 @@ abstract class AppLocalizations {
   /// 7 consecutive days challenge title
   ///
   /// In ko, this message translates to:
-  /// **'7일 연속 운동'**
+  /// **'7일 연속 연습'**
   String get challenge7DaysTitle;
 
   /// Hint for consecutive days challenges
@@ -4604,34 +5204,34 @@ abstract class AppLocalizations {
   /// **'연속 일수'**
   String get consecutiveDays;
 
-  /// 연속 운동 차단 제목
+  /// 연속 연습 차단 제목
   ///
   /// In ko, this message translates to:
-  /// **'STOP! 연속 운동 금지!'**
+  /// **'STOP! 연속 연습 금지!'**
   String get consecutiveWorkoutBlocked;
 
-  /// 연속 운동 차단 메시지
+  /// 연속 연습 차단 메시지
   ///
   /// In ko, this message translates to:
-  /// **'야야야! 어제 운동했잖아! 🔥\n\n지금 뭘 하려는거야? 연속 운동이야?\n진짜 강자라면 쉴 때 확실히 쉬는 거다!\n\n💀 오버트레이닝은 노답이야!\n😎 오늘은 쿨하게 쉬고 내일 다시 가자! 💪'**
+  /// **'야야야! 어제 운동했잖아! 🔥\n\n지금 뭘 하려는거야? 연속 연습이야?\n진짜 강자라면 쉴 때 확실히 쉬는 거다!\n\n💀 과도한 연습은 노답이야!\n😎 오늘은 쿨하게 쉬고 내일 다시 가자! 💪'**
   String get consecutiveWorkoutMessage;
 
   /// Custom workout days setting
   ///
   /// In ko, this message translates to:
-  /// **'운동일 설정'**
+  /// **'연습일 설정'**
   String get customWorkoutDays;
 
   /// Custom workout days description
   ///
   /// In ko, this message translates to:
-  /// **'원하는 요일에 운동하도록 설정해'**
+  /// **'원하는 요일에 자각몽 연습하도록 설정해'**
   String get customWorkoutDaysDesc;
 
   /// 일일 알림 설정 성공 메시지
   ///
   /// In ko, this message translates to:
-  /// **'매일 {time} 운동 알림 설정 완료! 💪'**
+  /// **'매일 {time} 자각몽 연습 알림 설정 완료! 💪'**
   String dailyNotificationSet(Object time);
 
   /// 매일 운동 시간 알림 메시지
@@ -4640,10 +5240,10 @@ abstract class AppLocalizations {
   /// **'매일 운동 시간 알림! 놓치면 WEAK! 💪'**
   String get dailyWorkoutAlarm;
 
-  /// 일일 운동 알림 설정
+  /// 일일 자각몽 연습 알림 설정
   ///
   /// In ko, this message translates to:
-  /// **'일일 운동 알림'**
+  /// **'일일 자각몽 연습 알림'**
   String get dailyWorkoutReminder;
 
   /// 데이터 초기화 제목
@@ -4745,7 +5345,7 @@ abstract class AppLocalizations {
   /// 데이터 초기화 설명
   ///
   /// In ko, this message translates to:
-  /// **'모든 운동 기록을 삭제한다'**
+  /// **'모든 자각몽 연습 기록을 삭제한다'**
   String get deleteAllWorkoutRecords;
 
   /// 상세 리마인더 설정 제목
@@ -4781,19 +5381,19 @@ abstract class AppLocalizations {
   /// First workout completed description
   ///
   /// In ko, this message translates to:
-  /// **'첫 번째 워크아웃 완료'**
+  /// **'첫 번째 자각몽 연습 완료'**
   String get firstWorkoutCompleted;
 
-  /// 첫 운동 시작 메시지
+  /// 첫 자각몽 연습 시작 메시지
   ///
   /// In ko, this message translates to:
-  /// **'첫 번째 운동을 시작한다! 화이팅!'**
+  /// **'첫 번째 자각몽 연습을 시작한다! 화이팅!'**
   String get firstWorkoutMessage;
 
-  /// 발견된 운동 제목
+  /// 발견된 자각몽 연습 제목
   ///
   /// In ko, this message translates to:
-  /// **'🔍 발견된 운동'**
+  /// **'🔍 발견된 자각몽 연습'**
   String get foundWorkout;
 
   /// No description provided for @fridayFull.
@@ -4817,7 +5417,7 @@ abstract class AppLocalizations {
   /// 영상 제목 5
   ///
   /// In ko, this message translates to:
-  /// **'홈트 팔굽혀펴기 🏠'**
+  /// **'집에서 하는 자각몽 연습 🏠'**
   String get homeWorkoutPushups;
 
   /// Hundred reps in one session description
@@ -4829,7 +5429,7 @@ abstract class AppLocalizations {
   /// 미완료 운동 발견 메시지
   ///
   /// In ko, this message translates to:
-  /// **'미완료된 운동이 발견되었다!'**
+  /// **'미완료된 자각몽 연습이 발견되었다!'**
   String get incompleteWorkoutFound;
 
   /// 언어 설정 제목
@@ -4871,7 +5471,7 @@ abstract class AppLocalizations {
   /// 최대 6일 운동 제한 메시지
   ///
   /// In ko, this message translates to:
-  /// **'최대 6일까지만 운동할 수 있다 (하루는 쉬어야 함)'**
+  /// **'최대 6일까지만 자각몽 연습할 수 있다 (하루는 쉬어야 함)'**
   String get maxSixDaysWorkout;
 
   /// 최소 하루 쉬는 날 필요 메시지
@@ -4880,10 +5480,10 @@ abstract class AppLocalizations {
   /// **'최소 하루는 쉬는 날이 있어야 한다'**
   String get minOneDayRest;
 
-  /// Mission 100 설정 제목
+  /// Lucid Dream 100 설정 제목
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100 설정'**
+  /// **'Lucid Dream 100 설정'**
   String get mission100Settings;
 
   /// No description provided for @mondayFull.
@@ -4913,49 +5513,49 @@ abstract class AppLocalizations {
   /// 주 4회 운동 제한 메시지
   ///
   /// In ko, this message translates to:
-  /// **'주 4회까지만 운동할 수 있다. 충분한 휴식이 필요한다!'**
+  /// **'주 4회까지만 자각몽 연습할 수 있다. 충분한 휴식이 필요한다!'**
   String get noConsecutiveSixDays;
 
-  /// 운동하기로 결정 버튼
+  /// 자각몽 연습하기로 결정 버튼
   ///
   /// In ko, this message translates to:
-  /// **'아니다! 운동할래!'**
+  /// **'아니다! 자각몽 연습할래!'**
   String get noWorkout;
 
-  /// 운동 기록이 없을 때 메시지
+  /// 자각몽 연습 기록이 없을 때 메시지
   ///
   /// In ko, this message translates to:
-  /// **'운동 기록이 없다'**
+  /// **'자각몽 연습 기록이 없다'**
   String get noWorkoutHistory;
 
-  /// 선택된 날짜에 운동 기록 없음
+  /// 선택된 날짜에 자각몽 연습 기록 없음
   ///
   /// In ko, this message translates to:
-  /// **'이 날에는 운동 기록이 없다'**
+  /// **'이 날에는 자각몽 연습 기록이 없다'**
   String get noWorkoutRecordForDate;
 
-  /// 운동 기록 없음 제목
+  /// 자각몽 연습 기록 없음 제목
   ///
   /// In ko, this message translates to:
-  /// **'아직 운동 기록이 없어!'**
+  /// **'아직 자각몽 연습 기록이 없어!'**
   String get noWorkoutRecords;
 
-  /// 운동 기록이 없는 날 메시지
+  /// 자각몽 연습 기록이 없는 날 메시지
   ///
   /// In ko, this message translates to:
-  /// **'이 날에는 운동 기록이 없다'**
+  /// **'이 날에는 자각몽 연습 기록이 없다'**
   String get noWorkoutThisDay;
 
   /// 오늘의 운동 없음 메시지 - 스타일
   ///
   /// In ko, this message translates to:
-  /// **'🤷‍♂️ 오늘은 휴식? 내일은 더 파괴적으로! 🔥'**
+  /// **'🤷‍♂️ 오늘은 휴식? 내일은 더 강력하게! 🔥'**
   String get noWorkoutToday;
 
   /// No workouts today message
   ///
   /// In ko, this message translates to:
-  /// **'이 날에는 워크아웃이 없다'**
+  /// **'이 날에는 자각몽 연습이 없다'**
   String get noWorkoutsToday;
 
   /// 알림 설정 제목
@@ -4991,7 +5591,7 @@ abstract class AppLocalizations {
   /// 영상 설명 5
   ///
   /// In ko, this message translates to:
-  /// **'집에서 할 수 있는 완벽한 운동'**
+  /// **'집에서 할 수 있는 완벽한 자각몽 연습'**
   String get perfectHomeWorkout;
 
   /// Perfect week achievement
@@ -5030,13 +5630,13 @@ abstract class AppLocalizations {
   /// **'{week}주차 - {totalDays}일 중 {completedDays}일 완료'**
   String progressWeekDay(int completedDays, int totalDays, int week);
 
-  /// 최근 운동 기록 제목
+  /// 최근 자각몽 연습 기록 제목
   ///
   /// In ko, this message translates to:
-  /// **'최근 운동 기록'**
+  /// **'최근 자각몽 연습 기록'**
   String get recentWorkouts;
 
-  /// 운동 기록 형식
+  /// 자각몽 연습 기록 형식
   ///
   /// In ko, this message translates to:
   /// **'{reps}개 • {percentage}% 달성'**
@@ -5105,7 +5705,7 @@ abstract class AppLocalizations {
   /// 휴식일 보너스 챌린지 내용
   ///
   /// In ko, this message translates to:
-  /// **'휴식일 보너스 챌린지! 💪\n\n• 플랭크 30초 x 3세트\n• 스쿼트 20개 x 2세트\n• 푸시업 10개 (완벽한 자세로!)\n\n준비됐어? 진짜 챔피언만 할 수 있어! 🏆'**
+  /// **'휴식일 보너스 챌린지! 💪\n\n• 명상 10분 x 3회\n• 현실 확인 20회\n• 꿈 일기 완벽하게 작성 (완벽한 자세로!)\n\n준비됐어? 진짜 자각몽 마스터만 할 수 있어! 🏆'**
   String get restDayBonusChallenge;
 
   /// 휴식일 추가 챌린지 메시지
@@ -5135,13 +5735,13 @@ abstract class AppLocalizations {
   /// 휴식일 놀리기 메시지
   ///
   /// In ko, this message translates to:
-  /// **'누군가는 100개 푸시업하고 있어! 💪\n\n정말 오늘은 쉬실 건가요?'**
+  /// **'누군가는 100일 자각몽 연습하고 있어! 💪\n\n정말 오늘은 쉬실 건가요?'**
   String get restDayTeasing;
 
   /// 휴식 중 메시지
   ///
   /// In ko, this message translates to:
-  /// **'쉬는 것도 성장이야. 다음은 더 파괴적으로 가자, 만삣삐 🦍'**
+  /// **'쉬는 것도 성장이야. 다음은 더 강력하게 가자, 만삣삐 🦍'**
   String get restMessage;
 
   /// 휴식 시간 설명
@@ -5195,7 +5795,7 @@ abstract class AppLocalizations {
   /// 운동 재개 제목
   ///
   /// In ko, this message translates to:
-  /// **'💪 운동 재개'**
+  /// **'💪 자각몽 연습 재개'**
   String get resumeWorkout;
 
   /// No description provided for @saturdayFull.
@@ -5213,7 +5813,7 @@ abstract class AppLocalizations {
   /// 요일 선택 안내
   ///
   /// In ko, this message translates to:
-  /// **'운동할 요일을 선택해 (최대 6일)'**
+  /// **'자각몽 연습할 요일을 선택해 (최대 6일)'**
   String get selectWorkoutDays;
 
   /// 선택된 요일 표시 형식
@@ -5345,7 +5945,7 @@ abstract class AppLocalizations {
   /// Seven days exercise description
   ///
   /// In ko, this message translates to:
-  /// **'7일 연속 운동'**
+  /// **'7일 연속 연습'**
   String get sevenDaysExercise;
 
   /// 운동 결과 공유 버튼
@@ -5381,31 +5981,31 @@ abstract class AppLocalizations {
   /// 사운드 설정 설명
   ///
   /// In ko, this message translates to:
-  /// **'운동 효과음 활성화'**
+  /// **'운동 피드백음 활성화'**
   String get soundSettingsDesc;
 
-  /// 첫 운동 시작 메시지
+  /// 첫 자각몽 연습 시작 메시지
   ///
   /// In ko, this message translates to:
-  /// **'첫 운동을 시작하고\\n나만의 전설을 만들어보자! 🔥'**
+  /// **'첫 자각몽 연습을 시작하고\\n나만의 전설을 만들어보자! 🔥'**
   String get startFirstWorkout;
 
-  /// 새 운동 시작 버튼
+  /// 새 자각몽 연습 시작 버튼
   ///
   /// In ko, this message translates to:
-  /// **'새 운동 시작'**
+  /// **'새 자각몽 연습 시작'**
   String get startNewWorkout;
 
-  /// 오늘 운동 시작 버튼
+  /// 오늘 자각몽 연습 시작 버튼
   ///
   /// In ko, this message translates to:
   /// **'🚀 오늘의 DOMINATION 시작! 🚀'**
   String get startTodayWorkout;
 
-  /// 운동 시작 버튼
+  /// 자각몽 연습 시작 버튼
   ///
   /// In ko, this message translates to:
-  /// **'운동 시작'**
+  /// **'자각몽 연습 시작'**
   String get startWorkout;
 
   /// 연속 일수 형식
@@ -5414,10 +6014,10 @@ abstract class AppLocalizations {
   /// **'{days}일'**
   String streakDays(int days);
 
-  /// 연속 운동 알림 설정 성공 메시지
+  /// 연속 자각몽 연습 알림 설정 성공 메시지
   ///
   /// In ko, this message translates to:
-  /// **'연속 운동 격려 알림이 설정되었다!'**
+  /// **'연속 연습 격려 알림이 설정되었다!'**
   String get streakNotificationSet;
 
   /// 설정 저장 성공 메시지
@@ -5426,7 +6026,7 @@ abstract class AppLocalizations {
   /// **'⚡ ALPHA SETTINGS LOCKED! 완벽한 설정으로 무장 완료! ⚡'**
   String get successSettingsSaved;
 
-  /// 운동 완료 성공 메시지
+  /// 자각몽 연습 완료 성공 메시지
   ///
   /// In ko, this message translates to:
   /// **'🚀 WORKOUT DOMINATION COMPLETE! 또 하나의 LEGENDARY ACHIEVEMENT 달성! 🚀'**
@@ -5468,10 +6068,10 @@ abstract class AppLocalizations {
   /// **'테마 및 언어 설정'**
   String get themeLanguageSettings;
 
-  /// 이번 달 운동 횟수
+  /// 이번 달 자각몽 연습 횟수
   ///
   /// In ko, this message translates to:
-  /// **'이번 달 운동'**
+  /// **'이번 달 자각몽 연습'**
   String get thisMonthWorkouts;
 
   /// 이번 주 진행률 표시
@@ -5516,10 +6116,10 @@ abstract class AppLocalizations {
   /// **'오늘의 목표:'**
   String get todayTarget;
 
-  /// 오늘 운동 완료 축하 메시지
+  /// 오늘 자각몽 연습 완료 축하 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🎉 오늘 운동 완료! 🎉'**
+  /// **'🎉 오늘 자각몽 연습 완료! 🎉'**
   String get todayWorkoutCompleted;
 
   /// 오늘의 운동 불가 메시지
@@ -5546,16 +6146,16 @@ abstract class AppLocalizations {
   /// **'{totalReps}개'**
   String totalRepsFormat(int totalReps);
 
-  /// 총 운동 횟수
+  /// 총 자각몽 연습 횟수
   ///
   /// In ko, this message translates to:
-  /// **'총 운동 횟수'**
+  /// **'총 자각몽 연습 횟수'**
   String get totalWorkouts;
 
   /// 영상 설명 3
   ///
   /// In ko, this message translates to:
-  /// **'진정한 차드가 되는 마인드셋'**
+  /// **'진정한 드림 스피릿가 되는 마인드셋'**
   String get trueChadMindset;
 
   /// No description provided for @tuesdayFull.
@@ -5672,7 +6272,7 @@ abstract class AppLocalizations {
   /// **'{week}주차'**
   String weekX(int week);
 
-  /// 직장인 차드 모드 설명
+  /// 직장인 드림 스피릿 모드 설명
   ///
   /// In ko, this message translates to:
   /// **'주말엔 휴식, 평일엔 무적! 💪'**
@@ -5693,7 +6293,7 @@ abstract class AppLocalizations {
   /// Weekly challenge achievement description
   ///
   /// In ko, this message translates to:
-  /// **'7일 연속 운동'**
+  /// **'7일 연속 연습'**
   String get weeklyChallengeDesc;
 
   /// Weekly details title
@@ -5726,10 +6326,10 @@ abstract class AppLocalizations {
   /// **'📊 주간 리포트 📊'**
   String get weeklyReport;
 
-  /// 요일별 운동 설정 설명
+  /// 요일별 자각몽 연습 설정 설명
   ///
   /// In ko, this message translates to:
-  /// **'요일별 운동 시간 설정'**
+  /// **'요일별 자각몽 연습 시간 설정'**
   String get weeklyWorkoutSchedule;
 
   /// 완료된 주차 수
@@ -5762,16 +6362,16 @@ abstract class AppLocalizations {
   /// **'오늘의 운동은 이미 완료했다! 💪'**
   String get workoutAlreadyCompleted;
 
-  /// 운동 리마인더 자동 갱신 알림 내용
+  /// 자각몽 연습 리마인더 자동 갱신 알림 내용
   ///
   /// In ko, this message translates to:
-  /// **'운동 리마인더가 자동으로 갱신되었다. 계속해서 건강한 운동 습관을 유지해! 💪'**
+  /// **'자각몽 연습 리마인더가 자동으로 갱신되었다. 계속해서 건강한 운동 습관을 유지해! 💪'**
   String get workoutAutoRenewalBody;
 
-  /// 운동 리마인더 자동 갱신 알림 제목
+  /// 자각몽 연습 리마인더 자동 갱신 알림 제목
   ///
   /// In ko, this message translates to:
-  /// **'⏰ 운동 리마인더 자동 갱신'**
+  /// **'⏰ 자각몽 연습 리마인더 자동 갱신'**
   String get workoutAutoRenewalTitle;
 
   /// 일반 세트 완료 버튼
@@ -5789,7 +6389,7 @@ abstract class AppLocalizations {
   /// Workout calendar title
   ///
   /// In ko, this message translates to:
-  /// **'워크아웃 캘린더'**
+  /// **'자각몽 연습 캘린더'**
   String get workoutCalendar;
 
   /// 운동 차트 제목
@@ -5798,25 +6398,25 @@ abstract class AppLocalizations {
   /// **'운동 차트'**
   String get workoutChart;
 
-  /// 운동 완료 확인 버튼
+  /// 자각몽 연습 완료 확인 버튼
   ///
   /// In ko, this message translates to:
   /// **'레전드다, 만삣삐!'**
   String get workoutCompleteButton;
 
-  /// 운동 완료 메시지
+  /// 자각몽 연습 완료 메시지
   ///
   /// In ko, this message translates to:
   /// **'{title} 완전 파괴!\n총 파워 해방: {totalReps}회! 해냈다! ⚡'**
   String workoutCompleteMessage(String title, int totalReps);
 
-  /// 운동 완료 다이얼로그 제목
+  /// 자각몽 연습 완료 다이얼로그 제목
   ///
   /// In ko, this message translates to:
   /// **'🔥 굿 잡, 만삣삐! 야수 모드 완료! 👑'**
   String get workoutCompleteTitle;
 
-  /// 운동 완료 상태
+  /// 자각몽 연습 완료 상태
   ///
   /// In ko, this message translates to:
   /// **'완료'**
@@ -5825,10 +6425,10 @@ abstract class AppLocalizations {
   /// 운동 완룀 축하 알림 채널 설명
   ///
   /// In ko, this message translates to:
-  /// **'운동 완료 축하 알림'**
+  /// **'자각몽 연습 완료 축하 알림'**
   String get workoutCompletionChannelDescription;
 
-  /// 운동 완료 성취 메시지
+  /// 자각몽 연습 완료 성취 메시지
   ///
   /// In ko, this message translates to:
   /// **'목표의 {percentage}% 파괴! 강자의 길을 걷고 있다! KEEP GRINDING! 🔥💪'**
@@ -5843,13 +6443,13 @@ abstract class AppLocalizations {
   /// Workout date format
   ///
   /// In ko, this message translates to:
-  /// **'{month}월 {day}일 워크아웃'**
+  /// **'{month}월 {day}일 자각몽 연습'**
   String workoutDate(int day, int month);
 
   /// Workout day notification
   ///
   /// In ko, this message translates to:
-  /// **'운동일 전용 알림'**
+  /// **'연습일 전용 알림'**
   String get workoutDayNotification;
 
   /// Workout day selection title
@@ -5858,22 +6458,22 @@ abstract class AppLocalizations {
   /// **'운동 요일 선택'**
   String get workoutDaySelection;
 
-  /// 운동일 전용 모드 활성화 메시지
+  /// 연습일 전용 모드 활성화 메시지
   ///
   /// In ko, this message translates to:
-  /// **'💪 운동일 전용 알림 모드 활성화! 월,수,금에만 알림이 옵니다!'**
+  /// **'💪 연습일 전용 알림 모드 활성화! 월,수,금에만 알림이 옵니다!'**
   String get workoutDaysModeActivated;
 
-  /// 운동일 전용 알림 설정 제목
+  /// 연습일 전용 알림 설정 제목
   ///
   /// In ko, this message translates to:
-  /// **'🔥 운동일 전용 알림'**
+  /// **'🔥 연습일 전용 알림'**
   String get workoutDaysOnlyNotifications;
 
-  /// 운동일 전용 알림 설정 설명
+  /// 연습일 전용 알림 설정 설명
   ///
   /// In ko, this message translates to:
-  /// **'매일이 아닌 운동일(월,수,금)에만 알림을 받다. 휴식일엔 방해받지 않아요!'**
+  /// **'매일이 아닌 연습일(월,수,금)에만 알림을 받다. 휴식일엔 방해받지 않아요!'**
   String get workoutDaysOnlyNotificationsDesc;
 
   /// 운동 상세 정보
@@ -5882,10 +6482,10 @@ abstract class AppLocalizations {
   /// **'운동: {title}\\n완료된 세트: {sets}개\\n총 횟수: {reps}회'**
   String workoutDetailsWithStats(int reps, int sets, String title);
 
-  /// 운동 기록 로딩 실패 오류 메시지
+  /// 자각몽 연습 기록 로딩 실패 오류 메시지
   ///
   /// In ko, this message translates to:
-  /// **'운동 기록을 불러오는 중 오류가 발생했다: {error}'**
+  /// **'자각몽 연습 기록을 불러오는 중 오류가 발생했다: {error}'**
   String workoutHistoryLoadError(String error);
 
   /// 운동 중단 발견 경고
@@ -5897,76 +6497,76 @@ abstract class AppLocalizations {
   /// No description provided for @workoutNotificationPermission.
   ///
   /// In ko, this message translates to:
-  /// **'🔔 운동 알림 권한'**
+  /// **'🔔 자각몽 연습 알림 권한'**
   String get workoutNotificationPermission;
 
   /// 운동 주의사항
   ///
   /// In ko, this message translates to:
-  /// **'• 최소 하루는 쉬는 날이 있어야 한다\n• 연속으로 6일 이상 운동할 수 없다\n• 충분한 휴식은 근육 성장에 필수이다'**
+  /// **'• 최소 하루는 쉬는 날이 있어야 한다\n• 연속으로 6일 이상 자각몽 연습할 수 없다\n• 충분한 휴식은 근육 성장에 필수이다'**
   String get workoutPrecautions;
 
-  /// 운동 완료 처리 상태 메시지
+  /// 자각몽 연습 완료 처리 상태 메시지
   ///
   /// In ko, this message translates to:
-  /// **'운동 완료 처리 중...'**
+  /// **'자각몽 연습 완료 처리 중...'**
   String get workoutProcessing;
 
-  /// 선택된 날짜의 운동 기록
+  /// 선택된 날짜의 자각몽 연습 기록
   ///
   /// In ko, this message translates to:
-  /// **'{month}/{day} 운동 기록'**
+  /// **'{month}/{day} 자각몽 연습 기록'**
   String workoutRecordForDate(int day, int month);
 
-  /// 운동 기록 및 통계 항목
+  /// 자각몽 연습 기록 및 통계 항목
   ///
   /// In ko, this message translates to:
-  /// **'• 운동 기록 및 통계'**
+  /// **'• 자각몽 연습 기록 및 통계'**
   String get workoutRecordsStats;
 
-  /// 운동 리마인더 설정
+  /// 자각몽 연습 리마인더 설정
   ///
   /// In ko, this message translates to:
-  /// **'운동 리마인더'**
+  /// **'자각몽 연습 리마인더'**
   String get workoutReminder;
 
-  /// 기본 운동 리마인더 알림 내용
+  /// 기본 자각몽 연습 리마인더 알림 내용
   ///
   /// In ko, this message translates to:
-  /// **'💪 MISSION 100 운동 시간! LEGENDARY MODE 활성화! 💪'**
+  /// **'💪 LUCID DREAM 100 운동 시간! LEGENDARY MODE 활성화! 💪'**
   String get workoutReminderDefaultBody;
 
-  /// 운동 리마인더 비활성화 메시지
+  /// 자각몽 연습 리마인더 비활성화 메시지
   ///
   /// In ko, this message translates to:
-  /// **'운동 리마인더가 비활성화되었다'**
+  /// **'자각몽 연습 리마인더가 비활성화되었다'**
   String get workoutReminderDisabled;
 
-  /// 운동 리마인더 활성화 메시지
+  /// 자각몽 연습 리마인더 활성화 메시지
   ///
   /// In ko, this message translates to:
-  /// **'운동 리마인더가 활성화되었다'**
+  /// **'자각몽 연습 리마인더가 활성화되었다'**
   String get workoutReminderEnabled;
 
-  /// 운동 리마인더 설정 제목
+  /// 자각몽 연습 리마인더 설정 제목
   ///
   /// In ko, this message translates to:
-  /// **'운동 리마인더 설정'**
+  /// **'자각몽 연습 리마인더 설정'**
   String get workoutReminderSettings;
 
-  /// 운동 리마인더 옵션
+  /// 자각몽 연습 리마인더 옵션
   ///
   /// In ko, this message translates to:
-  /// **'운동 리마인더'**
+  /// **'자각몽 연습 리마인더'**
   String get workoutReminders;
 
-  /// 운동 리마인더 알림 채널 설명
+  /// 자각몽 연습 리마인더 알림 채널 설명
   ///
   /// In ko, this message translates to:
-  /// **'요일별 운동 알림'**
+  /// **'요일별 자각몽 연습 알림'**
   String get workoutRemindersChannelDescription;
 
-  /// 운동 리마인더 설명
+  /// 자각몽 연습 리마인더 설명
   ///
   /// In ko, this message translates to:
   /// **'💀 매일 너를 깨워서 운동시켜줄 거야! 도망갈 생각 마라!'**
@@ -5987,19 +6587,19 @@ abstract class AppLocalizations {
   /// 운동 설정 섹션
   ///
   /// In ko, this message translates to:
-  /// **'💪 운동 설정'**
+  /// **'💪 자각몽 연습 설정'**
   String get workoutSettings;
 
-  /// 운동 시작 오류 메시지
+  /// 자각몽 연습 시작 오류 메시지
   ///
   /// In ko, this message translates to:
   /// **'⚡ ALPHA SYSTEM ERROR! 재시도하라, 만삣삐: {error} ⚡'**
   String workoutStartError(String error);
 
-  /// 운동 시작 액션 메시지
+  /// 자각몽 연습 시작 액션 메시지
   ///
   /// In ko, this message translates to:
-  /// **'운동 시작! 🔥'**
+  /// **'자각몽 연습 시작! 🔥'**
   String get workoutStartMessage;
 
   /// 운동 시간 통계 제목
@@ -6083,7 +6683,7 @@ abstract class AppLocalizations {
   /// No description provided for @workoutCompleteSimple.
   ///
   /// In ko, this message translates to:
-  /// **'운동 완료!'**
+  /// **'자각몽 연습 완료!'**
   String get workoutCompleteSimple;
 
   /// No description provided for @workoutCompleteGreatJob.
@@ -6101,19 +6701,19 @@ abstract class AppLocalizations {
   /// No description provided for @letsStartWorkout.
   ///
   /// In ko, this message translates to:
-  /// **'💪 운동을 시작합니다! 화이팅!'**
+  /// **'💪 자각몽 연습을 시작합니다! 화이팅!'**
   String get letsStartWorkout;
 
   /// No description provided for @processingCompletion.
   ///
   /// In ko, this message translates to:
-  /// **'운동 완료 처리 중...'**
+  /// **'자각몽 연습 완료 처리 중...'**
   String get processingCompletion;
 
   /// No description provided for @cannotShowCompletionDialog.
   ///
   /// In ko, this message translates to:
-  /// **'운동 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.'**
+  /// **'자각몽 연습 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.'**
   String get cannotShowCompletionDialog;
 
   /// No description provided for @exitWorkoutSaved.
@@ -6197,79 +6797,151 @@ abstract class AppLocalizations {
   /// No description provided for @chadBecameStronger.
   ///
   /// In ko, this message translates to:
-  /// **'💪 Chad가 더 강해졌다!'**
+  /// **'✨ Dream Spirit가 성장했습니다'**
   String get chadBecameStronger;
 
   /// No description provided for @repsDestroyed.
   ///
   /// In ko, this message translates to:
-  /// **'💀 파괴된 횟수'**
+  /// **'✓ 완료한 태스크'**
   String get repsDestroyed;
 
   /// No description provided for @xpGained.
   ///
   /// In ko, this message translates to:
-  /// **'💰 획득 XP'**
+  /// **'⭐ 획득 경험치'**
   String get xpGained;
 
   /// No description provided for @timeElapsed.
   ///
   /// In ko, this message translates to:
-  /// **'⏱️ 소멸 시간'**
+  /// **'⏱️ 소요 시간'**
   String get timeElapsed;
 
   /// No description provided for @workoutDestroyed.
   ///
   /// In ko, this message translates to:
-  /// **'💀 운동 파괴 완료! 💀'**
+  /// **'🌙 오늘의 연습 완료! ✨'**
   String get workoutDestroyed;
 
   /// No description provided for @workoutDestroyedMessage.
   ///
   /// In ko, this message translates to:
-  /// **'오늘 운동을 완전히 박살냈다!'**
+  /// **'오늘의 자각몽 연습을 성공적으로 마쳤습니다'**
   String get workoutDestroyedMessage;
 
   /// No description provided for @timeDestroyed.
   ///
   /// In ko, this message translates to:
-  /// **'⏱️ 소멸 시간'**
+  /// **'⏱️ 연습 시간'**
   String get timeDestroyed;
 
   /// No description provided for @tomorrowIsRestDay.
   ///
   /// In ko, this message translates to:
-  /// **'😴 내일은 CHAD 휴식일! 😴'**
+  /// **'🌙 내일도 꿈의 여정이 계속됩니다 ✨'**
   String get tomorrowIsRestDay;
 
   /// No description provided for @recoverToBeStronger.
   ///
   /// In ko, this message translates to:
-  /// **'🌴 완전한 회복으로 더 강한 CHAD가 되자! 💪'**
+  /// **'😴 오늘 밤 좋은 꿈 꾸세요 ✨'**
   String get recoverToBeStronger;
 
   /// No description provided for @tomorrowBeastMode.
   ///
   /// In ko, this message translates to:
-  /// **'🔥 내일: 다시 야수 모드! 🔥'**
+  /// **'✨ 내일도 함께 자각몽을 연습해요 🌙'**
   String get tomorrowBeastMode;
 
   /// No description provided for @legendaryJourneyContinues.
   ///
   /// In ko, this message translates to:
-  /// **'💀 LEGENDARY 경지로의 여정은 계속된다! 💀'**
+  /// **'🌟 자각몽 마스터로의 여정은 계속됩니다 🌟'**
   String get legendaryJourneyContinues;
 
   /// No description provided for @chadEvolutionProgress.
   ///
   /// In ko, this message translates to:
-  /// **'💪 Chad 진화 진행률'**
+  /// **'✨ Dream Spirit 성장 진행률'**
   String get chadEvolutionProgress;
+
+  /// Dream journal task title
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 작성'**
+  String get taskDreamJournalTitle;
+
+  /// Dream journal task description
+  ///
+  /// In ko, this message translates to:
+  /// **'매일 아침 기상 직후 꿈을 기록하세요. 꿈 회상 능력은 자각몽의 첫걸음입니다.'**
+  String get taskDreamJournalDesc;
+
+  /// Reality check task title
+  ///
+  /// In ko, this message translates to:
+  /// **'현실 확인 (Reality Check)'**
+  String get taskRealityCheckTitle;
+
+  /// Reality check task description
+  ///
+  /// In ko, this message translates to:
+  /// **'하루 5회 이상 손바닥을 보며 \"지금 꿈인가?\"를 자문하세요. 손가락을 꿰뚫어보는 연습도 좋습니다.'**
+  String get taskRealityCheckDesc;
+
+  /// MILD affirmation task title
+  ///
+  /// In ko, this message translates to:
+  /// **'MILD 확언'**
+  String get taskMildTitle;
+
+  /// MILD affirmation task description
+  ///
+  /// In ko, this message translates to:
+  /// **'취침 전 \"다음 꿈에서 나는 깨어있을 것이다\"를 반복하며 자각몽 의도를 확고히 하세요.'**
+  String get taskMildDesc;
+
+  /// Sleep hygiene task title
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 위생 체크'**
+  String get taskSleepHygieneTitle;
+
+  /// Sleep hygiene task description
+  ///
+  /// In ko, this message translates to:
+  /// **'규칙적인 수면 시간, 어두운 방, 카페인 제한 등 양질의 수면을 위한 환경을 조성하세요.'**
+  String get taskSleepHygieneDesc;
+
+  /// WBTB task title
+  ///
+  /// In ko, this message translates to:
+  /// **'WBTB (Wake Back To Bed)'**
+  String get taskWbtbTitle;
+
+  /// WBTB task description
+  ///
+  /// In ko, this message translates to:
+  /// **'5시간 수면 후 알람으로 깨어나 20-30분 각성 상태 유지 후 다시 잠들어 REM 수면 진입을 유도하세요.'**
+  String get taskWbtbDesc;
+
+  /// Meditation task title
+  ///
+  /// In ko, this message translates to:
+  /// **'명상 (선택)'**
+  String get taskMeditationTitle;
+
+  /// Meditation task description
+  ///
+  /// In ko, this message translates to:
+  /// **'10분 이상 마음챙김 명상으로 자각 능력을 키우세요. 자각몽에 큰 도움이 됩니다.'**
+  String get taskMeditationDesc;
 
   /// Quiz question 3
   ///
   /// In ko, this message translates to:
-  /// **'초보자에게 가장 적합한 푸시업 변형은?'**
+  /// **'초보자에게 가장 적합한 자각몽 기법은?'**
   String get beginnerPushupQuiz;
 
   /// Step 3 title - bottom position
@@ -6293,7 +6965,7 @@ abstract class AppLocalizations {
   /// Subtitle for pushup form guide
   ///
   /// In ko, this message translates to:
-  /// **'차드가 알려주는 완벽한 푸시업 폼! 💪'**
+  /// **'드림 스피릿이 알려주는 완벽한 자각몽 기법! 💪'**
   String get chadPerfectPushupForm;
 
   /// 완료된 운동 표시
@@ -6305,19 +6977,19 @@ abstract class AppLocalizations {
   /// Header for 5-step pushup guide
   ///
   /// In ko, this message translates to:
-  /// **'올바른 푸시업 자세 5단계'**
+  /// **'올바른 자각몽 기법 5단계'**
   String get correctPushupForm5Steps;
 
   /// 영상 설명 1
   ///
   /// In ko, this message translates to:
-  /// **'올바른 팔굽혀펴기 자세로 효과적인 운동'**
+  /// **'올바른 자각몽 기법으로 효과적인 연습'**
   String get correctPushupFormDesc;
 
   /// Quiz question 1
   ///
   /// In ko, this message translates to:
-  /// **'올바른 푸시업 시작 자세에서 손의 위치는?'**
+  /// **'올바른 자각몽 연습 시작 시 중요한 것은?'**
   String get correctPushupQuiz1;
 
   /// Excellent performance message
@@ -6353,13 +7025,13 @@ abstract class AppLocalizations {
   /// Hundred pushups achievement
   ///
   /// In ko, this message translates to:
-  /// **'백 푸시업'**
+  /// **'자각몽 100일'**
   String get hundredPushups;
 
   /// Hundred pushups achievement description
   ///
   /// In ko, this message translates to:
-  /// **'한 세션에 100회 달성'**
+  /// **'100일 연속 자각몽 연습 달성'**
   String get hundredPushupsDesc;
 
   /// 완벽 자세 챌린지 메시지
@@ -6371,7 +7043,7 @@ abstract class AppLocalizations {
   /// Title for pushup form guide screen
   ///
   /// In ko, this message translates to:
-  /// **'완벽한 푸시업 자세'**
+  /// **'완벽한 자각몽 기법'**
   String get perfectPushupForm;
 
   /// 목표 100% 달성시 메시지
@@ -6407,277 +7079,277 @@ abstract class AppLocalizations {
   /// 영상 제목 4
   ///
   /// In ko, this message translates to:
-  /// **'팔굽혀펴기 100개 도전 🎯'**
+  /// **'자각몽 100일 도전 🎯'**
   String get pushup100Challenge;
 
   /// 푸시업 100개 연속 달성 메시지
   ///
   /// In ko, this message translates to:
-  /// **'💪💀 푸시업 100개 연속 달성! 인간 초월! 💀💪'**
+  /// **'💪💀 자각몽 100일 연속 달성! 인간 초월! 💀💪'**
   String get pushup100Streak;
 
   /// 아처 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'아처 푸시업'**
+  /// **'SSILD 기법'**
   String get pushupArcher;
 
   /// 아처 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 한쪽 팔 집중 강화\\n• 좌우 균형 발달\\n• 원핸드 푸시업 준비\\n• 코어 회전 안정성 강화'**
+  /// **'• 감각 집중 능력 강화\\n• 시청각촉각 균형 발달\\n• 고급 자각몽 준비\\n• 안정적인 꿈 진입'**
   String get pushupArcherBenefits;
 
   /// 아처 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'활시위 당기듯 집중해서 호흡해라. 정확성이 생명이다, you idiot!'**
+  /// **'사이클 돌듯 집중해서 호흡해라. 정확성이 생명이다, you idiot!'**
   String get pushupArcherBreathing;
 
-  /// 아처 푸시업 차드 조언
+  /// 아처 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'🏹 정확한 아처가 원핸드 지름길? 맞다! 양쪽 균등 마스터하면 LEGENDARY ARCHER EMPEROR! 🏹'**
+  /// **'🏹 정확한 사이클이 자각몽 지름길? 맞다! 감각 마스터하면 LEGENDARY LUCID EMPEROR! 🏹'**
   String get pushupArcherChad;
 
   /// 아처 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'한쪽씩 집중하는 고급 기술! 균형감각과 코어가 필요하다, 만삣삐!'**
+  /// **'감각씩 집중하는 고급 기술! 균형감각과 집중력이 필요하다, 만삣삐!'**
   String get pushupArcherDesc;
 
   /// 아처 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 와이드 그립으로 시작하라\\n2. 한쪽으로 체중을 기울여라\\n3. 한 팔은 굽히고 다른 팔은 쭉\\n4. 활시위 당기듯 정확하게\\n5. 양쪽을 번갈아가며, 만삣삐!'**
+  /// **'1. 눈 감고 시각에 주의\\n2. 청각 자극에 집중\\n3. 촉각 감각 느끼기\\n4. 4-6회 빠른 사이클\\n5. 양쪽을 번갈아가며, 만삣삐!'**
   String get pushupArcherInstructions;
 
   /// 아처 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 몸이 비틀어짐\\n• 쭉 편 팔에도 힘이 들어감\\n• 좌우 동작이 불균등\\n• 코어가 흔들림'**
+  /// **'• 너무 강하게 집중\\n• 한 감각에만 치우침\\n• 사이클이 불규칙\\n• 조급하게 진행'**
   String get pushupArcherMistakes;
 
   /// 아처 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'아처 푸시업'**
+  /// **'SSILD 기법'**
   String get pushupArcherName;
 
   /// Quiz question 4
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 시 올바른 호흡법은?'**
+  /// **'자각몽 연습 시 올바른 호흡법은?'**
   String get pushupBreathingQuiz;
 
   /// 박수 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'박수 푸시업'**
+  /// **'FILD 기법'**
   String get pushupClap;
 
   /// 박수 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 폭발적인 근력 발달\\n• 전신 파워 향상\\n• 순간 반응속도 증가\\n• 진짜 나만의 증명'**
+  /// **'• 빠른 꿈 진입 능력\\n• 손가락 집중력 향상\\n• 즉각적인 자각몽\\n• 진짜 마스터의 증명'**
   String get pushupClapBenefits;
 
   /// 박수 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'폭발할 때 강하게 내뱉고, 착지 후 빠르게 호흡 정리. 리듬이 중요하다, you idiot!'**
+  /// **'깨어날 때 깊게 호흡하고, 손가락 움직임에 집중. 리듬이 중요하다, you idiot!'**
   String get pushupClapBreathing;
 
-  /// 박수 푸시업 차드 조언
+  /// 박수 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'👏 박수 푸시업은 파워의 증명? 아니다! 이제 EXPLOSIVE THUNDER POWER의 표현이다! 👏'**
+  /// **'👏 손가락 기법이 빠른 진입? 맞다! 이제 EXPLOSIVE LUCID ENTRY의 표현이다! 👏'**
   String get pushupClapChad;
 
   /// 박수 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'박수치면서 하는 폭발적인 파워! 진짜 강자만이 할 수 있다!'**
+  /// **'손가락 움직이며 하는 빠른 진입! 진짜 마스터만이 할 수 있다!'**
   String get pushupClapDesc;
 
   /// 박수 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 기본 푸시업 자세로 시작\\n2. 폭발적으로 밀어올려라\\n3. 공중에서 박수를 쳐라\\n4. 안전하게 착지하라\\n5. 연속으로 도전해라, 만삣삐!'**
+  /// **'1. 알람 후 움직이지 말고\\n2. 손가락을 살짝 움직여라\\n3. 피아노 치듯 교대로\\n4. 꿈 장면이 나타날 때까지\\n5. 연속으로 도전해라, 만삣삐!'**
   String get pushupClapInstructions;
 
   /// 박수 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 충분한 높이로 올라가지 않음\\n• 착지할 때 손목 부상 위험\\n• 폼이 흐트러짐\\n• 무리한 연속 시도'**
+  /// **'• 너무 강하게 움직이기\\n• 완전히 깨버리기\\n• 리듬이 불규칙\\n• 조급하게 포기하기'**
   String get pushupClapMistakes;
 
   /// 박수 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'박수 푸시업'**
+  /// **'FILD 기법'**
   String get pushupClapName;
 
   /// 디클라인 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'디클라인 푸시업'**
+  /// **'꿈 신호 인식'**
   String get pushupDecline;
 
   /// 디클라인 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 상부 가슴근육 집중 발달\\n• 어깨 전면 강화\\n• 코어 안정성 최대 강화\\n• 전신 근력 향상'**
+  /// **'• 꿈 패턴 파악 능력 강화\\n• 자각몽 트리거 발견\\n• 인식 속도 최대 강화\\n• 전체 자각몽 능력 향상'**
   String get pushupDeclineBenefits;
 
   /// 디클라인 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'중력과 싸우면서도 안정된 호흡을 유지해라. 진짜 파워는 여기서 나온다, you idiot!'**
+  /// **'무의식과 싸우면서도 안정된 관찰을 유지해라. 진짜 파워는 여기서 나온다, you idiot!'**
   String get pushupDeclineBreathing;
 
-  /// 디클라인 푸시업 차드 조언
+  /// 디클라인 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'🌪️ 중력 따위 개무시? 당연하지! 이제 물리법칙을 지배하라! 디클라인으로 GODLIKE SHOULDERS! 🌪️'**
+  /// **'🌪️ 꿈 신호 따위 개무시? 당연하지! 이제 꿈 세계를 지배하라! 신호 인식으로 GODLIKE AWARENESS! 🌪️'**
   String get pushupDeclineChad;
 
   /// 디클라인 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'발을 높게 올려서 강도 업! 어깨와 상체 근육을 제대로 자극한다!'**
+  /// **'관찰력을 높게 올려서 인식 향상! 꿈 신호를 제대로 포착한다!'**
   String get pushupDeclineDesc;
 
   /// 디클라인 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 발을 벤치나 의자에 올려라\\n2. 손은 어깨 아래 정확히\\n3. 몸은 아래쪽으로 기울어진 직선\\n4. 중력의 저항을 이겨내라\\n5. 강하게 밀어올려라, 만삣삐!'**
+  /// **'1. 꿈 일기에서 반복 요소 찾기\\n2. 개인 꿈 신호 목록 작성\\n3. 현실에서 그 신호 주시하기\\n4. 신호 발견 시 현실 확인\\n5. 꿈에서 신호 인식하라, 만삣삐!'**
   String get pushupDeclineInstructions;
 
   /// 디클라인 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 발 위치가 불안정\\n• 엉덩이가 아래로 처짐\\n• 목에 무리가 가는 자세\\n• 균형을 잃고 비틀어짐'**
+  /// **'• 신호를 대충 관찰\\n• 패턴을 무시하기\\n• 일기 분석 안 하기\\n• 꿈에서 신호 놓치기'**
   String get pushupDeclineMistakes;
 
   /// 디클라인 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'디클라인 푸시업'**
+  /// **'꿈 신호 인식'**
   String get pushupDeclineName;
 
   /// 다이아몬드 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'다이아몬드 푸시업'**
+  /// **'WBTB 기법'**
   String get pushupDiamond;
 
   /// 다이아몬드 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 삼두근 집중 강화\\n• 가슴 안쪽 근육 발달\\n• 팔 전체 근력 향상\\n• 코어 안정성 증가'**
+  /// **'• 자각몽 확률 극대화\\n• REM 수면 활용\\n• 의식 명료함 강화\\n• 꿈 컨트롤 능력 증가'**
   String get pushupDiamondBenefits;
 
   /// 다이아몬드 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'집중해서 호흡해라. 삼두근이 불타는 걸 느껴라, you idiot!'**
+  /// **'집중해서 호흡해라. 의식이 깨어나는 걸 느껴라, you idiot!'**
   String get pushupDiamondBreathing;
 
-  /// 다이아몬드 푸시업 차드 조언
+  /// 다이아몬드 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'💎 다이아몬드보다 단단한 팔? 틀렸다! 이제 UNBREAKABLE TITANIUM ARMS다! 10개면 진짜 BEAST 인정! 💎'**
+  /// **'💎 다이아몬드보다 빛나는 의식? 틀렸다! 이제 UNBREAKABLE LUCID MIND다! 한 번만 성공해도 진짜 BEAST 인정! 💎'**
   String get pushupDiamondChad;
 
   /// 다이아몬드 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'삼두근 집중 공략! 다이아몬드 모양이 진짜 나만의 상징이다!'**
+  /// **'REM 수면 집중 공략! WBTB가 진짜 마스터의 상징이다!'**
   String get pushupDiamondDesc;
 
   /// 다이아몬드 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 엄지와 검지로 다이아몬드 모양 만들어라\\n2. 가슴 중앙 아래에 손 위치\\n3. 팔꿈치는 몸에 가깝게 유지\\n4. 가슴이 손에 닿을 때까지\\n5. 삼두근 힘으로 밀어올려라, 만삣삐!'**
+  /// **'1. 5-6시간 자고 깨어나라\\n2. 20-30분 깨어있어라\\n3. 자각몽에 집중하며 읽기\\n4. 다시 잠들 때 의도 유지\\n5. REM 수면으로 진입하라, 만삣삐!'**
   String get pushupDiamondInstructions;
 
   /// 다이아몬드 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 손목에 과도한 압력\\n• 팔꿈치가 너무 벌어짐\\n• 몸이 비틀어짐\\n• 다이아몬드 모양이 부정확함'**
+  /// **'• 너무 오래 깨어있기\\n• 완전히 잠 깨버리기\\n• 의도 없이 다시 자기\\n• 타이밍이 부정확함'**
   String get pushupDiamondMistakes;
 
   /// 다이아몬드 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'다이아몬드 푸시업'**
+  /// **'WBTB 기법'**
   String get pushupDiamondName;
 
   /// 팔굽혀펴기 해시태그
   ///
   /// In ko, this message translates to:
-  /// **'#팔굽혀펴기'**
+  /// **'#자각몽'**
   String get pushupHashtag;
 
   /// 인클라인 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'인클라인 푸시업'**
+  /// **'수면 위생'**
   String get pushupIncline;
 
   /// 인클라인 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 부담을 줄여 폼 완성\\n• 하부 가슴근육 강화\\n• 어깨 안정성 향상\\n• 기본 푸시업으로의 징검다리'**
+  /// **'• 수면 질 향상\\n• 꿈 선명도 강화\\n• 자각몽 성공률 증가\\n• 모든 기법의 기초 다지기'**
   String get pushupInclineBenefits;
 
   /// 인클라인 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'각도가 편해진 만큼 호흡도 편안하게. 하지만 집중력은 최고로, you idiot!'**
+  /// **'잠들기 전 호흡도 편안하게. 하지만 규칙성은 최고로, you idiot!'**
   String get pushupInclineBreathing;
 
-  /// 인클라인 푸시업 차드 조언
+  /// 인클라인 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'🚀 높이는 조절하고 강도는 MAX! 20개 완벽 수행하면 GOD TIER 입장권 획득이다, 만삣삐! 🚀'**
+  /// **'🚀 환경은 조절하고 수면은 MAX! 완벽한 수면 루틴이면 GOD TIER 입장권 획득이다, 만삣삐! 🚀'**
   String get pushupInclineChad;
 
   /// 인클라인 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'경사면을 이용해서 난이도 조절! 계단이나 벤치면 충분하다, 만삣삐!'**
+  /// **'수면 환경을 이용해서 꿈 품질 향상! 조용하고 어둡게만 해도 충분하다, 만삣삐!'**
   String get pushupInclineDesc;
 
   /// 인클라인 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 벤치나 의자에 손을 올려라\\n2. 몸을 비스듬히 기울여라\\n3. 발가락부터 머리까지 일직선\\n4. 높을수록 쉬워진다, 만삣삐\\n5. 점차 낮은 곳으로 도전해라!'**
+  /// **'1. 규칙적인 수면 시간 정해라\\n2. 침실을 어둡고 시원하게\\n3. 잠들기 2시간 전 전자기기 끄기\\n4. 편안한 침구 준비\\n5. 점차 완벽한 환경 만들어라!'**
   String get pushupInclineInstructions;
 
   /// 인클라인 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 엉덩이가 위로 솟음\\n• 손목에 과도한 체중\\n• 불안정한 지지대 사용\\n• 각도를 너무 급하게 낮춤'**
+  /// **'• 불규칙한 수면 시간\\n• 밝은 침실에서 자기\\n• 자기 직전 스마트폰 보기\\n• 너무 급하게 변화 시도'**
   String get pushupInclineMistakes;
 
   /// 인클라인 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'인클라인 푸시업'**
+  /// **'수면 위생'**
   String get pushupInclineName;
 
   /// 무릎 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'무릎 푸시업'**
+  /// **'현실 확인'**
   String get pushupKnee;
 
   /// 무릎 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 기본 근력 향상\\n• 올바른 푸시업 폼 학습\\n• 어깨와 팔 안정성 강화\\n• 기본 푸시업으로의 단계적 진행'**
+  /// **'• 꿈과 현실 구분 능력 향상\\n• 자각몽 인식 훈련\\n• 의식 명료함 강화\\n• 자각몽으로의 단계적 진입'**
   String get pushupKneeBenefits;
 
   /// 무릎 푸시업 호흡법
@@ -6686,268 +7358,268 @@ abstract class AppLocalizations {
   /// **'부드럽고 꾸준한 호흡으로 시작해라. 급하게 하지 마라, 만삣삐!'**
   String get pushupKneeBreathing;
 
-  /// 무릎 푸시업 차드 조언
+  /// 무릎 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'⚡ 시작이 반? 아니다! 이미 ALPHA JOURNEY가 시작됐다! 무릎 푸시업도 EMPEROR의 길이다! ⚡'**
+  /// **'⚡ 시작이 반? 아니다! 이미 ALPHA JOURNEY가 시작됐다! 현실 확인도 EMPEROR의 길이다! ⚡'**
   String get pushupKneeChad;
 
   /// 무릎 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'입문자도 할 수 있다! 무릎 대고 하는 거 부끄러워하지 마라, 만삣삐!'**
+  /// **'입문자도 할 수 있다! 하루 10번 현실 확인 부끄러워하지 마라, 만삣삐!'**
   String get pushupKneeDesc;
 
   /// 무릎 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 무릎을 바닥에 대고 시작하라\\n2. 발목을 들어올려라\\n3. 상체는 기본 푸시업과 동일하게\\n4. 무릎에서 머리까지 일직선 유지\\n5. 천천히 확실하게 움직여라, 만삣삐!'**
+  /// **'1. 하루에 10번 이상 체크하라\\n2. 손을 자세히 관찰하라\\n3. \'지금 꿈인가?\' 진지하게 물어라\\n4. 주변 환경이 이상한지 확인\\n5. 천천히 확실하게 검증하라, 만삣삐!'**
   String get pushupKneeInstructions;
 
   /// 무릎 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 엉덩이가 뒤로 빠짐\\n• 무릎 위치가 너무 앞쪽\\n• 상체만 움직이고 코어 사용 안 함\\n• 너무 빠르게 동작함'**
+  /// **'• 대충 형식적으로 체크하기\\n• 하루에 너무 적게 하기\\n• 진지하게 의심하지 않기\\n• 너무 빠르게 지나가기'**
   String get pushupKneeMistakes;
 
   /// 무릎 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'무릎 푸시업'**
+  /// **'현실 확인'**
   String get pushupKneeName;
 
   /// Quiz question 2
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 중 가장 흔한 실수는?'**
+  /// **'자각몽 연습 중 가장 흔한 실수는?'**
   String get pushupMistakeQuiz;
 
   /// 원핸드 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'원핸드 푸시업'**
+  /// **'고급 WILD'**
   String get pushupOneArm;
 
   /// 원핸드 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 궁극의 상체 근력\\n• 완벽한 코어 컨트롤\\n• 전신 균형과 조정력\\n• 기가 나만의 완성'**
+  /// **'• 궁극의 의식 제어\\n• 완벽한 꿈 컨트롤\\n• 전체 자각몽 마스터\\n• 기가 마스터 완성'**
   String get pushupOneArmBenefits;
 
   /// 원핸드 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'깊고 안정된 호흡으로 집중력을 최고조로. 모든 에너지를 하나로, you idiot!'**
+  /// **'깊고 안정된 호흡으로 집중력을 최고조로. 모든 의식을 하나로, you idiot!'**
   String get pushupOneArmBreathing;
 
-  /// 원핸드 푸시업 차드 조언
+  /// 원핸드 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'🚀 원핸드는 차드 완성형? 틀렸다! 이제 ULTIMATE APEX GOD EMPEROR 탄생이다, FXXK YEAH! 🚀'**
+  /// **'🚀 고급 WILD는 마스터 완성형? 틀렸다! 이제 ULTIMATE APEX LUCID GOD 탄생이다, FXXK YEAH! 🚀'**
   String get pushupOneArmChad;
 
   /// 원핸드 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'원핸드 푸시업은 나만의 완성형이다! 이거 한 번이라도 하면 진짜 기가 차드 인정!'**
+  /// **'고급 WILD는 자각몽의 완성형이다! 이거 한 번이라도 성공하면 진짜 기가 마스터 인정!'**
   String get pushupOneArmDesc;
 
   /// 원핸드 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 다리를 넓게 벌려 균형잡아라\\n2. 한 손은 등 뒤로\\n3. 코어에 모든 힘을 집중\\n4. 천천히 확실하게\\n5. 기가 나만의 자격을 증명하라!'**
+  /// **'1. 명상과 WILD를 결합\\n2. 환각을 적극 활용\\n3. 의식에 모든 힘을 집중\\n4. 천천히 확실하게\\n5. 기가 마스터 자격을 증명하라!'**
   String get pushupOneArmInstructions;
 
   /// 원핸드 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 다리가 너무 좁음\\n• 몸이 비틀어지며 회전\\n• 반대 손으로 지탱\\n• 무리한 도전으로 부상'**
+  /// **'• 기초가 부족한 상태로 시도\\n• 긴장으로 몸이 굳어짐\\n• 조급하게 진입 시도\\n• 무리한 도전으로 좌절'**
   String get pushupOneArmMistakes;
 
   /// 원핸드 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'원핸드 푸시업'**
+  /// **'고급 WILD'**
   String get pushupOneArmName;
 
   /// 파이크 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'파이크 푸시업'**
+  /// **'WILD 기법'**
   String get pushupPike;
 
   /// 파이크 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 어깨 전체 근육 강화\\n• 핸드스탠드 푸시업 준비\\n• 상체 수직 힘 발달\\n• 코어와 균형감 향상'**
+  /// **'• 의식 유지 능력 강화\\n• 직접 꿈 진입 마스터\\n• 극한 집중력 발달\\n• 깊은 자각몽 경험'**
   String get pushupPikeBenefits;
 
   /// 파이크 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'거꾸로 된 자세에서도 안정된 호흡. 어깨에 집중해라, you idiot!'**
+  /// **'수면 마비 중에도 안정된 호흡. 의식에 집중해라, you idiot!'**
   String get pushupPikeBreathing;
 
-  /// 파이크 푸시업 차드 조언
+  /// 파이크 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'⚡ 파이크 마스터하면 핸드스탠드? 당연하지! 어깨 EMPEROR로 진화하라, 만삣삐! ⚡'**
+  /// **'⚡ WILD 마스터하면 자유자재? 당연하지! 의식 EMPEROR로 진화하라, 만삣삐! ⚡'**
   String get pushupPikeChad;
 
   /// 파이크 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'어깨 집중 공략! 핸드스탠드 푸시업의 전 단계다!'**
+  /// **'의식 집중 공략! 고급 자각몽의 핵심 기법이다!'**
   String get pushupPikeDesc;
 
   /// 파이크 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 다운독 자세로 시작하라\\n2. 엉덩이를 최대한 위로\\n3. 머리가 바닥에 가까워질 때까지\\n4. 어깨 힘으로만 밀어올려라\\n5. 역삼각형을 유지하라, 만삣삐!'**
+  /// **'1. 편안하게 누워 긴장 풀기\\n2. 호흡에 집중하라\\n3. 몸이 잠들게 두되 의식 유지\\n4. 환각 증상을 관찰\\n5. 꿈으로 직접 진입하라, 만삣삐!'**
   String get pushupPikeInstructions;
 
   /// 파이크 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 엉덩이가 충분히 올라가지 않음\\n• 팔꿈치가 옆으로 벌어짐\\n• 머리로만 지탱하려 함\\n• 발 위치가 너무 멀거나 가까움'**
+  /// **'• 너무 긴장해서 잠 못 자기\\n• 의식을 잃어버리기\\n• 수면 마비에 당황하기\\n• 조급하게 포기하기'**
   String get pushupPikeMistakes;
 
   /// 파이크 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'파이크 푸시업'**
+  /// **'WILD 기법'**
   String get pushupPikeName;
 
   /// 기본 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'기본 푸시업'**
+  /// **'꿈 일기'**
   String get pushupStandard;
 
   /// 기본 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 가슴근육 전체 발달\\n• 삼두근과 어깨 강화\\n• 기본 체력 향상\\n• 모든 푸시업의 기초가 된다, you idiot!'**
+  /// **'• 꿈 기억력 향상\\n• 꿈 패턴 인식 능력 강화\\n• 자각몽 빈도 증가\\n• 모든 자각몽 기법의 기초!'**
   String get pushupStandardBenefits;
 
   /// 기본 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'내려갈 때 숨을 마시고, 올라올 때 강하게 내뱉어라. 호흡이 파워다, 만삣삐!'**
+  /// **'자기 전 깊게 호흡하며 이완해라. 평온한 마음이 명확한 꿈을 부른다, 만삣삐!'**
   String get pushupStandardBreathing;
 
-  /// 표준 푸시업 차드 조언
+  /// 표준 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'🔥 기본이 제일 어렵다고? 틀렸다! 완벽한 폼 하나가 세상을 정복한다, 만삣삐! MASTER THE BASICS! 🔥'**
+  /// **'🔥 꿈 일기가 제일 중요하다! 매일 쓰면 꿈 세계를 정복한다, 만삣삐! MASTER THE BASICS! 🔥'**
   String get pushupStandardChad;
 
   /// 기본 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'모든 나만의 시작점. 완벽한 기본기가 진짜 강함이다, 만삣삐!'**
+  /// **'모든 자각몽의 시작점. 완벽한 꿈 일기가 진짜 마스터를 만든다, 만삣삐!'**
   String get pushupStandardDesc;
 
   /// 기본 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 플랭크 자세로 시작한다, 만삣삐\\n2. 손은 어깨 너비로 벌려라\\n3. 몸은 일직선으로 유지해라, 흐트러지지 말고\\n4. 가슴이 바닥에 닿을 때까지 내려가라\\n5. 강하게 밀어올려라, 차드답게!'**
+  /// **'1. 잠에서 깨자마자 기록해라, 만삣삐\\n2. 모든 세부사항을 포착하라\\n3. 감정과 색깔도 기록하라\\n4. 꿈 신호를 찾아내라\\n5. 매일 꾸준히 실천하라, 드림 스피릿답게!'**
   String get pushupStandardInstructions;
 
   /// 기본 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 엉덩이가 위로 솟음 - 약자들이나 하는 짓이야\\n• 가슴을 끝까지 내리지 않음\\n• 목을 앞으로 빼고 함\\n• 손목이 어깨보다 앞에 위치\\n• 일정한 속도를 유지하지 않음, fxxk idiot!'**
+  /// **'• 나중에 쓰겠다고 미루기\\n• 세부사항을 대충 쓰기\\n• 불규칙하게 기록하기\\n• 감정을 무시하기\\n• 너무 빨리 포기하기, fxxk idiot!'**
   String get pushupStandardMistakes;
 
   /// 기본 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'기본 푸시업'**
+  /// **'꿈 일기'**
   String get pushupStandardName;
 
   /// 푸시업 튜토리얼 화면 부제목
   ///
   /// In ko, this message translates to:
-  /// **'진짜 강자들은 자세부터 다르다! 💪'**
+  /// **'진짜 꿈 마스터들은 기법부터 다르다! 💪'**
   String get pushupTutorialSubtitle;
 
   /// 푸시업 튜토리얼 화면 제목
   ///
   /// In ko, this message translates to:
-  /// **'차드 푸시업 도장'**
+  /// **'드림 스피릿 자각몽 도장'**
   String get pushupTutorialTitle;
 
   /// 영상 제목 2
   ///
   /// In ko, this message translates to:
-  /// **'팔굽혀펴기 변형 동작 🔥'**
+  /// **'자각몽 기법 다양화 🔥'**
   String get pushupVariations;
 
   /// Variations section header
   ///
   /// In ko, this message translates to:
-  /// **'난이도별 푸시업 변형'**
+  /// **'난이도별 자각몽 기법'**
   String get pushupVariationsByDifficulty;
 
   /// 와이드 그립 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'와이드 그립 푸시업'**
+  /// **'MILD 기법'**
   String get pushupWideGrip;
 
   /// 와이드 그립 푸시업 효과
   ///
   /// In ko, this message translates to:
-  /// **'• 가슴 바깥쪽 근육 집중 발달\\n• 어깨 안정성 향상\\n• 가슴 넓이 확장\\n• 상체 전체적인 균형 발달'**
+  /// **'• 자각몽 의도 강화\\n• 꿈 인식 능력 향상\\n• 성공률 극대화\\n• 전체적인 자각몽 능력 발달'**
   String get pushupWideGripBenefits;
 
   /// 와이드 그립 푸시업 호흡법
   ///
   /// In ko, this message translates to:
-  /// **'넓은 가슴으로 깊게 숨쉬어라. 가슴이 확장되는 걸 느껴라, you idiot!'**
+  /// **'깊은 호흡으로 의도를 각인시켜라. 의식이 확장되는 걸 느껴라, you idiot!'**
   String get pushupWideGripBreathing;
 
-  /// 와이드 그립 푸시업 차드 조언
+  /// 와이드 그립 푸시업 드림 스피릿 조언
   ///
   /// In ko, this message translates to:
-  /// **'🦁 넓은 가슴? 아니다! 이제 LEGENDARY GORILLA CHEST를 만들어라! 와이드 그립으로 세상을 압도하라! 🦁'**
+  /// **'🦁 강한 의도? 아니다! 이제 LEGENDARY LUCID MASTER를 만들어라! MILD로 꿈 세계를 압도하라! 🦁'**
   String get pushupWideGripChad;
 
   /// 와이드 그립 푸시업 설명
   ///
   /// In ko, this message translates to:
-  /// **'와이드하게 벌려서 가슴을 더 넓게! 진짜 강자 가슴을 만들어라!'**
+  /// **'의도를 강하게 세워서 자각몽 확률을 더 높게! 진짜 마스터가 되어라!'**
   String get pushupWideGripDesc;
 
   /// 와이드 그립 푸시업 실행법
   ///
   /// In ko, this message translates to:
-  /// **'1. 손을 어깨보다 1.5배 넓게 벌려라\\n2. 손가락은 약간 바깥쪽을 향하게\\n3. 가슴이 바닥에 닿을 때까지\\n4. 팔꿈치는 45도 각도 유지\\n5. 넓은 가슴으로 밀어올려라, 만삣삐!'**
+  /// **'1. 잠들기 전 \'꿈에서 깨어난다\' 반복\\n2. 최근 꿈을 회상하라\\n3. 자각몽이 되는 순간 상상\\n4. 강한 의도를 유지\\n5. 확신을 가지고 잠들어라, 만삣삐!'**
   String get pushupWideGripInstructions;
 
   /// 와이드 그립 푸시업 일반적인 실수
   ///
   /// In ko, this message translates to:
-  /// **'• 손을 너무 넓게 벌림\\n• 팔꿈치가 완전히 바깥쪽\\n• 어깨에 무리가 가는 자세\\n• 가슴을 충분히 내리지 않음'**
+  /// **'• 의도가 너무 약함\\n• 대충 형식적으로 반복\\n• 상상이 구체적이지 않음\\n• 확신이 부족함'**
   String get pushupWideGripMistakes;
 
   /// 와이드 그립 푸시업 이름
   ///
   /// In ko, this message translates to:
-  /// **'와이드 그립 푸시업'**
+  /// **'MILD 기법'**
   String get pushupWideGripName;
 
   /// 푸시업 개수 형식
   ///
   /// In ko, this message translates to:
-  /// **'{count}개'**
+  /// **'{count}회'**
   String pushupsCount(int count);
 
   /// 푸시업 레이블
   ///
   /// In ko, this message translates to:
-  /// **'💪 푸시업'**
+  /// **'💪 자각몽 기법'**
   String get pushupsLabel;
 
   /// 운동 결과 표시 형식
@@ -6983,13 +7655,13 @@ abstract class AppLocalizations {
   /// Total pushups label
   ///
   /// In ko, this message translates to:
-  /// **'총 푸시업'**
+  /// **'총 자각몽 연습'**
   String get totalPushups;
 
   /// 자세 튜토리얼 조언
   ///
   /// In ko, this message translates to:
-  /// **'완벽한 자세가 완벽한 차드를 만든다!'**
+  /// **'완벽한 기법이 완벽한 드림 스피릿을 만든다!'**
   String get tutorialAdviceForm;
 
   /// Tab title for variation exercises
@@ -7001,7 +7673,7 @@ abstract class AppLocalizations {
   /// 영상 설명 2
   ///
   /// In ko, this message translates to:
-  /// **'다양한 팔굽혀펴기 변형으로 근육 자극'**
+  /// **'다양한 자각몽 기법으로 의식 자극'**
   String get variousPushupStimulation;
 
   /// No description provided for @watchVideo.
@@ -7013,13 +7685,13 @@ abstract class AppLocalizations {
   /// No description provided for @specialPushupForChads.
   ///
   /// In ko, this message translates to:
-  /// **'차드를 위한 특별한 푸시업'**
+  /// **'드림 스피릿을 위한 특별한 자각몽 기법'**
   String get specialPushupForChads;
 
   /// No description provided for @chadPerfectFormGuide.
   ///
   /// In ko, this message translates to:
-  /// **'차드의 완벽한 푸시업 폼 가이드! 💪'**
+  /// **'드림 스피릿의 완벽한 자각몽 기법 가이드! 💪'**
   String get chadPerfectFormGuide;
 
   /// No description provided for @formGuideAdvancedLevel.
@@ -7124,7 +7796,7 @@ abstract class AppLocalizations {
   /// **'여정을 시작하는 단계다.\n아직 잠이 덜 깼지만 곧 깨어날 거야! 😴'**
   String get chadSleepyCapDesc;
 
-  /// 수면모자 차드 타이틀
+  /// 수면모자 드림 스피릿 타이틀
   ///
   /// In ko, this message translates to:
   /// **'수면모자'**
@@ -7178,13 +7850,13 @@ abstract class AppLocalizations {
   /// **'휴식필요'**
   String get recoveryLevelPoor;
 
-  /// 전략적 차드 모드 설명
+  /// 전략적 드림 스피릿 모드 설명
   ///
   /// In ko, this message translates to:
   /// **'과학적 근육 회복 + 지속가능한 파워! 🧠💪'**
   String get scientificRecovery;
 
-  /// 수면모자 차드 진화 상태
+  /// 수면모자 드림 스피릿 진화 상태
   ///
   /// In ko, this message translates to:
   /// **'수면모자 진화'**
@@ -7385,7 +8057,7 @@ abstract class AppLocalizations {
   /// 연속 운동 중단 메시지
   ///
   /// In ko, this message translates to:
-  /// **'연속 운동이 끊어졌다'**
+  /// **'연속 연습이 끊어졌다'**
   String get streakBrokenMessage;
 
   /// No description provided for @streakChallenge.
@@ -7397,31 +8069,31 @@ abstract class AppLocalizations {
   /// 연속 운동 지속 메시지
   ///
   /// In ko, this message translates to:
-  /// **'연속 운동 계속 중!'**
+  /// **'연속 연습 계속 중!'**
   String get streakContinueMessage;
 
   /// 연속 운동 격려 설정
   ///
   /// In ko, this message translates to:
-  /// **'연속 운동 격려'**
+  /// **'연속 연습 격려'**
   String get streakEncouragement;
 
   /// 연속 운동 격려 설정 부제목
   ///
   /// In ko, this message translates to:
-  /// **'3일 연속 운동 시 격려 메시지'**
+  /// **'3일 연속 연습 시 격려 메시지'**
   String get streakEncouragementSubtitle;
 
   /// 연속 운동 진행률 라벨
   ///
   /// In ko, this message translates to:
-  /// **'연속 운동 진행률'**
+  /// **'연속 연습 진행률'**
   String get streakProgress;
 
   /// 연속 운동 시작 메시지
   ///
   /// In ko, this message translates to:
-  /// **'연속 운동 시작!'**
+  /// **'연속 연습 시작!'**
   String get streakStartMessage;
 
   /// No description provided for @loadingProgramData.
@@ -7433,13 +8105,13 @@ abstract class AppLocalizations {
   /// No description provided for @startWorkoutToStartProgram.
   ///
   /// In ko, this message translates to:
-  /// **'운동을 시작하여 프로그램을 시작하세요! 💪'**
+  /// **'연습을 시작하여 프로그램을 시작하세요! 💪'**
   String get startWorkoutToStartProgram;
 
   /// No description provided for @progressShownAfterWorkout.
   ///
   /// In ko, this message translates to:
-  /// **'운동을 시작하면 진행률이 표시됩니다'**
+  /// **'연습을 시작하면 진행률이 표시됩니다'**
   String get progressShownAfterWorkout;
 
   /// No description provided for @overallProgramProgress.
@@ -7469,7 +8141,7 @@ abstract class AppLocalizations {
   /// No description provided for @totalSessions.
   ///
   /// In ko, this message translates to:
-  /// **'총 운동 세션'**
+  /// **'총 연습 세션'**
   String get totalSessions;
 
   /// No description provided for @dataBackupProgress.
@@ -7505,8 +8177,267 @@ abstract class AppLocalizations {
   /// No description provided for @statisticsBannerText.
   ///
   /// In ko, this message translates to:
-  /// **'차드 성장을 확인하라! 📊'**
+  /// **'드림 스피릿 성장을 확인하라! 📊'**
   String get statisticsBannerText;
+
+  /// No description provided for @progressLoadingError.
+  ///
+  /// In ko, this message translates to:
+  /// **'진행률 데이터 로드 실패'**
+  String get progressLoadingError;
+
+  /// No description provided for @progressRepsUnit.
+  ///
+  /// In ko, this message translates to:
+  /// **'{count} 회'**
+  String progressRepsUnit(Object count);
+
+  /// No description provided for @progressWeekNumber.
+  ///
+  /// In ko, this message translates to:
+  /// **'{week}주차'**
+  String progressWeekNumber(Object week);
+
+  /// No description provided for @progressDateWorkout.
+  ///
+  /// In ko, this message translates to:
+  /// **'날짜: {date}'**
+  String progressDateWorkout(Object date);
+
+  /// No description provided for @progressNoWorkoutThisDay.
+  ///
+  /// In ko, this message translates to:
+  /// **'휴식일'**
+  String get progressNoWorkoutThisDay;
+
+  /// No description provided for @progressWeekDaySession.
+  ///
+  /// In ko, this message translates to:
+  /// **'{week}주차, {day}일차'**
+  String progressWeekDaySession(Object day, Object week);
+
+  /// No description provided for @progressSetsUnit.
+  ///
+  /// In ko, this message translates to:
+  /// **'{count} 세트'**
+  String progressSetsUnit(Object count);
+
+  /// No description provided for @progressSetRecordLabel.
+  ///
+  /// In ko, this message translates to:
+  /// **'세트 기록'**
+  String get progressSetRecordLabel;
+
+  /// No description provided for @progressSetNumber.
+  ///
+  /// In ko, this message translates to:
+  /// **'{number}세트'**
+  String progressSetNumber(Object number);
+
+  /// No description provided for @progressChadEvolutionStage.
+  ///
+  /// In ko, this message translates to:
+  /// **'드림 스피릿 진화'**
+  String get progressChadEvolutionStage;
+
+  /// No description provided for @progressChadLevel.
+  ///
+  /// In ko, this message translates to:
+  /// **'레벨 {level}'**
+  String progressChadLevel(Object level);
+
+  /// No description provided for @progressEvolvingToGigaChad.
+  ///
+  /// In ko, this message translates to:
+  /// **'기가 드림 스피릿으로 진화 중!'**
+  String get progressEvolvingToGigaChad;
+
+  /// No description provided for @progressNextLevelRemaining.
+  ///
+  /// In ko, this message translates to:
+  /// **'다음 레벨까지 {remaining} XP'**
+  String progressNextLevelRemaining(Object remaining);
+
+  /// No description provided for @progressViewAll.
+  ///
+  /// In ko, this message translates to:
+  /// **'전체 보기'**
+  String get progressViewAll;
+
+  /// No description provided for @progressRepsCompleted.
+  ///
+  /// In ko, this message translates to:
+  /// **'{reps} 회 완료'**
+  String progressRepsCompleted(Object reps);
+
+  /// No description provided for @progressPersonalRecords.
+  ///
+  /// In ko, this message translates to:
+  /// **'개인 기록'**
+  String get progressPersonalRecords;
+
+  /// No description provided for @progressBestRecord.
+  ///
+  /// In ko, this message translates to:
+  /// **'최고 기록'**
+  String get progressBestRecord;
+
+  /// No description provided for @progressBestWeek.
+  ///
+  /// In ko, this message translates to:
+  /// **'최고의 주'**
+  String get progressBestWeek;
+
+  /// No description provided for @progressConsecutiveDays.
+  ///
+  /// In ko, this message translates to:
+  /// **'연속 일수'**
+  String get progressConsecutiveDays;
+
+  /// No description provided for @progressDaysUnit.
+  ///
+  /// In ko, this message translates to:
+  /// **'{count} 일'**
+  String progressDaysUnit(Object count);
+
+  /// No description provided for @progressAverageScore.
+  ///
+  /// In ko, this message translates to:
+  /// **'평균 점수'**
+  String get progressAverageScore;
+
+  /// No description provided for @progressAchievementFirstStep.
+  ///
+  /// In ko, this message translates to:
+  /// **'첫 발걸음'**
+  String get progressAchievementFirstStep;
+
+  /// No description provided for @progressAchievementFirstStepDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'첫 훈련 세션 완료'**
+  String get progressAchievementFirstStepDesc;
+
+  /// No description provided for @progressAchievementHundredPushups.
+  ///
+  /// In ko, this message translates to:
+  /// **'백 개 마크'**
+  String get progressAchievementHundredPushups;
+
+  /// No description provided for @progressAchievementHundredPushupsDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'한 세션에서 푸쉬업 100개 완료'**
+  String get progressAchievementHundredPushupsDesc;
+
+  /// No description provided for @progressAchievementPerfectionist.
+  ///
+  /// In ko, this message translates to:
+  /// **'완벽주의자'**
+  String get progressAchievementPerfectionist;
+
+  /// No description provided for @progressAchievementPerfectionistDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'완벽한 자세로 모든 세트 완료'**
+  String get progressAchievementPerfectionistDesc;
+
+  /// No description provided for @progressAchievementWeekChallenge.
+  ///
+  /// In ko, this message translates to:
+  /// **'주간 워리어'**
+  String get progressAchievementWeekChallenge;
+
+  /// No description provided for @progressAchievementWeekChallengeDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'한 주의 모든 운동 완료'**
+  String get progressAchievementWeekChallengeDesc;
+
+  /// No description provided for @progressCurrentChadStatus.
+  ///
+  /// In ko, this message translates to:
+  /// **'현재 상태'**
+  String get progressCurrentChadStatus;
+
+  /// No description provided for @progressMaxLevelAchieved.
+  ///
+  /// In ko, this message translates to:
+  /// **'최대 레벨 달성!'**
+  String get progressMaxLevelAchieved;
+
+  /// No description provided for @progressNextLevel.
+  ///
+  /// In ko, this message translates to:
+  /// **'다음 레벨: {title}'**
+  String progressNextLevel(Object title);
+
+  /// No description provided for @progressNoData.
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터 없음'**
+  String get progressNoData;
+
+  /// No description provided for @progressPercentComplete.
+  ///
+  /// In ko, this message translates to:
+  /// **'{percent}% 완료'**
+  String progressPercentComplete(Object percent);
+
+  /// No description provided for @progressRequirementProgramStart.
+  ///
+  /// In ko, this message translates to:
+  /// **'프로그램 시작'**
+  String get progressRequirementProgramStart;
+
+  /// No description provided for @progressRequirementWeek1.
+  ///
+  /// In ko, this message translates to:
+  /// **'1주차 완료'**
+  String get progressRequirementWeek1;
+
+  /// No description provided for @progressRequirementWeek2.
+  ///
+  /// In ko, this message translates to:
+  /// **'2주차 완료'**
+  String get progressRequirementWeek2;
+
+  /// No description provided for @progressRequirementWeek3.
+  ///
+  /// In ko, this message translates to:
+  /// **'3주차 완료'**
+  String get progressRequirementWeek3;
+
+  /// No description provided for @progressRequirementWeek4.
+  ///
+  /// In ko, this message translates to:
+  /// **'4주차 완료'**
+  String get progressRequirementWeek4;
+
+  /// No description provided for @progressRequirementWeek5.
+  ///
+  /// In ko, this message translates to:
+  /// **'5주차 완료'**
+  String get progressRequirementWeek5;
+
+  /// No description provided for @progressRequirementWeek6.
+  ///
+  /// In ko, this message translates to:
+  /// **'6주차 완료'**
+  String get progressRequirementWeek6;
+
+  /// No description provided for @progressScoreUnit.
+  ///
+  /// In ko, this message translates to:
+  /// **'{score} 점'**
+  String progressScoreUnit(Object score);
+
+  /// No description provided for @progressTooltipWeekComplete.
+  ///
+  /// In ko, this message translates to:
+  /// **'{week}주차: {completionRate}% 완료\\n{completedSessions}/{totalSessions} 세션'**
+  String progressTooltipWeekComplete(Object completedSessions,
+      Object completionRate, Object totalSessions, Object week);
 
   /// Advanced level label
   ///
@@ -7517,13 +8448,13 @@ abstract class AppLocalizations {
   /// 고급자 레벨 설명
   ///
   /// In ko, this message translates to:
-  /// **'궁극의 차드'**
+  /// **'궁극의 드림 스피릿'**
   String get alphaLevelDescription;
 
   /// 고급 레벨 부제목
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 11개 이상 - 이미 나만의 자질'**
+  /// **'자각몽 연습 11일 이상 - 이미 드림 스피릿 자질'**
   String get alphaLevelSubtitle;
 
   /// 고급자 레벨 제목
@@ -7547,31 +8478,31 @@ abstract class AppLocalizations {
   /// Variations section subtitle
   ///
   /// In ko, this message translates to:
-  /// **'초보자부터 차드까지! 단계별로 도전해보자! 🚀'**
+  /// **'초보자부터 드림 스피릿까지! 단계별로 도전해보자! 🚀'**
   String get beginnerToChad;
 
-  /// 차드 레벨 라벨
+  /// 드림 스피릿 레벨 라벨
   ///
   /// In ko, this message translates to:
-  /// **'차드 레벨'**
+  /// **'드림 스피릿 레벨'**
   String get chadLevel;
 
-  /// 푸시업 상급 난이도
+  /// 자각몽 상급 난이도
   ///
   /// In ko, this message translates to:
-  /// **'차드 - 강력한 기가들'**
+  /// **'드림 스피릿 - 강력한 기가들'**
   String get difficultyAdvanced;
 
-  /// 푸시업 초급 난이도
+  /// 자각몽 초급 난이도
   ///
   /// In ko, this message translates to:
   /// **'푸시 - 시작하는 만삣삐들'**
   String get difficultyBeginner;
 
-  /// 푸시업 중급 난이도
+  /// 자각몽 중급 난이도
   ///
   /// In ko, this message translates to:
-  /// **'알파 지망생 - 성장하는 차드들'**
+  /// **'알파 지망생 - 성장하는 드림 스피릿들'**
   String get difficultyIntermediate;
 
   /// Intermediate level label
@@ -7607,7 +8538,7 @@ abstract class AppLocalizations {
   /// 초급 레벨 설명
   ///
   /// In ko, this message translates to:
-  /// **'🔥 ROOKIE 단계. 푸시업 제국의 시작점.\n각성의 여정이 시작되었다. 🔥'**
+  /// **'🔥 ROOKIE 단계. 자각몽 제국의 시작점.\n각성의 여정이 시작되었다. 🔥'**
   String get levelDescRookie;
 
   /// 고급 목표 메시지
@@ -7631,7 +8562,7 @@ abstract class AppLocalizations {
   /// 초급 목표 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🔥 목표: 14주 후 연속 100개 푸시업 ABSOLUTE DOMINATION! 🔥'**
+  /// **'🔥 목표: 30일 만에 자각몽 마스터 ABSOLUTE DOMINATION! 🔥'**
   String get levelGoalRookie;
 
   /// 레벨 레이블
@@ -7661,28 +8592,28 @@ abstract class AppLocalizations {
   /// 초급 격려 메시지
   ///
   /// In ko, this message translates to:
-  /// **'🔥 모든 EMPEROR는 여기서 시작한다!\n14주 후 MIND-BLOWING TRANSFORMATION을 경험하라, 만삣삐! 🔥'**
+  /// **'🔥 모든 EMPEROR는 여기서 시작한다!\n30일 후 MIND-BLOWING TRANSFORMATION을 경험하라, 만삣삐! 🔥'**
   String get levelMotivationRookie;
 
-  /// 고급 차드 이름
+  /// 고급 드림 스피릿 이름
   ///
   /// In ko, this message translates to:
   /// **'Alpha'**
   String get levelNameAlpha;
 
-  /// 최고급 차드 이름
+  /// 최고급 드림 스피릿 이름
   ///
   /// In ko, this message translates to:
-  /// **'기가 차드'**
+  /// **'기가 드림 스피릿'**
   String get levelNameGiga;
 
-  /// 중급 차드 이름
+  /// 중급 드림 스피릿 이름
   ///
   /// In ko, this message translates to:
   /// **'Rising'**
   String get levelNameRising;
 
-  /// 초급 차드 이름
+  /// 초급 드림 스피릿 이름
   ///
   /// In ko, this message translates to:
   /// **'Rookie'**
@@ -7691,7 +8622,7 @@ abstract class AppLocalizations {
   /// 레벨 선택 설명
   ///
   /// In ko, this message translates to:
-  /// **'현재 푸시업 최대 횟수에 맞는 레벨을 선택해라!\n14주 후 목표 달성을 위한 맞춤 프로그램이 제공된다!'**
+  /// **'현재 자각몽 연습 경험에 맞는 레벨을 선택해라!\n30일 만에 자각몽 마스터를 위한 맞춤 프로그램이 제공된다!'**
   String get levelSelectionDescription;
 
   /// 레벨 선택 헤더
@@ -7712,10 +8643,10 @@ abstract class AppLocalizations {
   /// **'최고 레벨 달성!'**
   String get maxLevelAchieved;
 
-  /// 새로운 차드 등급 텍스트
+  /// 새로운 드림 스피릿 등급 텍스트
   ///
   /// In ko, this message translates to:
-  /// **'새로운 차드 등급'**
+  /// **'새로운 드림 스피릿 등급'**
   String get newChadLevel;
 
   /// Progress to next level label
@@ -7733,13 +8664,13 @@ abstract class AppLocalizations {
   /// 중급자 레벨 설명
   ///
   /// In ko, this message translates to:
-  /// **'성장하는 차드'**
+  /// **'성장하는 드림 스피릿'**
   String get risingLevelDescription;
 
   /// 중급 레벨 부제목
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 6-10개 - 차드로 성장 중'**
+  /// **'자각몽 연습 6-10일 - 드림 스피릿로 성장 중'**
   String get risingLevelSubtitle;
 
   /// 중급자 레벨 제목
@@ -7751,13 +8682,13 @@ abstract class AppLocalizations {
   /// 초보자 레벨 설명
   ///
   /// In ko, this message translates to:
-  /// **'천천히 시작하는 차드'**
+  /// **'천천히 시작하는 드림 스피릿'**
   String get rookieLevelDescription;
 
   /// 초급 레벨 부제목
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 6개 미만 - 기초부터 차근차근'**
+  /// **'자각몽 연습 6일 미만 - 기초부터 차근차근'**
   String get rookieLevelSubtitle;
 
   /// 초보자 레벨 제목
@@ -7805,55 +8736,55 @@ abstract class AppLocalizations {
   /// No description provided for @rookieGoalDesc.
   ///
   /// In ko, this message translates to:
-  /// **'5개 이하 → 100개 달성'**
+  /// **'5일 이하 → 30일 마스터 달성'**
   String get rookieGoalDesc;
 
   /// No description provided for @risingGoalDesc.
   ///
   /// In ko, this message translates to:
-  /// **'6-10개 → 100개 달성'**
+  /// **'6-10일 → 30일 마스터 달성'**
   String get risingGoalDesc;
 
   /// No description provided for @alphaGoalDesc.
   ///
   /// In ko, this message translates to:
-  /// **'11-20개 → 100개 달성'**
+  /// **'11-20일 → 30일 마스터 달성'**
   String get alphaGoalDesc;
 
   /// No description provided for @gigaGoalDesc.
   ///
   /// In ko, this message translates to:
-  /// **'21개 이상 → 100개+ 달성'**
+  /// **'21일 이상 → 30일+ 마스터 달성'**
   String get gigaGoalDesc;
 
   /// No description provided for @difficultyAdvancedDesc.
   ///
   /// In ko, this message translates to:
-  /// **'진정한 차드'**
+  /// **'진정한 드림 스피릿'**
   String get difficultyAdvancedDesc;
 
   /// No description provided for @difficultyBeginnerDesc.
   ///
   /// In ko, this message translates to:
-  /// **'천천히 시작하는 차드'**
+  /// **'천천히 시작하는 드림 스피릿'**
   String get difficultyBeginnerDesc;
 
   /// No description provided for @difficultyIntermediateDesc.
   ///
   /// In ko, this message translates to:
-  /// **'꾸준한 차드'**
+  /// **'꾸준한 드림 스피릿'**
   String get difficultyIntermediateDesc;
 
   /// No description provided for @achievementAllRounderDesc.
   ///
   /// In ko, this message translates to:
-  /// **'모든 푸시업 타입을 시도했다'**
+  /// **'모든 자각몽 체크리스트 타입을 시도했다'**
   String get achievementAllRounderDesc;
 
   /// No description provided for @achievementAllRounderMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'모든 타입 마스터! 올라운더 차드! 🌈'**
+  /// **'모든 타입 마스터! 올라운더 드림 스피릿! 🌈'**
   String get achievementAllRounderMotivation;
 
   /// No description provided for @achievementAllRounderTitle.
@@ -7880,22 +8811,22 @@ abstract class AppLocalizations {
   /// **'나만의 힘을 느꼈다! 💪'**
   String get achievementCelebrationMessage;
 
-  /// 100회 업적 제목
+  /// 100일 훈련 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'센츄리온'**
   String get achievementCenturion;
 
-  /// 100회 업적 설명
+  /// 100일 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'총 100회의 푸쉬업을 달성하다'**
+  /// **'총 100일 자각몽 연습을 달성하다'**
   String get achievementCenturionDesc;
 
   /// 100개 누적 챌린지 완료 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'100개 누적 푸쉬업 챌린지를 완료했다'**
+  /// **'100일 누적 자각몽 챌린지를 완료했다'**
   String get achievementChallenge100CumulativeDesc;
 
   /// 100개 누적 챌린지 완료 업적 동기부여 메시지
@@ -7907,13 +8838,13 @@ abstract class AppLocalizations {
   /// 100개 누적 챌린지 완료 업적 제목
   ///
   /// In ko, this message translates to:
-  /// **'100개 누적 챌린지 완료'**
+  /// **'100일 누적 챌린지 완료'**
   String get achievementChallenge100CumulativeTitle;
 
   /// 14일 연속 챌린지 완료 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'14일 연속 운동 챌린지를 완료했다'**
+  /// **'14일 연속 자각몽 연습 챌린지를 완료했다'**
   String get achievementChallenge14DaysDesc;
 
   /// 14일 연속 챌린지 완료 업적 동기부여 메시지
@@ -7931,7 +8862,7 @@ abstract class AppLocalizations {
   /// 200개 누적 챌린지 완료 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'200개 누적 푸쉬업 챌린지를 완료했다'**
+  /// **'200일 누적 자각몽 챌린지를 완료했다'**
   String get achievementChallenge200CumulativeDesc;
 
   /// 200개 누적 챌린지 완료 업적 동기부여 메시지
@@ -7943,13 +8874,13 @@ abstract class AppLocalizations {
   /// 200개 누적 챌린지 완료 업적 제목
   ///
   /// In ko, this message translates to:
-  /// **'200개 누적 챌린지 완료'**
+  /// **'200일 누적 챌린지 완료'**
   String get achievementChallenge200CumulativeTitle;
 
   /// 50개 한번에 챌린지 완료 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'한 번에 50개 푸쉬업 챌린지를 완료했다'**
+  /// **'한 번에 50개 자각몽 기법 챌린지를 완료했다'**
   String get achievementChallenge50SingleDesc;
 
   /// 50개 한번에 챌린지 완료 업적 동기부여 메시지
@@ -7961,13 +8892,13 @@ abstract class AppLocalizations {
   /// 50개 한번에 챌린지 완료 업적 제목
   ///
   /// In ko, this message translates to:
-  /// **'50개 한번에 챌린지 완료'**
+  /// **'50개 기법 한번에 챌린지 완료'**
   String get achievementChallenge50SingleTitle;
 
   /// 7일 연속 챌린지 완료 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'7일 연속 운동 챌린지를 완료했다'**
+  /// **'7일 연속 자각몽 연습 챌린지를 완료했다'**
   String get achievementChallenge7DaysDesc;
 
   /// 7일 연속 챌린지 완료 업적 동기부여 메시지
@@ -8003,13 +8934,13 @@ abstract class AppLocalizations {
   /// No description provided for @achievementComebackKidDesc.
   ///
   /// In ko, this message translates to:
-  /// **'7일 이상 쉰 후 다시 운동을 시작했다'**
+  /// **'7일 이상 쉰 후 다시 꿈 연습을 시작했다'**
   String get achievementComebackKidDesc;
 
   /// No description provided for @achievementComebackKidMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'포기하지 않는 마음! 컴백의 차드! 🔄'**
+  /// **'포기하지 않는 마음! 컴백의 드림 스피릿! 🔄'**
   String get achievementComebackKidMotivation;
 
   /// No description provided for @achievementComebackKidTitle.
@@ -8018,55 +8949,55 @@ abstract class AppLocalizations {
   /// **'컴백 키드'**
   String get achievementComebackKidTitle;
 
-  /// 완료율 80% 업적 설명
+  /// 달성률 80% 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'평균 완료율 80% 이상을 달성했다'**
+  /// **'평균 달성률 80% 이상을 달성했다'**
   String get achievementCompletionRate80Desc;
 
-  /// 완료율 80% 업적 동기부여
+  /// 달성률 80% 업적 동기부여
   ///
   /// In ko, this message translates to:
   /// **'꾸준함이 답이다! 계속 간다! 💪'**
   String get achievementCompletionRate80Motivation;
 
-  /// 완료율 80% 업적 제목
+  /// 달성률 80% 업적 제목
   ///
   /// In ko, this message translates to:
-  /// **'우수한 완료율'**
+  /// **'우수한 달성률'**
   String get achievementCompletionRate80Title;
 
-  /// 완료율 90% 업적 설명
+  /// 달성률 90% 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'평균 완료율 90% 이상을 달성했다'**
+  /// **'평균 달성률 90% 이상을 달성했다'**
   String get achievementCompletionRate90Desc;
 
-  /// 완료율 90% 업적 동기부여
+  /// 달성률 90% 업적 동기부여
   ///
   /// In ko, this message translates to:
   /// **'거의 완벽! 폼 미쳤다! 🔥'**
   String get achievementCompletionRate90Motivation;
 
-  /// 완료율 90% 업적 제목
+  /// 달성률 90% 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'완벽주의자'**
   String get achievementCompletionRate90Title;
 
-  /// 완료율 95% 업적 설명
+  /// 달성률 95% 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'평균 완료율 95% 이상을 달성했다'**
+  /// **'평균 달성률 95% 이상을 달성했다'**
   String get achievementCompletionRate95Desc;
 
-  /// 완료율 95% 업적 동기부여
+  /// 달성률 95% 업적 동기부여
   ///
   /// In ko, this message translates to:
   /// **'완벽에 가깝다! 레전드급! 👑'**
   String get achievementCompletionRate95Motivation;
 
-  /// 완료율 95% 업적 제목
+  /// 달성률 95% 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'마스터 퍼포머'**
@@ -8081,7 +9012,7 @@ abstract class AppLocalizations {
   /// 30일 연속 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'30일 연속으로 운동하다'**
+  /// **'30일 연속으로 자각몽 연습하다'**
   String get achievementConsistencyDesc;
 
   /// No description provided for @achievementConsistencyMasterDesc.
@@ -8111,7 +9042,7 @@ abstract class AppLocalizations {
   /// 100일 연속 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'100일 연속으로 운동하다'**
+  /// **'100일 연속으로 자각몽 연습하다'**
   String get achievementDedicationDesc;
 
   /// No description provided for @achievementDedicationMasterDesc.
@@ -8141,7 +9072,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementDoubleTroubleMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'목표의 2배! 더블 트러블 차드! 🎪'**
+  /// **'목표의 2배! 더블 트러블 드림 스피릿! 🎪'**
   String get achievementDoubleTroubleMotivation;
 
   /// No description provided for @achievementDoubleTroubleTitle.
@@ -8150,46 +9081,46 @@ abstract class AppLocalizations {
   /// **'더블 트러블'**
   String get achievementDoubleTroubleTitle;
 
-  /// 아침 운동 업적 제목
+  /// 아침 자각몽 훈련 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'얼리버드'**
   String get achievementEarlyBird;
 
-  /// 아침 운동 업적 설명
+  /// 아침 자각몽 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'오전 7시 이전에 5번 운동했다'**
+  /// **'오전 7시 이전에 5번 자각몽 연습했다'**
   String get achievementEarlyBirdDesc;
 
   /// No description provided for @achievementEarlyBirdMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'새벽을 정복한 얼리버드 차드! 🌅'**
+  /// **'새벽을 정복한 얼리버드 드림 스피릿! 🌅'**
   String get achievementEarlyBirdMotivation;
 
   /// No description provided for @achievementEarlyBirdTitle.
   ///
   /// In ko, this message translates to:
-  /// **'새벽 차드'**
+  /// **'새벽 드림 스피릿'**
   String get achievementEarlyBirdTitle;
 
-  /// 긴 운동 업적 제목
+  /// 긴 자각몽 훈련 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'지구력 왕'**
   String get achievementEndurance;
 
-  /// 긴 운동 업적 설명
+  /// 긴 자각몽 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'30분 이상 운동하다'**
+  /// **'30분 이상 자각몽 연습하다'**
   String get achievementEnduranceDesc;
 
   /// No description provided for @achievementEnduranceKingDesc.
   ///
   /// In ko, this message translates to:
-  /// **'30분 이상 운동을 지속했다'**
+  /// **'30분 이상 꿈 연습을 지속했다'**
   String get achievementEnduranceKingDesc;
 
   /// No description provided for @achievementEnduranceKingMotivation.
@@ -8207,13 +9138,13 @@ abstract class AppLocalizations {
   /// No description provided for @achievementFirst100SingleDesc.
   ///
   /// In ko, this message translates to:
-  /// **'한 번의 운동에서 100개를 달성했다'**
+  /// **'한 번의 자각몽 연습에서 100개를 달성했다'**
   String get achievementFirst100SingleDesc;
 
   /// No description provided for @achievementFirst100SingleMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'한 번에 100개! 진정한 파워 차드! 💥'**
+  /// **'한 번에 100개! 진정한 파워 드림 스피릿! 💥'**
   String get achievementFirst100SingleMotivation;
 
   /// No description provided for @achievementFirst100SingleTitle.
@@ -8225,7 +9156,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementFirst50Desc.
   ///
   /// In ko, this message translates to:
-  /// **'한 번의 운동에서 50개를 달성했다'**
+  /// **'한 번의 자각몽 연습에서 50개를 달성했다'**
   String get achievementFirst50Desc;
 
   /// No description provided for @achievementFirst50Motivation.
@@ -8249,7 +9180,7 @@ abstract class AppLocalizations {
   /// 첫 번째 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'첫 번째 푸쉬업을 완료하다'**
+  /// **'첫 번째 자각몽 연습을 완료하다'**
   String get achievementFirstJourneyDesc;
 
   /// 신 모드 업적 제목
@@ -8261,7 +9192,7 @@ abstract class AppLocalizations {
   /// 신 모드 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'한 세션에서 500회 이상 달성하다'**
+  /// **'한 세션에서 500일 훈련 이상 달성하다'**
   String get achievementGodModeDesc;
 
   /// 어려운 난이도 업적 제목
@@ -8288,16 +9219,16 @@ abstract class AppLocalizations {
   /// **'강철 의지'**
   String get achievementIronWillTitle;
 
-  /// 10000회 업적 제목
+  /// 10000일 훈련 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'전설'**
   String get achievementLegend;
 
-  /// 10000회 업적 설명
+  /// 10000일 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'총 10000회의 푸쉬업을 달성하다'**
+  /// **'총 10000일 자각몽 연습을 달성하다'**
   String get achievementLegendDesc;
 
   /// No description provided for @achievementLegendaryBeastDesc.
@@ -8333,7 +9264,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementLevel10Title.
   ///
   /// In ko, this message translates to:
-  /// **'레벨 10 차드'**
+  /// **'레벨 10 드림 스피릿'**
   String get achievementLevel10Title;
 
   /// No description provided for @achievementLevel20Desc.
@@ -8345,13 +9276,13 @@ abstract class AppLocalizations {
   /// No description provided for @achievementLevel20Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'레벨 20! 차드 중의 왕! 👑'**
+  /// **'레벨 20! 드림 스피릿 중의 왕! 👑'**
   String get achievementLevel20Motivation;
 
   /// No description provided for @achievementLevel20Title.
   ///
   /// In ko, this message translates to:
-  /// **'레벨 20 차드'**
+  /// **'레벨 20 드림 스피릿'**
   String get achievementLevel20Title;
 
   /// No description provided for @achievementLevel5Desc.
@@ -8369,49 +9300,49 @@ abstract class AppLocalizations {
   /// No description provided for @achievementLevel5Title.
   ///
   /// In ko, this message translates to:
-  /// **'레벨 5 차드'**
+  /// **'레벨 5 드림 스피릿'**
   String get achievementLevel5Title;
 
   /// No description provided for @achievementLunchBreakDesc.
   ///
   /// In ko, this message translates to:
-  /// **'점심시간(12-2시)에 5번 운동했다'**
+  /// **'점심시간(12-2시)에 5번 자각몽 연습했다'**
   String get achievementLunchBreakDesc;
 
   /// No description provided for @achievementLunchBreakMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'점심시간도 놓치지 않는 효율적인 차드! 🍽️'**
+  /// **'점심시간도 놓치지 않는 효율적인 드림 스피릿! 🍽️'**
   String get achievementLunchBreakMotivation;
 
   /// No description provided for @achievementLunchBreakTitle.
   ///
   /// In ko, this message translates to:
-  /// **'점심시간 차드'**
+  /// **'점심시간 드림 스피릿'**
   String get achievementLunchBreakTitle;
 
-  /// 5000회 업적 제목
+  /// 5000일 훈련 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'마라토너'**
   String get achievementMarathoner;
 
-  /// 5000회 업적 설명
+  /// 5000일 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'총 5000회의 푸쉬업을 달성하다'**
+  /// **'총 5000일 자각몽 연습을 달성하다'**
   String get achievementMarathonerDesc;
 
   /// No description provided for @achievementMonthlyWarriorDesc.
   ///
   /// In ko, this message translates to:
-  /// **'한 달에 20일 이상 운동했다'**
+  /// **'한 달에 20일 이상 자각몽 연습했다'**
   String get achievementMonthlyWarriorDesc;
 
   /// No description provided for @achievementMonthlyWarriorMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'한 달 20일! 월간 전사 차드! 📅'**
+  /// **'한 달 20일! 월간 전사 드림 스피릿! 📅'**
   String get achievementMonthlyWarriorMotivation;
 
   /// No description provided for @achievementMonthlyWarriorTitle.
@@ -8438,28 +9369,28 @@ abstract class AppLocalizations {
   /// **'동기부여자'**
   String get achievementMotivatorTitle;
 
-  /// 밤 운동 업적 제목
+  /// 밤 자각몽 훈련 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'올빼미'**
   String get achievementNightOwl;
 
-  /// 밤 운동 업적 설명
+  /// 밤 자각몽 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'오후 10시 이후에 5번 운동했다'**
+  /// **'오후 10시 이후에 5번 자각몽 연습했다'**
   String get achievementNightOwlDesc;
 
   /// No description provided for @achievementNightOwlMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'밤에도 포기하지 않는 올빼미 차드! 🦉'**
+  /// **'밤에도 포기하지 않는 올빼미 드림 스피릿! 🦉'**
   String get achievementNightOwlMotivation;
 
   /// No description provided for @achievementNightOwlTitle.
   ///
   /// In ko, this message translates to:
-  /// **'야행성 차드'**
+  /// **'야행성 드림 스피릿'**
   String get achievementNightOwlTitle;
 
   /// 업적 알림 채널 설명
@@ -8492,13 +9423,13 @@ abstract class AppLocalizations {
   /// **'🏆 새로운 업적 달성 시 너의 승리를 알려준다!'**
   String get achievementNotificationsDesc;
 
-  /// 목표 초과 5회 업적 제목
+  /// 목표 초과 5일 훈련 업적 제목
   ///
   /// In ko, this message translates to:
   /// **'초과달성자'**
   String get achievementOverachiever;
 
-  /// 목표 초과 5회 업적 설명
+  /// 목표 초과 5일 훈련 업적 설명
   ///
   /// In ko, this message translates to:
   /// **'목표의 150%를 5번 달성했다'**
@@ -8519,25 +9450,25 @@ abstract class AppLocalizations {
   /// No description provided for @achievementPerfect10Desc.
   ///
   /// In ko, this message translates to:
-  /// **'10번의 완벽한 운동을 달성했다'**
+  /// **'10번의 완벽한 꿈 연습을 달성했다'**
   String get achievementPerfect10Desc;
 
   /// No description provided for @achievementPerfect10Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'완벽의 마스터! 차드 중의 차드! 🏆'**
+  /// **'완벽의 마스터! 드림 스피릿 중의 드림 스피릿! 🏆'**
   String get achievementPerfect10Motivation;
 
   /// No description provided for @achievementPerfect10Title.
   ///
   /// In ko, this message translates to:
-  /// **'마스터 차드'**
+  /// **'마스터 드림 스피릿'**
   String get achievementPerfect10Title;
 
   /// No description provided for @achievementPerfect20Desc.
   ///
   /// In ko, this message translates to:
-  /// **'20번의 완벽한 운동을 달성했다'**
+  /// **'20번의 완벽한 꿈 연습을 달성했다'**
   String get achievementPerfect20Desc;
 
   /// No description provided for @achievementPerfect20Motivation.
@@ -8555,13 +9486,13 @@ abstract class AppLocalizations {
   /// No description provided for @achievementPerfect3Desc.
   ///
   /// In ko, this message translates to:
-  /// **'3번의 완벽한 운동을 달성했다'**
+  /// **'3번의 완벽한 꿈 연습을 달성했다'**
   String get achievementPerfect3Desc;
 
   /// No description provided for @achievementPerfect3Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'완벽한 트리플! 정확성의 차드! 🎯'**
+  /// **'완벽한 트리플! 정확성의 드림 스피릿! 🎯'**
   String get achievementPerfect3Motivation;
 
   /// No description provided for @achievementPerfect3Title.
@@ -8573,19 +9504,19 @@ abstract class AppLocalizations {
   /// No description provided for @achievementPerfect5Desc.
   ///
   /// In ko, this message translates to:
-  /// **'5번의 완벽한 운동을 달성했다'**
+  /// **'5번의 완벽한 꿈 연습을 달성했다'**
   String get achievementPerfect5Desc;
 
   /// No description provided for @achievementPerfect5Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'완벽을 추구하는 진정한 차드! ⭐'**
+  /// **'완벽을 추구하는 진정한 드림 스피릿! ⭐'**
   String get achievementPerfect5Motivation;
 
   /// No description provided for @achievementPerfect5Title.
   ///
   /// In ko, this message translates to:
-  /// **'완벽주의 차드'**
+  /// **'완벽주의 드림 스피릿'**
   String get achievementPerfect5Title;
 
   /// 완벽한 세트 업적 제목
@@ -8612,16 +9543,16 @@ abstract class AppLocalizations {
   /// **'완벽한 세트를 10개 달성하다'**
   String get achievementPerfectionistDesc;
 
-  /// 1000회 업적 제목
+  /// 1000일 훈련 업적 제목
   ///
   /// In ko, this message translates to:
-  /// **'푸쉬업 마스터'**
+  /// **'자각몽 마스터'**
   String get achievementPushupMaster;
 
-  /// 1000회 업적 설명
+  /// 1000일 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'총 1000회의 푸쉬업을 달성하다'**
+  /// **'총 1000일 자각몽 연습을 달성하다'**
   String get achievementPushupMasterDesc;
 
   /// 일반 등급
@@ -8657,7 +9588,7 @@ abstract class AppLocalizations {
   /// 업적 화면 광고 대체 메시지
   ///
   /// In ko, this message translates to:
-  /// **'업적을 달성해서 차드가 되자! 🏆'**
+  /// **'업적을 달성해서 드림 스피릿가 되자! 🏆'**
   String get achievementScreenAdMessage;
 
   /// No description provided for @achievementSeasonalChampionDesc.
@@ -8693,7 +9624,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementSpeedDemonMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'번개 같은 속도! 스피드의 차드! 💨'**
+  /// **'번개 같은 속도! 스피드의 드림 스피릿! 💨'**
   String get achievementSpeedDemonMotivation;
 
   /// No description provided for @achievementSpeedDemonTitle.
@@ -8705,7 +9636,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementStreak100Desc.
   ///
   /// In ko, this message translates to:
-  /// **'100일 연속 운동을 완료했다'**
+  /// **'100일 연속 자각몽 연습을 완료했다'**
   String get achievementStreak100Desc;
 
   /// No description provided for @achievementStreak100Motivation.
@@ -8717,31 +9648,31 @@ abstract class AppLocalizations {
   /// No description provided for @achievementStreak100Title.
   ///
   /// In ko, this message translates to:
-  /// **'100일 신화 차드'**
+  /// **'100일 신화 드림 스피릿'**
   String get achievementStreak100Title;
 
   /// No description provided for @achievementStreak14Desc.
   ///
   /// In ko, this message translates to:
-  /// **'14일 연속 운동을 완료했다'**
+  /// **'14일 연속 자각몽 연습을 완료했다'**
   String get achievementStreak14Desc;
 
   /// No description provided for @achievementStreak14Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'끈기의 왕! 차드 중의 차드! 🏃‍♂️'**
+  /// **'끈기의 왕! 드림 스피릿 중의 드림 스피릿! 🏃‍♂️'**
   String get achievementStreak14Motivation;
 
   /// No description provided for @achievementStreak14Title.
   ///
   /// In ko, this message translates to:
-  /// **'2주 마라톤 차드'**
+  /// **'2주 마라톤 드림 스피릿'**
   String get achievementStreak14Title;
 
   /// No description provided for @achievementStreak30Desc.
   ///
   /// In ko, this message translates to:
-  /// **'30일 연속 운동을 완료했다'**
+  /// **'30일 연속 자각몽 연습을 완료했다'**
   String get achievementStreak30Desc;
 
   /// No description provided for @achievementStreak30Motivation.
@@ -8753,31 +9684,31 @@ abstract class AppLocalizations {
   /// No description provided for @achievementStreak30Title.
   ///
   /// In ko, this message translates to:
-  /// **'월간 궁극 차드'**
+  /// **'월간 궁극 드림 스피릿'**
   String get achievementStreak30Title;
 
   /// No description provided for @achievementStreak3Desc.
   ///
   /// In ko, this message translates to:
-  /// **'3일 연속 운동을 완료했다'**
+  /// **'3일 연속 자각몽 연습을 완료했다'**
   String get achievementStreak3Desc;
 
   /// No description provided for @achievementStreak3Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'꾸준함이 차드를 만듭니다! 🔥'**
+  /// **'꾸준함이 Dream Spirit를 만듭니다! 🔥'**
   String get achievementStreak3Motivation;
 
   /// No description provided for @achievementStreak3Title.
   ///
   /// In ko, this message translates to:
-  /// **'3일 연속 차드'**
+  /// **'3일 연속 드림 스피릿'**
   String get achievementStreak3Title;
 
   /// No description provided for @achievementStreak60Desc.
   ///
   /// In ko, this message translates to:
-  /// **'60일 연속 운동을 완료했다'**
+  /// **'60일 연속 자각몽 연습을 완료했다'**
   String get achievementStreak60Desc;
 
   /// No description provided for @achievementStreak60Motivation.
@@ -8789,31 +9720,31 @@ abstract class AppLocalizations {
   /// No description provided for @achievementStreak60Title.
   ///
   /// In ko, this message translates to:
-  /// **'2개월 레전드 차드'**
+  /// **'2개월 레전드 드림 스피릿'**
   String get achievementStreak60Title;
 
   /// No description provided for @achievementStreak7Desc.
   ///
   /// In ko, this message translates to:
-  /// **'7일 연속 운동을 완료했다'**
+  /// **'7일 연속 자각몽 연습을 완료했다'**
   String get achievementStreak7Desc;
 
   /// No description provided for @achievementStreak7Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'일주일을 정복한 진정한 차드! 💪'**
+  /// **'일주일을 정복한 진정한 드림 스피릿! 💪'**
   String get achievementStreak7Motivation;
 
   /// No description provided for @achievementStreak7Title.
   ///
   /// In ko, this message translates to:
-  /// **'주간 차드'**
+  /// **'주간 드림 스피릿'**
   String get achievementStreak7Title;
 
   /// No description provided for @achievementTotal10000Desc.
   ///
   /// In ko, this message translates to:
-  /// **'총 10000개의 푸시업을 완료했다'**
+  /// **'총 10000개의 자각몽 체크리스트을 완료했다'**
   String get achievementTotal10000Desc;
 
   /// No description provided for @achievementTotal10000Motivation.
@@ -8825,31 +9756,31 @@ abstract class AppLocalizations {
   /// No description provided for @achievementTotal10000Title.
   ///
   /// In ko, this message translates to:
-  /// **'10000 갓 차드'**
+  /// **'10000 갓 드림 스피릿'**
   String get achievementTotal10000Title;
 
   /// No description provided for @achievementTotal1000Desc.
   ///
   /// In ko, this message translates to:
-  /// **'총 1000개의 푸시업을 완료했다'**
+  /// **'총 1000개의 자각몽 체크리스트을 완료했다'**
   String get achievementTotal1000Desc;
 
   /// No description provided for @achievementTotal1000Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'1000개 돌파! 메가 차드 달성! ⚡'**
+  /// **'1000개 돌파! 메가 드림 스피릿 달성! ⚡'**
   String get achievementTotal1000Motivation;
 
   /// No description provided for @achievementTotal1000Title.
   ///
   /// In ko, this message translates to:
-  /// **'1000 메가 차드'**
+  /// **'1000 메가 드림 스피릿'**
   String get achievementTotal1000Title;
 
   /// No description provided for @achievementTotal100Desc.
   ///
   /// In ko, this message translates to:
-  /// **'총 100개의 푸시업을 완료했다'**
+  /// **'총 100개의 자각몽 체크리스트을 완료했다'**
   String get achievementTotal100Desc;
 
   /// No description provided for @achievementTotal100Motivation.
@@ -8867,7 +9798,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementTotal2500Desc.
   ///
   /// In ko, this message translates to:
-  /// **'총 2500개의 푸시업을 완료했다'**
+  /// **'총 2500개의 자각몽 체크리스트을 완료했다'**
   String get achievementTotal2500Desc;
 
   /// No description provided for @achievementTotal2500Motivation.
@@ -8879,13 +9810,13 @@ abstract class AppLocalizations {
   /// No description provided for @achievementTotal2500Title.
   ///
   /// In ko, this message translates to:
-  /// **'2500 슈퍼 차드'**
+  /// **'2500 슈퍼 드림 스피릿'**
   String get achievementTotal2500Title;
 
   /// No description provided for @achievementTotal250Desc.
   ///
   /// In ko, this message translates to:
-  /// **'총 250개의 푸시업을 완료했다'**
+  /// **'총 250개의 자각몽 체크리스트을 완료했다'**
   String get achievementTotal250Desc;
 
   /// No description provided for @achievementTotal250Motivation.
@@ -8897,49 +9828,49 @@ abstract class AppLocalizations {
   /// No description provided for @achievementTotal250Title.
   ///
   /// In ko, this message translates to:
-  /// **'250 차드'**
+  /// **'250 드림 스피릿'**
   String get achievementTotal250Title;
 
   /// No description provided for @achievementTotal5000Desc.
   ///
   /// In ko, this message translates to:
-  /// **'총 5000개의 푸시업을 완료했다'**
+  /// **'총 5000개의 자각몽 체크리스트을 완료했다'**
   String get achievementTotal5000Desc;
 
   /// No description provided for @achievementTotal5000Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'5000개! 당신은 울트라 차드이다! 🌟'**
+  /// **'5000개! 당신은 울트라 Dream Spirit가다! 🌟'**
   String get achievementTotal5000Motivation;
 
   /// No description provided for @achievementTotal5000Title.
   ///
   /// In ko, this message translates to:
-  /// **'5000 울트라 차드'**
+  /// **'5000 울트라 드림 스피릿'**
   String get achievementTotal5000Title;
 
   /// No description provided for @achievementTotal500Desc.
   ///
   /// In ko, this message translates to:
-  /// **'총 500개의 푸시업을 완료했다'**
+  /// **'총 500개의 자각몽 체크리스트을 완료했다'**
   String get achievementTotal500Desc;
 
   /// No description provided for @achievementTotal500Motivation.
   ///
   /// In ko, this message translates to:
-  /// **'500개 돌파! 중급 차드 달성! 🚀'**
+  /// **'500개 돌파! 중급 드림 스피릿 달성! 🚀'**
   String get achievementTotal500Motivation;
 
   /// No description provided for @achievementTotal500Title.
   ///
   /// In ko, this message translates to:
-  /// **'500 차드'**
+  /// **'500 드림 스피릿'**
   String get achievementTotal500Title;
 
   /// No description provided for @achievementTotal50Desc.
   ///
   /// In ko, this message translates to:
-  /// **'총 50개의 푸시업을 완료했다'**
+  /// **'총 50개의 자각몽 체크리스트을 완료했다'**
   String get achievementTotal50Desc;
 
   /// No description provided for @achievementTotal50Motivation.
@@ -8957,7 +9888,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementTutorialExplorerDesc.
   ///
   /// In ko, this message translates to:
-  /// **'첫 번째 푸시업 튜토리얼을 확인했다'**
+  /// **'첫 번째 자각몽 체크리스트 튜토리얼을 확인했다'**
   String get achievementTutorialExplorerDesc;
 
   /// No description provided for @achievementTutorialExplorerMotivation.
@@ -8969,43 +9900,43 @@ abstract class AppLocalizations {
   /// No description provided for @achievementTutorialExplorerTitle.
   ///
   /// In ko, this message translates to:
-  /// **'탐구하는 차드'**
+  /// **'탐구하는 드림 스피릿'**
   String get achievementTutorialExplorerTitle;
 
   /// No description provided for @achievementTutorialMasterDesc.
   ///
   /// In ko, this message translates to:
-  /// **'모든 푸시업 튜토리얼을 확인했다'**
+  /// **'모든 자각몽 체크리스트 튜토리얼을 확인했다'**
   String get achievementTutorialMasterDesc;
 
   /// No description provided for @achievementTutorialMasterMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'모든 기술을 마스터한 푸시업 박사! 🎓'**
+  /// **'모든 기술을 마스터한 자각몽 체크리스트 박사! 🎓'**
   String get achievementTutorialMasterMotivation;
 
   /// No description provided for @achievementTutorialMasterTitle.
   ///
   /// In ko, this message translates to:
-  /// **'푸시업 마스터'**
+  /// **'자각몽 체크리스트 마스터'**
   String get achievementTutorialMasterTitle;
 
   /// No description provided for @achievementTutorialStudentDesc.
   ///
   /// In ko, this message translates to:
-  /// **'5개의 푸시업 튜토리얼을 확인했다'**
+  /// **'5개의 자각몽 체크리스트 튜토리얼을 확인했다'**
   String get achievementTutorialStudentDesc;
 
   /// No description provided for @achievementTutorialStudentMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'다양한 기술을 배우는 진정한 차드! 📚'**
+  /// **'다양한 기술을 배우는 진정한 드림 스피릿! 📚'**
   String get achievementTutorialStudentMotivation;
 
   /// No description provided for @achievementTutorialStudentTitle.
   ///
   /// In ko, this message translates to:
-  /// **'학습하는 차드'**
+  /// **'학습하는 드림 스피릿'**
   String get achievementTutorialStudentTitle;
 
   /// 챌린지 업적 타입 - 스타일
@@ -9053,7 +9984,7 @@ abstract class AppLocalizations {
   /// 최고 업적 제목
   ///
   /// In ko, this message translates to:
-  /// **'궁극의 차드'**
+  /// **'궁극의 드림 스피릿'**
   String get achievementUltimate;
 
   /// 최고 업적 설명
@@ -9065,7 +9996,7 @@ abstract class AppLocalizations {
   /// No description provided for @achievementUltimateMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'당신은 궁극의 차드이다! 🌟'**
+  /// **'당신은 궁극의 Dream Spirit가다! 🌟'**
   String get achievementUltimateMotivation;
 
   /// 업적 달성 타이틀
@@ -9101,19 +10032,19 @@ abstract class AppLocalizations {
   /// 다양한 푸쉬업 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'5가지 다른 푸쉬업 타입을 완료하다'**
+  /// **'5가지 다른 자각몽 기법 타입을 완료하다'**
   String get achievementVarietyDesc;
 
   /// No description provided for @achievementVarietySeekerDesc.
   ///
   /// In ko, this message translates to:
-  /// **'5가지 다른 푸시업 타입을 시도했다'**
+  /// **'5가지 다른 자각몽 체크리스트 타입을 시도했다'**
   String get achievementVarietySeekerDesc;
 
   /// No description provided for @achievementVarietySeekerMotivation.
   ///
   /// In ko, this message translates to:
-  /// **'다양함을 추구하는 창의적 차드! 🎨'**
+  /// **'다양함을 추구하는 창의적 드림 스피릿! 🎨'**
   String get achievementVarietySeekerMotivation;
 
   /// No description provided for @achievementVarietySeekerTitle.
@@ -9131,13 +10062,13 @@ abstract class AppLocalizations {
   /// 7일 연속 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'7일 연속으로 운동하다'**
+  /// **'7일 연속으로 자각몽 연습하다'**
   String get achievementWeekWarriorDesc;
 
   /// No description provided for @achievementWeekendWarriorDesc.
   ///
   /// In ko, this message translates to:
-  /// **'주말에 꾸준히 운동하는 차드'**
+  /// **'주말에 꾸준히 자각몽 연습하는 드림 스피릿'**
   String get achievementWeekendWarriorDesc;
 
   /// No description provided for @achievementWeekendWarriorMotivation.
@@ -9152,40 +10083,40 @@ abstract class AppLocalizations {
   /// **'주말 전사'**
   String get achievementWeekendWarriorTitle;
 
-  /// 5시간 운동 업적 설명
+  /// 5시간 자각몽 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'총 운동 시간 300분(5시간)을 달성했다'**
+  /// **'총 자각몽 연습 시간 300분(5시간)을 달성했다'**
   String get achievementWorkoutTime300Desc;
 
-  /// 5시간 운동 업적 동기부여
+  /// 5시간 자각몽 훈련 업적 동기부여
   ///
   /// In ko, this message translates to:
-  /// **'운동에 진심인 당신의 모습이 멋집니다!'**
+  /// **'자각몽 연습에 진심인 당신의 모습이 멋집니다!'**
   String get achievementWorkoutTime300Motivation;
 
-  /// 5시간 운동 업적 제목
+  /// 5시간 자각몽 훈련 업적 제목
   ///
   /// In ko, this message translates to:
-  /// **'5시간 운동 마스터'**
+  /// **'5시간 자각몽 연습 마스터'**
   String get achievementWorkoutTime300Title;
 
-  /// 1시간 운동 업적 설명
+  /// 1시간 자각몽 훈련 업적 설명
   ///
   /// In ko, this message translates to:
-  /// **'총 운동 시간 60분을 달성했다'**
+  /// **'총 자각몽 연습 시간 60분을 달성했다'**
   String get achievementWorkoutTime60Desc;
 
-  /// 1시간 운동 업적 동기부여
+  /// 1시간 자각몽 훈련 업적 동기부여
   ///
   /// In ko, this message translates to:
-  /// **'꾸준한 운동 누적 중! 💪'**
+  /// **'꾸준한 자각몽 연습 누적 중! 💪'**
   String get achievementWorkoutTime60Motivation;
 
-  /// 1시간 운동 업적 제목
+  /// 1시간 자각몽 훈련 업적 제목
   ///
   /// In ko, this message translates to:
-  /// **'1시간 운동 달성'**
+  /// **'1시간 자각몽 연습 달성'**
   String get achievementWorkoutTime60Title;
 
   /// 업적 탭
@@ -9203,7 +10134,7 @@ abstract class AppLocalizations {
   /// 업적 화면 배너 텍스트
   ///
   /// In ko, this message translates to:
-  /// **'업적을 달성해서 차드가 되자! 🏆'**
+  /// **'업적을 달성해서 드림 스피릿가 되자! 🏆'**
   String get achievementsBannerText;
 
   /// 모든 업적 획득 제목
@@ -9233,7 +10164,7 @@ abstract class AppLocalizations {
   /// Consecutive warrior badge reward
   ///
   /// In ko, this message translates to:
-  /// **'연속 운동 전사 배지'**
+  /// **'연속 자각몽 연습 전사 배지'**
   String get challengeRewardConsecutiveWarrior;
 
   /// Dedication master badge reward
@@ -9293,7 +10224,7 @@ abstract class AppLocalizations {
   /// 업적 없음 메시지
   ///
   /// In ko, this message translates to:
-  /// **'운동 시작해서 첫 업적 획득하자! 💪'**
+  /// **'자각몽 연습 시작해서 첫 업적 획득하자! 💪'**
   String get startWorkoutForAchievements;
 
   /// No description provided for @trophyIcon.
@@ -9305,7 +10236,7 @@ abstract class AppLocalizations {
   /// 챌린지 해금 안내 메시지
   ///
   /// In ko, this message translates to:
-  /// **'더 많은 운동을 완료하여 새로운 챌린지를 해금해!'**
+  /// **'더 많은 자각몽 연습을 완료하여 새로운 챌린지를 해금해!'**
   String get unlockMoreChallenges;
 
   /// 획득한 업적 탭
@@ -9365,7 +10296,7 @@ abstract class AppLocalizations {
   /// No description provided for @completion.
   ///
   /// In ko, this message translates to:
-  /// **'완료율'**
+  /// **'달성률'**
   String get completion;
 
   /// Number of achievements unlocked message
@@ -9395,55 +10326,55 @@ abstract class AppLocalizations {
   /// 100 cumulative challenge description
   ///
   /// In ko, this message translates to:
-  /// **'총 100개 팔굽혀펴기 달성'**
+  /// **'총 100일 자각몽 연습 달성'**
   String get challenge100CumulativeDescription;
 
   /// 100 cumulative challenge detailed description
   ///
   /// In ko, this message translates to:
-  /// **'여러 세션 합쳐서 총 100개 달성! 💪'**
+  /// **'여러 세션 합쳐서 총 100일 달성! 💪'**
   String get challenge100CumulativeDetailedDescription;
 
   /// 100 cumulative challenge title
   ///
   /// In ko, this message translates to:
-  /// **'100개 챌린지'**
+  /// **'100일 챌린지'**
   String get challenge100CumulativeTitle;
 
   /// 200 cumulative challenge description
   ///
   /// In ko, this message translates to:
-  /// **'총 200개 팔굽혀펴기 달성'**
+  /// **'총 200일 자각몽 연습 달성'**
   String get challenge200CumulativeDescription;
 
   /// 200 cumulative challenge detailed description
   ///
   /// In ko, this message translates to:
-  /// **'여러 세션 합쳐서 총 200개 달성! 100개 클리어 후 도전! 🔥'**
+  /// **'여러 세션 합쳐서 총 200일 달성! 100일 클리어 후 도전! 🔥'**
   String get challenge200CumulativeDetailedDescription;
 
   /// 200 cumulative challenge title
   ///
   /// In ko, this message translates to:
-  /// **'200개 챌린지'**
+  /// **'200일 챌린지'**
   String get challenge200CumulativeTitle;
 
   /// 50 single session challenge description
   ///
   /// In ko, this message translates to:
-  /// **'한 번의 운동에서 50개 팔굽혀펴기'**
+  /// **'한 번의 세션에서 50개 자각몽 기법'**
   String get challenge50SingleDescription;
 
   /// 50 single session challenge detailed description
   ///
   /// In ko, this message translates to:
-  /// **'한 번에 50개! 중간에 쉬면 처음부터 다시! 💥'**
+  /// **'한 번에 50개 기법! 중간에 쉬면 처음부터 다시! 💥'**
   String get challenge50SingleDetailedDescription;
 
   /// 50 single session challenge title
   ///
   /// In ko, this message translates to:
-  /// **'50개 한번에'**
+  /// **'50개 기법 한번에'**
   String get challenge50SingleTitle;
 
   /// Abandon challenge button
@@ -9551,7 +10482,7 @@ abstract class AppLocalizations {
   /// 챌린지 모드 설명
   ///
   /// In ko, this message translates to:
-  /// **'그냥 기본 운동? 아니면 진짜 챔피언 모드? 🚀\n\n⚡ 챌린지 모드 ON 하면:\n• 더 높은 난이도\n• 보너스 포인트 획득 🏆'**
+  /// **'그냥 기본 연습? 아니면 진짜 챔피언 모드? 🚀\n\n⚡ 챌린지 모드 ON 하면:\n• 더 높은 난이도\n• 보너스 포인트 획득 🏆'**
   String get challengeModeDescription;
 
   /// 챌린지 모드 활성화 버튼
@@ -9575,7 +10506,7 @@ abstract class AppLocalizations {
   /// 영상 설명 4
   ///
   /// In ko, this message translates to:
-  /// **'팔굽혀펴기 100개를 향한 도전 정신'**
+  /// **'자각몽 100일을 향한 도전 정신'**
   String get challengeSpirit100;
 
   /// Start challenge button
@@ -9707,7 +10638,7 @@ abstract class AppLocalizations {
   /// Send friend challenge button
   ///
   /// In ko, this message translates to:
-  /// **'💀 친구에게 차드 도전장 발송! 💀'**
+  /// **'💀 친구에게 드림 스피릿 도전장 발송! 💀'**
   String get sendFriendChallenge;
 
   /// 스프린트 챌린지 기본 설명
@@ -10880,6 +11811,276 @@ abstract class AppLocalizations {
   /// **'🔥 Chad Beast Mode\n• 최고 강도 운동\n• 도전적인 목표\n• 한계 돌파 세션'**
   String get chadBeastMode;
 
+  /// No description provided for @dreamSpiritStage0Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈꾸는 초심자'**
+  String get dreamSpiritStage0Name;
+
+  /// No description provided for @dreamSpiritStage1Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'자각하는 꿈꾸는 자'**
+  String get dreamSpiritStage1Name;
+
+  /// No description provided for @dreamSpiritStage2Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'각성된 꿈꾸는 자'**
+  String get dreamSpiritStage2Name;
+
+  /// No description provided for @dreamSpiritStage3Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'집중하는 꿈꾸는 자'**
+  String get dreamSpiritStage3Name;
+
+  /// No description provided for @dreamSpiritStage4Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'자신감 있는 자각몽가'**
+  String get dreamSpiritStage4Name;
+
+  /// No description provided for @dreamSpiritStage5Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'쿨한 자각몽 마스터'**
+  String get dreamSpiritStage5Name;
+
+  /// No description provided for @dreamSpiritStage6Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'기쁜 꿈 걷는 자'**
+  String get dreamSpiritStage6Name;
+
+  /// No description provided for @dreamSpiritStage7Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'카리스마 넘치는 꿈꾸는 자'**
+  String get dreamSpiritStage7Name;
+
+  /// No description provided for @dreamSpiritStage8Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'집중된 꿈 마스터'**
+  String get dreamSpiritStage8Name;
+
+  /// No description provided for @dreamSpiritStage9Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'강력한 자각몽가'**
+  String get dreamSpiritStage9Name;
+
+  /// No description provided for @dreamSpiritStage10Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'고급 꿈 통제자'**
+  String get dreamSpiritStage10Name;
+
+  /// No description provided for @dreamSpiritStage11Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'빛나는 꿈 마스터'**
+  String get dreamSpiritStage11Name;
+
+  /// No description provided for @dreamSpiritStage12Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'쌍둥이 꿈 걷는 자'**
+  String get dreamSpiritStage12Name;
+
+  /// No description provided for @dreamSpiritStage13Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'삼위일체 꿈 마스터'**
+  String get dreamSpiritStage13Name;
+
+  /// No description provided for @dreamSpiritStage14Name.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈의 신'**
+  String get dreamSpiritStage14Name;
+
+  /// No description provided for @dreamSpiritStage0Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 여정을 막 시작했습니다'**
+  String get dreamSpiritStage0Desc;
+
+  /// No description provided for @dreamSpiritStage1Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈을 인식하기 시작합니다'**
+  String get dreamSpiritStage1Desc;
+
+  /// No description provided for @dreamSpiritStage2Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈의 세계에서 각성 상태를 유지합니다'**
+  String get dreamSpiritStage2Desc;
+
+  /// No description provided for @dreamSpiritStage3Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈의 자각에 집중합니다'**
+  String get dreamSpiritStage3Desc;
+
+  /// No description provided for @dreamSpiritStage4Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'자신감 있게 자각몽을 경험합니다'**
+  String get dreamSpiritStage4Desc;
+
+  /// No description provided for @dreamSpiritStage5Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'스타일리시하게 자각몽 기법을 마스터합니다'**
+  String get dreamSpiritStage5Desc;
+
+  /// No description provided for @dreamSpiritStage6Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'기쁨과 함께 꿈을 걸어갑니다'**
+  String get dreamSpiritStage6Desc;
+
+  /// No description provided for @dreamSpiritStage7Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈의 영역에서 압도적인 존재감을 보입니다'**
+  String get dreamSpiritStage7Desc;
+
+  /// No description provided for @dreamSpiritStage8Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 마스터리에 완벽히 집중합니다'**
+  String get dreamSpiritStage8Desc;
+
+  /// No description provided for @dreamSpiritStage9Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'강력한 자각몽 능력을 휘두릅니다'**
+  String get dreamSpiritStage9Desc;
+
+  /// No description provided for @dreamSpiritStage10Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 시나리오를 고급스럽게 제어합니다'**
+  String get dreamSpiritStage10Desc;
+
+  /// No description provided for @dreamSpiritStage11Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 탐험에서 빛나는 숙달을 보여줍니다'**
+  String get dreamSpiritStage11Desc;
+
+  /// No description provided for @dreamSpiritStage12Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈에서 쌍둥이 길을 걷습니다'**
+  String get dreamSpiritStage12Desc;
+
+  /// No description provided for @dreamSpiritStage13Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'삼위일체 꿈 자각을 달성했습니다'**
+  String get dreamSpiritStage13Desc;
+
+  /// No description provided for @dreamSpiritStage14Desc.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 영역의 궁극적 마스터입니다'**
+  String get dreamSpiritStage14Desc;
+
+  /// No description provided for @dreamSpiritStage0Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'🌟 드림 스피릿이 각성했습니다! 자각몽 여정이 지금 시작됩니다!'**
+  String get dreamSpiritStage0Unlock;
+
+  /// No description provided for @dreamSpiritStage1Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'✨ 축하합니다! 자각하는 꿈꾸는 자가 되었습니다! 연습을 계속하세요!'**
+  String get dreamSpiritStage1Unlock;
+
+  /// No description provided for @dreamSpiritStage2Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'🎯 놀라워요! 이제 각성된 꿈꾸는 자입니다! 자각력이 성장하고 있어요!'**
+  String get dreamSpiritStage2Unlock;
+
+  /// No description provided for @dreamSpiritStage3Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'🔥 잘하셨어요! 집중하는 꿈꾸는 자로 진화했습니다! 계속 집중하세요!'**
+  String get dreamSpiritStage3Unlock;
+
+  /// No description provided for @dreamSpiritStage4Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'💪 인상적이에요! 이제 자신감 있는 자각몽가입니다! 실력이 향상되고 있어요!'**
+  String get dreamSpiritStage4Unlock;
+
+  /// No description provided for @dreamSpiritStage5Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'😎 멋져요! 쿨한 자각몽 마스터가 되었습니다! 기법을 마스터하고 있어요!'**
+  String get dreamSpiritStage5Unlock;
+
+  /// No description provided for @dreamSpiritStage6Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'🌈 환상적이에요! 이제 기쁜 꿈 걷는 자입니다! 꿈의 세계를 포용하세요!'**
+  String get dreamSpiritStage6Unlock;
+
+  /// No description provided for @dreamSpiritStage7Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'⭐ 놀라워요! 카리스마 넘치는 꿈꾸는 자로 진화했습니다! 존재감이 강력해요!'**
+  String get dreamSpiritStage7Unlock;
+
+  /// No description provided for @dreamSpiritStage8Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'🎓 탁월해요! 이제 집중된 꿈 마스터입니다! 완벽한 숙달이 가까워졌어요!'**
+  String get dreamSpiritStage8Unlock;
+
+  /// No description provided for @dreamSpiritStage9Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'⚡ 믿을 수 없어요! 강력한 자각몽가가 되었습니다! 능력이 비범해요!'**
+  String get dreamSpiritStage9Unlock;
+
+  /// No description provided for @dreamSpiritStage10Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'🏆 뛰어나요! 이제 고급 꿈 통제자입니다! 꿈을 지배하고 있어요!'**
+  String get dreamSpiritStage10Unlock;
+
+  /// No description provided for @dreamSpiritStage11Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'💎 빛나요! 빛나는 꿈 마스터로 진화했습니다! 숙달이 찬란하게 빛나요!'**
+  String get dreamSpiritStage11Unlock;
+
+  /// No description provided for @dreamSpiritStage12Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'🌟🌟 경이로워요! 이제 쌍둥이 꿈 걷는 자입니다! 여러 꿈의 길을 걷고 있어요!'**
+  String get dreamSpiritStage12Unlock;
+
+  /// No description provided for @dreamSpiritStage13Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'👑 장엄해요! 삼위일체 꿈 마스터를 달성했습니다! 꿈의 삼위일체가 당신의 것이에요!'**
+  String get dreamSpiritStage13Unlock;
+
+  /// No description provided for @dreamSpiritStage14Unlock.
+  ///
+  /// In ko, this message translates to:
+  /// **'🌌 전설이에요! 꿈의 신으로 승천했습니다! 궁극적 마스터리를 달성했어요!'**
+  String get dreamSpiritStage14Unlock;
+
   /// No description provided for @currentSubscription.
   ///
   /// In ko, this message translates to:
@@ -11216,6 +12417,30 @@ abstract class AppLocalizations {
   /// **'프리미엄 구독'**
   String get titlePremiumSubscription;
 
+  /// VIP 환영 다이얼로그 프리미엄 회원 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'✨ 프리미엄 회원'**
+  String get vipWelcomePremiumMember;
+
+  /// VIP 환영 다이얼로그 런칭 프로모션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'🎉 런칭 프로모션'**
+  String get vipWelcomeLaunchPromo;
+
+  /// VIP 환영 다이얼로그 무료 회원 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'👋 무료 회원'**
+  String get vipWelcomeFreeMember;
+
+  /// VIP 빠른 로딩 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'VIP 10배 빠른 로딩'**
+  String get vipFastLoading;
+
   /// Adaptive theme setting
   ///
   /// In ko, this message translates to:
@@ -11303,26 +12528,8 @@ abstract class AppLocalizations {
   /// No description provided for @notificationActivationTitle.
   ///
   /// In ko, this message translates to:
-  /// **'🔥 MISSION 100 알림 활성화! 🔥'**
+  /// **'🔥 LUCID DREAM 100 알림 활성화! 🔥'**
   String get notificationActivationTitle;
-
-  /// 알림 혜택 1
-  ///
-  /// In ko, this message translates to:
-  /// **'💪 매일 운동 리마인더'**
-  String get notificationBenefit1;
-
-  /// 알림 혜택 2
-  ///
-  /// In ko, this message translates to:
-  /// **'🏆 업적 달성 축하 알림'**
-  String get notificationBenefit2;
-
-  /// 알림 혜택 3
-  ///
-  /// In ko, this message translates to:
-  /// **'🔥 동기부여 메시지'**
-  String get notificationBenefit3;
 
   /// Checking permission status message
   ///
@@ -11336,12 +12543,6 @@ abstract class AppLocalizations {
   /// **'⚠️ 알림 권한 필요! 설정에서 허용! 💪'**
   String get notificationPermissionDeniedMessage;
 
-  /// 알림 권한 설명
-  ///
-  /// In ko, this message translates to:
-  /// **'운동 리마인더와 업적 알림을 받기 위해 필요한다'**
-  String get notificationPermissionDesc;
-
   /// 알림 권한 오류 메시지
   ///
   /// In ko, this message translates to:
@@ -11351,7 +12552,7 @@ abstract class AppLocalizations {
   /// 알림 권한 기능 목록
   ///
   /// In ko, this message translates to:
-  /// **'• 운동 리마인더\n• 업적 달성 알림\n• 동기부여 메시지'**
+  /// **'• 연습 리마인더\n• 업적 달성 알림\n• 동기부여 메시지'**
   String get notificationPermissionFeatures;
 
   /// 알림 권한 허용 메시지
@@ -11401,12 +12602,6 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'🔔 알림 권한 필요'**
   String get notificationPermissionRequired;
-
-  /// 알림 권한 제목
-  ///
-  /// In ko, this message translates to:
-  /// **'🔔 알림 권한'**
-  String get notificationPermissionTitle;
 
   /// 알림 및 저장소 권한 요청 메시지
   ///
@@ -11483,7 +12678,7 @@ abstract class AppLocalizations {
   /// No description provided for @settingsHeader.
   ///
   /// In ko, this message translates to:
-  /// **'MISSION 100 설정'**
+  /// **'LUCID DREAM 100 설정'**
   String get settingsHeader;
 
   /// No description provided for @notificationPermissionStatus.
@@ -11519,19 +12714,19 @@ abstract class AppLocalizations {
   /// No description provided for @workoutNotifications.
   ///
   /// In ko, this message translates to:
-  /// **'운동 알림 설정'**
+  /// **'연습 알림 설정'**
   String get workoutNotifications;
 
   /// No description provided for @enableWorkoutReminders.
   ///
   /// In ko, this message translates to:
-  /// **'운동 알림 받기'**
+  /// **'연습 알림 받기'**
   String get enableWorkoutReminders;
 
   /// No description provided for @getRemindersOnWorkoutDays.
   ///
   /// In ko, this message translates to:
-  /// **'선택한 운동일에 알림을 받습니다'**
+  /// **'선택한 연습일에 알림을 받습니다'**
   String get getRemindersOnWorkoutDays;
 
   /// No description provided for @notificationTime.
@@ -11549,7 +12744,7 @@ abstract class AppLocalizations {
   /// No description provided for @selectWorkoutDaysMin3.
   ///
   /// In ko, this message translates to:
-  /// **'운동 요일 선택 (최소 3일)'**
+  /// **'연습 요일 선택 (최소 3일)'**
   String get selectWorkoutDaysMin3;
 
   /// Shows selected days count
@@ -11639,7 +12834,7 @@ abstract class AppLocalizations {
   /// No description provided for @achieve100Pushups.
   ///
   /// In ko, this message translates to:
-  /// **'14주 만에 100개 푸쉬업 달성!\n차드가 되는 여정을 함께하세요! 🔥'**
+  /// **'30일 만에 자각몽 마스터!\n드림 스피릿과 함께하는 여정! 🔥'**
   String get achieve100Pushups;
 
   /// No description provided for @techStack.
@@ -11669,13 +12864,13 @@ abstract class AppLocalizations {
   /// No description provided for @feedbackSubject.
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100 Chad Pushup 피드백'**
+  /// **'Lucid Dream 100 피드백'**
   String get feedbackSubject;
 
   /// No description provided for @feedbackBody.
   ///
   /// In ko, this message translates to:
-  /// **'안녕하세요! Mission 100 Chad Pushup 앱에 대한 피드백을 보내드립니다.\n\n'**
+  /// **'안녕하세요! Lucid Dream 100 앱에 대한 피드백을 보내드립니다.\n\n'**
   String get feedbackBody;
 
   /// No description provided for @goalAchievementCelebration.
@@ -11699,13 +12894,13 @@ abstract class AppLocalizations {
   /// No description provided for @storageBackupRestorePermission.
   ///
   /// In ko, this message translates to:
-  /// **'운동 데이터 백업/복원을 위해 저장소 접근 권한이 필요합니다.'**
+  /// **'연습 데이터 백업/복원을 위해 저장소 접근 권한이 필요합니다.'**
   String get storageBackupRestorePermission;
 
   /// No description provided for @workoutRecordBackup.
   ///
   /// In ko, this message translates to:
-  /// **'• 운동 기록 백업'**
+  /// **'• 연습 기록 백업'**
   String get workoutRecordBackup;
 
   /// No description provided for @android13FilePickerNote.
@@ -11741,7 +12936,7 @@ abstract class AppLocalizations {
   /// No description provided for @storagePermissionDeniedMessage.
   ///
   /// In ko, this message translates to:
-  /// **'저장소 권한이 거부되었습니다.\n\n백업/복원 기능을 사용하려면 설정에서\n수동으로 권한을 허용해주세요.\n\n설정 > 앱 > Mission 100 > 권한 > 저장소'**
+  /// **'저장소 권한이 거부되었습니다.\n\n백업/복원 기능을 사용하려면 설정에서\n수동으로 권한을 허용해주세요.\n\n설정 > 앱 > Lucid Dream 100 > 권한 > 저장소'**
   String get storagePermissionDeniedMessage;
 
   /// No description provided for @permissionGranted.
@@ -11798,6 +12993,102 @@ abstract class AppLocalizations {
   /// **'한국어'**
   String get languageKorean;
 
+  /// No description provided for @aboutSettingsScientificBasisTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'과학적 근거'**
+  String get aboutSettingsScientificBasisTitle;
+
+  /// No description provided for @aboutSettingsScientificBasisDesc.
+  ///
+  /// In ko, this message translates to:
+  /// **'프로그램의 과학적 연구 출처'**
+  String get aboutSettingsScientificBasisDesc;
+
+  /// No description provided for @aboutSettingsAppName.
+  ///
+  /// In ko, this message translates to:
+  /// **'드림플로 (DreamFlow)'**
+  String get aboutSettingsAppName;
+
+  /// No description provided for @aboutSettingsPrivacyPolicy.
+  ///
+  /// In ko, this message translates to:
+  /// **'개인정보처리방침'**
+  String get aboutSettingsPrivacyPolicy;
+
+  /// No description provided for @aboutSettingsTermsOfService.
+  ///
+  /// In ko, this message translates to:
+  /// **'이용약관'**
+  String get aboutSettingsTermsOfService;
+
+  /// No description provided for @aboutSettingsScientificDialogTitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'과학적 근거'**
+  String get aboutSettingsScientificDialogTitle;
+
+  /// No description provided for @aboutSettingsResearchDescription.
+  ///
+  /// In ko, this message translates to:
+  /// **'상체 근력 운동은 주 2-3회가 최적이며, 2분 이상 휴식 시 근비대와 근력 증가가 더 효과적입니다.'**
+  String get aboutSettingsResearchDescription;
+
+  /// No description provided for @aboutSettingsTrainingGuidelines.
+  ///
+  /// In ko, this message translates to:
+  /// **'훈련 가이드라인'**
+  String get aboutSettingsTrainingGuidelines;
+
+  /// No description provided for @aboutSettingsWeeklyFrequency.
+  ///
+  /// In ko, this message translates to:
+  /// **'주당 빈도'**
+  String get aboutSettingsWeeklyFrequency;
+
+  /// No description provided for @aboutSettingsWeeklyFrequencyValue.
+  ///
+  /// In ko, this message translates to:
+  /// **'주 2-3회'**
+  String get aboutSettingsWeeklyFrequencyValue;
+
+  /// No description provided for @aboutSettingsRestBetweenSets.
+  ///
+  /// In ko, this message translates to:
+  /// **'세트 간 휴식'**
+  String get aboutSettingsRestBetweenSets;
+
+  /// No description provided for @aboutSettingsRestBetweenSetsValue.
+  ///
+  /// In ko, this message translates to:
+  /// **'2-3분 (근력), 1-2분 (근비대)'**
+  String get aboutSettingsRestBetweenSetsValue;
+
+  /// No description provided for @aboutSettingsRecoveryTime.
+  ///
+  /// In ko, this message translates to:
+  /// **'회복 시간'**
+  String get aboutSettingsRecoveryTime;
+
+  /// No description provided for @aboutSettingsRecoveryTimeValue.
+  ///
+  /// In ko, this message translates to:
+  /// **'48-72시간'**
+  String get aboutSettingsRecoveryTimeValue;
+
+  /// No description provided for @aboutSettingsProgramExplanation.
+  ///
+  /// In ko, this message translates to:
+  /// **'이 프로그램은 위 연구 논문의 과학적 근거를 바탕으로 설계된 14주 프로그레시브 오버로드 프로그램입니다.'**
+  String get aboutSettingsProgramExplanation;
+
+  /// No description provided for @aboutSettingsConfirmButton.
+  ///
+  /// In ko, this message translates to:
+  /// **'확인'**
+  String get aboutSettingsConfirmButton;
+
   /// 자동 백업 설정 설명
   ///
   /// In ko, this message translates to:
@@ -11831,7 +13122,7 @@ abstract class AppLocalizations {
   /// 백업 완료 알림 제목
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100 백업 완료'**
+  /// **'Lucid Dream 100 백업 완료'**
   String get backupCompletedTitle;
 
   /// 백업 완료 메시지
@@ -11885,7 +13176,7 @@ abstract class AppLocalizations {
   /// 백업 실패 알림 제목
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100 백업 실패'**
+  /// **'Lucid Dream 100 백업 실패'**
   String get backupFailedTitle;
 
   /// 백업 파일명 레이블
@@ -11927,7 +13218,7 @@ abstract class AppLocalizations {
   /// 백업 스케줄 중단 알림 제목
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100 백업 중단'**
+  /// **'Lucid Dream 100 백업 중단'**
   String get backupScheduleSuspendedTitle;
 
   /// No description provided for @backupStatusLoadFailed.
@@ -11969,7 +13260,7 @@ abstract class AppLocalizations {
   /// 데이터 백업 설명
   ///
   /// In ko, this message translates to:
-  /// **'💾 너의 차드 전설을 영원히 보존한다!'**
+  /// **'💾 너의 드림 스피릿 전설을 영원히 보존한다!'**
   String get dataBackupDesc;
 
   /// 암호화 백업 버튼
@@ -12041,7 +13332,7 @@ abstract class AppLocalizations {
   /// 수동 백업 완료 알림 제목
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100 수동 백업 완료'**
+  /// **'Lucid Dream 100 수동 백업 완료'**
   String get manualBackupCompletedTitle;
 
   /// 수동 백업 실패 알림 내용
@@ -12053,7 +13344,7 @@ abstract class AppLocalizations {
   /// 수동 백업 실패 알림 제목
   ///
   /// In ko, this message translates to:
-  /// **'Mission 100 수동 백업 실패'**
+  /// **'Lucid Dream 100 수동 백업 실패'**
   String get manualBackupFailedTitle;
 
   /// 백업 기록이 없을 때 설명
@@ -12109,6 +13400,1332 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'수동'**
   String get frequencyManual;
+
+  /// 백업 작업 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'백업 작업'**
+  String get backupActionsTitle;
+
+  /// 자동 백업 비활성화 상태 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'자동 백업이 현재 비활성화되어 있다'**
+  String get backupAutoBackupDisabled;
+
+  /// 자동 백업 활성화 상태 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'자동 백업이 활성화되어 있다'**
+  String get backupAutoBackupEnabled;
+
+  /// 백업 실패 횟수 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'실패 횟수'**
+  String get backupFailureCountLabel;
+
+  /// 백업 실패 횟수 값 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{count}회 실패'**
+  String backupFailureCountValue(Object count);
+
+  /// 백업 빈도 변경 성공 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'백업 빈도가 업데이트되었다'**
+  String get backupFrequencyChanged;
+
+  /// 백업 빈도 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'빈도'**
+  String get backupFrequencyLabel;
+
+  /// 백업 기록 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'백업 기록'**
+  String get backupHistoryTitle;
+
+  /// 마지막 백업 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'마지막 백업'**
+  String get backupLastBackupLabel;
+
+  /// 다음 백업 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'다음 백업'**
+  String get backupNextBackupLabel;
+
+  /// 백업 설정 변경 실패 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'백업 설정 업데이트에 실패했다: {error}'**
+  String backupSettingsChangeFailed(String error);
+
+  /// 백업 설정 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'백업 설정'**
+  String get backupSettingsTitle;
+
+  /// 백업 상태 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'상태'**
+  String get backupStatusLabel;
+
+  /// 가속 적용 메시지 (일수 포함)
+  ///
+  /// In ko, this message translates to:
+  /// **'가속 적용: {days}일'**
+  String evolutionBoostApplied(Object days);
+
+  /// 진화 가속 기능 곧 사용 가능 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'곧 사용 가능'**
+  String get evolutionBoostComingSoon;
+
+  /// 다음 진화 가속까지 일수 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{days}일 후 사용 가능'**
+  String evolutionBoostCooldownDays(Object days);
+
+  /// 다음 진화 가속까지 시간 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{hours}시간 후 사용 가능'**
+  String evolutionBoostCooldownHours(Object hours);
+
+  /// 다음 진화까지 남은 일수
+  ///
+  /// In ko, this message translates to:
+  /// **'{days}일 남음'**
+  String evolutionBoostDaysLeft(Object days);
+
+  /// 진화 가속 기능 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'광고로 진화 가속'**
+  String get evolutionBoostDescription;
+
+  /// 이미 최종 진화 상태일 때 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'이미 최종 진화입니다'**
+  String get evolutionBoostMaxLevel;
+
+  /// 다음 진화 단계 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'다음 진화'**
+  String get evolutionBoostNextEvolution;
+
+  /// 남은 가속 횟수 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'남은 횟수: {count}/3'**
+  String evolutionBoostRemaining(Object count);
+
+  /// 진화 가속 성공 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'진화가 가속되었습니다!'**
+  String get evolutionBoostSuccess;
+
+  /// 진화 가속 기능 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'진화 가속권'**
+  String get evolutionBoostTitle;
+
+  /// 광고 보고 진화 가속 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 가속하기'**
+  String get evolutionBoostWatchAd;
+
+  /// 광고 보고 보상 받기 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 {reward} 받기'**
+  String rewardedAdWatchAndGet(String reward);
+
+  /// 리워드 광고 남은 사용 횟수
+  ///
+  /// In ko, this message translates to:
+  /// **'남은 횟수: {remaining}/{max}'**
+  String rewardedAdRemainingUses(int remaining, int max);
+
+  /// 광고 보기 짧은 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 받기'**
+  String get rewardedAdWatchButton;
+
+  /// 광고가 곧 사용 가능할 때 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'곧 사용 가능'**
+  String get rewardedAdComingSoon;
+
+  /// 보상 지급 시 스낵바 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'{icon} {title} 획득!'**
+  String rewardedAdRewardGranted(String icon, String title);
+
+  /// 다음 사용까지 시간과 분 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{hours}시간 {minutes}분 후 사용 가능'**
+  String rewardedAdAvailableInHours(int hours, int minutes);
+
+  /// 다음 사용까지 분 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{minutes}분 후 사용 가능'**
+  String rewardedAdAvailableInMinutes(int minutes);
+
+  /// 토큰 광고 기능 준비 중 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 기능 준비 중'**
+  String get tokenBalanceAdComingSoon;
+
+  /// 일일 토큰 보상 받기 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'보상 받기 (+{amount} 토큰)'**
+  String tokenBalanceClaimReward(Object amount);
+
+  /// 일일 토큰 보상 섹션 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 보상'**
+  String get tokenBalanceDailyReward;
+
+  /// 다음 보상 카운트다운 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'다음 보상'**
+  String get tokenBalanceNextReward;
+
+  /// 프리미엄 상태 배지 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄'**
+  String get tokenBalancePremium;
+
+  /// 보상 받기 실패 에러 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'보상 받기 실패: {error}'**
+  String tokenBalanceRewardFailed(Object error);
+
+  /// 보상 받기 성공 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'보상을 받았습니다!'**
+  String get tokenBalanceRewardReceived;
+
+  /// 보상 토큰 양 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'+{amount} 토큰'**
+  String tokenBalanceRewardAmount(Object amount);
+
+  /// 토큰 잔액 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 잔액'**
+  String get tokenBalanceTitle;
+
+  /// 대화당 토큰 사용량 안내 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi와 대화 한 번당 토큰 1개 소모'**
+  String get tokenBalanceUsageInfo;
+
+  /// 광고 보고 토큰 받기 버튼 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 토큰 받기'**
+  String get tokenBalanceWatchAd;
+
+  /// AI 어시스턴트 화면 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'AI 꿈 어시스턴트'**
+  String get aiAssistantTitle;
+
+  /// 질문이 선택되지 않았을 때 플레이스홀더
+  ///
+  /// In ko, this message translates to:
+  /// **'위의 기능을 선택하여 시작하세요'**
+  String get aiAssistantEmptyQuestion;
+
+  /// 입력이 비었을 때 경고
+  ///
+  /// In ko, this message translates to:
+  /// **'질문이나 꿈을 입력해주세요'**
+  String get aiAssistantEmptyInput;
+
+  /// 질문 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'당신의 질문'**
+  String get aiAssistantQuestion;
+
+  /// 응답 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi의 답변'**
+  String get aiAssistantResponse;
+
+  /// 응답 생성 중 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'답변 생성 중...'**
+  String get aiAssistantGenerating;
+
+  /// 오늘 사용량
+  ///
+  /// In ko, this message translates to:
+  /// **'오늘: {used}/{limit} 사용 ({remaining}개 남음)'**
+  String aiAssistantUsageToday(Object used, Object limit, Object remaining);
+
+  /// 사용량 한도 경고
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 한도의 {percentage}%를 사용했습니다!'**
+  String aiAssistantUsageWarning(Object percentage);
+
+  /// 무료 티어 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'무료'**
+  String get aiAssistantFree;
+
+  /// 프리미엄 티어 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄'**
+  String get aiAssistantPremium;
+
+  /// 꿈 일기 기능 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기'**
+  String get aiFeatureDreamJournalTitle;
+
+  /// 꿈 일기 기능 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 분석하기'**
+  String get aiFeatureDreamJournalSubtitle;
+
+  /// 꿈 일기 기능 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 상징과 의미에 대한 깊은 통찰 얻기'**
+  String get aiFeatureDreamJournalDesc;
+
+  /// 꿈 일기 입력 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈을 설명하세요'**
+  String get aiFeatureDreamJournalInputLabel;
+
+  /// 꿈 일기 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'당신의 꿈에 대해 말해주세요...'**
+  String get aiFeatureDreamJournalInputHint;
+
+  /// 현실 확인 기능 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'현실 확인'**
+  String get aiFeatureRealityCheckTitle;
+
+  /// 현실 확인 기능 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'자각 훈련'**
+  String get aiFeatureRealityCheckSubtitle;
+
+  /// 현실 확인 기능 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽을 위한 효과적인 현실 확인 기법 배우기'**
+  String get aiFeatureRealityCheckDesc;
+
+  /// 현실 확인 입력 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'현실 확인에 대해 질문하기'**
+  String get aiFeatureRealityCheckInputLabel;
+
+  /// 현실 확인 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'효과적인 현실 확인은 어떻게 하나요?'**
+  String get aiFeatureRealityCheckInputHint;
+
+  /// 기법 기능 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'기법'**
+  String get aiFeatureTechniqueTitle;
+
+  /// 기법 기능 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'WILD, MILD, WBTB'**
+  String get aiFeatureTechniqueSubtitle;
+
+  /// 기법 기능 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'고급 자각몽 기법 마스터하기'**
+  String get aiFeatureTechniqueDesc;
+
+  /// 기법 입력 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'기법에 대해 질문하기'**
+  String get aiFeatureTechniqueInputLabel;
+
+  /// 기법 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'WILD 기법은 어떻게 작동하나요?'**
+  String get aiFeatureTechniqueInputHint;
+
+  /// 명상 기능 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'명상'**
+  String get aiFeatureMeditationTitle;
+
+  /// 명상 기능 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'마음챙김 연습'**
+  String get aiFeatureMeditationSubtitle;
+
+  /// 명상 기능 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 자각을 향상시키는 명상 기법'**
+  String get aiFeatureMeditationDesc;
+
+  /// 명상 입력 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'명상에 대해 질문하기'**
+  String get aiFeatureMeditationInputLabel;
+
+  /// 명상 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽에 도움이 되는 명상은 무엇인가요?'**
+  String get aiFeatureMeditationInputHint;
+
+  /// 자유 대화 기능 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'자유 대화'**
+  String get aiFeatureFreeChatTitle;
+
+  /// 자유 대화 기능 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'무엇이든 질문'**
+  String get aiFeatureFreeChatSubtitle;
+
+  /// 자유 대화 기능 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 주제에 대해 자유롭게 대화하기'**
+  String get aiFeatureFreeChatDesc;
+
+  /// 자유 대화 입력 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'무엇이든 질문하세요'**
+  String get aiFeatureFreeChatInputLabel;
+
+  /// 자유 대화 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽에 대해 무엇이든 물어보세요...'**
+  String get aiFeatureFreeChatInputHint;
+
+  /// 분석 모드 선택 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'분석 모드 선택'**
+  String get analysisModeTitle;
+
+  /// 분석 모드 헤더
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 분석'**
+  String get analysisModeHeader;
+
+  /// 빠른 분석 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'빠른 분석'**
+  String get analysisQuickTitle;
+
+  /// 빠른 분석 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'빠르고 무료'**
+  String get analysisQuickBadge;
+
+  /// 빠른 분석 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'즉시 기본 꿈 해석 받기'**
+  String get analysisQuickDesc;
+
+  /// No description provided for @analysisQuickFeature1.
+  ///
+  /// In ko, this message translates to:
+  /// **'즉시 결과'**
+  String get analysisQuickFeature1;
+
+  /// No description provided for @analysisQuickFeature2.
+  ///
+  /// In ko, this message translates to:
+  /// **'기본 해석'**
+  String get analysisQuickFeature2;
+
+  /// No description provided for @analysisQuickFeature3.
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 불필요'**
+  String get analysisQuickFeature3;
+
+  /// 빠른 분석 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'빠른 분석 시작'**
+  String get analysisQuickButton;
+
+  /// Lumi 분석 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi 깊은 분석'**
+  String get analysisLumiTitle;
+
+  /// Lumi 필요 토큰
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 {tokens}개'**
+  String analysisLumiTokens(Object tokens);
+
+  /// Lumi 분석 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'AI 대화와 함께하는 깊은 꿈 분석'**
+  String get analysisLumiDesc;
+
+  /// No description provided for @analysisLumiFeature1.
+  ///
+  /// In ko, this message translates to:
+  /// **'깊은 해석'**
+  String get analysisLumiFeature1;
+
+  /// No description provided for @analysisLumiFeature2.
+  ///
+  /// In ko, this message translates to:
+  /// **'상징 분석'**
+  String get analysisLumiFeature2;
+
+  /// No description provided for @analysisLumiFeature3.
+  ///
+  /// In ko, this message translates to:
+  /// **'패턴 감지'**
+  String get analysisLumiFeature3;
+
+  /// No description provided for @analysisLumiFeature4.
+  ///
+  /// In ko, this message translates to:
+  /// **'후속 대화'**
+  String get analysisLumiFeature4;
+
+  /// Lumi 분석 시작 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'분석 시작'**
+  String get analysisLumiButtonStart;
+
+  /// 토큰 필요 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 얻기'**
+  String get analysisLumiButtonNeedTokens;
+
+  /// 비교 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'기능 비교'**
+  String get analysisComparisonTitle;
+
+  /// 속도 비교 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'속도'**
+  String get analysisComparisonSpeed;
+
+  /// 빠른 분석 속도
+  ///
+  /// In ko, this message translates to:
+  /// **'즉시'**
+  String get analysisComparisonSpeedQuick;
+
+  /// Lumi 분석 속도
+  ///
+  /// In ko, this message translates to:
+  /// **'30-60초'**
+  String get analysisComparisonSpeedLumi;
+
+  /// 깊이 비교 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'분석 깊이'**
+  String get analysisComparisonDepth;
+
+  /// 빠른 분석 깊이
+  ///
+  /// In ko, this message translates to:
+  /// **'기본'**
+  String get analysisComparisonDepthQuick;
+
+  /// Lumi 분석 깊이
+  ///
+  /// In ko, this message translates to:
+  /// **'종합'**
+  String get analysisComparisonDepthLumi;
+
+  /// 후속 대화 비교 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'후속 대화'**
+  String get analysisComparisonFollowUp;
+
+  /// 빠른 분석 후속 대화
+  ///
+  /// In ko, this message translates to:
+  /// **'불가능'**
+  String get analysisComparisonFollowUpQuick;
+
+  /// Lumi 분석 후속 대화
+  ///
+  /// In ko, this message translates to:
+  /// **'가능'**
+  String get analysisComparisonFollowUpLumi;
+
+  /// 비용 비교 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'비용'**
+  String get analysisComparisonCost;
+
+  /// 빠른 분석 비용
+  ///
+  /// In ko, this message translates to:
+  /// **'무료'**
+  String get analysisComparisonCostQuick;
+
+  /// Lumi 분석 비용
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 1개'**
+  String get analysisComparisonCostLumi;
+
+  /// 토큰 부족 다이얼로그 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰이 부족합니다'**
+  String get analysisNoTokensTitle;
+
+  /// 토큰 부족 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi 깊은 분석에는 토큰이 필요합니다'**
+  String get analysisNoTokensMessage;
+
+  /// 일일 무료 토큰 정보
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 무료 토큰'**
+  String get analysisNoTokensDaily;
+
+  /// 무료 티어 일일 토큰
+  ///
+  /// In ko, this message translates to:
+  /// **'하루 1개 토큰'**
+  String get analysisNoTokensDailyFree;
+
+  /// 프리미엄 티어 일일 토큰
+  ///
+  /// In ko, this message translates to:
+  /// **'하루 5개 토큰'**
+  String get analysisNoTokensDailyPremium;
+
+  /// 프리미엄 무제한 정보
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄: 무제한'**
+  String get analysisNoTokensPremium;
+
+  /// 프리미엄 보너스
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 토큰 5배'**
+  String get analysisNoTokensPremiumBonus;
+
+  /// 토큰을 위한 광고 시청
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 토큰 받기'**
+  String get analysisNoTokensAd;
+
+  /// 광고 보상 양
+  ///
+  /// In ko, this message translates to:
+  /// **'+1 토큰'**
+  String get analysisNoTokensAdReward;
+
+  /// 일일 토큰 받기 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 토큰 받기'**
+  String get analysisNoTokensClaim;
+
+  /// 토큰 받기 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 토큰을 받았습니다!'**
+  String get analysisNoTokensClaimedSnackbar;
+
+  /// 다이얼로그 닫기 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'닫기'**
+  String get analysisNoTokensClose;
+
+  /// 빠른 분석 앱바 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'빠른 꿈 분석'**
+  String get quickAnalysisAppBar;
+
+  /// 입력 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈을 설명하세요'**
+  String get quickAnalysisInputTitle;
+
+  /// 입력 필드 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'여기에 꿈을 입력하세요...'**
+  String get quickAnalysisInputHint;
+
+  /// 글자 수 카운터
+  ///
+  /// In ko, this message translates to:
+  /// **'{current}/{max} 자'**
+  String quickAnalysisInputCounter(Object current, Object max);
+
+  /// 분석 시작 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 분석하기'**
+  String get quickAnalysisButtonStart;
+
+  /// 가이드 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'사용 방법'**
+  String get quickAnalysisGuideTitle;
+
+  /// 가이드 기능 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'무료'**
+  String get quickAnalysisGuideBadge;
+
+  /// 가이드 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'빠른 분석은 즉시 기본 꿈 해석을 제공합니다'**
+  String get quickAnalysisGuideDescription;
+
+  /// 즉시 결과 기능
+  ///
+  /// In ko, this message translates to:
+  /// **'즉시 결과'**
+  String get quickAnalysisGuideInstantResults;
+
+  /// 기본 해석 기능
+  ///
+  /// In ko, this message translates to:
+  /// **'기본 해석'**
+  String get quickAnalysisGuideBasicInterpretation;
+
+  /// 토큰 불필요 기능
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 불필요'**
+  String get quickAnalysisGuideNoTokens;
+
+  /// 로딩 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 분석 중'**
+  String get quickAnalysisLoadingTitle;
+
+  /// 로딩 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'잠시만 기다려주세요...'**
+  String get quickAnalysisLoadingSubtitle;
+
+  /// 결과 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'분석 결과'**
+  String get quickAnalysisResultTitle;
+
+  /// 더 깊은 분석 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'더 깊은 분석을 원하시나요?'**
+  String get quickAnalysisDeeperTitle;
+
+  /// 더 깊은 분석 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'종합적인 통찰을 위해 Lumi 깊은 분석을 시도하세요'**
+  String get quickAnalysisDeeperDescription;
+
+  /// Lumi와 대화 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi와 대화하기'**
+  String get quickAnalysisButtonChatWithLumi;
+
+  /// 다시 분석하기 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'다른 꿈 분석하기'**
+  String get quickAnalysisButtonAnalyzeAgain;
+
+  /// 빈 입력 에러
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈을 설명해주세요'**
+  String get quickAnalysisErrorEmpty;
+
+  /// 너무 짧은 입력 에러
+  ///
+  /// In ko, this message translates to:
+  /// **'더 자세히 설명해주세요 (최소 20자)'**
+  String get quickAnalysisErrorTooShort;
+
+  /// 새로고침 버튼 툴팁
+  ///
+  /// In ko, this message translates to:
+  /// **'지우고 다시 시작'**
+  String get quickAnalysisRefreshTooltip;
+
+  /// Lumi 대화 앱바 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi와 대화'**
+  String get lumiConversationAppBar;
+
+  /// 빈 대화 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 대화 시작하기'**
+  String get lumiConversationEmptyTitle;
+
+  /// 빈 대화 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi에게 꿈에 대해 무엇이든 물어보세요'**
+  String get lumiConversationEmptySubtitle;
+
+  /// 입력 필드 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈에 대해 질문하세요...'**
+  String get lumiConversationInputHint;
+
+  /// 생각 중 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi가 생각하는 중...'**
+  String get lumiConversationThinking;
+
+  /// 로드 에러 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'대화를 불러오지 못했습니다'**
+  String get lumiConversationLoadError;
+
+  /// 토큰 다이얼로그 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 1개 필요'**
+  String get lumiConversationTokenDialogTitle;
+
+  /// 토큰 다이얼로그 내용
+  ///
+  /// In ko, this message translates to:
+  /// **'이 대화는 토큰 1개를 사용합니다'**
+  String get lumiConversationTokenDialogContent;
+
+  /// 토큰 다이얼로그 닫기 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'취소'**
+  String get lumiConversationTokenDialogClose;
+
+  /// 꿈 분석 화면 앱바 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 분석'**
+  String get dreamAnalysisAppBar;
+
+  /// 키워드 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'주요 테마'**
+  String get dreamAnalysisKeywordsTitle;
+
+  /// 감정 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'감정'**
+  String get dreamAnalysisEmotionsTitle;
+
+  /// 상징 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'상징'**
+  String get dreamAnalysisSymbolsTitle;
+
+  /// 해석 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'해석'**
+  String get dreamAnalysisInterpretationTitle;
+
+  /// 권장사항 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 팁'**
+  String get dreamAnalysisRecommendationsTitle;
+
+  /// 분석 헤더 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'당신의 꿈 분석'**
+  String get dreamAnalysisHeaderTitle;
+
+  /// 분석 헤더 서브타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi AI 제공'**
+  String get dreamAnalysisHeaderSubtitle;
+
+  /// 자각몽 가능성 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 가능성'**
+  String get dreamAnalysisLucidPotentialTitle;
+
+  /// 높은 자각몽 가능성 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'높음'**
+  String get dreamAnalysisLucidPotentialHigh;
+
+  /// 중간 자각몽 가능성 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'중간'**
+  String get dreamAnalysisLucidPotentialMedium;
+
+  /// 낮은 자각몽 가능성 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'낮음'**
+  String get dreamAnalysisLucidPotentialLow;
+
+  /// 프리미엄 프로모션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'더 깊은 분석 잠금 해제'**
+  String get dreamAnalysisPremiumPromoTitle;
+
+  /// 프리미엄 기능 목록
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 회원은 상세한 상징 해석, 개인화된 통찰, 무제한 분석을 받습니다'**
+  String get dreamAnalysisPremiumFeatures;
+
+  /// 프리미엄 업그레이드 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 가입'**
+  String get dreamAnalysisPremiumButton;
+
+  /// 분석 실패 에러 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'분석 실패: {error}'**
+  String checklistAnalysisError(Object error);
+
+  /// 꿈 분석 중 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈을 분석하는 중...'**
+  String get checklistAnalyzing;
+
+  /// 취소 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'취소'**
+  String get checklistCancel;
+
+  /// 완료된 태스크 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'완료된 태스크'**
+  String get checklistCompletedTasks;
+
+  /// 완료된 태스크 수 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{completed}/{total}'**
+  String checklistCompletedTasksValue(Object completed, Object total);
+
+  /// 체크리스트 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'잘하셨어요! 오늘의 훈련을 완료했습니다!'**
+  String get checklistCompleteMessage;
+
+  /// 필수 태스크 미완료 경고 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'모든 필수 태스크를 완료해주세요'**
+  String get checklistCompleteRequired;
+
+  /// 필수 태스크 먼저 완료 경고
+  ///
+  /// In ko, this message translates to:
+  /// **'필수 태스크를 먼저 완료하세요'**
+  String get checklistCompleteRequiredFirst;
+
+  /// 훈련 완료 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'훈련 완료'**
+  String get checklistCompleteTraining;
+
+  /// 확인 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'확인'**
+  String get checklistConfirm;
+
+  /// 일차 완료 타이틀 with 일차 번호
+  ///
+  /// In ko, this message translates to:
+  /// **'{day}일차 완료! 🎉'**
+  String checklistDayComplete(Object day);
+
+  /// 앱바 일차 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'{day}일차 훈련'**
+  String checklistDayTitle(Object day);
+
+  /// 꿈 분석 가능 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'오늘 무료 분석 1회 가능'**
+  String get checklistDreamAnalysisAvailable;
+
+  /// 프리미엄 무제한 분석 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄: 무제한'**
+  String get checklistDreamAnalysisPremiumUnlimited;
+
+  /// 꿈 분석 섹션 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 분석'**
+  String get checklistDreamAnalysisTitle;
+
+  /// 광고 시청으로 분석 추가 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 분석 1회 더 받기'**
+  String get checklistDreamAnalysisWatchAd;
+
+  /// 꿈 입력 필드 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈을 자세히 설명해주세요...'**
+  String get checklistDreamInputHint;
+
+  /// 꿈 입력 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 입력'**
+  String get checklistEnterDream;
+
+  /// 나가기 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'나가기'**
+  String get checklistExit;
+
+  /// 나가기 확인 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'진행 상황이 저장되지 않습니다. 정말 나가시겠습니까?'**
+  String get checklistExitMessage;
+
+  /// 나가기 확인 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'훈련 종료?'**
+  String get checklistExitTitle;
+
+  /// 무료 분석 가능 횟수
+  ///
+  /// In ko, this message translates to:
+  /// **'오늘 무료 분석 가능'**
+  String get checklistFreeAnalysisAvailable;
+
+  /// 무료 분석 시작 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'무료 분석 시작'**
+  String get checklistFreeAnalysisStart;
+
+  /// 나중에 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'나중에'**
+  String get checklistLater;
+
+  /// 프리미엄 분석 시작 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 분석 (프리미엄)'**
+  String get checklistPremiumAnalysisStart;
+
+  /// 프리미엄 무제한 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄: 무제한'**
+  String get checklistPremiumUnlimited;
+
+  /// 진행률 퍼센트
+  ///
+  /// In ko, this message translates to:
+  /// **'{percent}%'**
+  String checklistProgressPercent(Object percent);
+
+  /// 필수 태스크 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'필수 태스크'**
+  String get checklistRequiredTasks;
+
+  /// 필수 태스크 완료 수
+  ///
+  /// In ko, this message translates to:
+  /// **'{completed}/{total} 완료'**
+  String checklistRequiredTasksValue(Object completed, Object total);
+
+  /// 태스크 목표와 횟수
+  ///
+  /// In ko, this message translates to:
+  /// **'목표: {count}회'**
+  String checklistTaskGoal(Object count);
+
+  /// 선택 태스크 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'선택'**
+  String get checklistTaskOptional;
+
+  /// 필수 태스크 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'필수'**
+  String get checklistTaskRequired;
+
+  /// 소요 시간 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'소요 시간'**
+  String get checklistTimeSpent;
+
+  /// 소요 시간 분 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{minutes}분'**
+  String checklistTimeSpentValue(Object minutes);
+
+  /// 광고 보고 분석 받기 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 분석 받기'**
+  String get checklistWatchAdAnalysis;
+
+  /// 광고 보고 추가 분석 얻기
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 분석 1회 더 받기'**
+  String get checklistWatchAdForAnalysis;
+
+  /// WBTB 바쁨 상태
+  ///
+  /// In ko, this message translates to:
+  /// **'바쁜 날 - WBTB 건너뜀'**
+  String get checklistWbtbBusy;
+
+  /// WBTB 완료 상태
+  ///
+  /// In ko, this message translates to:
+  /// **'WBTB 완료'**
+  String get checklistWbtbCompleted;
+
+  /// WBTB 날 배지
+  ///
+  /// In ko, this message translates to:
+  /// **'🌙 WBTB 날'**
+  String get checklistWbtbDayBadge;
+
+  /// WBTB 남은 건너뛰기 횟수
+  ///
+  /// In ko, this message translates to:
+  /// **'이번 주 건너뛰기 {remaining}회 남음'**
+  String checklistWbtbRemainingSkips(Object remaining);
+
+  /// WBTB 건너뜀 상태
+  ///
+  /// In ko, this message translates to:
+  /// **'WBTB 건너뜀'**
+  String get checklistWbtbSkipped;
+
+  /// 광고 보고 WBTB 건너뛰기
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 보고 오늘 WBTB 건너뛰기'**
+  String get checklistWbtbSkipWithAd;
+
+  /// 일일 체크리스트 앱바 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 체크리스트'**
+  String get dailyChecklistAppBar;
+
+  /// 일일 체크리스트 완료 상태
+  ///
+  /// In ko, this message translates to:
+  /// **'완료'**
+  String get dailyChecklistComplete;
+
+  /// 우선순위 1 작업 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'🔥 우선순위 1 - 필수'**
+  String get dailyChecklistPriority1;
+
+  /// 우선순위 2 작업 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'💪 우선순위 2 - 중요'**
+  String get dailyChecklistPriority2;
+
+  /// 일반 작업 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'📝 일반 연습'**
+  String get dailyChecklistRegular;
+
+  /// 선택 작업 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'⭐ 선택 - 보너스'**
+  String get dailyChecklistOptional;
+
+  /// 카운터 진행률 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{current}/{target}'**
+  String dailyChecklistCounterProgress(Object current, Object target);
+
+  /// 연습 간격 안내
+  ///
+  /// In ko, this message translates to:
+  /// **'{minutes}분마다 연습하기'**
+  String dailyChecklistPracticeInterval(Object minutes);
+
+  /// 완료 대화상자 제목과 아이콘
+  ///
+  /// In ko, this message translates to:
+  /// **'{icon} 작업 완료!'**
+  String dailyChecklistCompletionDialogTitle(Object icon);
+
+  /// 완료 대화상자 내용
+  ///
+  /// In ko, this message translates to:
+  /// **'잘했어! {name}을(를) 완료했다!'**
+  String dailyChecklistCompletionDialogContent(Object name);
+
+  /// 대화상자 확인 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'확인'**
+  String get dailyChecklistConfirmButton;
+
+  /// No description provided for @legalDocumentLoadError.
+  ///
+  /// In ko, this message translates to:
+  /// **'문서를 불러올 수 없습니다'**
+  String get legalDocumentLoadError;
+
+  /// No description provided for @legalDocumentNotFound.
+  ///
+  /// In ko, this message translates to:
+  /// **'문서를 찾을 수 없습니다: {path}'**
+  String legalDocumentNotFound(Object path);
 
   /// No description provided for @adLoadFailed.
   ///

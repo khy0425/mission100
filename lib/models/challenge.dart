@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mission100/generated/l10n/app_localizations.dart';
+import 'package:lucid_dream_100/generated/l10n/app_localizations.dart';
 
 /// 챌린지 타입 (단기 미션 중심)
 enum ChallengeType {

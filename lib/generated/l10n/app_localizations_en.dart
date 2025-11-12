@@ -30,7 +30,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get activatedStatus => 'Activated';
 
   @override
-  String get adFallbackMessage => 'Journey to Chad status, let\'s go! 💪';
+  String get adFallbackMessage =>
+      'Journey to Dream Spirit status, let\'s go! 💪';
 
   @override
   String get advertisement => 'Advertisement';
@@ -88,7 +89,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appRatingComingSoon => 'App rating feature is coming soon';
 
   @override
-  String get appSlogan => 'Journey to Become Chad';
+  String get appSlogan => 'Journey to Become Dream Spirit';
 
   @override
   String get appTitle => '⚡ ALPHA BATTLEGROUND ⚡';
@@ -147,7 +148,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get calendar => 'Calendar';
 
   @override
-  String get calendarBannerText => 'Consistency is Chad power! 📅';
+  String get calendarBannerText => 'Consistency is Dream Spirit power! 📅';
 
   @override
   String get calendarIcon => '📅';
@@ -271,11 +272,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get continueOrStartNew =>
-      'Would you like to continue the previous workout?\\nOr start a new workout?';
+      'Would you like to continue the previous workout?\\nOr start a new practice?';
 
   @override
   String get copyrightMission100 =>
-      '© 2024 Mission 100 Team\nAll rights reserved\n\n💪 Until you become unstoppable!';
+      '© 2024 Lucid Dream Team\nAll rights reserved\n\n💪 Until you become unstoppable!';
 
   @override
   String get core => 'Core';
@@ -349,7 +350,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get developerInfo => 'Developer Info';
 
   @override
-  String get developerInfoDesc => 'Join the journey to become Chad';
+  String get developerInfoDesc => 'Join the journey to become Dream Spirit';
 
   @override
   String difficultyChanged(String difficulty) {
@@ -363,7 +364,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get difficultyExpert => 'Expert';
 
   @override
-  String get difficultyExtreme => 'Giga Chad - Legendary Territory';
+  String get difficultyExtreme => 'Giga Dream Spirit - Legendary Territory';
 
   @override
   String get difficultyHard => 'Hard';
@@ -379,7 +380,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get downloadMission100 =>
-      'Download Mission: 100 app! Weaklings run away!';
+      'Download Lucid Dream 100 app! Weaklings run away!';
 
   @override
   String get durationLabel => 'Duration';
@@ -628,13 +629,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get logoutTitle => 'Logout';
 
   @override
-  String get madeWithLove => 'Made with ❤️ for Chad';
+  String get madeWithLove => 'Made with ❤️ for Dream Spirit';
 
   @override
   String get minutes => 'minutes';
 
   @override
-  String get mission100Team => 'Mission 100 Team';
+  String get mission100Team => 'Lucid Dream Team';
 
   @override
   String get missionComplete =>
@@ -715,12 +716,56 @@ class AppLocalizationsEn extends AppLocalizations {
   String get permissionBenefits => 'With these permissions, you can:';
 
   @override
+  String get permissionBenefitsPrompt => 'You will have access to:';
+
+  @override
+  String get permissionAllowButton => 'Allow';
+
+  @override
+  String get notificationPermissionTitle => '🔔 Notification Permission';
+
+  @override
+  String get notificationPermissionDesc =>
+      'Required for practice reminders and achievement notifications';
+
+  @override
+  String get notificationBenefit1 => '💪 Daily practice reminders';
+
+  @override
+  String get notificationBenefit2 => '🏆 Achievement celebration alerts';
+
+  @override
+  String get notificationBenefit3 => '🔥 Motivational messages';
+
+  @override
+  String get notificationBenefit4 => '✨ New challenge notifications';
+
+  @override
+  String get backupPermissionTitle => '💾 Backup Feature';
+
+  @override
+  String get backupPermissionDesc =>
+      'Storage access is needed to safely backup your dream journal data.';
+
+  @override
+  String get backupBenefit1 => '📁 Automatic dream journal backup';
+
+  @override
+  String get backupBenefit2 => '🔄 Data restoration when changing devices';
+
+  @override
+  String get backupBenefit3 => '💾 Prevent data loss';
+
+  @override
+  String get backupBenefit4 => '☁️ Secure data storage';
+
+  @override
   String get permissionStorageMessage =>
       'Storage permission is required. Please allow in settings.';
 
   @override
   String get permissionsDescription =>
-      'Mission 100 needs the following permissions\nfor the best experience:';
+      'Lucid Dream needs the following permissions\nfor the optimal experience:';
 
   @override
   String get pleaseCreateProfile => 'Please create your profile';
@@ -875,264 +920,265 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get scientificFact10Content =>
-      'Regular push-ups increase cardiac output by 20%, improving systemic circulation.';
+      'Lucid dream training increases cognitive flexibility by 42%, enabling thinking from multiple perspectives.';
 
   @override
-  String get scientificFact10Impact => '❤️ Powerful heart pump upgrade!';
+  String get scientificFact10Impact => '🌈 Cognitive flexibility exploding!';
 
   @override
-  String get scientificFact10Title => 'Increased Cardiac Output';
+  String get scientificFact10Title => 'Cognitive Flexibility Enhancement';
 
   @override
   String get scientificFact11Content =>
-      'Push-ups increase capillary density by 30%, improving oxygen supply to muscles and brain.';
+      'REM sleep quality improves by 30%, enabling deeper and more efficient lucid dream training.';
 
   @override
-  String get scientificFact11Impact => '🌊 Life highway expansion project!';
+  String get scientificFact11Impact =>
+      '🌙 Experiencing the optimal dream state!';
 
   @override
-  String get scientificFact11Title => 'Enhanced Angiogenesis';
+  String get scientificFact11Title => 'REM Sleep Quality Enhancement';
 
   @override
   String get scientificFact12Content =>
-      '12 weeks of push-up program reduces systolic blood pressure by an average of 8mmHg.';
+      'Lucid dream training optimizes sleep cycles, maintaining regular 90-minute cycles.';
 
   @override
-  String get scientificFact12Impact =>
-      '📉 Natural blood pressure normalization!';
+  String get scientificFact12Impact => '⏰ Perfect sleep rhythm acquired!';
 
   @override
-  String get scientificFact12Title => 'Blood Pressure Normalization';
+  String get scientificFact12Title => 'Sleep Cycle Optimization';
 
   @override
   String get scientificFact13Content =>
-      'Regular push-ups improve heart rate variability by 35%, increasing stress resistance.';
+      'Deep sleep stage (N3) increases by 20%, promoting physical recovery and growth hormone secretion.';
 
   @override
-  String get scientificFact13Impact => '💎 Diamond-like heart rhythm!';
+  String get scientificFact13Impact =>
+      '💤 Getting the ultimate restorative sleep!';
 
   @override
-  String get scientificFact13Title => 'Improved Heart Rate Variability';
+  String get scientificFact13Title => 'Deep Sleep Increase';
 
   @override
   String get scientificFact14Content =>
-      'High-intensity push-ups improve vascular endothelial function by 25%, promoting vascular health.';
+      'Lucid dream training regulates the body clock, improving circadian rhythm by 15%.';
 
   @override
-  String get scientificFact14Impact => '✨ Vascular youth recovery!';
+  String get scientificFact14Impact => '🌍 Natural biorhythm restored!';
 
   @override
-  String get scientificFact14Title => 'Improved Endothelial Function';
+  String get scientificFact14Title => 'Circadian Rhythm Alignment';
 
   @override
   String get scientificFact15Content =>
-      'Resistance exercise push-ups increase basal metabolic rate by 15%, boosting 24-hour calorie burn.';
+      'Sleep efficiency increases by 25%, allowing more rest in the same amount of time.';
 
   @override
-  String get scientificFact15Impact => '🔥 24-hour fat burning system!';
+  String get scientificFact15Impact =>
+      '⚡ Sleep quality dramatically improving!';
 
   @override
-  String get scientificFact15Title => 'Increased Basal Metabolic Rate';
+  String get scientificFact15Title => 'Sleep Efficiency Increase';
 
   @override
   String get scientificFact16Content =>
-      '8 weeks of push-up training improves insulin sensitivity by 40%, enhancing blood sugar control.';
+      'During lucid dreams, rapid eye movement (REM) increases to 60-70 times per minute, creating vivid visual experiences.';
 
   @override
-  String get scientificFact16Impact => '📊 Perfect blood sugar control system!';
+  String get scientificFact16Impact =>
+      '👁️ The dream world unfolds in ultra-high definition!';
 
   @override
-  String get scientificFact16Title => 'Improved Insulin Sensitivity';
+  String get scientificFact16Title => 'Eye Movement Pattern';
 
   @override
   String get scientificFact17Content =>
-      'Push-ups increase fat oxidation enzyme activity by 50%, accelerating body fat reduction.';
+      'During REM sleep, brain activity increases to levels similar to waking states, enabling conscious thought.';
 
   @override
-  String get scientificFact17Impact => '🔥 Fat-burning turbo engine!';
+  String get scientificFact17Impact =>
+      '🧠 Your brain is awake while you sleep!';
 
   @override
-  String get scientificFact17Title => 'Enhanced Fat Oxidation';
+  String get scientificFact17Title => 'REM Brain Activation';
 
   @override
   String get scientificFact18Content =>
-      'High-intensity exercise activates brown fat to increase calorie burn through heat generation.';
+      'Lucid dream training balances serotonin and dopamine, improving mood and motivation.';
 
   @override
-  String get scientificFact18Impact => '♨️ Internal heating system activated!';
+  String get scientificFact18Impact => '😊 Happy hormones are being optimized!';
 
   @override
-  String get scientificFact18Title => 'Brown Fat Activation';
+  String get scientificFact18Title => 'Neurotransmitter Regulation';
 
   @override
   String get scientificFact19Content =>
-      'High-intensity push-ups increase oxygen consumption for up to 24 hours after exercise, burning additional calories.';
+      'During lucid dreams, acetylcholine levels increase by 30%, creating clear consciousness and vivid memories.';
 
   @override
-  String get scientificFact19Impact => '🌪️ 24-hour afterburn effect!';
+  String get scientificFact19Impact =>
+      '💡 Dreams are becoming as vivid as reality!';
 
   @override
-  String get scientificFact19Title => 'Post-Exercise Oxygen Consumption';
+  String get scientificFact19Title => 'Acetylcholine Increase';
 
   @override
   String get scientificFact1Content =>
-      'Regular pushups convert slow-twitch fibers (Type I) to fast-twitch fibers (Type II), increasing explosive power.';
+      'During lucid dreams, prefrontal cortex activity increases by 40% compared to normal dreams, enabling self-awareness and metacognition.';
 
   @override
-  String get scientificFact1Impact =>
-      '💪 Qualitative muscle transformation in progress!';
+  String get scientificFact1Impact => '🧠 Consciousness is expanding!';
 
   @override
-  String get scientificFact1Title => 'Muscle Fiber Type Transformation';
+  String get scientificFact1Title => 'Prefrontal Cortex Activation';
 
   @override
   String get scientificFact20Content =>
-      'High-intensity push-ups increase growth hormone secretion by up to 500%, promoting muscle growth and recovery.';
+      'Regular lucid dream training balances melatonin and serotonin, optimizing the sleep-wake cycle.';
 
   @override
-  String get scientificFact20Impact => '🚀 Youth hormone explosion!';
+  String get scientificFact20Impact =>
+      '🌗 Perfect sleep hormone balance achieved!';
 
   @override
-  String get scientificFact20Title => 'Growth Hormone Surge';
+  String get scientificFact20Title => 'Serotonin Balance';
 
   @override
   String get scientificFact21Content =>
-      'Push-up training improves motor unit synchronization by 70%, enabling explosive power generation.';
+      'Lucid dream training reduces anxiety symptoms by 55%, providing emotional stability.';
 
   @override
-  String get scientificFact21Impact =>
-      '⚡ Perfect harmony between nerves and muscles!';
+  String get scientificFact21Impact => '☮️ Finding peace of mind!';
 
   @override
-  String get scientificFact21Title => 'Motor Unit Synchronization';
+  String get scientificFact21Title => 'Anxiety Reduction';
 
   @override
   String get scientificFact22Content =>
-      'Regular push-ups increase motor cortex neuroplasticity by 45%, improving learning ability.';
+      'The ability to process and manage stress improves by 40% in lucid dreams.';
 
   @override
-  String get scientificFact22Impact => '🧠 Your brain is evolving too!';
+  String get scientificFact22Impact => '🛡️ Building resistance to stress!';
 
   @override
-  String get scientificFact22Title => 'Enhanced Neuroplasticity';
+  String get scientificFact22Title => 'Stress Management Ability';
 
   @override
   String get scientificFact23Content =>
-      'High-intensity push-ups increase brain-derived neurotrophic factor (BDNF) by up to 300%, improving brain health.';
+      'Through lucid dreams, emotional processing ability improves by 60%, facilitating psychological healing.';
 
   @override
-  String get scientificFact23Impact =>
-      '🌟 Brain rejuvenation program activated!';
+  String get scientificFact23Impact => '💖 Emotional healing is taking place!';
 
   @override
-  String get scientificFact23Title => 'Increased BDNF Secretion';
+  String get scientificFact23Title => 'Emotional Processing Ability';
 
   @override
   String get scientificFact24Content =>
-      '14 weeks of push-up training improves neural conduction velocity by 15%, shortening reaction time.';
+      '70% of PTSD patients experience reduced nightmare frequency and symptom relief through lucid dream training.';
 
   @override
-  String get scientificFact24Impact => '⚡ Lightning-fast reflexes acquired!';
+  String get scientificFact24Impact => '🌈 Recovering from trauma!';
 
   @override
-  String get scientificFact24Title => 'Improved Reaction Speed';
+  String get scientificFact24Title => 'PTSD Symptom Relief';
 
   @override
   String get scientificFact25Content =>
-      'Complex push-up exercises improve spinal interneuron inhibitory function by 25%, enhancing movement precision.';
+      'Lucid dream training reduces depression symptoms by 32%, improving overall mood and quality of life.';
 
   @override
   String get scientificFact25Impact =>
-      '🎯 Perfect movement control system established!';
+      '✨ Hope and positive energy being recharged!';
 
   @override
-  String get scientificFact25Title => 'Interneuron Activation';
+  String get scientificFact25Title => 'Depression Improvement';
 
   @override
   String get scientificFact2Content =>
-      'Pushups increase muscle mitochondrial density by up to 40%, maximizing energy production.';
+      'During lucid dreaming, 40Hz gamma waves increase by 75%, indicating a higher level of conscious awareness.';
 
   @override
   String get scientificFact2Impact =>
-      '⚡ Infinite energy system being constructed!';
+      '⚡ Entering transcendent conscious state!';
 
   @override
-  String get scientificFact2Title => 'Mitochondrial Density Increase';
+  String get scientificFact2Title => 'Gamma Wave Pattern Increase';
 
   @override
   String get scientificFact3Content =>
-      'Push-ups activate mTOR signaling, the key to muscle growth, by 300%.';
+      'After 8 weeks of lucid dream training, prefrontal cortex gray matter density increases by 5%.';
 
   @override
   String get scientificFact3Impact =>
-      '🚀 Muscle growth turbo engine is activated!';
+      '🧠 Your brain is physically strengthening!';
 
   @override
-  String get scientificFact3Title => 'mTOR Signaling Activation';
+  String get scientificFact3Title => 'Prefrontal Cortex Growth';
 
   @override
   String get scientificFact4Content =>
-      'Once developed muscles maintain nuclear domains even after stopping exercise, enabling rapid recovery even after 10 years.';
+      'Lucid dream practice improves metacognitive ability by 34%, increasing self-awareness even when awake.';
 
   @override
   String get scientificFact4Impact =>
-      '🧐 Eternal muscle memory is being carved!';
+      '🎯 Awareness is strengthening in reality too!';
 
   @override
-  String get scientificFact4Title => 'Permanence of Muscle Memory';
+  String get scientificFact4Title => 'Metacognitive Ability Enhancement';
 
   @override
   String get scientificFact5Content =>
-      'Push-up training improves motor unit synchronization by 70%, enabling explosive power output.';
+      'During lucid dreams, both alpha waves (8-13Hz) and beta waves (13-30Hz) are simultaneously activated, creating a unique conscious state.';
 
   @override
-  String get scientificFact5Impact =>
-      '⚡ Perfect harmony between nerves and muscles!';
+  String get scientificFact5Impact => '✨ Experiencing the awake dream state!';
 
   @override
-  String get scientificFact5Title => 'Motor Unit Synchronization';
+  String get scientificFact5Title => 'Mixed Brainwave State';
 
   @override
   String get scientificFact6Content =>
-      'Regular push-ups increase motor cortex neuroplasticity by 45%, improving learning abilities.';
+      'Lucid dream training improves dream recall by 300%, allowing you to remember more dreams.';
 
   @override
-  String get scientificFact6Impact => '🧐 The brain is also evolving!';
+  String get scientificFact6Impact => '💭 The dream world is opening vividly!';
 
   @override
-  String get scientificFact6Title => 'Enhanced Neuroplasticity';
+  String get scientificFact6Title => 'Dream Recall Increase';
 
   @override
   String get scientificFact7Content =>
-      'High-intensity push-ups increase Brain-Derived Neurotrophic Factor (BDNF) by up to 300%, improving brain health.';
+      'During lucid dreams, working memory capacity increases by 25%, enabling complex thinking and planning.';
 
   @override
-  String get scientificFact7Impact =>
-      '🌟 Brain youth recovery program activated!';
+  String get scientificFact7Impact => '🧠 Becoming a genius in dreams!';
 
   @override
-  String get scientificFact7Title => 'Increased BDNF Secretion';
+  String get scientificFact7Title => 'Working Memory Enhancement';
 
   @override
   String get scientificFact8Content =>
-      '14 weeks of push-up training improves nerve transmission speed by 15%, shortening reaction time.';
+      'During REM sleep, memory consolidation proceeds 50% more efficiently, converting learning into long-term memory.';
 
   @override
-  String get scientificFact8Impact => '⚡ Lightning-fast reflexes acquired!';
+  String get scientificFact8Impact =>
+      '📚 Knowledge is being imprinted while you sleep!';
 
   @override
-  String get scientificFact8Title => 'Improved Reaction Speed';
+  String get scientificFact8Title => 'Memory Consolidation Enhancement';
 
   @override
   String get scientificFact9Content =>
-      'Complex movement push-ups improve spinal interneuron inhibitory function by 25%, enhancing movement precision.';
+      'Problem-solving ability improves by 23% in lucid dreams, enabling creative insights.';
 
   @override
-  String get scientificFact9Impact =>
-      '🎯 Perfect movement control system established!';
+  String get scientificFact9Impact => '💡 Discovering solutions in dreams!';
 
   @override
-  String get scientificFact9Title => 'Interneuron Activation';
+  String get scientificFact9Title => 'Creative Problem Solving';
 
   @override
   String get seconds => 'seconds';
@@ -1192,7 +1238,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get storageAccess => '📁 Storage Access';
 
   @override
-  String get storageBenefit1 => '📁 Secure workout data backup';
+  String get storageBenefit1 => '📁 Secure dream journal data backup';
 
   @override
   String get storageBenefit2 => '🔄 Data restoration when changing devices';
@@ -1202,7 +1248,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get storagePermissionDesc =>
-      'Required for backing up and restoring workout data';
+      'Required for backing up and restoring dream journal data';
 
   @override
   String get storagePermissionTitle => '📁 Storage Permission';
@@ -1280,7 +1326,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get versionInfo => 'Version Info';
 
   @override
-  String get versionInfoDesc => 'Mission: 100 v1.0.0';
+  String get versionInfoDesc => 'Lucid Dream 100 v1.0.0';
 
   @override
   String victoryTime(String time) {
@@ -1355,7 +1401,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get premiumFeatures => 'Premium Features';
 
   @override
-  String get tomorrowChadActivity => 'Tomorrow\'s Chad Activity';
+  String get tomorrowChadActivity => 'Tomorrow\'s Dream Spirit Activity';
 
   @override
   String get createAccount => 'Create Account';
@@ -1383,7 +1429,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get guestMode => 'Guest Mode';
 
   @override
-  String get alreadyHaveAccount => 'Already have a Chad account?';
+  String get alreadyHaveAccount => 'Already have a Dream Spirit account?';
 
   @override
   String get welcome => 'Welcome!';
@@ -1630,7 +1676,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcomeTitle => 'Welcome!';
 
   @override
-  String get signupThankYouMessage => '🎉 Thank you for joining Mission: 100!';
+  String get signupThankYouMessage =>
+      '🎉 Thank you for joining Lucid Dream 100!';
 
   @override
   String get launchEventBenefits => 'Launch Event Benefits:';
@@ -1642,10 +1689,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get oneMonthFreePremium => '1 Month Free Premium';
 
   @override
-  String get benefit14WeeksProgram => '• Access to full 14-week program';
+  String get benefit14WeeksProgram => '• Access to full 30-day program';
 
   @override
-  String get benefitAllChadStages => '• All Chad evolution stages';
+  String get benefitAllChadStages => '• All Dream Spirit evolution stages';
 
   @override
   String get benefitDetailedStats => '• Detailed statistics and analysis';
@@ -1655,7 +1702,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get premiumFeaturesSummary =>
-      'Full 14-week program + All Chads + Detailed stats';
+      'Full 30-day program + All Chads + Detailed stats';
 
   @override
   String get benefitPersonalizedPlan => '• Personalized workout plan';
@@ -1671,6 +1718,9 @@ class AppLocalizationsEn extends AppLocalizations {
       'Compare with others and check rankings for motivation';
 
   @override
+  String get personalRecord => 'Personal Records';
+
+  @override
   String get personalRecordGoalDescription =>
       'Focus on personal goals and improving your own records';
 
@@ -1679,7 +1729,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tomorrowActivitiesMessage =>
-      'These are the activities Chad recommends for tomorrow! Let\'s prepare! 💪';
+      'These are the activities Dream Spirit recommends for tomorrow! Let\'s prepare! 💪';
 
   @override
   String get googleLogin => 'Sign in with Google';
@@ -1688,14 +1738,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get googleSignin3Seconds => 'Start in 3 seconds with Google';
 
   @override
-  String get alreadyHaveChadAccount => 'Already have a Chad account?';
+  String get alreadyHaveChadAccount => 'Already have a Dream Spirit account?';
 
   @override
   String get googleQuickSignup => 'Quick Sign up with Google';
 
   @override
   String chadActivityCompleted(String activityTitle) {
-    return '$activityTitle completed! Chad is proud! 💪';
+    return '$activityTitle completed! Dream Spirit is proud! 💪';
   }
 
   @override
@@ -1782,20 +1832,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get startSubscriptionButton => 'Start Subscription';
 
   @override
-  String get chadRecoveryTitle => 'Chad Active Recovery';
+  String get chadRecoveryTitle => 'Dream Spirit Active Recovery';
 
   @override
-  String get chadRecoverySettingsTitle => 'Chad Recovery Settings';
+  String get chadRecoverySettingsTitle => 'Dream Spirit Recovery Settings';
 
   @override
   String get chadRecoverySettingsSubtitle =>
       'Adjust personalized recovery activities';
 
   @override
-  String get chadWeeklyRecoveryReport => 'Chad Weekly Recovery Report';
+  String get chadWeeklyRecoveryReport => 'Dream Spirit Weekly Recovery Report';
 
   @override
-  String get tomorrowsChadActivity => 'Tomorrow\'s Chad Activity';
+  String get tomorrowsChadActivity => 'Tomorrow\'s Dream Spirit Activity';
 
   @override
   String chadActivityDuration(String duration) {
@@ -1808,7 +1858,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get chadRecoverySettings => 'Chad Recovery Settings';
+  String get chadRecoverySettings => 'Dream Spirit Recovery Settings';
 
   @override
   String goalProgramReady(String goalText) {
@@ -1825,10 +1875,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get viewAchievement => 'View Achievement';
 
   @override
-  String get chadLevelUpTitle => '🎉 Chad Level Up!';
+  String get chadLevelUpTitle => '🎉 Dream Spirit Level Up!';
 
   @override
-  String get viewChad => 'View Chad';
+  String get viewChad => 'View Dream Spirit';
 
   @override
   String get continueWithGoogle => 'Continue with Google';
@@ -1844,6 +1894,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementsTab => '🏆 Achievements';
+
+  @override
+  String calendarSelectedDate(Object day, Object month, Object year) {
+    return '$month/$day/$year';
+  }
+
+  @override
+  String get homeChecklistLoadError => 'Failed to load checklist';
+
+  @override
+  String get homeAIDreamAnalysisTitle => 'AI Dream Analysis';
+
+  @override
+  String get homeAIDreamAnalysisSubtitle => 'Unlock the secrets of your dreams';
+
+  @override
+  String get aiAssistantSubtitle => 'Chat with Lumi about lucid dreaming';
+
+  @override
+  String get homeDailyRewardTitle => 'Daily Login Reward';
+
+  @override
+  String get homeDailyRewardMessage =>
+      'Keep up the great work on your lucid dreaming journey!';
+
+  @override
+  String get homePremiumBonusApplied => 'Premium Bonus Applied!';
+
+  @override
+  String homeChatWithLumiMessage(Object amount) {
+    return 'Chat with Lumi for +$amount tokens';
+  }
+
+  @override
+  String get homeLaterButton => 'Later';
+
+  @override
+  String get homeClaimButton => 'Claim';
+
+  @override
+  String homeDailyRewardReceived(Object amount) {
+    return 'You received +$amount tokens!';
+  }
 
   @override
   String get accountInfoTitle => 'Account Information';
@@ -1954,7 +2047,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get btnStartGoogleQuick => 'Start in 3 seconds with Google';
 
   @override
-  String get msgAlreadyHaveAccount => 'Already have a Chad account?';
+  String get msgAlreadyHaveAccount => 'Already have a Dream Spirit account?';
 
   @override
   String get msgGuestMode =>
@@ -1967,11 +2060,131 @@ class AppLocalizationsEn extends AppLocalizations {
   String get titleCreateAccount => 'Create Account';
 
   @override
-  String get challengeTestYourLimits => '💪 Test your limits today?';
+  String get loginGoogleSignInFailed =>
+      'Google sign in failed. Please try again.';
+
+  @override
+  String get loginReadyToStartWithChad =>
+      'Ready to Start Your Lucid Dream Journey?';
+
+  @override
+  String get loginStartDreamflowJourney =>
+      'Begin your path to conscious dreaming';
+
+  @override
+  String get loginStartWithChad => 'Start with Dream Spirit';
+
+  @override
+  String get loginChadLaunchSpecial => '🎉 Launch Special Event';
+
+  @override
+  String get loginChadFreeTrialOffer => 'Try Premium free for 30 days';
+
+  @override
+  String get loginAlreadyHaveChadAccount => 'Already have an account?';
+
+  @override
+  String get loginEmail => 'Email';
+
+  @override
+  String get loginEmailRequired => 'Please enter your email';
+
+  @override
+  String get loginEmailInvalid => 'Please enter a valid email';
+
+  @override
+  String get loginPassword => 'Password';
+
+  @override
+  String get loginPasswordRequired => 'Please enter your password';
+
+  @override
+  String get loginPasswordMinLength => 'Password must be at least 6 characters';
+
+  @override
+  String get loginLoginButton => 'Login';
+
+  @override
+  String get signupChadTermsAgreementRequired =>
+      'Please agree to the terms and conditions';
+
+  @override
+  String get signupChadWelcomeMessage =>
+      'Welcome to your lucid dreaming journey!';
+
+  @override
+  String get signupChadGoogleSignupFailed =>
+      'Google signup failed. Please try again.';
+
+  @override
+  String get signupChadScreenTitle => 'Create Your Account';
+
+  @override
+  String get signupChadSigningUp => 'Creating your account...';
+
+  @override
+  String get signupChadStartFreeMonth => 'Start Free Month';
+
+  @override
+  String get signupChadLaunchSpecialEvent => '🎊 Launch Special Event';
+
+  @override
+  String get signupChadBenefitsList => 'Premium Benefits';
+
+  @override
+  String get signupChadOrEmailSignup => 'Or sign up with email';
+
+  @override
+  String get signupChadNameLabel => 'Name';
+
+  @override
+  String get signupChadNameRequired => 'Please enter your name';
+
+  @override
+  String get signupChadNameMinLength => 'Name must be at least 2 characters';
+
+  @override
+  String get signupChadEmailLabel => 'Email';
+
+  @override
+  String get signupChadEmailRequired => 'Please enter your email';
+
+  @override
+  String get signupChadEmailInvalid => 'Please enter a valid email';
+
+  @override
+  String get signupChadPasswordLabel => 'Password';
+
+  @override
+  String get signupChadPasswordRequired => 'Please enter a password';
+
+  @override
+  String get signupChadPasswordMinLength =>
+      'Password must be at least 6 characters';
+
+  @override
+  String get signupChadConfirmPasswordLabel => 'Confirm Password';
+
+  @override
+  String get signupChadConfirmPasswordRequired =>
+      'Please confirm your password';
+
+  @override
+  String get signupChadPasswordsNotMatch => 'Passwords do not match';
+
+  @override
+  String get signupChadTermsAgreement => 'I agree to the Terms and Conditions';
+
+  @override
+  String get signupChadLoginButton => 'Login';
+
+  @override
+  String get challengeTestYourLimits =>
+      '🌙 Start your lucid dream journey today?';
 
   @override
   String get completeInitialTest =>
-      'Complete initial test to create your profile';
+      'Create your profile and start lucid dream training';
 
   @override
   String get getStartedButton => 'Get Started';
@@ -2000,10 +2213,35 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingInitialTestDescription =>
-      'Check your current level.\nGet your personalized program.\n\n• Push to your max\n• Keep perfect form\n• Get your custom plan';
+      'Start your lucid dream journey.\n\n• Set your goals\n• Prepare dream journal\n• Learn your first technique';
 
   @override
-  String get onboardingInitialTestTitle => 'Skill Check Time ⏱️';
+  String get onboardingInitialTestTitle => 'Journey Prep Time ⏱️';
+
+  @override
+  String get onboardingMissionAdvancedDesc => 'Week 11-14';
+
+  @override
+  String get onboardingMissionAdvancedTitle => 'Advanced';
+
+  @override
+  String get onboardingMissionAssurance => 'Proven results guaranteed';
+
+  @override
+  String get onboardingMissionBeginnerDesc => 'Week 1-6';
+
+  @override
+  String get onboardingMissionBeginnerTitle => 'Beginner';
+
+  @override
+  String get onboardingMissionIntermediateDesc => 'Week 7-10';
+
+  @override
+  String get onboardingMissionIntermediateTitle => 'Intermediate';
+
+  @override
+  String get onboardingMissionPersonalizedProgram =>
+      'Personalized 14-Week Program';
 
   @override
   String get onboardingNext => 'Next';
@@ -2016,52 +2254,53 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get onboardingWelcomeDescription =>
-      '14 weeks is all you need. You got this.\nLet\'s crush it! 💪';
+      '30 days is all you need. You got this.\nLet\'s master lucid dreaming! 🌙';
 
   @override
-  String get onboardingWelcomeTitle => '14 Weeks, 100 Reps. Let\'s Go! 🔥';
+  String get onboardingWelcomeTitle => '30 Days to Lucid Dreams! 🔥';
 
   @override
-  String get startTestButton => 'Start Test';
+  String get startTestButton => 'Get Started';
 
   @override
   String get stepByStepGuide => 'Step-by-Step\nGuide';
 
   @override
-  String get testAdMessage => 'Test Ad - Fitness App';
+  String get testAdMessage => 'Test Ad - Lucid Dream App';
 
   @override
-  String get tutorialButton => '💥 BECOME PUSHUP MASTER 💥';
+  String get tutorialButton => '💥 BECOME LUCID DREAM MASTER 💥';
 
   @override
-  String get tutorialDetailTitle => '💥 MASTER THE EMPEROR FORM 💥';
+  String get tutorialDetailTitle => '💥 MASTER THE DREAM TECHNIQUES 💥';
 
   @override
-  String get tutorialSubtitle => 'Real EMPERORS perfect their form! 💪';
+  String get tutorialSubtitle =>
+      'Real DREAM MASTERS perfect their techniques! 🌙';
 
   @override
-  String get tutorialTitle => '🔥 ALPHA EMPEROR PUSHUP DOJO 🔥';
+  String get tutorialTitle => '🔥 LUCID DREAM MASTERY DOJO 🔥';
 
   @override
   String get welcomeMessage =>
-      '🔥 WELCOME,\nFUTURE EMPEROR! 🔥\nTime to conquer!';
+      '🔥 WELCOME,\nFUTURE DREAM MASTER! 🔥\nTime to awaken!';
 
   @override
   String get startJourney => 'Start the Journey! 🚀';
 
   @override
-  String get setWorkoutSchedule => '🔥 Set Your Workout Schedule!';
+  String get setWorkoutSchedule => '🔥 Set Your Practice Schedule!';
 
   @override
   String get workoutScheduleDescription =>
-      'To become a true champion, you need consistency!\nYou must work out at least 3 days a week. 💪\n\nChoose days that fit your lifestyle,\nand block excuses with reminder notifications! 🚀';
+      'To become a lucid dream master, you need consistency!\nDaily practice is key. 💪\n\nChoose days that fit your lifestyle,\nand get reminders with notifications! 🚀';
 
   @override
   String get goalSetupComplete => '🎉 Goal Setup Complete!';
 
   @override
   String get goalSetupCompleteMessage =>
-      'Your personalized Mission: 100 begins now.\nTry 1 month free with our launch event!';
+      'Your personalized DreamFlow journey begins now.\nTry 1 month free with our launch event!';
 
   @override
   String get keyFeatures => '✨ Key Features';
@@ -2071,53 +2310,54 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get scientificBasisDesc =>
-      'Program designed based on\nlatest sports science research';
+      'Program designed based on\nlatest lucid dreaming research';
 
   @override
-  String get progressiveOverloadTitle => 'Progressive Overload';
+  String get progressiveOverloadTitle => 'Daily Checklist System';
 
   @override
   String get progressiveOverloadDesc =>
-      'Systematically increasing\nworkload for safe growth';
+      'Proven techniques like\nWBTB + MILD (46% success rate)';
 
   @override
-  String get rpeAdaptationTitle => 'RPE-Based Adaptation';
+  String get rpeAdaptationTitle => 'Dream Journal Tracking';
 
   @override
   String get rpeAdaptationDesc =>
-      'Automatically adjusts difficulty\nbased on your workout intensity';
+      'Track your dream recall\nand lucid dream experiences';
 
   @override
-  String get chadEvolutionTitle => 'Chad Evolution System';
+  String get chadEvolutionTitle => 'Dream Spirit Evolution';
 
   @override
-  String get chadEvolutionDesc => 'Your character grows\nas you work out';
+  String get chadEvolutionDesc =>
+      'Your spirit guide grows\nas you master lucid dreaming';
 
   @override
   String get readyToStart => 'Ready to Start?';
 
   @override
   String get findYourLevel =>
-      'First, find your starting point\nwith a quick level test';
+      'First, find your starting point\nwith a quick setup';
 
   @override
-  String get step1LevelTest => 'Level Test (30 seconds)';
+  String get step1LevelTest => 'Goal Setting (1 minute)';
 
   @override
-  String get step2SetStartDate => 'Set Workout Start Date';
+  String get step2SetStartDate => 'Set Practice Start Date';
 
   @override
-  String get step3StartJourney => 'Start 14-Week Journey!';
+  String get step3StartJourney => 'Start 30-Day Journey!';
 
   @override
   String get awesome => 'Awesome!';
 
   @override
-  String get onboardingProgramIntroTitle => '14-Week Program Introduction';
+  String get onboardingProgramIntroTitle => '30-Day Lucid Dream Program';
 
   @override
   String get onboardingProgramIntroDescription =>
-      'Scientifically designed 14-week program\nto help you achieve 100 pushups';
+      'Scientifically designed 30-day program\nto help you master lucid dreaming';
 
   @override
   String get btnGetStarted => 'Get Started';
@@ -2129,31 +2369,124 @@ class AppLocalizationsEn extends AppLocalizations {
   String get titleTutorial => 'Tutorial';
 
   @override
-  String get tutorialWelcomeTitle => '🏋️ Mission 100';
+  String get goalSetupCurrentWeight => 'Current Weight (kg)';
 
   @override
-  String get tutorialWelcomeSubtitle => 'Achieve 100 Push-ups in 14 Weeks';
+  String get goalSetupTargetWeight => 'Target Weight (kg, optional)';
+
+  @override
+  String get goalSetupNextButton => 'Next';
+
+  @override
+  String get goalSetupStartButton => 'Start';
+
+  @override
+  String get goalSetupLevelBeginnerTitle => 'Beginner';
+
+  @override
+  String get goalSetupLevelBeginnerDesc =>
+      'If you\'re starting lucid dreaming for the first time or after a long break';
+
+  @override
+  String get goalSetupLevelIntermediateTitle => 'Intermediate';
+
+  @override
+  String get goalSetupLevelIntermediateDesc =>
+      'If you\'ve been practicing consistently and are familiar with basic techniques';
+
+  @override
+  String get goalSetupLevelAdvancedTitle => 'Advanced';
+
+  @override
+  String get goalSetupLevelAdvancedDesc =>
+      'If you want intensive training and want to try various advanced techniques';
+
+  @override
+  String get goalSetupGoalWeightLossTitle => 'Weight Loss';
+
+  @override
+  String get goalSetupGoalWeightLossDesc =>
+      'Reduce body fat and create a lean physique';
+
+  @override
+  String get goalSetupGoalMuscleGainTitle => 'Muscle Gain';
+
+  @override
+  String get goalSetupGoalMuscleGainDesc =>
+      'Build solid muscles and attractive upper body lines';
+
+  @override
+  String get goalSetupGoalStaminaTitle => 'Stamina Improvement';
+
+  @override
+  String get goalSetupGoalStaminaDesc =>
+      'Improve endurance and overall fitness';
+
+  @override
+  String get goalSetupGoalHealthTitle => 'Overall Health';
+
+  @override
+  String get goalSetupGoalHealthDesc =>
+      'Healthy lifestyle habits and balanced body building';
+
+  @override
+  String get goalSetupTimeDawn => 'Dawn (5-7 AM)';
+
+  @override
+  String get goalSetupTimeMorning => 'Morning (7-9 AM)';
+
+  @override
+  String get goalSetupTimeLateMorning => 'Late Morning (9 AM-12 PM)';
+
+  @override
+  String get goalSetupTimeLunch => 'Lunch (12-2 PM)';
+
+  @override
+  String get goalSetupTimeAfternoon => 'Afternoon (2-5 PM)';
+
+  @override
+  String get goalSetupTimeEvening => 'Evening (5-8 PM)';
+
+  @override
+  String get goalSetupTimeNight => 'Night (8-10 PM)';
+
+  @override
+  String get goalSetupWelcomeMessage =>
+      'Your personalized lucid dream journey begins now.\nTry 1 month free with our launch event!';
+
+  @override
+  String get goalSetupStartJourney => 'Start Your Journey';
+
+  @override
+  String get goalSetupCompleteTitle => '🎉 Goal Setup Complete!';
+
+  @override
+  String get tutorialWelcomeTitle => '🌙 Lucid Dream 100';
+
+  @override
+  String get tutorialWelcomeSubtitle =>
+      'Become a Lucid Dream Master in 30 Days';
 
   @override
   String get tutorialFeature1Title => 'Science-Based';
 
   @override
   String get tutorialFeature1Desc =>
-      'Program designed based on\nlatest sports science research (2016-2024)';
+      'Program designed based on\nlatest lucid dreaming research (2014-2024)';
 
   @override
-  String get tutorialFeature2Title => 'Progressive Overload';
+  String get tutorialFeature2Title => 'Progressive Training';
 
   @override
   String get tutorialFeature2Desc =>
-      'Systematically increasing volume each week\nfor safe and effective growth';
+      'Systematically increasing difficulty each day\nfor safe and effective growth';
 
   @override
-  String get tutorialFeature3Title => 'Personalized Program';
+  String get tutorialFeature3Title => 'Customized Program';
 
   @override
   String get tutorialFeature3Desc =>
-      'Customized workout plan\ntailored to your level';
+      'Customized training plan\ntailored to your progress';
 
   @override
   String get tutorialProgramTitle => '📋 Program Structure';
@@ -2162,88 +2495,88 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tutorialDurationTitle => '⏱️ Duration';
 
   @override
-  String get tutorialDurationSubtitle => '14 weeks (42 sessions total)';
+  String get tutorialDurationSubtitle => '30 days (daily)';
 
   @override
   String get tutorialDurationDesc =>
-      '3x per week (Mon, Wed, Fri)\n48-hour recovery guaranteed';
+      'Daily consistent practice\n5-10 minutes daily investment';
 
   @override
-  String get tutorialStructureTitle => '💪 Structure';
+  String get tutorialStructureTitle => '🌙 Structure';
 
   @override
-  String get tutorialStructureSubtitle => 'Push-ups + Finisher';
+  String get tutorialStructureSubtitle => 'Checklist + Dream Journal';
 
   @override
   String get tutorialStructureDesc =>
-      'Main: 5-9 sets of push-ups\nFinisher: Burpees/Jump Squats etc.';
+      'Main: Daily checklist\nRecord: Dream journal entry';
 
   @override
-  String get tutorialRestTitle => '⏳ Rest Time';
+  String get tutorialRestTitle => '⏳ Time Required';
 
   @override
-  String get tutorialRestSubtitle => 'Scientifically Optimized';
+  String get tutorialRestSubtitle => 'Optimized Duration';
 
   @override
-  String get tutorialRestDesc =>
-      'Between sets: 45-120 seconds\nAuto-adjusted by level/week';
+  String get tutorialRestDesc => 'Daily: 5-10 minutes\nAdjusted by progress';
 
   @override
   String get tutorialTipTitle => '💡 Pro Tip';
 
   @override
   String get tutorialTipDesc =>
-      'Record your RPE after each workout\nand the next workout intensity will auto-adjust!';
+      'Record your completion rate daily\nand the next checklist auto-adjusts!';
 
   @override
-  String get tutorialFormTitle => '✅ Proper Push-up Form';
+  String get tutorialFormTitle => '✅ Key Lucid Dream Techniques';
 
   @override
-  String get tutorialForm1Title => '1. Starting Position';
+  String get tutorialForm1Title => '1. WBTB Technique';
 
   @override
   String get tutorialForm1Desc =>
-      'Hands shoulder-width apart\nBody in straight line';
+      'Sleep early, wake after 4-6 hours\nStay awake for 20-30 minutes';
 
   @override
-  String get tutorialForm2Title => '2. Descending';
+  String get tutorialForm2Title => '2. MILD Technique';
 
   @override
   String get tutorialForm2Desc =>
-      'Lower until chest touches floor\nElbows at 45-degree angle';
+      'Before sleep, repeat \"I will know I\'m dreaming\"\nStrengthen lucid intention';
 
   @override
-  String get tutorialForm3Title => '3. Ascending';
+  String get tutorialForm3Title => '3. Reality Check';
 
   @override
-  String get tutorialForm3Desc => 'Engage chest and core\nExplode upward';
+  String get tutorialForm3Desc =>
+      'Check 10+ times daily\n\"Am I dreaming now?\"';
 
   @override
   String get tutorialWarningTitle => '⚠️ Warnings';
 
   @override
-  String get tutorialWarning1 => 'Keep core engaged to prevent sagging';
+  String get tutorialWarning1 => 'Don\'t overdo it, maintain your own pace';
 
   @override
-  String get tutorialWarning2 => 'Don\'t hyperextend your neck';
+  String get tutorialWarning2 => 'Ensure sufficient sleep (7-8 hours)';
 
   @override
-  String get tutorialWarning3 => 'Don\'t tuck elbows too close to body';
+  String get tutorialWarning3 => 'Enjoy without stress';
 
   @override
-  String get tutorialWarning4 => 'Stop immediately if you feel pain';
+  String get tutorialWarning4 => 'Consult professional if sleep disorders';
 
   @override
-  String get tutorialRpeTitle => '📊 What is RPE?';
+  String get tutorialRpeTitle => '📊 What is Completion Rate?';
 
   @override
-  String get tutorialRpeSubtitle => 'Rate of Perceived Exertion';
+  String get tutorialRpeSubtitle => 'Daily checklist achievement';
 
   @override
   String get tutorialRpe6 => '😊 Too Easy';
 
   @override
-  String get tutorialRpe6Desc => 'I can do more next time';
+  String get tutorialRpe6Desc => 'I can add more techniques';
 
   @override
   String get tutorialRpe7 => '🙂 Moderate';
@@ -2264,64 +2597,64 @@ class AppLocalizationsEn extends AppLocalizations {
   String get tutorialRpe9Desc => 'Nearly impossible';
 
   @override
-  String get tutorialRpe10 => '🤯 Max Effort!';
+  String get tutorialRpe10 => '🤯 Perfect!';
 
   @override
-  String get tutorialRpe10Desc => 'Gave it everything I had';
+  String get tutorialRpe10Desc => 'Completed all items';
 
   @override
   String get tutorialAutoAdjustTitle => '🎯 Smart Auto-Adjustment';
 
   @override
   String get tutorialAutoAdjustDesc =>
-      'Record your RPE and the next workout\nautomatically optimizes!\n\n• RPE 6-7: Difficulty +5%\n• RPE 8: Maintain\n• RPE 9-10: Difficulty -5%';
+      'Record completion rate and next checklist\nautomatically optimizes!\n\n• 80%+: Add new techniques\n• 60-80%: Maintain\n• <60%: Adjust difficulty';
 
   @override
   String get tutorialScienceTitle => '🔬 Scientific Evidence';
 
   @override
   String get tutorialScienceSubtitle =>
-      'Designed based on latest research findings';
+      'Designed based on latest lucid dream research';
 
   @override
-  String get tutorialResearch1Author => 'Schoenfeld et al. (2016, 2019)';
+  String get tutorialResearch1Author => 'Stumbrys et al. (2012)';
 
   @override
-  String get tutorialResearch1Topic => 'Hypertrophy & Training Frequency';
+  String get tutorialResearch1Topic => 'Lucid Dream Induction Techniques';
 
   @override
   String get tutorialResearch1Finding =>
-      '3x weekly training optimal for muscle growth\n48-hour recovery recommended';
+      'MILD + WBTB combination most effective\n46% success rate proven';
 
   @override
-  String get tutorialResearch2Author => 'Grgic et al. (2018)';
+  String get tutorialResearch2Author => 'LaBerge et al. (2018)';
 
   @override
-  String get tutorialResearch2Topic => 'Inter-set Rest Periods';
+  String get tutorialResearch2Topic => 'Lucid Dream Frequency';
 
   @override
   String get tutorialResearch2Finding =>
-      '60-120 second rest\nmost effective for hypertrophy';
+      '2-4 lucid dreams per week\nis typical frequency';
 
   @override
-  String get tutorialResearch3Author => 'Plotkin et al. (2022)';
+  String get tutorialResearch3Author => 'Aspy et al. (2017)';
 
   @override
-  String get tutorialResearch3Topic => 'Progressive Overload';
+  String get tutorialResearch3Topic => 'MILD Technique Effectiveness';
 
   @override
   String get tutorialResearch3Finding =>
-      'Progressive rep increase\neffective for strength gains';
+      'Using MILD technique\ngreatly increases lucid dream probability';
 
   @override
-  String get tutorialResearch4Author => 'Wang et al. (2024)';
+  String get tutorialResearch4Author => 'Voss et al. (2014)';
 
   @override
-  String get tutorialResearch4Topic => 'HIIT + Resistance Training';
+  String get tutorialResearch4Topic => 'Reality Check';
 
   @override
   String get tutorialResearch4Finding =>
-      'Combined cardio and strength training\nimproves both fitness and strength';
+      'Reality Check practice\nhelps induce lucid dreams';
 
   @override
   String get aboutSettings => 'ℹ️ App Info';
@@ -2356,25 +2689,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backupRestoredSuccessfully => 'Backup restored successfully';
 
   @override
-  String get backupWorkoutRecords => 'Backup workout records';
+  String get backupWorkoutRecords => 'Backup lucid dream practice records';
 
   @override
   String get bestWeek => 'Best Week';
 
   @override
-  String get chadDays => 'Chad days!';
+  String get chadDays => 'Dream Spirit days!';
 
   @override
-  String get chadNotificationSettings => '🔔 Chad Notification Settings';
+  String get chadNotificationSettings =>
+      '🔔 Dream Spirit Notification Settings';
 
   @override
   String get chadRestModeToday => 'Okay! Today\'s rest mode! 💪😎';
 
   @override
-  String get chadTimeSettings => '⏰ Chad Time Settings';
+  String get chadTimeSettings => '⏰ Dream Spirit Time Settings';
 
   @override
-  String get challenge14DaysDescription => 'Work out for 14 consecutive days';
+  String get challenge14DaysDescription =>
+      'Practice lucid dreaming for 14 consecutive days';
 
   @override
   String get challenge14DaysDetailedDescription =>
@@ -2384,7 +2719,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get challenge14DaysTitle => '14 Consecutive Days';
 
   @override
-  String get challenge7DaysDescription => 'Work out for 7 consecutive days';
+  String get challenge7DaysDescription =>
+      'Practice lucid dreaming for 7 consecutive days';
 
   @override
   String get challenge7DaysDetailedDescription =>
@@ -2446,22 +2782,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get consecutiveWorkoutMessage =>
-      'Yo! You worked out yesterday! 🔥\n\nWhat are you doing? Back-to-back?\nReal warriors rest when it\'s time!\n\n💀 Overtraining = NO GO!\n😎 Chill today, crush it tomorrow! 💪';
+      'Yo! You worked out yesterday! 🔥\n\nWhat are you doing? Back-to-back?\nReal warriors rest when it\'s time!\n\n💀 Excessive practice = NO GO!\n😎 Chill today, crush it tomorrow! 💪';
 
   @override
   String get customWorkoutDays => 'Workout Days Settings';
 
   @override
-  String get customWorkoutDaysDesc => 'Set your preferred workout days';
+  String get customWorkoutDaysDesc => 'Set your preferred practice days';
 
   @override
   String dailyNotificationSet(Object time) {
-    return 'Daily $time workout reminder set! 💪';
+    return 'Daily $time lucid dream practice reminder set! 💪';
   }
 
   @override
   String get dailyWorkoutAlarm =>
-      'Daily workout time alarm! Miss it and you\'re WEAK! 💪';
+      'Daily lucid dream practice time alarm! Miss it and you\'re WEAK! 💪';
 
   @override
   String get dailyWorkoutReminder => 'Daily Workout Reminder';
@@ -2526,7 +2862,8 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get deleteAllWorkoutRecords => 'Delete all workout records';
+  String get deleteAllWorkoutRecords =>
+      'Delete all lucid dream practice records';
 
   @override
   String get detailedReminderSettings => 'Detailed Reminder Settings';
@@ -2545,7 +2882,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get errorPleaseTryAgain => 'An error occurred. Please try again';
 
   @override
-  String get firstWorkoutCompleted => 'First workout completed';
+  String get firstWorkoutCompleted => 'First lucid dream practice completed';
 
   @override
   String get firstWorkoutMessage => 'Starting your first workout! Let\'s go!';
@@ -2563,7 +2900,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get goToSettings => 'Go to Settings';
 
   @override
-  String get homeWorkoutPushups => 'Home Workout Pushups 🏠';
+  String get homeWorkoutPushups => '집에서 하는 자각몽 연습 🏠';
 
   @override
   String get hundredRepsInOneSession => '100 reps in one session';
@@ -2599,7 +2936,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get minOneDayRest => 'At least one rest day is required';
 
   @override
-  String get mission100Settings => 'Mission 100 Settings';
+  String get mission100Settings => 'Lucid Dream 100 Settings';
 
   @override
   String get mondayFull => 'Monday';
@@ -2618,19 +2955,20 @@ class AppLocalizationsEn extends AppLocalizations {
       'Maximum 4 workouts per week allowed. Adequate rest is essential!';
 
   @override
-  String get noWorkout => 'No! I\'ll work out!';
+  String get noWorkout => 'No! I\'ll practice lucid dreaming!';
 
   @override
-  String get noWorkoutHistory => 'No workout history';
+  String get noWorkoutHistory => 'No lucid dream practice history';
 
   @override
-  String get noWorkoutRecordForDate => 'No workout record for this date';
+  String get noWorkoutRecordForDate =>
+      'No lucid dream practice record for this date';
 
   @override
-  String get noWorkoutRecords => 'No workout records yet!';
+  String get noWorkoutRecords => 'No lucid dream practice records yet!';
 
   @override
-  String get noWorkoutThisDay => 'No workout records for this day';
+  String get noWorkoutThisDay => 'No lucid dream practice records for this day';
 
   @override
   String get noWorkoutToday => '🤷‍♂️ REST DAY? TOMORROW WE DESTROY! 🔥';
@@ -2785,7 +3123,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get saturdayShort => 'Sat';
 
   @override
-  String get selectWorkoutDays => 'Select workout days (maximum 6 days)';
+  String get selectWorkoutDays => 'Select practice days (maximum 6 days)';
 
   @override
   String selectedDaysFormat(int count, String days) {
@@ -2847,7 +3185,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings => 'Settings';
 
   @override
-  String get settingsBannerText => 'Customize Chad\'s settings! ⚙️';
+  String get settingsBannerText => 'Customize Dream Spirit\'s settings! ⚙️';
 
   @override
   String get settingsSaveFailed => 'Failed to save settings';
@@ -2856,10 +3194,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsSaved => 'Settings have been saved';
 
   @override
-  String get settingsSubtitle => 'Customize your Chad journey';
+  String get settingsSubtitle => 'Customize your Dream Spirit journey';
 
   @override
-  String get settingsTitle => '⚙️ Chad Settings';
+  String get settingsTitle => '⚙️ Dream Spirit Settings';
 
   @override
   String get sevenDayStreak =>
@@ -2889,7 +3227,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get startFirstWorkout =>
-      'Start your first workout and\\ncreate your Chad legend! 🔥';
+      'Start your first workout and\\ncreate your Dream Spirit legend! 🔥';
 
   @override
   String get startNewWorkout => 'Start New Workout';
@@ -2987,7 +3325,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get totalWorkouts => 'Total Workouts';
 
   @override
-  String get trueChadMindset => 'Mindset to become a true Chad';
+  String get trueChadMindset => 'Mindset to become a true Dream Spirit';
 
   @override
   String get tuesdayFull => 'Tuesday';
@@ -3081,7 +3419,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get weeklyReport => '📊 Weekly Report 📊';
 
   @override
-  String get weeklyWorkoutSchedule => 'Set weekly workout schedule';
+  String get weeklyWorkoutSchedule =>
+      'Set weekly lucid dream practice schedule';
 
   @override
   String weeksCompleted(int completed, int total) {
@@ -3105,7 +3444,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get workoutAutoRenewalBody =>
-      'Workout reminders have been automatically renewed. Keep up your healthy exercise habits! 💪';
+      'Lucid dream practice reminders have been automatically renewed. Keep up your healthy exercise habits! 💪';
 
   @override
   String get workoutAutoRenewalTitle => '⏰ Workout Reminder Auto Renewal';
@@ -3163,14 +3502,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get workoutDaysModeActivated =>
-      '💪 Workout days only mode activated! Notifications will come only on Mon, Wed, Fri!';
+      '💪 Practice days only mode activated! Notifications will come only on Mon, Wed, Fri!';
 
   @override
   String get workoutDaysOnlyNotifications => '🔥 Workout Days Only Alerts';
 
   @override
   String get workoutDaysOnlyNotificationsDesc =>
-      'Receive notifications only on workout days (Mon, Wed, Fri). No disturbance on rest days!';
+      'Receive notifications only on practice days (Mon, Wed, Fri). No disturbance on rest days!';
 
   @override
   String workoutDetailsWithStats(int reps, int sets, String title) {
@@ -3179,7 +3518,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String workoutHistoryLoadError(String error) {
-    return 'Error loading workout history: $error';
+    return 'Error loading lucid dream practice history: $error';
   }
 
   @override
@@ -3202,20 +3541,23 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get workoutRecordsStats => '• Workout records and statistics';
+  String get workoutRecordsStats =>
+      '• Lucid dream practice records and statistics';
 
   @override
   String get workoutReminder => 'Workout Reminder';
 
   @override
   String get workoutReminderDefaultBody =>
-      '💪 MISSION 100 workout time! LEGENDARY MODE activated! 💪';
+      '💪 LUCID DREAM 100 workout time! LEGENDARY MODE activated! 💪';
 
   @override
-  String get workoutReminderDisabled => 'Workout reminders have been disabled';
+  String get workoutReminderDisabled =>
+      'Lucid dream practice reminders have been disabled';
 
   @override
-  String get workoutReminderEnabled => 'Workout reminders have been enabled';
+  String get workoutReminderEnabled =>
+      'Lucid dream practice reminders have been enabled';
 
   @override
   String get workoutReminderSettings => 'Workout Reminder Settings';
@@ -3224,17 +3566,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get workoutReminders => 'Workout Reminders';
 
   @override
-  String get workoutRemindersChannelDescription => 'Weekly workout reminders';
+  String get workoutRemindersChannelDescription =>
+      'Weekly lucid dream practice reminders';
 
   @override
   String get workoutRemindersDesc => 'Daily reminders at your set time';
 
   @override
   String get workoutSaveError =>
-      'An error occurred while saving workout record. Please try again.';
+      'An error occurred while saving lucid dream practice record. Please try again.';
 
   @override
-  String get workoutScreenAdMessage => 'Feel the power of Chad! 💪';
+  String get workoutScreenAdMessage => 'Feel the power of Dream Spirit! 💪';
 
   @override
   String get workoutSettings => '💪 Workout Settings';
@@ -3245,7 +3588,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get workoutStartMessage => 'Workout started! 🔥';
+  String get workoutStartMessage => 'Lucid dream practice started! 🔥';
 
   @override
   String get workoutTime => 'Workout Time';
@@ -3272,7 +3615,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get championNeedsConsistency =>
-      'True champions need consistency!\n\nYou need to work out at least 3 days a week to see real change!\n\nSelect more and try again! 💪';
+      'True champions need consistency!\n\nYou need to practice lucid dreaming at least 3 days a week to see real change!\n\nSelect more and try again! 💪';
 
   @override
   String scheduleSetupComplete(int sessionsCreated) {
@@ -3363,47 +3706,89 @@ class AppLocalizationsEn extends AppLocalizations {
   String get restoreButton => 'Restore';
 
   @override
-  String get chadBecameStronger => '💪 Chad became stronger!';
+  String get chadBecameStronger => '✨ Dream Spirit has grown';
 
   @override
-  String get repsDestroyed => '💀 Reps Destroyed';
+  String get repsDestroyed => '✓ Tasks Completed';
 
   @override
-  String get xpGained => '💰 XP Gained';
+  String get xpGained => '⭐ XP Gained';
 
   @override
-  String get timeElapsed => '⏱️ Time Elapsed';
+  String get timeElapsed => '⏱️ Time Spent';
 
   @override
-  String get workoutDestroyed => '💀 WORKOUT DESTROYED! 💀';
+  String get workoutDestroyed => '🌙 Today\'s Practice Complete! ✨';
 
   @override
   String get workoutDestroyedMessage =>
-      'You absolutely crushed today\'s workout!';
+      'You\'ve successfully completed today\'s lucid dream training';
 
   @override
-  String get timeDestroyed => '⏱️ TIME DESTROYED';
+  String get timeDestroyed => '⏱️ Practice Time';
 
   @override
-  String get tomorrowIsRestDay => '😴 Tomorrow is CHAD Rest Day! 😴';
+  String get tomorrowIsRestDay => '🌙 Your dream journey continues tomorrow ✨';
 
   @override
-  String get recoverToBeStronger =>
-      '🌴 Recover fully to become a stronger CHAD! 💪';
+  String get recoverToBeStronger => '😴 Sweet dreams tonight ✨';
 
   @override
-  String get tomorrowBeastMode => '🔥 TOMORROW: BEAST MODE AGAIN! 🔥';
+  String get tomorrowBeastMode =>
+      '✨ Let\'s practice lucid dreaming together tomorrow 🌙';
 
   @override
   String get legendaryJourneyContinues =>
-      '💀 The journey to LEGENDARY continues! 💀';
+      '🌟 The journey to lucid dream mastery continues 🌟';
 
   @override
-  String get chadEvolutionProgress => '💪 Chad Evolution Progress';
+  String get chadEvolutionProgress => '✨ Dream Spirit Growth Progress';
+
+  @override
+  String get taskDreamJournalTitle => 'Dream Journal';
+
+  @override
+  String get taskDreamJournalDesc =>
+      'Record your dreams immediately upon waking each morning. Dream recall is the first step to lucid dreaming.';
+
+  @override
+  String get taskRealityCheckTitle => 'Reality Check';
+
+  @override
+  String get taskRealityCheckDesc =>
+      '5+ times daily, look at your hands and ask \"Am I dreaming?\" Practice trying to push fingers through your palm.';
+
+  @override
+  String get taskMildTitle => 'MILD Affirmation';
+
+  @override
+  String get taskMildDesc =>
+      'Before sleep, repeat \"In my next dream, I will be aware\" to solidify your lucid dreaming intention.';
+
+  @override
+  String get taskSleepHygieneTitle => 'Sleep Hygiene Check';
+
+  @override
+  String get taskSleepHygieneDesc =>
+      'Create quality sleep environment: regular sleep time, dark room, limit caffeine, etc.';
+
+  @override
+  String get taskWbtbTitle => 'WBTB (Wake Back To Bed)';
+
+  @override
+  String get taskWbtbDesc =>
+      'Set alarm for 5 hours of sleep, stay awake 20-30 min, then return to sleep to induce REM entry.';
+
+  @override
+  String get taskMeditationTitle => 'Meditation (Optional)';
+
+  @override
+  String get taskMeditationDesc =>
+      'Practice 10+ minutes of mindfulness meditation to enhance awareness. Great for lucid dreaming.';
 
   @override
   String get beginnerPushupQuiz =>
-      'What is the most suitable pushup variation for beginners?';
+      'What is the most suitable lucid dream technique for beginners?';
 
   @override
   String get bottomPosition => 'Bottom Position';
@@ -3417,7 +3802,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get chadPerfectPushupForm =>
-      'Chad\'s guide to perfect pushup form! 💪';
+      'Dream Spirit\'s guide to perfect lucid dream techniques! 💪';
 
   @override
   String completedFormat(int totalReps, int totalSets) {
@@ -3425,15 +3810,16 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get correctPushupForm5Steps => 'Correct Pushup Form in 5 Steps';
+  String get correctPushupForm5Steps =>
+      'Correct Lucid Dream Technique in 5 Steps';
 
   @override
   String get correctPushupFormDesc =>
-      'Effective workout with proper pushup form';
+      'Effective practice with proper lucid dream technique';
 
   @override
   String get correctPushupQuiz1 =>
-      'What is the correct hand position in a proper pushup starting position?';
+      'What is important when starting lucid dream practice?';
 
   @override
   String get excellentPerformance => '🚀 EXCELLENT! Perfect execution! 🚀';
@@ -3454,17 +3840,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get goodPerformance => '💪 GOOD! Keep it up! 💪';
 
   @override
-  String get hundredPushups => 'Hundred Pushups';
+  String get hundredPushups => 'Lucid Dream 100 Days';
 
   @override
-  String get hundredPushupsDesc => 'Achieve 100 reps in one session';
+  String get hundredPushupsDesc =>
+      'Achieve 100 days of consecutive lucid dream practice';
 
   @override
   String get perfectFormChallenge =>
       '🎯 Perfect Form Challenge activated! No slacking! 💪';
 
   @override
-  String get perfectPushupForm => 'Perfect Pushup Form';
+  String get perfectPushupForm => 'Perfect Lucid Dream Technique';
 
   @override
   String get performanceGodTier =>
@@ -3486,175 +3873,175 @@ class AppLocalizationsEn extends AppLocalizations {
       '🔱 IRON BOWS TO YOUR MIGHT! NOW GRAVITY SURRENDERS TO YOU! LEGENDARY BEAST! 🔱';
 
   @override
-  String get pushup100Challenge => '100 Pushup Challenge 🎯';
+  String get pushup100Challenge => '100 Days Lucid Dream Challenge 🎯';
 
   @override
   String get pushup100Streak =>
-      '💪💀 100 Push-ups Streak! Human Transcendence! 💀💪';
+      '💪💀 100 Days Lucid Dream Streak! Human Transcendence! 💀💪';
 
   @override
-  String get pushupArcher => 'Archer Pushup';
+  String get pushupArcher => 'SSILD Technique';
 
   @override
   String get pushupArcherBenefits =>
-      '• ONE ARM FOCUS\\n• LEFT-RIGHT BALANCE\\n• ONE-ARM PUSHUP PREPARATION\\n• CORE ROTATIONAL STABILITY';
+      '• SENSORY FOCUS ABILITY\\n• SIGHT-SOUND-TOUCH BALANCE\\n• ADVANCED LUCID PREPARATION\\n• STABLE DREAM ENTRY';
 
   @override
   String get pushupArcherBreathing =>
-      'FOCUSED BREATHING LIKE DRAWING BOW. ACCURACY IS LIFE, YOU IDIOT!';
+      'FOCUSED BREATHING THROUGH CYCLES. ACCURACY IS LIFE, YOU IDIOT!';
 
   @override
   String get pushupArcherChad =>
-      '🏹 PRECISE ARCHER = ONE-ARM SHORTCUT? YES! MASTER BOTH SIDES = LEGENDARY ARCHER EMPEROR! 🏹';
+      '🏹 PRECISE CYCLES = LUCID SHORTCUT? YES! MASTER ALL SENSES = LEGENDARY LUCID EMPEROR! 🏹';
 
   @override
   String get pushupArcherDesc =>
-      'Advanced technique focusing on one side! Requires balance and core!';
+      'Advanced technique focusing on each sense! Requires balance and focus!';
 
   @override
   String get pushupArcherInstructions =>
-      '1. START WITH WIDE GRIP\\n2. LEAN WEIGHT TO ONE SIDE\\n3. ONE ARM BENT, OTHER STRAIGHT\\n4. PRECISE LIKE BOWSTRING\\n5. ALTERNATE BOTH SIDES!';
+      '1. CLOSE EYES, ATTEND TO VISION\\n2. FOCUS ON AUDITORY STIMULI\\n3. FEEL TACTILE SENSATIONS\\n4. RAPID CYCLES 4-6 TIMES\\n5. ALTERNATE ALL SENSES!';
 
   @override
   String get pushupArcherMistakes =>
-      '• BODY TWISTING\\n• FORCE IN STRAIGHT ARM\\n• UNEVEN LEFT-RIGHT MOVEMENT\\n• CORE SHAKING';
+      '• TOO FORCEFUL FOCUS\\n• FAVORING ONE SENSE\\n• IRREGULAR CYCLES\\n• RUSHING PROCESS';
 
   @override
-  String get pushupArcherName => 'ARCHER PUSHUP';
+  String get pushupArcherName => 'SSILD TECHNIQUE';
 
   @override
   String get pushupBreathingQuiz =>
-      'What is the correct breathing technique during pushups?';
+      'What is the correct breathing technique during lucid dream practice?';
 
   @override
-  String get pushupClap => 'Clap Pushup';
+  String get pushupClap => 'FILD Technique';
 
   @override
   String get pushupClapBenefits =>
-      '• EXPLOSIVE STRENGTH DEVELOPMENT\\n• FULL BODY POWER\\n• INSTANT REACTION SPEED\\n• PROOF OF REAL CHAD';
+      '• RAPID DREAM ENTRY\\n• FINGER FOCUS BOOST\\n• INSTANT LUCID DREAMING\\n• PROOF OF REAL MASTER';
 
   @override
   String get pushupClapBreathing =>
-      'EXPLOSIVE EXHALE UP, QUICK BREATHING RESET AFTER LANDING. RHYTHM IS KEY, YOU IDIOT!';
+      'DEEP BREATHING UPON WAKING, FOCUS ON FINGER MOVEMENT. RHYTHM IS KEY, YOU IDIOT!';
 
   @override
   String get pushupClapChad =>
-      '👏 CLAP PUSHUP = POWER PROOF? NO! NOW EXPLOSIVE THUNDER POWER EXPRESSION! 👏';
+      '👏 FINGER TECHNIQUE = QUICK ENTRY? YES! NOW EXPLOSIVE LUCID ENTRY! 👏';
 
   @override
   String get pushupClapDesc =>
-      'Explosive power with clapping! Only real chads can do this!';
+      'Quick entry with finger movement! Only real masters can do this!';
 
   @override
   String get pushupClapInstructions =>
-      '1. START IN STANDARD POSITION\\n2. EXPLODE UP\\n3. CLAP IN AIR\\n4. LAND SAFELY\\n5. TRY CONSECUTIVELY!';
+      '1. AFTER ALARM, DON\'T MOVE\\n2. MOVE FINGERS SLIGHTLY\\n3. ALTERNATE LIKE PIANO\\n4. UNTIL DREAM SCENE APPEARS\\n5. TRY CONSECUTIVELY!';
 
   @override
   String get pushupClapMistakes =>
-      '• NOT ENOUGH HEIGHT\\n• WRIST INJURY RISK ON LANDING\\n• FORM BREAKDOWN\\n• EXCESSIVE CONSECUTIVE ATTEMPTS';
+      '• MOVING TOO STRONGLY\\n• FULLY WAKING UP\\n• IRREGULAR RHYTHM\\n• GIVING UP TOO SOON';
 
   @override
-  String get pushupClapName => 'CLAP PUSHUP';
+  String get pushupClapName => 'FILD TECHNIQUE';
 
   @override
-  String get pushupDecline => 'Decline Pushup';
+  String get pushupDecline => 'Dream Signs';
 
   @override
   String get pushupDeclineBenefits =>
-      '• UPPER CHEST FOCUS\\n• FRONT SHOULDER STRENGTHENING\\n• MAXIMUM CORE STABILITY\\n• FULL BODY STRENGTH';
+      '• DREAM PATTERN RECOGNITION\\n• LUCID TRIGGER DISCOVERY\\n• MAXIMUM AWARENESS SPEED\\n• FULL LUCID ABILITY BOOST';
 
   @override
   String get pushupDeclineBreathing =>
-      'STABLE BREATHING WHILE FIGHTING GRAVITY. REAL POWER COMES FROM HERE, YOU IDIOT!';
+      'STABLE OBSERVATION WHILE FIGHTING UNCONSCIOUS. REAL POWER COMES FROM HERE, YOU IDIOT!';
 
   @override
   String get pushupDeclineChad =>
-      '🌪️ IGNORE GRAVITY? SURE! NOW DOMINATE PHYSICS LAWS! DECLINE = GODLIKE SHOULDERS! 🌪️';
+      '🌪️ IGNORE DREAM SIGNS? SURE! NOW DOMINATE DREAM WORLD! RECOGNITION = GODLIKE AWARENESS! 🌪️';
 
   @override
   String get pushupDeclineDesc =>
-      'Raise feet for increased intensity! Properly stimulate shoulders and upper body!';
+      'Raise awareness for increased recognition! Properly identify dream signals!';
 
   @override
   String get pushupDeclineInstructions =>
-      '1. FEET ON BENCH OR CHAIR\\n2. HANDS DIRECTLY UNDER SHOULDERS\\n3. STRAIGHT LINE ANGLED DOWN\\n4. OVERCOME GRAVITY\'S RESISTANCE\\n5. PUSH UP POWERFULLY!';
+      '1. FIND RECURRING ELEMENTS IN DREAM JOURNAL\\n2. CREATE PERSONAL DREAM SIGN LIST\\n3. WATCH FOR THESE SIGNS IN REALITY\\n4. REALITY CHECK WHEN SIGN APPEARS\\n5. RECOGNIZE SIGNS IN DREAMS!';
 
   @override
   String get pushupDeclineMistakes =>
-      '• UNSTABLE FOOT POSITION\\n• BUTT SAGGING DOWN\\n• NECK STRAIN\\n• LOSING BALANCE';
+      '• SUPERFICIAL OBSERVATION\\n• IGNORING PATTERNS\\n• NOT ANALYZING JOURNAL\\n• MISSING SIGNS IN DREAMS';
 
   @override
-  String get pushupDeclineName => 'DECLINE PUSHUP';
+  String get pushupDeclineName => 'DREAM SIGNS';
 
   @override
-  String get pushupDiamond => 'Diamond Pushup';
+  String get pushupDiamond => 'WBTB Technique';
 
   @override
   String get pushupDiamondBenefits =>
-      '• TRICEPS FOCUS\\n• INNER CHEST DEVELOPMENT\\n• FULL ARM STRENGTH\\n• CORE STABILITY INCREASE';
+      '• LUCID PROBABILITY MAXIMIZATION\\n• REM SLEEP UTILIZATION\\n• CONSCIOUSNESS CLARITY BOOST\\n• DREAM CONTROL INCREASE';
 
   @override
   String get pushupDiamondBreathing =>
-      'FOCUSED BREATHING. FEEL THE TRICEPS BURN, YOU IDIOT!';
+      'FOCUSED BREATHING. FEEL CONSCIOUSNESS AWAKEN, YOU IDIOT!';
 
   @override
   String get pushupDiamondChad =>
-      '💎 HARDER THAN DIAMOND ARMS? WRONG! NOW UNBREAKABLE TITANIUM ARMS! 10 REPS = REAL BEAST RECOGNITION! 💎';
+      '💎 BRIGHTER THAN DIAMOND CONSCIOUSNESS? WRONG! NOW UNBREAKABLE LUCID MIND! ONE SUCCESS = REAL BEAST RECOGNITION! 💎';
 
   @override
   String get pushupDiamondDesc =>
-      'Focused triceps attack! Diamond shape is the symbol of real chad!';
+      'Focused REM attack! WBTB is the symbol of real masters!';
 
   @override
   String get pushupDiamondInstructions =>
-      '1. MAKE DIAMOND WITH THUMBS AND FINGERS\\n2. HANDS BELOW CHEST CENTER\\n3. ELBOWS CLOSE TO BODY\\n4. CHEST TO HANDS\\n5. PUSH WITH TRICEPS POWER!';
+      '1. SLEEP 5-6 HOURS THEN WAKE\\n2. STAY AWAKE 20-30 MINUTES\\n3. READ ABOUT LUCID DREAMING\\n4. MAINTAIN INTENTION WHILE SLEEPING AGAIN\\n5. ENTER REM SLEEP CYCLE!';
 
   @override
   String get pushupDiamondMistakes =>
-      '• EXCESSIVE WRIST PRESSURE\\n• ELBOWS TOO WIDE\\n• BODY TWISTING\\n• INACCURATE DIAMOND SHAPE';
+      '• STAYING AWAKE TOO LONG\\n• FULLY WAKING UP\\n• SLEEPING WITHOUT INTENTION\\n• INCORRECT TIMING';
 
   @override
-  String get pushupDiamondName => 'DIAMOND PUSHUP';
+  String get pushupDiamondName => 'WBTB TECHNIQUE';
 
   @override
-  String get pushupHashtag => '#Pushup';
+  String get pushupHashtag => '#LucidDream';
 
   @override
-  String get pushupIncline => 'Incline Pushup';
+  String get pushupIncline => 'Sleep Hygiene';
 
   @override
   String get pushupInclineBenefits =>
-      '• REDUCED LOAD FOR FORM PERFECTION\\n• LOWER CHEST STRENGTHENING\\n• SHOULDER STABILITY\\n• BRIDGE TO STANDARD PUSHUP';
+      '• IMPROVED SLEEP QUALITY\\n• ENHANCED DREAM CLARITY\\n• INCREASED LUCID SUCCESS\\n• FOUNDATION FOR ALL TECHNIQUES';
 
   @override
   String get pushupInclineBreathing =>
-      'COMFORTABLE BREATHING WITH EASIER ANGLE. BUT MAXIMUM FOCUS, YOU IDIOT!';
+      'COMFORTABLE BREATHING BEFORE SLEEP. BUT MAXIMUM REGULARITY, YOU IDIOT!';
 
   @override
   String get pushupInclineChad =>
-      '🚀 ADJUST HEIGHT, MAX INTENSITY! 20 PERFECT REPS = GOD TIER ENTRY TICKET! 🚀';
+      '🚀 ADJUST ENVIRONMENT, MAX SLEEP! PERFECT ROUTINE = GOD TIER ENTRY TICKET! 🚀';
 
   @override
   String get pushupInclineDesc =>
-      'Use incline to adjust difficulty! Stairs or bench are enough!';
+      'Use sleep environment to boost dream quality! Dark and quiet is enough!';
 
   @override
   String get pushupInclineInstructions =>
-      '1. HANDS ON BENCH OR CHAIR\\n2. LEAN BODY AT ANGLE\\n3. STRAIGHT LINE TOE TO HEAD\\n4. HIGHER = EASIER\\n5. GRADUALLY GO LOWER!';
+      '1. SET REGULAR SLEEP TIME\\n2. MAKE ROOM DARK AND COOL\\n3. NO SCREENS 2 HOURS BEFORE\\n4. COMFORTABLE BEDDING\\n5. GRADUALLY PERFECT ENVIRONMENT!';
 
   @override
   String get pushupInclineMistakes =>
-      '• BUTT STICKING UP\\n• TOO MUCH WEIGHT ON WRISTS\\n• UNSTABLE SUPPORT\\n• LOWERING ANGLE TOO QUICKLY';
+      '• IRREGULAR SLEEP TIMES\\n• BRIGHT BEDROOM\\n• PHONE BEFORE SLEEP\\n• RUSHING CHANGES';
 
   @override
-  String get pushupInclineName => 'INCLINE PUSHUP';
+  String get pushupInclineName => 'SLEEP HYGIENE';
 
   @override
-  String get pushupKnee => 'Knee Pushup';
+  String get pushupKnee => 'Reality Check';
 
   @override
   String get pushupKneeBenefits =>
-      '• BASIC STRENGTH IMPROVEMENT\\n• LEARN PROPER PUSHUP FORM\\n• SHOULDER AND ARM STABILITY\\n• PROGRESSION TO STANDARD PUSHUP';
+      '• DREAM-REALITY DISTINCTION\\n• LUCID AWARENESS TRAINING\\n• CONSCIOUSNESS CLARITY\\n• PROGRESSION TO LUCID DREAMS';
 
   @override
   String get pushupKneeBreathing =>
@@ -3662,167 +4049,168 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get pushupKneeChad =>
-      '⚡ BEGINNING IS HALF? NO! ALPHA JOURNEY ALREADY STARTED! KNEE PUSHUPS ARE EMPEROR\'S PATH TOO! ⚡';
+      '⚡ BEGINNING IS HALF? NO! ALPHA JOURNEY ALREADY STARTED! REALITY CHECKS ARE EMPEROR\'S PATH TOO! ⚡';
 
   @override
   String get pushupKneeDesc =>
-      'Beginners can do it too! Don\'t be ashamed of knee pushups!';
+      'Beginners can do it too! Don\'t be ashamed of 10 reality checks daily!';
 
   @override
   String get pushupKneeInstructions =>
-      '1. START ON KNEES\\n2. LIFT ANKLES UP\\n3. UPPER BODY SAME AS STANDARD\\n4. STRAIGHT LINE FROM KNEES TO HEAD\\n5. MOVE SLOWLY AND SURELY!';
+      '1. CHECK 10+ TIMES DAILY\\n2. EXAMINE HANDS CAREFULLY\\n3. ASK \'AM I DREAMING?\' SERIOUSLY\\n4. CHECK IF ENVIRONMENT IS ODD\\n5. VERIFY SLOWLY AND SURELY!';
 
   @override
   String get pushupKneeMistakes =>
-      '• BUTT SAGGING BACK\\n• KNEES TOO FAR FORWARD\\n• ONLY MOVING UPPER BODY\\n• MOVING TOO FAST';
+      '• CHECKING SUPERFICIALLY\\n• TOO FEW CHECKS DAILY\\n• NOT QUESTIONING SERIOUSLY\\n• RUSHING THROUGH';
 
   @override
-  String get pushupKneeName => 'KNEE PUSHUP';
+  String get pushupKneeName => 'REALITY CHECK';
 
   @override
   String get pushupMistakeQuiz =>
-      'What is the most common mistake during pushups?';
+      'What is the most common mistake during lucid dream practice?';
 
   @override
-  String get pushupOneArm => 'One-Arm Pushup';
+  String get pushupOneArm => 'Advanced WILD';
 
   @override
   String get pushupOneArmBenefits =>
-      '• ULTIMATE UPPER BODY STRENGTH\\n• PERFECT CORE CONTROL\\n• FULL BODY BALANCE AND COORDINATION\\n• GIGA CHAD COMPLETION';
+      '• ULTIMATE CONSCIOUSNESS CONTROL\\n• PERFECT DREAM CONTROL\\n• COMPLETE LUCID MASTERY\\n• GIGA MASTER COMPLETION';
 
   @override
   String get pushupOneArmBreathing =>
-      'DEEP, STABLE BREATHING FOR MAXIMUM FOCUS. UNITE ALL ENERGY, YOU IDIOT!';
+      'DEEP, STABLE BREATHING FOR MAXIMUM FOCUS. UNITE ALL CONSCIOUSNESS, YOU IDIOT!';
 
   @override
   String get pushupOneArmChad =>
-      '🚀 ONE-ARM = CHAD COMPLETION? WRONG! NOW ULTIMATE APEX GOD EMPEROR BIRTH, FXXK YEAH! 🚀';
+      '🚀 ADVANCED WILD = MASTER COMPLETION? WRONG! NOW ULTIMATE APEX LUCID GOD BIRTH, FXXK YEAH! 🚀';
 
   @override
   String get pushupOneArmDesc =>
-      'One-arm pushup is the ultimate chad form! Do this even once and you\'re recognized as a real giga chad!';
+      'Advanced WILD is ultimate lucid form! Do this even once and you\'re recognized as a real giga master!';
 
   @override
   String get pushupOneArmInstructions =>
-      '1. SPREAD LEGS WIDE FOR BALANCE\\n2. ONE HAND BEHIND BACK\\n3. FOCUS ALL POWER IN CORE\\n4. SLOW AND SURE\\n5. PROVE YOUR GIGA CHAD QUALIFICATION!';
+      '1. COMBINE MEDITATION WITH WILD\\n2. ACTIVELY USE HYPNAGOGIA\\n3. FOCUS ALL POWER IN CONSCIOUSNESS\\n4. SLOW AND SURE\\n5. PROVE YOUR GIGA MASTER QUALIFICATION!';
 
   @override
   String get pushupOneArmMistakes =>
-      '• LEGS TOO NARROW\\n• BODY TWISTING AND ROTATING\\n• SUPPORTING WITH OTHER HAND\\n• INJURY FROM EXCESSIVE ATTEMPT';
+      '• ATTEMPTING WITHOUT BASICS\\n• BODY TENSING UP\\n• RUSHING ENTRY\\n• FRUSTRATION FROM EXCESSIVE ATTEMPT';
 
   @override
-  String get pushupOneArmName => 'ONE-ARM PUSHUP';
+  String get pushupOneArmName => 'ADVANCED WILD';
 
   @override
-  String get pushupPike => 'Pike Pushup';
+  String get pushupPike => 'WILD Technique';
 
   @override
   String get pushupPikeBenefits =>
-      '• FULL SHOULDER STRENGTHENING\\n• HANDSTAND PUSHUP PREPARATION\\n• VERTICAL UPPER BODY POWER\\n• CORE AND BALANCE IMPROVEMENT';
+      '• CONSCIOUSNESS MAINTENANCE\\n• DIRECT DREAM ENTRY MASTERY\\n• EXTREME FOCUS DEVELOPMENT\\n• DEEP LUCID EXPERIENCE';
 
   @override
   String get pushupPikeBreathing =>
-      'STABLE BREATHING IN INVERTED POSITION. FOCUS ON SHOULDERS, YOU IDIOT!';
+      'STABLE BREATHING DURING SLEEP PARALYSIS. FOCUS ON CONSCIOUSNESS, YOU IDIOT!';
 
   @override
   String get pushupPikeChad =>
-      '⚡ PIKE MASTER = HANDSTAND? SURE! EVOLVE TO SHOULDER EMPEROR! ⚡';
+      '⚡ WILD MASTER = FREE CONTROL? SURE! EVOLVE TO CONSCIOUSNESS EMPEROR! ⚡';
 
   @override
   String get pushupPikeDesc =>
-      'Shoulder focused attack! Pre-stage to handstand pushups!';
+      'Consciousness focused attack! Core of advanced lucid dreaming!';
 
   @override
   String get pushupPikeInstructions =>
-      '1. START IN DOWNWARD DOG\\n2. BUTT AS HIGH AS POSSIBLE\\n3. HEAD CLOSE TO FLOOR\\n4. PUSH WITH SHOULDER POWER ONLY\\n5. MAINTAIN INVERTED TRIANGLE!';
+      '1. LIE COMFORTABLY AND RELAX\\n2. FOCUS ON BREATHING\\n3. LET BODY SLEEP, KEEP MIND AWAKE\\n4. OBSERVE HYPNAGOGIC IMAGES\\n5. ENTER DREAM DIRECTLY!';
 
   @override
   String get pushupPikeMistakes =>
-      '• BUTT NOT HIGH ENOUGH\\n• ELBOWS OUT TO SIDES\\n• SUPPORTING WITH HEAD ONLY\\n• FEET TOO FAR OR CLOSE';
+      '• TOO TENSE TO SLEEP\\n• LOSING CONSCIOUSNESS\\n• PANICKING IN SLEEP PARALYSIS\\n• GIVING UP TOO QUICKLY';
 
   @override
-  String get pushupPikeName => 'PIKE PUSHUP';
+  String get pushupPikeName => 'WILD TECHNIQUE';
 
   @override
-  String get pushupStandard => 'Standard Pushup';
+  String get pushupStandard => 'Dream Journal';
 
   @override
   String get pushupStandardBenefits =>
-      '• FULL CHEST DEVELOPMENT\\n• TRICEPS AND SHOULDER STRENGTH\\n• BASIC FITNESS IMPROVEMENT\\n• FOUNDATION FOR ALL PUSHUPS, YOU IDIOT!';
+      '• DREAM RECALL IMPROVEMENT\\n• DREAM PATTERN RECOGNITION\\n• LUCID DREAM FREQUENCY INCREASE\\n• FOUNDATION FOR ALL TECHNIQUES!';
 
   @override
   String get pushupStandardBreathing =>
-      'INHALE DOWN, EXHALE UP POWERFULLY. BREATHING IS POWER!';
+      'BREATHE DEEPLY BEFORE SLEEP. PEACEFUL MIND BRINGS CLEAR DREAMS!';
 
   @override
   String get pushupStandardChad =>
-      '🔥 BASICS HARDEST? WRONG! ONE PERFECT FORM CONQUERS THE WORLD! MASTER THE BASICS! 🔥';
+      '🔥 DREAM JOURNAL MOST IMPORTANT! WRITE DAILY TO CONQUER DREAM WORLD! MASTER THE BASICS! 🔥';
 
   @override
   String get pushupStandardDesc =>
-      'Starting point of all chads. Perfect basics are true strength!';
+      'Starting point of all lucid dreamers. Perfect dream journal is true mastery!';
 
   @override
   String get pushupStandardInstructions =>
-      '1. START IN PLANK POSITION\\n2. HANDS SHOULDER-WIDTH APART\\n3. KEEP BODY IN STRAIGHT LINE\\n4. LOWER CHEST TO FLOOR\\n5. PUSH UP POWERFULLY, CHAD STYLE!';
+      '1. RECORD IMMEDIATELY UPON WAKING\\n2. CAPTURE ALL DETAILS\\n3. NOTE EMOTIONS AND COLORS\\n4. IDENTIFY DREAM SIGNS\\n5. PRACTICE CONSISTENTLY, DREAM SPIRIT STYLE!';
 
   @override
   String get pushupStandardMistakes =>
-      '• BUTT STICKING UP - WEAKLING MOVE\\n• NOT LOWERING CHEST FULLY\\n• NECK FORWARD\\n• WRISTS AHEAD OF SHOULDERS\\n• INCONSISTENT TEMPO, FXXK IDIOT!';
+      '• PROCRASTINATING RECORDING\\n• VAGUE DESCRIPTIONS\\n• IRREGULAR JOURNALING\\n• IGNORING EMOTIONS\\n• GIVING UP TOO QUICKLY, FXXK IDIOT!';
 
   @override
-  String get pushupStandardName => 'STANDARD PUSHUP';
+  String get pushupStandardName => 'DREAM JOURNAL';
 
   @override
   String get pushupTutorialSubtitle =>
-      'Real chads start with different form! 💪';
+      'Real dream masters start with different techniques! 💪';
 
   @override
-  String get pushupTutorialTitle => 'Chad Pushup Dojo';
+  String get pushupTutorialTitle => 'Dream Spirit Lucid Dream Dojo';
 
   @override
-  String get pushupVariations => 'Pushup Variations 🔥';
+  String get pushupVariations => 'Lucid Dream Technique Variations 🔥';
 
   @override
-  String get pushupVariationsByDifficulty => 'Pushup Variations by Difficulty';
+  String get pushupVariationsByDifficulty =>
+      'Lucid Dream Techniques by Difficulty';
 
   @override
-  String get pushupWideGrip => 'Wide Grip Pushup';
+  String get pushupWideGrip => 'MILD Technique';
 
   @override
   String get pushupWideGripBenefits =>
-      '• OUTER CHEST FOCUS\\n• SHOULDER STABILITY\\n• CHEST WIDTH EXPANSION\\n• OVERALL UPPER BODY BALANCE';
+      '• LUCID INTENTION STRENGTHENING\\n• DREAM AWARENESS BOOST\\n• SUCCESS RATE MAXIMIZATION\\n• OVERALL LUCID ABILITY BALANCE';
 
   @override
   String get pushupWideGripBreathing =>
-      'BREATHE DEEP WITH WIDE CHEST. FEEL THE EXPANSION, YOU IDIOT!';
+      'BREATHE DEEP WITH INTENTION. FEEL CONSCIOUSNESS EXPAND, YOU IDIOT!';
 
   @override
   String get pushupWideGripChad =>
-      '🦁 WIDE CHEST? NO! NOW LEGENDARY GORILLA CHEST! DOMINATE WORLD WITH WIDE GRIP! 🦁';
+      '🦁 STRONG INTENTION? NO! NOW LEGENDARY LUCID MASTER! DOMINATE DREAM WORLD WITH MILD! 🦁';
 
   @override
   String get pushupWideGripDesc =>
-      'Spread wide for broader chest! Build that real chad chest!';
+      'Set strong intention for higher lucid probability! Be a real master!';
 
   @override
   String get pushupWideGripInstructions =>
-      '1. HANDS 1.5X SHOULDER WIDTH\\n2. FINGERS SLIGHTLY OUTWARD\\n3. CHEST TO FLOOR\\n4. ELBOWS AT 45 DEGREES\\n5. PUSH WITH WIDE CHEST!';
+      '1. REPEAT \'I WILL LUCID DREAM\' BEFORE SLEEP\\n2. RECALL RECENT DREAMS\\n3. IMAGINE BECOMING LUCID\\n4. MAINTAIN STRONG INTENTION\\n5. FALL ASLEEP WITH CONFIDENCE!';
 
   @override
   String get pushupWideGripMistakes =>
-      '• HANDS TOO WIDE\\n• ELBOWS COMPLETELY OUT\\n• SHOULDER STRAIN\\n• NOT LOWERING CHEST ENOUGH';
+      '• WEAK INTENTION\\n• SUPERFICIAL REPETITION\\n• VAGUE IMAGINATION\\n• LACKING CONFIDENCE';
 
   @override
-  String get pushupWideGripName => 'WIDE GRIP PUSHUP';
+  String get pushupWideGripName => 'MILD TECHNIQUE';
 
   @override
   String pushupsCount(int count) {
-    return '$count reps';
+    return '$count sessions';
   }
 
   @override
-  String get pushupsLabel => '💪 Push-ups';
+  String get pushupsLabel => '💪 Lucid Dream Techniques';
 
   @override
   String resultFormat(int percentage, int reps) {
@@ -3847,26 +4235,29 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get totalPushups => 'Total Pushups';
+  String get totalPushups => 'Total Lucid Dream Practice';
 
   @override
-  String get tutorialAdviceForm => 'Perfect form makes perfect Chad!';
+  String get tutorialAdviceForm =>
+      'Perfect technique makes perfect Dream Spirit!';
 
   @override
   String get variationExercises => 'Variation\nExercises';
 
   @override
   String get variousPushupStimulation =>
-      'Stimulate muscles with various pushup variations';
+      'Stimulate consciousness with various lucid dream techniques';
 
   @override
   String get watchVideo => 'Watch Video';
 
   @override
-  String get specialPushupForChads => 'Special pushup for chads';
+  String get specialPushupForChads =>
+      'Special lucid dream technique for dream masters';
 
   @override
-  String get chadPerfectFormGuide => 'Chad\'s perfect pushup form guide! 💪';
+  String get chadPerfectFormGuide =>
+      'Dream Spirit\'s perfect lucid dream technique guide! 💪';
 
   @override
   String get formGuideAdvancedLevel => 'Advanced';
@@ -3912,7 +4303,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String chadConfirmedCondition(String condition) {
-    return 'Chad confirmed your $condition condition!';
+    return 'Dream Spirit confirmed your $condition condition!';
   }
 
   @override
@@ -4016,7 +4407,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get loadingStatistics => 'Loading Chad\'s statistics...';
+  String get loadingStatistics => 'Loading Dream Spirit\'s statistics...';
 
   @override
   String get loginToSaveProgress => 'Login to save your progress';
@@ -4061,37 +4452,37 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statusInProgress => 'In Progress';
 
   @override
-  String get streakBrokenMessage => 'Workout streak broken';
+  String get streakBrokenMessage => 'Practice streak broken';
 
   @override
   String get streakChallenge => 'Streak Challenge';
 
   @override
-  String get streakContinueMessage => 'Workout streak continues!';
+  String get streakContinueMessage => 'Practice streak continues!';
 
   @override
   String get streakEncouragement => 'Streak Encouragement';
 
   @override
   String get streakEncouragementSubtitle =>
-      'Encouragement message after 3 consecutive workouts';
+      'Encouragement message after 3 consecutive practices';
 
   @override
   String get streakProgress => 'Streak Progress';
 
   @override
-  String get streakStartMessage => 'Workout streak started!';
+  String get streakStartMessage => 'Practice streak started!';
 
   @override
   String get loadingProgramData => 'Loading program data...';
 
   @override
   String get startWorkoutToStartProgram =>
-      'Start your workout to begin the program! 💪';
+      'Start your practice to begin the program! 💪';
 
   @override
   String get progressShownAfterWorkout =>
-      'Progress will be shown once you start working out';
+      'Progress will be shown once you start practicing';
 
   @override
   String get overallProgramProgress => 'Overall Program Progress';
@@ -4129,16 +4520,179 @@ class AppLocalizationsEn extends AppLocalizations {
   String get progressText => 'Progress';
 
   @override
-  String get statisticsBannerText => 'Check your Chad growth! 📊';
+  String get statisticsBannerText => 'Check your Dream Spirit growth! 📊';
+
+  @override
+  String get progressLoadingError => 'Failed to load progress data';
+
+  @override
+  String progressRepsUnit(Object count) {
+    return '$count reps';
+  }
+
+  @override
+  String progressWeekNumber(Object week) {
+    return 'Week $week';
+  }
+
+  @override
+  String progressDateWorkout(Object date) {
+    return 'Date: $date';
+  }
+
+  @override
+  String get progressNoWorkoutThisDay => 'Rest day';
+
+  @override
+  String progressWeekDaySession(Object day, Object week) {
+    return 'Week $week, Day $day';
+  }
+
+  @override
+  String progressSetsUnit(Object count) {
+    return '$count sets';
+  }
+
+  @override
+  String get progressSetRecordLabel => 'Set Records';
+
+  @override
+  String progressSetNumber(Object number) {
+    return 'Set $number';
+  }
+
+  @override
+  String get progressChadEvolutionStage => 'Dream Spirit Evolution';
+
+  @override
+  String progressChadLevel(Object level) {
+    return 'Level $level';
+  }
+
+  @override
+  String get progressEvolvingToGigaChad => 'Evolving to Giga Dream Spirit!';
+
+  @override
+  String progressNextLevelRemaining(Object remaining) {
+    return '$remaining XP to next level';
+  }
+
+  @override
+  String get progressViewAll => 'View All';
+
+  @override
+  String progressRepsCompleted(Object reps) {
+    return '$reps reps completed';
+  }
+
+  @override
+  String get progressPersonalRecords => 'Personal Records';
+
+  @override
+  String get progressBestRecord => 'Best Record';
+
+  @override
+  String get progressBestWeek => 'Best Week';
+
+  @override
+  String get progressConsecutiveDays => 'Consecutive Days';
+
+  @override
+  String progressDaysUnit(Object count) {
+    return '$count days';
+  }
+
+  @override
+  String get progressAverageScore => 'Average Score';
+
+  @override
+  String get progressAchievementFirstStep => 'First Step';
+
+  @override
+  String get progressAchievementFirstStepDesc =>
+      'Complete your first training session';
+
+  @override
+  String get progressAchievementHundredPushups => 'Century Mark';
+
+  @override
+  String get progressAchievementHundredPushupsDesc =>
+      'Complete 100 pushups in a single session';
+
+  @override
+  String get progressAchievementPerfectionist => 'Perfectionist';
+
+  @override
+  String get progressAchievementPerfectionistDesc =>
+      'Complete all sets with perfect form';
+
+  @override
+  String get progressAchievementWeekChallenge => 'Week Warrior';
+
+  @override
+  String get progressAchievementWeekChallengeDesc =>
+      'Complete all workouts in a week';
+
+  @override
+  String get progressCurrentChadStatus => 'Current Status';
+
+  @override
+  String get progressMaxLevelAchieved => 'Max Level Achieved!';
+
+  @override
+  String progressNextLevel(Object title) {
+    return 'Next Level: $title';
+  }
+
+  @override
+  String get progressNoData => 'No data available';
+
+  @override
+  String progressPercentComplete(Object percent) {
+    return '$percent% Complete';
+  }
+
+  @override
+  String get progressRequirementProgramStart => 'Start the program';
+
+  @override
+  String get progressRequirementWeek1 => 'Complete Week 1';
+
+  @override
+  String get progressRequirementWeek2 => 'Complete Week 2';
+
+  @override
+  String get progressRequirementWeek3 => 'Complete Week 3';
+
+  @override
+  String get progressRequirementWeek4 => 'Complete Week 4';
+
+  @override
+  String get progressRequirementWeek5 => 'Complete Week 5';
+
+  @override
+  String get progressRequirementWeek6 => 'Complete Week 6';
+
+  @override
+  String progressScoreUnit(Object score) {
+    return '$score pts';
+  }
+
+  @override
+  String progressTooltipWeekComplete(Object completedSessions,
+      Object completionRate, Object totalSessions, Object week) {
+    return 'Week $week: $completionRate% complete\\n$completedSessions/$totalSessions sessions';
+  }
 
   @override
   String get advancedLevel => 'Advanced';
 
   @override
-  String get alphaLevelDescription => 'Ultimate Chad';
+  String get alphaLevelDescription => 'Ultimate Dream Spirit';
 
   @override
-  String get alphaLevelSubtitle => '11+ pushups - Already chad material';
+  String get alphaLevelSubtitle =>
+      '11+ days practice - Already Dream Spirit material';
 
   @override
   String get alphaLevelTitle => 'Alpha';
@@ -4151,13 +4705,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get beginnerToChad =>
-      'From beginner to Chad! Challenge yourself step by step! 🚀';
+      'From beginner to Dream Spirit! Challenge yourself step by step! 🚀';
 
   @override
-  String get chadLevel => 'Chad Level';
+  String get chadLevel => 'Dream Spirit Level';
 
   @override
-  String get difficultyAdvanced => 'Chad - Powerful Gigas';
+  String get difficultyAdvanced => 'Dream Spirit - Powerful Gigas';
 
   @override
   String get difficultyBeginner => 'PUSH - Starting Alphas';
@@ -4185,7 +4739,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get levelDescRookie =>
-      '🔥 ROOKIE level. Starting point of the pushup empire.\nThe awakening journey begins. 🔥';
+      '🔥 ROOKIE level. Starting point of the lucid dream empire.\nThe awakening journey begins. 🔥';
 
   @override
   String get levelGoalAlpha =>
@@ -4201,7 +4755,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get levelGoalRookie =>
-      '🔥 GOAL: 100 CONSECUTIVE PUSHUPS ABSOLUTE DOMINATION AFTER 14 WEEKS! 🔥';
+      '🔥 GOAL: LUCID DREAM MASTERY ABSOLUTE DOMINATION IN 30 DAYS! 🔥';
 
   @override
   String get levelLabel => '🏆 Level';
@@ -4236,7 +4790,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get levelSelectionDescription =>
-      'Select your current max pushup count level!\nCustom 14-week program for goal achievement!';
+      'Select your current lucid dream practice experience level!\nCustom 30-day program for dream mastery!';
 
   @override
   String get levelSelectionHeader => '🏋️‍♂️ CHOOSE YOUR LEVEL NOW!';
@@ -4248,7 +4802,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get maxLevelAchieved => 'Maximum level achieved!';
 
   @override
-  String get newChadLevel => 'New Chad Level';
+  String get newChadLevel => 'New Dream Spirit Level';
 
   @override
   String get nextLevel => 'Until next level';
@@ -4257,19 +4811,20 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nextLevelIn => '30% remaining to next level';
 
   @override
-  String get risingLevelDescription => 'Chad who is growing';
+  String get risingLevelDescription => 'Dream Spirit who is growing';
 
   @override
-  String get risingLevelSubtitle => '6-10 pushups - Growing into chad';
+  String get risingLevelSubtitle =>
+      '6-10 days practice - Growing into Dream Spirit';
 
   @override
   String get risingLevelTitle => 'Rising';
 
   @override
-  String get rookieLevelDescription => 'Chad who starts slowly';
+  String get rookieLevelDescription => 'Dream Spirit who starts slowly';
 
   @override
-  String get rookieLevelSubtitle => 'Under 6 pushups - Build from basics';
+  String get rookieLevelSubtitle => 'Under 6 days practice - Build from basics';
 
   @override
   String get rookieLevelTitle => 'Rookie';
@@ -4297,16 +4852,16 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get rookieGoalDesc => '≤5 reps → Achieve 100';
+  String get rookieGoalDesc => '≤5 days → Master in 30 days';
 
   @override
-  String get risingGoalDesc => '6-10 reps → Achieve 100';
+  String get risingGoalDesc => '6-10 days → Master in 30 days';
 
   @override
-  String get alphaGoalDesc => '11-20 reps → Achieve 100';
+  String get alphaGoalDesc => '11-20 days → Master in 30 days';
 
   @override
-  String get gigaGoalDesc => '21+ reps → Achieve 100+';
+  String get gigaGoalDesc => '21+ days → Master in 30+ days';
 
   @override
   String get difficultyAdvancedDesc => 'True CHAD';
@@ -4318,11 +4873,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get difficultyIntermediateDesc => 'Consistent CHAD';
 
   @override
-  String get achievementAllRounderDesc => 'Tried all pushup types';
+  String get achievementAllRounderDesc => 'Tried all dream tasks types';
 
   @override
   String get achievementAllRounderMotivation =>
-      'Master of all types! All-rounder Chad! 🌈';
+      'Master of all types! All-rounder Dream Spirit! 🌈';
 
   @override
   String get achievementAllRounderTitle => 'All-Rounder';
@@ -4334,17 +4889,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementBeastModeDesc => 'Exceed target by 150%';
 
   @override
-  String get achievementCelebrationMessage => 'Feel the power of Chad! 💪';
+  String get achievementCelebrationMessage =>
+      'Feel the power of Dream Spirit! 💪';
 
   @override
   String get achievementCenturion => 'Centurion';
 
   @override
-  String get achievementCenturionDesc => 'Achieve a total of 100 pushups';
+  String get achievementCenturionDesc => 'Achieve a total of 100 dream tasks';
 
   @override
   String get achievementChallenge100CumulativeDesc =>
-      'Completed 100 cumulative pushups challenge';
+      'Completed 100 cumulative dream tasks challenge';
 
   @override
   String get achievementChallenge100CumulativeMotivation =>
@@ -4356,7 +4912,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementChallenge14DaysDesc =>
-      'Completed 14 consecutive days workout challenge';
+      'Completed 14 consecutive days lucid dream practice challenge';
 
   @override
   String get achievementChallenge14DaysMotivation =>
@@ -4368,7 +4924,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementChallenge200CumulativeDesc =>
-      'Completed 200 cumulative pushups challenge';
+      'Completed 200 cumulative dream tasks challenge';
 
   @override
   String get achievementChallenge200CumulativeMotivation =>
@@ -4380,7 +4936,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementChallenge50SingleDesc =>
-      'Completed 50 pushups in one session challenge';
+      'Completed 50 dream tasks in one session challenge';
 
   @override
   String get achievementChallenge50SingleMotivation =>
@@ -4392,7 +4948,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementChallenge7DaysDesc =>
-      'Completed 7 consecutive days workout challenge';
+      'Completed 7 consecutive days lucid dream practice challenge';
 
   @override
   String get achievementChallenge7DaysMotivation =>
@@ -4414,29 +4970,29 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementComebackKidDesc =>
-      'Restarted workout after resting for 7+ days';
+      'Restarted lucid dream practice after resting for 7+ days';
 
   @override
   String get achievementComebackKidMotivation =>
-      'Never-give-up spirit! Comeback Chad! 🔄';
+      'Never-give-up spirit! Comeback Dream Spirit! 🔄';
 
   @override
   String get achievementComebackKidTitle => 'Comeback Kid';
 
   @override
   String get achievementCompletionRate80Desc =>
-      'Achieved average completion rate of 80% or higher';
+      'Achieved average achievement rate of 80% or higher';
 
   @override
   String get achievementCompletionRate80Motivation =>
       'Consistency is key! Keep going! 💪';
 
   @override
-  String get achievementCompletionRate80Title => 'Excellent Completion Rate';
+  String get achievementCompletionRate80Title => 'Excellent Achievement Rate';
 
   @override
   String get achievementCompletionRate90Desc =>
-      'Achieved average completion rate of 90% or higher';
+      'Achieved average achievement rate of 90% or higher';
 
   @override
   String get achievementCompletionRate90Motivation =>
@@ -4447,7 +5003,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementCompletionRate95Desc =>
-      'Achieved average completion rate of 95% or higher';
+      'Achieved average achievement rate of 95% or higher';
 
   @override
   String get achievementCompletionRate95Motivation =>
@@ -4460,7 +5016,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementConsistency => 'King of Consistency';
 
   @override
-  String get achievementConsistencyDesc => 'Work out for 30 consecutive days';
+  String get achievementConsistencyDesc =>
+      'Practice lucid dreaming for 30 consecutive days';
 
   @override
   String get achievementConsistencyMasterDesc =>
@@ -4477,7 +5034,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementDedication => 'Dedication';
 
   @override
-  String get achievementDedicationDesc => 'Work out for 100 consecutive days';
+  String get achievementDedicationDesc =>
+      'Practice lucid dreaming for 100 consecutive days';
 
   @override
   String get achievementDedicationMasterDesc => 'Used the app for 100+ days';
@@ -4494,7 +5052,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementDoubleTroubleMotivation =>
-      'Double the goal! Double Trouble Chad! 🎪';
+      'Double the goal! Double Trouble Dream Spirit! 🎪';
 
   @override
   String get achievementDoubleTroubleTitle => 'Double Trouble';
@@ -4503,24 +5061,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementEarlyBird => 'Early Bird';
 
   @override
-  String get achievementEarlyBirdDesc => 'Worked out 5 times before 7 AM';
+  String get achievementEarlyBirdDesc =>
+      'Practiced lucid dreaming 5 times before 7 AM';
 
   @override
   String get achievementEarlyBirdMotivation =>
-      'Early bird Chad who conquered the dawn! 🌅';
+      'Early bird Dream Spirit who conquered the dawn! 🌅';
 
   @override
-  String get achievementEarlyBirdTitle => 'Dawn Chad';
+  String get achievementEarlyBirdTitle => 'Dawn Dream Spirit';
 
   @override
   String get achievementEndurance => 'Endurance King';
 
   @override
-  String get achievementEnduranceDesc => 'Work out for over 30 minutes';
+  String get achievementEnduranceDesc =>
+      'Practice lucid dreaming for over 30 minutes';
 
   @override
   String get achievementEnduranceKingDesc =>
-      'Sustained workout for over 30 minutes';
+      'Sustained lucid dream practice for over 30 minutes';
 
   @override
   String get achievementEnduranceKingMotivation =>
@@ -4531,43 +5091,43 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementFirst100SingleDesc =>
-      'Achieved 100 pushups in a single workout';
+      'Achieved 100 dream tasks in a single lucid dream practice';
 
   @override
   String get achievementFirst100SingleMotivation =>
-      '100 in one go! True power Chad! 💥';
+      '100 in one go! True power Dream Spirit! 💥';
 
   @override
   String get achievementFirst100SingleTitle => '100 in One Go';
 
   @override
   String get achievementFirst50Desc =>
-      'Achieved 50 pushups in a single workout';
+      'Achieved 50 dream tasks in a single lucid dream practice';
 
   @override
   String get achievementFirst50Motivation =>
-      '50 reps breakthrough! Foundation getting solid! 🎊';
+      '50 tasks breakthrough! Foundation getting solid! 🎊';
 
   @override
   String get achievementFirst50Title => 'First 50 Breakthrough';
 
   @override
-  String get achievementFirstJourney => 'Chad Journey Begins';
+  String get achievementFirstJourney => 'Dream Spirit Journey Begins';
 
   @override
-  String get achievementFirstJourneyDesc => 'Complete your first pushup';
+  String get achievementFirstJourneyDesc => 'Complete your first dream tasks';
 
   @override
   String get achievementGodMode => 'God Mode';
 
   @override
-  String get achievementGodModeDesc => 'Achieve over 500 reps in one session';
+  String get achievementGodModeDesc => 'Achieve over 500 tasks in one session';
 
   @override
   String get achievementIronWill => 'Iron Will';
 
   @override
-  String get achievementIronWillDesc => 'Achieved 200 pushups in one go';
+  String get achievementIronWillDesc => 'Achieved 200 dream tasks in one go';
 
   @override
   String get achievementIronWillMotivation =>
@@ -4580,10 +5140,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementLegend => 'Legend';
 
   @override
-  String get achievementLegendDesc => 'Achieve a total of 10000 pushups';
+  String get achievementLegendDesc => 'Achieve a total of 10000 dream tasks';
 
   @override
-  String get achievementLegendaryBeastDesc => 'Achieved 500 pushups in one go';
+  String get achievementLegendaryBeastDesc =>
+      'Achieved 500 dream tasks in one go';
 
   @override
   String get achievementLegendaryBeastMotivation =>
@@ -4597,10 +5158,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementLevel10Motivation =>
-      'Level 10! Realm of advanced Chad! 🏅';
+      'Level 10! Realm of advanced Dream Spirit! 🏅';
 
   @override
-  String get achievementLevel10Title => 'Level 10 Chad';
+  String get achievementLevel10Title => 'Level 10 Dream Spirit';
 
   @override
   String get achievementLevel20Desc => 'Reached level 20';
@@ -4609,41 +5170,42 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementLevel20Motivation => 'Level 20! King among Chads! 👑';
 
   @override
-  String get achievementLevel20Title => 'Level 20 Chad';
+  String get achievementLevel20Title => 'Level 20 Dream Spirit';
 
   @override
   String get achievementLevel5Desc => 'Reached level 5';
 
   @override
   String get achievementLevel5Motivation =>
-      'Level 5 achieved! Beginning of intermediate Chad! 🌟';
+      'Level 5 achieved! Beginning of intermediate Dream Spirit! 🌟';
 
   @override
-  String get achievementLevel5Title => 'Level 5 Chad';
+  String get achievementLevel5Title => 'Level 5 Dream Spirit';
 
   @override
   String get achievementLunchBreakDesc =>
-      'Worked out 5 times during lunch break (12-2 PM)';
+      'Practiced lucid dreaming 5 times during lunch break (12-2 PM)';
 
   @override
   String get achievementLunchBreakMotivation =>
-      'Efficient Chad who doesn\'t miss lunch break! 🍽️';
+      'Efficient Dream Spirit who doesn\'t miss lunch break! 🍽️';
 
   @override
-  String get achievementLunchBreakTitle => 'Lunch Break Chad';
+  String get achievementLunchBreakTitle => 'Lunch Break Dream Spirit';
 
   @override
   String get achievementMarathoner => 'Marathoner';
 
   @override
-  String get achievementMarathonerDesc => 'Achieve a total of 5000 pushups';
+  String get achievementMarathonerDesc => 'Achieve a total of 5000 dream tasks';
 
   @override
-  String get achievementMonthlyWarriorDesc => 'Worked out 20+ days in a month';
+  String get achievementMonthlyWarriorDesc =>
+      'Practiced lucid dreaming 20+ days in a month';
 
   @override
   String get achievementMonthlyWarriorMotivation =>
-      '20 days a month! Monthly warrior Chad! 📅';
+      '20 days a month! Monthly warrior Dream Spirit! 📅';
 
   @override
   String get achievementMonthlyWarriorTitle => 'Monthly Warrior';
@@ -4662,14 +5224,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementNightOwl => 'Night Owl';
 
   @override
-  String get achievementNightOwlDesc => 'Worked out 5 times after 10 PM';
+  String get achievementNightOwlDesc =>
+      'Practiced lucid dreaming 5 times after 10 PM';
 
   @override
   String get achievementNightOwlMotivation =>
-      'Owl Chad who never gives up even at night! 🦉';
+      'Owl Dream Spirit who never gives up even at night! 🦉';
 
   @override
-  String get achievementNightOwlTitle => 'Nocturnal Chad';
+  String get achievementNightOwlTitle => 'Nocturnal Dream Spirit';
 
   @override
   String get achievementNotificationChannelDescription =>
@@ -4703,17 +5266,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementOverachieverTitle => 'Overachiever';
 
   @override
-  String get achievementPerfect10Desc => 'Achieved 10 perfect workouts';
+  String get achievementPerfect10Desc =>
+      'Achieved 10 perfect lucid dream practices';
 
   @override
   String get achievementPerfect10Motivation =>
-      'Master of perfection! Chad among Chads! 🏆';
+      'Master of perfection! Dream Spirit among Chads! 🏆';
 
   @override
-  String get achievementPerfect10Title => 'Master Chad';
+  String get achievementPerfect10Title => 'Master Dream Spirit';
 
   @override
-  String get achievementPerfect20Desc => 'Achieved 20 perfect workouts';
+  String get achievementPerfect20Desc =>
+      'Achieved 20 perfect lucid dream practices';
 
   @override
   String get achievementPerfect20Motivation =>
@@ -4723,24 +5288,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementPerfect20Title => 'Perfect Legend';
 
   @override
-  String get achievementPerfect3Desc => 'Achieved 3 perfect workouts';
+  String get achievementPerfect3Desc =>
+      'Achieved 3 perfect lucid dream practices';
 
   @override
   String get achievementPerfect3Motivation =>
-      'Perfect triple! Chad of accuracy! 🎯';
+      'Perfect triple! Dream Spirit of accuracy! 🎯';
 
   @override
   String get achievementPerfect3Title => 'Perfect Triple';
 
   @override
-  String get achievementPerfect5Desc => 'Achieved 5 perfect workouts';
+  String get achievementPerfect5Desc =>
+      'Achieved 5 perfect lucid dream practices';
 
   @override
   String get achievementPerfect5Motivation =>
-      'True Chad who pursues perfection! ⭐';
+      'True Dream Spirit who pursues perfection! ⭐';
 
   @override
-  String get achievementPerfect5Title => 'Perfectionist Chad';
+  String get achievementPerfect5Title => 'Perfectionist Dream Spirit';
 
   @override
   String get achievementPerfectSet => 'Perfect First Set';
@@ -4756,10 +5323,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementPerfectionistDesc => 'Achieve 10 perfect sets';
 
   @override
-  String get achievementPushupMaster => 'Pushup Master';
+  String get achievementPushupMaster => 'Dream Tasks Master';
 
   @override
-  String get achievementPushupMasterDesc => 'Achieve a total of 1000 pushups';
+  String get achievementPushupMasterDesc =>
+      'Achieve a total of 1000 dream tasks';
 
   @override
   String get achievementRarityCommon => 'Common';
@@ -4777,7 +5345,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementRarityRare => 'Rare';
 
   @override
-  String get achievementScreenAdMessage => 'Achieve and become Chad! 🏆';
+  String get achievementScreenAdMessage =>
+      'Achieve and become Dream Spirit! 🏆';
 
   @override
   String get achievementSeasonalChampionDesc =>
@@ -4795,151 +5364,156 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementSpeedDemonDesc =>
-      'Completed 50 pushups in under 5 minutes';
+      'Completed 50 dream tasks in under 5 minutes';
 
   @override
   String get achievementSpeedDemonMotivation =>
-      'Lightning speed! Chad of speed! 💨';
+      'Lightning speed! Dream Spirit of speed! 💨';
 
   @override
   String get achievementSpeedDemonTitle => 'Speed Demon';
 
   @override
   String get achievementStreak100Desc =>
-      'Completed workouts for 100 consecutive days';
+      'Completed lucid dream practices for 100 consecutive days';
 
   @override
   String get achievementStreak100Motivation =>
       '100 days straight! You are a living myth! 🌟';
 
   @override
-  String get achievementStreak100Title => '100-Day Mythical Chad';
+  String get achievementStreak100Title => '100-Day Mythical Dream Spirit';
 
   @override
   String get achievementStreak14Desc =>
-      'Completed workouts for 14 consecutive days';
+      'Completed lucid dream practices for 14 consecutive days';
 
   @override
   String get achievementStreak14Motivation =>
-      'King of persistence! Chad among Chads! 🏃‍♂️';
+      'King of persistence! Dream Spirit among Chads! 🏃‍♂️';
 
   @override
-  String get achievementStreak14Title => '2-Week Marathon Chad';
+  String get achievementStreak14Title => '2-Week Marathon Dream Spirit';
 
   @override
   String get achievementStreak30Desc =>
-      'Completed workouts for 30 consecutive days';
+      'Completed lucid dream practices for 30 consecutive days';
 
   @override
   String get achievementStreak30Motivation =>
       'You are now the King of Chads! 👑';
 
   @override
-  String get achievementStreak30Title => 'Monthly Ultimate Chad';
+  String get achievementStreak30Title => 'Monthly Ultimate Dream Spirit';
 
   @override
   String get achievementStreak3Desc =>
-      'Completed workouts for 3 consecutive days';
+      'Completed lucid dream practices for 3 consecutive days';
 
   @override
-  String get achievementStreak3Motivation => 'Consistency makes a Chad! 🔥';
+  String get achievementStreak3Motivation =>
+      'Consistency makes a Dream Spirit! 🔥';
 
   @override
-  String get achievementStreak3Title => '3-Day Streak Chad';
+  String get achievementStreak3Title => '3-Day Streak Dream Spirit';
 
   @override
   String get achievementStreak60Desc =>
-      'Completed workouts for 60 consecutive days';
+      'Completed lucid dream practices for 60 consecutive days';
 
   @override
   String get achievementStreak60Motivation =>
       '2 months straight! You are a legend! 🏅';
 
   @override
-  String get achievementStreak60Title => '2-Month Legend Chad';
+  String get achievementStreak60Title => '2-Month Legend Dream Spirit';
 
   @override
   String get achievementStreak7Desc =>
-      'Completed workouts for 7 consecutive days';
+      'Completed lucid dream practices for 7 consecutive days';
 
   @override
   String get achievementStreak7Motivation =>
-      'True Chad who conquered the week! 💪';
+      'True Dream Spirit who conquered the week! 💪';
 
   @override
-  String get achievementStreak7Title => 'Weekly Chad';
+  String get achievementStreak7Title => 'Weekly Dream Spirit';
 
   @override
-  String get achievementTotal10000Desc => 'Completed a total of 10000 pushups';
+  String get achievementTotal10000Desc =>
+      'Completed a total of 10000 dream tasks';
 
   @override
   String get achievementTotal10000Motivation =>
       '10000! You are the God of Chads! 👑';
 
   @override
-  String get achievementTotal10000Title => '10000 God Chad';
+  String get achievementTotal10000Title => '10000 God Dream Spirit';
 
   @override
-  String get achievementTotal1000Desc => 'Completed a total of 1000 pushups';
+  String get achievementTotal1000Desc =>
+      'Completed a total of 1000 dream tasks';
 
   @override
   String get achievementTotal1000Motivation =>
-      '1000 breakthrough! Mega Chad achieved! ⚡';
+      '1000 breakthrough! Mega Dream Spirit achieved! ⚡';
 
   @override
-  String get achievementTotal1000Title => '1000 Mega Chad';
+  String get achievementTotal1000Title => '1000 Mega Dream Spirit';
 
   @override
-  String get achievementTotal100Desc => 'Completed a total of 100 pushups';
+  String get achievementTotal100Desc => 'Completed a total of 100 dream tasks';
 
   @override
   String get achievementTotal100Motivation =>
-      'First 100 breakthrough! Chad\'s foundation complete! 💯';
+      'First 100 breakthrough! Dream Spirit\'s foundation complete! 💯';
 
   @override
   String get achievementTotal100Title => 'First 100 Breakthrough';
 
   @override
-  String get achievementTotal2500Desc => 'Completed a total of 2500 pushups';
+  String get achievementTotal2500Desc =>
+      'Completed a total of 2500 dream tasks';
 
   @override
   String get achievementTotal2500Motivation =>
-      '2500! Reached the realm of Super Chad! 🔥';
+      '2500! Reached the realm of Super Dream Spirit! 🔥';
 
   @override
-  String get achievementTotal2500Title => '2500 Super Chad';
+  String get achievementTotal2500Title => '2500 Super Dream Spirit';
 
   @override
-  String get achievementTotal250Desc => 'Completed a total of 250 pushups';
+  String get achievementTotal250Desc => 'Completed a total of 250 dream tasks';
 
   @override
   String get achievementTotal250Motivation => '250! Result of consistency! 🎯';
 
   @override
-  String get achievementTotal250Title => '250 Chad';
+  String get achievementTotal250Title => '250 Dream Spirit';
 
   @override
-  String get achievementTotal5000Desc => 'Completed a total of 5000 pushups';
+  String get achievementTotal5000Desc =>
+      'Completed a total of 5000 dream tasks';
 
   @override
   String get achievementTotal5000Motivation =>
-      '5000! You are an Ultra Chad! 🌟';
+      '5000! You are an Ultra Dream Spirit! 🌟';
 
   @override
-  String get achievementTotal5000Title => '5000 Ultra Chad';
+  String get achievementTotal5000Title => '5000 Ultra Dream Spirit';
 
   @override
-  String get achievementTotal500Desc => 'Completed a total of 500 pushups';
+  String get achievementTotal500Desc => 'Completed a total of 500 dream tasks';
 
   @override
   String get achievementTotal500Motivation =>
-      '500 breakthrough! Intermediate Chad achieved! 🚀';
+      '500 breakthrough! Intermediate Dream Spirit achieved! 🚀';
 
   @override
-  String get achievementTotal500Title => '500 Chad';
+  String get achievementTotal500Title => '500 Dream Spirit';
 
   @override
-  String get achievementTotal50Desc => 'Completed a total of 50 pushups';
+  String get achievementTotal50Desc => 'Completed a total of 50 dream tasks';
 
   @override
   String get achievementTotal50Motivation =>
@@ -4950,34 +5524,36 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementTutorialExplorerDesc =>
-      'Checked the first pushup tutorial';
+      'Checked the first dream tasks tutorial';
 
   @override
   String get achievementTutorialExplorerMotivation =>
-      'Knowledge is Chad\'s first power! 🔍';
+      'Knowledge is Dream Spirit\'s first power! 🔍';
 
   @override
-  String get achievementTutorialExplorerTitle => 'Exploring Chad';
+  String get achievementTutorialExplorerTitle => 'Exploring Dream Spirit';
 
   @override
-  String get achievementTutorialMasterDesc => 'Checked all pushup tutorials';
+  String get achievementTutorialMasterDesc =>
+      'Checked all dream tasks tutorials';
 
   @override
   String get achievementTutorialMasterMotivation =>
-      'Pushup doctor who mastered all techniques! 🎓';
+      'Dream Tasks doctor who mastered all techniques! 🎓';
 
   @override
-  String get achievementTutorialMasterTitle => 'Pushup Master';
+  String get achievementTutorialMasterTitle => 'Dream Tasks Master';
 
   @override
-  String get achievementTutorialStudentDesc => 'Checked 5 pushup tutorials';
+  String get achievementTutorialStudentDesc =>
+      'Checked 5 dream tasks tutorials';
 
   @override
   String get achievementTutorialStudentMotivation =>
-      'True Chad learning various techniques! 📚';
+      'True Dream Spirit learning various techniques! 📚';
 
   @override
-  String get achievementTutorialStudentTitle => 'Learning Chad';
+  String get achievementTutorialStudentTitle => 'Learning Dream Spirit';
 
   @override
   String get achievementTypeChallenge => '🚀 CHALLENGE BEAST';
@@ -5001,20 +5577,21 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementTypeVolume => '🔥 VOLUME BOMBING';
 
   @override
-  String get achievementUltimate => 'Ultimate Chad';
+  String get achievementUltimate => 'Ultimate Dream Spirit';
 
   @override
   String get achievementUltimateDesc => 'Achieve all achievements';
 
   @override
-  String get achievementUltimateMotivation => 'You are the ultimate Chad! 🌟';
+  String get achievementUltimateMotivation =>
+      'You are the ultimate Dream Spirit! 🌟';
 
   @override
   String get achievementUnlocked => '🏆 Achievement Unlocked! 🏆';
 
   @override
   String get achievementUnstoppableForceDesc =>
-      'Achieved 300 pushups in one go';
+      'Achieved 300 dream tasks in one go';
 
   @override
   String get achievementUnstoppableForceMotivation =>
@@ -5027,14 +5604,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementVariety => 'Master of Variety';
 
   @override
-  String get achievementVarietyDesc => 'Complete 5 different pushup types';
+  String get achievementVarietyDesc => 'Complete 5 different dream tasks types';
 
   @override
-  String get achievementVarietySeekerDesc => 'Tried 5 different pushup types';
+  String get achievementVarietySeekerDesc =>
+      'Tried 5 different dream tasks types';
 
   @override
   String get achievementVarietySeekerMotivation =>
-      'Creative Chad seeking variety! 🎨';
+      'Creative Dream Spirit seeking variety! 🎨';
 
   @override
   String get achievementVarietySeekerTitle => 'Variety Seeker';
@@ -5043,11 +5621,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get achievementWeekWarrior => 'Week Warrior';
 
   @override
-  String get achievementWeekWarriorDesc => 'Work out for 7 consecutive days';
+  String get achievementWeekWarriorDesc =>
+      'Practice lucid dreaming for 7 consecutive days';
 
   @override
   String get achievementWeekendWarriorDesc =>
-      'Chad who consistently works out on weekends';
+      'Dream Spirit who consistently practices lucid dreaming on weekends';
 
   @override
   String get achievementWeekendWarriorMotivation =>
@@ -5058,25 +5637,27 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementWorkoutTime300Desc =>
-      'Achieved total workout time of 300 minutes (5 hours)';
+      'Achieved total lucid dream practice time of 300 minutes (5 hours)';
 
   @override
   String get achievementWorkoutTime300Motivation =>
-      'Your dedication to fitness is amazing!';
+      'Your dedication to lucid dreaming is amazing!';
 
   @override
-  String get achievementWorkoutTime300Title => '5 Hour Workout Master';
+  String get achievementWorkoutTime300Title =>
+      '5 Hour Lucid Dream Practice Master';
 
   @override
   String get achievementWorkoutTime60Desc =>
-      'Achieved total workout time of 60 minutes';
+      'Achieved total lucid dream practice time of 60 minutes';
 
   @override
   String get achievementWorkoutTime60Motivation =>
-      'Consistent work stacking up! 💪';
+      'Consistent practice stacking up! 💪';
 
   @override
-  String get achievementWorkoutTime60Title => '1 Hour Workout Achievement';
+  String get achievementWorkoutTime60Title =>
+      '1 Hour Lucid Dream Practice Achievement';
 
   @override
   String get achievements => 'Achievements';
@@ -5086,7 +5667,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achievementsBannerText =>
-      'Unlock achievements and become a Chad! 🏆';
+      'Unlock achievements and become a Dream Spirit! 🏆';
 
   @override
   String get allAchievementsUnlocked => 'All achievements unlocked! 🏆';
@@ -5139,14 +5720,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get startWorkoutForAchievements =>
-      'Start working out to unlock first achievement! 💪';
+      'Start lucid dream practice to unlock first achievement! 💪';
 
   @override
   String get trophyIcon => '🏆';
 
   @override
   String get unlockMoreChallenges =>
-      'Complete more workouts to unlock new challenges!';
+      'Complete more lucid dream practices to unlock new challenges!';
 
   @override
   String unlockedAchievements(int count) {
@@ -5202,35 +5783,36 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get challenge100CumulativeDescription =>
-      'Achieve a total of 100 pushups';
+      'Achieve a total of 100 days lucid dream practice';
 
   @override
   String get challenge100CumulativeDetailedDescription =>
-      'Hit 100 total reps across multiple sessions! 💪';
+      'Hit 100 total days across multiple sessions! 💪';
 
   @override
-  String get challenge100CumulativeTitle => '100 Challenge';
+  String get challenge100CumulativeTitle => '100 Days Challenge';
 
   @override
   String get challenge200CumulativeDescription =>
-      'Achieve a total of 200 pushups';
+      'Achieve a total of 200 days lucid dream practice';
 
   @override
   String get challenge200CumulativeDetailedDescription =>
-      'Hit 200 total reps across multiple sessions! Clear 100 first! 🔥';
+      'Hit 200 total days across multiple sessions! Clear 100 first! 🔥';
 
   @override
-  String get challenge200CumulativeTitle => '200 Challenge';
+  String get challenge200CumulativeTitle => '200 Days Challenge';
 
   @override
-  String get challenge50SingleDescription => '50 pushups in a single workout';
+  String get challenge50SingleDescription =>
+      '50 lucid dream techniques in a single session';
 
   @override
   String get challenge50SingleDetailedDescription =>
-      '50 reps in one shot! Stop = Start over! 💥';
+      '50 techniques in one shot! Stop = Start over! 💥';
 
   @override
-  String get challenge50SingleTitle => '50 in One Go';
+  String get challenge50SingleTitle => '50 Techniques in One Go';
 
   @override
   String get challengeAbandonButton => 'Abandon';
@@ -5290,7 +5872,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get challengeModeDescription =>
-      'Just basic workout? Or true champion mode? 🚀\n\n⚡ Challenge Mode ON gives you:\n• Higher difficulty\n• Bonus points earned 🏆';
+      'Just basic practice? Or true champion mode? 🚀\n\n⚡ Challenge Mode ON gives you:\n• Higher difficulty\n• Bonus points earned 🏆';
 
   @override
   String get challengeModeOn => 'Challenge Mode ON! 🔥';
@@ -5303,7 +5885,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get challengePrerequisitesNotMet => 'Prerequisites not met';
 
   @override
-  String get challengeSpirit100 => 'Challenge spirit towards 100 pushups';
+  String get challengeSpirit100 =>
+      'Challenge spirit towards 100 days lucid dreaming';
 
   @override
   String get challengeStartButton => 'Start';
@@ -6047,6 +6630,158 @@ class AppLocalizationsEn extends AppLocalizations {
       '🔥 Chad Beast Mode\n• Maximum intensity workout\n• Challenging goals\n• Limit-breaking session';
 
   @override
+  String get dreamSpiritStage0Name => 'Dreaming Novice';
+
+  @override
+  String get dreamSpiritStage1Name => 'Aware Dreamer';
+
+  @override
+  String get dreamSpiritStage2Name => 'Alert Dreamer';
+
+  @override
+  String get dreamSpiritStage3Name => 'Focused Dreamer';
+
+  @override
+  String get dreamSpiritStage4Name => 'Confident Lucid Dreamer';
+
+  @override
+  String get dreamSpiritStage5Name => 'Cool Lucid Master';
+
+  @override
+  String get dreamSpiritStage6Name => 'Joyful Dream Walker';
+
+  @override
+  String get dreamSpiritStage7Name => 'Charismatic Dreamer';
+
+  @override
+  String get dreamSpiritStage8Name => 'Focused Dream Master';
+
+  @override
+  String get dreamSpiritStage9Name => 'Powerful Lucid Dreamer';
+
+  @override
+  String get dreamSpiritStage10Name => 'Advanced Dream Controller';
+
+  @override
+  String get dreamSpiritStage11Name => 'Radiant Dream Master';
+
+  @override
+  String get dreamSpiritStage12Name => 'Twin Dream Walker';
+
+  @override
+  String get dreamSpiritStage13Name => 'Trinity Dream Master';
+
+  @override
+  String get dreamSpiritStage14Name => 'Dream God';
+
+  @override
+  String get dreamSpiritStage0Desc =>
+      'Just starting the lucid dreaming journey';
+
+  @override
+  String get dreamSpiritStage1Desc => 'Beginning to recognize dreams';
+
+  @override
+  String get dreamSpiritStage2Desc => 'Staying alert in the dream world';
+
+  @override
+  String get dreamSpiritStage3Desc => 'Focusing on dream awareness';
+
+  @override
+  String get dreamSpiritStage4Desc => 'Confidently experiencing lucid dreams';
+
+  @override
+  String get dreamSpiritStage5Desc =>
+      'Mastering lucid dream techniques with style';
+
+  @override
+  String get dreamSpiritStage6Desc => 'Walking through dreams with joy';
+
+  @override
+  String get dreamSpiritStage7Desc => 'Commanding presence in the dream realm';
+
+  @override
+  String get dreamSpiritStage8Desc => 'Complete focus in dream mastery';
+
+  @override
+  String get dreamSpiritStage9Desc => 'Wielding powerful lucid abilities';
+
+  @override
+  String get dreamSpiritStage10Desc => 'Advanced control over dream scenarios';
+
+  @override
+  String get dreamSpiritStage11Desc => 'Radiating mastery in dream exploration';
+
+  @override
+  String get dreamSpiritStage12Desc => 'Walking twin paths in dreams';
+
+  @override
+  String get dreamSpiritStage13Desc => 'Trinity of dream awareness achieved';
+
+  @override
+  String get dreamSpiritStage14Desc => 'Ultimate mastery of the dream realm';
+
+  @override
+  String get dreamSpiritStage0Unlock =>
+      '🌟 Dream Spirit awakened! Your lucid dreaming journey begins now!';
+
+  @override
+  String get dreamSpiritStage1Unlock =>
+      '✨ Congratulations! You\'ve become an Aware Dreamer! Keep up the practice!';
+
+  @override
+  String get dreamSpiritStage2Unlock =>
+      '🎯 Amazing! You\'re now an Alert Dreamer! Your awareness is growing!';
+
+  @override
+  String get dreamSpiritStage3Unlock =>
+      '🔥 Well done! You\'ve evolved into a Focused Dreamer! Stay dedicated!';
+
+  @override
+  String get dreamSpiritStage4Unlock =>
+      '💪 Impressive! You\'re now a Confident Lucid Dreamer! Your skills are advancing!';
+
+  @override
+  String get dreamSpiritStage5Unlock =>
+      '😎 Awesome! You\'ve become a Cool Lucid Master! You\'re mastering the techniques!';
+
+  @override
+  String get dreamSpiritStage6Unlock =>
+      '🌈 Fantastic! You\'re now a Joyful Dream Walker! Embrace the dream world!';
+
+  @override
+  String get dreamSpiritStage7Unlock =>
+      '⭐ Remarkable! You\'ve evolved into a Charismatic Dreamer! Your presence is powerful!';
+
+  @override
+  String get dreamSpiritStage8Unlock =>
+      '🎓 Outstanding! You\'re now a Focused Dream Master! Complete mastery is near!';
+
+  @override
+  String get dreamSpiritStage9Unlock =>
+      '⚡ Incredible! You\'ve become a Powerful Lucid Dreamer! Your abilities are extraordinary!';
+
+  @override
+  String get dreamSpiritStage10Unlock =>
+      '🏆 Exceptional! You\'re now an Advanced Dream Controller! You command your dreams!';
+
+  @override
+  String get dreamSpiritStage11Unlock =>
+      '💎 Brilliant! You\'ve evolved into a Radiant Dream Master! Your mastery shines bright!';
+
+  @override
+  String get dreamSpiritStage12Unlock =>
+      '🌟🌟 Phenomenal! You\'re now a Twin Dream Walker! Walking multiple dream paths!';
+
+  @override
+  String get dreamSpiritStage13Unlock =>
+      '👑 Magnificent! You\'ve achieved Trinity Dream Master! The dream trinity is yours!';
+
+  @override
+  String get dreamSpiritStage14Unlock =>
+      '🌌 LEGENDARY! You\'ve ascended to Dream God status! Ultimate mastery achieved!';
+
+  @override
   String get currentSubscription => 'Current Subscription';
 
   @override
@@ -6243,6 +6978,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get titlePremiumSubscription => 'Premium Subscription';
 
   @override
+  String get vipWelcomePremiumMember => '✨ Premium Member';
+
+  @override
+  String get vipWelcomeLaunchPromo => '🎉 Launch Promotion';
+
+  @override
+  String get vipWelcomeFreeMember => '👋 Free Member';
+
+  @override
+  String get vipFastLoading => 'VIP 10x Faster Loading';
+
+  @override
   String get adaptiveTheme => 'Adaptive Theme';
 
   @override
@@ -6292,16 +7039,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get notificationActivationTitle =>
-      '🔥 MISSION 100 NOTIFICATION ACTIVATE! 🔥';
-
-  @override
-  String get notificationBenefit1 => '💪 Daily workout reminders';
-
-  @override
-  String get notificationBenefit2 => '🏆 Achievement celebration alerts';
-
-  @override
-  String get notificationBenefit3 => '🔥 Motivational messages';
+      '🔥 LUCID DREAM 100 NOTIFICATION ACTIVATE! 🔥';
 
   @override
   String get notificationPermissionCheckingStatus =>
@@ -6312,16 +7050,12 @@ class AppLocalizationsEn extends AppLocalizations {
       '⚠️ Need notification permission! Enable in settings! 💪';
 
   @override
-  String get notificationPermissionDesc =>
-      'Required for workout reminders and achievement notifications';
-
-  @override
   String get notificationPermissionErrorMessage =>
       'Error requesting permission!';
 
   @override
   String get notificationPermissionFeatures =>
-      '• Workout reminders\n• Achievement notifications\n• Motivational messages';
+      '• Practice reminders\n• Achievement notifications\n• Motivational messages';
 
   @override
   String get notificationPermissionGranted =>
@@ -6354,9 +7088,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get notificationPermissionRequired =>
       '🔔 Notification Permission Required';
-
-  @override
-  String get notificationPermissionTitle => '🔔 Notification Permission';
 
   @override
   String get permissionNotificationMessage =>
@@ -6399,7 +7130,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get useDarkTheme => 'Use dark theme';
 
   @override
-  String get settingsHeader => 'MISSION 100 Settings';
+  String get settingsHeader => 'LUCID DREAM 100 Settings';
 
   @override
   String get notificationPermissionStatus => 'Notification Permission Status';
@@ -6419,13 +7150,13 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get workoutNotifications => 'Workout Notifications';
+  String get workoutNotifications => 'Practice Notifications';
 
   @override
-  String get enableWorkoutReminders => 'Enable Workout Reminders';
+  String get enableWorkoutReminders => 'Enable Practice Reminders';
 
   @override
-  String get getRemindersOnWorkoutDays => 'Get reminders on your workout days';
+  String get getRemindersOnWorkoutDays => 'Get reminders on your practice days';
 
   @override
   String get notificationTime => 'Notification Time';
@@ -6435,7 +7166,7 @@ class AppLocalizationsEn extends AppLocalizations {
       '💡 You can change these settings anytime in Settings';
 
   @override
-  String get selectWorkoutDaysMin3 => 'Select Workout Days (Min 3 days)';
+  String get selectWorkoutDaysMin3 => 'Select Practice Days (Min 3 days)';
 
   @override
   String selectedDaysCount(int count) {
@@ -6493,7 +7224,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get achieve100Pushups =>
-      'Achieve 100 pushups in 14 weeks!\nJoin the Chad journey! 🔥';
+      'Master lucid dreaming in 30 days!\nJoin the Dream Spirit journey! 🔥';
 
   @override
   String get techStack => 'Tech Stack:';
@@ -6508,11 +7239,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get licenses => 'Licenses';
 
   @override
-  String get feedbackSubject => 'Mission 100 Chad Pushup Feedback';
+  String get feedbackSubject => 'Lucid Dream 100 Feedback';
 
   @override
   String get feedbackBody =>
-      'Hello! I am sending feedback about the Mission 100 Chad Pushup app.\n\n';
+      'Hello! I am sending feedback about the Lucid Dream 100 app.\n\n';
 
   @override
   String get goalAchievementCelebration => '• Goal achievement celebration';
@@ -6525,10 +7256,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get storageBackupRestorePermission =>
-      'Storage access permission is required for workout data backup/restore.';
+      'Storage access permission is required for practice data backup/restore.';
 
   @override
-  String get workoutRecordBackup => '• Workout record backup';
+  String get workoutRecordBackup => '• Practice record backup';
 
   @override
   String get android13FilePickerNote =>
@@ -6549,7 +7280,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get storagePermissionDeniedMessage =>
-      'Storage permission has been denied.\n\nTo use backup/restore features, please manually grant permission in settings.\n\nSettings > Apps > Mission 100 > Permissions > Storage';
+      'Storage permission has been denied.\n\nTo use backup/restore features, please manually grant permission in settings.\n\nSettings > Apps > Lucid Dream 100 > Permissions > Storage';
 
   @override
   String get permissionGranted => 'Granted';
@@ -6581,6 +7312,58 @@ class AppLocalizationsEn extends AppLocalizations {
   String get languageKorean => 'Korean';
 
   @override
+  String get aboutSettingsScientificBasisTitle => 'Scientific Basis';
+
+  @override
+  String get aboutSettingsScientificBasisDesc =>
+      'Scientific research sources for the program';
+
+  @override
+  String get aboutSettingsAppName => 'DreamFlow';
+
+  @override
+  String get aboutSettingsPrivacyPolicy => 'Privacy Policy';
+
+  @override
+  String get aboutSettingsTermsOfService => 'Terms of Service';
+
+  @override
+  String get aboutSettingsScientificDialogTitle => 'Scientific Basis';
+
+  @override
+  String get aboutSettingsResearchDescription =>
+      'Upper body strength training is most effective 2-3 times per week, with rest periods of 2+ minutes being more effective for muscle growth and strength gain.';
+
+  @override
+  String get aboutSettingsTrainingGuidelines => 'Training Guidelines';
+
+  @override
+  String get aboutSettingsWeeklyFrequency => 'Weekly Frequency';
+
+  @override
+  String get aboutSettingsWeeklyFrequencyValue => '2-3 times/week';
+
+  @override
+  String get aboutSettingsRestBetweenSets => 'Rest Between Sets';
+
+  @override
+  String get aboutSettingsRestBetweenSetsValue =>
+      '2-3min (strength), 1-2min (hypertrophy)';
+
+  @override
+  String get aboutSettingsRecoveryTime => 'Recovery Time';
+
+  @override
+  String get aboutSettingsRecoveryTimeValue => '48-72 hours';
+
+  @override
+  String get aboutSettingsProgramExplanation =>
+      'This program is designed based on the scientific evidence from the above research papers as a 14-week progressive overload program.';
+
+  @override
+  String get aboutSettingsConfirmButton => 'OK';
+
+  @override
   String get autoBackupDescription => 'Performs automatic backup regularly';
 
   @override
@@ -6598,7 +7381,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get backupCompletedTitle => 'Mission 100 Backup Complete';
+  String get backupCompletedTitle => 'Lucid Dream 100 Backup Complete';
 
   @override
   String backupCompletedWithPath(String path) {
@@ -6635,7 +7418,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get backupFailedBody => 'Backup error! Check settings! ⚠️';
 
   @override
-  String get backupFailedTitle => 'Mission 100 Backup Failed';
+  String get backupFailedTitle => 'Lucid Dream 100 Backup Failed';
 
   @override
   String get backupFileName => 'Backup File Name';
@@ -6660,7 +7443,7 @@ class AppLocalizationsEn extends AppLocalizations {
       'Automatic backup has been suspended due to consecutive failures.';
 
   @override
-  String get backupScheduleSuspendedTitle => 'Mission 100 Backup Suspended';
+  String get backupScheduleSuspendedTitle => 'Lucid Dream 100 Backup Suspended';
 
   @override
   String backupStatusLoadFailed(Object error) {
@@ -6723,13 +7506,14 @@ class AppLocalizationsEn extends AppLocalizations {
   String get manualBackupCompletedBody => 'Backup created successfully';
 
   @override
-  String get manualBackupCompletedTitle => 'Mission 100 Manual Backup Complete';
+  String get manualBackupCompletedTitle =>
+      'Lucid Dream 100 Manual Backup Complete';
 
   @override
   String get manualBackupFailedBody => 'Error occurred during backup creation';
 
   @override
-  String get manualBackupFailedTitle => 'Mission 100 Manual Backup Failed';
+  String get manualBackupFailedTitle => 'Lucid Dream 100 Manual Backup Failed';
 
   @override
   String get noBackupCreated => 'No backup has been created yet';
@@ -6758,6 +7542,752 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get frequencyManual => 'Manual';
+
+  @override
+  String get backupActionsTitle => 'Backup Actions';
+
+  @override
+  String get backupAutoBackupDisabled => 'Auto backup is currently disabled';
+
+  @override
+  String get backupAutoBackupEnabled => 'Auto backup is enabled';
+
+  @override
+  String get backupFailureCountLabel => 'Failures';
+
+  @override
+  String backupFailureCountValue(Object count) {
+    return '$count failures';
+  }
+
+  @override
+  String get backupFrequencyChanged => 'Backup frequency has been updated';
+
+  @override
+  String get backupFrequencyLabel => 'Frequency';
+
+  @override
+  String get backupHistoryTitle => 'Backup History';
+
+  @override
+  String get backupLastBackupLabel => 'Last Backup';
+
+  @override
+  String get backupNextBackupLabel => 'Next Backup';
+
+  @override
+  String backupSettingsChangeFailed(String error) {
+    return 'Failed to update backup settings: $error';
+  }
+
+  @override
+  String get backupSettingsTitle => 'Backup Settings';
+
+  @override
+  String get backupStatusLabel => 'Status';
+
+  @override
+  String evolutionBoostApplied(Object days) {
+    return 'Boost Applied: $days days';
+  }
+
+  @override
+  String get evolutionBoostComingSoon => 'Coming Soon';
+
+  @override
+  String evolutionBoostCooldownDays(Object days) {
+    return 'Available in $days days';
+  }
+
+  @override
+  String evolutionBoostCooldownHours(Object hours) {
+    return 'Available in $hours hours';
+  }
+
+  @override
+  String evolutionBoostDaysLeft(Object days) {
+    return '$days days left';
+  }
+
+  @override
+  String get evolutionBoostDescription => 'Accelerate evolution with ads';
+
+  @override
+  String get evolutionBoostMaxLevel => 'Already at max evolution';
+
+  @override
+  String get evolutionBoostNextEvolution => 'Next Evolution';
+
+  @override
+  String evolutionBoostRemaining(Object count) {
+    return 'Remaining: $count/3';
+  }
+
+  @override
+  String get evolutionBoostSuccess => 'Evolution accelerated!';
+
+  @override
+  String get evolutionBoostTitle => 'Evolution Accelerator';
+
+  @override
+  String get evolutionBoostWatchAd => 'Watch Ad & Accelerate';
+
+  @override
+  String rewardedAdWatchAndGet(String reward) {
+    return 'Watch Ad & Get $reward';
+  }
+
+  @override
+  String rewardedAdRemainingUses(int remaining, int max) {
+    return 'Remaining: $remaining/$max';
+  }
+
+  @override
+  String get rewardedAdWatchButton => 'Watch Ad & Get';
+
+  @override
+  String get rewardedAdComingSoon => 'Coming Soon';
+
+  @override
+  String rewardedAdRewardGranted(String icon, String title) {
+    return '$icon $title Obtained!';
+  }
+
+  @override
+  String rewardedAdAvailableInHours(int hours, int minutes) {
+    return 'Available in ${hours}h ${minutes}m';
+  }
+
+  @override
+  String rewardedAdAvailableInMinutes(int minutes) {
+    return 'Available in ${minutes}m';
+  }
+
+  @override
+  String get tokenBalanceAdComingSoon => 'Ad feature coming soon';
+
+  @override
+  String tokenBalanceClaimReward(Object amount) {
+    return 'Claim Reward (+$amount tokens)';
+  }
+
+  @override
+  String get tokenBalanceDailyReward => 'Daily Reward';
+
+  @override
+  String get tokenBalanceNextReward => 'Next Reward';
+
+  @override
+  String get tokenBalancePremium => 'PREMIUM';
+
+  @override
+  String tokenBalanceRewardFailed(Object error) {
+    return 'Failed to claim reward: $error';
+  }
+
+  @override
+  String get tokenBalanceRewardReceived => 'Reward received!';
+
+  @override
+  String tokenBalanceRewardAmount(Object amount) {
+    return '+$amount tokens';
+  }
+
+  @override
+  String get tokenBalanceTitle => 'Token Balance';
+
+  @override
+  String get tokenBalanceUsageInfo => '1 token per conversation with Lumi';
+
+  @override
+  String get tokenBalanceWatchAd => 'Watch Ad for Tokens';
+
+  @override
+  String get aiAssistantTitle => 'AI Dream Assistant';
+
+  @override
+  String get aiAssistantEmptyQuestion => 'Select a feature above to start';
+
+  @override
+  String get aiAssistantEmptyInput => 'Please enter your question or dream';
+
+  @override
+  String get aiAssistantQuestion => 'Your Question';
+
+  @override
+  String get aiAssistantResponse => 'Lumi\'s Response';
+
+  @override
+  String get aiAssistantGenerating => 'Generating response...';
+
+  @override
+  String aiAssistantUsageToday(Object used, Object limit, Object remaining) {
+    return 'Today: $used/$limit used ($remaining remaining)';
+  }
+
+  @override
+  String aiAssistantUsageWarning(Object percentage) {
+    return 'You\'ve used $percentage% of your daily limit!';
+  }
+
+  @override
+  String get aiAssistantFree => 'Free';
+
+  @override
+  String get aiAssistantPremium => 'Premium';
+
+  @override
+  String get aiFeatureDreamJournalTitle => 'Dream Journal';
+
+  @override
+  String get aiFeatureDreamJournalSubtitle => 'Analyze your dreams';
+
+  @override
+  String get aiFeatureDreamJournalDesc =>
+      'Get deep insights into your dream symbols and meanings';
+
+  @override
+  String get aiFeatureDreamJournalInputLabel => 'Describe your dream';
+
+  @override
+  String get aiFeatureDreamJournalInputHint => 'Tell me about your dream...';
+
+  @override
+  String get aiFeatureRealityCheckTitle => 'Reality Check';
+
+  @override
+  String get aiFeatureRealityCheckSubtitle => 'Practice awareness';
+
+  @override
+  String get aiFeatureRealityCheckDesc =>
+      'Learn effective reality check techniques for lucid dreaming';
+
+  @override
+  String get aiFeatureRealityCheckInputLabel => 'Ask about reality checks';
+
+  @override
+  String get aiFeatureRealityCheckInputHint =>
+      'How do I do effective reality checks?';
+
+  @override
+  String get aiFeatureTechniqueTitle => 'Techniques';
+
+  @override
+  String get aiFeatureTechniqueSubtitle => 'WILD, MILD, WBTB';
+
+  @override
+  String get aiFeatureTechniqueDesc =>
+      'Master advanced lucid dreaming techniques';
+
+  @override
+  String get aiFeatureTechniqueInputLabel => 'Ask about techniques';
+
+  @override
+  String get aiFeatureTechniqueInputHint => 'How does WILD technique work?';
+
+  @override
+  String get aiFeatureMeditationTitle => 'Meditation';
+
+  @override
+  String get aiFeatureMeditationSubtitle => 'Mindfulness practice';
+
+  @override
+  String get aiFeatureMeditationDesc =>
+      'Meditation techniques to improve dream awareness';
+
+  @override
+  String get aiFeatureMeditationInputLabel => 'Ask about meditation';
+
+  @override
+  String get aiFeatureMeditationInputHint =>
+      'What meditation helps with lucid dreaming?';
+
+  @override
+  String get aiFeatureFreeChatTitle => 'Free Chat';
+
+  @override
+  String get aiFeatureFreeChatSubtitle => 'Ask anything';
+
+  @override
+  String get aiFeatureFreeChatDesc => 'Chat freely about lucid dreaming topics';
+
+  @override
+  String get aiFeatureFreeChatInputLabel => 'Ask anything';
+
+  @override
+  String get aiFeatureFreeChatInputHint =>
+      'Ask me anything about lucid dreaming...';
+
+  @override
+  String get analysisModeTitle => 'Choose Analysis Mode';
+
+  @override
+  String get analysisModeHeader => 'Dream Analysis';
+
+  @override
+  String get analysisQuickTitle => 'Quick Analysis';
+
+  @override
+  String get analysisQuickBadge => 'Fast & Free';
+
+  @override
+  String get analysisQuickDesc => 'Get instant basic dream interpretation';
+
+  @override
+  String get analysisQuickFeature1 => 'Instant results';
+
+  @override
+  String get analysisQuickFeature2 => 'Basic interpretation';
+
+  @override
+  String get analysisQuickFeature3 => 'No tokens required';
+
+  @override
+  String get analysisQuickButton => 'Start Quick Analysis';
+
+  @override
+  String get analysisLumiTitle => 'Lumi Deep Analysis';
+
+  @override
+  String analysisLumiTokens(Object tokens) {
+    return '$tokens token';
+  }
+
+  @override
+  String get analysisLumiDesc => 'Deep dream analysis with AI conversation';
+
+  @override
+  String get analysisLumiFeature1 => 'Deep interpretation';
+
+  @override
+  String get analysisLumiFeature2 => 'Symbol analysis';
+
+  @override
+  String get analysisLumiFeature3 => 'Pattern detection';
+
+  @override
+  String get analysisLumiFeature4 => 'Follow-up chat';
+
+  @override
+  String get analysisLumiButtonStart => 'Start Analysis';
+
+  @override
+  String get analysisLumiButtonNeedTokens => 'Get Tokens';
+
+  @override
+  String get analysisComparisonTitle => 'Feature Comparison';
+
+  @override
+  String get analysisComparisonSpeed => 'Speed';
+
+  @override
+  String get analysisComparisonSpeedQuick => 'Instant';
+
+  @override
+  String get analysisComparisonSpeedLumi => '30-60 seconds';
+
+  @override
+  String get analysisComparisonDepth => 'Analysis Depth';
+
+  @override
+  String get analysisComparisonDepthQuick => 'Basic';
+
+  @override
+  String get analysisComparisonDepthLumi => 'Comprehensive';
+
+  @override
+  String get analysisComparisonFollowUp => 'Follow-up Chat';
+
+  @override
+  String get analysisComparisonFollowUpQuick => 'Not available';
+
+  @override
+  String get analysisComparisonFollowUpLumi => 'Available';
+
+  @override
+  String get analysisComparisonCost => 'Cost';
+
+  @override
+  String get analysisComparisonCostQuick => 'Free';
+
+  @override
+  String get analysisComparisonCostLumi => '1 token';
+
+  @override
+  String get analysisNoTokensTitle => 'Not Enough Tokens';
+
+  @override
+  String get analysisNoTokensMessage =>
+      'You need tokens for Lumi Deep Analysis';
+
+  @override
+  String get analysisNoTokensDaily => 'Daily Free Token';
+
+  @override
+  String get analysisNoTokensDailyFree => '1 token per day';
+
+  @override
+  String get analysisNoTokensDailyPremium => '5 tokens per day';
+
+  @override
+  String get analysisNoTokensPremium => 'Premium: Unlimited';
+
+  @override
+  String get analysisNoTokensPremiumBonus => '5x daily tokens';
+
+  @override
+  String get analysisNoTokensAd => 'Watch Ad for Tokens';
+
+  @override
+  String get analysisNoTokensAdReward => '+1 token';
+
+  @override
+  String get analysisNoTokensClaim => 'Claim Daily Token';
+
+  @override
+  String get analysisNoTokensClaimedSnackbar => 'Daily token claimed!';
+
+  @override
+  String get analysisNoTokensClose => 'Close';
+
+  @override
+  String get quickAnalysisAppBar => 'Quick Dream Analysis';
+
+  @override
+  String get quickAnalysisInputTitle => 'Describe Your Dream';
+
+  @override
+  String get quickAnalysisInputHint => 'Enter your dream here...';
+
+  @override
+  String quickAnalysisInputCounter(Object current, Object max) {
+    return '$current/$max characters';
+  }
+
+  @override
+  String get quickAnalysisButtonStart => 'Analyze Dream';
+
+  @override
+  String get quickAnalysisGuideTitle => 'How It Works';
+
+  @override
+  String get quickAnalysisGuideBadge => 'Free';
+
+  @override
+  String get quickAnalysisGuideDescription =>
+      'Quick Analysis provides instant basic dream interpretation';
+
+  @override
+  String get quickAnalysisGuideInstantResults => 'Instant results';
+
+  @override
+  String get quickAnalysisGuideBasicInterpretation => 'Basic interpretation';
+
+  @override
+  String get quickAnalysisGuideNoTokens => 'No tokens required';
+
+  @override
+  String get quickAnalysisLoadingTitle => 'Analyzing Dream';
+
+  @override
+  String get quickAnalysisLoadingSubtitle => 'Please wait...';
+
+  @override
+  String get quickAnalysisResultTitle => 'Analysis Result';
+
+  @override
+  String get quickAnalysisDeeperTitle => 'Want Deeper Analysis?';
+
+  @override
+  String get quickAnalysisDeeperDescription =>
+      'Try Lumi Deep Analysis for comprehensive insights';
+
+  @override
+  String get quickAnalysisButtonChatWithLumi => 'Chat with Lumi';
+
+  @override
+  String get quickAnalysisButtonAnalyzeAgain => 'Analyze Another Dream';
+
+  @override
+  String get quickAnalysisErrorEmpty => 'Please describe your dream';
+
+  @override
+  String get quickAnalysisErrorTooShort =>
+      'Please provide more details (at least 20 characters)';
+
+  @override
+  String get quickAnalysisRefreshTooltip => 'Clear and start over';
+
+  @override
+  String get lumiConversationAppBar => 'Chat with Lumi';
+
+  @override
+  String get lumiConversationEmptyTitle => 'Start Your Dream Conversation';
+
+  @override
+  String get lumiConversationEmptySubtitle =>
+      'Ask Lumi anything about your dreams';
+
+  @override
+  String get lumiConversationInputHint => 'Ask about your dream...';
+
+  @override
+  String get lumiConversationThinking => 'Lumi is thinking...';
+
+  @override
+  String get lumiConversationLoadError => 'Failed to load conversation';
+
+  @override
+  String get lumiConversationTokenDialogTitle => '1 Token Required';
+
+  @override
+  String get lumiConversationTokenDialogContent =>
+      'This conversation will use 1 token';
+
+  @override
+  String get lumiConversationTokenDialogClose => 'Cancel';
+
+  @override
+  String get dreamAnalysisAppBar => 'Dream Analysis';
+
+  @override
+  String get dreamAnalysisKeywordsTitle => 'Key Themes';
+
+  @override
+  String get dreamAnalysisEmotionsTitle => 'Emotions';
+
+  @override
+  String get dreamAnalysisSymbolsTitle => 'Symbols';
+
+  @override
+  String get dreamAnalysisInterpretationTitle => 'Interpretation';
+
+  @override
+  String get dreamAnalysisRecommendationsTitle => 'Lucid Dream Tips';
+
+  @override
+  String get dreamAnalysisHeaderTitle => 'Your Dream Analysis';
+
+  @override
+  String get dreamAnalysisHeaderSubtitle => 'Powered by Lumi AI';
+
+  @override
+  String get dreamAnalysisLucidPotentialTitle => 'Lucid Dream Potential';
+
+  @override
+  String get dreamAnalysisLucidPotentialHigh => 'High';
+
+  @override
+  String get dreamAnalysisLucidPotentialMedium => 'Medium';
+
+  @override
+  String get dreamAnalysisLucidPotentialLow => 'Low';
+
+  @override
+  String get dreamAnalysisPremiumPromoTitle => 'Unlock Deeper Analysis';
+
+  @override
+  String get dreamAnalysisPremiumFeatures =>
+      'Premium members get detailed symbol interpretations, personalized insights, and unlimited analyses';
+
+  @override
+  String get dreamAnalysisPremiumButton => 'Go Premium';
+
+  @override
+  String checklistAnalysisError(Object error) {
+    return 'Analysis failed: $error';
+  }
+
+  @override
+  String get checklistAnalyzing => 'Analyzing your dream...';
+
+  @override
+  String get checklistCancel => 'Cancel';
+
+  @override
+  String get checklistCompletedTasks => 'Completed Tasks';
+
+  @override
+  String checklistCompletedTasksValue(Object completed, Object total) {
+    return '$completed/$total';
+  }
+
+  @override
+  String get checklistCompleteMessage =>
+      'Great work! You completed today\'s training!';
+
+  @override
+  String get checklistCompleteRequired => 'Please complete all required tasks';
+
+  @override
+  String get checklistCompleteRequiredFirst => 'Complete required tasks first';
+
+  @override
+  String get checklistCompleteTraining => 'Complete Training';
+
+  @override
+  String get checklistConfirm => 'Confirm';
+
+  @override
+  String checklistDayComplete(Object day) {
+    return 'Day $day Complete! 🎉';
+  }
+
+  @override
+  String checklistDayTitle(Object day) {
+    return 'Day $day Training';
+  }
+
+  @override
+  String get checklistDreamAnalysisAvailable =>
+      '1 free analysis available today';
+
+  @override
+  String get checklistDreamAnalysisPremiumUnlimited => 'Premium: Unlimited';
+
+  @override
+  String get checklistDreamAnalysisTitle => 'Dream Analysis';
+
+  @override
+  String get checklistDreamAnalysisWatchAd => 'Watch ad for 1 more analysis';
+
+  @override
+  String get checklistDreamInputHint => 'Describe your dream in detail...';
+
+  @override
+  String get checklistEnterDream => 'Enter Dream';
+
+  @override
+  String get checklistExit => 'Exit';
+
+  @override
+  String get checklistExitMessage =>
+      'Your progress will not be saved. Are you sure?';
+
+  @override
+  String get checklistExitTitle => 'Exit Training?';
+
+  @override
+  String get checklistFreeAnalysisAvailable => 'Free analysis available today';
+
+  @override
+  String get checklistFreeAnalysisStart => 'Start Free Analysis';
+
+  @override
+  String get checklistLater => 'Later';
+
+  @override
+  String get checklistPremiumAnalysisStart => 'Analyze Dream (Premium)';
+
+  @override
+  String get checklistPremiumUnlimited => 'Premium: Unlimited';
+
+  @override
+  String checklistProgressPercent(Object percent) {
+    return '$percent%';
+  }
+
+  @override
+  String get checklistRequiredTasks => 'Required Tasks';
+
+  @override
+  String checklistRequiredTasksValue(Object completed, Object total) {
+    return '$completed/$total completed';
+  }
+
+  @override
+  String checklistTaskGoal(Object count) {
+    return 'Goal: $count times';
+  }
+
+  @override
+  String get checklistTaskOptional => 'Optional';
+
+  @override
+  String get checklistTaskRequired => 'Required';
+
+  @override
+  String get checklistTimeSpent => 'Time Spent';
+
+  @override
+  String checklistTimeSpentValue(Object minutes) {
+    return '$minutes min';
+  }
+
+  @override
+  String get checklistWatchAdAnalysis => 'Watch Ad for Analysis';
+
+  @override
+  String get checklistWatchAdForAnalysis => 'Watch ad for 1 more analysis';
+
+  @override
+  String get checklistWbtbBusy => 'Busy day - WBTB skipped';
+
+  @override
+  String get checklistWbtbCompleted => 'WBTB Completed';
+
+  @override
+  String get checklistWbtbDayBadge => '🌙 WBTB Day';
+
+  @override
+  String checklistWbtbRemainingSkips(Object remaining) {
+    return '$remaining skips remaining this week';
+  }
+
+  @override
+  String get checklistWbtbSkipped => 'WBTB Skipped';
+
+  @override
+  String get checklistWbtbSkipWithAd => 'Watch ad to skip WBTB today';
+
+  @override
+  String get dailyChecklistAppBar => 'Daily Checklist';
+
+  @override
+  String get dailyChecklistComplete => 'Complete';
+
+  @override
+  String get dailyChecklistPriority1 => '🔥 Priority 1 - Essential';
+
+  @override
+  String get dailyChecklistPriority2 => '💪 Priority 2 - Important';
+
+  @override
+  String get dailyChecklistRegular => '📝 Regular Practice';
+
+  @override
+  String get dailyChecklistOptional => '⭐ Optional - Bonus';
+
+  @override
+  String dailyChecklistCounterProgress(Object current, Object target) {
+    return '$current/$target';
+  }
+
+  @override
+  String dailyChecklistPracticeInterval(Object minutes) {
+    return 'Practice every $minutes minutes';
+  }
+
+  @override
+  String dailyChecklistCompletionDialogTitle(Object icon) {
+    return '$icon Task Complete!';
+  }
+
+  @override
+  String dailyChecklistCompletionDialogContent(Object name) {
+    return 'Great job! You completed $name!';
+  }
+
+  @override
+  String get dailyChecklistConfirmButton => 'OK';
+
+  @override
+  String get legalDocumentLoadError => 'Unable to load document';
+
+  @override
+  String legalDocumentNotFound(Object path) {
+    return 'Document not found: $path';
+  }
 
   @override
   String get adLoadFailed => 'Unable to load advertisement';

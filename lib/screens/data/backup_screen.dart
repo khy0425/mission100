@@ -161,9 +161,10 @@ class _BackupScreenState extends State<BackupScreen> {
 
       await _loadBackupStatus();
 
-      _showSuccessSnackBar(enabled ? '자동 백업이 활성화되었습니다' : '자동 백업이 비활성화되었습니다');
+      final l10n = AppLocalizations.of(context);
+      _showSuccessSnackBar(enabled ? l10n.backupAutoBackupEnabled : l10n.backupAutoBackupDisabled);
     } catch (e) {
-      _showErrorSnackBar('설정 변경 실패: $e');
+      _showErrorSnackBar(AppLocalizations.of(context).backupSettingsChangeFailed(e.toString()));
     }
   }
 
@@ -175,9 +176,9 @@ class _BackupScreenState extends State<BackupScreen> {
     try {
       await _scheduler.updateBackupSettings(frequency: frequency);
       await _loadBackupStatus();
-      _showSuccessSnackBar('백업 빈도가 변경되었습니다');
+      _showSuccessSnackBar(AppLocalizations.of(context).backupFrequencyChanged);
     } catch (e) {
-      _showErrorSnackBar('설정 변경 실패: $e');
+      _showErrorSnackBar(AppLocalizations.of(context).backupSettingsChangeFailed(e.toString()));
     }
   }
 
@@ -242,9 +243,9 @@ class _BackupScreenState extends State<BackupScreen> {
                   color: status.autoBackupEnabled ? Colors.green : Colors.grey,
                 ),
                 const SizedBox(width: 8),
-                const Text(
-                  '백업 상태',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                Text(
+                  AppLocalizations.of(context).backupStatusLabel,
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -255,12 +256,12 @@ class _BackupScreenState extends State<BackupScreen> {
             ),
             if (status.lastBackupTime != null)
               _buildStatusRow(
-                '마지막 백업',
+                AppLocalizations.of(context).backupLastBackupLabel,
                 _formatDateTime(status.lastBackupTime!),
               ),
             if (status.nextBackupTime != null)
-              _buildStatusRow('다음 백업', _formatDateTime(status.nextBackupTime!)),
-            _buildStatusRow('백업 빈도', _getFrequencyText(status.frequency)),
+              _buildStatusRow(AppLocalizations.of(context).backupNextBackupLabel, _formatDateTime(status.nextBackupTime!)),
+            _buildStatusRow(AppLocalizations.of(context).backupFrequencyLabel, _getFrequencyText(status.frequency)),
             _buildStatusRow(
               AppLocalizations.of(context).encryption,
               status.encryptionEnabled
@@ -269,8 +270,8 @@ class _BackupScreenState extends State<BackupScreen> {
             ),
             if (status.failureCount > 0)
               _buildStatusRow(
-                '실패 횟수',
-                '${status.failureCount}회',
+                AppLocalizations.of(context).backupFailureCountLabel,
+                AppLocalizations.of(context).backupFailureCountValue(status.failureCount),
                 isError: true,
               ),
           ],
@@ -306,9 +307,9 @@ class _BackupScreenState extends State<BackupScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              '백업 작업',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            Text(
+              AppLocalizations.of(context).backupActionsTitle,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             Row(
@@ -395,9 +396,9 @@ class _BackupScreenState extends State<BackupScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              '백업 설정',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            Text(
+              AppLocalizations.of(context).backupSettingsTitle,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             SwitchListTile(
@@ -428,9 +429,9 @@ class _BackupScreenState extends State<BackupScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              '백업 히스토리',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            Text(
+              AppLocalizations.of(context).backupHistoryTitle,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             if (_backupStatus!.lastBackupTime != null)

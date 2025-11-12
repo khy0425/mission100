@@ -1,0 +1,15 @@
+{
+  "@legalDocumentLoadError": {
+    "description": "Error message when unable to load legal document"
+  },
+  "legalDocumentLoadError": "Unable to load document",
+  "@legalDocumentNotFound": {
+    "description": "Error message when document file is not found",
+    "placeholders": {
+      "path": {
+        "type": "Object"
+      }
+    }
+  },
+  "legalDocumentNotFound": "Document not found: {path}"
+}

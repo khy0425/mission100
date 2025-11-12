@@ -16,7 +16,7 @@
                      android:maxSdkVersion="32" />
     
     <application
-        android:label="Mission: 100"
+        android:label="드림플로"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
         android:requestLegacyExternalStorage="true">

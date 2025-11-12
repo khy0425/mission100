@@ -62,7 +62,7 @@
     "description": "Progress label for achievement progress bar"
   },
   "@progressLabel": {
-    "description": "Progress label - Chad style"
+    "description": "Progress label - Dream Spirit style"
   },
   "@progressText": {
     "description": "Progress text"
@@ -110,7 +110,7 @@
   "dataBackupProgress": "Backing up data...",
   "inProgress": "In Progress",
   "inProgressStatus": "In Progress",
-  "loadingStatistics": "Loading Chad's statistics...",
+  "loadingStatistics": "Loading Dream Spirit's statistics...",
   "loginToSaveProgress": "Login to save your progress",
   "monthlyProgress": "Monthly Progress",
   "noBackupRecord": "No Backup Record",
@@ -128,23 +128,277 @@
   "progressTracking": "Progress Tracking",
   "progressVisualization": "Progress Visualization",
   "statistics": "Statistics",
-  "statisticsBannerText": "Check your Chad growth! 📊",
+  "statisticsBannerText": "Check your Dream Spirit growth! 📊",
   "statisticsTab": "Statistics",
   "statusInProgress": "In Progress",
-  "streakBrokenMessage": "Workout streak broken",
+  "streakBrokenMessage": "Practice streak broken",
   "streakChallenge": "Streak Challenge",
-  "streakContinueMessage": "Workout streak continues!",
+  "streakContinueMessage": "Practice streak continues!",
   "streakEncouragement": "Streak Encouragement",
-  "streakEncouragementSubtitle": "Encouragement message after 3 consecutive workouts",
+  "streakEncouragementSubtitle": "Encouragement message after 3 consecutive practices",
   "streakProgress": "Streak Progress",
-  "streakStartMessage": "Workout streak started!",
+  "streakStartMessage": "Practice streak started!",
   "loadingProgramData": "Loading program data...",
-  "startWorkoutToStartProgram": "Start your workout to begin the program! 💪",
+  "startWorkoutToStartProgram": "Start your practice to begin the program! 💪",
   "programProgress": "Program Progress",
-  "progressShownAfterWorkout": "Progress will be shown once you start working out",
+  "progressShownAfterWorkout": "Progress will be shown once you start practicing",
   "overallProgramProgress": "Overall Program Progress",
   "weeksFormat": "{current}/{total} weeks",
   "thisWeekFormat": "This Week (Week {week})",
   "daysCompleted": "days completed",
-  "totalSessions": "Total Sessions"
+  "totalSessions": "Total Sessions",
+  "@progressLoadingError": {
+    "description": "Error loading progress data"
+  },
+  "progressLoadingError": "Failed to load progress data",
+  "@progressRepsUnit": {
+    "description": "Reps unit display",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressRepsUnit": "{count} reps",
+  "@progressWeekNumber": {
+    "description": "Week number display",
+    "placeholders": {
+      "week": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressWeekNumber": "Week {week}",
+  "@progressDateWorkout": {
+    "description": "Workout date display",
+    "placeholders": {
+      "date": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressDateWorkout": "Date: {date}",
+  "@progressNoWorkoutThisDay": {
+    "description": "No workout on this day message"
+  },
+  "progressNoWorkoutThisDay": "Rest day",
+  "@progressWeekDaySession": {
+    "description": "Week day session display",
+    "placeholders": {
+      "week": {
+        "type": "Object"
+      },
+      "day": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressWeekDaySession": "Week {week}, Day {day}",
+  "@progressSetsUnit": {
+    "description": "Sets unit display",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressSetsUnit": "{count} sets",
+  "@progressSetRecordLabel": {
+    "description": "Set record label"
+  },
+  "progressSetRecordLabel": "Set Records",
+  "@progressSetNumber": {
+    "description": "Set number display",
+    "placeholders": {
+      "number": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressSetNumber": "Set {number}",
+  "@progressChadEvolutionStage": {
+    "description": "Dream Spirit evolution stage title"
+  },
+  "progressChadEvolutionStage": "Dream Spirit Evolution",
+  "@progressChadLevel": {
+    "description": "Dream Spirit level display",
+    "placeholders": {
+      "level": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressChadLevel": "Level {level}",
+  "@progressEvolvingToGigaChad": {
+    "description": "Evolving to Giga Dream Spirit message"
+  },
+  "progressEvolvingToGigaChad": "Evolving to Giga Dream Spirit!",
+  "@progressNextLevelRemaining": {
+    "description": "Remaining XP to next level",
+    "placeholders": {
+      "remaining": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressNextLevelRemaining": "{remaining} XP to next level",
+  "@progressViewAll": {
+    "description": "View all button"
+  },
+  "progressViewAll": "View All",
+  "@progressRepsCompleted": {
+    "description": "Reps completed display",
+    "placeholders": {
+      "reps": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressRepsCompleted": "{reps} reps completed",
+  "@progressPersonalRecords": {
+    "description": "Personal records title"
+  },
+  "progressPersonalRecords": "Personal Records",
+  "@progressBestRecord": {
+    "description": "Best record label"
+  },
+  "progressBestRecord": "Best Record",
+  "@progressBestWeek": {
+    "description": "Best week label"
+  },
+  "progressBestWeek": "Best Week",
+  "@progressConsecutiveDays": {
+    "description": "Consecutive days label"
+  },
+  "progressConsecutiveDays": "Consecutive Days",
+  "@progressDaysUnit": {
+    "description": "Days unit display",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressDaysUnit": "{count} days",
+  "@progressAverageScore": {
+    "description": "Average score label"
+  },
+  "progressAverageScore": "Average Score",
+  "@progressAchievementFirstStep": {
+    "description": "First step achievement title"
+  },
+  "progressAchievementFirstStep": "First Step",
+  "@progressAchievementFirstStepDesc": {
+    "description": "First step achievement description"
+  },
+  "progressAchievementFirstStepDesc": "Complete your first training session",
+  "@progressAchievementHundredPushups": {
+    "description": "Hundred pushups achievement title"
+  },
+  "progressAchievementHundredPushups": "Century Mark",
+  "@progressAchievementHundredPushupsDesc": {
+    "description": "Hundred pushups achievement description"
+  },
+  "progressAchievementHundredPushupsDesc": "Complete 100 pushups in a single session",
+  "@progressAchievementPerfectionist": {
+    "description": "Perfectionist achievement title"
+  },
+  "progressAchievementPerfectionist": "Perfectionist",
+  "@progressAchievementPerfectionistDesc": {
+    "description": "Perfectionist achievement description"
+  },
+  "progressAchievementPerfectionistDesc": "Complete all sets with perfect form",
+  "@progressAchievementWeekChallenge": {
+    "description": "Week challenge achievement title"
+  },
+  "progressAchievementWeekChallenge": "Week Warrior",
+  "@progressAchievementWeekChallengeDesc": {
+    "description": "Week challenge achievement description"
+  },
+  "progressAchievementWeekChallengeDesc": "Complete all workouts in a week",
+  "@progressCurrentChadStatus": {
+    "description": "Current Dream Spirit status label"
+  },
+  "progressCurrentChadStatus": "Current Status",
+  "@progressMaxLevelAchieved": {
+    "description": "Max level achieved message"
+  },
+  "progressMaxLevelAchieved": "Max Level Achieved!",
+  "@progressNextLevel": {
+    "description": "Next level label",
+    "placeholders": {
+      "title": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressNextLevel": "Next Level: {title}",
+  "@progressNoData": {
+    "description": "No data available message"
+  },
+  "progressNoData": "No data available",
+  "@progressPercentComplete": {
+    "description": "Percent complete label",
+    "placeholders": {
+      "percent": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressPercentComplete": "{percent}% Complete",
+  "@progressRequirementProgramStart": {
+    "description": "Requirement to start program"
+  },
+  "progressRequirementProgramStart": "Start the program",
+  "@progressRequirementWeek1": {
+    "description": "Week 1 requirement"
+  },
+  "progressRequirementWeek1": "Complete Week 1",
+  "@progressRequirementWeek2": {
+    "description": "Week 2 requirement"
+  },
+  "progressRequirementWeek2": "Complete Week 2",
+  "@progressRequirementWeek3": {
+    "description": "Week 3 requirement"
+  },
+  "progressRequirementWeek3": "Complete Week 3",
+  "@progressRequirementWeek4": {
+    "description": "Week 4 requirement"
+  },
+  "progressRequirementWeek4": "Complete Week 4",
+  "@progressRequirementWeek5": {
+    "description": "Week 5 requirement"
+  },
+  "progressRequirementWeek5": "Complete Week 5",
+  "@progressRequirementWeek6": {
+    "description": "Week 6 requirement"
+  },
+  "progressRequirementWeek6": "Complete Week 6",
+  "@progressScoreUnit": {
+    "description": "Score unit display",
+    "placeholders": {
+      "score": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressScoreUnit": "{score} pts",
+  "@progressTooltipWeekComplete": {
+    "description": "Tooltip for week completion",
+    "placeholders": {
+      "week": {
+        "type": "Object"
+      },
+      "completionRate": {
+        "type": "Object"
+      },
+      "completedSessions": {
+        "type": "Object"
+      },
+      "totalSessions": {
+        "type": "Object"
+      }
+    }
+  },
+  "progressTooltipWeekComplete": "Week {week}: {completionRate}% complete\\n{completedSessions}/{totalSessions} sessions"
 }

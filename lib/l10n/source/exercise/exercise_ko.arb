@@ -100,7 +100,7 @@
     "description": "아처 푸시업 호흡법"
   },
   "@pushupArcherChad": {
-    "description": "아처 푸시업 차드 조언"
+    "description": "아처 푸시업 드림 스피릿 조언"
   },
   "@pushupArcherDesc": {
     "description": "아처 푸시업 설명"
@@ -127,7 +127,7 @@
     "description": "박수 푸시업 호흡법"
   },
   "@pushupClapChad": {
-    "description": "박수 푸시업 차드 조언"
+    "description": "박수 푸시업 드림 스피릿 조언"
   },
   "@pushupClapDesc": {
     "description": "박수 푸시업 설명"
@@ -151,7 +151,7 @@
     "description": "디클라인 푸시업 호흡법"
   },
   "@pushupDeclineChad": {
-    "description": "디클라인 푸시업 차드 조언"
+    "description": "디클라인 푸시업 드림 스피릿 조언"
   },
   "@pushupDeclineDesc": {
     "description": "디클라인 푸시업 설명"
@@ -175,7 +175,7 @@
     "description": "다이아몬드 푸시업 호흡법"
   },
   "@pushupDiamondChad": {
-    "description": "다이아몬드 푸시업 차드 조언"
+    "description": "다이아몬드 푸시업 드림 스피릿 조언"
   },
   "@pushupDiamondDesc": {
     "description": "다이아몬드 푸시업 설명"
@@ -202,7 +202,7 @@
     "description": "인클라인 푸시업 호흡법"
   },
   "@pushupInclineChad": {
-    "description": "인클라인 푸시업 차드 조언"
+    "description": "인클라인 푸시업 드림 스피릿 조언"
   },
   "@pushupInclineDesc": {
     "description": "인클라인 푸시업 설명"
@@ -226,7 +226,7 @@
     "description": "무릎 푸시업 호흡법"
   },
   "@pushupKneeChad": {
-    "description": "무릎 푸시업 차드 조언"
+    "description": "무릎 푸시업 드림 스피릿 조언"
   },
   "@pushupKneeDesc": {
     "description": "무릎 푸시업 설명"
@@ -253,7 +253,7 @@
     "description": "원핸드 푸시업 호흡법"
   },
   "@pushupOneArmChad": {
-    "description": "원핸드 푸시업 차드 조언"
+    "description": "원핸드 푸시업 드림 스피릿 조언"
   },
   "@pushupOneArmDesc": {
     "description": "원핸드 푸시업 설명"
@@ -277,7 +277,7 @@
     "description": "파이크 푸시업 호흡법"
   },
   "@pushupPikeChad": {
-    "description": "파이크 푸시업 차드 조언"
+    "description": "파이크 푸시업 드림 스피릿 조언"
   },
   "@pushupPikeDesc": {
     "description": "파이크 푸시업 설명"
@@ -301,7 +301,7 @@
     "description": "기본 푸시업 호흡법"
   },
   "@pushupStandardChad": {
-    "description": "표준 푸시업 차드 조언"
+    "description": "표준 푸시업 드림 스피릿 조언"
   },
   "@pushupStandardDesc": {
     "description": "기본 푸시업 설명"
@@ -337,7 +337,7 @@
     "description": "와이드 그립 푸시업 호흡법"
   },
   "@pushupWideGripChad": {
-    "description": "와이드 그립 푸시업 차드 조언"
+    "description": "와이드 그립 푸시업 드림 스피릿 조언"
   },
   "@pushupWideGripDesc": {
     "description": "와이드 그립 푸시업 설명"
@@ -410,132 +410,132 @@
   "@variousPushupStimulation": {
     "description": "영상 설명 2"
   },
-  "beginnerPushupQuiz": "초보자에게 가장 적합한 푸시업 변형은?",
+  "beginnerPushupQuiz": "초보자에게 가장 적합한 자각몽 기법은?",
   "bottomPosition": "최하점 자세",
   "bottomPositionDesc": "가슴이 바닥에 거의 닿는 최하점에서 잠시 정지한다.",
   "breathingTechnique": "호흡법",
-  "chadPerfectPushupForm": "차드가 알려주는 완벽한 푸시업 폼! 💪",
+  "chadPerfectPushupForm": "드림 스피릿이 알려주는 완벽한 자각몽 기법! 💪",
   "completedFormat": "완료: {totalReps}개 / {totalSets}세트",
-  "correctPushupForm5Steps": "올바른 푸시업 자세 5단계",
-  "correctPushupFormDesc": "올바른 팔굽혀펴기 자세로 효과적인 운동",
-  "correctPushupQuiz1": "올바른 푸시업 시작 자세에서 손의 위치는?",
+  "correctPushupForm5Steps": "올바른 자각몽 기법 5단계",
+  "correctPushupFormDesc": "올바른 자각몽 기법으로 효과적인 연습",
+  "correctPushupQuiz1": "올바른 자각몽 연습 시작 시 중요한 것은?",
   "excellentPerformance": "🚀 EXCELLENT! 완벽한 실행! 🚀",
   "finishPosition": "완료 자세",
   "finishPositionDesc": "시작 자세로 완전히 돌아와 다음 반복을 준비한다.",
   "goalFormat": "목표: {totalReps}개 / {totalSets}세트",
   "goodPerformance": "💪 GOOD! 잘하고 있다! 💪",
-  "hundredPushups": "백 푸시업",
-  "hundredPushupsDesc": "한 세션에 100회 달성",
+  "hundredPushups": "자각몽 100일",
+  "hundredPushupsDesc": "100일 연속 자각몽 연습 달성",
   "perfectFormChallenge": "🎯 완벽 자세 챌린지 활성화! 대충하면 안 된다! 💪",
-  "perfectPushupForm": "완벽한 푸시업 자세",
+  "perfectPushupForm": "완벽한 자각몽 기법",
   "performanceGodTier": "🚀 ABSOLUTE PERFECTION! 신을 넘어선 ULTRA GOD EMPEROR 탄생! 👑",
   "performanceMedium": "⚡ GOOD! 약함이 도망치고 있다. ALPHA STORM이 몰려온다, 만삣삐! ⚡",
   "performanceMotivation": "🔥 할 수 있어? 당연하지! 이제 세상을 정복하러 가자, 만삣삐! 🔥",
   "performanceStart": "💥 시작이 반? 틀렸다! 이미 전설의 문이 열렸다, YOU FUTURE EMPEROR! 💥",
   "performanceStrong": "🔱 철봉이 무릎꿇는다고? 이제 중력이 너에게 항복한다! LEGENDARY BEAST! 🔱",
-  "pushup100Challenge": "팔굽혀펴기 100개 도전 🎯",
-  "pushup100Streak": "💪💀 푸시업 100개 연속 달성! 인간 초월! 💀💪",
-  "pushupArcher": "아처 푸시업",
-  "pushupArcherBenefits": "• 한쪽 팔 집중 강화\\n• 좌우 균형 발달\\n• 원핸드 푸시업 준비\\n• 코어 회전 안정성 강화",
-  "pushupArcherBreathing": "활시위 당기듯 집중해서 호흡해라. 정확성이 생명이다, you idiot!",
-  "pushupArcherChad": "🏹 정확한 아처가 원핸드 지름길? 맞다! 양쪽 균등 마스터하면 LEGENDARY ARCHER EMPEROR! 🏹",
-  "pushupArcherDesc": "한쪽씩 집중하는 고급 기술! 균형감각과 코어가 필요하다, 만삣삐!",
-  "pushupArcherInstructions": "1. 와이드 그립으로 시작하라\\n2. 한쪽으로 체중을 기울여라\\n3. 한 팔은 굽히고 다른 팔은 쭉\\n4. 활시위 당기듯 정확하게\\n5. 양쪽을 번갈아가며, 만삣삐!",
-  "pushupArcherMistakes": "• 몸이 비틀어짐\\n• 쭉 편 팔에도 힘이 들어감\\n• 좌우 동작이 불균등\\n• 코어가 흔들림",
-  "pushupArcherName": "아처 푸시업",
-  "pushupBreathingQuiz": "푸시업 시 올바른 호흡법은?",
-  "pushupClap": "박수 푸시업",
-  "pushupClapBenefits": "• 폭발적인 근력 발달\\n• 전신 파워 향상\\n• 순간 반응속도 증가\\n• 진짜 나만의 증명",
-  "pushupClapBreathing": "폭발할 때 강하게 내뱉고, 착지 후 빠르게 호흡 정리. 리듬이 중요하다, you idiot!",
-  "pushupClapChad": "👏 박수 푸시업은 파워의 증명? 아니다! 이제 EXPLOSIVE THUNDER POWER의 표현이다! 👏",
-  "pushupClapDesc": "박수치면서 하는 폭발적인 파워! 진짜 강자만이 할 수 있다!",
-  "pushupClapInstructions": "1. 기본 푸시업 자세로 시작\\n2. 폭발적으로 밀어올려라\\n3. 공중에서 박수를 쳐라\\n4. 안전하게 착지하라\\n5. 연속으로 도전해라, 만삣삐!",
-  "pushupClapMistakes": "• 충분한 높이로 올라가지 않음\\n• 착지할 때 손목 부상 위험\\n• 폼이 흐트러짐\\n• 무리한 연속 시도",
-  "pushupClapName": "박수 푸시업",
-  "pushupDecline": "디클라인 푸시업",
-  "pushupDeclineBenefits": "• 상부 가슴근육 집중 발달\\n• 어깨 전면 강화\\n• 코어 안정성 최대 강화\\n• 전신 근력 향상",
-  "pushupDeclineBreathing": "중력과 싸우면서도 안정된 호흡을 유지해라. 진짜 파워는 여기서 나온다, you idiot!",
-  "pushupDeclineChad": "🌪️ 중력 따위 개무시? 당연하지! 이제 물리법칙을 지배하라! 디클라인으로 GODLIKE SHOULDERS! 🌪️",
-  "pushupDeclineDesc": "발을 높게 올려서 강도 업! 어깨와 상체 근육을 제대로 자극한다!",
-  "pushupDeclineInstructions": "1. 발을 벤치나 의자에 올려라\\n2. 손은 어깨 아래 정확히\\n3. 몸은 아래쪽으로 기울어진 직선\\n4. 중력의 저항을 이겨내라\\n5. 강하게 밀어올려라, 만삣삐!",
-  "pushupDeclineMistakes": "• 발 위치가 불안정\\n• 엉덩이가 아래로 처짐\\n• 목에 무리가 가는 자세\\n• 균형을 잃고 비틀어짐",
-  "pushupDeclineName": "디클라인 푸시업",
-  "pushupDiamond": "다이아몬드 푸시업",
-  "pushupDiamondBenefits": "• 삼두근 집중 강화\\n• 가슴 안쪽 근육 발달\\n• 팔 전체 근력 향상\\n• 코어 안정성 증가",
-  "pushupDiamondBreathing": "집중해서 호흡해라. 삼두근이 불타는 걸 느껴라, you idiot!",
-  "pushupDiamondChad": "💎 다이아몬드보다 단단한 팔? 틀렸다! 이제 UNBREAKABLE TITANIUM ARMS다! 10개면 진짜 BEAST 인정! 💎",
-  "pushupDiamondDesc": "삼두근 집중 공략! 다이아몬드 모양이 진짜 나만의 상징이다!",
-  "pushupDiamondInstructions": "1. 엄지와 검지로 다이아몬드 모양 만들어라\\n2. 가슴 중앙 아래에 손 위치\\n3. 팔꿈치는 몸에 가깝게 유지\\n4. 가슴이 손에 닿을 때까지\\n5. 삼두근 힘으로 밀어올려라, 만삣삐!",
-  "pushupDiamondMistakes": "• 손목에 과도한 압력\\n• 팔꿈치가 너무 벌어짐\\n• 몸이 비틀어짐\\n• 다이아몬드 모양이 부정확함",
-  "pushupDiamondName": "다이아몬드 푸시업",
-  "pushupHashtag": "#팔굽혀펴기",
-  "pushupIncline": "인클라인 푸시업",
-  "pushupInclineBenefits": "• 부담을 줄여 폼 완성\\n• 하부 가슴근육 강화\\n• 어깨 안정성 향상\\n• 기본 푸시업으로의 징검다리",
-  "pushupInclineBreathing": "각도가 편해진 만큼 호흡도 편안하게. 하지만 집중력은 최고로, you idiot!",
-  "pushupInclineChad": "🚀 높이는 조절하고 강도는 MAX! 20개 완벽 수행하면 GOD TIER 입장권 획득이다, 만삣삐! 🚀",
-  "pushupInclineDesc": "경사면을 이용해서 난이도 조절! 계단이나 벤치면 충분하다, 만삣삐!",
-  "pushupInclineInstructions": "1. 벤치나 의자에 손을 올려라\\n2. 몸을 비스듬히 기울여라\\n3. 발가락부터 머리까지 일직선\\n4. 높을수록 쉬워진다, 만삣삐\\n5. 점차 낮은 곳으로 도전해라!",
-  "pushupInclineMistakes": "• 엉덩이가 위로 솟음\\n• 손목에 과도한 체중\\n• 불안정한 지지대 사용\\n• 각도를 너무 급하게 낮춤",
-  "pushupInclineName": "인클라인 푸시업",
-  "pushupKnee": "무릎 푸시업",
-  "pushupKneeBenefits": "• 기본 근력 향상\\n• 올바른 푸시업 폼 학습\\n• 어깨와 팔 안정성 강화\\n• 기본 푸시업으로의 단계적 진행",
+  "pushup100Challenge": "자각몽 100일 도전 🎯",
+  "pushup100Streak": "💪💀 자각몽 100일 연속 달성! 인간 초월! 💀💪",
+  "pushupArcher": "SSILD 기법",
+  "pushupArcherBenefits": "• 감각 집중 능력 강화\\n• 시청각촉각 균형 발달\\n• 고급 자각몽 준비\\n• 안정적인 꿈 진입",
+  "pushupArcherBreathing": "사이클 돌듯 집중해서 호흡해라. 정확성이 생명이다, you idiot!",
+  "pushupArcherChad": "🏹 정확한 사이클이 자각몽 지름길? 맞다! 감각 마스터하면 LEGENDARY LUCID EMPEROR! 🏹",
+  "pushupArcherDesc": "감각씩 집중하는 고급 기술! 균형감각과 집중력이 필요하다, 만삣삐!",
+  "pushupArcherInstructions": "1. 눈 감고 시각에 주의\\n2. 청각 자극에 집중\\n3. 촉각 감각 느끼기\\n4. 4-6회 빠른 사이클\\n5. 양쪽을 번갈아가며, 만삣삐!",
+  "pushupArcherMistakes": "• 너무 강하게 집중\\n• 한 감각에만 치우침\\n• 사이클이 불규칙\\n• 조급하게 진행",
+  "pushupArcherName": "SSILD 기법",
+  "pushupBreathingQuiz": "자각몽 연습 시 올바른 호흡법은?",
+  "pushupClap": "FILD 기법",
+  "pushupClapBenefits": "• 빠른 꿈 진입 능력\\n• 손가락 집중력 향상\\n• 즉각적인 자각몽\\n• 진짜 마스터의 증명",
+  "pushupClapBreathing": "깨어날 때 깊게 호흡하고, 손가락 움직임에 집중. 리듬이 중요하다, you idiot!",
+  "pushupClapChad": "👏 손가락 기법이 빠른 진입? 맞다! 이제 EXPLOSIVE LUCID ENTRY의 표현이다! 👏",
+  "pushupClapDesc": "손가락 움직이며 하는 빠른 진입! 진짜 마스터만이 할 수 있다!",
+  "pushupClapInstructions": "1. 알람 후 움직이지 말고\\n2. 손가락을 살짝 움직여라\\n3. 피아노 치듯 교대로\\n4. 꿈 장면이 나타날 때까지\\n5. 연속으로 도전해라, 만삣삐!",
+  "pushupClapMistakes": "• 너무 강하게 움직이기\\n• 완전히 깨버리기\\n• 리듬이 불규칙\\n• 조급하게 포기하기",
+  "pushupClapName": "FILD 기법",
+  "pushupDecline": "꿈 신호 인식",
+  "pushupDeclineBenefits": "• 꿈 패턴 파악 능력 강화\\n• 자각몽 트리거 발견\\n• 인식 속도 최대 강화\\n• 전체 자각몽 능력 향상",
+  "pushupDeclineBreathing": "무의식과 싸우면서도 안정된 관찰을 유지해라. 진짜 파워는 여기서 나온다, you idiot!",
+  "pushupDeclineChad": "🌪️ 꿈 신호 따위 개무시? 당연하지! 이제 꿈 세계를 지배하라! 신호 인식으로 GODLIKE AWARENESS! 🌪️",
+  "pushupDeclineDesc": "관찰력을 높게 올려서 인식 향상! 꿈 신호를 제대로 포착한다!",
+  "pushupDeclineInstructions": "1. 꿈 일기에서 반복 요소 찾기\\n2. 개인 꿈 신호 목록 작성\\n3. 현실에서 그 신호 주시하기\\n4. 신호 발견 시 현실 확인\\n5. 꿈에서 신호 인식하라, 만삣삐!",
+  "pushupDeclineMistakes": "• 신호를 대충 관찰\\n• 패턴을 무시하기\\n• 일기 분석 안 하기\\n• 꿈에서 신호 놓치기",
+  "pushupDeclineName": "꿈 신호 인식",
+  "pushupDiamond": "WBTB 기법",
+  "pushupDiamondBenefits": "• 자각몽 확률 극대화\\n• REM 수면 활용\\n• 의식 명료함 강화\\n• 꿈 컨트롤 능력 증가",
+  "pushupDiamondBreathing": "집중해서 호흡해라. 의식이 깨어나는 걸 느껴라, you idiot!",
+  "pushupDiamondChad": "💎 다이아몬드보다 빛나는 의식? 틀렸다! 이제 UNBREAKABLE LUCID MIND다! 한 번만 성공해도 진짜 BEAST 인정! 💎",
+  "pushupDiamondDesc": "REM 수면 집중 공략! WBTB가 진짜 마스터의 상징이다!",
+  "pushupDiamondInstructions": "1. 5-6시간 자고 깨어나라\\n2. 20-30분 깨어있어라\\n3. 자각몽에 집중하며 읽기\\n4. 다시 잠들 때 의도 유지\\n5. REM 수면으로 진입하라, 만삣삐!",
+  "pushupDiamondMistakes": "• 너무 오래 깨어있기\\n• 완전히 잠 깨버리기\\n• 의도 없이 다시 자기\\n• 타이밍이 부정확함",
+  "pushupDiamondName": "WBTB 기법",
+  "pushupHashtag": "#자각몽",
+  "pushupIncline": "수면 위생",
+  "pushupInclineBenefits": "• 수면 질 향상\\n• 꿈 선명도 강화\\n• 자각몽 성공률 증가\\n• 모든 기법의 기초 다지기",
+  "pushupInclineBreathing": "잠들기 전 호흡도 편안하게. 하지만 규칙성은 최고로, you idiot!",
+  "pushupInclineChad": "🚀 환경은 조절하고 수면은 MAX! 완벽한 수면 루틴이면 GOD TIER 입장권 획득이다, 만삣삐! 🚀",
+  "pushupInclineDesc": "수면 환경을 이용해서 꿈 품질 향상! 조용하고 어둡게만 해도 충분하다, 만삣삐!",
+  "pushupInclineInstructions": "1. 규칙적인 수면 시간 정해라\\n2. 침실을 어둡고 시원하게\\n3. 잠들기 2시간 전 전자기기 끄기\\n4. 편안한 침구 준비\\n5. 점차 완벽한 환경 만들어라!",
+  "pushupInclineMistakes": "• 불규칙한 수면 시간\\n• 밝은 침실에서 자기\\n• 자기 직전 스마트폰 보기\\n• 너무 급하게 변화 시도",
+  "pushupInclineName": "수면 위생",
+  "pushupKnee": "현실 확인",
+  "pushupKneeBenefits": "• 꿈과 현실 구분 능력 향상\\n• 자각몽 인식 훈련\\n• 의식 명료함 강화\\n• 자각몽으로의 단계적 진입",
   "pushupKneeBreathing": "부드럽고 꾸준한 호흡으로 시작해라. 급하게 하지 마라, 만삣삐!",
-  "pushupKneeChad": "⚡ 시작이 반? 아니다! 이미 ALPHA JOURNEY가 시작됐다! 무릎 푸시업도 EMPEROR의 길이다! ⚡",
-  "pushupKneeDesc": "입문자도 할 수 있다! 무릎 대고 하는 거 부끄러워하지 마라, 만삣삐!",
-  "pushupKneeInstructions": "1. 무릎을 바닥에 대고 시작하라\\n2. 발목을 들어올려라\\n3. 상체는 기본 푸시업과 동일하게\\n4. 무릎에서 머리까지 일직선 유지\\n5. 천천히 확실하게 움직여라, 만삣삐!",
-  "pushupKneeMistakes": "• 엉덩이가 뒤로 빠짐\\n• 무릎 위치가 너무 앞쪽\\n• 상체만 움직이고 코어 사용 안 함\\n• 너무 빠르게 동작함",
-  "pushupKneeName": "무릎 푸시업",
-  "pushupMistakeQuiz": "푸시업 중 가장 흔한 실수는?",
-  "pushupOneArm": "원핸드 푸시업",
-  "pushupOneArmBenefits": "• 궁극의 상체 근력\\n• 완벽한 코어 컨트롤\\n• 전신 균형과 조정력\\n• 기가 나만의 완성",
-  "pushupOneArmBreathing": "깊고 안정된 호흡으로 집중력을 최고조로. 모든 에너지를 하나로, you idiot!",
-  "pushupOneArmChad": "🚀 원핸드는 차드 완성형? 틀렸다! 이제 ULTIMATE APEX GOD EMPEROR 탄생이다, FXXK YEAH! 🚀",
-  "pushupOneArmDesc": "원핸드 푸시업은 나만의 완성형이다! 이거 한 번이라도 하면 진짜 기가 차드 인정!",
-  "pushupOneArmInstructions": "1. 다리를 넓게 벌려 균형잡아라\\n2. 한 손은 등 뒤로\\n3. 코어에 모든 힘을 집중\\n4. 천천히 확실하게\\n5. 기가 나만의 자격을 증명하라!",
-  "pushupOneArmMistakes": "• 다리가 너무 좁음\\n• 몸이 비틀어지며 회전\\n• 반대 손으로 지탱\\n• 무리한 도전으로 부상",
-  "pushupOneArmName": "원핸드 푸시업",
-  "pushupPike": "파이크 푸시업",
-  "pushupPikeBenefits": "• 어깨 전체 근육 강화\\n• 핸드스탠드 푸시업 준비\\n• 상체 수직 힘 발달\\n• 코어와 균형감 향상",
-  "pushupPikeBreathing": "거꾸로 된 자세에서도 안정된 호흡. 어깨에 집중해라, you idiot!",
-  "pushupPikeChad": "⚡ 파이크 마스터하면 핸드스탠드? 당연하지! 어깨 EMPEROR로 진화하라, 만삣삐! ⚡",
-  "pushupPikeDesc": "어깨 집중 공략! 핸드스탠드 푸시업의 전 단계다!",
-  "pushupPikeInstructions": "1. 다운독 자세로 시작하라\\n2. 엉덩이를 최대한 위로\\n3. 머리가 바닥에 가까워질 때까지\\n4. 어깨 힘으로만 밀어올려라\\n5. 역삼각형을 유지하라, 만삣삐!",
-  "pushupPikeMistakes": "• 엉덩이가 충분히 올라가지 않음\\n• 팔꿈치가 옆으로 벌어짐\\n• 머리로만 지탱하려 함\\n• 발 위치가 너무 멀거나 가까움",
-  "pushupPikeName": "파이크 푸시업",
-  "pushupStandard": "기본 푸시업",
-  "pushupStandardBenefits": "• 가슴근육 전체 발달\\n• 삼두근과 어깨 강화\\n• 기본 체력 향상\\n• 모든 푸시업의 기초가 된다, you idiot!",
-  "pushupStandardBreathing": "내려갈 때 숨을 마시고, 올라올 때 강하게 내뱉어라. 호흡이 파워다, 만삣삐!",
-  "pushupStandardChad": "🔥 기본이 제일 어렵다고? 틀렸다! 완벽한 폼 하나가 세상을 정복한다, 만삣삐! MASTER THE BASICS! 🔥",
-  "pushupStandardDesc": "모든 나만의 시작점. 완벽한 기본기가 진짜 강함이다, 만삣삐!",
-  "pushupStandardInstructions": "1. 플랭크 자세로 시작한다, 만삣삐\\n2. 손은 어깨 너비로 벌려라\\n3. 몸은 일직선으로 유지해라, 흐트러지지 말고\\n4. 가슴이 바닥에 닿을 때까지 내려가라\\n5. 강하게 밀어올려라, 차드답게!",
-  "pushupStandardMistakes": "• 엉덩이가 위로 솟음 - 약자들이나 하는 짓이야\\n• 가슴을 끝까지 내리지 않음\\n• 목을 앞으로 빼고 함\\n• 손목이 어깨보다 앞에 위치\\n• 일정한 속도를 유지하지 않음, fxxk idiot!",
-  "pushupStandardName": "기본 푸시업",
-  "pushupTutorialSubtitle": "진짜 강자들은 자세부터 다르다! 💪",
-  "pushupTutorialTitle": "차드 푸시업 도장",
-  "pushupVariations": "팔굽혀펴기 변형 동작 🔥",
-  "pushupVariationsByDifficulty": "난이도별 푸시업 변형",
-  "pushupWideGrip": "와이드 그립 푸시업",
-  "pushupWideGripBenefits": "• 가슴 바깥쪽 근육 집중 발달\\n• 어깨 안정성 향상\\n• 가슴 넓이 확장\\n• 상체 전체적인 균형 발달",
-  "pushupWideGripBreathing": "넓은 가슴으로 깊게 숨쉬어라. 가슴이 확장되는 걸 느껴라, you idiot!",
-  "pushupWideGripChad": "🦁 넓은 가슴? 아니다! 이제 LEGENDARY GORILLA CHEST를 만들어라! 와이드 그립으로 세상을 압도하라! 🦁",
-  "pushupWideGripDesc": "와이드하게 벌려서 가슴을 더 넓게! 진짜 강자 가슴을 만들어라!",
-  "pushupWideGripInstructions": "1. 손을 어깨보다 1.5배 넓게 벌려라\\n2. 손가락은 약간 바깥쪽을 향하게\\n3. 가슴이 바닥에 닿을 때까지\\n4. 팔꿈치는 45도 각도 유지\\n5. 넓은 가슴으로 밀어올려라, 만삣삐!",
-  "pushupWideGripMistakes": "• 손을 너무 넓게 벌림\\n• 팔꿈치가 완전히 바깥쪽\\n• 어깨에 무리가 가는 자세\\n• 가슴을 충분히 내리지 않음",
-  "pushupWideGripName": "와이드 그립 푸시업",
-  "pushupsCount": "{count}개",
-  "pushupsLabel": "💪 푸시업",
+  "pushupKneeChad": "⚡ 시작이 반? 아니다! 이미 ALPHA JOURNEY가 시작됐다! 현실 확인도 EMPEROR의 길이다! ⚡",
+  "pushupKneeDesc": "입문자도 할 수 있다! 하루 10번 현실 확인 부끄러워하지 마라, 만삣삐!",
+  "pushupKneeInstructions": "1. 하루에 10번 이상 체크하라\\n2. 손을 자세히 관찰하라\\n3. '지금 꿈인가?' 진지하게 물어라\\n4. 주변 환경이 이상한지 확인\\n5. 천천히 확실하게 검증하라, 만삣삐!",
+  "pushupKneeMistakes": "• 대충 형식적으로 체크하기\\n• 하루에 너무 적게 하기\\n• 진지하게 의심하지 않기\\n• 너무 빠르게 지나가기",
+  "pushupKneeName": "현실 확인",
+  "pushupMistakeQuiz": "자각몽 연습 중 가장 흔한 실수는?",
+  "pushupOneArm": "고급 WILD",
+  "pushupOneArmBenefits": "• 궁극의 의식 제어\\n• 완벽한 꿈 컨트롤\\n• 전체 자각몽 마스터\\n• 기가 마스터 완성",
+  "pushupOneArmBreathing": "깊고 안정된 호흡으로 집중력을 최고조로. 모든 의식을 하나로, you idiot!",
+  "pushupOneArmChad": "🚀 고급 WILD는 마스터 완성형? 틀렸다! 이제 ULTIMATE APEX LUCID GOD 탄생이다, FXXK YEAH! 🚀",
+  "pushupOneArmDesc": "고급 WILD는 자각몽의 완성형이다! 이거 한 번이라도 성공하면 진짜 기가 마스터 인정!",
+  "pushupOneArmInstructions": "1. 명상과 WILD를 결합\\n2. 환각을 적극 활용\\n3. 의식에 모든 힘을 집중\\n4. 천천히 확실하게\\n5. 기가 마스터 자격을 증명하라!",
+  "pushupOneArmMistakes": "• 기초가 부족한 상태로 시도\\n• 긴장으로 몸이 굳어짐\\n• 조급하게 진입 시도\\n• 무리한 도전으로 좌절",
+  "pushupOneArmName": "고급 WILD",
+  "pushupPike": "WILD 기법",
+  "pushupPikeBenefits": "• 의식 유지 능력 강화\\n• 직접 꿈 진입 마스터\\n• 극한 집중력 발달\\n• 깊은 자각몽 경험",
+  "pushupPikeBreathing": "수면 마비 중에도 안정된 호흡. 의식에 집중해라, you idiot!",
+  "pushupPikeChad": "⚡ WILD 마스터하면 자유자재? 당연하지! 의식 EMPEROR로 진화하라, 만삣삐! ⚡",
+  "pushupPikeDesc": "의식 집중 공략! 고급 자각몽의 핵심 기법이다!",
+  "pushupPikeInstructions": "1. 편안하게 누워 긴장 풀기\\n2. 호흡에 집중하라\\n3. 몸이 잠들게 두되 의식 유지\\n4. 환각 증상을 관찰\\n5. 꿈으로 직접 진입하라, 만삣삐!",
+  "pushupPikeMistakes": "• 너무 긴장해서 잠 못 자기\\n• 의식을 잃어버리기\\n• 수면 마비에 당황하기\\n• 조급하게 포기하기",
+  "pushupPikeName": "WILD 기법",
+  "pushupStandard": "꿈 일기",
+  "pushupStandardBenefits": "• 꿈 기억력 향상\\n• 꿈 패턴 인식 능력 강화\\n• 자각몽 빈도 증가\\n• 모든 자각몽 기법의 기초!",
+  "pushupStandardBreathing": "자기 전 깊게 호흡하며 이완해라. 평온한 마음이 명확한 꿈을 부른다, 만삣삐!",
+  "pushupStandardChad": "🔥 꿈 일기가 제일 중요하다! 매일 쓰면 꿈 세계를 정복한다, 만삣삐! MASTER THE BASICS! 🔥",
+  "pushupStandardDesc": "모든 자각몽의 시작점. 완벽한 꿈 일기가 진짜 마스터를 만든다, 만삣삐!",
+  "pushupStandardInstructions": "1. 잠에서 깨자마자 기록해라, 만삣삐\\n2. 모든 세부사항을 포착하라\\n3. 감정과 색깔도 기록하라\\n4. 꿈 신호를 찾아내라\\n5. 매일 꾸준히 실천하라, 드림 스피릿답게!",
+  "pushupStandardMistakes": "• 나중에 쓰겠다고 미루기\\n• 세부사항을 대충 쓰기\\n• 불규칙하게 기록하기\\n• 감정을 무시하기\\n• 너무 빨리 포기하기, fxxk idiot!",
+  "pushupStandardName": "꿈 일기",
+  "pushupTutorialSubtitle": "진짜 꿈 마스터들은 기법부터 다르다! 💪",
+  "pushupTutorialTitle": "드림 스피릿 자각몽 도장",
+  "pushupVariations": "자각몽 기법 다양화 🔥",
+  "pushupVariationsByDifficulty": "난이도별 자각몽 기법",
+  "pushupWideGrip": "MILD 기법",
+  "pushupWideGripBenefits": "• 자각몽 의도 강화\\n• 꿈 인식 능력 향상\\n• 성공률 극대화\\n• 전체적인 자각몽 능력 발달",
+  "pushupWideGripBreathing": "깊은 호흡으로 의도를 각인시켜라. 의식이 확장되는 걸 느껴라, you idiot!",
+  "pushupWideGripChad": "🦁 강한 의도? 아니다! 이제 LEGENDARY LUCID MASTER를 만들어라! MILD로 꿈 세계를 압도하라! 🦁",
+  "pushupWideGripDesc": "의도를 강하게 세워서 자각몽 확률을 더 높게! 진짜 마스터가 되어라!",
+  "pushupWideGripInstructions": "1. 잠들기 전 '꿈에서 깨어난다' 반복\\n2. 최근 꿈을 회상하라\\n3. 자각몽이 되는 순간 상상\\n4. 강한 의도를 유지\\n5. 확신을 가지고 잠들어라, 만삣삐!",
+  "pushupWideGripMistakes": "• 의도가 너무 약함\\n• 대충 형식적으로 반복\\n• 상상이 구체적이지 않음\\n• 확신이 부족함",
+  "pushupWideGripName": "MILD 기법",
+  "pushupsCount": "{count}회",
+  "pushupsLabel": "💪 자각몽 기법",
   "resultFormat": "전설 등급: {reps}회 ({percentage}%) 🏆",
   "startPosition": "시작 자세",
   "startPositionDesc": "플랭크 자세로 시작하여 손과 발의 위치를 정확히 설정한다.",
   "timesFormat": "{times}회",
   "totalFormat": "총 {reps}회 ({sets}세트)",
-  "totalPushups": "총 푸시업",
-  "tutorialAdviceForm": "완벽한 자세가 완벽한 차드를 만든다!",
+  "totalPushups": "총 자각몽 연습",
+  "tutorialAdviceForm": "완벽한 기법이 완벽한 드림 스피릿을 만든다!",
   "variationExercises": "변형\n운동",
-  "variousPushupStimulation": "다양한 팔굽혀펴기 변형으로 근육 자극",
+  "variousPushupStimulation": "다양한 자각몽 기법으로 의식 자극",
   "watchVideo": "운동 영상 보기",
-  "specialPushupForChads": "차드를 위한 특별한 푸시업",
-  "chadPerfectFormGuide": "차드의 완벽한 푸시업 폼 가이드! 💪",
+  "specialPushupForChads": "드림 스피릿을 위한 특별한 자각몽 기법",
+  "chadPerfectFormGuide": "드림 스피릿의 완벽한 자각몽 기법 가이드! 💪",
   "formGuideAdvancedLevel": "고급",
   "formGuideBeginnerLevel": "초급",
   "formGuideCategoryBreathing": "호흡",

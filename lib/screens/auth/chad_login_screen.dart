@@ -67,7 +67,7 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
           MaterialPageRoute(builder: (context) => const PermissionScreen()),
         );
       } else {
-        _showErrorSnackBar(result.errorMessage ?? '구글 로그인에 실패했습니다.');
+        _showErrorSnackBar(result.errorMessage ?? AppLocalizations.of(context).loginGoogleSignInFailed);
       }
     }
   }
@@ -84,6 +84,8 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ChadOnboardingService>(
@@ -94,8 +96,8 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
         body: SafeArea(
           child: ChadOnboardingWidget(
             stepType: 'goalSetupComplete',
-            title: 'Chad와 함께 시작할 준비 완료!',
-            description: '이제 Chad AI 개인 트레이너와 함께\nMission: 100을 시작해보세요!',
+            title: l10n.loginReadyToStartWithChad,
+            description: l10n.loginStartDreamflowJourney,
             customContent: _buildLoginContent(context),
             onNext: () {
               Navigator.of(context).push(
@@ -104,7 +106,7 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
                 ),
               );
             },
-            buttonText: 'Chad와 함께 시작하기',
+            buttonText: l10n.loginStartWithChad,
           ),
         ),
       ),
@@ -113,6 +115,7 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
 
   Widget _buildLoginContent(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
 
     return Column(
       children: [
@@ -131,21 +134,21 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
               color: const Color(AppColors.primaryColor).withValues(alpha: 0.3),
             ),
           ),
-          child: const Column(
+          child: Column(
             children: [
               Text(
-                '🎉 Chad 런칭 특가!',
-                style: TextStyle(
+                l10n.loginChadLaunchSpecial,
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                   color: Color(AppColors.primaryColor),
                 ),
               ),
-              SizedBox(height: 8),
+              const SizedBox(height: 8),
               Text(
-                'Chad AI 트레이너 1개월 무료 체험\n지금 가입하면 무료로 시작!',
+                l10n.loginChadFreeTrialOffer,
                 textAlign: TextAlign.center,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   height: 1.4,
                 ),
@@ -158,7 +161,7 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
 
         // 이미 계정이 있다면
         Text(
-          '이미 Chad 계정이 있다면?',
+          l10n.loginAlreadyHaveChadAccount,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,
@@ -178,7 +181,7 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
                 controller: _emailController,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
-                  labelText: '이메일',
+                  labelText: l10n.loginEmail,
                   prefixIcon: const Icon(Icons.email_outlined),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),
@@ -190,10 +193,10 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return '이메일을 입력해주세요';
+                    return l10n.loginEmailRequired;
                   }
                   if (!value.contains('@')) {
-                    return '올바른 이메일 주소를 입력해주세요';
+                    return l10n.loginEmailInvalid;
                   }
                   return null;
                 },
@@ -206,7 +209,7 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
                 controller: _passwordController,
                 obscureText: _obscurePassword,
                 decoration: InputDecoration(
-                  labelText: '비밀번호',
+                  labelText: l10n.loginPassword,
                   prefixIcon: const Icon(Icons.lock_outlined),
                   suffixIcon: IconButton(
                     icon: Icon(
@@ -230,10 +233,10 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
                 ),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    return '비밀번호를 입력해주세요';
+                    return l10n.loginPasswordRequired;
                   }
                   if (value.length < 6) {
-                    return '비밀번호는 6자 이상이어야 합니다';
+                    return l10n.loginPasswordMinLength;
                   }
                   return null;
                 },
@@ -265,9 +268,9 @@ class _ChadLoginScreenState extends State<ChadLoginScreen> {
                             ),
                           ),
                         )
-                      : const Text(
-                          '로그인',
-                          style: TextStyle(
+                      : Text(
+                          l10n.loginLoginButton,
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                           ),

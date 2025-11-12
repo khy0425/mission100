@@ -169,5 +169,21 @@
   "statusLabel": "Status",
   "startDate": "Start Date",
   "expiryDate": "Expiry Date",
-  "autoRenewalEnabled": "Auto Renewal Enabled"
+  "autoRenewalEnabled": "Auto Renewal Enabled",
+  "@vipWelcomePremiumMember": {
+    "description": "VIP welcome dialog premium member title"
+  },
+  "vipWelcomePremiumMember": "✨ Premium Member",
+  "@vipWelcomeLaunchPromo": {
+    "description": "VIP welcome dialog launch promo title"
+  },
+  "vipWelcomeLaunchPromo": "🎉 Launch Promotion",
+  "@vipWelcomeFreeMember": {
+    "description": "VIP welcome dialog free member title"
+  },
+  "vipWelcomeFreeMember": "👋 Free Member",
+  "@vipFastLoading": {
+    "description": "VIP fast loading badge"
+  },
+  "vipFastLoading": "VIP 10x Faster Loading"
 }

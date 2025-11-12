@@ -1,57 +1,57 @@
 {
   "@@locale": "en",
 
-  "tutorialWelcomeTitle": "🏋️ Mission 100",
-  "tutorialWelcomeSubtitle": "Achieve 100 Push-ups in 14 Weeks",
+  "tutorialWelcomeTitle": "🌙 Lucid Dream 100",
+  "tutorialWelcomeSubtitle": "Become a Lucid Dream Master in 30 Days",
 
   "tutorialFeature1Title": "Science-Based",
-  "tutorialFeature1Desc": "Program designed based on\nlatest sports science research (2016-2024)",
+  "tutorialFeature1Desc": "Program designed based on\nlatest lucid dreaming research (2014-2024)",
 
-  "tutorialFeature2Title": "Progressive Overload",
-  "tutorialFeature2Desc": "Systematically increasing volume each week\nfor safe and effective growth",
+  "tutorialFeature2Title": "Progressive Training",
+  "tutorialFeature2Desc": "Systematically increasing difficulty each day\nfor safe and effective growth",
 
-  "tutorialFeature3Title": "Personalized Program",
-  "tutorialFeature3Desc": "Customized workout plan\ntailored to your level",
+  "tutorialFeature3Title": "Customized Program",
+  "tutorialFeature3Desc": "Customized training plan\ntailored to your progress",
 
   "tutorialProgramTitle": "📋 Program Structure",
 
   "tutorialDurationTitle": "⏱️ Duration",
-  "tutorialDurationSubtitle": "14 weeks (42 sessions total)",
-  "tutorialDurationDesc": "3x per week (Mon, Wed, Fri)\n48-hour recovery guaranteed",
+  "tutorialDurationSubtitle": "30 days (daily)",
+  "tutorialDurationDesc": "Daily consistent practice\n5-10 minutes daily investment",
 
-  "tutorialStructureTitle": "💪 Structure",
-  "tutorialStructureSubtitle": "Push-ups + Finisher",
-  "tutorialStructureDesc": "Main: 5-9 sets of push-ups\nFinisher: Burpees/Jump Squats etc.",
+  "tutorialStructureTitle": "🌙 Structure",
+  "tutorialStructureSubtitle": "Checklist + Dream Journal",
+  "tutorialStructureDesc": "Main: Daily checklist\nRecord: Dream journal entry",
 
-  "tutorialRestTitle": "⏳ Rest Time",
-  "tutorialRestSubtitle": "Scientifically Optimized",
-  "tutorialRestDesc": "Between sets: 45-120 seconds\nAuto-adjusted by level/week",
+  "tutorialRestTitle": "⏳ Time Required",
+  "tutorialRestSubtitle": "Optimized Duration",
+  "tutorialRestDesc": "Daily: 5-10 minutes\nAdjusted by progress",
 
   "tutorialTipTitle": "💡 Pro Tip",
-  "tutorialTipDesc": "Record your RPE after each workout\nand the next workout intensity will auto-adjust!",
+  "tutorialTipDesc": "Record your completion rate daily\nand the next checklist auto-adjusts!",
 
-  "tutorialFormTitle": "✅ Proper Push-up Form",
+  "tutorialFormTitle": "✅ Key Lucid Dream Techniques",
 
-  "tutorialForm1Title": "1. Starting Position",
-  "tutorialForm1Desc": "Hands shoulder-width apart\nBody in straight line",
+  "tutorialForm1Title": "1. WBTB Technique",
+  "tutorialForm1Desc": "Sleep early, wake after 4-6 hours\nStay awake for 20-30 minutes",
 
-  "tutorialForm2Title": "2. Descending",
-  "tutorialForm2Desc": "Lower until chest touches floor\nElbows at 45-degree angle",
+  "tutorialForm2Title": "2. MILD Technique",
+  "tutorialForm2Desc": "Before sleep, repeat \"I will know I'm dreaming\"\nStrengthen lucid intention",
 
-  "tutorialForm3Title": "3. Ascending",
-  "tutorialForm3Desc": "Engage chest and core\nExplode upward",
+  "tutorialForm3Title": "3. Reality Check",
+  "tutorialForm3Desc": "Check 10+ times daily\n\"Am I dreaming now?\"",
 
   "tutorialWarningTitle": "⚠️ Warnings",
-  "tutorialWarning1": "Keep core engaged to prevent sagging",
-  "tutorialWarning2": "Don't hyperextend your neck",
-  "tutorialWarning3": "Don't tuck elbows too close to body",
-  "tutorialWarning4": "Stop immediately if you feel pain",
+  "tutorialWarning1": "Don't overdo it, maintain your own pace",
+  "tutorialWarning2": "Ensure sufficient sleep (7-8 hours)",
+  "tutorialWarning3": "Enjoy without stress",
+  "tutorialWarning4": "Consult professional if sleep disorders",
 
-  "tutorialRpeTitle": "📊 What is RPE?",
-  "tutorialRpeSubtitle": "Rate of Perceived Exertion",
+  "tutorialRpeTitle": "📊 What is Completion Rate?",
+  "tutorialRpeSubtitle": "Daily checklist achievement",
 
   "tutorialRpe6": "😊 Too Easy",
-  "tutorialRpe6Desc": "I can do more next time",
+  "tutorialRpe6Desc": "I can add more techniques",
 
   "tutorialRpe7": "🙂 Moderate",
   "tutorialRpe7Desc": "Just right difficulty",
@@ -62,28 +62,28 @@
   "tutorialRpe9": "😫 Very Hard",
   "tutorialRpe9Desc": "Nearly impossible",
 
-  "tutorialRpe10": "🤯 Max Effort!",
-  "tutorialRpe10Desc": "Gave it everything I had",
+  "tutorialRpe10": "🤯 Perfect!",
+  "tutorialRpe10Desc": "Completed all items",
 
   "tutorialAutoAdjustTitle": "🎯 Smart Auto-Adjustment",
-  "tutorialAutoAdjustDesc": "Record your RPE and the next workout\nautomatically optimizes!\n\n• RPE 6-7: Difficulty +5%\n• RPE 8: Maintain\n• RPE 9-10: Difficulty -5%",
+  "tutorialAutoAdjustDesc": "Record completion rate and next checklist\nautomatically optimizes!\n\n• 80%+: Add new techniques\n• 60-80%: Maintain\n• <60%: Adjust difficulty",
 
   "tutorialScienceTitle": "🔬 Scientific Evidence",
-  "tutorialScienceSubtitle": "Designed based on latest research findings",
+  "tutorialScienceSubtitle": "Designed based on latest lucid dream research",
 
-  "tutorialResearch1Author": "Schoenfeld et al. (2016, 2019)",
-  "tutorialResearch1Topic": "Hypertrophy & Training Frequency",
-  "tutorialResearch1Finding": "3x weekly training optimal for muscle growth\n48-hour recovery recommended",
+  "tutorialResearch1Author": "Stumbrys et al. (2012)",
+  "tutorialResearch1Topic": "Lucid Dream Induction Techniques",
+  "tutorialResearch1Finding": "MILD + WBTB combination most effective\n46% success rate proven",
 
-  "tutorialResearch2Author": "Grgic et al. (2018)",
-  "tutorialResearch2Topic": "Inter-set Rest Periods",
-  "tutorialResearch2Finding": "60-120 second rest\nmost effective for hypertrophy",
+  "tutorialResearch2Author": "LaBerge et al. (2018)",
+  "tutorialResearch2Topic": "Lucid Dream Frequency",
+  "tutorialResearch2Finding": "2-4 lucid dreams per week\nis typical frequency",
 
-  "tutorialResearch3Author": "Plotkin et al. (2022)",
-  "tutorialResearch3Topic": "Progressive Overload",
-  "tutorialResearch3Finding": "Progressive rep increase\neffective for strength gains",
+  "tutorialResearch3Author": "Aspy et al. (2017)",
+  "tutorialResearch3Topic": "MILD Technique Effectiveness",
+  "tutorialResearch3Finding": "Using MILD technique\ngreatly increases lucid dream probability",
 
-  "tutorialResearch4Author": "Wang et al. (2024)",
-  "tutorialResearch4Topic": "HIIT + Resistance Training",
-  "tutorialResearch4Finding": "Combined cardio and strength training\nimproves both fitness and strength"
+  "tutorialResearch4Author": "Voss et al. (2014)",
+  "tutorialResearch4Topic": "Reality Check",
+  "tutorialResearch4Finding": "Reality Check practice\nhelps induce lucid dreams"
 }

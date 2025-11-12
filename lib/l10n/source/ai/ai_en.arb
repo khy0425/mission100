@@ -1,0 +1,513 @@
+{
+  "@aiAssistantTitle": {
+    "description": "AI assistant screen title"
+  },
+  "aiAssistantTitle": "AI Dream Assistant",
+  "@aiAssistantEmptyQuestion": {
+    "description": "Placeholder when no question is selected"
+  },
+  "aiAssistantEmptyQuestion": "Select a feature above to start",
+  "@aiAssistantEmptyInput": {
+    "description": "Warning when input is empty"
+  },
+  "aiAssistantEmptyInput": "Please enter your question or dream",
+  "@aiAssistantQuestion": {
+    "description": "Question label"
+  },
+  "aiAssistantQuestion": "Your Question",
+  "@aiAssistantResponse": {
+    "description": "Response label"
+  },
+  "aiAssistantResponse": "Lumi's Response",
+  "@aiAssistantGenerating": {
+    "description": "Generating response message"
+  },
+  "aiAssistantGenerating": "Generating response...",
+  "@aiAssistantUsageToday": {
+    "description": "Usage count for today",
+    "placeholders": {
+      "used": {
+        "type": "Object"
+      },
+      "limit": {
+        "type": "Object"
+      },
+      "remaining": {
+        "type": "Object"
+      }
+    }
+  },
+  "aiAssistantUsageToday": "Today: {used}/{limit} used ({remaining} remaining)",
+  "@aiAssistantUsageWarning": {
+    "description": "Usage limit warning",
+    "placeholders": {
+      "percentage": {
+        "type": "Object"
+      }
+    }
+  },
+  "aiAssistantUsageWarning": "You've used {percentage}% of your daily limit!",
+  "@aiAssistantFree": {
+    "description": "Free tier badge"
+  },
+  "aiAssistantFree": "Free",
+  "@aiAssistantPremium": {
+    "description": "Premium tier badge"
+  },
+  "aiAssistantPremium": "Premium",
+  "@aiFeatureDreamJournalTitle": {
+    "description": "Dream journal feature title"
+  },
+  "aiFeatureDreamJournalTitle": "Dream Journal",
+  "@aiFeatureDreamJournalSubtitle": {
+    "description": "Dream journal feature subtitle"
+  },
+  "aiFeatureDreamJournalSubtitle": "Analyze your dreams",
+  "@aiFeatureDreamJournalDesc": {
+    "description": "Dream journal feature description"
+  },
+  "aiFeatureDreamJournalDesc": "Get deep insights into your dream symbols and meanings",
+  "@aiFeatureDreamJournalInputLabel": {
+    "description": "Dream journal input label"
+  },
+  "aiFeatureDreamJournalInputLabel": "Describe your dream",
+  "@aiFeatureDreamJournalInputHint": {
+    "description": "Dream journal input hint"
+  },
+  "aiFeatureDreamJournalInputHint": "Tell me about your dream...",
+  "@aiFeatureRealityCheckTitle": {
+    "description": "Reality check feature title"
+  },
+  "aiFeatureRealityCheckTitle": "Reality Check",
+  "@aiFeatureRealityCheckSubtitle": {
+    "description": "Reality check feature subtitle"
+  },
+  "aiFeatureRealityCheckSubtitle": "Practice awareness",
+  "@aiFeatureRealityCheckDesc": {
+    "description": "Reality check feature description"
+  },
+  "aiFeatureRealityCheckDesc": "Learn effective reality check techniques for lucid dreaming",
+  "@aiFeatureRealityCheckInputLabel": {
+    "description": "Reality check input label"
+  },
+  "aiFeatureRealityCheckInputLabel": "Ask about reality checks",
+  "@aiFeatureRealityCheckInputHint": {
+    "description": "Reality check input hint"
+  },
+  "aiFeatureRealityCheckInputHint": "How do I do effective reality checks?",
+  "@aiFeatureTechniqueTitle": {
+    "description": "Technique feature title"
+  },
+  "aiFeatureTechniqueTitle": "Techniques",
+  "@aiFeatureTechniqueSubtitle": {
+    "description": "Technique feature subtitle"
+  },
+  "aiFeatureTechniqueSubtitle": "WILD, MILD, WBTB",
+  "@aiFeatureTechniqueDesc": {
+    "description": "Technique feature description"
+  },
+  "aiFeatureTechniqueDesc": "Master advanced lucid dreaming techniques",
+  "@aiFeatureTechniqueInputLabel": {
+    "description": "Technique input label"
+  },
+  "aiFeatureTechniqueInputLabel": "Ask about techniques",
+  "@aiFeatureTechniqueInputHint": {
+    "description": "Technique input hint"
+  },
+  "aiFeatureTechniqueInputHint": "How does WILD technique work?",
+  "@aiFeatureMeditationTitle": {
+    "description": "Meditation feature title"
+  },
+  "aiFeatureMeditationTitle": "Meditation",
+  "@aiFeatureMeditationSubtitle": {
+    "description": "Meditation feature subtitle"
+  },
+  "aiFeatureMeditationSubtitle": "Mindfulness practice",
+  "@aiFeatureMeditationDesc": {
+    "description": "Meditation feature description"
+  },
+  "aiFeatureMeditationDesc": "Meditation techniques to improve dream awareness",
+  "@aiFeatureMeditationInputLabel": {
+    "description": "Meditation input label"
+  },
+  "aiFeatureMeditationInputLabel": "Ask about meditation",
+  "@aiFeatureMeditationInputHint": {
+    "description": "Meditation input hint"
+  },
+  "aiFeatureMeditationInputHint": "What meditation helps with lucid dreaming?",
+  "@aiFeatureFreeChatTitle": {
+    "description": "Free chat feature title"
+  },
+  "aiFeatureFreeChatTitle": "Free Chat",
+  "@aiFeatureFreeChatSubtitle": {
+    "description": "Free chat feature subtitle"
+  },
+  "aiFeatureFreeChatSubtitle": "Ask anything",
+  "@aiFeatureFreeChatDesc": {
+    "description": "Free chat feature description"
+  },
+  "aiFeatureFreeChatDesc": "Chat freely about lucid dreaming topics",
+  "@aiFeatureFreeChatInputLabel": {
+    "description": "Free chat input label"
+  },
+  "aiFeatureFreeChatInputLabel": "Ask anything",
+  "@aiFeatureFreeChatInputHint": {
+    "description": "Free chat input hint"
+  },
+  "aiFeatureFreeChatInputHint": "Ask me anything about lucid dreaming...",
+  "@analysisModeTitle": {
+    "description": "Analysis mode selection title"
+  },
+  "analysisModeTitle": "Choose Analysis Mode",
+  "@analysisModeHeader": {
+    "description": "Analysis mode header"
+  },
+  "analysisModeHeader": "Dream Analysis",
+  "@analysisQuickTitle": {
+    "description": "Quick analysis title"
+  },
+  "analysisQuickTitle": "Quick Analysis",
+  "@analysisQuickBadge": {
+    "description": "Quick analysis badge"
+  },
+  "analysisQuickBadge": "Fast & Free",
+  "@analysisQuickDesc": {
+    "description": "Quick analysis description"
+  },
+  "analysisQuickDesc": "Get instant basic dream interpretation",
+  "@analysisQuickFeature": {
+    "description": "Quick analysis features",
+    "placeholders": {
+      "index": {
+        "type": "Object"
+      }
+    }
+  },
+  "analysisQuickFeature1": "Instant results",
+  "analysisQuickFeature2": "Basic interpretation",
+  "analysisQuickFeature3": "No tokens required",
+  "@analysisQuickButton": {
+    "description": "Quick analysis button"
+  },
+  "analysisQuickButton": "Start Quick Analysis",
+  "@analysisLumiTitle": {
+    "description": "Lumi analysis title"
+  },
+  "analysisLumiTitle": "Lumi Deep Analysis",
+  "@analysisLumiTokens": {
+    "description": "Lumi tokens required",
+    "placeholders": {
+      "tokens": {
+        "type": "Object"
+      }
+    }
+  },
+  "analysisLumiTokens": "{tokens} token",
+  "@analysisLumiDesc": {
+    "description": "Lumi analysis description"
+  },
+  "analysisLumiDesc": "Deep dream analysis with AI conversation",
+  "@analysisLumiFeature": {
+    "description": "Lumi analysis features"
+  },
+  "analysisLumiFeature1": "Deep interpretation",
+  "analysisLumiFeature2": "Symbol analysis",
+  "analysisLumiFeature3": "Pattern detection",
+  "analysisLumiFeature4": "Follow-up chat",
+  "@analysisLumiButtonStart": {
+    "description": "Start Lumi analysis button"
+  },
+  "analysisLumiButtonStart": "Start Analysis",
+  "@analysisLumiButtonNeedTokens": {
+    "description": "Need tokens button"
+  },
+  "analysisLumiButtonNeedTokens": "Get Tokens",
+  "@analysisComparisonTitle": {
+    "description": "Comparison section title"
+  },
+  "analysisComparisonTitle": "Feature Comparison",
+  "@analysisComparisonSpeed": {
+    "description": "Speed comparison label"
+  },
+  "analysisComparisonSpeed": "Speed",
+  "@analysisComparisonSpeedQuick": {
+    "description": "Quick analysis speed"
+  },
+  "analysisComparisonSpeedQuick": "Instant",
+  "@analysisComparisonSpeedLumi": {
+    "description": "Lumi analysis speed"
+  },
+  "analysisComparisonSpeedLumi": "30-60 seconds",
+  "@analysisComparisonDepth": {
+    "description": "Depth comparison label"
+  },
+  "analysisComparisonDepth": "Analysis Depth",
+  "@analysisComparisonDepthQuick": {
+    "description": "Quick analysis depth"
+  },
+  "analysisComparisonDepthQuick": "Basic",
+  "@analysisComparisonDepthLumi": {
+    "description": "Lumi analysis depth"
+  },
+  "analysisComparisonDepthLumi": "Comprehensive",
+  "@analysisComparisonFollowUp": {
+    "description": "Follow-up comparison label"
+  },
+  "analysisComparisonFollowUp": "Follow-up Chat",
+  "@analysisComparisonFollowUpQuick": {
+    "description": "Quick analysis follow-up"
+  },
+  "analysisComparisonFollowUpQuick": "Not available",
+  "@analysisComparisonFollowUpLumi": {
+    "description": "Lumi analysis follow-up"
+  },
+  "analysisComparisonFollowUpLumi": "Available",
+  "@analysisComparisonCost": {
+    "description": "Cost comparison label"
+  },
+  "analysisComparisonCost": "Cost",
+  "@analysisComparisonCostQuick": {
+    "description": "Quick analysis cost"
+  },
+  "analysisComparisonCostQuick": "Free",
+  "@analysisComparisonCostLumi": {
+    "description": "Lumi analysis cost"
+  },
+  "analysisComparisonCostLumi": "1 token",
+  "@analysisNoTokensTitle": {
+    "description": "No tokens dialog title"
+  },
+  "analysisNoTokensTitle": "Not Enough Tokens",
+  "@analysisNoTokensMessage": {
+    "description": "No tokens message"
+  },
+  "analysisNoTokensMessage": "You need tokens for Lumi Deep Analysis",
+  "@analysisNoTokensDaily": {
+    "description": "Daily free token info"
+  },
+  "analysisNoTokensDaily": "Daily Free Token",
+  "@analysisNoTokensDailyFree": {
+    "description": "Free tier daily tokens"
+  },
+  "analysisNoTokensDailyFree": "1 token per day",
+  "@analysisNoTokensDailyPremium": {
+    "description": "Premium tier daily tokens"
+  },
+  "analysisNoTokensDailyPremium": "5 tokens per day",
+  "@analysisNoTokensPremium": {
+    "description": "Premium unlimited info"
+  },
+  "analysisNoTokensPremium": "Premium: Unlimited",
+  "@analysisNoTokensPremiumBonus": {
+    "description": "Premium bonus"
+  },
+  "analysisNoTokensPremiumBonus": "5x daily tokens",
+  "@analysisNoTokensAd": {
+    "description": "Watch ad for tokens"
+  },
+  "analysisNoTokensAd": "Watch Ad for Tokens",
+  "@analysisNoTokensAdReward": {
+    "description": "Ad reward amount"
+  },
+  "analysisNoTokensAdReward": "+1 token",
+  "@analysisNoTokensClaim": {
+    "description": "Claim daily token button"
+  },
+  "analysisNoTokensClaim": "Claim Daily Token",
+  "@analysisNoTokensClaimedSnackbar": {
+    "description": "Token claimed message"
+  },
+  "analysisNoTokensClaimedSnackbar": "Daily token claimed!",
+  "@analysisNoTokensClose": {
+    "description": "Close dialog button"
+  },
+  "analysisNoTokensClose": "Close",
+  "@quickAnalysisAppBar": {
+    "description": "Quick analysis app bar title"
+  },
+  "quickAnalysisAppBar": "Quick Dream Analysis",
+  "@quickAnalysisInputTitle": {
+    "description": "Input section title"
+  },
+  "quickAnalysisInputTitle": "Describe Your Dream",
+  "@quickAnalysisInputHint": {
+    "description": "Input field hint"
+  },
+  "quickAnalysisInputHint": "Enter your dream here...",
+  "@quickAnalysisInputCounter": {
+    "description": "Character counter",
+    "placeholders": {
+      "current": {
+        "type": "Object"
+      },
+      "max": {
+        "type": "Object"
+      }
+    }
+  },
+  "quickAnalysisInputCounter": "{current}/{max} characters",
+  "@quickAnalysisButtonStart": {
+    "description": "Start analysis button"
+  },
+  "quickAnalysisButtonStart": "Analyze Dream",
+  "@quickAnalysisGuideTitle": {
+    "description": "Guide section title"
+  },
+  "quickAnalysisGuideTitle": "How It Works",
+  "@quickAnalysisGuideBadge": {
+    "description": "Guide feature badge"
+  },
+  "quickAnalysisGuideBadge": "Free",
+  "@quickAnalysisGuideDescription": {
+    "description": "Guide description"
+  },
+  "quickAnalysisGuideDescription": "Quick Analysis provides instant basic dream interpretation",
+  "@quickAnalysisGuideInstantResults": {
+    "description": "Instant results feature"
+  },
+  "quickAnalysisGuideInstantResults": "Instant results",
+  "@quickAnalysisGuideBasicInterpretation": {
+    "description": "Basic interpretation feature"
+  },
+  "quickAnalysisGuideBasicInterpretation": "Basic interpretation",
+  "@quickAnalysisGuideNoTokens": {
+    "description": "No tokens required feature"
+  },
+  "quickAnalysisGuideNoTokens": "No tokens required",
+  "@quickAnalysisLoadingTitle": {
+    "description": "Loading title"
+  },
+  "quickAnalysisLoadingTitle": "Analyzing Dream",
+  "@quickAnalysisLoadingSubtitle": {
+    "description": "Loading subtitle"
+  },
+  "quickAnalysisLoadingSubtitle": "Please wait...",
+  "@quickAnalysisResultTitle": {
+    "description": "Result section title"
+  },
+  "quickAnalysisResultTitle": "Analysis Result",
+  "@quickAnalysisDeeperTitle": {
+    "description": "Deeper analysis title"
+  },
+  "quickAnalysisDeeperTitle": "Want Deeper Analysis?",
+  "@quickAnalysisDeeperDescription": {
+    "description": "Deeper analysis description"
+  },
+  "quickAnalysisDeeperDescription": "Try Lumi Deep Analysis for comprehensive insights",
+  "@quickAnalysisButtonChatWithLumi": {
+    "description": "Chat with Lumi button"
+  },
+  "quickAnalysisButtonChatWithLumi": "Chat with Lumi",
+  "@quickAnalysisButtonAnalyzeAgain": {
+    "description": "Analyze again button"
+  },
+  "quickAnalysisButtonAnalyzeAgain": "Analyze Another Dream",
+  "@quickAnalysisErrorEmpty": {
+    "description": "Empty input error"
+  },
+  "quickAnalysisErrorEmpty": "Please describe your dream",
+  "@quickAnalysisErrorTooShort": {
+    "description": "Too short input error"
+  },
+  "quickAnalysisErrorTooShort": "Please provide more details (at least 20 characters)",
+  "@quickAnalysisRefreshTooltip": {
+    "description": "Refresh button tooltip"
+  },
+  "quickAnalysisRefreshTooltip": "Clear and start over",
+  "@lumiConversationAppBar": {
+    "description": "Lumi conversation app bar title"
+  },
+  "lumiConversationAppBar": "Chat with Lumi",
+  "@lumiConversationEmptyTitle": {
+    "description": "Empty conversation title"
+  },
+  "lumiConversationEmptyTitle": "Start Your Dream Conversation",
+  "@lumiConversationEmptySubtitle": {
+    "description": "Empty conversation subtitle"
+  },
+  "lumiConversationEmptySubtitle": "Ask Lumi anything about your dreams",
+  "@lumiConversationInputHint": {
+    "description": "Input field hint"
+  },
+  "lumiConversationInputHint": "Ask about your dream...",
+  "@lumiConversationThinking": {
+    "description": "Thinking message"
+  },
+  "lumiConversationThinking": "Lumi is thinking...",
+  "@lumiConversationLoadError": {
+    "description": "Load error message"
+  },
+  "lumiConversationLoadError": "Failed to load conversation",
+  "@lumiConversationTokenDialogTitle": {
+    "description": "Token dialog title"
+  },
+  "lumiConversationTokenDialogTitle": "1 Token Required",
+  "@lumiConversationTokenDialogContent": {
+    "description": "Token dialog content"
+  },
+  "lumiConversationTokenDialogContent": "This conversation will use 1 token",
+  "@lumiConversationTokenDialogClose": {
+    "description": "Token dialog close button"
+  },
+  "lumiConversationTokenDialogClose": "Cancel",
+  "@dreamAnalysisAppBar": {
+    "description": "Dream analysis screen app bar title"
+  },
+  "dreamAnalysisAppBar": "Dream Analysis",
+  "@dreamAnalysisKeywordsTitle": {
+    "description": "Keywords section title"
+  },
+  "dreamAnalysisKeywordsTitle": "Key Themes",
+  "@dreamAnalysisEmotionsTitle": {
+    "description": "Emotions section title"
+  },
+  "dreamAnalysisEmotionsTitle": "Emotions",
+  "@dreamAnalysisSymbolsTitle": {
+    "description": "Symbols section title"
+  },
+  "dreamAnalysisSymbolsTitle": "Symbols",
+  "@dreamAnalysisInterpretationTitle": {
+    "description": "Interpretation section title"
+  },
+  "dreamAnalysisInterpretationTitle": "Interpretation",
+  "@dreamAnalysisRecommendationsTitle": {
+    "description": "Recommendations section title"
+  },
+  "dreamAnalysisRecommendationsTitle": "Lucid Dream Tips",
+  "@dreamAnalysisHeaderTitle": {
+    "description": "Analysis header title"
+  },
+  "dreamAnalysisHeaderTitle": "Your Dream Analysis",
+  "@dreamAnalysisHeaderSubtitle": {
+    "description": "Analysis header subtitle"
+  },
+  "dreamAnalysisHeaderSubtitle": "Powered by Lumi AI",
+  "@dreamAnalysisLucidPotentialTitle": {
+    "description": "Lucid potential section title"
+  },
+  "dreamAnalysisLucidPotentialTitle": "Lucid Dream Potential",
+  "@dreamAnalysisLucidPotentialHigh": {
+    "description": "High lucid potential label"
+  },
+  "dreamAnalysisLucidPotentialHigh": "High",
+  "@dreamAnalysisLucidPotentialMedium": {
+    "description": "Medium lucid potential label"
+  },
+  "dreamAnalysisLucidPotentialMedium": "Medium",
+  "@dreamAnalysisLucidPotentialLow": {
+    "description": "Low lucid potential label"
+  },
+  "dreamAnalysisLucidPotentialLow": "Low",
+  "@dreamAnalysisPremiumPromoTitle": {
+    "description": "Premium promotion title"
+  },
+  "dreamAnalysisPremiumPromoTitle": "Unlock Deeper Analysis",
+  "@dreamAnalysisPremiumFeatures": {
+    "description": "Premium features list"
+  },
+  "dreamAnalysisPremiumFeatures": "Premium members get detailed symbol interpretations, personalized insights, and unlimited analyses",
+  "@dreamAnalysisPremiumButton": {
+    "description": "Premium upgrade button"
+  },
+  "dreamAnalysisPremiumButton": "Go Premium"
+}

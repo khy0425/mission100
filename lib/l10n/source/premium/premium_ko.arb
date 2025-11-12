@@ -130,5 +130,21 @@
   "msgSubscriptionSuccess": "구독이 성공적으로 완료되었습니다!",
   "titleManageSubscription": "구독 관리",
   "titlePremiumFeatures": "프리미엄 기능",
-  "titlePremiumSubscription": "프리미엄 구독"
+  "titlePremiumSubscription": "프리미엄 구독",
+  "@vipWelcomePremiumMember": {
+    "description": "VIP 환영 다이얼로그 프리미엄 회원 타이틀"
+  },
+  "vipWelcomePremiumMember": "✨ 프리미엄 회원",
+  "@vipWelcomeLaunchPromo": {
+    "description": "VIP 환영 다이얼로그 런칭 프로모션 타이틀"
+  },
+  "vipWelcomeLaunchPromo": "🎉 런칭 프로모션",
+  "@vipWelcomeFreeMember": {
+    "description": "VIP 환영 다이얼로그 무료 회원 타이틀"
+  },
+  "vipWelcomeFreeMember": "👋 무료 회원",
+  "@vipFastLoading": {
+    "description": "VIP 빠른 로딩 배지"
+  },
+  "vipFastLoading": "VIP 10배 빠른 로딩"
 }

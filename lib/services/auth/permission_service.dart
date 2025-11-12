@@ -234,12 +234,12 @@ class PermissionService {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
+                  const Text(
                     '운동 데이터 백업/복원을 위해 저장소 접근 권한이 필요합니다.',
                     style: TextStyle(fontSize: 16),
                   ),
-                  SizedBox(height: 16),
-                  Row(
+                  const SizedBox(height: 16),
+                  const Row(
                     children: [
                       Icon(Icons.backup, color: Colors.green, size: 20),
                       SizedBox(width: 8),
@@ -251,18 +251,18 @@ class PermissionService {
                       ),
                     ],
                   ),
-                  SizedBox(height: 8),
+                  const SizedBox(height: 8),
                   Row(
                     children: [
-                      Icon(Icons.restore, color: Colors.blue, size: 20),
-                      SizedBox(width: 8),
+                      const Icon(Icons.restore, color: Colors.blue, size: 20),
+                      const SizedBox(width: 8),
                       Expanded(
-                        child: Text(AppLocalizations.of(context).dataRestore, style: TextStyle(fontSize: 14)),
+                        child: Text(AppLocalizations.of(context).dataRestore, style: const TextStyle(fontSize: 14)),
                       ),
                     ],
                   ),
-                  SizedBox(height: 16),
-                  Text(
+                  const SizedBox(height: 16),
+                  const Text(
                     '💡 Android 13+에서는 파일 선택기를 사용하므로 이 권한이 필요하지 않습니다.',
                     style: TextStyle(
                       fontSize: 12,

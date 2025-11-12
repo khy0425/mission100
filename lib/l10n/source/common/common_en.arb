@@ -125,7 +125,7 @@
     "description": "Cancel button text"
   },
   "@cancelButton": {
-    "description": "Cancel button - Chad style"
+    "description": "Cancel button - Dream Spirit style"
   },
   "@cannotLoadQuizData": {
     "description": "Quiz data load failed message"
@@ -349,7 +349,7 @@
     "description": "Common mistakes section header"
   },
   "@downloadMission100": {
-    "description": "Mission 100 app download message"
+    "description": "Lucid Dream app download message"
   },
   "@durationLabel": {
     "description": "Duration label"
@@ -415,7 +415,7 @@
     "description": "Excellent performance label"
   },
   "@exitButton": {
-    "description": "Exit button - Chad style"
+    "description": "Exit button - Dream Spirit style"
   },
   "@exitDialogContinue": {
     "description": "Continue workout button"
@@ -607,7 +607,7 @@
     "description": "OK button text"
   },
   "@okButton": {
-    "description": "OK button - Chad style"
+    "description": "OK button - Dream Spirit style"
   },
   "@okay": {
     "description": "Okay workout completion"
@@ -670,7 +670,7 @@
     "description": "Precautions title"
   },
   "@previousButton": {
-    "description": "Previous button - Chad style"
+    "description": "Previous button - Dream Spirit style"
   },
   "@privacyPolicy": {
     "description": "Privacy policy menu title"
@@ -763,7 +763,7 @@
     "description": "Rep input guidance message"
   },
   "@resumeButton": {
-    "description": "Resume button - Chad style"
+    "description": "Resume button - Dream Spirit style"
   },
   "@retry": {
     "description": "Retry button"
@@ -1105,7 +1105,7 @@
     "description": "Storage permission title"
   },
   "@strengthImprovement": {
-    "description": "Strength improvement category - Chad style"
+    "description": "Strength improvement category - Dream Spirit style"
   },
   "@strengthSecrets": {
     "description": "Video title 6"
@@ -1211,7 +1211,7 @@
   "actionCannotBeUndone": "Can't undo this! Think carefully!",
   "activated": "Activated",
   "activatedStatus": "Activated",
-  "adFallbackMessage": "Journey to Chad status, let's go! 💪",
+  "adFallbackMessage": "Journey to Dream Spirit status, let's go! 💪",
   "advertisement": "Advertisement",
   "allowButton": "Allow",
   "allowPermissions": "Allow Permissions",
@@ -1230,7 +1230,7 @@
   "appInfo": "App Information",
   "appRating": "App Rating",
   "appRatingComingSoon": "App rating feature is coming soon",
-  "appSlogan": "Journey to Become Chad",
+  "appSlogan": "Journey to Become Dream Spirit",
   "appTitle": "⚡ ALPHA BATTLEGROUND ⚡",
   "appVersion": "1.0.0",
   "appearance": "Appearance",
@@ -1258,7 +1258,7 @@
   "btnSubscribe": "Subscribe",
   "buildInfo": "Build: {buildNumber}",
   "calendar": "Calendar",
-  "calendarBannerText": "Consistency is Chad power! 📅",
+  "calendarBannerText": "Consistency is Dream Spirit power! 📅",
   "calendarIcon": "📅",
   "calendarTab": "Calendar",
   "caloriesPerRep": "{calories}kcal/rep",
@@ -1298,8 +1298,8 @@
   "congratulationsMessage": "Perfect! All permissions set! 🎉",
   "consistentStrengthImprovement": "Improve strength through consistent exercise",
   "contactButton": "Contact",
-  "continueOrStartNew": "Would you like to continue the previous workout?\\nOr start a new workout?",
-  "copyrightMission100": "© 2024 Mission 100 Team\nAll rights reserved\n\n💪 Until you become unstoppable!",
+  "continueOrStartNew": "Would you like to continue the previous workout?\\nOr start a new practice?",
+  "copyrightMission100": "© 2024 Lucid Dream Team\nAll rights reserved\n\n💪 Until you become unstoppable!",
   "core": "Core",
   "correctPose": "Correct Pose",
   "correctionMethod": "Correction Method:",
@@ -1322,18 +1322,18 @@
   "descriptionTitle": "Description",
   "developer": "Developer",
   "developerInfo": "Developer Info",
-  "developerInfoDesc": "Join the journey to become Chad",
+  "developerInfoDesc": "Join the journey to become Dream Spirit",
   "difficultyChanged": "Difficulty changed! -> {difficulty} 💪",
   "difficultyEasy": "Easy",
   "difficultyExpert": "Expert",
   "difficultyExpertDesc": "CHAD Legend",
-  "difficultyExtreme": "Giga Chad - Legendary Territory",
+  "difficultyExtreme": "Giga Dream Spirit - Legendary Territory",
   "difficultyHard": "Hard",
   "difficultyMedium": "Medium",
   "disabled": "Disabled",
   "disabledStatus": "Disabled",
   "dontMakeTheseMistakes": "Don't Make These Mistakes!",
-  "downloadMission100": "Download Mission: 100 app! Weaklings run away!",
+  "downloadMission100": "Download Lucid Dream 100 app! Weaklings run away!",
   "durationLabel": "Duration",
   "earnedXp": "Earned XP",
   "elbowAngleQuiz": "What is the correct elbow angle during pushups?",
@@ -1417,9 +1417,9 @@
   "logoutConfirmMessage": "Are you sure you want to logout? Unsaved data may be lost.",
   "logoutSuccessMessage": "Successfully logged out",
   "logoutTitle": "Logout",
-  "madeWithLove": "Made with ❤️ for Chad",
+  "madeWithLove": "Made with ❤️ for Dream Spirit",
   "minutes": "minutes",
-  "mission100Team": "Mission 100 Team",
+  "mission100Team": "Lucid Dream Team",
   "missionComplete": "🎉👑💀 MISSION COMPLETE! ALPHA EMPEROR Ascension! 💀👑🎉",
   "mistakesSection": "❌ WEAKLINGS' PATHETIC MISTAKES ❌",
   "month": "month",
@@ -1448,9 +1448,23 @@
   "permissionAllowed": "Allowed",
   "permissionAlreadyRequested": "Permissions have already been requested.\nPlease allow them manually in settings.",
   "permissionBenefits": "With these permissions, you can:",
+  "permissionBenefitsPrompt": "You will have access to:",
+  "permissionAllowButton": "Allow",
+  "notificationPermissionTitle": "🔔 Allow Notifications",
+  "notificationPermissionDesc": "Notification permission is needed to receive lucid dream practice reminders.",
+  "notificationBenefit1": "🌙 Daily lucid dream practice reminders",
+  "notificationBenefit2": "🎯 Goal achievement celebration alerts",
+  "notificationBenefit3": "🔥 Streak maintenance reminders",
+  "notificationBenefit4": "✨ New challenge notifications",
+  "backupPermissionTitle": "💾 Backup Feature",
+  "backupPermissionDesc": "Storage access is needed to safely backup your dream journal data.",
+  "backupBenefit1": "📁 Automatic dream journal backup",
+  "backupBenefit2": "🔄 Data restoration when changing devices",
+  "backupBenefit3": "💾 Prevent data loss",
+  "backupBenefit4": "☁️ Secure data storage",
   "permissionDenied": "Denied",
   "permissionStorageMessage": "Storage permission is required. Please allow in settings.",
-  "permissionsDescription": "Mission 100 needs the following permissions\nfor the best experience:",
+  "permissionsDescription": "Lucid Dream needs the following permissions\nfor the optimal experience:",
   "pleaseCreateProfile": "Please create your profile",
   "poor": "Poor",
   "precautions": "Precautions",
@@ -1499,81 +1513,81 @@
   "scheduleDaily": "Daily",
   "scheduleNone": "None",
   "schedulerStoppedStatus": "Scheduler stopped",
-  "scientificFact10Content": "Regular push-ups increase cardiac output by 20%, improving systemic circulation.",
-  "scientificFact10Impact": "❤️ Powerful heart pump upgrade!",
-  "scientificFact10Title": "Increased Cardiac Output",
-  "scientificFact11Content": "Push-ups increase capillary density by 30%, improving oxygen supply to muscles and brain.",
-  "scientificFact11Impact": "🌊 Life highway expansion project!",
-  "scientificFact11Title": "Enhanced Angiogenesis",
-  "scientificFact12Content": "12 weeks of push-up program reduces systolic blood pressure by an average of 8mmHg.",
-  "scientificFact12Impact": "📉 Natural blood pressure normalization!",
-  "scientificFact12Title": "Blood Pressure Normalization",
-  "scientificFact13Content": "Regular push-ups improve heart rate variability by 35%, increasing stress resistance.",
-  "scientificFact13Impact": "💎 Diamond-like heart rhythm!",
-  "scientificFact13Title": "Improved Heart Rate Variability",
-  "scientificFact14Content": "High-intensity push-ups improve vascular endothelial function by 25%, promoting vascular health.",
-  "scientificFact14Impact": "✨ Vascular youth recovery!",
-  "scientificFact14Title": "Improved Endothelial Function",
-  "scientificFact15Content": "Resistance exercise push-ups increase basal metabolic rate by 15%, boosting 24-hour calorie burn.",
-  "scientificFact15Impact": "🔥 24-hour fat burning system!",
-  "scientificFact15Title": "Increased Basal Metabolic Rate",
-  "scientificFact16Content": "8 weeks of push-up training improves insulin sensitivity by 40%, enhancing blood sugar control.",
-  "scientificFact16Impact": "📊 Perfect blood sugar control system!",
-  "scientificFact16Title": "Improved Insulin Sensitivity",
-  "scientificFact17Content": "Push-ups increase fat oxidation enzyme activity by 50%, accelerating body fat reduction.",
-  "scientificFact17Impact": "🔥 Fat-burning turbo engine!",
-  "scientificFact17Title": "Enhanced Fat Oxidation",
-  "scientificFact18Content": "High-intensity exercise activates brown fat to increase calorie burn through heat generation.",
-  "scientificFact18Impact": "♨️ Internal heating system activated!",
-  "scientificFact18Title": "Brown Fat Activation",
-  "scientificFact19Content": "High-intensity push-ups increase oxygen consumption for up to 24 hours after exercise, burning additional calories.",
-  "scientificFact19Impact": "🌪️ 24-hour afterburn effect!",
-  "scientificFact19Title": "Post-Exercise Oxygen Consumption",
-  "scientificFact1Content": "Regular pushups convert slow-twitch fibers (Type I) to fast-twitch fibers (Type II), increasing explosive power.",
-  "scientificFact1Impact": "💪 Qualitative muscle transformation in progress!",
-  "scientificFact1Title": "Muscle Fiber Type Transformation",
-  "scientificFact20Content": "High-intensity push-ups increase growth hormone secretion by up to 500%, promoting muscle growth and recovery.",
-  "scientificFact20Impact": "🚀 Youth hormone explosion!",
-  "scientificFact20Title": "Growth Hormone Surge",
-  "scientificFact21Content": "Push-up training improves motor unit synchronization by 70%, enabling explosive power generation.",
-  "scientificFact21Impact": "⚡ Perfect harmony between nerves and muscles!",
-  "scientificFact21Title": "Motor Unit Synchronization",
-  "scientificFact22Content": "Regular push-ups increase motor cortex neuroplasticity by 45%, improving learning ability.",
-  "scientificFact22Impact": "🧠 Your brain is evolving too!",
-  "scientificFact22Title": "Enhanced Neuroplasticity",
-  "scientificFact23Content": "High-intensity push-ups increase brain-derived neurotrophic factor (BDNF) by up to 300%, improving brain health.",
-  "scientificFact23Impact": "🌟 Brain rejuvenation program activated!",
-  "scientificFact23Title": "Increased BDNF Secretion",
-  "scientificFact24Content": "14 weeks of push-up training improves neural conduction velocity by 15%, shortening reaction time.",
-  "scientificFact24Impact": "⚡ Lightning-fast reflexes acquired!",
-  "scientificFact24Title": "Improved Reaction Speed",
-  "scientificFact25Content": "Complex push-up exercises improve spinal interneuron inhibitory function by 25%, enhancing movement precision.",
-  "scientificFact25Impact": "🎯 Perfect movement control system established!",
-  "scientificFact25Title": "Interneuron Activation",
-  "scientificFact2Content": "Pushups increase muscle mitochondrial density by up to 40%, maximizing energy production.",
-  "scientificFact2Impact": "⚡ Infinite energy system being constructed!",
-  "scientificFact2Title": "Mitochondrial Density Increase",
-  "scientificFact3Content": "Push-ups activate mTOR signaling, the key to muscle growth, by 300%.",
-  "scientificFact3Impact": "🚀 Muscle growth turbo engine is activated!",
-  "scientificFact3Title": "mTOR Signaling Activation",
-  "scientificFact4Content": "Once developed muscles maintain nuclear domains even after stopping exercise, enabling rapid recovery even after 10 years.",
-  "scientificFact4Impact": "🧐 Eternal muscle memory is being carved!",
-  "scientificFact4Title": "Permanence of Muscle Memory",
-  "scientificFact5Content": "Push-up training improves motor unit synchronization by 70%, enabling explosive power output.",
-  "scientificFact5Impact": "⚡ Perfect harmony between nerves and muscles!",
-  "scientificFact5Title": "Motor Unit Synchronization",
-  "scientificFact6Content": "Regular push-ups increase motor cortex neuroplasticity by 45%, improving learning abilities.",
-  "scientificFact6Impact": "🧐 The brain is also evolving!",
-  "scientificFact6Title": "Enhanced Neuroplasticity",
-  "scientificFact7Content": "High-intensity push-ups increase Brain-Derived Neurotrophic Factor (BDNF) by up to 300%, improving brain health.",
-  "scientificFact7Impact": "🌟 Brain youth recovery program activated!",
-  "scientificFact7Title": "Increased BDNF Secretion",
-  "scientificFact8Content": "14 weeks of push-up training improves nerve transmission speed by 15%, shortening reaction time.",
-  "scientificFact8Impact": "⚡ Lightning-fast reflexes acquired!",
-  "scientificFact8Title": "Improved Reaction Speed",
-  "scientificFact9Content": "Complex movement push-ups improve spinal interneuron inhibitory function by 25%, enhancing movement precision.",
-  "scientificFact9Impact": "🎯 Perfect movement control system established!",
-  "scientificFact9Title": "Interneuron Activation",
+  "scientificFact10Content": "Lucid dream training increases cognitive flexibility by 42%, enabling thinking from multiple perspectives.",
+  "scientificFact10Impact": "🌈 Cognitive flexibility exploding!",
+  "scientificFact10Title": "Cognitive Flexibility Enhancement",
+  "scientificFact11Content": "REM sleep quality improves by 30%, enabling deeper and more efficient lucid dream training.",
+  "scientificFact11Impact": "🌙 Experiencing the optimal dream state!",
+  "scientificFact11Title": "REM Sleep Quality Enhancement",
+  "scientificFact12Content": "Lucid dream training optimizes sleep cycles, maintaining regular 90-minute cycles.",
+  "scientificFact12Impact": "⏰ Perfect sleep rhythm acquired!",
+  "scientificFact12Title": "Sleep Cycle Optimization",
+  "scientificFact13Content": "Deep sleep stage (N3) increases by 20%, promoting physical recovery and growth hormone secretion.",
+  "scientificFact13Impact": "💤 Getting the ultimate restorative sleep!",
+  "scientificFact13Title": "Deep Sleep Increase",
+  "scientificFact14Content": "Lucid dream training regulates the body clock, improving circadian rhythm by 15%.",
+  "scientificFact14Impact": "🌍 Natural biorhythm restored!",
+  "scientificFact14Title": "Circadian Rhythm Alignment",
+  "scientificFact15Content": "Sleep efficiency increases by 25%, allowing more rest in the same amount of time.",
+  "scientificFact15Impact": "⚡ Sleep quality dramatically improving!",
+  "scientificFact15Title": "Sleep Efficiency Increase",
+  "scientificFact16Content": "During lucid dreams, rapid eye movement (REM) increases to 60-70 times per minute, creating vivid visual experiences.",
+  "scientificFact16Impact": "👁️ The dream world unfolds in ultra-high definition!",
+  "scientificFact16Title": "Eye Movement Pattern",
+  "scientificFact17Content": "During REM sleep, brain activity increases to levels similar to waking states, enabling conscious thought.",
+  "scientificFact17Impact": "🧠 Your brain is awake while you sleep!",
+  "scientificFact17Title": "REM Brain Activation",
+  "scientificFact18Content": "Lucid dream training balances serotonin and dopamine, improving mood and motivation.",
+  "scientificFact18Impact": "😊 Happy hormones are being optimized!",
+  "scientificFact18Title": "Neurotransmitter Regulation",
+  "scientificFact19Content": "During lucid dreams, acetylcholine levels increase by 30%, creating clear consciousness and vivid memories.",
+  "scientificFact19Impact": "💡 Dreams are becoming as vivid as reality!",
+  "scientificFact19Title": "Acetylcholine Increase",
+  "scientificFact1Content": "During lucid dreams, prefrontal cortex activity increases by 40% compared to normal dreams, enabling self-awareness and metacognition.",
+  "scientificFact1Impact": "🧠 Consciousness is expanding!",
+  "scientificFact1Title": "Prefrontal Cortex Activation",
+  "scientificFact20Content": "Regular lucid dream training balances melatonin and serotonin, optimizing the sleep-wake cycle.",
+  "scientificFact20Impact": "🌗 Perfect sleep hormone balance achieved!",
+  "scientificFact20Title": "Serotonin Balance",
+  "scientificFact21Content": "Lucid dream training reduces anxiety symptoms by 55%, providing emotional stability.",
+  "scientificFact21Impact": "☮️ Finding peace of mind!",
+  "scientificFact21Title": "Anxiety Reduction",
+  "scientificFact22Content": "The ability to process and manage stress improves by 40% in lucid dreams.",
+  "scientificFact22Impact": "🛡️ Building resistance to stress!",
+  "scientificFact22Title": "Stress Management Ability",
+  "scientificFact23Content": "Through lucid dreams, emotional processing ability improves by 60%, facilitating psychological healing.",
+  "scientificFact23Impact": "💖 Emotional healing is taking place!",
+  "scientificFact23Title": "Emotional Processing Ability",
+  "scientificFact24Content": "70% of PTSD patients experience reduced nightmare frequency and symptom relief through lucid dream training.",
+  "scientificFact24Impact": "🌈 Recovering from trauma!",
+  "scientificFact24Title": "PTSD Symptom Relief",
+  "scientificFact25Content": "Lucid dream training reduces depression symptoms by 32%, improving overall mood and quality of life.",
+  "scientificFact25Impact": "✨ Hope and positive energy being recharged!",
+  "scientificFact25Title": "Depression Improvement",
+  "scientificFact2Content": "During lucid dreaming, 40Hz gamma waves increase by 75%, indicating a higher level of conscious awareness.",
+  "scientificFact2Impact": "⚡ Entering transcendent conscious state!",
+  "scientificFact2Title": "Gamma Wave Pattern Increase",
+  "scientificFact3Content": "After 8 weeks of lucid dream training, prefrontal cortex gray matter density increases by 5%.",
+  "scientificFact3Impact": "🧠 Your brain is physically strengthening!",
+  "scientificFact3Title": "Prefrontal Cortex Growth",
+  "scientificFact4Content": "Lucid dream practice improves metacognitive ability by 34%, increasing self-awareness even when awake.",
+  "scientificFact4Impact": "🎯 Awareness is strengthening in reality too!",
+  "scientificFact4Title": "Metacognitive Ability Enhancement",
+  "scientificFact5Content": "During lucid dreams, both alpha waves (8-13Hz) and beta waves (13-30Hz) are simultaneously activated, creating a unique conscious state.",
+  "scientificFact5Impact": "✨ Experiencing the awake dream state!",
+  "scientificFact5Title": "Mixed Brainwave State",
+  "scientificFact6Content": "Lucid dream training improves dream recall by 300%, allowing you to remember more dreams.",
+  "scientificFact6Impact": "💭 The dream world is opening vividly!",
+  "scientificFact6Title": "Dream Recall Increase",
+  "scientificFact7Content": "During lucid dreams, working memory capacity increases by 25%, enabling complex thinking and planning.",
+  "scientificFact7Impact": "🧠 Becoming a genius in dreams!",
+  "scientificFact7Title": "Working Memory Enhancement",
+  "scientificFact8Content": "During REM sleep, memory consolidation proceeds 50% more efficiently, converting learning into long-term memory.",
+  "scientificFact8Impact": "📚 Knowledge is being imprinted while you sleep!",
+  "scientificFact8Title": "Memory Consolidation Enhancement",
+  "scientificFact9Content": "Problem-solving ability improves by 23% in lucid dreams, enabling creative insights.",
+  "scientificFact9Impact": "💡 Discovering solutions in dreams!",
+  "scientificFact9Title": "Creative Problem Solving",
   "seconds": "seconds",
   "select": "Select",
   "selectAction": "Select",
@@ -1597,10 +1611,10 @@
   "statusLabel": "Status",
   "statusLocked": "Locked",
   "storageAccess": "📁 Storage Access",
-  "storageBenefit1": "📁 Secure workout data backup",
+  "storageBenefit1": "📁 Secure dream journal data backup",
   "storageBenefit2": "🔄 Data restoration when changing devices",
   "storageBenefit3": "💾 Prevent data loss",
-  "storagePermissionDesc": "Required for backing up and restoring workout data",
+  "storagePermissionDesc": "Required for backing up and restoring dream journal data",
   "storagePermissionTitle": "📁 Storage Permission",
   "strengthImprovement": "💪 POWER SURGE PROTOCOL 💪",
   "strengthSecrets": "Strength Secrets 💯",
@@ -1625,7 +1639,7 @@
   "version": "Version",
   "versionAndBuild": "Version {version}+{buildNumber}",
   "versionInfo": "Version Info",
-  "versionInfoDesc": "Mission: 100 v1.0.0",
+  "versionInfoDesc": "Lucid Dream 100 v1.0.0",
   "victoryTime": "{time} - Victory Time!",
   "videoCannotOpen": "Cannot open video. Please check your YouTube app.",
   "viewAll": "View All",
@@ -1650,7 +1664,7 @@
   "accountInfo": "Account Information",
   "goalSettings": "Goal Settings",
   "premiumFeatures": "Premium Features",
-  "tomorrowChadActivity": "Tomorrow's Chad Activity",
+  "tomorrowChadActivity": "Tomorrow's Dream Spirit Activity",
   "createAccount": "Create Account",
   "premiumSubscription": "Premium Subscription",
   "manageSubscription": "Manage Subscription",
@@ -1659,7 +1673,7 @@
   "personalizedProgramReady": "Your personalized program is ready!",
   "logoutConfirm": "Are you sure you want to logout? Unsaved data may be lost.",
   "guestMode": "You are using guest mode. Please login to save your progress.",
-  "alreadyHaveAccount": "Already have a Chad account?",
+  "alreadyHaveAccount": "Already have a Dream Spirit account?",
   "welcome": "Welcome!",
   "subscriptionSuccess": "Subscription completed successfully!",
   "cannotStartPurchase": "Cannot start purchase.",
@@ -1736,7 +1750,7 @@
   "signupPromptBenefit4": "• Detailed body composition analysis",
   "signupPromptCallToAction": "Sign up now and achieve your goals! 💪",
   "startForFree": "Start for Free",
-  "chadActivityCompleted": "{activityTitle} completed! Chad is proud! 💪",
+  "chadActivityCompleted": "{activityTitle} completed! Dream Spirit is proud! 💪",
   "@chadActivityCompleted": {
     "placeholders": {
       "activityTitle": {
@@ -1745,13 +1759,13 @@
     }
   },
   "continueWithGoogle": "Continue with Google",
-  "signupThankYouMessage": "🎉 Thank you for joining Mission: 100!",
+  "signupThankYouMessage": "🎉 Thank you for joining Lucid Dream 100!",
   "googleQuickSignup": "Quick Sign up with Google",
   "googleLogin": "Sign in with Google",
   "googleSignin3Seconds": "Start in 3 seconds with Google",
-  "chadRecoveryTitle": "Chad Active Recovery",
-  "chadWeeklyRecoveryReport": "Chad Weekly Recovery Report",
-  "tomorrowsChadActivity": "Tomorrow's Chad Activity",
+  "chadRecoveryTitle": "Dream Spirit Active Recovery",
+  "chadWeeklyRecoveryReport": "Dream Spirit Weekly Recovery Report",
+  "tomorrowsChadActivity": "Tomorrow's Dream Spirit Activity",
   "chadActivityDuration": "{minutes} minutes",
   "@chadActivityDuration": {
     "placeholders": {
@@ -1760,13 +1774,13 @@
       }
     }
   },
-  "chadRecoverySettings": "Chad Recovery Settings",
+  "chadRecoverySettings": "Dream Spirit Recovery Settings",
   "expandAllSteps": "Expand All",
   "startSubscriptionButton": "Start Subscription",
   "newAchievementUnlocked": "🏆 New Achievement Unlocked!",
-  "chadLevelUpTitle": "🎉 Chad Level Up!",
+  "chadLevelUpTitle": "🎉 Dream Spirit Level Up!",
   "viewAchievement": "View Achievement",
-  "viewChad": "View Chad",
+  "viewChad": "View Dream Spirit",
   "noActiveSubscription": "No active subscription",
   "subscribeForPremium": "Start a subscription to access premium features",
   "competitionRankings": "Competition and Rankings",
@@ -1775,8 +1789,8 @@
   "launchEventBenefits": "Launch Event Benefits:",
   "benefit1MonthFree": "• 1 month free premium",
   "oneMonthFreePremium": "1 Month Free Premium",
-  "benefit14WeeksProgram": "• Access to full 14-week program",
-  "benefitAllChadStages": "• All Chad evolution stages",
+  "benefit14WeeksProgram": "• Access to full 30-day program",
+  "benefitAllChadStages": "• All Dream Spirit evolution stages",
   "benefitDetailedStats": "• Detailed statistics and analysis",
   "startWorkoutNow": "Start your workout now! 💪",
   "benefitPersonalizedPlan": "• Personalized workout plan",
@@ -1785,14 +1799,14 @@
   "competitionGoalDescription": "Compare with others and check rankings for motivation",
   "personalRecordGoalDescription": "Focus on personal goals and improving your own records",
   "viewAllReferences": "View All References",
-  "tomorrowActivitiesMessage": "These are the activities Chad recommends for tomorrow! Let's prepare! 💪",
+  "tomorrowActivitiesMessage": "These are the activities Dream Spirit recommends for tomorrow! Let's prepare! 💪",
   "goalProgramReady": "Your personalized program for {goalText} is ready!",
   "signupToAchieveGoal": "Sign up now and achieve your goals! 💪",
-  "chadRecoverySettingsTitle": "Chad Recovery Settings",
+  "chadRecoverySettingsTitle": "Dream Spirit Recovery Settings",
   "chadRecoverySettingsSubtitle": "Adjust personalized recovery activities",
   "moreActivities": "+ {count} more",
-  "premiumFeaturesSummary": "Full 14-week program + All Chads + Detailed stats",
-  "alreadyHaveChadAccount": "Already have a Chad account?",
+  "premiumFeaturesSummary": "Full 30-day program + All Chads + Detailed stats",
+  "alreadyHaveChadAccount": "Already have a Dream Spirit account?",
   "@moreActivities": {
     "placeholders": {
       "count": {
@@ -1812,5 +1826,74 @@
   "@achievementsTab": {
     "description": "Achievements sub-tab within progress screen"
   },
-  "achievementsTab": "🏆 Achievements"
+  "achievementsTab": "🏆 Achievements",
+  "@calendarSelectedDate": {
+    "description": "Calendar selected date display",
+    "placeholders": {
+      "day": {
+        "type": "Object"
+      },
+      "month": {
+        "type": "Object"
+      },
+      "year": {
+        "type": "Object"
+      }
+    }
+  },
+  "calendarSelectedDate": "{month}/{day}/{year}",
+  "@homeChecklistLoadError": {
+    "description": "Error loading checklist message"
+  },
+  "homeChecklistLoadError": "Failed to load checklist",
+  "@homeAIDreamAnalysisTitle": {
+    "description": "AI dream analysis card title"
+  },
+  "homeAIDreamAnalysisTitle": "AI Dream Analysis",
+  "@homeAIDreamAnalysisSubtitle": {
+    "description": "AI dream analysis card subtitle"
+  },
+  "homeAIDreamAnalysisSubtitle": "Unlock the secrets of your dreams",
+  "@aiAssistantSubtitle": {
+    "description": "AI assistant card subtitle"
+  },
+  "aiAssistantSubtitle": "Chat with Lumi about lucid dreaming",
+  "@homeDailyRewardTitle": {
+    "description": "Daily reward dialog title"
+  },
+  "homeDailyRewardTitle": "Daily Login Reward",
+  "@homeDailyRewardMessage": {
+    "description": "Daily reward dialog message"
+  },
+  "homeDailyRewardMessage": "Keep up the great work on your lucid dreaming journey!",
+  "@homePremiumBonusApplied": {
+    "description": "Premium bonus applied message"
+  },
+  "homePremiumBonusApplied": "Premium Bonus Applied!",
+  "@homeChatWithLumiMessage": {
+    "description": "Chat with Lumi message with reward amount",
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "homeChatWithLumiMessage": "Chat with Lumi for +{amount} tokens",
+  "@homeLaterButton": {
+    "description": "Later button text"
+  },
+  "homeLaterButton": "Later",
+  "@homeClaimButton": {
+    "description": "Claim button text"
+  },
+  "homeClaimButton": "Claim",
+  "@homeDailyRewardReceived": {
+    "description": "Daily reward received message",
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "homeDailyRewardReceived": "You received +{amount} tokens!"
 }

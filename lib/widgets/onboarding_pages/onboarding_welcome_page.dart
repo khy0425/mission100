@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../utils/config/constants.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 온보딩 환영 페이지
 class OnboardingWelcomePage extends StatelessWidget {
@@ -8,6 +9,7 @@ class OnboardingWelcomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
 
     return SingleChildScrollView(
       child: Padding(
@@ -46,7 +48,7 @@ class OnboardingWelcomePage extends StatelessWidget {
                 ],
               ),
               child: const Icon(
-                Icons.accessibility_new,
+                Icons.nightlight_round,
                 size: 80,
                 color: Colors.white,
               ),
@@ -54,7 +56,7 @@ class OnboardingWelcomePage extends StatelessWidget {
           ),
           const SizedBox(height: AppConstants.paddingXL * 2),
           Text(
-            'Mission 100',
+            'DreamFlow',
             style: theme.textTheme.displayMedium?.copyWith(
               fontWeight: FontWeight.bold,
               color: const Color(AppColors.primaryColor),
@@ -63,7 +65,7 @@ class OnboardingWelcomePage extends StatelessWidget {
           ),
           const SizedBox(height: AppConstants.paddingM),
           Text(
-            '14주 만에 푸시업 100개',
+            l10n.onboardingWelcomeTitle,
             style: theme.textTheme.headlineSmall?.copyWith(
               color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
               fontWeight: FontWeight.w500,
@@ -81,7 +83,7 @@ class OnboardingWelcomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(AppConstants.radiusL),
             ),
             child: Text(
-              '💪 체계적인 훈련으로\n당신의 목표를 달성하세요',
+              l10n.onboardingWelcomeDescription,
               style: theme.textTheme.titleMedium?.copyWith(
                 color: const Color(AppColors.primaryColor),
                 fontWeight: FontWeight.w600,

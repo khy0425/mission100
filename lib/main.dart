@@ -37,7 +37,7 @@ void main() async {
   try {
     // 환경 변수 로드 (.env 파일)
     try {
-      await dotenv.load(fileName: ".env");
+      await dotenv.load(fileName: '.env');
       debugPrint('✅ 환경 변수 로드 완료');
     } catch (e) {
       debugPrint('⚠️ 환경 변수 로드 실패: $e');
@@ -546,14 +546,14 @@ class _SplashScreenState extends State<SplashScreen>
                       decoration: BoxDecoration(
                         gradient: RadialGradient(
                           colors: [
-                            Colors.white.withOpacity(0.9),
-                            Color(AppColors.accentColor).withOpacity(0.8),
+                            Colors.white.withValues(alpha: 0.9),
+                            const Color(AppColors.accentColor).withValues(alpha: 0.8),
                           ],
                         ),
                         shape: BoxShape.circle,
                         boxShadow: [
                           BoxShadow(
-                            color: Color(AppColors.accentColor).withValues(alpha: 0.5),
+                            color: const Color(AppColors.accentColor).withValues(alpha: 0.5),
                             blurRadius: 30,
                             spreadRadius: 5,
                             offset: const Offset(0, 5),
@@ -585,7 +585,7 @@ class _SplashScreenState extends State<SplashScreen>
                     letterSpacing: 2,
                     shadows: [
                       Shadow(
-                        color: Color(AppColors.accentColor).withOpacity(0.5),
+                        color: const Color(AppColors.accentColor).withOpacity(0.5),
                         blurRadius: 10,
                         offset: const Offset(0, 2),
                       ),

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:mission100/models/workout_history.dart';
+import 'package:mission_pushup_100/models/workout_history.dart';
 import 'dart:convert';
 
 /// 통합 테스트 - CloudSyncService의 실제 동작을 시뮬레이션

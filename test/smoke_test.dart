@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
-import 'package:mission100/services/payment/ad_service.dart';
-import 'package:mission100/services/localization/theme_service.dart';
-import 'package:mission100/services/core/onboarding_service.dart';
-import 'package:mission100/services/chad/chad_evolution_service.dart';
-import 'package:mission100/services/chad/chad_condition_service.dart';
-import 'package:mission100/services/chad/chad_recovery_service.dart';
-import 'package:mission100/services/chad/chad_active_recovery_service.dart';
-import 'package:mission100/services/auth/auth_service.dart';
+import 'package:mission_pushup_100/services/payment/ad_service.dart';
+import 'package:mission_pushup_100/services/localization/theme_service.dart';
+import 'package:mission_pushup_100/services/core/onboarding_service.dart';
+import 'package:mission_pushup_100/services/chad/chad_evolution_service.dart';
+import 'package:mission_pushup_100/services/chad/chad_condition_service.dart';
+import 'package:mission_pushup_100/services/chad/chad_recovery_service.dart';
+import 'package:mission_pushup_100/services/chad/chad_active_recovery_service.dart';
+import 'package:mission_pushup_100/services/auth/auth_service.dart';
 
 // Simple test LocaleNotifier
 class TestLocaleNotifier extends ChangeNotifier {

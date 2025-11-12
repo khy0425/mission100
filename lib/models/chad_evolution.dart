@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:lucid_dream_100/generated/l10n/app_localizations.dart';
 
-/// Chad 진화 단계 열거형 (14 Levels + Initial)
+/// Dream Spirit 진화 단계 열거형 (14 Levels + Initial)
 enum ChadEvolutionStage {
-  sleepCapChad, // Week 0: Sleep Cap Chad (시작)
-  basicChad, // Week 1: Basic Chad
-  coffeeChad, // Week 2: Coffee Chad
-  frontFacingChad, // Week 3: Front Facing Chad
-  confidentChad, // Week 4: Confident Chad
-  sunglassesChad, // Week 5: Sunglasses Chad
-  smilingChad, // Week 6: Smiling Chad
-  winkChad, // Week 7: Wink Chad
-  gamerChad, // Week 8: Gamer Chad
-  laserEyesChad, // Week 9: Laser Eyes Chad
-  laserEyesHudChad, // Week 10: Laser Eyes HUD Chad
-  glowingEyesChad, // Week 11: Glowing Eyes Chad
-  doubleChad, // Week 12: Double Chad
-  tripleChad, // Week 13: Triple Chad
-  godChad, // Week 14: GOD CHAD (최종)
+  sleepCapChad, // Week 0: Dreaming Novice (꿈꾸는 초심자)
+  basicChad, // Week 1: Aware Dreamer (자각하는 꿈꾸는 자)
+  coffeeChad, // Week 2: Alert Dreamer (각성된 꿈꾸는 자)
+  frontFacingChad, // Week 3: Focused Dreamer (집중하는 꿈꾸는 자)
+  confidentChad, // Week 4: Confident Lucid Dreamer (자신감 있는 자각몽가)
+  sunglassesChad, // Week 5: Cool Lucid Master (쿨한 자각몽 마스터)
+  smilingChad, // Week 6: Joyful Dream Walker (기쁜 꿈 걷는 자)
+  winkChad, // Week 7: Charismatic Dreamer (카리스마 넘치는 꿈꾸는 자)
+  gamerChad, // Week 8: Focused Dream Master (집중된 꿈 마스터)
+  laserEyesChad, // Week 9: Powerful Lucid Dreamer (강력한 자각몽가)
+  laserEyesHudChad, // Week 10: Advanced Dream Controller (고급 꿈 통제자)
+  glowingEyesChad, // Week 11: Radiant Dream Master (빛나는 꿈 마스터)
+  doubleChad, // Week 12: Twin Dream Walker (쌍둥이 꿈 걷는 자)
+  tripleChad, // Week 13: Trinity Dream Master (삼위일체 꿈 마스터)
+  godChad, // Week 14: Dream God (꿈의 신)
 }
 
-/// Chad 진화 데이터 모델
+/// Dream Spirit 진화 데이터 모델
 class ChadEvolution {
   final ChadEvolutionStage stage;
   final String name;
@@ -43,158 +44,158 @@ class ChadEvolution {
     required this.unlockMessage,
   });
 
-  /// 기본 Chad 진화 단계들 (9-Level System)
+  /// 기본 Dream Spirit 진화 단계들 (15-Level System)
   static const List<ChadEvolution> defaultStages = [
     // Stage 0: Initial
     ChadEvolution(
       stage: ChadEvolutionStage.sleepCapChad,
-      name: 'Sleep Cap Chad',
-      description: '여정을 시작하는 Chad입니다.\n아직 잠이 덜 깬 상태지만 곧 깨어날 것입니다!',
+      name: '꿈꾸는 초심자',
+      description: '자각몽 여정을 시작하는 Dream Spirit입니다.\n꿈의 세계에 첫 발을 내딛었습니다!',
       imagePath: 'assets/images/chad/basic/sleepCapChad.png',
       requiredWeek: 0,
       isUnlocked: true,
-      unlockMessage: 'Chad는 완성형이다. 남은 것은 뇌절뿐.',
+      unlockMessage: '꿈의 여정이 시작됩니다. 자각의 첫 걸음을 내딛었습니다.',
     ),
     // Level 1: Basic Chad
     ChadEvolution(
       stage: ChadEvolutionStage.basicChad,
-      name: 'Basic Chad',
-      description: '첫 번째 진화를 완료한 Chad입니다.\n기초 체력을 다지기 시작했습니다!',
+      name: '자각하는 꿈꾸는 자',
+      description: '첫 번째 진화를 완료한 Dream Spirit입니다.\n꿈과 현실을 구분하기 시작했습니다!',
       imagePath: 'assets/images/chad/basic/basicChad.png',
       requiredWeek: 1,
       isUnlocked: false,
-      unlockMessage: '💪 뇌절 1도: Basic Chad로 진화! 턱선이 날카로워지기 시작했다.',
+      unlockMessage: '🌙 1단계 자각: 꿈 속에서 깨어나기 시작했습니다!',
     ),
     // Level 2: Coffee Chad
     ChadEvolution(
       stage: ChadEvolutionStage.coffeeChad,
-      name: 'Coffee Chad',
-      description: '☕ 카페인으로 충전된 Chad입니다.\n에너지가 폭발합니다!',
+      name: '각성된 꿈꾸는 자',
+      description: '☕ 꿈 속에서 완전히 깨어난 Dream Spirit입니다.\n꿈의 명료도가 높아집니다!',
       imagePath: 'assets/images/chad/basic/coffeeChad.png',
       requiredWeek: 2,
       isUnlocked: false,
-      unlockMessage: '☕ 뇌절 2도: Coffee Chad로 진화! 카페인 오라가 뿜어져 나온다.',
+      unlockMessage: '☕ 2단계 자각: 꿈의 명료도가 증가했습니다!',
     ),
     // Level 3: Front Facing Chad
     ChadEvolution(
       stage: ChadEvolutionStage.frontFacingChad,
-      name: 'Front Facing Chad',
-      description: '👀 정면을 응시하는 Chad입니다.\n각성이 시작되었습니다!',
+      name: '집중하는 꿈꾸는 자',
+      description: '👀 꿈 속 세계에 집중하는 Dream Spirit입니다.\n리얼리티 체크를 습관화했습니다!',
       imagePath: 'assets/images/chad/basic/frontFacingChad.png',
       requiredWeek: 3,
       isUnlocked: false,
-      unlockMessage: '👀 뇌절 3도: Front Facing Chad로 진화! 눈빛이 달라졌다.',
+      unlockMessage: '👀 3단계 자각: 꿈의 세계가 선명해졌습니다!',
     ),
     // Level 4: Confident Chad
     ChadEvolution(
       stage: ChadEvolutionStage.confidentChad,
-      name: 'Confident Chad',
-      description: '💪 자신감이 넘치는 Chad입니다.\n당당한 자세를 갖췄습니다!',
+      name: '자신감 있는 자각몽가',
+      description: '💪 꿈을 통제할 수 있는 Dream Spirit입니다.\n자각몽 컨트롤이 시작됩니다!',
       imagePath: 'assets/images/chad/basic/confidentChad.png',
       requiredWeek: 4,
       isUnlocked: false,
-      unlockMessage: '💪 뇌절 4도: Confident Chad로 진화! 자신감이 폭발한다.',
+      unlockMessage: '💪 4단계 자각: 꿈을 통제하기 시작했습니다!',
     ),
     // Level 5: Sunglasses Chad
     ChadEvolution(
       stage: ChadEvolutionStage.sunglassesChad,
-      name: 'Sunglasses Chad',
-      description: '🕶️ 쿨한 매력의 Chad입니다.\n선글라스 뒤로 빛나는 눈빛!',
+      name: '쿨한 자각몽 마스터',
+      description: '🕶️ 여유롭게 꿈을 즐기는 Dream Spirit입니다.\n꿈 속에서 자유자재로 움직입니다!',
       imagePath: 'assets/images/chad/basic/sunglassesChad.png',
       requiredWeek: 5,
       isUnlocked: false,
-      unlockMessage: '🕶️ 뇌절 5도: Sunglasses Chad로 진화! 쿨함이 극대화되었다.',
+      unlockMessage: '🕶️ 5단계 자각: 꿈을 자유롭게 즐깁니다!',
     ),
     // Level 6: Smiling Chad
     ChadEvolution(
       stage: ChadEvolutionStage.smilingChad,
-      name: 'Smiling Chad',
-      description: '😄 여유로운 미소를 짓는 Chad입니다.\n진정한 강자의 여유!',
+      name: '기쁜 꿈 걷는 자',
+      description: '😄 꿈 속에서 행복을 느끼는 Dream Spirit입니다.\n완벽한 자각몽 경험!',
       imagePath: 'assets/images/chad/basic/smilingChad.png',
       requiredWeek: 6,
       isUnlocked: false,
-      unlockMessage: '😄 뇌절 6도: Smiling Chad로 진화! 강자의 미소 완성!',
+      unlockMessage: '😄 6단계 자각: 꿈 속에서 완벽한 행복을 느낍니다!',
     ),
     // Level 7: Wink Chad
     ChadEvolution(
       stage: ChadEvolutionStage.winkChad,
-      name: 'Wink Chad',
-      description: '😉 윙크하는 Chad입니다.\n최고의 자신감과 매력!',
+      name: '카리스마 넘치는 꿈꾸는 자',
+      description: '😉 꿈 속에서 모든 것을 통제하는 Dream Spirit입니다.\n완전한 자각몽 마스터!',
       imagePath: 'assets/images/chad/basic/winkChad.png',
       requiredWeek: 7,
       isUnlocked: false,
-      unlockMessage: '😉 뇌절 7도: Wink Chad로 진화! 치명적 윙크 습득!',
+      unlockMessage: '😉 7단계 자각: 완벽한 꿈 통제력을 얻었습니다!',
     ),
     // Level 8: Gamer Chad
     ChadEvolution(
       stage: ChadEvolutionStage.gamerChad,
-      name: 'Gamer Chad',
-      description: '🎮 게이밍 헤드셋을 착용한 Chad입니다.\n집중력과 반응속도 극대화!',
+      name: '집중된 꿈 마스터',
+      description: '🎮 극도로 집중된 상태의 Dream Spirit입니다.\n꿈의 모든 디테일을 인지합니다!',
       imagePath: 'assets/images/chad/basic/gamerChad.png',
       requiredWeek: 8,
       isUnlocked: false,
-      unlockMessage: '🎮 뇌절 8도: Gamer Chad로 진화! 반응속도 0.1초!',
+      unlockMessage: '🎮 8단계 자각: 초집중 상태로 꿈을 관찰합니다!',
     ),
     // Level 9: Laser Eyes Chad
     ChadEvolution(
       stage: ChadEvolutionStage.laserEyesChad,
-      name: 'Laser Eyes Chad',
-      description: '⚡ 눈에서 레이저가 발사되는 Chad입니다.\n파괴적인 힘을 가졌습니다!',
+      name: '강력한 자각몽가',
+      description: '⚡ 강력한 에너지를 가진 Dream Spirit입니다.\n꿈의 모든 요소를 자유자재로 변화시킵니다!',
       imagePath: 'assets/images/chad/basic/laserEyesChad.png',
       requiredWeek: 9,
       isUnlocked: false,
-      unlockMessage: '⚡ 뇌절 9도: Laser Eyes Chad로 진화! 레이저 눈빔 발사!',
+      unlockMessage: '⚡ 9단계 자각: 꿈을 완벽하게 변화시킵니다!',
     ),
     // Level 10: Laser Eyes HUD Chad
     ChadEvolution(
       stage: ChadEvolutionStage.laserEyesHudChad,
-      name: 'Laser Eyes HUD Chad',
-      description: '⚡🎯 레이저 + HUD 시스템이 장착된 Chad입니다.\n전투력 측정기가 폭발합니다!',
+      name: '고급 꿈 통제자',
+      description: '⚡🎯 고도의 통제력을 가진 Dream Spirit입니다.\n꿈의 모든 시스템을 파악합니다!',
       imagePath: 'assets/images/chad/basic/laserEyesHudChad.png',
       requiredWeek: 10,
       isUnlocked: false,
-      unlockMessage: '⚡🎯 뇌절 10도: HUD Chad로 진화! 전투력 측정기 장착!',
+      unlockMessage: '⚡🎯 10단계 자각: 완벽한 꿈 분석 능력을 얻었습니다!',
     ),
     // Level 11: Glowing Eyes Chad
     ChadEvolution(
       stage: ChadEvolutionStage.glowingEyesChad,
-      name: 'Glowing Eyes Chad',
-      description: '✨ 눈부신 빛을 발하는 Chad입니다.\n내면의 힘이 폭발합니다!',
+      name: '빛나는 꿈 마스터',
+      description: '✨ 눈부신 빛을 발하는 Dream Spirit입니다.\n꿈의 에너지가 넘쳐흐릅니다!',
       imagePath: 'assets/images/chad/basic/glowingEyesChad.png',
       requiredWeek: 11,
       isUnlocked: false,
-      unlockMessage: '✨ 뇌절 11도: Glowing Eyes Chad로 진화! 눈부신 빛이 폭발한다!',
+      unlockMessage: '✨ 11단계 자각: 꿈의 에너지가 폭발합니다!',
     ),
     // Level 12: Double Chad
     ChadEvolution(
       stage: ChadEvolutionStage.doubleChad,
-      name: 'Double Chad',
-      description: '👥 두 배의 파워를 가진 Chad입니다.\n분신술이 시작됩니다!',
+      name: '쌍둥이 꿈 걷는 자',
+      description: '👥 두 배의 인식력을 가진 Dream Spirit입니다.\n동시에 여러 꿈을 인지합니다!',
       imagePath: 'assets/images/chad/basic/doubleChad.png',
       requiredWeek: 12,
       isUnlocked: false,
-      unlockMessage: '👥 뇌절 12도: Double Chad로 진화! 분신술 발동!',
+      unlockMessage: '👥 12단계 자각: 다중 꿈 인식이 가능해졌습니다!',
     ),
     // Level 13: Triple Chad
     ChadEvolution(
       stage: ChadEvolutionStage.tripleChad,
-      name: 'Triple Chad',
-      description: '👥👥 세 배의 파워를 가진 Chad입니다.\n삼위일체가 완성됩니다!',
+      name: '삼위일체 꿈 마스터',
+      description: '👥👥 완벽한 조화를 이룬 Dream Spirit입니다.\n꿈·현실·의식이 하나가 됩니다!',
       imagePath: 'assets/images/chad/basic/tripleChad.png',
       requiredWeek: 13,
       isUnlocked: false,
-      unlockMessage: '👥👥 뇌절 13도: Triple Chad로 진화! 삼위일체 완성!',
+      unlockMessage: '👥👥 13단계 자각: 삼위일체 완성! 완벽한 조화!',
     ),
     // Level 14: GOD CHAD (Final)
     ChadEvolution(
       stage: ChadEvolutionStage.godChad,
-      name: 'GOD CHAD',
-      description: '👑🌟 전설의 최종 진화 Chad입니다.\n신의 경지에 도달!',
+      name: '꿈의 신',
+      description: '👑🌟 전설적인 최종 진화 Dream Spirit입니다.\n꿈의 세계를 완전히 지배합니다!',
       imagePath: 'assets/images/chad/basic/godChad.png',
       evolutionAnimationPath: 'assets/images/chad/evolution/level14_final.gif',
       requiredWeek: 14,
       isUnlocked: false,
-      unlockMessage: '👑🌟 뇌절 14도(극한): GOD CHAD 등극! 신이 되었다!',
+      unlockMessage: '👑🌟 14단계 자각(극한): 꿈의 신 등극! 완벽한 자각몽 마스터!',
     ),
   ];
 
@@ -442,17 +443,17 @@ class ChadEvolutionState {
   }
 }
 
-/// Chad 통계 모델 - 운동 성과 기반 밈 스타일 지표
+/// Dream Spirit 통계 모델 - 자각몽 성과 기반 지표
 class ChadStats {
-  final int chadLevel; // Chad 레벨 (1-9)
-  final int brainjoltDegree; // 뇌절 도수 (1-9도)
-  final double chadAura; // Chad Aura (0-100%)
-  final double jawlineSharpness; // 턱선 날카로움 (0-100%)
-  final int crowdAdmiration; // 군중 찬사 (0-999+)
-  final int brainjoltVoltage; // 뇌절 전압 (V)
-  final String memePower; // 밈 파워 등급
-  final int chadConsistency; // Chad 연속성 (일)
-  final int totalChadHours; // 총 Chad 시간 (시간)
+  final int chadLevel; // Dream Spirit 레벨 (1-14)
+  final int brainjoltDegree; // 자각 단계 (1-14단계)
+  final double chadAura; // Dream Clarity 꿈 명료도 (0-100%)
+  final double jawlineSharpness; // Lucidity Level 자각 수준 (0-100%)
+  final int crowdAdmiration; // Dream Mastery Points 꿈 마스터리 포인트 (0-999+)
+  final int brainjoltVoltage; // Dream Energy 꿈 에너지 (E)
+  final String memePower; // Dream Mastery Tier 꿈 마스터리 등급
+  final int chadConsistency; // Dream Streak 꿈 일기 연속성 (일)
+  final int totalChadHours; // Total Dream Hours 총 꿈 시간 (시간)
 
   const ChadStats({
     required this.chadLevel,
@@ -466,7 +467,7 @@ class ChadStats {
     required this.totalChadHours,
   });
 
-  /// 운동 데이터로부터 ChadStats 생성
+  /// 자각몽 데이터로부터 ChadStats 생성
   factory ChadStats.fromWorkoutData({
     required int level,
     required int streakDays,
@@ -474,42 +475,42 @@ class ChadStats {
     required int totalMinutes,
     required int shareCount,
   }) {
-    // Chad 레벨 (1-9)
-    final chadLevel = level.clamp(1, 9);
+    // Dream Spirit 레벨 (1-14)
+    final chadLevel = level.clamp(1, 14);
 
-    // 뇌절 도수 = Chad 레벨
+    // 자각 단계 = Dream Spirit 레벨
     final brainjoltDegree = chadLevel;
 
-    // Chad Aura: 연속일수 기반 (최대 100%)
+    // Dream Clarity 꿈 명료도: 연속일수 기반 (최대 100%)
     final chadAura = (streakDays * 2.0).clamp(0.0, 100.0);
 
-    // 턱선 날카로움: 완료된 미션 수 기반 (최대 100%)
+    // Lucidity Level 자각 수준: 완료된 미션 수 기반 (최대 100%)
     final jawlineSharpness = (completedMissions * 3.0).clamp(0.0, 100.0);
 
-    // 군중 찬사: 공유 횟수 * 10
+    // Dream Mastery Points 꿈 마스터리 포인트: 공유 횟수 * 10
     final crowdAdmiration = (shareCount * 10).clamp(0, 999);
 
-    // 뇌절 전압: 레벨 * 1000V
+    // Dream Energy 꿈 에너지: 레벨 * 1000E
     final brainjoltVoltage = chadLevel * 1000;
 
-    // 밈 파워 등급
+    // Dream Mastery Tier 꿈 마스터리 등급
     String memePower;
-    if (chadLevel >= 9) {
-      memePower = 'GOD TIER';
+    if (chadLevel >= 14) {
+      memePower = 'DREAM GOD';
+    } else if (chadLevel >= 11) {
+      memePower = 'LEGENDARY DREAMER';
     } else if (chadLevel >= 7) {
-      memePower = 'LEGENDARY';
-    } else if (chadLevel >= 5) {
-      memePower = 'EPIC';
-    } else if (chadLevel >= 3) {
-      memePower = 'RARE';
+      memePower = 'MASTER DREAMER';
+    } else if (chadLevel >= 4) {
+      memePower = 'SKILLED DREAMER';
     } else {
-      memePower = 'COMMON';
+      memePower = 'NOVICE DREAMER';
     }
 
-    // Chad 연속성 = 연속일수
+    // Dream Streak 꿈 일기 연속성 = 연속일수
     final chadConsistency = streakDays;
 
-    // 총 Chad 시간 (분 -> 시간)
+    // Total Dream Hours 총 꿈 시간 (분 -> 시간)
     final totalChadHours = (totalMinutes / 60).floor();
 
     return ChadStats(
@@ -582,7 +583,7 @@ class ChadStats {
 
   @override
   String toString() {
-    return 'ChadStats(level: $chadLevel, brainjolt: $brainjoltDegree도, aura: ${chadAura.toStringAsFixed(1)}%)';
+    return 'DreamSpiritStats(level: $chadLevel, lucidity: $brainjoltDegree단계, clarity: ${chadAura.toStringAsFixed(1)}%)';
   }
 
   @override
@@ -611,5 +612,187 @@ class ChadStats {
         memePower.hashCode ^
         chadConsistency.hashCode ^
         totalChadHours.hashCode;
+  }
+}
+
+/// ChadEvolutionStage에 대한 Localization Extension
+extension ChadEvolutionStageLocalization on ChadEvolutionStage {
+  /// Localized stage name
+  String localizedName(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    switch (this) {
+      case ChadEvolutionStage.sleepCapChad:
+        return l10n.dreamSpiritStage0Name;
+      case ChadEvolutionStage.basicChad:
+        return l10n.dreamSpiritStage1Name;
+      case ChadEvolutionStage.coffeeChad:
+        return l10n.dreamSpiritStage2Name;
+      case ChadEvolutionStage.frontFacingChad:
+        return l10n.dreamSpiritStage3Name;
+      case ChadEvolutionStage.confidentChad:
+        return l10n.dreamSpiritStage4Name;
+      case ChadEvolutionStage.sunglassesChad:
+        return l10n.dreamSpiritStage5Name;
+      case ChadEvolutionStage.smilingChad:
+        return l10n.dreamSpiritStage6Name;
+      case ChadEvolutionStage.winkChad:
+        return l10n.dreamSpiritStage7Name;
+      case ChadEvolutionStage.gamerChad:
+        return l10n.dreamSpiritStage8Name;
+      case ChadEvolutionStage.laserEyesChad:
+        return l10n.dreamSpiritStage9Name;
+      case ChadEvolutionStage.laserEyesHudChad:
+        return l10n.dreamSpiritStage10Name;
+      case ChadEvolutionStage.glowingEyesChad:
+        return l10n.dreamSpiritStage11Name;
+      case ChadEvolutionStage.doubleChad:
+        return l10n.dreamSpiritStage12Name;
+      case ChadEvolutionStage.tripleChad:
+        return l10n.dreamSpiritStage13Name;
+      case ChadEvolutionStage.godChad:
+        return l10n.dreamSpiritStage14Name;
+    }
+  }
+
+  /// Localized stage description
+  String localizedDescription(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    switch (this) {
+      case ChadEvolutionStage.sleepCapChad:
+        return l10n.dreamSpiritStage0Desc;
+      case ChadEvolutionStage.basicChad:
+        return l10n.dreamSpiritStage1Desc;
+      case ChadEvolutionStage.coffeeChad:
+        return l10n.dreamSpiritStage2Desc;
+      case ChadEvolutionStage.frontFacingChad:
+        return l10n.dreamSpiritStage3Desc;
+      case ChadEvolutionStage.confidentChad:
+        return l10n.dreamSpiritStage4Desc;
+      case ChadEvolutionStage.sunglassesChad:
+        return l10n.dreamSpiritStage5Desc;
+      case ChadEvolutionStage.smilingChad:
+        return l10n.dreamSpiritStage6Desc;
+      case ChadEvolutionStage.winkChad:
+        return l10n.dreamSpiritStage7Desc;
+      case ChadEvolutionStage.gamerChad:
+        return l10n.dreamSpiritStage8Desc;
+      case ChadEvolutionStage.laserEyesChad:
+        return l10n.dreamSpiritStage9Desc;
+      case ChadEvolutionStage.laserEyesHudChad:
+        return l10n.dreamSpiritStage10Desc;
+      case ChadEvolutionStage.glowingEyesChad:
+        return l10n.dreamSpiritStage11Desc;
+      case ChadEvolutionStage.doubleChad:
+        return l10n.dreamSpiritStage12Desc;
+      case ChadEvolutionStage.tripleChad:
+        return l10n.dreamSpiritStage13Desc;
+      case ChadEvolutionStage.godChad:
+        return l10n.dreamSpiritStage14Desc;
+    }
+  }
+
+  /// Localized unlock message
+  String localizedUnlockMessage(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+    switch (this) {
+      case ChadEvolutionStage.sleepCapChad:
+        return l10n.dreamSpiritStage0Unlock;
+      case ChadEvolutionStage.basicChad:
+        return l10n.dreamSpiritStage1Unlock;
+      case ChadEvolutionStage.coffeeChad:
+        return l10n.dreamSpiritStage2Unlock;
+      case ChadEvolutionStage.frontFacingChad:
+        return l10n.dreamSpiritStage3Unlock;
+      case ChadEvolutionStage.confidentChad:
+        return l10n.dreamSpiritStage4Unlock;
+      case ChadEvolutionStage.sunglassesChad:
+        return l10n.dreamSpiritStage5Unlock;
+      case ChadEvolutionStage.smilingChad:
+        return l10n.dreamSpiritStage6Unlock;
+      case ChadEvolutionStage.winkChad:
+        return l10n.dreamSpiritStage7Unlock;
+      case ChadEvolutionStage.gamerChad:
+        return l10n.dreamSpiritStage8Unlock;
+      case ChadEvolutionStage.laserEyesChad:
+        return l10n.dreamSpiritStage9Unlock;
+      case ChadEvolutionStage.laserEyesHudChad:
+        return l10n.dreamSpiritStage10Unlock;
+      case ChadEvolutionStage.glowingEyesChad:
+        return l10n.dreamSpiritStage11Unlock;
+      case ChadEvolutionStage.doubleChad:
+        return l10n.dreamSpiritStage12Unlock;
+      case ChadEvolutionStage.tripleChad:
+        return l10n.dreamSpiritStage13Unlock;
+      case ChadEvolutionStage.godChad:
+        return l10n.dreamSpiritStage14Unlock;
+    }
+  }
+
+  /// Week requirement for this stage
+  int get requiredWeek {
+    return index;
+  }
+
+  /// Image path for this stage
+  String get imagePath {
+    switch (this) {
+      case ChadEvolutionStage.sleepCapChad:
+        return 'assets/images/chad/basic/sleepCapChad.png';
+      case ChadEvolutionStage.basicChad:
+        return 'assets/images/chad/basic/basicChad.png';
+      case ChadEvolutionStage.coffeeChad:
+        return 'assets/images/chad/basic/coffeeChad.png';
+      case ChadEvolutionStage.frontFacingChad:
+        return 'assets/images/chad/basic/frontFacingChad.png';
+      case ChadEvolutionStage.confidentChad:
+        return 'assets/images/chad/basic/confidentChad.png';
+      case ChadEvolutionStage.sunglassesChad:
+        return 'assets/images/chad/basic/sunglassesChad.png';
+      case ChadEvolutionStage.smilingChad:
+        return 'assets/images/chad/basic/smilingChad.png';
+      case ChadEvolutionStage.winkChad:
+        return 'assets/images/chad/basic/winkChad.png';
+      case ChadEvolutionStage.gamerChad:
+        return 'assets/images/chad/basic/gamerChad.png';
+      case ChadEvolutionStage.laserEyesChad:
+        return 'assets/images/chad/basic/laserEyesChad.png';
+      case ChadEvolutionStage.laserEyesHudChad:
+        return 'assets/images/chad/basic/laserEyesHudChad.png';
+      case ChadEvolutionStage.glowingEyesChad:
+        return 'assets/images/chad/basic/glowingEyesChad.png';
+      case ChadEvolutionStage.doubleChad:
+        return 'assets/images/chad/basic/doubleChad.png';
+      case ChadEvolutionStage.tripleChad:
+        return 'assets/images/chad/basic/tripleChad.png';
+      case ChadEvolutionStage.godChad:
+        return 'assets/images/chad/basic/godChad.png';
+    }
+  }
+
+  /// Evolution animation path (optional)
+  String? get evolutionAnimationPath {
+    if (this == ChadEvolutionStage.godChad) {
+      return 'assets/images/chad/evolution/level14_final.gif';
+    }
+    return null;
+  }
+}
+
+/// ChadEvolution에 대한 Factory Extension
+extension ChadEvolutionFactory on ChadEvolution {
+  /// BuildContext를 사용하여 localized ChadEvolution 생성
+  static List<ChadEvolution> getLocalizedStages(BuildContext context) {
+    return ChadEvolutionStage.values.map((stage) {
+      return ChadEvolution(
+        stage: stage,
+        name: stage.localizedName(context),
+        description: stage.localizedDescription(context),
+        imagePath: stage.imagePath,
+        evolutionAnimationPath: stage.evolutionAnimationPath,
+        requiredWeek: stage.requiredWeek,
+        isUnlocked: stage == ChadEvolutionStage.sleepCapChad, // Only first stage unlocked by default
+        unlockMessage: stage.localizedUnlockMessage(context),
+      );
+    }).toList();
   }
 }

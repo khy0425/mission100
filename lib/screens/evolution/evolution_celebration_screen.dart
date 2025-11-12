@@ -68,8 +68,8 @@ class _EvolutionCelebrationScreenState
     return ChadImageService.getEvolutionGifPath(widget.completedWeek);
   }
 
-  String _getStageName() {
-    return ChadImageService.getEvolutionStageName(widget.completedWeek);
+  String _getStageName(BuildContext context) {
+    return ChadImageService.getEvolutionStageName(widget.completedWeek, context);
   }
 
   Color _getStageColor(BuildContext context) {
@@ -235,7 +235,7 @@ class _EvolutionCelebrationScreenState
 
   Widget _buildStageTitle(BuildContext context) {
     return Text(
-      _getStageName(),
+      _getStageName(context),
       style: TextStyle(
         fontSize: 32,
         fontWeight: FontWeight.w600,

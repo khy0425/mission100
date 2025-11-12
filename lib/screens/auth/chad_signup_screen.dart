@@ -39,7 +39,8 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
     if (!_formKey.currentState!.validate()) return;
 
     if (!_agreeTerms) {
-      _showErrorSnackBar('이용약관에 동의해주세요.');
+      final l10n = AppLocalizations.of(context);
+      _showErrorSnackBar(l10n.signupChadTermsAgreementRequired);
       return;
     }
 
@@ -61,7 +62,8 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             Provider.of<ChadOnboardingService>(context, listen: false);
         await chadService.applyPersonalizationImmediately();
 
-        _showSuccessSnackBar('Chad와 함께하는 Mission: 100에 오신 것을 환영합니다!');
+        final l10n = AppLocalizations.of(context);
+        _showSuccessSnackBar(l10n.signupChadWelcomeMessage);
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => const PermissionScreen()),
         );
@@ -86,12 +88,14 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             Provider.of<ChadOnboardingService>(context, listen: false);
         await chadService.applyPersonalizationImmediately();
 
-        _showSuccessSnackBar('Chad와 함께하는 Mission: 100에 오신 것을 환영합니다!');
+        final l10n = AppLocalizations.of(context);
+        _showSuccessSnackBar(l10n.signupChadWelcomeMessage);
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(builder: (context) => const PermissionScreen()),
         );
       } else {
-        _showErrorSnackBar(result.errorMessage ?? '구글 회원가입에 실패했습니다.');
+        final l10n = AppLocalizations.of(context);
+        _showErrorSnackBar(result.errorMessage ?? l10n.signupChadGoogleSignupFailed);
       }
     }
   }
@@ -118,6 +122,8 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context);
+
     return MultiProvider(
       providers: [
         ChangeNotifierProvider<ChadOnboardingService>(
@@ -131,7 +137,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
               builder: (context, chadService, child) {
                 return ChadOnboardingWidget(
                   stepType: 'goalSetupComplete',
-                  title: 'Chad AI 트레이너 가입하기',
+                  title: l10n.signupChadScreenTitle,
                   description: chadService.getSignupMotivationMessage(),
                   customContent: _buildSignupContent(context),
                   onNext: _isLoading
@@ -141,10 +147,10 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
                               _agreeTerms) {
                             await _handleSignUp();
                           } else if (!_agreeTerms) {
-                            _showErrorSnackBar('이용약관에 동의해주세요.');
+                            _showErrorSnackBar(l10n.signupChadTermsAgreementRequired);
                           }
                         },
-                  buttonText: _isLoading ? '가입 중...' : 'Chad와 1개월 무료 시작!',
+                  buttonText: _isLoading ? l10n.signupChadSigningUp : l10n.signupChadStartFreeMonth,
                 );
               },
             ),
@@ -156,6 +162,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
 
   Widget _buildSignupContent(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
 
     return Form(
       key: _formKey,
@@ -177,20 +184,20 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
                 color: Colors.green.withValues(alpha: 0.3),
               ),
             ),
-            child: const Column(
+            child: Column(
               children: [
                 Text(
-                  '🎉 런칭 기념 특가!',
-                  style: TextStyle(
+                  l10n.signupChadLaunchSpecialEvent,
+                  style: const TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                     color: Colors.green,
                   ),
                 ),
-                SizedBox(height: 8),
+                const SizedBox(height: 8),
                 Text(
-                  '• Chad AI 개인 트레이너 1개월 무료\n• 개인 맞춤 운동 계획\n• Chad 회복 관리 시스템\n• 언제든 취소 가능',
-                  style: TextStyle(
+                  l10n.signupChadBenefitsList,
+                  style: const TextStyle(
                     fontSize: 14,
                     height: 1.4,
                   ),
@@ -234,7 +241,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Text(
-                  '또는 이메일로 가입',
+                  l10n.signupChadOrEmailSignup,
                   style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 14,
@@ -251,7 +258,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
           TextFormField(
             controller: _nameController,
             decoration: InputDecoration(
-              labelText: '이름',
+              labelText: l10n.signupChadNameLabel,
               prefixIcon: const Icon(Icons.person_outlined),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -263,10 +270,10 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return '이름을 입력해주세요';
+                return l10n.signupChadNameRequired;
               }
               if (value.length < 2) {
-                return '이름은 2자 이상이어야 합니다';
+                return l10n.signupChadNameMinLength;
               }
               return null;
             },
@@ -279,7 +286,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             controller: _emailController,
             keyboardType: TextInputType.emailAddress,
             decoration: InputDecoration(
-              labelText: '이메일',
+              labelText: l10n.signupChadEmailLabel,
               prefixIcon: const Icon(Icons.email_outlined),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(12),
@@ -291,10 +298,10 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return '이메일을 입력해주세요';
+                return l10n.signupChadEmailRequired;
               }
               if (!value.contains('@')) {
-                return '올바른 이메일 주소를 입력해주세요';
+                return l10n.signupChadEmailInvalid;
               }
               return null;
             },
@@ -307,7 +314,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             controller: _passwordController,
             obscureText: _obscurePassword,
             decoration: InputDecoration(
-              labelText: '비밀번호',
+              labelText: l10n.signupChadPasswordLabel,
               prefixIcon: const Icon(Icons.lock_outlined),
               suffixIcon: IconButton(
                 icon: Icon(
@@ -331,10 +338,10 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return '비밀번호를 입력해주세요';
+                return l10n.signupChadPasswordRequired;
               }
               if (value.length < 6) {
-                return '비밀번호는 6자 이상이어야 합니다';
+                return l10n.signupChadPasswordMinLength;
               }
               return null;
             },
@@ -347,7 +354,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             controller: _confirmPasswordController,
             obscureText: _obscureConfirmPassword,
             decoration: InputDecoration(
-              labelText: '비밀번호 확인',
+              labelText: l10n.signupChadConfirmPasswordLabel,
               prefixIcon: const Icon(Icons.lock_outlined),
               suffixIcon: IconButton(
                 icon: Icon(
@@ -371,10 +378,10 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
-                return '비밀번호를 다시 입력해주세요';
+                return l10n.signupChadConfirmPasswordRequired;
               }
               if (value != _passwordController.text) {
-                return '비밀번호가 일치하지 않습니다';
+                return l10n.signupChadPasswordsNotMatch;
               }
               return null;
             },
@@ -401,9 +408,9 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
                       _agreeTerms = !_agreeTerms;
                     });
                   },
-                  child: const Text(
-                    '이용약관 및 개인정보처리방침에 동의합니다',
-                    style: TextStyle(
+                  child: Text(
+                    l10n.signupChadTermsAgreement,
+                    style: const TextStyle(
                       fontSize: 14,
                     ),
                   ),
@@ -418,7 +425,7 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(AppLocalizations.of(context).alreadyHaveAccount),
+              Text(l10n.alreadyHaveAccount),
               TextButton(
                 onPressed: () {
                   Navigator.of(context).pushReplacement(
@@ -427,9 +434,9 @@ class _ChadSignupScreenState extends State<ChadSignupScreen> {
                     ),
                   );
                 },
-                child: const Text(
-                  '로그인',
-                  style: TextStyle(
+                child: Text(
+                  l10n.signupChadLoginButton,
+                  style: const TextStyle(
                     color: Color(AppColors.primaryColor),
                     fontWeight: FontWeight.bold,
                   ),

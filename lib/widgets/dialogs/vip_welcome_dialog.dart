@@ -72,7 +72,7 @@ class _VIPWelcomeDialogState extends State<VIPWelcomeDialog>
     // 구독 타입별 색상
     final gradientColors = _getGradientColors(widget.subscription.type);
     final icon = _getIcon(widget.subscription.type);
-    final title = _getTitle(widget.subscription.type);
+    final title = _getTitle(widget.subscription.type, context);
     final subtitle = _getSubtitle(widget.subscription, context);
 
     return FadeTransition(
@@ -189,7 +189,7 @@ class _VIPWelcomeDialogState extends State<VIPWelcomeDialog>
                         ),
                         const SizedBox(width: 8),
                         Text(
-                          'VIP 10배 빠른 로딩',
+                          AppLocalizations.of(context).vipFastLoading,
                           style: TextStyle(
                             fontSize: 13,
                             fontWeight: FontWeight.bold,
@@ -242,14 +242,15 @@ class _VIPWelcomeDialogState extends State<VIPWelcomeDialog>
   }
 
   /// 구독 타입별 타이틀
-  String _getTitle(SubscriptionType type) {
+  String _getTitle(SubscriptionType type, BuildContext context) {
+    final l10n = AppLocalizations.of(context);
     switch (type) {
       case SubscriptionType.premium:
-        return '✨ 프리미엄 회원';
+        return l10n.vipWelcomePremiumMember;
       case SubscriptionType.launchPromo:
-        return '🎉 런칭 프로모션';
+        return l10n.vipWelcomeLaunchPromo;
       case SubscriptionType.free:
-        return '👋 무료 회원';
+        return l10n.vipWelcomeFreeMember;
     }
   }
 

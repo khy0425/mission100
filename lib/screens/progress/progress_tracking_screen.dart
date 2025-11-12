@@ -69,7 +69,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
     try {
       setState(() {
         _isLoading = true;
-        _errorMessage = '데이터를 불러오는 중 오류가 발생했습니다';
+        _errorMessage = '';
       });
 
       // 전체 프로그램 진행률 로드
@@ -92,7 +92,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
     } catch (e) {
       setState(() {
         _isLoading = false;
-        _errorMessage = '데이터를 불러오는 중 오류가 발생했습니다';
+        _errorMessage = 'error_loading';
       });
     }
   }
@@ -219,6 +219,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   }
 
   Widget _buildErrorWidget() {
+    final l10n = AppLocalizations.of(context);
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -226,7 +227,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
           const Icon(Icons.error_outline, size: 64, color: Color(0xFFFF6B6B)),
           const SizedBox(height: 16),
           Text(
-            _errorMessage,
+            l10n.progressLoadingError,
             textAlign: TextAlign.center,
             style: const TextStyle(fontSize: 16, color: Color(0xFFFF6B6B)),
           ),
@@ -237,7 +238,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
               backgroundColor: const Color(0xFF4DABF7),
               foregroundColor: Colors.white,
             ),
-            child: Text(AppLocalizations.of(context).retryButton),
+            child: Text(l10n.retryButton),
           ),
         ],
       ),
@@ -334,7 +335,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   Expanded(
                     child: _buildStatItem(
                       AppLocalizations.of(context).completedCount,
-                      '${_programProgress!.totalCompletedReps}회',
+                      AppLocalizations.of(context).progressRepsUnit(_programProgress!.totalCompletedReps),
                       Icons.fitness_center,
                       const Color(0xFF51CF66),
                     ),
@@ -343,7 +344,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   Expanded(
                     child: _buildStatItem(
                       AppLocalizations.of(context).remainingCount,
-                      '${_programProgress!.remainingReps}회',
+                      AppLocalizations.of(context).progressRepsUnit(_programProgress!.remainingReps),
                       Icons.schedule,
                       const Color(0xFFFFD43B),
                     ),
@@ -458,6 +459,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   }
 
   Widget _buildWeeklyBreakdownItem(WeeklyProgressData data) {
+    final l10n = AppLocalizations.of(context);
     final completionPercentage = (data.completionRate * 100).toInt();
     final isCompleted = data.completionRate >= 1.0;
 
@@ -501,7 +503,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '${data.week}주차',
+                  l10n.progressWeekNumber(data.week),
                   style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -509,7 +511,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  '${data.completedSessions}/${data.totalSessions} ${AppLocalizations.of(context).sessionsCompleted} • ${data.totalReps}회',
+                  '${data.completedSessions}/${data.totalSessions} ${l10n.sessionsCompleted} • ${l10n.progressRepsUnit(data.totalReps)}',
                   style: TextStyle(fontSize: 14, color: Colors.grey[600]),
                 ),
               ],
@@ -640,6 +642,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   Widget _buildSelectedDayWorkouts() {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 700),
@@ -661,7 +664,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   ),
                   const SizedBox(width: 8),
                   Text(
-                    '${_selectedDay!.month}월 ${_selectedDay!.day}일 워크아웃',
+                    l10n.progressDateWorkout('${_selectedDay!.month}/${_selectedDay!.day}'),
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -678,13 +681,13 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                     color: Colors.grey.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.info_outline, color: Colors.grey, size: 20),
-                      SizedBox(width: 8),
+                      const Icon(Icons.info_outline, color: Colors.grey, size: 20),
+                      const SizedBox(width: 8),
                       Text(
-                        '이 날에는 워크아웃이 없습니다.',
-                        style: TextStyle(color: Colors.grey, fontSize: 14),
+                        l10n.progressNoWorkoutThisDay,
+                        style: const TextStyle(color: Colors.grey, fontSize: 14),
                       ),
                     ],
                   ),
@@ -702,6 +705,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   }
 
   Widget _buildWorkoutSessionCard(WorkoutSession session) {
+    final l10n = AppLocalizations.of(context);
     final isCompleted = session.isCompleted;
 
     return Container(
@@ -745,7 +749,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      '${session.week}주차 - ${session.day}일차',
+                      l10n.progressWeekDaySession(session.week, session.day),
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
@@ -753,8 +757,8 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                     ),
                     Text(
                       isCompleted
-                          ? AppLocalizations.of(context).completed
-                          : AppLocalizations.of(context).inProgress,
+                          ? l10n.completed
+                          : l10n.inProgress,
                       style: TextStyle(
                         fontSize: 14,
                         color: isCompleted
@@ -771,7 +775,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Text(
-                      '${session.totalReps}회',
+                      l10n.progressRepsUnit(session.totalReps),
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -779,7 +783,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                       ),
                     ),
                     Text(
-                      '${session.totalSets}세트',
+                      l10n.progressSetsUnit(session.totalSets),
                       style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                     ),
                   ],
@@ -791,9 +795,9 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
             const SizedBox(height: 12),
             const Divider(),
             const SizedBox(height: 8),
-            const Text(
-              '세트별 기록:',
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
+            Text(
+              l10n.progressSetRecordLabel,
+              style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w600),
             ),
             const SizedBox(height: 8),
             Wrap(
@@ -801,7 +805,6 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
               runSpacing: 4,
               children: session.completedReps.asMap().entries.map((entry) {
                 final setIndex = entry.key + 1;
-                final reps = entry.value;
                 return Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 8,
@@ -812,7 +815,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                     borderRadius: BorderRadius.circular(6),
                   ),
                   child: Text(
-                    '$setIndex세트: $reps회',
+                    l10n.progressSetNumber(setIndex),
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 12,
@@ -913,19 +916,19 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 children: [
                   _buildStatCard(
                     AppLocalizations.of(context).totalPushups,
-                    '${_programProgress!.totalCompletedReps}회',
+                    AppLocalizations.of(context).progressRepsUnit(_programProgress!.totalCompletedReps),
                     Icons.fitness_center,
                     const Color(0xFF51CF66),
                   ),
                   _buildStatCard(
                     AppLocalizations.of(context).completedSessions,
-                    '${_programProgress!.completedSessions}회',
+                    AppLocalizations.of(context).progressRepsUnit(_programProgress!.completedSessions),
                     Icons.check_circle,
                     const Color(0xFF4DABF7),
                   ),
                   _buildStatCard(
                     AppLocalizations.of(context).averagePerSession,
-                    '${averageRepsPerDay.toStringAsFixed(1)}회',
+                    AppLocalizations.of(context).progressRepsUnit(averageRepsPerDay.toStringAsFixed(1)),
                     Icons.trending_up,
                     const Color(0xFFFFD43B),
                   ),
@@ -989,6 +992,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   Widget _buildChadEvolutionCard() {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
 
     return AnimatedContainer(
       duration: const Duration(milliseconds: 900),
@@ -1001,13 +1005,13 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
+              Row(
                 children: [
-                  Icon(Icons.emoji_events, color: Color(0xFFFFD43B), size: 24),
-                  SizedBox(width: 8),
+                  const Icon(Icons.emoji_events, color: Color(0xFFFFD43B), size: 24),
+                  const SizedBox(width: 8),
                   Text(
-                    'Chad 진화 단계',
-                    style: TextStyle(
+                    l10n.progressChadEvolutionStage,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFFFFD43B),
@@ -1048,7 +1052,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Chad 레벨 ${widget.userProfile.chadLevel + 1}',
+                          l10n.progressChadLevel(widget.userProfile.chadLevel + 1),
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
@@ -1057,7 +1061,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          '기가차드로 진화 중...',
+                          l10n.progressEvolvingToGigaChad,
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.grey[600],
@@ -1075,7 +1079,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                         ),
                         const SizedBox(height: 8),
                         Text(
-                          '다음 레벨까지 30% 남음',
+                          l10n.progressNextLevelRemaining(30),
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.grey[600],
@@ -1141,9 +1145,9 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                       // 전체 주간 데이터 보기
                       _tabController.animateTo(0); // 주간 성장 탭으로 이동
                     },
-                    child: const Text(
-                      '전체 보기',
-                      style: TextStyle(
+                    child: Text(
+                      AppLocalizations.of(context).progressViewAll,
+                      style: const TextStyle(
                         color: Color(0xFF51CF66),
                         fontWeight: FontWeight.w600,
                       ),
@@ -1159,6 +1163,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   }
 
   Widget _buildWeeklyPerformanceItem(WeeklyProgressData data) {
+    final l10n = AppLocalizations.of(context);
     final completionPercentage = (data.completionRate * 100).toInt();
     final isExcellent = completionPercentage >= 100;
     final isGood = completionPercentage >= 80;
@@ -1170,15 +1175,15 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
     if (isExcellent) {
       statusColor = const Color(0xFF51CF66);
       statusIcon = Icons.star;
-      statusText = AppLocalizations.of(context).perfect;
+      statusText = l10n.perfect;
     } else if (isGood) {
       statusColor = const Color(0xFF4DABF7);
       statusIcon = Icons.thumb_up;
-      statusText = AppLocalizations.of(context).good;
+      statusText = l10n.good;
     } else {
       statusColor = const Color(0xFFFFD43B);
       statusIcon = Icons.trending_up;
-      statusText = AppLocalizations.of(context).improvement;
+      statusText = l10n.improvement;
     }
 
     return Container(
@@ -1198,14 +1203,14 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  '${data.week}주차',
+                  l10n.progressWeekNumber(data.week),
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
                 Text(
-                  '${data.totalReps}회 완료',
+                  l10n.progressRepsCompleted(data.totalReps),
                   style: TextStyle(fontSize: 12, color: Colors.grey[600]),
                 ),
               ],
@@ -1240,6 +1245,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   Widget _buildPersonalRecordsCard() {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
 
     // 개인 기록 계산 (임시 데이터)
     final maxRepsInSession = _weeklyData.isNotEmpty
@@ -1262,13 +1268,13 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
+              Row(
                 children: [
-                  Icon(Icons.military_tech, color: Color(0xFFFF6B6B), size: 24),
-                  SizedBox(width: 8),
+                  const Icon(Icons.military_tech, color: Color(0xFFFF6B6B), size: 24),
+                  const SizedBox(width: 8),
                   Text(
-                    '개인 기록',
-                    style: TextStyle(
+                    l10n.progressPersonalRecords,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFFFF6B6B),
@@ -1281,8 +1287,8 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 children: [
                   Expanded(
                     child: _buildRecordItem(
-                      '최고 기록',
-                      '$maxRepsInSession회',
+                      l10n.progressBestRecord,
+                      l10n.progressRepsUnit(maxRepsInSession),
                       Icons.emoji_events,
                       const Color(0xFFFFD43B),
                     ),
@@ -1290,8 +1296,8 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   const SizedBox(width: 16),
                   Expanded(
                     child: _buildRecordItem(
-                      '최고 주차',
-                      bestWeek != null ? '${bestWeek.week}주차' : '-',
+                      l10n.progressBestWeek,
+                      bestWeek != null ? l10n.progressWeekNumber(bestWeek.week) : '-',
                       Icons.star,
                       const Color(0xFF51CF66),
                     ),
@@ -1303,8 +1309,8 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                 children: [
                   Expanded(
                     child: _buildRecordItem(
-                      '연속 일수',
-                      '7일', // 임시 값
+                      l10n.progressConsecutiveDays,
+                      l10n.progressDaysUnit(7), // 임시 값
                       Icons.local_fire_department,
                       const Color(0xFFFF6B6B),
                     ),
@@ -1312,8 +1318,8 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                   const SizedBox(width: 16),
                   Expanded(
                     child: _buildRecordItem(
-                      '평균 점수',
-                      '85점', // 임시 값
+                      l10n.progressAverageScore,
+                      l10n.progressScoreUnit(85), // 임시 값
                       Icons.grade,
                       const Color(0xFF4DABF7),
                     ),
@@ -1422,6 +1428,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   Widget _buildCurrentChadCard() {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
 
     // Chad 레벨에 따른 이미지 및 정보
     final chadImages = [
@@ -1466,13 +1473,13 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
+              Row(
                 children: [
-                  Icon(Icons.emoji_events, color: Color(0xFFFFD43B), size: 24),
-                  SizedBox(width: 8),
+                  const Icon(Icons.emoji_events, color: Color(0xFFFFD43B), size: 24),
+                  const SizedBox(width: 8),
                   Text(
-                    '현재 Chad 상태',
-                    style: TextStyle(
+                    l10n.progressCurrentChadStatus,
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFFFFD43B),
@@ -1534,7 +1541,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                         // 다음 레벨 진행률
                         if (currentLevel < chadImages.length - 1) ...[
                           Text(
-                            '다음 레벨: ${chadTitles[nextLevel]}',
+                            l10n.progressNextLevel(chadTitles[nextLevel]),
                             style: TextStyle(
                               fontSize: 14,
                               color: Colors.grey[600],
@@ -1550,7 +1557,7 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                           ),
                           const SizedBox(height: 8),
                           Text(
-                            '${(progressToNext * 100).toInt()}% 완료',
+                            l10n.progressPercentComplete((progressToNext * 100).toInt()),
                             style: TextStyle(
                               fontSize: 12,
                               color: Colors.grey[600],
@@ -1570,17 +1577,17 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
                                 ).withValues(alpha: 0.3),
                               ),
                             ),
-                            child: const Row(
+                            child: Row(
                               children: [
-                                Icon(
+                                const Icon(
                                   Icons.star,
                                   color: Color(0xFFFFD43B),
                                   size: 16,
                                 ),
-                                SizedBox(width: 8),
+                                const SizedBox(width: 8),
                                 Text(
-                                  '최고 레벨 달성!',
-                                  style: TextStyle(
+                                  l10n.progressMaxLevelAchieved,
+                                  style: const TextStyle(
                                     color: Color(0xFFFFD43B),
                                     fontWeight: FontWeight.w600,
                                   ),
@@ -1605,41 +1612,43 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
 
+    final l10n = AppLocalizations.of(context);
+
     final chadStages = [
       {
         'name': 'Rookie Chad',
         'image': 'assets/images/chad/basic/basicChad.png',
-        'requirement': '프로그램 시작',
+        'requirement': l10n.progressRequirementProgramStart,
       },
       {
         'name': 'Rising Chad',
         'image': 'assets/images/chad/basic/basicChad.png',
-        'requirement': '1주차 완료',
+        'requirement': l10n.progressRequirementWeek1,
       },
       {
         'name': 'Alpha Chad',
         'image': 'assets/images/chad/basic/basicChad.png',
-        'requirement': '2주차 완료',
+        'requirement': l10n.progressRequirementWeek2,
       },
       {
         'name': 'Sigma Chad',
         'image': 'assets/images/chad/basic/basicChad.png',
-        'requirement': '3주차 완료',
+        'requirement': l10n.progressRequirementWeek3,
       },
       {
         'name': 'Giga Chad',
         'image': 'assets/images/chad/basic/basicChad.png',
-        'requirement': '4주차 완료',
+        'requirement': l10n.progressRequirementWeek4,
       },
       {
         'name': 'Ultra Chad',
         'image': 'assets/images/chad/basic/basicChad.png',
-        'requirement': '5주차 완료',
+        'requirement': l10n.progressRequirementWeek5,
       },
       {
         'name': 'Legendary Chad',
         'image': 'assets/images/chad/basic/basicChad.png',
-        'requirement': '6주차 완료',
+        'requirement': l10n.progressRequirementWeek6,
       },
     ];
 
@@ -1825,33 +1834,34 @@ class _ProgressTrackingScreenState extends State<ProgressTrackingScreen>
   Widget _buildChadAchievements() {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
 
     // 업적 데이터 (임시)
     final achievements = [
       {
-        'title': '첫 걸음',
-        'description': '첫 번째 워크아웃 완료',
+        'title': l10n.progressAchievementFirstStep,
+        'description': l10n.progressAchievementFirstStepDesc,
         'icon': Icons.play_arrow,
         'color': const Color(0xFF51CF66),
         'isUnlocked': true,
       },
       {
-        'title': '일주일 챌린지',
-        'description': '7일 연속 운동',
+        'title': l10n.progressAchievementWeekChallenge,
+        'description': l10n.progressAchievementWeekChallengeDesc,
         'icon': Icons.calendar_view_week,
         'color': const Color(0xFF4DABF7),
         'isUnlocked': true,
       },
       {
-        'title': '백 푸시업',
-        'description': '한 세션에 100회 달성',
+        'title': l10n.progressAchievementHundredPushups,
+        'description': l10n.progressAchievementHundredPushupsDesc,
         'icon': Icons.fitness_center,
         'color': const Color(0xFFFFD43B),
         'isUnlocked': false,
       },
       {
-        'title': '완벽주의자',
-        'description': '한 주 100% 완료',
+        'title': l10n.progressAchievementPerfectionist,
+        'description': l10n.progressAchievementPerfectionistDesc,
         'icon': Icons.star,
         'color': const Color(0xFFFF6B6B),
         'isUnlocked': false,
@@ -2021,10 +2031,10 @@ class _WeeklyGrowthChartState extends State<WeeklyGrowthChart>
   @override
   Widget build(BuildContext context) {
     if (widget.weeklyData.isEmpty) {
-      return const Center(
+      return Center(
         child: Text(
-          '데이터가 없습니다',
-          style: TextStyle(fontSize: 16, color: Colors.grey),
+          AppLocalizations.of(context).progressNoData,
+          style: const TextStyle(fontSize: 16, color: Colors.grey),
         ),
       );
     }
@@ -2075,8 +2085,9 @@ class _WeeklyGrowthChartState extends State<WeeklyGrowthChart>
                           fontWeight: FontWeight.bold,
                           fontSize: 12,
                         );
+                        final l10n = AppLocalizations.of(context);
                         return Text(
-                          '${value.toInt()}${AppLocalizations.of(context).weekUnit}',
+                          '${value.toInt()}${l10n.weekUnit}',
                           style: style,
                         );
                       },
@@ -2154,8 +2165,14 @@ class _WeeklyGrowthChartState extends State<WeeklyGrowthChart>
                         final weekData = widget.weeklyData.firstWhere(
                           (data) => data.week == barSpot.x.toInt(),
                         );
+                        final l10n = AppLocalizations.of(context);
                         return LineTooltipItem(
-                          '${weekData.week}주차\n${(weekData.completionRate * 100).toInt()}% 완료\n${weekData.completedSessions}/${weekData.totalSessions} 세션',
+                          l10n.progressTooltipWeekComplete(
+                            weekData.week,
+                            (weekData.completionRate * 100).toInt(),
+                            weekData.completedSessions,
+                            weekData.totalSessions,
+                          ),
                           const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

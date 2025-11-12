@@ -1,5 +1,5 @@
-name: mission100
-description: "Mission 100 Push-Ups - 100일 푸시업 챌린지! 14주 과학적 프로그램으로 연속 100개 달성. Chad AI 코칭과 함께!"
+name: lucid_dream_100
+description: "드림플로 (DreamFlow) - 자각몽의 흐름 속으로 - 과학적 프로그램으로 자각몽을 마스터하세요. Lumi AI 코칭과 함께!"
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -32,6 +32,10 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
+  # Core 100 SDK - 공통 모듈
+  core_100_sdk:
+    path: ../../app-factory-complete/core_100_sdk
+
   firebase_core: ^4.1.1
   firebase_auth: ^6.1.0
   cloud_firestore: ^6.0.2
@@ -40,6 +44,7 @@ dependencies:
   firebase_crashlytics: ^5.0.2
   firebase_performance: ^0.11.1
   firebase_messaging: ^16.0.2
+  firebase_remote_config: ^6.0.2
   google_sign_in: ^6.3.0
 
   # 결제 시스템
@@ -91,6 +96,9 @@ dependencies:
   # HTTP 요청
   http: ^1.2.2
 
+  # 환경 변수 관리
+  flutter_dotenv: ^5.1.0
+
   # 네트워크 연결 상태 감지
   connectivity_plus: ^6.0.5
   
@@ -123,6 +131,9 @@ dependency_overrides:
   webview_flutter: 4.8.0
   webview_flutter_android: 3.16.7
   webview_flutter_wkwebview: 3.15.0
+  cloud_firestore_platform_interface: any
+  connectivity_plus_platform_interface: any
+  firebase_auth_platform_interface: any
 
 dev_dependencies:
   flutter_test:
@@ -147,9 +158,6 @@ dev_dependencies:
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter packages.
-  cloud_firestore_platform_interface: any
-  connectivity_plus_platform_interface: any
-  firebase_auth_platform_interface: any
 flutter:
   generate: true
 
@@ -160,10 +168,12 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - .env
     - assets/legal/
     - assets/config/
     - assets/data/
     - assets/images/
+    - assets/images/logo/
     - assets/images/chad/basic/
     - assets/images/chad/evolution/
     - assets/images/chad/condition/
@@ -210,17 +220,17 @@ flutter:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
-  image_path: "assets/icon/misson100_icon.png"
+  image_path: "assets/icon/dreammaster_icon.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
   web:
     generate: true
-    image_path: "assets/icon/misson100_icon.png"
-    background_color: "#hexcode"
-    theme_color: "#hexcode"
+    image_path: "assets/icon/dreammaster_icon.png"
+    background_color: "#4A5568"
+    theme_color: "#9B7EDE"
   windows:
     generate: true
-    image_path: "assets/icon/misson100_icon.png"
+    image_path: "assets/icon/dreammaster_icon.png"
     icon_size: 48 # min:48, max:256, default: 48
   macos:
     generate: true
-    image_path: "assets/icon/misson100_icon.png"
+    image_path: "assets/icon/dreammaster_icon.png"

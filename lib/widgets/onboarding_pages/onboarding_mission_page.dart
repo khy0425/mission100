@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import '../../utils/config/constants.dart';
 import 'onboarding_level_badge.dart';
+import '../../generated/l10n/app_localizations.dart';
 
 /// 온보딩 미션 페이지
 class OnboardingMissionPage extends StatefulWidget {
@@ -72,6 +73,7 @@ class _OnboardingMissionPageState extends State<OnboardingMissionPage> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l10n = AppLocalizations.of(context);
 
     return SingleChildScrollView(
       controller: _scrollController,
@@ -86,31 +88,31 @@ class _OnboardingMissionPageState extends State<OnboardingMissionPage> {
           ),
           const SizedBox(height: AppConstants.paddingXL),
           Text(
-            '당신의 레벨에 맞춘\n맞춤형 프로그램',
+            l10n.onboardingMissionPersonalizedProgram,
             style: theme.textTheme.headlineMedium?.copyWith(
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppConstants.paddingXL),
-          const OnboardingLevelBadge(
+          OnboardingLevelBadge(
             level: 'Rookie',
-            label: '초보자',
-            range: '5개 이하',
-            color: Color(AppColors.primaryColor),
+            label: l10n.onboardingMissionBeginnerTitle,
+            range: l10n.onboardingMissionBeginnerDesc,
+            color: const Color(AppColors.primaryColor),
           ),
           const SizedBox(height: AppConstants.paddingM),
-          const OnboardingLevelBadge(
+          OnboardingLevelBadge(
             level: 'Rising',
-            label: '중급자',
-            range: '6-10개',
+            label: l10n.onboardingMissionIntermediateTitle,
+            range: l10n.onboardingMissionIntermediateDesc,
             color: Colors.green,
           ),
           const SizedBox(height: AppConstants.paddingM),
-          const OnboardingLevelBadge(
+          OnboardingLevelBadge(
             level: 'Alpha',
-            label: '고급자',
-            range: '11개 이상',
+            label: l10n.onboardingMissionAdvancedTitle,
+            range: l10n.onboardingMissionAdvancedDesc,
             color: Colors.orange,
           ),
           const SizedBox(height: AppConstants.paddingXL),
@@ -131,7 +133,7 @@ class _OnboardingMissionPageState extends State<OnboardingMissionPage> {
                 const SizedBox(width: AppConstants.paddingM),
                 Expanded(
                   child: Text(
-                    '걱정 마세요!\n어떤 레벨이든 14주 후\n100개를 달성할 수 있습니다',
+                    l10n.onboardingMissionAssurance,
                     style: theme.textTheme.bodyLarge?.copyWith(
                       color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
                       height: 1.5,

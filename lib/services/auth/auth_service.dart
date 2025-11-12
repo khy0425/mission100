@@ -31,7 +31,7 @@ class AuthService extends ChangeNotifier {
   factory AuthService() => _instance;
   AuthService._internal();
 
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+  FirebaseAuth? _auth;
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   User? _currentUser;
@@ -50,8 +50,18 @@ class AuthService extends ChangeNotifier {
     debugPrint('🔐 AuthService 초기화 시작');
 
     try {
+      // Try to initialize Firebase Auth (only if Firebase is initialized)
+      try {
+        _auth = FirebaseAuth.instance;
+        debugPrint('✅ Firebase Auth 사용 가능');
+      } catch (e) {
+        debugPrint('⚠️ Firebase Auth 사용 불가 (오프라인 모드): $e');
+        _auth = null;
+        return; // Skip auth initialization if Firebase is not available
+      }
+
       // Firebase Auth 상태 변경 리스너
-      _auth.authStateChanges().listen((User? user) {
+      _auth!.authStateChanges().listen((User? user) {
         _currentUser = user;
         debugPrint('🔐 Auth 상태 변경: ${user?.uid ?? "로그아웃"}');
 
@@ -65,7 +75,7 @@ class AuthService extends ChangeNotifier {
       });
 
       // 현재 사용자 확인
-      _currentUser = _auth.currentUser;
+      _currentUser = _auth!.currentUser;
       if (_currentUser != null) {
         await _loadUserSubscription(_currentUser!.uid);
       }
@@ -82,12 +92,16 @@ class AuthService extends ChangeNotifier {
     required String password,
     required String displayName,
   }) async {
+    if (_auth == null) {
+      return AuthResult.failure('Firebase not initialized - offline mode');
+    }
+
     _setLoading(true);
 
     try {
       debugPrint('📧 이메일 회원가입 시도: $email');
 
-      final credential = await _auth.createUserWithEmailAndPassword(
+      final credential = await _auth!.createUserWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -96,7 +110,7 @@ class AuthService extends ChangeNotifier {
         // 사용자 프로필 업데이트
         await credential.user!.updateDisplayName(displayName);
         await credential.user!.reload();
-        _currentUser = _auth.currentUser;
+        _currentUser = _auth!.currentUser;
 
         // 런칭 이벤트 구독 생성
         await _createLaunchPromoSubscription(credential.user!.uid);
@@ -126,12 +140,16 @@ class AuthService extends ChangeNotifier {
     required String email,
     required String password,
   }) async {
+    if (_auth == null) {
+      return AuthResult.failure('Firebase not initialized - offline mode');
+    }
+
     _setLoading(true);
 
     try {
       debugPrint('📧 이메일 로그인 시도: $email');
 
-      final credential = await _auth.signInWithEmailAndPassword(
+      final credential = await _auth!.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -160,6 +178,10 @@ class AuthService extends ChangeNotifier {
 
   // Google 로그인
   Future<AuthResult> signInWithGoogle() async {
+    if (_auth == null) {
+      return AuthResult.failure('Firebase not initialized - offline mode');
+    }
+
     _setLoading(true);
 
     try {
@@ -179,7 +201,7 @@ class AuthService extends ChangeNotifier {
         idToken: googleAuth.idToken,
       );
 
-      final userCredential = await _auth.signInWithCredential(credential);
+      final userCredential = await _auth!.signInWithCredential(credential);
 
       if (userCredential.user != null) {
         // 신규 사용자인 경우 런칭 이벤트 구독 생성 및 프로필 생성
@@ -211,10 +233,14 @@ class AuthService extends ChangeNotifier {
     try {
       debugPrint('🚪 로그아웃 시작');
 
-      await Future.wait([
-        _auth.signOut(),
-        _googleSignIn.signOut(),
-      ]);
+      if (_auth != null) {
+        await Future.wait([
+          _auth!.signOut(),
+          _googleSignIn.signOut(),
+        ]);
+      } else {
+        await _googleSignIn.signOut();
+      }
 
       _currentUser = null;
       _currentSubscription = null;
@@ -228,13 +254,17 @@ class AuthService extends ChangeNotifier {
 
   // 비밀번호 재설정
   Future<AuthResult> resetPassword(String email) async {
+    if (_auth == null) {
+      return AuthResult.failure('Firebase not initialized - offline mode');
+    }
+
     try {
       debugPrint('🔑 비밀번호 재설정 이메일 전송: $email');
 
-      await _auth.sendPasswordResetEmail(email: email);
+      await _auth!.sendPasswordResetEmail(email: email);
 
       debugPrint('✅ 비밀번호 재설정 이메일 전송 완료');
-      return AuthResult.success(_auth.currentUser!);
+      return AuthResult.success(_auth!.currentUser!);
     } on FirebaseAuthException catch (e) {
       final String message = _getErrorMessage(e.code);
       debugPrint('❌ 비밀번호 재설정 오류: ${e.code} - $message');

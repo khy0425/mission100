@@ -1,0 +1,196 @@
+{
+  "@evolutionBoostApplied": {
+    "description": "Message showing boost has been applied with days",
+    "placeholders": {
+      "days": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostApplied": "Boost Applied: {days} days",
+  "@evolutionBoostComingSoon": {
+    "description": "Message when evolution boost feature is coming soon"
+  },
+  "evolutionBoostComingSoon": "Coming Soon",
+  "@evolutionBoostCooldownDays": {
+    "description": "Message showing days until next evolution boost",
+    "placeholders": {
+      "days": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostCooldownDays": "Available in {days} days",
+  "@evolutionBoostCooldownHours": {
+    "description": "Message showing hours until next evolution boost",
+    "placeholders": {
+      "hours": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostCooldownHours": "Available in {hours} hours",
+  "@evolutionBoostDaysLeft": {
+    "description": "Message showing days left until next evolution",
+    "placeholders": {
+      "days": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostDaysLeft": "{days} days left",
+  "@evolutionBoostDescription": {
+    "description": "Evolution boost feature description"
+  },
+  "evolutionBoostDescription": "Accelerate evolution with ads",
+  "@evolutionBoostMaxLevel": {
+    "description": "Message when character is already at max evolution"
+  },
+  "evolutionBoostMaxLevel": "Already at max evolution",
+  "@evolutionBoostNextEvolution": {
+    "description": "Label for next evolution stage"
+  },
+  "evolutionBoostNextEvolution": "Next Evolution",
+  "@evolutionBoostRemaining": {
+    "description": "Message showing remaining boost count",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "evolutionBoostRemaining": "Remaining: {count}/3",
+  "@evolutionBoostSuccess": {
+    "description": "Success message when evolution is accelerated"
+  },
+  "evolutionBoostSuccess": "Evolution accelerated!",
+  "@evolutionBoostTitle": {
+    "description": "Evolution boost feature title"
+  },
+  "evolutionBoostTitle": "Evolution Accelerator",
+  "@evolutionBoostWatchAd": {
+    "description": "Button text to watch ad and accelerate evolution"
+  },
+  "evolutionBoostWatchAd": "Watch Ad & Accelerate",
+  "@rewardedAdWatchAndGet": {
+    "description": "Button text to watch ad and get reward",
+    "placeholders": {
+      "reward": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardedAdWatchAndGet": "Watch Ad & Get {reward}",
+  "@rewardedAdRemainingUses": {
+    "description": "Remaining usage count for rewarded ad",
+    "placeholders": {
+      "remaining": {
+        "type": "int"
+      },
+      "max": {
+        "type": "int"
+      }
+    }
+  },
+  "rewardedAdRemainingUses": "Remaining: {remaining}/{max}",
+  "@rewardedAdWatchButton": {
+    "description": "Short button text to watch ad"
+  },
+  "rewardedAdWatchButton": "Watch Ad & Get",
+  "@rewardedAdComingSoon": {
+    "description": "Message when ad will be available soon"
+  },
+  "rewardedAdComingSoon": "Coming Soon",
+  "@rewardedAdRewardGranted": {
+    "description": "Snackbar message when reward is granted",
+    "placeholders": {
+      "icon": {
+        "type": "String"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "rewardedAdRewardGranted": "{icon} {title} Obtained!",
+  "@rewardedAdAvailableInHours": {
+    "description": "Message showing hours and minutes until next use",
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      },
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "rewardedAdAvailableInHours": "Available in {hours}h {minutes}m",
+  "@rewardedAdAvailableInMinutes": {
+    "description": "Message showing minutes until next use",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "rewardedAdAvailableInMinutes": "Available in {minutes}m",
+  "@tokenBalanceAdComingSoon": {
+    "description": "Message when token ad feature is coming soon"
+  },
+  "tokenBalanceAdComingSoon": "Ad feature coming soon",
+  "@tokenBalanceClaimReward": {
+    "description": "Button text to claim daily token reward",
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "tokenBalanceClaimReward": "Claim Reward (+{amount} tokens)",
+  "@tokenBalanceDailyReward": {
+    "description": "Label for daily token reward section"
+  },
+  "tokenBalanceDailyReward": "Daily Reward",
+  "@tokenBalanceNextReward": {
+    "description": "Label for next reward countdown"
+  },
+  "tokenBalanceNextReward": "Next Reward",
+  "@tokenBalancePremium": {
+    "description": "Label for premium status badge"
+  },
+  "tokenBalancePremium": "PREMIUM",
+  "@tokenBalanceRewardFailed": {
+    "description": "Error message when reward claim fails",
+    "placeholders": {
+      "error": {
+        "type": "Object"
+      }
+    }
+  },
+  "tokenBalanceRewardFailed": "Failed to claim reward: {error}",
+  "@tokenBalanceRewardReceived": {
+    "description": "Success message when reward is received"
+  },
+  "tokenBalanceRewardReceived": "Reward received!",
+  "@tokenBalanceRewardAmount": {
+    "description": "Display amount of tokens for reward",
+    "placeholders": {
+      "amount": {
+        "type": "Object"
+      }
+    }
+  },
+  "tokenBalanceRewardAmount": "+{amount} tokens",
+  "@tokenBalanceTitle": {
+    "description": "Token balance section title"
+  },
+  "tokenBalanceTitle": "Token Balance",
+  "@tokenBalanceUsageInfo": {
+    "description": "Info message about token usage per conversation"
+  },
+  "tokenBalanceUsageInfo": "1 token per conversation with Lumi",
+  "@tokenBalanceWatchAd": {
+    "description": "Button text to watch ad for tokens"
+  },
+  "tokenBalanceWatchAd": "Watch Ad for Tokens"
+}
