@@ -156,7 +156,7 @@ class _QuickAnalysisScreenState extends State<QuickAnalysisScreen> {
                 Container(
                   padding: const EdgeInsets.all(8),
                   decoration: BoxDecoration(
-                    color: Colors.green.withOpacity(0.1),
+                    color: Colors.green.withValues(alpha: 0.1),
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: const Text('⚡', style: TextStyle(fontSize: 24)),
@@ -313,10 +313,10 @@ class _QuickAnalysisScreenState extends State<QuickAnalysisScreen> {
     return Container(
       padding: const EdgeInsets.all(AppConstants.paddingM),
       decoration: BoxDecoration(
-        color: Colors.red.withOpacity(0.1),
+        color: Colors.red.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(12),
         border: Border.all(
-          color: Colors.red.withOpacity(0.3),
+          color: Colors.red.withValues(alpha: 0.3),
           width: 1,
         ),
       ),
@@ -383,7 +383,7 @@ class _QuickAnalysisScreenState extends State<QuickAnalysisScreen> {
             Container(
               padding: const EdgeInsets.all(8),
               decoration: BoxDecoration(
-                color: theme.primaryColor.withOpacity(0.1),
+                color: theme.primaryColor.withValues(alpha: 0.1),
                 borderRadius: BorderRadius.circular(8),
               ),
               child: Icon(
@@ -428,11 +428,11 @@ class _QuickAnalysisScreenState extends State<QuickAnalysisScreen> {
         // 더 깊은 분석 안내
         Card(
           elevation: 1,
-          color: theme.primaryColor.withOpacity(0.05),
+          color: theme.primaryColor.withValues(alpha: 0.05),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: BorderSide(
-              color: theme.primaryColor.withOpacity(0.2),
+              color: theme.primaryColor.withValues(alpha: 0.2),
               width: 1,
             ),
           ),
@@ -469,7 +469,7 @@ class _QuickAnalysisScreenState extends State<QuickAnalysisScreen> {
                         style: OutlinedButton.styleFrom(
                           padding: const EdgeInsets.symmetric(vertical: 14),
                           side: BorderSide(
-                            color: theme.primaryColor.withOpacity(0.5),
+                            color: theme.primaryColor.withValues(alpha: 0.5),
                           ),
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),

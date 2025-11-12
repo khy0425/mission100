@@ -198,7 +198,7 @@ class _LumiConversationScreenState extends State<LumiConversationScreen> {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: theme.primaryColor.withOpacity(0.2),
+                      color: theme.primaryColor.withValues(alpha: 0.2),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Row(
@@ -229,7 +229,7 @@ class _LumiConversationScreenState extends State<LumiConversationScreen> {
             Container(
               width: double.infinity,
               padding: const EdgeInsets.all(12),
-              color: Colors.red.withOpacity(0.1),
+              color: Colors.red.withValues(alpha: 0.1),
               child: Row(
                 children: [
                   const Icon(Icons.error_outline, color: Colors.red),
@@ -379,7 +379,7 @@ class _LumiConversationScreenState extends State<LumiConversationScreen> {
         color: isDark ? Colors.grey[900] : Colors.white,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.1),
+            color: Colors.black.withValues(alpha: 0.1),
             blurRadius: 4,
             offset: const Offset(0, -2),
           ),

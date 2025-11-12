@@ -60,10 +60,10 @@ class _TokenBalanceWidgetState extends State<TokenBalanceWidget> {
                         vertical: 8,
                       ),
                       decoration: BoxDecoration(
-                        color: theme.primaryColor.withOpacity(0.1),
+                        color: theme.primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                          color: theme.primaryColor.withOpacity(0.3),
+                          color: theme.primaryColor.withValues(alpha: 0.3),
                           width: 1,
                         ),
                       ),
@@ -92,7 +92,7 @@ class _TokenBalanceWidgetState extends State<TokenBalanceWidget> {
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
                     color: isDark
-                        ? Colors.grey[800]?.withOpacity(0.5)
+                        ? Colors.grey[800]?.withValues(alpha: 0.5)
                         : Colors.grey[100],
                     borderRadius: BorderRadius.circular(8),
                   ),
@@ -181,13 +181,13 @@ class _TokenBalanceWidgetState extends State<TokenBalanceWidget> {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                theme.primaryColor.withOpacity(0.1),
-                theme.primaryColor.withOpacity(0.05),
+                theme.primaryColor.withValues(alpha: 0.1),
+                theme.primaryColor.withValues(alpha: 0.05),
               ],
             ),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: theme.primaryColor.withOpacity(0.3),
+              color: theme.primaryColor.withValues(alpha: 0.3),
               width: 1,
             ),
           ),

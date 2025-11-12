@@ -585,7 +585,7 @@ class _SplashScreenState extends State<SplashScreen>
                     letterSpacing: 2,
                     shadows: [
                       Shadow(
-                        color: const Color(AppColors.accentColor).withOpacity(0.5),
+                        color: const Color(AppColors.accentColor).withValues(alpha: 0.5),
                         blurRadius: 10,
                         offset: const Offset(0, 2),
                       ),
@@ -605,7 +605,7 @@ class _SplashScreenState extends State<SplashScreen>
                 child: Text(
                   AppLocalizations.of(context).appSlogan,
                   style: theme.textTheme.titleMedium?.copyWith(
-                    color: Colors.white.withOpacity(0.9),
+                    color: Colors.white.withValues(alpha: 0.9),
                   ),
                 ),
               ),

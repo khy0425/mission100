@@ -290,7 +290,7 @@ and write concisely and easy to understand.
               height: 36,
               child: CircularProgressIndicator(
                 value: _usageCount / _dailyLimit,
-                backgroundColor: Colors.white.withOpacity(0.3),
+                backgroundColor: Colors.white.withValues(alpha: 0.3),
                 valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
                 strokeWidth: 3,
               ),
@@ -386,7 +386,7 @@ and write concisely and easy to understand.
               begin: Alignment.topLeft,
               end: Alignment.bottomRight,
               colors: [
-                color.withOpacity(0.7),
+                color.withValues(alpha: 0.7),
                 color,
               ],
             ),
@@ -414,7 +414,7 @@ and write concisely and easy to understand.
                 subtitle,
                 style: TextStyle(
                   fontSize: 12,
-                  color: Colors.white.withOpacity(0.9),
+                  color: Colors.white.withValues(alpha: 0.9),
                 ),
                 textAlign: TextAlign.center,
               ),
