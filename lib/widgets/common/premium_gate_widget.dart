@@ -3,8 +3,7 @@ import 'package:provider/provider.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../../services/auth/auth_service.dart';
 import '../../models/user_subscription.dart';
-// TODO: Create subscription_screen.dart if needed
-// import '../../screens/subscription/subscription_screen.dart';
+import '../../screens/settings/subscription_screen.dart';
 
 class PremiumGateWidget extends StatelessWidget {
   final Widget child;
@@ -259,26 +258,9 @@ class PremiumUpgradeDialog extends StatelessWidget {
 
   void _navigateToSubscription(BuildContext context) {
     Navigator.of(context).pop(); // 다이얼로그 닫기
-    // TODO: Implement SubscriptionScreen navigation
-    /*
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const SubscriptionScreen(),
-      ),
-    );
-    */
-    // Temporary: Show coming soon dialog
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Premium'),
-        content: const Text('Subscription screen coming soon!'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('OK'),
-          ),
-        ],
       ),
     );
   }
@@ -392,26 +374,9 @@ class PremiumLimitWidget extends StatelessWidget {
   }
 
   void _navigateToSubscription(BuildContext context) {
-    // TODO: Implement SubscriptionScreen navigation
-    /*
     Navigator.of(context).push(
       MaterialPageRoute(
         builder: (context) => const SubscriptionScreen(),
-      ),
-    );
-    */
-    // Temporary: Show coming soon dialog
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        title: const Text('Premium'),
-        content: const Text('Subscription screen coming soon!'),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(context).pop(),
-            child: const Text('OK'),
-          ),
-        ],
       ),
     );
   }
