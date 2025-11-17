@@ -8891,4 +8891,71 @@ class AppLocalizationsEn extends AppLocalizations {
   String weekUnlockGenericMessage(String prevWeek) {
     return 'You\'ve completed Week $prevWeek!\\n\\nPremium is required to proceed to the next stage.';
   }
+
+  @override
+  String get dreamSignActionKeywords =>
+      'fly,flying,flight,sky,air,float,wall,pass through,teleport,teleportation,died,revive,resurrection,transform,superpower,invisible,magic';
+
+  @override
+  String get dreamSignFormKeywords =>
+      'face,transformation,strange,monster,animal,changed,appearance,unfamiliar,bizarre,non-existent,impossible,distorted,deformed,giant,tiny';
+
+  @override
+  String get dreamSignContextKeywords =>
+      'dead,alive,past,future,childhood,school,work,home,strange place,time,inconsistency,weird,doesn\'t make sense,contradiction';
+
+  @override
+  String get dreamSignAwarenessKeywords =>
+      'strange,something,feeling,weird,felt odd,doubt,question,reality,check,dream,realize,notice';
+
+  @override
+  String dreamSignActionDesc(String keyword) {
+    return 'Abnormal Action: $keyword';
+  }
+
+  @override
+  String dreamSignFormDesc(String keyword) {
+    return 'Abnormal Form: $keyword';
+  }
+
+  @override
+  String dreamSignContextDesc(String keyword) {
+    return 'Abnormal Context: $keyword';
+  }
+
+  @override
+  String dreamSignAwarenessDesc(String keyword) {
+    return 'Awareness Related: $keyword';
+  }
+
+  @override
+  String dreamSignSymbolDesc(String symbol) {
+    return 'Dream Symbol: $symbol';
+  }
+
+  @override
+  String get dreamSignInsufficientData =>
+      'Not enough dream journal entries yet. Try recording your dreams daily.';
+
+  @override
+  String get dreamSignError => 'An error occurred. Please try again later.';
+
+  @override
+  String dreamSignRealityCheckIntro(String patterns) {
+    return 'The pattern \"$patterns\" frequently appears in your dreams.';
+  }
+
+  @override
+  String get dreamSignRealityCheckInstructions =>
+      'Perform a Reality Check whenever you encounter these elements:\\n1. Check your palms\\n2. Pinch your nose and try to breathe\\n3. Look at a clock twice';
+
+  @override
+  String dreamSignRealityCheckFrequency(String frequency) {
+    return 'Performing $frequency or more times a day is effective.';
+  }
+
+  @override
+  String dreamSignPatternDesc(String elements, String similarity) {
+    return 'Common elements: $elements (similarity $similarity%)';
+  }
 }

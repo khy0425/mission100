@@ -15782,6 +15782,96 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'Week {prevWeek}을 완료했습니다!\\n\\n다음 단계로 진행하려면 프리미엄이 필요합니다.'**
   String weekUnlockGenericMessage(String prevWeek);
+
+  /// Dream Sign 감지용 ACTION 키워드 (쉼표로 구분)
+  ///
+  /// In ko, this message translates to:
+  /// **'날다,날기,비행,하늘,공중,떠다니,벽,통과,순간이동,텔레포트,죽었다,살아나,부활,변신,초능력,투명,마법'**
+  String get dreamSignActionKeywords;
+
+  /// Dream Sign 감지용 FORM 키워드 (쉼표로 구분)
+  ///
+  /// In ko, this message translates to:
+  /// **'얼굴,변형,이상한,괴물,동물,변한,모습,낯선,기묘한,존재하지 않는,불가능한,왜곡,기형,거대한,작은'**
+  String get dreamSignFormKeywords;
+
+  /// Dream Sign 감지용 CONTEXT 키워드 (쉼표로 구분)
+  ///
+  /// In ko, this message translates to:
+  /// **'죽은,살아있,과거,미래,어렸을 때,학교,직장,집,낯선 곳,시간,불일치,이상한,말이 안,모순'**
+  String get dreamSignContextKeywords;
+
+  /// Dream Sign 감지용 AWARENESS 키워드 (쉼표로 구분)
+  ///
+  /// In ko, this message translates to:
+  /// **'이상하,뭔가,느낌,이상한,이상했,의심,의문,현실,확인,꿈,깨닫,알아차'**
+  String get dreamSignAwarenessKeywords;
+
+  /// ACTION 카테고리 Dream Sign 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'비정상적 행동: {keyword}'**
+  String dreamSignActionDesc(String keyword);
+
+  /// FORM 카테고리 Dream Sign 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'비정상적 형태: {keyword}'**
+  String dreamSignFormDesc(String keyword);
+
+  /// CONTEXT 카테고리 Dream Sign 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'비정상적 맥락: {keyword}'**
+  String dreamSignContextDesc(String keyword);
+
+  /// AWARENESS 카테고리 Dream Sign 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'자각 관련: {keyword}'**
+  String dreamSignAwarenessDesc(String keyword);
+
+  /// 사용자 입력 심볼 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 심볼: {symbol}'**
+  String dreamSignSymbolDesc(String symbol);
+
+  /// Reality Check 제안: 데이터 부족 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'아직 충분한 꿈 일기가 없습니다. 매일 꿈을 기록해보세요.'**
+  String get dreamSignInsufficientData;
+
+  /// Dream Sign 분석 오류 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'오류가 발생했습니다. 나중에 다시 시도해주세요.'**
+  String get dreamSignError;
+
+  /// Reality Check 제안: 패턴 소개
+  ///
+  /// In ko, this message translates to:
+  /// **'당신의 꿈에서 \"{patterns}\" 패턴이 자주 나타납니다.'**
+  String dreamSignRealityCheckIntro(String patterns);
+
+  /// Reality Check 수행 방법 안내
+  ///
+  /// In ko, this message translates to:
+  /// **'이 요소들을 만날 때마다 Reality Check를 수행하세요:\\n1. 손바닥 확인하기\\n2. 코를 막고 숨쉬기\\n3. 시계 두 번 보기'**
+  String get dreamSignRealityCheckInstructions;
+
+  /// Reality Check 권장 빈도
+  ///
+  /// In ko, this message translates to:
+  /// **'하루 {frequency}회 이상 수행하면 효과적입니다.'**
+  String dreamSignRealityCheckFrequency(String frequency);
+
+  /// 반복 꿈 패턴 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'공통 요소: {elements} (유사도 {similarity}%)'**
+  String dreamSignPatternDesc(String elements, String similarity);
 }
 
 class _AppLocalizationsDelegate

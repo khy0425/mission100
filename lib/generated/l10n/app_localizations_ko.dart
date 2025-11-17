@@ -8470,4 +8470,70 @@ class AppLocalizationsKo extends AppLocalizations {
   String weekUnlockGenericMessage(String prevWeek) {
     return 'Week $prevWeek을 완료했습니다!\\n\\n다음 단계로 진행하려면 프리미엄이 필요합니다.';
   }
+
+  @override
+  String get dreamSignActionKeywords =>
+      '날다,날기,비행,하늘,공중,떠다니,벽,통과,순간이동,텔레포트,죽었다,살아나,부활,변신,초능력,투명,마법';
+
+  @override
+  String get dreamSignFormKeywords =>
+      '얼굴,변형,이상한,괴물,동물,변한,모습,낯선,기묘한,존재하지 않는,불가능한,왜곡,기형,거대한,작은';
+
+  @override
+  String get dreamSignContextKeywords =>
+      '죽은,살아있,과거,미래,어렸을 때,학교,직장,집,낯선 곳,시간,불일치,이상한,말이 안,모순';
+
+  @override
+  String get dreamSignAwarenessKeywords =>
+      '이상하,뭔가,느낌,이상한,이상했,의심,의문,현실,확인,꿈,깨닫,알아차';
+
+  @override
+  String dreamSignActionDesc(String keyword) {
+    return '비정상적 행동: $keyword';
+  }
+
+  @override
+  String dreamSignFormDesc(String keyword) {
+    return '비정상적 형태: $keyword';
+  }
+
+  @override
+  String dreamSignContextDesc(String keyword) {
+    return '비정상적 맥락: $keyword';
+  }
+
+  @override
+  String dreamSignAwarenessDesc(String keyword) {
+    return '자각 관련: $keyword';
+  }
+
+  @override
+  String dreamSignSymbolDesc(String symbol) {
+    return '꿈 심볼: $symbol';
+  }
+
+  @override
+  String get dreamSignInsufficientData => '아직 충분한 꿈 일기가 없습니다. 매일 꿈을 기록해보세요.';
+
+  @override
+  String get dreamSignError => '오류가 발생했습니다. 나중에 다시 시도해주세요.';
+
+  @override
+  String dreamSignRealityCheckIntro(String patterns) {
+    return '당신의 꿈에서 \"$patterns\" 패턴이 자주 나타납니다.';
+  }
+
+  @override
+  String get dreamSignRealityCheckInstructions =>
+      '이 요소들을 만날 때마다 Reality Check를 수행하세요:\\n1. 손바닥 확인하기\\n2. 코를 막고 숨쉬기\\n3. 시계 두 번 보기';
+
+  @override
+  String dreamSignRealityCheckFrequency(String frequency) {
+    return '하루 $frequency회 이상 수행하면 효과적입니다.';
+  }
+
+  @override
+  String dreamSignPatternDesc(String elements, String similarity) {
+    return '공통 요소: $elements (유사도 $similarity%)';
+  }
 }
