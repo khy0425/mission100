@@ -8197,7 +8197,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get notEntered => '미입력';
 
   @override
-  String get techniquesUsedLabel => '사용한 기법 (Techniques Used)';
+  String get techniquesUsedLabel => '사용한 기법:';
 
   @override
   String get moodScoreLabel => '기분 점수 (Mood Score)';
@@ -8566,4 +8566,25 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get programCompleted => '프로그램을 완료했습니다!';
+
+  @override
+  String get favoriteAdded => '즐겨찾기에 추가되었습니다';
+
+  @override
+  String get favoriteRemoved => '즐겨찾기가 해제되었습니다';
+
+  @override
+  String get noTitle => '(제목 없음)';
+
+  @override
+  String get emotionsLabel => '감정:';
+
+  @override
+  String get charactersLabel => '등장 인물:';
+
+  @override
+  String get locationsLabel => '장소:';
+
+  @override
+  String get dreamJournalTitle => '꿈 일기';
 }

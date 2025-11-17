@@ -8613,7 +8613,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get notEntered => 'Not Entered';
 
   @override
-  String get techniquesUsedLabel => 'Techniques Used';
+  String get techniquesUsedLabel => 'Techniques used:';
 
   @override
   String get moodScoreLabel => 'Mood Score';
@@ -8988,4 +8988,25 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get programCompleted => 'You\'ve completed the program!';
+
+  @override
+  String get favoriteAdded => 'Added to favorites';
+
+  @override
+  String get favoriteRemoved => 'Removed from favorites';
+
+  @override
+  String get noTitle => '(No title)';
+
+  @override
+  String get emotionsLabel => 'Emotions:';
+
+  @override
+  String get charactersLabel => 'Characters:';
+
+  @override
+  String get locationsLabel => 'Locations:';
+
+  @override
+  String get dreamJournalTitle => 'Dream Journal';
 }

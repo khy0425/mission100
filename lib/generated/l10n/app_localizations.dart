@@ -15279,10 +15279,10 @@ abstract class AppLocalizations {
   /// **'미입력'**
   String get notEntered;
 
-  /// 사용한 기법 섹션 제목
+  /// 사용한 기법 레이블
   ///
   /// In ko, this message translates to:
-  /// **'사용한 기법 (Techniques Used)'**
+  /// **'사용한 기법:'**
   String get techniquesUsedLabel;
 
   /// 기분 점수 섹션 제목
@@ -15932,6 +15932,48 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'프로그램을 완료했습니다!'**
   String get programCompleted;
+
+  /// 즐겨찾기 추가 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'즐겨찾기에 추가되었습니다'**
+  String get favoriteAdded;
+
+  /// 즐겨찾기 해제 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'즐겨찾기가 해제되었습니다'**
+  String get favoriteRemoved;
+
+  /// 제목이 없을 때 표시되는 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'(제목 없음)'**
+  String get noTitle;
+
+  /// 감정 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'감정:'**
+  String get emotionsLabel;
+
+  /// 등장 인물 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'등장 인물:'**
+  String get charactersLabel;
+
+  /// 장소 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'장소:'**
+  String get locationsLabel;
+
+  /// 꿈 일기 화면 타이틀
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기'**
+  String get dreamJournalTitle;
 }
 
 class _AppLocalizationsDelegate
