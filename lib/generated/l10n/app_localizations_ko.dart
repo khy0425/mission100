@@ -8536,4 +8536,34 @@ class AppLocalizationsKo extends AppLocalizations {
   String dreamSignPatternDesc(String elements, String similarity) {
     return '공통 요소: $elements (유사도 $similarity%)';
   }
+
+  @override
+  String get taskOptional => '(선택)';
+
+  @override
+  String get taskDreamJournal => '꿈 일기 작성';
+
+  @override
+  String get taskRealityCheck => '현실 확인 (5회)';
+
+  @override
+  String get taskMildAffirmation => 'MILD 확언';
+
+  @override
+  String get taskSleepHygiene => '수면 위생 체크';
+
+  @override
+  String get taskWbtb => 'WBTB 수행';
+
+  @override
+  String get taskMeditation => '명상 (선택)';
+
+  @override
+  String get checklistProgressLabel => '진행 상황';
+
+  @override
+  String get checklistCompletedReward => '완료! +5 토큰 획득';
+
+  @override
+  String get programCompleted => '프로그램을 완료했습니다!';
 }

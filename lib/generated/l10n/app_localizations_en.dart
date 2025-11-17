@@ -8958,4 +8958,34 @@ class AppLocalizationsEn extends AppLocalizations {
   String dreamSignPatternDesc(String elements, String similarity) {
     return 'Common elements: $elements (similarity $similarity%)';
   }
+
+  @override
+  String get taskOptional => '(Optional)';
+
+  @override
+  String get taskDreamJournal => 'Record Dream Journal';
+
+  @override
+  String get taskRealityCheck => 'Reality Checks (5x)';
+
+  @override
+  String get taskMildAffirmation => 'MILD Affirmation';
+
+  @override
+  String get taskSleepHygiene => 'Sleep Hygiene Check';
+
+  @override
+  String get taskWbtb => 'WBTB Practice';
+
+  @override
+  String get taskMeditation => 'Meditation (Optional)';
+
+  @override
+  String get checklistProgressLabel => 'Progress';
+
+  @override
+  String get checklistCompletedReward => 'Complete! +5 Tokens Earned';
+
+  @override
+  String get programCompleted => 'You\'ve completed the program!';
 }

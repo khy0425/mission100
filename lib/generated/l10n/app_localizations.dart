@@ -15872,6 +15872,66 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'공통 요소: {elements} (유사도 {similarity}%)'**
   String dreamSignPatternDesc(String elements, String similarity);
+
+  /// 선택적 태스크 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'(선택)'**
+  String get taskOptional;
+
+  /// 꿈 일기 작성 태스크
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 작성'**
+  String get taskDreamJournal;
+
+  /// 현실 확인 태스크
+  ///
+  /// In ko, this message translates to:
+  /// **'현실 확인 (5회)'**
+  String get taskRealityCheck;
+
+  /// MILD 확언 태스크
+  ///
+  /// In ko, this message translates to:
+  /// **'MILD 확언'**
+  String get taskMildAffirmation;
+
+  /// 수면 위생 체크 태스크
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 위생 체크'**
+  String get taskSleepHygiene;
+
+  /// WBTB 수행 태스크
+  ///
+  /// In ko, this message translates to:
+  /// **'WBTB 수행'**
+  String get taskWbtb;
+
+  /// 명상 태스크
+  ///
+  /// In ko, this message translates to:
+  /// **'명상 (선택)'**
+  String get taskMeditation;
+
+  /// 체크리스트 진행 상황 레이블
+  ///
+  /// In ko, this message translates to:
+  /// **'진행 상황'**
+  String get checklistProgressLabel;
+
+  /// 체크리스트 완료 보상 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'완료! +5 토큰 획득'**
+  String get checklistCompletedReward;
+
+  /// 프로그램 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'프로그램을 완료했습니다!'**
+  String get programCompleted;
 }
 
 class _AppLocalizationsDelegate
