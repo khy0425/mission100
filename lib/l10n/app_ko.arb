@@ -8988,5 +8988,21 @@
         "type": "int"
       }
     }
+  },
+  "emptyLucidDreams": "아직 자각몽을 기록하지 않았어요.\n꾸준히 연습하면 자각몽을 꿀 수 있어요!",
+  "@emptyLucidDreams": {
+    "description": "자각몽 필터 시 빈 상태 메시지"
+  },
+  "emptyFavorites": "즐겨찾기한 꿈이 없어요.\n특별한 꿈을 즐겨찾기 해보세요!",
+  "@emptyFavorites": {
+    "description": "즐겨찾기 필터 시 빈 상태 메시지"
+  },
+  "emptyAllDreams": "아직 기록한 꿈이 없어요.\n매일 아침 꿈을 기록하는 습관을 만들어보세요!",
+  "@emptyAllDreams": {
+    "description": "전체 꿈 목록 빈 상태 메시지"
+  },
+  "writeFirstDream": "첫 꿈 일기 작성하기",
+  "@writeFirstDream": {
+    "description": "첫 꿈 일기 작성 버튼"
   }
 }

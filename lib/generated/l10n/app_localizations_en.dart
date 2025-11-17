@@ -9017,4 +9017,19 @@ class AppLocalizationsEn extends AppLocalizations {
   String lucidDreamLevel(int level) {
     return 'Lucid Dream Lv.$level';
   }
+
+  @override
+  String get emptyLucidDreams =>
+      'You haven\'t recorded any lucid dreams yet.\nWith consistent practice, you can have lucid dreams!';
+
+  @override
+  String get emptyFavorites =>
+      'You don\'t have any favorite dreams.\nTry bookmarking your special dreams!';
+
+  @override
+  String get emptyAllDreams =>
+      'You haven\'t recorded any dreams yet.\nStart building a daily dream journaling habit!';
+
+  @override
+  String get writeFirstDream => 'Write Your First Dream';
 }

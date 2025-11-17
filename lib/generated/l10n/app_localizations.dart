@@ -15986,6 +15986,30 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'자각몽 Lv.{level}'**
   String lucidDreamLevel(int level);
+
+  /// 자각몽 필터 시 빈 상태 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'아직 자각몽을 기록하지 않았어요.\n꾸준히 연습하면 자각몽을 꿀 수 있어요!'**
+  String get emptyLucidDreams;
+
+  /// 즐겨찾기 필터 시 빈 상태 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'즐겨찾기한 꿈이 없어요.\n특별한 꿈을 즐겨찾기 해보세요!'**
+  String get emptyFavorites;
+
+  /// 전체 꿈 목록 빈 상태 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'아직 기록한 꿈이 없어요.\n매일 아침 꿈을 기록하는 습관을 만들어보세요!'**
+  String get emptyAllDreams;
+
+  /// 첫 꿈 일기 작성 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'첫 꿈 일기 작성하기'**
+  String get writeFirstDream;
 }
 
 class _AppLocalizationsDelegate

@@ -8991,5 +8991,21 @@
         "type": "int"
       }
     }
+  },
+  "emptyLucidDreams": "You haven't recorded any lucid dreams yet.\nWith consistent practice, you can have lucid dreams!",
+  "@emptyLucidDreams": {
+    "description": "Empty state message for lucid dream filter"
+  },
+  "emptyFavorites": "You don't have any favorite dreams.\nTry bookmarking your special dreams!",
+  "@emptyFavorites": {
+    "description": "Empty state message for favorites filter"
+  },
+  "emptyAllDreams": "You haven't recorded any dreams yet.\nStart building a daily dream journaling habit!",
+  "@emptyAllDreams": {
+    "description": "Empty state message for all dreams list"
+  },
+  "writeFirstDream": "Write Your First Dream",
+  "@writeFirstDream": {
+    "description": "Write first dream button"
   }
 }

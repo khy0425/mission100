@@ -8595,4 +8595,16 @@ class AppLocalizationsKo extends AppLocalizations {
   String lucidDreamLevel(int level) {
     return '자각몽 Lv.$level';
   }
+
+  @override
+  String get emptyLucidDreams => '아직 자각몽을 기록하지 않았어요.\n꾸준히 연습하면 자각몽을 꿀 수 있어요!';
+
+  @override
+  String get emptyFavorites => '즐겨찾기한 꿈이 없어요.\n특별한 꿈을 즐겨찾기 해보세요!';
+
+  @override
+  String get emptyAllDreams => '아직 기록한 꿈이 없어요.\n매일 아침 꿈을 기록하는 습관을 만들어보세요!';
+
+  @override
+  String get writeFirstDream => '첫 꿈 일기 작성하기';
 }
