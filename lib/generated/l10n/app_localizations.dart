@@ -2810,10 +2810,10 @@ abstract class AppLocalizations {
   /// **'프리미엄 구독 (₩4,900/월)'**
   String get premiumSubscriptionPrice;
 
-  /// No description provided for @premiumBenefitAdFree.
+  /// 프리미엄 혜택: 광고 제거
   ///
   /// In ko, this message translates to:
-  /// **'✨ 모든 광고 제거'**
+  /// **'광고 제거'**
   String get premiumBenefitAdFree;
 
   /// No description provided for @premiumBenefitFastLoading.
@@ -4196,11 +4196,53 @@ abstract class AppLocalizations {
   /// **'고급자'**
   String get onboardingMissionAdvancedTitle;
 
-  /// 미션 맞춤형 프로그램 보장 메시지
+  /// 미션 맞춤형 프로그램 과학적 근거 메시지
   ///
   /// In ko, this message translates to:
-  /// **'검증된 결과 보장'**
+  /// **'과학적 근거 기반 프로그램'**
   String get onboardingMissionAssurance;
+
+  /// 미션 Week 1-2 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'Week 1-2: 기초 훈련'**
+  String get onboardingMissionWeek12Title;
+
+  /// 미션 Week 1-2 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 회상력 향상 및 리얼리티 체크 습관화'**
+  String get onboardingMissionWeek12Desc;
+
+  /// 미션 Week 3-4 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'Week 3-4: 자각몽 입문'**
+  String get onboardingMissionWeek34Title;
+
+  /// 미션 Week 3-4 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'WBTB+MILD 기법으로 첫 자각몽 경험'**
+  String get onboardingMissionWeek34Desc;
+
+  /// 미션 Week 5-8 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'Week 5-8: 마스터'**
+  String get onboardingMissionWeek58Title;
+
+  /// 미션 Week 5-8 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 제어 및 고급 기법 마스터'**
+  String get onboardingMissionWeek58Desc;
+
+  /// 과학 논문 기반 프로그램 뱃지
+  ///
+  /// In ko, this message translates to:
+  /// **'과학 논문 기반 프로그램'**
+  String get onboardingMissionScientificBasis;
 
   /// 미션 맞춤형 프로그램 초급 레벨 설명
   ///
@@ -4399,6 +4441,30 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'준비되셨나요?'**
   String get readyToStart;
+
+  /// No description provided for @readyToStartSubtitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 여정을 시작해보세요'**
+  String get readyToStartSubtitle;
+
+  /// No description provided for @getStartedStep1.
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 작성하기'**
+  String get getStartedStep1;
+
+  /// No description provided for @getStartedStep2.
+  ///
+  /// In ko, this message translates to:
+  /// **'매일 체크리스트 완료하기'**
+  String get getStartedStep2;
+
+  /// No description provided for @getStartedStep3.
+  ///
+  /// In ko, this message translates to:
+  /// **'60일 자각몽 마스터 되기'**
+  String get getStartedStep3;
 
   /// No description provided for @findYourLevel.
   ///
@@ -8775,6 +8841,36 @@ abstract class AppLocalizations {
   /// **'꾸준한 드림 스피릿'**
   String get difficultyIntermediateDesc;
 
+  /// Level up title
+  ///
+  /// In ko, this message translates to:
+  /// **'레벨 업'**
+  String get levelUp;
+
+  /// Double congratulations message
+  ///
+  /// In ko, this message translates to:
+  /// **'진심으로 축하해'**
+  String get doubleCongratulations;
+
+  /// 레벨업 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'{emoji}💥 LEVEL UP! 한계 박살! 💥{emoji}'**
+  String levelUpMessage(String emoji);
+
+  /// Multiple level up message
+  ///
+  /// In ko, this message translates to:
+  /// **'{levels}레벨이나 올랐어!'**
+  String levelUpMultipleMessage(int levels);
+
+  /// Days remaining to next level
+  ///
+  /// In ko, this message translates to:
+  /// **'다음 레벨까지 약 {days}일 남음'**
+  String daysToNextLevel(int days);
+
   /// No description provided for @achievementAllRounderDesc.
   ///
   /// In ko, this message translates to:
@@ -10196,12 +10292,6 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'보상'**
   String get challengeRewards;
-
-  /// 레벨업 메시지
-  ///
-  /// In ko, this message translates to:
-  /// **'{emoji}💥 LEVEL UP! 한계 박살! 💥{emoji}'**
-  String levelUpMessage(String emoji);
 
   /// 미획득 업적 탭
   ///
@@ -14715,6 +14805,12 @@ abstract class AppLocalizations {
   /// **'확인'**
   String get dailyChecklistConfirmButton;
 
+  /// Checklist completion XP earned message
+  ///
+  /// In ko, this message translates to:
+  /// **'훈련 완료! +{xp} XP 획득'**
+  String checklistCompletionXP(int xp);
+
   /// No description provided for @legalDocumentLoadError.
   ///
   /// In ko, this message translates to:
@@ -14816,6 +14912,126 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'영상 로딩 오류: {error}'**
   String videoLoadError(String error);
+
+  /// 프리미엄 레벨 도달 축하 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'축하합니다! 🎉'**
+  String get premiumCongratulations;
+
+  /// Week 레벨 도달 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Week {week} 레벨 도달!'**
+  String premiumWeekReached(int week);
+
+  /// 프리미엄 구독 필요 안내 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Week 2 이상 레벨은\n프리미엄 구독이 필요합니다'**
+  String get premiumRequiredMessage;
+
+  /// 프리미엄 혜택: Lumi 진화
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi 완전 진화 해금'**
+  String get premiumBenefitLumiEvolution;
+
+  /// 프리미엄 혜택: Lumi 진화 (짧은 버전)
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi 완전 진화'**
+  String get premiumBenefitLumi;
+
+  /// 프리미엄 혜택: 무제한 AI
+  ///
+  /// In ko, this message translates to:
+  /// **'무제한 AI 분석'**
+  String get premiumBenefitUnlimitedAI;
+
+  /// 월간 프리미엄 가격
+  ///
+  /// In ko, this message translates to:
+  /// **'₩5,900'**
+  String get premiumPriceMonthly;
+
+  /// 월간 구독 단위
+  ///
+  /// In ko, this message translates to:
+  /// **'/ 월'**
+  String get premiumPricePerMonth;
+
+  /// 나중에 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'나중에'**
+  String get premiumLaterButton;
+
+  /// 프리미엄 시작 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 시작'**
+  String get premiumStartButton;
+
+  /// 프리미엄 다이얼로그 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'DreamFlow Premium'**
+  String get premiumDialogTitle;
+
+  /// 프리미엄 주차 해금 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Week {week}+ 단계 해금'**
+  String premiumUnlockWeeks(int week);
+
+  /// 프리미엄 혜택 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 혜택'**
+  String get premiumBenefitsTitle;
+
+  /// 광고 제거 혜택 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'방해 없는 자각몽 훈련'**
+  String get premiumBenefitAdFreeDesc;
+
+  /// Lumi 진화 혜택 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'Week 2-14 모든 단계 해금'**
+  String get premiumBenefitLumiDesc;
+
+  /// AI 분석 혜택 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 AI 피드백 무제한'**
+  String get premiumBenefitAIDesc;
+
+  /// 고급 통계 혜택 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'상세한 진행 상황 분석'**
+  String get premiumBenefitStatsDesc;
+
+  /// 프리미엄 혜택: 고급 통계 (짧은 버전)
+  ///
+  /// In ko, this message translates to:
+  /// **'고급 통계'**
+  String get premiumBenefitAdvancedStats;
+
+  /// 프리미엄 구독 시작 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 시작하기'**
+  String get premiumStartNowButton;
+
+  /// 구독 정보 안내
+  ///
+  /// In ko, this message translates to:
+  /// **'월간 구독 • 언제든 해지 가능'**
+  String get premiumSubscriptionInfo;
 }
 
 class _AppLocalizationsDelegate

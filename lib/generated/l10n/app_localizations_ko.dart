@@ -1437,7 +1437,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get premiumSubscriptionPrice => '프리미엄 구독 (₩4,900/월)';
 
   @override
-  String get premiumBenefitAdFree => '✨ 모든 광고 제거';
+  String get premiumBenefitAdFree => '광고 제거';
 
   @override
   String get premiumBenefitFastLoading => '⚡ VIP 빠른 로딩';
@@ -2155,7 +2155,28 @@ class AppLocalizationsKo extends AppLocalizations {
   String get onboardingMissionAdvancedTitle => '고급자';
 
   @override
-  String get onboardingMissionAssurance => '검증된 결과 보장';
+  String get onboardingMissionAssurance => '과학적 근거 기반 프로그램';
+
+  @override
+  String get onboardingMissionWeek12Title => 'Week 1-2: 기초 훈련';
+
+  @override
+  String get onboardingMissionWeek12Desc => '꿈 회상력 향상 및 리얼리티 체크 습관화';
+
+  @override
+  String get onboardingMissionWeek34Title => 'Week 3-4: 자각몽 입문';
+
+  @override
+  String get onboardingMissionWeek34Desc => 'WBTB+MILD 기법으로 첫 자각몽 경험';
+
+  @override
+  String get onboardingMissionWeek58Title => 'Week 5-8: 마스터';
+
+  @override
+  String get onboardingMissionWeek58Desc => '자각몽 제어 및 고급 기법 마스터';
+
+  @override
+  String get onboardingMissionScientificBasis => '과학 논문 기반 프로그램';
 
   @override
   String get onboardingMissionBeginnerDesc => '1-6주차';
@@ -2259,6 +2280,18 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get readyToStart => '준비되셨나요?';
+
+  @override
+  String get readyToStartSubtitle => '자각몽 여정을 시작해보세요';
+
+  @override
+  String get getStartedStep1 => '꿈 일기 작성하기';
+
+  @override
+  String get getStartedStep2 => '매일 체크리스트 완료하기';
+
+  @override
+  String get getStartedStep3 => '60일 자각몽 마스터 되기';
 
   @override
   String get findYourLevel => '먼저 간단한 설정으로\n당신의 시작점을 찾아보세요';
@@ -4683,6 +4716,27 @@ class AppLocalizationsKo extends AppLocalizations {
   String get difficultyIntermediateDesc => '꾸준한 드림 스피릿';
 
   @override
+  String get levelUp => '레벨 업';
+
+  @override
+  String get doubleCongratulations => '진심으로 축하해';
+
+  @override
+  String levelUpMessage(String emoji) {
+    return '$emoji💥 LEVEL UP! 한계 박살! 💥$emoji';
+  }
+
+  @override
+  String levelUpMultipleMessage(int levels) {
+    return '$levels레벨이나 올랐어!';
+  }
+
+  @override
+  String daysToNextLevel(int days) {
+    return '다음 레벨까지 약 $days일 남음';
+  }
+
+  @override
   String get achievementAllRounderDesc => '모든 자각몽 체크리스트 타입을 시도했다';
 
   @override
@@ -5402,11 +5456,6 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get challengeRewards => '보상';
-
-  @override
-  String levelUpMessage(String emoji) {
-    return '$emoji💥 LEVEL UP! 한계 박살! 💥$emoji';
-  }
 
   @override
   String lockedAchievements(int count) {
@@ -7875,6 +7924,11 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dailyChecklistConfirmButton => '확인';
 
   @override
+  String checklistCompletionXP(int xp) {
+    return '훈련 완료! +$xp XP 획득';
+  }
+
+  @override
   String get legalDocumentLoadError => '문서를 불러올 수 없습니다';
 
   @override
@@ -7932,4 +7986,68 @@ class AppLocalizationsKo extends AppLocalizations {
   String videoLoadError(String error) {
     return '영상 로딩 오류: $error';
   }
+
+  @override
+  String get premiumCongratulations => '축하합니다! 🎉';
+
+  @override
+  String premiumWeekReached(int week) {
+    return 'Week $week 레벨 도달!';
+  }
+
+  @override
+  String get premiumRequiredMessage => 'Week 2 이상 레벨은\n프리미엄 구독이 필요합니다';
+
+  @override
+  String get premiumBenefitLumiEvolution => 'Lumi 완전 진화 해금';
+
+  @override
+  String get premiumBenefitLumi => 'Lumi 완전 진화';
+
+  @override
+  String get premiumBenefitUnlimitedAI => '무제한 AI 분석';
+
+  @override
+  String get premiumPriceMonthly => '₩5,900';
+
+  @override
+  String get premiumPricePerMonth => '/ 월';
+
+  @override
+  String get premiumLaterButton => '나중에';
+
+  @override
+  String get premiumStartButton => '프리미엄 시작';
+
+  @override
+  String get premiumDialogTitle => 'DreamFlow Premium';
+
+  @override
+  String premiumUnlockWeeks(int week) {
+    return 'Week $week+ 단계 해금';
+  }
+
+  @override
+  String get premiumBenefitsTitle => '프리미엄 혜택';
+
+  @override
+  String get premiumBenefitAdFreeDesc => '방해 없는 자각몽 훈련';
+
+  @override
+  String get premiumBenefitLumiDesc => 'Week 2-14 모든 단계 해금';
+
+  @override
+  String get premiumBenefitAIDesc => '꿈 일기 AI 피드백 무제한';
+
+  @override
+  String get premiumBenefitStatsDesc => '상세한 진행 상황 분석';
+
+  @override
+  String get premiumBenefitAdvancedStats => '고급 통계';
+
+  @override
+  String get premiumStartNowButton => '프리미엄 시작하기';
+
+  @override
+  String get premiumSubscriptionInfo => '월간 구독 • 언제든 해지 가능';
 }

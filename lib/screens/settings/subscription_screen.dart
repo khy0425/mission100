@@ -71,8 +71,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         return;
       }
 
-      // Start purchase flow
-      final result = await _billingService.purchaseProduct('premium_lifetime');
+      // Start purchase flow (월간 구독)
+      final result = await _billingService.purchaseProduct('premium_monthly');
       final success = result.success;
 
       if (success && mounted) {
@@ -242,7 +242,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
           if (subscription?.remainingDays != null) ...[
             const SizedBox(height: 8),
             Text(
-              '무료 체험 ${subscription!.remainingDays}일 남음',
+              l10n.subscriptionFreeTrialRemaining(subscription!.remainingDays.toString()),
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.white.withValues(alpha: 0.8),
@@ -256,12 +256,12 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
   Widget _buildPremiumBenefitsCard(bool isDark, AppLocalizations l10n) {
     final benefits = [
-      _BenefitItem(Icons.block, '광고 제거', 'Ad-Free Experience'),
-      _BenefitItem(Icons.timeline, '60일 확장 프로그램 (Week 1-8)', 'Extended 60-day Program'),
-      _BenefitItem(Icons.auto_awesome, 'Lumi 14단계 완전 진화', 'Lumi Full Evolution (14 stages)'),
-      _BenefitItem(Icons.psychology, '무제한 AI 꿈 분석', 'Unlimited AI Dream Analysis'),
-      _BenefitItem(Icons.analytics, '고급 통계 분석', 'Advanced Analytics'),
-      _BenefitItem(Icons.cloud_upload, '데이터 내보내기', 'Export Your Data'),
+      _BenefitItem(Icons.block, l10n.subscriptionBenefitAdFree, 'Ad-Free Experience'),
+      _BenefitItem(Icons.timeline, l10n.subscriptionBenefitExtendedProgram, 'Extended 60-day Program'),
+      _BenefitItem(Icons.auto_awesome, l10n.subscriptionBenefitLumiEvolution, 'Lumi Full Evolution (6 stages)'),
+      _BenefitItem(Icons.psychology, l10n.subscriptionBenefitUnlimitedAI, 'Unlimited AI Dream Analysis'),
+      _BenefitItem(Icons.analytics, l10n.subscriptionBenefitAdvancedAnalytics, 'Advanced Analytics'),
+      _BenefitItem(Icons.cloud_upload, l10n.subscriptionBenefitDataExport, 'Export Your Data'),
     ];
 
     return Container(
@@ -386,8 +386,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
           if (subscription.type == SubscriptionType.premium) ...[
             const Divider(height: 24),
             _buildDetailRow(
-              '광고 표시',
-              subscription.hasAds ? '예' : '아니오 (광고 제거)',
+              l10n.subscriptionAdsLabel,
+              subscription.hasAds ? l10n.subscriptionAdsYes : l10n.subscriptionAdsNoWithAdFree,
               Icons.block,
               isDark,
             ),

@@ -1478,7 +1478,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get premiumSubscriptionPrice => 'Premium Subscription (₩4,900/month)';
 
   @override
-  String get premiumBenefitAdFree => '✨ Remove all ads';
+  String get premiumBenefitAdFree => 'Remove Ads';
 
   @override
   String get premiumBenefitFastLoading => '⚡ VIP fast loading';
@@ -2225,7 +2225,31 @@ class AppLocalizationsEn extends AppLocalizations {
   String get onboardingMissionAdvancedTitle => 'Advanced';
 
   @override
-  String get onboardingMissionAssurance => 'Proven results guaranteed';
+  String get onboardingMissionAssurance => 'Science-Based Program';
+
+  @override
+  String get onboardingMissionWeek12Title => 'Week 1-2: Foundation';
+
+  @override
+  String get onboardingMissionWeek12Desc =>
+      'Improve dream recall and reality check habits';
+
+  @override
+  String get onboardingMissionWeek34Title => 'Week 3-4: Lucid Dream Entry';
+
+  @override
+  String get onboardingMissionWeek34Desc =>
+      'First lucid dream with WBTB+MILD techniques';
+
+  @override
+  String get onboardingMissionWeek58Title => 'Week 5-8: Mastery';
+
+  @override
+  String get onboardingMissionWeek58Desc =>
+      'Master lucid dream control and advanced techniques';
+
+  @override
+  String get onboardingMissionScientificBasis => 'Research-Based Program';
 
   @override
   String get onboardingMissionBeginnerDesc => 'Week 1-6';
@@ -2335,6 +2359,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get readyToStart => 'Ready to Start?';
+
+  @override
+  String get readyToStartSubtitle => 'Begin your lucid dream journey';
+
+  @override
+  String get getStartedStep1 => 'Write dream journal';
+
+  @override
+  String get getStartedStep2 => 'Complete daily checklist';
+
+  @override
+  String get getStartedStep3 => 'Become lucid dream master in 60 days';
 
   @override
   String get findYourLevel =>
@@ -4873,6 +4909,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get difficultyIntermediateDesc => 'Consistent CHAD';
 
   @override
+  String get levelUp => 'Level Up';
+
+  @override
+  String get doubleCongratulations => 'Congratulations';
+
+  @override
+  String levelUpMessage(String emoji) {
+    return '$emoji💥 LEVEL UP! Limit Destroyed! 💥$emoji';
+  }
+
+  @override
+  String levelUpMultipleMessage(int levels) {
+    return 'You leveled up $levels times!';
+  }
+
+  @override
+  String daysToNextLevel(int days) {
+    return 'About $days days to next level';
+  }
+
+  @override
   String get achievementAllRounderDesc => 'Tried all dream tasks types';
 
   @override
@@ -5700,11 +5757,6 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get challengeRewards => 'Rewards';
-
-  @override
-  String levelUpMessage(String emoji) {
-    return '$emoji💥 LEVEL UP! Limit Destroyed! 💥$emoji';
-  }
 
   @override
   String lockedAchievements(int count) {
@@ -7358,7 +7410,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get aboutSettingsProgramExplanation =>
-      'This program is designed based on the scientific evidence from the above research papers as a 14-week progressive overload program.';
+      'This program is designed based on scientific lucid dreaming research as a 60-day progressive training program.';
 
   @override
   String get aboutSettingsConfirmButton => 'OK';
@@ -8282,6 +8334,11 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dailyChecklistConfirmButton => 'OK';
 
   @override
+  String checklistCompletionXP(int xp) {
+    return 'Training Complete! +$xp XP Earned';
+  }
+
+  @override
   String get legalDocumentLoadError => 'Unable to load document';
 
   @override
@@ -8342,4 +8399,70 @@ class AppLocalizationsEn extends AppLocalizations {
   String videoLoadError(String error) {
     return 'Error loading videos: $error';
   }
+
+  @override
+  String get premiumCongratulations => 'Congratulations! 🎉';
+
+  @override
+  String premiumWeekReached(int week) {
+    return 'Week $week Level Reached!';
+  }
+
+  @override
+  String get premiumRequiredMessage =>
+      'Week 2+ levels require\nPremium subscription';
+
+  @override
+  String get premiumBenefitLumiEvolution => 'Unlock Full Lumi Evolution';
+
+  @override
+  String get premiumBenefitLumi => 'Lumi Full Evolution';
+
+  @override
+  String get premiumBenefitUnlimitedAI => 'Unlimited AI Analysis';
+
+  @override
+  String get premiumPriceMonthly => '\$4.99';
+
+  @override
+  String get premiumPricePerMonth => '/ month';
+
+  @override
+  String get premiumLaterButton => 'Later';
+
+  @override
+  String get premiumStartButton => 'Start Premium';
+
+  @override
+  String get premiumDialogTitle => 'DreamFlow Premium';
+
+  @override
+  String premiumUnlockWeeks(int week) {
+    return 'Unlock Week $week+ Stages';
+  }
+
+  @override
+  String get premiumBenefitsTitle => 'Premium Benefits';
+
+  @override
+  String get premiumBenefitAdFreeDesc =>
+      'Uninterrupted lucid dreaming training';
+
+  @override
+  String get premiumBenefitLumiDesc => 'Unlock all Week 2-14 stages';
+
+  @override
+  String get premiumBenefitAIDesc => 'Unlimited dream journal AI feedback';
+
+  @override
+  String get premiumBenefitStatsDesc => 'Detailed progress analytics';
+
+  @override
+  String get premiumBenefitAdvancedStats => 'Advanced Stats';
+
+  @override
+  String get premiumStartNowButton => 'Start Premium Now';
+
+  @override
+  String get premiumSubscriptionInfo => 'Monthly subscription • Cancel anytime';
 }
