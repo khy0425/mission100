@@ -8371,7 +8371,9 @@ class AppLocalizationsEn extends AppLocalizations {
       '🔱 DATA NOT FOUND! TIME TO CREATE NEW LEGENDS! 🔱';
 
   @override
-  String get errorOccurred => 'An error occurred';
+  String errorOccurred(String error) {
+    return 'An error occurred: $error';
+  }
 
   @override
   String errorOccurredWithMessage(String error) {
@@ -8465,4 +8467,428 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get premiumSubscriptionInfo => 'Monthly subscription • Cancel anytime';
+
+  @override
+  String get tokenInsufficientMessage =>
+      'Insufficient tokens! Complete checklists or watch ads to earn tokens.';
+
+  @override
+  String get tokenUserTypePremium => 'Premium';
+
+  @override
+  String get tokenUserTypeFree => 'Free';
+
+  @override
+  String tokenBalanceDisplay(int balance, int maxTokens) {
+    return '🎫 Tokens: $balance (Max $maxTokens)';
+  }
+
+  @override
+  String get tokenRewardTitle => 'Tokens Earned!';
+
+  @override
+  String get tokenDailyRewardPremium => 'Premium Daily Reward';
+
+  @override
+  String get tokenDailyRewardFree => 'Daily Reward';
+
+  @override
+  String tokenStreakBonus(int streak) {
+    return '$streak-Day Streak Bonus 🔥';
+  }
+
+  @override
+  String get tokenTotalReward => 'Total Earned';
+
+  @override
+  String tokenStreakStatus(int streak) {
+    return '$streak-Day Streak!';
+  }
+
+  @override
+  String tokenStreakGoal3Days(int remaining) {
+    return '$remaining more days for bonus tokens!';
+  }
+
+  @override
+  String tokenStreakGoal7Days(int remaining) {
+    return '$remaining more days for 7-day bonus!';
+  }
+
+  @override
+  String get tokenRewardConfirm => 'OK';
+
+  @override
+  String checklistDayHeader(int day) {
+    return '🌙 Day $day';
+  }
+
+  @override
+  String get tokenConsumeFailed => 'Token consumption failed';
+
+  @override
+  String get dreamDeleteDialogTitle => 'Delete Dream Journal';
+
+  @override
+  String get dreamDeleteDialogContent =>
+      'Are you sure you want to delete this dream journal?\nDeleted data cannot be recovered.';
+
+  @override
+  String get dreamDeletedSuccess => 'Dream journal has been deleted';
+
+  @override
+  String dreamDeleteFailed(String error) {
+    return 'Delete failed: $error';
+  }
+
+  @override
+  String get aiAnalysis => 'AI Analysis';
+
+  @override
+  String get sortNewest => 'Newest';
+
+  @override
+  String get sortOldest => 'Oldest';
+
+  @override
+  String get sortLucidityHigh => 'High Lucidity';
+
+  @override
+  String get newDreamJournal => 'New Dream Journal';
+
+  @override
+  String get dreamContentRequired => 'Please enter dream content.';
+
+  @override
+  String get dreamSaveFailed => 'Failed to save dream journal.';
+
+  @override
+  String lucidDreamCount(String count) {
+    return 'Lucid Dreams: $count';
+  }
+
+  @override
+  String normalDreamCount(String count) {
+    return 'Normal Dreams: $count';
+  }
+
+  @override
+  String get lucidDream => 'Lucid Dream';
+
+  @override
+  String get normalDream => 'Normal Dream';
+
+  @override
+  String get dreamDate => 'Dream Date';
+
+  @override
+  String get moodScore => 'Mood Score:';
+
+  @override
+  String get sleepStart => 'Sleep Start';
+
+  @override
+  String get wakeTime => 'Wake Time';
+
+  @override
+  String get sleepDuration => 'Sleep Duration';
+
+  @override
+  String get sleepQuality => 'Sleep Quality:';
+
+  @override
+  String get wbtbUsed => 'WBTB technique used';
+
+  @override
+  String get wbtbTechnique => 'WBTB Technique';
+
+  @override
+  String get progressNotUsed =>
+      'Statistics screen is not used in lucid dream app';
+
+  @override
+  String get sleepInfoOptional => 'Sleep Info (Optional)';
+
+  @override
+  String get notEntered => 'Not Entered';
+
+  @override
+  String get techniquesUsedLabel => 'Techniques Used';
+
+  @override
+  String get moodScoreLabel => 'Mood Score';
+
+  @override
+  String get sleepQualityLabel => 'Sleep Quality';
+
+  @override
+  String get techniquesUsedTitle => 'Techniques Used';
+
+  @override
+  String get wbtbUsedMessage => 'WBTB technique used';
+
+  @override
+  String get sleepInfoTitle => 'Sleep Info';
+
+  @override
+  String get sleepDurationLabel => 'Sleep Duration';
+
+  @override
+  String sleepDurationValue(String hours, String minutes) {
+    return '${hours}h ${minutes}m';
+  }
+
+  @override
+  String get emotionsAndMoodTitle => 'Emotions & Mood';
+
+  @override
+  String get emotionsInputTitle => 'Emotions';
+
+  @override
+  String get dreamSignsInputTitle => 'Dream Signs/Keywords';
+
+  @override
+  String get charactersInputTitle => 'Characters';
+
+  @override
+  String get locationsInputTitle => 'Locations';
+
+  @override
+  String get dreamStatisticsNoData =>
+      'Not enough dream data.\nStatistics will appear when you write dream entries.';
+
+  @override
+  String get lucidSuccessRate => 'Lucid Dream Success Rate';
+
+  @override
+  String successRatePercent(String rate) {
+    return 'Success Rate: $rate%';
+  }
+
+  @override
+  String get lucidityTrend => 'Lucidity Trend';
+
+  @override
+  String get recentDreams10 => 'Recent 10 Dreams';
+
+  @override
+  String get weeklyStatistics => 'Weekly Statistics';
+
+  @override
+  String get weeklyStatisticsSubtitle => 'Dream records for the past 7 days';
+
+  @override
+  String get dreamContentHint =>
+      'Write freely about what you saw and felt in your dream...';
+
+  @override
+  String get dreamSearchHint =>
+      'Search dream content, symbols, characters, locations...';
+
+  @override
+  String get dreamTitleHint => 'e.g., Flying in the sky';
+
+  @override
+  String get emotionInputHint => 'Enter emotion and press Enter';
+
+  @override
+  String get dreamSignsHint => 'e.g., water, flying, school';
+
+  @override
+  String get charactersHint => 'e.g., mom, friend, stranger';
+
+  @override
+  String get locationsHint => 'e.g., home, school, unknown city';
+
+  @override
+  String get dreamContentLabel => 'Dream Content (Required) *';
+
+  @override
+  String get dreamTitleLabel => 'Title (Optional)';
+
+  @override
+  String get tooltipFavorite => 'Favorite';
+
+  @override
+  String get tooltipEdit => 'Edit';
+
+  @override
+  String get tooltipDelete => 'Delete';
+
+  @override
+  String get tooltipSave => 'Save';
+
+  @override
+  String get dreamJournalEdit => 'Edit Dream Journal';
+
+  @override
+  String get dreamJournalCreate => 'New Dream Journal';
+
+  @override
+  String get dreamSavedSuccess => 'Dream journal saved successfully.';
+
+  @override
+  String get dreamUpdatedSuccess => 'Dream journal updated successfully.';
+
+  @override
+  String tabAllDreams(String count) {
+    return 'All ($count)';
+  }
+
+  @override
+  String tabLucidDreams(String count) {
+    return 'Lucid ($count)';
+  }
+
+  @override
+  String get tabFavorites => 'Favorites';
+
+  @override
+  String get lucidDreamBadge => 'Lucid';
+
+  @override
+  String get statTotalDreams => 'Total Dreams';
+
+  @override
+  String get statLucidDreams => 'Lucid Dreams';
+
+  @override
+  String get statAvgLucidity => 'Avg Lucidity';
+
+  @override
+  String get metaInfoTitle => 'Info';
+
+  @override
+  String get metaCreatedAt => 'Created';
+
+  @override
+  String get metaUpdatedAt => 'Updated';
+
+  @override
+  String get metaWordCount => 'Word Count';
+
+  @override
+  String metaWordCountValue(String count) {
+    return '$count words';
+  }
+
+  @override
+  String get metaAiAnalysis => 'AI Analysis';
+
+  @override
+  String get metaCompleted => 'Completed';
+
+  @override
+  String get metaNotCompleted => 'Not Completed';
+
+  @override
+  String get statStreakLabel => 'Streak';
+
+  @override
+  String statStreakDays(String count) {
+    return '$count days';
+  }
+
+  @override
+  String subscriptionFreeTrialRemaining(String days) {
+    return 'Free trial: $days days left';
+  }
+
+  @override
+  String get subscriptionBenefitAdFree => 'Ad-Free Experience';
+
+  @override
+  String get subscriptionBenefitExtendedProgram =>
+      'Extended 60-day Program (Week 1-8)';
+
+  @override
+  String get subscriptionBenefitLumiEvolution =>
+      'Lumi Full Evolution (6 stages)';
+
+  @override
+  String get subscriptionBenefitUnlimitedAI => 'Unlimited AI Dream Analysis';
+
+  @override
+  String get subscriptionBenefitAdvancedAnalytics => 'Advanced Analytics';
+
+  @override
+  String get subscriptionBenefitDataExport => 'Export Your Data';
+
+  @override
+  String get subscriptionAdsLabel => 'Ads';
+
+  @override
+  String get subscriptionAdsYes => 'Yes';
+
+  @override
+  String get subscriptionAdsNoWithAdFree => 'No (Ad-Free)';
+
+  @override
+  String get weekUnlockResearchLabel => 'Research Results';
+
+  @override
+  String get weekUnlockWbtbMildTechnique => 'WBTB + MILD Technique';
+
+  @override
+  String get weekUnlockSuccessRate => '46% Lucid Dream Success Rate';
+
+  @override
+  String get weekUnlockTechniquesLabel => 'Unlocked Techniques';
+
+  @override
+  String get weekUnlockPremiumBenefitsLabel => 'Premium Benefits';
+
+  @override
+  String get weekUnlockBenefitFullProgram => '🎯 Full 60-day Program Access';
+
+  @override
+  String get weekUnlockBenefitLumiEvolution =>
+      '✨ Lumi Full Evolution (6 Stages)';
+
+  @override
+  String get weekUnlockBenefitUnlimitedAI => '🧠 Unlimited AI Dream Analysis';
+
+  @override
+  String get weekUnlockBenefitAdvancedStats => '📊 Advanced Analytics';
+
+  @override
+  String get weekUnlockBenefitAdRemoval => '🚫 Complete Ad Removal';
+
+  @override
+  String get weekUnlockWeek2Title => '🎯 Week 2 Techniques Unlocked!';
+
+  @override
+  String get weekUnlockWeek2Message =>
+      'Congratulations! You\'ve completed Week 1.\\n\\nUpgrade to Premium to experience research-based lucid dreaming techniques and the extended 60-day program.';
+
+  @override
+  String get weekUnlockWeek3Title => '🎯 Week 3 Techniques Unlocked!';
+
+  @override
+  String get weekUnlockWeek3Message =>
+      'Congratulations! You\'ve completed Week 2.\\n\\nUpgrade to Premium to unlock WBTB+MILD, the most effective technique proven by research.';
+
+  @override
+  String get weekUnlockWeek5Title => '🌌 Advanced Techniques Unlocked!';
+
+  @override
+  String get weekUnlockWeek5Message =>
+      'You\'ve reached Week 5!\\n\\nAre you ready to master advanced lucid dreaming techniques like SSILD and WILD?';
+
+  @override
+  String get weekUnlockWeek7Title => '🔮 Master Techniques Unlocked!';
+
+  @override
+  String get weekUnlockWeek7Message =>
+      'Week 7 reached! You\'re almost there.\\n\\nBecome a lucid dream master with dream control and stabilization techniques!';
+
+  @override
+  String weekUnlockGenericTitle(String week) {
+    return '🔓 Week $week Unlocked';
+  }
+
+  @override
+  String weekUnlockGenericMessage(String prevWeek) {
+    return 'You\'ve completed Week $prevWeek!\\n\\nPremium is required to proceed to the next stage.';
+  }
 }

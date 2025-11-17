@@ -380,7 +380,7 @@ abstract class AppLocalizations {
   /// **'{calories}kcal/회'**
   String caloriesPerRep(int calories);
 
-  /// Cancel button text
+  /// 취소 버튼
   ///
   /// In ko, this message translates to:
   /// **'취소'**
@@ -674,7 +674,7 @@ abstract class AppLocalizations {
   /// **'운동 기록 백업 및 복원'**
   String get dataManagementDesc;
 
-  /// 삭제 버튼 텍스트
+  /// 삭제 버튼
   ///
   /// In ko, this message translates to:
   /// **'삭제'**
@@ -2282,7 +2282,7 @@ abstract class AppLocalizations {
   /// **'💬 너의 의견을 들려달라! 드림 스피릿들의 목소리가 필요하다!'**
   String get sendFeedbackDesc;
 
-  /// 공유 버튼 라벨
+  /// 공유 버튼
   ///
   /// In ko, this message translates to:
   /// **'공유'**
@@ -14865,11 +14865,11 @@ abstract class AppLocalizations {
   /// **'🔱 데이터를 찾을 수 없다! 새로운 전설을 만들 시간이다, 만삣삐! 🔱'**
   String get errorNotFound;
 
-  /// 일반적인 오류 발생 메시지
+  /// 일반 오류 메시지
   ///
   /// In ko, this message translates to:
-  /// **'오류가 발생했다'**
-  String get errorOccurred;
+  /// **'오류가 발생했습니다: {error}'**
+  String errorOccurred(String error);
 
   /// Error occurred with message
   ///
@@ -15032,6 +15032,756 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'월간 구독 • 언제든 해지 가능'**
   String get premiumSubscriptionInfo;
+
+  /// 토큰 부족 안내 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰이 부족합니다! 체크리스트를 완료하거나 광고를 시청하여 토큰을 받으세요.'**
+  String get tokenInsufficientMessage;
+
+  /// 프리미엄 사용자 타입
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄'**
+  String get tokenUserTypePremium;
+
+  /// 무료 사용자 타입
+  ///
+  /// In ko, this message translates to:
+  /// **'무료'**
+  String get tokenUserTypeFree;
+
+  /// 토큰 잔액 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'🎫 보유 토큰: {balance}개 (최대 {maxTokens}개)'**
+  String tokenBalanceDisplay(int balance, int maxTokens);
+
+  /// 토큰 획득 다이얼로그 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 획득!'**
+  String get tokenRewardTitle;
+
+  /// 프리미엄 일일 보상 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 일일 보상'**
+  String get tokenDailyRewardPremium;
+
+  /// 무료 일일 보상 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'일일 보상'**
+  String get tokenDailyRewardFree;
+
+  /// 연속 출석 보너스 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{streak}일 연속 보너스 🔥'**
+  String tokenStreakBonus(int streak);
+
+  /// 총 획득 토큰 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'총 획득'**
+  String get tokenTotalReward;
+
+  /// 연속 출석 상태 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{streak}일 연속 출석 중!'**
+  String tokenStreakStatus(int streak);
+
+  /// 3일 연속 목표 안내
+  ///
+  /// In ko, this message translates to:
+  /// **'{remaining}일 더 연속 출석하면 보너스 토큰 획득!'**
+  String tokenStreakGoal3Days(int remaining);
+
+  /// 7일 연속 목표 안내
+  ///
+  /// In ko, this message translates to:
+  /// **'{remaining}일 더 연속 출석하면 7일 보너스!'**
+  String tokenStreakGoal7Days(int remaining);
+
+  /// 토큰 보상 확인 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'확인'**
+  String get tokenRewardConfirm;
+
+  /// 체크리스트 Day 헤더
+  ///
+  /// In ko, this message translates to:
+  /// **'🌙 Day {day}'**
+  String checklistDayHeader(int day);
+
+  /// 토큰 소비 실패 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'토큰 소비 실패'**
+  String get tokenConsumeFailed;
+
+  /// 꿈 일기 삭제 다이얼로그 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 삭제'**
+  String get dreamDeleteDialogTitle;
+
+  /// 꿈 일기 삭제 확인 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'이 꿈 일기를 삭제하시겠습니까?\n삭제된 데이터는 복구할 수 없습니다.'**
+  String get dreamDeleteDialogContent;
+
+  /// 꿈 일기 삭제 성공 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기가 삭제되었습니다'**
+  String get dreamDeletedSuccess;
+
+  /// 꿈 일기 삭제 실패 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'삭제 실패: {error}'**
+  String dreamDeleteFailed(String error);
+
+  /// AI 분석 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'AI 분석'**
+  String get aiAnalysis;
+
+  /// 최신순 정렬
+  ///
+  /// In ko, this message translates to:
+  /// **'최신순'**
+  String get sortNewest;
+
+  /// 오래된순 정렬
+  ///
+  /// In ko, this message translates to:
+  /// **'오래된순'**
+  String get sortOldest;
+
+  /// 자각도 높은순 정렬
+  ///
+  /// In ko, this message translates to:
+  /// **'자각도 높은순'**
+  String get sortLucidityHigh;
+
+  /// 새 꿈 일기 작성 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'새 꿈 일기'**
+  String get newDreamJournal;
+
+  /// 꿈 내용 입력 필수 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 내용을 입력해주세요.'**
+  String get dreamContentRequired;
+
+  /// 꿈 일기 저장 실패 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 저장에 실패했습니다.'**
+  String get dreamSaveFailed;
+
+  /// 자각몽 개수 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽: {count}'**
+  String lucidDreamCount(String count);
+
+  /// 일반 꿈 개수 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'일반 꿈: {count}'**
+  String normalDreamCount(String count);
+
+  /// 자각몽
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽'**
+  String get lucidDream;
+
+  /// 일반 꿈
+  ///
+  /// In ko, this message translates to:
+  /// **'일반 꿈'**
+  String get normalDream;
+
+  /// 꿈을 꾼 날짜 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈을 꾼 날짜'**
+  String get dreamDate;
+
+  /// 기분 점수 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'기분 점수:'**
+  String get moodScore;
+
+  /// 수면 시작 시간 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 시작'**
+  String get sleepStart;
+
+  /// 기상 시간 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'기상 시간'**
+  String get wakeTime;
+
+  /// 수면 시간 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 시간'**
+  String get sleepDuration;
+
+  /// 수면 품질 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 품질:'**
+  String get sleepQuality;
+
+  /// WBTB 기법 사용 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'중간 기상법 사용'**
+  String get wbtbUsed;
+
+  /// WBTB 기법 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'중간 기상법'**
+  String get wbtbTechnique;
+
+  /// 통계 화면 미사용 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'통계 화면은 자각몽 앱에서 사용하지 않습니다'**
+  String get progressNotUsed;
+
+  /// 수면 정보 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 정보 (선택)'**
+  String get sleepInfoOptional;
+
+  /// 값이 입력되지 않음을 나타내는 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'미입력'**
+  String get notEntered;
+
+  /// 사용한 기법 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'사용한 기법 (Techniques Used)'**
+  String get techniquesUsedLabel;
+
+  /// 기분 점수 섹션 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'기분 점수 (Mood Score)'**
+  String get moodScoreLabel;
+
+  /// 수면 품질 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 품질'**
+  String get sleepQualityLabel;
+
+  /// 사용한 기법 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'사용한 기법'**
+  String get techniquesUsedTitle;
+
+  /// WBTB 사용 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'중간 기상법 사용'**
+  String get wbtbUsedMessage;
+
+  /// 수면 정보 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 정보'**
+  String get sleepInfoTitle;
+
+  /// 수면 시간 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'수면 시간'**
+  String get sleepDurationLabel;
+
+  /// 수면 시간 값 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'{hours}시간 {minutes}분'**
+  String sleepDurationValue(String hours, String minutes);
+
+  /// 감정 및 기분 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'감정 및 기분'**
+  String get emotionsAndMoodTitle;
+
+  /// 감정 입력 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'감정 (Emotions)'**
+  String get emotionsInputTitle;
+
+  /// 꿈 심볼 입력 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 심볼/키워드 (Dream Signs)'**
+  String get dreamSignsInputTitle;
+
+  /// 등장 인물 입력 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'등장 인물 (Characters)'**
+  String get charactersInputTitle;
+
+  /// 장소 입력 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'장소 (Locations)'**
+  String get locationsInputTitle;
+
+  /// 통계 데이터 없음 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 데이터가 충분하지 않습니다.\n꿈 일기를 작성하면 통계가 표시됩니다.'**
+  String get dreamStatisticsNoData;
+
+  /// 자각몽 성공률 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 성공률'**
+  String get lucidSuccessRate;
+
+  /// 성공률 퍼센트 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'성공률: {rate}%'**
+  String successRatePercent(String rate);
+
+  /// 자각도 추세 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'자각도 추세'**
+  String get lucidityTrend;
+
+  /// 최근 10개 꿈 부제목
+  ///
+  /// In ko, this message translates to:
+  /// **'최근 10개 꿈'**
+  String get recentDreams10;
+
+  /// 주간 통계 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'주간 통계'**
+  String get weeklyStatistics;
+
+  /// 주간 통계 부제목
+  ///
+  /// In ko, this message translates to:
+  /// **'최근 7일간 꿈 기록'**
+  String get weeklyStatisticsSubtitle;
+
+  /// 꿈 내용 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈에서 본 것, 느낀 것을 자유롭게 작성하세요...'**
+  String get dreamContentHint;
+
+  /// 꿈 검색 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 내용, 심볼, 인물, 장소 검색...'**
+  String get dreamSearchHint;
+
+  /// 꿈 제목 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'예: 하늘을 나는 꿈'**
+  String get dreamTitleHint;
+
+  /// 감정 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'감정 입력 후 Enter'**
+  String get emotionInputHint;
+
+  /// 꿈 심볼 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'예: 물, 비행, 학교'**
+  String get dreamSignsHint;
+
+  /// 등장 인물 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'예: 엄마, 친구, 낯선 사람'**
+  String get charactersHint;
+
+  /// 장소 입력 힌트
+  ///
+  /// In ko, this message translates to:
+  /// **'예: 집, 학교, 낯선 도시'**
+  String get locationsHint;
+
+  /// 꿈 내용 입력 필드 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 내용 (필수) *'**
+  String get dreamContentLabel;
+
+  /// 꿈 제목 입력 필드 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'제목 (선택)'**
+  String get dreamTitleLabel;
+
+  /// 즐겨찾기 툴팁
+  ///
+  /// In ko, this message translates to:
+  /// **'즐겨찾기'**
+  String get tooltipFavorite;
+
+  /// 수정 툴팁
+  ///
+  /// In ko, this message translates to:
+  /// **'수정'**
+  String get tooltipEdit;
+
+  /// 삭제 툴팁
+  ///
+  /// In ko, this message translates to:
+  /// **'삭제'**
+  String get tooltipDelete;
+
+  /// 저장 툴팁
+  ///
+  /// In ko, this message translates to:
+  /// **'저장'**
+  String get tooltipSave;
+
+  /// 꿈 일기 수정 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 수정'**
+  String get dreamJournalEdit;
+
+  /// 꿈 일기 작성 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기 작성'**
+  String get dreamJournalCreate;
+
+  /// 꿈 일기 저장 성공 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기가 저장되었습니다.'**
+  String get dreamSavedSuccess;
+
+  /// 꿈 일기 수정 성공 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 일기가 수정되었습니다.'**
+  String get dreamUpdatedSuccess;
+
+  /// 전체 꿈 탭
+  ///
+  /// In ko, this message translates to:
+  /// **'전체 ({count})'**
+  String tabAllDreams(String count);
+
+  /// 자각몽 탭
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 ({count})'**
+  String tabLucidDreams(String count);
+
+  /// 즐겨찾기 탭
+  ///
+  /// In ko, this message translates to:
+  /// **'즐겨찾기'**
+  String get tabFavorites;
+
+  /// 자각몽 배지 텍스트
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽'**
+  String get lucidDreamBadge;
+
+  /// 총 꿈 통계 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'총 꿈'**
+  String get statTotalDreams;
+
+  /// 자각몽 통계 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽'**
+  String get statLucidDreams;
+
+  /// 평균 자각도 통계 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'평균 자각도'**
+  String get statAvgLucidity;
+
+  /// 메타정보 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'정보'**
+  String get metaInfoTitle;
+
+  /// 작성일 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'작성일'**
+  String get metaCreatedAt;
+
+  /// 수정일 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'수정일'**
+  String get metaUpdatedAt;
+
+  /// 단어 수 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'단어 수'**
+  String get metaWordCount;
+
+  /// 단어 수 값
+  ///
+  /// In ko, this message translates to:
+  /// **'{count} 단어'**
+  String metaWordCountValue(String count);
+
+  /// AI 분석 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'AI 분석'**
+  String get metaAiAnalysis;
+
+  /// 완료 상태
+  ///
+  /// In ko, this message translates to:
+  /// **'완료'**
+  String get metaCompleted;
+
+  /// 미완료 상태
+  ///
+  /// In ko, this message translates to:
+  /// **'미완료'**
+  String get metaNotCompleted;
+
+  /// 연속 기록 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'연속 기록'**
+  String get statStreakLabel;
+
+  /// 연속 일수
+  ///
+  /// In ko, this message translates to:
+  /// **'{count}일'**
+  String statStreakDays(String count);
+
+  /// 무료 체험 남은 일수
+  ///
+  /// In ko, this message translates to:
+  /// **'무료 체험 {days}일 남음'**
+  String subscriptionFreeTrialRemaining(String days);
+
+  /// 프리미엄 혜택: 광고 제거
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 제거'**
+  String get subscriptionBenefitAdFree;
+
+  /// 프리미엄 혜택: 확장 프로그램
+  ///
+  /// In ko, this message translates to:
+  /// **'60일 확장 프로그램 (Week 1-8)'**
+  String get subscriptionBenefitExtendedProgram;
+
+  /// 프리미엄 혜택: Lumi 진화
+  ///
+  /// In ko, this message translates to:
+  /// **'Lumi 6단계 완전 진화'**
+  String get subscriptionBenefitLumiEvolution;
+
+  /// 프리미엄 혜택: 무제한 AI 분석
+  ///
+  /// In ko, this message translates to:
+  /// **'무제한 AI 꿈 분석'**
+  String get subscriptionBenefitUnlimitedAI;
+
+  /// 프리미엄 혜택: 고급 통계
+  ///
+  /// In ko, this message translates to:
+  /// **'고급 통계 분석'**
+  String get subscriptionBenefitAdvancedAnalytics;
+
+  /// 프리미엄 혜택: 데이터 내보내기
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터 내보내기'**
+  String get subscriptionBenefitDataExport;
+
+  /// 광고 표시 여부 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'광고 표시'**
+  String get subscriptionAdsLabel;
+
+  /// 예
+  ///
+  /// In ko, this message translates to:
+  /// **'예'**
+  String get subscriptionAdsYes;
+
+  /// 아니오 (광고 제거됨)
+  ///
+  /// In ko, this message translates to:
+  /// **'아니오 (광고 제거)'**
+  String get subscriptionAdsNoWithAdFree;
+
+  /// 연구 결과 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'연구 결과'**
+  String get weekUnlockResearchLabel;
+
+  /// WBTB + MILD 기법
+  ///
+  /// In ko, this message translates to:
+  /// **'WBTB + MILD 기법'**
+  String get weekUnlockWbtbMildTechnique;
+
+  /// 자각몽 성공률 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'46% 자각몽 성공률'**
+  String get weekUnlockSuccessRate;
+
+  /// 해금될 기법 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'해금될 기법'**
+  String get weekUnlockTechniquesLabel;
+
+  /// 프리미엄 혜택 섹션 라벨
+  ///
+  /// In ko, this message translates to:
+  /// **'프리미엄 혜택'**
+  String get weekUnlockPremiumBenefitsLabel;
+
+  /// 60일 전체 프로그램 접근 혜택
+  ///
+  /// In ko, this message translates to:
+  /// **'🎯 60일 전체 프로그램 접근'**
+  String get weekUnlockBenefitFullProgram;
+
+  /// Lumi 6단계 진화 혜택
+  ///
+  /// In ko, this message translates to:
+  /// **'✨ Lumi 6단계 전체 진화'**
+  String get weekUnlockBenefitLumiEvolution;
+
+  /// 무제한 AI 분석 혜택
+  ///
+  /// In ko, this message translates to:
+  /// **'🧠 무제한 AI 꿈 분석'**
+  String get weekUnlockBenefitUnlimitedAI;
+
+  /// 고급 통계 분석 혜택
+  ///
+  /// In ko, this message translates to:
+  /// **'📊 고급 통계 분석'**
+  String get weekUnlockBenefitAdvancedStats;
+
+  /// 광고 완전 제거 혜택
+  ///
+  /// In ko, this message translates to:
+  /// **'🚫 광고 완전 제거'**
+  String get weekUnlockBenefitAdRemoval;
+
+  /// Week 2 해금 다이얼로그 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'🎯 Week 2 기법 해금!'**
+  String get weekUnlockWeek2Title;
+
+  /// Week 2 해금 다이얼로그 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'축하합니다! Week 1을 완료했습니다.\\n\\n연구 기반 자각몽 기법과 60일 확장 프로그램을 경험하려면 프리미엄으로 업그레이드하세요.'**
+  String get weekUnlockWeek2Message;
+
+  /// Week 3 해금 다이얼로그 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'🎯 Week 3 기법 해금!'**
+  String get weekUnlockWeek3Title;
+
+  /// Week 3 해금 다이얼로그 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'축하합니다! Week 2를 완료했습니다.\\n\\n연구에서 증명된 가장 효과적인 기법인 WBTB+MILD를 해금하려면 프리미엄으로 업그레이드하세요.'**
+  String get weekUnlockWeek3Message;
+
+  /// Week 5 해금 다이얼로그 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'🌌 고급 기법 해금!'**
+  String get weekUnlockWeek5Title;
+
+  /// Week 5 해금 다이얼로그 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Week 5에 도달했습니다!\\n\\nSSILD와 WILD 같은 고급 자각몽 기법을 마스터할 준비가 되셨나요?'**
+  String get weekUnlockWeek5Message;
+
+  /// Week 7 해금 다이얼로그 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'🔮 마스터 기법 해금!'**
+  String get weekUnlockWeek7Title;
+
+  /// Week 7 해금 다이얼로그 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Week 7 도달! 거의 다 왔습니다.\\n\\n꿈 조종과 안정화 기법으로 자각몽 마스터가 되세요!'**
+  String get weekUnlockWeek7Message;
+
+  /// 일반 Week 해금 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'🔓 Week {week} 해금'**
+  String weekUnlockGenericTitle(String week);
+
+  /// 일반 Week 해금 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'Week {prevWeek}을 완료했습니다!\\n\\n다음 단계로 진행하려면 프리미엄이 필요합니다.'**
+  String weekUnlockGenericMessage(String prevWeek);
 }
 
 class _AppLocalizationsDelegate

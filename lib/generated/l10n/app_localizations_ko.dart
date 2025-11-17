@@ -7958,7 +7958,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get errorNotFound => '🔱 데이터를 찾을 수 없다! 새로운 전설을 만들 시간이다, 만삣삐! 🔱';
 
   @override
-  String get errorOccurred => '오류가 발생했다';
+  String errorOccurred(String error) {
+    return '오류가 발생했습니다: $error';
+  }
 
   @override
   String errorOccurredWithMessage(String error) {
@@ -8050,4 +8052,422 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get premiumSubscriptionInfo => '월간 구독 • 언제든 해지 가능';
+
+  @override
+  String get tokenInsufficientMessage =>
+      '토큰이 부족합니다! 체크리스트를 완료하거나 광고를 시청하여 토큰을 받으세요.';
+
+  @override
+  String get tokenUserTypePremium => '프리미엄';
+
+  @override
+  String get tokenUserTypeFree => '무료';
+
+  @override
+  String tokenBalanceDisplay(int balance, int maxTokens) {
+    return '🎫 보유 토큰: $balance개 (최대 $maxTokens개)';
+  }
+
+  @override
+  String get tokenRewardTitle => '토큰 획득!';
+
+  @override
+  String get tokenDailyRewardPremium => '프리미엄 일일 보상';
+
+  @override
+  String get tokenDailyRewardFree => '일일 보상';
+
+  @override
+  String tokenStreakBonus(int streak) {
+    return '$streak일 연속 보너스 🔥';
+  }
+
+  @override
+  String get tokenTotalReward => '총 획득';
+
+  @override
+  String tokenStreakStatus(int streak) {
+    return '$streak일 연속 출석 중!';
+  }
+
+  @override
+  String tokenStreakGoal3Days(int remaining) {
+    return '$remaining일 더 연속 출석하면 보너스 토큰 획득!';
+  }
+
+  @override
+  String tokenStreakGoal7Days(int remaining) {
+    return '$remaining일 더 연속 출석하면 7일 보너스!';
+  }
+
+  @override
+  String get tokenRewardConfirm => '확인';
+
+  @override
+  String checklistDayHeader(int day) {
+    return '🌙 Day $day';
+  }
+
+  @override
+  String get tokenConsumeFailed => '토큰 소비 실패';
+
+  @override
+  String get dreamDeleteDialogTitle => '꿈 일기 삭제';
+
+  @override
+  String get dreamDeleteDialogContent =>
+      '이 꿈 일기를 삭제하시겠습니까?\n삭제된 데이터는 복구할 수 없습니다.';
+
+  @override
+  String get dreamDeletedSuccess => '꿈 일기가 삭제되었습니다';
+
+  @override
+  String dreamDeleteFailed(String error) {
+    return '삭제 실패: $error';
+  }
+
+  @override
+  String get aiAnalysis => 'AI 분석';
+
+  @override
+  String get sortNewest => '최신순';
+
+  @override
+  String get sortOldest => '오래된순';
+
+  @override
+  String get sortLucidityHigh => '자각도 높은순';
+
+  @override
+  String get newDreamJournal => '새 꿈 일기';
+
+  @override
+  String get dreamContentRequired => '꿈 내용을 입력해주세요.';
+
+  @override
+  String get dreamSaveFailed => '꿈 일기 저장에 실패했습니다.';
+
+  @override
+  String lucidDreamCount(String count) {
+    return '자각몽: $count';
+  }
+
+  @override
+  String normalDreamCount(String count) {
+    return '일반 꿈: $count';
+  }
+
+  @override
+  String get lucidDream => '자각몽';
+
+  @override
+  String get normalDream => '일반 꿈';
+
+  @override
+  String get dreamDate => '꿈을 꾼 날짜';
+
+  @override
+  String get moodScore => '기분 점수:';
+
+  @override
+  String get sleepStart => '수면 시작';
+
+  @override
+  String get wakeTime => '기상 시간';
+
+  @override
+  String get sleepDuration => '수면 시간';
+
+  @override
+  String get sleepQuality => '수면 품질:';
+
+  @override
+  String get wbtbUsed => '중간 기상법 사용';
+
+  @override
+  String get wbtbTechnique => '중간 기상법';
+
+  @override
+  String get progressNotUsed => '통계 화면은 자각몽 앱에서 사용하지 않습니다';
+
+  @override
+  String get sleepInfoOptional => '수면 정보 (선택)';
+
+  @override
+  String get notEntered => '미입력';
+
+  @override
+  String get techniquesUsedLabel => '사용한 기법 (Techniques Used)';
+
+  @override
+  String get moodScoreLabel => '기분 점수 (Mood Score)';
+
+  @override
+  String get sleepQualityLabel => '수면 품질';
+
+  @override
+  String get techniquesUsedTitle => '사용한 기법';
+
+  @override
+  String get wbtbUsedMessage => '중간 기상법 사용';
+
+  @override
+  String get sleepInfoTitle => '수면 정보';
+
+  @override
+  String get sleepDurationLabel => '수면 시간';
+
+  @override
+  String sleepDurationValue(String hours, String minutes) {
+    return '$hours시간 $minutes분';
+  }
+
+  @override
+  String get emotionsAndMoodTitle => '감정 및 기분';
+
+  @override
+  String get emotionsInputTitle => '감정 (Emotions)';
+
+  @override
+  String get dreamSignsInputTitle => '꿈 심볼/키워드 (Dream Signs)';
+
+  @override
+  String get charactersInputTitle => '등장 인물 (Characters)';
+
+  @override
+  String get locationsInputTitle => '장소 (Locations)';
+
+  @override
+  String get dreamStatisticsNoData =>
+      '꿈 데이터가 충분하지 않습니다.\n꿈 일기를 작성하면 통계가 표시됩니다.';
+
+  @override
+  String get lucidSuccessRate => '자각몽 성공률';
+
+  @override
+  String successRatePercent(String rate) {
+    return '성공률: $rate%';
+  }
+
+  @override
+  String get lucidityTrend => '자각도 추세';
+
+  @override
+  String get recentDreams10 => '최근 10개 꿈';
+
+  @override
+  String get weeklyStatistics => '주간 통계';
+
+  @override
+  String get weeklyStatisticsSubtitle => '최근 7일간 꿈 기록';
+
+  @override
+  String get dreamContentHint => '꿈에서 본 것, 느낀 것을 자유롭게 작성하세요...';
+
+  @override
+  String get dreamSearchHint => '꿈 내용, 심볼, 인물, 장소 검색...';
+
+  @override
+  String get dreamTitleHint => '예: 하늘을 나는 꿈';
+
+  @override
+  String get emotionInputHint => '감정 입력 후 Enter';
+
+  @override
+  String get dreamSignsHint => '예: 물, 비행, 학교';
+
+  @override
+  String get charactersHint => '예: 엄마, 친구, 낯선 사람';
+
+  @override
+  String get locationsHint => '예: 집, 학교, 낯선 도시';
+
+  @override
+  String get dreamContentLabel => '꿈 내용 (필수) *';
+
+  @override
+  String get dreamTitleLabel => '제목 (선택)';
+
+  @override
+  String get tooltipFavorite => '즐겨찾기';
+
+  @override
+  String get tooltipEdit => '수정';
+
+  @override
+  String get tooltipDelete => '삭제';
+
+  @override
+  String get tooltipSave => '저장';
+
+  @override
+  String get dreamJournalEdit => '꿈 일기 수정';
+
+  @override
+  String get dreamJournalCreate => '꿈 일기 작성';
+
+  @override
+  String get dreamSavedSuccess => '꿈 일기가 저장되었습니다.';
+
+  @override
+  String get dreamUpdatedSuccess => '꿈 일기가 수정되었습니다.';
+
+  @override
+  String tabAllDreams(String count) {
+    return '전체 ($count)';
+  }
+
+  @override
+  String tabLucidDreams(String count) {
+    return '자각몽 ($count)';
+  }
+
+  @override
+  String get tabFavorites => '즐겨찾기';
+
+  @override
+  String get lucidDreamBadge => '자각몽';
+
+  @override
+  String get statTotalDreams => '총 꿈';
+
+  @override
+  String get statLucidDreams => '자각몽';
+
+  @override
+  String get statAvgLucidity => '평균 자각도';
+
+  @override
+  String get metaInfoTitle => '정보';
+
+  @override
+  String get metaCreatedAt => '작성일';
+
+  @override
+  String get metaUpdatedAt => '수정일';
+
+  @override
+  String get metaWordCount => '단어 수';
+
+  @override
+  String metaWordCountValue(String count) {
+    return '$count 단어';
+  }
+
+  @override
+  String get metaAiAnalysis => 'AI 분석';
+
+  @override
+  String get metaCompleted => '완료';
+
+  @override
+  String get metaNotCompleted => '미완료';
+
+  @override
+  String get statStreakLabel => '연속 기록';
+
+  @override
+  String statStreakDays(String count) {
+    return '$count일';
+  }
+
+  @override
+  String subscriptionFreeTrialRemaining(String days) {
+    return '무료 체험 $days일 남음';
+  }
+
+  @override
+  String get subscriptionBenefitAdFree => '광고 제거';
+
+  @override
+  String get subscriptionBenefitExtendedProgram => '60일 확장 프로그램 (Week 1-8)';
+
+  @override
+  String get subscriptionBenefitLumiEvolution => 'Lumi 6단계 완전 진화';
+
+  @override
+  String get subscriptionBenefitUnlimitedAI => '무제한 AI 꿈 분석';
+
+  @override
+  String get subscriptionBenefitAdvancedAnalytics => '고급 통계 분석';
+
+  @override
+  String get subscriptionBenefitDataExport => '데이터 내보내기';
+
+  @override
+  String get subscriptionAdsLabel => '광고 표시';
+
+  @override
+  String get subscriptionAdsYes => '예';
+
+  @override
+  String get subscriptionAdsNoWithAdFree => '아니오 (광고 제거)';
+
+  @override
+  String get weekUnlockResearchLabel => '연구 결과';
+
+  @override
+  String get weekUnlockWbtbMildTechnique => 'WBTB + MILD 기법';
+
+  @override
+  String get weekUnlockSuccessRate => '46% 자각몽 성공률';
+
+  @override
+  String get weekUnlockTechniquesLabel => '해금될 기법';
+
+  @override
+  String get weekUnlockPremiumBenefitsLabel => '프리미엄 혜택';
+
+  @override
+  String get weekUnlockBenefitFullProgram => '🎯 60일 전체 프로그램 접근';
+
+  @override
+  String get weekUnlockBenefitLumiEvolution => '✨ Lumi 6단계 전체 진화';
+
+  @override
+  String get weekUnlockBenefitUnlimitedAI => '🧠 무제한 AI 꿈 분석';
+
+  @override
+  String get weekUnlockBenefitAdvancedStats => '📊 고급 통계 분석';
+
+  @override
+  String get weekUnlockBenefitAdRemoval => '🚫 광고 완전 제거';
+
+  @override
+  String get weekUnlockWeek2Title => '🎯 Week 2 기법 해금!';
+
+  @override
+  String get weekUnlockWeek2Message =>
+      '축하합니다! Week 1을 완료했습니다.\\n\\n연구 기반 자각몽 기법과 60일 확장 프로그램을 경험하려면 프리미엄으로 업그레이드하세요.';
+
+  @override
+  String get weekUnlockWeek3Title => '🎯 Week 3 기법 해금!';
+
+  @override
+  String get weekUnlockWeek3Message =>
+      '축하합니다! Week 2를 완료했습니다.\\n\\n연구에서 증명된 가장 효과적인 기법인 WBTB+MILD를 해금하려면 프리미엄으로 업그레이드하세요.';
+
+  @override
+  String get weekUnlockWeek5Title => '🌌 고급 기법 해금!';
+
+  @override
+  String get weekUnlockWeek5Message =>
+      'Week 5에 도달했습니다!\\n\\nSSILD와 WILD 같은 고급 자각몽 기법을 마스터할 준비가 되셨나요?';
+
+  @override
+  String get weekUnlockWeek7Title => '🔮 마스터 기법 해금!';
+
+  @override
+  String get weekUnlockWeek7Message =>
+      'Week 7 도달! 거의 다 왔습니다.\\n\\n꿈 조종과 안정화 기법으로 자각몽 마스터가 되세요!';
+
+  @override
+  String weekUnlockGenericTitle(String week) {
+    return '🔓 Week $week 해금';
+  }
+
+  @override
+  String weekUnlockGenericMessage(String prevWeek) {
+    return 'Week $prevWeek을 완료했습니다!\\n\\n다음 단계로 진행하려면 프리미엄이 필요합니다.';
+  }
 }
