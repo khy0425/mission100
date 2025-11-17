@@ -8590,4 +8590,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get trialEnded => '체험 종료';
+
+  @override
+  String lucidDreamLevel(int level) {
+    return '자각몽 Lv.$level';
+  }
 }

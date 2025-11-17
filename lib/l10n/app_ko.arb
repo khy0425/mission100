@@ -8979,5 +8979,14 @@
   "premium": "Premium",
   "@premium": {
     "description": "프리미엄 라벨"
+  },
+  "lucidDreamLevel": "자각몽 Lv.{level}",
+  "@lucidDreamLevel": {
+    "description": "자각몽 레벨 표시",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
   }
 }

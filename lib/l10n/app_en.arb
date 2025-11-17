@@ -8982,5 +8982,14 @@
   "premium": "Premium",
   "@premium": {
     "description": "Premium label"
+  },
+  "lucidDreamLevel": "Lucid Dream Lv.{level}",
+  "@lucidDreamLevel": {
+    "description": "Lucid dream level indicator",
+    "placeholders": {
+      "level": {
+        "type": "int"
+      }
+    }
   }
 }

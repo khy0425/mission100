@@ -15980,6 +15980,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'체험 종료'**
   String get trialEnded;
+
+  /// 자각몽 레벨 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 Lv.{level}'**
+  String lucidDreamLevel(int level);
 }
 
 class _AppLocalizationsDelegate

@@ -9012,4 +9012,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get trialEnded => 'Trial Ended';
+
+  @override
+  String lucidDreamLevel(int level) {
+    return 'Lucid Dream Lv.$level';
+  }
 }
