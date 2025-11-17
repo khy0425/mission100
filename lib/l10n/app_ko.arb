@@ -8971,5 +8971,13 @@
   "dreamJournalTitle": "꿈 일기",
   "@dreamJournalTitle": {
     "description": "꿈 일기 화면 타이틀"
+  },
+  "trialEnded": "체험 종료",
+  "@trialEnded": {
+    "description": "무료 체험 종료 표시"
+  },
+  "premium": "Premium",
+  "@premium": {
+    "description": "프리미엄 라벨"
   }
 }

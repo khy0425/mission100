@@ -9009,4 +9009,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get dreamJournalTitle => 'Dream Journal';
+
+  @override
+  String get trialEnded => 'Trial Ended';
 }

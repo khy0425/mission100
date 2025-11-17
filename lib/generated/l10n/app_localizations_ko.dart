@@ -6587,7 +6587,7 @@ class AppLocalizationsKo extends AppLocalizations {
   String get allWorkoutProgramsAvailable => '모든 운동 프로그램 이용 가능';
 
   @override
-  String get premium => '프리미엄';
+  String get premium => 'Premium';
 
   @override
   String get promotion => '프로모션';
@@ -8587,4 +8587,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get dreamJournalTitle => '꿈 일기';
+
+  @override
+  String get trialEnded => '체험 종료';
 }

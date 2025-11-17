@@ -8974,5 +8974,13 @@
   "dreamJournalTitle": "Dream Journal",
   "@dreamJournalTitle": {
     "description": "Dream journal screen title"
+  },
+  "trialEnded": "Trial Ended",
+  "@trialEnded": {
+    "description": "Free trial ended label"
+  },
+  "premium": "Premium",
+  "@premium": {
+    "description": "Premium label"
   }
 }

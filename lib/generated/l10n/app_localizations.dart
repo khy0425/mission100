@@ -12363,10 +12363,10 @@ abstract class AppLocalizations {
   /// **'모든 운동 프로그램 이용 가능'**
   String get allWorkoutProgramsAvailable;
 
-  /// No description provided for @premium.
+  /// 프리미엄 라벨
   ///
   /// In ko, this message translates to:
-  /// **'프리미엄'**
+  /// **'Premium'**
   String get premium;
 
   /// No description provided for @promotion.
@@ -15974,6 +15974,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'꿈 일기'**
   String get dreamJournalTitle;
+
+  /// 무료 체험 종료 표시
+  ///
+  /// In ko, this message translates to:
+  /// **'체험 종료'**
+  String get trialEnded;
 }
 
 class _AppLocalizationsDelegate
