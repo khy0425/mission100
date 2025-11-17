@@ -8607,4 +8607,7 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get writeFirstDream => '첫 꿈 일기 작성하기';
+
+  @override
+  String get newTechniqueUnlocked => '새로운 기법 해금!';
 }

@@ -16010,6 +16010,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'첫 꿈 일기 작성하기'**
   String get writeFirstDream;
+
+  /// 레벨업 시 새 기법 해금 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'새로운 기법 해금!'**
+  String get newTechniqueUnlocked;
 }
 
 class _AppLocalizationsDelegate

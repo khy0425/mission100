@@ -9004,5 +9004,9 @@
   "writeFirstDream": "첫 꿈 일기 작성하기",
   "@writeFirstDream": {
     "description": "첫 꿈 일기 작성 버튼"
+  },
+  "newTechniqueUnlocked": "새로운 기법 해금!",
+  "@newTechniqueUnlocked": {
+    "description": "레벨업 시 새 기법 해금 메시지"
   }
 }

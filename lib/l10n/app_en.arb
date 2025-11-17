@@ -9007,5 +9007,9 @@
   "writeFirstDream": "Write Your First Dream",
   "@writeFirstDream": {
     "description": "Write first dream button"
+  },
+  "newTechniqueUnlocked": "New Technique Unlocked!",
+  "@newTechniqueUnlocked": {
+    "description": "New technique unlocked message on level up"
   }
 }

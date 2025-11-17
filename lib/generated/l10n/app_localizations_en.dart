@@ -9032,4 +9032,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get writeFirstDream => 'Write Your First Dream';
+
+  @override
+  String get newTechniqueUnlocked => 'New Technique Unlocked!';
 }
