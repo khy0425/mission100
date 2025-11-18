@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import '../../utils/config/constants.dart';
-import 'onboarding_level_badge.dart';
 import '../../generated/l10n/app_localizations.dart';
 
 /// 온보딩 미션 페이지
@@ -95,25 +94,28 @@ class _OnboardingMissionPageState extends State<OnboardingMissionPage> {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: AppConstants.paddingXL),
-          OnboardingLevelBadge(
-            level: 'Rookie',
-            label: l10n.onboardingMissionBeginnerTitle,
-            range: l10n.onboardingMissionBeginnerDesc,
+          _buildDreamStageCard(
+            context,
+            icon: '💤',
+            title: l10n.onboardingMissionWeek12Title,
+            description: l10n.onboardingMissionWeek12Desc,
             color: const Color(AppColors.primaryColor),
           ),
           const SizedBox(height: AppConstants.paddingM),
-          OnboardingLevelBadge(
-            level: 'Rising',
-            label: l10n.onboardingMissionIntermediateTitle,
-            range: l10n.onboardingMissionIntermediateDesc,
-            color: Colors.green,
+          _buildDreamStageCard(
+            context,
+            icon: '🌙',
+            title: l10n.onboardingMissionWeek34Title,
+            description: l10n.onboardingMissionWeek34Desc,
+            color: Colors.blue,
           ),
           const SizedBox(height: AppConstants.paddingM),
-          OnboardingLevelBadge(
-            level: 'Alpha',
-            label: l10n.onboardingMissionAdvancedTitle,
-            range: l10n.onboardingMissionAdvancedDesc,
-            color: Colors.orange,
+          _buildDreamStageCard(
+            context,
+            icon: '✨',
+            title: l10n.onboardingMissionWeek58Title,
+            description: l10n.onboardingMissionWeek58Desc,
+            color: Colors.purple,
           ),
           const SizedBox(height: AppConstants.paddingXL),
           Container(
@@ -123,21 +125,77 @@ class _OnboardingMissionPageState extends State<OnboardingMissionPage> {
               borderRadius: BorderRadius.circular(AppConstants.radiusM),
               border: Border.all(color: theme.colorScheme.outline),
             ),
-            child: Row(
+            child: Column(
               children: [
-                const Icon(
-                  Icons.info_outline,
-                  color: Color(AppColors.primaryColor),
-                  size: 32,
+                Icon(
+                  Icons.rocket_launch,
+                  size: 48,
+                  color: const Color(AppColors.primaryColor),
                 ),
-                const SizedBox(width: AppConstants.paddingM),
-                Expanded(
-                  child: Text(
-                    l10n.onboardingMissionAssurance,
-                    style: theme.textTheme.bodyLarge?.copyWith(
-                      color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
-                      height: 1.5,
-                    ),
+                const SizedBox(height: AppConstants.paddingM),
+                Text(
+                  l10n.onboardingMissionReadyTitle,
+                  style: theme.textTheme.titleLarge?.copyWith(
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: AppConstants.paddingS),
+                Text(
+                  l10n.onboardingMissionReadyDesc,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// 자각몽 단계 카드 빌더
+  Widget _buildDreamStageCard(
+    BuildContext context, {
+    required String icon,
+    required String title,
+    required String description,
+    required Color color,
+  }) {
+    final theme = Theme.of(context);
+
+    return Container(
+      padding: const EdgeInsets.all(AppConstants.paddingL),
+      decoration: BoxDecoration(
+        color: color.withValues(alpha: 0.1),
+        borderRadius: BorderRadius.circular(AppConstants.radiusM),
+        border: Border.all(color: color.withValues(alpha: 0.3), width: 2),
+      ),
+      child: Row(
+        children: [
+          Text(
+            icon,
+            style: const TextStyle(fontSize: 36),
+          ),
+          const SizedBox(width: AppConstants.paddingM),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  description,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    color: Colors.white.withValues(alpha: 0.9),
                   ),
                 ),
               ],

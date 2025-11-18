@@ -9047,5 +9047,13 @@
   "newStageLabel": "새로운 단계:",
   "@newStageLabel": {
     "description": "새로운 캐릭터 단계 레이블"
+  },
+  "onboardingMissionReadyTitle": "준비되셨나요?",
+  "@onboardingMissionReadyTitle": {
+    "description": "온보딩 미션 페이지 - 시작 준비 제목"
+  },
+  "onboardingMissionReadyDesc": "모든 단계는 당신의 속도에 맞춰 진행됩니다. 언제든지 시작할 수 있습니다!",
+  "@onboardingMissionReadyDesc": {
+    "description": "온보딩 미션 페이지 - 시작 준비 설명"
   }
 }

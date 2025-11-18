@@ -9050,5 +9050,13 @@
   "newStageLabel": "New stage:",
   "@newStageLabel": {
     "description": "New character stage label"
+  },
+  "onboardingMissionReadyTitle": "Ready to Begin?",
+  "@onboardingMissionReadyTitle": {
+    "description": "Onboarding mission page - ready to start title"
+  },
+  "onboardingMissionReadyDesc": "Every step progresses at your own pace. You can start whenever you're ready!",
+  "@onboardingMissionReadyDesc": {
+    "description": "Onboarding mission page - ready to start description"
   }
 }
