@@ -145,7 +145,7 @@ class DreamEntryCardWidget extends StatelessWidget {
                     ),
                     const SizedBox(width: 4),
                     Text(
-                      'AI 분석 완료',
+                      l10n.aiAnalysisCompleted,
                       style: TextStyle(
                         fontSize: AppConstants.fontSizeXS,
                         color: Colors.blue.shade600,

@@ -9020,5 +9020,9 @@
   "dreamLocationsLabel": "장소:",
   "@dreamLocationsLabel": {
     "description": "꿈 장소 섹션 레이블"
+  },
+  "aiAnalysisCompleted": "AI 분석 완료",
+  "@aiAnalysisCompleted": {
+    "description": "AI 분석이 완료된 꿈 일기 뱃지"
   }
 }

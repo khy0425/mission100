@@ -9023,5 +9023,9 @@
   "dreamLocationsLabel": "Locations:",
   "@dreamLocationsLabel": {
     "description": "Dream locations section label"
+  },
+  "aiAnalysisCompleted": "AI Analysis Completed",
+  "@aiAnalysisCompleted": {
+    "description": "Badge for dreams with AI analysis completed"
   }
 }
