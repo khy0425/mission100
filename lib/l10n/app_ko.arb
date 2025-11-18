@@ -9008,5 +9008,17 @@
   "newTechniqueUnlocked": "새로운 기법 해금!",
   "@newTechniqueUnlocked": {
     "description": "레벨업 시 새 기법 해금 메시지"
+  },
+  "dreamSymbolsLabel": "꿈 심볼:",
+  "@dreamSymbolsLabel": {
+    "description": "꿈 심볼 섹션 레이블"
+  },
+  "dreamCharactersLabel": "등장 인물:",
+  "@dreamCharactersLabel": {
+    "description": "꿈 등장인물 섹션 레이블"
+  },
+  "dreamLocationsLabel": "장소:",
+  "@dreamLocationsLabel": {
+    "description": "꿈 장소 섹션 레이블"
   }
 }

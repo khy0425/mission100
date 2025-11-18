@@ -9011,5 +9011,17 @@
   "newTechniqueUnlocked": "New Technique Unlocked!",
   "@newTechniqueUnlocked": {
     "description": "New technique unlocked message on level up"
+  },
+  "dreamSymbolsLabel": "Dream Symbols:",
+  "@dreamSymbolsLabel": {
+    "description": "Dream symbols section label"
+  },
+  "dreamCharactersLabel": "Characters:",
+  "@dreamCharactersLabel": {
+    "description": "Dream characters section label"
+  },
+  "dreamLocationsLabel": "Locations:",
+  "@dreamLocationsLabel": {
+    "description": "Dream locations section label"
   }
 }
