@@ -8337,15 +8337,6 @@
   "@dreamSaveFailed": {
     "description": "Dream journal save failed message"
   },
-  "errorOccurred": "An error occurred: {error}",
-  "@errorOccurred": {
-    "description": "General error message",
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
   "lucidDreamCount": "Lucid Dreams: {count}",
   "@lucidDreamCount": {
     "description": "Lucid dream count display",

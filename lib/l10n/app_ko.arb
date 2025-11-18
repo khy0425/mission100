@@ -8334,15 +8334,6 @@
   "@dreamSaveFailed": {
     "description": "꿈 일기 저장 실패 메시지"
   },
-  "errorOccurred": "오류가 발생했습니다: {error}",
-  "@errorOccurred": {
-    "description": "일반 오류 메시지",
-    "placeholders": {
-      "error": {
-        "type": "String"
-      }
-    }
-  },
   "lucidDreamCount": "자각몽: {count}",
   "@lucidDreamCount": {
     "description": "자각몽 개수 표시",
