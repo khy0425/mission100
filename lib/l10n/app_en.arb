@@ -9051,5 +9051,13 @@
   "characterUnlockStage6": "LEGENDARY! Week 7+ Dream Master achieved! 👑🌙 [Premium]",
   "@characterUnlockStage6": {
     "description": "Stage 6 (Dream Master) unlock message"
+  },
+  "characterEvolvedFallback": "Lumi has evolved!",
+  "@characterEvolvedFallback": {
+    "description": "Character level up notification fallback message"
+  },
+  "newStageLabel": "New stage:",
+  "@newStageLabel": {
+    "description": "New character stage label"
   }
 }

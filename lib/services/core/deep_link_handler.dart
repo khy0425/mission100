@@ -199,10 +199,11 @@ class DeepLinkHandler {
 
   /// Chad 레벨업 다이얼로그 표시
   void _showChadLevelUpDialog(BuildContext context, Map<String, dynamic> data) {
+    final l10n = AppLocalizations.of(context);
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(AppLocalizations.of(context).chadLevelUpTitle),
+        title: Text(l10n.chadLevelUpTitle),
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -214,11 +215,11 @@ class DeepLinkHandler {
               ),
             ),
             const SizedBox(height: 8),
-            Text(data['message'] ?? 'Chad가 성장했습니다!'),
+            Text(data['message'] ?? l10n.characterEvolvedFallback),
             if (data['newStage'] != null) ...[
               const SizedBox(height: 16),
               Text(
-                '새로운 단계: ${data['newStage']}',
+                '${l10n.newStageLabel} ${data['newStage']}',
                 style: const TextStyle(
                   fontSize: 16,
                   color: Colors.blue,

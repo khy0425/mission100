@@ -9048,5 +9048,13 @@
   "characterUnlockStage6": "전설 등급! Week 7+ Dream Master 달성! 👑🌙 [프리미엄]",
   "@characterUnlockStage6": {
     "description": "Stage 6 (Dream Master) 해금 메시지"
+  },
+  "characterEvolvedFallback": "Lumi가 성장했습니다!",
+  "@characterEvolvedFallback": {
+    "description": "캐릭터 레벨업 알림 fallback 메시지"
+  },
+  "newStageLabel": "새로운 단계:",
+  "@newStageLabel": {
+    "description": "새로운 캐릭터 단계 레이블"
   }
 }
