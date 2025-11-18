@@ -9024,5 +9024,29 @@
   "aiAnalysisCompleted": "AI 분석 완료",
   "@aiAnalysisCompleted": {
     "description": "AI 분석이 완료된 꿈 일기 뱃지"
+  },
+  "characterUnlockStage1": "드림 레름에 오신 것을 환영합니다! Lumi가 당신과 함께 깨어납니다. 💙",
+  "@characterUnlockStage1": {
+    "description": "Stage 1 (Sleepy Lumi) 해금 메시지"
+  },
+  "characterUnlockStage2": "Week 1 완료! Lumi가 깨어나고 있어요! ✨ [무료]",
+  "@characterUnlockStage2": {
+    "description": "Stage 2 (Aware Lumi) 해금 메시지"
+  },
+  "characterUnlockStage3": "Week 2 달성! 첫 자각몽의 순간! 🌟 [프리미엄 또는 첫 달 무료]",
+  "@characterUnlockStage3": {
+    "description": "Stage 3 (Lucid Lumi) 해금 메시지"
+  },
+  "characterUnlockStage4": "Week 3 달성! Dream Walker 해금! 🚶‍♂️✨ [프리미엄 또는 첫 달 무료]",
+  "@characterUnlockStage4": {
+    "description": "Stage 4 (Dream Walker) 해금 메시지"
+  },
+  "characterUnlockStage5": "Week 4+ 달성! 아스트랄 여행 해금! 🌌 [프리미엄]",
+  "@characterUnlockStage5": {
+    "description": "Stage 5 (Astral Traveler) 해금 메시지"
+  },
+  "characterUnlockStage6": "전설 등급! Week 7+ Dream Master 달성! 👑🌙 [프리미엄]",
+  "@characterUnlockStage6": {
+    "description": "Stage 6 (Dream Master) 해금 메시지"
   }
 }

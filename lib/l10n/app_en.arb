@@ -9027,5 +9027,29 @@
   "aiAnalysisCompleted": "AI Analysis Completed",
   "@aiAnalysisCompleted": {
     "description": "Badge for dreams with AI analysis completed"
+  },
+  "characterUnlockStage1": "Welcome to the Dream Realm! Lumi awakens with you. 💙",
+  "@characterUnlockStage1": {
+    "description": "Stage 1 (Sleepy Lumi) unlock message"
+  },
+  "characterUnlockStage2": "Week 1 complete! Lumi is waking up! ✨ [FREE]",
+  "@characterUnlockStage2": {
+    "description": "Stage 2 (Aware Lumi) unlock message"
+  },
+  "characterUnlockStage3": "Week 2 achieved! First lucid moments! 🌟 [Premium or first month free]",
+  "@characterUnlockStage3": {
+    "description": "Stage 3 (Lucid Lumi) unlock message"
+  },
+  "characterUnlockStage4": "Week 3 achieved! Dream Walker unlocked! 🚶‍♂️✨ [Premium or first month free]",
+  "@characterUnlockStage4": {
+    "description": "Stage 4 (Dream Walker) unlock message"
+  },
+  "characterUnlockStage5": "Week 4+ achieved! Astral travel unlocked! 🌌 [Premium]",
+  "@characterUnlockStage5": {
+    "description": "Stage 5 (Astral Traveler) unlock message"
+  },
+  "characterUnlockStage6": "LEGENDARY! Week 7+ Dream Master achieved! 👑🌙 [Premium]",
+  "@characterUnlockStage6": {
+    "description": "Stage 6 (Dream Master) unlock message"
   }
 }

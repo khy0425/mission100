@@ -480,8 +480,17 @@ class _LevelUpDialogState extends State<LevelUpDialog>
     String message;
 
     if (widget.result.characterEvolved) {
-      final characterStage = CharacterEvolution.stages[widget.result.newCharacterStage!];
-      message = characterStage.unlockMessage;
+      final stageIndex = widget.result.newCharacterStage!;
+      // Map stage index to l10n key
+      message = switch (stageIndex) {
+        0 => l10n.characterUnlockStage1,
+        1 => l10n.characterUnlockStage2,
+        2 => l10n.characterUnlockStage3,
+        3 => l10n.characterUnlockStage4,
+        4 => l10n.characterUnlockStage5,
+        5 => l10n.characterUnlockStage6,
+        _ => CharacterEvolution.stages[stageIndex].unlockMessage, // Fallback
+      };
     } else if (widget.result.multipleLevelUps) {
       message = l10n.levelUpMultipleMessage(widget.result.levelDifference);
     } else {
