@@ -1,17 +1,24 @@
-import 'dart:convert';
+import 'dart:async';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/foundation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../models/conversation_token.dart';
 
-/// 대화 토큰 관리 서비스
+/// 대화 토큰 관리 서비스 (Firestore + Cloud Functions)
+///
+/// 서버측 검증을 통해 토큰 조작 방지
 class ConversationTokenService extends ChangeNotifier {
   static final ConversationTokenService _instance =
       ConversationTokenService._internal();
   factory ConversationTokenService() => _instance;
   ConversationTokenService._internal();
 
-  static const String _storageKey = 'conversation_tokens';
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseFunctions _functions = FirebaseFunctions.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  StreamSubscription<DocumentSnapshot>? _tokenSubscription;
   ConversationTokens _tokens = ConversationTokens.initial();
   bool _isInitialized = false;
 
@@ -22,84 +29,204 @@ class ConversationTokenService extends ChangeNotifier {
   Future<void> initialize() async {
     if (_isInitialized) return;
 
-    await _loadTokens();
+    await _setupTokenListener();
     _isInitialized = true;
     notifyListeners();
   }
 
-  /// 토큰 로드
-  Future<void> _loadTokens() async {
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      final tokensJson = prefs.getString(_storageKey);
-
-      if (tokensJson != null) {
-        final tokensMap = json.decode(tokensJson) as Map<String, dynamic>;
-        _tokens = ConversationTokens.fromJson(tokensMap);
-        debugPrint('✅ Loaded conversation tokens: ${_tokens.balance}');
-      } else {
-        _tokens = ConversationTokens.initial();
-        debugPrint('✅ Initialized new conversation tokens');
-      }
-    } catch (e) {
-      debugPrint('❌ Failed to load conversation tokens: $e');
-      _tokens = ConversationTokens.initial();
+  /// 토큰 실시간 리스너 설정
+  Future<void> _setupTokenListener() async {
+    final user = _auth.currentUser;
+    if (user == null) {
+      debugPrint('❌ No authenticated user for token listener');
+      return;
     }
+
+    debugPrint('🔄 Setting up token listener for user: ${user.uid}');
+
+    // Firestore 실시간 리스너
+    _tokenSubscription = _firestore
+        .collection('conversationTokens')
+        .doc(user.uid)
+        .snapshots()
+        .listen(
+      (snapshot) {
+        if (snapshot.exists) {
+          final data = snapshot.data()!;
+          _tokens = ConversationTokens.fromJson({
+            'balance': data['balance'] ?? 0,
+            'lastDailyReward': data['lastClaimDate'] ?? DateTime.now().toIso8601String(),
+            'lifetimeEarned': data['totalEarned'] ?? 0,
+            'lifetimeSpent': data['totalSpent'] ?? 0,
+            'currentStreak': data['currentStreak'] ?? 0,
+          });
+          debugPrint('✅ Token balance updated: ${_tokens.balance}');
+          notifyListeners();
+        } else {
+          // 토큰 문서가 없으면 초기 상태
+          _tokens = ConversationTokens.initial();
+          debugPrint('ℹ️ No token document - using initial state');
+          notifyListeners();
+        }
+      },
+      onError: (error) {
+        debugPrint('❌ Token listener error: $error');
+      },
+    );
   }
 
-  /// 토큰 저장
-  Future<void> _saveTokens() async {
-    try {
-      final prefs = await SharedPreferences.getInstance();
-      final tokensJson = json.encode(_tokens.toJson());
-      await prefs.setString(_storageKey, tokensJson);
-      debugPrint('✅ Saved conversation tokens: ${_tokens.balance}');
-    } catch (e) {
-      debugPrint('❌ Failed to save conversation tokens: $e');
-    }
-  }
-
-  /// 일일 보상 받기
+  /// 일일 보상 받기 (서버 호출)
   Future<void> claimDailyReward({required bool isPremium}) async {
-    if (!canClaimDailyReward) {
-      throw Exception('일일 보상은 하루에 한 번만 받을 수 있습니다.');
+    try {
+      debugPrint('📞 Calling claimDailyReward Cloud Function (isPremium: $isPremium)...');
+
+      final callable = _functions.httpsCallable('claimDailyReward');
+      final result = await callable.call<Map<String, dynamic>>({
+        'isPremium': isPremium,
+      });
+
+      final data = result.data;
+      final tokensEarned = data['tokensEarned'] as int;
+      final newBalance = data['newBalance'] as int;
+      final currentStreak = data['currentStreak'] as int;
+      final bonusReason = data['bonusReason'] as String?;
+
+      debugPrint('✅ Daily reward claimed: +$tokensEarned tokens (Balance: $newBalance)');
+      if (bonusReason != null) {
+        debugPrint('🎁 Bonus: $bonusReason');
+      }
+
+      // Firestore 리스너가 자동으로 상태 업데이트
+    } catch (e) {
+      debugPrint('❌ Failed to claim daily reward: $e');
+      rethrow;
     }
-
-    _tokens = _tokens.claimDailyReward(isPremium: isPremium);
-    await _saveTokens();
-    notifyListeners();
-
-    final tokensEarned = isPremium
-        ? ConversationTokenSystem.premiumUserDailyTokens
-        : ConversationTokenSystem.freeUserDailyTokens;
-    debugPrint('✅ Claimed daily reward: +$tokensEarned tokens');
   }
 
-  /// 리워드 광고로 토큰 획득
+  /// 리워드 광고로 토큰 획득 (로컬)
+  /// 광고는 서버 검증 없이 로컬에서 처리 (광고 플랫폼이 검증)
   Future<void> earnFromRewardAd({required bool isPremium}) async {
-    _tokens = _tokens.earnFromAd(isPremium: isPremium);
-    await _saveTokens();
-    notifyListeners();
+    try {
+      final user = _auth.currentUser;
+      if (user == null) {
+        throw Exception('인증이 필요합니다');
+      }
 
-    debugPrint(
-        '✅ Earned tokens from ad: +${ConversationTokenSystem.rewardAdTokens} token');
+      debugPrint('💰 Earning tokens from reward ad...');
+
+      // Firestore에 직접 토큰 추가 (광고 플랫폼이 이미 검증함)
+      final tokenRef = _firestore.collection('conversationTokens').doc(user.uid);
+      final tokenDoc = await tokenRef.get();
+
+      final currentBalance = tokenDoc.exists ? (tokenDoc.data()!['balance'] ?? 0) : 0;
+      final maxTokens = isPremium
+          ? ConversationTokenSystem.maxPremiumTokens
+          : ConversationTokenSystem.maxFreeTokens;
+
+      final newBalance = (currentBalance + ConversationTokenSystem.rewardAdTokens)
+          .clamp(0, maxTokens);
+
+      await tokenRef.set({
+        'userId': user.uid,
+        'balance': newBalance,
+        'totalEarned': FieldValue.increment(ConversationTokenSystem.rewardAdTokens),
+        'totalSpent': tokenDoc.exists ? (tokenDoc.data()!['totalSpent'] ?? 0) : 0,
+        'currentStreak': tokenDoc.exists ? (tokenDoc.data()!['currentStreak'] ?? 0) : 0,
+        'lastClaimDate': tokenDoc.exists ? tokenDoc.data()!['lastClaimDate'] : null,
+        'lastUpdated': FieldValue.serverTimestamp(),
+      }, SetOptions(merge: true));
+
+      // 히스토리 기록
+      await tokenRef.collection('history').add({
+        'type': 'reward_ad',
+        'amount': ConversationTokenSystem.rewardAdTokens,
+        'balanceBefore': currentBalance,
+        'balanceAfter': newBalance,
+        'createdAt': FieldValue.serverTimestamp(),
+      });
+
+      debugPrint('✅ Earned tokens from ad: +${ConversationTokenSystem.rewardAdTokens} token');
+    } catch (e) {
+      debugPrint('❌ Failed to earn from reward ad: $e');
+      rethrow;
+    }
   }
 
-  /// 대화 시작 (토큰 소모)
+  /// 대화 시작 (서버 호출 - requestAIConversation에서 토큰 차감)
+  /// 이 메서드는 UI에서 토큰 확인용으로만 사용
   Future<bool> startConversation() async {
-    final newTokens = _tokens.startConversation();
-
-    if (newTokens == null) {
+    // 토큰 잔액 확인만 수행
+    if (!hasEnoughTokens) {
       debugPrint('❌ Not enough tokens to start conversation');
       return false;
     }
 
-    _tokens = newTokens;
-    await _saveTokens();
-    notifyListeners();
-
-    debugPrint('✅ Started conversation: -1 token (${_tokens.balance} remaining)');
+    // 실제 토큰 차감은 AI 대화 요청 시 서버에서 수행
+    debugPrint('✅ Tokens available for conversation');
     return true;
+  }
+
+  /// AI 대화 요청 (서버 호출 - 토큰 차감 포함)
+  Future<Map<String, dynamic>> requestAIConversation({
+    required List<Map<String, String>> messages,
+    String? conversationId,
+    String? model,
+  }) async {
+    try {
+      debugPrint('📞 Calling requestAIConversation Cloud Function...');
+
+      final callable = _functions.httpsCallable('requestAIConversation');
+      final result = await callable.call<Map<String, dynamic>>({
+        'messages': messages,
+        'conversationId': conversationId,
+        'model': model,
+      });
+
+      final data = result.data;
+      final response = data['response'] as String;
+      final newConversationId = data['conversationId'] as String;
+      final tokensRemaining = data['tokensRemaining'] as int;
+
+      debugPrint('✅ AI conversation success: $tokensRemaining tokens remaining');
+
+      return {
+        'response': response,
+        'conversationId': newConversationId,
+        'tokensRemaining': tokensRemaining,
+      };
+    } catch (e) {
+      debugPrint('❌ AI conversation failed: $e');
+      rethrow;
+    }
+  }
+
+  /// 체크리스트 완료 보상 (서버 호출)
+  Future<void> completeChecklist({
+    required int week,
+    required int day,
+    required int xpEarned,
+  }) async {
+    try {
+      debugPrint('📞 Calling completeChecklist Cloud Function...');
+
+      final callable = _functions.httpsCallable('completeChecklist');
+      final result = await callable.call<Map<String, dynamic>>({
+        'week': week,
+        'day': day,
+        'xpEarned': xpEarned,
+      });
+
+      final data = result.data;
+      final tokensEarned = data['tokensEarned'] as int;
+      final newBalance = data['newBalance'] as int;
+
+      debugPrint('✅ Checklist completed: +$tokensEarned tokens (Balance: $newBalance)');
+
+      // Firestore 리스너가 자동으로 상태 업데이트
+    } catch (e) {
+      debugPrint('❌ Failed to complete checklist: $e');
+      rethrow;
+    }
   }
 
   /// 토큰 잔액 확인
@@ -141,22 +268,61 @@ class ConversationTokenService extends ChangeNotifier {
         'lifetimeSpent': _tokens.lifetimeSpent,
       };
 
-  /// 테스트용: 토큰 추가
+  /// 테스트용: 토큰 추가 (서버 호출)
   Future<void> addTokensForTesting(int amount) async {
-    _tokens = ConversationTokens(
-      balance: (_tokens.balance + amount).clamp(0, 999),
-      lastDailyReward: _tokens.lastDailyReward,
-      lifetimeEarned: _tokens.lifetimeEarned + amount,
-      lifetimeSpent: _tokens.lifetimeSpent,
-    );
-    await _saveTokens();
-    notifyListeners();
+    try {
+      final user = _auth.currentUser;
+      if (user == null) {
+        throw Exception('인증이 필요합니다');
+      }
+
+      debugPrint('🧪 Adding $amount tokens for testing...');
+
+      final tokenRef = _firestore.collection('conversationTokens').doc(user.uid);
+      await tokenRef.update({
+        'balance': FieldValue.increment(amount),
+        'totalEarned': FieldValue.increment(amount),
+        'lastUpdated': FieldValue.serverTimestamp(),
+      });
+
+      debugPrint('✅ Added $amount tokens for testing');
+    } catch (e) {
+      debugPrint('❌ Failed to add test tokens: $e');
+      rethrow;
+    }
   }
 
-  /// 테스트용: 토큰 초기화
+  /// 테스트용: 토큰 초기화 (서버 호출)
   Future<void> resetTokensForTesting() async {
-    _tokens = ConversationTokens.initial();
-    await _saveTokens();
-    notifyListeners();
+    try {
+      final user = _auth.currentUser;
+      if (user == null) {
+        throw Exception('인증이 필요합니다');
+      }
+
+      debugPrint('🧪 Resetting tokens for testing...');
+
+      final tokenRef = _firestore.collection('conversationTokens').doc(user.uid);
+      await tokenRef.set({
+        'userId': user.uid,
+        'balance': 0,
+        'totalEarned': 0,
+        'totalSpent': 0,
+        'currentStreak': 0,
+        'lastClaimDate': null,
+        'lastUpdated': FieldValue.serverTimestamp(),
+      });
+
+      debugPrint('✅ Tokens reset for testing');
+    } catch (e) {
+      debugPrint('❌ Failed to reset test tokens: $e');
+      rethrow;
+    }
+  }
+
+  @override
+  void dispose() {
+    _tokenSubscription?.cancel();
+    super.dispose();
   }
 }

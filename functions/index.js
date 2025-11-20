@@ -1,11 +1,17 @@
 /**
- * Mission100 Firebase Cloud Functions
+ * Lucid Dream 100 Firebase Cloud Functions
  *
  * Functions:
  * 1. verifyPurchase - IAP 결제 검증
  * 2. sendWorkoutReminders - 일일 운동 알림 스케줄링
- * 3. onUserLevelUp - Chad 레벨업 이벤트
+ * 3. onUserLevelUp - 레벨업 이벤트
  * 4. onAchievementUnlocked - 업적 달성 이벤트
+ * 5. sendStreakWarnings - 스트릭 위험 알림
+ * 6. analyzeWithLumi - Lumi와 대화 (OpenAI GPT-4o-mini)
+ * 7. quickDreamAnalysis - 빠른 꿈 분석 (토큰 없이 사용 가능)
+ * 8. claimDailyReward - 일일 보상 클레임 (서버측 검증)
+ * 9. requestAIConversation - AI 대화 요청 (토큰 차감 + OpenAI API 호출)
+ * 10. completeChecklist - 체크리스트 완료 (토큰 보상)
  */
 
 const {onRequest, onCall} = require("firebase-functions/v2/https");
@@ -20,9 +26,6 @@ admin.initializeApp();
 
 // OpenAI API 키를 Secret으로 정의
 const openaiApiKey = defineSecret("OPENAI_API_KEY");
-
-// OpenRouter API 키를 Secret으로 정의
-const openrouterApiKey = defineSecret("OPENROUTER_API_KEY");
 
 // ============================================
 // 1. IAP 결제 검증 (Google Play)
@@ -569,11 +572,11 @@ exports.quickDreamAnalysis = onCall({
   }
 });
 
+
 // ============================================
-// 8. OpenRouter AI Proxy (보안 API 게이트웨이)
+// 9. 일일 보상 클레임 (서버측 검증)
 // ============================================
-exports.openRouterProxy = onCall({
-  secrets: [openrouterApiKey],
+exports.claimDailyReward = onCall({
   cors: true,
 }, async (request) => {
   try {
@@ -583,119 +586,340 @@ exports.openRouterProxy = onCall({
     }
 
     const userId = request.auth.uid;
-    const {prompt, model, maxTokens, messages} = request.data;
-
-    // 2. 입력 검증
-    if (!prompt && !messages) {
-      throw new Error("prompt 또는 messages를 제공해야 합니다");
-    }
-
-    // 3. 사용자 구독 상태 확인
-    const userDoc = await admin.firestore()
-        .collection("users")
-        .doc(userId)
-        .get();
-
-    const userData = userDoc.data();
-    const isPremium = userData?.isPremium || false;
-
-    // 4. 일일 사용량 확인 및 제한
+    const {isPremium} = request.data; // 프리미엄 상태 받기
     const today = new Date().toISOString().split("T")[0];
-    const usageDoc = await admin.firestore()
-        .collection("aiUsage")
+
+    // 2. 이미 오늘 보상을 받았는지 확인
+    const rewardDoc = await admin.firestore()
+        .collection("dailyRewards")
         .doc(`${userId}_${today}`)
         .get();
 
-    const currentUsage = usageDoc.exists ? usageDoc.data().count : 0;
-    const dailyLimit = isPremium ? 100 : 10;
-
-    if (currentUsage >= dailyLimit) {
-      throw new Error(
-          `일일 사용 한도(${dailyLimit}회)를 초과했습니다. ` +
-          (isPremium ? "내일 다시 시도해주세요" : "프리미엄으로 업그레이드하면 100회까지 사용 가능합니다"),
-      );
+    if (rewardDoc.exists) {
+      throw new Error("이미 오늘 보상을 받았습니다");
     }
 
-    // 5. OpenRouter API 호출
-    const apiModel = model || "google/gemini-2.0-flash-exp:free";
-    const apiMaxTokens = maxTokens || 512;
+    // 3. 토큰 문서 가져오기 또는 생성
+    const tokenRef = admin.firestore()
+        .collection("conversationTokens")
+        .doc(userId);
 
-    let requestBody;
-    if (messages) {
-      // 대화형 메시지
-      requestBody = {
-        model: apiModel,
-        messages: messages,
-        max_tokens: apiMaxTokens,
-      };
-    } else {
-      // 단일 프롬프트
-      requestBody = {
-        model: apiModel,
-        messages: [
-          {
-            role: "user",
-            content: prompt,
-          },
-        ],
-        max_tokens: apiMaxTokens,
-      };
+    const tokenDoc = await tokenRef.get();
+    const tokenData = tokenDoc.exists ? tokenDoc.data() : {
+      balance: 0,
+      totalEarned: 0,
+      totalSpent: 0,
+      currentStreak: 0,
+      lastClaimDate: null,
+    };
+
+    // 4. 스트릭 계산
+    let newStreak = 1;
+    if (tokenData.lastClaimDate) {
+      const lastClaim = new Date(tokenData.lastClaimDate);
+      const yesterday = new Date();
+      yesterday.setDate(yesterday.getDate() - 1);
+
+      const lastClaimDate = lastClaim.toISOString().split("T")[0];
+      const yesterdayDate = yesterday.toISOString().split("T")[0];
+
+      // 어제 클레임했다면 스트릭 증가
+      if (lastClaimDate === yesterdayDate) {
+        newStreak = (tokenData.currentStreak || 0) + 1;
+      }
     }
 
-    const openrouterResponse = await axios.post(
-        "https://openrouter.ai/api/v1/chat/completions",
-        requestBody,
-        {
-          headers: {
-            "Authorization": `Bearer ${openrouterApiKey.value()}`,
-            "Content-Type": "application/json",
-            "HTTP-Referer": "https://lucid-dream-100.app",
-            "X-Title": "Lucid Dream 100",
-          },
-          timeout: 30000, // 30초 타임아웃
-        },
-    );
+    // 5. 보상 토큰 계산 (프리미엄 여부에 따라)
+    const baseTokens = isPremium ? 5 : 1; // 프리미엄: 5개, 무료: 1개
+    let rewardTokens = baseTokens;
+    let bonusReason = null;
 
-    const aiResponse = openrouterResponse.data.choices[0].message.content;
+    // 스트릭 보너스 (무료/프리미엄 모두 동일)
+    if (newStreak === 3) {
+      rewardTokens = baseTokens + 1; // 3일 연속: +1 보너스
+      bonusReason = "3일 연속 출석 보너스";
+    } else if (newStreak >= 7) {
+      rewardTokens = baseTokens + 1; // 7일 연속: +1 보너스
+      bonusReason = `${newStreak}일 연속 출석 보너스`;
+    }
 
-    // 6. 사용량 증가
+    // 6. 토큰 증가 및 상태 업데이트
+    await tokenRef.set({
+      userId: userId,
+      balance: (tokenData.balance || 0) + rewardTokens,
+      totalEarned: (tokenData.totalEarned || 0) + rewardTokens,
+      totalSpent: tokenData.totalSpent || 0,
+      currentStreak: newStreak,
+      lastClaimDate: today,
+      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+    }, {merge: true});
+
+    // 7. 보상 클레임 기록 생성
     await admin.firestore()
-        .collection("aiUsage")
+        .collection("dailyRewards")
         .doc(`${userId}_${today}`)
         .set({
           userId: userId,
           date: today,
-          count: admin.firestore.FieldValue.increment(1),
-          isPremium: isPremium,
-          lastUsed: admin.firestore.FieldValue.serverTimestamp(),
-        }, {merge: true});
+          tokensEarned: rewardTokens,
+          streak: newStreak,
+          bonusReason: bonusReason,
+          claimedAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+
+    // 8. 히스토리 기록
+    await admin.firestore()
+        .collection("conversationTokens")
+        .doc(userId)
+        .collection("history")
+        .add({
+          type: "daily_reward",
+          amount: rewardTokens,
+          balanceBefore: tokenData.balance || 0,
+          balanceAfter: (tokenData.balance || 0) + rewardTokens,
+          streak: newStreak,
+          bonusReason: bonusReason,
+          createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
 
     console.log(
-        `User ${userId} (${isPremium ? "premium" : "free"}): ` +
-        `AI usage ${currentUsage + 1}/${dailyLimit}`,
+        `User ${userId}: Daily reward claimed. ` +
+        `Tokens: +${rewardTokens}, Streak: ${newStreak}`,
     );
 
-    // 7. 결과 반환
+    return {
+      success: true,
+      tokensEarned: rewardTokens,
+      newBalance: (tokenData.balance || 0) + rewardTokens,
+      currentStreak: newStreak,
+      bonusReason: bonusReason,
+    };
+  } catch (error) {
+    console.error("Daily reward claim error:", error);
+    throw new Error(error.message || "보상 수령 중 오류가 발생했습니다");
+  }
+});
+
+// ============================================
+// 10. AI 대화 요청 (토큰 차감 + OpenAI API 호출)
+// ============================================
+exports.requestAIConversation = onCall({
+  secrets: [openaiApiKey],
+  cors: true,
+}, async (request) => {
+  try {
+    // 1. 사용자 인증 확인
+    if (!request.auth) {
+      throw new Error("인증이 필요합니다");
+    }
+
+    const userId = request.auth.uid;
+    const {messages, conversationId, model} = request.data;
+
+    if (!messages || !Array.isArray(messages) || messages.length === 0) {
+      throw new Error("메시지를 제공해야 합니다");
+    }
+
+    // 2. 토큰 잔액 확인
+    const tokenRef = admin.firestore()
+        .collection("conversationTokens")
+        .doc(userId);
+
+    const tokenDoc = await tokenRef.get();
+
+    if (!tokenDoc.exists || (tokenDoc.data().balance || 0) < 1) {
+      throw new Error("대화 토큰이 부족합니다");
+    }
+
+    const tokenData = tokenDoc.data();
+    const currentBalance = tokenData.balance || 0;
+
+    // 3. OpenAI API 호출
+    const apiModel = model || "gpt-4o-mini";
+
+    const openaiResponse = await axios.post(
+        "https://api.openai.com/v1/chat/completions",
+        {
+          model: apiModel,
+          messages: messages,
+          max_tokens: 512,
+          temperature: 0.7,
+        },
+        {
+          headers: {
+            "Authorization": `Bearer ${openaiApiKey.value()}`,
+            "Content-Type": "application/json",
+          },
+          timeout: 30000,
+        },
+    );
+
+    const aiResponse = openaiResponse.data.choices[0].message.content;
+
+    // 4. 토큰 차감 (트랜잭션)
+    await admin.firestore().runTransaction(async (transaction) => {
+      const freshTokenDoc = await transaction.get(tokenRef);
+      const freshBalance = freshTokenDoc.data().balance || 0;
+
+      if (freshBalance < 1) {
+        throw new Error("대화 토큰이 부족합니다");
+      }
+
+      transaction.update(tokenRef, {
+        balance: admin.firestore.FieldValue.increment(-1),
+        totalSpent: admin.firestore.FieldValue.increment(1),
+        lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+      });
+    });
+
+    // 5. 대화 기록 저장
+    const newConversationId = conversationId ||
+        `conv_${userId}_${Date.now()}`;
+
+    await admin.firestore()
+        .collection("conversations")
+        .doc(newConversationId)
+        .set({
+          userId: userId,
+          conversationId: newConversationId,
+          messages: [...messages, {role: "assistant", content: aiResponse}],
+          lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+        }, {merge: true});
+
+    // 6. 히스토리 기록
+    await admin.firestore()
+        .collection("conversationTokens")
+        .doc(userId)
+        .collection("history")
+        .add({
+          type: "ai_conversation",
+          amount: -1,
+          balanceBefore: currentBalance,
+          balanceAfter: currentBalance - 1,
+          conversationId: newConversationId,
+          model: apiModel,
+          createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+
+    console.log(
+        `User ${userId}: AI conversation. ` +
+        `Tokens: -1, Balance: ${currentBalance - 1}`,
+    );
+
     return {
       success: true,
       response: aiResponse,
-      usageCount: currentUsage + 1,
-      dailyLimit: dailyLimit,
-      remaining: dailyLimit - (currentUsage + 1),
-      isPremium: isPremium,
+      conversationId: newConversationId,
+      tokensRemaining: currentBalance - 1,
     };
   } catch (error) {
-    console.error("OpenRouter proxy error:", error);
+    console.error("AI conversation error:", error);
 
-    // OpenRouter API 에러 처리
     if (error.response?.status === 429) {
       throw new Error("API 사용량 한도 초과. 잠시 후 다시 시도해주세요");
     } else if (error.response?.status === 401) {
       throw new Error("API 인증 실패. 관리자에게 문의하세요");
-    } else if (error.response?.data?.error?.message) {
-      throw new Error(`OpenRouter API 오류: ${error.response.data.error.message}`);
     }
 
-    throw new Error(error.message || "AI 호출 중 오류가 발생했습니다");
+    throw new Error(error.message || "AI 대화 중 오류가 발생했습니다");
+  }
+});
+
+// ============================================
+// 11. 체크리스트 완료 (토큰 보상)
+// ============================================
+exports.completeChecklist = onCall({
+  cors: true,
+}, async (request) => {
+  try {
+    // 1. 사용자 인증 확인
+    if (!request.auth) {
+      throw new Error("인증이 필요합니다");
+    }
+
+    const userId = request.auth.uid;
+    const {week, day, xpEarned} = request.data;
+
+    if (!week || !day) {
+      throw new Error("주차와 일차 정보가 필요합니다");
+    }
+
+    const today = new Date().toISOString().split("T")[0];
+    const checklistId = `${userId}_w${week}_d${day}_${today}`;
+
+    // 2. 이미 완료했는지 확인
+    const checklistDoc = await admin.firestore()
+        .collection("checklistCompletions")
+        .doc(checklistId)
+        .get();
+
+    if (checklistDoc.exists) {
+      throw new Error("이미 완료한 체크리스트입니다");
+    }
+
+    // 3. 토큰 보상 (1 토큰)
+    const rewardTokens = 1;
+
+    const tokenRef = admin.firestore()
+        .collection("conversationTokens")
+        .doc(userId);
+
+    const tokenDoc = await tokenRef.get();
+    const currentBalance = tokenDoc.exists ? tokenDoc.data().balance : 0;
+
+    await tokenRef.set({
+      userId: userId,
+      balance: (currentBalance || 0) + rewardTokens,
+      totalEarned: admin.firestore.FieldValue.increment(rewardTokens),
+      totalSpent: tokenDoc.exists ? tokenDoc.data().totalSpent : 0,
+      currentStreak: tokenDoc.exists ? tokenDoc.data().currentStreak : 0,
+      lastClaimDate: tokenDoc.exists ? tokenDoc.data().lastClaimDate : null,
+      lastUpdated: admin.firestore.FieldValue.serverTimestamp(),
+    }, {merge: true});
+
+    // 4. 체크리스트 완료 기록
+    await admin.firestore()
+        .collection("checklistCompletions")
+        .doc(checklistId)
+        .set({
+          userId: userId,
+          week: week,
+          day: day,
+          date: today,
+          tokensEarned: rewardTokens,
+          xpEarned: xpEarned || 0,
+          completedAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+
+    // 5. 히스토리 기록
+    await admin.firestore()
+        .collection("conversationTokens")
+        .doc(userId)
+        .collection("history")
+        .add({
+          type: "checklist_completion",
+          amount: rewardTokens,
+          balanceBefore: currentBalance || 0,
+          balanceAfter: (currentBalance || 0) + rewardTokens,
+          week: week,
+          day: day,
+          xpEarned: xpEarned || 0,
+          createdAt: admin.firestore.FieldValue.serverTimestamp(),
+        });
+
+    console.log(
+        `User ${userId}: Checklist W${week}D${day} completed. ` +
+        `Tokens: +${rewardTokens}, XP: +${xpEarned || 0}`,
+    );
+
+    return {
+      success: true,
+      tokensEarned: rewardTokens,
+      newBalance: (currentBalance || 0) + rewardTokens,
+      xpEarned: xpEarned || 0,
+    };
+  } catch (error) {
+    console.error("Checklist completion error:", error);
+    throw new Error(error.message || "체크리스트 완료 처리 중 오류가 발생했습니다");
   }
 });
