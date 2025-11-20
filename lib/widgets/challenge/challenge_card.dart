@@ -51,7 +51,7 @@ class ChallengeCard extends StatelessWidget {
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: Text(
-                        challenge.status!.displayName,
+                        getChallengeStatusName(context, challenge.status!),
                         style: theme.textTheme.bodySmall?.copyWith(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -132,7 +132,7 @@ class ChallengeCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                         Text(
-                          challenge.difficulty!.displayName,
+                          getChallengeDifficultyName(context, challenge.difficulty!),
                           style: theme.textTheme.bodySmall,
                         ),
                       ],
