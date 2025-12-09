@@ -185,5 +185,66 @@
   "@vipFastLoading": {
     "description": "VIP fast loading badge"
   },
-  "vipFastLoading": "VIP 10x Faster Loading"
+  "vipFastLoading": "VIP 10x Faster Loading",
+  "@trialEnded": {
+    "description": "Trial period ended label"
+  },
+  "trialEnded": "Trial Ended",
+  "@premiumBenefitsTitle": {
+    "description": "Premium benefits title"
+  },
+  "premiumBenefitsTitle": "Premium Benefits",
+  "@premiumBenefitAdFreeDesc": {
+    "description": "Ad-free benefit description"
+  },
+  "premiumBenefitAdFreeDesc": "Remove all ads",
+  "@premiumBenefitLumi": {
+    "description": "Lumi evolution benefit"
+  },
+  "premiumBenefitLumi": "Lumi Evolution System",
+  "@premiumBenefitLumiDesc": {
+    "description": "Lumi evolution benefit description"
+  },
+  "premiumBenefitLumiDesc": "Access Lumi character evolution",
+  "@premiumBenefitUnlimitedAI": {
+    "description": "Unlimited AI conversations benefit"
+  },
+  "premiumBenefitUnlimitedAI": "Unlimited AI Conversations",
+  "@premiumBenefitAIDesc": {
+    "description": "Unlimited AI conversations benefit description"
+  },
+  "premiumBenefitAIDesc": "Chat with Lumi unlimited times",
+  "@premiumBenefitAdvancedStats": {
+    "description": "Advanced statistics benefit"
+  },
+  "premiumBenefitAdvancedStats": "Advanced Statistics",
+  "@premiumBenefitStatsDesc": {
+    "description": "Advanced statistics benefit description"
+  },
+  "premiumBenefitStatsDesc": "Detailed progress statistics and analysis",
+  "@premiumDialogTitle": {
+    "description": "Premium dialog title"
+  },
+  "premiumDialogTitle": "Upgrade to Premium",
+  "@premiumUnlockWeeks": {
+    "description": "Premium required to unlock weeks message",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "premiumUnlockWeeks": "Week {week} and beyond require Premium subscription",
+  "@premiumBenefitLumiEvolution": {
+    "description": "Lumi evolution premium benefit"
+  },
+  "premiumBenefitLumiEvolution": "Full Lumi Evolution",
+  "@premiumLaterButton": {
+    "description": "Later button"
+  },
+  "premiumLaterButton": "Later",
+  "@premiumStartButton": {
+    "description": "Start button"
+  },
+  "premiumStartButton": "Start"
 }

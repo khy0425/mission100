@@ -118,39 +118,6 @@ class _OnboardingMissionPageState extends State<OnboardingMissionPage> {
             color: Colors.purple,
           ),
           const SizedBox(height: AppConstants.paddingXL),
-          Container(
-            padding: const EdgeInsets.all(AppConstants.paddingL),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.surfaceContainerHighest,
-              borderRadius: BorderRadius.circular(AppConstants.radiusM),
-              border: Border.all(color: theme.colorScheme.outline),
-            ),
-            child: Column(
-              children: [
-                Icon(
-                  Icons.rocket_launch,
-                  size: 48,
-                  color: const Color(AppColors.primaryColor),
-                ),
-                const SizedBox(height: AppConstants.paddingM),
-                Text(
-                  l10n.onboardingMissionReadyTitle,
-                  style: theme.textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(height: AppConstants.paddingS),
-                Text(
-                  l10n.onboardingMissionReadyDesc,
-                  style: theme.textTheme.bodyMedium?.copyWith(
-                    color: theme.colorScheme.onSurface.withValues(alpha: 0.7),
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-              ],
-            ),
-          ),
         ],
       ),
     );

@@ -83,70 +83,70 @@ class OnboardingService extends ChangeNotifier {
     _steps = [
       const OnboardingStep(
         type: OnboardingStepType.welcome,
-        title: 'Mission 100에 오신 것을 환영합니다!',
+        title: 'DreamFlow에 오신 것을 환영합니다!',
         description:
-            '14주 동안 100개의 푸시업을 목표로 하는 여정을 시작해보세요.\n체계적인 프로그램으로 당신의 한계를 뛰어넘어보세요!',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
+            '60일 동안 자각몽 마스터를 목표로 하는 여정을 시작해보세요.\n과학적으로 검증된 프로그램으로 꿈의 세계를 정복하세요!',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
         buttonText: '시작하기',
         canSkip: false,
       ),
       const OnboardingStep(
         type: OnboardingStepType.programIntroduction,
-        title: '14주 프로그램 소개',
+        title: '60일 과학 프로그램',
         description:
-            '과학적으로 설계된 14주 프로그램으로 점진적으로 실력을 향상시킵니다.\n\n• 1주차: 기초 체력 다지기\n• 2-3주차: 근력 강화\n• 4-5주차: 지구력 향상\n• 14주차: 목표 달성',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
+            '연구 기반 단계별 잠금 해제 시스템:\n\n🆓 Week 1-2 (무료): 꿈 일기 & 현실 확인\n💎 Week 3-4: WBTB + MILD (46% 성공률!)\n🌟 Week 5-6: SSILD + WILD 고급 기법\n👑 Week 7-9: 꿈 조종 & 마스터리\n\n주차가 올라갈수록 새로운 기법이 해금됩니다!',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
         buttonText: '다음',
         canSkip: true,
       ),
       const OnboardingStep(
         type: OnboardingStepType.adaptiveTraining,
-        title: '🎯 운동이 너무 힘들거나 쉽다면?',
-        description: '걱정마세요! Mission 100은 여러분의 피드백을 실시간으로 반영합니다.\n\n'
-            '💬 운동 후 난이도를 알려주세요\n'
-            '📊 너무 힘들었다면 → 다음엔 강도 ⬇️\n'
-            '😊 너무 쉬웠다면 → 다음엔 강도 ⬆️\n\n'
-            '딱 맞는 운동을 찾을 때까지 자동으로 조절해드려요!',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
+        title: '🎯 연습이 너무 힘들거나 쉽다면?',
+        description: '걱정마세요! DreamFlow는 여러분의 피드백을 실시간으로 반영합니다.\n\n'
+            '💬 연습 후 난이도를 알려주세요\n'
+            '📊 너무 힘들었다면 → 다음엔 목표 ⬇️\n'
+            '😊 너무 쉬웠다면 → 다음엔 목표 ⬆️\n\n'
+            '당신에게 딱 맞는 프로그램으로 자동 조절해드려요!',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
         buttonText: '똑똑하네요!',
         canSkip: true,
       ),
       const OnboardingStep(
         type: OnboardingStepType.chadEvolution,
-        title: 'Chad 진화 시스템',
+        title: 'Dream Spirit 진화 시스템',
         description:
-            '운동을 완료할 때마다 Chad가 진화합니다!\n\n🏃‍♂️ Rookie Chad → 💪 Giga Chad → 👑 Legendary Chad\n\n각 단계마다 새로운 Chad 이미지와 업적을 해제하세요!',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
+            '연습을 완료할 때마다 Dream Spirit이 진화합니다!\n\n👻 Sleepy Ghost → ✨ Aware Wisp → 🌟 Lucid Sprite → 🚶 Dream Walker → 🌌 Astral Traveler → 🔮 Oracle → 👑 Master of Dreams\n\n각 단계마다 새로운 Spirit 이미지와 업적을 해제하세요!',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
         buttonText: '멋져요!',
         canSkip: true,
       ),
       const OnboardingStep(
         type: OnboardingStepType.initialTest,
-        title: '초기 실력 테스트',
+        title: '자각몽 경험 조사',
         description:
-            '현재 실력을 측정하여 맞춤형 프로그램을 제공합니다.\n\n• 최대한 많은 푸시업을 해보세요\n• 정확한 자세로 실시하세요\n• 결과에 따라 프로그램이 조정됩니다',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
-        buttonText: '테스트 시작',
+            '현재 경험 수준을 확인하여 맞춤형 프로그램을 제공합니다.\n\n• 자각몽을 경험해본 적이 있나요?\n• 꿈을 얼마나 자주 기억하나요?\n• 결과에 따라 프로그램이 조정됩니다',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
+        buttonText: '시작하기',
         canSkip: false,
       ),
 
       // 목표 설정 단계들
       const OnboardingStep(
         type: OnboardingStepType.goalSetupWeight,
-        title: '현재 체중을 알려주세요',
+        title: '평균 수면 시간을 알려주세요',
         description:
-            '더 정확한 칼로리 소모량과 진행상황을 계산해드려요.\n\n목표 체중도 함께 설정하면 더욱 맞춤형 계획을 제공할 수 있습니다.',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
+            '수면 패턴에 맞춰 더 효과적인 자각몽 프로그램을 제공해드려요.\n\n일반적으로 7-9시간의 충분한 수면이 자각몽에 유리합니다.',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
         buttonText: '다음',
         canSkip: true,
       ),
 
       const OnboardingStep(
         type: OnboardingStepType.goalSetupFitnessLevel,
-        title: '운동 경험이 어느정도인가요?',
+        title: '자각몽 경험이 어느정도인가요?',
         description:
-            '레벨에 맞는 운동 강도로 조절해드려요.\n\n• 초보자: 기초부터 차근차근\n• 중급자: 적당한 도전으로\n• 고급자: 강도 높은 훈련으로',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
+            '레벨에 맞는 프로그램 강도로 조절해드려요.\n\n• 초보자: 기초부터 차근차근\n• 중급자: 적당한 도전으로\n• 고급자: 고급 기법 훈련으로',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
         buttonText: '다음',
         canSkip: true,
       ),
@@ -155,18 +155,18 @@ class OnboardingService extends ChangeNotifier {
         type: OnboardingStepType.goalSetupGoal,
         title: '주요 목표를 선택해주세요',
         description:
-            '목표에 맞는 운동 계획과 팁을 제공해드려요.\n\n🔥 체중 감량\n💪 근육 증가\n⚡ 체력 향상\n🌟 전반적인 건강',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
+            '목표에 맞는 자각몽 프로그램과 팁을 제공해드려요.\n\n🌙 자각몽 첫 경험\n✨ 꿈 조종 능력 향상\n🧠 꿈 기억력 강화\n🌟 완전한 자각몽 마스터',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
         buttonText: '다음',
         canSkip: true,
       ),
 
       const OnboardingStep(
         type: OnboardingStepType.goalSetupWorkoutTime,
-        title: '주로 언제 운동하시나요?',
+        title: '주로 언제 취침하시나요?',
         description:
-            '선호하는 시간대에 맞춰 알림을 설정해드려요.\n\n복수선택이 가능하며, 나중에 언제든 변경할 수 있습니다.',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
+            '취침 시간에 맞춰 알림을 설정해드려요.\n\n현실 확인 리마인더와 WBTB 알람을 최적 시간에 제공합니다.',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
         buttonText: '다음',
         canSkip: true,
       ),
@@ -185,9 +185,9 @@ class OnboardingService extends ChangeNotifier {
         type: OnboardingStepType.goalSetupComplete,
         title: '🎉 맞춤형 프로그램 준비완료!',
         description:
-            '당신만의 개인화된 Mission: 100이 준비되었습니다!\n\n• 맞춤형 운동 계획\n• 개인 목표 기반 추천\n• 최적화된 알림 설정\n\n지금 계정을 만들고 1개월 무료로 시작해보세요! 💪',
-        imagePath: 'assets/images/chad/basic/basicChad.png',
-        buttonText: '무료로 시작하기',
+            '당신만의 개인화된 DreamFlow가 준비되었습니다!\n\n• 60일 완성 프로그램\n• 개인 목표 기반 추천\n• 최적화된 알림 설정\n\n📊 연구 검증: 2주 훈련으로 17.4% 자각몽 성공!\n지금 2주 무료로 효과를 직접 확인해보세요! 🌙',
+        imagePath: 'assets/images/character/stage0_sleepy_ghost.png',
+        buttonText: '2주 무료 체험 시작',
         canSkip: true,
       ),
     ];

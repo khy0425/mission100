@@ -5,7 +5,12 @@ import '../../services/ai/dream_analysis_service_secure.dart';
 import '../../services/ai/conversation_token_service.dart';
 import '../../services/ai/conversation_storage_service.dart';
 import '../../services/auth/auth_service.dart';
+import '../../services/security/rate_limit_service.dart';
+import '../../services/ads/reward_ad_service.dart';
+import '../../services/progress/experience_service.dart';
+import '../../models/user_subscription.dart';
 import '../../utils/config/constants.dart';
+import '../../utils/user_title_helper.dart';
 import '../../generated/l10n/app_localizations.dart';
 
 /// Lumi와의 대화형 꿈 분석 화면
@@ -91,9 +96,30 @@ class _LumiConversationScreenState extends State<LumiConversationScreen> {
     final text = _controller.text.trim();
     if (text.isEmpty || _isLoading) return;
 
-    // 토큰 확인
+    // Rate Limiting 체크
+    final authService = context.read<AuthService>();
+    final isPremium = authService.currentSubscription?.type == SubscriptionType.premium;
+
+    final rateLimitResult = await RateLimitService.checkRateLimit(
+      action: 'ai_message',
+      isPremium: isPremium,
+    );
+
+    if (!rateLimitResult.allowed) {
+      setState(() {
+        _error = rateLimitResult.reason ?? '요청 제한을 초과했습니다.';
+      });
+
+      // 의심스러운 활동이면 경고 다이얼로그 표시
+      if (rateLimitResult.isSuspicious) {
+        _showSuspiciousActivityDialog(rateLimitResult.reason);
+      }
+      return;
+    }
+
+    // 토큰 확인 (깊은 분석: 3토큰 필요)
     final tokenService = context.read<ConversationTokenService>();
-    if (!tokenService.hasEnoughTokens) {
+    if (!tokenService.hasEnoughTokensForDeep) {
       _showTokenDialog();
       return;
     }
@@ -109,14 +135,19 @@ class _LumiConversationScreenState extends State<LumiConversationScreen> {
     _scrollToBottom();
 
     try {
+      // 사용자 칭호 가져오기 (레벨 기반, 다국어 지원)
+      final expService = ExperienceService();
+      final totalXP = expService.totalExpEarned;
+      final userTitle = UserTitleHelper.getLocalizedTitleForXP(context, totalXP);
+
       // AI 응답 받기
       final result = await _aiService.analyzeWithConversation(
         conversationId: _conversationId,
         userMessage: text,
+        userTitle: userTitle,
       );
 
-      // 토큰 차감
-      await tokenService.startConversation();
+      // 토큰은 서버에서 자동 차감됨
 
       // AI 응답 추가
       final aiMessage = ConversationMessage.assistant(result.response);
@@ -143,15 +174,223 @@ class _LumiConversationScreenState extends State<LumiConversationScreen> {
   /// 토큰 부족 다이얼로그
   void _showTokenDialog() {
     final l10n = AppLocalizations.of(context);
+    final tokenService = context.read<ConversationTokenService>();
+    final balance = tokenService.balance;
+    final authService = context.read<AuthService>();
+    final isPremium = authService.currentSubscription?.type == SubscriptionType.premium;
+    final maxTokens = isPremium ? 50 : 10;
+
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(l10n.lumiConversationTokenDialogTitle),
-        content: Text(l10n.lumiConversationTokenDialogContent),
+        title: const Row(
+          children: [
+            Text('🎫', style: TextStyle(fontSize: 24)),
+            SizedBox(width: 8),
+            Text('AI 토큰 부족'),
+          ],
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // 현재 상태
+            Container(
+              padding: const EdgeInsets.all(12),
+              decoration: BoxDecoration(
+                color: Colors.orange.withValues(alpha: 0.1),
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(
+                  color: Colors.orange.withValues(alpha: 0.3),
+                ),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    '현재 토큰',
+                    style: TextStyle(fontWeight: FontWeight.w600),
+                  ),
+                  Text(
+                    '$balance / $maxTokens',
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: Colors.orange,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 16),
+
+            const Text(
+              'Lumi 깊은 분석에는 3 토큰이 필요합니다.',
+              style: TextStyle(fontSize: 15),
+            ),
+
+            const SizedBox(height: 12),
+
+            const Text(
+              '💡 토큰 획득 방법 (일일):',
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+            ),
+            const SizedBox(height: 8),
+            const Text('✅ 체크리스트 완료: +1 토큰', style: TextStyle(fontSize: 13)),
+            const Text('📺 광고 시청: +1 토큰/광고 (최대 2개/일)', style: TextStyle(fontSize: 13)),
+          ],
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
             child: Text(l10n.lumiConversationTokenDialogClose),
+          ),
+          ElevatedButton(
+            onPressed: () async {
+              Navigator.pop(context);
+              await _watchRewardAd();
+            },
+            child: const Text('광고 보고 토큰 받기'),
+          ),
+        ],
+      ),
+    );
+  }
+
+  /// 광고 시청하고 토큰 받기
+  Future<void> _watchRewardAd() async {
+    final tokenService = context.read<ConversationTokenService>();
+    final authService = context.read<AuthService>();
+    final isPremium = authService.currentSubscription?.type == SubscriptionType.premium;
+    final adService = RewardAdService();
+
+    try {
+      // 광고가 준비되지 않았으면 먼저 로드
+      if (!adService.isAdReady) {
+        if (!mounted) return;
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text('광고를 불러오는 중...'),
+            duration: Duration(seconds: 1),
+          ),
+        );
+
+        await adService.loadAd();
+
+        // 로딩 후에도 광고가 준비되지 않았으면 에러
+        if (!adService.isAdReady) {
+          if (!mounted) return;
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('광고를 불러올 수 없습니다. 잠시 후 다시 시도해주세요.'),
+              backgroundColor: Colors.orange,
+            ),
+          );
+          return;
+        }
+      }
+
+      // 광고 시청 시작
+      bool adWatched = false;
+
+      await adService.showAd(
+        onRewarded: () async {
+          debugPrint('🎁 광고 시청 완료 - 토큰 획득 시도');
+          adWatched = true;
+
+          // 광고 시청 완료 후 서버에 토큰 획득 요청
+          try {
+            final success = await tokenService.earnFromRewardAd(isPremium: isPremium);
+
+            if (!mounted) return;
+
+            if (success) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('✅ 광고 시청 완료! +1 토큰 획득'),
+                  backgroundColor: Colors.green,
+                ),
+              );
+            } else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text('⚠️ 일일 광고 시청 제한에 도달했습니다 (최대 2회/일)'),
+                  backgroundColor: Colors.orange,
+                ),
+              );
+            }
+          } catch (e) {
+            if (!mounted) return;
+
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('토큰 획득 중 오류: ${e.toString()}'),
+                backgroundColor: Colors.red,
+              ),
+            );
+          }
+        },
+        onAdClosed: () {
+          debugPrint('❌ 광고 닫힘 (adWatched: $adWatched)');
+
+          if (!adWatched && mounted) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('광고를 끝까지 시청해야 토큰을 받을 수 있습니다.'),
+                backgroundColor: Colors.orange,
+              ),
+            );
+          }
+        },
+        onAdFailedToShow: (error) {
+          debugPrint('❌ 광고 표시 실패: $error');
+
+          if (!mounted) return;
+
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('광고 표시 실패: $error'),
+              backgroundColor: Colors.red,
+            ),
+          );
+        },
+      );
+    } catch (e) {
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('광고 시청 중 오류: ${e.toString()}'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
+  }
+
+  /// 의심스러운 활동 경고 다이얼로그
+  void _showSuspiciousActivityDialog(String? reason) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Row(
+          children: [
+            Icon(Icons.warning, color: Colors.orange, size: 28),
+            SizedBox(width: 12),
+            Text('⚠️ 비정상 활동 감지'),
+          ],
+        ),
+        content: Text(
+          reason ?? '비정상적인 활동이 감지되어 일시적으로 제한됩니다.\n\n'
+              '계속해서 제한이 발생하면 계정이 정지될 수 있습니다.',
+          style: const TextStyle(fontSize: 15),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('확인'),
           ),
         ],
       ),

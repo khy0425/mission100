@@ -108,7 +108,7 @@
     "description": "Build information",
     "placeholders": {
       "buildNumber": {
-        "type": "String"
+        "type": "Object"
       }
     }
   },
@@ -1231,7 +1231,7 @@
   "appRating": "App Rating",
   "appRatingComingSoon": "App rating feature is coming soon",
   "appSlogan": "Journey to Become Dream Spirit",
-  "appTitle": "⚡ ALPHA BATTLEGROUND ⚡",
+  "appTitle": "DreamFlow",
   "appVersion": "1.0.0",
   "appearance": "Appearance",
   "ascendingMotion": "Ascending Motion",
@@ -1299,7 +1299,7 @@
   "consistentStrengthImprovement": "Improve strength through consistent exercise",
   "contactButton": "Contact",
   "continueOrStartNew": "Would you like to continue the previous workout?\\nOr start a new practice?",
-  "copyrightMission100": "© 2024 Lucid Dream Team\nAll rights reserved\n\n💪 Until you become unstoppable!",
+  "copyrightMission100": "© 2024 HundredCore\nAll rights reserved",
   "core": "Core",
   "correctPose": "Correct Pose",
   "correctionMethod": "Correction Method:",
@@ -1333,13 +1333,13 @@
   "disabled": "Disabled",
   "disabledStatus": "Disabled",
   "dontMakeTheseMistakes": "Don't Make These Mistakes!",
-  "downloadMission100": "Download Lucid Dream 100 app! Weaklings run away!",
+  "downloadMission100": "Download DreamFlow app! Your dream journey awaits!",
   "durationLabel": "Duration",
   "earnedXp": "Earned XP",
   "elbowAngleQuiz": "What is the correct elbow angle during pushups?",
   "enabled": "Enabled",
   "enabledStatus": "Enabled",
-  "encouragementMessage1": "🔥 ALPHAS HAVE TRIALS TOO! BUT THAT MAKES YOU STRONGER! 🔥",
+  "encouragementMessage1": "🔥 Challenges make you grow! 🔥",
   "encouragementMessage10": "👑 NOT CHAD RESILIENCE... NOW IMMORTAL PHOENIX POWER, FXXK YEAH! 👑",
   "encouragementMessage2": "⚡ TOMORROW IS LEGENDARY COMEBACK DAY! WORLD WILL SEE YOUR RESURRECTION! ⚡",
   "encouragementMessage3": "👑 REAL EMPERORS NEVER SURRENDER, FXXK THE LIMITS! 👑",
@@ -1391,7 +1391,7 @@
   "highContrastMode": "High Contrast Mode",
   "highContrastModeDesc": "Enable high contrast mode for visual accessibility",
   "home": "Home",
-  "homeTitle": "💥 ALPHA EMPEROR COMMAND CENTER 💥",
+  "homeTitle": "DreamFlow",
   "improvement": "Needs Improvement",
   "improvementNeeded": "Needs Improvement",
   "instructions": "Instructions",
@@ -1419,7 +1419,7 @@
   "logoutTitle": "Logout",
   "madeWithLove": "Made with ❤️ for Dream Spirit",
   "minutes": "minutes",
-  "mission100Team": "Lucid Dream Team",
+  "mission100Team": "HundredCore Team",
   "missionComplete": "🎉👑💀 MISSION COMPLETE! ALPHA EMPEROR Ascension! 💀👑🎉",
   "mistakesSection": "❌ WEAKLINGS' PATHETIC MISTAKES ❌",
   "month": "month",
@@ -1639,7 +1639,7 @@
   "version": "Version",
   "versionAndBuild": "Version {version}+{buildNumber}",
   "versionInfo": "Version Info",
-  "versionInfoDesc": "Lucid Dream 100 v1.0.0",
+  "versionInfoDesc": "DreamFlow v1.0.0",
   "victoryTime": "{time} - Victory Time!",
   "videoCannotOpen": "Cannot open video. Please check your YouTube app.",
   "viewAll": "View All",
@@ -1759,7 +1759,7 @@
     }
   },
   "continueWithGoogle": "Continue with Google",
-  "signupThankYouMessage": "🎉 Thank you for joining Lucid Dream 100!",
+  "signupThankYouMessage": "🎉 Thank you for joining DreamFlow!",
   "googleQuickSignup": "Quick Sign up with Google",
   "googleLogin": "Sign in with Google",
   "googleSignin3Seconds": "Start in 3 seconds with Google",
@@ -1895,5 +1895,96 @@
       }
     }
   },
-  "homeDailyRewardReceived": "You received +{amount} tokens!"
+  "homeDailyRewardReceived": "You received +{amount} tokens!",
+
+  "@userTitleDreamer": {
+    "description": "User title for Week 0-1"
+  },
+  "userTitleDreamer": "Dreamer",
+  "@userTitleExplorer": {
+    "description": "User title for Week 2-3"
+  },
+  "userTitleExplorer": "Dream Explorer",
+  "@userTitleAwakening": {
+    "description": "User title for Week 4-6"
+  },
+  "userTitleAwakening": "Awakening One",
+  "@userTitleLucidWalker": {
+    "description": "User title for Week 7-9"
+  },
+  "userTitleLucidWalker": "Lucid Walker",
+  "@userTitleDreamMaster": {
+    "description": "User title for Week 10+"
+  },
+  "userTitleDreamMaster": "Dream Master",
+  "@homeDreamJournalTitle": {
+    "description": "Home screen dream journal card title"
+  },
+  "homeDreamJournalTitle": "My Dream Journal",
+  "@homeDreamJournalSubtitle": {
+    "description": "Home screen dream journal card subtitle"
+  },
+  "homeDreamJournalSubtitle": "Check and analyze your dream entries",
+  "@homeStreakStartTitle": {
+    "description": "Home screen streak start banner title"
+  },
+  "homeStreakStartTitle": "Start Today!",
+  "@homeStreakStartSubtitle": {
+    "description": "Home screen streak start banner subtitle"
+  },
+  "homeStreakStartSubtitle": "Complete your checklist and build your streak",
+  "@streakDaysOngoing": {
+    "description": "Streak days ongoing message",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDaysOngoing": "{days} day streak going!",
+  "@streakRiskMessage": {
+    "description": "Streak risk warning message"
+  },
+  "streakRiskMessage": "Complete today's checklist to keep your streak!",
+  "@streakMilestoneProgress": {
+    "description": "Days until milestone",
+    "placeholders": {
+      "targetDays": {"type": "int"},
+      "remainingDays": {"type": "int"}
+    }
+  },
+  "streakMilestoneProgress": "🎯 {remainingDays} days to {targetDays}-day milestone!",
+  "@streakDaysAchieved": {
+    "description": "Streak days achieved",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDaysAchieved": "{days} day streak!",
+  "@streakDaysUntilMilestone": {
+    "description": "Days until next milestone",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDaysUntilMilestone": "{days} days until next milestone",
+  "@streakBestRecord": {
+    "description": "Best streak record",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakBestRecord": "Best record: {days} days 🎉",
+  "@streakDays": {
+    "description": "Number of streak days",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDays": "{days} days",
+  "@streakDaysTarget": {
+    "description": "Target streak days",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDaysTarget": "{days} days 🎯"
 }

@@ -318,13 +318,13 @@ class BackupScheduler {
       // Legacy fallback 위해 하드코딩 사용
       if (result.success) {
         await _showBackupNotification(
-          title: 'Mission 100 수동 백업 완료',
+          title: 'Lucid Dream 100 수동 백업 완료',
           body: '백업이 성공적으로 생성되었습니다',
           isSuccess: true,
         );
       } else {
         await _showBackupNotification(
-          title: 'Mission 100 수동 백업 실패',
+          title: 'Lucid Dream 100 수동 백업 실패',
           body: '백업 생성 중 오류가 발생했습니다',
           isSuccess: false,
         );

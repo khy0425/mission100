@@ -151,5 +151,53 @@
   "goalSetupTimeNight": "Night (8-10 PM)",
   "goalSetupWelcomeMessage": "Your personalized lucid dream journey begins now.\nTry 1 month free with our launch event!",
   "goalSetupStartJourney": "Start Your Journey",
-  "goalSetupCompleteTitle": "🎉 Goal Setup Complete!"
+  "goalSetupCompleteTitle": "🎉 Goal Setup Complete!",
+  "@onboardingMissionWeek12Title": {
+    "description": "Onboarding mission week 1-2 title"
+  },
+  "onboardingMissionWeek12Title": "Week 1-2",
+  "@onboardingMissionWeek12Desc": {
+    "description": "Onboarding mission week 1-2 description"
+  },
+  "onboardingMissionWeek12Desc": "Building Foundations",
+  "@onboardingMissionWeek34Title": {
+    "description": "Onboarding mission week 3-4 title"
+  },
+  "onboardingMissionWeek34Title": "Week 3-4",
+  "@onboardingMissionWeek34Desc": {
+    "description": "Onboarding mission week 3-4 description"
+  },
+  "onboardingMissionWeek34Desc": "First Lucid Dream",
+  "@onboardingMissionWeek58Title": {
+    "description": "Onboarding mission week 5-8 title"
+  },
+  "onboardingMissionWeek58Title": "Week 5-8",
+  "@onboardingMissionWeek58Desc": {
+    "description": "Onboarding mission week 5-8 description"
+  },
+  "onboardingMissionWeek58Desc": "Lucid Dream Mastery",
+  "@onboardingMissionReadyTitle": {
+    "description": "Onboarding mission ready title"
+  },
+  "onboardingMissionReadyTitle": "Ready!",
+  "@onboardingMissionReadyDesc": {
+    "description": "Onboarding mission ready description"
+  },
+  "onboardingMissionReadyDesc": "Start now",
+  "@readyToStartSubtitle": {
+    "description": "Ready to start subtitle"
+  },
+  "readyToStartSubtitle": "Find your starting point with a quick setup",
+  "@getStartedStep1": {
+    "description": "Get started step 1"
+  },
+  "getStartedStep1": "1. Goal Setting (1 minute)",
+  "@getStartedStep2": {
+    "description": "Get started step 2"
+  },
+  "getStartedStep2": "2. Set Practice Start Date",
+  "@getStartedStep3": {
+    "description": "Get started step 3"
+  },
+  "getStartedStep3": "3. Start 30-Day Journey!"
 }

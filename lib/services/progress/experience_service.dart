@@ -1,8 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'dart:convert';
+import 'dart:async';
 
-/// 14주 프로그램 기반 경험치 및 레벨 시스템
+/// 60일 프로그램 기반 경험치 및 레벨 시스템
 ///
 /// 레벨 설계:
 /// - Level 1-5: 각 주차마다 레벨 업 (Week 1-5 완료 시)
@@ -16,6 +19,10 @@ class ExperienceService extends ChangeNotifier {
   ExperienceService._internal();
 
   static const String _experienceDataKey = 'experience_data';
+
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  StreamSubscription<DocumentSnapshot>? _experienceSubscription;
 
   ExperienceData _data = const ExperienceData();
   bool _isInitialized = false;
@@ -388,7 +395,7 @@ class ExpCalculator {
   }
 }
 
-/// 레벨 테이블 (14주 프로그램 기반 - 밸런스 최적화)
+/// 레벨 테이블 (60일 프로그램 기반 - 밸런스 최적화)
 class LevelTable {
   static const int maxLevel = 14;
 

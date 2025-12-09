@@ -72,7 +72,7 @@ class AnalysisModeSelectionScreen extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
         side: BorderSide(
-          color: Colors.green.withValues(alpha: 0.3),
+          color: Colors.blue.withValues(alpha: 0.3),
           width: 2,
         ),
       ),
@@ -90,7 +90,7 @@ class AnalysisModeSelectionScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.all(12),
                     decoration: BoxDecoration(
-                      color: Colors.green.withValues(alpha: 0.1),
+                      color: Colors.blue.withValues(alpha: 0.1),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: const Text(
@@ -116,12 +116,12 @@ class AnalysisModeSelectionScreen extends StatelessWidget {
                             vertical: 2,
                           ),
                           decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: Colors.blue,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Text(
-                            l10n.analysisQuickBadge,
-                            style: const TextStyle(
+                          child: const Text(
+                            '🎫 1토큰',
+                            style: TextStyle(
                               fontSize: 12,
                               fontWeight: FontWeight.bold,
                               color: Colors.white,
@@ -153,17 +153,17 @@ class AnalysisModeSelectionScreen extends StatelessWidget {
               // 특징
               _buildFeatureItem(
                 l10n.analysisQuickFeature1,
-                Colors.green,
+                Colors.blue,
                 isDark,
               ),
               _buildFeatureItem(
                 l10n.analysisQuickFeature2,
-                Colors.green,
+                Colors.blue,
                 isDark,
               ),
               _buildFeatureItem(
                 l10n.analysisQuickFeature3,
-                Colors.green,
+                Colors.blue,
                 isDark,
               ),
 
@@ -175,7 +175,7 @@ class AnalysisModeSelectionScreen extends StatelessWidget {
                 child: ElevatedButton(
                   onPressed: () => _navigateToQuickAnalysis(context),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.green,
+                    backgroundColor: Colors.blue,
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(

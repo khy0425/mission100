@@ -7,6 +7,7 @@ class ChecklistItem {
   final String name;
   final String nameKo;
   final String description;
+  final String descriptionKo;
   final String icon;
   final String? defaultTime;
   final int? priority;
@@ -14,12 +15,14 @@ class ChecklistItem {
   final int? intervalMinutes;
   final bool optional;
   final String? researchNote;
+  final int unlockWeek;
 
   const ChecklistItem({
     required this.id,
     required this.name,
     required this.nameKo,
     required this.description,
+    required this.descriptionKo,
     required this.icon,
     this.defaultTime,
     this.priority,
@@ -27,84 +30,138 @@ class ChecklistItem {
     this.intervalMinutes,
     this.optional = false,
     this.researchNote,
+    this.unlockWeek = 1,
   });
 }
 
 class ChecklistData {
-  /// Daily checklist items
   static List<ChecklistItem> get dailyChecklist => [
     const ChecklistItem(
       id: 'dream_journal',
       name: 'Dream Journal (PRIORITY #1)',
       nameKo: '꿈 일기 작성 (최우선)',
-      description: 'Write down dreams immediately after waking. Research shows dream recall is the #1 predictor of lucid dream success.',
+      description: 'Write down dreams immediately after waking.',
+      descriptionKo: '일어나자마자 꿈을 기록하세요. 꿈 회상력이 자각몽 성공의 핵심입니다.',
       icon: '📔',
       defaultTime: '07:00',
       priority: 1,
-      researchNote: 'Superior dream recall = higher success rate',
+      unlockWeek: 1,
     ),
     const ChecklistItem(
       id: 'reality_check_2hr',
       name: 'Reality Checks (5x, every 2hrs)',
       nameKo: '현실 확인 (5회, 2시간마다)',
-      description: 'Check reality every 2 hours while awake. Research: 5 times daily, combined with WBTB+MILD is effective.',
+      description: 'Check reality every 2 hours while awake.',
+      descriptionKo: '깨어있는 동안 2시간마다 현실 확인을 하세요.',
       icon: '👁️',
       countRequired: 5,
       intervalMinutes: 120,
-      researchNote: 'Reality checks alone are NOT effective. Must combine with WBTB+MILD',
-    ),
-    const ChecklistItem(
-      id: 'wbtb_alarm',
-      name: 'WBTB Alarm (Wake Back to Bed)',
-      nameKo: 'WBTB 알람 (5시간 후)',
-      description: 'Set alarm for 5 hours after sleep. Wake briefly, practice MILD, then sleep again. Research: 46% success rate!',
-      icon: '⏰',
-      defaultTime: '23:00',
-      priority: 2,
-      researchNote: 'WBTB + MILD = highest success rate (46%)',
-    ),
-    const ChecklistItem(
-      id: 'mild_wbtb',
-      name: 'MILD Technique (during WBTB)',
-      nameKo: 'MILD 기법 (WBTB 중)',
-      description: 'After 5hr alarm: Stay awake 5-10min. Repeat "Next time I am dreaming, I will remember I am dreaming". Fall asleep within 10min.',
-      icon: '🧠',
-      defaultTime: '04:00',
-      priority: 2,
-      researchNote: 'Fall asleep within 10min after MILD = success predictor',
+      unlockWeek: 1,
     ),
     const ChecklistItem(
       id: 'bedtime_preparation',
       name: 'Bedtime Dream Prep',
       nameKo: '취침 전 준비',
-      description: 'Review dream journal, set intention for lucidity. Keep journal by bed.',
+      description: 'Review dream journal, set intention for lucidity.',
+      descriptionKo: '꿈 일기를 복습하고 자각몽 의도를 설정하세요.',
       icon: '🌙',
       defaultTime: '22:30',
+      unlockWeek: 1,
+    ),
+    const ChecklistItem(
+      id: 'wbtb_alarm',
+      name: 'WBTB Alarm (Wake Back to Bed)',
+      nameKo: 'WBTB 알람 (5시간 후)',
+      description: 'Set alarm for 5 hours after sleep.',
+      descriptionKo: '수면 5시간 후 알람을 설정하세요. 성공률 46%의 검증된 기법입니다.',
+      icon: '⏰',
+      defaultTime: '23:00',
+      priority: 2,
+      unlockWeek: 3,
+    ),
+    const ChecklistItem(
+      id: 'mild_wbtb',
+      name: 'MILD Technique (during WBTB)',
+      nameKo: 'MILD 기법 (WBTB 중)',
+      description: 'After alarm: Stay awake 5-10min. Practice MILD.',
+      descriptionKo: '알람 후 5-10분 깨어있으면서 "다음 꿈에서 꿈인 것을 알아차릴 것이다"를 반복하세요.',
+      icon: '🧠',
+      defaultTime: '04:00',
+      priority: 2,
+      unlockWeek: 3,
     ),
     const ChecklistItem(
       id: 'ssild_technique',
-      name: 'SSILD Technique (Advanced, Optional)',
-      nameKo: 'SSILD 기법 (고급, 선택)',
-      description: 'Senses Initiated Lucid Dream: Cycle through sight, sound, body sensations. As effective as MILD.',
+      name: 'SSILD Technique (Advanced)',
+      nameKo: 'SSILD 기법 (고급)',
+      description: 'Senses Initiated Lucid Dream.',
+      descriptionKo: '시각, 청각, 신체 감각을 순환하며 집중하는 고급 기법입니다.',
       icon: '🧘',
+      unlockWeek: 5,
+    ),
+    const ChecklistItem(
+      id: 'wild_technique',
+      name: 'WILD Technique (Wake Initiated)',
+      nameKo: 'WILD 기법 (각성 유도)',
+      description: 'Wake Initiated Lucid Dream.',
+      descriptionKo: '의식을 유지하면서 잠드는 고급 기법입니다. 연습이 필요합니다.',
+      icon: '🌊',
+      unlockWeek: 5,
+    ),
+    const ChecklistItem(
+      id: 'dream_control_practice',
+      name: 'Dream Control Practice',
+      nameKo: '꿈 조종 연습',
+      description: 'Practice controlling dream elements.',
+      descriptionKo: '비행, 배경 변경, 물체 소환 등 꿈 요소를 조종하는 연습을 하세요.',
+      icon: '🎮',
+      unlockWeek: 7,
       optional: true,
-      researchNote: 'SSILD is similarly effective to MILD',
+    ),
+    const ChecklistItem(
+      id: 'reality_stabilization',
+      name: 'Lucid Dream Stabilization',
+      nameKo: '자각몽 안정화 훈련',
+      description: 'Techniques to maintain lucidity.',
+      descriptionKo: '손 비비기, 회전하기, 세부 관찰 등으로 자각 상태를 유지하세요.',
+      icon: '⚖️',
+      unlockWeek: 7,
+      optional: true,
     ),
   ];
 
-  /// Get priority 1 items
   static List<ChecklistItem> get priority1Items =>
       dailyChecklist.where((item) => item.priority == 1).toList();
 
-  /// Get priority 2 items
   static List<ChecklistItem> get priority2Items =>
       dailyChecklist.where((item) => item.priority == 2).toList();
 
-  /// Get regular items (no priority)
   static List<ChecklistItem> get regularItems =>
       dailyChecklist.where((item) => item.priority == null && !item.optional).toList();
 
-  /// Get optional items
   static List<ChecklistItem> get optionalItems =>
       dailyChecklist.where((item) => item.optional).toList();
+
+  static List<ChecklistItem> getItemsForWeek(int currentWeek) =>
+      dailyChecklist.where((item) => item.unlockWeek <= currentWeek).toList();
+
+  static List<ChecklistItem> getLockedItems(int currentWeek) =>
+      dailyChecklist.where((item) => item.unlockWeek > currentWeek).toList();
+
+  static bool isItemUnlocked(String itemId, int currentWeek) {
+    final item = dailyChecklist.firstWhere(
+      (item) => item.id == itemId,
+      orElse: () => dailyChecklist.first,
+    );
+    return item.unlockWeek <= currentWeek;
+  }
+
+  static int? getNextUnlockWeek(int currentWeek) {
+    final lockedItems = getLockedItems(currentWeek);
+    if (lockedItems.isEmpty) return null;
+    return lockedItems.map((item) => item.unlockWeek).reduce((a, b) => a < b ? a : b);
+  }
+
+  static List<ChecklistItem> getItemsUnlockingAtWeek(int week) =>
+      dailyChecklist.where((item) => item.unlockWeek == week).toList();
 }

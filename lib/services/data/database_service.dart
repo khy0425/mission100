@@ -2,7 +2,9 @@ import 'dart:async';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import '../../models/user_profile.dart';
-import '../../models/workout_session.dart';
+// DreamFlow - workout_session.dart 제거됨 (자각몽 앱에서는 사용 안 함)
+// import '../../models/workout_session.dart';
+import '../../models/dream_entry.dart';
 import 'package:flutter/foundation.dart';
 
 class DatabaseService {
@@ -24,7 +26,7 @@ class DatabaseService {
 
     return await openDatabase(
       path,
-      version: 3, // 버전을 3으로 업그레이드 (개인화 필드 추가)
+      version: 4, // 버전을 4로 업그레이드 (꿈 일기 테이블 추가)
       onCreate: _onCreate,
       onUpgrade: _onUpgrade,
     );
@@ -73,11 +75,47 @@ class DatabaseService {
       )
     ''');
 
+    // DreamEntry 테이블 생성
+    await db.execute('''
+      CREATE TABLE dream_entry (
+        id TEXT PRIMARY KEY,
+        userId TEXT NOT NULL,
+        createdAt TEXT NOT NULL,
+        updatedAt TEXT,
+        dreamDate TEXT NOT NULL,
+        title TEXT,
+        content TEXT NOT NULL,
+        lucidityLevel INTEGER DEFAULT 0,
+        wasLucid INTEGER DEFAULT 0,
+        emotions TEXT,
+        moodScore INTEGER,
+        symbols TEXT,
+        characters TEXT,
+        locations TEXT,
+        sleepTime TEXT,
+        wakeTime TEXT,
+        sleepQuality INTEGER,
+        techniquesUsed TEXT,
+        usedWbtb INTEGER DEFAULT 0,
+        aiAnalysisId TEXT,
+        hasAiAnalysis INTEGER DEFAULT 0,
+        tags TEXT,
+        isFavorite INTEGER DEFAULT 0,
+        imageUrl TEXT,
+        voiceNoteUrl TEXT,
+        repeatPatternId INTEGER,
+        isRecurring INTEGER DEFAULT 0
+      )
+    ''');
+
     // 인덱스 생성
     await db.execute('CREATE INDEX idx_workout_date ON workout_session(date)');
     await db.execute(
       'CREATE INDEX idx_workout_week_day ON workout_session(week, day)',
     );
+    await db.execute('CREATE INDEX idx_dream_date ON dream_entry(dreamDate)');
+    await db.execute('CREATE INDEX idx_dream_user ON dream_entry(userId)');
+    await db.execute('CREATE INDEX idx_dream_lucid ON dream_entry(wasLucid)');
   }
 
   Future<void> _onUpgrade(Database db, int oldVersion, int newVersion) async {
@@ -102,6 +140,46 @@ class DatabaseService {
       await db.execute('ALTER TABLE user_profile ADD COLUMN chad_total_level_ups INTEGER DEFAULT 0');
       await db.execute('ALTER TABLE user_profile ADD COLUMN chad_last_level_up_at TEXT');
       debugPrint('✅ 데이터베이스 업그레이드: 개인화 필드 추가 완료 (v3)');
+    }
+
+    if (oldVersion < 4) {
+      // 꿈 일기 테이블 추가
+      await db.execute('''
+        CREATE TABLE dream_entry (
+          id TEXT PRIMARY KEY,
+          userId TEXT NOT NULL,
+          createdAt TEXT NOT NULL,
+          updatedAt TEXT,
+          dreamDate TEXT NOT NULL,
+          title TEXT,
+          content TEXT NOT NULL,
+          lucidityLevel INTEGER DEFAULT 0,
+          wasLucid INTEGER DEFAULT 0,
+          emotions TEXT,
+          moodScore INTEGER,
+          symbols TEXT,
+          characters TEXT,
+          locations TEXT,
+          sleepTime TEXT,
+          wakeTime TEXT,
+          sleepQuality INTEGER,
+          techniquesUsed TEXT,
+          usedWbtb INTEGER DEFAULT 0,
+          aiAnalysisId TEXT,
+          hasAiAnalysis INTEGER DEFAULT 0,
+          tags TEXT,
+          isFavorite INTEGER DEFAULT 0,
+          imageUrl TEXT,
+          voiceNoteUrl TEXT,
+          repeatPatternId INTEGER,
+          isRecurring INTEGER DEFAULT 0
+        )
+      ''');
+
+      await db.execute('CREATE INDEX idx_dream_date ON dream_entry(dreamDate)');
+      await db.execute('CREATE INDEX idx_dream_user ON dream_entry(userId)');
+      await db.execute('CREATE INDEX idx_dream_lucid ON dream_entry(wasLucid)');
+      debugPrint('✅ 데이터베이스 업그레이드: 꿈 일기 테이블 추가 완료 (v4)');
     }
   }
 
@@ -136,120 +214,122 @@ class DatabaseService {
     return await db.delete('user_profile', where: 'id = ?', whereArgs: [id]);
   }
 
-  // WorkoutSession CRUD 작업
-  Future<int> insertWorkoutSession(WorkoutSession session) async {
-    final db = await database;
-    return await db.insert(
-      'workout_session',
-      session.toMap(),
-      conflictAlgorithm: ConflictAlgorithm.replace,
-    );
-  }
+  // DreamFlow - WorkoutSession 관련 코드 제거됨 (운동 앱 전용)
+  // 자각몽 앱은 체크리스트 히스토리 서비스를 사용합니다
 
-  Future<List<WorkoutSession>> getAllWorkoutSessions() async {
-    final db = await database;
-    final maps = await db.query('workout_session');
+  // Future<int> insertWorkoutSession(WorkoutSession session) async {
+  //   final db = await database;
+  //   return await db.insert(
+  //     'workout_session',
+  //     session.toMap(),
+  //     conflictAlgorithm: ConflictAlgorithm.replace,
+  //   );
+  // }
 
-    return List.generate(maps.length, (i) {
-      return WorkoutSession.fromMap(maps[i]);
-    });
-  }
+  // Future<List<WorkoutSession>> getAllWorkoutSessions() async {
+  //   final db = await database;
+  //   final maps = await db.query('workout_session');
 
-  Future<List<WorkoutSession>> getWorkoutSessionsByWeek(int week) async {
-    final db = await database;
-    final maps = await db.query(
-      'workout_session',
-      where: 'week = ?',
-      whereArgs: [week],
-    );
+  //   return List.generate(maps.length, (i) {
+  //     return WorkoutSession.fromMap(maps[i]);
+  //   });
+  // }
 
-    return List.generate(maps.length, (i) {
-      return WorkoutSession.fromMap(maps[i]);
-    });
-  }
+  // Future<List<WorkoutSession>> getWorkoutSessionsByWeek(int week) async {
+  //   final db = await database;
+  //   final maps = await db.query(
+  //     'workout_session',
+  //     where: 'week = ?',
+  //     whereArgs: [week],
+  //   );
 
-  Future<List<WorkoutSession>> getWorkoutSessionsByUserId(int userId) async {
-    final db = await database;
-    final maps = await db.query('workout_session');
+  //   return List.generate(maps.length, (i) {
+  //     return WorkoutSession.fromMap(maps[i]);
+  //   });
+  // }
 
-    return List.generate(maps.length, (i) {
-      return WorkoutSession.fromMap(maps[i]);
-    });
-  }
+  // Future<List<WorkoutSession>> getWorkoutSessionsByUserId(int userId) async {
+  //   final db = await database;
+  //   final maps = await db.query('workout_session');
 
-  Future<WorkoutSession?> getWorkoutSession(int week, int day) async {
-    final db = await database;
-    final maps = await db.query(
-      'workout_session',
-      where: 'week = ? AND day = ?',
-      whereArgs: [week, day],
-    );
+  //   return List.generate(maps.length, (i) {
+  //     return WorkoutSession.fromMap(maps[i]);
+  //   });
+  // }
 
-    if (maps.isNotEmpty) {
-      return WorkoutSession.fromMap(maps.first);
-    }
-    return null;
-  }
+  // Future<WorkoutSession?> getWorkoutSession(int week, int day) async {
+  //   final db = await database;
+  //   final maps = await db.query(
+  //     'workout_session',
+  //     where: 'week = ? AND day = ?',
+  //     whereArgs: [week, day],
+  //   );
 
-  Future<WorkoutSession?> getTodayWorkoutSession() async {
-    final db = await database;
-    final today = DateTime.now().toIso8601String().split('T')[0];
-    final maps = await db.query(
-      'workout_session',
-      where: 'date = ?',
-      whereArgs: [today],
-    );
+  //   if (maps.isNotEmpty) {
+  //     return WorkoutSession.fromMap(maps.first);
+  //   }
+  //   return null;
+  // }
 
-    if (maps.isNotEmpty) {
-      return WorkoutSession.fromMap(maps.first);
-    }
-    return null;
-  }
+  // Future<WorkoutSession?> getTodayWorkoutSession() async {
+  //   final db = await database;
+  //   final today = DateTime.now().toIso8601String().split('T')[0];
+  //   final maps = await db.query(
+  //     'workout_session',
+  //     where: 'date = ?',
+  //     whereArgs: [today],
+  //   );
 
-  Future<int> updateWorkoutSession(WorkoutSession session) async {
-    final db = await database;
-    return await db.update(
-      'workout_session',
-      session.toMap(),
-      where: 'id = ?',
-      whereArgs: [session.id],
-    );
-  }
+  //   if (maps.isNotEmpty) {
+  //     return WorkoutSession.fromMap(maps.first);
+  //   }
+  //   return null;
+  // }
 
-  Future<int> deleteWorkoutSession(int id) async {
-    final db = await database;
-    return await db.delete('workout_session', where: 'id = ?', whereArgs: [id]);
-  }
+  // Future<int> updateWorkoutSession(WorkoutSession session) async {
+  //   final db = await database;
+  //   return await db.update(
+  //     'workout_session',
+  //     session.toMap(),
+  //     where: 'id = ?',
+  //     whereArgs: [session.id],
+  //   );
+  // }
 
-  // 통계 메서드
-  Future<int> getTotalPushups() async {
-    final db = await database;
-    final result = await db.rawQuery(
-      'SELECT SUM(total_reps) as total FROM workout_session WHERE is_completed = 1',
-    );
-    return result.first['total'] as int? ?? 0;
-  }
+  // Future<int> deleteWorkoutSession(int id) async {
+  //   final db = await database;
+  //   return await db.delete('workout_session', where: 'id = ?', whereArgs: [id]);
+  // }
 
-  Future<int> getCompletedWorkouts() async {
-    final db = await database;
-    final result = await db.rawQuery(
-      'SELECT COUNT(*) as count FROM workout_session WHERE is_completed = 1',
-    );
-    return result.first['count'] as int? ?? 0;
-  }
+  // // 통계 메서드
+  // Future<int> getTotalPushups() async {
+  //   final db = await database;
+  //   final result = await db.rawQuery(
+  //     'SELECT SUM(total_reps) as total FROM workout_session WHERE is_completed = 1',
+  //   );
+  //   return result.first['total'] as int? ?? 0;
+  // }
 
-  Future<List<WorkoutSession>> getRecentWorkouts({int limit = 7}) async {
-    final db = await database;
-    final maps = await db.query(
-      'workout_session',
-      orderBy: 'date DESC',
-      limit: limit,
-    );
+  // Future<int> getCompletedWorkouts() async {
+  //   final db = await database;
+  //   final result = await db.rawQuery(
+  //     'SELECT COUNT(*) as count FROM workout_session WHERE is_completed = 1',
+  //   );
+  //   return result.first['count'] as int? ?? 0;
+  // }
 
-    return List.generate(maps.length, (i) {
-      return WorkoutSession.fromMap(maps[i]);
-    });
-  }
+  // Future<List<WorkoutSession>> getRecentWorkouts({int limit = 7}) async {
+  //   final db = await database;
+  //   final maps = await db.query(
+  //     'workout_session',
+  //     orderBy: 'date DESC',
+  //     limit: limit,
+  //   );
+
+  //   return List.generate(maps.length, (i) {
+  //     return WorkoutSession.fromMap(maps[i]);
+  //   });
+  // }
 
   // 연속 운동일 계산
   Future<int> getConsecutiveDays() async {

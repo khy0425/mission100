@@ -4,6 +4,7 @@ import '../../generated/l10n/app_localizations.dart';
 import '../../models/user_subscription.dart';
 import '../../services/ai/conversation_token_service.dart';
 import '../../services/auth/auth_service.dart';
+import '../../services/monetization/ad_service.dart';
 import '../../utils/config/constants.dart';
 
 /// 토큰 잔액 및 일일 보상 위젯
@@ -60,10 +61,14 @@ class _TokenBalanceWidgetState extends State<TokenBalanceWidget> {
                         vertical: 8,
                       ),
                       decoration: BoxDecoration(
-                        color: theme.primaryColor.withValues(alpha: 0.1),
+                        color: isDark
+                            ? const Color(0xFF9B7EDE).withValues(alpha: 0.2)
+                            : theme.primaryColor.withValues(alpha: 0.1),
                         borderRadius: BorderRadius.circular(20),
                         border: Border.all(
-                          color: theme.primaryColor.withValues(alpha: 0.3),
+                          color: isDark
+                              ? const Color(0xFF9B7EDE)
+                              : theme.primaryColor.withValues(alpha: 0.3),
                           width: 1,
                         ),
                       ),
@@ -76,7 +81,9 @@ class _TokenBalanceWidgetState extends State<TokenBalanceWidget> {
                             '$balance',
                             style: theme.textTheme.titleLarge?.copyWith(
                               fontWeight: FontWeight.bold,
-                              color: theme.primaryColor,
+                              color: isDark
+                                  ? const Color(0xFFB39DDB) // Light Purple for dark mode
+                                  : theme.primaryColor,
                             ),
                           ),
                         ],
@@ -180,14 +187,21 @@ class _TokenBalanceWidgetState extends State<TokenBalanceWidget> {
           padding: const EdgeInsets.all(12),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                theme.primaryColor.withValues(alpha: 0.1),
-                theme.primaryColor.withValues(alpha: 0.05),
-              ],
+              colors: isDark
+                  ? [
+                      const Color(0xFF9B7EDE).withValues(alpha: 0.2),
+                      const Color(0xFF9B7EDE).withValues(alpha: 0.1),
+                    ]
+                  : [
+                      theme.primaryColor.withValues(alpha: 0.1),
+                      theme.primaryColor.withValues(alpha: 0.05),
+                    ],
             ),
             borderRadius: BorderRadius.circular(8),
             border: Border.all(
-              color: theme.primaryColor.withValues(alpha: 0.3),
+              color: isDark
+                  ? const Color(0xFF9B7EDE)
+                  : theme.primaryColor.withValues(alpha: 0.3),
               width: 1,
             ),
           ),
@@ -200,7 +214,9 @@ class _TokenBalanceWidgetState extends State<TokenBalanceWidget> {
                 l10n.tokenBalanceRewardAmount(rewardAmount),
                 style: theme.textTheme.titleMedium?.copyWith(
                   fontWeight: FontWeight.bold,
-                  color: theme.primaryColor,
+                  color: isDark
+                      ? const Color(0xFFB39DDB) // Light Purple for dark mode
+                      : theme.primaryColor,
                 ),
               ),
               if (isPremium) ...[
@@ -383,15 +399,159 @@ class _TokenBalanceWidgetState extends State<TokenBalanceWidget> {
     }
   }
 
-  /// 광고 시청
+  /// 광고 시청하고 토큰 받기
   Future<void> _watchAd() async {
-    // TODO: 광고 SDK 연동 후 구현
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(AppLocalizations.of(context).tokenBalanceAdComingSoon),
-        duration: const Duration(seconds: 2),
-      ),
-    );
+    try {
+      final authService = context.read<AuthService>();
+      final tokenService = context.read<ConversationTokenService>();
+      final subscription = authService.currentSubscription;
+      final isPremium = subscription?.type == SubscriptionType.premium ||
+          subscription?.type == SubscriptionType.launchPromo;
+
+      // 프리미엄 사용자: 광고 없이 즉시 토큰 지급
+      if (isPremium) {
+        await tokenService.earnFromRewardAd(isPremium: isPremium);
+
+        if (!mounted) return;
+
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Row(
+              children: [
+                const Icon(Icons.workspace_premium, color: Colors.amber),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Text(
+                    '🎉 +1 토큰 획득! (프리미엄)',
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            backgroundColor: const Color(0xFF7B2CBF),
+            duration: const Duration(seconds: 2),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+        return;
+      }
+
+      // 무료 사용자: 리워드 광고 시청 후 토큰 지급
+      final adService = AdService();
+
+      // 광고 준비 상태 확인
+      if (!adService.isRewardedAdReady) {
+        if (!mounted) return;
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Row(
+              children: [
+                Icon(Icons.warning, color: Colors.amber),
+                SizedBox(width: 12),
+                Expanded(
+                  child: Text('광고를 로딩 중입니다. 잠시 후 다시 시도해주세요.'),
+                ),
+              ],
+            ),
+            backgroundColor: Colors.orange,
+            duration: Duration(seconds: 2),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+        return;
+      }
+
+      // 광고 로딩 표시
+      if (!mounted) return;
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Row(
+            children: [
+              SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                ),
+              ),
+              SizedBox(width: 12),
+              Text('광고 준비 중...', style: TextStyle(fontSize: 15)),
+            ],
+          ),
+          duration: Duration(seconds: 2),
+        ),
+      );
+
+      // 실제 리워드 광고 표시
+      await adService.showRewardedAd(
+        onRewardEarned: (amount, type) async {
+          if (!mounted) return;
+
+          // 토큰 애니메이션은 Provider 상태 변경으로 자동 트리거됨
+          // (AppBarTokenWidget이 ConversationTokenService를 Consumer로 구독)
+
+          // 서버에 토큰 지급 요청
+          try {
+            await tokenService.earnFromRewardAd(isPremium: isPremium);
+            debugPrint('✅ Token earned from ad');
+
+            // 성공 메시지
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Row(
+                    children: [
+                      Text('🎉', style: TextStyle(fontSize: 20)),
+                      SizedBox(width: 12),
+                      Text('+1 토큰 획득!', style: TextStyle(fontWeight: FontWeight.bold)),
+                    ],
+                  ),
+                  backgroundColor: Colors.green,
+                  duration: Duration(seconds: 2),
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+            }
+          } catch (e) {
+            debugPrint('❌ Token reward error: $e');
+            // 에러 메시지 표시
+            if (mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Row(
+                    children: [
+                      const Icon(Icons.error_outline, color: Colors.white),
+                      const SizedBox(width: 12),
+                      Expanded(child: Text('토큰 지급 실패: $e')),
+                    ],
+                  ),
+                  backgroundColor: Colors.red,
+                  duration: const Duration(seconds: 3),
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+            }
+          }
+        },
+        onAdClosed: () {
+          // 광고 닫힘 처리 (보상 없이 닫은 경우)
+          if (!mounted) return;
+        },
+      );
+    } catch (e) {
+      if (!mounted) return;
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('토큰 획득 실패: $e'),
+          backgroundColor: Colors.red,
+        ),
+      );
+    }
   }
 
   /// 시간 포맷팅 (HH:MM:SS)

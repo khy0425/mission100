@@ -1167,14 +1167,14 @@
   "actionCannotBeUndone": "되돌릴 수 없다! 신중하게!",
   "activated": "활성화됨",
   "activatedStatus": "활성화됨",
-  "adFallbackMessage": "드림 스피릿가 되는 여정, 함께 간다! 💪",
+  "adFallbackMessage": "자각몽 마스터가 되는 여정, 함께 간다! 💪",
   "advertisement": "광고",
   "allowPermissions": "권한 허용하기",
-  "alphaEmperorDomain": "💀 ALPHA EMPEROR DOMAIN 💀",
-  "alphaFeature1": "고급 변형 푸시업",
-  "alphaFeature2": "폭발적 파워 훈련",
-  "alphaFeature3": "플라이오메트릭 운동",
-  "alphaFeature4": "기가드림 스피릿 완성 코스",
+  "alphaEmperorDomain": "💀 드림 마스터 영역 💀",
+  "alphaFeature1": "고급 자각몽 기법",
+  "alphaFeature2": "심화 WILD 기법",
+  "alphaFeature3": "드림 컨트롤 훈련",
+  "alphaFeature4": "자각몽 마스터 완성 코스",
   "alphaShort": "드림 스피릿",
   "animationEffect": "애니메이션 효과",
   "animations": "애니메이션",
@@ -1186,8 +1186,8 @@
   "appInfoDesc": "버전 정보 및 개발자 정보",
   "appRating": "앱 평가",
   "appRatingComingSoon": "앱 평가 기능은 준비 중이다",
-  "appSlogan": "드림 스피릿가 되는 여정",
-  "appTitle": "⚡ ALPHA EMPEROR DOMAIN ⚡",
+  "appSlogan": "자각몽 마스터로 가는 길",
+  "appTitle": "DreamFlow",
   "appVersion": "앱 버전",
   "appearance": "외관 설정",
   "ascendingMotion": "상승 동작",
@@ -1228,12 +1228,12 @@
   "completionMessage10": "👑 나만의 하루? 아니다! EMPEROR OF ALPHAS의 제국 건설 완료, 만삣삐! 👑",
   "completionMessage2": "⚡ 오늘 ALPHA STORM이 몰아쳤다, 만삣삐! 세상이 떨고 있어! ⚡",
   "completionMessage3": "👑 드림 스피릿에 가까워진 게 아니다... 이제 드림 스피릿를 넘어섰다! 👑",
-  "completionMessage4": "🚀 드림 스피릿답다고? 틀렸다! 이제 LEGENDARY BEAST MODE다, YOU MONSTER! 🚀",
-  "completionMessage5": "⚡ 드림 스피릿 에너지 레벨: ∞ 무한대 돌파! 우주가 경배한다! ⚡",
+  "completionMessage4": "🚀 드림 스피릿답다고? 틀렸다! 이제 전설적인 드림 마스터입니다! 🚀",
+  "completionMessage5": "⚡ 드림 스피릿 에너지 레벨: ∞ 무한대 돌파! 정말 대단해요! ⚡",
   "completionMessage6": "🦁 존경? 그딴 건 지났다! 이제 온 세상이 너에게 절한다, 만삣삐! 🦁",
-  "completionMessage7": "🔱 드림 스피릿가 승인했다고? 아니다! GOD TIER가 탄생을 인정했다! 🔱",
-  "completionMessage8": "🌪️ 드림 스피릿 게임 레벨업? 틀렸다! ALPHA DIMENSION을 정복했다, FXXK BEAST! 🌪️",
-  "completionMessage9": "💥 순수한 드림 스피릿 퍼포먼스가 아니다... 이제 PURE LEGENDARY DOMINANCE! 💥",
+  "completionMessage7": "🔱 자각몽 마스터가 승인했다고? 아니다! 드림 마스터 칭호를 획득했습니다! 🔱",
+  "completionMessage8": "🌪️ 드림 스피릿 게임 레벨업? 틀렸다! 드림 월드를 완전히 정복했습니다! 🌪️",
+  "completionMessage9": "💥 순수한 드림 스피릿 퍼포먼스가 아니다... 이제 진정한 자각몽 마스터! 💥",
   "completionPercentage": "{percentage}%",
   "completionRate": "완료율",
   "confirm": "확인",
@@ -1241,7 +1241,7 @@
   "congratulationsMessage": "완벽! 모든 권한 설정 완료! 🎉",
   "consistentStrengthImprovement": "꾸준한 운동으로 근력 향상",
   "continueOrStartNew": "이전 훈련을 이어서 계속할래?\\n아니면 새 훈련을 시작할래?",
-  "copyrightMission100": "© 2024 Lucid Dream Team\n모든 권리 보유\n\n💪 자각몽 마스터가 되는 그 날까지!",
+  "copyrightMission100": "© 2024 HundredCore\n모든 권리 보유",
   "core": "코어",
   "correctPose": "올바른 자세",
   "correctionMethod": "교정 방법:",
@@ -1252,7 +1252,7 @@
   "dailyReminderAt": "매일 {time}에 알림",
   "dailyReminderSubtitle": "매일 정해진 시간에 운동 알림",
   "darkMode": "다크 모드",
-  "darkModeDesc": "🌙 진짜 강자는 어둠 속에서도 강하다",
+  "darkModeDesc": "🌙 꿈의 세계로 안내하는 어두운 테마",
   "darkModeEnabled": "다크 모드가 활성화되었다",
   "dataManagement": "데이터 관리",
   "dataManagementDesc": "운동 기록 백업 및 복원",
@@ -1264,7 +1264,7 @@
   "developer": "개발자",
   "developerContact": "개발자 연락처",
   "developerInfo": "개발자 정보",
-  "developerInfoDesc": "드림 스피릿가 되는 여정을 함께해",
+  "developerInfoDesc": "자각몽 마스터가 되는 여정을 함께해",
   "difficultyChanged": "난이도 변경! -> {difficulty} 💪",
   "difficultyEasy": "쉬움",
   "difficultyExpert": "전문가",
@@ -1273,7 +1273,7 @@
   "difficultyMedium": "보통",
   "disabled": "비활성화",
   "dontMakeTheseMistakes": "이런 실수는 하지 마라!",
-  "downloadMission100": "Lucid Dream 100 앱 다운로드해라! 당신의 꿈을 응원합니다!",
+  "downloadMission100": "DreamFlow 앱 다운로드해라! 당신의 꿈을 응원합니다!",
   "durationLabel": "소요일",
   "earnedXp": "획득 XP",
   "elbowAngleQuiz": "푸시업에서 팔꿈치의 올바른 각도는?",
@@ -1327,7 +1327,7 @@
   "highContrastMode": "고대비 모드",
   "highContrastModeDesc": "시각적 접근성을 위한 고대비 모드를 활성화한다",
   "home": "홈",
-  "homeTitle": "💥 ALPHA EMPEROR COMMAND CENTER 💥",
+  "homeTitle": "DreamFlow",
   "improvement": "개선 필요",
   "improvementNeeded": "개선 필요",
   "instructions": "운동 방법",
@@ -1353,7 +1353,7 @@
   "logoutTitle": "로그아웃",
   "madeWithLove": "드림 스피릿를 위해 ❤️로 제작",
   "minutes": "분",
-  "mission100Team": "Lucid Dream Team",
+  "mission100Team": "HundredCore Team",
   "missionComplete": "🎉👑💀 MISSION COMPLETE! ALPHA EMPEROR 등극! 💀👑🎉",
   "mistakesSection": "❌ 약자들의 PATHETIC 실수들 ❌",
   "month": "월",
@@ -1424,7 +1424,7 @@
   "reminderTimeChanged": "리마인더 시간이 {time}로 변경되었다",
   "reminderTimeDesc": "⚡ 너의 운명이 결정되는 시간을 정해라!",
   "renewButton": "갱신",
-  "repLogMessage": "기록해라, 만삣삐. 약자는 숫자를 센다, 강자는 전설을 만든다 💪",
+  "repLogMessage": "기록해라, 만삣삐. 기록하면 성장할 수 있어요 💪",
   "resumeButton": "재개",
   "retry": "다시 시도",
   "retryButton": "다시 시도",
@@ -1564,7 +1564,7 @@
   "version": "버전",
   "versionAndBuild": "버전 {version}+{buildNumber}",
   "versionInfo": "버전 정보",
-  "versionInfoDesc": "Lucid Dream 100 v1.0.0",
+  "versionInfoDesc": "DreamFlow v1.0.0",
   "victoryTime": "{time} - 승리의 시간!",
   "videoCannotOpen": "영상을 열 수 없다. YouTube 앱을 확인해주세요.",
   "viewAll": "전체 보기",
@@ -1692,7 +1692,7 @@
   "titleLogout": "로그아웃",
   "titleScientificEvidence": "과학적 근거",
   "welcomeTitle": "환영합니다!",
-  "signupThankYouMessage": "🎉 Lucid Dream 100에 가입해주셔서 감사합니다!",
+  "signupThankYouMessage": "🎉 DreamFlow에 가입해주셔서 감사합니다!",
   "launchEventBenefits": "런칭 이벤트 혜택:",
   "benefit1MonthFree": "• 1개월 무료 프리미엄 기능",
   "oneMonthFreePremium": "1개월 무료 프리미엄",
@@ -1727,7 +1727,7 @@
   "rpeLevel8Description": "적당히 힘들었어요",
   "rpeLevel9Description": "많이 힘들었어요",
   "rpeLevel10Description": "최대로 힘들었어요",
-  "signupPromptTitle": "Lucid Dream 100 시작하기",
+  "signupPromptTitle": "DreamFlow 시작하기",
   "signupPromptMessage": "{goalText}\n\n가입하고 프리미엄 혜택을 받으세요!",
   "@signupPromptMessage": {
     "placeholders": {
@@ -1870,5 +1870,96 @@
       }
     }
   },
-  "homeDailyRewardReceived": "+{amount} 토큰을 받았습니다!"
+  "homeDailyRewardReceived": "+{amount} 토큰을 받았습니다!",
+
+  "@userTitleDreamer": {
+    "description": "User title for Week 0-1"
+  },
+  "userTitleDreamer": "드리머님",
+  "@userTitleExplorer": {
+    "description": "User title for Week 2-3"
+  },
+  "userTitleExplorer": "몽탐자님",
+  "@userTitleAwakening": {
+    "description": "User title for Week 4-6"
+  },
+  "userTitleAwakening": "각성자님",
+  "@userTitleLucidWalker": {
+    "description": "User title for Week 7-9"
+  },
+  "userTitleLucidWalker": "루시드 워커님",
+  "@userTitleDreamMaster": {
+    "description": "User title for Week 10+"
+  },
+  "userTitleDreamMaster": "드림 마스터님",
+  "@homeDreamJournalTitle": {
+    "description": "Home screen dream journal card title"
+  },
+  "homeDreamJournalTitle": "내 꿈 일기",
+  "@homeDreamJournalSubtitle": {
+    "description": "Home screen dream journal card subtitle"
+  },
+  "homeDreamJournalSubtitle": "작성한 꿈 일기를 확인하고 분석해보세요",
+  "@homeStreakStartTitle": {
+    "description": "Home screen streak start banner title"
+  },
+  "homeStreakStartTitle": "오늘부터 시작해보세요!",
+  "@homeStreakStartSubtitle": {
+    "description": "Home screen streak start banner subtitle"
+  },
+  "homeStreakStartSubtitle": "체크리스트를 완료하고 연속 기록을 쌓아보세요",
+  "@streakDaysOngoing": {
+    "description": "Streak days ongoing message",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDaysOngoing": "{days}일 연속 유지 중!",
+  "@streakRiskMessage": {
+    "description": "Streak risk warning message"
+  },
+  "streakRiskMessage": "오늘 체크리스트를 완료해서 스트릭을 지켜주세요!",
+  "@streakMilestoneProgress": {
+    "description": "Days until milestone",
+    "placeholders": {
+      "targetDays": {"type": "int"},
+      "remainingDays": {"type": "int"}
+    }
+  },
+  "streakMilestoneProgress": "🎯 {targetDays}일 달성까지 {remainingDays}일!",
+  "@streakDaysAchieved": {
+    "description": "Streak days achieved",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDaysAchieved": "{days}일 연속 달성!",
+  "@streakDaysUntilMilestone": {
+    "description": "Days until next milestone",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDaysUntilMilestone": "다음 마일스톤까지 {days}일 남았어요",
+  "@streakBestRecord": {
+    "description": "Best streak record",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakBestRecord": "최고 기록: {days}일 🎉",
+  "@streakDays": {
+    "description": "Number of streak days",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDays": "{days}일",
+  "@streakDaysTarget": {
+    "description": "Target streak days",
+    "placeholders": {
+      "days": {"type": "int"}
+    }
+  },
+  "streakDaysTarget": "{days}일 🎯"
 }

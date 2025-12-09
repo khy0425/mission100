@@ -6,6 +6,7 @@ import '../../services/auth/auth_service.dart';
 import '../../services/payment/billing_service.dart';
 import '../../models/user_subscription.dart';
 import '../../widgets/common/vip_badge_widget.dart';
+import '../../utils/config/constants.dart';
 
 class SubscriptionScreen extends StatefulWidget {
   const SubscriptionScreen({super.key});
@@ -33,10 +34,8 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     });
 
     try {
-      // Initialize billing service
       await _billingService.initialize();
-
-      // Load current subscription
+      if (!mounted) return;
       final authService = Provider.of<AuthService>(context, listen: false);
       final subscription = authService.currentSubscription;
 
@@ -71,7 +70,6 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
         return;
       }
 
-      // Start purchase flow (월간 구독)
       final result = await _billingService.purchaseProduct('premium_monthly');
       final success = result.success;
 
@@ -82,8 +80,6 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             backgroundColor: Colors.green,
           ),
         );
-
-        // Reload subscription data
         await _loadSubscriptionData();
       }
     } catch (e) {
@@ -109,18 +105,102 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     final l10n = AppLocalizations.of(context);
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.black : const Color(0xFFF5F5F5),
-      appBar: AppBar(
-        title: Text(l10n.subscriptionManagement),
-        backgroundColor: isDark ? Colors.grey[900] : const Color(0xFF7B2CBF),
-        foregroundColor: Colors.white,
-        elevation: 0,
+      body: CustomScrollView(
+        slivers: [
+          // 아름다운 그라데이션 앱바
+          SliverAppBar(
+            expandedHeight: 160,
+            floating: false,
+            pinned: true,
+            elevation: 0,
+            backgroundColor: theme.primaryColor,
+            foregroundColor: Colors.white,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(
+                l10n.subscriptionManagement,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.5,
+                  fontSize: 18,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black26,
+                      blurRadius: 4,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+              ),
+              background: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: isDark
+                        ? [const Color(0xFF2D1F3D), const Color(0xFF1A1625)]
+                        : [
+                            const Color(AppColors.primaryColor),
+                            const Color(AppColors.secondaryColor),
+                            const Color(AppColors.accentColor),
+                          ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ),
+                ),
+                child: Stack(
+                  children: [
+                    // 장식 원들
+                    Positioned(
+                      top: -20,
+                      right: -20,
+                      child: Container(
+                        width: 120,
+                        height: 120,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withValues(alpha:0.1),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 30,
+                      left: -30,
+                      child: Container(
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withValues(alpha:0.08),
+                        ),
+                      ),
+                    ),
+                    // 프리미엄 아이콘
+                    Positioned(
+                      top: 50,
+                      right: 30,
+                      child: Icon(
+                        Icons.workspace_premium,
+                        size: 36,
+                        color: Colors.white.withValues(alpha:0.3),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+
+          // 컨텐츠
+          SliverToBoxAdapter(
+            child: _isLoading
+                ? const Padding(
+                    padding: EdgeInsets.all(60),
+                    child: Center(child: CircularProgressIndicator()),
+                  )
+                : _errorMessage != null
+                    ? _buildErrorView()
+                    : _buildSubscriptionContent(isDark, l10n, theme),
+          ),
+        ],
       ),
-      body: _isLoading
-          ? const Center(child: CircularProgressIndicator())
-          : _errorMessage != null
-              ? _buildErrorView()
-              : _buildSubscriptionContent(isDark, l10n),
     );
   }
 
@@ -149,40 +229,52 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     );
   }
 
-  Widget _buildSubscriptionContent(bool isDark, AppLocalizations l10n) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // Current subscription header
-          _buildCurrentSubscriptionCard(isDark, l10n),
-          const SizedBox(height: 24),
+  Widget _buildSubscriptionContent(bool isDark, AppLocalizations l10n, ThemeData theme) {
+    final isPremium = _subscription?.type == SubscriptionType.premium;
 
-          // Premium benefits section
-          _buildSectionTitle(l10n.premiumBenefits, Icons.star),
-          const SizedBox(height: 12),
-          _buildPremiumBenefitsCard(isDark, l10n),
-          const SizedBox(height: 24),
+    return Container(
+      decoration: BoxDecoration(
+        color: isDark
+            ? const Color(AppColors.backgroundDark)
+            : const Color(AppColors.backgroundLight),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // 현재 구독 상태 카드
+            _buildCurrentSubscriptionCard(isDark, l10n, theme),
 
-          // Subscription details
-          if (_subscription != null) ...[
-            _buildSectionTitle(l10n.currentSubscription, Icons.info_outline),
+            const SizedBox(height: 20),
+
+            // 프리미엄이 아닐 때만 업그레이드 버튼 표시 (상단에 배치)
+            if (!isPremium) ...[
+              _buildUpgradeButton(l10n, theme),
+              const SizedBox(height: 24),
+            ],
+
+            // 프리미엄 혜택 섹션
+            _buildSectionTitle(l10n.premiumBenefits, Icons.star, theme),
             const SizedBox(height: 12),
-            _buildSubscriptionDetailsCard(isDark, l10n),
-          ],
+            _buildPremiumBenefitsCard(isDark, l10n, theme),
 
-          // Upgrade button (if not premium)
-          if (_subscription?.type != SubscriptionType.premium) ...[
-            const SizedBox(height: 24),
-            _buildUpgradeButton(l10n),
+            // 구독 상세 정보
+            if (_subscription != null) ...[
+              const SizedBox(height: 24),
+              _buildSectionTitle(l10n.currentSubscription, Icons.info_outline, theme),
+              const SizedBox(height: 12),
+              _buildSubscriptionDetailsCard(isDark, l10n, theme),
+            ],
+
+            const SizedBox(height: 40),
           ],
-        ],
+        ),
       ),
     );
   }
 
-  Widget _buildCurrentSubscriptionCard(bool isDark, AppLocalizations l10n) {
+  Widget _buildCurrentSubscriptionCard(bool isDark, AppLocalizations l10n, ThemeData theme) {
     final subscription = _subscription;
     final subscriptionName = _getSubscriptionName(subscription?.type, l10n);
     final statusText = _getStatusText(subscription?.status, l10n);
@@ -190,62 +282,72 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(24),
       decoration: BoxDecoration(
         gradient: LinearGradient(
           colors: isPremium
-              ? [
-                  const Color(0xFF7B2CBF),
-                  const Color(0xFF9D4EDD),
-                ]
+              ? [theme.primaryColor, theme.primaryColor.withValues(alpha:0.7)]
               : isDark
                   ? [Colors.grey[800]!, Colors.grey[700]!]
-                  : [
-                      const Color(0xFF2196F3),
-                      const Color(0xFF1976D2),
-                    ],
+                  : [Colors.blue[400]!, Colors.blue[600]!],
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(20),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: 0.1),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
+            color: (isPremium ? theme.primaryColor : Colors.blue).withValues(alpha:0.3),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
           ),
         ],
       ),
       child: Column(
         children: [
           if (isPremium && subscription != null)
-            VIPBadgeWidget(subscription: subscription)
+            VIPBadgeWidget(subscription: subscription, size: VIPBadgeSize.large)
           else
-            const Icon(Icons.person, size: 48, color: Colors.white),
-          const SizedBox(height: 12),
+            Container(
+              width: 64,
+              height: 64,
+              decoration: BoxDecoration(
+                color: Colors.white.withValues(alpha:0.2),
+                shape: BoxShape.circle,
+              ),
+              child: const Icon(Icons.person, size: 36, color: Colors.white),
+            ),
+          const SizedBox(height: 16),
           Text(
             subscriptionName,
             style: const TextStyle(
-              fontSize: 24,
+              fontSize: 26,
               fontWeight: FontWeight.bold,
               color: Colors.white,
             ),
           ),
-          const SizedBox(height: 4),
-          Text(
-            statusText,
-            style: TextStyle(
-              fontSize: 16,
-              color: Colors.white.withValues(alpha: 0.9),
+          const SizedBox(height: 6),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
+            decoration: BoxDecoration(
+              color: Colors.white.withValues(alpha:0.2),
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Text(
+              statusText,
+              style: const TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w500,
+                color: Colors.white,
+              ),
             ),
           ),
           if (subscription?.remainingDays != null) ...[
-            const SizedBox(height: 8),
+            const SizedBox(height: 12),
             Text(
               l10n.subscriptionFreeTrialRemaining(subscription!.remainingDays.toString()),
               style: TextStyle(
                 fontSize: 14,
-                color: Colors.white.withValues(alpha: 0.8),
+                color: Colors.white.withValues(alpha:0.85),
               ),
             ),
           ],
@@ -254,101 +356,176 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     );
   }
 
-  Widget _buildPremiumBenefitsCard(bool isDark, AppLocalizations l10n) {
+  Widget _buildUpgradeButton(AppLocalizations l10n, ThemeData theme) {
+    return Container(
+      width: double.infinity,
+      height: 60,
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: [
+            theme.primaryColor,
+            theme.primaryColor.withValues(alpha:0.8),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: theme.primaryColor.withValues(alpha:0.4),
+            blurRadius: 16,
+            offset: const Offset(0, 6),
+          ),
+        ],
+      ),
+      child: ElevatedButton(
+        onPressed: _isLoading ? null : _startPremiumPurchase,
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          shadowColor: Colors.transparent,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16),
+          ),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Icon(Icons.workspace_premium, size: 26, color: Colors.white),
+            const SizedBox(width: 12),
+            Text(
+              l10n.btnStartSubscription,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+                letterSpacing: 0.5,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildPremiumBenefitsCard(bool isDark, AppLocalizations l10n, ThemeData theme) {
     final benefits = [
       _BenefitItem(Icons.block, l10n.subscriptionBenefitAdFree, 'Ad-Free Experience'),
-      _BenefitItem(Icons.timeline, l10n.subscriptionBenefitExtendedProgram, 'Extended 60-day Program'),
-      _BenefitItem(Icons.auto_awesome, l10n.subscriptionBenefitLumiEvolution, 'Lumi Full Evolution (6 stages)'),
-      _BenefitItem(Icons.psychology, l10n.subscriptionBenefitUnlimitedAI, 'Unlimited AI Dream Analysis'),
+      _BenefitItem(Icons.auto_awesome, l10n.subscriptionBenefitLumiEvolution, 'Lumi Full Evolution'),
+      _BenefitItem(Icons.psychology, l10n.subscriptionBenefitUnlimitedAI, 'Unlimited AI Analysis'),
       _BenefitItem(Icons.analytics, l10n.subscriptionBenefitAdvancedAnalytics, 'Advanced Analytics'),
       _BenefitItem(Icons.cloud_upload, l10n.subscriptionBenefitDataExport, 'Export Your Data'),
     ];
 
     return Container(
       decoration: BoxDecoration(
-        color: isDark ? Colors.grey[900] : Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        color: isDark ? Colors.grey[900]!.withValues(alpha:0.5) : Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha:0.3)
+                : theme.primaryColor.withValues(alpha:0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 4),
+          ),
+        ],
         border: Border.all(
-          color: isDark ? Colors.grey[700]! : Colors.grey[300]!,
+          color: isDark ? Colors.grey[800]! : theme.primaryColor.withValues(alpha:0.1),
+          width: 1,
         ),
       ),
       child: Column(
-        children: benefits
-            .map((benefit) => _buildBenefitItem(benefit, isDark))
-            .toList(),
+        children: benefits.asMap().entries.map((entry) {
+          final index = entry.key;
+          final benefit = entry.value;
+          return _buildBenefitItem(benefit, isDark, theme, isLast: index == benefits.length - 1);
+        }).toList(),
       ),
     );
   }
 
-  Widget _buildBenefitItem(_BenefitItem benefit, bool isDark) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-      decoration: BoxDecoration(
-        border: Border(
-          bottom: BorderSide(
-            color: isDark ? Colors.grey[800]! : Colors.grey[200]!,
+  Widget _buildBenefitItem(_BenefitItem benefit, bool isDark, ThemeData theme, {bool isLast = false}) {
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+          child: Row(
+            children: [
+              Container(
+                width: 44,
+                height: 44,
+                decoration: BoxDecoration(
+                  color: theme.primaryColor.withValues(alpha:0.12),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Icon(
+                  benefit.icon,
+                  color: theme.primaryColor,
+                  size: 22,
+                ),
+              ),
+              const SizedBox(width: 16),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      benefit.titleKo,
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        color: isDark ? Colors.white : Colors.black87,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      benefit.titleEn,
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: isDark ? Colors.grey[400] : Colors.grey[600],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Icon(
+                Icons.check_circle,
+                color: Colors.green[500],
+                size: 22,
+              ),
+            ],
           ),
         ),
-      ),
-      child: Row(
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: const Color(0xFF7B2CBF).withValues(alpha: 0.1),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Icon(
-              benefit.icon,
-              color: const Color(0xFF7B2CBF),
-              size: 24,
-            ),
+        if (!isLast)
+          Divider(
+            height: 1,
+            indent: 76,
+            color: isDark ? Colors.grey[800] : Colors.grey[200],
           ),
-          const SizedBox(width: 16),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  benefit.titleKo,
-                  style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600,
-                    color: isDark ? Colors.white : Colors.black87,
-                  ),
-                ),
-                Text(
-                  benefit.titleEn,
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: isDark ? Colors.grey[400] : Colors.grey[600],
-                  ),
-                ),
-              ],
-            ),
-          ),
-          Icon(
-            Icons.check_circle,
-            color: Colors.green[600],
-            size: 20,
-          ),
-        ],
-      ),
+      ],
     );
   }
 
-  Widget _buildSubscriptionDetailsCard(bool isDark, AppLocalizations l10n) {
+  Widget _buildSubscriptionDetailsCard(bool isDark, AppLocalizations l10n, ThemeData theme) {
     final subscription = _subscription!;
     final dateFormat = DateFormat('yyyy-MM-dd');
 
     return Container(
       width: double.infinity,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: isDark ? Colors.grey[900] : Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        color: isDark ? Colors.grey[900]!.withValues(alpha:0.5) : Colors.white,
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: isDark
+                ? Colors.black.withValues(alpha:0.3)
+                : theme.primaryColor.withValues(alpha:0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 4),
+          ),
+        ],
         border: Border.all(
-          color: isDark ? Colors.grey[700]! : Colors.grey[300]!,
+          color: isDark ? Colors.grey[800]! : theme.primaryColor.withValues(alpha:0.1),
+          width: 1,
         ),
       ),
       child: Column(
@@ -359,22 +536,25 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
             _getSubscriptionName(subscription.type, l10n),
             Icons.card_membership,
             isDark,
+            theme,
           ),
-          const Divider(height: 24),
+          _buildDivider(isDark),
           _buildDetailRow(
             l10n.statusLabel,
             _getStatusText(subscription.status, l10n),
             Icons.verified,
             isDark,
+            theme,
           ),
-          const Divider(height: 24),
+          _buildDivider(isDark),
           _buildDetailRow(
             l10n.startDate,
             dateFormat.format(subscription.startDate),
             Icons.calendar_today,
             isDark,
+            theme,
           ),
-          const Divider(height: 24),
+          _buildDivider(isDark),
           _buildDetailRow(
             l10n.expiryDate,
             subscription.endDate != null
@@ -382,14 +562,16 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
                 : l10n.unlimited,
             Icons.event,
             isDark,
+            theme,
           ),
           if (subscription.type == SubscriptionType.premium) ...[
-            const Divider(height: 24),
+            _buildDivider(isDark),
             _buildDetailRow(
               l10n.subscriptionAdsLabel,
               subscription.hasAds ? l10n.subscriptionAdsYes : l10n.subscriptionAdsNoWithAdFree,
               Icons.block,
               isDark,
+              theme,
             ),
           ],
         ],
@@ -397,15 +579,33 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     );
   }
 
-  Widget _buildDetailRow(String label, String value, IconData icon, bool isDark) {
+  Widget _buildDivider(bool isDark) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 12),
+      child: Divider(
+        height: 1,
+        color: isDark ? Colors.grey[800] : Colors.grey[200],
+      ),
+    );
+  }
+
+  Widget _buildDetailRow(String label, String value, IconData icon, bool isDark, ThemeData theme) {
     return Row(
       children: [
-        Icon(
-          icon,
-          size: 20,
-          color: isDark ? Colors.grey[400] : Colors.grey[600],
+        Container(
+          width: 36,
+          height: 36,
+          decoration: BoxDecoration(
+            color: theme.primaryColor.withValues(alpha:0.1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(
+            icon,
+            size: 18,
+            color: theme.primaryColor,
+          ),
         ),
-        const SizedBox(width: 12),
+        const SizedBox(width: 14),
         Expanded(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -413,7 +613,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               Text(
                 label,
                 style: TextStyle(
-                  fontSize: 13,
+                  fontSize: 12,
                   color: isDark ? Colors.grey[400] : Colors.grey[600],
                 ),
               ),
@@ -421,7 +621,7 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
               Text(
                 value,
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 15,
                   fontWeight: FontWeight.w600,
                   color: isDark ? Colors.white : Colors.black87,
                 ),
@@ -433,67 +633,32 @@ class _SubscriptionScreenState extends State<SubscriptionScreen> {
     );
   }
 
-  Widget _buildSectionTitle(String title, IconData icon) {
+  Widget _buildSectionTitle(String title, IconData icon, ThemeData theme) {
     return Row(
       children: [
-        Icon(icon, size: 24, color: const Color(0xFF7B2CBF)),
-        const SizedBox(width: 8),
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: theme.primaryColor.withValues(alpha:0.1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Icon(
+            icon,
+            size: 20,
+            color: theme.primaryColor,
+          ),
+        ),
+        const SizedBox(width: 12),
         Text(
           title,
-          style: const TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: theme.colorScheme.onSurface,
+            letterSpacing: 0.3,
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildUpgradeButton(AppLocalizations l10n) {
-    return Container(
-      width: double.infinity,
-      height: 56,
-      decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [
-            Color(0xFF7B2CBF),
-            Color(0xFF9D4EDD),
-          ],
-        ),
-        borderRadius: BorderRadius.circular(12),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xFF7B2CBF).withValues(alpha: 0.3),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: ElevatedButton(
-        onPressed: _isLoading ? null : _startPremiumPurchase,
-        style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.transparent,
-          shadowColor: Colors.transparent,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Icon(Icons.workspace_premium, size: 24),
-            const SizedBox(width: 12),
-            Text(
-              l10n.btnStartSubscription,
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-      ),
     );
   }
 

@@ -6,18 +6,23 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'utils/config/constants.dart';
 import 'screens/home_screen.dart';
-import 'screens/onboarding_screen.dart';
+// DreamFlow - 온보딩 화면 제거됨 (아카이브)
+// import 'screens/onboarding_screen.dart';
+import 'screens/onboarding/onboarding_screen.dart'; // 자각몽 전용 온보딩
 import 'services/localization/theme_service.dart';
 import 'services/localization/locale_service.dart';
 import 'services/notification/notification_service.dart';
 import 'services/payment/ad_service.dart';
 import 'services/payment/rewarded_ad_reward_service.dart';
+import 'services/monetization/ad_service.dart' as monetization;
+import 'services/ads/reward_ad_service.dart';
 import 'services/core/onboarding_service.dart';
 // DreamFlow - Chad 서비스 제거됨 (운동 앱 전용)
 // import 'services/chad/chad_evolution_service.dart';
-import 'services/chad/chad_image_service.dart';
+// import 'services/chad/chad_image_service.dart';
 // import 'services/chad/chad_condition_service.dart';
 // import 'services/chad/chad_recovery_service.dart';
 // import 'services/chad/chad_active_recovery_service.dart';
@@ -30,79 +35,98 @@ import 'services/payment/billing_service.dart';
 import 'services/core/deep_link_handler.dart';
 import 'services/ai/conversation_token_service.dart';
 import 'services/ai/openrouter_service.dart';
+import 'services/workout/daily_task_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   try {
-    // 환경 변수 로드 (.env 파일)
-    try {
-      await dotenv.load(fileName: '.env');
-      debugPrint('✅ 환경 변수 로드 완료');
-    } catch (e) {
-      debugPrint('⚠️ 환경 변수 로드 실패: $e');
-    }
+    // ========================================
+    // 1단계: 핵심 초기화 (병렬 실행으로 속도 향상)
+    // ========================================
+    final stopwatch = Stopwatch()..start();
 
-    // Firebase 초기화 (선택적)
-    try {
-      await Firebase.initializeApp();
-      debugPrint('✅ Firebase 초기화 완료');
-    } catch (e) {
-      debugPrint('⚠️ Firebase 초기화 실패 (계속 진행): $e');
-    }
+    // 병렬로 실행 가능한 핵심 초기화들
+    await Future.wait([
+      // 환경 변수 로드
+      dotenv.load(fileName: '.env').then((_) {
+        debugPrint('✅ 환경 변수 로드 완료');
+      }).catchError((e) {
+        debugPrint('⚠️ 환경 변수 로드 실패: $e');
+      }),
 
-    // 화면 방향 고정 (세로) - 필수
-    await SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-      DeviceOrientation.portraitDown,
+      // Firebase 초기화
+      Firebase.initializeApp().then((_) {
+        debugPrint('✅ Firebase 초기화 완료');
+      }).catchError((e) {
+        debugPrint('⚠️ Firebase 초기화 실패: $e');
+      }),
+
+      // 화면 방향 고정
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]),
     ]);
 
-    // 즉시 필요한 서비스들만 동기 초기화
+    debugPrint('⏱️ 1단계 완료: ${stopwatch.elapsedMilliseconds}ms');
 
-    // 테마 서비스 초기화 (UI 렌더링에 필요)
+    // ========================================
+    // 2단계: UI 필수 서비스 (병렬 실행)
+    // ========================================
     final themeService = ThemeService();
-    await themeService.initialize();
-    debugPrint('✅ ThemeService 초기화 완료');
-
-    // 로케일 서비스 초기화 (다국어 지원에 필요)
     final localeNotifier = LocaleNotifier();
-    await localeNotifier.loadLocale();
-    debugPrint('✅ LocaleService 초기화 완료');
-
-    // 온보딩 서비스 초기화 (첫 화면 결정에 필요)
     final onboardingService = OnboardingService();
-    await onboardingService.initialize();
-    debugPrint('✅ OnboardingService 초기화 완료');
-
-    // OpenRouter AI 서비스 초기화 (Firebase Remote Config 사용)
-    try {
-      final openRouterService = OpenRouterService();
-      await openRouterService.initialize();
-      debugPrint('✅ OpenRouterService 초기화 완료');
-    } catch (e) {
-      debugPrint('⚠️ OpenRouterService 초기화 실패: $e');
-    }
-
-    // DreamFlow - Chad 서비스 제거됨 (운동 앱 전용)
-    // 자각몽 앱에는 Chad 캐릭터 불필요
-    // final chadEvolutionService = ChadEvolutionService();
-    // await chadEvolutionService.initialize();
-    // final chadConditionService = ChadConditionService();
-    // await chadConditionService.initialize();
-    // final chadRecoveryService = ChadRecoveryService();
-    // await chadRecoveryService.initialize();
-    // final chadActiveRecoveryService = ChadActiveRecoveryService();
-    // await chadActiveRecoveryService.initialize();
-
-    // Auth 서비스 초기화
     final authService = AuthService();
-    await authService.initialize();
-    debugPrint('✅ AuthService 초기화 완료');
-
-    // Conversation Token 서비스 초기화
     final conversationTokenService = ConversationTokenService();
-    await conversationTokenService.initialize();
-    debugPrint('✅ ConversationTokenService 초기화 완료');
+
+    await Future.wait([
+      themeService.initialize().then((_) {
+        debugPrint('✅ ThemeService 초기화 완료');
+      }),
+      localeNotifier.loadLocale().then((_) {
+        debugPrint('✅ LocaleService 초기화 완료');
+      }),
+      onboardingService.initialize().then((_) {
+        debugPrint('✅ OnboardingService 초기화 완료');
+      }),
+      authService.initialize().then((_) {
+        debugPrint('✅ AuthService 초기화 완료');
+      }),
+      conversationTokenService.initialize().then((_) {
+        debugPrint('✅ ConversationTokenService 초기화 완료');
+      }),
+    ]);
+
+    debugPrint('⏱️ 2단계 완료: ${stopwatch.elapsedMilliseconds}ms');
+
+    // ========================================
+    // 3단계: 백그라운드 서비스 (non-blocking)
+    // ========================================
+
+    // Google Mobile Ads (백그라운드 - UI 차단 안 함)
+    unawaited(MobileAds.instance.initialize().then((_) {
+      debugPrint('✅ Google Mobile Ads 초기화 완료');
+    }).catchError((e) {
+      debugPrint('⚠️ Google Mobile Ads 초기화 실패: $e');
+    }));
+
+    // OpenRouter AI 서비스 (백그라운드 - 채팅 시 필요)
+    final openRouterService = OpenRouterService();
+    unawaited(openRouterService.initialize().then((_) {
+      debugPrint('✅ OpenRouterService 초기화 완료');
+    }).catchError((e) {
+      debugPrint('⚠️ OpenRouterService 초기화 실패: $e');
+    }));
+
+    debugPrint('🚀 총 초기화 시간: ${stopwatch.elapsedMilliseconds}ms');
+    stopwatch.stop();
+
+    // Daily Task 서비스 생성 (초기화 불필요)
+    final dailyTaskService = DailyTaskService();
+    dailyTaskService.setTokenService(conversationTokenService);
+    dailyTaskService.setAuthService(authService);
+    debugPrint('✅ DailyTaskService 생성 완료 (토큰 서비스 + Auth 서비스 연결됨)');
 
     // CloudSync 서비스 초기화 (백그라운드에서) - Using stub for testing
     final cloudSyncService = CloudSyncService();
@@ -129,6 +153,14 @@ void main() async {
       debugPrint('❌ RewardedAdRewardService 초기화 오류: $e');
     }));
 
+    // Google AdMob 광고 초기화 (무료 사용자 수익화)
+    final adService = monetization.AdService();
+    unawaited(adService.initialize().then((_) {
+      debugPrint('✅ AdMob 초기화 완료');
+    }).catchError((e) {
+      debugPrint('❌ AdMob 초기화 오류: $e');
+    }));
+
     debugPrint('🚀 앱 기본 초기화 완료 - 빠른 시작!');
 
     runApp(
@@ -144,6 +176,7 @@ void main() async {
           // ChangeNotifierProvider.value(value: chadActiveRecoveryService),
           ChangeNotifierProvider.value(value: authService),
           ChangeNotifierProvider.value(value: conversationTokenService),
+          ChangeNotifierProvider.value(value: dailyTaskService),
           ChangeNotifierProvider.value(value: rewardedAdRewardService),
           // Provider.value(value: subscriptionService), // 구형 시스템 - AuthService로 대체됨
           Provider.value(value: billingService),
@@ -206,6 +239,17 @@ void _initializeBackgroundServices() {
     debugPrint('❌ AdService 초기화 오류: $e');
   });
 
+  // 리워드 광고 서비스 초기화 및 광고 미리 로드 (백그라운드)
+  RewardAdService().loadAd().then((success) {
+    if (success) {
+      debugPrint('✅ RewardAdService 백그라운드 초기화 및 광고 로드 완료');
+    } else {
+      debugPrint('⚠️ RewardAdService 초기화됨 (광고 로드 실패)');
+    }
+  }).catchError((Object e) {
+    debugPrint('❌ RewardAdService 초기화 오류: $e');
+  });
+
   // 알림 서비스 초기화 (백그라운드)
   NotificationService.initialize().then((_) async {
     await NotificationService.createNotificationChannels();
@@ -214,12 +258,13 @@ void _initializeBackgroundServices() {
     debugPrint('❌ NotificationService 초기화 오류: $e');
   });
 
-  // Chad 이미지 서비스 초기화 (백그라운드) - 내부 참조용으로 유지
-  ChadImageService().initialize().then((_) {
-    debugPrint('✅ ChadImageService 백그라운드 초기화 완료');
-  }).catchError((Object e) {
-    debugPrint('❌ ChadImageService 초기화 오류: $e');
-  });
+  // DreamFlow - Chad 이미지 서비스 제거됨 (운동 앱 전용)
+  // 자각몽 앱에는 Chad 캐릭터가 필요 없습니다
+  // ChadImageService().initialize().then((_) {
+  //   debugPrint('✅ ChadImageService 백그라운드 초기화 완료');
+  // }).catchError((Object e) {
+  //   debugPrint('❌ ChadImageService 초기화 오류: $e');
+  // });
 
   // 업적 서비스 초기화 (백그라운드)
   Future.delayed(const Duration(milliseconds: 500), () {

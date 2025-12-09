@@ -1,12 +1,23 @@
 import 'package:flutter/material.dart';
-import '../../services/ai/openrouter_proxy_service.dart';
+import 'package:provider/provider.dart';
+import '../../services/workout/daily_task_service.dart';
+import '../../services/workout/lucid_dream_program_service.dart';
+import '../../services/data/database_service.dart';
+import '../../models/lucid_dream_task.dart';
+import '../../models/user_profile.dart';
 import '../../generated/l10n/app_localizations.dart';
+import '../../utils/config/constants.dart';
+import '../../widgets/common/ad_banner_widget.dart';
+import '../dream_journal/dream_journal_write_screen.dart';
+import '../tasks/reality_check_screen.dart';
+import '../tasks/mild_affirmation_screen.dart';
+import '../tasks/sleep_hygiene_screen.dart';
+import '../tasks/wbtb_screen.dart';
+import '../tasks/meditation_screen.dart';
 
-/// 자각몽 AI 어시스턴트 화면
+/// 자각몽 태스크 화면 (체크리스트와 동일)
 ///
-/// OpenRouter를 활용한 다양한 자각몽 관련 AI 기능 제공
-/// - 무료: 10회/일
-/// - 프리미엄: 100회/일
+/// 오늘의 자각몽 태스크 목록을 표시하고 각 태스크 화면으로 이동
 class LucidDreamAIAssistantScreen extends StatefulWidget {
   const LucidDreamAIAssistantScreen({super.key});
 
@@ -17,605 +28,395 @@ class LucidDreamAIAssistantScreen extends StatefulWidget {
 
 class _LucidDreamAIAssistantScreenState
     extends State<LucidDreamAIAssistantScreen> {
-  final TextEditingController _inputController = TextEditingController();
-  final ScrollController _scrollController = ScrollController();
-  final OpenRouterProxyService _proxyService = OpenRouterProxyService();
-
-  String _response = '';
-  bool _isLoading = false;
-  final String _selectedModel = 'google/gemini-2.0-flash-exp:free';
-
-  // 사용량 정보
-  int _usageCount = 0;
-  int _dailyLimit = 10;
-  int _remaining = 10;
-  bool _isPremium = false;
-
-  // 선택된 기능
-  AssistantFeature? _selectedFeature;
+  final LucidDreamProgramService _programService = LucidDreamProgramService();
+  final DatabaseService _databaseService = DatabaseService();
+  TodayChecklist? _todayChecklist;
+  bool _isLoading = true;
 
   @override
-  void dispose() {
-    _inputController.dispose();
-    _scrollController.dispose();
-    super.dispose();
+  void initState() {
+    super.initState();
+    _loadTodayChecklist();
   }
 
-  Future<void> _sendMessage(String prompt) async {
-    setState(() {
-      _isLoading = true;
-      _response = '';
-    });
-
+  Future<void> _loadTodayChecklist() async {
     try {
-      final result = await _proxyService.sendMessage(
-        prompt: prompt,
-        model: _selectedModel,
-        maxTokens: 512,
-      );
+      // 사용자 프로필 로드
+      final profile = await _databaseService.getUserProfile();
 
+      // 프로필이 null이면 기본 프로필 생성
+      final userProfile = profile ??
+          UserProfile(
+            id: 1,
+            level: UserLevel.rising,
+            initialMaxReps: 10,
+            startDate: DateTime.now(),
+          );
+
+      final checklist = _programService.getTodayChecklist(userProfile);
       setState(() {
-        _response = result.response;
-        _usageCount = result.usageCount;
-        _dailyLimit = result.dailyLimit;
-        _remaining = result.remaining;
-        _isPremium = result.isPremium;
+        _todayChecklist = checklist;
         _isLoading = false;
       });
-
-      // 응답 영역으로 스크롤
-      Future.delayed(const Duration(milliseconds: 300), () {
-        if (_scrollController.hasClients) {
-          _scrollController.animateTo(
-            _scrollController.position.maxScrollExtent,
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.easeOut,
-          );
-        }
-      });
-
-      // 사용량 경고 표시
-      if (result.shouldShowWarning && mounted) {
-        final l10n = AppLocalizations.of(context);
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(
-              l10n.aiAssistantUsageWarning((result.usagePercentage * 100).toInt()),
-            ),
-            backgroundColor: Colors.orange,
-          ),
-        );
-      }
     } catch (e) {
+      debugPrint('❌ 체크리스트 로드 실패: $e');
       setState(() {
-        _response = 'Error: $e';
         _isLoading = false;
       });
-
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text('$e'),
-            backgroundColor: Colors.red,
-          ),
-        );
-      }
     }
   }
 
-  void _useFeature(AssistantFeature feature) {
-    setState(() {
-      _selectedFeature = feature;
-      _inputController.text = '';
-      _response = '';
-    });
-  }
+  void _navigateToTaskScreen(LucidDreamTaskType taskType) {
+    Widget screen;
 
-  void _executeFeature() {
-    if (_selectedFeature == null) return;
-
-    final input = _inputController.text.trim();
-    final l10n = AppLocalizations.of(context);
-    String prompt = '';
-
-    switch (_selectedFeature!) {
-      case AssistantFeature.dreamJournal:
-        if (input.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(l10n.aiAssistantEmptyInput)),
-          );
-          return;
-        }
-        prompt = '''
-You are a lucid dream expert. Please structure the following dream content into a structured dream journal:
-
-"$input"
-
-Please write in the following format:
-1. Dream Title
-2. Main Scenes (3-5 bullet points)
-3. Emotional State
-4. Dream Signs (Lucid Dream Signals)
-5. Techniques to try next time
-
-Please write concisely and practically.
-''';
+    switch (taskType) {
+      case LucidDreamTaskType.dreamJournal:
+        screen = DreamJournalWriteScreen();
         break;
-
-      case AssistantFeature.techniqueRecommendation:
-        prompt = '''
-You are a lucid dream expert.
-Please recommend 3 effective lucid dream techniques for ${input.isEmpty ? 'beginners' : input}.
-
-For each technique:
-1. Technique Name
-2. How to Execute (clear and simple)
-3. Effectiveness & Success Rate
-4. Precautions
-
-Please explain specifically so that it can be applied in practice immediately.
-''';
+      case LucidDreamTaskType.realityCheck:
+        screen = RealityCheckScreen();
         break;
-
-      case AssistantFeature.meditationScript:
-        prompt = '''
-You are a meditation expert.
-Please write a ${input.isEmpty ? '5' : input} minute meditation script for inducing lucid dreams.
-
-Elements to include:
-- Relaxing breath guidance
-- Body relaxation stages
-- Visualization (entering the dream world)
-- Strengthening awareness
-- Positive affirmations
-
-Please write in a warm and calm tone.
-''';
+      case LucidDreamTaskType.mildAffirmation:
+        screen = MildAffirmationScreen();
         break;
-
-      case AssistantFeature.realityCheck:
-        prompt = '''
-You are a lucid dream expert.
-Please suggest 5 Reality Check ideas that can be practiced in daily life.
-
-For each idea:
-1. Specific situation/trigger
-2. How to check
-3. Characteristics that appear in dreams
-4. Practice tips
-
-Please suggest creative and practical ideas.
-${input.isNotEmpty ? '\nPlease especially consider the following situation: $input' : ''}
-''';
+      case LucidDreamTaskType.sleepHygiene:
+        screen = SleepHygieneScreen();
         break;
-
-      case AssistantFeature.freeChat:
-        if (input.isEmpty) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text(l10n.aiAssistantEmptyQuestion)),
-          );
-          return;
-        }
-        prompt = '''
-You are a lucid dream expert AI assistant.
-Please answer the user's question kindly and professionally:
-
-"$input"
-
-Provide a balanced answer with scientific evidence and practical advice,
-and write concisely and easy to understand.
-''';
+      case LucidDreamTaskType.wbtb:
+        screen = WBTBScreen();
+        break;
+      case LucidDreamTaskType.meditation:
+        screen = MeditationScreen();
         break;
     }
 
-    _sendMessage(prompt);
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => screen),
+    );
+  }
+
+  String _getTaskTitle(LucidDreamTaskType taskType, AppLocalizations l10n) {
+    switch (taskType) {
+      case LucidDreamTaskType.dreamJournal:
+        return l10n.taskDreamJournal;
+      case LucidDreamTaskType.realityCheck:
+        return l10n.taskRealityCheck;
+      case LucidDreamTaskType.mildAffirmation:
+        return l10n.taskMildAffirmation;
+      case LucidDreamTaskType.sleepHygiene:
+        return l10n.taskSleepHygiene;
+      case LucidDreamTaskType.wbtb:
+        return l10n.taskWbtb;
+      case LucidDreamTaskType.meditation:
+        return l10n.taskMeditation;
+    }
+  }
+
+  String _getTaskDescription(LucidDreamTaskType taskType, AppLocalizations l10n) {
+    switch (taskType) {
+      case LucidDreamTaskType.dreamJournal:
+        return l10n.taskDreamJournalDesc;
+      case LucidDreamTaskType.realityCheck:
+        return l10n.taskRealityCheckDesc;
+      case LucidDreamTaskType.mildAffirmation:
+        return l10n.taskMildDesc;
+      case LucidDreamTaskType.sleepHygiene:
+        return l10n.taskSleepHygieneDesc;
+      case LucidDreamTaskType.wbtb:
+        return l10n.taskWbtbDesc;
+      case LucidDreamTaskType.meditation:
+        return l10n.taskMeditationDesc;
+    }
+  }
+
+  String _getTaskIcon(LucidDreamTaskType taskType) {
+    switch (taskType) {
+      case LucidDreamTaskType.dreamJournal:
+        return '📔';
+      case LucidDreamTaskType.realityCheck:
+        return '💭';
+      case LucidDreamTaskType.mildAffirmation:
+        return '🌙';
+      case LucidDreamTaskType.sleepHygiene:
+        return '😴';
+      case LucidDreamTaskType.wbtb:
+        return '⏰';
+      case LucidDreamTaskType.meditation:
+        return '🧘';
+    }
+  }
+
+  Color _getTaskColor(LucidDreamTaskType taskType) {
+    switch (taskType) {
+      case LucidDreamTaskType.dreamJournal:
+        return const Color(0xFF673AB7);
+      case LucidDreamTaskType.realityCheck:
+        return const Color(0xFF9C27B0);
+      case LucidDreamTaskType.mildAffirmation:
+        return const Color(0xFF2196F3);
+      case LucidDreamTaskType.sleepHygiene:
+        return const Color(0xFF673AB7);
+      case LucidDreamTaskType.wbtb:
+        return const Color(0xFF00BCD4);
+      case LucidDreamTaskType.meditation:
+        return const Color(0xFF009688);
+    }
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
+    final theme = Theme.of(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(l10n.aiAssistantTitle),
+        title: Text(
+          '오늘의 자각몽 연습',
+          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+        ),
         backgroundColor: const Color(0xFF26A69A),
       ),
-      body: Column(
-        children: [
-          // 사용량 표시
-          _buildUsageIndicator(l10n),
-
-          // 기능 선택 그리드
-          if (_selectedFeature == null) ...[
-            Expanded(
-              child: _buildFeatureGrid(l10n),
-            ),
-          ] else ...[
-            // 선택된 기능 실행 화면
-            Expanded(
-              child: _buildFeatureExecutionView(l10n),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-
-  Widget _buildUsageIndicator(AppLocalizations l10n) {
-    return Container(
-      margin: const EdgeInsets.all(16),
-      padding: const EdgeInsets.all(12),
-      decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            _isPremium ? Colors.purple[400]! : Colors.teal[400]!,
-            _isPremium ? Colors.purple[600]! : Colors.teal[600]!,
-          ],
-        ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        children: [
-          Icon(
-            _isPremium ? Icons.workspace_premium : Icons.psychology,
-            color: Colors.white,
-            size: 20,
-          ),
-          const SizedBox(width: 12),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: _isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : Column(
               children: [
-                Text(
-                  _isPremium ? l10n.aiAssistantPremium : l10n.aiAssistantFree,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
+                // 안내 배너
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        const Color(0xFF4CAF50).withOpacity(0.1),
+                        const Color(0xFF2196F3).withOpacity(0.1),
+                      ],
+                    ),
+                    border: Border(
+                      bottom: BorderSide(
+                        color: const Color(0xFF26A69A).withOpacity(0.3),
+                        width: 1,
+                      ),
+                    ),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: const Color(0xFF4CAF50),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: const Icon(
+                          Icons.check_circle,
+                          color: Colors.white,
+                          size: 24,
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              '오늘의 미션',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              '아래 태스크를 완료하여 토큰을 획득하세요!',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: theme.colorScheme.onSurface
+                                    .withOpacity(0.7),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                Text(
-                  l10n.aiAssistantUsageToday(_usageCount, _dailyLimit, _remaining),
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 12,
-                  ),
+
+                // 태스크 목록
+                Expanded(
+                  child: _todayChecklist == null
+                      ? Center(
+                          child: Text(
+                            '오늘의 체크리스트가 없습니다',
+                            style: TextStyle(
+                              color: theme.colorScheme.onSurface
+                                  .withOpacity(0.5),
+                            ),
+                          ),
+                        )
+                      : Consumer<DailyTaskService>(
+                          builder: (context, taskService, child) {
+                            return ListView.builder(
+                              padding: const EdgeInsets.all(16),
+                              itemCount:
+                                  _todayChecklist!.checklist.tasks.length,
+                              itemBuilder: (context, index) {
+                                final task =
+                                    _todayChecklist!.checklist.tasks[index];
+                                final isCompleted = taskService.completedTasks
+                                    .contains(task.type);
+
+                                return Padding(
+                                  padding: const EdgeInsets.only(bottom: 12),
+                                  child: _buildTaskCard(
+                                    task,
+                                    isCompleted,
+                                    theme,
+                                  ),
+                                );
+                              },
+                            );
+                          },
+                        ),
+                ),
+                // 하단 배너 광고
+                const SafeArea(
+                  top: false,
+                  child: AdBannerWidget(margin: EdgeInsets.symmetric(vertical: 8)),
                 ),
               ],
             ),
-          ),
-          if (_usageCount > 0)
-            SizedBox(
-              width: 36,
-              height: 36,
-              child: CircularProgressIndicator(
-                value: _usageCount / _dailyLimit,
-                backgroundColor: Colors.white.withValues(alpha: 0.3),
-                valueColor: const AlwaysStoppedAnimation<Color>(Colors.white),
-                strokeWidth: 3,
-              ),
-            ),
-        ],
-      ),
     );
   }
 
-  Widget _buildFeatureGrid(AppLocalizations l10n) {
-    return SingleChildScrollView(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            l10n.aiAssistantQuestion,
-            style: const TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: 16),
-          GridView.count(
-            crossAxisCount: 2,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            mainAxisSpacing: 12,
-            crossAxisSpacing: 12,
-            childAspectRatio: 1.1,
-            children: [
-              _buildFeatureCard(
-                AssistantFeature.dreamJournal,
-                '📝',
-                l10n.aiFeatureDreamJournalTitle,
-                l10n.aiFeatureDreamJournalSubtitle,
-                Colors.blue,
-              ),
-              _buildFeatureCard(
-                AssistantFeature.techniqueRecommendation,
-                '💡',
-                l10n.aiFeatureTechniqueTitle,
-                l10n.aiFeatureTechniqueSubtitle,
-                Colors.orange,
-              ),
-              _buildFeatureCard(
-                AssistantFeature.meditationScript,
-                '🧘',
-                l10n.aiFeatureMeditationTitle,
-                l10n.aiFeatureMeditationSubtitle,
-                Colors.purple,
-              ),
-              _buildFeatureCard(
-                AssistantFeature.realityCheck,
-                '✋',
-                l10n.aiFeatureRealityCheckTitle,
-                l10n.aiFeatureRealityCheckSubtitle,
-                Colors.green,
-              ),
-              _buildFeatureCard(
-                AssistantFeature.freeChat,
-                '💬',
-                l10n.aiFeatureFreeChatTitle,
-                l10n.aiFeatureFreeChatSubtitle,
-                Colors.teal,
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildFeatureCard(
-    AssistantFeature feature,
-    String emoji,
-    String title,
-    String subtitle,
-    Color color,
+  Widget _buildTaskCard(
+    LucidDreamTask task,
+    bool isCompleted,
+    ThemeData theme,
   ) {
-    return Card(
-      elevation: 2,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
-      ),
+    final l10n = AppLocalizations.of(context);
+    final color = _getTaskColor(task.type);
+    final icon = _getTaskIcon(task.type);
+
+    return Material(
+      color: Colors.transparent,
       child: InkWell(
-        onTap: () => _useFeature(feature),
+        onTap: () => _navigateToTaskScreen(task.type),
         borderRadius: BorderRadius.circular(16),
         child: Container(
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                color.withValues(alpha: 0.7),
-                color,
-              ],
+              colors: isCompleted
+                  ? [
+                      Colors.green.withOpacity(0.1),
+                      Colors.green.withOpacity(0.05),
+                    ]
+                  : [
+                      color.withOpacity(0.1),
+                      color.withOpacity(0.05),
+                    ],
             ),
             borderRadius: BorderRadius.circular(16),
+            border: Border.all(
+              color: isCompleted ? Colors.green : color.withOpacity(0.3),
+              width: isCompleted ? 2 : 1,
+            ),
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+          child: Row(
             children: [
-              Text(
-                emoji,
-                style: const TextStyle(fontSize: 40),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                title,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
+              // 아이콘
+              Container(
+                width: 56,
+                height: 56,
+                decoration: BoxDecoration(
+                  color: isCompleted
+                      ? Colors.green.withOpacity(0.2)
+                      : color.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 4),
-              Text(
-                subtitle,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: Colors.white.withValues(alpha: 0.9),
+                child: Center(
+                  child: Text(
+                    icon,
+                    style: const TextStyle(fontSize: 28),
+                  ),
                 ),
-                textAlign: TextAlign.center,
               ),
+              const SizedBox(width: 16),
+              // 태스크 정보
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
+                            _getTaskTitle(task.type, l10n),
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: isCompleted
+                                  ? theme.colorScheme.onSurface
+                                      .withOpacity(0.6)
+                                  : theme.colorScheme.onSurface,
+                              decoration: isCompleted
+                                  ? TextDecoration.lineThrough
+                                  : null,
+                            ),
+                          ),
+                        ),
+                        if (task.isRequired)
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 8,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color(0xFFFF9800),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: const Text(
+                              '필수',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                      ],
+                    ),
+                    const SizedBox(height: 4),
+                    Text(
+                      _getTaskDescription(task.type, l10n),
+                      style: TextStyle(
+                        fontSize: 13,
+                        color:
+                            theme.colorScheme.onSurface.withOpacity(0.6),
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(width: 12),
+              // 완료 표시
+              if (isCompleted)
+                const Icon(
+                  Icons.check_circle,
+                  color: Colors.green,
+                  size: 32,
+                )
+              else
+                Icon(
+                  Icons.arrow_forward_ios,
+                  color: color,
+                  size: 20,
+                ),
             ],
           ),
         ),
       ),
     );
   }
-
-  Widget _buildFeatureExecutionView(AppLocalizations l10n) {
-    return Column(
-      children: [
-        // 선택된 기능 헤더
-        Container(
-          padding: const EdgeInsets.all(16),
-          color: Colors.teal[50],
-          child: Row(
-            children: [
-              Expanded(
-                child: Text(
-                  _getFeatureTitle(_selectedFeature!, l10n),
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-              IconButton(
-                icon: const Icon(Icons.close),
-                onPressed: () {
-                  setState(() {
-                    _selectedFeature = null;
-                    _response = '';
-                    _inputController.clear();
-                  });
-                },
-              ),
-            ],
-          ),
-        ),
-
-        // 입력 및 결과 영역
-        Expanded(
-          child: SingleChildScrollView(
-            controller: _scrollController,
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                // 설명
-                Text(
-                  _getFeatureDescription(_selectedFeature!, l10n),
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.grey[600],
-                  ),
-                ),
-                const SizedBox(height: 16),
-
-                // 입력 필드
-                if (_requiresInput(_selectedFeature!))
-                  TextField(
-                    controller: _inputController,
-                    decoration: InputDecoration(
-                      labelText: _getInputLabel(_selectedFeature!, l10n),
-                      hintText: _getInputHint(_selectedFeature!, l10n),
-                      border: const OutlineInputBorder(),
-                    ),
-                    maxLines: 3,
-                  ),
-                const SizedBox(height: 16),
-
-                // 실행 버튼
-                ElevatedButton(
-                  onPressed: _isLoading ? null : _executeFeature,
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF26A69A),
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                  ),
-                  child: _isLoading
-                      ? const SizedBox(
-                          height: 20,
-                          width: 20,
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor:
-                                AlwaysStoppedAnimation<Color>(Colors.white),
-                          ),
-                        )
-                      : Text(
-                          l10n.aiAssistantGenerating,
-                          style: const TextStyle(fontSize: 16, color: Colors.white),
-                        ),
-                ),
-                const SizedBox(height: 24),
-
-                // AI 응답
-                if (_response.isNotEmpty) ...[
-                  Text(
-                    l10n.aiAssistantResponse,
-                    style: const TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(8),
-                      border: Border.all(color: Colors.grey[300]!),
-                    ),
-                    child: Text(
-                      _response,
-                      style: const TextStyle(
-                        fontSize: 14,
-                        height: 1.6,
-                      ),
-                    ),
-                  ),
-                ],
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  String _getFeatureTitle(AssistantFeature feature, AppLocalizations l10n) {
-    switch (feature) {
-      case AssistantFeature.dreamJournal:
-        return l10n.aiFeatureDreamJournalTitle;
-      case AssistantFeature.techniqueRecommendation:
-        return l10n.aiFeatureTechniqueTitle;
-      case AssistantFeature.meditationScript:
-        return l10n.aiFeatureMeditationTitle;
-      case AssistantFeature.realityCheck:
-        return l10n.aiFeatureRealityCheckTitle;
-      case AssistantFeature.freeChat:
-        return l10n.aiFeatureFreeChatTitle;
-    }
-  }
-
-  String _getFeatureDescription(AssistantFeature feature, AppLocalizations l10n) {
-    switch (feature) {
-      case AssistantFeature.dreamJournal:
-        return l10n.aiFeatureDreamJournalDesc;
-      case AssistantFeature.techniqueRecommendation:
-        return l10n.aiFeatureTechniqueDesc;
-      case AssistantFeature.meditationScript:
-        return l10n.aiFeatureMeditationDesc;
-      case AssistantFeature.realityCheck:
-        return l10n.aiFeatureRealityCheckDesc;
-      case AssistantFeature.freeChat:
-        return l10n.aiFeatureFreeChatDesc;
-    }
-  }
-
-  bool _requiresInput(AssistantFeature feature) {
-    return feature == AssistantFeature.dreamJournal ||
-        feature == AssistantFeature.freeChat;
-  }
-
-  String _getInputLabel(AssistantFeature feature, AppLocalizations l10n) {
-    switch (feature) {
-      case AssistantFeature.dreamJournal:
-        return l10n.aiFeatureDreamJournalInputLabel;
-      case AssistantFeature.techniqueRecommendation:
-        return l10n.aiFeatureTechniqueInputLabel;
-      case AssistantFeature.meditationScript:
-        return l10n.aiFeatureMeditationInputLabel;
-      case AssistantFeature.realityCheck:
-        return l10n.aiFeatureRealityCheckInputLabel;
-      case AssistantFeature.freeChat:
-        return l10n.aiFeatureFreeChatInputLabel;
-    }
-  }
-
-  String _getInputHint(AssistantFeature feature, AppLocalizations l10n) {
-    switch (feature) {
-      case AssistantFeature.dreamJournal:
-        return l10n.aiFeatureDreamJournalInputHint;
-      case AssistantFeature.techniqueRecommendation:
-        return l10n.aiFeatureTechniqueInputHint;
-      case AssistantFeature.meditationScript:
-        return l10n.aiFeatureMeditationInputHint;
-      case AssistantFeature.realityCheck:
-        return l10n.aiFeatureRealityCheckInputHint;
-      case AssistantFeature.freeChat:
-        return l10n.aiFeatureFreeChatInputHint;
-    }
-  }
-}
-
-enum AssistantFeature {
-  dreamJournal,
-  techniqueRecommendation,
-  meditationScript,
-  realityCheck,
-  freeChat,
 }

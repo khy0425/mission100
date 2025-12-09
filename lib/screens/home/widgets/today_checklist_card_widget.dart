@@ -3,6 +3,12 @@ import '../../../generated/l10n/app_localizations.dart';
 import '../../../utils/config/constants.dart';
 import '../../../services/workout/lucid_dream_program_service.dart';
 import '../../../models/lucid_dream_task.dart';
+import '../../tasks/reality_check_screen.dart';
+import '../../tasks/mild_affirmation_screen.dart';
+import '../../tasks/sleep_hygiene_screen.dart';
+import '../../tasks/meditation_screen.dart';
+import '../../tasks/wbtb_screen.dart';
+import '../../dream_journal/dream_journal_write_screen.dart';
 
 /// 오늘의 자각몽 체크리스트를 표시하는 카드 위젯
 class TodayChecklistCardWidget extends StatelessWidget {
@@ -56,7 +62,7 @@ class TodayChecklistCardWidget extends StatelessWidget {
           if (todayChecklist != null) ...[
             _buildDayInfo(l10n),
             const SizedBox(height: 16),
-            _buildTasksList(l10n, theme),
+            _buildTasksList(context, l10n, theme),
             const SizedBox(height: 16),
             _buildProgress(l10n, theme),
             if (_isAllCompleted()) ...[
@@ -110,18 +116,19 @@ class TodayChecklistCardWidget extends StatelessWidget {
     );
   }
 
-  Widget _buildTasksList(AppLocalizations l10n, ThemeData theme) {
+  Widget _buildTasksList(BuildContext context, AppLocalizations l10n, ThemeData theme) {
     final tasks = todayChecklist!.checklist.tasks;
 
     return Column(
       children: tasks.map((task) {
         final isCompleted = completedTasks.contains(task.type);
-        return _buildTaskItem(task, isCompleted, l10n, theme);
+        return _buildTaskItem(context, task, isCompleted, l10n, theme);
       }).toList(),
     );
   }
 
   Widget _buildTaskItem(
+    BuildContext context,
     LucidDreamTask task,
     bool isCompleted,
     AppLocalizations l10n,
@@ -132,7 +139,7 @@ class TodayChecklistCardWidget extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: () => onTaskToggle(task.type, !isCompleted),
+          onTap: () => _navigateToTaskScreen(context, task.type),
           borderRadius: BorderRadius.circular(8),
           child: Container(
             padding: const EdgeInsets.all(12),
@@ -342,5 +349,34 @@ class TodayChecklistCardWidget extends StatelessWidget {
         .map((t) => t.type)
         .toSet();
     return requiredTasks.every((type) => completedTasks.contains(type));
+  }
+
+  void _navigateToTaskScreen(BuildContext context, LucidDreamTaskType taskType) {
+    Widget screen;
+
+    switch (taskType) {
+      case LucidDreamTaskType.dreamJournal:
+        screen = const DreamJournalWriteScreen();
+        break;
+      case LucidDreamTaskType.realityCheck:
+        screen = const RealityCheckScreen();
+        break;
+      case LucidDreamTaskType.mildAffirmation:
+        screen = const MildAffirmationScreen();
+        break;
+      case LucidDreamTaskType.sleepHygiene:
+        screen = const SleepHygieneScreen();
+        break;
+      case LucidDreamTaskType.wbtb:
+        screen = const WBTBScreen();
+        break;
+      case LucidDreamTaskType.meditation:
+        screen = const MeditationScreen();
+        break;
+    }
+
+    Navigator.of(context).push(
+      MaterialPageRoute(builder: (context) => screen),
+    );
   }
 }

@@ -233,5 +233,59 @@
   "gigaGoalDesc": "21일 이상 → 30일+ 마스터 달성",
   "difficultyAdvancedDesc": "진정한 드림 스피릿",
   "difficultyBeginnerDesc": "천천히 시작하는 드림 스피릿",
-  "difficultyIntermediateDesc": "꾸준한 드림 스피릿"
+  "difficultyIntermediateDesc": "꾸준한 드림 스피릿",
+  "@doubleCongratulations": {
+    "description": "Double congratulations message"
+  },
+  "doubleCongratulations": "축하합니다! 축하합니다!",
+  "@levelUp": {
+    "description": "Level up message"
+  },
+  "levelUp": "레벨업!",
+  "@newTechniqueUnlocked": {
+    "description": "New technique unlocked message"
+  },
+  "newTechniqueUnlocked": "새로운 기법 해금!",
+  "@characterUnlockStage1": {
+    "description": "Character unlock stage 1 message"
+  },
+  "characterUnlockStage1": "Lumi Stage 1 해금",
+  "@characterUnlockStage2": {
+    "description": "Character unlock stage 2 message"
+  },
+  "characterUnlockStage2": "Lumi Stage 2 해금",
+  "@characterUnlockStage3": {
+    "description": "Character unlock stage 3 message"
+  },
+  "characterUnlockStage3": "Lumi Stage 3 해금",
+  "@characterUnlockStage4": {
+    "description": "Character unlock stage 4 message"
+  },
+  "characterUnlockStage4": "Lumi Stage 4 해금",
+  "@characterUnlockStage5": {
+    "description": "Character unlock stage 5 message"
+  },
+  "characterUnlockStage5": "Lumi Stage 5 해금",
+  "@characterUnlockStage6": {
+    "description": "Character unlock stage 6 message"
+  },
+  "characterUnlockStage6": "Lumi Stage 6 해금",
+  "@levelUpMultipleMessage": {
+    "description": "Level up multiple levels message",
+    "placeholders": {
+      "levels": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpMultipleMessage": "레벨 {levels} 상승!",
+  "@daysToNextLevel": {
+    "description": "Days to next level message",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "daysToNextLevel": "다음 레벨까지 {days}일"
 }

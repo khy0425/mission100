@@ -13,13 +13,15 @@ class DreamAnalysisServiceSecure {
 
   final FirebaseFunctions _functions = FirebaseFunctions.instance;
 
-  /// 빠른 꿈 분석 (토큰 없이 사용 가능)
+  /// 빠른 꿈 분석 (1토큰 - Gemini 2.0 Flash)
   ///
   /// [dreamText]: 분석할 꿈 내용 (최대 500자)
+  /// [userTitle]: 사용자 칭호 (레벨 기반, 예: 드리머님, 각성자님)
   ///
   /// Returns: AI 분석 결과
   Future<String> quickAnalysis({
     required String dreamText,
+    String? userTitle,
   }) async {
     try {
       // 입력 검증
@@ -32,11 +34,14 @@ class DreamAnalysisServiceSecure {
       }
 
       debugPrint('📡 Calling Firebase Functions: quickDreamAnalysis');
+      debugPrint('   User title: ${userTitle ?? "드리머님"}');
 
       // Firebase Functions 호출
+      // userTitle은 이미 클라이언트에서 l10n을 통해 다국어로 전달됨
       final callable = _functions.httpsCallable('quickDreamAnalysis');
       final result = await callable.call({
         'dreamText': dreamText,
+        'userTitle': userTitle, // null이면 서버에서 기본 처리
       });
 
       final data = result.data as Map<String, dynamic>;
@@ -56,15 +61,17 @@ class DreamAnalysisServiceSecure {
     }
   }
 
-  /// Lumi와 대화형 분석 (토큰 소모)
+  /// Lumi와 대화형 분석 (1토큰 - Gemini 2.0 Flash)
   ///
   /// [conversationId]: 대화 ID (null이면 새 대화 시작)
   /// [userMessage]: 사용자 메시지 (최대 500자)
+  /// [userTitle]: 사용자 칭호 (레벨 기반, 예: 드리머님, 각성자님)
   ///
   /// Returns: 대화 결과 (conversationId, AI 응답, 남은 토큰 등)
   Future<ConversationResult> analyzeWithConversation({
     String? conversationId,
     required String userMessage,
+    String? userTitle,
   }) async {
     try {
       // 입력 검증
@@ -78,12 +85,15 @@ class DreamAnalysisServiceSecure {
 
       debugPrint('📡 Calling Firebase Functions: analyzeWithLumi');
       debugPrint('   Conversation ID: $conversationId');
+      debugPrint('   User title: ${userTitle ?? "드리머님"}');
 
       // Firebase Functions 호출
+      // userTitle은 이미 클라이언트에서 l10n을 통해 다국어로 전달됨
       final callable = _functions.httpsCallable('analyzeWithLumi');
       final result = await callable.call({
         'conversationId': conversationId,
         'userMessage': userMessage,
+        'userTitle': userTitle, // null이면 서버에서 기본 처리
       });
 
       final data = result.data as Map<String, dynamic>;

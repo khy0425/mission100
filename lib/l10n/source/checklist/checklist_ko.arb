@@ -284,5 +284,9 @@
   "@dailyChecklistConfirmButton": {
     "description": "대화상자 확인 버튼"
   },
-  "dailyChecklistConfirmButton": "확인"
+  "dailyChecklistConfirmButton": "확인",
+  "@tokenRewardConfirm": {
+    "description": "토큰 보상 확인 버튼"
+  },
+  "tokenRewardConfirm": "확인"
 }

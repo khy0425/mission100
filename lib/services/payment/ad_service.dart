@@ -6,10 +6,13 @@ class AdService {
   factory AdService() => _instance;
   AdService._internal();
 
-  // 실제 AdMob 광고 ID - 수익 발생!
+  // 배너 광고 ID
   static String get bannerAdUnitId {
+    // TODO: 테스트 완료 후 실제 광고 ID로 교체
+    // 현재는 Google 테스트 광고 ID 사용
     if (Platform.isAndroid) {
-      return 'ca-app-pub-1075071967728463/8071566014'; // 실제 배너
+      return 'ca-app-pub-3940256099942544/6300978111'; // Android 테스트 배너
+      // return 'ca-app-pub-1075071967728463/8750118320'; // 실제 배너 (배포 시 주석 해제)
     } else {
       return 'ca-app-pub-3940256099942544/2934735716'; // iOS 테스트
     }
@@ -17,7 +20,7 @@ class AdService {
 
   static String get interstitialAdUnitId {
     if (Platform.isAndroid) {
-      return 'ca-app-pub-1075071967728463/1378165152'; // 실제 전면
+      return 'ca-app-pub-1075071967728463/4723243403'; // 실제 전면
     } else {
       return 'ca-app-pub-3940256099942544/4411468910'; // iOS 테스트
     }
@@ -25,7 +28,7 @@ class AdService {
 
   static String get rewardedAdUnitId {
     if (Platform.isAndroid) {
-      return 'ca-app-pub-1075071967728463/3586074831'; // 실제 리워드
+      return 'ca-app-pub-1075071967728463/9479960264'; // 실제 리워드
     } else {
       return 'ca-app-pub-3940256099942544/1712485313'; // iOS 테스트
     }
@@ -33,8 +36,10 @@ class AdService {
 
   // 설정 화면용 배너 광고 ID
   static String get settingsBannerAdUnitId {
+    // TODO: 테스트 완료 후 실제 광고 ID로 교체
     if (Platform.isAndroid) {
-      return 'ca-app-pub-1075071967728463/8071566014'; // 실제 배너
+      return 'ca-app-pub-3940256099942544/6300978111'; // Android 테스트 배너
+      // return 'ca-app-pub-1075071967728463/8750118320'; // 실제 배너 (배포 시 주석 해제)
     } else {
       return 'ca-app-pub-3940256099942544/2934735716'; // iOS 테스트
     }

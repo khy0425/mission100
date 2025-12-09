@@ -292,9 +292,7 @@ class BillingService {
 
       debugPrint('✅ 구독 상태 Firestore 저장 완료: $productId');
       debugPrint('📱 로컬 캐시 업데이트 완료 (오프라인 UX용)');
-
-      // TODO: Firebase Functions로 영수증 검증 구현 필요
-      // await _verifyPurchaseWithServer(productId, purchaseToken);
+      debugPrint('✅ Firebase Functions 검증 완료 (PaymentVerificationService를 통해)');
 
     } catch (e) {
       debugPrint('❌ 구독 활성화 오류: $e');

@@ -4,14 +4,17 @@ import 'package:provider/provider.dart';
 import '../generated/l10n/app_localizations.dart';
 import '../utils/config/constants.dart';
 import '../models/lucid_dream_task.dart';
-import '../models/checklist_history.dart';
 import '../models/rewarded_ad_reward.dart';
 import '../services/workout/lucid_dream_program_service.dart';
-import '../services/workout/checklist_history_service.dart';
 import '../services/payment/rewarded_ad_reward_service.dart';
 import '../services/auth/auth_service.dart';
 import '../services/ai/dream_analysis_service.dart';
 import '../screens/dream_analysis_screen.dart';
+import '../widgets/gamification/level_up_dialog.dart';
+import '../widgets/checklist/checklist_completion_dialog.dart';
+import '../widgets/checklist/token_reward_dialog.dart';
+import '../widgets/checklist/dream_analysis_offer_dialog.dart';
+import '../services/checklist/checklist_completion_service.dart';
 
 /// 자각몽 일일 체크리스트 화면
 ///
@@ -98,369 +101,70 @@ class _LucidDreamChecklistScreenState
     _showCompletionDialog();
   }
 
-  /// 체크리스트 완료 데이터 저장
-  Future<void> _saveChecklistHistory(Duration timeElapsed) async {
-    final checklist = widget.checklist.checklist;
-
-    // 완료된 태스크 타입들 수집
-    final completedTaskTypes = <String>[];
-    for (int i = 0; i < checklist.tasks.length; i++) {
-      if (_taskCompletionStatus[i]) {
-        completedTaskTypes.add(checklist.tasks[i].type.name);
-      }
-    }
-
-    // ChecklistHistory 객체 생성
-    final history = ChecklistHistory(
-      id: DateTime.now().millisecondsSinceEpoch.toString(),
-      date: DateTime.now(),
-      dayNumber: widget.checklist.day,
-      completedTasks: completedTaskTypes,
-      totalTasksCompleted: _completedTaskCount,
-      totalRequiredTasks: checklist.requiredTaskCount,
-      completionRate: _completedTaskCount / checklist.tasks.length,
-      duration: timeElapsed,
-      isWbtbDay: checklist.isWbtbDay,
-    );
-
-    // 데이터베이스에 저장
-    try {
-      await ChecklistHistoryService.saveChecklistHistory(history);
-      debugPrint('✅ 체크리스트 데이터 저장 완료: Day ${widget.checklist.day}');
-    } catch (e) {
-      debugPrint('❌ 체크리스트 데이터 저장 실패: $e');
-    }
-  }
-
   /// 완료 다이얼로그 표시
   void _showCompletionDialog() {
-    final l10n = AppLocalizations.of(context);
     final timeElapsed = DateTime.now().difference(_checklistStartTime!);
     final checklist = widget.checklist.checklist;
 
-    showDialog(
+    ChecklistCompletionDialog.show(
       context: context,
-      barrierDismissible: false,
-      builder: (context) => AlertDialog(
-        title: Row(
-          children: [
-            const Icon(Icons.check_circle, color: Color(AppColors.successColor)),
-            const SizedBox(width: 8),
-            Text(l10n.checklistDayComplete(widget.checklist.day)),
-          ],
-        ),
-        content: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              l10n.checklistCompleteMessage,
-              style: const TextStyle(fontSize: 16),
-            ),
-            const SizedBox(height: 16),
-            _buildStatRow(l10n.checklistCompletedTasks, l10n.checklistCompletedTasksValue(_completedTaskCount, checklist.tasks.length)),
-            _buildStatRow(l10n.checklistRequiredTasks, l10n.checklistRequiredTasksValue(checklist.requiredTaskCount, checklist.requiredTaskCount)),
-            if (checklist.isWbtbDay)
-              _buildStatRow('WBTB', l10n.checklistWbtbDayBadge),
-            _buildStatRow(l10n.checklistTimeSpent, l10n.checklistTimeSpentValue(timeElapsed.inMinutes)),
-          ],
-        ),
-        actions: [
-          TextButton(
-            onPressed: () async {
-              // 체크리스트 완료 데이터 저장
-              await _saveChecklistHistory(timeElapsed);
+      dayNumber: widget.checklist.day,
+      completedTaskCount: _completedTaskCount,
+      totalTaskCount: checklist.tasks.length,
+      requiredTaskCount: checklist.requiredTaskCount,
+      isWbtbDay: checklist.isWbtbDay,
+      timeElapsed: timeElapsed,
+      onConfirm: () async {
+        // 체크리스트 완료 데이터 저장
+        await ChecklistCompletionService.saveChecklistHistory(
+          dayNumber: widget.checklist.day,
+          taskCompletionStatus: _taskCompletionStatus,
+          checklist: checklist,
+          timeElapsed: timeElapsed,
+        );
 
-              if (!mounted) return;
+        if (!mounted) return;
 
-              // 꿈 일기 태스크 완료 여부 확인
-              bool hasDreamJournal = false;
-              for (int i = 0; i < checklist.tasks.length; i++) {
-                if (checklist.tasks[i].type == LucidDreamTaskType.dreamJournal) {
-                  hasDreamJournal = _taskCompletionStatus[i];
-                  break;
-                }
-              }
+        // 다이얼로그 닫기
+        Navigator.of(context).pop();
 
-              Navigator.of(context).pop();
+        // 💎 체크리스트 완료 시 토큰 지급 (축하 팝업 표시)
+        await _rewardTokensForChecklistCompletion();
 
-              // 꿈 일기 완료 시 Lumi AI 분석 제안
-              if (hasDreamJournal) {
-                await _showDreamAnalysisOffer();
-              }
+        if (!mounted) return;
 
-              if (!mounted) return;
-              Navigator.of(context).pop(); // 체크리스트 화면도 닫기
-              widget.onChecklistCompleted?.call();
-            },
-            child: Text(l10n.checklistConfirm),
-          ),
-        ],
-      ),
-    );
-  }
+        // ⭐ 체크리스트 완료 시 경험치 획득 및 레벨업 체크
+        await _checkXPAndLevelUp();
 
-  Widget _buildStatRow(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(label, style: TextStyle(color: Colors.grey[600])),
-          Text(value, style: const TextStyle(fontWeight: FontWeight.bold)),
-        ],
-      ),
+        if (!mounted) return;
+
+        // 체크리스트 화면 닫기 -> 홈 화면으로 돌아감
+        Navigator.of(context).pop();
+        widget.onChecklistCompleted?.call();
+      },
     );
   }
 
   /// Lumi AI 꿈 분석 제안 다이얼로그
   Future<void> _showDreamAnalysisOffer() async {
-    final l10n = AppLocalizations.of(context);
     final authService = context.read<AuthService>();
     final rewardService = context.read<RewardedAdRewardService>();
-    final isPremium = !authService.hasAds; // 프리미엄 = 광고 없음
+    final isPremium = !authService.hasAds;
     final canUseFree = isPremium || rewardService.canUseReward(RewardedAdType.dreamAnalysis);
 
-    final TextEditingController dreamController = TextEditingController();
-
-    await showModalBottomSheet(
+    await DreamAnalysisOfferDialog.show(
       context: context,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) => Container(
-        padding: EdgeInsets.only(
-          bottom: MediaQuery.of(context).viewInsets.bottom,
-        ),
-        decoration: BoxDecoration(
-          color: Theme.of(context).scaffoldBackgroundColor,
-          borderRadius: const BorderRadius.vertical(top: Radius.circular(20)),
-        ),
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppConstants.paddingL),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              // 핸들 바
-              Container(
-                width: 40,
-                height: 4,
-                margin: const EdgeInsets.only(bottom: AppConstants.paddingL),
-                decoration: BoxDecoration(
-                  color: Colors.grey[300],
-                  borderRadius: BorderRadius.circular(2),
-                ),
-              ),
-
-              // 헤더
-              Row(
-                children: [
-                  Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          Color(AppColors.lucidGradient[0]),
-                          Color(AppColors.lucidGradient[1]),
-                        ],
-                      ),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Center(
-                      child: Text('🧠', style: TextStyle(fontSize: 32)),
-                    ),
-                  ),
-                  const SizedBox(width: AppConstants.paddingM),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          l10n.checklistDreamAnalysisTitle,
-                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                                fontWeight: FontWeight.bold,
-                              ),
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          isPremium
-                              ? l10n.checklistDreamAnalysisPremiumUnlimited
-                              : canUseFree
-                                  ? l10n.checklistDreamAnalysisAvailable
-                                  : l10n.checklistDreamAnalysisWatchAd,
-                          style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                                color: isPremium ? const Color(AppColors.successColor) : Colors.grey[600],
-                              ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: AppConstants.paddingL),
-
-              // 꿈 내용 입력
-              TextField(
-                controller: dreamController,
-                maxLines: 5,
-                decoration: InputDecoration(
-                  hintText: l10n.checklistDreamInputHint,
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(AppConstants.radiusM),
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[100],
-                ),
-              ),
-
-              const SizedBox(height: AppConstants.paddingL),
-
-              // 사용 가능 횟수 안내
-              if (isPremium)
-                Container(
-                  padding: const EdgeInsets.all(AppConstants.paddingM),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        Color(AppColors.successGradient[0]),
-                        Color(AppColors.successGradient[1]),
-                      ],
-                    ),
-                    borderRadius: BorderRadius.circular(AppConstants.radiusM),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.diamond, color: Colors.white, size: 20),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          l10n.checklistPremiumUnlimited,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              else if (canUseFree)
-                Container(
-                  padding: const EdgeInsets.all(AppConstants.paddingM),
-                  decoration: BoxDecoration(
-                    color: Colors.green.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(AppConstants.radiusM),
-                    border: Border.all(color: Colors.green.withValues(alpha: 0.3)),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.check_circle, color: Colors.green, size: 20),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          l10n.checklistFreeAnalysisAvailable,
-                          style: TextStyle(
-                            color: Colors.green[700],
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                )
-              else
-                Container(
-                  padding: const EdgeInsets.all(AppConstants.paddingM),
-                  decoration: BoxDecoration(
-                    color: Colors.orange.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(AppConstants.radiusM),
-                    border: Border.all(color: Colors.orange.withValues(alpha: 0.3)),
-                  ),
-                  child: Row(
-                    children: [
-                      const Icon(Icons.access_time, color: Colors.orange, size: 20),
-                      const SizedBox(width: 8),
-                      Expanded(
-                        child: Text(
-                          l10n.checklistWatchAdForAnalysis,
-                          style: TextStyle(
-                            color: Colors.orange[700],
-                            fontWeight: FontWeight.w600,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-
-              const SizedBox(height: AppConstants.paddingL),
-
-              // 버튼
-              Row(
-                children: [
-                  Expanded(
-                    child: TextButton(
-                      onPressed: () => Navigator.of(context).pop(),
-                      child: Text(l10n.checklistLater),
-                    ),
-                  ),
-                  const SizedBox(width: AppConstants.paddingM),
-                  Expanded(
-                    flex: 2,
-                    child: ElevatedButton(
-                      onPressed: () async {
-                        final dreamText = dreamController.text.trim();
-                        if (dreamText.isEmpty) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text(l10n.checklistEnterDream),
-                              backgroundColor: Colors.orange,
-                            ),
-                          );
-                          return;
-                        }
-
-                        Navigator.of(context).pop();
-
-                        if (isPremium) {
-                          // 프리미엄 사용자: 무제한 분석 (쿨다운 없음)
-                          await _performDreamAnalysis(dreamText, true);
-                        } else if (canUseFree) {
-                          // 무료 사용자: 무료 분석 (쿨다운 적용)
-                          await _performDreamAnalysis(dreamText, false);
-                        } else {
-                          // 쿨다운 중: 리워드 광고 시청 후 분석
-                          await _performRewardedDreamAnalysis(dreamText);
-                        }
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: isPremium
-                            ? const Color(AppColors.successColor)
-                            : canUseFree
-                                ? const Color(AppColors.primaryColor)
-                                : Colors.orange,
-                        padding: const EdgeInsets.symmetric(vertical: AppConstants.paddingM),
-                      ),
-                      child: Text(
-                        isPremium
-                            ? l10n.checklistPremiumAnalysisStart
-                            : canUseFree
-                                ? l10n.checklistFreeAnalysisStart
-                                : l10n.checklistWatchAdAnalysis,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ),
-      ),
+      isPremium: isPremium,
+      canUseFree: canUseFree,
+      onPremiumAnalysis: (dreamText) async {
+        await _performDreamAnalysis(dreamText, true);
+      },
+      onFreeAnalysis: (dreamText) async {
+        await _performDreamAnalysis(dreamText, false);
+      },
+      onRewardedAnalysis: (dreamText) async {
+        await _performRewardedDreamAnalysis(dreamText);
+      },
     );
   }
 
@@ -669,7 +373,7 @@ class _LucidDreamChecklistScreenState
         children: [
           // Day 제목
           Text(
-            '🌙 Day ${widget.checklist.day}',
+            l10n.checklistDayHeader(widget.checklist.day),
             style: const TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
@@ -1099,6 +803,84 @@ class _LucidDreamChecklistScreenState
         return l10n.taskMeditationDesc;
       default:
         return key;
+    }
+  }
+
+  /// 체크리스트 완료 시 AI 대화 토큰 지급
+  Future<void> _rewardTokensForChecklistCompletion() async {
+    final authService = Provider.of<AuthService>(context, listen: false);
+
+    final result = await ChecklistCompletionService.rewardTokensForChecklistCompletion(
+      authService: authService,
+    );
+
+    if (result == null) {
+      // 이미 오늘 토큰을 받았거나 에러 발생
+      return;
+    }
+
+    // 축하 다이얼로그 표시
+    if (!mounted) return;
+    await TokenRewardDialog.show(
+      context: context,
+      baseTokens: result.baseTokens,
+      bonusTokens: result.bonusTokens,
+      totalTokens: result.totalTokens,
+      currentStreak: result.currentStreak,
+      isPremium: result.isPremium,
+    );
+  }
+
+  /// 체크리스트 완료 시 경험치 획득 및 레벨업 체크
+  Future<void> _checkXPAndLevelUp() async {
+    final l10n = AppLocalizations.of(context);
+    final authService = context.read<AuthService>();
+
+    final result = await ChecklistCompletionService.checkXPAndLevelUp(
+      completedTaskCount: _completedTaskCount,
+      totalTaskCount: widget.checklist.checklist.tasks.length,
+      authService: authService,
+    );
+
+    if (result == null) {
+      // 에러 발생
+      return;
+    }
+
+    // 경험치 획득 스낵바 표시
+    if (mounted) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Row(
+            children: [
+              const Text('⭐', style: TextStyle(fontSize: 20)),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  l10n.checklistCompletionXP(result.xpEarned),
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ),
+            ],
+          ),
+          backgroundColor: Colors.amber[700],
+          duration: const Duration(seconds: 3),
+        ),
+      );
+    }
+
+    if (!mounted) return;
+
+    // 레벨업이 발생했으면 축하 다이얼로그 표시
+    if (result.levelUpResult.leveledUp) {
+      await LevelUpDialog.show(
+        context,
+        result: result.levelUpResult,
+        daysToNextLevel: result.daysToNextLevel ?? 0,
+      );
     }
   }
 }

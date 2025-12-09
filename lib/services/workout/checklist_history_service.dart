@@ -316,6 +316,23 @@ class ChecklistHistoryService {
     return progress >= 30;
   }
 
+  /// 총 XP 계산 (체크리스트 완료율 기반)
+  ///
+  /// 각 체크리스트 완료 = (완료율 × 100) XP
+  /// 예: 100% 완료 = 100 XP, 50% 완료 = 50 XP
+  static Future<int> getTotalXP() async {
+    final db = await database;
+    final result = await db.rawQuery('''
+      SELECT SUM(completionRate * 100) as totalXP
+      FROM $tableName
+    ''');
+
+    if (result.isNotEmpty && result.first['totalXP'] != null) {
+      return (result.first['totalXP'] as num).round();
+    }
+    return 0;
+  }
+
   // Date to string (YYYY-MM-DD)
   static String _dateToString(DateTime date) {
     return '${date.year}-${date.month.toString().padLeft(2, '0')}-${date.day.toString().padLeft(2, '0')}';

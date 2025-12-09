@@ -16,7 +16,7 @@
                      android:maxSdkVersion="32" />
     
     <application
-        android:label="드림플로"
+        android:label="@string/app_name"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
         android:requestLegacyExternalStorage="true">
@@ -48,9 +48,11 @@
             android:name="flutterEmbedding"
             android:value="2" />
         <!-- Google Mobile Ads 앱 ID -->
+        <!-- TODO: 테스트 완료 후 실제 앱 ID로 교체 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-1075071967728463~6042582986"/>
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            <!-- android:value="ca-app-pub-1075071967728463~6042582986"/> (실제 앱 ID - 배포 시 사용) -->
     </application>
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and

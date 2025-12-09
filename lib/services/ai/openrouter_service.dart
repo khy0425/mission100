@@ -85,8 +85,8 @@ class OpenRouterService {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $_apiKey',
-          'HTTP-Referer': 'https://lucid-dream-100.app',
-          'X-Title': 'Lucid Dream 100',
+          'HTTP-Referer': 'https://dreamflow.app',
+          'X-Title': 'DreamFlow',
         },
         body: jsonEncode({
           'model': model,
@@ -131,8 +131,8 @@ class OpenRouterService {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $_apiKey',
-          'HTTP-Referer': 'https://lucid-dream-100.app',
-          'X-Title': 'Lucid Dream 100',
+          'HTTP-Referer': 'https://dreamflow.app',
+          'X-Title': 'DreamFlow',
         },
         body: jsonEncode({
           'model': model,

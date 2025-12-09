@@ -10,9 +10,9 @@ import '../../../generated/l10n/app_localizations.dart';
 /// - 총 운동 세션 진행률
 /// - 다음 목표까지의 정보
 class ProgressCardWidget extends StatelessWidget {
-  final dynamic programProgress; // 서비스에서 가져오는 타입
+  final dynamic programProgress; // 서비스에서 가져오는 타입 (DreamFlow에서는 lucid dream progress)
 
-  const ProgressCardWidget({super.key, required this.programProgress});
+  const ProgressCardWidget({super.key, this.programProgress}); // DreamFlow - optional로 변경
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class ProgressCardWidget extends StatelessWidget {
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           _buildHeader(context, theme),
           const SizedBox(height: AppConstants.paddingM),
@@ -141,7 +141,7 @@ class ProgressCardWidget extends StatelessWidget {
         ],
       ),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           // 전체 프로그램 진행도
           _buildOverallProgress(
@@ -185,7 +185,7 @@ class ProgressCardWidget extends StatelessWidget {
     double progressPercentage,
   ) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
           children: [
@@ -237,7 +237,7 @@ class ProgressCardWidget extends StatelessWidget {
     int totalDaysThisWeek,
   ) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
           AppLocalizations.of(context).thisWeekFormat(currentWeek),
@@ -292,7 +292,7 @@ class ProgressCardWidget extends StatelessWidget {
     int totalSessions,
   ) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Row(
           children: [

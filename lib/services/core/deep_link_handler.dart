@@ -215,11 +215,11 @@ class DeepLinkHandler {
               ),
             ),
             const SizedBox(height: 8),
-            Text(data['message'] ?? l10n.characterEvolvedFallback),
+            Text(data['message'] ?? '캐릭터가 진화했습니다!'),
             if (data['newStage'] != null) ...[
               const SizedBox(height: 16),
               Text(
-                '${l10n.newStageLabel} ${data['newStage']}',
+                '새로운 단계: ${data['newStage']}',
                 style: const TextStyle(
                   fontSize: 16,
                   color: Colors.blue,

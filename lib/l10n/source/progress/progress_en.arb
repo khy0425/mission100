@@ -400,5 +400,29 @@
       }
     }
   },
-  "progressTooltipWeekComplete": "Week {week}: {completionRate}% complete\\n{completedSessions}/{totalSessions} sessions"
+  "progressTooltipWeekComplete": "Week {week}: {completionRate}% complete\\n{completedSessions}/{totalSessions} sessions",
+  "@dreamJournalStatistics": {
+    "description": "Dream journal statistics title"
+  },
+  "dreamJournalStatistics": "Dream Journal Statistics",
+  "@totalDreams": {
+    "description": "Total dreams count label"
+  },
+  "totalDreams": "Total Dreams",
+  "@lucidDreams": {
+    "description": "Lucid dreams count label"
+  },
+  "lucidDreams": "Lucid Dreams",
+  "@thisMonth": {
+    "description": "This month label"
+  },
+  "thisMonth": "This Month",
+  "@dreamEntry": {
+    "description": "Dream entry label for calendar legend"
+  },
+  "dreamEntry": "Dream Entry",
+  "@lucidDream": {
+    "description": "Lucid dream label for calendar legend"
+  },
+  "lucidDream": "Lucid Dream"
 }

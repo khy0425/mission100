@@ -269,7 +269,7 @@
   "@analysisComparisonCostQuick": {
     "description": "Quick analysis cost"
   },
-  "analysisComparisonCostQuick": "Free",
+  "analysisComparisonCostQuick": "1 Token",
   "@analysisComparisonCostLumi": {
     "description": "Lumi analysis cost"
   },
@@ -357,7 +357,7 @@
   "@quickAnalysisGuideBadge": {
     "description": "Guide feature badge"
   },
-  "quickAnalysisGuideBadge": "Free",
+  "quickAnalysisGuideBadge": "1 Token",
   "@quickAnalysisGuideDescription": {
     "description": "Guide description"
   },
@@ -373,7 +373,7 @@
   "@quickAnalysisGuideNoTokens": {
     "description": "No tokens required feature"
   },
-  "quickAnalysisGuideNoTokens": "No tokens required",
+  "quickAnalysisGuideNoTokens": "Requires 1 token",
   "@quickAnalysisLoadingTitle": {
     "description": "Loading title"
   },
@@ -509,5 +509,81 @@
   "@dreamAnalysisPremiumButton": {
     "description": "Premium upgrade button"
   },
-  "dreamAnalysisPremiumButton": "Go Premium"
+  "dreamAnalysisPremiumButton": "Go Premium",
+  "@tokenRewardTitle": {
+    "description": "Token reward dialog title"
+  },
+  "tokenRewardTitle": "Tokens Earned",
+  "@tokenDailyRewardPremium": {
+    "description": "Premium daily reward label"
+  },
+  "tokenDailyRewardPremium": "Premium Daily Reward",
+  "@tokenDailyRewardFree": {
+    "description": "Free daily reward label"
+  },
+  "tokenDailyRewardFree": "Free Daily Reward",
+  "@tokenStreakBonus": {
+    "description": "Streak bonus label",
+    "placeholders": {
+      "currentStreak": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenStreakBonus": "{currentStreak}-Day Streak Bonus",
+  "@tokenTotalReward": {
+    "description": "Total reward label"
+  },
+  "tokenTotalReward": "Total Earned",
+  "@tokenStreakStatus": {
+    "description": "Current streak status",
+    "placeholders": {
+      "currentStreak": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenStreakStatus": "{currentStreak}-Day Streak",
+  "@tokenStreakGoal3Days": {
+    "description": "3-day streak goal message",
+    "placeholders": {
+      "daysLeft": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenStreakGoal3Days": "{daysLeft} more days for bonus!",
+  "@tokenStreakGoal7Days": {
+    "description": "7-day streak goal message",
+    "placeholders": {
+      "daysLeft": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenStreakGoal7Days": "{daysLeft} more days for special bonus!",
+  "@tokenUserTypePremium": {
+    "description": "Premium user type label"
+  },
+  "tokenUserTypePremium": "Premium",
+  "@tokenUserTypeFree": {
+    "description": "Free user type label"
+  },
+  "tokenUserTypeFree": "Free",
+  "@tokenBalanceDisplay": {
+    "description": "Token balance display",
+    "placeholders": {
+      "balance": {
+        "type": "int"
+      },
+      "maxTokens": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenBalanceDisplay": "{balance}/{maxTokens} Tokens",
+  "@dreamJournalTitle": {
+    "description": "Dream journal title"
+  },
+  "dreamJournalTitle": "Dream Journal"
 }

@@ -5,18 +5,18 @@ import '../../../utils/config/constants.dart';
 /// 홈 화면의 주요 액션 버튼들을 표시하는 위젯
 ///
 /// 기능:
-/// - 꿈 일기 버튼 (과학적 근거 기반)
+/// - 설정 버튼
 /// - 진행률 추적 버튼
 /// - 각 버튼별 고유한 색상과 아이콘
 ///
 /// MVP: 튜토리얼 버튼 제거 (자각몽 앱에는 필요없음)
 class ActionButtonsWidget extends StatelessWidget {
-  final VoidCallback? onDreamJournalPressed;
+  final VoidCallback? onSettingsPressed;
   final VoidCallback? onProgressTrackingPressed;
 
   const ActionButtonsWidget({
     super.key,
-    this.onDreamJournalPressed,
+    this.onSettingsPressed,
     this.onProgressTrackingPressed,
   });
 
@@ -27,8 +27,8 @@ class ActionButtonsWidget extends StatelessWidget {
 
     return Column(
       children: [
-        // 꿈 일기 버튼 (과학적 근거 기반 - Schredl 2002, LaBerge 1985)
-        _buildDreamJournalButton(context, theme),
+        // 설정 버튼
+        _buildSettingsButton(context, theme),
         const SizedBox(height: AppConstants.paddingM),
 
         // 진행률 추적 버튼
@@ -37,15 +37,15 @@ class ActionButtonsWidget extends StatelessWidget {
     );
   }
 
-  // 꿈 일기 버튼 (과학적 근거: Schredl 2002 - 꿈 일기 작성의 효과)
-  Widget _buildDreamJournalButton(BuildContext context, ThemeData theme) {
+  // 설정 버튼
+  Widget _buildSettingsButton(BuildContext context, ThemeData theme) {
     final l10n = AppLocalizations.of(context);
     return SizedBox(
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: onDreamJournalPressed,
+        onPressed: onSettingsPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF9C27B0), // Purple - 꿈 관련 색상
+          backgroundColor: const Color(0xFF607D8B), // Blue Grey - 설정 색상
           padding: const EdgeInsets.symmetric(vertical: AppConstants.paddingL),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(AppConstants.radiusM),
@@ -54,10 +54,10 @@ class ActionButtonsWidget extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(Icons.auto_stories, color: Colors.white, size: 24),
+            const Icon(Icons.settings, color: Colors.white, size: 24),
             const SizedBox(width: AppConstants.paddingS),
             Text(
-              l10n.dreamJournalTitle,
+              l10n.settings,
               style: theme.textTheme.titleMedium?.copyWith(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,

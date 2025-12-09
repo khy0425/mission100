@@ -284,5 +284,9 @@
   "@dailyChecklistConfirmButton": {
     "description": "Confirm button in dialog"
   },
-  "dailyChecklistConfirmButton": "OK"
+  "dailyChecklistConfirmButton": "OK",
+  "@tokenRewardConfirm": {
+    "description": "Token reward confirmation button"
+  },
+  "tokenRewardConfirm": "OK"
 }

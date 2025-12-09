@@ -8,6 +8,7 @@ import '../ai/conversation_token_service.dart';
 import '../auth/auth_service.dart';
 import '../progress/level_up_service.dart';
 import '../progress/dream_statistics_service.dart';
+import '../firebase_functions_service.dart';
 
 /// 체크리스트 완료 처리 서비스
 ///
@@ -78,8 +79,8 @@ class ChecklistCompletionService {
       final currentTokens = tokenService.tokens;
       final bonusTokens = currentTokens.calculateBonusTokens();
       final baseTokens = isPremium
-          ? ConversationTokenSystem.premiumUserDailyTokens
-          : ConversationTokenSystem.freeUserDailyTokens;
+          ? 5 // 5토큰
+          : 1; // 1토큰
       final totalTokens = baseTokens + bonusTokens;
 
       // 토큰 지급
@@ -111,6 +112,8 @@ class ChecklistCompletionService {
     required int completedTaskCount,
     required int totalTaskCount,
     required AuthService authService,
+    int weekNumber = 1,
+    int dayNumber = 1,
   }) async {
     try {
       // 완료율 기반 경험치 계산
@@ -137,6 +140,14 @@ class ChecklistCompletionService {
         debugPrint('✓ 레벨업 없음 (현재 레벨: ${levelUpResult.newLevel})');
       }
 
+      // Firebase Functions로 체크리스트 완료 보고 및 진행도 동기화 (백그라운드)
+      _reportChecklistCompletionAsync(
+        weekNumber: weekNumber,
+        dayNumber: dayNumber,
+        xpEarned: xpEarned,
+        newLevel: levelUpResult.newLevel,
+      );
+
       return XPRewardResult(
         xpEarned: xpEarned,
         completionRate: completionRate,
@@ -147,6 +158,18 @@ class ChecklistCompletionService {
       debugPrint('❌ 경험치/레벨업 체크 실패: $e');
       return null;
     }
+  }
+
+  /// Firebase Functions로 체크리스트 완료 보고 (백그라운드)
+  /// TODO: FirebaseFunctionsService에 completeChecklist, syncUserProgress 메서드 구현 필요
+  static void _reportChecklistCompletionAsync({
+    required int weekNumber,
+    required int dayNumber,
+    required int xpEarned,
+    required int newLevel,
+  }) {
+    // 서버 동기화 기능 임시 비활성화
+    debugPrint('📤 체크리스트 완료: Week $weekNumber, Day $dayNumber, XP $xpEarned, Level $newLevel (서버 동기화 대기 중)');
   }
 }
 

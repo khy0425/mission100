@@ -1,32 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../../utils/config/constants.dart';
-import '../../services/core/first_launch_service.dart';
 import '../../widgets/onboarding_pages/onboarding_welcome_page.dart';
-import '../../widgets/onboarding_pages/onboarding_mission_page.dart';
-import '../../widgets/onboarding_pages/onboarding_features_page.dart';
-import '../../widgets/onboarding_pages/onboarding_get_started_page.dart';
-import 'initial_test_screen.dart';
+import '../../widgets/onboarding_pages/onboarding_checklist_page.dart';
+import '../../widgets/onboarding_pages/onboarding_welcome_bonus_page.dart';
+import '../home_screen.dart';
 
 /// 🚀 온보딩 화면
 ///
 /// 앱 첫 실행 시 사용자에게 앱을 소개하는 화면
 /// - 앱의 핵심 가치 제안
 /// - 주요 기능 소개
-/// - 시작하기 버튼으로 레벨 테스트로 이동
-class QuickOnboardingScreen extends StatefulWidget {
-  const QuickOnboardingScreen({super.key});
+/// - 시작하기 버튼으로 홈 화면으로 이동
+class OnboardingScreen extends StatefulWidget {
+  const OnboardingScreen({super.key});
 
   @override
-  State<QuickOnboardingScreen> createState() => _QuickOnboardingScreenState();
+  State<OnboardingScreen> createState() => _OnboardingScreenState();
 }
 
-class _QuickOnboardingScreenState extends State<QuickOnboardingScreen>
+class _OnboardingScreenState extends State<OnboardingScreen>
     with TickerProviderStateMixin {
   final PageController _pageController = PageController();
   int _currentPage = 0;
-  final int _totalPages = 4;
+  final int _totalPages = 3;
 
   late AnimationController _fadeController;
   late Animation<double> _fadeAnimation;
@@ -59,23 +58,24 @@ class _QuickOnboardingScreenState extends State<QuickOnboardingScreen>
         curve: Curves.easeInOut,
       );
     } else {
-      _navigateToLevelTest();
+      _completeOnboarding();
     }
   }
 
   void _skipOnboarding() {
-    _navigateToLevelTest();
+    _completeOnboarding();
   }
 
-  void _navigateToLevelTest() async {
+  Future<void> _completeOnboarding() async {
     // 온보딩 완료 표시
-    await FirstLaunchService.setOnboardingCompleted();
-    await FirstLaunchService.setFirstLaunchCompleted();
+    final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('onboarding_completed', true);
+    await prefs.setBool('onboarding_definitely_completed', true);
 
     if (mounted) {
       Navigator.of(context).pushReplacement(
         MaterialPageRoute<void>(
-          builder: (context) => const InitialTestScreen(),
+          builder: (context) => const HomeScreen(),
         ),
       );
     }
@@ -122,9 +122,8 @@ class _QuickOnboardingScreenState extends State<QuickOnboardingScreen>
                   },
                   children: const [
                     OnboardingWelcomePage(),
-                    OnboardingMissionPage(),
-                    OnboardingFeaturesPage(),
-                    OnboardingGetStartedPage(),
+                    OnboardingChecklistPage(),
+                    OnboardingWelcomeBonusPage(),
                   ],
                 ),
               ),

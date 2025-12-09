@@ -1,5 +1,5 @@
 enum SubscriptionType {
-  free, // 무료 사용자 (30일 프로그램, Week 1-4, 광고 있음)
+  free, // 무료 사용자 (Week 1만 영구 무료, 광고 있음)
   launchPromo, // 런칭 이벤트 (60일 확장, 30일간, 광고 포함)
   premium, // 프리미엄 (60일 확장, 광고 없음, 일회성 결제)
 }
@@ -38,7 +38,7 @@ class UserSubscription {
     required this.updatedAt,
   });
 
-  // 무료 사용자 기본 구독 (30일 프로그램)
+  // 무료 사용자 기본 구독 (Week 1만 영구 무료)
   static UserSubscription createFreeSubscription(String userId) {
     final now = DateTime.now();
     return UserSubscription(
@@ -49,9 +49,11 @@ class UserSubscription {
       startDate: now,
       endDate: null, // 무제한
       hasAds: true,
-      allowedWeeks: 4, // 30일 프로그램 (Week 1-4, Evolution Stage 0-6)
+      allowedWeeks: 1, // Week 1만 영구 무료 (기초 기법만)
       allowedFeatures: [
-        'basic_workouts',
+        'basic_techniques',
+        'dream_journal',
+        'reality_checks',
         'progress_tracking',
         'basic_stats',
       ],
@@ -227,9 +229,9 @@ class UserSubscription {
 
 /// 프리미엄 기능 열거형
 ///
-/// 새 구독 모델 (V3):
-/// - 무료 사용자: Week 1-4 (30일), Lumi 진화 0-6단계 (7단계), 광고 있음
-/// - 프리미엄 사용자: Week 1-8 (60일), Lumi 진화 0-13단계 (14단계), 광고 제거
+/// 새 구독 모델 (V3 - Model B):
+/// - 무료 사용자: Week 1만 영구 무료, 광고 있음, Level 1 cap
+/// - 프리미엄 사용자: Week 1-8 (60일), Lumi 진화 0-13단계 (14단계), 광고 제거, Level 9 cap
 /// - 프리미엄 혜택: 광고 제거 + 무제한 AI 분석 + 고급 통계 + 60일 확장
 enum PremiumFeature {
   adFree, // 광고 제거 (프리미엄만)

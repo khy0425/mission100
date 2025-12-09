@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../../utils/config/constants.dart';
 import '../../models/dream_entry.dart';
@@ -10,6 +11,7 @@ import '../../widgets/dream_journal/dream_search_bar_widget.dart';
 import '../../widgets/dream_journal/dream_list_loading_widget.dart';
 import '../../widgets/dream_journal/dream_list_empty_widget.dart';
 import '../../widgets/dream_journal/dream_entry_card_widget.dart';
+import '../../widgets/common/ad_banner_widget.dart';
 import 'dream_journal_write_screen.dart';
 import 'dream_journal_detail_screen.dart';
 
@@ -266,41 +268,59 @@ class _DreamJournalListScreenState extends State<DreamJournalListScreen>
           ],
         ),
       ),
-      body: Column(
-        children: [
-          // 통계 카드
-          DreamStatisticsCardWidget(
-            totalDreams: _totalDreams,
-            lucidDreams: _lucidDreams,
-            avgLucidity: _avgLucidity,
-            currentStreak: _currentStreak,
-          ),
+      body: SafeArea(
+        bottom: true, // 시스템 네비게이션 버튼 영역 확보
+        child: Column(
+          children: [
+            // 통계 카드
+            DreamStatisticsCardWidget(
+              totalDreams: _totalDreams,
+              lucidDreams: _lucidDreams,
+              avgLucidity: _avgLucidity,
+              currentStreak: _currentStreak,
+            ),
 
-          // 차트 (통계 시각화)
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingM),
-            child: DreamStatisticsChartWidget(dreams: _allDreams),
-          ),
+            // 차트 (통계 시각화)
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppConstants.paddingM),
+              child: DreamStatisticsChartWidget(dreams: _allDreams),
+            ),
 
-          // 검색 바
-          DreamSearchBarWidget(
-            controller: _searchController,
-            onChanged: _applyFiltersAndSort,
-            onClear: _applyFiltersAndSort,
-          ),
+            // 검색 바
+            DreamSearchBarWidget(
+              controller: _searchController,
+              onChanged: _applyFiltersAndSort,
+              onClear: _applyFiltersAndSort,
+            ),
 
-          // 꿈 일기 목록
-          Expanded(
-            child: _isLoading
-                ? const DreamListLoadingWidget()
-                : _filteredDreams.isEmpty
-                    ? DreamListEmptyWidget(
-                        filterMode: _filterMode,
-                        onCreateNew: _createNewDream,
-                      )
-                    : _buildDreamList(),
-          ),
-        ],
+            // 꿈 일기 목록
+            Expanded(
+              child: _isLoading
+                  ? const DreamListLoadingWidget()
+                  : _filteredDreams.isEmpty
+                      ? DreamListEmptyWidget(
+                          filterMode: _filterMode,
+                          onCreateNew: _createNewDream,
+                        )
+                      : _buildDreamList(),
+            ),
+
+            // 하단 배너 광고 (네비게이션 바 회피)
+            Consumer<AuthService>(
+              builder: (context, authService, child) {
+                return const AdBannerWidget(
+                  margin: EdgeInsets.only(
+                    top: 8,
+                    bottom: 8,
+                  ),
+                );
+              },
+            ),
+
+            // 네비게이션 바를 위한 추가 공간 확보
+            const SizedBox(height: 20),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _createNewDream,

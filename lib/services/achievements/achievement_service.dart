@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:path/path.dart';
 import 'dart:convert';
 import '../../models/achievement.dart';
-import '../../models/workout_history.dart';
-import '../workout/workout_history_service.dart';
+// DreamFlow - Workout/Chad 제거됨 (아카이브)
+// import '../../models/workout_history.dart';
+// import '../workout/workout_history_service.dart';
 import '../notification/notification_service.dart';
-import '../chad/chad_evolution_service.dart';
+// DreamFlow - Workout/Chad 제거됨 (아카이브)
+// import '../chad/chad_evolution_service.dart';
 import 'dart:io';
 
 class AchievementService {
@@ -305,9 +307,10 @@ class AchievementService {
           achievement.descriptionKey,
         );
 
-        // XP 추가 (차드 진화 서비스)
-        await ChadEvolutionService.addExperience(achievement.xpReward);
-        debugPrint('💰 XP 추가: ${achievement.xpReward} XP');
+        // DreamFlow - Workout/Chad 제거됨 (아카이브)
+        // XP 추가 (차드 진화 서비스) - 자각몽 앱에서는 사용하지 않음
+        // await ChadEvolutionService.addExperience(achievement.xpReward);
+        // debugPrint('💰 XP 추가: ${achievement.xpReward} XP');
 
         // CloudSyncService에 변경사항 알림
         try {
@@ -345,16 +348,20 @@ class AchievementService {
       // 상태 백업
       await _backupState();
 
-      // 데이터 수집 (캐시 활용)
+      // DreamFlow - Workout/Chad 제거됨 (아카이브)
+      // 데이터 수집 (캐시 활용) - 자각몽 앱에서는 사용하지 않음
       final dataTimer = _startPerformanceTimer('data_collection');
-      final workouts = await WorkoutHistoryService.getAllWorkouts();
-      debugPrint('📊 WorkoutHistoryService에서 조회된 운동 기록: ${workouts.length}개');
+      // final workouts = await WorkoutHistoryService.getAllWorkouts();
+      final workouts = <dynamic>[]; // 빈 리스트로 대체 (workout_history 모델 제거됨)
+      debugPrint('📊 운동 기록: ${workouts.length}개 (자각몽 앱에서는 사용하지 않음)');
 
-      final statistics = await WorkoutHistoryService.getStatistics();
-      debugPrint('📈 운동 통계: $statistics');
+      // final statistics = await WorkoutHistoryService.getStatistics();
+      final statistics = <String, dynamic>{'totalReps': 0}; // 빈 통계로 대체
+      debugPrint('📈 운동 통계: $statistics (자각몽 앱에서는 사용하지 않음)');
 
-      final consecutiveWeeks = await WorkoutHistoryService.getConsecutiveWeeksCompleted();
-      debugPrint('🔥 연속 완료 주차: $consecutiveWeeks주');
+      // final consecutiveWeeks = await WorkoutHistoryService.getConsecutiveWeeksCompleted();
+      final consecutiveWeeks = 0; // 0으로 대체
+      debugPrint('🔥 연속 완료 주차: $consecutiveWeeks주 (자각몽 앱에서는 사용하지 않음)');
       _endPerformanceTimer('data_collection', dataTimer);
 
       // 캐시된 업적 조회
@@ -514,7 +521,7 @@ class AchievementService {
   // 첫 번째 달성 업적 체크
   static Future<int> _checkFirstAchievements(
     Achievement achievement,
-    List<WorkoutHistory> workouts,
+    List<dynamic> workouts,
   ) async {
     switch (achievement.id) {
       case 'first_workout':
@@ -547,14 +554,16 @@ class AchievementService {
         return 0;
 
       case 'first_level_up':
-        // 레벨 5 달성 여부 확인 (Chad Evolution 시스템과 연동)
-        try {
-          final currentLevel = await ChadEvolutionService.getCurrentLevel();
-          return currentLevel >= 5 ? 1 : 0;
-        } catch (e) {
-          debugPrint('❌ 레벨 확인 중 오류: $e');
-          return 0;
-        }
+        // DreamFlow - Workout/Chad 제거됨 (아카이브)
+        // 레벨 5 달성 여부 확인 (Chad Evolution 시스템과 연동) - 자각몽 앱에서는 사용하지 않음
+        // try {
+        //   final currentLevel = await ChadEvolutionService.getCurrentLevel();
+        //   return currentLevel >= 5 ? 1 : 0;
+        // } catch (e) {
+        //   debugPrint('❌ 레벨 확인 중 오류: $e');
+        //   return 0;
+        // }
+        return 0; // 자각몽 앱에서는 항상 0 반환
 
       default:
         return 0;
@@ -563,7 +572,7 @@ class AchievementService {
 
   // 완벽 수행 업적 체크
   static Future<int> _checkPerfectAchievements(
-    List<WorkoutHistory> workouts,
+    List<dynamic> workouts,
   ) async {
     int perfectCount = 0;
     for (final workout in workouts) {
@@ -577,7 +586,7 @@ class AchievementService {
   // 특별 업적 체크 (시간대 고려 개선)
   static Future<int> _checkSpecialAchievements(
     Achievement achievement,
-    List<WorkoutHistory> workouts,
+    List<dynamic> workouts,
   ) async {
     switch (achievement.id) {
       case 'tutorial_explorer':
@@ -656,7 +665,7 @@ class AchievementService {
       case 'comeback_kid':
         // 7일 이상 쉬고 다시 운동한 적이 있는지 체크
         if (workouts.length >= 2) {
-          final sortedWorkouts = List<WorkoutHistory>.from(workouts)
+          final sortedWorkouts = List<dynamic>.from(workouts)
             ..sort((a, b) => a.date.compareTo(b.date));
 
           for (int i = 1; i < sortedWorkouts.length; i++) {
@@ -693,7 +702,7 @@ class AchievementService {
       case 'consistency_master':
         // 연속 10일 동안 정확히 목표 달성했는지 체크
         if (workouts.length >= 10) {
-          final sortedWorkouts = List<WorkoutHistory>.from(workouts)
+          final sortedWorkouts = List<dynamic>.from(workouts)
             ..sort((a, b) => b.date.compareTo(a.date)); // 최신순 정렬
 
           int consecutiveExactDays = 0;
@@ -1124,7 +1133,7 @@ class AchievementService {
   // 통계 기반 업적 체크
   static Future<int> _checkStatisticsAchievements(
     Achievement achievement,
-    List<WorkoutHistory> workouts,
+    List<dynamic> workouts,
   ) async {
     if (workouts.isEmpty) return 0;
 
@@ -1147,12 +1156,9 @@ class AchievementService {
       case 'total_workout_time_300':
       case 'total_workout_time_600':
       case 'total_workout_time_1200':
-        final totalMinutes = workouts.fold<int>(
-          0,
-          (sum, workout) => sum + workout.duration.inMinutes,
-        );
-        debugPrint('총 운동 시간: $totalMinutes분');
-        return totalMinutes;
+        // DreamFlow - 자각몽 앱에서는 사용하지 않음
+        debugPrint('총 운동 시간: 0분 (자각몽 앱에서는 사용하지 않음)');
+        return 0;
 
       // 주간 운동 횟수 (최근 7일)
       case 'weekly_sessions_5':
@@ -1380,11 +1386,16 @@ class AchievementService {
     try {
       debugPrint('🔄 업적 진행도 동기화 시작');
 
-      final workouts = await WorkoutHistoryService.getAllWorkouts();
-      final statistics = await WorkoutHistoryService.getStatistics();
-      final consecutiveWeeks = await WorkoutHistoryService.getConsecutiveWeeksCompleted();
+      // DreamFlow - Workout/Chad 제거됨 (아카이브)
+      // 자각몽 앱에서는 사용하지 않음
+      // final workouts = await WorkoutHistoryService.getAllWorkouts();
+      // final statistics = await WorkoutHistoryService.getStatistics();
+      // final consecutiveWeeks = await WorkoutHistoryService.getConsecutiveWeeksCompleted();
+      final workouts = <dynamic>[]; // 빈 리스트로 대체 (workout_history 모델 제거됨)
+      final statistics = <String, dynamic>{'totalReps': 0};
+      final consecutiveWeeks = 0;
 
-      debugPrint('📊 기준 데이터: 운동 ${workouts.length}회, 연속 완료 주차 $consecutiveWeeks주');
+      debugPrint('📊 기준 데이터: 운동 ${workouts.length}회, 연속 완료 주차 $consecutiveWeeks주 (자각몽 앱에서는 사용하지 않음)');
 
       // 모든 업적의 진행도를 다시 계산
       for (final achievement in PredefinedAchievements.all) {

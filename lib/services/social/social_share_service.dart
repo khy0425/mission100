@@ -12,26 +12,26 @@ import '../../generated/l10n/app_localizations.dart';
 import '../../models/user_profile.dart';
 
 class SocialShareService {
-  /// 앱 이름 가져오기 (다국어 지원)
+  /// 앱 이름 가져오기
   static String _getAppName(AppLocalizations l10n) {
-    return 'Mission: 100'; // 앱 이름은 동일
+    return 'DreamFlow';
   }
 
   /// 다운로드 메시지 가져오기 (다국어 지원)
   static String _getDownloadMessage(AppLocalizations l10n) {
     final locale = l10n.localeName;
     if (locale == 'ko') {
-      return '💀 너도 차드가 되고 싶다면? Mission: 100 앱 다운로드해라! 약자는 도망가라! 💀';
+      return '🌙 너도 자각몽 마스터가 되고 싶다면? DreamFlow 앱 다운로드! 🌙';
     } else {
-      return '💀 Want to become a CHAD too? Download Mission: 100 app! WEAKLINGS RUN AWAY! 💀';
+      return '🌙 Want to master lucid dreaming too? Download DreamFlow app! 🌙';
     }
   }
 
-  /// 일일 운동 공유 메시지 가져오기 (다국어 지원)
+  /// 일일 연습 공유 메시지 가져오기 (다국어 지원)
   static String _getDailyWorkoutMessage(
     AppLocalizations l10n,
     int currentDay,
-    int pushupCount,
+    int practiceCount,
     String levelName,
   ) {
     final locale = l10n.localeName;
@@ -39,32 +39,32 @@ class SocialShareService {
 
     if (locale == 'ko') {
       return '''
-🔥💀 또 하나의 전설이 탄생했다! 💀🔥
+🌙✨ 오늘의 자각몽 훈련 완료! ✨🌙
 
-⚡ Day $currentDay - 차드의 정복은 멈추지 않는다!
-💪 푸시업: $pushupCount개 (평범한 인간들은 따라올 수 없다, 만삣삐!)
+⚡ Day $currentDay - 꾸준한 연습이 자각몽을 만든다!
+💫 완료한 연습: $practiceCount개
 👑 현재 레벨: $levelName
 
-매일매일 더 강해지는 ALPHA EMPEROR! 💥
-약자들은 이미 무릎꿇었다! 😎
+매일매일 꿈의 세계를 탐험하는 중! 🌟
+Lumi와 함께 성장하고 있어요! 😊
 
 $downloadMessage
 
-#Mission100 #차드일기 #푸시업마스터 #인간초월 #만삣삐 #ALPHAEMPEROR''';
+#DreamFlow #자각몽 #LucidDream #꿈일기 #Lumi''';
     } else {
       return '''
-🔥💀 ANOTHER LEGEND IS BORN! 💀🔥
+🌙✨ Today's Lucid Dream Training Complete! ✨🌙
 
-⚡ Day $currentDay - THE CHAD CONQUEST NEVER STOPS!
-💪 Push-ups: $pushupCount reps (ORDINARY HUMANS CAN'T FOLLOW!)
+⚡ Day $currentDay - Consistent practice makes lucid dreams!
+💫 Practices Completed: $practiceCount
 👑 Current Level: $levelName
 
-GETTING STRONGER EVERY DAY AS AN ALPHA EMPEROR! 💥
-WEAKLINGS ALREADY KNEELED DOWN! 😎
+Exploring the dream world every day! 🌟
+Growing with Lumi! 😊
 
 $downloadMessage
 
-#Mission100 #ChadDiary #PushupMaster #BeyondHuman #ALPHAEMPEROR''';
+#DreamFlow #LucidDream #DreamJournal #Lumi''';
     }
   }
 
@@ -73,7 +73,7 @@ $downloadMessage
     AppLocalizations l10n,
     UserLevel newLevel,
     int totalDays,
-    int totalPushups,
+    int totalPractices,
   ) {
     final locale = l10n.localeName;
     final levelName = _getLevelName(newLevel, l10n);
@@ -82,30 +82,32 @@ $downloadMessage
 
     if (locale == 'ko') {
       return '''
-$levelEmoji💥 LEVEL UP! 또 하나의 한계를 박살냈다! 💥$levelEmoji
+$levelEmoji🎉 레벨 업! 새로운 단계에 도달했어요! 🎉$levelEmoji
 
 🎉 새로운 레벨: $levelName
-📅 총 정복일: $totalDays일
-💪 총 파워: $totalPushups개
+📅 총 훈련일: $totalDays일
+💫 총 연습: $totalPractices회
 
-차드의 여정은 계속된다! 약자들은 도망가라! 💪
+자각몽 마스터의 길을 걷고 있어요! 💪
+Lumi도 함께 성장 중! 🌙
 
 $downloadMessage
 
-#Mission100 #레벨업 #푸시업마스터 #차드 #만삣삐''';
+#DreamFlow #레벨업 #자각몽 #꿈일기''';
     } else {
       return '''
-$levelEmoji💥 LEVEL UP! ANOTHER LIMIT DESTROYED! 💥$levelEmoji
+$levelEmoji🎉 LEVEL UP! Reached a new stage! 🎉$levelEmoji
 
 🎉 New Level: $levelName
-📅 Total Conquest Days: $totalDays days
-💪 Total Power: $totalPushups reps
+📅 Total Training Days: $totalDays days
+💫 Total Practices: $totalPractices
 
-THE CHAD JOURNEY CONTINUES! WEAKLINGS RUN AWAY! 💪
+Walking the path to lucid dream mastery! 💪
+Lumi is growing together! 🌙
 
 $downloadMessage
 
-#Mission100 #LevelUp #PushupMaster #Chad #ALPHAEMPEROR''';
+#DreamFlow #LevelUp #LucidDream #DreamJournal''';
     }
   }
 
@@ -121,30 +123,32 @@ $downloadMessage
 
     if (locale == 'ko') {
       return '''
-🏆💀 업적 달성! 또 하나의 신화가 탄생했다! 💀🏆
+🏆✨ 업적 달성! ✨🏆
 
 ✨ $achievementTitle
 📝 $achievementDescription
 🎯 획득 XP: $xpReward점
 
-한 걸음씩 ALPHA EMPEROR에 가까워지고 있다, 만삣삐! 💪
+한 걸음씩 드림 스피릿에 가까워지고 있어요! 💫
+Lumi가 축하해주고 있어요! 🌙
 
 $downloadMessage
 
-#Mission100 #업적달성 #푸시업챌린지 #차드 #만삣삐''';
+#DreamFlow #업적달성 #자각몽 #Lumi''';
     } else {
       return '''
-🏆💀 ACHIEVEMENT UNLOCKED! ANOTHER MYTH IS BORN! 💀🏆
+🏆✨ Achievement Unlocked! ✨🏆
 
 ✨ $achievementTitle
 📝 $achievementDescription
 🎯 XP Gained: $xpReward points
 
-GETTING CLOSER TO ALPHA EMPEROR STEP BY STEP! 💪
+Getting closer to Dream Spirit step by step! 💫
+Lumi is celebrating! 🌙
 
 $downloadMessage
 
-#Mission100 #AchievementUnlocked #PushupChallenge #Chad #ALPHAEMPEROR''';
+#DreamFlow #Achievement #LucidDream #Lumi''';
     }
   }
 
@@ -153,7 +157,7 @@ $downloadMessage
     AppLocalizations l10n,
     int weekNumber,
     int completedDays,
-    int totalPushups,
+    int totalPractices,
     double progressPercentage,
   ) {
     final locale = l10n.localeName;
@@ -163,40 +167,42 @@ $downloadMessage
 
     if (locale == 'ko') {
       return '''
-📊💀 $appName 주간 정복 리포트 💀📊
+📊🌙 $appName 주간 리포트 🌙📊
 
 📅 Week $weekNumber
-✅ 정복일: $completedDays일
-💪 총 파워: $totalPushups개
+✅ 훈련일: $completedDays일
+💫 총 연습: $totalPractices회
 📈 진행률: ${progressPercentage.toStringAsFixed(1)}%
 
 $progressBar
 
-꾸준함이 ALPHA EMPEROR를 만든다! 약자들은 포기해라! 🔥
+꾸준함이 자각몽을 만든다! 🌟
+Lumi와 함께 꿈의 세계를 탐험 중! 🔥
 
 $downloadMessage
 
-#Mission100 #주간리포트 #푸시업챌린지 #꾸준함 #만삣삐''';
+#DreamFlow #주간리포트 #자각몽 #꾸준함''';
     } else {
       return '''
-📊💀 $appName Weekly Conquest Report 💀📊
+📊🌙 $appName Weekly Report 🌙📊
 
 📅 Week $weekNumber
-✅ Conquest Days: $completedDays days
-💪 Total Power: $totalPushups reps
+✅ Training Days: $completedDays days
+💫 Total Practices: $totalPractices
 📈 Progress: ${progressPercentage.toStringAsFixed(1)}%
 
 $progressBar
 
-CONSISTENCY MAKES AN ALPHA EMPEROR! WEAKLINGS GIVE UP! 🔥
+Consistency makes lucid dreams! 🌟
+Exploring the dream world with Lumi! 🔥
 
 $downloadMessage
 
-#Mission100 #WeeklyReport #PushupChallenge #Consistency #ALPHAEMPEROR''';
+#DreamFlow #WeeklyReport #LucidDream #Consistency''';
     }
   }
 
-  /// 100개 달성 공유 메시지 가져오기 (다국어 지원)
+  /// 마스터 달성 공유 메시지 가져오기 (다국어 지원)
   static String _get100AchievementMessage(
     AppLocalizations l10n,
     int totalDays,
@@ -207,42 +213,42 @@ $downloadMessage
 
     if (locale == 'ko') {
       return '''
-🎉👑💀 기가차드 완성! 인간 초월 달성! ALPHA EMPEROR 등극! 💀👑🎉
+🎉👑✨ 드림 스피릿 달성! 자각몽 마스터! ✨👑🎉
 
-💪 푸시업 100개 연속 - 불가능을 가능으로! 💪
+🌙 자각몽 훈련 완료 - 꿈의 세계를 정복! 🌙
 
-📅 총 소요일: $duration일 (인간의 한계를 뛰어넘었다, 만삣삐!)
-🏆 완료 세션: $totalDays회 (포기란 없었다!)
-🔥 진정한 기가차드 등극! 🔥
+📅 총 소요일: $duration일
+🏆 완료 세션: $totalDays회
+🔥 진정한 드림 스피릿 등극! 🔥
 
-베이비차드에서 시작해서...
-진짜 ALPHA EMPEROR가 되었다! 💀
+꿈 씨앗에서 시작해서...
+진짜 드림 스피릿이 되었어요! 💫
 
-이제 평범한 인간들과는 다른 존재다.
-너도 이 경지에 도달할 수 있을까? 😏
+이제 꿈 속에서 무엇이든 할 수 있어요.
+너도 이 경지에 도달할 수 있을까? 🌙
 
 $downloadMessage
 
-#Mission100 #기가차드완성 #인간초월 #100개달성 #차드의전설 #불가능은없다 #만삣삐 #ALPHAEMPEROR''';
+#DreamFlow #드림스피릿 #자각몽마스터 #완료 #꿈의전설''';
     } else {
       return '''
-🎉👑💀 GIGA CHAD COMPLETE! HUMAN TRANSCENDENCE ACHIEVED! ALPHA EMPEROR ASCENSION! 💀👑🎉
+🎉👑✨ DREAM SPIRIT ACHIEVED! LUCID DREAM MASTER! ✨👑🎉
 
-💪 100 Push-ups Consecutive - IMPOSSIBLE MADE POSSIBLE! 💪
+🌙 Lucid Dream Training Complete - Conquered the Dream World! 🌙
 
-📅 Total Duration: $duration days (BEYOND HUMAN LIMITS!)
-🏆 Completed Sessions: $totalDays times (NO GIVING UP!)
-🔥 TRUE GIGA CHAD ASCENSION! 🔥
+📅 Total Duration: $duration days
+🏆 Completed Sessions: $totalDays times
+🔥 TRUE DREAM SPIRIT ASCENSION! 🔥
 
-Started as a baby chad...
-Now became a REAL ALPHA EMPEROR! 💀
+Started as a dream seed...
+Now became a real Dream Spirit! 💫
 
-Now a different existence from ordinary humans.
-Can you reach this level too? 😏
+Now you can do anything in your dreams.
+Can you reach this level too? 🌙
 
 $downloadMessage
 
-#Mission100 #GigaChadComplete #HumanTranscendence #100Achievement #ChadLegend #ImpossibleIsNothing #ALPHAEMPEROR''';
+#DreamFlow #DreamSpirit #LucidDreamMaster #Complete #DreamLegend''';
     }
   }
 
@@ -256,42 +262,36 @@ $downloadMessage
 
     if (locale == 'ko') {
       return '''
-🔥💪💀 차드 도전장 발송! 약자는 도망가라! 💀💪🔥
+🌙💫 자각몽 도전장! 함께 꿈의 세계를 탐험해요! 💫🌙
 
-${userName.isNotEmpty ? userName : '진정한 ALPHA EMPEROR'}가 너에게 도전장을 던진다!
+${userName.isNotEmpty ? userName : '드림 스피릿'}이(가) 너에게 도전장을 보냈어요!
 
-⚡ 미션: 14주 만에 푸시업 100개 연속 달성
-🎯 목표: 베이비차드 → 기가차드 진화
-💀 각오: 포기는 없다. 오직 차드만이 살아남는다, 만삣삐!
+⚡ 미션: 60일 만에 자각몽 마스터 달성
+🎯 목표: 꿈 씨앗 → 드림 스피릿 진화
+💫 각오: 매일 꾸준히 연습하면 누구나 가능해요!
 
-너도 차드가 될 수 있다고 생각하나? 🤔
-아니면 그냥 평범한 약자로 살 건가? 😏
-
-진짜 차드라면 지금 당장 도전하라! 💥
-약자들은 이미 도망갔다!
+자각몽의 세계에 함께 도전해볼래요? 🌙
+Lumi가 기다리고 있어요! ✨
 
 $downloadMessage
 
-#Mission100 #차드도전장 #푸시업챌린지 #차드vs약자 #너도차드될수있어 #만삣삐''';
+#DreamFlow #자각몽도전 #함께해요 #꿈탐험''';
     } else {
       return '''
-🔥💪💀 CHAD CHALLENGE SENT! WEAKLINGS RUN AWAY! 💀💪🔥
+🌙💫 Lucid Dream Challenge! Let's explore the dream world together! 💫🌙
 
-${userName.isNotEmpty ? userName : 'A TRUE ALPHA EMPEROR'} throws down the gauntlet to you!
+${userName.isNotEmpty ? userName : 'A Dream Spirit'} sends you a challenge!
 
-⚡ Mission: Achieve 100 consecutive push-ups in 14 weeks
-🎯 Goal: Baby Chad → Giga Chad Evolution
-💀 Resolve: No giving up. Only CHADs survive!
+⚡ Mission: Master lucid dreaming in 60 days
+🎯 Goal: Dream Seed → Dream Spirit Evolution
+💫 Resolve: Anyone can do it with daily practice!
 
-Do you think you can become a CHAD? 🤔
-Or will you just live as an ordinary weakling? 😏
-
-If you're a real CHAD, challenge yourself right now! 💥
-Weaklings already ran away!
+Want to take on the lucid dream challenge together? 🌙
+Lumi is waiting! ✨
 
 $downloadMessage
 
-#Mission100 #ChadChallenge #PushupChallenge #ChadVsWeaklings #YouCanBecomeChad #ALPHAEMPEROR''';
+#DreamFlow #LucidDreamChallenge #Together #DreamExploration''';
     }
   }
 
@@ -305,28 +305,30 @@ $downloadMessage
 
     if (locale == 'ko') {
       return '''
-💪💀 오늘의 ALPHA EMPEROR 동기부여 💀💪
+💫🌙 오늘의 자각몽 동기부여 🌙💫
 
 "$motivationMessage"
 
-작은 시작? 틀렸다! 이미 전설의 시작이다, 만삣삐!
-오늘도 한 걸음씩 ALPHA EMPEROR에 가까워져라! 🔥
+작은 시작이 큰 변화를 만들어요!
+오늘도 꿈의 세계로 한 걸음! 🌟
+Lumi가 응원하고 있어요! ✨
 
 $downloadMessage
 
-#Mission100 #동기부여 #푸시업챌린지 #오늘도화이팅 #만삣삐''';
+#DreamFlow #동기부여 #자각몽 #오늘도화이팅''';
     } else {
       return '''
-💪💀 Today's ALPHA EMPEROR Motivation 💀💪
+💫🌙 Today's Lucid Dream Motivation 🌙💫
 
 "$motivationMessage"
 
-Small beginnings? Wrong! This is already the start of a legend!
-Getting closer to becoming an ALPHA EMPEROR step by step today too! 🔥
+Small beginnings make big changes!
+One step closer to the dream world today! 🌟
+Lumi is cheering you on! ✨
 
 $downloadMessage
 
-#Mission100 #Motivation #PushupChallenge #KeepGoing #ALPHAEMPEROR''';
+#DreamFlow #Motivation #LucidDream #KeepGoing''';
     }
   }
 
@@ -342,45 +344,45 @@ $downloadMessage
     if (locale == 'ko') {
       switch (type) {
         case 'daily':
-          return '$appName - 💀 Day $extra 차드 인증! 약자는 도망가라! 💀';
+          return '$appName - 🌙 Day $extra 자각몽 훈련 완료! 🌙';
         case 'levelup':
-          return '$appName - 💥 $extra 레벨 달성! 또 하나의 한계 박살! 💥';
+          return '$appName - 🎉 $extra 레벨 달성! 🎉';
         case 'achievement':
-          return '$appName - 🏆💀 업적 달성! 신화 탄생! 💀🏆';
+          return '$appName - 🏆✨ 업적 달성! ✨🏆';
         case 'weekly':
-          return '$appName - 📊💀 Week $extra 정복 리포트 💀📊';
+          return '$appName - 📊 Week $extra 리포트 📊';
         case '100achievement':
-          return '$appName - 🎉👑💀 기가차드 완성! 인간 초월! ALPHA EMPEROR 등극! 💀👑🎉';
+          return '$appName - 🎉👑 드림 스피릿 달성! 👑🎉';
         case 'challenge':
-          return '$appName - 🔥💀 차드 도전장 발송! 약자는 도망가라! 💀🔥';
+          return '$appName - 🌙💫 자각몽 도전장! 💫🌙';
         case 'motivation':
-          return '$appName - 💪💀 오늘의 ALPHA EMPEROR 동기부여 💀💪';
+          return '$appName - 💫🌙 오늘의 동기부여 🌙💫';
         default:
           return appName;
       }
     } else {
       switch (type) {
         case 'daily':
-          return '$appName - 💀 Day $extra CHAD Certification! WEAKLINGS RUN AWAY! 💀';
+          return '$appName - 🌙 Day $extra Lucid Dream Training Complete! 🌙';
         case 'levelup':
-          return '$appName - 💥 $extra Level Achieved! ANOTHER LIMIT DESTROYED! 💥';
+          return '$appName - 🎉 $extra Level Achieved! 🎉';
         case 'achievement':
-          return '$appName - 🏆💀 Achievement Unlocked! MYTH BORN! 💀🏆';
+          return '$appName - 🏆✨ Achievement Unlocked! ✨🏆';
         case 'weekly':
-          return '$appName - 📊💀 Week $extra Conquest Report 💀📊';
+          return '$appName - 📊 Week $extra Report 📊';
         case '100achievement':
-          return '$appName - 🎉👑💀 GIGA CHAD COMPLETE! HUMAN TRANSCENDENCE! ALPHA EMPEROR ASCENSION! 💀👑🎉';
+          return '$appName - 🎉👑 Dream Spirit Achieved! 👑🎉';
         case 'challenge':
-          return '$appName - 🔥💀 CHAD CHALLENGE SENT! WEAKLINGS RUN AWAY! 💀🔥';
+          return '$appName - 🌙💫 Lucid Dream Challenge! 💫🌙';
         case 'motivation':
-          return '$appName - 💪💀 Today\'s ALPHA EMPEROR Motivation 💀💪';
+          return '$appName - 💫🌙 Today\'s Motivation 🌙💫';
         default:
           return appName;
       }
     }
   }
 
-  /// 일일 운동 기록 공유
+  /// 일일 연습 기록 공유
   static Future<void> shareDailyWorkout({
     required BuildContext context,
     required int pushupCount,
@@ -403,7 +405,7 @@ $downloadMessage
         subject: _getShareSubject(l10n, 'daily', extra: currentDay.toString()),
       );
     } catch (e) {
-      debugPrint('일일 운동 기록 공유 오류: $e');
+      debugPrint('일일 연습 기록 공유 오류: $e');
     }
   }
 
@@ -488,7 +490,7 @@ $downloadMessage
     }
   }
 
-  /// 100개 달성 공유
+  /// 마스터 달성 공유
   static Future<void> share100Achievement({
     required BuildContext context,
     required int totalDays,
@@ -505,7 +507,7 @@ $downloadMessage
         subject: _getShareSubject(l10n, '100achievement'),
       );
     } catch (e) {
-      debugPrint('100개 달성 공유 오류: $e');
+      debugPrint('마스터 달성 공유 오류: $e');
     }
   }
 
@@ -560,7 +562,7 @@ $downloadMessage
 
       // 임시 파일로 저장
       final tempDir = await getTemporaryDirectory();
-      final file = await File('${tempDir.path}/mission100_share.png').create();
+      final file = await File('${tempDir.path}/dreamflow_share.png').create();
       await file.writeAsBytes(pngBytes);
 
       // 이미지와 텍스트 함께 공유
@@ -596,9 +598,9 @@ $downloadMessage
       case UserLevel.rookie:
         return '🌱';
       case UserLevel.rising:
-        return '🔥';
+        return '🌙';
       case UserLevel.alpha:
-        return '⚡';
+        return '⭐';
       case UserLevel.giga:
         return '👑';
     }

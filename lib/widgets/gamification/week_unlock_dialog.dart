@@ -213,18 +213,18 @@ class WeekUnlockDialog extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(
+              Icon(
                 Icons.science,
                 color: Color(AppColors.primaryColor),
                 size: 20,
               ),
-              const SizedBox(width: 8),
+              SizedBox(width: 8),
               Text(
-                l10n.weekUnlockResearchLabel,
-                style: const TextStyle(
+                '연구 결과',
+                style: TextStyle(
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                   color: Color(AppColors.primaryColor),
@@ -233,18 +233,18 @@ class WeekUnlockDialog extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 8),
-          Text(
-            l10n.weekUnlockWbtbMildTechnique,
-            style: const TextStyle(
+          const Text(
+            'WBTB + MILD 기법',
+            style: TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
               color: Color(AppColors.primaryColor),
             ),
           ),
           const SizedBox(height: 4),
-          Text(
-            l10n.weekUnlockSuccessRate,
-            style: const TextStyle(
+          const Text(
+            '46% 성공률',
+            style: TextStyle(
               fontSize: 28,
               fontWeight: FontWeight.bold,
               color: Color(AppColors.accentColor),

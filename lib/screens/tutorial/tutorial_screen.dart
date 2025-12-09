@@ -200,7 +200,7 @@ class _TutorialScreenState extends State<TutorialScreen> {
           ),
           const SizedBox(height: AppConstants.paddingL),
           Text(
-            'Lucid Dream 100',
+            'DreamFlow',
             style: theme.textTheme.displaySmall?.copyWith(
               fontWeight: FontWeight.bold,
               color: const Color(AppColors.primaryColor),

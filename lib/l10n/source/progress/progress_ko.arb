@@ -226,5 +226,29 @@
   "progressRequirementWeek5": "5주차 완료",
   "progressRequirementWeek6": "6주차 완료",
   "progressScoreUnit": "{score} 점",
-  "progressTooltipWeekComplete": "{week}주차: {completionRate}% 완료\\n{completedSessions}/{totalSessions} 세션"
+  "progressTooltipWeekComplete": "{week}주차: {completionRate}% 완료\\n{completedSessions}/{totalSessions} 세션",
+  "@dreamJournalStatistics": {
+    "description": "Dream journal statistics title"
+  },
+  "dreamJournalStatistics": "꿈 일기 통계",
+  "@totalDreams": {
+    "description": "Total dreams count label"
+  },
+  "totalDreams": "총 꿈",
+  "@lucidDreams": {
+    "description": "Lucid dreams count label"
+  },
+  "lucidDreams": "자각몽",
+  "@thisMonth": {
+    "description": "This month label"
+  },
+  "thisMonth": "이번 달",
+  "@dreamEntry": {
+    "description": "Dream entry label for calendar legend"
+  },
+  "dreamEntry": "꿈 기록",
+  "@lucidDream": {
+    "description": "Lucid dream label for calendar legend"
+  },
+  "lucidDream": "자각몽"
 }

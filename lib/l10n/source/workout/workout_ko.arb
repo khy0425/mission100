@@ -276,7 +276,7 @@
     "description": "최소 하루 쉬는 날 필요 메시지"
   },
   "@mission100Settings": {
-    "description": "Lucid Dream 100 설정 제목"
+    "description": "DreamFlow 설정 제목"
   },
   "@mondayShort": {
     "description": "Monday short form"
@@ -1067,7 +1067,7 @@
   "confirmDataReset": "데이터 초기화 확인",
   "consecutiveDays": "연속 일수",
   "consecutiveWorkoutBlocked": "STOP! 연속 연습 금지!",
-  "consecutiveWorkoutMessage": "야야야! 어제 운동했잖아! 🔥\n\n지금 뭘 하려는거야? 연속 연습이야?\n진짜 강자라면 쉴 때 확실히 쉬는 거다!\n\n💀 과도한 연습은 노답이야!\n😎 오늘은 쿨하게 쉬고 내일 다시 가자! 💪",
+  "consecutiveWorkoutMessage": "야야야! 어제 운동했잖아! 🔥\n\n지금 뭘 하려는거야? 연속 연습이야?\n충분한 휴식도 중요해요!\n\n💀 과도한 연습은 노답이야!\n😎 오늘은 쿨하게 쉬고 내일 다시 가자! 💪",
   "customWorkoutDays": "연습일 설정",
   "customWorkoutDaysDesc": "원하는 요일에 자각몽 연습하도록 설정해",
   "dailyNotificationSet": "매일 {time} 자각몽 연습 알림 설정 완료! 💪",
@@ -1114,7 +1114,7 @@
   "manageAppSettings": "앱 설정을 관리해",
   "maxSixDaysWorkout": "최대 6일까지만 자각몽 연습할 수 있다 (하루는 쉬어야 함)",
   "minOneDayRest": "최소 하루는 쉬는 날이 있어야 한다",
-  "mission100Settings": "Lucid Dream 100 설정",
+  "mission100Settings": "DreamFlow 설정",
   "mondayFull": "월요일",
   "mondayShort": "월",
   "nextSetButton": "굿 잡! 우주 정복 완료!",
@@ -1160,7 +1160,7 @@
   "restMessage": "쉬는 것도 성장이야. 다음은 더 강력하게 가자, 만삣삐 🦍",
   "restTimeDesc": "세트 간 휴식 시간 설정",
   "restTimeSettings": "휴식 시간 설정",
-  "restTimeTitle": "강자들의 재충전 타임, 만삣삐 ⚡",
+  "restTimeTitle": "재충전 타임, 만삣삐 ⚡",
   "restoreBackup": "백업 복원",
   "restoreBackupData": "백업된 데이터를 복원한다",
   "restoreErrorOccurred": "복원 중 오류가 발생했다: {error}",
@@ -1226,7 +1226,7 @@
   "totalCompletedReps": "총 완료 횟수: {reps}회",
   "totalRepsFormat": "{totalReps}개",
   "totalWorkouts": "총 자각몽 연습 횟수",
-  "trueChadMindset": "진정한 드림 스피릿가 되는 마인드셋",
+  "trueChadMindset": "진정한 자각몽 마스터가 되는 마인드셋",
   "tuesdayFull": "화요일",
   "tuesdayShort": "화",
   "vibrationSettings": "진동 설정",
@@ -1272,7 +1272,7 @@
   "workoutCompleteTitle": "🔥 굿 잡, 만삣삐! 야수 모드 완료! 👑",
   "workoutCompleted": "완료",
   "workoutCompletionChannelDescription": "자각몽 연습 완료 축하 알림",
-  "workoutCompletionMessage": "목표의 {percentage}% 파괴! 강자의 길을 걷고 있다! KEEP GRINDING! 🔥💪",
+  "workoutCompletionMessage": "목표의 {percentage}% 파괴! 성장의 길을 걷고 있어요! KEEP GRINDING! 🔥💪",
   "workoutCount": "{count}회",
   "workoutDate": "{month}월 {day}일 자각몽 연습",
   "workoutDayNotification": "연습일 전용 알림",
@@ -1435,5 +1435,63 @@
   "taskMeditationDesc": "10분 이상 마음챙김 명상으로 자각 능력을 키우세요. 자각몽에 큰 도움이 됩니다.",
   "@taskMeditationDesc": {
     "description": "Meditation task description"
-  }
+  },
+  "@checklistDayHeader": {
+    "description": "Checklist day header",
+    "placeholders": {
+      "day": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistDayHeader": "Day {day} 체크리스트",
+  "@taskOptional": {
+    "description": "Optional task label"
+  },
+  "taskOptional": "(선택)",
+  "@taskDreamJournal": {
+    "description": "Dream journal task"
+  },
+  "taskDreamJournal": "꿈 일기 작성",
+  "@taskRealityCheck": {
+    "description": "Reality check task"
+  },
+  "taskRealityCheck": "현실 확인 (하루 5회 이상)",
+  "@taskMildAffirmation": {
+    "description": "MILD affirmation task"
+  },
+  "taskMildAffirmation": "MILD 확언 (잠들기 전)",
+  "@taskSleepHygiene": {
+    "description": "Sleep hygiene task"
+  },
+  "taskSleepHygiene": "수면 위생 (선택)",
+  "@taskWbtb": {
+    "description": "WBTB task"
+  },
+  "taskWbtb": "WBTB (선택)",
+  "@taskMeditation": {
+    "description": "Meditation task"
+  },
+  "taskMeditation": "명상 (선택)",
+  "@checklistProgressLabel": {
+    "description": "Checklist progress label"
+  },
+  "checklistProgressLabel": "진행 상황",
+  "@checklistCompletedReward": {
+    "description": "Checklist completed reward message"
+  },
+  "checklistCompletedReward": "완료! 토큰을 획득했습니다",
+  "@programCompleted": {
+    "description": "Program completed message"
+  },
+  "programCompleted": "프로그램 완료",
+  "@checklistCompletionXP": {
+    "description": "Checklist completion XP message",
+    "placeholders": {
+      "xp": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistCompletionXP": "경험치 +{xp} 획득!"
 }

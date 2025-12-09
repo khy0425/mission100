@@ -5,6 +5,7 @@ import '../../models/user_subscription.dart';
 import '../../widgets/dialogs/vip_welcome_dialog.dart';
 import '../data/cloud_sync_service.dart';
 import '../core/deep_link_handler.dart';
+import '../payment/billing_service.dart';
 
 class AuthResult {
   final bool success;
@@ -74,15 +75,173 @@ class AuthService extends ChangeNotifier {
         notifyListeners();
       });
 
-      // 현재 사용자 확인
+      // 현재 사용자 확인 - 없으면 자동으로 익명 로그인
       _currentUser = _auth!.currentUser;
+      debugPrint('🔍 현재 사용자 확인: ${_currentUser?.uid ?? "null"}');
       if (_currentUser != null) {
         await _loadUserSubscription(_currentUser!.uid);
+        debugPrint('✅ 기존 사용자 확인: ${_currentUser!.uid}');
+      } else {
+        debugPrint('🔄 익명 로그인 호출 시작');
+        // 자동 익명 로그인
+        await _signInAnonymouslyIfNeeded();
+        debugPrint('🔄 익명 로그인 호출 완료');
       }
 
       debugPrint('✅ AuthService 초기화 완료');
     } catch (e) {
       debugPrint('❌ AuthService 초기화 오류: $e');
+    }
+  }
+
+  // 익명 로그인 (자동)
+  Future<void> _signInAnonymouslyIfNeeded() async {
+    if (_auth == null) return;
+    if (_currentUser != null) return; // 이미 로그인된 경우 스킵
+
+    try {
+      debugPrint('👤 익명 로그인 시작 (자동)');
+
+      final credential = await _auth!.signInAnonymously();
+      _currentUser = credential.user;
+
+      if (_currentUser != null) {
+        debugPrint('✅ 익명 로그인 완료: ${_currentUser!.uid}');
+
+        // 무료 구독 생성
+        await _createFreeSubscription(_currentUser!.uid);
+
+        // Firestore에 익명 사용자 프로필 생성
+        await _createUserProfile(_currentUser!, 'Anonymous User');
+      }
+    } catch (e) {
+      debugPrint('❌ 익명 로그인 오류: $e');
+    }
+  }
+
+  // 익명 계정을 이메일 계정으로 업그레이드
+  Future<AuthResult> upgradeAnonymousAccount({
+    required String email,
+    required String password,
+    required String displayName,
+  }) async {
+    if (_auth == null) {
+      return AuthResult.failure('Firebase not initialized - offline mode');
+    }
+
+    if (_currentUser == null || !_currentUser!.isAnonymous) {
+      return AuthResult.failure('익명 계정이 아닙니다.');
+    }
+
+    _setLoading(true);
+
+    try {
+      debugPrint('🔄 익명 계정 업그레이드 시도: $email');
+
+      final credential = EmailAuthProvider.credential(
+        email: email,
+        password: password,
+      );
+
+      // 익명 계정을 이메일 계정으로 연결
+      final userCredential = await _currentUser!.linkWithCredential(credential);
+
+      if (userCredential.user != null) {
+        // 사용자 프로필 업데이트
+        await userCredential.user!.updateDisplayName(displayName);
+        await userCredential.user!.reload();
+        _currentUser = _auth!.currentUser;
+
+        // Firestore 프로필 업데이트
+        await _createUserProfile(userCredential.user!, displayName);
+
+        debugPrint('✅ 익명 계정 업그레이드 성공');
+        return AuthResult.success(userCredential.user!);
+      } else {
+        return AuthResult.failure('계정 업그레이드에 실패했습니다.');
+      }
+    } on FirebaseAuthException catch (e) {
+      final String message = _getErrorMessage(e.code);
+      debugPrint('❌ 계정 업그레이드 오류: ${e.code} - $message');
+      return AuthResult.failure(message);
+    } catch (e) {
+      debugPrint('❌ 계정 업그레이드 오류: $e');
+      return AuthResult.failure('계정 업그레이드 중 오류가 발생했습니다.');
+    } finally {
+      _setLoading(false);
+    }
+  }
+
+  // 익명 사용자 여부 확인
+  bool get isAnonymous => _currentUser?.isAnonymous ?? false;
+
+  // 익명 계정을 구글 계정으로 연동
+  Future<AuthResult> linkAnonymousWithGoogle() async {
+    if (_auth == null) {
+      return AuthResult.failure('Firebase not initialized - offline mode');
+    }
+
+    if (_currentUser == null || !_currentUser!.isAnonymous) {
+      return AuthResult.failure('익명 계정이 아닙니다.');
+    }
+
+    _setLoading(true);
+
+    try {
+      debugPrint('🔄 익명 계정 → 구글 계정 연동 시도');
+
+      // Google 로그인
+      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      if (googleUser == null) {
+        debugPrint('Google 로그인 취소됨');
+        return AuthResult.failure('로그인이 취소되었습니다.');
+      }
+
+      final GoogleSignInAuthentication googleAuth =
+          await googleUser.authentication;
+
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth.accessToken,
+        idToken: googleAuth.idToken,
+      );
+
+      // 익명 계정을 구글 계정으로 연결 (기존 UID 유지!)
+      final userCredential = await _currentUser!.linkWithCredential(credential);
+
+      if (userCredential.user != null) {
+        await userCredential.user!.reload();
+        _currentUser = _auth!.currentUser;
+
+        // Firestore 프로필 업데이트 (기존 데이터 유지, UID 동일)
+        await _createUserProfile(
+          userCredential.user!,
+          userCredential.user!.displayName ?? 'Google User',
+        );
+
+        debugPrint('✅ 익명 계정 → 구글 계정 연동 성공 (UID 유지: ${_currentUser!.uid})');
+        debugPrint('💾 기존 구독 정보와 토큰이 모두 유지됩니다!');
+
+        return AuthResult.success(userCredential.user!);
+      } else {
+        return AuthResult.failure('계정 연동에 실패했습니다.');
+      }
+    } on FirebaseAuthException catch (e) {
+      String message = _getErrorMessage(e.code);
+
+      // 이미 사용 중인 구글 계정인 경우 특별 처리
+      if (e.code == 'credential-already-in-use') {
+        message = '이미 다른 계정에 연결된 구글 계정입니다.\n다른 구글 계정을 사용해주세요.';
+      } else if (e.code == 'provider-already-linked') {
+        message = '이미 구글 계정이 연결되어 있습니다.';
+      }
+
+      debugPrint('❌ 계정 연동 오류: ${e.code} - $message');
+      return AuthResult.failure(message);
+    } catch (e) {
+      debugPrint('❌ 계정 연동 오류: $e');
+      return AuthResult.failure('계정 연동 중 오류가 발생했습니다.');
+    } finally {
+      _setLoading(false);
     }
   }
 
@@ -112,8 +271,8 @@ class AuthService extends ChangeNotifier {
         await credential.user!.reload();
         _currentUser = _auth!.currentUser;
 
-        // 런칭 이벤트 구독 생성
-        await _createLaunchPromoSubscription(credential.user!.uid);
+        // 무료 구독 생성
+        await _createFreeSubscription(credential.user!.uid);
 
         // Firestore에 사용자 프로필 생성
         await _createUserProfile(credential.user!, displayName);
@@ -204,9 +363,9 @@ class AuthService extends ChangeNotifier {
       final userCredential = await _auth!.signInWithCredential(credential);
 
       if (userCredential.user != null) {
-        // 신규 사용자인 경우 런칭 이벤트 구독 생성 및 프로필 생성
+        // 신규 사용자인 경우 무료 구독 생성 및 프로필 생성
         if (userCredential.additionalUserInfo?.isNewUser == true) {
-          await _createLaunchPromoSubscription(userCredential.user!.uid);
+          await _createFreeSubscription(userCredential.user!.uid);
           await _createUserProfile(userCredential.user!,
               userCredential.user!.displayName ?? 'Google User');
         }
@@ -297,10 +456,10 @@ class AuthService extends ChangeNotifier {
       // Firestore에 구독 정보가 없으면 로컬에서 시도
       subscription ??= await cloudSyncService.loadSubscriptionLocally();
 
-      // 둘 다 없으면 런칭 이벤트 구독 생성
+      // 둘 다 없으면 무료 구독 생성 (런칭 프로모션은 수동 클레임 방식)
       if (subscription == null) {
-        debugPrint('ℹ️ 구독 정보 없음 - 런칭 이벤트 구독 생성');
-        subscription = UserSubscription.createLaunchPromoSubscription(userId);
+        debugPrint('ℹ️ 구독 정보 없음 - 무료 구독 생성 (런칭 프로모션은 홈 화면에서 클레임 가능)');
+        subscription = UserSubscription.createFreeSubscription(userId);
 
         // 새로 생성한 구독 정보를 저장
         await cloudSyncService.saveSubscription(subscription);
@@ -353,13 +512,13 @@ class AuthService extends ChangeNotifier {
     }
   }
 
-  // 런칭 이벤트 구독 생성
-  Future<void> _createLaunchPromoSubscription(String userId) async {
+  // 무료 구독 생성
+  Future<void> _createFreeSubscription(String userId) async {
     try {
-      debugPrint('🎉 런칭 이벤트 구독 생성: $userId');
+      debugPrint('📦 무료 구독 생성: $userId');
 
       final subscription =
-          UserSubscription.createLaunchPromoSubscription(userId);
+          UserSubscription.createFreeSubscription(userId);
       _currentSubscription = subscription;
 
       // Firestore와 로컬에 구독 정보 저장
@@ -367,9 +526,9 @@ class AuthService extends ChangeNotifier {
       await cloudSyncService.saveSubscription(subscription);
       await cloudSyncService.saveSubscriptionLocally(subscription);
 
-      debugPrint('✅ 런칭 이벤트 구독 생성 완료');
+      debugPrint('✅ 무료 구독 생성 완료');
     } catch (e) {
-      debugPrint('❌ 런칭 이벤트 구독 생성 오류: $e');
+      debugPrint('❌ 무료 구독 생성 오류: $e');
     }
   }
 
@@ -522,20 +681,38 @@ class AuthService extends ChangeNotifier {
     try {
       debugPrint('🔄 구독 자동 갱신 확인 중...');
 
-      // TODO: Google Play Billing을 통한 실제 구독 상태 확인
-      // 현재는 임시로 false 반환 (구현 필요)
-      // 실제 구현 시:
-      // 1. BillingService를 통해 Google Play에 구독 상태 조회
-      // 2. autoRenewing 플래그 확인
-      // 3. 갱신 성공 시 true, 실패/취소 시 false 반환
+      // Google Play Billing을 통한 실제 구독 상태 확인
+      final billingService = BillingService();
 
-      debugPrint('⚠️ 자동 갱신 확인은 Google Play Billing 연동 후 구현 예정');
-      return false; // 임시로 false 반환
+      // BillingService 초기화 확인
+      if (!billingService.isInitialized) {
+        debugPrint('⚠️ BillingService가 초기화되지 않음');
+        return false;
+      }
 
-      // 실제 구현 예시:
-      // final billingService = BillingService();
-      // final isActive = await billingService.isSubscriptionActive('premium_monthly');
-      // return isActive;
+      // 1. Premium Monthly 구독 확인
+      bool isActive = await billingService.isSubscriptionActive('premium_monthly');
+      if (isActive) {
+        debugPrint('✅ Premium Monthly 구독 활성 상태');
+        return true;
+      }
+
+      // 2. Premium Yearly 구독 확인
+      isActive = await billingService.isSubscriptionActive('premium_yearly');
+      if (isActive) {
+        debugPrint('✅ Premium Yearly 구독 활성 상태');
+        return true;
+      }
+
+      // 3. Premium Lifetime 구독 확인
+      isActive = await billingService.isSubscriptionActive('premium_lifetime');
+      if (isActive) {
+        debugPrint('✅ Premium Lifetime 구독 활성 상태');
+        return true;
+      }
+
+      debugPrint('❌ 활성 구독 없음');
+      return false;
 
     } catch (e) {
       debugPrint('❌ 구독 자동 갱신 확인 오류: $e');
@@ -558,6 +735,65 @@ class AuthService extends ChangeNotifier {
         debugPrint('⚠️ 데이터 프리로드 오류: $e');
       }
     });
+  }
+
+  /// 런칭 프로모션 클레임 (2025년 12월 설치자 전용)
+  ///
+  /// 2025년 12월에 앱을 설치한 사용자만 런칭 프로모션을 받을 수 있습니다.
+  /// 무료 사용자만 클레임 가능하며, 이미 프리미엄/프로모션 구독이 있는 경우 불가합니다.
+  Future<bool> claimLaunchPromotion() async {
+    try {
+      if (_currentUser == null) {
+        debugPrint('❌ 런칭 프로모션 클레임 실패: 로그인 필요');
+        return false;
+      }
+
+      // 현재 구독 상태 확인
+      if (_currentSubscription == null) {
+        debugPrint('❌ 런칭 프로모션 클레임 실패: 구독 정보 없음');
+        return false;
+      }
+
+      // 이미 프리미엄/프로모션 구독이 있는 경우
+      if (_currentSubscription!.type != SubscriptionType.free) {
+        debugPrint('❌ 런칭 프로모션 클레임 실패: 이미 프리미엄 구독 중');
+        return false;
+      }
+
+      // 2025년 12월 설치자인지 확인 (유저 생성 날짜 기준)
+      final installDate = _currentSubscription!.startDate;
+      final year = installDate.year;
+      final month = installDate.month;
+
+      if (year != 2025 || month != 12) {
+        debugPrint('❌ 런칭 프로모션 클레임 실패: 2025년 12월 설치자만 가능 (설치일: $installDate)');
+        return false;
+      }
+
+      debugPrint('✅ 런칭 프로모션 클레임 가능 - 적용 중...');
+
+      // 런칭 프로모션 구독으로 업그레이드
+      final userId = _currentUser!.uid;
+      _currentSubscription = UserSubscription.createLaunchPromoSubscription(userId);
+
+      // 구독 정보 저장
+      final cloudSyncService = CloudSyncService();
+      await cloudSyncService.saveSubscription(_currentSubscription!);
+      await cloudSyncService.saveSubscriptionLocally(_currentSubscription!);
+
+      debugPrint('🎉 런칭 프로모션 클레임 완료!');
+      notifyListeners();
+
+      return true;
+    } catch (e) {
+      debugPrint('❌ 런칭 프로모션 클레임 오류: $e');
+      return false;
+    }
+  }
+
+  /// 런칭 프로모션 클레임 가능 여부 확인 (프로모션 종료)
+  bool get canClaimLaunchPromotion {
+    return false; // 프로모션 종료됨
   }
 
   // 편의 메서드들

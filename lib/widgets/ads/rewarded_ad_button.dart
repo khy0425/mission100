@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../../models/rewarded_ad_reward.dart';
+import '../../models/user_subscription.dart';
 import '../../services/payment/rewarded_ad_reward_service.dart';
+import '../../services/auth/auth_service.dart';
 import '../../utils/config/constants.dart';
 
 /// 리워드 광고 버튼 위젯
@@ -52,7 +54,48 @@ class _RewardedAdButtonState extends State<RewardedAdButton> {
     });
 
     final service = context.read<RewardedAdRewardService>();
+    final authService = context.read<AuthService>();
+    final subscription = authService.currentSubscription;
+    final isPremium = subscription?.type == SubscriptionType.premium ||
+        subscription?.type == SubscriptionType.launchPromo;
 
+    // 프리미엄 사용자: 광고 없이 즉시 보상
+    if (isPremium) {
+      // 바로 보상 지급 (강제 지급)
+      await service.forceGrantReward(widget.rewardType);
+
+      setState(() {
+        _isLoading = false;
+      });
+
+      // 보상 지급 완료 메시지
+      if (mounted) {
+        final l10n = AppLocalizations.of(context);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Row(
+              children: [
+                const Icon(Icons.workspace_premium, color: Colors.amber),
+                const SizedBox(width: 8),
+                Expanded(
+                  child: Text(
+                    '${l10n.rewardedAdRewardGranted(_reward.icon, _reward.title)} (프리미엄)',
+                  ),
+                ),
+              ],
+            ),
+            backgroundColor: const Color(0xFF7B2CBF),
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+
+      // 콜백 실행
+      widget.onRewardGranted();
+      return;
+    }
+
+    // 무료 사용자: 광고 시청 후 보상
     await service.watchAdAndReward(
       widget.rewardType,
       onRewardGranted: () {
@@ -100,8 +143,26 @@ class _RewardedAdButtonState extends State<RewardedAdButton> {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context);
     final service = context.watch<RewardedAdRewardService>();
+    final authService = context.watch<AuthService>();
+    final subscription = authService.currentSubscription;
+    final isPremium = subscription?.type == SubscriptionType.premium ||
+        subscription?.type == SubscriptionType.launchPromo;
 
     final canUse = service.canUseReward(widget.rewardType);
+
+    // 버튼 텍스트와 아이콘 결정
+    final buttonText = widget.customButtonText ??
+        (isPremium
+            ? '${_reward.title} 즉시 받기 ⭐'
+            : l10n.rewardedAdWatchAndGet(_reward.title));
+
+    final buttonIcon = isPremium
+        ? Icons.workspace_premium
+        : (widget.customIcon ?? Icons.play_circle_outline);
+
+    final buttonColor = isPremium
+        ? const Color(0xFF7B2CBF)
+        : (widget.buttonColor ?? const Color(AppColors.primaryColor));
 
     return ElevatedButton.icon(
       onPressed: canUse && !_isLoading ? _watchAd : null,
@@ -115,19 +176,18 @@ class _RewardedAdButtonState extends State<RewardedAdButton> {
               ),
             )
           : Icon(
-              widget.customIcon ?? Icons.play_circle_outline,
+              buttonIcon,
               color: Colors.white,
             ),
       label: Text(
-        widget.customButtonText ?? l10n.rewardedAdWatchAndGet(_reward.title),
+        buttonText,
         style: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor:
-            widget.buttonColor ?? const Color(AppColors.primaryColor),
+        backgroundColor: buttonColor,
         padding: const EdgeInsets.symmetric(
           horizontal: AppConstants.paddingL,
           vertical: AppConstants.paddingM,

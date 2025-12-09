@@ -3,3 +3,7 @@ npm-debug.log
 yarn-error.log
 *.log
 .DS_Store
+
+# 🔐 보안: Google Cloud Service Account 키 (절대 커밋 금지!)
+service-account-key.json
+*-service-account-key.json

@@ -150,7 +150,7 @@ class AchievementExpMapping {
         500 + // Special (tutorial)
         1950 + // Statistics (시간/세션)
         3750 + // Evolution (4개 진화)
-        3460 + // Week completion (14주)
+        2700 + // Week completion (9주)
         1000; // sessions_42
     // 총: 16,410 EXP
   }
@@ -360,7 +360,7 @@ class AchievementDatabase {
     AchievementInfo(
       id: 'program_complete',
       name: '프로그램 완료',
-      description: '14주 프로그램을 완료하세요',
+      description: '60일 프로그램을 완료하세요',
       expReward: AchievementExpMapping.getExpForAchievement('program_complete'),
       difficulty: AchievementDifficulty.legendary,
       category: AchievementCategory.completion,

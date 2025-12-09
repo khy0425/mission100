@@ -300,7 +300,7 @@
     "description": "Minimum one day rest required message"
   },
   "@mission100Settings": {
-    "description": "Lucid Dream 100 settings title"
+    "description": "DreamFlow settings title"
   },
   "@mondayShort": {
     "description": "Monday short form"
@@ -1163,7 +1163,7 @@
   "manageAppSettings": "Manage your app settings",
   "maxSixDaysWorkout": "Maximum 6 days workout allowed (one day must be rest)",
   "minOneDayRest": "At least one rest day is required",
-  "mission100Settings": "Lucid Dream 100 Settings",
+  "mission100Settings": "DreamFlow Settings",
   "mondayFull": "Monday",
   "mondayShort": "Mon",
   "nextSetButton": "UNIVERSE CONQUERED!",

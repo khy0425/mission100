@@ -108,43 +108,43 @@ class AppConstants {
   static const Color cardDark = Color(0xFF2C2C2C);
 }
 
-// 앱 색상 정의
+// 앱 색상 정의 - 몽환적인 연보라 테마
 class AppColors {
-  // 기본 브랜드 색상 - 자각몽 밤하늘 테마
-  static const int primaryColor = 0xFF7B68EE; // 진한 보라 (자각몽 테마)
-  static const int secondaryColor = 0xFF4A90E2; // 밝은 파랑 (꿈의 청명함)
-  static const int accentColor = 0xFFFFD700; // 금빛 (별/달빛)
+  // 기본 브랜드 색상 - 몽환적인 연보라 테마
+  static const int primaryColor = 0xFFB39DDB; // 연보라 (몽환적 라벤더)
+  static const int secondaryColor = 0xFF9FA8DA; // 페리윙클 (부드러운 인디고)
+  static const int accentColor = 0xFFE1BEE7; // 연핑크 라벤더 (부드러운 악센트)
 
   // 배경 색상 - 라이트/다크 테마 구분
-  static const int backgroundLight = 0xFFF5F5F5; // 밝은 회색 (라이트 테마)
-  static const int backgroundDark = 0xFF1E1E2E; // 깊은 밤하늘 (다크 테마)
-  static const int surfaceLight = 0xFFFFFFFF; // 흰색 (라이트 테마)
-  static const int surfaceDark = 0xFF2D2D44; // 밤하늘 표면 (다크 테마)
+  static const int backgroundLight = 0xFFF3E5F5; // 연라벤더 배경 (라이트 테마)
+  static const int backgroundDark = 0xFF1A1625; // 깊은 보라 밤하늘 (다크 테마)
+  static const int surfaceLight = 0xFFFAF5FF; // 아주 연한 라벤더 (라이트 테마)
+  static const int surfaceDark = 0xFF2D2640; // 보라빛 밤하늘 표면 (다크 테마)
 
   // 텍스트 색상 - 라이트/다크 테마 구분
-  static const int textPrimaryLight = 0xFF212121; // 어두운 회색 (라이트 테마)
-  static const int textPrimaryDark = 0xFFFFFFFF; // 흰색 (다크 테마)
-  static const int textSecondaryLight = 0xFF757575; // 중간 회색 (라이트 테마)
-  static const int textSecondaryDark = 0xFFBDBDBD; // 밝은 회색 (다크 테마)
+  static const int textPrimaryLight = 0xFF4A3C5C; // 진한 보라빛 회색 (라이트 테마)
+  static const int textPrimaryDark = 0xFFF3E5F5; // 연라벤더 (다크 테마)
+  static const int textSecondaryLight = 0xFF7E6C8A; // 중간 보라빛 회색 (라이트 테마)
+  static const int textSecondaryDark = 0xFFCEC2D9; // 연보라 회색 (다크 테마)
 
-  // 상태별 색상 - 자각몽 테마에 맞게 조정
-  static const int successColor = 0xFF7B68EE; // 진한 보라 (성공 - 자각몽 달성)
-  static const int warningColor = 0xFFFFD700; // 금빛 (경고 - 달/별빛)
-  static const int errorColor = 0xFFE76F51; // 부드러운 빨강 (에러)
-  static const int infoColor = 0xFF4A90E2; // 밝은 파랑 (정보 - 청명한 꿈)
+  // 상태별 색상 - 몽환적 테마에 맞게 조정
+  static const int successColor = 0xFFB39DDB; // 연보라 (성공 - 자각몽 달성)
+  static const int warningColor = 0xFFFFCC80; // 부드러운 금빛 (경고 - 달빛)
+  static const int errorColor = 0xFFEF9A9A; // 연한 빨강 (에러)
+  static const int infoColor = 0xFF9FA8DA; // 페리윙클 (정보 - 몽환적 꿈)
 
-  // Dream Spirit 레벨별 색상 - 꿈의 단계를 나타내는 색상
-  static const int rookieColor = 0xFF4A90E2; // 밝은 파랑 (초보 - 얕은 잠)
-  static const int risingColor = 0xFF7B68EE; // 진보라 (상승 - REM 수면)
-  static const int alphaColor = 0xFF9B7EDE; // 연보라 (알파 - 자각몽 시작)
-  static const int gigaColor = 0xFFFFD700; // 금빛 (기가 - 완전한 자각)
+  // Dream Spirit 레벨별 색상 - 몽환적인 꿈의 단계
+  static const int rookieColor = 0xFFCE93D8; // 연한 마젠타 (초보 - 얕은 잠)
+  static const int risingColor = 0xFFB39DDB; // 연보라 (상승 - REM 수면)
+  static const int alphaColor = 0xFF9FA8DA; // 페리윙클 (알파 - 자각몽 시작)
+  static const int gigaColor = 0xFFE1BEE7; // 연핑크 라벤더 (기가 - 완전한 자각)
 
-  // 그라데이션 색상 - 자각몽 밤하늘 테마
-  static const List<int> dreamGradient = [0xFF1E1E2E, 0xFF2D2D44]; // 밤하늘 그라디언트
-  static const List<int> lucidGradient = [0xFF7B68EE, 0xFF4A90E2]; // 보라→파랑 그라데이션 (자각몽)
-  static const List<int> nightGradient = [0xFF1E1E2E, 0xFF3D2B69]; // 밤하늘 → 진한 보라 (깊은 밤)
-  static const List<int> successGradient = [0xFF7B68EE, 0xFFFFD700]; // 성공: 보라→금빛
-  static const List<int> wbtbGradient = [0xFFFF6B6B, 0xFFFFB347]; // WBTB: 빨강→주황 (새벽)
+  // 그라데이션 색상 - 몽환적인 연보라 테마
+  static const List<int> dreamGradient = [0xFF1A1625, 0xFF2D2640]; // 깊은 보라 밤하늘 그라디언트
+  static const List<int> lucidGradient = [0xFFB39DDB, 0xFF9FA8DA]; // 연보라→페리윙클 (몽환적 자각몽)
+  static const List<int> nightGradient = [0xFF1A1625, 0xFF3D2B5C]; // 밤하늘 → 진한 보라 (깊은 밤)
+  static const List<int> successGradient = [0xFFB39DDB, 0xFFE1BEE7]; // 성공: 연보라→연핑크
+  static const List<int> wbtbGradient = [0xFFCE93D8, 0xFFFFCC80]; // WBTB: 마젠타→금빛 (새벽)
 }
 
 // Dream Spirit 관련 상수 (내부적으로는 Chad 변수명 유지, MVP 이후 리팩토링 예정)

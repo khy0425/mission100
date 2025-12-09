@@ -3,11 +3,12 @@ import 'package:flutter/services.dart';
 import 'dart:async';
 import '../../generated/l10n/app_localizations.dart';
 import '../../utils/config/constants.dart';
-import '../../utils/data/workout_data.dart';
 import '../../models/user_profile.dart';
 import '../../services/data/database_service.dart';
 
-import '../workout_schedule_setup_screen.dart';
+// DreamFlow - Workout/Chad 제거됨 (아카이브)
+// import '../workout_schedule_setup_screen.dart';
+import '../home_screen.dart';
 
 class InitialTestScreen extends StatefulWidget {
   const InitialTestScreen({super.key});
@@ -136,12 +137,12 @@ class _InitialTestScreenState extends State<InitialTestScreen>
       final userId = await databaseService.insertUserProfile(userProfile);
       final userProfileWithId = userProfile.copyWith(id: userId);
 
-      // 운동 스케줄 설정 화면으로 이동
+      // DreamFlow - Workout/Chad 제거됨 (아카이브)
+      // 운동 스케줄 설정 대신 홈 화면으로 이동
       if (mounted) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute<void>(
-            builder: (context) =>
-                WorkoutScheduleSetupScreen(userProfile: userProfileWithId),
+            builder: (context) => const HomeScreen(),
           ),
         );
       }
@@ -184,7 +185,14 @@ class _InitialTestScreenState extends State<InitialTestScreen>
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
     final isSelected = _selectedLevel == level;
-    final levelColor = WorkoutData.levelColors[level] ?? const Color(AppColors.primaryColor);
+    // DreamFlow - 레벨별 색상 직접 지정
+    final levelColors = {
+      UserLevel.rookie: const Color(0xFF81C784), // Green (초급)
+      UserLevel.rising: const Color(0xFFFFB74D), // Orange (중급)
+      UserLevel.alpha: const Color(0xFFE57373), // Red (고급)
+      UserLevel.giga: const Color(0xFF9C27B0), // Purple (마스터)
+    };
+    final levelColor = levelColors[level] ?? const Color(AppColors.primaryColor);
 
     return GestureDetector(
       onTap: () => _selectLevel(level),

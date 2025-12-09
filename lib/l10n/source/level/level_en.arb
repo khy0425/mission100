@@ -203,5 +203,59 @@
   "levelProgressMax": "Level {currentLevel} (Max)",
   "levelProgressNext": "Level {currentLevel} → {nextLevel}",
   "levelUps": "Level Ups",
-  "levelUpsCount": "{count} times"
+  "levelUpsCount": "{count} times",
+  "@doubleCongratulations": {
+    "description": "Double congratulations message"
+  },
+  "doubleCongratulations": "Congratulations! Congratulations!",
+  "@levelUp": {
+    "description": "Level up message"
+  },
+  "levelUp": "Level Up!",
+  "@newTechniqueUnlocked": {
+    "description": "New technique unlocked message"
+  },
+  "newTechniqueUnlocked": "New Technique Unlocked!",
+  "@characterUnlockStage1": {
+    "description": "Character unlock stage 1 message"
+  },
+  "characterUnlockStage1": "Lumi Stage 1 Unlocked",
+  "@characterUnlockStage2": {
+    "description": "Character unlock stage 2 message"
+  },
+  "characterUnlockStage2": "Lumi Stage 2 Unlocked",
+  "@characterUnlockStage3": {
+    "description": "Character unlock stage 3 message"
+  },
+  "characterUnlockStage3": "Lumi Stage 3 Unlocked",
+  "@characterUnlockStage4": {
+    "description": "Character unlock stage 4 message"
+  },
+  "characterUnlockStage4": "Lumi Stage 4 Unlocked",
+  "@characterUnlockStage5": {
+    "description": "Character unlock stage 5 message"
+  },
+  "characterUnlockStage5": "Lumi Stage 5 Unlocked",
+  "@characterUnlockStage6": {
+    "description": "Character unlock stage 6 message"
+  },
+  "characterUnlockStage6": "Lumi Stage 6 Unlocked",
+  "@levelUpMultipleMessage": {
+    "description": "Level up multiple levels message",
+    "placeholders": {
+      "levels": {
+        "type": "int"
+      }
+    }
+  },
+  "levelUpMultipleMessage": "Level Up +{levels}!",
+  "@daysToNextLevel": {
+    "description": "Days to next level message",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "daysToNextLevel": "{days} days to next level"
 }

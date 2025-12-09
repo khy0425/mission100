@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
 import 'package:lucid_dream_100/generated/l10n/app_localizations.dart';
-import '../../services/notification/notification_service.dart';
-import '../../services/auth/auth_service.dart';
-import '../../models/user_subscription.dart';
-import '../../widgets/common/vip_badge_widget.dart';
-import '../onboarding_screen.dart';
-import 'workout_reminder_settings_screen.dart';
+import '../../widgets/settings/account_settings_section.dart';
+import '../../widgets/settings/subscription_section.dart';
+import '../../widgets/settings/app_info_section.dart';
+import '../../services/localization/theme_service.dart';
+import '../../utils/config/constants.dart';
 
 class SimpleSettingsScreen extends StatefulWidget {
   const SimpleSettingsScreen({super.key});
@@ -16,751 +14,747 @@ class SimpleSettingsScreen extends StatefulWidget {
   State<SimpleSettingsScreen> createState() => _SimpleSettingsScreenState();
 }
 
-class _SimpleSettingsScreenState extends State<SimpleSettingsScreen> {
-  bool _pushNotifications = true;
-  bool _workoutReminders = true;
-  bool _darkMode = false;
-  TimeOfDay _reminderTime = const TimeOfDay(hour: 18, minute: 0); // 기본 오후 6시
+class _SimpleSettingsScreenState extends State<SimpleSettingsScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animationController;
+  late Animation<double> _fadeAnimation;
 
   @override
   void initState() {
     super.initState();
-    _loadSettings();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 800),
+    );
+    _fadeAnimation = CurvedAnimation(
+      parent: _animationController,
+      curve: Curves.easeOut,
+    );
+    _animationController.forward();
   }
 
-  Future<void> _loadSettings() async {
-    final prefs = await SharedPreferences.getInstance();
-
-    // 리마인더 시간 로드
-    final timeString = prefs.getString('reminder_time') ?? '18:00';
-    final timeParts = timeString.split(':');
-    final hour = int.tryParse(timeParts[0]) ?? 18;
-    final minute = int.tryParse(timeParts[1]) ?? 0;
-
-    setState(() {
-      _pushNotifications = prefs.getBool('push_notifications') ?? true;
-      _workoutReminders = prefs.getBool('workout_reminders') ?? true;
-      _darkMode = prefs.getBool('dark_mode') ?? false;
-      _reminderTime = TimeOfDay(hour: hour, minute: minute);
-    });
-  }
-
-  Future<void> _saveBoolSetting(String key, bool value) async {
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.setBool(key, value);
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final isDark = theme.brightness == Brightness.dark;
+    final l10n = AppLocalizations.of(context);
 
     return Scaffold(
-      backgroundColor: isDark ? Colors.black : const Color(0xFFF5F5F5),
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context).settings),
-        backgroundColor: isDark ? Colors.grey[900] : Colors.blue,
-        foregroundColor: Colors.white,
-        elevation: 0,
-      ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // 헤더
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                gradient: isDark
-                    ? LinearGradient(
-                        colors: [
-                          Colors.grey[800] ?? Colors.grey,
-                          Colors.grey[700] ?? Colors.grey
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      )
-                    : const LinearGradient(
-                        colors: [
-                          Color(0xFF2196F3),
-                          Color(0xFF1976D2),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                borderRadius: BorderRadius.circular(12),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black.withValues(alpha: 0.1),
-                    blurRadius: 8,
-                    offset: const Offset(0, 2),
-                  ),
-                ],
-              ),
-              child: Column(
-                children: [
-                  const Icon(Icons.settings, size: 48, color: Colors.white),
-                  const SizedBox(height: 8),
-                  Text(
-                    AppLocalizations.of(context).mission100Settings,
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
+      body: CustomScrollView(
+        slivers: [
+          // 아름다운 그라데이션 앱바
+          SliverAppBar(
+            expandedHeight: 180,
+            floating: false,
+            pinned: true,
+            elevation: 0,
+            backgroundColor: theme.primaryColor,
+            foregroundColor: Colors.white,
+            flexibleSpace: FlexibleSpaceBar(
+              title: Text(
+                l10n.settings,
+                style: const TextStyle(
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.5,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black26,
+                      blurRadius: 4,
+                      offset: Offset(0, 2),
                     ),
+                  ],
+                ),
+              ),
+              background: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: isDark
+                        ? [
+                            const Color(0xFF2D1F3D),
+                            const Color(0xFF1A1625),
+                          ]
+                        : [
+                            const Color(AppColors.primaryColor),
+                            const Color(AppColors.secondaryColor),
+                            const Color(AppColors.accentColor),
+                          ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
-                  Text(
-                    AppLocalizations.of(context).customizeAppFeatures,
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.white.withValues(alpha: 0.9),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            // 알림 설정
-            _buildSectionHeader(
-              AppLocalizations.of(context).notificationSettings,
-              Icons.notifications,
-            ),
-            const SizedBox(height: 8),
-            _buildSettingsCard([
-              SwitchListTile(
-                title: Text(AppLocalizations.of(context).pushNotifications),
-                subtitle: Text(
-                  AppLocalizations.of(context).receiveGeneralNotifications,
                 ),
-                value: _pushNotifications,
-                onChanged: (bool value) async {
-                  setState(() {
-                    _pushNotifications = value;
-                  });
-                  await _saveBoolSetting('push_notifications', value);
-                  _showSnackBar(
-                    value
-                        ? AppLocalizations.of(context).pushNotificationEnabled
-                        : AppLocalizations.of(
-                            context,
-                          ).pushNotificationDisabled,
-                  );
-                },
-              ),
-              const Divider(height: 1),
-              SwitchListTile(
-                title: Text(AppLocalizations.of(context).workoutReminder),
-                subtitle: Text(
-                  AppLocalizations.of(
-                    context,
-                  ).dailyReminderAt(_reminderTime.format(context)),
-                ),
-                value: _workoutReminders,
-                onChanged: (bool value) async {
-                  setState(() {
-                    _workoutReminders = value;
-                  });
-                  await _saveBoolSetting('workout_reminders', value);
-
-                  // 실제 알림 스케줄링 처리
-                  if (value && _pushNotifications) {
-                    await NotificationService.scheduleWorkoutReminder(
-                      _reminderTime,
-                    );
-                  } else {
-                    await NotificationService.cancelWorkoutReminder();
-                  }
-
-                  _showSnackBar(
-                    value
-                        ? AppLocalizations.of(context).workoutReminderEnabled
-                        : AppLocalizations.of(context).workoutReminderDisabled,
-                  );
-                },
-              ),
-              const Divider(height: 1),
-              ListTile(
-                leading: const Icon(Icons.schedule),
-                title: Text(
-                  AppLocalizations.of(context).detailedReminderSettings,
-                ),
-                subtitle: Text(
-                  AppLocalizations.of(context).weeklyWorkoutSchedule,
-                ),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: _workoutReminders ? _openReminderSettings : null,
-              ),
-              const Divider(height: 1),
-              SwitchListTile(
-                title: Text(
-                  AppLocalizations.of(context).achievementNotifications,
-                ),
-                subtitle: Text(
-                  AppLocalizations.of(context).receiveAchievementNotifications,
-                ),
-                value: true,
-                onChanged: (bool value) {
-                  _showSnackBar(
-                    AppLocalizations.of(
-                      context,
-                    ).achievementNotificationsAlwaysOn,
-                  );
-                },
-              ),
-            ]),
-
-            const SizedBox(height: 20),
-
-            // 외관 설정
-            _buildSectionHeader(
-              AppLocalizations.of(context).appearanceSettings,
-              Icons.palette,
-            ),
-            const SizedBox(height: 8),
-            _buildSettingsCard([
-              SwitchListTile(
-                title: Text(AppLocalizations.of(context).darkMode),
-                subtitle: Text(AppLocalizations.of(context).useDarkTheme),
-                value: _darkMode,
-                onChanged: (bool value) async {
-                  setState(() {
-                    _darkMode = value;
-                  });
-                  await _saveBoolSetting('dark_mode', value);
-                  _showSnackBar(
-                    AppLocalizations.of(context).themeChangeAfterRestart,
-                  );
-                },
-              ),
-              const Divider(height: 1),
-              ListTile(
-                leading: const Icon(Icons.language),
-                title: Text(AppLocalizations.of(context).languageSettings),
-                subtitle: Text(AppLocalizations.of(context).korean),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  _showSnackBar(
-                    AppLocalizations.of(context).languageSettingsComingSoon,
-                  );
-                },
-              ),
-              const Divider(height: 1),
-              ListTile(
-                leading: const Icon(Icons.fitness_center),
-                title: Text(AppLocalizations.of(context).difficultySettings),
-                subtitle: Text(AppLocalizations.of(context).beginnerMode),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  _showSnackBar(
-                    AppLocalizations.of(context).difficultySettingsComingSoon,
-                  );
-                },
-              ),
-            ]),
-
-            const SizedBox(height: 20),
-
-            // 데이터 관리
-            _buildSectionHeader(
-              AppLocalizations.of(context).dataManagement,
-              Icons.storage,
-            ),
-            const SizedBox(height: 8),
-            _buildSettingsCard([
-              ListTile(
-                leading: const Icon(Icons.backup),
-                title: Text(AppLocalizations.of(context).dataBackup),
-                subtitle: Text(
-                  AppLocalizations.of(context).backupWorkoutRecords,
-                ),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  _showSnackBar(
-                    AppLocalizations.of(context).dataBackupComingSoon,
-                  );
-                },
-              ),
-              const Divider(height: 1),
-              ListTile(
-                leading: const Icon(Icons.restore),
-                title: Text(AppLocalizations.of(context).dataRestore),
-                subtitle: Text(AppLocalizations.of(context).restoreBackupData),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  _showSnackBar(
-                    AppLocalizations.of(context).dataRestoreComingSoon,
-                  );
-                },
-              ),
-              const Divider(height: 1),
-              ListTile(
-                leading: const Icon(Icons.delete_forever, color: Colors.red),
-                title: Text(
-                  AppLocalizations.of(context).dataReset,
-                  style: const TextStyle(color: Colors.red),
-                ),
-                subtitle: Text(
-                  AppLocalizations.of(context).deleteAllWorkoutRecords,
-                ),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  _showSnackBar(
-                    AppLocalizations.of(context).dataResetComingSoon,
-                  );
-                },
-              ),
-            ]),
-
-            const SizedBox(height: 20),
-
-            // 계정 관리 섹션 추가
-            _buildSectionHeader(
-              AppLocalizations.of(context).accountSettings,
-              Icons.person,
-            ),
-            const SizedBox(height: 8),
-            _buildSettingsCard([
-              ListTile(
-                leading: const Icon(Icons.account_circle),
-                title: Text(AppLocalizations.of(context).accountInfo),
-                subtitle: Consumer<AuthService>(
-                  builder: (context, authService, child) {
-                    final user = authService.currentUser;
-                    if (user != null) {
-                      return Text(user.email ?? user.displayName ?? 'User');
-                    }
-                    return Text(AppLocalizations.of(context).guestMode);
-                  },
-                ),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  _showAccountInfo();
-                },
-              ),
-              const Divider(height: 1),
-              Consumer<AuthService>(
-                builder: (context, authService, child) {
-                  // 로그인된 경우에만 로그아웃 버튼 표시
-                  if (authService.isLoggedIn) {
-                    return ListTile(
-                      leading: const Icon(Icons.logout, color: Colors.orange),
-                      title: Text(
-                        AppLocalizations.of(context).logoutButton,
-                        style: const TextStyle(color: Colors.orange),
-                      ),
-                      subtitle: Text(AppLocalizations.of(context).logoutFromAccount),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () {
-                        _showLogoutConfirmDialog();
-                      },
-                    );
-                  } else {
-                    // 게스트 모드일 때는 로그인 버튼 표시
-                    return ListTile(
-                      leading: const Icon(Icons.login, color: Colors.blue),
-                      title: Text(
-                        AppLocalizations.of(context).loginButton,
-                        style: const TextStyle(color: Colors.blue),
-                      ),
-                      subtitle: Text(AppLocalizations.of(context).loginToSaveProgress),
-                      trailing: const Icon(Icons.chevron_right),
-                      onTap: () {
-                        _navigateToLogin();
-                      },
-                    );
-                  }
-                },
-              ),
-            ]),
-
-            const SizedBox(height: 20),
-
-            // 구독 관리
-            _buildSectionHeader(
-              AppLocalizations.of(context).subscriptionManagement,
-              Icons.workspace_premium,
-            ),
-            const SizedBox(height: 8),
-            Consumer<AuthService>(
-              builder: (context, authService, child) {
-                final subscription = authService.currentSubscription;
-                final isPremium = subscription?.type == SubscriptionType.premium;
-                final isLaunchPromo = subscription?.type == SubscriptionType.launchPromo;
-
-                String statusText;
-                if (isPremium) {
-                  statusText = AppLocalizations.of(context).premiumActive;
-                } else if (isLaunchPromo) {
-                  statusText = AppLocalizations.of(context).launchPromoActive;
-                } else {
-                  statusText = AppLocalizations.of(context).freeUsing;
-                }
-
-                return _buildSettingsCard([
-                  ListTile(
-                    leading: const Icon(Icons.workspace_premium),
-                    title: Row(
-                      children: [
-                        Text(AppLocalizations.of(context).currentSubscription),
-                        const SizedBox(width: 8),
-                        if (subscription != null)
-                          VIPBadgeWidget(
-                            subscription: subscription,
-                            size: VIPBadgeSize.small,
-                            showLabel: true,
-                          ),
-                      ],
-                    ),
-                    subtitle: Text(
-                      statusText,
-                      style: TextStyle(
-                        color: isPremium ? Colors.green : Colors.grey,
-                        fontWeight: isPremium ? FontWeight.w600 : FontWeight.normal,
+                child: Stack(
+                  children: [
+                    // 몽환적인 원형 장식들
+                    Positioned(
+                      top: -30,
+                      right: -30,
+                      child: Container(
+                        width: 150,
+                        height: 150,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withOpacity(0.1),
+                        ),
                       ),
                     ),
-                    trailing: isPremium
-                        ? const Icon(Icons.verified, color: Colors.green)
-                        : const Icon(Icons.chevron_right),
-                    onTap: () {
-                      // TODO: Implement subscription management screen
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute<void>(
-                      //     builder: (context) => const SubscriptionScreen(),
-                      //   ),
-                      // );
-                    },
-                  ),
-                ]);
-              },
+                    Positioned(
+                      bottom: 20,
+                      left: -40,
+                      child: Container(
+                        width: 100,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withOpacity(0.08),
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      top: 60,
+                      left: 100,
+                      child: Container(
+                        width: 60,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white.withOpacity(0.05),
+                        ),
+                      ),
+                    ),
+                    // 달 아이콘
+                    Positioned(
+                      top: 50,
+                      right: 30,
+                      child: Icon(
+                        Icons.nightlight_round,
+                        size: 40,
+                        color: Colors.white.withOpacity(0.3),
+                      ),
+                    ),
+                    // 별 아이콘들
+                    Positioned(
+                      top: 70,
+                      right: 100,
+                      child: Icon(
+                        Icons.star,
+                        size: 16,
+                        color: Colors.white.withOpacity(0.4),
+                      ),
+                    ),
+                    Positioned(
+                      top: 90,
+                      right: 60,
+                      child: Icon(
+                        Icons.star,
+                        size: 12,
+                        color: Colors.white.withOpacity(0.3),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ),
+          ),
 
-            const SizedBox(height: 20),
-
-            // 앱 정보
-            _buildSectionHeader(
-              AppLocalizations.of(context).appInfo,
-              Icons.info,
-            ),
-            const SizedBox(height: 8),
-            _buildSettingsCard([
-              ListTile(
-                leading: const Icon(Icons.info_outline),
-                title: Text(AppLocalizations.of(context).version),
-                subtitle: const Text('1.0.0'),
-              ),
-              const Divider(height: 1),
-              ListTile(
-                leading: const Icon(Icons.code),
-                title: Text(AppLocalizations.of(context).developer),
-                subtitle: Text(AppLocalizations.of(context).mission100Team),
-              ),
-              const Divider(height: 1),
-              ListTile(
-                leading: const Icon(Icons.description),
-                title: Text(AppLocalizations.of(context).license),
-                subtitle: Text(AppLocalizations.of(context).openSourceLicense),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  _showSnackBar(
-                    AppLocalizations.of(context).licenseInfoComingSoon,
-                  );
-                },
-              ),
-              const Divider(height: 1),
-              ListTile(
-                leading: const Icon(Icons.star),
-                title: Text(AppLocalizations.of(context).appRating),
-                subtitle: Text(AppLocalizations.of(context).rateOnPlayStore),
-                trailing: const Icon(Icons.chevron_right),
-                onTap: () {
-                  _showSnackBar(
-                    AppLocalizations.of(context).appRatingComingSoon,
-                  );
-                },
-              ),
-            ]),
-
-            const SizedBox(height: 30),
-
-            // 하단 정보
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.all(16),
-              decoration: BoxDecoration(
-                color: isDark ? Colors.grey[900] : Colors.grey[100],
-                borderRadius: BorderRadius.circular(8),
-                border: Border.all(
+          // 설정 컨텐츠
+          SliverToBoxAdapter(
+            child: FadeTransition(
+              opacity: _fadeAnimation,
+              child: Container(
+                decoration: BoxDecoration(
                   color: isDark
-                      ? Colors.grey[700] ?? Colors.grey
-                      : Colors.grey[300] ?? Colors.grey,
-                  width: 1,
+                      ? const Color(AppColors.backgroundDark)
+                      : const Color(AppColors.backgroundLight),
                 ),
-              ),
-              child: Text(
-                AppLocalizations.of(context).copyrightMission100,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontSize: 12,
-                  color: isDark ? Colors.grey[400] : Colors.grey[600],
-                  height: 1.5,
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // 프로필 헤더 카드
+                      _buildProfileHeader(theme, isDark, l10n),
+
+                      const SizedBox(height: 24),
+
+                      // 외관 설정
+                      _buildSectionTitle(l10n.appearanceSettings, Icons.palette, theme),
+                      const SizedBox(height: 12),
+                      _buildAppearanceSection(theme, isDark, l10n),
+
+                      const SizedBox(height: 24),
+
+                      // 계정 관리 섹션
+                      _buildSectionTitle(l10n.accountSettings, Icons.person_outline, theme),
+                      const SizedBox(height: 12),
+                      _buildElegantCard(
+                        child: AccountSettingsSection(
+                          showSnackBar: _showSnackBar,
+                        ),
+                        theme: theme,
+                        isDark: isDark,
+                      ),
+
+                      const SizedBox(height: 24),
+
+                      // 구독 관리
+                      _buildSectionTitle(l10n.subscriptionManagement, Icons.workspace_premium_outlined, theme),
+                      const SizedBox(height: 12),
+                      _buildElegantCard(
+                        child: const SubscriptionSection(),
+                        theme: theme,
+                        isDark: isDark,
+                      ),
+
+                      const SizedBox(height: 24),
+
+                      // 앱 정보
+                      _buildSectionTitle(l10n.appInfo, Icons.info_outline, theme),
+                      const SizedBox(height: 12),
+                      _buildElegantCard(
+                        child: AppInfoSection(
+                          showSnackBar: _showSnackBar,
+                        ),
+                        theme: theme,
+                        isDark: isDark,
+                      ),
+
+                      const SizedBox(height: 40),
+
+                      // 하단 정보
+                      _buildFooter(l10n, theme, isDark),
+
+                      const SizedBox(height: 20),
+                    ],
+                  ),
                 ),
               ),
             ),
-
-            const SizedBox(height: 20),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildSectionHeader(String title, IconData icon) {
-    final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
+  /// 프로필 헤더 카드
+  Widget _buildProfileHeader(ThemeData theme, bool isDark, AppLocalizations l10n) {
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          colors: isDark
+              ? [
+                  theme.primaryColor.withOpacity(0.3),
+                  theme.primaryColor.withOpacity(0.1),
+                ]
+              : [
+                  theme.primaryColor.withOpacity(0.15),
+                  theme.primaryColor.withOpacity(0.05),
+                ],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ),
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(
+          color: theme.primaryColor.withOpacity(0.2),
+          width: 1,
+        ),
+      ),
+      child: Row(
+        children: [
+          // 아이콘
+          Container(
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  theme.primaryColor,
+                  theme.primaryColor.withOpacity(0.7),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+              borderRadius: BorderRadius.circular(16),
+              boxShadow: [
+                BoxShadow(
+                  color: theme.primaryColor.withOpacity(0.3),
+                  blurRadius: 12,
+                  offset: const Offset(0, 4),
+                ),
+              ],
+            ),
+            child: const Icon(
+              Icons.nights_stay_rounded,
+              color: Colors.white,
+              size: 32,
+            ),
+          ),
+          const SizedBox(width: 16),
+          // 텍스트
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l10n.mission100Settings,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: theme.colorScheme.onSurface,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Text(
+                  l10n.customizeAppFeatures,
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: theme.colorScheme.onSurface.withOpacity(0.6),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 
+  /// 섹션 타이틀
+  Widget _buildSectionTitle(String title, IconData icon, ThemeData theme) {
     return Row(
       children: [
         Container(
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isDark
-                ? Colors.blue.withValues(alpha: 0.2)
-                : Colors.blue.withValues(alpha: 0.1),
-            borderRadius: BorderRadius.circular(8),
+            color: theme.primaryColor.withOpacity(0.1),
+            borderRadius: BorderRadius.circular(10),
           ),
           child: Icon(
             icon,
-            color: isDark ? Colors.blue[300] : Colors.blue[700],
             size: 20,
+            color: theme.primaryColor,
           ),
         ),
         const SizedBox(width: 12),
         Text(
           title,
           style: TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-            color: isDark ? Colors.white : Colors.black87,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+            color: theme.colorScheme.onSurface,
+            letterSpacing: 0.3,
           ),
         ),
       ],
     );
   }
 
-  Widget _buildSettingsCard(List<Widget> children) {
-    final theme = Theme.of(context);
-    final isDark = theme.brightness == Brightness.dark;
-
+  /// 세련된 카드 래퍼
+  Widget _buildElegantCard({
+    required Widget child,
+    required ThemeData theme,
+    required bool isDark,
+  }) {
     return Container(
       decoration: BoxDecoration(
-        color: isDark ? Colors.grey[850] : Colors.white,
-        borderRadius: BorderRadius.circular(12),
+        color: isDark
+            ? Colors.grey[900]!.withOpacity(0.5)
+            : Colors.white,
+        borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withValues(alpha: isDark ? 0.3 : 0.1),
-            blurRadius: 8,
-            offset: const Offset(0, 2),
+            color: isDark
+                ? Colors.black.withOpacity(0.3)
+                : theme.primaryColor.withOpacity(0.08),
+            blurRadius: 20,
+            offset: const Offset(0, 4),
           ),
         ],
         border: Border.all(
           color: isDark
-              ? Colors.grey[700] ?? Colors.grey
-              : Colors.grey[200] ?? Colors.grey,
+              ? Colors.grey[800]!
+              : theme.primaryColor.withOpacity(0.1),
           width: 1,
         ),
       ),
-      child: Column(children: children),
-    );
-  }
-
-  /// 상세 리마인더 설정 화면 열기
-  Future<void> _openReminderSettings() async {
-    await Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const WorkoutReminderSettingsScreen(),
-      ),
-    );
-    // 설정 화면에서 돌아온 후 설정 다시 로드
-    await _loadSettings();
-  }
-
-  void _showSnackBar(String message) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
-        content: Text(message),
-        duration: const Duration(seconds: 2),
-        backgroundColor: Colors.blue,
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: child,
       ),
     );
   }
 
-  // 계정 정보 표시
-  void _showAccountInfo() {
-    final authService = Provider.of<AuthService>(context, listen: false);
-    final user = authService.currentUser;
-
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Row(
-            children: [
-              const Icon(Icons.account_circle, color: Colors.blue),
-              const SizedBox(width: 8),
-              Text(AppLocalizations.of(context).accountInfoTitle),
-            ],
-          ),
-          content: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              if (user != null) ...[
-                if (user.displayName != null)
-                  _buildInfoRow(
-                    AppLocalizations.of(context).nameLabel,
-                    user.displayName!,
-                  ),
-                if (user.email != null)
-                  _buildInfoRow(
-                    AppLocalizations.of(context).emailLabel,
-                    user.email!,
-                  ),
-                _buildInfoRow(
-                  AppLocalizations.of(context).accountTypeLabel,
-                  authService.currentSubscription?.type == SubscriptionType.premium
-                      ? AppLocalizations.of(context).premiumAccountType
-                      : AppLocalizations.of(context).freeAccountType,
-                ),
-                _buildInfoRow(
-                  AppLocalizations.of(context).loginMethodLabel,
-                  user.providerData.isNotEmpty
-                      ? user.providerData.first.providerId.contains('google')
-                          ? AppLocalizations.of(context).googleMethod
-                          : AppLocalizations.of(context).emailMethod
-                      : AppLocalizations.of(context).emailMethod,
-                ),
-              ] else ...[
-                Text(AppLocalizations.of(context).guestModeMessage),
-              ],
-            ],
-          ),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(AppLocalizations.of(context).closeButton),
-            ),
-          ],
-        );
-      },
-    );
-  }
-
-  Widget _buildInfoRow(String label, String value) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 4.0),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+  /// 하단 푸터
+  Widget _buildFooter(AppLocalizations l10n, ThemeData theme, bool isDark) {
+    return Center(
+      child: Column(
         children: [
-          Text(
-            '$label: ',
-            style: const TextStyle(fontWeight: FontWeight.bold),
+          Container(
+            width: 50,
+            height: 4,
+            decoration: BoxDecoration(
+              color: theme.primaryColor.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(2),
+            ),
           ),
-          Expanded(
-            child: Text(value),
+          const SizedBox(height: 16),
+          Text(
+            l10n.copyrightMission100,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 12,
+              color: theme.colorScheme.onSurface.withOpacity(0.4),
+            ),
           ),
         ],
       ),
     );
   }
 
-  // 로그아웃 확인 다이얼로그
-  void _showLogoutConfirmDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(AppLocalizations.of(context).logoutTitle),
-          content: Text(AppLocalizations.of(context).logoutConfirmMessage),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: Text(AppLocalizations.of(context).cancelButton),
-            ),
-            ElevatedButton(
-              onPressed: () async {
-                Navigator.pop(context); // 다이얼로그 닫기
-                await _performLogout();
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.orange,
-                foregroundColor: Colors.white,
-              ),
-              child: Text(AppLocalizations.of(context).logoutButton),
-            ),
+  void _showSnackBar(String message) {
+    final theme = Theme.of(context);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Row(
+          children: [
+            Icon(Icons.check_circle, color: Colors.white, size: 20),
+            const SizedBox(width: 12),
+            Expanded(child: Text(message)),
           ],
+        ),
+        duration: const Duration(seconds: 2),
+        backgroundColor: theme.primaryColor,
+        behavior: SnackBarBehavior.floating,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        margin: const EdgeInsets.all(16),
+      ),
+    );
+  }
+
+  /// 외관 설정 섹션 (세련된 디자인)
+  Widget _buildAppearanceSection(ThemeData theme, bool isDark, AppLocalizations l10n) {
+    return Consumer<ThemeService>(
+      builder: (context, themeService, child) {
+        return Container(
+          decoration: BoxDecoration(
+            color: isDark ? Colors.grey[900]!.withValues(alpha: 0.5) : Colors.white,
+            borderRadius: BorderRadius.circular(16),
+            boxShadow: [
+              BoxShadow(
+                color: isDark
+                    ? Colors.black.withValues(alpha: 0.3)
+                    : theme.primaryColor.withValues(alpha: 0.08),
+                blurRadius: 20,
+                offset: const Offset(0, 4),
+              ),
+            ],
+            border: Border.all(
+              color: isDark
+                  ? Colors.grey[800]!
+                  : theme.primaryColor.withValues(alpha: 0.1),
+              width: 1,
+            ),
+          ),
+          child: Column(
+            children: [
+              // 다크 모드 토글
+              _buildSettingsTile(
+                icon: Icons.dark_mode_rounded,
+                iconColor: const Color(0xFF5C6BC0),
+                title: l10n.darkMode,
+                subtitle: l10n.darkModeDesc,
+                trailing: Switch(
+                  value: themeService.isDarkMode,
+                  onChanged: (value) async {
+                    await themeService.setDarkMode(value);
+                    _showSnackBar(value ? l10n.darkModeEnabled : l10n.lightModeEnabled);
+                  },
+                  activeTrackColor: theme.primaryColor.withValues(alpha: 0.5),
+                  activeThumbColor: theme.primaryColor,
+                ),
+                theme: theme,
+                isDark: isDark,
+              ),
+              Divider(
+                height: 1,
+                indent: 60,
+                color: isDark ? Colors.grey[800] : Colors.grey[200],
+              ),
+              // 테마 색상
+              _buildSettingsTile(
+                icon: Icons.palette_rounded,
+                iconColor: themeService.currentTheme.color,
+                title: l10n.colorTheme,
+                subtitle: _getThemeDisplayName(themeService.currentTheme),
+                trailing: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Container(
+                      width: 24,
+                      height: 24,
+                      decoration: BoxDecoration(
+                        color: themeService.currentTheme.color,
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: themeService.currentTheme.color.withValues(alpha: 0.4),
+                            blurRadius: 6,
+                            offset: const Offset(0, 2),
+                          ),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(width: 8),
+                    Icon(
+                      Icons.chevron_right,
+                      color: theme.colorScheme.onSurface.withValues(alpha: 0.4),
+                    ),
+                  ],
+                ),
+                onTap: () => _showThemeColorDialog(themeService, l10n, isDark),
+                theme: theme,
+                isDark: isDark,
+              ),
+            ],
+          ),
         );
       },
     );
   }
 
-  // 실제 로그아웃 수행
-  Future<void> _performLogout() async {
-    try {
-      // 로딩 표시
-      showDialog(
-        context: context,
-        barrierDismissible: false,
-        builder: (BuildContext context) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        },
-      );
+  /// 세련된 설정 타일
+  Widget _buildSettingsTile({
+    required IconData icon,
+    required Color iconColor,
+    required String title,
+    required String subtitle,
+    required Widget trailing,
+    required ThemeData theme,
+    required bool isDark,
+    VoidCallback? onTap,
+  }) {
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        child: Row(
+          children: [
+            Container(
+              width: 44,
+              height: 44,
+              decoration: BoxDecoration(
+                color: iconColor.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Icon(icon, color: iconColor, size: 22),
+            ),
+            const SizedBox(width: 16),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w600,
+                      color: theme.colorScheme.onSurface,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    subtitle,
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: theme.colorScheme.onSurface.withValues(alpha: 0.5),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            trailing,
+          ],
+        ),
+      ),
+    );
+  }
 
-      final authService = Provider.of<AuthService>(context, listen: false);
-      await authService.signOut();
-
-      // SharedPreferences 초기화 (선택적)
-      final prefs = await SharedPreferences.getInstance();
-      // 온보딩 완료 상태는 유지하되, 사용자 관련 데이터만 초기화
-      await prefs.remove('user_profile');
-      await prefs.remove('workout_history');
-
-      if (!mounted) return;
-
-      // 로딩 다이얼로그 닫기
-      Navigator.pop(context);
-
-      // 온보딩 화면으로 이동
-      Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => const OnboardingScreen()),
-        (Route<dynamic> route) => false,
-      );
-
-      _showSnackBar(AppLocalizations.of(context).logoutSuccessMessage);
-    } catch (e) {
-      if (!mounted) return;
-
-      // 로딩 다이얼로그 닫기
-      Navigator.pop(context);
-
-      _showSnackBar(AppLocalizations.of(context).logoutErrorMessage(e.toString()));
+  String _getThemeDisplayName(ThemeColor themeColor) {
+    switch (themeColor) {
+      case ThemeColor.lavender:
+        return '연보라 (Lavender)';
+      case ThemeColor.purple:
+        return '보라 (Purple)';
+      case ThemeColor.blue:
+        return '파랑 (Blue)';
+      case ThemeColor.green:
+        return '녹색 (Green)';
+      case ThemeColor.orange:
+        return '주황 (Orange)';
+      case ThemeColor.red:
+        return '빨강 (Red)';
+      case ThemeColor.teal:
+        return '청록 (Teal)';
+      case ThemeColor.indigo:
+        return '인디고 (Indigo)';
+      case ThemeColor.pink:
+        return '분홍 (Pink)';
     }
   }
 
-  // 로그인 화면으로 이동
-  void _navigateToLogin() {
-    Navigator.of(context).pushAndRemoveUntil(
-      MaterialPageRoute(builder: (context) => const OnboardingScreen()),
-      (Route<dynamic> route) => false,
+  void _showThemeColorDialog(ThemeService themeService, AppLocalizations l10n, bool isDark) {
+    final theme = Theme.of(context);
+
+    showModalBottomSheet(
+      context: context,
+      backgroundColor: Colors.transparent,
+      isScrollControlled: true,
+      builder: (context) {
+        return Container(
+          decoration: BoxDecoration(
+            color: isDark ? const Color(0xFF1A1625) : Colors.white,
+            borderRadius: const BorderRadius.vertical(top: Radius.circular(24)),
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // 핸들 바
+              Container(
+                margin: const EdgeInsets.only(top: 12),
+                width: 40,
+                height: 4,
+                decoration: BoxDecoration(
+                  color: Colors.grey.withValues(alpha: 0.3),
+                  borderRadius: BorderRadius.circular(2),
+                ),
+              ),
+              // 타이틀
+              Padding(
+                padding: const EdgeInsets.all(20),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      decoration: BoxDecoration(
+                        color: theme.primaryColor.withValues(alpha: 0.1),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: Icon(
+                        Icons.palette_rounded,
+                        color: theme.primaryColor,
+                        size: 24,
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Text(
+                      l10n.selectColorTheme,
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: isDark ? Colors.white : Colors.black87,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // 색상 그리드
+              Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+                child: GridView.count(
+                  shrinkWrap: true,
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 12,
+                  mainAxisSpacing: 12,
+                  childAspectRatio: 1,
+                  physics: const NeverScrollableScrollPhysics(),
+                  children: ThemeColor.values.map((color) {
+                    final isSelected = themeService.currentTheme == color;
+                    return _buildColorOption(
+                      color: color,
+                      isSelected: isSelected,
+                      themeService: themeService,
+                      isDark: isDark,
+                    );
+                  }).toList(),
+                ),
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  /// 색상 선택 옵션
+  Widget _buildColorOption({
+    required ThemeColor color,
+    required bool isSelected,
+    required ThemeService themeService,
+    required bool isDark,
+  }) {
+    return GestureDetector(
+      onTap: () async {
+        await themeService.setThemeColor(color);
+        if (mounted) {
+          Navigator.pop(context);
+          _showSnackBar('${_getThemeDisplayName(color)} 테마가 적용되었습니다');
+        }
+      },
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 200),
+        decoration: BoxDecoration(
+          color: isSelected
+              ? color.color.withValues(alpha: 0.15)
+              : (isDark ? Colors.grey[850] : Colors.grey[100]),
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(
+            color: isSelected ? color.color : Colors.transparent,
+            width: 2,
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: color.color,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: color.color.withValues(alpha: 0.4),
+                    blurRadius: 8,
+                    offset: const Offset(0, 3),
+                  ),
+                ],
+              ),
+              child: isSelected
+                  ? const Icon(Icons.check, color: Colors.white, size: 20)
+                  : null,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              color.name,
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: isSelected ? FontWeight.w600 : FontWeight.normal,
+                color: isSelected
+                    ? color.color
+                    : (isDark ? Colors.grey[400] : Colors.grey[600]),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

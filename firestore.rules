@@ -17,14 +17,14 @@ service cloud.firestore {
     }
 
     // 유효한 사용자 데이터인지 확인
-    function isValidUserData(data) {
-      return data.keys().hasAll(['userId', 'updatedAt']) &&
-             data.userId is string &&
-             data.updatedAt is timestamp;
+    function isValidUserData(requestData) {
+      return requestData.keys().hasAll(['userId', 'updatedAt']) &&
+             requestData.userId is string &&
+             requestData.updatedAt is timestamp;
     }
 
     // 데이터 크기 제한 (512KB로 축소)
-    function isValidSize(data) {
+    function isValidSize(requestData) {
       return request.resource.size < 524288; // 512KB
     }
 
@@ -40,11 +40,6 @@ service cloud.firestore {
       return subscription.status == 'active' && subscription.type in ['premium_monthly', 'premium_yearly', 'premium_lifetime'];
     }
 
-    // 유효한 이메일 형식인지 확인
-    function isValidEmail(email) {
-      return email.matches('.*@.*\\..*');
-    }
-
     // 스트링 길이 검증
     function isValidStringLength(value, minLength, maxLength) {
       return value is string && value.size() >= minLength && value.size() <= maxLength;
@@ -53,16 +48,6 @@ service cloud.firestore {
     // 숫자 범위 검증
     function isValidNumberRange(value, min, max) {
       return value is number && value >= min && value <= max;
-    }
-
-    // 구독 상태 검증
-    function isValidSubscriptionStatus(status) {
-      return status in ['active', 'inactive', 'cancelled', 'expired', 'pending'];
-    }
-
-    // 결제 상태 검증
-    function isValidPaymentStatus(status) {
-      return status in ['pending', 'completed', 'failed', 'refunded', 'cancelled'];
     }
 
     // ===============================================
@@ -325,6 +310,36 @@ service cloud.firestore {
 
     match /securityLogs/{logId} {
       allow read, write: if false; // 시스템에서만 접근 가능
+    }
+
+    // ===============================================
+    // 대화 토큰 시스템 (서버 전용)
+    // ===============================================
+
+    match /conversationTokens/{userId} {
+      // 읽기는 본인만 가능
+      allow read: if isAuthenticated() && isOwner(userId);
+
+      // 쓰기는 서버에서만 가능 (Cloud Functions만 토큰 조작 가능)
+      allow create, update, delete: if false;
+    }
+
+    // 토큰 히스토리 (거래 내역)
+    match /conversationTokens/{userId}/history/{historyId} {
+      // 읽기는 본인만 가능
+      allow read: if isAuthenticated() && isOwner(userId);
+
+      // 쓰기는 서버에서만 가능 (감사 추적용)
+      allow create, update, delete: if false;
+    }
+
+    // 일일 보상 클레임 기록
+    match /dailyRewards/{userId} {
+      // 읽기는 본인만 가능
+      allow read: if isAuthenticated() && isOwner(userId);
+
+      // 쓰기는 서버에서만 가능 (중복 방지)
+      allow create, update, delete: if false;
     }
 
     // ===============================================

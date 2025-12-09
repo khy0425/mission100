@@ -208,7 +208,7 @@ class ShareCardWidget extends StatelessWidget {
     return Column(
       children: [
         Text(
-          l10n.levelUpMessage(levelEmoji),
+          '$levelEmoji ${l10n.levelUpMessage}',
           style: const TextStyle(
             color: Colors.white,
             fontSize: 20,

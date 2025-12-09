@@ -4,6 +4,7 @@ import 'package:cloud_functions/cloud_functions.dart';
 import 'package:flutter/foundation.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import '../../models/conversation_token.dart';
+import '../progress/stage_unlock_service.dart';
 
 /// 대화 토큰 관리 서비스 (Firestore + Cloud Functions)
 ///
@@ -44,6 +45,57 @@ class ConversationTokenService extends ChangeNotifier {
 
     debugPrint('🔄 Setting up token listener for user: ${user.uid}');
 
+    // 먼저 문서 존재 여부 확인 (신규 사용자 체크)
+    final tokenRef = _firestore.collection('conversationTokens').doc(user.uid);
+    final initialSnapshot = await tokenRef.get();
+
+    if (!initialSnapshot.exists) {
+      // 🎁 신규 사용자! 환영 보너스 1토큰 지급
+      debugPrint('🎉 NEW USER DETECTED! Granting welcome bonus...');
+
+      bool bonusGranted = false;
+
+      // 먼저 Cloud Function 시도
+      try {
+        final callable = _functions.httpsCallable('grantWelcomeBonus');
+        final result = await callable.call<Map<String, dynamic>>();
+
+        final data = result.data;
+        final success = data['success'] as bool;
+        final message = data['message'] as String?;
+
+        if (success) {
+          debugPrint('✅ Welcome bonus granted via Cloud Function: +1 token!');
+          debugPrint('   Message: $message');
+          bonusGranted = true;
+        } else {
+          debugPrint('ℹ️ Welcome bonus already granted');
+          bonusGranted = true; // 이미 지급됨
+        }
+      } catch (e) {
+        debugPrint('⚠️ Cloud Function failed: $e');
+        debugPrint('🔄 Trying local fallback...');
+      }
+
+      // Cloud Function 실패 시 로컬에서 직접 토큰 문서 생성
+      if (!bonusGranted) {
+        try {
+          await tokenRef.set({
+            'balance': 1,
+            'totalEarned': 1,
+            'totalSpent': 0,
+            'lastClaimDate': FieldValue.serverTimestamp(),
+            'currentStreak': 0,
+            'createdAt': FieldValue.serverTimestamp(),
+            'welcomeBonusGranted': true,
+          });
+          debugPrint('✅ Welcome bonus granted via local fallback: +1 token!');
+        } catch (fallbackError) {
+          debugPrint('❌ Local fallback also failed: $fallbackError');
+        }
+      }
+    }
+
     // Firestore 실시간 리스너
     _tokenSubscription = _firestore
         .collection('conversationTokens')
@@ -63,7 +115,7 @@ class ConversationTokenService extends ChangeNotifier {
           debugPrint('✅ Token balance updated: ${_tokens.balance}');
           notifyListeners();
         } else {
-          // 토큰 문서가 없으면 초기 상태
+          // 토큰 문서가 없으면 초기 상태 (일반적으로 발생하지 않음)
           _tokens = ConversationTokens.initial();
           debugPrint('ℹ️ No token document - using initial state');
           notifyListeners();
@@ -78,7 +130,7 @@ class ConversationTokenService extends ChangeNotifier {
   /// 일일 보상 받기 (서버 호출)
   Future<void> claimDailyReward({required bool isPremium}) async {
     try {
-      debugPrint('📞 Calling claimDailyReward Cloud Function (isPremium: $isPremium)...');
+      debugPrint('📞 Calling claimDailyReward Cloud Function...');
 
       final callable = _functions.httpsCallable('claimDailyReward');
       final result = await callable.call<Map<String, dynamic>>({
@@ -89,12 +141,8 @@ class ConversationTokenService extends ChangeNotifier {
       final tokensEarned = data['tokensEarned'] as int;
       final newBalance = data['newBalance'] as int;
       final currentStreak = data['currentStreak'] as int;
-      final bonusReason = data['bonusReason'] as String?;
 
-      debugPrint('✅ Daily reward claimed: +$tokensEarned tokens (Balance: $newBalance)');
-      if (bonusReason != null) {
-        debugPrint('🎁 Bonus: $bonusReason');
-      }
+      debugPrint('✅ Daily reward claimed: +$tokensEarned tokens (Balance: $newBalance, Streak: $currentStreak)');
 
       // Firestore 리스너가 자동으로 상태 업데이트
     } catch (e) {
@@ -103,67 +151,115 @@ class ConversationTokenService extends ChangeNotifier {
     }
   }
 
-  /// 리워드 광고로 토큰 획득 (로컬)
-  /// 광고는 서버 검증 없이 로컬에서 처리 (광고 플랫폼이 검증)
-  Future<void> earnFromRewardAd({required bool isPremium}) async {
+  /// 리워드 광고로 토큰 획득 (서버 호출)
+  Future<bool> earnFromRewardAd({required bool isPremium}) async {
     try {
-      final user = _auth.currentUser;
-      if (user == null) {
-        throw Exception('인증이 필요합니다');
-      }
+      debugPrint('📞 Calling earnRewardAdTokens Cloud Function...');
 
-      debugPrint('💰 Earning tokens from reward ad...');
-
-      // Firestore에 직접 토큰 추가 (광고 플랫폼이 이미 검증함)
-      final tokenRef = _firestore.collection('conversationTokens').doc(user.uid);
-      final tokenDoc = await tokenRef.get();
-
-      final currentBalance = tokenDoc.exists ? (tokenDoc.data()!['balance'] ?? 0) : 0;
-      final maxTokens = isPremium
-          ? ConversationTokenSystem.maxPremiumTokens
-          : ConversationTokenSystem.maxFreeTokens;
-
-      final newBalance = (currentBalance + ConversationTokenSystem.rewardAdTokens)
-          .clamp(0, maxTokens);
-
-      await tokenRef.set({
-        'userId': user.uid,
-        'balance': newBalance,
-        'totalEarned': FieldValue.increment(ConversationTokenSystem.rewardAdTokens),
-        'totalSpent': tokenDoc.exists ? (tokenDoc.data()!['totalSpent'] ?? 0) : 0,
-        'currentStreak': tokenDoc.exists ? (tokenDoc.data()!['currentStreak'] ?? 0) : 0,
-        'lastClaimDate': tokenDoc.exists ? tokenDoc.data()!['lastClaimDate'] : null,
-        'lastUpdated': FieldValue.serverTimestamp(),
-      }, SetOptions(merge: true));
-
-      // 히스토리 기록
-      await tokenRef.collection('history').add({
-        'type': 'reward_ad',
-        'amount': ConversationTokenSystem.rewardAdTokens,
-        'balanceBefore': currentBalance,
-        'balanceAfter': newBalance,
-        'createdAt': FieldValue.serverTimestamp(),
+      final callable = _functions.httpsCallable('earnRewardAdTokens');
+      final result = await callable.call<Map<String, dynamic>>({
+        'isPremium': isPremium,
       });
 
-      debugPrint('✅ Earned tokens from ad: +${ConversationTokenSystem.rewardAdTokens} token');
+      final data = result.data;
+      final tokensEarned = data['tokensEarned'] as int;
+      final newBalance = data['newBalance'] as int;
+      final adsWatchedToday = data['adsWatchedToday'] as int;
+      final maxDailyAds = data['maxDailyAds'] as int;
+
+      debugPrint('✅ Earned tokens from ad: +$tokensEarned token ($adsWatchedToday/$maxDailyAds today, Balance: $newBalance)');
+
+      // Firestore 리스너가 자동으로 상태 업데이트
+      return true;
     } catch (e) {
       debugPrint('❌ Failed to earn from reward ad: $e');
+
+      // 일일 제한 초과는 정상적인 에러이므로 false 반환
+      if (e.toString().contains('일일 광고 시청 제한')) {
+        return false;
+      }
+
       rethrow;
     }
   }
 
-  /// 대화 시작 (서버 호출 - requestAIConversation에서 토큰 차감)
-  /// 이 메서드는 UI에서 토큰 확인용으로만 사용
-  Future<bool> startConversation() async {
-    // 토큰 잔액 확인만 수행
-    if (!hasEnoughTokens) {
-      debugPrint('❌ Not enough tokens to start conversation');
+  /// 일일 체크리스트 완료로 토큰 획득 (Optimistic UI)
+  ///
+  /// 3개 필수 태스크 (꿈일기, 현실확인, MILD) 완료 시 호출됩니다.
+  /// **Optimistic UI**: 먼저 로컬에서 토큰을 추가하고 UI를 즉시 업데이트한 후,
+  /// 서버 동기화는 백그라운드에서 진행합니다.
+  Future<bool> earnFromDailyChecklist() async {
+    const tokensToAdd = 1; // 체크리스트 완료 보상
+
+    // 1️⃣ Optimistic Update: 로컬 먼저 업데이트 → UI 즉시 반영
+    final oldBalance = _tokens.balance;
+    _tokens = ConversationTokens(
+      balance: oldBalance + tokensToAdd,
+      lastDailyReward: _tokens.lastDailyReward,
+      lifetimeEarned: _tokens.lifetimeEarned + tokensToAdd,
+      lifetimeSpent: _tokens.lifetimeSpent,
+      currentStreak: _tokens.currentStreak,
+    );
+    notifyListeners();
+    debugPrint('✨ Optimistic UI: +$tokensToAdd token (${oldBalance} → ${_tokens.balance})');
+
+    // 2️⃣ 서버 동기화 (백그라운드)
+    _syncTokensToServerAsync(tokensToAdd);
+
+    return true;
+  }
+
+  /// 서버와 토큰 동기화 (백그라운드)
+  void _syncTokensToServerAsync(int tokensToAdd) {
+    Future.microtask(() async {
+      try {
+        debugPrint('📞 [Background] Syncing tokens to server...');
+
+        final callable = _functions.httpsCallable('earnRewardAdTokens');
+        final result = await callable.call<Map<String, dynamic>>({
+          'isPremium': false,
+        });
+
+        final data = result.data;
+        final serverBalance = data['newBalance'] as int;
+
+        debugPrint('✅ [Background] Server sync complete (Server balance: $serverBalance)');
+
+        // Firestore 리스너가 서버 값으로 자동 조정
+      } catch (e) {
+        debugPrint('⚠️ [Background] Server sync failed: $e');
+        // 실패해도 로컬 값 유지 (다음 앱 재시작 시 서버 값으로 조정됨)
+      }
+    });
+  }
+
+  /// AI 대화 시작 가능 여부 (토큰 확인) - 레거시
+  Future<bool> canStartConversation() async {
+    if (_tokens.balance < ConversationTokenSystem.conversationCost) {
+      debugPrint('❌ Not enough tokens for conversation');
       return false;
     }
-
-    // 실제 토큰 차감은 AI 대화 요청 시 서버에서 수행
     debugPrint('✅ Tokens available for conversation');
     return true;
+  }
+
+  /// 토큰 부족 여부 - 레거시
+  bool get hasEnoughTokens =>
+      _tokens.balance >= ConversationTokenSystem.conversationCost;
+
+  // ========== 티어 기반 메서드 ==========
+
+  /// 빠른 상담 가능 여부
+  bool get hasEnoughTokensForQuick =>
+      _tokens.balance >= ConversationTokenSystem.quickChatCost;
+
+  /// 깊은 상담 가능 여부
+  bool get hasEnoughTokensForDeep =>
+      _tokens.balance >= ConversationTokenSystem.deepChatCost;
+
+  /// 특정 티어로 대화 시작 가능 여부
+  bool canStartChatWithTier(ConversationTier tier) {
+    return _tokens.canStartChat(tier);
   }
 
   /// AI 대화 요청 (서버 호출 - 토큰 차감 포함)
@@ -232,15 +328,99 @@ class ConversationTokenService extends ChangeNotifier {
   /// 토큰 잔액 확인
   int get balance => _tokens.balance;
 
-  /// 토큰 부족 여부
-  bool get hasEnoughTokens =>
-      _tokens.balance >= ConversationTokenSystem.conversationCost;
-
   /// 일일 보상 받을 수 있는지 (getter)
   bool get canClaimDailyReward => _tokens.canClaimDailyReward();
 
   /// 다음 일일 보상까지 남은 시간 (getter)
   Duration get timeUntilNextReward => getTimeUntilNextDailyReward();
+
+  // ========== 스테이지 기반 메서드 (NEW) ==========
+
+  /// 스테이지 정보 가져오기
+  StageInfo getStageInfo(int totalXP, {required bool isPremium}) {
+    final effectiveStage = StageUnlockService.getEffectiveStage(
+      totalXP,
+      isPremium: isPremium,
+    );
+    return StageUnlockService.getStageInfo(effectiveStage);
+  }
+
+  /// 스테이지 기반 일일 토큰 수
+  int getDailyTokensForXP(int totalXP, {required bool isPremium}) {
+    return ConversationTokenSystem.getDailyTokensFromXP(
+      totalXP,
+      isPremium: isPremium,
+    );
+  }
+
+  /// 스테이지 기반 최대 토큰 수
+  int getMaxTokensForXP(int totalXP, {required bool isPremium}) {
+    final effectiveStage = StageUnlockService.getEffectiveStage(
+      totalXP,
+      isPremium: isPremium,
+    );
+    return ConversationTokenSystem.getMaxTokensForStage(effectiveStage);
+  }
+
+  /// 스테이지 기반 일일 보상 받기 (서버 호출)
+  ///
+  /// [totalXP]: 현재 총 경험치
+  /// [isPremium]: 프리미엄 구독 여부
+  Future<void> claimDailyRewardWithStage({
+    required int totalXP,
+    required bool isPremium,
+  }) async {
+    try {
+      final effectiveStage = StageUnlockService.getEffectiveStage(
+        totalXP,
+        isPremium: isPremium,
+      );
+      final dailyTokens = StageUnlockService.getDailyTokensForStage(effectiveStage);
+
+      debugPrint('📞 Calling claimDailyReward with Stage $effectiveStage ($dailyTokens tokens)...');
+
+      final callable = _functions.httpsCallable('claimDailyReward');
+      final result = await callable.call<Map<String, dynamic>>({
+        'isPremium': isPremium,
+        'stage': effectiveStage, // 서버에 스테이지 전달
+        'totalXP': totalXP,
+      });
+
+      final data = result.data;
+      final tokensEarned = data['tokensEarned'] as int;
+      final newBalance = data['newBalance'] as int;
+      final currentStreak = data['currentStreak'] as int;
+
+      debugPrint('✅ Stage-based daily reward: +$tokensEarned tokens (Stage $effectiveStage, Balance: $newBalance, Streak: $currentStreak)');
+    } catch (e) {
+      debugPrint('❌ Failed to claim stage-based daily reward: $e');
+      rethrow;
+    }
+  }
+
+  /// 현재 스테이지 정보 요약
+  Map<String, dynamic> getStageTokenInfo(int totalXP, {required bool isPremium}) {
+    final effectiveStage = StageUnlockService.getEffectiveStage(
+      totalXP,
+      isPremium: isPremium,
+    );
+    final stageInfo = StageUnlockService.getStageInfo(effectiveStage);
+    final rawStage = StageUnlockService.getStageFromXP(totalXP);
+
+    return {
+      'effectiveStage': effectiveStage,
+      'rawStage': rawStage,
+      'stageName': stageInfo.name,
+      'stageNameKo': stageInfo.nameKo,
+      'stageEmoji': stageInfo.emoji,
+      'dailyTokens': stageInfo.dailyTokens,
+      'maxTokens': ConversationTokenSystem.getMaxTokensForStage(effectiveStage),
+      'isPremiumRequired': stageInfo.requiresPremium,
+      'stageProgress': StageUnlockService.getStageProgress(totalXP),
+      'xpToNextStage': StageUnlockService.getXPToNextStage(totalXP),
+      'daysToNextStage': StageUnlockService.getDaysToNextStage(totalXP),
+    };
+  }
 
   /// 다음 일일 보상까지 남은 시간
   Duration getTimeUntilNextDailyReward() {
@@ -267,6 +447,35 @@ class ConversationTokenService extends ChangeNotifier {
         'lifetimeEarned': _tokens.lifetimeEarned,
         'lifetimeSpent': _tokens.lifetimeSpent,
       };
+
+  /// 튜토리얼 완료로 토큰 획득
+  ///
+  /// 튜토리얼 완료 시 1회만 호출됩니다.
+  /// 기본 보상: +1 토큰
+  Future<bool> earnFromTutorialCompletion({int amount = 1}) async {
+    try {
+      final user = _auth.currentUser;
+      if (user == null) {
+        debugPrint('❌ Tutorial reward failed: User not authenticated');
+        return false;
+      }
+
+      debugPrint('🎓 Awarding tutorial completion reward: +$amount token...');
+
+      final tokenRef = _firestore.collection('conversationTokens').doc(user.uid);
+      await tokenRef.update({
+        'balance': FieldValue.increment(amount),
+        'totalEarned': FieldValue.increment(amount),
+        'lastUpdated': FieldValue.serverTimestamp(),
+      });
+
+      debugPrint('✅ Tutorial completion reward: +$amount token');
+      return true;
+    } catch (e) {
+      debugPrint('❌ Failed to award tutorial reward: $e');
+      return false;
+    }
+  }
 
   /// 테스트용: 토큰 추가 (서버 호출)
   Future<void> addTokensForTesting(int amount) async {

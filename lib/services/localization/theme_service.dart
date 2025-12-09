@@ -4,8 +4,9 @@ import '../../utils/config/constants.dart';
 
 /// 테마 색상 옵션
 enum ThemeColor {
-  blue(Color(AppColors.primaryColor), 'Blue'),
+  lavender(Color(AppColors.primaryColor), 'Lavender'), // 연보라 (기본)
   purple(Color(0xFF9C27B0), 'Purple'),
+  blue(Color(0xFF4A90E2), 'Blue'),
   green(Color(0xFF4CAF50), 'Green'),
   orange(Color(0xFFFF9800), 'Orange'),
   red(Color(0xFFF44336), 'Red'),
@@ -36,8 +37,8 @@ class ThemeService extends ChangeNotifier {
   static const String _animationsEnabledKey = 'animations_enabled';
   static const String _highContrastKey = 'high_contrast_mode';
 
-  ThemeMode _themeMode = ThemeMode.dark;
-  ThemeColor _themeColor = ThemeColor.blue;
+  ThemeMode _themeMode = ThemeMode.light; // 기본 라이트 모드 (몽환적인 연보라 테마)
+  ThemeColor _themeColor = ThemeColor.lavender; // 기본 연보라 테마
   FontScale _fontScale = FontScale.normal;
   bool _animationsEnabled = true;
   bool _highContrastMode = false;
@@ -61,21 +62,21 @@ class ThemeService extends ChangeNotifier {
   Future<void> initialize() async {
     final prefs = await SharedPreferences.getInstance();
 
-    // 테마 모드 로드
-    final themeModeIndex = prefs.getInt(_themeKey) ?? ThemeMode.dark.index;
+    // 테마 모드 로드 (기본값: 라이트 모드)
+    final themeModeIndex = prefs.getInt(_themeKey) ?? ThemeMode.light.index;
     if (themeModeIndex >= 0 && themeModeIndex < ThemeMode.values.length) {
       _themeMode = ThemeMode.values[themeModeIndex];
     } else {
-      _themeMode = ThemeMode.dark;
+      _themeMode = ThemeMode.light;
     }
 
-    // 테마 색상 로드
+    // 테마 색상 로드 (기본값: 연보라)
     final themeColorIndex =
-        prefs.getInt(_themeColorKey) ?? ThemeColor.blue.index;
+        prefs.getInt(_themeColorKey) ?? ThemeColor.lavender.index;
     if (themeColorIndex >= 0 && themeColorIndex < ThemeColor.values.length) {
       _themeColor = ThemeColor.values[themeColorIndex];
     } else {
-      _themeColor = ThemeColor.blue;
+      _themeColor = ThemeColor.lavender;
     }
 
     // 폰트 크기 로드
@@ -171,7 +172,7 @@ class ThemeService extends ChangeNotifier {
 
   /// 적응형 테마 설정
   Future<void> setAdaptiveTheme(bool enabled) async {
-    final newMode = enabled ? ThemeMode.system : ThemeMode.dark;
+    final newMode = enabled ? ThemeMode.system : ThemeMode.light;
     await setThemeMode(newMode);
   }
 
@@ -182,8 +183,8 @@ class ThemeService extends ChangeNotifier {
 
   /// 모든 설정 초기화
   Future<void> resetToDefaults() async {
-    _themeMode = ThemeMode.dark;
-    _themeColor = ThemeColor.blue;
+    _themeMode = ThemeMode.light;
+    _themeColor = ThemeColor.lavender;
     _fontScale = FontScale.normal;
     _animationsEnabled = true;
     _highContrastMode = false;
@@ -249,16 +250,17 @@ class ThemeService extends ChangeNotifier {
     if (_themeMode == ThemeMode.dark) {
       return ColorScheme.dark(
         primary: baseColor,
-        secondary: baseColor.withValues(alpha: 0.7),
-        surface: _highContrastMode ? Colors.black : const Color(0xFF1E1E1E),
-        onSurface: _highContrastMode ? Colors.white : Colors.white70,
+        secondary: const Color(AppColors.secondaryColor),
+        surface: _highContrastMode ? Colors.black : const Color(AppColors.surfaceDark),
+        onSurface: _highContrastMode ? Colors.white : const Color(AppColors.textPrimaryDark),
       );
     } else {
+      // 라이트 모드 - 몽환적인 연보라 테마
       return ColorScheme.light(
         primary: baseColor,
-        secondary: baseColor.withValues(alpha: 0.7),
-        surface: _highContrastMode ? Colors.white : const Color(0xFFFAFAFA),
-        onSurface: _highContrastMode ? Colors.black : Colors.black87,
+        secondary: const Color(AppColors.secondaryColor),
+        surface: _highContrastMode ? Colors.white : const Color(AppColors.surfaceLight),
+        onSurface: _highContrastMode ? Colors.black : const Color(AppColors.textPrimaryLight),
       );
     }
   }
@@ -266,17 +268,19 @@ class ThemeService extends ChangeNotifier {
   /// 현재 설정에 맞는 ThemeData 생성
   ThemeData getThemeData() {
     final colorScheme = getColorScheme();
+    final isDark = _themeMode == ThemeMode.dark;
 
     return ThemeData(
       useMaterial3: true,
       colorScheme: colorScheme,
-      brightness:
-          _themeMode == ThemeMode.dark ? Brightness.dark : Brightness.light,
+      brightness: isDark ? Brightness.dark : Brightness.light,
       fontFamily: 'Pretendard',
       textTheme: _buildTextTheme(colorScheme),
+      // 배경색 설정 - 몽환적인 연보라 테마
+      scaffoldBackgroundColor: Color(isDark ? AppColors.backgroundDark : AppColors.backgroundLight),
       appBarTheme: AppBarTheme(
-        backgroundColor: colorScheme.surface,
-        foregroundColor: colorScheme.onSurface,
+        backgroundColor: colorScheme.primary,
+        foregroundColor: Colors.white,
         elevation: _highContrastMode ? 4 : 0,
       ),
       cardTheme: CardThemeData(

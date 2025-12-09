@@ -3,7 +3,8 @@ import 'package:provider/provider.dart';
 import '../../../generated/l10n/app_localizations.dart';
 import '../../../utils/config/constants.dart';
 import '../../../services/data/data_service.dart';
-import '../../../services/chad/chad_evolution_service.dart';
+// DreamFlow - Chad 제거됨 (아카이브)
+// import '../../../services/chad/chad_evolution_service.dart';
 import '../../data/backup_screen.dart';
 
 /// 데이터 관리 설정을 담당하는 위젯
@@ -300,8 +301,9 @@ class DataSettingsWidget extends StatelessWidget {
             Text(AppLocalizations.of(context).followingDataDeleted),
             const SizedBox(height: 4),
             Text(AppLocalizations.of(context).currentLevelProgress),
-            Text(AppLocalizations.of(context).workoutRecordsStats),
-            Text(AppLocalizations.of(context).chadEvolutionStatus),
+            // DreamFlow - Workout/Chad 제거됨
+            // Text(AppLocalizations.of(context).workoutRecordsStats),
+            // Text(AppLocalizations.of(context).chadEvolutionStatus),
             Text(AppLocalizations.of(context).achievementsBadges),
             const SizedBox(height: 8),
             Text(
@@ -357,12 +359,12 @@ class DataSettingsWidget extends StatelessWidget {
       // final dataService = Provider.of<DataService>(context, listen: false);
       // await dataService.resetProgress(); // 메서드가 없으므로 주석 처리
 
-      // Chad Evolution 상태도 리셋
-      final chadService = Provider.of<ChadEvolutionService>(
-        context,
-        listen: false,
-      );
-      await chadService.resetEvolution();
+      // DreamFlow - Chad Evolution 제거됨 (아카이브)
+      // final chadService = Provider.of<ChadEvolutionService>(
+      //   context,
+      //   listen: false,
+      // );
+      // await chadService.resetEvolution();
 
       // 로딩 다이얼로그 닫기
       Navigator.pop(context);

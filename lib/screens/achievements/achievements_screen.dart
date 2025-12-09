@@ -7,6 +7,10 @@ import '../../services/payment/ad_service.dart';
 import '../../widgets/achievements/enhanced_achievement_card.dart';
 import '../../widgets/achievements/achievement_unlock_animation.dart';
 import '../../widgets/achievements/achievement_detail_dialog.dart';
+import '../../widgets/achievements/achievements_stats_header_widget.dart';
+import '../../widgets/achievements/achievements_tab_bar_widget.dart';
+import '../../widgets/achievements/achievements_empty_state_widget.dart';
+import '../../widgets/achievements/achievements_banner_ad_widget.dart';
 import '../../generated/l10n/app_localizations.dart';
 
 class AchievementsScreen extends StatefulWidget {
@@ -151,10 +155,24 @@ class _AchievementsScreenState extends State<AchievementsScreen>
                   physics: const BouncingScrollPhysics(),
                   slivers: [
                     // 헤더 통계
-                    SliverToBoxAdapter(child: _buildStatsHeader()),
+                    SliverToBoxAdapter(
+                      child: AchievementsStatsHeaderWidget(
+                        isLoading: _isLoading,
+                        totalXP: _totalXP,
+                        unlockedCount: _unlockedCount,
+                        totalCount: _totalCount,
+                        rarityCount: _rarityCount,
+                      ),
+                    ),
 
                     // 탭바
-                    SliverToBoxAdapter(child: _buildTabBar()),
+                    SliverToBoxAdapter(
+                      child: AchievementsTabBarWidget(
+                        controller: _tabController,
+                        unlockedCount: _unlockedAchievements.length,
+                        lockedCount: _lockedAchievements.length,
+                      ),
+                    ),
 
                     // 업적 리스트
                     SliverFillRemaining(
@@ -171,7 +189,7 @@ class _AchievementsScreenState extends State<AchievementsScreen>
               ),
 
               // 하단 배너 광고
-              _buildBannerAd(),
+              AchievementsBannerAdWidget(bannerAd: _achievementsBannerAd),
             ],
           ),
 
@@ -191,228 +209,9 @@ class _AchievementsScreenState extends State<AchievementsScreen>
     );
   }
 
-  Widget _buildStatsHeader() {
-    final theme = Theme.of(context);
-
-    if (_isLoading) {
-      return Container(
-        padding: const EdgeInsets.all(AppConstants.paddingL),
-        child: const Center(child: CircularProgressIndicator()),
-      );
-    }
-
-    final isDark = theme.brightness == Brightness.dark;
-
-    return Container(
-      margin: const EdgeInsets.all(AppConstants.paddingM),
-      padding: const EdgeInsets.all(AppConstants.paddingL),
-      decoration: BoxDecoration(
-        gradient: isDark
-            ? LinearGradient(
-                colors: [
-                  Color(AppColors.lucidGradient[0]),
-                  Color(AppColors.lucidGradient[1]),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              )
-            : const LinearGradient(
-                colors: <Color>[
-                  Color(0xFF2196F3), // 밝은 파란색
-                  Color(0xFF1976D2), // 진한 파란색
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-              ),
-        borderRadius: BorderRadius.circular(AppConstants.radiusL),
-        boxShadow: [
-          BoxShadow(
-            color: (isDark ? Colors.black : Colors.grey).withValues(alpha: 0.2),
-            blurRadius: 12,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        children: [
-          Text(
-            '🏆 ${AppLocalizations.of(context).achievements}',
-            style: theme.textTheme.headlineSmall?.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const SizedBox(height: AppConstants.paddingM),
-
-          // 메인 통계
-          Row(
-            children: [
-              Expanded(
-                child: _buildStatItem(
-                  icon: Icons.emoji_events,
-                  value: '$_unlockedCount/$_totalCount',
-                  label: AppLocalizations.of(
-                    context,
-                  ).unlockedAchievements(_unlockedCount),
-                  color: Colors.amber,
-                ),
-              ),
-              Expanded(
-                child: _buildStatItem(
-                  icon: Icons.star,
-                  value: '$_totalXP XP',
-                  label: AppLocalizations.of(context).totalExperience,
-                  color: Colors.white,
-                ),
-              ),
-            ],
-          ),
-
-          const SizedBox(height: AppConstants.paddingM),
-
-          // 레어도별 통계
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildRarityBadge(
-                AchievementRarity.common,
-                _rarityCount[AchievementRarity.common] ?? 0,
-              ),
-              _buildRarityBadge(
-                AchievementRarity.rare,
-                _rarityCount[AchievementRarity.rare] ?? 0,
-              ),
-              _buildRarityBadge(
-                AchievementRarity.epic,
-                _rarityCount[AchievementRarity.epic] ?? 0,
-              ),
-              _buildRarityBadge(
-                AchievementRarity.legendary,
-                _rarityCount[AchievementRarity.legendary] ?? 0,
-              ),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildStatItem({
-    required IconData icon,
-    required String value,
-    required String label,
-    required Color color,
-  }) {
-    final theme = Theme.of(context);
-
-    return Column(
-      children: [
-        Icon(icon, color: color, size: 32),
-        const SizedBox(height: AppConstants.paddingS / 2),
-        Text(
-          value,
-          style: theme.textTheme.titleLarge?.copyWith(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        Text(
-          label,
-          style: theme.textTheme.bodySmall?.copyWith(color: Colors.white70),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildRarityBadge(AchievementRarity rarity, int count) {
-    final theme = Theme.of(context);
-    final color = Achievement(
-      id: '',
-      titleKey: 'achievementTutorialExplorerTitle',
-      descriptionKey: 'achievementTutorialExplorerDesc',
-      motivationKey: 'achievementTutorialExplorerMotivation',
-      type: AchievementType.first,
-      rarity: rarity,
-      targetValue: 0,
-      icon: Icons.star,
-    ).getRarityColor();
-
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: AppConstants.paddingS,
-        vertical: AppConstants.paddingS / 2,
-      ),
-      decoration: BoxDecoration(
-        color: color.withValues(alpha: 0.2),
-        borderRadius: BorderRadius.circular(AppConstants.radiusS),
-        border: Border.all(color: color, width: 1),
-      ),
-      child: Column(
-        children: [
-          Text(
-            '$count',
-            style: theme.textTheme.titleLarge?.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          Text(
-            rarity == AchievementRarity.common
-                ? AppLocalizations.of(context).common
-                : rarity == AchievementRarity.rare
-                    ? AppLocalizations.of(context).rare
-                    : rarity == AchievementRarity.epic
-                        ? AppLocalizations.of(context).epic
-                        : AppLocalizations.of(context).legendary,
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: Colors.white70,
-              fontSize: 10,
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTabBar() {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: AppConstants.paddingM),
-      decoration: BoxDecoration(
-        color: const Color(AppColors.primaryColor).withValues(alpha: 0.1),
-        borderRadius: BorderRadius.circular(AppConstants.radiusM),
-      ),
-      child: TabBar(
-        controller: _tabController,
-        labelColor: const Color(AppColors.primaryColor),
-        unselectedLabelColor: Colors.grey[600],
-        indicator: BoxDecoration(
-          color: const Color(AppColors.primaryColor),
-          borderRadius: BorderRadius.circular(AppConstants.radiusM),
-        ),
-        labelStyle: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-        unselectedLabelStyle: const TextStyle(
-          fontWeight: FontWeight.normal,
-          fontSize: 14,
-        ),
-        tabs: [
-          Tab(
-            text: AppLocalizations.of(
-              context,
-            ).unlockedAchievements(_unlockedAchievements.length),
-          ),
-          Tab(
-            text: AppLocalizations.of(
-              context,
-            ).lockedAchievements(_lockedAchievements.length),
-          ),
-        ],
-      ),
-    );
-  }
-
   Widget _buildUnlockedAchievements() {
     if (_unlockedAchievements.isEmpty) {
-      return _buildEmptyState(
+      return AchievementsEmptyStateWidget(
         icon: Icons.emoji_events_outlined,
         title: AppLocalizations.of(context).noAchievementsYet,
         message: AppLocalizations.of(context).startWorkoutForAchievements,
@@ -437,7 +236,7 @@ class _AchievementsScreenState extends State<AchievementsScreen>
 
   Widget _buildLockedAchievements() {
     if (_lockedAchievements.isEmpty) {
-      return _buildEmptyState(
+      return AchievementsEmptyStateWidget(
         icon: Icons.lock_outline,
         title: AppLocalizations.of(context).allAchievementsUnlocked,
         message: AppLocalizations.of(context).congratulationsChad,
@@ -460,89 +259,11 @@ class _AchievementsScreenState extends State<AchievementsScreen>
     );
   }
 
-  Widget _buildEmptyState({
-    required IconData icon,
-    required String title,
-    required String message,
-  }) {
-    final theme = Theme.of(context);
-
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.all(AppConstants.paddingL),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Icon(icon, size: 80, color: Colors.grey[400]),
-            const SizedBox(height: 16),
-            Text(
-              title,
-              style: theme.textTheme.headlineSmall?.copyWith(
-                fontWeight: FontWeight.bold,
-                color: Colors.grey[600],
-              ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              message,
-              style: theme.textTheme.bodyLarge?.copyWith(
-                color: Colors.grey[500],
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-
   /// 업적 상세 정보 다이얼로그 표시
   void _showAchievementDetail(Achievement achievement) {
     showDialog<void>(
       context: context,
       builder: (context) => AchievementDetailDialog(achievement: achievement),
-    );
-  }
-
-  Widget _buildBannerAd() {
-    final l10n = AppLocalizations.of(context);
-
-    return Container(
-      height: 60,
-      width: double.infinity,
-      decoration: const BoxDecoration(
-        color: Color(0xFF1A1A1A),
-        border: Border(
-          top: BorderSide(color: Color(AppColors.primaryColor), width: 1),
-        ),
-      ),
-      child: _achievementsBannerAd != null
-          ? AdWidget(ad: _achievementsBannerAd!)
-          : Container(
-              height: 60,
-              color: const Color(0xFF1A1A1A),
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      Icons.emoji_events,
-                      color: Color(AppColors.primaryColor),
-                      size: 18,
-                    ),
-                    const SizedBox(width: 6),
-                    Text(
-                      l10n.achievementsBannerText,
-                      style: const TextStyle(
-                        color: Colors.white70,
-                        fontSize: 13,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
     );
   }
 }

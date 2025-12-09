@@ -23,8 +23,8 @@ class AdBannerWidget extends StatefulWidget {
 
 class _AdBannerWidgetState extends State<AdBannerWidget> {
   BannerAd? _bannerAd;
-  final bool _isAdLoaded = false;
-  final bool _hasError = false;
+  bool _isAdLoaded = false;
+  bool _hasError = false;
 
   @override
   void initState() {
@@ -33,13 +33,36 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
   }
 
   void _loadBannerAd() {
-    // 프리미엄 사용자는 광고 로드하지 않음
+    // 프리미엄 구독자는 광고를 로드하지 않음
     final authService = context.read<AuthService>();
     if (!authService.hasAds) {
       return;
     }
 
-    _bannerAd = AdService().createBannerAd();
+    debugPrint('🔍 AdBannerWidget _loadBannerAd() 시작');
+
+    _bannerAd = BannerAd(
+      adUnitId: AdService.bannerAdUnitId,
+      size: widget.adSize,
+      request: const AdRequest(),
+      listener: BannerAdListener(
+        onAdLoaded: (ad) {
+          setState(() {
+            _isAdLoaded = true;
+            _hasError = false;
+          });
+          debugPrint('✅ 배너 광고 로드 완료: ${ad.adUnitId}');
+        },
+        onAdFailedToLoad: (ad, error) {
+          setState(() {
+            _isAdLoaded = false;
+            _hasError = true;
+          });
+          debugPrint('❌ 배너 광고 로드 실패: $error');
+          ad.dispose();
+        },
+      ),
+    );
     _bannerAd?.load();
   }
 
@@ -51,14 +74,17 @@ class _AdBannerWidgetState extends State<AdBannerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    // 프리미엄 사용자는 광고 표시하지 않음
+    // 프리미엄 구독자는 광고를 표시하지 않음
     final authService = context.watch<AuthService>();
     if (!authService.hasAds) {
       return const SizedBox.shrink();
     }
 
+    debugPrint('🔍 AdBannerWidget build() - _isAdLoaded: $_isAdLoaded, _hasError: $_hasError');
+
     // 광고 로드 실패 시 에러 표시 여부에 따라 처리
     if (_hasError && !widget.showOnError) {
+      debugPrint('⚠️ AdBannerWidget - 광고 로드 실패로 숨김');
       return const SizedBox.shrink();
     }
 

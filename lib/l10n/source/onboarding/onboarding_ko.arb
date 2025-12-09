@@ -89,8 +89,8 @@
   "onboardingNext": "다음",
   "onboardingSkip": "건너뛰기",
   "onboardingStart": "시작하기",
-  "onboardingWelcomeDescription": "30일이면 충분해. 당신도 자각몽을 경험할 수 있어요.\n함께 시작해봐요! 🌙",
-  "onboardingWelcomeTitle": "30일, 자각몽 마스터! 🔥",
+  "onboardingWelcomeDescription": "30일이면 충분합니다. 당신도 자각몽을 경험할 수 있습니다.\n함께 시작해봅시다!",
+  "onboardingWelcomeTitle": "30일, 자각몽 마스터!",
   "startTestButton": "시작하기",
   "stepByStepGuide": "단계별\n가이드",
   "testAdMessage": "테스트 광고 - 자각몽 앱",
@@ -152,5 +152,53 @@
   "goalSetupTimeNight": "밤 (20-22시)",
   "goalSetupWelcomeMessage": "이제 당신만의 맞춤형 자각몽 여정이 시작됩니다.\n런칭 이벤트로 1개월 무료 체험해보세요!",
   "goalSetupStartJourney": "시작하기",
-  "goalSetupCompleteTitle": "🎉 목표 설정 완료!"
+  "goalSetupCompleteTitle": "🎉 목표 설정 완료!",
+  "@onboardingMissionWeek12Title": {
+    "description": "온보딩 미션 1-2주차 제목"
+  },
+  "onboardingMissionWeek12Title": "Week 1-2",
+  "@onboardingMissionWeek12Desc": {
+    "description": "온보딩 미션 1-2주차 설명"
+  },
+  "onboardingMissionWeek12Desc": "기초 다지기",
+  "@onboardingMissionWeek34Title": {
+    "description": "온보딩 미션 3-4주차 제목"
+  },
+  "onboardingMissionWeek34Title": "Week 3-4",
+  "@onboardingMissionWeek34Desc": {
+    "description": "온보딩 미션 3-4주차 설명"
+  },
+  "onboardingMissionWeek34Desc": "자각몽 첫 성공",
+  "@onboardingMissionWeek58Title": {
+    "description": "온보딩 미션 5-8주차 제목"
+  },
+  "onboardingMissionWeek58Title": "Week 5-8",
+  "@onboardingMissionWeek58Desc": {
+    "description": "온보딩 미션 5-8주차 설명"
+  },
+  "onboardingMissionWeek58Desc": "자각몽 마스터",
+  "@onboardingMissionReadyTitle": {
+    "description": "온보딩 미션 준비 완료 제목"
+  },
+  "onboardingMissionReadyTitle": "준비 완료!",
+  "@onboardingMissionReadyDesc": {
+    "description": "온보딩 미션 준비 완료 설명"
+  },
+  "onboardingMissionReadyDesc": "지금 시작하세요",
+  "@readyToStartSubtitle": {
+    "description": "시작 준비 부제목"
+  },
+  "readyToStartSubtitle": "간단한 설정으로 시작점을 찾아보세요",
+  "@getStartedStep1": {
+    "description": "시작하기 1단계"
+  },
+  "getStartedStep1": "1. 목표 설정 (1분)",
+  "@getStartedStep2": {
+    "description": "시작하기 2단계"
+  },
+  "getStartedStep2": "2. 연습 시작일 설정",
+  "@getStartedStep3": {
+    "description": "시작하기 3단계"
+  },
+  "getStartedStep3": "3. 30일 여정 시작!"
 }

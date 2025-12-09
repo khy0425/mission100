@@ -146,5 +146,140 @@
   "@vipFastLoading": {
     "description": "VIP 빠른 로딩 배지"
   },
-  "vipFastLoading": "VIP 10배 빠른 로딩"
+  "vipFastLoading": "VIP 10배 빠른 로딩",
+  "@trialEnded": {
+    "description": "체험 기간 종료 레이블"
+  },
+  "trialEnded": "체험 종료",
+  "@premiumBenefitsTitle": {
+    "description": "프리미엄 혜택 제목"
+  },
+  "premiumBenefitsTitle": "프리미엄 혜택",
+  "@premiumBenefitAdFreeDesc": {
+    "description": "광고 제거 혜택 설명"
+  },
+  "premiumBenefitAdFreeDesc": "모든 광고 제거",
+  "@premiumBenefitLumi": {
+    "description": "Lumi 진화 혜택"
+  },
+  "premiumBenefitLumi": "Lumi 진화 시스템",
+  "@premiumBenefitLumiDesc": {
+    "description": "Lumi 진화 혜택 설명"
+  },
+  "premiumBenefitLumiDesc": "Lumi 캐릭터 진화 시스템 이용",
+  "@premiumBenefitUnlimitedAI": {
+    "description": "무제한 AI 대화 혜택"
+  },
+  "premiumBenefitUnlimitedAI": "무제한 AI 대화",
+  "@premiumBenefitAIDesc": {
+    "description": "무제한 AI 대화 혜택 설명"
+  },
+  "premiumBenefitAIDesc": "Lumi와 무제한 대화 가능",
+  "@premiumBenefitAdvancedStats": {
+    "description": "고급 통계 혜택"
+  },
+  "premiumBenefitAdvancedStats": "고급 통계",
+  "@premiumBenefitStatsDesc": {
+    "description": "고급 통계 혜택 설명"
+  },
+  "premiumBenefitStatsDesc": "상세한 진행 상황 통계 분석",
+  "@premiumDialogTitle": {
+    "description": "프리미엄 다이얼로그 제목"
+  },
+  "premiumDialogTitle": "프리미엄 업그레이드",
+  "@premiumUnlockWeeks": {
+    "description": "프리미엄으로 Week 잠금 해제 메시지",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "premiumUnlockWeeks": "Week {week} 이후는 프리미엄 구독이 필요합니다",
+  "@premiumPriceMonthly": {
+    "description": "월간 프리미엄 가격"
+  },
+  "premiumPriceMonthly": "₩4,900/월",
+  "@premiumPricePerMonth": {
+    "description": "월 단위 가격"
+  },
+  "premiumPricePerMonth": "월 ₩4,900",
+  "@premiumStartNowButton": {
+    "description": "프리미엄 시작 버튼"
+  },
+  "premiumStartNowButton": "지금 시작하기",
+  "@premiumSubscriptionInfo": {
+    "description": "구독 정보 안내"
+  },
+  "premiumSubscriptionInfo": "언제든지 취소 가능합니다",
+  "@premiumCongratulations": {
+    "description": "축하 메시지"
+  },
+  "premiumCongratulations": "축하합니다",
+  "@premiumWeekReached": {
+    "description": "Week 도달 메시지",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "premiumWeekReached": "Week {week}에 도달했습니다",
+  "@premiumRequiredMessage": {
+    "description": "프리미엄 필요 메시지"
+  },
+  "premiumRequiredMessage": "계속하려면 프리미엄 구독이 필요합니다",
+  "@subscriptionFreeTrialRemaining": {
+    "description": "무료 체험 남은 기간",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "subscriptionFreeTrialRemaining": "무료 체험 {days}일 남음",
+  "@subscriptionBenefitAdFree": {
+    "description": "광고 제거 혜택"
+  },
+  "subscriptionBenefitAdFree": "광고 없는 경험",
+  "@subscriptionBenefitLumiEvolution": {
+    "description": "Lumi 진화 혜택"
+  },
+  "subscriptionBenefitLumiEvolution": "Lumi 전체 진화 (6단계)",
+  "@subscriptionBenefitUnlimitedAI": {
+    "description": "무제한 AI 분석 혜택"
+  },
+  "subscriptionBenefitUnlimitedAI": "무제한 AI 꿈 분석",
+  "@subscriptionBenefitAdvancedAnalytics": {
+    "description": "고급 분석 혜택"
+  },
+  "subscriptionBenefitAdvancedAnalytics": "고급 통계 분석",
+  "@subscriptionBenefitDataExport": {
+    "description": "데이터 내보내기 혜택"
+  },
+  "subscriptionBenefitDataExport": "데이터 내보내기",
+  "@subscriptionAdsLabel": {
+    "description": "광고 레이블"
+  },
+  "subscriptionAdsLabel": "광고",
+  "@subscriptionAdsYes": {
+    "description": "광고 있음"
+  },
+  "subscriptionAdsYes": "있음",
+  "@subscriptionAdsNoWithAdFree": {
+    "description": "광고 없음 (프리미엄)"
+  },
+  "subscriptionAdsNoWithAdFree": "없음 (광고 제거)",
+  "@premiumBenefitLumiEvolution": {
+    "description": "Lumi 진화 프리미엄 혜택"
+  },
+  "premiumBenefitLumiEvolution": "Lumi 전체 진화",
+  "@premiumLaterButton": {
+    "description": "나중에 하기 버튼"
+  },
+  "premiumLaterButton": "나중에",
+  "@premiumStartButton": {
+    "description": "시작하기 버튼"
+  },
+  "premiumStartButton": "시작하기"
 }

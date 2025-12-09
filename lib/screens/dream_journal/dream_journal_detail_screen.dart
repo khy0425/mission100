@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import '../../generated/l10n/app_localizations.dart';
 import '../../utils/config/constants.dart';
 import '../../models/dream_entry.dart';
-import '../../models/dream_sign.dart';
 import '../../services/data/dream_journal_service.dart';
+import '../../services/auth/auth_service.dart';
 import '../../widgets/dream_journal/dream_header_card_widget.dart';
 import '../../widgets/dream_journal/dream_content_card_widget.dart';
 import '../../widgets/dream_journal/dream_emotions_card_widget.dart';
@@ -12,6 +13,7 @@ import '../../widgets/dream_journal/dream_signs_card_widget.dart';
 import '../../widgets/dream_journal/dream_sleep_info_card_widget.dart';
 import '../../widgets/dream_journal/dream_techniques_card_widget.dart';
 import '../../widgets/dream_journal/dream_meta_info_card_widget.dart';
+import '../../widgets/common/ad_banner_widget.dart';
 import '../ai/lucid_dream_ai_assistant_screen.dart';
 import 'dream_journal_write_screen.dart';
 
@@ -137,31 +139,10 @@ class _DreamJournalDetailScreenState extends State<DreamJournalDetailScreen> {
 
   /// AI 분석 요청
   void _analyzeWithAI() async {
-    final l10n = AppLocalizations.of(context);
-    // 꿈 내용을 AI 분석 형식으로 포맷팅
-    final dreamText = '''
-제목: ${_dream.title.isNotEmpty ? _dream.title : l10n.noTitle}
-
-날짜: ${_dream.dateLabel}
-자각도: ${_dream.lucidityLevel}/10 (${_dream.lucidityLevelText})
-
-꿈 내용:
-${_dream.content}
-
-${_dream.emotions.isNotEmpty ? '${l10n.emotionsLabel} ${_dream.emotions.join(', ')}' : ''}
-${_dream.symbols.isNotEmpty ? 'Dream Signs: ${_dream.symbols.join(', ')}' : ''}
-${_dream.characters.isNotEmpty ? '${l10n.charactersLabel} ${_dream.characters.join(', ')}' : ''}
-${_dream.locations.isNotEmpty ? '${l10n.locationsLabel} ${_dream.locations.join(', ')}' : ''}
-${_dream.techniquesUsed.isNotEmpty ? '${l10n.techniquesUsedLabel} ${_dream.techniquesUsed.join(', ')}' : ''}
-''';
-
-    // AI 어시스턴트 화면으로 이동 (꿈 분석 기능 선택)
+    // AI 어시스턴트 화면으로 이동
     await Navigator.of(context).push(
       MaterialPageRoute(
-        builder: (context) => LucidDreamAIAssistantScreen(
-          initialContent: dreamText,
-          initialFeature: AssistantFeature.dreamJournal,
-        ),
+        builder: (context) => const LucidDreamAIAssistantScreen(),
       ),
     );
   }
@@ -227,81 +208,105 @@ ${_dream.techniquesUsed.isNotEmpty ? '${l10n.techniquesUsedLabel} ${_dream.techn
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(AppConstants.paddingM),
+      body: SafeArea(
+        bottom: true, // 시스템 네비게이션 버튼 영역 확보
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // 날짜 및 자각도 카드
-            DreamHeaderCardWidget(dream: _dream),
-            const SizedBox(height: AppConstants.paddingM),
+            Expanded(
+              child: SingleChildScrollView(
+                padding: const EdgeInsets.all(AppConstants.paddingM),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // 날짜 및 자각도 카드
+                    DreamHeaderCardWidget(dream: _dream),
+                    const SizedBox(height: AppConstants.paddingM),
 
-            // 제목 (있는 경우)
-            if (_dream.title.isNotEmpty) ...[
-              Text(
-                _dream.title,
-                style: const TextStyle(
-                  fontSize: AppConstants.fontSizeXXL,
-                  fontWeight: FontWeight.bold,
+                    // 제목 (있는 경우)
+                    if (_dream.title.isNotEmpty) ...[
+                      Text(
+                        _dream.title,
+                        style: const TextStyle(
+                          fontSize: AppConstants.fontSizeXXL,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: AppConstants.paddingM),
+                    ],
+
+                    // 내용
+                    DreamContentCardWidget(content: _dream.content),
+                    const SizedBox(height: AppConstants.paddingM),
+
+                    // 감정 및 기분
+                    if (_dream.emotions.isNotEmpty || _dream.moodScore != null) ...[
+                      DreamEmotionsCardWidget(
+                        emotions: _dream.emotions,
+                        moodScore: _dream.moodScore,
+                      ),
+                      const SizedBox(height: AppConstants.paddingM),
+                    ],
+
+                    // Dream Signs (심볼, 인물, 장소)
+                    if (_dream.symbols.isNotEmpty ||
+                        _dream.characters.isNotEmpty ||
+                        _dream.locations.isNotEmpty) ...[
+                      DreamSignsCardWidget(
+                        symbols: _dream.symbols,
+                        characters: _dream.characters,
+                        locations: _dream.locations,
+                      ),
+                      const SizedBox(height: AppConstants.paddingM),
+                    ],
+
+                    // 수면 정보
+                    if (_dream.sleepTime != null ||
+                        _dream.wakeTime != null ||
+                        _dream.sleepQuality != null) ...[
+                      DreamSleepInfoCardWidget(
+                        sleepTime: _dream.sleepTime,
+                        wakeTime: _dream.wakeTime,
+                        sleepDuration: _dream.sleepDuration,
+                        sleepQuality: _dream.sleepQuality,
+                      ),
+                      const SizedBox(height: AppConstants.paddingM),
+                    ],
+
+                    // 사용한 기법
+                    if (_dream.techniquesUsed.isNotEmpty || _dream.usedWbtb) ...[
+                      DreamTechniquesCardWidget(
+                        usedWbtb: _dream.usedWbtb,
+                        techniquesUsed: _dream.techniquesUsed,
+                      ),
+                      const SizedBox(height: AppConstants.paddingM),
+                    ],
+
+                    // 메타 정보
+                    DreamMetaInfoCardWidget(
+                      createdAt: _dream.createdAt,
+                      updatedAt: _dream.updatedAt,
+                      wordCount: _dream.wordCount,
+                      hasAiAnalysis: _dream.hasAiAnalysis,
+                    ),
+                  ],
                 ),
               ),
-              const SizedBox(height: AppConstants.paddingM),
-            ],
-
-            // 내용
-            DreamContentCardWidget(content: _dream.content),
-            const SizedBox(height: AppConstants.paddingM),
-
-            // 감정 및 기분
-            if (_dream.emotions.isNotEmpty || _dream.moodScore != null) ...[
-              DreamEmotionsCardWidget(
-                emotions: _dream.emotions,
-                moodScore: _dream.moodScore,
-              ),
-              const SizedBox(height: AppConstants.paddingM),
-            ],
-
-            // Dream Signs (심볼, 인물, 장소)
-            if (_dream.symbols.isNotEmpty ||
-                _dream.characters.isNotEmpty ||
-                _dream.locations.isNotEmpty) ...[
-              DreamSignsCardWidget(
-                symbols: _dream.symbols,
-                characters: _dream.characters,
-                locations: _dream.locations,
-              ),
-              const SizedBox(height: AppConstants.paddingM),
-            ],
-
-            // 수면 정보
-            if (_dream.sleepTime != null ||
-                _dream.wakeTime != null ||
-                _dream.sleepQuality != null) ...[
-              DreamSleepInfoCardWidget(
-                sleepTime: _dream.sleepTime,
-                wakeTime: _dream.wakeTime,
-                sleepDuration: _dream.sleepDuration,
-                sleepQuality: _dream.sleepQuality,
-              ),
-              const SizedBox(height: AppConstants.paddingM),
-            ],
-
-            // 사용한 기법
-            if (_dream.techniquesUsed.isNotEmpty || _dream.usedWbtb) ...[
-              DreamTechniquesCardWidget(
-                usedWbtb: _dream.usedWbtb,
-                techniquesUsed: _dream.techniquesUsed,
-              ),
-              const SizedBox(height: AppConstants.paddingM),
-            ],
-
-            // 메타 정보
-            DreamMetaInfoCardWidget(
-              createdAt: _dream.createdAt,
-              updatedAt: _dream.updatedAt,
-              wordCount: _dream.wordCount,
-              hasAiAnalysis: _dream.hasAiAnalysis,
             ),
+
+            // 하단 배너 광고 (네비게이션 바 회피)
+            Consumer<AuthService>(
+              builder: (context, authService, child) {
+                return const AdBannerWidget(
+                  margin: EdgeInsets.only(
+                    top: 8,
+                    bottom: 8,
+                  ),
+                );
+              },
+            ),
+
+            // 네비게이션 바를 위한 추가 공간 확보
+            const SizedBox(height: 20),
           ],
         ),
       ),

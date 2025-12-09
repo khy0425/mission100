@@ -269,7 +269,7 @@
   "@analysisComparisonCostQuick": {
     "description": "빠른 분석 비용"
   },
-  "analysisComparisonCostQuick": "무료",
+  "analysisComparisonCostQuick": "1 토큰",
   "@analysisComparisonCostLumi": {
     "description": "Lumi 분석 비용"
   },
@@ -357,7 +357,7 @@
   "@quickAnalysisGuideBadge": {
     "description": "가이드 기능 배지"
   },
-  "quickAnalysisGuideBadge": "무료",
+  "quickAnalysisGuideBadge": "1 토큰",
   "@quickAnalysisGuideDescription": {
     "description": "가이드 설명"
   },
@@ -373,7 +373,7 @@
   "@quickAnalysisGuideNoTokens": {
     "description": "토큰 불필요 기능"
   },
-  "quickAnalysisGuideNoTokens": "토큰 불필요",
+  "quickAnalysisGuideNoTokens": "1 토큰 필요",
   "@quickAnalysisLoadingTitle": {
     "description": "로딩 타이틀"
   },
@@ -509,5 +509,89 @@
   "@dreamAnalysisPremiumButton": {
     "description": "프리미엄 업그레이드 버튼"
   },
-  "dreamAnalysisPremiumButton": "프리미엄 가입"
+  "dreamAnalysisPremiumButton": "프리미엄 가입",
+  "@tokenRewardTitle": {
+    "description": "토큰 보상 다이얼로그 제목"
+  },
+  "tokenRewardTitle": "토큰 획득",
+  "@tokenDailyRewardPremium": {
+    "description": "프리미엄 일일 보상 레이블"
+  },
+  "tokenDailyRewardPremium": "프리미엄 일일 보상",
+  "@tokenDailyRewardFree": {
+    "description": "무료 일일 보상 레이블"
+  },
+  "tokenDailyRewardFree": "무료 일일 보상",
+  "@tokenStreakBonus": {
+    "description": "연속 출석 보너스 레이블",
+    "placeholders": {
+      "currentStreak": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenStreakBonus": "연속 {currentStreak}일 보너스",
+  "@tokenTotalReward": {
+    "description": "총 획득 토큰 레이블"
+  },
+  "tokenTotalReward": "총 획득",
+  "@tokenStreakStatus": {
+    "description": "현재 연속 출석 상태",
+    "placeholders": {
+      "currentStreak": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenStreakStatus": "연속 {currentStreak}일 달성",
+  "@tokenStreakGoal3Days": {
+    "description": "3일 연속 목표 안내",
+    "placeholders": {
+      "daysLeft": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenStreakGoal3Days": "{daysLeft}일 더 하면 보너스!",
+  "@tokenStreakGoal7Days": {
+    "description": "7일 연속 목표 안내",
+    "placeholders": {
+      "daysLeft": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenStreakGoal7Days": "{daysLeft}일 더 하면 특별 보너스!",
+  "@tokenUserTypePremium": {
+    "description": "프리미엄 사용자 타입 레이블"
+  },
+  "tokenUserTypePremium": "프리미엄",
+  "@tokenUserTypeFree": {
+    "description": "무료 사용자 타입 레이블"
+  },
+  "tokenUserTypeFree": "무료",
+  "@tokenBalanceDisplay": {
+    "description": "토큰 잔액 표시",
+    "placeholders": {
+      "balance": {
+        "type": "int"
+      },
+      "maxTokens": {
+        "type": "int"
+      }
+    }
+  },
+  "tokenBalanceDisplay": "{balance}/{maxTokens} 토큰",
+  "@dreamJournalTitle": {
+    "description": "꿈 일기 타이틀"
+  },
+  "dreamJournalTitle": "꿈 일기",
+  "@tokenInsufficientMessage": {
+    "description": "토큰 부족 메시지"
+  },
+  "tokenInsufficientMessage": "토큰이 부족합니다",
+  "@tokenConsumeFailed": {
+    "description": "토큰 사용 실패 메시지"
+  },
+  "tokenConsumeFailed": "토큰 사용에 실패했습니다"
 }

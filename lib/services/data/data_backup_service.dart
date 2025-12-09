@@ -6,9 +6,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:crypto/crypto.dart';
 import 'package:encrypt/encrypt.dart' as encrypt;
-import '../../models/workout_history.dart';
+// DreamFlow - Workout/Chad 제거됨 (아카이브)
+// import '../../models/workout_history.dart';
 import '../../models/achievement.dart';
-import '../workout/workout_history_service.dart';
+// DreamFlow - Workout/Chad 제거됨 (아카이브)
+// import '../workout/workout_history_service.dart';
 import '../achievements/achievement_service.dart';
 import '../auth/permission_service.dart';
 import '../progress/streak_service.dart';
@@ -119,7 +121,7 @@ class DataBackupService {
 
       // 파일 저장 위치 선택 (새로운 방식 - bytes 사용)
       final result = await FilePicker.platform.saveFile(
-        dialogTitle: 'Mission 100 백업 파일 저장',
+        dialogTitle: 'Lucid Dream 100 백업 파일 저장',
         fileName: backupResult.fileName,
         bytes: Uint8List.fromList(bytes), // bytes 파라미터 사용
         type: FileType.custom,
@@ -174,7 +176,7 @@ class DataBackupService {
         final result = await FilePicker.platform.pickFiles(
           type: FileType.custom,
           allowedExtensions: ['json'],
-          dialogTitle: 'Mission 100 백업 파일 선택',
+          dialogTitle: 'Lucid Dream 100 백업 파일 선택',
         );
 
         if (result == null || result.files.isEmpty) {
@@ -226,9 +228,11 @@ class DataBackupService {
       prefsData[key] = value;
     }
 
-    // 운동 기록 데이터
-    final workoutRecords = await WorkoutHistoryService.getAllWorkouts();
-    final workoutData = workoutRecords.map((record) => record.toMap()).toList();
+    // DreamFlow - Workout/Chad 제거됨 (아카이브)
+    // 운동 기록 데이터 - 자각몽 앱에서는 사용하지 않음
+    // final workoutRecords = await WorkoutHistoryService.getAllWorkouts();
+    final workoutRecords = <dynamic>[]; // 빈 리스트로 대체 (workout_history 모델 제거됨)
+    final workoutData = <Map<String, dynamic>>[]; // 빈 리스트로 대체
 
     // 업적 데이터
     final achievements = await AchievementService.getAllAchievements();
@@ -377,12 +381,13 @@ class DataBackupService {
       }
     }
 
-    // 운동 기록 복원
-    final workoutData = data['workoutRecords'] as List<dynamic>;
-    for (final recordData in workoutData) {
-      final record = WorkoutHistory.fromMap(recordData as Map<String, dynamic>);
-      await WorkoutHistoryService.saveWorkoutHistory(record);
-    }
+    // DreamFlow - Workout/Chad 제거됨 (아카이브)
+    // 운동 기록 복원 - 자각몽 앱에서는 사용하지 않음
+    // final workoutData = data['workoutRecords'] as List<dynamic>;
+    // for (final recordData in workoutData) {
+    //   final record = WorkoutHistory.fromMap(recordData as Map<String, dynamic>);
+    //   await WorkoutHistoryService.saveWorkoutHistory(record);
+    // }
 
     // 업적 복원
     final achievementData = data['achievements'] as List<dynamic>;
@@ -403,7 +408,8 @@ class DataBackupService {
   Future<void> _clearAllData() async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.clear();
-    await WorkoutHistoryService.clearAllRecords();
+    // DreamFlow - Workout/Chad 제거됨 (아카이브)
+    // await WorkoutHistoryService.clearAllRecords();
     await AchievementService.resetAchievementDatabase();
 
     // 스트릭 데이터 초기화
