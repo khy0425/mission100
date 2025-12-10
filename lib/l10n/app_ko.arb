@@ -1301,6 +1301,46 @@
     "description": "Improvement tips section subtitle"
   },
   "becomeTrueChadTips": "이 팁들로 너도 성장할 수 있어요! 💎",
+  "@bedtimePrepCheckAtLeast3": {
+    "description": "최소 3개 체크 필요"
+  },
+  "bedtimePrepCheckAtLeast3": "최소 3개 이상 체크해주세요",
+  "@bedtimePrepCompleted": {
+    "description": "취침 준비 완료"
+  },
+  "bedtimePrepCompleted": "취침 준비 완료!",
+  "@bedtimePrepGuideDescription": {
+    "description": "취침 준비 가이드 설명"
+  },
+  "bedtimePrepGuideDescription": "자기 전에 이 체크리스트를 완료하여 자각몽 성공률을 높이세요.",
+  "@bedtimePrepGuideTitle": {
+    "description": "취침 준비 가이드 제목"
+  },
+  "bedtimePrepGuideTitle": "자각몽을 위한 마음 준비",
+  "@bedtimePrepItem1": {
+    "description": "취침 준비 항목 1"
+  },
+  "bedtimePrepItem1": "오늘의 꿈 일기 복습",
+  "@bedtimePrepItem2": {
+    "description": "취침 준비 항목 2"
+  },
+  "bedtimePrepItem2": "자각몽 의도 설정하기",
+  "@bedtimePrepItem3": {
+    "description": "취침 준비 항목 3"
+  },
+  "bedtimePrepItem3": "스마트폰/전자기기 멀리 두기",
+  "@bedtimePrepItem4": {
+    "description": "취침 준비 항목 4"
+  },
+  "bedtimePrepItem4": "편안한 수면 환경 확인",
+  "@bedtimePrepItem5": {
+    "description": "취침 준비 항목 5"
+  },
+  "bedtimePrepItem5": "MILD 확언 3회 반복",
+  "@bedtimePrepTitle": {
+    "description": "취침 준비 화면 제목"
+  },
+  "bedtimePrepTitle": "취침 전 준비",
   "@beginnerLevel": {
     "description": "Beginner level label"
   },
@@ -2485,6 +2525,10 @@
     "description": "일반 세트 완료 버튼"
   },
   "completeSetContinue": "또 하나 박살내기!",
+  "@completeTask": {
+    "description": "태스크 완료 버튼"
+  },
+  "completeTask": "완료하기",
   "@completed": {
     "description": "Completed status"
   },
@@ -2745,6 +2789,10 @@
     "description": "앱 기능 커스터마이징 설명"
   },
   "customizeAppFeatures": "앱 기능을 사용자 정의하세요",
+  "@dailyChecklistAllComplete": {
+    "description": "체크리스트 100% 완료 메시지"
+  },
+  "dailyChecklistAllComplete": "오늘의 체크리스트를 모두 완료했어요! 🎉",
   "@dailyChecklistAppBar": {
     "description": "일일 체크리스트 앱바 제목"
   },
@@ -3191,6 +3239,67 @@
     "description": "상징 섹션 타이틀"
   },
   "dreamAnalysisSymbolsTitle": "상징",
+  "@dreamControlCompleted": {
+    "description": "꿈 조종 완료 메시지"
+  },
+  "dreamControlCompleted": "꿈 조종 연습 학습 완료!",
+  "@dreamControlGuideDescription": {
+    "description": "꿈 조종 가이드 설명"
+  },
+  "dreamControlGuideDescription": "자각몽에서 꿈 요소를 조종하는 기술을 연습하세요.",
+  "@dreamControlGuideTitle": {
+    "description": "꿈 조종 가이드 제목"
+  },
+  "dreamControlGuideTitle": "꿈 속에서 자유롭게",
+  "@dreamControlPracticeCount": {
+    "description": "연습한 기술 수",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "dreamControlPracticeCount": "{count}개 기술 학습 완료",
+  "@dreamControlSkill1": {
+    "description": "꿈 조종 기술 1"
+  },
+  "dreamControlSkill1": "비행",
+  "@dreamControlSkill1Desc": {
+    "description": "꿈 조종 기술 1 설명"
+  },
+  "dreamControlSkill1Desc": "점프 후 떠오르거나 슈퍼맨처럼 날아보세요.",
+  "@dreamControlSkill2": {
+    "description": "꿈 조종 기술 2"
+  },
+  "dreamControlSkill2": "물체 소환",
+  "@dreamControlSkill2Desc": {
+    "description": "꿈 조종 기술 2 설명"
+  },
+  "dreamControlSkill2Desc": "뒤를 돌아보며 원하는 물체가 있다고 기대하세요.",
+  "@dreamControlSkill3": {
+    "description": "꿈 조종 기술 3"
+  },
+  "dreamControlSkill3": "장면 전환",
+  "@dreamControlSkill3Desc": {
+    "description": "꿈 조종 기술 3 설명"
+  },
+  "dreamControlSkill3Desc": "문을 열거나 회전하며 새로운 장소를 상상하세요.",
+  "@dreamControlSkill4": {
+    "description": "꿈 조종 기술 4"
+  },
+  "dreamControlSkill4": "캐릭터 대화",
+  "@dreamControlSkill4Desc": {
+    "description": "꿈 조종 기술 4 설명"
+  },
+  "dreamControlSkill4Desc": "꿈 캐릭터에게 질문하고 대화해보세요.",
+  "@dreamControlTip": {
+    "description": "꿈 조종 팁"
+  },
+  "dreamControlTip": "'명령'보다 '기대'가 효과적입니다. 결과가 이미 일어났다고 믿으세요.",
+  "@dreamControlTitle": {
+    "description": "꿈 조종 화면 제목"
+  },
+  "dreamControlTitle": "꿈 조종 연습",
   "@dreamEntry": {
     "description": "Dream entry label for calendar legend"
   },
@@ -3248,11 +3357,51 @@
   "dreamSpiritStage9Desc": "강력한 자각몽 능력을 휘두릅니다",
   "dreamSpiritStage9Name": "강력한 자각몽가",
   "dreamSpiritStage9Unlock": "⚡ 믿을 수 없어요! 강력한 자각몽가가 되었습니다! 능력이 비범해요!",
+  "dreamStatisticsNoData": "데이터가 없습니다.\n꿈을 기록하면 통계가 표시됩니다.",
   "durationDays": "기간",
   "@durationLabel": {
     "description": "소요일 레이블"
   },
   "durationLabel": "소요일",
+  "@durationMinutes": {
+    "description": "분 형식",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutes": "{minutes}분",
+  "@durationMinutesSeconds": {
+    "description": "분초 형식",
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      },
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "durationMinutesSeconds": "{minutes}분 {seconds}초",
+  "@durationSeconds": {
+    "description": "초 형식",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "durationSeconds": "{seconds}초",
+  "@durationSecondsShort": {
+    "description": "초 짧은 형식",
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "durationSecondsShort": "{seconds}초",
   "earnedXp": "획득 XP",
   "@elbowAngleQuiz": {
     "description": "Quiz question 5"
@@ -3894,6 +4043,10 @@
     "description": "실행 방법 섹션 제목"
   },
   "instructionsSection": "⚡ EMPEROR EXECUTION 방법 ⚡",
+  "@interactiveTag": {
+    "description": "인터랙티브 태그"
+  },
+  "interactiveTag": "연습하기",
   "@intermediateLevel": {
     "description": "Intermediate level label"
   },
@@ -4274,10 +4427,21 @@
     "description": "Lucid dream label for calendar legend"
   },
   "lucidDream": "자각몽",
+  "@lucidDreamCount": {
+    "description": "Lucid dream count display",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "lucidDreamCount": "자각몽 {count}회",
   "@lucidDreams": {
     "description": "Lucid dreams count label"
   },
   "lucidDreams": "자각몽",
+  "lucidSuccessRate": "자각몽 성공률",
+  "lucidityTrend": "자각도 추세",
   "@lumiConversationAppBar": {
     "description": "Lumi 대화 앱바 타이틀"
   },
@@ -4348,6 +4512,50 @@
     "description": "최대 6일 운동 제한 메시지"
   },
   "maxSixDaysWorkout": "최대 6일까지만 자각몽 연습할 수 있다 (하루는 쉬어야 함)",
+  "@meditationBreathingGuide": {
+    "description": "명상 호흡 가이드 제목"
+  },
+  "meditationBreathingGuide": "호흡 가이드",
+  "@meditationBreathingInstructions": {
+    "description": "명상 호흡 지침"
+  },
+  "meditationBreathingInstructions": "코로 천천히 숨을 들이쉬고, 잠시 멈춘 후 입으로 내쉬세요.",
+  "@meditationCompleted": {
+    "description": "명상 완료 메시지"
+  },
+  "meditationCompleted": "명상 완료!",
+  "@meditationGoodJob": {
+    "description": "잘하고 있음"
+  },
+  "meditationGoodJob": "잘하고 있어요! 완료할 수 있습니다",
+  "@meditationGuideDescription": {
+    "description": "명상 가이드 설명"
+  },
+  "meditationGuideDescription": "조용한 곳에서 눈을 감고 호흡에 집중하세요. 최소 1분 이상 진행하세요.",
+  "@meditationGuideTitle": {
+    "description": "명상 가이드 제목"
+  },
+  "meditationGuideTitle": "마음챙김 명상",
+  "@meditationMinimum1Minute": {
+    "description": "최소 1분 필요"
+  },
+  "meditationMinimum1Minute": "최소 1분 이상 명상하세요",
+  "@meditationPause": {
+    "description": "일시정지"
+  },
+  "meditationPause": "일시정지",
+  "@meditationReset": {
+    "description": "초기화"
+  },
+  "meditationReset": "초기화",
+  "@meditationStart": {
+    "description": "시작"
+  },
+  "meditationStart": "시작",
+  "@meditationTitle": {
+    "description": "명상 화면 제목"
+  },
+  "meditationTitle": "명상 가이드",
   "@minOneDayRest": {
     "description": "최소 하루 쉬는 날 필요 메시지"
   },
@@ -4592,6 +4800,16 @@
     "description": "No workouts today message"
   },
   "noWorkoutsToday": "이 날에는 자각몽 연습이 없다",
+  "normalDream": "일반 꿈",
+  "@normalDreamCount": {
+    "description": "Normal dream count display",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "normalDreamCount": "일반 꿈 {count}회",
   "notificationActivationMessage": "💪 알림 활성화!\n바로 설정하자! FXXK THE EXCUSES! 💪",
   "notificationActivationTitle": "🔥 LUCID DREAM 100 알림 활성화! 🔥",
   "@notificationBenefit1": {
@@ -5776,6 +5994,7 @@
     "description": "푸시 알림 설명"
   },
   "receiveGeneralNotifications": "일반 알림을 받다",
+  "recentDreams10": "최근 10개의 꿈",
   "@recentWorkouts": {
     "description": "최근 자각몽 연습 기록 제목"
   },
@@ -7031,6 +7250,124 @@
   },
   "sprintChallenge": "스프린트 챌린지",
   "sqliteDatabase": "SQLite 로컬 데이터베이스",
+  "@ssildCompleted": {
+    "description": "SSILD 완료 메시지"
+  },
+  "ssildCompleted": "SSILD 연습 완료!",
+  "@ssildCycleCount": {
+    "description": "SSILD 사이클 횟수",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "ssildCycleCount": "{count}회 사이클 완료",
+  "@ssildGuideDescription": {
+    "description": "SSILD 가이드 설명"
+  },
+  "ssildGuideDescription": "시각, 청각, 신체 감각을 순환하며 자각몽을 유도하는 기법입니다.",
+  "@ssildGuideTitle": {
+    "description": "SSILD 가이드 제목"
+  },
+  "ssildGuideTitle": "감각 순환 자각몽 유도",
+  "@ssildMinCycles": {
+    "description": "SSILD 최소 사이클"
+  },
+  "ssildMinCycles": "최소 4회 사이클을 완료하세요",
+  "@ssildStep1Description": {
+    "description": "SSILD 1단계 설명"
+  },
+  "ssildStep1Description": "눈을 감고 눈꺼풀 뒤의 어둠이나 색상, 패턴에 집중하세요.",
+  "@ssildStep1Title": {
+    "description": "SSILD 1단계 제목"
+  },
+  "ssildStep1Title": "시각 집중",
+  "@ssildStep2Description": {
+    "description": "SSILD 2단계 설명"
+  },
+  "ssildStep2Description": "주변의 소리나 머릿속 소리에 집중하세요. 윙윙거림이나 맥박 소리도 좋습니다.",
+  "@ssildStep2Title": {
+    "description": "SSILD 2단계 제목"
+  },
+  "ssildStep2Title": "청각 집중",
+  "@ssildStep3Description": {
+    "description": "SSILD 3단계 설명"
+  },
+  "ssildStep3Description": "몸의 무게감, 따뜻함, 저림 등 신체 감각에 집중하세요.",
+  "@ssildStep3Title": {
+    "description": "SSILD 3단계 제목"
+  },
+  "ssildStep3Title": "신체 감각 집중",
+  "@ssildTip": {
+    "description": "SSILD 팁"
+  },
+  "ssildTip": "각 감각에 15-30초씩 집중하고, 너무 강하게 집중하지 마세요. 편안하게 관찰하는 것이 핵심입니다.",
+  "@ssildTitle": {
+    "description": "SSILD 화면 제목"
+  },
+  "ssildTitle": "SSILD 기법",
+  "@stabilizationCompleted": {
+    "description": "안정화 완료 메시지"
+  },
+  "stabilizationCompleted": "안정화 기법 학습 완료!",
+  "@stabilizationGuideDescription": {
+    "description": "안정화 가이드 설명"
+  },
+  "stabilizationGuideDescription": "자각몽이 흐려지거나 깰 것 같을 때 사용하는 안정화 기법입니다.",
+  "@stabilizationGuideTitle": {
+    "description": "안정화 가이드 제목"
+  },
+  "stabilizationGuideTitle": "자각 상태 유지하기",
+  "@stabilizationLearnCount": {
+    "description": "학습한 기법 수",
+    "placeholders": {
+      "count": {
+        "type": "Object"
+      }
+    }
+  },
+  "stabilizationLearnCount": "{count}개 기법 학습 완료",
+  "@stabilizationTech1": {
+    "description": "안정화 기술 1"
+  },
+  "stabilizationTech1": "손 비비기",
+  "@stabilizationTech1Desc": {
+    "description": "안정화 기술 1 설명"
+  },
+  "stabilizationTech1Desc": "양 손바닥을 비비며 촉감에 집중하세요. 감각이 선명해집니다.",
+  "@stabilizationTech2": {
+    "description": "안정화 기술 2"
+  },
+  "stabilizationTech2": "제자리 회전",
+  "@stabilizationTech2Desc": {
+    "description": "안정화 기술 2 설명"
+  },
+  "stabilizationTech2Desc": "팽이처럼 회전하세요. 새로운 꿈 장면이 생성될 수 있습니다.",
+  "@stabilizationTech3": {
+    "description": "안정화 기술 3"
+  },
+  "stabilizationTech3": "세부 관찰",
+  "@stabilizationTech3Desc": {
+    "description": "안정화 기술 3 설명"
+  },
+  "stabilizationTech3Desc": "주변 물체의 질감, 색상, 세부 사항을 자세히 관찰하세요.",
+  "@stabilizationTech4": {
+    "description": "안정화 기술 4"
+  },
+  "stabilizationTech4": "언어 선언",
+  "@stabilizationTech4Desc": {
+    "description": "안정화 기술 4 설명"
+  },
+  "stabilizationTech4Desc": "\"선명해져라!\" \"지금은 꿈이다!\"라고 크게 외치세요.",
+  "@stabilizationTip": {
+    "description": "안정화 팁"
+  },
+  "stabilizationTip": "흥분하면 깨기 쉽습니다. 침착함을 유지하고, 꿈이 흐려지면 즉시 안정화 기법을 사용하세요.",
+  "@stabilizationTitle": {
+    "description": "안정화 화면 제목"
+  },
+  "stabilizationTitle": "자각몽 안정화",
   "start": "시작",
   "startButton": "시작",
   "@startChallenge": {
@@ -7304,6 +7641,15 @@
     "description": "프로필 저장 성공 메시지"
   },
   "successProfileSaved": "👑 EMPEROR PROFILE SAVED! 너의 전설이 기록되었다, 만삣삐! 👑",
+  "@successRatePercent": {
+    "description": "Success rate percentage display",
+    "placeholders": {
+      "percent": {
+        "type": "String"
+      }
+    }
+  },
+  "successRatePercent": "성공률 {percent}%",
   "@successSettingsSaved": {
     "description": "설정 저장 성공 메시지"
   },
@@ -7447,6 +7793,26 @@
   },
   "taskWbtbTitle": "WBTB (Wake Back To Bed)",
   "techStack": "기술 스택:",
+  "@techniqueDescription": {
+    "description": "기법 설명 제목"
+  },
+  "techniqueDescription": "설명",
+  "@techniqueGuide": {
+    "description": "기법 가이드 제목"
+  },
+  "techniqueGuide": "기법 가이드",
+  "@techniqueScientificBasis": {
+    "description": "과학적 근거"
+  },
+  "techniqueScientificBasis": "과학적 근거",
+  "@techniqueStepByStep": {
+    "description": "단계별 안내"
+  },
+  "techniqueStepByStep": "단계별 안내",
+  "@techniqueTips": {
+    "description": "팁"
+  },
+  "techniqueTips": "팁",
   "@termsOfService": {
     "description": "Terms of service menu title"
   },
@@ -8197,6 +8563,8 @@
     "description": "주간 리포트 타이틀"
   },
   "weeklyReport": "📊 주간 리포트 📊",
+  "weeklyStatistics": "주간 통계",
+  "weeklyStatisticsSubtitle": "최근 7일간 기록된 꿈",
   "@weeklyWorkoutSchedule": {
     "description": "요일별 자각몽 연습 설정 설명"
   },
@@ -8246,6 +8614,54 @@
   "welcome": "환영합니다!",
   "welcomeMessage": "🔥 WELCOME,\nFUTURE DREAM MASTER! 🔥\n각성의 시간이다!",
   "welcomeTitle": "환영합니다!",
+  "@wildCompleteAllSteps": {
+    "description": "WILD 모든 단계 완료 필요"
+  },
+  "wildCompleteAllSteps": "모든 단계를 체크해주세요",
+  "@wildCompleted": {
+    "description": "WILD 완료 메시지"
+  },
+  "wildCompleted": "WILD 연습 완료!",
+  "@wildGuideDescription": {
+    "description": "WILD 가이드 설명"
+  },
+  "wildGuideDescription": "의식을 유지하면서 잠에 드는 고급 기법입니다. WBTB와 함께 사용하면 효과적입니다.",
+  "@wildGuideTitle": {
+    "description": "WILD 가이드 제목"
+  },
+  "wildGuideTitle": "각성 유도 자각몽",
+  "@wildStep1Description": {
+    "description": "WILD 1단계 설명"
+  },
+  "wildStep1Description": "몸을 완전히 이완시키세요. 발끝부터 머리까지 긴장을 풀어줍니다.",
+  "@wildStep1Title": {
+    "description": "WILD 1단계 제목"
+  },
+  "wildStep1Title": "이완 상태 진입",
+  "@wildStep2Description": {
+    "description": "WILD 2단계 설명"
+  },
+  "wildStep2Description": "나타나는 이미지나 소리를 관찰하세요. 반응하지 말고 그냥 지켜보세요.",
+  "@wildStep2Title": {
+    "description": "WILD 2단계 제목"
+  },
+  "wildStep2Title": "입면 환각 관찰",
+  "@wildStep3Description": {
+    "description": "WILD 3단계 설명"
+  },
+  "wildStep3Description": "환각이 꿈으로 발전하면 부드럽게 들어가세요. 현실확인을 하세요.",
+  "@wildStep3Title": {
+    "description": "WILD 3단계 제목"
+  },
+  "wildStep3Title": "꿈 진입",
+  "@wildTip": {
+    "description": "WILD 팁"
+  },
+  "wildTip": "WILD는 어려운 기법입니다. 수면 마비가 올 수 있지만 정상입니다. 공포심 없이 관찰하세요.",
+  "@wildTitle": {
+    "description": "WILD 화면 제목"
+  },
+  "wildTitle": "WILD 기법",
   "@workerChadMode": {
     "description": "직장인 차드 모드 제목"
   },

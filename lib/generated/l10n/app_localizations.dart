@@ -2858,6 +2858,66 @@ abstract class AppLocalizations {
   /// **'이 팁들로 너도 성장할 수 있어요! 💎'**
   String get becomeTrueChadTips;
 
+  /// 최소 3개 체크 필요
+  ///
+  /// In ko, this message translates to:
+  /// **'최소 3개 이상 체크해주세요'**
+  String get bedtimePrepCheckAtLeast3;
+
+  /// 취침 준비 완료
+  ///
+  /// In ko, this message translates to:
+  /// **'취침 준비 완료!'**
+  String get bedtimePrepCompleted;
+
+  /// 취침 준비 가이드 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'자기 전에 이 체크리스트를 완료하여 자각몽 성공률을 높이세요.'**
+  String get bedtimePrepGuideDescription;
+
+  /// 취침 준비 가이드 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽을 위한 마음 준비'**
+  String get bedtimePrepGuideTitle;
+
+  /// 취침 준비 항목 1
+  ///
+  /// In ko, this message translates to:
+  /// **'오늘의 꿈 일기 복습'**
+  String get bedtimePrepItem1;
+
+  /// 취침 준비 항목 2
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 의도 설정하기'**
+  String get bedtimePrepItem2;
+
+  /// 취침 준비 항목 3
+  ///
+  /// In ko, this message translates to:
+  /// **'스마트폰/전자기기 멀리 두기'**
+  String get bedtimePrepItem3;
+
+  /// 취침 준비 항목 4
+  ///
+  /// In ko, this message translates to:
+  /// **'편안한 수면 환경 확인'**
+  String get bedtimePrepItem4;
+
+  /// 취침 준비 항목 5
+  ///
+  /// In ko, this message translates to:
+  /// **'MILD 확언 3회 반복'**
+  String get bedtimePrepItem5;
+
+  /// 취침 준비 화면 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'취침 전 준비'**
+  String get bedtimePrepTitle;
+
   /// Beginner level label
   ///
   /// In ko, this message translates to:
@@ -4856,6 +4916,12 @@ abstract class AppLocalizations {
   /// **'또 하나 박살내기!'**
   String get completeSetContinue;
 
+  /// 태스크 완료 버튼
+  ///
+  /// In ko, this message translates to:
+  /// **'완료하기'**
+  String get completeTask;
+
   /// Completed status
   ///
   /// In ko, this message translates to:
@@ -5269,6 +5335,12 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'앱 기능을 사용자 정의하세요'**
   String get customizeAppFeatures;
+
+  /// 체크리스트 100% 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'오늘의 체크리스트를 모두 완료했어요! 🎉'**
+  String get dailyChecklistAllComplete;
 
   /// 일일 체크리스트 앱바 제목
   ///
@@ -5948,6 +6020,90 @@ abstract class AppLocalizations {
   /// **'상징'**
   String get dreamAnalysisSymbolsTitle;
 
+  /// 꿈 조종 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 조종 연습 학습 완료!'**
+  String get dreamControlCompleted;
+
+  /// 꿈 조종 가이드 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽에서 꿈 요소를 조종하는 기술을 연습하세요.'**
+  String get dreamControlGuideDescription;
+
+  /// 꿈 조종 가이드 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 속에서 자유롭게'**
+  String get dreamControlGuideTitle;
+
+  /// 연습한 기술 수
+  ///
+  /// In ko, this message translates to:
+  /// **'{count}개 기술 학습 완료'**
+  String dreamControlPracticeCount(Object count);
+
+  /// 꿈 조종 기술 1
+  ///
+  /// In ko, this message translates to:
+  /// **'비행'**
+  String get dreamControlSkill1;
+
+  /// 꿈 조종 기술 1 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'점프 후 떠오르거나 슈퍼맨처럼 날아보세요.'**
+  String get dreamControlSkill1Desc;
+
+  /// 꿈 조종 기술 2
+  ///
+  /// In ko, this message translates to:
+  /// **'물체 소환'**
+  String get dreamControlSkill2;
+
+  /// 꿈 조종 기술 2 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'뒤를 돌아보며 원하는 물체가 있다고 기대하세요.'**
+  String get dreamControlSkill2Desc;
+
+  /// 꿈 조종 기술 3
+  ///
+  /// In ko, this message translates to:
+  /// **'장면 전환'**
+  String get dreamControlSkill3;
+
+  /// 꿈 조종 기술 3 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'문을 열거나 회전하며 새로운 장소를 상상하세요.'**
+  String get dreamControlSkill3Desc;
+
+  /// 꿈 조종 기술 4
+  ///
+  /// In ko, this message translates to:
+  /// **'캐릭터 대화'**
+  String get dreamControlSkill4;
+
+  /// 꿈 조종 기술 4 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 캐릭터에게 질문하고 대화해보세요.'**
+  String get dreamControlSkill4Desc;
+
+  /// 꿈 조종 팁
+  ///
+  /// In ko, this message translates to:
+  /// **'\'명령\'보다 \'기대\'가 효과적입니다. 결과가 이미 일어났다고 믿으세요.'**
+  String get dreamControlTip;
+
+  /// 꿈 조종 화면 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 조종 연습'**
+  String get dreamControlTitle;
+
   /// Dream entry label for calendar legend
   ///
   /// In ko, this message translates to:
@@ -6236,6 +6392,12 @@ abstract class AppLocalizations {
   /// **'⚡ 믿을 수 없어요! 강력한 자각몽가가 되었습니다! 능력이 비범해요!'**
   String get dreamSpiritStage9Unlock;
 
+  /// No description provided for @dreamStatisticsNoData.
+  ///
+  /// In ko, this message translates to:
+  /// **'데이터가 없습니다.\n꿈을 기록하면 통계가 표시됩니다.'**
+  String get dreamStatisticsNoData;
+
   /// No description provided for @durationDays.
   ///
   /// In ko, this message translates to:
@@ -6247,6 +6409,30 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'소요일'**
   String get durationLabel;
+
+  /// 분 형식
+  ///
+  /// In ko, this message translates to:
+  /// **'{minutes}분'**
+  String durationMinutes(int minutes);
+
+  /// 분초 형식
+  ///
+  /// In ko, this message translates to:
+  /// **'{minutes}분 {seconds}초'**
+  String durationMinutesSeconds(int minutes, int seconds);
+
+  /// 초 형식
+  ///
+  /// In ko, this message translates to:
+  /// **'{seconds}초'**
+  String durationSeconds(int seconds);
+
+  /// 초 짧은 형식
+  ///
+  /// In ko, this message translates to:
+  /// **'{seconds}초'**
+  String durationSecondsShort(int seconds);
 
   /// No description provided for @earnedXp.
   ///
@@ -7556,6 +7742,12 @@ abstract class AppLocalizations {
   /// **'⚡ EMPEROR EXECUTION 방법 ⚡'**
   String get instructionsSection;
 
+  /// 인터랙티브 태그
+  ///
+  /// In ko, this message translates to:
+  /// **'연습하기'**
+  String get interactiveTag;
+
   /// Intermediate level label
   ///
   /// In ko, this message translates to:
@@ -8228,11 +8420,29 @@ abstract class AppLocalizations {
   /// **'자각몽'**
   String get lucidDream;
 
+  /// Lucid dream count display
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 {count}회'**
+  String lucidDreamCount(String count);
+
   /// Lucid dreams count label
   ///
   /// In ko, this message translates to:
   /// **'자각몽'**
   String get lucidDreams;
+
+  /// No description provided for @lucidSuccessRate.
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 성공률'**
+  String get lucidSuccessRate;
+
+  /// No description provided for @lucidityTrend.
+  ///
+  /// In ko, this message translates to:
+  /// **'자각도 추세'**
+  String get lucidityTrend;
 
   /// Lumi 대화 앱바 타이틀
   ///
@@ -8347,6 +8557,72 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'최대 6일까지만 자각몽 연습할 수 있다 (하루는 쉬어야 함)'**
   String get maxSixDaysWorkout;
+
+  /// 명상 호흡 가이드 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'호흡 가이드'**
+  String get meditationBreathingGuide;
+
+  /// 명상 호흡 지침
+  ///
+  /// In ko, this message translates to:
+  /// **'코로 천천히 숨을 들이쉬고, 잠시 멈춘 후 입으로 내쉬세요.'**
+  String get meditationBreathingInstructions;
+
+  /// 명상 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'명상 완료!'**
+  String get meditationCompleted;
+
+  /// 잘하고 있음
+  ///
+  /// In ko, this message translates to:
+  /// **'잘하고 있어요! 완료할 수 있습니다'**
+  String get meditationGoodJob;
+
+  /// 명상 가이드 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'조용한 곳에서 눈을 감고 호흡에 집중하세요. 최소 1분 이상 진행하세요.'**
+  String get meditationGuideDescription;
+
+  /// 명상 가이드 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'마음챙김 명상'**
+  String get meditationGuideTitle;
+
+  /// 최소 1분 필요
+  ///
+  /// In ko, this message translates to:
+  /// **'최소 1분 이상 명상하세요'**
+  String get meditationMinimum1Minute;
+
+  /// 일시정지
+  ///
+  /// In ko, this message translates to:
+  /// **'일시정지'**
+  String get meditationPause;
+
+  /// 초기화
+  ///
+  /// In ko, this message translates to:
+  /// **'초기화'**
+  String get meditationReset;
+
+  /// 시작
+  ///
+  /// In ko, this message translates to:
+  /// **'시작'**
+  String get meditationStart;
+
+  /// 명상 화면 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'명상 가이드'**
+  String get meditationTitle;
 
   /// 최소 하루 쉬는 날 필요 메시지
   ///
@@ -8797,6 +9073,18 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'이 날에는 자각몽 연습이 없다'**
   String get noWorkoutsToday;
+
+  /// No description provided for @normalDream.
+  ///
+  /// In ko, this message translates to:
+  /// **'일반 꿈'**
+  String get normalDream;
+
+  /// Normal dream count display
+  ///
+  /// In ko, this message translates to:
+  /// **'일반 꿈 {count}회'**
+  String normalDreamCount(String count);
 
   /// No description provided for @notificationActivationMessage.
   ///
@@ -10971,6 +11259,12 @@ abstract class AppLocalizations {
   /// **'일반 알림을 받다'**
   String get receiveGeneralNotifications;
 
+  /// No description provided for @recentDreams10.
+  ///
+  /// In ko, this message translates to:
+  /// **'최근 10개의 꿈'**
+  String get recentDreams10;
+
   /// 최근 자각몽 연습 기록 제목
   ///
   /// In ko, this message translates to:
@@ -12873,6 +13167,168 @@ abstract class AppLocalizations {
   /// **'SQLite 로컬 데이터베이스'**
   String get sqliteDatabase;
 
+  /// SSILD 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'SSILD 연습 완료!'**
+  String get ssildCompleted;
+
+  /// SSILD 사이클 횟수
+  ///
+  /// In ko, this message translates to:
+  /// **'{count}회 사이클 완료'**
+  String ssildCycleCount(Object count);
+
+  /// SSILD 가이드 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'시각, 청각, 신체 감각을 순환하며 자각몽을 유도하는 기법입니다.'**
+  String get ssildGuideDescription;
+
+  /// SSILD 가이드 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'감각 순환 자각몽 유도'**
+  String get ssildGuideTitle;
+
+  /// SSILD 최소 사이클
+  ///
+  /// In ko, this message translates to:
+  /// **'최소 4회 사이클을 완료하세요'**
+  String get ssildMinCycles;
+
+  /// SSILD 1단계 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'눈을 감고 눈꺼풀 뒤의 어둠이나 색상, 패턴에 집중하세요.'**
+  String get ssildStep1Description;
+
+  /// SSILD 1단계 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'시각 집중'**
+  String get ssildStep1Title;
+
+  /// SSILD 2단계 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'주변의 소리나 머릿속 소리에 집중하세요. 윙윙거림이나 맥박 소리도 좋습니다.'**
+  String get ssildStep2Description;
+
+  /// SSILD 2단계 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'청각 집중'**
+  String get ssildStep2Title;
+
+  /// SSILD 3단계 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'몸의 무게감, 따뜻함, 저림 등 신체 감각에 집중하세요.'**
+  String get ssildStep3Description;
+
+  /// SSILD 3단계 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'신체 감각 집중'**
+  String get ssildStep3Title;
+
+  /// SSILD 팁
+  ///
+  /// In ko, this message translates to:
+  /// **'각 감각에 15-30초씩 집중하고, 너무 강하게 집중하지 마세요. 편안하게 관찰하는 것이 핵심입니다.'**
+  String get ssildTip;
+
+  /// SSILD 화면 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'SSILD 기법'**
+  String get ssildTitle;
+
+  /// 안정화 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'안정화 기법 학습 완료!'**
+  String get stabilizationCompleted;
+
+  /// 안정화 가이드 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽이 흐려지거나 깰 것 같을 때 사용하는 안정화 기법입니다.'**
+  String get stabilizationGuideDescription;
+
+  /// 안정화 가이드 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'자각 상태 유지하기'**
+  String get stabilizationGuideTitle;
+
+  /// 학습한 기법 수
+  ///
+  /// In ko, this message translates to:
+  /// **'{count}개 기법 학습 완료'**
+  String stabilizationLearnCount(Object count);
+
+  /// 안정화 기술 1
+  ///
+  /// In ko, this message translates to:
+  /// **'손 비비기'**
+  String get stabilizationTech1;
+
+  /// 안정화 기술 1 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'양 손바닥을 비비며 촉감에 집중하세요. 감각이 선명해집니다.'**
+  String get stabilizationTech1Desc;
+
+  /// 안정화 기술 2
+  ///
+  /// In ko, this message translates to:
+  /// **'제자리 회전'**
+  String get stabilizationTech2;
+
+  /// 안정화 기술 2 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'팽이처럼 회전하세요. 새로운 꿈 장면이 생성될 수 있습니다.'**
+  String get stabilizationTech2Desc;
+
+  /// 안정화 기술 3
+  ///
+  /// In ko, this message translates to:
+  /// **'세부 관찰'**
+  String get stabilizationTech3;
+
+  /// 안정화 기술 3 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'주변 물체의 질감, 색상, 세부 사항을 자세히 관찰하세요.'**
+  String get stabilizationTech3Desc;
+
+  /// 안정화 기술 4
+  ///
+  /// In ko, this message translates to:
+  /// **'언어 선언'**
+  String get stabilizationTech4;
+
+  /// 안정화 기술 4 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'\"선명해져라!\" \"지금은 꿈이다!\"라고 크게 외치세요.'**
+  String get stabilizationTech4Desc;
+
+  /// 안정화 팁
+  ///
+  /// In ko, this message translates to:
+  /// **'흥분하면 깨기 쉽습니다. 침착함을 유지하고, 꿈이 흐려지면 즉시 안정화 기법을 사용하세요.'**
+  String get stabilizationTip;
+
+  /// 안정화 화면 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'자각몽 안정화'**
+  String get stabilizationTitle;
+
   /// No description provided for @start.
   ///
   /// In ko, this message translates to:
@@ -13395,6 +13851,12 @@ abstract class AppLocalizations {
   /// **'👑 EMPEROR PROFILE SAVED! 너의 전설이 기록되었다, 만삣삐! 👑'**
   String get successProfileSaved;
 
+  /// Success rate percentage display
+  ///
+  /// In ko, this message translates to:
+  /// **'성공률 {percent}%'**
+  String successRatePercent(String percent);
+
   /// 설정 저장 성공 메시지
   ///
   /// In ko, this message translates to:
@@ -13628,6 +14090,36 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'기술 스택:'**
   String get techStack;
+
+  /// 기법 설명 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'설명'**
+  String get techniqueDescription;
+
+  /// 기법 가이드 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'기법 가이드'**
+  String get techniqueGuide;
+
+  /// 과학적 근거
+  ///
+  /// In ko, this message translates to:
+  /// **'과학적 근거'**
+  String get techniqueScientificBasis;
+
+  /// 단계별 안내
+  ///
+  /// In ko, this message translates to:
+  /// **'단계별 안내'**
+  String get techniqueStepByStep;
+
+  /// 팁
+  ///
+  /// In ko, this message translates to:
+  /// **'팁'**
+  String get techniqueTips;
 
   /// Terms of service menu title
   ///
@@ -15021,6 +15513,18 @@ abstract class AppLocalizations {
   /// **'📊 주간 리포트 📊'**
   String get weeklyReport;
 
+  /// No description provided for @weeklyStatistics.
+  ///
+  /// In ko, this message translates to:
+  /// **'주간 통계'**
+  String get weeklyStatistics;
+
+  /// No description provided for @weeklyStatisticsSubtitle.
+  ///
+  /// In ko, this message translates to:
+  /// **'최근 7일간 기록된 꿈'**
+  String get weeklyStatisticsSubtitle;
+
   /// 요일별 자각몽 연습 설정 설명
   ///
   /// In ko, this message translates to:
@@ -15068,6 +15572,78 @@ abstract class AppLocalizations {
   /// In ko, this message translates to:
   /// **'환영합니다!'**
   String get welcomeTitle;
+
+  /// WILD 모든 단계 완료 필요
+  ///
+  /// In ko, this message translates to:
+  /// **'모든 단계를 체크해주세요'**
+  String get wildCompleteAllSteps;
+
+  /// WILD 완료 메시지
+  ///
+  /// In ko, this message translates to:
+  /// **'WILD 연습 완료!'**
+  String get wildCompleted;
+
+  /// WILD 가이드 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'의식을 유지하면서 잠에 드는 고급 기법입니다. WBTB와 함께 사용하면 효과적입니다.'**
+  String get wildGuideDescription;
+
+  /// WILD 가이드 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'각성 유도 자각몽'**
+  String get wildGuideTitle;
+
+  /// WILD 1단계 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'몸을 완전히 이완시키세요. 발끝부터 머리까지 긴장을 풀어줍니다.'**
+  String get wildStep1Description;
+
+  /// WILD 1단계 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'이완 상태 진입'**
+  String get wildStep1Title;
+
+  /// WILD 2단계 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'나타나는 이미지나 소리를 관찰하세요. 반응하지 말고 그냥 지켜보세요.'**
+  String get wildStep2Description;
+
+  /// WILD 2단계 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'입면 환각 관찰'**
+  String get wildStep2Title;
+
+  /// WILD 3단계 설명
+  ///
+  /// In ko, this message translates to:
+  /// **'환각이 꿈으로 발전하면 부드럽게 들어가세요. 현실확인을 하세요.'**
+  String get wildStep3Description;
+
+  /// WILD 3단계 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'꿈 진입'**
+  String get wildStep3Title;
+
+  /// WILD 팁
+  ///
+  /// In ko, this message translates to:
+  /// **'WILD는 어려운 기법입니다. 수면 마비가 올 수 있지만 정상입니다. 공포심 없이 관찰하세요.'**
+  String get wildTip;
+
+  /// WILD 화면 제목
+  ///
+  /// In ko, this message translates to:
+  /// **'WILD 기법'**
+  String get wildTitle;
 
   /// 직장인 차드 모드 제목
   ///

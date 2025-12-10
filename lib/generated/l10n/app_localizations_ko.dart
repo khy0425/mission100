@@ -1435,6 +1435,37 @@ class AppLocalizationsKo extends AppLocalizations {
   String get becomeTrueChadTips => '이 팁들로 너도 성장할 수 있어요! 💎';
 
   @override
+  String get bedtimePrepCheckAtLeast3 => '최소 3개 이상 체크해주세요';
+
+  @override
+  String get bedtimePrepCompleted => '취침 준비 완료!';
+
+  @override
+  String get bedtimePrepGuideDescription =>
+      '자기 전에 이 체크리스트를 완료하여 자각몽 성공률을 높이세요.';
+
+  @override
+  String get bedtimePrepGuideTitle => '자각몽을 위한 마음 준비';
+
+  @override
+  String get bedtimePrepItem1 => '오늘의 꿈 일기 복습';
+
+  @override
+  String get bedtimePrepItem2 => '자각몽 의도 설정하기';
+
+  @override
+  String get bedtimePrepItem3 => '스마트폰/전자기기 멀리 두기';
+
+  @override
+  String get bedtimePrepItem4 => '편안한 수면 환경 확인';
+
+  @override
+  String get bedtimePrepItem5 => 'MILD 확언 3회 반복';
+
+  @override
+  String get bedtimePrepTitle => '취침 전 준비';
+
+  @override
   String get beginnerLevel => '초급자';
 
   @override
@@ -2511,6 +2542,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get completeSetContinue => '또 하나 박살내기!';
 
   @override
+  String get completeTask => '완료하기';
+
+  @override
   String get completed => '완료';
 
   @override
@@ -2739,6 +2773,9 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get customizeAppFeatures => '앱 기능을 사용자 정의하세요';
+
+  @override
+  String get dailyChecklistAllComplete => '오늘의 체크리스트를 모두 완료했어요! 🎉';
 
   @override
   String get dailyChecklistAppBar => '일일 체크리스트';
@@ -3108,6 +3145,50 @@ class AppLocalizationsKo extends AppLocalizations {
   String get dreamAnalysisSymbolsTitle => '상징';
 
   @override
+  String get dreamControlCompleted => '꿈 조종 연습 학습 완료!';
+
+  @override
+  String get dreamControlGuideDescription => '자각몽에서 꿈 요소를 조종하는 기술을 연습하세요.';
+
+  @override
+  String get dreamControlGuideTitle => '꿈 속에서 자유롭게';
+
+  @override
+  String dreamControlPracticeCount(Object count) {
+    return '$count개 기술 학습 완료';
+  }
+
+  @override
+  String get dreamControlSkill1 => '비행';
+
+  @override
+  String get dreamControlSkill1Desc => '점프 후 떠오르거나 슈퍼맨처럼 날아보세요.';
+
+  @override
+  String get dreamControlSkill2 => '물체 소환';
+
+  @override
+  String get dreamControlSkill2Desc => '뒤를 돌아보며 원하는 물체가 있다고 기대하세요.';
+
+  @override
+  String get dreamControlSkill3 => '장면 전환';
+
+  @override
+  String get dreamControlSkill3Desc => '문을 열거나 회전하며 새로운 장소를 상상하세요.';
+
+  @override
+  String get dreamControlSkill4 => '캐릭터 대화';
+
+  @override
+  String get dreamControlSkill4Desc => '꿈 캐릭터에게 질문하고 대화해보세요.';
+
+  @override
+  String get dreamControlTip => '\'명령\'보다 \'기대\'가 효과적입니다. 결과가 이미 일어났다고 믿으세요.';
+
+  @override
+  String get dreamControlTitle => '꿈 조종 연습';
+
+  @override
   String get dreamEntry => '꿈 기록';
 
   @override
@@ -3266,10 +3347,33 @@ class AppLocalizationsKo extends AppLocalizations {
       '⚡ 믿을 수 없어요! 강력한 자각몽가가 되었습니다! 능력이 비범해요!';
 
   @override
+  String get dreamStatisticsNoData => '데이터가 없습니다.\n꿈을 기록하면 통계가 표시됩니다.';
+
+  @override
   String get durationDays => '기간';
 
   @override
   String get durationLabel => '소요일';
+
+  @override
+  String durationMinutes(int minutes) {
+    return '$minutes분';
+  }
+
+  @override
+  String durationMinutesSeconds(int minutes, int seconds) {
+    return '$minutes분 $seconds초';
+  }
+
+  @override
+  String durationSeconds(int seconds) {
+    return '$seconds초';
+  }
+
+  @override
+  String durationSecondsShort(int seconds) {
+    return '$seconds초';
+  }
 
   @override
   String get earnedXp => '획득 XP';
@@ -3969,6 +4073,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get instructionsSection => '⚡ EMPEROR EXECUTION 방법 ⚡';
 
   @override
+  String get interactiveTag => '연습하기';
+
+  @override
   String get intermediateLevel => '중급자';
 
   @override
@@ -4333,7 +4440,18 @@ class AppLocalizationsKo extends AppLocalizations {
   String get lucidDream => '자각몽';
 
   @override
+  String lucidDreamCount(String count) {
+    return '자각몽 $count회';
+  }
+
+  @override
   String get lucidDreams => '자각몽';
+
+  @override
+  String get lucidSuccessRate => '자각몽 성공률';
+
+  @override
+  String get lucidityTrend => '자각도 추세';
 
   @override
   String get lumiConversationAppBar => 'Lumi와 대화';
@@ -4391,6 +4509,41 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get maxSixDaysWorkout => '최대 6일까지만 자각몽 연습할 수 있다 (하루는 쉬어야 함)';
+
+  @override
+  String get meditationBreathingGuide => '호흡 가이드';
+
+  @override
+  String get meditationBreathingInstructions =>
+      '코로 천천히 숨을 들이쉬고, 잠시 멈춘 후 입으로 내쉬세요.';
+
+  @override
+  String get meditationCompleted => '명상 완료!';
+
+  @override
+  String get meditationGoodJob => '잘하고 있어요! 완료할 수 있습니다';
+
+  @override
+  String get meditationGuideDescription =>
+      '조용한 곳에서 눈을 감고 호흡에 집중하세요. 최소 1분 이상 진행하세요.';
+
+  @override
+  String get meditationGuideTitle => '마음챙김 명상';
+
+  @override
+  String get meditationMinimum1Minute => '최소 1분 이상 명상하세요';
+
+  @override
+  String get meditationPause => '일시정지';
+
+  @override
+  String get meditationReset => '초기화';
+
+  @override
+  String get meditationStart => '시작';
+
+  @override
+  String get meditationTitle => '명상 가이드';
 
   @override
   String get minOneDayRest => '최소 하루는 쉬는 날이 있어야 한다';
@@ -4628,6 +4781,14 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get noWorkoutsToday => '이 날에는 자각몽 연습이 없다';
+
+  @override
+  String get normalDream => '일반 꿈';
+
+  @override
+  String normalDreamCount(String count) {
+    return '일반 꿈 $count회';
+  }
 
   @override
   String get notificationActivationMessage =>
@@ -5827,6 +5988,9 @@ class AppLocalizationsKo extends AppLocalizations {
   String get receiveGeneralNotifications => '일반 알림을 받다';
 
   @override
+  String get recentDreams10 => '최근 10개의 꿈';
+
+  @override
   String get recentWorkouts => '최근 자각몽 연습 기록';
 
   @override
@@ -6872,6 +7036,95 @@ class AppLocalizationsKo extends AppLocalizations {
   String get sqliteDatabase => 'SQLite 로컬 데이터베이스';
 
   @override
+  String get ssildCompleted => 'SSILD 연습 완료!';
+
+  @override
+  String ssildCycleCount(Object count) {
+    return '$count회 사이클 완료';
+  }
+
+  @override
+  String get ssildGuideDescription => '시각, 청각, 신체 감각을 순환하며 자각몽을 유도하는 기법입니다.';
+
+  @override
+  String get ssildGuideTitle => '감각 순환 자각몽 유도';
+
+  @override
+  String get ssildMinCycles => '최소 4회 사이클을 완료하세요';
+
+  @override
+  String get ssildStep1Description => '눈을 감고 눈꺼풀 뒤의 어둠이나 색상, 패턴에 집중하세요.';
+
+  @override
+  String get ssildStep1Title => '시각 집중';
+
+  @override
+  String get ssildStep2Description =>
+      '주변의 소리나 머릿속 소리에 집중하세요. 윙윙거림이나 맥박 소리도 좋습니다.';
+
+  @override
+  String get ssildStep2Title => '청각 집중';
+
+  @override
+  String get ssildStep3Description => '몸의 무게감, 따뜻함, 저림 등 신체 감각에 집중하세요.';
+
+  @override
+  String get ssildStep3Title => '신체 감각 집중';
+
+  @override
+  String get ssildTip =>
+      '각 감각에 15-30초씩 집중하고, 너무 강하게 집중하지 마세요. 편안하게 관찰하는 것이 핵심입니다.';
+
+  @override
+  String get ssildTitle => 'SSILD 기법';
+
+  @override
+  String get stabilizationCompleted => '안정화 기법 학습 완료!';
+
+  @override
+  String get stabilizationGuideDescription =>
+      '자각몽이 흐려지거나 깰 것 같을 때 사용하는 안정화 기법입니다.';
+
+  @override
+  String get stabilizationGuideTitle => '자각 상태 유지하기';
+
+  @override
+  String stabilizationLearnCount(Object count) {
+    return '$count개 기법 학습 완료';
+  }
+
+  @override
+  String get stabilizationTech1 => '손 비비기';
+
+  @override
+  String get stabilizationTech1Desc => '양 손바닥을 비비며 촉감에 집중하세요. 감각이 선명해집니다.';
+
+  @override
+  String get stabilizationTech2 => '제자리 회전';
+
+  @override
+  String get stabilizationTech2Desc => '팽이처럼 회전하세요. 새로운 꿈 장면이 생성될 수 있습니다.';
+
+  @override
+  String get stabilizationTech3 => '세부 관찰';
+
+  @override
+  String get stabilizationTech3Desc => '주변 물체의 질감, 색상, 세부 사항을 자세히 관찰하세요.';
+
+  @override
+  String get stabilizationTech4 => '언어 선언';
+
+  @override
+  String get stabilizationTech4Desc => '\"선명해져라!\" \"지금은 꿈이다!\"라고 크게 외치세요.';
+
+  @override
+  String get stabilizationTip =>
+      '흥분하면 깨기 쉽습니다. 침착함을 유지하고, 꿈이 흐려지면 즉시 안정화 기법을 사용하세요.';
+
+  @override
+  String get stabilizationTitle => '자각몽 안정화';
+
+  @override
   String get start => '시작';
 
   @override
@@ -7155,6 +7408,11 @@ class AppLocalizationsKo extends AppLocalizations {
       '👑 EMPEROR PROFILE SAVED! 너의 전설이 기록되었다, 만삣삐! 👑';
 
   @override
+  String successRatePercent(String percent) {
+    return '성공률 $percent%';
+  }
+
+  @override
   String get successSettingsSaved =>
       '⚡ ALPHA SETTINGS LOCKED! 완벽한 설정으로 무장 완료! ⚡';
 
@@ -7280,6 +7538,21 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get techStack => '기술 스택:';
+
+  @override
+  String get techniqueDescription => '설명';
+
+  @override
+  String get techniqueGuide => '기법 가이드';
+
+  @override
+  String get techniqueScientificBasis => '과학적 근거';
+
+  @override
+  String get techniqueStepByStep => '단계별 안내';
+
+  @override
+  String get techniqueTips => '팁';
 
   @override
   String get termsOfService => '이용약관';
@@ -8036,6 +8309,12 @@ class AppLocalizationsKo extends AppLocalizations {
   String get weeklyReport => '📊 주간 리포트 📊';
 
   @override
+  String get weeklyStatistics => '주간 통계';
+
+  @override
+  String get weeklyStatisticsSubtitle => '최근 7일간 기록된 꿈';
+
+  @override
   String get weeklyWorkoutSchedule => '요일별 자각몽 연습 시간 설정';
 
   @override
@@ -8067,6 +8346,43 @@ class AppLocalizationsKo extends AppLocalizations {
 
   @override
   String get welcomeTitle => '환영합니다!';
+
+  @override
+  String get wildCompleteAllSteps => '모든 단계를 체크해주세요';
+
+  @override
+  String get wildCompleted => 'WILD 연습 완료!';
+
+  @override
+  String get wildGuideDescription =>
+      '의식을 유지하면서 잠에 드는 고급 기법입니다. WBTB와 함께 사용하면 효과적입니다.';
+
+  @override
+  String get wildGuideTitle => '각성 유도 자각몽';
+
+  @override
+  String get wildStep1Description => '몸을 완전히 이완시키세요. 발끝부터 머리까지 긴장을 풀어줍니다.';
+
+  @override
+  String get wildStep1Title => '이완 상태 진입';
+
+  @override
+  String get wildStep2Description => '나타나는 이미지나 소리를 관찰하세요. 반응하지 말고 그냥 지켜보세요.';
+
+  @override
+  String get wildStep2Title => '입면 환각 관찰';
+
+  @override
+  String get wildStep3Description => '환각이 꿈으로 발전하면 부드럽게 들어가세요. 현실확인을 하세요.';
+
+  @override
+  String get wildStep3Title => '꿈 진입';
+
+  @override
+  String get wildTip => 'WILD는 어려운 기법입니다. 수면 마비가 올 수 있지만 정상입니다. 공포심 없이 관찰하세요.';
+
+  @override
+  String get wildTitle => 'WILD 기법';
 
   @override
   String get workerChadMode => '💼 직장인 차드 모드 (월~금)';

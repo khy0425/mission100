@@ -108,7 +108,7 @@
     "description": "Build information",
     "placeholders": {
       "buildNumber": {
-        "type": "Object"
+        "type": "String"
       }
     }
   },
@@ -1986,5 +1986,35 @@
       "days": {"type": "int"}
     }
   },
-  "streakDaysTarget": "{days} days 🎯"
+  "streakDaysTarget": "{days} days 🎯",
+
+  "dreamStatisticsNoData": "No data yet.\nStart recording your dreams to see statistics.",
+  "lucidSuccessRate": "Lucid Dream Success Rate",
+  "@lucidDreamCount": {
+    "description": "Lucid dream count display",
+    "placeholders": {
+      "count": {"type": "String"}
+    }
+  },
+  "lucidDreamCount": "Lucid {count}",
+  "@normalDreamCount": {
+    "description": "Normal dream count display",
+    "placeholders": {
+      "count": {"type": "String"}
+    }
+  },
+  "normalDreamCount": "Normal {count}",
+  "@successRatePercent": {
+    "description": "Success rate percentage display",
+    "placeholders": {
+      "percent": {"type": "String"}
+    }
+  },
+  "successRatePercent": "Success Rate {percent}%",
+  "lucidityTrend": "Lucidity Trend",
+  "recentDreams10": "Recent 10 dreams",
+  "lucidDream": "Lucid Dream",
+  "normalDream": "Normal Dream",
+  "weeklyStatistics": "Weekly Statistics",
+  "weeklyStatisticsSubtitle": "Dreams recorded in the last 7 days"
 }

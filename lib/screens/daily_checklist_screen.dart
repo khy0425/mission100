@@ -6,10 +6,20 @@ import '../services/auth/auth_service.dart';
 import '../models/user_subscription.dart';
 import '../widgets/gamification/week_unlock_dialog.dart';
 import '../widgets/common/ad_banner_widget.dart';
+import '../widgets/checklist/token_reward_dialog.dart';
 import '../services/progress/dream_statistics_service.dart';
 import '../services/data/dream_journal_service.dart';
+import '../services/checklist/checklist_completion_service.dart';
 import 'dream_journal/dream_journal_write_screen.dart';
 import 'dream_journal/dream_journal_list_screen.dart';
+import 'tasks/reality_check_screen.dart';
+import 'tasks/mild_affirmation_screen.dart';
+import 'tasks/wbtb_screen.dart';
+import 'tasks/ssild_screen.dart';
+import 'tasks/wild_screen.dart';
+import 'tasks/dream_control_screen.dart';
+import 'tasks/stabilization_screen.dart';
+import 'tasks/bedtime_prep_screen.dart';
 
 /// Daily Checklist Screen
 /// Shows all checklist items grouped by priority
@@ -26,6 +36,7 @@ class _DailyChecklistScreenState extends State<DailyChecklistScreen> {
   Map<String, int> counterState = {}; // For items with countRequired
   int currentWeek = 1; // Current level (== Week). Level-based, not time-based!
   bool isLoading = true;
+  bool _rewardGivenToday = false; // 오늘 보상 받았는지 추적
 
   @override
   void initState() {
@@ -101,6 +112,74 @@ class _DailyChecklistScreenState extends State<DailyChecklistScreen> {
     }
 
     return total > 0 ? completed / total : 0;
+  }
+
+  /// 100% 완료 시 토큰 보상 지급
+  Future<void> _checkAndGiveReward() async {
+    // 100% 완료가 아니면 스킵
+    if (completionRate < 1.0) return;
+
+    // 이미 오늘 보상 받았으면 축하 메시지만 표시
+    if (_rewardGivenToday) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Row(
+              children: [
+                const Icon(Icons.celebration, color: Colors.white),
+                const SizedBox(width: 12),
+                Text(AppLocalizations.of(context).dailyChecklistAllComplete),
+              ],
+            ),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+      return;
+    }
+
+    final authService = Provider.of<AuthService>(context, listen: false);
+
+    // 토큰 보상 지급
+    final result = await ChecklistCompletionService.rewardTokensForChecklistCompletion(
+      authService: authService,
+    );
+
+    setState(() {
+      _rewardGivenToday = true;
+    });
+
+    if (result == null) {
+      // 이미 오늘 받았지만 처음 100% 달성 - 축하 스낵바 표시
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Row(
+              children: [
+                const Icon(Icons.check_circle, color: Colors.white),
+                const SizedBox(width: 12),
+                Text(AppLocalizations.of(context).dailyChecklistAllComplete),
+              ],
+            ),
+            backgroundColor: Colors.green,
+            behavior: SnackBarBehavior.floating,
+          ),
+        );
+      }
+      return;
+    }
+
+    // 축하 다이얼로그 표시
+    if (!mounted) return;
+    await TokenRewardDialog.show(
+      context: context,
+      baseTokens: result.baseTokens,
+      bonusTokens: result.bonusTokens,
+      totalTokens: result.totalTokens,
+      currentStreak: result.currentStreak,
+      isPremium: result.isPremium,
+    );
   }
 
   bool _isItemUnlocked(ChecklistItem item) {
@@ -260,7 +339,7 @@ class _DailyChecklistScreenState extends State<DailyChecklistScreen> {
             value: isLocked ? false : (completionState[item.id] ?? false),
             onChanged: isLocked
                 ? null
-                : (value) {
+                : (value) async {
                     // 꿈일기 항목은 체크박스 클릭 시에도 작성 화면으로 이동
                     if (item.id == 'dream_journal' && value == true) {
                       _handleChecklistItemTap(item);
@@ -268,6 +347,8 @@ class _DailyChecklistScreenState extends State<DailyChecklistScreen> {
                       setState(() {
                         completionState[item.id] = value ?? false;
                       });
+                      // 100% 완료 체크 및 보상 지급
+                      await _checkAndGiveReward();
                     }
                   },
             title: Row(
@@ -434,7 +515,7 @@ class _DailyChecklistScreenState extends State<DailyChecklistScreen> {
                             ? Colors.blue
                             : Colors.grey,
                         onPressed: currentCount < targetCount
-                            ? () {
+                            ? () async {
                                 setState(() {
                                   counterState[item.id] = currentCount + 1;
                                 });
@@ -443,6 +524,9 @@ class _DailyChecklistScreenState extends State<DailyChecklistScreen> {
                                 if (currentCount + 1 == targetCount) {
                                   _showCompletionDialog(item);
                                 }
+
+                                // 100% 완료 체크 및 보상 지급
+                                await _checkAndGiveReward();
                               }
                             : null,
                       ),
@@ -470,21 +554,71 @@ class _DailyChecklistScreenState extends State<DailyChecklistScreen> {
     // 꿈일기 작성 항목인 경우
     if (item.id == 'dream_journal') {
       await _handleDreamJournalTap();
+      await _checkAndGiveReward();
       return;
     }
 
-    // 그 외 항목은 바로 체크/언체크 토글
+    // 상세 화면이 있는 항목은 해당 화면으로 이동
+    final screen = _getDetailScreen(item.id);
+    if (screen != null) {
+      final result = await Navigator.of(context).push<bool>(
+        MaterialPageRoute(builder: (context) => screen),
+      );
+      // 상세 화면에서 완료했으면 체크 표시
+      if (result == true) {
+        setState(() {
+          // counter 항목인 경우 counterState 설정
+          if (item.countRequired != null) {
+            counterState[item.id] = item.countRequired!;
+          } else {
+            completionState[item.id] = true;
+          }
+        });
+        await _checkAndGiveReward();
+      }
+      return;
+    }
+
+    // 상세 화면 없는 항목은 바로 체크/언체크 토글
     setState(() {
       completionState[item.id] = !(completionState[item.id] ?? false);
     });
+    await _checkAndGiveReward();
+  }
+
+  /// 항목 ID에 따른 상세 화면 반환
+  Widget? _getDetailScreen(String itemId) {
+    switch (itemId) {
+      case 'reality_check_2hr':
+        return const RealityCheckScreen();
+      case 'bedtime_preparation':
+        return const BedtimePrepScreen();
+      case 'wbtb_alarm':
+        return const WBTBScreen();
+      case 'mild_wbtb':
+        return const MildAffirmationScreen();
+      case 'ssild_technique':
+        return const SSILDScreen();
+      case 'wild_technique':
+        return const WILDScreen();
+      case 'dream_control_practice':
+        return const DreamControlScreen();
+      case 'reality_stabilization':
+        return const StabilizationScreen();
+      default:
+        return null;
+    }
   }
 
   /// Counter 항목 클릭 처리 (카운트 증가)
-  void _handleCounterItemTap(ChecklistItem item) {
+  Future<void> _handleCounterItemTap(ChecklistItem item) async {
     setState(() {
       final currentCount = counterState[item.id] ?? 0;
       counterState[item.id] = currentCount + 1;
     });
+
+    // 100% 완료 체크 및 보상 지급
+    await _checkAndGiveReward();
   }
 
   /// 꿈일기 작성 처리

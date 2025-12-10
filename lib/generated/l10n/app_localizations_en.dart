@@ -1563,6 +1563,37 @@ class AppLocalizationsEn extends AppLocalizations {
       'With these tips, you can become a true Chad too! 💎';
 
   @override
+  String get bedtimePrepCheckAtLeast3 => 'Please check at least 3 items';
+
+  @override
+  String get bedtimePrepCompleted => 'Bedtime preparation complete!';
+
+  @override
+  String get bedtimePrepGuideDescription =>
+      'Complete this checklist before bed to increase lucid dream success rate.';
+
+  @override
+  String get bedtimePrepGuideTitle => 'Preparing Mind for Lucid Dreams';
+
+  @override
+  String get bedtimePrepItem1 => 'Review today\'s dream journal';
+
+  @override
+  String get bedtimePrepItem2 => 'Set lucid dream intention';
+
+  @override
+  String get bedtimePrepItem3 => 'Put phone/electronics away';
+
+  @override
+  String get bedtimePrepItem4 => 'Check comfortable sleep environment';
+
+  @override
+  String get bedtimePrepItem5 => 'Repeat MILD affirmation 3 times';
+
+  @override
+  String get bedtimePrepTitle => 'Bedtime Preparation';
+
+  @override
   String get beginnerLevel => 'Beginner';
 
   @override
@@ -2701,6 +2732,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get completeSetContinue => 'DESTROY ANOTHER ONE!';
 
   @override
+  String get completeTask => 'Complete';
+
+  @override
   String get completed => 'Complete!';
 
   @override
@@ -2938,6 +2972,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get customizeAppFeatures => 'Customize app features';
+
+  @override
+  String get dailyChecklistAllComplete =>
+      'You completed today\'s checklist! 🎉';
 
   @override
   String get dailyChecklistAppBar => 'Daily Checklist';
@@ -3319,6 +3357,56 @@ class AppLocalizationsEn extends AppLocalizations {
   String get dreamAnalysisSymbolsTitle => 'Symbols';
 
   @override
+  String get dreamControlCompleted => 'Dream control learning complete!';
+
+  @override
+  String get dreamControlGuideDescription =>
+      'Practice controlling dream elements in lucid dreams.';
+
+  @override
+  String get dreamControlGuideTitle => 'Freedom in Dreams';
+
+  @override
+  String dreamControlPracticeCount(Object count) {
+    return '$count skills learned';
+  }
+
+  @override
+  String get dreamControlSkill1 => 'Flying';
+
+  @override
+  String get dreamControlSkill1Desc =>
+      'Jump and float up, or fly like Superman.';
+
+  @override
+  String get dreamControlSkill2 => 'Summoning Objects';
+
+  @override
+  String get dreamControlSkill2Desc =>
+      'Turn around expecting the object you want to be there.';
+
+  @override
+  String get dreamControlSkill3 => 'Scene Change';
+
+  @override
+  String get dreamControlSkill3Desc =>
+      'Open a door or spin while imagining a new location.';
+
+  @override
+  String get dreamControlSkill4 => 'Character Dialogue';
+
+  @override
+  String get dreamControlSkill4Desc =>
+      'Ask questions and have conversations with dream characters.';
+
+  @override
+  String get dreamControlTip =>
+      '\'Expectation\' is more effective than \'command\'. Believe the result has already happened.';
+
+  @override
+  String get dreamControlTitle => 'Dream Control Practice';
+
+  @override
   String get dreamEntry => 'Dream Entry';
 
   @override
@@ -3480,10 +3568,34 @@ class AppLocalizationsEn extends AppLocalizations {
       '⚡ Incredible! You\'ve become a Powerful Lucid Dreamer! Your abilities are extraordinary!';
 
   @override
+  String get dreamStatisticsNoData =>
+      'No data yet.\nStart recording your dreams to see statistics.';
+
+  @override
   String get durationDays => 'Duration';
 
   @override
   String get durationLabel => 'Duration';
+
+  @override
+  String durationMinutes(int minutes) {
+    return '${minutes}m';
+  }
+
+  @override
+  String durationMinutesSeconds(int minutes, int seconds) {
+    return '${minutes}m ${seconds}s';
+  }
+
+  @override
+  String durationSeconds(int seconds) {
+    return '${seconds}s';
+  }
+
+  @override
+  String durationSecondsShort(int seconds) {
+    return '${seconds}s';
+  }
 
   @override
   String get earnedXp => 'Earned XP';
@@ -4208,6 +4320,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get instructionsSection => '⚡ EMPEROR EXECUTION METHOD ⚡';
 
   @override
+  String get interactiveTag => 'Practice';
+
+  @override
   String get intermediateLevel => 'Intermediate';
 
   @override
@@ -4588,7 +4703,18 @@ class AppLocalizationsEn extends AppLocalizations {
   String get lucidDream => 'Lucid Dream';
 
   @override
+  String lucidDreamCount(String count) {
+    return 'Lucid $count';
+  }
+
+  @override
   String get lucidDreams => 'Lucid Dreams';
+
+  @override
+  String get lucidSuccessRate => 'Lucid Dream Success Rate';
+
+  @override
+  String get lucidityTrend => 'Lucidity Trend';
 
   @override
   String get lumiConversationAppBar => 'Chat with Lumi';
@@ -4649,6 +4775,41 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get maxSixDaysWorkout =>
       'Maximum 6 days workout allowed (one day must be rest)';
+
+  @override
+  String get meditationBreathingGuide => 'Breathing Guide';
+
+  @override
+  String get meditationBreathingInstructions =>
+      'Breathe in slowly through your nose, pause briefly, then exhale through your mouth.';
+
+  @override
+  String get meditationCompleted => 'Meditation complete!';
+
+  @override
+  String get meditationGoodJob => 'Great job! You can complete now';
+
+  @override
+  String get meditationGuideDescription =>
+      'Close your eyes in a quiet place and focus on your breathing. Continue for at least 1 minute.';
+
+  @override
+  String get meditationGuideTitle => 'Mindful Meditation';
+
+  @override
+  String get meditationMinimum1Minute => 'Meditate for at least 1 minute';
+
+  @override
+  String get meditationPause => 'Pause';
+
+  @override
+  String get meditationReset => 'Reset';
+
+  @override
+  String get meditationStart => 'Start';
+
+  @override
+  String get meditationTitle => 'Meditation Guide';
 
   @override
   String get minOneDayRest => 'At least one rest day is required';
@@ -4896,6 +5057,14 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get noWorkoutsToday => 'No workouts on this day';
+
+  @override
+  String get normalDream => 'Normal Dream';
+
+  @override
+  String normalDreamCount(String count) {
+    return 'Normal $count';
+  }
 
   @override
   String get notificationActivationMessage =>
@@ -5366,7 +5535,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get premiumBenefitsTitle => 'Premium Benefits';
 
   @override
-  String get premiumCongratulations => '축하합니다';
+  String get premiumCongratulations => 'Congratulations';
 
   @override
   String get premiumDialogTitle => 'Upgrade to Premium';
@@ -6147,6 +6316,9 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get receiveGeneralNotifications => 'Receive general notifications';
+
+  @override
+  String get recentDreams10 => 'Recent 10 dreams';
 
   @override
   String get recentWorkouts => 'Recent Workouts';
@@ -7238,6 +7410,102 @@ class AppLocalizationsEn extends AppLocalizations {
   String get sqliteDatabase => 'SQLite Local Database';
 
   @override
+  String get ssildCompleted => 'SSILD practice complete!';
+
+  @override
+  String ssildCycleCount(Object count) {
+    return '$count cycles completed';
+  }
+
+  @override
+  String get ssildGuideDescription =>
+      'A technique that induces lucid dreams by cycling through visual, auditory, and bodily sensations.';
+
+  @override
+  String get ssildGuideTitle => 'Senses Initiated Lucid Dream';
+
+  @override
+  String get ssildMinCycles => 'Complete at least 4 cycles';
+
+  @override
+  String get ssildStep1Description =>
+      'Close your eyes and focus on the darkness, colors, or patterns behind your eyelids.';
+
+  @override
+  String get ssildStep1Title => 'Focus on Sight';
+
+  @override
+  String get ssildStep2Description =>
+      'Focus on surrounding sounds or sounds in your head. Buzzing or heartbeat sounds work too.';
+
+  @override
+  String get ssildStep2Title => 'Focus on Sound';
+
+  @override
+  String get ssildStep3Description =>
+      'Focus on body sensations like weight, warmth, or tingling.';
+
+  @override
+  String get ssildStep3Title => 'Focus on Body';
+
+  @override
+  String get ssildTip =>
+      'Focus 15-30 seconds on each sense. Don\'t concentrate too hard. The key is to observe passively.';
+
+  @override
+  String get ssildTitle => 'SSILD Technique';
+
+  @override
+  String get stabilizationCompleted => 'Stabilization techniques learned!';
+
+  @override
+  String get stabilizationGuideDescription =>
+      'Stabilization techniques to use when the dream fades or you\'re about to wake.';
+
+  @override
+  String get stabilizationGuideTitle => 'Maintaining Lucidity';
+
+  @override
+  String stabilizationLearnCount(Object count) {
+    return '$count techniques learned';
+  }
+
+  @override
+  String get stabilizationTech1 => 'Hand Rubbing';
+
+  @override
+  String get stabilizationTech1Desc =>
+      'Rub your palms together and focus on the sensation. It makes sensations clearer.';
+
+  @override
+  String get stabilizationTech2 => 'Spinning';
+
+  @override
+  String get stabilizationTech2Desc =>
+      'Spin like a top. A new dream scene may be generated.';
+
+  @override
+  String get stabilizationTech3 => 'Detail Observation';
+
+  @override
+  String get stabilizationTech3Desc =>
+      'Closely observe textures, colors, and details of nearby objects.';
+
+  @override
+  String get stabilizationTech4 => 'Verbal Declaration';
+
+  @override
+  String get stabilizationTech4Desc =>
+      'Shout \"Clarity now!\" or \"This is a dream!\"';
+
+  @override
+  String get stabilizationTip =>
+      'Getting excited makes you wake up easily. Stay calm and use stabilization techniques immediately when the dream fades.';
+
+  @override
+  String get stabilizationTitle => 'Dream Stabilization';
+
+  @override
   String get start => 'Start';
 
   @override
@@ -7485,16 +7753,16 @@ class AppLocalizationsEn extends AppLocalizations {
   String get subscribeNow => 'Subscribe Now';
 
   @override
-  String get subscriptionAdsLabel => '광고';
+  String get subscriptionAdsLabel => 'Ads';
 
   @override
-  String get subscriptionAdsNoWithAdFree => '없음 (광고 제거)';
+  String get subscriptionAdsNoWithAdFree => 'None (Ad-free)';
 
   @override
-  String get subscriptionAdsYes => '있음';
+  String get subscriptionAdsYes => 'Yes';
 
   @override
-  String get subscriptionBenefitAdFree => '광고 없는 경험';
+  String get subscriptionBenefitAdFree => 'Ad-free Experience';
 
   @override
   String get subscriptionBenefitAdvancedAnalytics => '고급 통계 분석';
@@ -7529,6 +7797,11 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get successProfileSaved =>
       '👑 EMPEROR PROFILE SAVED! YOUR LEGEND IS RECORDED! 👑';
+
+  @override
+  String successRatePercent(String percent) {
+    return 'Success Rate $percent%';
+  }
 
   @override
   String get successSettingsSaved =>
@@ -7657,6 +7930,21 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get techStack => 'Tech Stack:';
+
+  @override
+  String get techniqueDescription => 'Description';
+
+  @override
+  String get techniqueGuide => 'Technique Guide';
+
+  @override
+  String get techniqueScientificBasis => 'Scientific Basis';
+
+  @override
+  String get techniqueStepByStep => 'Step by Step';
+
+  @override
+  String get techniqueTips => 'Tips';
 
   @override
   String get termsOfService => 'Terms of Service';
@@ -8440,6 +8728,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get weeklyReport => '📊 Weekly Report 📊';
 
   @override
+  String get weeklyStatistics => 'Weekly Statistics';
+
+  @override
+  String get weeklyStatisticsSubtitle => 'Dreams recorded in the last 7 days';
+
+  @override
   String get weeklyWorkoutSchedule =>
       'Set weekly lucid dream practice schedule';
 
@@ -8472,6 +8766,47 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get welcomeTitle => 'Welcome!';
+
+  @override
+  String get wildCompleteAllSteps => 'Please check all steps';
+
+  @override
+  String get wildCompleted => 'WILD practice complete!';
+
+  @override
+  String get wildGuideDescription =>
+      'An advanced technique where you maintain consciousness while falling asleep. Most effective with WBTB.';
+
+  @override
+  String get wildGuideTitle => 'Wake Initiated Lucid Dream';
+
+  @override
+  String get wildStep1Description =>
+      'Completely relax your body. Release tension from toes to head.';
+
+  @override
+  String get wildStep1Title => 'Enter Relaxation';
+
+  @override
+  String get wildStep2Description =>
+      'Observe emerging images or sounds. Don\'t react, just watch.';
+
+  @override
+  String get wildStep2Title => 'Observe Hypnagogia';
+
+  @override
+  String get wildStep3Description =>
+      'When hallucinations develop into a dream, gently enter. Do a reality check.';
+
+  @override
+  String get wildStep3Title => 'Enter the Dream';
+
+  @override
+  String get wildTip =>
+      'WILD is a difficult technique. Sleep paralysis may occur but it\'s normal. Observe without fear.';
+
+  @override
+  String get wildTitle => 'WILD Technique';
 
   @override
   String get workerChadMode => '💼 Worker Chad Mode (Mon-Fri)';
