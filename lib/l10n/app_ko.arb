@@ -597,11 +597,37 @@
     "description": "Permission activated status"
   },
   "activatedStatus": "활성화됨",
+  "@adDailyLimitReached": {
+    "description": "Ad daily limit reached"
+  },
+  "adDailyLimitReached": "오늘 광고 시청 한도에 도달했습니다",
   "@adFallbackMessage": {
     "description": "광고가 없을 때 표시되는 대체 메시지"
   },
   "adFallbackMessage": "자각몽 마스터가 되는 여정, 함께 간다! 💪",
   "adLoadFailed": "광고를 불러올 수 없다",
+  "@adShowFailed": {
+    "description": "광고 표시 실패",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "adShowFailed": "광고를 표시할 수 없습니다: {error}",
+  "@adWatchError": {
+    "description": "광고 시청 오류",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "adWatchError": "광고 시청 중 오류: {error}",
+  "@adWatchSuccess": {
+    "description": "Ad watch success message"
+  },
+  "adWatchSuccess": "광고 시청 완료! 토큰을 받았습니다",
   "@adaptiveTheme": {
     "description": "Adaptive theme setting"
   },
@@ -610,6 +636,14 @@
     "description": "Adaptive theme description"
   },
   "adaptiveThemeDesc": "시스템 설정에 따라 자동으로 변경",
+  "@addNewDreamJournal": {
+    "description": "Add new dream journal"
+  },
+  "addNewDreamJournal": "새 꿈 기록하기",
+  "@addNewDreamJournalDesc": {
+    "description": "Add new dream journal description"
+  },
+  "addNewDreamJournalDesc": "오늘 꾼 꿈을 기록해보세요",
   "@advancedLevel": {
     "description": "Advanced level label"
   },
@@ -618,6 +652,14 @@
     "description": "광고 라벨"
   },
   "advertisement": "광고",
+  "@aiAnalysis": {
+    "description": "AI analysis label"
+  },
+  "aiAnalysis": "AI 분석",
+  "@aiAnalysisCompleted": {
+    "description": "AI analysis completed badge"
+  },
+  "aiAnalysisCompleted": "AI 분석 완료",
   "@aiAssistantEmptyInput": {
     "description": "입력이 비었을 때 경고"
   },
@@ -678,6 +720,10 @@
     }
   },
   "aiAssistantUsageWarning": "일일 한도의 {percentage}%를 사용했습니다!",
+  "@aiDeepChat": {
+    "description": "AI 깊은 대화 제목"
+  },
+  "aiDeepChat": "Lumi와 깊은 대화",
   "@aiFeatureDreamJournalDesc": {
     "description": "꿈 일기 기능 설명"
   },
@@ -778,6 +824,18 @@
     "description": "기법 기능 타이틀"
   },
   "aiFeatureTechniqueTitle": "기법",
+  "@aiQuickAnalysis": {
+    "description": "AI 빠른 분석 제목"
+  },
+  "aiQuickAnalysis": "빠른 AI 분석",
+  "@aiTokenLabel": {
+    "description": "AI 토큰 라벨"
+  },
+  "aiTokenLabel": "AI 토큰",
+  "@aiTokenShortage": {
+    "description": "AI 토큰 부족 메시지"
+  },
+  "aiTokenShortage": "토큰이 부족합니다. 광고를 시청하거나 프리미엄으로 업그레이드하세요.",
   "@allAchievementsUnlocked": {
     "description": "모든 업적 획득 제목"
   },
@@ -787,6 +845,10 @@
   },
   "allDataResetSuccessfully": "모든 데이터가 성공적으로 초기화되었다",
   "allFeaturesWithoutSignup": "회원가입 없이도 모든 기능을 사용할 수 있습니다",
+  "@allTasksCompleted": {
+    "description": "All tasks completed"
+  },
+  "allTasksCompleted": "모든 태스크 완료!",
   "allWorkoutProgramsAvailable": "모든 운동 프로그램 이용 가능",
   "allow": "허용",
   "allowButton": "허용",
@@ -799,10 +861,6 @@
     "description": "권한 허용 버튼"
   },
   "allowPermissions": "권한 허용하기",
-  "@alphaChad": {
-    "description": "Alpha title"
-  },
-  "alphaChad": "알파 레벨",
   "@alphaEmperorDomain": {
     "description": "알파 엠퍼러 도메인 타이틀"
   },
@@ -840,9 +898,6 @@
     "description": "고급 짧은 이름"
   },
   "alphaShort": "드림 스피릿",
-  "alreadyHaveAccount": "이미 Chad 계정이 있나요?",
-  "alreadyHaveChadAccount": "이미 Chad 계정이 있나요?",
-  "alreadySweatyChadWillShortWarmup": "이미 땀이 나고 있네!\nChad가 워밍업은 짧게 갈게! 🏃‍♂️",
   "@analysisComparisonCost": {
     "description": "비용 비교 레이블"
   },
@@ -850,7 +905,7 @@
   "@analysisComparisonCostLumi": {
     "description": "Lumi 분석 비용"
   },
-  "analysisComparisonCostLumi": "토큰 1개",
+  "analysisComparisonCostLumi": "토큰 3개",
   "@analysisComparisonCostQuick": {
     "description": "빠른 분석 비용"
   },
@@ -1284,23 +1339,11 @@
     "description": "데이터 백업 설명"
   },
   "backupWorkoutRecords": "자각몽 연습 기록을 백업한다",
-  "@balanceChadMode": {
-    "description": "밸런스 차드 모드 제목"
-  },
-  "balanceChadMode": "❤️ 밸런스 차드 모드 (화목토)",
   "@basicNotificationPermission": {
     "description": "Basic notification permission"
   },
   "basicNotificationPermission": "기본 알림 권한",
   "basicNotificationRequired": "기본 알림을 받기 위해 필요합니다",
-  "@becomeChad": {
-    "description": "차드 되기 초대 메시지"
-  },
-  "becomeChad": "💀 너도 차드가 되고 싶다면? 💀",
-  "@becomeTrueChadTips": {
-    "description": "Improvement tips section subtitle"
-  },
-  "becomeTrueChadTips": "이 팁들로 너도 성장할 수 있어요! 💎",
   "@bedtimePrepCheckAtLeast3": {
     "description": "최소 3개 체크 필요"
   },
@@ -1353,13 +1396,8 @@
     "description": "Quiz question 3"
   },
   "beginnerPushupQuiz": "초보자에게 가장 적합한 자각몽 기법은?",
-  "@beginnerToChad": {
-    "description": "Variations section subtitle"
-  },
-  "beginnerToChad": "초보자부터 드림 스피릿까지! 단계별로 도전해보자! 🚀",
   "benefit14WeeksProgram": "• 전체 30일 프로그램 접근",
   "benefit1MonthFree": "• 1개월 무료 프리미엄 기능",
-  "benefitAllChadStages": "• 모든 드림 스피릿 진화 단계",
   "benefitBodyAnalysis": "• 상세한 체성분 분석",
   "benefitCloudBackup": "• 진행상황 클라우드 백업",
   "benefitDetailedStats": "• 상세 통계 및 분석",
@@ -1384,6 +1422,10 @@
     "description": "보너스 챌린지 제목"
   },
   "bonusChallenge": "🔥 보너스 챌린지",
+  "@bonusRewardEarned": {
+    "description": "Bonus reward earned"
+  },
+  "bonusRewardEarned": "보너스 보상 획득!",
   "@bottomMotivation": {
     "description": "하단 동기부여 메시지"
   },
@@ -1443,6 +1485,26 @@
     "description": "Built with Flutter"
   },
   "builtWithFlutter": "Flutter로 제작됨",
+  "@buttonAnalyzeAI": {
+    "description": "Analyze with AI button"
+  },
+  "buttonAnalyzeAI": "AI 분석하기",
+  "@buttonClose": {
+    "description": "Close button"
+  },
+  "buttonClose": "닫기",
+  "@buttonConfirm": {
+    "description": "Confirm button text"
+  },
+  "buttonConfirm": "확인",
+  "@buttonDetails": {
+    "description": "Details button text"
+  },
+  "buttonDetails": "자세히",
+  "@buttonLater": {
+    "description": "Later button"
+  },
+  "buttonLater": "나중에",
   "@calendar": {
     "description": "달력 탭 제목"
   },
@@ -1513,387 +1575,6 @@
   "cannotShowCompletionDialog": "자각몽 연습 완료 화면을 표시할 수 없습니다. 홈으로 돌아갑니다.",
   "cannotStartPurchase": "구매를 시작할 수 없습니다.",
   "categoryAchievements": "카테고리별 업적",
-  "@chadAchievements": {
-    "description": "Chad achievements title"
-  },
-  "chadAchievements": "업적",
-  "chadActiveRecovery": "🧘‍♂️ Chad 액티브 리커버리\n• 가벼운 스트레칭 10분\n• 심호흡 운동\n• 충분한 휴식",
-  "@chadActivityCompleted": {
-    "placeholders": {
-      "activityTitle": {
-        "type": "String"
-      }
-    }
-  },
-  "chadActivityCompleted": "{activityTitle} 완료! Chad가 자랑스러워해! 💪",
-  "@chadActivityDuration": {
-    "placeholders": {
-      "duration": {
-        "type": "String"
-      }
-    }
-  },
-  "chadActivityDuration": "{duration}분 활동",
-  "chadAdvancedRoutine": "🚀 Chad 고급 루틴\n• 워밍업 10분\n• 푸시업 고강도 세트\n• 전신 운동 포함",
-  "@chadAdvice": {
-    "description": "차드 조언 섹션 제목"
-  },
-  "chadAdvice": "🔥 나만의 조언",
-  "@chadAlarmTime": {
-    "description": "알림 시간 제목"
-  },
-  "chadAlarmTime": "🔥 알림 시간",
-  "@chadBasic": {
-    "description": "기본형 이름"
-  },
-  "chadBasic": "기본형",
-  "@chadBasicDesc": {
-    "description": "기본형 설명"
-  },
-  "chadBasicDesc": "첫 진화 완료!\n기초 다지기 시작! 🔥",
-  "chadBasicRoutine": "🎯 Chad 기본 루틴\n• 워밍업 5분\n• 푸시업 기본 세트\n• 마무리 스트레칭",
-  "chadBeastMode": "🔥 Chad Beast Mode\n• 최고 강도 운동\n• 도전적인 목표\n• 한계 돌파 세션",
-  "chadBecameStronger": "✨ Dream Spirit가 성장했습니다",
-  "@chadCoffee": {
-    "description": "커피 Chad 이름"
-  },
-  "chadCoffee": "커피 파워",
-  "@chadCoffeeDesc": {
-    "description": "커피 Chad 설명"
-  },
-  "chadCoffeeDesc": "에너지 MAX!\n커피 파워로 더 강해졌다! ☕💪",
-  "chadConfident": "자신감 차드",
-  "chadConfidentDesc": "자신감 폭발!\n정면 돌파 준비 완료! 💪",
-  "@chadConfirmedCondition": {
-    "description": "컨디션 확인 완료 메시지",
-    "placeholders": {
-      "condition": {
-        "type": "String"
-      }
-    }
-  },
-  "chadConfirmedCondition": "Chad가 {condition} 컨디션을 확인했어요!",
-  "@chadDays": {
-    "description": "총 자각몽 연습 횟수 부제목"
-  },
-  "chadDays": "자각몽 마스터가 된 날들!",
-  "@chadDescription": {
-    "description": "차드 설명 섹션 제목"
-  },
-  "chadDescription": "💪 차드 설명",
-  "@chadDouble": {
-    "description": "더블 Chad 이름"
-  },
-  "chadDouble": "더블 파워",
-  "@chadDoubleDesc": {
-    "description": "더블 Chad 설명"
-  },
-  "chadDoubleDesc": "최종 진화 완료! 전설 등극!\n2배 파워로 모든 걸 정복한다! 👑",
-  "@chadEvolution": {
-    "description": "Chad evolution label"
-  },
-  "chadEvolution": "진화",
-  "@chadEvolutionCompleteNotification": {
-    "description": "Chad evolution complete notification"
-  },
-  "chadEvolutionCompleteNotification": "진화 완료 알림",
-  "chadEvolutionDesc": "자각몽을 마스터할수록\n성장하는 영혼 가이드",
-  "@chadEvolutionEncouragementNotifications": {
-    "description": "진화 격려 알림 설정 제목"
-  },
-  "chadEvolutionEncouragementNotifications": "진화 격려 알림",
-  "@chadEvolutionEncouragementNotificationsDesc": {
-    "description": "진화 격려 알림 설정 설명"
-  },
-  "chadEvolutionEncouragementNotificationsDesc": "다음 진화까지 3일 남았을 때 격려 메시지를 받다",
-  "@chadEvolutionNotifications": {
-    "description": "진화 완료 알림 설정 제목"
-  },
-  "chadEvolutionNotifications": "진화 완료 알림",
-  "@chadEvolutionNotificationsDesc": {
-    "description": "진화 완료 알림 설정 설명"
-  },
-  "chadEvolutionNotificationsDesc": "새로운 단계로 진화했을 때 알림받기",
-  "@chadEvolutionPreviewNotification": {
-    "description": "Chad evolution preview notification"
-  },
-  "chadEvolutionPreviewNotification": "진화 예고 알림",
-  "@chadEvolutionPreviewNotifications": {
-    "description": "진화 예고 알림 설정 제목"
-  },
-  "chadEvolutionPreviewNotifications": "진화 예고 알림",
-  "@chadEvolutionPreviewNotificationsDesc": {
-    "description": "진화 예고 알림 설정 설명"
-  },
-  "chadEvolutionPreviewNotificationsDesc": "다음 진화까지 1주일 남았을 때 미리 알림을 받다",
-  "chadEvolutionProgress": "✨ Dream Spirit 성장 진행률",
-  "@chadEvolutionQuarantineNotification": {
-    "description": "Chad evolution quarantine notification"
-  },
-  "chadEvolutionQuarantineNotification": "진화 격리 알림",
-  "@chadEvolutionStage": {
-    "description": "Chad evolution stage title"
-  },
-  "chadEvolutionStage": "진화단계",
-  "@chadEvolutionStages": {
-    "description": "Chad evolution stages label"
-  },
-  "chadEvolutionStages": "진화 단계",
-  "@chadEvolutionStatus": {
-    "description": "진화 상태 항목"
-  },
-  "chadEvolutionStatus": "• 진화 상태",
-  "chadEvolutionTitle": "Dream Spirit 진화",
-  "@chadFrontFacing": {
-    "description": "정면 Chad 이름"
-  },
-  "chadFrontFacing": "정면 돌파",
-  "@chadFrontFacingDesc": {
-    "description": "정면 Chad 설명"
-  },
-  "chadFrontFacingDesc": "자신감 폭발!\n정면 돌파 준비 완료! 💪",
-  "chadGamer": "게이머 Chad",
-  "chadGamerDesc": "게이밍 헤드셋을 착용한 Chad입니다.\n집중력과 반응속도 극대화!",
-  "@chadGlowingEyes": {
-    "description": "빛나는눈 Chad 이름"
-  },
-  "chadGlowingEyes": "빛나는눈 Chad",
-  "@chadGlowingEyesDesc": {
-    "description": "빛나는눈 Chad 설명"
-  },
-  "chadGlowingEyesDesc": "강력한 힘을 가진 Chad이다.\n눈에서 빛이 나며 엄청난 파워를 보여줍니다!",
-  "chadGod": "갓 차드",
-  "chadGodDesc": "전설의 완성! 신의 경지!\n모든 것을 초월한 궁극의 차드! 👑✨",
-  "chadGreeting": "안녕 Bro! Chad야! 💪",
-  "@chadHashtag": {
-    "description": "차드 해시태그"
-  },
-  "chadHashtag": "#차드",
-  "chadHexa": "Triple Chad",
-  "chadHexaDesc": "💥 세 배의 파워!\n대단한 모습! 💥",
-  "chadIntermediateRoutine": "💪 Chad 중급 루틴\n• 워밍업 5분\n• 푸시업 강화 세트\n• 코어 운동 추가",
-  "chadJourneyTagline": "차드가 되는 여정에 함께하라! 🔥",
-  "chadLaserEyes": "레이저 차드",
-  "chadLaserEyesDesc": "강력한 힘을 가진 차드!\n눈에서 빛이 나며 엄청난 파워! ⚡",
-  "chadLaserEyesHud": "레이저+HUD 차드",
-  "chadLaserEyesHudDesc": "최첨단 시스템 장착!\nHUD와 레이저로 무적 모드! 🎯",
-  "@chadLevel": {
-    "description": "드림 스피릿 레벨 라벨"
-  },
-  "chadLevel": "드림 스피릿 레벨",
-  "chadLevelUpTitle": "Chad 레벨 업!",
-  "@chadMessage0": {
-    "description": "차드 레벨 0 메시지 - 수면모자차드"
-  },
-  "chadMessage0": "🛌 잠에서 깨어나라, 미래의 차드여! 여정이 시작된다!",
-  "@chadMessage1": {
-    "description": "차드 레벨 1 메시지 - 기본차드"
-  },
-  "chadMessage1": "😎 기본기가 탄탄해지고 있어! 진짜 나만의 시작이야!",
-  "@chadMessage2": {
-    "description": "차드 레벨 2 메시지 - 커피차드"
-  },
-  "chadMessage2": "☕ 에너지가 넘쳐흘러! 커피보다 강한 힘이 생겼어!",
-  "@chadMessage3": {
-    "description": "차드 레벨 3 메시지 - 정면차드"
-  },
-  "chadMessage3": "🔥 정면돌파! 어떤 장애물도 막을 수 없다!",
-  "@chadMessage4": {
-    "description": "차드 레벨 4 메시지 - 썬글차드"
-  },
-  "chadMessage4": "🕶️ 쿨함이 몸에 배었어! 진정한 알파의 모습이야!",
-  "@chadMessage5": {
-    "description": "차드 레벨 5 메시지 - 눈빔차드"
-  },
-  "chadMessage5": "⚡ 눈빛만으로도 세상을 바꿀 수 있어! 전설의 시작!",
-  "@chadMessage6": {
-    "description": "차드 레벨 6 메시지 - 더블차드"
-  },
-  "chadMessage6": "👑 최고의 차드 완성! 더블 파워로 우주를 정복하라!",
-  "@chadMistakesAdvice": {
-    "description": "Chad's advice about mistakes"
-  },
-  "chadMistakesAdvice": "차드도 처음엔 실수했다. 하지만 이제는 완벽하지! 🔥",
-  "@chadModeActivate": {
-    "description": "차드 모드 활성화 설명"
-  },
-  "chadModeActivate": "💪 차드 모드 활성화! 승리의 스케줄을 설정하라! 🔥",
-  "chadModeActivated": "💡 MODE 활성화! 더 정확한 알림은 나중에 설정 가능! 🔥",
-  "@chadModeActive": {
-    "description": "차드 모드 활성화 상태",
-    "placeholders": {
-      "days": {
-        "type": "String"
-      },
-      "time": {
-        "type": "String"
-      }
-    }
-  },
-  "chadModeActive": "🔥 {days} {time} - 차드 모드 활성화!",
-  "@chadModeSelection": {
-    "description": "차드 모드 선택 섹션"
-  },
-  "chadModeSelection": "🚀 차드 모드 선택",
-  "@chadModeWaiting": {
-    "description": "차드 모드 대기 상태"
-  },
-  "chadModeWaiting": "😴 차드 모드 대기 중...",
-  "@chadMotivationArcher": {
-    "description": "아처 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationArcher": "균형과 집중력이 필요한 고급 기술! 한쪽씩 완벽하게 해내면 대단해요!",
-  "@chadMotivationClap": {
-    "description": "박수 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationClap": "폭발적인 파워로 박수를 쳐라! 이거 되면 정말 잘했어요, fxxk yeah!",
-  "@chadMotivationDecline": {
-    "description": "디클라인 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationDecline": "높은 곳을 향해 도전하는 것이 차드다! 어깨와 상체가 불타오르는 걸 느껴봐!",
-  "@chadMotivationDefault": {
-    "description": "기본 차드 격려 메시지"
-  },
-  "chadMotivationDefault": "나만의 길은 험하지만 그래서 더 가치있다! 포기하지 마라, 만삣삐!",
-  "@chadMotivationDiamond": {
-    "description": "다이아몬드 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationDiamond": "다이아몬드처럼 귀한 네 삼두근을 만들어라! 팔 근육 폭발하는 기분을 느껴봐!",
-  "@chadMotivationIncline": {
-    "description": "인클라인 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationIncline": "단계적으로 올라가는 것이 나만의 길이다! 각도를 점점 낮춰가면서 도전해봐!",
-  "@chadMotivationKnee": {
-    "description": "무릎 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationKnee": "시작이 반이다! 무릎 푸시업도 제대로 하면 금방 일반 푸시업으로 갈 수 있어!",
-  "@chadMotivationOneArm": {
-    "description": "원핸드 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationOneArm": "원핸드 푸시업은 나만의 완성형이다! 이거 한 번이라도 하면 진짜 기가 차드 인정, fxxk yeah!",
-  "@chadMotivationPike": {
-    "description": "파이크 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationPike": "핸드스탠드의 첫걸음! 어깨 근육이 터져나갈 것 같은 기분을 만끽해라!",
-  "@chadMotivationSection": {
-    "description": "차드 격려 메시지 섹션 제목"
-  },
-  "chadMotivationSection": "🔥 EMPEROR'S ULTIMATE WISDOM 🔥",
-  "@chadMotivationStandard": {
-    "description": "기본 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationStandard": "기본이 제일 중요하다, 만삣삐! 완벽한 폼으로 하나하나 쌓아가면 성장해요!",
-  "@chadMotivationWideGrip": {
-    "description": "와이드 그립 푸시업에 대한 차드 격려"
-  },
-  "chadMotivationWideGrip": "가슴을 활짝 펴고 나만의 기운을 받아라! 넓은 가슴이 진짜 나만의 상징이다!",
-  "@chadNotificationSettings": {
-    "description": "알림 설정 섹션 제목"
-  },
-  "chadNotificationSettings": "🔔 알림 설정",
-  "chadPenta": "Double Chad",
-  "chadPentaDesc": "🔥 두 배의 파워!\n혼자서 둘의 몫을 한다! 🔥",
-  "chadPerfectFormGuide": "드림 스피릿의 완벽한 자각몽 기법 가이드! 💪",
-  "@chadPerfectPushupForm": {
-    "description": "Subtitle for pushup form guide"
-  },
-  "chadPerfectPushupForm": "드림 스피릿이 알려주는 완벽한 자각몽 기법! 💪",
-  "chadPowerRoutine": "💪 Chad 파워 루틴\n• 기본 루틴 + 20% 추가\n• 새로운 변형 동작\n• 강도 업그레이드",
-  "chadQuadruple": "Glowing Eyes Chad",
-  "chadQuadrupleDesc": "✨ 눈부신 빛을 발하는 Chad!\n내면의 힘이 폭발한다! ✨",
-  "chadQuickStart": "🏃‍♂️ Chad 빠른 시작\n• 워밍업 단축\n• 바로 메인 운동\n• 효율적인 루틴",
-  "chadRecommendedWorkout": "차드 추천 운동",
-  "chadRecoverySettings": "회복 설정",
-  "chadRecoverySettingsSubtitle": "회복 활동 맞춤 설정",
-  "chadRecoverySettingsTitle": "회복 설정",
-  "chadRecoveryTitle": "Chad 회복 가이드",
-  "@chadReminder": {
-    "description": "차드 리마인더 제목"
-  },
-  "chadReminder": "💪 차드 리마인더",
-  "@chadRestModeToday": {
-    "description": "휴식모드 확인 버튼"
-  },
-  "chadRestModeToday": "오케이! 오늘은 휴식모드다! 💪😎",
-  "@chadSays": {
-    "description": "Chad 말풍선 레이블"
-  },
-  "chadSays": "Chad가 말해요",
-  "@chadSecretTips": {
-    "description": "Improvement tips section header"
-  },
-  "chadSecretTips": "나만의 특급 비법",
-  "@chadSecrets": {
-    "description": "영상 제목 3"
-  },
-  "chadSecrets": "나만의 비밀 ⚡",
-  "@chadShorts": {
-    "description": "YouTube Shorts 화면 제목"
-  },
-  "chadShorts": "차드 쇼츠 🔥",
-  "@chadSleepyCap": {
-    "description": "수면모자 Chad 이름"
-  },
-  "chadSleepyCap": "수면모자",
-  "@chadSleepyCapDesc": {
-    "description": "수면모자 Chad 설명"
-  },
-  "chadSleepyCapDesc": "여정을 시작하는 단계다.\n아직 잠이 덜 깼지만 곧 깨어날 거야! 😴",
-  "chadSmiling": "미소 Chad",
-  "chadSmilingDesc": "여유로운 미소를 짓는 Chad입니다.\n여유로운 모습!",
-  "@chadSunglasses": {
-    "description": "썬글라스 Chad 이름"
-  },
-  "chadSunglasses": "스타일 MAX",
-  "@chadSunglassesDesc": {
-    "description": "썬글라스 Chad 설명"
-  },
-  "chadSunglassesDesc": "스타일 MAX!\n멋도 실력이다! 😎",
-  "chadSupreme": "Supreme Chad",
-  "chadSupremeDesc": "👑 최고의 Chad!\n신에 가까운 힘! 👑",
-  "@chadTimeSettings": {
-    "description": "시간 설정 섹션"
-  },
-  "chadTimeSettings": "⏰ 시간 설정",
-  "@chadTitleBasic": {
-    "description": "기본 차드 타이틀"
-  },
-  "chadTitleBasic": "기본형",
-  "@chadTitleCoffee": {
-    "description": "커피 차드 타이틀"
-  },
-  "chadTitleCoffee": "커피 Chad",
-  "@chadTitleCool": {
-    "description": "썬글 차드 타이틀"
-  },
-  "chadTitleCool": "썬글 Chad",
-  "@chadTitleDouble": {
-    "description": "더블 차드 타이틀"
-  },
-  "chadTitleDouble": "더블 Chad",
-  "@chadTitleFront": {
-    "description": "정면 차드 타이틀"
-  },
-  "chadTitleFront": "정면 Chad",
-  "@chadTitleLaser": {
-    "description": "눈빨 차드 타이틀"
-  },
-  "chadTitleLaser": "눈빨 Chad",
-  "@chadTitleSleepy": {
-    "description": "수면모자 드림 스피릿 타이틀"
-  },
-  "chadTitleSleepy": "수면모자",
-  "chadTriple": "트리플 차드",
-  "chadTripleDesc": "3배 파워 폭발!\n혼자서 셋이 할 일을 한다! 💥",
-  "chadUltra": "Ultra Chad",
-  "chadUltraDesc": "🚀 최고 레벨의 파워!\n압도적인 존재감! 🚀",
-  "chadWeeklyRecoveryReport": "주간 회복 리포트",
-  "chadWillCreatePerfectRoutineForMuscleGain": "근육 증가를 위해 Chad가 완벽한 루틴을 짜줄게!",
-  "chadWillMakeCustomPlanForEndurance": "체력 향상을 위해 Chad가 맞춤 계획 세워줄게!",
-  "chadWillMatchWorkoutIntensityForWeightLoss": "체중감량을 위해 Chad가 최적의 운동 강도를 맞춰줄게!",
-  "chadWillRecommendWorkoutForYou": "Chad가 너에게 맞는 운동을 추천해줄게!",
-  "chadWink": "윙크 Chad",
-  "chadWinkDesc": "윙크하는 Chad입니다.\n최고의 자신감과 매력!",
   "@challenge100CumulativeDescription": {
     "description": "100 cumulative challenge description"
   },
@@ -2200,6 +1881,10 @@
   },
   "challengesTitle": "챌린지",
   "championNeedsConsistency": "진정한 챔피언은 일관성이 필요해!\n\n주 3일 이상은 운동해야 진짜 변화가 일어나!\n\n더 선택하고 다시 시도하라! 💪",
+  "@characterGrowth": {
+    "description": "Character growth screen title"
+  },
+  "characterGrowth": "캐릭터 성장",
   "@characterUnlockStage1": {
     "description": "Character unlock stage 1 message"
   },
@@ -2224,10 +1909,14 @@
     "description": "Character unlock stage 6 message"
   },
   "characterUnlockStage6": "Lumi Stage 6 해금",
-  "@checkChadGrowth": {
-    "description": "통계 화면 배너 텍스트"
+  "@charactersHint": {
+    "description": "Characters input hint"
   },
-  "checkChadGrowth": "나만의 성장을 확인하라! 📊",
+  "charactersHint": "등장 인물 (쉼표로 구분)",
+  "@charactersInputTitle": {
+    "description": "Characters input title"
+  },
+  "charactersInputTitle": "등장 인물",
   "checkIcon": "✅",
   "@checklistAnalysisError": {
     "description": "분석 실패 에러 메시지",
@@ -2334,10 +2023,6 @@
     "description": "꿈 분석 섹션 타이틀"
   },
   "checklistDreamAnalysisTitle": "꿈 분석",
-  "@checklistDreamAnalysisWatchAd": {
-    "description": "광고 시청으로 분석 추가 메시지"
-  },
-  "checklistDreamAnalysisWatchAd": "광고 보고 분석 1회 더 받기",
   "@checklistDreamInputHint": {
     "description": "꿈 입력 필드 힌트"
   },
@@ -2437,14 +2122,6 @@
     }
   },
   "checklistTimeSpentValue": "{minutes}분",
-  "@checklistWatchAdAnalysis": {
-    "description": "광고 보고 분석 받기 버튼"
-  },
-  "checklistWatchAdAnalysis": "광고 보고 분석 받기",
-  "@checklistWatchAdForAnalysis": {
-    "description": "광고 보고 추가 분석 얻기"
-  },
-  "checklistWatchAdForAnalysis": "광고 보고 분석 1회 더 받기",
   "@checklistWbtbBusy": {
     "description": "WBTB 바쁨 상태"
   },
@@ -2486,6 +2163,42 @@
     "description": "축소된 상태 안내"
   },
   "collapsedTapToExpand": "축소됨. 탭하여 확장",
+  "@colorBlue": {
+    "description": "Blue color"
+  },
+  "colorBlue": "파랑",
+  "@colorGreen": {
+    "description": "Green color"
+  },
+  "colorGreen": "초록",
+  "@colorIndigo": {
+    "description": "Indigo color"
+  },
+  "colorIndigo": "남색",
+  "@colorLavender": {
+    "description": "Lavender color"
+  },
+  "colorLavender": "라벤더",
+  "@colorOrange": {
+    "description": "Orange color"
+  },
+  "colorOrange": "주황",
+  "@colorPink": {
+    "description": "Pink color"
+  },
+  "colorPink": "분홍",
+  "@colorPurple": {
+    "description": "Purple color"
+  },
+  "colorPurple": "보라",
+  "@colorRed": {
+    "description": "Red color"
+  },
+  "colorRed": "빨강",
+  "@colorTeal": {
+    "description": "Teal color"
+  },
+  "colorTeal": "청록",
   "@colorTheme": {
     "description": "Color theme setting"
   },
@@ -2509,6 +2222,10 @@
     "description": "완료 버튼"
   },
   "complete": "완료",
+  "@completeDesc": {
+    "description": "Complete description"
+  },
+  "completeDesc": "완료되었습니다",
   "@completeFirstChallenge": {
     "description": "첫 챌린지 완료 안내 메시지"
   },
@@ -2517,6 +2234,10 @@
     "description": "초기 테스트 완료 안내"
   },
   "completeInitialTest": "프로필을 생성하고 자각몽 훈련을 시작해주세요",
+  "@completeLabel": {
+    "description": "Complete label"
+  },
+  "completeLabel": "완료",
   "@completeSetButton": {
     "description": "마지막 세트 완료 버튼"
   },
@@ -2529,6 +2250,10 @@
     "description": "태스크 완료 버튼"
   },
   "completeTask": "완료하기",
+  "@completeTodaysTasks": {
+    "description": "오늘의 태스크 완료 안내"
+  },
+  "completeTodaysTasks": "오늘의 태스크를 완료하세요",
   "@completed": {
     "description": "Completed status"
   },
@@ -2655,14 +2380,14 @@
     "description": "데이터 초기화 확인 제목"
   },
   "confirmDataReset": "데이터 초기화 확인",
+  "@confirmLabel": {
+    "description": "Confirm label"
+  },
+  "confirmLabel": "확인",
   "@congratulations": {
     "description": "축하 메시지"
   },
   "congratulations": "축하합니다!",
-  "@congratulationsChad": {
-    "description": "모든 업적 획득 메시지"
-  },
-  "congratulationsChad": "축하한다! 멋져요! 🎉",
   "@congratulationsMessage": {
     "description": "Congratulations message for permissions"
   },
@@ -2680,10 +2405,6 @@
     "description": "연속 연습 차단 메시지"
   },
   "consecutiveWorkoutMessage": "야야야! 어제 운동했잖아! 🔥\n\n지금 뭘 하려는거야? 연속 연습이야?\n충분한 휴식도 중요해요!\n\n💀 과도한 연습은 노답이야!\n😎 오늘은 쿨하게 쉬고 내일 다시 가자! 💪",
-  "@consistentChad": {
-    "description": "이번 달 운동 부제목"
-  },
-  "consistentChad": "꾸준한 차드!",
   "@consistentStrengthImprovement": {
     "description": "영상 설명 6"
   },
@@ -2695,6 +2416,10 @@
   },
   "continueOrStartNew": "이전 훈련을 이어서 계속할래?\\n아니면 새 훈련을 시작할래?",
   "continueWithGoogle": "Google로 계속하기",
+  "@conversationHistoryInfo": {
+    "description": "대화 기록 정보"
+  },
+  "conversationHistoryInfo": "이전 대화 기록이 있습니다",
   "@copyrightMission100": {
     "description": "저작권 및 슬로건"
   },
@@ -2740,10 +2465,6 @@
     "description": "Current status label"
   },
   "current": "현재",
-  "@currentChadState": {
-    "description": "Current Chad state title"
-  },
-  "currentChadState": "현재 Chad 상태",
   "@currentDifficulty": {
     "description": "현재 난이도 표시",
     "placeholders": {
@@ -2756,6 +2477,10 @@
     }
   },
   "currentDifficulty": "현재: {difficulty} - {description}",
+  "@currentLabel": {
+    "description": "Current label for current stage"
+  },
+  "currentLabel": "현재",
   "@currentLanguage": {
     "description": "현재 언어 표시",
     "placeholders": {
@@ -2771,12 +2496,20 @@
   },
   "currentLevelProgress": "• 현재 레벨 및 진행률",
   "currentMaxRange": "현재 최대 {range}",
+  "@currentStage": {
+    "description": "Current stage label"
+  },
+  "currentStage": "현재 단계",
   "currentStatus": "현재",
   "@currentStreak": {
     "description": "현재 연속 운동일"
   },
   "currentStreak": "현재 연속",
   "currentSubscription": "현재 구독",
+  "@currentTokens": {
+    "description": "현재 토큰"
+  },
+  "currentTokens": "현재 토큰",
   "@customWorkoutDays": {
     "description": "Custom workout days setting"
   },
@@ -2793,6 +2526,10 @@
     "description": "체크리스트 100% 완료 메시지"
   },
   "dailyChecklistAllComplete": "오늘의 체크리스트를 모두 완료했어요! 🎉",
+  "@dailyChecklistAlreadyCompleted": {
+    "description": "이미 완료된 항목 메시지"
+  },
+  "dailyChecklistAlreadyCompleted": "이미 완료한 항목이에요! ✅",
   "@dailyChecklistAppBar": {
     "description": "일일 체크리스트 앱바 제목"
   },
@@ -2809,7 +2546,7 @@
       }
     }
   },
-  "dailyChecklistCompletionDialogContent": "잘했어! {name}을(를) 완료했다!",
+  "dailyChecklistCompletionDialogContent": "잘하셨어요! {name}을(를) 완료했어요!",
   "@dailyChecklistCompletionDialogTitle": {
     "description": "완료 대화상자 제목과 아이콘",
     "placeholders": {
@@ -2864,6 +2601,10 @@
     "description": "일일 정복 기록 타이틀"
   },
   "dailyConquestRecord": "🔥💀 일일 정복 기록 💀🔥",
+  "@dailyFreeReward": {
+    "description": "Daily free reward"
+  },
+  "dailyFreeReward": "일일 무료 보상",
   "@dailyMotivation": {
     "description": "일일 동기부여 메시지"
   },
@@ -2889,6 +2630,24 @@
     "description": "일일 알림 설정 부제목"
   },
   "dailyReminderSubtitle": "매일 정해진 시간에 운동 알림",
+  "@dailyTokensAmount": {
+    "description": "Daily tokens amount",
+    "placeholders": {
+      "tokens": {
+        "type": "int"
+      }
+    }
+  },
+  "dailyTokensAmount": "일일 {tokens}토큰",
+  "@dailyTokensCount": {
+    "description": "일일 토큰 수량 표시",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "dailyTokensCount": "일일 {count}토큰",
   "@dailyWorkoutAlarm": {
     "description": "매일 운동 시간 알림 메시지"
   },
@@ -3063,6 +2822,14 @@
     }
   },
   "daysToNextLevel": "다음 레벨까지 {days}일",
+  "@deepAnalysisLabel": {
+    "description": "깊은 분석 라벨"
+  },
+  "deepAnalysisLabel": "깊은 분석",
+  "@deepAnalysisTokenRequired": {
+    "description": "깊은 분석 토큰 필요"
+  },
+  "deepAnalysisTokenRequired": "Lumi 깊은 분석에는 3 토큰이 필요합니다",
   "@delete": {
     "description": "삭제 버튼 텍스트"
   },
@@ -3239,6 +3006,22 @@
     "description": "상징 섹션 타이틀"
   },
   "dreamAnalysisSymbolsTitle": "상징",
+  "@dreamCharactersLabel": {
+    "description": "Dream characters label"
+  },
+  "dreamCharactersLabel": "등장 인물",
+  "@dreamContentHint": {
+    "description": "Dream content hint"
+  },
+  "dreamContentHint": "꿈에서 무슨 일이 있었나요?",
+  "@dreamContentLabel": {
+    "description": "Dream content label"
+  },
+  "dreamContentLabel": "꿈 내용",
+  "@dreamContentRequired": {
+    "description": "Dream content required message"
+  },
+  "dreamContentRequired": "꿈 내용을 입력해주세요",
   "@dreamControlCompleted": {
     "description": "꿈 조종 완료 메시지"
   },
@@ -3300,10 +3083,43 @@
     "description": "꿈 조종 화면 제목"
   },
   "dreamControlTitle": "꿈 조종 연습",
+  "@dreamDate": {
+    "description": "Dream date label"
+  },
+  "dreamDate": "꿈 날짜",
+  "@dreamDeleteDialogContent": {
+    "description": "Dream delete dialog content"
+  },
+  "dreamDeleteDialogContent": "이 꿈을 정말 삭제하시겠습니까?",
+  "@dreamDeleteDialogTitle": {
+    "description": "Dream delete dialog title"
+  },
+  "dreamDeleteDialogTitle": "꿈 삭제",
+  "@dreamDeleteFailed": {
+    "description": "Dream delete failed message",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamDeleteFailed": "삭제 실패: {error}",
+  "@dreamDeletedSuccess": {
+    "description": "Dream deleted success message"
+  },
+  "dreamDeletedSuccess": "꿈이 삭제되었습니다",
   "@dreamEntry": {
     "description": "Dream entry label for calendar legend"
   },
   "dreamEntry": "꿈 기록",
+  "@dreamJournalCreate": {
+    "description": "Dream journal create title"
+  },
+  "dreamJournalCreate": "새 꿈 기록",
+  "@dreamJournalEdit": {
+    "description": "Dream journal edit title"
+  },
+  "dreamJournalEdit": "꿈 수정",
   "@dreamJournalStatistics": {
     "description": "Dream journal statistics title"
   },
@@ -3312,6 +3128,145 @@
     "description": "꿈 일기 타이틀"
   },
   "dreamJournalTitle": "꿈 일기",
+  "@dreamLocationsLabel": {
+    "description": "Dream locations label"
+  },
+  "dreamLocationsLabel": "장소",
+  "@dreamRecallTips": {
+    "description": "꿈 기억 팁"
+  },
+  "dreamRecallTips": "꿈 기억 향상 팁",
+  "@dreamSaveFailed": {
+    "description": "Dream save failed message"
+  },
+  "dreamSaveFailed": "꿈 저장에 실패했습니다",
+  "@dreamSavedDialogContent": {
+    "description": "Dream saved dialog content"
+  },
+  "dreamSavedDialogContent": "AI에게 이 꿈을 분석받으시겠어요?",
+  "@dreamSavedDialogTitle": {
+    "description": "Dream saved dialog title"
+  },
+  "dreamSavedDialogTitle": "꿈 저장 완료!",
+  "@dreamSavedSuccess": {
+    "description": "Dream saved success message"
+  },
+  "dreamSavedSuccess": "꿈이 저장되었습니다",
+  "@dreamSearchHint": {
+    "description": "Dream search hint"
+  },
+  "dreamSearchHint": "꿈 검색...",
+  "@dreamSignActionDesc": {
+    "description": "Dream Sign action description",
+    "placeholders": {
+      "keyword": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamSignActionDesc": "'{keyword}' 행동이 꿈에서 자주 나타납니다",
+  "@dreamSignActionKeywords": {
+    "description": "Dream Sign action keywords list (comma separated)"
+  },
+  "dreamSignActionKeywords": "날다,떨어지다,도망치다,쫓기다,싸우다,수영하다,뛰다,점프하다,운전하다,춤추다",
+  "@dreamSignAwarenessDesc": {
+    "description": "Dream Sign awareness description",
+    "placeholders": {
+      "keyword": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamSignAwarenessDesc": "'{keyword}'한 상황이 꿈에서 자주 나타납니다",
+  "@dreamSignAwarenessKeywords": {
+    "description": "Dream Sign awareness keywords list (comma separated)"
+  },
+  "dreamSignAwarenessKeywords": "이상하다,불가능,초자연적,비현실적,놀라운,기이한,신기한,의아한,수상한,괴이한",
+  "@dreamSignContextDesc": {
+    "description": "Dream Sign context description",
+    "placeholders": {
+      "keyword": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamSignContextDesc": "'{keyword}' 배경이 꿈에서 자주 나타납니다",
+  "@dreamSignContextKeywords": {
+    "description": "Dream Sign context keywords list (comma separated)"
+  },
+  "dreamSignContextKeywords": "학교,집,직장,바다,산,도시,시골,과거,미래,우주",
+  "@dreamSignError": {
+    "description": "Dream sign analysis error"
+  },
+  "dreamSignError": "꿈 패턴 분석 중 오류가 발생했습니다. 나중에 다시 시도해주세요.",
+  "@dreamSignFormDesc": {
+    "description": "Dream Sign form description",
+    "placeholders": {
+      "keyword": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamSignFormDesc": "'{keyword}'이(가) 꿈에서 자주 등장합니다",
+  "@dreamSignFormKeywords": {
+    "description": "Dream Sign form keywords list (comma separated)"
+  },
+  "dreamSignFormKeywords": "괴물,동물,유명인,죽은 사람,외계인,유령,거인,아기,노인,군중",
+  "@dreamSignInsufficientData": {
+    "description": "Insufficient data message"
+  },
+  "dreamSignInsufficientData": "아직 분석할 꿈 데이터가 충분하지 않습니다. 더 많은 꿈을 기록해주세요.",
+  "@dreamSignPatternDesc": {
+    "description": "Recurring pattern description",
+    "placeholders": {
+      "elements": {
+        "type": "String"
+      },
+      "similarity": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamSignPatternDesc": "반복 패턴 발견: {elements} (유사도 {similarity}%)",
+  "@dreamSignRealityCheckFrequency": {
+    "description": "Reality check frequency recommendation",
+    "placeholders": {
+      "frequency": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamSignRealityCheckFrequency": "하루 {frequency}회 이상 현실 확인을 권장합니다.",
+  "@dreamSignRealityCheckInstructions": {
+    "description": "Reality check instructions"
+  },
+  "dreamSignRealityCheckInstructions": "이 패턴들을 현실에서 만나면 반드시 현실 확인을 하세요. '지금 꿈인가?'라고 자문하고 손가락 세기나 코 막기 테스트를 해보세요.",
+  "@dreamSignRealityCheckIntro": {
+    "description": "Reality check suggestion intro",
+    "placeholders": {
+      "signDescriptions": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamSignRealityCheckIntro": "당신의 꿈에서 자주 나타나는 패턴: {signDescriptions}",
+  "@dreamSignSymbolDesc": {
+    "description": "Dream Sign symbol description",
+    "placeholders": {
+      "symbol": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamSignSymbolDesc": "'{symbol}' 상징이 꿈에서 발견되었습니다",
+  "@dreamSignsHint": {
+    "description": "Dream signs input hint"
+  },
+  "dreamSignsHint": "꿈 신호/상징 (쉼표로 구분)",
+  "@dreamSignsInputTitle": {
+    "description": "Dream signs input title"
+  },
+  "dreamSignsInputTitle": "꿈 신호",
   "dreamSpiritStage0Desc": "자각몽 여정을 막 시작했습니다",
   "dreamSpiritStage0Name": "꿈꾸는 초심자",
   "dreamSpiritStage0Unlock": "🌟 드림 스피릿이 각성했습니다! 자각몽 여정이 지금 시작됩니다!",
@@ -3358,6 +3313,102 @@
   "dreamSpiritStage9Name": "강력한 자각몽가",
   "dreamSpiritStage9Unlock": "⚡ 믿을 수 없어요! 강력한 자각몽가가 되었습니다! 능력이 비범해요!",
   "dreamStatisticsNoData": "데이터가 없습니다.\n꿈을 기록하면 통계가 표시됩니다.",
+  "@dreamSymbolsLabel": {
+    "description": "Dream symbols label"
+  },
+  "dreamSymbolsLabel": "꿈 상징",
+  "@dreamTitleHint": {
+    "description": "Dream title hint"
+  },
+  "dreamTitleHint": "꿈에 제목을 붙여보세요",
+  "@dreamTitleLabel": {
+    "description": "Dream title label"
+  },
+  "dreamTitleLabel": "꿈 제목",
+  "@dreamUpdatedSuccess": {
+    "description": "Dream updated success message"
+  },
+  "dreamUpdatedSuccess": "꿈이 수정되었습니다",
+  "@dreamwalkerChargeComplete": {
+    "description": "Dreamwalker charge complete"
+  },
+  "dreamwalkerChargeComplete": "충전 완료!",
+  "@dreamwalkerCurrentEnergy": {
+    "description": "Current Lumi energy",
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "dreamwalkerCurrentEnergy": "현재 Lumi 에너지: {amount}",
+  "@dreamwalkerExclusive": {
+    "description": "Dreamwalker exclusive label"
+  },
+  "dreamwalkerExclusive": "단독 특가",
+  "@dreamwalkerLumiEnergy": {
+    "description": "Lumi energy",
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "dreamwalkerLumiEnergy": "Lumi 에너지 {amount}",
+  "@dreamwalkerLumiEnergyAdded": {
+    "description": "Lumi energy added",
+    "placeholders": {
+      "amount": {
+        "type": "int"
+      }
+    }
+  },
+  "dreamwalkerLumiEnergyAdded": "Lumi 에너지 +{amount} 추가!",
+  "@dreamwalkerMaxSaving": {
+    "description": "Dreamwalker max saving"
+  },
+  "dreamwalkerMaxSaving": "최대 할인",
+  "@dreamwalkerPurchase": {
+    "description": "Dreamwalker purchase button"
+  },
+  "dreamwalkerPurchase": "구매하기",
+  "@dreamwalkerPurchaseFailed": {
+    "description": "Dreamwalker purchase failed"
+  },
+  "dreamwalkerPurchaseFailed": "구매에 실패했습니다",
+  "@dreamwalkerRegularPrice": {
+    "description": "Dreamwalker regular price"
+  },
+  "dreamwalkerRegularPrice": "정가",
+  "@dreamwalkerSaving": {
+    "description": "Dreamwalker saving amount",
+    "placeholders": {
+      "amount": {
+        "type": "String"
+      }
+    }
+  },
+  "dreamwalkerSaving": "₩{amount} 절약",
+  "@dreamwalkerShop": {
+    "description": "Dreamwalker shop title"
+  },
+  "dreamwalkerShop": "드림워커 상점",
+  "@dreamwalkerSpecialDiscount": {
+    "description": "Dreamwalker special discount"
+  },
+  "dreamwalkerSpecialDiscount": "특별 할인",
+  "@dreamwalkerSupportJourney": {
+    "description": "Dreamwalker support journey"
+  },
+  "dreamwalkerSupportJourney": "자각몽 여정을 응원합니다",
+  "@dreamwalkerWelcome": {
+    "description": "Dreamwalker welcome title"
+  },
+  "dreamwalkerWelcome": "드림워커에 오신 것을 환영합니다",
+  "@dreamwalkerWelcomeDesc": {
+    "description": "Dreamwalker welcome description"
+  },
+  "dreamwalkerWelcomeDesc": "Lumi와 함께 자각몽 여정을 시작하세요",
   "durationDays": "기간",
   "@durationLabel": {
     "description": "소요일 레이블"
@@ -3402,6 +3453,10 @@
     }
   },
   "durationSecondsShort": "{seconds}초",
+  "@earnChecklistComplete": {
+    "description": "Earn by completing checklist"
+  },
+  "earnChecklistComplete": "체크리스트 완료",
   "earnedXp": "획득 XP",
   "@elbowAngleQuiz": {
     "description": "Quiz question 5"
@@ -3413,7 +3468,30 @@
   "emailFeedback": "이메일로 의견을 보내주세요",
   "emailLabel": "이메일",
   "emailMethod": "이메일",
-  "enableChadNotifications": "🔥 CHAD 알림 켜기! 만삣삐!",
+  "@emotionInputHint": {
+    "description": "Emotion input hint"
+  },
+  "emotionInputHint": "느낀 감정 (쉼표로 구분)",
+  "@emotionsAndMoodTitle": {
+    "description": "Emotions and mood title"
+  },
+  "emotionsAndMoodTitle": "감정 & 기분",
+  "@emotionsInputTitle": {
+    "description": "Emotions input title"
+  },
+  "emotionsInputTitle": "감정",
+  "@emptyAllDreams": {
+    "description": "Empty dream journal message"
+  },
+  "emptyAllDreams": "아직 기록된 꿈이 없습니다",
+  "@emptyFavorites": {
+    "description": "Empty favorites message"
+  },
+  "emptyFavorites": "즐겨찾기가 없습니다",
+  "@emptyLucidDreams": {
+    "description": "Empty lucid dreams message"
+  },
+  "emptyLucidDreams": "자각몽이 아직 없습니다",
   "enableWorkoutReminders": "연습 알림 받기",
   "@enabled": {
     "description": "활성화 상태"
@@ -3487,6 +3565,10 @@
   },
   "epic": "에픽",
   "error": "오류",
+  "@errorBillingUnavailable": {
+    "description": "Billing unavailable error"
+  },
+  "errorBillingUnavailable": "결제를 사용할 수 없습니다",
   "@errorDatabase": {
     "description": "데이터베이스 오류 메시지"
   },
@@ -3524,6 +3606,10 @@
     "description": "오류 발생 시 재시도 요청 메시지"
   },
   "errorPleaseTryAgain": "오류가 발생했다. 다시 시도해주세요",
+  "@errorSubscriptionNotReady": {
+    "description": "Subscription not ready error"
+  },
+  "errorSubscriptionNotReady": "구독이 아직 준비되지 않았습니다",
   "@eventChallenge": {
     "description": "이벤트 챌린지 기본 제목"
   },
@@ -3597,10 +3683,6 @@
     "description": "진화 가속 기능 제목"
   },
   "evolutionBoostTitle": "진화 가속권",
-  "@evolutionBoostWatchAd": {
-    "description": "광고 보고 진화 가속 버튼 텍스트"
-  },
-  "evolutionBoostWatchAd": "광고 보고 가속하기",
   "evolutionCompleted": "🎉 진화 완료! 🎉",
   "@exactAlarmPermission": {
     "description": "Exact alarm permission label"
@@ -3697,6 +3779,14 @@
   "factCategoryNervous": "신경계 개선",
   "failureCount": "실패 횟수",
   "fastAppStart": "앱 시작 시 10배 빠른 속도",
+  "@favoriteAdded": {
+    "description": "Favorite added message"
+  },
+  "favoriteAdded": "즐겨찾기에 추가됨",
+  "@favoriteRemoved": {
+    "description": "Favorite removed message"
+  },
+  "favoriteRemoved": "즐겨찾기에서 제거됨",
   "featureRequiresPremium": "{featureName}을 사용하려면 프리미엄 구독이 필요합니다.",
   "feedbackBody": "안녕하세요! DreamFlow 앱에 대한 피드백을 보내드립니다.\n\n",
   "@feedbackComingSoon": {
@@ -3708,10 +3798,6 @@
   },
   "feedbackEmail": "이메일로 피드백 보내기",
   "feedbackSubject": "DreamFlow 피드백",
-  "@feelThePowerOfChad": {
-    "description": "업적 달성 대화상자 확인 버튼 텍스트"
-  },
-  "feelThePowerOfChad": "나만의 힘을 느껴다! 💪",
   "@fileNamePlaceholder": {
     "description": "파일명 플레이스홀더"
   },
@@ -3811,10 +3897,6 @@
     "description": "시작하기 3단계"
   },
   "getStartedStep3": "3. 30일 여정 시작!",
-  "@gigaChad": {
-    "description": "Giga Chad title"
-  },
-  "gigaChad": "Giga Chad",
   "gigaGoalDesc": "21일 이상 → 30일+ 마스터 달성",
   "@gigaShort": {
     "description": "최고급 짧은 이름"
@@ -3884,8 +3966,6 @@
     "description": "Good status"
   },
   "good": "좋음",
-  "goodConditionLetsBurnCalories": "좋은 컨디션이야!\nChad와 칼로리 태우러 가자! 🔥",
-  "goodConditionLetsWorkout": "좋은 컨디션이야!\nChad와 운동하러 가자!",
   "@goodPerformance": {
     "description": "Good performance message"
   },
@@ -3896,6 +3976,10 @@
   "googleQuickSignup": "구글로 빠른 가입",
   "googleSignin3Seconds": "구글로 3초만에 시작하기",
   "grantPermission": "권한 허용",
+  "@growthJourney": {
+    "description": "Growth journey timeline title"
+  },
+  "growthJourney": "성장 여정",
   "guestMode": "게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.",
   "guestModeMessage": "게스트 모드로 사용 중입니다. 로그인하여 진행 상황을 저장하세요.",
   "@guidanceMessage": {
@@ -3980,6 +4064,18 @@
     "description": "나중에 버튼 텍스트"
   },
   "homeLaterButton": "나중에",
+  "@homeLucidDreamGuide": {
+    "description": "Lucid dream guide title on home"
+  },
+  "homeLucidDreamGuide": "자각몽 가이드",
+  "@homeLucidDreamGuideDesc": {
+    "description": "Lucid dream guide description on home"
+  },
+  "homeLucidDreamGuideDesc": "자각몽 기법과 팁을 확인하세요",
+  "@homeMyProgress": {
+    "description": "My progress title on home"
+  },
+  "homeMyProgress": "내 진행 상황",
   "@homePremiumBonusApplied": {
     "description": "프리미엄 보너스 적용 메시지"
   },
@@ -3996,6 +4092,122 @@
     "description": "홈 화면 제목"
   },
   "homeTitle": "DreamFlow",
+  "@homeViewAll": {
+    "description": "View all button on home"
+  },
+  "homeViewAll": "전체 보기",
+  "@homeViewDetailedStats": {
+    "description": "View detailed stats button on home"
+  },
+  "homeViewDetailedStats": "상세 통계 보기",
+  "@homeViewGrowth": {
+    "description": "View growth button on home"
+  },
+  "homeViewGrowth": "성장 보기",
+  "@homeSpeechBubbleMessage1": {
+    "description": "말풍선 메시지 1"
+  },
+  "homeSpeechBubbleMessage1": "오늘 밤은 꿈을 기억할 수 있을 거야!",
+  "@homeSpeechBubbleMessage2": {
+    "description": "말풍선 메시지 2"
+  },
+  "homeSpeechBubbleMessage2": "현실 점검 잊지 마세요~",
+  "@homeSpeechBubbleMessage3": {
+    "description": "말풍선 메시지 3"
+  },
+  "homeSpeechBubbleMessage3": "꿈 일기를 쓰면 기억력이 좋아져요",
+  "@homeSpeechBubbleMessage4": {
+    "description": "말풍선 메시지 4"
+  },
+  "homeSpeechBubbleMessage4": "자각몽까지 한 걸음 더!",
+  "@homeSpeechBubbleMessage5": {
+    "description": "말풍선 메시지 5"
+  },
+  "homeSpeechBubbleMessage5": "오늘도 함께해서 기뻐요 ✨",
+  "@homeSpeechBubbleNight": {
+    "description": "밤 말풍선 메시지"
+  },
+  "homeSpeechBubbleNight": "좋은 꿈 꿔요~ 🌙",
+  "@homeSpeechBubbleMorning": {
+    "description": "아침 말풍선 메시지"
+  },
+  "homeSpeechBubbleMorning": "어젯밤 꿈은 어땠어요?",
+  "@homeQuickActionDreamRecord": {
+    "description": "빠른 액션 버튼 - 꿈 기록"
+  },
+  "homeQuickActionDreamRecord": "꿈 기록",
+  "@homeQuickActionChecklist": {
+    "description": "빠른 액션 버튼 - 체크리스트"
+  },
+  "homeQuickActionChecklist": "체크리스트",
+  "@homeTodayQuest": {
+    "description": "오늘의 퀘스트 제목"
+  },
+  "homeTodayQuest": "오늘의 퀘스트",
+  "@homeTodayQuestRemaining": {
+    "description": "퀘스트 남은 개수",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "homeTodayQuestRemaining": "{count}개 남음",
+  "@homeTodayQuestDreamJournal": {
+    "description": "퀘스트 항목 - 꿈 일기"
+  },
+  "homeTodayQuestDreamJournal": "꿈 일기 작성",
+  "@homeTodayQuestRealityCheck": {
+    "description": "퀘스트 항목 - 현실 점검"
+  },
+  "homeTodayQuestRealityCheck": "현실 점검 5회",
+  "@homeTodayQuestMild": {
+    "description": "퀘스트 항목 - MILD 수련"
+  },
+  "homeTodayQuestMild": "MILD 수련",
+  "@checklistUnlockAtWeek": {
+    "description": "체크리스트 항목 잠금 해제 주차 메시지",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistUnlockAtWeek": "Week {week}에 해금",
+  "@checklistLockedAdvancedTechnique": {
+    "description": "잠긴 고급 기법 메시지",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistLockedAdvancedTechnique": "Week {week}에 해금되는 고급 기법입니다",
+  "@checklistWeek1Free": {
+    "description": "Week 1 무료 메시지",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "checklistWeek1Free": "🆓 Week 1 영구 무료! Week {week}까지 계속 훈련하면 해금됩니다!",
+  "@checklistPremiumUpgrade": {
+    "description": "프리미엄 업그레이드 메시지"
+  },
+  "checklistPremiumUpgrade": "💎 프리미엄으로 업그레이드하여 고급 기법을 해금하세요!",
+  "@characterEvolutionDaysProgress": {
+    "description": "일수 진행 형식",
+    "placeholders": {
+      "current": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "characterEvolutionDaysProgress": "{current}/{total}일",
   "@homeWorkoutPushups": {
     "description": "영상 제목 5"
   },
@@ -4051,22 +4263,6 @@
     "description": "Intermediate level label"
   },
   "intermediateLevel": "중급자",
-  "@joinChadJourney": {
-    "description": "여정 참여 메시지"
-  },
-  "joinChadJourney": "차드가 되는 여정에 동참해",
-  "@journeyChadEvolution": {
-    "description": "여정을 시작하는 차드 진화 상태"
-  },
-  "journeyChadEvolution": "여정을 시작하는 Chad",
-  "@journeyStartingChad": {
-    "description": "Journey starting chad description"
-  },
-  "journeyStartingChad": "각성을 시작한 Chad.\n잠재력이 깨어나고 있다.",
-  "@journeyToChad": {
-    "description": "차드가 되는 여정 설명"
-  },
-  "journeyToChad": "차드가 되는 정복의 여정",
   "@justWait": {
     "description": "Rest prevention message"
   },
@@ -4087,6 +4283,26 @@
     "description": "한국어 언어명"
   },
   "koreanLanguage": "한국어",
+  "@labelEnd": {
+    "description": "End label"
+  },
+  "labelEnd": "종료",
+  "@labelEqual": {
+    "description": "Equal label"
+  },
+  "labelEqual": "같음",
+  "@labelRandom": {
+    "description": "Random label"
+  },
+  "labelRandom": "랜덤",
+  "@labelStart": {
+    "description": "Start label"
+  },
+  "labelStart": "시작",
+  "@labelThisMonth": {
+    "description": "This month label"
+  },
+  "labelThisMonth": "이번 달",
   "@languageChanged": {
     "description": "언어 변경 확인 메시지",
     "placeholders": {
@@ -4114,15 +4330,15 @@
   },
   "lastBackup": "마지막 백업",
   "later": "나중에",
-  "@laterBasicChad": {
-    "description": "나중에 선택 버튼 텍스트"
-  },
-  "laterBasicChad": "나중에 (BASIC CHAD)",
   "laterButton": "나중에",
   "laterWeak": "나중에... (WEAK)",
   "launchEventBenefits": "런칭 이벤트 혜택:",
   "launchPromoActive": "런칭 프로모션 (30일 무료)",
   "launchPromotion": "런칭 프로모션",
+  "@learningComplete": {
+    "description": "학습 완료"
+  },
+  "learningComplete": "학습 완료",
   "legalDocumentLoadError": "문서를 불러올 수 없습니다",
   "legalDocumentNotFound": "문서를 찾을 수 없습니다: {path}",
   "@legend": {
@@ -4133,11 +4349,6 @@
     "description": "레전더리 등급"
   },
   "legendary": "레전더리",
-  "@legendaryChad": {
-    "description": "Legendary Chad title"
-  },
-  "legendaryChad": "Legendary Chad",
-  "legendaryChadModeUpgrade": "⚡ LEGENDARY MODE 업그레이드! ⚡",
   "legendaryJourneyContinues": "🌟 자각몽 마스터로의 여정은 계속됩니다 🌟",
   "legendaryModeDescription": "🔥 더 정확한 시간에 알림을 받고 싶다면\nLEGENDARY MODE를 활성화하자! 🔥",
   "legendaryModeOn": "⚡ LEGENDARY MODE ON! ⚡",
@@ -4319,14 +4530,78 @@
     "description": "좋아요 액션 메시지"
   },
   "likeMessage": "좋아요! 💪",
+  "@linkButton": {
+    "description": "Link button"
+  },
+  "linkButton": "연결",
+  "@linkGoogleAccount": {
+    "description": "Link Google account button"
+  },
+  "linkGoogleAccount": "Google 계정 연결",
+  "@linkGoogleAccountConfirm": {
+    "description": "Link Google account confirm message"
+  },
+  "linkGoogleAccountConfirm": "Google 계정을 연결하시겠습니까? 기존 데이터가 클라우드에 동기화됩니다.",
+  "@linkGoogleAccountDesc": {
+    "description": "Link Google account description"
+  },
+  "linkGoogleAccountDesc": "데이터를 안전하게 백업하세요",
+  "@linkGoogleAccountError": {
+    "description": "Link Google account error"
+  },
+  "linkGoogleAccountError": "Google 계정 연결에 실패했습니다",
+  "@linkGoogleAccountSuccess": {
+    "description": "Link Google account success message"
+  },
+  "linkGoogleAccountSuccess": "Google 계정이 연결되었습니다",
+  "@linkGoogleAccountTitle": {
+    "description": "Link Google account dialog title"
+  },
+  "linkGoogleAccountTitle": "Google 계정 연결",
+  "@signInWithGoogle": {
+    "description": "Sign in with existing Google account button"
+  },
+  "signInWithGoogle": "구글로 로그인",
+  "@signInWithGoogleDesc": {
+    "description": "Sign in with existing Google account description"
+  },
+  "signInWithGoogleDesc": "기존 계정이 있다면 데이터를 복원합니다",
+  "@signInWithGoogleTitle": {
+    "description": "Google sign in confirmation dialog title"
+  },
+  "signInWithGoogleTitle": "기존 계정 로그인",
+  "@signInWithGoogleConfirm": {
+    "description": "Google sign in confirmation message"
+  },
+  "signInWithGoogleConfirm": "이미 사용하던 Google 계정으로 로그인하면 이전에 저장된 꿈일기, 토큰, 진행 상황이 복원됩니다.",
+  "@signInWithGoogleWarning": {
+    "description": "Warning about losing current guest data"
+  },
+  "signInWithGoogleWarning": "현재 게스트 계정의 데이터는 사라집니다.",
+  "@signInButton": {
+    "description": "Sign in button"
+  },
+  "signInButton": "로그인",
+  "@signInWithGoogleSuccess": {
+    "description": "Google sign in success message"
+  },
+  "signInWithGoogleSuccess": "로그인 완료! 기존 데이터가 복원되었습니다.",
+  "@signInWithGoogleError": {
+    "description": "Google sign in failed message"
+  },
+  "signInWithGoogleError": "로그인에 실패했습니다. 다시 시도해주세요.",
   "@listView": {
     "description": "Button label for list view mode"
   },
   "listView": "목록 보기",
-  "@loadingChadVideos": {
-    "description": "YouTube 영상 로딩 메시지"
+  "@loadingAd": {
+    "description": "Loading ad message"
   },
-  "loadingChadVideos": "차드 영상 로딩 중... 🔥",
+  "loadingAd": "광고를 불러오는 중...",
+  "@loadingDreamJournal": {
+    "description": "Loading dream journal"
+  },
+  "loadingDreamJournal": "꿈 일기 로딩 중...",
   "loadingProgramData": "프로그램 데이터를 불러오는 중...",
   "@loadingStatistics": {
     "description": "통계 로딩 메시지"
@@ -4338,6 +4613,14 @@
   },
   "loadingText": "로딩 중...",
   "loadingVideo": "비디오 로딩 중...",
+  "@locationsHint": {
+    "description": "Locations input hint"
+  },
+  "locationsHint": "꿈 속 장소 (쉼표로 구분)",
+  "@locationsInputTitle": {
+    "description": "Locations input title"
+  },
+  "locationsInputTitle": "장소",
   "@lockedAchievements": {
     "description": "미획득 업적 탭",
     "placeholders": {
@@ -4347,19 +4630,7 @@
     }
   },
   "lockedAchievements": "미획득 업적 ({count})",
-  "@loginAlreadyHaveChadAccount": {
-    "description": "이미 계정이 있음 텍스트"
-  },
-  "loginAlreadyHaveChadAccount": "이미 계정이 있으신가요?",
   "loginButton": "로그인",
-  "@loginChadFreeTrialOffer": {
-    "description": "무료 체험 제안 메시지"
-  },
-  "loginChadFreeTrialOffer": "프리미엄을 30일 무료로 사용해보세요",
-  "@loginChadLaunchSpecial": {
-    "description": "런칭 특별 이벤트 메시지"
-  },
-  "loginChadLaunchSpecial": "🎉 런칭 특별 이벤트",
   "@loginEmail": {
     "description": "이메일 필드 라벨"
   },
@@ -4393,18 +4664,10 @@
     "description": "비밀번호 필수 검증"
   },
   "loginPasswordRequired": "비밀번호를 입력해주세요",
-  "@loginReadyToStartWithChad": {
-    "description": "드림 스피릿과 시작 준비 타이틀"
-  },
-  "loginReadyToStartWithChad": "자각몽 여정을 시작할 준비가 되셨나요?",
   "@loginStartDreamflowJourney": {
     "description": "드림플로우 여정 시작 메시지"
   },
   "loginStartDreamflowJourney": "의식적인 꿈의 세계로 떠나세요",
-  "@loginStartWithChad": {
-    "description": "드림 스피릿과 시작 버튼"
-  },
-  "loginStartWithChad": "드림 스피릿과 시작하기",
   "loginToSaveProgress": "진행 상황을 저장하려면 로그인하세요",
   "logout": "로그아웃",
   "logoutButton": "로그아웃",
@@ -4422,11 +4685,14 @@
   "logoutFromAccount": "계정에서 로그아웃합니다",
   "logoutSuccessMessage": "로그아웃 되었습니다",
   "logoutTitle": "로그아웃",
-  "lookingVeryStrongChadPreparedStrongerWorkout": "엄청 강해 보이는데?\nChad도 더 강한 운동 준비했어! 🚀",
   "@lucidDream": {
     "description": "Lucid dream label for calendar legend"
   },
   "lucidDream": "자각몽",
+  "@lucidDreamBadge": {
+    "description": "Lucid dream badge"
+  },
+  "lucidDreamBadge": "자각몽",
   "@lucidDreamCount": {
     "description": "Lucid dream count display",
     "placeholders": {
@@ -4436,11 +4702,24 @@
     }
   },
   "lucidDreamCount": "자각몽 {count}회",
+  "@lucidDreamLevel": {
+    "description": "Lucid dream level",
+    "placeholders": {
+      "level": {
+        "type": "String"
+      }
+    }
+  },
+  "lucidDreamLevel": "자각도 Lv.{level}",
   "@lucidDreams": {
     "description": "Lucid dreams count label"
   },
   "lucidDreams": "자각몽",
   "lucidSuccessRate": "자각몽 성공률",
+  "@lucidityLevelLabel": {
+    "description": "Lucidity level label"
+  },
+  "lucidityLevelLabel": "자각도",
   "lucidityTrend": "자각도 추세",
   "@lumiConversationAppBar": {
     "description": "Lumi 대화 앱바 타이틀"
@@ -4556,6 +4835,107 @@
     "description": "명상 화면 제목"
   },
   "meditationTitle": "명상 가이드",
+  "@metaAiAnalysis": {
+    "description": "AI analysis label"
+  },
+  "metaAiAnalysis": "AI 분석",
+  "@metaCompleted": {
+    "description": "Completed status"
+  },
+  "metaCompleted": "완료",
+  "@metaCreatedAt": {
+    "description": "Created at label"
+  },
+  "metaCreatedAt": "작성일",
+  "@metaInfoTitle": {
+    "description": "Meta info title"
+  },
+  "metaInfoTitle": "상세 정보",
+  "@metaNotCompleted": {
+    "description": "Not completed status"
+  },
+  "metaNotCompleted": "미완료",
+  "@metaUpdatedAt": {
+    "description": "Updated at label"
+  },
+  "metaUpdatedAt": "수정일",
+  "@metaWordCount": {
+    "description": "Word count label"
+  },
+  "metaWordCount": "글자 수",
+  "@metaWordCountValue": {
+    "description": "Word count value",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "metaWordCountValue": "{count}자",
+  "@mildAffirmation1": {
+    "description": "MILD 확언 1"
+  },
+  "mildAffirmation1": "다음 꿈에서 나는 꿈인 것을 알아차릴 것이다",
+  "@mildAffirmation2": {
+    "description": "MILD 확언 2"
+  },
+  "mildAffirmation2": "나는 꿈에서 의식적으로 깨어있을 것이다",
+  "@mildAffirmation3": {
+    "description": "MILD 확언 3"
+  },
+  "mildAffirmation3": "꿈에서 현실확인을 할 것이다",
+  "@mildAffirmation4": {
+    "description": "MILD 확언 4"
+  },
+  "mildAffirmation4": "나는 자각몽을 꿀 것이다",
+  "@mildAffirmation5": {
+    "description": "MILD 확언 5"
+  },
+  "mildAffirmation5": "꿈에서 나는 자유롭게 행동할 것이다",
+  "@mildCompleted": {
+    "description": "MILD 완료"
+  },
+  "mildCompleted": "MILD 확언 완료!",
+  "@mildCurrentAffirmation": {
+    "description": "현재 확언"
+  },
+  "mildCurrentAffirmation": "현재 확언",
+  "@mildGuideDescription": {
+    "description": "MILD 가이드 설명"
+  },
+  "mildGuideDescription": "확언을 반복하며 잠들기 전에 자각몽을 의도하는 기법입니다.",
+  "@mildGuideTitle": {
+    "description": "MILD 가이드 제목"
+  },
+  "mildGuideTitle": "기억 유도 자각몽",
+  "@mildRepeat": {
+    "description": "반복"
+  },
+  "mildRepeat": "반복",
+  "@mildRepeatAtLeast3Times": {
+    "description": "최소 3회 반복"
+  },
+  "mildRepeatAtLeast3Times": "최소 3회 이상 반복하세요",
+  "@mildReset": {
+    "description": "초기화"
+  },
+  "mildReset": "초기화",
+  "@mildSelectAffirmation": {
+    "description": "확언 선택"
+  },
+  "mildSelectAffirmation": "확언을 선택하세요",
+  "@mildTimes": {
+    "description": "회"
+  },
+  "mildTimes": "회",
+  "@mildTip": {
+    "description": "MILD 팁"
+  },
+  "mildTip": "확언을 외우며 최근 꿈 장면을 상상하세요. 감정을 담아 진심으로 반복하세요.",
+  "@mildTitle": {
+    "description": "MILD 화면 제목"
+  },
+  "mildTitle": "MILD 기법",
   "@minOneDayRest": {
     "description": "최소 하루 쉬는 날 필요 메시지"
   },
@@ -4601,6 +4981,14 @@
     "description": "월간 진행률 제목"
   },
   "monthlyProgress": "월간 진행률",
+  "@moodScore": {
+    "description": "Mood score label"
+  },
+  "moodScore": "기분 점수:",
+  "@moodScoreLabel": {
+    "description": "Mood score label"
+  },
+  "moodScoreLabel": "기분 점수",
   "@moreActivities": {
     "placeholders": {
       "count": {
@@ -4691,12 +5079,15 @@
   "muscleIcon": "💪",
   "name": "이름",
   "nameLabel": "이름",
-  "needRestChadRecommendsStretching": "휴식이 필요해 보이네!\nChad가 가벼운 스트레칭 추천해줄게! 🧘‍♂️",
   "newAchievementUnlocked": "🏆 새로운 업적 달성! 🏆",
-  "@newChadLevel": {
-    "description": "새로운 드림 스피릿 등급 텍스트"
+  "@newDreamJournal": {
+    "description": "New dream journal button"
   },
-  "newChadLevel": "새로운 드림 스피릿 등급",
+  "newDreamJournal": "새 꿈 기록",
+  "@newFeatures": {
+    "description": "New features label"
+  },
+  "newFeatures": "새로운 기능",
   "@newTechniqueUnlocked": {
     "description": "New technique unlocked message"
   },
@@ -4723,6 +5114,10 @@
     "description": "다음 세트 진행 버튼"
   },
   "nextSetContinue": "다음 희생양을 가져와라, 만삣삐!",
+  "@nextStage": {
+    "description": "Next stage label"
+  },
+  "nextStage": "다음 단계",
   "@noAchievementsYet": {
     "description": "업적 없음 제목"
   },
@@ -4748,6 +5143,10 @@
     "description": "차트 데이터가 없을 때 메시지"
   },
   "noChartData": "차트 데이터가 없다",
+  "@noChecklistToday": {
+    "description": "오늘 체크리스트 없음 메시지"
+  },
+  "noChecklistToday": "오늘의 체크리스트가 없습니다",
   "@noCompletedChallenges": {
     "description": "완료된 챌린지 없음 메시지"
   },
@@ -4810,6 +5209,10 @@
     }
   },
   "normalDreamCount": "일반 꿈 {count}회",
+  "@notEntered": {
+    "description": "Not entered placeholder"
+  },
+  "notEntered": "미입력",
   "notificationActivationMessage": "💪 알림 활성화!\n바로 설정하자! FXXK THE EXCUSES! 💪",
   "notificationActivationTitle": "🔥 LUCID DREAM 100 알림 활성화! 🔥",
   "@notificationBenefit1": {
@@ -4891,6 +5294,10 @@
   },
   "notificationSetupFailed": "알림 설정에 실패했다",
   "notificationTime": "알림 시간",
+  "@notificationTipMessage": {
+    "description": "Notification tip message"
+  },
+  "notificationTipMessage": "알림을 통해 꾸준한 연습을 할 수 있습니다",
   "@notificationsSettings": {
     "description": "알림 설정 제목"
   },
@@ -4907,6 +5314,18 @@
     "description": "보통 운동 완료"
   },
   "okay": "보통",
+  "@onboarding60DayProgram": {
+    "description": "60일 프로그램 소개"
+  },
+  "onboarding60DayProgram": "60일 자각몽 마스터 프로그램",
+  "@onboardingAIDreamAnalysis": {
+    "description": "AI 꿈 분석 제목"
+  },
+  "onboardingAIDreamAnalysis": "AI 꿈 분석",
+  "@onboardingAIDreamAnalysisDesc": {
+    "description": "AI 꿈 분석 설명"
+  },
+  "onboardingAIDreamAnalysisDesc": "AI가 당신의 꿈을 분석해드립니다",
   "@onboardingAdaptiveTrainingDescription": {
     "description": "온보딩 적응형 훈련 설명"
   },
@@ -4915,6 +5334,14 @@
     "description": "온보딩 적응형 훈련 제목"
   },
   "onboardingAdaptiveTrainingTitle": "🎯 당신에게 맞춰드려요",
+  "@onboardingBedtime": {
+    "description": "취침 시간"
+  },
+  "onboardingBedtime": "취침 시간",
+  "@onboardingBonusToken": {
+    "description": "보너스 토큰"
+  },
+  "onboardingBonusToken": "보너스 토큰",
   "@onboardingButtonGotIt": {
     "description": "온보딩 적응형 훈련 확인 버튼"
   },
@@ -4935,14 +5362,86 @@
     "description": "온보딩 테스트 시작 버튼"
   },
   "onboardingButtonStartTest": "시작할게요! 🎯",
-  "@onboardingChadEvolutionDescription": {
-    "description": "온보딩 진화 설명"
+  "@onboardingChecklistDreamJournal": {
+    "description": "체크리스트 꿈 일기"
   },
-  "onboardingChadEvolutionDescription": "14주 동안 Chad와 함께 진화!\n\n💪 매주 레벨업 → Level 1~14\n\n마지막에는 GOD CHAD 등극! 👑",
-  "@onboardingChadEvolutionTitle": {
-    "description": "온보딩 진화 제목"
+  "onboardingChecklistDreamJournal": "꿈 일기 작성",
+  "@onboardingChecklistDreamJournalDesc": {
+    "description": "체크리스트 꿈 일기 설명"
   },
-  "onboardingChadEvolutionTitle": "14주 Chad 진화 🚀",
+  "onboardingChecklistDreamJournalDesc": "기억나는 꿈을 기록하세요",
+  "@onboardingChecklistDreamJournalNote": {
+    "description": "체크리스트 꿈 일기 노트"
+  },
+  "onboardingChecklistDreamJournalNote": "기억이 안 나면 '없음'으로 기록해도 돼요",
+  "@onboardingChecklistMildDesc": {
+    "description": "체크리스트 MILD 설명"
+  },
+  "onboardingChecklistMildDesc": "잠들기 전 자각몽을 다짐하세요",
+  "@onboardingChecklistMildNote": {
+    "description": "체크리스트 MILD 노트"
+  },
+  "onboardingChecklistMildNote": "'다음 꿈에서 나는 꿈인 것을 알아차릴 것이다'",
+  "@onboardingChecklistRealityCheck": {
+    "description": "체크리스트 현실 점검"
+  },
+  "onboardingChecklistRealityCheck": "현실 점검",
+  "@onboardingChecklistRealityCheckDesc": {
+    "description": "체크리스트 현실 점검 설명"
+  },
+  "onboardingChecklistRealityCheckDesc": "지금 꿈인지 현실인지 확인해보세요",
+  "@onboardingChecklistRealityCheckNote": {
+    "description": "체크리스트 현실 점검 노트"
+  },
+  "onboardingChecklistRealityCheckNote": "손가락 관통 테스트를 해보세요",
+  "@onboardingCompleteButton": {
+    "description": "완료 버튼"
+  },
+  "onboardingCompleteButton": "시작하기",
+  "@onboardingCompleteDesc": {
+    "description": "완료 설명"
+  },
+  "onboardingCompleteDesc": "모든 준비가 끝났습니다!",
+  "@onboardingDailyPractice": {
+    "description": "일일 연습"
+  },
+  "onboardingDailyPractice": "일일 연습",
+  "@onboardingDailyPracticeDesc": {
+    "description": "일일 연습 설명"
+  },
+  "onboardingDailyPracticeDesc": "매일 체크리스트로 꾸준히 연습하세요",
+  "@onboardingDifficultyTip": {
+    "description": "난이도 팁"
+  },
+  "onboardingDifficultyTip": "매일 연습할수록 더 쉬워집니다",
+  "@onboardingDreamJournal": {
+    "description": "꿈 일기"
+  },
+  "onboardingDreamJournal": "꿈 일기",
+  "@onboardingDreamJournalDesc": {
+    "description": "꿈 일기 설명"
+  },
+  "onboardingDreamJournalDesc": "꿈을 기록하고 패턴을 발견하세요",
+  "@onboardingEvolutionSystem": {
+    "description": "진화 시스템 설명"
+  },
+  "onboardingEvolutionSystem": "루미와 함께 성장하세요",
+  "@onboardingExperienceLevel": {
+    "description": "경험 레벨"
+  },
+  "onboardingExperienceLevel": "경험 레벨",
+  "@onboardingExperienceSurvey": {
+    "description": "경험 설문"
+  },
+  "onboardingExperienceSurvey": "자각몽 경험을 알려주세요",
+  "@onboardingGoalDesc": {
+    "description": "목표 설명"
+  },
+  "onboardingGoalDesc": "달성하고 싶은 목표를 선택하세요",
+  "@onboardingGoalSelect": {
+    "description": "목표 선택"
+  },
+  "onboardingGoalSelect": "목표 선택",
   "@onboardingInitialTestDescription": {
     "description": "온보딩 초기 테스트 설명"
   },
@@ -4951,6 +5450,34 @@
     "description": "온보딩 초기 테스트 제목"
   },
   "onboardingInitialTestTitle": "여정 시작 준비 ⏱️",
+  "@onboardingJourneySubtitle": {
+    "description": "여정 부제목"
+  },
+  "onboardingJourneySubtitle": "30일이면 당신도 자각몽을 경험할 수 있습니다",
+  "@onboardingJourneyTitle": {
+    "description": "여정 제목"
+  },
+  "onboardingJourneyTitle": "자각몽 마스터의 여정",
+  "@onboardingLevelDesc": {
+    "description": "레벨 설명"
+  },
+  "onboardingLevelDesc": "자각몽 경험 수준을 선택하세요",
+  "@onboardingLucidTraining": {
+    "description": "자각몽 훈련 제목"
+  },
+  "onboardingLucidTraining": "자각몽 훈련",
+  "@onboardingLucidTrainingDesc": {
+    "description": "자각몽 훈련 설명"
+  },
+  "onboardingLucidTrainingDesc": "단계별 자각몽 기법을 배워보세요",
+  "@onboardingLumiChatDesc": {
+    "description": "루미 대화 설명"
+  },
+  "onboardingLumiChatDesc": "루미와 대화하며 자각몽을 배워보세요",
+  "@onboardingMildTitle": {
+    "description": "MILD 제목"
+  },
+  "onboardingMildTitle": "MILD 기법",
   "@onboardingMissionAdvancedDesc": {
     "description": "미션 맞춤형 프로그램 고급 레벨 설명"
   },
@@ -5015,11 +5542,63 @@
     "description": "온보딩 미션 5-8주차 제목"
   },
   "onboardingMissionWeek58Title": "Week 5-8",
+  "@onboardingMotivation": {
+    "description": "동기부여"
+  },
+  "onboardingMotivation": "동기부여",
+  "@onboardingMotivationDesc": {
+    "description": "동기부여 설명"
+  },
+  "onboardingMotivationDesc": "자각몽을 배우려는 이유를 알려주세요",
   "onboardingNext": "다음",
+  "@onboardingPracticeResult": {
+    "description": "연습 결과"
+  },
+  "onboardingPracticeResult": "연습 결과를 확인하세요",
   "onboardingProgramIntroDescription": "과학적으로 설계된 30일 프로그램으로\n자각몽 마스터를 목표로 합니다",
   "onboardingProgramIntroTitle": "30일 자각몽 프로그램",
+  "@onboardingProgramReady": {
+    "description": "프로그램 준비 완료"
+  },
+  "onboardingProgramReady": "프로그램 준비 완료!",
+  "@onboardingQuickAnalysisDesc": {
+    "description": "빠른 분석 설명"
+  },
+  "onboardingQuickAnalysisDesc": "토큰 1개로 AI가 꿈을 분석해드려요",
   "onboardingSkip": "건너뛰기",
+  "@onboardingSleepDesc": {
+    "description": "수면 설명"
+  },
+  "onboardingSleepDesc": "평소 취침 시간을 알려주세요",
+  "@onboardingSleepTime": {
+    "description": "수면 시간"
+  },
+  "onboardingSleepTime": "수면 시간",
   "onboardingStart": "시작하기",
+  "@onboardingTimeDesc": {
+    "description": "시간 설명"
+  },
+  "onboardingTimeDesc": "알림 받을 시간을 설정하세요",
+  "@onboardingTokenFreeCharge": {
+    "description": "토큰 무료 충전"
+  },
+  "onboardingTokenFreeCharge": "광고 시청으로 무료 충전!",
+  "@onboardingTokenLow": {
+    "description": "토큰 부족"
+  },
+  "onboardingTokenLow": "토큰이 부족해요",
+  "@onboardingTokenUsage": {
+    "description": "토큰 사용법"
+  },
+  "onboardingTokenUsage": "토큰으로 AI 분석을 받을 수 있어요",
+  "@onboardingWelcome": {
+    "description": "환영 메시지"
+  },
+  "onboardingWelcome": "환영합니다!",
+  "@onboardingWelcomeBonus": {
+    "description": "환영 보너스"
+  },
+  "onboardingWelcomeBonus": "🎁 신규 가입 보너스 5 토큰 지급!",
   "@onboardingWelcomeDescription": {
     "description": "온보딩 환영 화면 설명"
   },
@@ -5095,11 +5674,10 @@
     "description": "밸런스 드림 스피릿 모드 설명"
   },
   "perfectBalanceOptimized": "완벽한 균형! 주중+주말 최적화 패턴! ⚖️🔥",
-  "@perfectChadExperience": {
-    "description": "완벽한 Chad 경험 설명"
+  "@perfectDayTitle": {
+    "description": "Perfect day title"
   },
-  "perfectChadExperience": "설정을 조정하여 완벽한 Chad 경험을 만들어보세요",
-  "perfectConditionLetsBuildMuscle": "완벽한 상태네!\nChad와 근육 만들러 가자! 💪",
+  "perfectDayTitle": "완벽한 하루!",
   "@perfectExecution": {
     "description": "평균 달성률 부제목"
   },
@@ -5213,9 +5791,9 @@
   "premiumAccountType": "프리미엄 계정",
   "premiumActive": "프리미엄 구독 활성",
   "@premiumBenefitAIDesc": {
-    "description": "무제한 AI 대화 혜택 설명"
+    "description": "추가 AI 토큰 혜택 설명"
   },
-  "premiumBenefitAIDesc": "Lumi와 무제한 대화 가능",
+  "premiumBenefitAIDesc": "Stage 3+ 해금 (최대 15토큰/일)",
   "premiumBenefitAdFree": "✨ 모든 광고 제거",
   "@premiumBenefitAdFreeDesc": {
     "description": "광고 제거 혜택 설명"
@@ -5244,9 +5822,9 @@
   },
   "premiumBenefitStatsDesc": "상세한 진행 상황 통계 분석",
   "@premiumBenefitUnlimitedAI": {
-    "description": "무제한 AI 대화 혜택"
+    "description": "추가 AI 토큰 혜택"
   },
-  "premiumBenefitUnlimitedAI": "무제한 AI 대화",
+  "premiumBenefitUnlimitedAI": "상위 스테이지 해금",
   "premiumBenefits": "프리미엄 혜택",
   "@premiumBenefitsTitle": {
     "description": "프리미엄 혜택 제목"
@@ -5374,13 +5952,9 @@
   "progressAverageScore": "평균 점수",
   "progressBestRecord": "최고 기록",
   "progressBestWeek": "최고의 주",
-  "progressChadEvolutionStage": "드림 스피릿 진화",
-  "progressChadLevel": "레벨 {level}",
   "progressConsecutiveDays": "연속 일수",
-  "progressCurrentChadStatus": "현재 상태",
   "progressDateWorkout": "날짜: {date}",
   "progressDaysUnit": "{count} 일",
-  "progressEvolvingToGigaChad": "기가 드림 스피릿으로 진화 중!",
   "@progressLabel": {
     "description": "진행도 라벨 - 스타일"
   },
@@ -5486,10 +6060,6 @@
     "description": "아처 푸시업 호흡법"
   },
   "pushupArcherBreathing": "사이클 돌듯 집중해서 호흡해라. 정확성이 생명이다, you idiot!",
-  "@pushupArcherChad": {
-    "description": "아처 푸시업 드림 스피릿 조언"
-  },
-  "pushupArcherChad": "🏹 정확한 사이클이 자각몽 지름길? 맞다! 감각 마스터하면 LEGENDARY LUCID EMPEROR! 🏹",
   "@pushupArcherDesc": {
     "description": "아처 푸시업 설명"
   },
@@ -5522,10 +6092,6 @@
     "description": "박수 푸시업 호흡법"
   },
   "pushupClapBreathing": "깨어날 때 깊게 호흡하고, 손가락 움직임에 집중. 리듬이 중요하다, you idiot!",
-  "@pushupClapChad": {
-    "description": "박수 푸시업 드림 스피릿 조언"
-  },
-  "pushupClapChad": "👏 손가락 기법이 빠른 진입? 맞다! 이제 EXPLOSIVE LUCID ENTRY의 표현이다! 👏",
   "@pushupClapDesc": {
     "description": "박수 푸시업 설명"
   },
@@ -5554,10 +6120,6 @@
     "description": "디클라인 푸시업 호흡법"
   },
   "pushupDeclineBreathing": "무의식과 싸우면서도 안정된 관찰을 유지해라. 진짜 파워는 여기서 나온다, you idiot!",
-  "@pushupDeclineChad": {
-    "description": "디클라인 푸시업 드림 스피릿 조언"
-  },
-  "pushupDeclineChad": "🌪️ 꿈 신호 따위 개무시? 당연하지! 이제 꿈 세계를 지배하라! 신호 인식으로 GODLIKE AWARENESS! 🌪️",
   "@pushupDeclineDesc": {
     "description": "디클라인 푸시업 설명"
   },
@@ -5586,10 +6148,6 @@
     "description": "다이아몬드 푸시업 호흡법"
   },
   "pushupDiamondBreathing": "집중해서 호흡해라. 의식이 깨어나는 걸 느껴라, you idiot!",
-  "@pushupDiamondChad": {
-    "description": "다이아몬드 푸시업 드림 스피릿 조언"
-  },
-  "pushupDiamondChad": "💎 다이아몬드보다 빛나는 의식? 틀렸다! 이제 UNBREAKABLE LUCID MIND다! 한 번만 성공해도 진짜 BEAST 인정! 💎",
   "@pushupDiamondDesc": {
     "description": "다이아몬드 푸시업 설명"
   },
@@ -5622,10 +6180,6 @@
     "description": "인클라인 푸시업 호흡법"
   },
   "pushupInclineBreathing": "잠들기 전 호흡도 편안하게. 하지만 규칙성은 최고로, you idiot!",
-  "@pushupInclineChad": {
-    "description": "인클라인 푸시업 드림 스피릿 조언"
-  },
-  "pushupInclineChad": "🚀 환경은 조절하고 수면은 MAX! 완벽한 수면 루틴이면 GOD TIER 입장권 획득이다, 만삣삐! 🚀",
   "@pushupInclineDesc": {
     "description": "인클라인 푸시업 설명"
   },
@@ -5654,10 +6208,6 @@
     "description": "무릎 푸시업 호흡법"
   },
   "pushupKneeBreathing": "부드럽고 꾸준한 호흡으로 시작해라. 급하게 하지 마라, 만삣삐!",
-  "@pushupKneeChad": {
-    "description": "무릎 푸시업 드림 스피릿 조언"
-  },
-  "pushupKneeChad": "⚡ 시작이 반? 아니다! 이미 ALPHA JOURNEY가 시작됐다! 현실 확인도 EMPEROR의 길이다! ⚡",
   "@pushupKneeDesc": {
     "description": "무릎 푸시업 설명"
   },
@@ -5690,10 +6240,6 @@
     "description": "원핸드 푸시업 호흡법"
   },
   "pushupOneArmBreathing": "깊고 안정된 호흡으로 집중력을 최고조로. 모든 의식을 하나로, you idiot!",
-  "@pushupOneArmChad": {
-    "description": "원핸드 푸시업 드림 스피릿 조언"
-  },
-  "pushupOneArmChad": "🚀 고급 WILD는 마스터 완성형? 틀렸다! 이제 ULTIMATE APEX LUCID GOD 탄생이다, FXXK YEAH! 🚀",
   "@pushupOneArmDesc": {
     "description": "원핸드 푸시업 설명"
   },
@@ -5722,10 +6268,6 @@
     "description": "파이크 푸시업 호흡법"
   },
   "pushupPikeBreathing": "수면 마비 중에도 안정된 호흡. 의식에 집중해라, you idiot!",
-  "@pushupPikeChad": {
-    "description": "파이크 푸시업 드림 스피릿 조언"
-  },
-  "pushupPikeChad": "⚡ WILD 마스터하면 자유자재? 당연하지! 의식 EMPEROR로 진화하라, 만삣삐! ⚡",
   "@pushupPikeDesc": {
     "description": "파이크 푸시업 설명"
   },
@@ -5754,10 +6296,6 @@
     "description": "기본 푸시업 호흡법"
   },
   "pushupStandardBreathing": "자기 전 깊게 호흡하며 이완해라. 평온한 마음이 명확한 꿈을 부른다, 만삣삐!",
-  "@pushupStandardChad": {
-    "description": "표준 푸시업 드림 스피릿 조언"
-  },
-  "pushupStandardChad": "🔥 꿈 일기가 제일 중요하다! 매일 쓰면 꿈 세계를 정복한다, 만삣삐! MASTER THE BASICS! 🔥",
   "@pushupStandardDesc": {
     "description": "기본 푸시업 설명"
   },
@@ -5802,10 +6340,6 @@
     "description": "와이드 그립 푸시업 호흡법"
   },
   "pushupWideGripBreathing": "깊은 호흡으로 의도를 각인시켜라. 의식이 확장되는 걸 느껴라, you idiot!",
-  "@pushupWideGripChad": {
-    "description": "와이드 그립 푸시업 드림 스피릿 조언"
-  },
-  "pushupWideGripChad": "🦁 강한 의도? 아니다! 이제 LEGENDARY LUCID MASTER를 만들어라! MILD로 꿈 세계를 압도하라! 🦁",
   "@pushupWideGripDesc": {
     "description": "와이드 그립 푸시업 설명"
   },
@@ -5911,6 +6445,10 @@
     "description": "입력 섹션 타이틀"
   },
   "quickAnalysisInputTitle": "꿈을 설명하세요",
+  "@quickAnalysisLabel": {
+    "description": "빠른 분석 라벨"
+  },
+  "quickAnalysisLabel": "빠른 분석",
   "@quickAnalysisLoadingSubtitle": {
     "description": "로딩 서브타이틀"
   },
@@ -5927,6 +6465,10 @@
     "description": "결과 섹션 타이틀"
   },
   "quickAnalysisResultTitle": "분석 결과",
+  "@quickAnalysisTokenRequired": {
+    "description": "빠른 분석 토큰 필요"
+  },
+  "quickAnalysisTokenRequired": "빠른 AI 분석에는 1 토큰이 필요합니다",
   "@quickInputBeast": {
     "description": "목표 초과 버튼"
   },
@@ -5972,20 +6514,215 @@
     "description": "Rare rarity level"
   },
   "rarityRare": "레어",
+  "@rateLimitExceeded": {
+    "description": "요청 제한 초과 메시지"
+  },
+  "rateLimitExceeded": "요청 제한을 초과했습니다. 잠시 후 다시 시도해주세요.",
   "@rateOnPlayStore": {
     "description": "앱 평가 설명"
   },
   "rateOnPlayStore": "Play Store에서 평가하기",
+  "@rcDailyCount": {
+    "description": "Daily reality check count"
+  },
+  "rcDailyCount": "일일 현실 점검 횟수",
+  "@rcDailyNotificationCount": {
+    "description": "Daily notification count with placeholder",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "rcDailyNotificationCount": "하루 {count}회 알림",
+  "@rcDisabled": {
+    "description": "Reality check disabled"
+  },
+  "rcDisabled": "비활성화됨",
+  "@rcEqualDesc": {
+    "description": "Equal interval description"
+  },
+  "rcEqualDesc": "일정한 간격으로 알림",
+  "@rcInterval": {
+    "description": "Reality check interval"
+  },
+  "rcInterval": "현실 점검 간격",
+  "@rcNotifDefaultBody": {
+    "description": "Default notification body"
+  },
+  "rcNotifDefaultBody": "지금 꿈인지 확인해보세요!",
+  "@rcNotifPatternBody": {
+    "description": "Notification pattern body",
+    "placeholders": {
+      "pattern": {
+        "type": "String"
+      }
+    }
+  },
+  "rcNotifPatternBody": "{pattern} 패턴으로 알림을 보냅니다",
+  "@rcNotifPatternTitle": {
+    "description": "Notification pattern title"
+  },
+  "rcNotifPatternTitle": "알림 패턴",
+  "@rcNotifReminderBody": {
+    "description": "Reminder notification body"
+  },
+  "rcNotifReminderBody": "현실 점검을 잊지 마세요!",
+  "@rcNotificationSubtitle": {
+    "description": "Reality check notification subtitle"
+  },
+  "rcNotificationSubtitle": "현실 점검 알림 설정",
+  "@rcNotificationTitle": {
+    "description": "Reality check notification title"
+  },
+  "rcNotificationTitle": "현실 점검 알림",
+  "@rcRandomDesc": {
+    "description": "Random interval description"
+  },
+  "rcRandomDesc": "랜덤한 시간에 알림",
+  "@rcReceiveNotification": {
+    "description": "Receive notification toggle"
+  },
+  "rcReceiveNotification": "현실 점검 알림 받기",
+  "@rcScientificBasis": {
+    "description": "Scientific basis title"
+  },
+  "rcScientificBasis": "과학적 근거",
+  "@rcScientificContent": {
+    "description": "Scientific content"
+  },
+  "rcScientificContent": "현실 점검은 자각몽 유도에 효과적인 방법입니다. 하루 10회 이상의 현실 점검을 권장합니다.",
+  "@rcTimeRange": {
+    "description": "Time range"
+  },
+  "rcTimeRange": "알림 시간대",
+  "@rcWeekdayOnly": {
+    "description": "Weekday only"
+  },
+  "rcWeekdayOnly": "평일만",
+  "@rcWeekendIncluded": {
+    "description": "Weekend included"
+  },
+  "rcWeekendIncluded": "주말 포함",
+  "@rcWeekendNotification": {
+    "description": "Weekend notification toggle"
+  },
+  "rcWeekendNotification": "주말 알림",
   "readyToEvolve": "진화 준비 완료!",
   "readyToStart": "준비되셨나요?",
   "@readyToStartSubtitle": {
     "description": "시작 준비 부제목"
   },
   "readyToStartSubtitle": "간단한 설정으로 시작점을 찾아보세요",
-  "@realChadPower": {
-    "description": "총 푸시업 부제목"
+  "@realityCheckClockCheck": {
+    "description": "시계 확인"
   },
-  "realChadPower": "대단한 힘!",
+  "realityCheckClockCheck": "시계 확인",
+  "@realityCheckClockCheckDesc": {
+    "description": "시계 확인 설명"
+  },
+  "realityCheckClockCheckDesc": "시계를 두 번 확인하세요. 꿈에서는 시간이 바뀝니다.",
+  "@realityCheckClockCheckInstruction": {
+    "description": "시계 확인 지침"
+  },
+  "realityCheckClockCheckInstruction": "시계를 보고, 잠시 후 다시 확인하세요.",
+  "@realityCheckCompleted": {
+    "description": "현실 확인 완료"
+  },
+  "realityCheckCompleted": "현실 확인 완료!",
+  "@realityCheckCount": {
+    "description": "Reality check count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "realityCheckCount": "{count}회",
+  "@realityCheckEnabled": {
+    "description": "Reality check enabled"
+  },
+  "realityCheckEnabled": "현실 점검 활성화",
+  "@realityCheckFingerCount": {
+    "description": "손가락 세기"
+  },
+  "realityCheckFingerCount": "손가락 세기",
+  "@realityCheckFingerCountDesc": {
+    "description": "손가락 세기 설명"
+  },
+  "realityCheckFingerCountDesc": "손가락 개수를 세어보세요. 꿈에서는 손가락이 이상하게 보입니다.",
+  "@realityCheckFingerCountInstruction": {
+    "description": "손가락 세기 지침"
+  },
+  "realityCheckFingerCountInstruction": "두 손을 펴고 손가락을 천천히 세어보세요.",
+  "@realityCheckGuideDescription": {
+    "description": "현실 확인 가이드 설명"
+  },
+  "realityCheckGuideDescription": "하루에 5번 이상 현실 확인을 하면 꿈에서도 습관적으로 확인하게 됩니다.",
+  "@realityCheckGuideTitle": {
+    "description": "현실 확인 가이드 제목"
+  },
+  "realityCheckGuideTitle": "현실 확인 연습",
+  "@realityCheckHandPush": {
+    "description": "손바닥 밀기"
+  },
+  "realityCheckHandPush": "손바닥 밀기",
+  "@realityCheckHandPushDesc": {
+    "description": "손바닥 밀기 설명"
+  },
+  "realityCheckHandPushDesc": "손가락으로 손바닥을 밀어보세요. 꿈에서는 통과할 수 있습니다.",
+  "@realityCheckHandPushInstruction": {
+    "description": "손바닥 밀기 지침"
+  },
+  "realityCheckHandPushInstruction": "검지로 반대쪽 손바닥을 세게 밀어보세요.",
+  "@realityCheckHowTo": {
+    "description": "현실 확인 방법"
+  },
+  "realityCheckHowTo": "현실 확인 방법",
+  "@realityCheckMax": {
+    "description": "Reality check max"
+  },
+  "realityCheckMax": "최대 20회",
+  "@realityCheckMin": {
+    "description": "Reality check min"
+  },
+  "realityCheckMin": "최소 5회",
+  "@realityCheckNosePinch": {
+    "description": "코 막기"
+  },
+  "realityCheckNosePinch": "코 막기",
+  "@realityCheckNosePinchDesc": {
+    "description": "코 막기 설명"
+  },
+  "realityCheckNosePinchDesc": "코를 막고 숨을 쉬어보세요. 꿈에서는 숨이 쉬어집니다.",
+  "@realityCheckNosePinchInstruction": {
+    "description": "코 막기 지침"
+  },
+  "realityCheckNosePinchInstruction": "코를 완전히 막고 숨을 쉬어보세요.",
+  "@realityCheckRecommended": {
+    "description": "Reality check recommended"
+  },
+  "realityCheckRecommended": "권장: 10-15회",
+  "@realityCheckTextRead": {
+    "description": "글자 읽기"
+  },
+  "realityCheckTextRead": "글자 읽기",
+  "@realityCheckTextReadDesc": {
+    "description": "글자 읽기 설명"
+  },
+  "realityCheckTextReadDesc": "글자를 두 번 읽어보세요. 꿈에서는 글자가 변합니다.",
+  "@realityCheckTextReadInstruction": {
+    "description": "글자 읽기 지침"
+  },
+  "realityCheckTextReadInstruction": "주변 텍스트를 읽고, 시선을 돌린 후 다시 읽어보세요.",
+  "@realityCheckTitle": {
+    "description": "현실 확인 화면 제목"
+  },
+  "realityCheckTitle": "현실 확인",
+  "@realityCheckTried": {
+    "description": "현실 확인 시도"
+  },
+  "realityCheckTried": "시도함",
   "@receiveAchievementNotifications": {
     "description": "업적 알림 설명"
   },
@@ -6135,6 +6872,10 @@
   },
   "requiredLabel": "필수",
   "requiredSubscription": "필요한 구독:",
+  "@researchResults": {
+    "description": "연구 결과"
+  },
+  "researchResults": "연구 결과",
   "reset": "초기화",
   "@resetAllProgressConfirm": {
     "description": "모든 진행 상황 초기화 확인 메시지"
@@ -6259,7 +7000,47 @@
     "description": "다시 시도 버튼"
   },
   "retryButton": "다시 시도",
+  "@rewardDreamAnalysisDesc": {
+    "description": "Dream analysis reward description"
+  },
+  "rewardDreamAnalysisDesc": "AI 꿈 분석 1회 이용권",
+  "@rewardDreamAnalysisTitle": {
+    "description": "Dream analysis reward title"
+  },
+  "rewardDreamAnalysisTitle": "꿈 분석",
+  "@rewardEvolutionBoostDesc": {
+    "description": "Evolution boost reward description"
+  },
+  "rewardEvolutionBoostDesc": "캐릭터 진화 속도 증가",
+  "@rewardEvolutionBoostTitle": {
+    "description": "Evolution boost reward title"
+  },
+  "rewardEvolutionBoostTitle": "진화 부스트",
+  "@rewardPremiumPreviewDesc": {
+    "description": "Premium preview reward description"
+  },
+  "rewardPremiumPreviewDesc": "프리미엄 기능 24시간 체험",
+  "@rewardPremiumPreviewTitle": {
+    "description": "Premium preview reward title"
+  },
+  "rewardPremiumPreviewTitle": "프리미엄 미리보기",
+  "@rewardSpecialSkinDesc": {
+    "description": "Special skin reward description"
+  },
+  "rewardSpecialSkinDesc": "한정판 캐릭터 스킨",
+  "@rewardSpecialSkinTitle": {
+    "description": "Special skin reward title"
+  },
+  "rewardSpecialSkinTitle": "특별 스킨",
   "rewardText": "보상",
+  "@rewardWbtbSkipDesc": {
+    "description": "WBTB skip reward description"
+  },
+  "rewardWbtbSkipDesc": "WBTB 태스크 1회 건너뛰기",
+  "@rewardWbtbSkipTitle": {
+    "description": "WBTB skip reward title"
+  },
+  "rewardWbtbSkipTitle": "WBTB 스킵",
   "@rewardedAdAvailableInHours": {
     "description": "다음 사용까지 시간과 분 표시",
     "placeholders": {
@@ -6322,10 +7103,6 @@
     "description": "광고 보기 짧은 버튼 텍스트"
   },
   "rewardedAdWatchButton": "광고 보고 받기",
-  "@risingChad": {
-    "description": "Rising Chad title"
-  },
-  "risingChad": "Rising Chad",
   "@risingFeature1": {
     "description": "중급 특징 1"
   },
@@ -6359,10 +7136,6 @@
     "description": "중급 짧은 이름"
   },
   "risingShort": "알파 지망생",
-  "@rookieChad": {
-    "description": "Rookie Chad title"
-  },
-  "rookieChad": "Rookie Chad",
   "@rookieFeature1": {
     "description": "초급 특징 1"
   },
@@ -6858,6 +7631,22 @@
     "description": "초 단위"
   },
   "seconds": "초",
+  "@sectionBasicInfo": {
+    "description": "Basic info section"
+  },
+  "sectionBasicInfo": "기본 정보",
+  "@sectionDreamAnalysis": {
+    "description": "Dream analysis section"
+  },
+  "sectionDreamAnalysis": "꿈 분석",
+  "@sectionLucidDreamInfo": {
+    "description": "Lucid dream info section"
+  },
+  "sectionLucidDreamInfo": "자각몽 정보",
+  "@sectionSleepData": {
+    "description": "Sleep data section"
+  },
+  "sectionSleepData": "수면 데이터",
   "@select": {
     "description": "선택 버튼 또는 액션"
   },
@@ -6926,6 +7715,10 @@
     "description": "Send friend challenge button"
   },
   "sendFriendChallenge": "💀 친구에게 드림 스피릿 도전장 발송! 💀",
+  "@sendTestNotification": {
+    "description": "Send test notification button"
+  },
+  "sendTestNotification": "테스트 알림 보내기",
   "@sessions": {
     "description": "Sessions label"
   },
@@ -7089,105 +7882,9 @@
     "description": "어깨 근육군"
   },
   "shoulders": "어깨",
-  "@sigmaChad": {
-    "description": "Sigma Chad title"
-  },
-  "sigmaChad": "Sigma Chad",
   "signInGoogle": "구글로 로그인",
   "signInGoogleQuick": "구글로 3초만에 시작하기",
   "signupBenefitsMessage": "회원가입하시면 모든 운동 기록과\n진행 상황이 클라우드에 자동 백업됩니다.",
-  "@signupChadBenefitsList": {
-    "description": "혜택 목록 타이틀"
-  },
-  "signupChadBenefitsList": "프리미엄 혜택",
-  "@signupChadConfirmPasswordLabel": {
-    "description": "비밀번호 확인 필드 라벨"
-  },
-  "signupChadConfirmPasswordLabel": "비밀번호 확인",
-  "@signupChadConfirmPasswordRequired": {
-    "description": "비밀번호 확인 필수 검증"
-  },
-  "signupChadConfirmPasswordRequired": "비밀번호를 다시 입력해주세요",
-  "@signupChadEmailInvalid": {
-    "description": "이메일 유효하지 않음 검증"
-  },
-  "signupChadEmailInvalid": "올바른 이메일을 입력해주세요",
-  "@signupChadEmailLabel": {
-    "description": "이메일 필드 라벨"
-  },
-  "signupChadEmailLabel": "이메일",
-  "@signupChadEmailRequired": {
-    "description": "이메일 필수 검증"
-  },
-  "signupChadEmailRequired": "이메일을 입력해주세요",
-  "@signupChadGoogleSignupFailed": {
-    "description": "구글 회원가입 실패 메시지"
-  },
-  "signupChadGoogleSignupFailed": "구글 회원가입에 실패했습니다. 다시 시도해주세요.",
-  "@signupChadLaunchSpecialEvent": {
-    "description": "런칭 특별 이벤트 타이틀"
-  },
-  "signupChadLaunchSpecialEvent": "🎊 런칭 특별 이벤트",
-  "@signupChadLoginButton": {
-    "description": "회원가입 화면의 로그인 버튼 텍스트"
-  },
-  "signupChadLoginButton": "로그인",
-  "@signupChadNameLabel": {
-    "description": "이름 필드 라벨"
-  },
-  "signupChadNameLabel": "이름",
-  "@signupChadNameMinLength": {
-    "description": "이름 최소 길이 검증"
-  },
-  "signupChadNameMinLength": "이름은 최소 2자 이상이어야 합니다",
-  "@signupChadNameRequired": {
-    "description": "이름 필수 검증"
-  },
-  "signupChadNameRequired": "이름을 입력해주세요",
-  "@signupChadOrEmailSignup": {
-    "description": "또는 이메일 회원가입 구분선"
-  },
-  "signupChadOrEmailSignup": "또는 이메일로 가입하기",
-  "@signupChadPasswordLabel": {
-    "description": "비밀번호 필드 라벨"
-  },
-  "signupChadPasswordLabel": "비밀번호",
-  "@signupChadPasswordMinLength": {
-    "description": "비밀번호 최소 길이 검증"
-  },
-  "signupChadPasswordMinLength": "비밀번호는 최소 6자 이상이어야 합니다",
-  "@signupChadPasswordRequired": {
-    "description": "비밀번호 필수 검증"
-  },
-  "signupChadPasswordRequired": "비밀번호를 입력해주세요",
-  "@signupChadPasswordsNotMatch": {
-    "description": "비밀번호 불일치 검증"
-  },
-  "signupChadPasswordsNotMatch": "비밀번호가 일치하지 않습니다",
-  "@signupChadScreenTitle": {
-    "description": "회원가입 화면 타이틀"
-  },
-  "signupChadScreenTitle": "계정 만들기",
-  "@signupChadSigningUp": {
-    "description": "회원가입 진행 중 메시지"
-  },
-  "signupChadSigningUp": "계정을 생성하는 중...",
-  "@signupChadStartFreeMonth": {
-    "description": "무료 한 달 시작 버튼"
-  },
-  "signupChadStartFreeMonth": "무료로 한 달 시작하기",
-  "@signupChadTermsAgreement": {
-    "description": "약관 동의 체크박스 텍스트"
-  },
-  "signupChadTermsAgreement": "이용약관에 동의합니다",
-  "@signupChadTermsAgreementRequired": {
-    "description": "약관 동의 필수 검증"
-  },
-  "signupChadTermsAgreementRequired": "이용약관에 동의해주세요",
-  "@signupChadWelcomeMessage": {
-    "description": "환영 메시지"
-  },
-  "signupChadWelcomeMessage": "자각몽 여정에 오신 것을 환영합니다!",
   "signupIn30Seconds": "회원가입 (30초)",
   "signupPromptBenefit1": "• 1개월 무료 프리미엄",
   "signupPromptBenefit2": "• 전체 30일 프로그램 접근",
@@ -7224,14 +7921,98 @@
     "description": "휴식 건너뛰기 버튼"
   },
   "skipRestButton": "휴식? 약자나 해라, 만삣삐! 다음 희생양 가져와!",
-  "@sleepyChadEvolution": {
-    "description": "수면모자 드림 스피릿 진화 상태"
+  "@sleepDurationLabel": {
+    "description": "Sleep duration label"
   },
-  "sleepyChadEvolution": "수면모자 진화",
-  "@sleepyHatChad": {
-    "description": "Sleepy hat chad name"
+  "sleepDurationLabel": "수면 시간",
+  "@sleepDurationValue": {
+    "description": "Sleep duration value",
+    "placeholders": {
+      "hours": {
+        "type": "String"
+      },
+      "minutes": {
+        "type": "String"
+      }
+    }
   },
-  "sleepyHatChad": "수면모자",
+  "sleepDurationValue": "{hours}시간 {minutes}분",
+  "@sleepHygiene1": {
+    "description": "수면 위생 1"
+  },
+  "sleepHygiene1": "잠자리에 들기 1시간 전에 전자기기 끄기",
+  "@sleepHygiene2": {
+    "description": "수면 위생 2"
+  },
+  "sleepHygiene2": "카페인/알코올 피하기",
+  "@sleepHygiene3": {
+    "description": "수면 위생 3"
+  },
+  "sleepHygiene3": "일정한 취침 시간 유지",
+  "@sleepHygiene4": {
+    "description": "수면 위생 4"
+  },
+  "sleepHygiene4": "편안한 수면 환경 조성",
+  "@sleepHygiene5": {
+    "description": "수면 위생 5"
+  },
+  "sleepHygiene5": "취침 전 가벼운 스트레칭",
+  "@sleepHygiene6": {
+    "description": "수면 위생 6"
+  },
+  "sleepHygiene6": "오늘의 꿈 의도 설정",
+  "@sleepHygieneCheckAtLeast3": {
+    "description": "최소 3개 체크"
+  },
+  "sleepHygieneCheckAtLeast3": "최소 3개 이상 체크해주세요",
+  "@sleepHygieneCompleted": {
+    "description": "수면 위생 완료"
+  },
+  "sleepHygieneCompleted": "수면 위생 체크 완료!",
+  "@sleepHygieneGuideDescription": {
+    "description": "수면 위생 가이드 설명"
+  },
+  "sleepHygieneGuideDescription": "양질의 수면은 자각몽 성공의 핵심입니다. 최소 3개 이상 체크하세요.",
+  "@sleepHygieneGuideTitle": {
+    "description": "수면 위생 가이드 제목"
+  },
+  "sleepHygieneGuideTitle": "좋은 수면 습관",
+  "@sleepHygieneTitle": {
+    "description": "수면 위생 화면 제목"
+  },
+  "sleepHygieneTitle": "수면 위생",
+  "@sleepInfoOptional": {
+    "description": "Sleep info optional text"
+  },
+  "sleepInfoOptional": "수면 정보 (선택)",
+  "@sleepInfoTitle": {
+    "description": "Sleep info title"
+  },
+  "sleepInfoTitle": "수면 정보",
+  "@sleepQuality": {
+    "description": "Sleep quality label"
+  },
+  "sleepQuality": "수면 품질:",
+  "@sleepQualityLabel": {
+    "description": "Sleep quality label for input"
+  },
+  "sleepQualityLabel": "수면 품질",
+  "@sleepStart": {
+    "description": "Sleep start label"
+  },
+  "sleepStart": "취침 시간",
+  "@sortLucidityHigh": {
+    "description": "Sort by lucidity high"
+  },
+  "sortLucidityHigh": "자각도 높은순",
+  "@sortNewest": {
+    "description": "Sort by newest"
+  },
+  "sortNewest": "최신순",
+  "@sortOldest": {
+    "description": "Sort by oldest"
+  },
+  "sortOldest": "오래된순",
   "@soundSettings": {
     "description": "사운드 설정"
   },
@@ -7244,7 +8025,6 @@
     "description": "이벤트 챌린지 기본 설명"
   },
   "specialEventChallenge": "특별 이벤트 챌린지",
-  "specialPushupForChads": "드림 스피릿을 위한 특별한 자각몽 기법",
   "@sprintChallenge": {
     "description": "스프린트 챌린지 기본 제목"
   },
@@ -7254,6 +8034,10 @@
     "description": "SSILD 완료 메시지"
   },
   "ssildCompleted": "SSILD 연습 완료!",
+  "@ssildCycleCompleteButton": {
+    "description": "SSILD cycle complete button"
+  },
+  "ssildCycleCompleteButton": "사이클 완료",
   "@ssildCycleCount": {
     "description": "SSILD 사이클 횟수",
     "placeholders": {
@@ -7275,6 +8059,10 @@
     "description": "SSILD 최소 사이클"
   },
   "ssildMinCycles": "최소 4회 사이클을 완료하세요",
+  "@ssildNextSense": {
+    "description": "SSILD next sense"
+  },
+  "ssildNextSense": "다음 감각",
   "@ssildStep1Description": {
     "description": "SSILD 1단계 설명"
   },
@@ -7368,6 +8156,27 @@
     "description": "안정화 화면 제목"
   },
   "stabilizationTitle": "자각몽 안정화",
+  "@stageAchieved": {
+    "description": "Stage achieved message",
+    "placeholders": {
+      "stage": {
+        "type": "int"
+      }
+    }
+  },
+  "stageAchieved": "Stage {stage} 달성!",
+  "@stageDailyTokensInfo": {
+    "description": "Stage daily tokens info",
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "tokens": {
+        "type": "int"
+      }
+    }
+  },
+  "stageDailyTokensInfo": "{name} - 일일 {tokens}토큰",
   "start": "시작",
   "startButton": "시작",
   "@startChallenge": {
@@ -7425,6 +8234,31 @@
   "startWorkoutForAchievements": "자각몽 연습 시작해서 첫 업적 획득하자! 💪",
   "startWorkoutNow": "지금 바로 운동을 시작해보세요! 💪",
   "startWorkoutToStartProgram": "연습을 시작하여 프로그램을 시작하세요! 💪",
+  "@statAvgLucidity": {
+    "description": "Average lucidity stat label"
+  },
+  "statAvgLucidity": "평균 자각도",
+  "@statLucidDreams": {
+    "description": "Lucid dreams stat label"
+  },
+  "statLucidDreams": "자각몽",
+  "@statStreakDays": {
+    "description": "Streak days value",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "statStreakDays": "{days}일",
+  "@statStreakLabel": {
+    "description": "Streak stat label"
+  },
+  "statStreakLabel": "연속 기록",
+  "@statTotalDreams": {
+    "description": "Total dreams stat label"
+  },
+  "statTotalDreams": "총 꿈",
   "@statistics": {
     "description": "통계 탭"
   },
@@ -7477,10 +8311,6 @@
     "description": "저장소 권한 제목"
   },
   "storagePermissionTitle": "📁 저장소 권한",
-  "@strategicChadMode": {
-    "description": "전략적 차드 모드 제목"
-  },
-  "strategicChadMode": "⭐ 전략적 차드 모드 (월수금)",
   "@streakBestRecord": {
     "description": "Best streak record",
     "placeholders": {
@@ -7621,9 +8451,9 @@
   },
   "subscriptionBenefitLumiEvolution": "Lumi 전체 진화 (6단계)",
   "@subscriptionBenefitUnlimitedAI": {
-    "description": "무제한 AI 분석 혜택"
+    "description": "추가 AI 토큰 혜택"
   },
-  "subscriptionBenefitUnlimitedAI": "무제한 AI 꿈 분석",
+  "subscriptionBenefitUnlimitedAI": "상위 스테이지 해금 (최대 15토큰/일)",
   "subscriptionExpiringSoon": "구독이 곧 만료됩니다. 갱신하시겠습니까?",
   "@subscriptionFreeTrialRemaining": {
     "description": "무료 체험 남은 기간",
@@ -7663,10 +8493,14 @@
     "description": "Sunday short form"
   },
   "sundayShort": "일",
-  "@supportChadJourney": {
-    "description": "여정 응원 메시지"
+  "@suspiciousActivityMessage": {
+    "description": "의심 활동 감지 메시지"
   },
-  "supportChadJourney": "너의 여정을 응원한다! 🔥",
+  "suspiciousActivityMessage": "비정상적인 활동이 감지되어 일시적으로 제한됩니다. 잠시 후 다시 시도해주세요.",
+  "@suspiciousActivityTitle": {
+    "description": "의심 활동 감지 제목"
+  },
+  "suspiciousActivityTitle": "비정상적인 활동 감지",
   "swipeToView": "좌우로 스와이프하세요",
   "@swipeUpHint": {
     "description": "스와이프 힌트 텍스트"
@@ -7682,6 +8516,28 @@
     "description": "시스템 자동 갱신 알림 채널 설명"
   },
   "systemAutoRenewalChannelDescription": "시스템 자동 갱신 알림",
+  "@tabAllDreams": {
+    "description": "All dreams tab",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "tabAllDreams": "전체 ({count})",
+  "@tabFavorites": {
+    "description": "Favorites tab"
+  },
+  "tabFavorites": "즐겨찾기",
+  "@tabLucidDreams": {
+    "description": "Lucid dreams tab",
+    "placeholders": {
+      "count": {
+        "type": "String"
+      }
+    }
+  },
+  "tabLucidDreams": "자각몽 ({count})",
   "@target": {
     "description": "목표 횟수 라벨"
   },
@@ -7813,6 +8669,26 @@
     "description": "팁"
   },
   "techniqueTips": "팁",
+  "@techniquesUsedLabel": {
+    "description": "Techniques used label"
+  },
+  "techniquesUsedLabel": "사용한 기법:",
+  "@techniquesUsedTitle": {
+    "description": "Techniques used title"
+  },
+  "techniquesUsedTitle": "사용한 기법",
+  "@termsDreamwalkerShop": {
+    "description": "Dreamwalker shop terms"
+  },
+  "termsDreamwalkerShop": "드림워커 상점 이용약관",
+  "@termsDreamwalkerShopContent": {
+    "description": "Dreamwalker shop terms content"
+  },
+  "termsDreamwalkerShopContent": "상점에서 구매한 상품은 환불이 제한될 수 있습니다.",
+  "@termsLastUpdate": {
+    "description": "Terms last update"
+  },
+  "termsLastUpdate": "최종 업데이트",
   "@termsOfService": {
     "description": "Terms of service menu title"
   },
@@ -7822,7 +8698,43 @@
   },
   "termsOfServiceDesc": "앱 사용시 약관 확인",
   "termsPrivacy": "이용약관 및 개인정보처리방침",
+  "@termsPrivacyContent": {
+    "description": "Privacy policy content"
+  },
+  "termsPrivacyContent": "개인정보는 서비스 제공 목적으로만 사용됩니다.",
+  "@termsService": {
+    "description": "Terms of service"
+  },
+  "termsService": "서비스 이용약관",
+  "@termsServiceContent": {
+    "description": "Terms of service content"
+  },
+  "termsServiceContent": "본 서비스를 이용함으로써 이용약관에 동의하게 됩니다.",
+  "@termsSubscription": {
+    "description": "Subscription terms"
+  },
+  "termsSubscription": "구독 이용약관",
+  "@termsSubscriptionContent": {
+    "description": "Subscription terms content"
+  },
+  "termsSubscriptionContent": "구독은 언제든지 취소할 수 있으며, 취소 후 현재 결제 기간이 끝날 때까지 서비스를 이용할 수 있습니다.",
+  "@termsTitle": {
+    "description": "Terms title"
+  },
+  "termsTitle": "이용약관",
+  "@termsTokenPolicy": {
+    "description": "Token policy"
+  },
+  "termsTokenPolicy": "토큰 정책",
+  "@termsTokenPolicyContent": {
+    "description": "Token policy content"
+  },
+  "termsTokenPolicyContent": "토큰은 환불되지 않으며, AI 분석 서비스 이용에 사용됩니다.",
   "testAdMessage": "테스트 광고 - 자각몽 앱",
+  "@testNotificationSent": {
+    "description": "Test notification sent message"
+  },
+  "testNotificationSent": "테스트 알림을 보냈습니다",
   "@themeApplied": {
     "description": "Theme applied message",
     "placeholders": {
@@ -7924,9 +8836,17 @@
   "titlePremiumFeatures": "프리미엄 기능",
   "titlePremiumSubscription": "프리미엄 구독",
   "titleScientificEvidence": "과학적 근거",
-  "titleTomorrowChadActivity": "내일의 차드 활동",
   "titleTutorial": "튜토리얼",
   "todayCondition": "오늘의 컨디션",
+  "@todayDreamCount": {
+    "description": "Today dream count",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "todayDreamCount": "오늘 {count}개의 꿈",
   "@todayGoalTitle": {
     "description": "오늘의 목표 제목"
   },
@@ -7956,6 +8876,14 @@
     "description": "오늘의 목표 제목"
   },
   "todaysGoal": "오늘의 목표",
+  "@todaysLucidDreamPractice": {
+    "description": "오늘의 자각몽 연습 제목"
+  },
+  "todaysLucidDreamPractice": "오늘의 자각몽 연습",
+  "@todaysMission": {
+    "description": "오늘의 미션 제목"
+  },
+  "todaysMission": "오늘의 미션",
   "@tokenBalanceAdComingSoon": {
     "description": "토큰 광고 기능 준비 중 메시지"
   },
@@ -8023,14 +8951,18 @@
     "description": "대화당 토큰 사용량 안내 메시지"
   },
   "tokenBalanceUsageInfo": "Lumi와 대화 한 번당 토큰 1개 소모",
-  "@tokenBalanceWatchAd": {
-    "description": "광고 보고 토큰 받기 버튼 텍스트"
-  },
-  "tokenBalanceWatchAd": "광고 보고 토큰 받기",
   "@tokenConsumeFailed": {
     "description": "토큰 사용 실패 메시지"
   },
   "tokenConsumeFailed": "토큰 사용에 실패했습니다",
+  "@tokenCount1": {
+    "description": "1 token"
+  },
+  "tokenCount1": "1 토큰",
+  "@tokenCount3": {
+    "description": "3 tokens"
+  },
+  "tokenCount3": "3 토큰",
   "@tokenDailyRewardFree": {
     "description": "무료 일일 보상 레이블"
   },
@@ -8039,6 +8971,23 @@
     "description": "프리미엄 일일 보상 레이블"
   },
   "tokenDailyRewardPremium": "프리미엄 일일 보상",
+  "@tokenEarnError": {
+    "description": "토큰 획득 오류",
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "tokenEarnError": "토큰 획득 실패: {error}",
+  "@tokenEarnMethods": {
+    "description": "토큰 획득 방법"
+  },
+  "tokenEarnMethods": "토큰 획득 방법",
+  "@tokenEarnedSuccess": {
+    "description": "토큰 획득 성공"
+  },
+  "tokenEarnedSuccess": "토큰을 획득했습니다!",
   "@tokenInsufficientMessage": {
     "description": "토큰 부족 메시지"
   },
@@ -8091,6 +9040,14 @@
     "description": "총 획득 토큰 레이블"
   },
   "tokenTotalReward": "총 획득",
+  "@tokenUnit": {
+    "description": "Token unit"
+  },
+  "tokenUnit": "토큰",
+  "@tokenUsageTitle": {
+    "description": "Token usage title"
+  },
+  "tokenUsageTitle": "토큰 사용",
   "@tokenUserTypeFree": {
     "description": "무료 사용자 타입 레이블"
   },
@@ -8099,11 +9056,24 @@
     "description": "프리미엄 사용자 타입 레이블"
   },
   "tokenUserTypePremium": "프리미엄",
-  "tomorrowActivitiesMessage": "Chad가 내일 추천할 활동들이야! 미리 준비해두자! 💪",
   "tomorrowBeastMode": "✨ 내일도 함께 자각몽을 연습해요 🌙",
-  "tomorrowChadActivity": "내일의 Chad 활동",
   "tomorrowIsRestDay": "🌙 내일도 꿈의 여정이 계속됩니다 ✨",
-  "tomorrowsChadActivity": "내일의 Chad 활동",
+  "@tooltipDelete": {
+    "description": "Delete tooltip"
+  },
+  "tooltipDelete": "삭제",
+  "@tooltipEdit": {
+    "description": "Edit tooltip"
+  },
+  "tooltipEdit": "수정",
+  "@tooltipFavorite": {
+    "description": "Favorite tooltip"
+  },
+  "tooltipFavorite": "즐겨찾기",
+  "@tooltipSave": {
+    "description": "Save tooltip"
+  },
+  "tooltipSave": "저장",
   "@totalCompletedReps": {
     "description": "총 완료 횟수",
     "placeholders": {
@@ -8161,6 +9131,15 @@
     "description": "총 목표 라벨"
   },
   "totalTarget": "총 목표:",
+  "@totalTrainingDaysLabel": {
+    "description": "총 훈련 일수 레이블",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "totalTrainingDaysLabel": "총 {days}일",
   "@totalWorkouts": {
     "description": "총 자각몽 연습 횟수"
   },
@@ -8175,7 +9154,6 @@
     }
   },
   "totalXpEarned": "총 {totalXP} XP 획득!",
-  "totallyOnFireChadBeastMode": "완전 불타고 있네!\nChad도 Beast Mode로 갈게! 🔥💪",
   "@trialEnded": {
     "description": "체험 기간 종료 레이블"
   },
@@ -8185,14 +9163,6 @@
   },
   "triceps": "삼두",
   "trophyIcon": "🏆",
-  "@trueChadMindset": {
-    "description": "영상 설명 3"
-  },
-  "trueChadMindset": "진정한 자각몽 마스터가 되는 마인드셋",
-  "@trueGigaChad": {
-    "description": "진정한 기가차드 완성 메시지"
-  },
-  "trueGigaChad": "🔥💀 진정한 기가차드 완성! ALPHA EMPEROR! 💀🔥",
   "@tryAgain": {
     "description": "다시 시도 버튼 텍스트"
   },
@@ -8283,12 +9253,17 @@
   "tutorialWarningTitle": "⚠️ 주의사항",
   "tutorialWelcomeSubtitle": "30일 만에 자각몽 마스터 되기",
   "tutorialWelcomeTitle": "🌙 DreamFlow",
-  "@ultraChad": {
-    "description": "Ultra Chad title"
-  },
-  "ultraChad": "Ultra Chad",
   "unableToLoadVideo": "비디오를 불러올 수 없습니다",
   "unlimited": "무제한",
+  "@unlockAtWeek": {
+    "description": "Week unlock message for character stage",
+    "placeholders": {
+      "week": {
+        "type": "int"
+      }
+    }
+  },
+  "unlockAtWeek": "Week {week}에 해금",
   "@unlockMoreChallenges": {
     "description": "챌린지 해금 안내 메시지"
   },
@@ -8317,6 +9292,15 @@
     "description": "URL not available dialog title"
   },
   "urlNotAvailableTitle": "페이지 준비 중",
+  "@usageAvailableCount": {
+    "description": "사용 가능 횟수",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "usageAvailableCount": "{count}회 사용 가능",
   "@useDarkTheme": {
     "description": "다크 모드 설명"
   },
@@ -8438,7 +9422,15 @@
   "viewAll": "전체 보기",
   "viewAllAchievements": "✨ 모든 업적 보기",
   "viewAllReferences": "전체 참고문헌 보기",
-  "viewChad": "Chad 보기",
+  "@viewMyDreamJournal": {
+    "description": "View my dream journal"
+  },
+  "viewMyDreamJournal": "내 꿈 일기 보기",
+  "@viewMyDreamJournalDesc": {
+    "description": "View my dream journal description"
+  },
+  "viewMyDreamJournalDesc": "기록한 꿈들을 확인해보세요",
+  "viewTermsAndRefundPolicy": "이용약관 및 환불정책 보기",
   "@vipFastLoading": {
     "description": "VIP 빠른 로딩 배지"
   },
@@ -8455,7 +9447,71 @@
     "description": "VIP 환영 다이얼로그 프리미엄 회원 타이틀"
   },
   "vipWelcomePremiumMember": "✨ 프리미엄 회원",
+  "@wakeTime": {
+    "description": "Wake time label"
+  },
+  "wakeTime": "기상 시간",
+  "@watchRewardAd": {
+    "description": "Watch reward ad button title"
+  },
+  "watchRewardAd": "광고 보고 보상 받기",
   "watchVideo": "운동 영상 보기",
+  "@wbtbCompleteAllSteps": {
+    "description": "모든 단계 완료 필요"
+  },
+  "wbtbCompleteAllSteps": "모든 단계를 체크해주세요",
+  "@wbtbCompleted": {
+    "description": "WBTB 완료"
+  },
+  "wbtbCompleted": "WBTB 설정 완료!",
+  "@wbtbGuideDescription": {
+    "description": "WBTB 가이드 설명"
+  },
+  "wbtbGuideDescription": "수면 5-6시간 후 알람으로 깨어나 자각몽 기법을 연습하는 방법입니다.",
+  "@wbtbGuideTitle": {
+    "description": "WBTB 가이드 제목"
+  },
+  "wbtbGuideTitle": "수면 중 각성 기법",
+  "@wbtbStep1Description": {
+    "description": "WBTB 1단계 설명"
+  },
+  "wbtbStep1Description": "취침 5-6시간 후에 알람을 설정하세요. REM 수면 직전에 깨어나게 됩니다.",
+  "@wbtbStep1Title": {
+    "description": "WBTB 1단계 제목"
+  },
+  "wbtbStep1Title": "알람 설정",
+  "@wbtbStep2Description": {
+    "description": "WBTB 2단계 설명"
+  },
+  "wbtbStep2Description": "알람이 울리면 10-30분 동안 깨어있으세요. 꿈 일기를 읽거나 자각몽에 대해 생각하세요.",
+  "@wbtbStep2Title": {
+    "description": "WBTB 2단계 제목"
+  },
+  "wbtbStep2Title": "깨어있기",
+  "@wbtbSteps": {
+    "description": "WBTB 단계"
+  },
+  "wbtbSteps": "WBTB 단계",
+  "@wbtbTechnique": {
+    "description": "WBTB 기법"
+  },
+  "wbtbTechnique": "WBTB (Wake Back To Bed)",
+  "@wbtbTip": {
+    "description": "WBTB 팁"
+  },
+  "wbtbTip": "깨어있는 동안 MILD 확언을 반복하고, 다시 잠들 때 자각몽을 의도하세요.",
+  "@wbtbTipTitle": {
+    "description": "WBTB 팁 제목"
+  },
+  "wbtbTipTitle": "팁",
+  "@wbtbTitle": {
+    "description": "WBTB 화면 제목"
+  },
+  "wbtbTitle": "WBTB 기법",
+  "@wbtbUsedMessage": {
+    "description": "WBTB 사용 메시지"
+  },
+  "wbtbUsedMessage": "오늘 WBTB를 사용했습니다",
   "wednesdayFull": "수요일",
   "@wednesdayShort": {
     "description": "Wednesday short form"
@@ -8518,6 +9574,84 @@
   },
   "weekProgress": "{current}/{total} 주차",
   "weekUnit": "주",
+  "@weekUnlockBenefitAdRemoval": {
+    "description": "Premium benefit ad removal"
+  },
+  "weekUnlockBenefitAdRemoval": "광고 제거",
+  "@weekUnlockBenefitAdvancedStats": {
+    "description": "Premium benefit advanced stats"
+  },
+  "weekUnlockBenefitAdvancedStats": "고급 통계 분석",
+  "@weekUnlockBenefitFullProgram": {
+    "description": "Premium benefit full program"
+  },
+  "weekUnlockBenefitFullProgram": "전체 14주 프로그램",
+  "@weekUnlockBenefitLumiEvolution": {
+    "description": "Premium benefit Lumi evolution"
+  },
+  "weekUnlockBenefitLumiEvolution": "Lumi 캐릭터 진화",
+  "@weekUnlockBenefitUnlimitedAI": {
+    "description": "Premium benefit unlimited AI"
+  },
+  "weekUnlockBenefitUnlimitedAI": "무제한 AI 대화",
+  "@weekUnlockGenericMessage": {
+    "description": "Generic week unlock message",
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "weekUnlockGenericMessage": "{week}주차 훈련을 시작합니다",
+  "@weekUnlockGenericTitle": {
+    "description": "Generic week unlock title",
+    "placeholders": {
+      "week": {
+        "type": "String"
+      }
+    }
+  },
+  "weekUnlockGenericTitle": "{week}주차 시작!",
+  "@weekUnlockPremiumBenefitsLabel": {
+    "description": "Premium benefits label"
+  },
+  "weekUnlockPremiumBenefitsLabel": "프리미엄 혜택",
+  "@weekUnlockTechniquesLabel": {
+    "description": "Week unlock techniques label"
+  },
+  "weekUnlockTechniquesLabel": "새로운 기법",
+  "@weekUnlockWeek2Message": {
+    "description": "Week 2 unlock message"
+  },
+  "weekUnlockWeek2Message": "꿈 기억력이 향상되기 시작합니다",
+  "@weekUnlockWeek2Title": {
+    "description": "Week 2 unlock title"
+  },
+  "weekUnlockWeek2Title": "2주차 시작!",
+  "@weekUnlockWeek3Message": {
+    "description": "Week 3 unlock message"
+  },
+  "weekUnlockWeek3Message": "WBTB 기법으로 성공률을 높이세요",
+  "@weekUnlockWeek3Title": {
+    "description": "Week 3 unlock title"
+  },
+  "weekUnlockWeek3Title": "3주차 시작!",
+  "@weekUnlockWeek5Message": {
+    "description": "Week 5 unlock message"
+  },
+  "weekUnlockWeek5Message": "고급 기법이 해금됩니다",
+  "@weekUnlockWeek5Title": {
+    "description": "Week 5 unlock title"
+  },
+  "weekUnlockWeek5Title": "5주차 시작!",
+  "@weekUnlockWeek7Message": {
+    "description": "Week 7 unlock message"
+  },
+  "weekUnlockWeek7Message": "꿈 조종 기법을 연습해보세요",
+  "@weekUnlockWeek7Title": {
+    "description": "Week 7 unlock title"
+  },
+  "weekUnlockWeek7Title": "7주차 시작!",
   "@weekX": {
     "description": "Week number format",
     "placeholders": {
@@ -8662,10 +9796,6 @@
     "description": "WILD 화면 제목"
   },
   "wildTitle": "WILD 기법",
-  "@workerChadMode": {
-    "description": "직장인 차드 모드 제목"
-  },
-  "workerChadMode": "💼 직장인 차드 모드 (월~금)",
   "@workout": {
     "description": "운동 버튼 라벨"
   },
@@ -8914,6 +10044,10 @@
     "description": "운동 제목 - 스타일"
   },
   "workoutTitle": "💪 전쟁터 💪",
+  "@writeFirstDream": {
+    "description": "Write first dream button"
+  },
+  "writeFirstDream": "첫 번째 꿈 기록하기",
   "@wrongPose": {
     "description": "Wrong pose label"
   },
@@ -8922,5 +10056,46 @@
   "@yearly": {
     "description": "연간 필터 옵션"
   },
-  "yearly": "연간"
+  "yearly": "연간",
+  "@purchaseInProgress": {
+    "description": "Purchase in progress message"
+  },
+  "purchaseInProgress": "결제 진행 중...",
+  "navHome": "홈",
+  "navJournal": "일기",
+  "navAnalytics": "분석",
+  "navSettings": "설정",
+  "lucidityScaleDescription": "0: 일반 꿈 | 5: 꿈임을 인식 | 10: 완전한 통제",
+  "techniqueMild": "MILD (기억 유도법)",
+  "techniqueMildDesc": "취침 전 다음 꿈에서 꿈임을 알아차리겠다 반복",
+  "techniqueWbtb": "WBTB (중간 기상법)",
+  "techniqueWbtbDesc": "5-6시간 수면 후 30-60분 깨어있다가 다시 수면",
+  "techniqueRealityCheck": "Reality Check (현실 확인)",
+  "techniqueRealityCheckDesc": "하루 10회 이상 지금 꿈인가? 확인",
+  "techniqueSsild": "SSILD (감각 유도법)",
+  "techniqueSsildDesc": "시각, 청각, 촉각에 순차적으로 집중",
+  "techniqueWild": "WILD (직접 진입법)",
+  "techniqueWildDesc": "의식을 유지하며 직접 꿈으로 진입",
+  "techniqueDreamSigns": "Dream Signs (꿈 신호)",
+  "techniqueDreamSignsDesc": "꿈 신호를 인식하고 Reality Check 수행",
+  "lucidityNone": "일반 꿈",
+  "lucidityLow": "낮은 자각",
+  "lucidityMedium": "중간 자각",
+  "lucidityHigh": "높은 자각",
+  "lucidityFull": "완전 자각",
+  "lucidityNoneDesc": "자각 없음",
+  "lucidityLowDesc": "이상함을 느끼지만 꿈임을 모름",
+  "lucidityMediumDesc": "꿈임을 알지만 통제 어려움",
+  "lucidityHighDesc": "꿈임을 알고 부분 통제 가능",
+  "lucidityFullDesc": "완전한 통제와 명료함",
+  "dreamPromptEmotion": "꿈에서 느낀 감정을 먼저 떠올려보세요. 기쁨? 불안? 흥분?",
+  "dreamPromptReverse": "꿈의 마지막 장면부터 거꾸로 떠올려보세요.",
+  "dreamPromptFragments": "작은 조각이라도 괜찮습니다. 떠오르는 대로 적어보세요.",
+  "dreamPromptFast": "깨어나자마자 바로 기록하세요 (5분 이내 권장)",
+  "dreamPromptKeywords": "완벽한 문장이 아니어도 됩니다. 키워드만 적어도 좋습니다.",
+  "dreamPromptResearchBasis": "Schredl (2002) 연구 기반",
+  "subscriptionLifetimePurchase": "평생 이용권 (일회성 구매)",
+  "subscriptionOneTimePurchase": "한 번 결제로 영구 이용",
+  "subscriptionBenefitLumiEvolutionFull": "Lumi 전체 진화 단계",
+  "subscriptionBenefitAdvancedStats": "고급 통계 분석"
 }
