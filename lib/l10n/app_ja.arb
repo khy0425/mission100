@@ -2427,7 +2427,7 @@
   "@currentLevelProgress": {
     "description": "Current level and progress item"
   },
-  "currentLevelProgress": "• 現在 レベル and 進捗",
+  "currentLevelProgress": "• 現在レベルと進捗",
   "currentMaxRange": "現在 最大: {range}",
   "@currentStage": {
     "description": "Current stage label"
@@ -3478,7 +3478,7 @@
   "@encouragementMessage2": {
     "description": "Encouragement message 2"
   },
-  "encouragementMessage2": "⚡ 明日 IS レジェンダリー COMEBACK 日! WORLD WILL SEE YOUR RESURRECTION! ⚡",
+  "encouragementMessage2": "⚡ 明日はレジェンダリーなカムバック日！世界はあなたの復活を見届ける！ ⚡",
   "@encouragementMessage3": {
     "description": "Encouragement message 3"
   },
@@ -3498,7 +3498,7 @@
   "@encouragementMessage7": {
     "description": "Encouragement message 7"
   },
-  "encouragementMessage7": "⚡ STILL LEGEND TRANSFORMATION IN 進捗, YOU ABSOLUTE UNIT! ⚡",
+  "encouragementMessage7": "⚡ まだレジェンド変革は進行中、お前は最強だ！ ⚡",
   "@encouragementMessage8": {
     "description": "Encouragement message 8"
   },
@@ -3506,7 +3506,7 @@
   "@encouragementMessage9": {
     "description": "Encouragement message 9"
   },
-  "encouragementMessage9": "💥 すべてのEMPERORS PASS THROUGH TRIALS! THIS IS THE ROYAL PATH! 💥",
+  "encouragementMessage9": "💥 すべての皇帝は試練を乗り越える！これは王道だ！ 💥",
   "@encryptedBackup": {
     "description": "Encrypted backup button"
   },
@@ -3560,7 +3560,7 @@
   "@errorNotFound": {
     "description": "Data not found error message"
   },
-  "errorNotFound": "🔱 データ NOT FOUND! 時間 TO 作成 新規 LEGENDS! 🔱",
+  "errorNotFound": "🔱 データが見つかりません！新たな伝説を作る時間だ！ 🔱",
   "@errorOccurred": {
     "description": "General error occurrence message"
   },
@@ -3711,7 +3711,7 @@
   "@exportToFile": {
     "description": "Export to file button"
   },
-  "exportToFile": "エクスポート to ファイル",
+  "exportToFile": "ファイルにエクスポート",
   "@factCategoryCardio": {
     "description": "Cardiovascular health category"
   },
@@ -3877,7 +3877,7 @@
     "description": "Get started step 3"
   },
   "getStartedStep3": "3. 30日間の旅を開始！",
-  "gigaGoalDesc": "21+ 日 → マスター in 30+ 日",
+  "gigaGoalDesc": "21日以上 → 30日以上でマスター",
   "@gigaShort": {
     "description": "Giga short notation"
   },
@@ -4043,7 +4043,7 @@
   "@homeLucidDreamGuideDesc": {
     "description": "Lucid dream guide description on home"
   },
-  "homeLucidDreamGuideDesc": "チェック out 明晰夢テクニック and ヒント",
+  "homeLucidDreamGuideDesc": "明晰夢テクニックとヒントをチェック",
   "@homeMyProgress": {
     "description": "My progress title on home"
   },
@@ -4167,7 +4167,7 @@
   "@checklistPremiumUpgrade": {
     "description": "Premium upgrade message"
   },
-  "checklistPremiumUpgrade": "💎 アップグレード to プレミアム to アンロック 上級 テクニック!",
+  "checklistPremiumUpgrade": "💎 プレミアムにアップグレードして上級テクニックをアンロック！",
   "@characterEvolutionDaysProgress": {
     "description": "Days progress format",
     "placeholders": {
@@ -4361,11 +4361,11 @@
   "@levelGoalAlpha": {
     "description": "Alpha goal message"
   },
-  "levelGoalAlpha": "👑 目標: 完璧 FORM 100 回 完璧 EXECUTION! 👑",
+  "levelGoalAlpha": "👑 目標: 完璧なフォームで100回完璧実行！ 👑",
   "@levelGoalGiga": {
     "description": "Giga goal message"
   },
-  "levelGoalGiga": "🚀 目標: アルティメット マスター - UNIVERSE DOMINATION! 🚀",
+  "levelGoalGiga": "🚀 目標: アルティメットマスター - 宇宙制覇！ 🚀",
   "@levelGoalRising": {
     "description": "Rising goal message"
   },
@@ -4389,11 +4389,11 @@
   "@levelMotivationRising": {
     "description": "Rising motivation message"
   },
-  "levelMotivationRising": "⚡ 優秀 開始!\nBECOME STRONGER アルファ BEAST! ⚡",
+  "levelMotivationRising": "⚡ 素晴らしいスタート！\nより強いアルファビーストになれ！ ⚡",
   "@levelMotivationRookie": {
     "description": "Rookie motivation message"
   },
-  "levelMotivationRookie": "🔥 すべてのEMPERORS 開始 HERE!\n経験値 マインド-BLOWING TRANSFORMATION AFTER 14 WEEKS! 🔥",
+  "levelMotivationRookie": "🔥 すべての皇帝はここから始まる！\n14週間後に驚異的な変革を体験！ 🔥",
   "levelNameAlpha": "Alpha",
   "levelNameRising": "Rising",
   "levelNameRookie": "Rookie",
@@ -4418,7 +4418,7 @@
   "@levelSelectionHeader": {
     "description": "Level selection header"
   },
-  "levelSelectionHeader": "🏋️‍♂️ CHOOSE YOUR レベル 今!",
+  "levelSelectionHeader": "🏋️‍♂️ 今すぐレベルを選択！",
   "@levelSelectionTitle": {
     "description": "Level selection screen title"
   },
@@ -4748,7 +4748,7 @@
   "@meditationGoodJob": {
     "description": "Good progress"
   },
-  "meditationGoodJob": "素晴らしい job! You can 完了 今",
+  "meditationGoodJob": "素晴らしい！今すぐ完了できます",
   "@meditationGuideDescription": {
     "description": "Meditation guide description"
   },
@@ -4933,7 +4933,7 @@
   "@motivationGeneral": {
     "description": "General motivation message"
   },
-  "motivationGeneral": "今日'S SWEAT IS 明日'S GLORY. なし GIVE 上! 🔥💪",
+  "motivationGeneral": "今日の汗は明日の栄光。諦めるな！ 🔥💪",
   "@motivationGod": {
     "description": "Ultimate motivation when target achieved"
   },
@@ -4995,7 +4995,7 @@
   "msgLoadingSubscription": "サブスクリプション製品を読み込み中...",
   "msgLogoutConfirm": "本当にログアウトしますか？保存されていないデータが失われる可能性があります。",
   "msgSubscriptionSuccess": "サブスクリプションが正常に完了しました！",
-  "msgTermsAndPrivacy": "利用規約 of サービス and プライバシー ポリシー",
+  "msgTermsAndPrivacy": "利用規約とプライバシーポリシー",
   "msgWelcome": "Welcome!",
   "multiDeviceAccess": "Access from multiple devices",
   "multiDeviceSync": "Multi-device synchronization",
@@ -5140,7 +5140,7 @@
   },
   "notEntered": "Not entered",
   "notificationActivationMessage": "💪 通知を有効にしよう！\n設定しましょう！言い訳はなし！ 💪",
-  "notificationActivationTitle": "🔥 明晰夢 100 通知 ACTIVATE! 🔥",
+  "notificationActivationTitle": "🔥 明晰夢100通知を有効化！ 🔥",
   "@notificationBenefit1": {
     "description": "Notification benefit 1"
   },
@@ -5161,7 +5161,7 @@
   "@notificationPermissionDeniedMessage": {
     "description": "Notification permission denied message"
   },
-  "notificationPermissionDeniedMessage": "⚠️ Need 通知 許可! 有効 設定で! 💪",
+  "notificationPermissionDeniedMessage": "⚠️ 通知許可が必要です！設定で有効にしてください！ 💪",
   "@notificationPermissionDesc": {
     "description": "Notification permission description"
   },
@@ -5169,7 +5169,7 @@
   "@notificationPermissionErrorMessage": {
     "description": "Notification permission error message"
   },
-  "notificationPermissionErrorMessage": "エラー requesting 許可!",
+  "notificationPermissionErrorMessage": "許可のリクエスト中にエラー！",
   "@notificationPermissionFeatures": {
     "description": "Notification permission features list"
   },
@@ -5177,7 +5177,7 @@
   "@notificationPermissionGranted": {
     "description": "Notification permission granted message"
   },
-  "notificationPermissionGranted": "✅ 通知 許可 granted! 💪",
+  "notificationPermissionGranted": "✅ 通知許可が付与されました！ 💪",
   "@notificationPermissionGrantedMessage": {
     "description": "Notification permission granted success message"
   },
@@ -5185,11 +5185,11 @@
   "@notificationPermissionLaterMessage": {
     "description": "Notification permission later message"
   },
-  "notificationPermissionLaterMessage": "You can 許可 通知 後で 設定で.",
+  "notificationPermissionLaterMessage": "後で設定で通知を許可できます。",
   "@notificationPermissionMessage": {
     "description": "Notification permission dialog message"
   },
-  "notificationPermissionMessage": "通知 許可 is 必要 to receive push 通知.",
+  "notificationPermissionMessage": "プッシュ通知を受信するには通知許可が必要です。",
   "@notificationPermissionNeeded": {
     "description": "Notification permission needed status"
   },
@@ -5255,7 +5255,7 @@
   "@onboardingAdaptiveTrainingDescription": {
     "description": "Onboarding adaptive training description"
   },
-  "onboardingAdaptiveTrainingDescription": "Too 難しい? → We dial it 下 ⬇️\nToo 簡単? → We crank it 上 ⬆️\n\n完璧 intensity, every 時間! 🔥",
+  "onboardingAdaptiveTrainingDescription": "難しすぎる？ → 下げます ⬇️\n簡単すぎる？ → 上げます ⬆️\n\n毎回完璧な強度！ 🔥",
   "@onboardingAdaptiveTrainingTitle": {
     "description": "Onboarding adaptive training title"
   },
@@ -5295,7 +5295,7 @@
   "@onboardingChecklistDreamJournalDesc": {
     "description": "Checklist dream journal description"
   },
-  "onboardingChecklistDreamJournalDesc": "記録 夢の you remember",
+  "onboardingChecklistDreamJournalDesc": "覚えている夢を記録",
   "@onboardingChecklistDreamJournalNote": {
     "description": "Checklist dream journal note"
   },
@@ -5303,7 +5303,7 @@
   "@onboardingChecklistMildDesc": {
     "description": "Checklist MILD description"
   },
-  "onboardingChecklistMildDesc": "セット your intention before 睡眠",
+  "onboardingChecklistMildDesc": "睡眠前に意図を設定",
   "@onboardingChecklistMildNote": {
     "description": "Checklist MILD note"
   },
@@ -5335,11 +5335,11 @@
   "@onboardingDailyPracticeDesc": {
     "description": "Daily practice description"
   },
-  "onboardingDailyPracticeDesc": "練習 consistently with 毎日 checklists",
+  "onboardingDailyPracticeDesc": "毎日のチェックリストで一貫して練習",
   "@onboardingDifficultyTip": {
     "description": "Difficulty tip"
   },
-  "onboardingDifficultyTip": "It gets easier with 毎日 練習",
+  "onboardingDifficultyTip": "毎日の練習で簡単になります",
   "@onboardingDreamJournal": {
     "description": "Dream journal"
   },
@@ -5347,7 +5347,7 @@
   "@onboardingDreamJournalDesc": {
     "description": "Dream journal description"
   },
-  "onboardingDreamJournalDesc": "記録 夢 and discover パターン",
+  "onboardingDreamJournalDesc": "夢を記録してパターンを発見",
   "@onboardingEvolutionSystem": {
     "description": "Evolution system description"
   },
@@ -5480,7 +5480,7 @@
   "@onboardingPracticeResult": {
     "description": "Practice result"
   },
-  "onboardingPracticeResult": "チェック your 練習 results",
+  "onboardingPracticeResult": "練習結果をチェック",
   "onboardingProgramIntroDescription": "科学的に設計された30日プログラム\n明晰夢をマスターするために",
   "onboardingProgramIntroTitle": "30-日 明晰夢 プログラム",
   "@onboardingProgramReady": {
@@ -5532,7 +5532,7 @@
   "@onboardingWelcomeTitle": {
     "description": "Onboarding welcome screen title"
   },
-  "onboardingWelcomeTitle": "30 日 to 明晰夢! 🔥",
+  "onboardingWelcomeTitle": "30日で明晰夢！ 🔥",
   "oneMonthFreePremium": "1ヶ月無料プレミアム",
   "@oneWeekChallenge": {
     "description": "One week challenge achievement"
@@ -5559,7 +5559,7 @@
     "description": "Open source licenses description"
   },
   "openSourceLicensesDesc": "View open source licenses",
-  "optionPersonalRecordDesc": "集中 オン achieving personal 目標 and improving 記録",
+  "optionPersonalRecordDesc": "個人目標の達成と記録の向上に集中",
   "optionPersonalRecordTitle": "Personal Records",
   "overallProgramProgress": "全体的なプログラム進捗",
   "@overallProgress": {
@@ -5597,7 +5597,7 @@
   "@perfectFormChallenge": {
     "description": "Perfect form challenge message"
   },
-  "perfectFormChallenge": "🎯 完璧 Form チャレンジactivated! ないslacking! 💪",
+  "perfectFormChallenge": "🎯 完璧フォームチャレンジ発動！手を抜くな！ 💪",
   "@perfectFormGuide": {
     "description": "Tab title for perfect form guide (combines steps + tips)"
   },
@@ -5605,7 +5605,7 @@
   "@perfectHomeWorkout": {
     "description": "Video description 5"
   },
-  "perfectHomeWorkout": "完璧 トレーニング you can do at ホーム",
+  "perfectHomeWorkout": "自宅でできる完璧なトレーニング",
   "@perfectPerformance": {
     "description": "Average completion subtitle"
   },
@@ -5684,14 +5684,14 @@
   "@permissionsDescription": {
     "description": "Permission request description"
   },
-  "permissionsDescription": "明晰夢 needs the following 許可\nfor the optimal 経験値:",
+  "permissionsDescription": "最適な体験のために明晰夢には\n以下の許可が必要です：",
   "@permissionsRequired": {
     "description": "Permission request dialog title"
   },
   "permissionsRequired": "🔐 Permissions Required",
   "personalRecord": "Personal Records",
-  "personalRecordDesc": "集中 オン achieving personal 目標 and improving 記録",
-  "personalRecordGoalDescription": "集中 オン personal 目標 and improving your own 記録",
+  "personalRecordDesc": "個人目標の達成と記録の向上に集中",
+  "personalRecordGoalDescription": "個人目標と自己記録の向上に集中",
   "personalRecordTitle": "Personal Records",
   "@personalRecords": {
     "description": "Personal records title"
@@ -5723,7 +5723,7 @@
   "@premiumBenefitAIDesc": {
     "description": "Extra AI token benefit description"
   },
-  "premiumBenefitAIDesc": "ステージ 3+ アクセス (上 to 15 トークン/日)",
+  "premiumBenefitAIDesc": "ステージ3以上アクセス（最大15トークン/日）",
   "premiumBenefitAdFree": "✨ すべての広告を削除",
   "@premiumBenefitAdFreeDesc": {
     "description": "Ad-free benefit description"
@@ -5788,7 +5788,7 @@
       }
     }
   },
-  "premiumUnlockWeeks": "週 {週} and beyond require プレミアム サブスクリプション",
+  "premiumUnlockWeeks": "第{week}週以降はプレミアムサブスクリプションが必要です",
   "previous": "前",
   "@previousButton": {
     "description": "Previous button - Dream Spirit style"
@@ -5801,7 +5801,7 @@
   "@privacyPolicyDesc": {
     "description": "Privacy policy description"
   },
-  "privacyPolicyDesc": "チェック プライバシー 保護 and processing ポリシー",
+  "privacyPolicyDesc": "プライバシー保護と処理ポリシーを確認",
   "processingCompletion": "トレーニング完了を処理中...",
   "@profileCreated": {
     "description": "Profile creation complete message",
@@ -5811,7 +5811,7 @@
       }
     }
   },
-  "profileCreated": "🚀 EMPEROR プロフィール CREATION 完了！ ({セッション} DOMINATION セッション READY!) 🚀",
+  "profileCreated": "🚀 エンペラープロフィール作成完了！（{sessions}制覇セッション準備完了！）🚀",
   "@profileCreationError": {
     "description": "Profile creation error message",
     "placeholders": {
@@ -5820,11 +5820,11 @@
       }
     }
   },
-  "profileCreationError": "⚡ プロフィール CREATION 失敗! TRY AGAIN, アルファ! エラー: {エラー} ⚡",
+  "profileCreationError": "⚡ プロフィール作成失敗！もう一度試して、アルファ！エラー: {error} ⚡",
   "@programCompletedMessage": {
     "description": "Program completion message"
   },
-  "programCompletedMessage": "プログラム 完了！ 素晴らしい job!",
+  "programCompletedMessage": "プログラム完了！素晴らしい！",
   "@programProgress": {
     "description": "Program progress label"
   },
@@ -5844,7 +5844,7 @@
   "@progressAchievementFirstStepDesc": {
     "description": "First step achievement description"
   },
-  "progressAchievementFirstStepDesc": "完了 your 最初 トレーニング セッション",
+  "progressAchievementFirstStepDesc": "最初のトレーニングセッションを完了",
   "@progressAchievementHundredPushups": {
     "description": "Hundred pushups achievement title"
   },
@@ -5852,7 +5852,7 @@
   "@progressAchievementHundredPushupsDesc": {
     "description": "Hundred pushups achievement description"
   },
-  "progressAchievementHundredPushupsDesc": "完了 100 pushups in a シングル セッション",
+  "progressAchievementHundredPushupsDesc": "1セッションで100回の腕立てを完了",
   "@progressAchievementPerfectionist": {
     "description": "Perfectionist achievement title"
   },
@@ -5860,7 +5860,7 @@
   "@progressAchievementPerfectionistDesc": {
     "description": "Perfectionist achievement description"
   },
-  "progressAchievementPerfectionistDesc": "完了 すべてのsets with 完璧 form",
+  "progressAchievementPerfectionistDesc": "すべてのセットを完璧なフォームで完了",
   "@progressAchievementWeekChallenge": {
     "description": "Week challenge achievement title"
   },
@@ -5910,7 +5910,7 @@
   "@progressLoadingError": {
     "description": "Error loading progress data"
   },
-  "progressLoadingError": "に失敗しました load 進捗 データ",
+  "progressLoadingError": "進捗データの読み込みに失敗しました",
   "@progressMaxLevelAchieved": {
     "description": "Max level achieved message"
   },
@@ -5975,7 +5975,7 @@
   "@progressRequirementProgramStart": {
     "description": "Requirement to start program"
   },
-  "progressRequirementProgramStart": "開始 the プログラム",
+  "progressRequirementProgramStart": "プログラムを開始",
   "@progressRequirementWeek1": {
     "description": "Week 1 requirement"
   },
@@ -6026,7 +6026,7 @@
       }
     }
   },
-  "progressSetReady": "進捗: セット {セット} ready",
+  "progressSetReady": "進捗: セット{set}準備完了",
   "@progressSetRecordLabel": {
     "description": "Set record label"
   },
@@ -6089,7 +6089,7 @@
       }
     }
   },
-  "progressWeekDay": "週 {週} - {completedDays} of {totalDays} 日 完了",
+  "progressWeekDay": "第{week}週 - {completedDays}/{totalDays}日完了",
   "@progressWeekDaySession": {
     "description": "Week day session display",
     "placeholders": {
@@ -6116,15 +6116,15 @@
   "promotion": "Promotion",
   "providerStateManagement": "Provider State Management",
   "purchaseHistoryProtection": "Purchase history protection",
-  "purchaseProtectionMessage": "An アカウント is 必要 to securely\nmanage your {product} 購入 and\nuse it across すべてのdevices.",
+  "purchaseProtectionMessage": "安全に{product}の購入を管理し、\nすべてのデバイスで使用するには\nアカウントが必要です。",
   "@pushNotificationDisabled": {
     "description": "Push notifications disabled message"
   },
-  "pushNotificationDisabled": "Push 通知 have been 無効",
+  "pushNotificationDisabled": "プッシュ通知が無効になりました",
   "@pushNotificationEnabled": {
     "description": "Push notifications enabled message"
   },
-  "pushNotificationEnabled": "Push 通知 have been 有効",
+  "pushNotificationEnabled": "プッシュ通知が有効になりました",
   "@pushNotifications": {
     "description": "Push notifications option"
   },
@@ -6145,56 +6145,56 @@
     "description": "Archer pushup name"
   },
   "pushupArcher": "SSILD テクニック",
-  "pushupArcherBenefits": "• SENSORY 集中 能力\\n• SIGHT-サウンド-TOUCH BALANCE\\n• 上級 明晰 PREPARATION\\n• 安定版 夢 エントリー",
+  "pushupArcherBenefits": "• 感覚集中能力\\n• 視覚-聴覚-触覚のバランス\\n• 上級明晰準備\\n• 安定した夢へのエントリー",
   "pushupArcherBreathing": "FOCUSED BREATHING THROUGH CYCLES. ACCURACY IS LIFE, YOU IDIOT!",
   "@pushupArcherDesc": {
     "description": "Archer pushup description"
   },
   "pushupArcherDesc": "各感覚に集中する上級テクニック！バランスと集中力が必要！",
-  "pushupArcherInstructions": "1. 閉じる EYES, ATTEND TO VISION\\n2. 集中 オン AUDITORY STIMULI\\n3. FEEL TACTILE SENSATIONS\\n4. RAPID CYCLES 4-6 TIMES\\n5. ALTERNATE すべてのSENSES!",
+  "pushupArcherInstructions": "1. 目を閉じて視覚に集中\\n2. 聴覚刺激に集中\\n3. 触覚を感じる\\n4. 4-6回高速サイクル\\n5. すべての感覚を交互に！",
   "pushupArcherMistakes": "• TOO FORCEFUL FOCUS\\n• FAVORING ONE SENSE\\n• IRREGULAR CYCLES\\n• RUSHING PROCESS",
   "pushupArcherName": "SSILD テクニック",
   "@pushupBreathingQuiz": {
     "description": "Quiz question 4"
   },
-  "pushupBreathingQuiz": "What is the 正しい 呼吸 テクニック during 明晰夢練習?",
+  "pushupBreathingQuiz": "明晰夢練習中の正しい呼吸テクニックは何ですか？",
   "@pushupClap": {
     "description": "Clap pushup name"
   },
   "pushupClap": "FILD テクニック",
-  "pushupClapBenefits": "• RAPID 夢 エントリー\\n• FINGER 集中 BOOST\\n• INSTANT 明晰 DREAMING\\n• PROOF OF REAL マスター",
+  "pushupClapBenefits": "• 高速夢エントリー\\n• 指の集中ブースト\\n• 即座の明晰夢\\n• 本物のマスターの証",
   "pushupClapBreathing": "DEEP BREATHING UPON WAKING, FOCUS ON FINGER MOVEMENT. RHYTHM IS KEY, YOU IDIOT!",
   "@pushupClapDesc": {
     "description": "Clap pushup description"
   },
   "pushupClapDesc": "Quick entry with finger movement! Only real masters can do this!",
-  "pushupClapInstructions": "1. AFTER アラーム, DON'T MOVE\\n2. MOVE FINGERS SLIGHTLY\\n3. ALTERNATE いいね PIANO\\n4. UNTIL 夢 SCENE APPEARS\\n5. TRY CONSECUTIVELY!",
+  "pushupClapInstructions": "1. アラーム後、動かない\\n2. 指を少し動かす\\n3. ピアノのように交互に\\n4. 夢のシーンが現れるまで\\n5. 連続で試す！",
   "pushupClapMistakes": "• MOVING TOO STRONGLY\\n• FULLY WAKING UP\\n• IRREGULAR RHYTHM\\n• GIVING UP TOO SOON",
   "pushupClapName": "FILD テクニック",
   "@pushupDecline": {
     "description": "Decline pushup name"
   },
   "pushupDecline": "夢 サイン",
-  "pushupDeclineBenefits": "• 夢 パターン RECOGNITION\\n• 明晰 TRIGGER DISCOVERY\\n• 最大 気づき SPEED\\n• フル 明晰 能力 BOOST",
+  "pushupDeclineBenefits": "• 夢パターン認識\\n• 明晰トリガー発見\\n• 最大気づきスピード\\n• 完全な明晰能力ブースト",
   "pushupDeclineBreathing": "STABLE OBSERVATION WHILE FIGHTING UNCONSCIOUS. REAL POWER COMES FROM HERE, YOU IDIOT!",
   "@pushupDeclineDesc": {
     "description": "Decline pushup description"
   },
   "pushupDeclineDesc": "認識力を高めて夢のサインを正しく識別しよう！",
-  "pushupDeclineInstructions": "1. FIND RECURRING ELEMENTS IN 夢日記\\n2. 作成 PERSONAL 夢 サイン リスト\\n3. WATCH FOR THESE サイン IN リアリティ\\n4. リアリティチェック WHEN サイン APPEARS\\n5. RECOGNIZE サイン IN 夢!",
-  "pushupDeclineMistakes": "• SUPERFICIAL OBSERVATION\\n• IGNORING パターン\\n• NOT ANALYZING 日記\\n• MISSING サイン IN 夢",
+  "pushupDeclineInstructions": "1. 夢日記で繰り返す要素を見つける\\n2. 個人的な夢のサインリストを作成\\n3. 現実でこれらのサインを注視\\n4. サインが現れたらリアリティチェック\\n5. 夢でサインを認識！",
+  "pushupDeclineMistakes": "• 表面的な観察\\n• パターンを無視\\n• 日記を分析しない\\n• 夢でサインを見逃す",
   "pushupDeclineName": "夢 サイン",
   "@pushupDiamond": {
     "description": "Diamond pushup name"
   },
   "pushupDiamond": "WBTB テクニック",
-  "pushupDiamondBenefits": "• 明晰 PROBABILITY MAXIMIZATION\\n• REM 睡眠 UTILIZATION\\n• 意識 CLARITY BOOST\\n• 夢 CONTROL INCREASE",
+  "pushupDiamondBenefits": "• 明晰確率の最大化\\n• REM睡眠の活用\\n• 意識の明晰ブースト\\n• 夢コントロールの向上",
   "pushupDiamondBreathing": "FOCUSED BREATHING. FEEL CONSCIOUSNESS AWAKEN, YOU IDIOT!",
   "@pushupDiamondDesc": {
     "description": "Diamond pushup description"
   },
   "pushupDiamondDesc": "Focused REM attack! WBTB is the symbol of real masters!",
-  "pushupDiamondInstructions": "1. 睡眠 5-6 時間 THEN 起床\\n2. STAY 覚醒 20-30 分\\n3. READ 情報 明晰 DREAMING\\n4. MAINTAIN INTENTION WHILE SLEEPING AGAIN\\n5. ENTER REM 睡眠 CYCLE!",
+  "pushupDiamondInstructions": "1. 5-6時間睡眠後に起床\\n2. 20-30分覚醒状態を維持\\n3. 明晰夢についての情報を読む\\n4. 再び眠る際に意図を維持\\n5. REM睡眠サイクルに入る！",
   "pushupDiamondMistakes": "• STAYING AWAKE TOO LONG\\n• FULLY WAKING UP\\n• SLEEPING WITHOUT INTENTION\\n• INCORRECT TIMING",
   "pushupDiamondName": "WBTB テクニック",
   "@pushupHashtag": {
@@ -6205,21 +6205,21 @@
     "description": "Incline pushup name"
   },
   "pushupIncline": "睡眠衛生",
-  "pushupInclineBenefits": "• IMPROVED 睡眠 品質\\n• ENHANCED 夢 CLARITY\\n• INCREASED 明晰 成功\\n• FOUNDATION FOR すべてのテクニック",
-  "pushupInclineBreathing": "COMFORTABLE 呼吸 BEFORE 睡眠. BUT 最大 REGULARITY, YOU IDIOT!",
+  "pushupInclineBenefits": "• 睡眠品質の向上\\n• 夢の明瞭さ向上\\n• 明晰成功率の向上\\n• すべてのテクニックの基盤",
+  "pushupInclineBreathing": "睡眠前は快適な呼吸。ただし最大の規則性を！",
   "@pushupInclineDesc": {
     "description": "Incline pushup description"
   },
-  "pushupInclineDesc": "Use 睡眠環境 to boost 夢 品質! ダーク and quiet is enough!",
-  "pushupInclineInstructions": "1. セット 通常 睡眠 時間\\n2. MAKE ROOM ダーク AND クール\\n3. ないSCREENS 2 時間 BEFORE\\n4. COMFORTABLE BEDDING\\n5. GRADUALLY 完璧 ENVIRONMENT!",
-  "pushupInclineMistakes": "• IRREGULAR 睡眠 TIMES\\n• 明るい BEDROOM\\n• 電話 BEFORE 睡眠\\n• RUSHING CHANGES",
-  "pushupInclineName": "睡眠 HYGIENE",
+  "pushupInclineDesc": "睡眠環境で夢の品質を向上！暗くて静かであれば十分！",
+  "pushupInclineInstructions": "1. 通常の睡眠時間を設定\\n2. 部屋を暗く涼しく\\n3. 2時間前はスクリーンなし\\n4. 快適な寝具\\n5. 徐々に環境を完璧に！",
+  "pushupInclineMistakes": "• 不規則な睡眠時間\\n• 明るい寝室\\n• 睡眠前の携帯電話\\n• 急いで変更する",
+  "pushupInclineName": "睡眠衛生",
   "@pushupKnee": {
     "description": "Knee pushup name"
   },
   "pushupKnee": "リアリティチェック",
-  "pushupKneeBenefits": "• 夢-リアリティ DISTINCTION\\n• 明晰 気づき トレーニング\\n• 意識 CLARITY\\n• PROGRESSION TO 明晰夢",
-  "pushupKneeBreathing": "SMOOTH, STEADY 呼吸 TO 開始. DON'T RUSH!",
+  "pushupKneeBenefits": "• 夢と現実の区別\\n• 明晰気づきトレーニング\\n• 意識の明瞭さ\\n• 明晰夢への進展",
+  "pushupKneeBreathing": "スムーズで安定した呼吸で開始。急がないで！",
   "@pushupKneeDesc": {
     "description": "Knee pushup description"
   },
@@ -6230,54 +6230,54 @@
   "@pushupMistakeQuiz": {
     "description": "Quiz question 2"
   },
-  "pushupMistakeQuiz": "What is the most コモン mistake during 明晰夢練習?",
+  "pushupMistakeQuiz": "明晰夢練習中の最も一般的な間違いは何ですか？",
   "@pushupOneArm": {
     "description": "One-arm pushup name"
   },
   "pushupOneArm": "Advanced WILD",
-  "pushupOneArmBenefits": "• アルティメット 意識 CONTROL\\n• 完璧 夢 CONTROL\\n• 完了 明晰 MASTERY\\n• ギガ マスター COMPLETION",
-  "pushupOneArmBreathing": "深い, 安定版 呼吸 FOR 最大 集中. UNITE すべてのCONSCIOUSNESS, YOU IDIOT!",
+  "pushupOneArmBenefits": "• 究極の意識コントロール\\n• 完璧な夢コントロール\\n• 完全な明晰マスタリー\\n• ギガマスター完了",
+  "pushupOneArmBreathing": "最大集中のための深く安定した呼吸。すべての意識を統一せよ！",
   "@pushupOneArmDesc": {
     "description": "One-arm pushup description"
   },
-  "pushupOneArmDesc": "上級 WILD is アルティメット 明晰 form! Do this even once and you're recognized as a real ギガ マスター!",
-  "pushupOneArmInstructions": "1. COMBINE 瞑想 WITH WILD\\n2. ACTIVELY USE HYPNAGOGIA\\n3. 集中 すべてのPOWER IN 意識\\n4. 低速 AND SURE\\n5. PROVE YOUR ギガ マスター QUALIFICATION!",
+  "pushupOneArmDesc": "上級WILDはアルティメット明晰フォーム！一度でもできれば本物のギガマスターとして認められる！",
+  "pushupOneArmInstructions": "1. 瞑想とWILDを組み合わせる\\n2. 入眠時幻覚を積極的に活用\\n3. すべての力を意識に集中\\n4. ゆっくり確実に\\n5. ギガマスターの資格を証明！",
   "pushupOneArmMistakes": "• ATTEMPTING WITHOUT BASICS\\n• BODY TENSING UP\\n• RUSHING ENTRY\\n• FRUSTRATION FROM EXCESSIVE ATTEMPT",
   "pushupOneArmName": "ADVANCED WILD",
   "@pushupPike": {
     "description": "Pike pushup name"
   },
   "pushupPike": "WILD テクニック",
-  "pushupPikeBenefits": "• 意識 MAINTENANCE\\n• DIRECT 夢 エントリー MASTERY\\n• エクストリーム 集中 発展\\n• 深い 明晰 経験値",
-  "pushupPikeBreathing": "安定版 呼吸 DURING 睡眠 PARALYSIS. 集中 オン 意識, YOU IDIOT!",
+  "pushupPikeBenefits": "• 意識維持\\n• 直接夢エントリーのマスタリー\\n• 極限の集中発展\\n• 深い明晰体験",
+  "pushupPikeBreathing": "睡眠麻痺中の安定した呼吸。意識に集中せよ！",
   "@pushupPikeDesc": {
     "description": "Pike pushup description"
   },
-  "pushupPikeDesc": "意識 focused attack! Core of 上級 明晰夢!",
-  "pushupPikeInstructions": "1. LIE COMFORTABLY AND RELAX\\n2. 集中 オン 呼吸\\n3. LET BODY 睡眠, KEEP マインド 覚醒\\n4. OBSERVE HYPNAGOGIC IMAGES\\n5. ENTER 夢 DIRECTLY!",
-  "pushupPikeMistakes": "• TOO TENSE TO 睡眠\\n• LOSING 意識\\n• PANICKING IN 睡眠 PARALYSIS\\n• GIVING 上 TOO QUICKLY",
+  "pushupPikeDesc": "意識を集中した攻撃！上級明晰夢の核心！",
+  "pushupPikeInstructions": "1. 快適に横たわりリラックス\\n2. 呼吸に集中\\n3. 体は眠らせ、心は覚醒\\n4. 入眠時幻覚を観察\\n5. 夢に直接入る！",
+  "pushupPikeMistakes": "• 緊張しすぎて眠れない\\n• 意識を失う\\n• 睡眠麻痺でパニック\\n• すぐに諦める",
   "pushupPikeName": "WILD テクニック",
   "@pushupStandard": {
     "description": "Standard pushup name"
   },
   "pushupStandard": "夢日記",
-  "pushupStandardBenefits": "• 夢 想起 改善\\n• 夢 パターン RECOGNITION\\n• 明晰夢 FREQUENCY INCREASE\\n• FOUNDATION FOR すべてのテクニック!",
-  "pushupStandardBreathing": "BREATHE DEEPLY BEFORE 睡眠. PEACEFUL マインド BRINGS クリア 夢!",
+  "pushupStandardBenefits": "• 夢想起の改善\\n• 夢パターン認識\\n• 明晰夢頻度の向上\\n• すべてのテクニックの基盤！",
+  "pushupStandardBreathing": "睡眠前に深く呼吸。穏やかな心が明晰な夢をもたらす！",
   "@pushupStandardDesc": {
     "description": "Standard pushup description"
   },
   "pushupStandardDesc": "すべての明晰夢見人の出発点。完璧な夢日記が真のマスタリー！",
-  "pushupStandardInstructions": "1. 記録 IMMEDIATELY UPON WAKING\\n2. CAPTURE すべてのDETAILS\\n3. メモ 感情 AND カラー\\n4. IDENTIFY 夢 サイン\\n5. 練習 CONSISTENTLY, 夢 スピリット スタイル!",
-  "pushupStandardMistakes": "• PROCRASTINATING RECORDING\\n• VAGUE DESCRIPTIONS\\n• IRREGULAR JOURNALING\\n• IGNORING 感情\\n• GIVING 上 TOO QUICKLY, FXXK IDIOT!",
+  "pushupStandardInstructions": "1. 起床後すぐに記録\\n2. すべての詳細を捉える\\n3. 感情と色をメモ\\n4. 夢のサインを特定\\n5. ドリームスピリットスタイルで一貫して練習！",
+  "pushupStandardMistakes": "• 記録を先延ばし\\n• 曖昧な説明\\n• 不規則な日記\\n• 感情を無視\\n• すぐに諦める！",
   "pushupStandardName": "夢日記",
   "@pushupTutorialSubtitle": {
     "description": "Pushup tutorial screen subtitle"
   },
-  "pushupTutorialSubtitle": "Real 夢 masters 開始 with different テクニック! 💪",
+  "pushupTutorialSubtitle": "本物の夢マスターは様々なテクニックで始める！ 💪",
   "@pushupTutorialTitle": {
     "description": "Pushup tutorial screen title"
   },
-  "pushupTutorialTitle": "ドリームスピリット 明晰夢 Dojo",
+  "pushupTutorialTitle": "ドリームスピリット明晰夢道場",
   "@pushupVariations": {
     "description": "Video title 2"
   },
@@ -6290,13 +6290,13 @@
     "description": "Wide grip pushup name"
   },
   "pushupWideGrip": "MILDテクニック",
-  "pushupWideGripBenefits": "• 明晰 INTENTION STRENGTHENING\\n• 夢 気づき BOOST\\n• 成功 評価 MAXIMIZATION\\n• OVERALL 明晰 能力 BALANCE",
+  "pushupWideGripBenefits": "• 明晰意図の強化\\n• 夢気づきブースト\\n• 成功率の最大化\\n• 全体的な明晰能力バランス",
   "pushupWideGripBreathing": "BREATHE DEEP WITH INTENTION. FEEL CONSCIOUSNESS EXPAND, YOU IDIOT!",
   "@pushupWideGripDesc": {
     "description": "Wide grip pushup description"
   },
   "pushupWideGripDesc": "強い意図を持って明晰確率を高めよう！本物のマスターになろう！",
-  "pushupWideGripInstructions": "1. REPEAT 'I WILL 明晰夢' BEFORE 睡眠\\n2. 想起 RECENT 夢\\n3. IMAGINE BECOMING 明晰\\n4. MAINTAIN STRONG INTENTION\\n5. FALL ASLEEP WITH CONFIDENCE!",
+  "pushupWideGripInstructions": "1. 睡眠前に「明晰夢を見る」を繰り返す\\n2. 最近の夢を想起\\n3. 明晰になることを想像\\n4. 強い意図を維持\\n5. 自信を持って眠りにつく！",
   "pushupWideGripMistakes": "• WEAK INTENTION\\n• SUPERFICIAL REPETITION\\n• VAGUE IMAGINATION\\n• LACKING CONFIDENCE",
   "pushupWideGripName": "MILDテクニック",
   "@pushupsCount": {
@@ -6355,7 +6355,7 @@
   "@quickAnalysisGuideDescription": {
     "description": "Guide description"
   },
-  "quickAnalysisGuideDescription": "クイック 分析 provides instant ベーシック 夢 解釈",
+  "quickAnalysisGuideDescription": "クイック分析で即座に基本的な夢解釈を提供",
   "@quickAnalysisGuideInstantResults": {
     "description": "Instant results feature"
   },
@@ -6411,7 +6411,7 @@
   "@quickAnalysisTokenRequired": {
     "description": "Quick analysis token required"
   },
-  "quickAnalysisTokenRequired": "クイック AI 分析 requires 1 トークン",
+  "quickAnalysisTokenRequired": "クイックAI分析には1トークンが必要",
   "@quickInputBeast": {
     "description": "Above target button"
   },
@@ -6488,7 +6488,7 @@
   "@rcEqualDesc": {
     "description": "Equal interval description"
   },
-  "rcEqualDesc": "通知 at 通常 intervals",
+  "rcEqualDesc": "通常の間隔で通知",
   "@rcInterval": {
     "description": "Reality check interval"
   },
@@ -6505,7 +6505,7 @@
       }
     }
   },
-  "rcNotifPatternBody": "通知 will be sent using {パターン} パターン",
+  "rcNotifPatternBody": "通知は{pattern}パターンで送信されます",
   "@rcNotifPatternTitle": {
     "description": "Notification pattern title"
   },
@@ -6584,7 +6584,7 @@
   "@realityCheckFingerCountDesc": {
     "description": "Finger count description"
   },
-  "realityCheckFingerCountDesc": "Look at your hands carefully. Count your fingers. In 夢, the number often appears 間違い.",
+  "realityCheckFingerCountDesc": "手を注意深く見て、指を数えてください。夢の中では数が間違っていることが多いです。",
   "@realityCheckGuideDescription": {
     "description": "Reality check guide description"
   },
@@ -6624,7 +6624,7 @@
   "@realityCheckTextReadDesc": {
     "description": "Text reading description"
   },
-  "realityCheckTextReadDesc": "Read テキスト and look away, then read again. In 夢, テキスト often changes.",
+  "realityCheckTextReadDesc": "テキストを読んで目を離し、もう一度読んでください。夢の中ではテキストがよく変わります。",
   "@realityCheckTip": {
     "description": "Reality check tip"
   },
@@ -6716,7 +6716,7 @@
       }
     }
   },
-  "reminderTimeChanged": "リマインダー 時間 has been changed to {時間}",
+  "reminderTimeChanged": "リマインダー時間が{time}に変更されました",
   "@reminderTimeDesc": {
     "description": "Reminder time description"
   },
@@ -6830,11 +6830,11 @@
   "@restDayDescription": {
     "description": "Rest day description message"
   },
-  "restDayDescription": "今日 is a scheduled rest 日 but...\n真 champions なし rest! 🔥\n\nWould you いいね to take オン an additional チャレンジ?",
+  "restDayDescription": "今日は休息日ですが...\n本物のチャンピオンは休まない！ 🔥\n\n追加チャレンジに挑戦しますか？",
   "@restDayMessage": {
     "description": "Rest day message for non-practice days"
   },
-  "restDayMessage": "今日 is recovery 日. 真 強さ comes from rest.",
+  "restDayMessage": "今日は回復日。本当の強さは休息から生まれます。",
   "@restDayTeasing": {
     "description": "Rest day teasing message"
   },
@@ -6842,11 +6842,11 @@
   "@restMessage": {
     "description": "Rest period message"
   },
-  "restMessage": "REST IS ALSO 成長. 次へ WILL BE もっと DESTRUCTIVE 🦍",
+  "restMessage": "休息も成長。次はもっと破壊的に！ 🦍",
   "@restTimeDesc": {
     "description": "Rest time description"
   },
-  "restTimeDesc": "セット rest 時間 between セット",
+  "restTimeDesc": "セット間の休憩時間を設定",
   "@restTimeSettings": {
     "description": "Rest time settings"
   },
@@ -6854,7 +6854,7 @@
   "@restTimeTitle": {
     "description": "Rest time title"
   },
-  "restTimeTitle": "アルファ RECHARGE 時間 ⚡",
+  "restTimeTitle": "アルファ充電時間 ⚡",
   "@restoreBackup": {
     "description": "Restore backup button"
   },
@@ -6862,7 +6862,7 @@
   "@restoreBackupData": {
     "description": "Data restore description"
   },
-  "restoreBackupData": "復元 backed 上 データ",
+  "restoreBackupData": "バックアップデータを復元",
   "@restoreButton": {
     "description": "Restore button text"
   },
@@ -6880,7 +6880,7 @@
   "@restoreSuccess": {
     "description": "Restore success message"
   },
-  "restoreSuccess": "データ 復元 完了 successfully",
+  "restoreSuccess": "データ復元が正常に完了しました",
   "@restoringData": {
     "description": "Data restore in progress message"
   },
@@ -6924,7 +6924,7 @@
   "@rewardEvolutionBoostDesc": {
     "description": "Evolution boost reward description"
   },
-  "rewardEvolutionBoostDesc": "Speed 上 キャラクター 進化",
+  "rewardEvolutionBoostDesc": "キャラクター進化を加速",
   "@rewardEvolutionBoostTitle": {
     "description": "Evolution boost reward title"
   },
@@ -7035,7 +7035,7 @@
     "description": "Rising feature 4"
   },
   "risingFeature4": "Systematic progression",
-  "risingGoalDesc": "6-10 日 → マスター in 30 日",
+  "risingGoalDesc": "6-10日 → 30日でマスター",
   "@risingLevelDescription": {
     "description": "Rising level description"
   },
@@ -7068,7 +7068,7 @@
     "description": "Rookie feature 4"
   },
   "rookieFeature4": "Build basic fitness",
-  "rookieGoalDesc": "≤5 日 → マスター in 30 日",
+  "rookieGoalDesc": "5日以下 → 30日でマスター",
   "@rookieLevelDescription": {
     "description": "Rookie level description"
   },
@@ -7076,7 +7076,7 @@
   "@rookieLevelSubtitle": {
     "description": "Rookie level subtitle"
   },
-  "rookieLevelSubtitle": "Under 6 日 練習 - ビルド from basics",
+  "rookieLevelSubtitle": "6日未満の練習 - 基礎から構築",
   "@rookieLevelTitle": {
     "description": "Rookie level title"
   },
@@ -7085,13 +7085,13 @@
     "description": "Rookie short notation"
   },
   "rookieShort": "PUSH",
-  "rpeAdaptationDesc": "Track あなたの夢 想起\nand 明晰夢 experiences",
+  "rpeAdaptationDesc": "夢の想起と明晰夢体験を追跡",
   "rpeAdaptationTitle": "夢日記トラッキング",
   "rpeDialogSubtitle": "RPE（主観的運動強度）",
-  "rpeDialogTitle": "How 難しい was the トレーニング?",
+  "rpeDialogTitle": "トレーニングはどのくらい難しかったですか？",
   "rpeLevel10Description": "全力を尽くした\\n→ 次のトレーニング強度-10%",
   "rpeLevel10Title": "最大努力！",
-  "rpeLevel6Description": "I can do もっと 次へ 時間\\n→ 次へ トレーニング intensity +5%",
+  "rpeLevel6Description": "もっとできる 次回\n→ 次のトレーニング強度+5%",
   "rpeLevel6Title": "Too Easy",
   "rpeLevel7Description": "Perfect difficulty\\n→ Maintain intensity",
   "rpeLevel7Title": "Just Right",
@@ -7115,12 +7115,12 @@
   "scheduleDaily": "Daily",
   "scheduleNone": "なし",
   "scheduleSetupComplete": "🎉 スケジュール設定完了！\n\n{sessionsCreated}トレーニングセッションが作成されました！\nさあ行こう！ 💪🔥",
-  "scheduleSetupError": "エラー during スケジュール setup:\n{エラー}",
+  "scheduleSetupError": "スケジュール設定中にエラー:\n{error}",
   "@schedulerStoppedStatus": {
     "description": "Status message when scheduler is stopped"
   },
   "schedulerStoppedStatus": "Scheduler stopped",
-  "scientificBasisDesc": "プログラム designed based オン\nlatest 明晰夢 research",
+  "scientificBasisDesc": "最新の明晰夢研究に基づいて\n設計されたプログラム",
   "scientificBasisTitle": "Science-Based",
   "scientificEvidence": "Scientific Evidence",
   "@scientificFact10Content": {
@@ -7142,7 +7142,7 @@
   "@scientificFact11Content": {
     "description": "Scientific fact 11 content"
   },
-  "scientificFact11Content": "REM 睡眠 品質 improves by 30%, enabling deeper and もっと efficient 明晰夢 トレーニング.",
+  "scientificFact11Content": "REM睡眠の品質が30%向上し、より深く効率的な明晰夢トレーニングが可能になります。",
   "@scientificFact11Explanation": {
     "description": "Scientific fact 11 explanation"
   },
@@ -7158,7 +7158,7 @@
   "@scientificFact12Content": {
     "description": "Scientific fact 12 content"
   },
-  "scientificFact12Content": "明晰夢 トレーニング optimizes 睡眠 cycles, maintaining 通常 90-分 cycles.",
+  "scientificFact12Content": "明晰夢トレーニングは睡眠サイクルを最適化し、通常の90分サイクルを維持します。",
   "@scientificFact12Explanation": {
     "description": "Scientific fact 12 explanation"
   },
@@ -7166,19 +7166,19 @@
   "@scientificFact12Impact": {
     "description": "Scientific fact 12 impact message"
   },
-  "scientificFact12Impact": "⏰ 完璧 睡眠 rhythm acquired!",
+  "scientificFact12Impact": "⏰ 完璧な睡眠リズムを獲得！",
   "@scientificFact12Title": {
     "description": "Scientific fact 12 - blood pressure normalization title"
   },
-  "scientificFact12Title": "睡眠 Cycle 最適化",
+  "scientificFact12Title": "睡眠サイクル最適化",
   "@scientificFact13Content": {
     "description": "Scientific fact 13 content"
   },
-  "scientificFact13Content": "深い 睡眠 ステージ (N3) increases by 20%, promoting physical recovery and 成長 hormone secretion.",
+  "scientificFact13Content": "深い睡眠ステージ（N3）が20%増加し、身体の回復と成長ホルモンの分泌を促進します。",
   "@scientificFact13Explanation": {
     "description": "Scientific fact 13 explanation"
   },
-  "scientificFact13Explanation": "高い heart 評価 variability indicates healthy autonomic nervous システム balance.",
+  "scientificFact13Explanation": "高い心拍変動は健康な自律神経システムのバランスを示します。",
   "@scientificFact13Impact": {
     "description": "Scientific fact 13 impact message"
   },
@@ -7190,7 +7190,7 @@
   "@scientificFact14Content": {
     "description": "Scientific fact 14 content"
   },
-  "scientificFact14Content": "明晰夢 トレーニング regulates the body 時計, improving circadian rhythm by 15%.",
+  "scientificFact14Content": "明晰夢トレーニングは体内時計を調整し、概日リズムを15%改善します。",
   "@scientificFact14Explanation": {
     "description": "Scientific fact 14 explanation"
   },
@@ -7206,7 +7206,7 @@
   "@scientificFact15Content": {
     "description": "Scientific fact 15 content"
   },
-  "scientificFact15Content": "睡眠 efficiency increases by 25%, allowing もっと rest in the same amount of 時間.",
+  "scientificFact15Content": "睡眠効率が25%向上し、同じ時間でより多くの休息を得られます。",
   "@scientificFact15Explanation": {
     "description": "Scientific fact 15 explanation"
   },
@@ -7214,7 +7214,7 @@
   "@scientificFact15Impact": {
     "description": "Scientific fact 15 impact message"
   },
-  "scientificFact15Impact": "⚡ 睡眠 品質 dramatically improving!",
+  "scientificFact15Impact": "⚡ 睡眠品質が劇的に改善！",
   "@scientificFact15Title": {
     "description": "Scientific fact 15 - increased basal metabolic rate title"
   },
@@ -7230,7 +7230,7 @@
   "@scientificFact16Impact": {
     "description": "Scientific fact 16 impact message"
   },
-  "scientificFact16Impact": "👁️ The 夢 world unfolds in ウルトラ-高い definition!",
+  "scientificFact16Impact": "👁️ 夢の世界が超高精細で展開！",
   "@scientificFact16Title": {
     "description": "Scientific fact 16 - improved insulin sensitivity title"
   },
@@ -7246,7 +7246,7 @@
   "@scientificFact17Impact": {
     "description": "Scientific fact 17 impact message"
   },
-  "scientificFact17Impact": "🧠 Your 脳 is 覚醒 while you 睡眠!",
+  "scientificFact17Impact": "🧠 睡眠中も脳が覚醒！",
   "@scientificFact17Title": {
     "description": "Scientific fact 17 - enhanced fat oxidation title"
   },
@@ -7274,11 +7274,11 @@
   "@scientificFact19Explanation": {
     "description": "Scientific fact 19 explanation"
   },
-  "scientificFact19Explanation": "EPOC effect causes continuous エネルギー expenditure even after エクササイズ ends.",
+  "scientificFact19Explanation": "EPOC効果により、運動終了後も継続的なエネルギー消費が起こります。",
   "@scientificFact19Impact": {
     "description": "Scientific fact 19 impact message"
   },
-  "scientificFact19Impact": "💡 夢 are becoming as vivid as リアリティ!",
+  "scientificFact19Impact": "💡 夢が現実と同じくらい鮮明に！",
   "@scientificFact19Title": {
     "description": "Scientific fact 19 - post-exercise oxygen consumption title"
   },
@@ -7286,7 +7286,7 @@
   "@scientificFact1Content": {
     "description": "Scientific fact 1 content"
   },
-  "scientificFact1Content": "During 明晰夢, prefrontal cortex アクティビティ increases by 40% compared to 通常 夢, enabling self-気づき and metacognition.",
+  "scientificFact1Content": "明晰夢中、前頭前皮質の活動が通常の夢と比較して40%増加し、自己認識とメタ認知を可能にします。",
   "@scientificFact1Explanation": {
     "description": "Scientific fact 1 explanation"
   },
@@ -7302,7 +7302,7 @@
   "@scientificFact20Content": {
     "description": "Scientific fact 20 content"
   },
-  "scientificFact20Content": "通常 明晰夢 トレーニング balances melatonin and serotonin, optimizing the 睡眠-起床 cycle.",
+  "scientificFact20Content": "定期的な明晰夢トレーニングはメラトニンとセロトニンのバランスを整え、睡眠-覚醒サイクルを最適化します。",
   "@scientificFact20Explanation": {
     "description": "Scientific fact 20 explanation"
   },
@@ -7310,7 +7310,7 @@
   "@scientificFact20Impact": {
     "description": "Scientific fact 20 impact message"
   },
-  "scientificFact20Impact": "🌗 完璧 睡眠 hormone balance achieved!",
+  "scientificFact20Impact": "🌗 完璧な睡眠ホルモンバランスを達成！",
   "@scientificFact20Title": {
     "description": "Scientific fact 20 - growth hormone surge title"
   },
@@ -7334,11 +7334,11 @@
   "@scientificFact22Content": {
     "description": "Scientific fact 22 content"
   },
-  "scientificFact22Content": "The 能力 to process and manage stress improves by 40% in 明晰夢.",
+  "scientificFact22Content": "明晰夢ではストレスを処理し管理する能力が40%向上します。",
   "@scientificFact22Explanation": {
     "description": "Scientific fact 22 explanation"
   },
-  "scientificFact22Explanation": "エクササイズ-induced neuroplasticity enhances overall cognitive 機能.",
+  "scientificFact22Explanation": "運動誘発性神経可塑性は全体的な認知機能を向上させます。",
   "@scientificFact22Impact": {
     "description": "Scientific fact 22 impact message"
   },
@@ -7350,7 +7350,7 @@
   "@scientificFact23Content": {
     "description": "Scientific fact 23 content"
   },
-  "scientificFact23Content": "Through 明晰夢, emotional processing 能力 improves by 60%, facilitating psychological healing.",
+  "scientificFact23Content": "明晰夢を通じて、感情処理能力が60%向上し、心理的治癒を促進します。",
   "@scientificFact23Explanation": {
     "description": "Scientific fact 23 explanation"
   },
@@ -7398,7 +7398,7 @@
   "@scientificFact2Content": {
     "description": "Scientific fact 2 content"
   },
-  "scientificFact2Content": "During 明晰夢, 40Hz gamma waves increase by 75%, indicating a higher レベル of conscious 気づき.",
+  "scientificFact2Content": "明晰夢中、40Hzのガンマ波が75%増加し、より高いレベルの意識的認識を示します。",
   "@scientificFact2Explanation": {
     "description": "Scientific fact 2 explanation"
   },
@@ -7430,7 +7430,7 @@
   "@scientificFact4Content": {
     "description": "Scientific fact 4 content"
   },
-  "scientificFact4Content": "明晰夢練習 improves metacognitive 能力 by 34%, increasing self-気づき even when 覚醒.",
+  "scientificFact4Content": "明晰夢練習はメタ認知能力を34%向上させ、覚醒時でも自己認識を高めます。",
   "@scientificFact4Explanation": {
     "description": "Scientific fact 4 explanation"
   },
@@ -7446,7 +7446,7 @@
   "@scientificFact5Content": {
     "description": "Scientific fact 5 content"
   },
-  "scientificFact5Content": "During 明晰夢, both アルファ waves (8-13Hz) and ベータ waves (13-30Hz) are simultaneously activated, creating a unique conscious 状態.",
+  "scientificFact5Content": "明晰夢中、アルファ波（8-13Hz）とベータ波（13-30Hz）が同時に活性化し、独特の意識状態を作り出します。",
   "@scientificFact5Explanation": {
     "description": "Scientific fact 5 explanation"
   },
@@ -7454,7 +7454,7 @@
   "@scientificFact5Impact": {
     "description": "Scientific fact 5 impact message"
   },
-  "scientificFact5Impact": "✨ Experiencing the 覚醒 夢 状態!",
+  "scientificFact5Impact": "✨ 覚醒夢状態を体験！",
   "@scientificFact5Title": {
     "description": "Scientific fact 5 - motor unit synchronization title"
   },
@@ -7462,11 +7462,11 @@
   "@scientificFact6Content": {
     "description": "Scientific fact 6 content"
   },
-  "scientificFact6Content": "明晰夢 トレーニング improves 夢 想起 by 300%, allowing you to remember もっと 夢.",
+  "scientificFact6Content": "明晰夢トレーニングは夢の想起を300%向上させ、より多くの夢を覚えられます。",
   "@scientificFact6Explanation": {
     "description": "Scientific fact 6 explanation"
   },
-  "scientificFact6Explanation": "エクササイズ-induced neuroplasticity increases lead to overall cognitive 機能 improvements.",
+  "scientificFact6Explanation": "運動誘発性神経可塑性の増加は、全体的な認知機能の改善につながります。",
   "@scientificFact6Impact": {
     "description": "Scientific fact 6 impact message"
   },
@@ -7474,11 +7474,11 @@
   "@scientificFact6Title": {
     "description": "Scientific fact 6 - enhanced neuroplasticity title"
   },
-  "scientificFact6Title": "夢 想起 Increase",
+  "scientificFact6Title": "夢想起の向上",
   "@scientificFact7Content": {
     "description": "Scientific fact 7 content"
   },
-  "scientificFact7Content": "During 明晰夢, working 記憶 capacity increases by 25%, enabling complex thinking and planning.",
+  "scientificFact7Content": "明晰夢中、ワーキングメモリ容量が25%増加し、複雑な思考と計画を可能にします。",
   "@scientificFact7Explanation": {
     "description": "Scientific fact 7 explanation"
   },
@@ -7494,7 +7494,7 @@
   "@scientificFact8Content": {
     "description": "Scientific fact 8 content"
   },
-  "scientificFact8Content": "During REM 睡眠, 記憶 consolidation proceeds 50% もっと efficiently, converting learning into long-term 記憶.",
+  "scientificFact8Content": "REM睡眠中、記憶の固定化が50%効率的に進み、学習を長期記憶に変換します。",
   "@scientificFact8Explanation": {
     "description": "Scientific fact 8 explanation"
   },
@@ -7502,7 +7502,7 @@
   "@scientificFact8Impact": {
     "description": "Scientific fact 8 impact message"
   },
-  "scientificFact8Impact": "📚 知識 is being imprinted while you 睡眠!",
+  "scientificFact8Impact": "📚 睡眠中に知識が刻まれる！",
   "@scientificFact8Title": {
     "description": "Scientific fact 8 - improved reaction speed title"
   },
@@ -7510,7 +7510,7 @@
   "@scientificFact9Content": {
     "description": "Scientific fact 9 content"
   },
-  "scientificFact9Content": "問題-solving 能力 improves by 23% in 明晰夢, enabling creative insights.",
+  "scientificFact9Content": "明晰夢では問題解決能力が23%向上し、創造的な洞察を可能にします。",
   "@scientificFact9Explanation": {
     "description": "Scientific fact 9 explanation"
   },
@@ -7612,7 +7612,7 @@
   "@sendTestNotification": {
     "description": "Send test notification button"
   },
-  "sendTestNotification": "Send テスト 通知",
+  "sendTestNotification": "テスト通知を送信",
   "@sessions": {
     "description": "Sessions label"
   },
@@ -7656,7 +7656,7 @@
   "@setExactAlarmPermission": {
     "description": "Set exact alarm permission button"
   },
-  "setExactAlarmPermission": "セット Exact アラーム 許可",
+  "setExactAlarmPermission": "正確なアラーム許可を設定",
   "@setFormat": {
     "description": "Set format",
     "placeholders": {
@@ -7713,8 +7713,8 @@
     }
   },
   "setRepsFormat": "Set {setIndex}: {reps} reps",
-  "setWorkoutSchedule": "🔥 セット Your 練習 スケジュール!",
-  "setYourWorkoutSchedule": "🔥 セット Your トレーニング スケジュール!",
+  "setWorkoutSchedule": "🔥 練習スケジュールを設定！",
+  "setYourWorkoutSchedule": "🔥 トレーニングスケジュールを設定！",
   "@settings": {
     "description": "Settings title"
   },
@@ -7743,7 +7743,7 @@
   "@sevenDayStreak": {
     "description": "7-day streak challenge message"
   },
-  "sevenDayStreak": "🔄 7-日 連続 チャレンジstarted! Miss a 日, 開始 over! 🚀",
+  "sevenDayStreak": "🔄 7日連続チャレンジ開始！1日休むとやり直し！ 🚀",
   "@sevenDaysExercise": {
     "description": "Seven days exercise description"
   },
@@ -7771,20 +7771,20 @@
   "@shortTermIntensiveChallenge": {
     "description": "Sprint challenge default description"
   },
-  "shortTermIntensiveChallenge": "Short-term Intensive チャレンジ",
+  "shortTermIntensiveChallenge": "短期集中チャレンジ",
   "@shoulders": {
     "description": "Shoulders muscle group"
   },
   "shoulders": "Shoulders",
   "signInGoogle": "Googleでサインイン",
   "signInGoogleQuick": "Googleで3秒で開始",
-  "signupBenefitsMessage": "When you 登録, すべてのトレーニング 記録 and\n進捗 will be automatically backed 上 to the cloud.",
+  "signupBenefitsMessage": "登録すると、すべてのトレーニング記録と\n進捗が自動的にクラウドにバックアップされます。",
   "signupIn30Seconds": "登録 (30 秒)",
   "signupPromptBenefit1": "• 1 月 無料 プレミアム",
   "signupPromptBenefit2": "• パーソナライズされたトレーニングプラン",
   "signupPromptBenefit3": "• クラウドバックアップ の進捗",
   "signupPromptBenefit4": "• 詳細な体組成分析",
-  "signupPromptCallToAction": "登録 今 and achieve your 目標! 💪",
+  "signupPromptCallToAction": "今すぐ登録して目標を達成！ 💪",
   "signupPromptLaunchEvent": "🎁 Launch Event Benefits:",
   "@signupPromptMessage": {
     "placeholders": {
@@ -7796,7 +7796,7 @@
   "signupPromptMessage": "{goalText}のパーソナライズされたプログラムの準備ができました！",
   "signupPromptTitle": "Customized Program Ready!",
   "signupThankYouMessage": "🎉 DreamFlowへのご参加ありがとうございます！",
-  "signupToAchieveGoal": "登録 今 and achieve your 目標! 💪",
+  "signupToAchieveGoal": "今すぐ登録して目標を達成！ 💪",
   "singleSessionChallenge": "シングル セッション チャレンジ",
   "@skip": {
     "description": "Skip button text"
@@ -7814,7 +7814,7 @@
   "@skipRestButton": {
     "description": "Skip rest button"
   },
-  "skipRestButton": "REST? ONLY FOR THE WEAK! BRING THE 次へ VICTIM!",
+  "skipRestButton": "休息？弱者のためだけ！次のターゲットを持ってこい！",
   "@sleepDurationLabel": {
     "description": "Sleep duration label"
   },
@@ -7834,7 +7834,7 @@
   "@sleepHygiene1": {
     "description": "Sleep hygiene item 1"
   },
-  "sleepHygiene1": "Keep consistent 睡眠 スケジュール",
+  "sleepHygiene1": "一貫した睡眠スケジュールを維持",
   "@sleepHygiene2": {
     "description": "Sleep hygiene item 2"
   },
@@ -7842,19 +7842,19 @@
   "@sleepHygiene3": {
     "description": "Sleep hygiene item 3"
   },
-  "sleepHygiene3": "Keep bedroom ダーク and クール",
+  "sleepHygiene3": "寝室を暗く涼しく保つ",
   "@sleepHygiene4": {
     "description": "Sleep hygiene item 4"
   },
-  "sleepHygiene4": "ないscreens 30 最小 before bed",
+  "sleepHygiene4": "就寝30分前はスクリーンなし",
   "@sleepHygiene5": {
     "description": "Sleep hygiene item 5"
   },
-  "sleepHygiene5": "Avoid heavy meals before 睡眠",
+  "sleepHygiene5": "睡眠前の重い食事を避ける",
   "@sleepHygiene6": {
     "description": "Sleep hygiene item 6"
   },
-  "sleepHygiene6": "エクササイズ regularly (but not late)",
+  "sleepHygiene6": "定期的に運動（ただし遅くない時間に）",
   "@sleepHygieneCheckAtLeast3": {
     "description": "Check at least 3"
   },
@@ -7862,11 +7862,11 @@
   "@sleepHygieneCompleted": {
     "description": "Sleep hygiene completed"
   },
-  "sleepHygieneCompleted": "良い 睡眠 habits セット!",
+  "sleepHygieneCompleted": "良い睡眠習慣を設定！",
   "@sleepHygieneGuideDescription": {
     "description": "Sleep hygiene guide description"
   },
-  "sleepHygieneGuideDescription": "良い 睡眠 hygiene is fundamental to 明晰夢. チェック at least 3 アイテム.",
+  "sleepHygieneGuideDescription": "良い睡眠衛生は明晰夢の基本です。少なくとも3項目をチェックしてください。",
   "@sleepHygieneGuideTitle": {
     "description": "Sleep hygiene guide title"
   },
@@ -7874,15 +7874,15 @@
   "@sleepHygieneTip": {
     "description": "Sleep hygiene tip"
   },
-  "sleepHygieneTip": "品質 睡眠 increases REM 睡眠, leading to もっと vivid 夢.",
+  "sleepHygieneTip": "質の高い睡眠はREM睡眠を増加させ、より鮮明な夢をもたらします。",
   "@sleepHygieneTitle": {
     "description": "Sleep hygiene screen title"
   },
-  "sleepHygieneTitle": "睡眠 Hygiene チェックリスト",
+  "sleepHygieneTitle": "睡眠衛生チェックリスト",
   "@sleepInfoOptional": {
     "description": "Sleep info optional text"
   },
-  "sleepInfoOptional": "睡眠 情報 (optional)",
+  "sleepInfoOptional": "睡眠情報（任意）",
   "@sleepInfoTitle": {
     "description": "Sleep info title"
   },
@@ -7918,7 +7918,7 @@
   "@soundSettingsDesc": {
     "description": "Sound settings description"
   },
-  "soundSettingsDesc": "有効 トレーニング サウンド effects",
+  "soundSettingsDesc": "トレーニングサウンド効果を有効化",
   "@specialEventChallenge": {
     "description": "Event challenge default description"
   },
@@ -7926,7 +7926,7 @@
   "@sprintChallenge": {
     "description": "Sprint challenge default title"
   },
-  "sprintChallenge": "Sprint チャレンジ",
+  "sprintChallenge": "スプリントチャレンジ",
   "@sqliteDatabase": {
     "description": "SQLite database item"
   },
@@ -7938,7 +7938,7 @@
   "@ssildCycleCompleteButton": {
     "description": "SSILD cycle complete button"
   },
-  "ssildCycleCompleteButton": "Cycle 完了",
+  "ssildCycleCompleteButton": "サイクル完了",
   "@ssildCycleCount": {
     "description": "SSILD cycle count",
     "placeholders": {
@@ -7947,7 +7947,7 @@
       }
     }
   },
-  "ssildCycleCount": "{count} cycles 完了",
+  "ssildCycleCount": "{count}サイクル完了",
   "@ssildGuideDescription": {
     "description": "SSILD guide description"
   },
@@ -7955,19 +7955,19 @@
   "@ssildGuideTitle": {
     "description": "SSILD guide title"
   },
-  "ssildGuideTitle": "Senses Initiated 明晰夢",
+  "ssildGuideTitle": "感覚誘導明晰夢",
   "@ssildMinCycles": {
     "description": "SSILD minimum cycles"
   },
-  "ssildMinCycles": "完了 at least 4 cycles",
+  "ssildMinCycles": "少なくとも4サイクルを完了",
   "@ssildNextSense": {
     "description": "SSILD next sense"
   },
-  "ssildNextSense": "次へ Sense",
+  "ssildNextSense": "次の感覚",
   "@ssildStep1Description": {
     "description": "SSILD step 1 description"
   },
-  "ssildStep1Description": "閉じる your eyes and 集中 オン the darkness, カラー, or パターン behind your eyelids.",
+  "ssildStep1Description": "目を閉じて、まぶたの裏の暗闇、色、またはパターンに集中してください。",
   "@ssildStep1Title": {
     "description": "SSILD step 1 title"
   },
@@ -7991,7 +7991,7 @@
   "@ssildTip": {
     "description": "SSILD tip"
   },
-  "ssildTip": "集中 15-30 秒 オン each sense. Don't concentrate too 難しい. The キー is to observe passively.",
+  "ssildTip": "各感覚に15-30秒集中してください。あまり集中しすぎないで。キーは受動的に観察することです。",
   "@ssildTitle": {
     "description": "SSILD screen title"
   },
@@ -7999,11 +7999,11 @@
   "@stabilizationCompleted": {
     "description": "Stabilization completed message"
   },
-  "stabilizationCompleted": "Stabilization テクニック learned!",
+  "stabilizationCompleted": "安定化テクニックを学習！",
   "@stabilizationGuideDescription": {
     "description": "Stabilization guide description"
   },
-  "stabilizationGuideDescription": "Stabilization テクニック to use when 夢の fades or you're 情報 to 起床.",
+  "stabilizationGuideDescription": "夢が薄れたり、目覚めそうなときに使う安定化テクニック。",
   "@stabilizationGuideTitle": {
     "description": "Stabilization guide title"
   },
@@ -8016,7 +8016,7 @@
       }
     }
   },
-  "stabilizationLearnCount": "{count} テクニック learned",
+  "stabilizationLearnCount": "{count}テクニック学習済み",
   "@stabilizationTech1": {
     "description": "Stabilization technique 1"
   },
@@ -8032,7 +8032,7 @@
   "@stabilizationTech2Desc": {
     "description": "Stabilization technique 2 description"
   },
-  "stabilizationTech2Desc": "Spin いいね a 上部. A 新規 夢 scene may be generated.",
+  "stabilizationTech2Desc": "コマのように回転。新しい夢のシーンが生成されるかもしれません。",
   "@stabilizationTech3": {
     "description": "Stabilization technique 3"
   },
@@ -8048,15 +8048,15 @@
   "@stabilizationTech4Desc": {
     "description": "Stabilization technique 4 description"
   },
-  "stabilizationTech4Desc": "Shout \"Clarity 今!\" or \"This is a 夢!\"",
+  "stabilizationTech4Desc": "「今、明晰に！」または「これは夢だ！」と叫ぶ",
   "@stabilizationTip": {
     "description": "Stabilization tip"
   },
-  "stabilizationTip": "Getting excited makes you 起床 上 easily. Stay calm and use stabilization テクニック immediately when 夢の fades.",
+  "stabilizationTip": "興奮すると目覚めやすくなります。冷静でいて、夢が薄れたらすぐに安定化テクニックを使いましょう。",
   "@stabilizationTitle": {
     "description": "Stabilization screen title"
   },
-  "stabilizationTitle": "夢 Stabilization",
+  "stabilizationTitle": "夢の安定化",
   "@stageAchieved": {
     "description": "Stage achieved message",
     "placeholders": {
@@ -8065,7 +8065,7 @@
       }
     }
   },
-  "stageAchieved": "ステージ {ステージ} Achieved!",
+  "stageAchieved": "ステージ{stage}達成！",
   "@stageDailyTokensInfo": {
     "description": "Stage daily tokens info",
     "placeholders": {
@@ -8094,10 +8094,10 @@
   "@startFirstWorkout": {
     "description": "Start first workout message"
   },
-  "startFirstWorkout": "開始 your 最初 トレーニング and\\ncreate your ドリームスピリット legend! 🔥",
+  "startFirstWorkout": "最初のトレーニングを開始して\nドリームスピリット伝説を作ろう！ 🔥",
   "startForFree": "無料で開始",
   "startFree": "無料で開始",
-  "startJourney": "開始 the Journey! 🚀",
+  "startJourney": "旅を始めよう！ 🚀",
   "@startNewChallenge": {
     "description": "Start new challenge guide message"
   },
@@ -8109,19 +8109,19 @@
   "@startPosition": {
     "description": "Step 1 title - start position"
   },
-  "startPosition": "開始 Position",
+  "startPosition": "開始ポジション",
   "@startPositionDesc": {
     "description": "Step 1 description"
   },
-  "startPositionDesc": "開始 with a plank position and accurately セット the position of your hands and feet.",
+  "startPositionDesc": "プランクポジションで開始し、手と足の位置を正確に設定してください。",
   "startSubscription": "開始 サブスクリプション",
   "startSubscriptionButton": "開始 サブスクリプション",
   "startTestButton": "Get Started",
-  "startTheJourney": "開始 the Journey! 🚀",
+  "startTheJourney": "旅を始めよう！ 🚀",
   "@startTodayWorkout": {
     "description": "Start today's workout button"
   },
-  "startTodayWorkout": "🚀 開始 今日'S DOMINATION! 🚀",
+  "startTodayWorkout": "🚀 今日の制覇を開始！ 🚀",
   "@startWithLevel": {
     "description": "Start with selected level button",
     "placeholders": {
@@ -8130,7 +8130,7 @@
       }
     }
   },
-  "startWithLevel": "💥 開始 EMPEROR JOURNEY AS {レベル}! 💥",
+  "startWithLevel": "💥 {level}としてエンペラーの旅を開始！ 💥",
   "@startWorkout": {
     "description": "Start lucid dream practice button"
   },
@@ -8138,9 +8138,9 @@
   "@startWorkoutForAchievements": {
     "description": "No achievements message"
   },
-  "startWorkoutForAchievements": "開始 明晰夢練習 to アンロック 最初 実績! 💪",
-  "startWorkoutNow": "開始 your トレーニング 今! 💪",
-  "startWorkoutToStartProgram": "開始 your 練習 to begin the プログラム! 💪",
+  "startWorkoutForAchievements": "明晰夢練習を始めて最初の実績をアンロック！ 💪",
+  "startWorkoutNow": "今すぐトレーニングを開始！ 💪",
+  "startWorkoutToStartProgram": "練習を始めてプログラムを開始！ 💪",
   "@statAvgLucidity": {
     "description": "Average lucidity stat label"
   },
@@ -8173,7 +8173,7 @@
   "@statisticsBannerText": {
     "description": "Statistics screen banner text"
   },
-  "statisticsBannerText": "チェック your ドリームスピリット 成長! 📊",
+  "statisticsBannerText": "ドリームスピリットの成長をチェック！ 📊",
   "@statisticsTab": {
     "description": "Statistics tab"
   },
@@ -8207,16 +8207,16 @@
     "description": "Trial subscription status"
   },
   "statusTrial": "Trial",
-  "step1LevelTest": "目標 Setting (1 分)",
+  "step1LevelTest": "目標設定（1分）",
   "step2SetStartDate": "セット 練習 開始 日付",
-  "step3StartJourney": "開始 30-日 Journey!",
+  "step3StartJourney": "30日の旅を開始！",
   "stepByStepGuide": "Step-by-Step\nGuide",
   "storageAccess": "📁 Storage Access",
   "storageBackupRestorePermission": "練習データのバックアップ/復元にはストレージアクセス許可が必要です。",
   "@storageBenefit1": {
     "description": "Storage benefit 1"
   },
-  "storageBenefit1": "📁 Secure 夢日記 データバックアップ",
+  "storageBenefit1": "📁 安全な夢日記データバックアップ",
   "@storageBenefit2": {
     "description": "Storage benefit 2"
   },
@@ -8225,12 +8225,12 @@
     "description": "Storage benefit 3"
   },
   "storageBenefit3": "💾 Prevent data loss",
-  "storagePermissionDeniedMessage": "Storage 許可 has been denied.\n\nTo use バックアップ/復元 機能, please manually grant 許可 設定で.\n\n設定 > Apps > DreamFlow > 許可 > Storage",
+  "storagePermissionDeniedMessage": "ストレージ許可が拒否されました。\n\nバックアップ/復元機能を使用するには、設定で手動で許可を付与してください。\n\n設定 > アプリ > DreamFlow > 許可 > ストレージ",
   "@storagePermissionDesc": {
     "description": "Storage permission description"
   },
   "storagePermissionDesc": "夢日記データのバックアップと復元に必要です",
-  "storagePermissionNeededForBackup": "Storage アクセス 許可 is 必要 to use the データバックアップ and 復元 機能.\n\nDo you want to grant 許可?",
+  "storagePermissionNeededForBackup": "データバックアップと復元機能を使用するにはストレージアクセス許可が必要です。\n\n許可を付与しますか？",
   "storagePermissionRequired": "Storage Permission Required",
   "@storagePermissionTitle": {
     "description": "Storage permission title"
@@ -8248,12 +8248,12 @@
   "@streakBrokenMessage": {
     "description": "Workout streak broken message"
   },
-  "streakBrokenMessage": "練習 連続 broken",
+  "streakBrokenMessage": "練習連続記録が途切れました",
   "streakChallenge": "連続 チャレンジ",
   "@streakContinueMessage": {
     "description": "Workout streak continue message"
   },
-  "streakContinueMessage": "練習 連続 continues!",
+  "streakContinueMessage": "練習連続記録継続中！",
   "@streakDays": {
     "description": "Streak days format",
     "placeholders": {
@@ -8280,7 +8280,7 @@
       }
     }
   },
-  "streakDaysOngoing": "{日} 日 連続 going!",
+  "streakDaysOngoing": "{days}日連続継続中！",
   "@streakDaysTarget": {
     "description": "Target streak days",
     "placeholders": {
@@ -8298,16 +8298,16 @@
       }
     }
   },
-  "streakDaysUntilMilestone": "{日} 日 until 次へ マイルストーン",
+  "streakDaysUntilMilestone": "次のマイルストーンまで{days}日",
   "@streakEncouragement": {
     "description": "Streak encouragement setting"
   },
-  "streakEncouragement": "連続 Encouragement",
+  "streakEncouragement": "連続記録の励まし",
   "@streakEncouragementSubtitle": {
     "description": "Subtitle for streak encouragement setting"
   },
   "streakEncouragementSubtitle": "Encouragement message after 3 consecutive practices",
-  "streakMaintenanceReminder": "• 連続 maintenance リマインダー",
+  "streakMaintenanceReminder": "• 連続記録維持リマインダー",
   "@streakMilestoneProgress": {
     "description": "Days until milestone",
     "placeholders": {
@@ -8319,11 +8319,11 @@
       }
     }
   },
-  "streakMilestoneProgress": "🎯 {remainingDays} 日 to {targetDays}-日 マイルストーン!",
+  "streakMilestoneProgress": "🎯 {targetDays}日マイルストーンまで{remainingDays}日！",
   "@streakNotificationSet": {
     "description": "Success message for streak notification setup"
   },
-  "streakNotificationSet": "連続 encouragement 通知 has been セット!",
+  "streakNotificationSet": "連続記録励まし通知が設定されました！",
   "@streakProgress": {
     "description": "Streak progress label"
   },
@@ -8335,7 +8335,7 @@
   "@streakStartMessage": {
     "description": "Workout streak start message"
   },
-  "streakStartMessage": "練習 連続 started!",
+  "streakStartMessage": "練習連続記録開始！",
   "@strengthImprovement": {
     "description": "Strength improvement category - Dream Spirit style"
   },
@@ -8345,7 +8345,7 @@
   },
   "strengthSecrets": "Strength Secrets 💯",
   "subscribe": "Subscribe",
-  "subscribeForPremium": "開始 a サブスクリプション to アクセス プレミアム 機能",
+  "subscribeForPremium": "サブスクリプションを開始してプレミアム機能にアクセス",
   "subscribeNow": "Subscribe Now",
   "subscriptionAdsLabel": "Ads",
   "subscriptionAdsNoWithAdFree": "なし (広告-無料)",
@@ -8354,15 +8354,15 @@
   "@subscriptionBenefitUnlimitedAI": {
     "description": "Extra AI token benefit"
   },
-  "subscriptionBenefitUnlimitedAI": "アンロック Higher Stages (上 to 15 トークン/日)",
-  "subscriptionExpiringSoon": "Your サブスクリプション is expiring soon. Renew?",
-  "subscriptionManagement": "サブスクリプション Management",
+  "subscriptionBenefitUnlimitedAI": "高ステージをアンロック（最大15トークン/日）",
+  "subscriptionExpiringSoon": "サブスクリプションがまもなく期限切れです。更新しますか？",
+  "subscriptionManagement": "サブスクリプション管理",
   "subscriptionSuccess": "サブスクリプションが正常に完了しました！",
   "success": "成功",
   "@successProfileSaved": {
     "description": "Profile save success message"
   },
-  "successProfileSaved": "👑 EMPEROR プロフィール SAVED! YOUR LEGEND IS RECORDED! 👑",
+  "successProfileSaved": "👑 エンペラープロフィール保存！あなたの伝説が記録されました！ 👑",
   "@successRatePercent": {
     "description": "Success rate percentage display",
     "placeholders": {
@@ -8375,11 +8375,11 @@
   "@successSettingsSaved": {
     "description": "Settings save success message"
   },
-  "successSettingsSaved": "⚡ アルファ 設定 ロック! 完璧 CONFIG ARMED! ⚡",
+  "successSettingsSaved": "⚡ アルファ設定ロック！完璧な設定完了！ ⚡",
   "@successWorkoutCompleted": {
     "description": "Workout completion success message"
   },
-  "successWorkoutCompleted": "🚀 トレーニング DOMINATION 完了！ ANOTHER レジェンダリー 実績! 🚀",
+  "successWorkoutCompleted": "🚀 トレーニング制覇完了！また一つレジェンダリー実績！ 🚀",
   "sundayFull": "Sunday",
   "@sundayShort": {
     "description": "Sunday short form"
@@ -8407,7 +8407,7 @@
   "@systemAutoRenewalChannelDescription": {
     "description": "System auto renewal notification channel description"
   },
-  "systemAutoRenewalChannelDescription": "システム 自動 renewal 通知",
+  "systemAutoRenewalChannelDescription": "システム自動更新通知",
   "@tabAllDreams": {
     "description": "All dreams tab",
     "placeholders": {
@@ -8455,7 +8455,7 @@
   "@taskDreamJournalDesc": {
     "description": "Dream journal task description"
   },
-  "taskDreamJournalDesc": "記録 あなたの夢 immediately upon waking each morning. 夢 想起 is the 最初 step to 明晰夢.",
+  "taskDreamJournalDesc": "毎朝起床後すぐに夢を記録してください。夢の想起は明晰夢への第一歩です。",
   "@taskDreamJournalTitle": {
     "description": "Dream journal task title"
   },
@@ -8471,7 +8471,7 @@
   "@taskMildDesc": {
     "description": "MILD affirmation task description"
   },
-  "taskMildDesc": "Before 睡眠, repeat \"In my 次へ 夢, I will be aware\" to solidify your 明晰夢 intention.",
+  "taskMildDesc": "睡眠前に「次の夢では気づく」と繰り返し、明晰夢の意図を固めてください。",
   "@taskMildTitle": {
     "description": "MILD affirmation task title"
   },
@@ -8479,7 +8479,7 @@
   "@taskRealityCheckDesc": {
     "description": "Reality check task description"
   },
-  "taskRealityCheckDesc": "5+ times 毎日, look at your hands and ask \"Am I dreaming?\" 練習 trying to push fingers through your palm.",
+  "taskRealityCheckDesc": "毎日5回以上、手を見て「私は夢を見ている？」と尋ねてください。手のひらに指を押し通す練習をしましょう。",
   "@taskRealityCheckTitle": {
     "description": "Reality check task title"
   },
@@ -8487,11 +8487,11 @@
   "@taskSleepHygieneDesc": {
     "description": "Sleep hygiene task description"
   },
-  "taskSleepHygieneDesc": "作成 品質 睡眠環境: 通常 睡眠 時間, ダーク room, limit caffeine, etc.",
+  "taskSleepHygieneDesc": "質の高い睡眠環境を作成：規則的な睡眠時間、暗い部屋、カフェインを制限など。",
   "@taskSleepHygieneTitle": {
     "description": "Sleep hygiene task title"
   },
-  "taskSleepHygieneTitle": "睡眠 Hygiene チェック",
+  "taskSleepHygieneTitle": "睡眠衛生チェック",
   "@taskWbtbDesc": {
     "description": "WBTB task description"
   },
@@ -8499,7 +8499,7 @@
   "@taskWbtbTitle": {
     "description": "WBTB task title"
   },
-  "taskWbtbTitle": "WBTB (起床 戻る To Bed)",
+  "taskWbtbTitle": "WBTB（起きて寝床に戻る）",
   "techStack": "Tech Stack:",
   "@techniqueDescription": {
     "description": "Technique description title"
@@ -8524,15 +8524,15 @@
   "@techniquesUsedLabel": {
     "description": "Techniques used label"
   },
-  "techniquesUsedLabel": "テクニック Used:",
+  "techniquesUsedLabel": "使用テクニック：",
   "@techniquesUsedTitle": {
     "description": "Techniques used title"
   },
-  "techniquesUsedTitle": "テクニック Used",
+  "techniquesUsedTitle": "使用テクニック",
   "@termsDreamwalkerShop": {
     "description": "Dreamwalker shop terms"
   },
-  "termsDreamwalkerShop": "Dreamwalker Shop 利用規約",
+  "termsDreamwalkerShop": "ドリームウォーカーショップ利用規約",
   "@termsDreamwalkerShopContent": {
     "description": "Dreamwalker shop terms content"
   },
@@ -8544,12 +8544,12 @@
   "@termsOfService": {
     "description": "Terms of service menu title"
   },
-  "termsOfService": "利用規約 of サービス",
+  "termsOfService": "サービス利用規約",
   "@termsOfServiceDesc": {
     "description": "Terms of service description"
   },
   "termsOfServiceDesc": "アプリ利用のための利用規約を確認",
-  "termsPrivacy": "利用規約 of サービス and プライバシー ポリシー",
+  "termsPrivacy": "利用規約とプライバシーポリシー",
   "@termsPrivacyContent": {
     "description": "Privacy policy content"
   },
@@ -8557,11 +8557,11 @@
   "@termsService": {
     "description": "Terms of service"
   },
-  "termsService": "利用規約 of サービス",
+  "termsService": "サービス利用規約",
   "@termsServiceContent": {
     "description": "Terms of service content"
   },
-  "termsServiceContent": "By using this サービス, you agree to our 利用規約 of サービス.",
+  "termsServiceContent": "このサービスを使用することで、利用規約に同意したことになります。",
   "@termsSubscription": {
     "description": "Subscription terms"
   },
@@ -8569,11 +8569,11 @@
   "@termsSubscriptionContent": {
     "description": "Subscription terms content"
   },
-  "termsSubscriptionContent": "You can キャンセル your サブスクリプション anytime. After cancellation, you can use the サービス until the 終了 of the 現在 請求 period.",
+  "termsSubscriptionContent": "いつでもサブスクリプションをキャンセルできます。キャンセル後も、現在の請求期間終了まで使用できます。",
   "@termsTitle": {
     "description": "Terms title"
   },
-  "termsTitle": "利用規約 & Conditions",
+  "termsTitle": "利用規約と条件",
   "@termsTokenPolicy": {
     "description": "Token policy"
   },
@@ -8586,17 +8586,17 @@
   "@testNotificationSent": {
     "description": "Test notification sent message"
   },
-  "testNotificationSent": "テスト 通知 sent",
-  "themeApplied": "{テーマ} テーマ applied",
+  "testNotificationSent": "テスト通知送信完了",
+  "themeApplied": "{theme}テーマが適用されました",
   "themeBlue": "Blue",
   "@themeChangeAfterRestart": {
     "description": "Theme change application notice"
   },
-  "themeChangeAfterRestart": "テーマ changes will be applied after アプリ restart",
+  "themeChangeAfterRestart": "テーマの変更はアプリ再起動後に適用されます",
   "@themeChangeRestart": {
     "description": "Theme change restart notice"
   },
-  "themeChangeRestart": "テーマ change will apply after アプリ restart",
+  "themeChangeRestart": "テーマの変更はアプリ再起動後に適用されます",
   "@themeColor": {
     "description": "Theme color setting title"
   },
@@ -8609,7 +8609,7 @@
       }
     }
   },
-  "themeColorChanged": "テーマ カラー changed to {colorName}",
+  "themeColorChanged": "テーマカラーが{colorName}に変更されました",
   "@themeColorDesc": {
     "description": "Theme color setting description"
   },
@@ -8617,12 +8617,12 @@
   "@themeColorSelection": {
     "description": "Theme color selection dialog title"
   },
-  "themeColorSelection": "テーマ カラー Selection",
+  "themeColorSelection": "テーマカラー選択",
   "themeGreen": "Green",
   "@themeLanguageSettings": {
     "description": "Theme and language settings description"
   },
-  "themeLanguageSettings": "テーマ and 言語 設定",
+  "themeLanguageSettings": "テーマと言語設定",
   "themeOrange": "Orange",
   "themePurple": "Purple",
   "themeRed": "Red",
@@ -8635,7 +8635,7 @@
     "description": "This month lucid dream practice count label"
   },
   "thisMonthWorkouts": "今月",
-  "thisWeekFormat": "This 週 (週 {週})",
+  "thisWeekFormat": "今週（第{week}週）",
   "@thisWeekProgress": {
     "description": "This week progress display",
     "placeholders": {
@@ -8644,14 +8644,14 @@
       }
     }
   },
-  "thisWeekProgress": "This 週 (週 {current})",
+  "thisWeekProgress": "今週（第{current}週）",
   "thursdayFull": "Thursday",
   "@thursdayShort": {
     "description": "Thursday short form"
   },
   "thursdayShort": "Thu",
   "timeDestroyed": "⏱️ 練習 時間",
-  "timeElapsed": "⏱️ 時間 Spent",
+  "timeElapsed": "⏱️ 経過時間",
   "@times": {
     "description": "Times unit for workout count"
   },
@@ -8774,7 +8774,7 @@
       }
     }
   },
-  "tokenBalanceRewardFailed": "に失敗しました claim 報酬: {エラー}",
+  "tokenBalanceRewardFailed": "報酬の請求に失敗しました: {error}",
   "@tokenBalanceRewardReceived": {
     "description": "Success message when reward is received"
   },
@@ -8790,7 +8790,7 @@
   "@tokenConsumeFailed": {
     "description": "Token consume failed message"
   },
-  "tokenConsumeFailed": "に失敗しました use トークン",
+  "tokenConsumeFailed": "トークンの使用に失敗しました",
   "@tokenCount1": {
     "description": "1 token"
   },
@@ -8815,7 +8815,7 @@
       }
     }
   },
-  "tokenEarnError": "に失敗しました earn トークン: {エラー}",
+  "tokenEarnError": "トークンの獲得に失敗しました: {error}",
   "@tokenEarnMethods": {
     "description": "Token earn methods"
   },
@@ -8875,7 +8875,7 @@
   "@tokenTotalReward": {
     "description": "Total reward label"
   },
-  "tokenTotalReward": "合計 Earned",
+  "tokenTotalReward": "獲得合計",
   "@tokenUnit": {
     "description": "Token unit"
   },
@@ -8894,7 +8894,7 @@
   "tokenUserTypePremium": "プレミアム",
   "tomorrowActivitiesMessage": "明日ドリームスピリットがおすすめする活動です！準備しよう！ 💪",
   "tomorrowBeastMode": "✨ 明日一緒に明晰夢を練習しよう 🌙",
-  "tomorrowIsRestDay": "🌙 Your 夢 journey continues 明日 ✨",
+  "tomorrowIsRestDay": "🌙 あなたの夢の旅は明日も続く ✨",
   "@tooltipDelete": {
     "description": "Delete tooltip"
   },
@@ -8924,7 +8924,7 @@
     "description": "Total dreams count label"
   },
   "totalDreams": "合計 夢",
-  "totalExpEarned": "合計 経験値 earned",
+  "totalExpEarned": "獲得経験値合計",
   "@totalExperience": {
     "description": "Total experience label"
   },
@@ -8972,9 +8972,9 @@
   "@totalWorkouts": {
     "description": "Total lucid dream practice sessions count label"
   },
-  "totalWorkouts": "合計 Workouts",
+  "totalWorkouts": "トレーニング合計",
   "totalXP": "合計 XP",
-  "totalXpEarned": "合計 {totalXP} XP Earned!",
+  "totalXpEarned": "合計{totalXP} XP獲得！",
   "@trialEnded": {
     "description": "Trial period ended label"
   },
@@ -9004,74 +9004,74 @@
   "@tutorialAdviceForm": {
     "description": "Form tutorial advice"
   },
-  "tutorialAdviceForm": "完璧 テクニック makes 完璧 ドリームスピリット!",
+  "tutorialAdviceForm": "完璧なテクニックが完璧なドリームスピリットを作る！",
   "@tutorialAdviceStart": {
     "description": "Starting tutorial advice"
   },
   "tutorialAdviceStart": "Starting is half the battle!",
-  "tutorialAutoAdjustDesc": "記録 completion 評価 and 次へ チェックリスト\nautomatically optimizes!\n\n• 80%+: 追加 新規 テクニック\n• 60-80%: Maintain\n• <60%: Adjust difficulty",
+  "tutorialAutoAdjustDesc": "完了率を記録し、次のチェックリストを\n自動最適化！\n\n• 80%以上: 新しいテクニックを追加\n• 60-80%: 維持\n• 60%未満: 難易度調整",
   "tutorialAutoAdjustTitle": "🎯 Smart Auto-Adjustment",
-  "tutorialButton": "💥 BECOME 明晰夢 マスター 💥",
-  "tutorialDetailTitle": "💥 マスター THE 夢 テクニック 💥",
-  "tutorialDurationDesc": "毎日 consistent 練習\n5-10 分 毎日 investment",
+  "tutorialButton": "💥 明晰夢マスターになれ 💥",
+  "tutorialDetailTitle": "💥 夢のテクニックをマスターせよ 💥",
+  "tutorialDurationDesc": "毎日の一貫した練習\n毎日5-10分の投資",
   "tutorialDurationSubtitle": "30 日 (毎日)",
   "tutorialDurationTitle": "⏱️ 時間",
-  "tutorialFeature1Desc": "プログラム designed based オン\nlatest 明晰夢 research (2014-2024)",
+  "tutorialFeature1Desc": "最新の明晰夢研究（2014-2024）に基づいて\n設計されたプログラム",
   "tutorialFeature1Title": "Science-Based",
-  "tutorialFeature2Desc": "Systematically increasing difficulty each 日\nfor safe and effective 成長",
-  "tutorialFeature2Title": "Progressive トレーニング",
-  "tutorialFeature3Desc": "Customized トレーニング プラン\ntailored to your 進捗",
+  "tutorialFeature2Desc": "安全で効果的な成長のために\n毎日体系的に難易度を上げる",
+  "tutorialFeature2Title": "プログレッシブトレーニング",
+  "tutorialFeature3Desc": "あなたの進捗に合わせた\nカスタマイズされたトレーニングプラン",
   "tutorialFeature3Title": "Customized Program",
-  "tutorialForm1Desc": "睡眠 early, 起床 after 4-6 時間\nStay 覚醒 for 20-30 分",
+  "tutorialForm1Desc": "早く寝て、4-6時間後に起床\n20-30分覚醒状態を維持",
   "tutorialForm1Title": "1. WBTB テクニック",
-  "tutorialForm2Desc": "Before 睡眠, repeat \"I will know I'm dreaming\"\nStrengthen 明晰 intention",
+  "tutorialForm2Desc": "睡眠前に「夢だと気づく」を繰り返す\n明晰意図を強化",
   "tutorialForm2Title": "2. MILD テクニック",
   "tutorialForm3Desc": "Check 10+ times daily\n\"Am I dreaming now?\"",
   "tutorialForm3Title": "3. リアリティチェック",
   "tutorialFormTitle": "✅ キー 明晰夢テクニック",
   "tutorialProgramTitle": "📋 Program Structure",
   "tutorialResearch1Author": "Stumbrys et al. (2012)",
-  "tutorialResearch1Finding": "MILD + WBTB combination most effective\n46% 成功 評価 proven",
-  "tutorialResearch1Topic": "明晰夢 Induction テクニック",
+  "tutorialResearch1Finding": "MILD + WBTBの組み合わせが最も効果的\n46%の成功率が証明",
+  "tutorialResearch1Topic": "明晰夢誘導テクニック",
   "tutorialResearch2Author": "LaBerge et al. (2018)",
-  "tutorialResearch2Finding": "2-4 明晰夢 per 週\nis typical frequency",
-  "tutorialResearch2Topic": "明晰夢 Frequency",
+  "tutorialResearch2Finding": "週に2-4回の明晰夢が\n典型的な頻度",
+  "tutorialResearch2Topic": "明晰夢頻度",
   "tutorialResearch3Author": "Aspy et al. (2017)",
-  "tutorialResearch3Finding": "Using MILD テクニック\ngreatly increases 明晰夢 probability",
-  "tutorialResearch3Topic": "MILD テクニック Effectiveness",
+  "tutorialResearch3Finding": "MILDテクニックを使用すると\n明晰夢の確率が大幅に向上",
+  "tutorialResearch3Topic": "MILDテクニックの効果",
   "tutorialResearch4Author": "Voss et al. (2014)",
-  "tutorialResearch4Finding": "リアリティチェック 練習\nhelps induce 明晰夢",
+  "tutorialResearch4Finding": "リアリティチェックの練習は\n明晰夢を誘発するのに役立つ",
   "tutorialResearch4Topic": "リアリティチェック",
-  "tutorialRestDesc": "毎日: 5-10 分\nAdjusted by 進捗",
-  "tutorialRestSubtitle": "Optimized 時間",
+  "tutorialRestDesc": "毎日: 5-10分\n進捗に応じて調整",
+  "tutorialRestSubtitle": "最適化された時間",
   "tutorialRestTitle": "⏳ 時間 必要",
   "tutorialRpe10": "🤯 Perfect!",
   "tutorialRpe10Desc": "完了 すべてのitems",
   "tutorialRpe6": "😊 Too Easy",
-  "tutorialRpe6Desc": "I can 追加 もっと テクニック",
+  "tutorialRpe6Desc": "もっとテクニックを追加できる",
   "tutorialRpe7": "🙂 Moderate",
   "tutorialRpe7Desc": "Just right difficulty",
   "tutorialRpe8": "😤 Hard",
-  "tutorialRpe8Desc": "Struggled to 完了",
+  "tutorialRpe8Desc": "完了に苦労した",
   "tutorialRpe9": "😫 Very Hard",
   "tutorialRpe9Desc": "Nearly impossible",
   "tutorialRpeSubtitle": "毎日 チェックリスト 実績",
-  "tutorialRpeTitle": "📊 What is Completion 評価?",
-  "tutorialScienceSubtitle": "Designed based オン latest 明晰夢 research",
+  "tutorialRpeTitle": "📊 完了率とは？",
+  "tutorialScienceSubtitle": "最新の明晰夢研究に基づいて設計",
   "tutorialScienceTitle": "🔬 Scientific Evidence",
   "tutorialStructureDesc": "メイン: 毎日 チェックリスト\n記録: 夢日記 エントリー",
   "tutorialStructureSubtitle": "チェックリスト + 夢日記",
   "tutorialStructureTitle": "🌙 Structure",
-  "tutorialSubtitle": "Real 夢 MASTERS 完璧 their テクニック! 🌙",
-  "tutorialTipDesc": "記録 your completion 評価 毎日\nand the 次へ チェックリスト 自動-adjusts!",
+  "tutorialSubtitle": "本物の夢マスターはテクニックを完璧にする！ 🌙",
+  "tutorialTipDesc": "毎日の完了率を記録すると\n次のチェックリストが自動調整！",
   "tutorialTipTitle": "💡 Pro Tip",
-  "tutorialTitle": "🔥 明晰夢 MASTERY DOJO 🔥",
+  "tutorialTitle": "🔥 明晰夢マスタリー道場 🔥",
   "tutorialWarning1": "Don't overdo it, maintain your own pace",
-  "tutorialWarning2": "Ensure sufficient 睡眠 (7-8 時間)",
+  "tutorialWarning2": "十分な睡眠を確保（7-8時間）",
   "tutorialWarning3": "Enjoy without stress",
-  "tutorialWarning4": "Consult professional if 睡眠 disorders",
+  "tutorialWarning4": "睡眠障害がある場合は専門家に相談",
   "tutorialWarningTitle": "⚠️ Warnings",
-  "tutorialWelcomeSubtitle": "Become a 明晰夢マスター in 30 日",
+  "tutorialWelcomeSubtitle": "30日で明晰夢マスターになる",
   "tutorialWelcomeTitle": "🌙 DreamFlow",
   "unableToLoadVideo": "Unable to load video",
   "@unlimited": {
@@ -9090,7 +9090,7 @@
   "@unlockMoreChallenges": {
     "description": "Challenge unlock guide message"
   },
-  "unlockMoreChallenges": "完了 もっと 明晰夢 practices to アンロック 新規 チャレンジ!",
+  "unlockMoreChallenges": "もっと明晰夢練習を完了して新しいチャレンジをアンロック！",
   "@unlockedAchievements": {
     "description": "Unlocked achievements tab",
     "placeholders": {
@@ -9131,7 +9131,7 @@
   "@userProfileRequired": {
     "description": "User profile required explanation"
   },
-  "userProfileRequired": "User プロフィール is 必要 to 開始 your トレーニング",
+  "userProfileRequired": "トレーニングを開始するにはユーザープロフィールが必要です",
   "@userTitleAwakening": {
     "description": "User title for Week 4-6"
   },
@@ -9147,11 +9147,11 @@
   "@userTitleExplorer": {
     "description": "User title for Week 2-3"
   },
-  "userTitleExplorer": "夢 Explorer",
+  "userTitleExplorer": "夢の探検家",
   "@userTitleLucidWalker": {
     "description": "User title for Week 7-9"
   },
-  "userTitleLucidWalker": "明晰 Walker",
+  "userTitleLucidWalker": "明晰ウォーカー",
   "@variationExercises": {
     "description": "Tab title for variation exercises"
   },
@@ -9159,7 +9159,7 @@
   "@variousPushupStimulation": {
     "description": "Video description 2"
   },
-  "variousPushupStimulation": "Stimulate 意識 with various 明晰夢テクニック",
+  "variousPushupStimulation": "様々な明晰夢テクニックで意識を刺激",
   "@version": {
     "description": "Version label"
   },
@@ -9188,15 +9188,15 @@
   "@vibrationSettings": {
     "description": "Vibration settings"
   },
-  "vibrationSettings": "Vibration 設定",
+  "vibrationSettings": "バイブレーション設定",
   "@vibrationSettingsDesc": {
     "description": "Vibration settings description"
   },
-  "vibrationSettingsDesc": "有効 vibration フィードバック",
+  "vibrationSettingsDesc": "バイブレーションフィードバックを有効化",
   "@victoryDaySelection": {
     "description": "Victory day selection section"
   },
-  "victoryDaySelection": "💪 Victory 日 Selection",
+  "victoryDaySelection": "💪 勝利日選択",
   "@victoryTime": {
     "description": "Victory time display",
     "placeholders": {
@@ -9205,11 +9205,11 @@
       }
     }
   },
-  "victoryTime": "{時間} - Victory 時間!",
+  "victoryTime": "{time} - 勝利の時間！",
   "@videoCannotOpen": {
     "description": "Video cannot open error message"
   },
-  "videoCannotOpen": "開けません ビデオ. Please チェック your YouTube アプリ.",
+  "videoCannotOpen": "ビデオを開けません。YouTubeアプリを確認してください。",
   "videoDemo": "Video Demo",
   "videoDemoPlaceholder": "{title} placeholder. Video is not ready.",
   "@videoLoadError": {
@@ -9220,7 +9220,7 @@
       }
     }
   },
-  "videoLoadError": "エラー 読み込み中 videos: {エラー}",
+  "videoLoadError": "ビデオの読み込み中にエラー: {error}",
   "viewAchievement": "表示 実績",
   "viewAchievements": "表示 実績",
   "@viewAll": {
@@ -9232,20 +9232,20 @@
   "@viewMyDreamJournal": {
     "description": "View my dream journal"
   },
-  "viewMyDreamJournal": "表示 My 夢",
+  "viewMyDreamJournal": "マイドリームを表示",
   "@viewMyDreamJournalDesc": {
     "description": "View my dream journal description"
   },
-  "viewMyDreamJournalDesc": "チェック your recorded 夢",
-  "viewTermsAndRefundPolicy": "表示 利用規約 and 返金 ポリシー",
+  "viewMyDreamJournalDesc": "記録した夢を確認",
+  "viewTermsAndRefundPolicy": "利用規約と返金ポリシーを表示",
   "@vipFastLoading": {
     "description": "VIP fast loading badge"
   },
-  "vipFastLoading": "VIP 10x Faster 読み込み中",
+  "vipFastLoading": "VIP 10倍高速読み込み",
   "@vipWelcomeFreeMember": {
     "description": "VIP welcome dialog free member title"
   },
-  "vipWelcomeFreeMember": "👋 無料 Member",
+  "vipWelcomeFreeMember": "👋 無料メンバー",
   "@vipWelcomeLaunchPromo": {
     "description": "VIP welcome dialog launch promo title"
   },
@@ -9253,7 +9253,7 @@
   "@vipWelcomePremiumMember": {
     "description": "VIP welcome dialog premium member title"
   },
-  "vipWelcomePremiumMember": "✨ プレミアム Member",
+  "vipWelcomePremiumMember": "✨ プレミアムメンバー",
   "@wakeTime": {
     "description": "Wake time label"
   },
@@ -9270,19 +9270,19 @@
   "@wbtbCompleteAllSteps": {
     "description": "Complete all steps required"
   },
-  "wbtbCompleteAllSteps": "Please 完了 すべてのsteps",
+  "wbtbCompleteAllSteps": "すべてのステップを完了してください",
   "@wbtbCompleted": {
     "description": "WBTB completed"
   },
-  "wbtbCompleted": "WBTB setup 完了！",
+  "wbtbCompleted": "WBTB設定完了！",
   "@wbtbGuideDescription": {
     "description": "WBTB guide description"
   },
-  "wbtbGuideDescription": "起床 上 5 時間 after sleeping, stay 覚醒 briefly, then go 戻る to 睡眠. 成功 評価 increases to 46%.",
+  "wbtbGuideDescription": "5時間睡眠後に起きて、少し覚醒状態を保ち、再び眠りにつきます。成功率は46%に上昇します。",
   "@wbtbGuideTitle": {
     "description": "WBTB guide title"
   },
-  "wbtbGuideTitle": "起床 戻る to Bed",
+  "wbtbGuideTitle": "起きて寝床に戻る",
   "@wbtbStep1Description": {
     "description": "WBTB step 1 description"
   },
@@ -9306,11 +9306,11 @@
   "@wbtbStep3Title": {
     "description": "WBTB step 3 title"
   },
-  "wbtbStep3Title": "返品 to 睡眠",
+  "wbtbStep3Title": "睡眠に戻る",
   "@wbtbTip": {
     "description": "WBTB tip"
   },
-  "wbtbTip": "20-60 分 is optimal. Too short won't リセット 意識, too long makes it 難しい to fall 戻る asleep.",
+  "wbtbTip": "20-60分が最適です。短すぎると意識がリセットされず、長すぎると再び眠りにつくのが難しくなります。",
   "@wbtbTitle": {
     "description": "WBTB screen title"
   },
@@ -9351,7 +9351,7 @@
   "@weekCompletedMessage": {
     "description": "Week completion message"
   },
-  "weekCompletedMessage": "週 完了！ Congratulations!",
+  "weekCompletedMessage": "週完了！おめでとうございます！",
   "@weekDayFormat": {
     "description": "Week/day format",
     "placeholders": {
@@ -9405,7 +9405,7 @@
       }
     }
   },
-  "weekUnlockGenericMessage": "Starting 週 {週} トレーニング",
+  "weekUnlockGenericMessage": "第{week}週トレーニング開始",
   "@weekUnlockGenericTitle": {
     "description": "Generic week unlock title",
     "placeholders": {
@@ -9414,7 +9414,7 @@
       }
     }
   },
-  "weekUnlockGenericTitle": "週 {週} Begins!",
+  "weekUnlockGenericTitle": "第{week}週開始！",
   "@weekUnlockPremiumBenefitsLabel": {
     "description": "Premium benefits label"
   },
@@ -9426,19 +9426,19 @@
   "@weekUnlockWeek2Message": {
     "description": "Week 2 unlock message"
   },
-  "weekUnlockWeek2Message": "夢 想起 is starting to improve",
+  "weekUnlockWeek2Message": "夢の想起が向上し始めています",
   "@weekUnlockWeek2Title": {
     "description": "Week 2 unlock title"
   },
-  "weekUnlockWeek2Title": "週 2 Begins!",
+  "weekUnlockWeek2Title": "第2週開始！",
   "@weekUnlockWeek3Message": {
     "description": "Week 3 unlock message"
   },
-  "weekUnlockWeek3Message": "Boost your 成功 評価 with WBTB",
+  "weekUnlockWeek3Message": "WBTBで成功率をブースト",
   "@weekUnlockWeek3Title": {
     "description": "Week 3 unlock title"
   },
-  "weekUnlockWeek3Title": "週 3 Begins!",
+  "weekUnlockWeek3Title": "第3週開始！",
   "@weekUnlockWeek5Message": {
     "description": "Week 5 unlock message"
   },
@@ -9446,15 +9446,15 @@
   "@weekUnlockWeek5Title": {
     "description": "Week 5 unlock title"
   },
-  "weekUnlockWeek5Title": "週 5 Begins!",
+  "weekUnlockWeek5Title": "第5週開始！",
   "@weekUnlockWeek7Message": {
     "description": "Week 7 unlock message"
   },
-  "weekUnlockWeek7Message": "練習 夢 control テクニック",
+  "weekUnlockWeek7Message": "夢コントロールテクニックを練習",
   "@weekUnlockWeek7Title": {
     "description": "Week 7 unlock title"
   },
-  "weekUnlockWeek7Title": "週 7 Begins!",
+  "weekUnlockWeek7Title": "第7週開始！",
   "@weekX": {
     "description": "Week number format",
     "placeholders": {
@@ -9498,7 +9498,7 @@
   },
   "weeklyReport": "📊 Weekly Report 📊",
   "weeklyStatistics": "毎週 統計",
-  "weeklyStatisticsSubtitle": "夢 recorded in the 最後 7 日",
+  "weeklyStatisticsSubtitle": "過去7日間に記録された夢",
   "@weeklyWorkoutSchedule": {
     "description": "Weekly lucid dream practice schedule description"
   },
@@ -9514,7 +9514,7 @@
       }
     }
   },
-  "weeksCompleted": "{完了}/{total} weeks 完了",
+  "weeksCompleted": "{completed}/{total}週完了",
   "weeksFormat": "{current}/{total} weeks",
   "@weeksRemaining": {
     "description": "Weeks remaining until evolution",
@@ -9527,12 +9527,12 @@
   "weeksRemaining": "{weeks} weeks left",
   "weeksToEvolve": "{weeks}w to evolve",
   "welcome": "Welcome!",
-  "welcomeMessage": "🔥 WELCOME,\nFUTURE 夢 マスター! 🔥\n時間 to awaken!",
+  "welcomeMessage": "🔥 ようこそ、\n未来の夢マスター！ 🔥\n目覚めの時間だ！",
   "welcomeTitle": "Welcome!",
   "@wildCompleteAllSteps": {
     "description": "WILD complete all steps required"
   },
-  "wildCompleteAllSteps": "Please チェック すべてのsteps",
+  "wildCompleteAllSteps": "すべてのステップを確認してください",
   "@wildCompleted": {
     "description": "WILD completed message"
   },
@@ -9540,11 +9540,11 @@
   "@wildGuideDescription": {
     "description": "WILD guide description"
   },
-  "wildGuideDescription": "An 上級 テクニック where you maintain 意識 while falling asleep. Most effective with WBTB.",
+  "wildGuideDescription": "眠りに落ちながら意識を維持する上級テクニック。WBTBと組み合わせると最も効果的です。",
   "@wildGuideTitle": {
     "description": "WILD guide title"
   },
-  "wildGuideTitle": "起床 Initiated 明晰夢",
+  "wildGuideTitle": "覚醒誘導明晰夢",
   "@wildStep1Description": {
     "description": "WILD step 1 description"
   },
@@ -9564,11 +9564,11 @@
   "@wildStep3Description": {
     "description": "WILD step 3 description"
   },
-  "wildStep3Description": "When hallucinations develop into a 夢, gently enter. Do a リアリティチェック.",
+  "wildStep3Description": "幻覚が夢に発展したら、そっと入ってください。リアリティチェックをしましょう。",
   "@wildStep3Title": {
     "description": "WILD step 3 title"
   },
-  "wildStep3Title": "Enter 夢の",
+  "wildStep3Title": "夢に入る",
   "@wildTip": {
     "description": "WILD tip"
   },
@@ -9592,11 +9592,11 @@
   "@workoutAutoRenewalBody": {
     "description": "Lucid dream practice reminder auto renewal notification body"
   },
-  "workoutAutoRenewalBody": "明晰夢練習 リマインダー have been automatically renewed. Keep 上 your healthy エクササイズ habits! 💪",
+  "workoutAutoRenewalBody": "明晰夢練習リマインダーが自動更新されました。健康的な運動習慣を続けてください！ 💪",
   "@workoutAutoRenewalTitle": {
     "description": "Lucid dream practice reminder auto renewal notification title"
   },
-  "workoutAutoRenewalTitle": "⏰ トレーニング リマインダー 自動 Renewal",
+  "workoutAutoRenewalTitle": "⏰ トレーニングリマインダー自動更新",
   "@workoutButtonConquer": {
     "description": "Regular set completion button"
   },
@@ -9629,12 +9629,12 @@
       }
     }
   },
-  "workoutCompleteMessage": "{タイトル} COMPLETELY DESTROYED!\n合計 パワー UNLEASHED: {totalReps} 回! ⚡",
+  "workoutCompleteMessage": "{title}を完全制覇！\n解き放たれた合計パワー: {totalReps}回！ ⚡",
   "workoutCompleteSimple": "トレーニング 完了！",
   "@workoutCompleteTitle": {
     "description": "Workout completion dialog title"
   },
-  "workoutCompleteTitle": "🔥 BEAST モード 完了！ 👑",
+  "workoutCompleteTitle": "🔥 ビーストモード完了！ 👑",
   "@workoutCompleted": {
     "description": "Workout completion status"
   },
@@ -9642,7 +9642,7 @@
   "@workoutCompletionChannelDescription": {
     "description": "Workout completion celebration notification channel description"
   },
-  "workoutCompletionChannelDescription": "トレーニング completion celebration 通知",
+  "workoutCompletionChannelDescription": "トレーニング完了お祝い通知",
   "@workoutCompletionMessage": {
     "description": "Workout completion achievement message",
     "placeholders": {
@@ -9651,7 +9651,7 @@
       }
     }
   },
-  "workoutCompletionMessage": "{percentage}% of 目標 crushed! Walking the warrior path! KEEP GRINDING! 🔥💪",
+  "workoutCompletionMessage": "目標の{percentage}%を達成！戦士の道を歩む！頑張り続けろ！ 🔥💪",
   "@workoutCount": {
     "description": "Workout count format",
     "placeholders": {
@@ -9684,15 +9684,15 @@
   "@workoutDaysModeActivated": {
     "description": "Practice days mode activated message"
   },
-  "workoutDaysModeActivated": "💪 練習 日 only モード activated! 通知 will come only オン Mon, Wed, Fri!",
+  "workoutDaysModeActivated": "💪 練習日のみモード有効！通知は月・水・金のみ！",
   "@workoutDaysOnlyNotifications": {
     "description": "Practice days only notification setting title"
   },
-  "workoutDaysOnlyNotifications": "🔥 トレーニング 日 Only アラート",
+  "workoutDaysOnlyNotifications": "🔥 トレーニング日のみアラート",
   "@workoutDaysOnlyNotificationsDesc": {
     "description": "Practice days only notification setting description"
   },
-  "workoutDaysOnlyNotificationsDesc": "Receive 通知 only オン 練習 日 (Mon, Wed, Fri). ないdisturbance オン rest 日!",
+  "workoutDaysOnlyNotificationsDesc": "練習日（月・水・金）のみ通知を受信。休息日は邪魔しません！",
   "workoutDestroyed": "🌙 今日の練習 完了！ ✨",
   "workoutDestroyedMessage": "今日の明晰夢トレーニングを正常に完了しました",
   "@workoutDetailsWithStats": {
@@ -9709,7 +9709,7 @@
       }
     }
   },
-  "workoutDetailsWithStats": "トレーニング: {タイトル}\\nCompleted セット: {セット}\\nTotal 回: {回}",
+  "workoutDetailsWithStats": "トレーニング: {title}\\n完了セット: {sets}\\n合計回数: {reps}",
   "@workoutHistoryLoadError": {
     "description": "Error message when loading lucid dream practice history fails",
     "placeholders": {
@@ -9722,13 +9722,13 @@
   "@workoutInterruptionDetected": {
     "description": "Workout interruption detected warning"
   },
-  "workoutInterruptionDetected": "⚠️ トレーニング Interruption Detected",
+  "workoutInterruptionDetected": "⚠️ トレーニング中断を検出",
   "workoutNotificationPermission": "🔔 トレーニング 通知の許可",
   "workoutNotifications": "練習 通知",
   "@workoutPrecautions": {
     "description": "Workout precautions"
   },
-  "workoutPrecautions": "• At least one rest 日 is 必要\n• Cannot トレーニング もっと than 6 連続 日\n• Adequate rest is essential for muscle 成長",
+  "workoutPrecautions": "• 少なくとも1日の休息が必要\n• 6日以上連続でトレーニングできません\n• 適切な休息は筋肉の成長に不可欠",
   "@workoutProcessing": {
     "description": "Workout completion processing message"
   },
@@ -9749,7 +9749,7 @@
   "@workoutRecordsStats": {
     "description": "Lucid dream practice records and statistics item"
   },
-  "workoutRecordsStats": "• 明晰夢練習 記録 and 統計",
+  "workoutRecordsStats": "• 明晰夢練習記録と統計",
   "@workoutReminder": {
     "description": "Lucid dream practice reminder setting"
   },
@@ -9757,15 +9757,15 @@
   "@workoutReminderDefaultBody": {
     "description": "Default lucid dream practice reminder notification body"
   },
-  "workoutReminderDefaultBody": "💪 明晰夢 100 トレーニング 時間! レジェンダリー モード activated! 💪",
+  "workoutReminderDefaultBody": "💪 明晰夢100トレーニング時間！レジェンダリーモード発動！ 💪",
   "@workoutReminderDisabled": {
     "description": "Lucid dream practice reminder disabled message"
   },
-  "workoutReminderDisabled": "明晰夢練習 リマインダー have been 無効",
+  "workoutReminderDisabled": "明晰夢練習リマインダーが無効になりました",
   "@workoutReminderEnabled": {
     "description": "Lucid dream practice reminder enabled message"
   },
-  "workoutReminderEnabled": "明晰夢練習 リマインダー have been 有効",
+  "workoutReminderEnabled": "明晰夢練習リマインダーが有効になりました",
   "@workoutReminderSettings": {
     "description": "Lucid dream practice reminder settings title"
   },
@@ -9781,17 +9781,17 @@
   "@workoutRemindersDesc": {
     "description": "Lucid dream practice reminders description"
   },
-  "workoutRemindersDesc": "毎日 リマインダー at your セット 時間",
+  "workoutRemindersDesc": "設定時間に毎日リマインダー",
   "@workoutSaveError": {
     "description": "Lucid dream practice record save failure error message"
   },
-  "workoutSaveError": "An エラーが発生しました while saving 明晰夢練習 記録. Please try again.",
-  "workoutScheduleDescription": "To become a 明晰夢 マスター, you need consistency!\n毎日 練習 is キー. 💪\n\nChoose 日 that fit your lifestyle,\nand get リマインダー with 通知! 🚀",
-  "workoutScheduleSetup": "トレーニング スケジュール Setup",
+  "workoutSaveError": "明晰夢練習記録の保存中にエラーが発生しました。もう一度お試しください。",
+  "workoutScheduleDescription": "明晰夢マスターになるには一貫性が必要！\n毎日の練習がカギ。 💪\n\nライフスタイルに合った日を選んで、\n通知でリマインダーを受け取ろう！ 🚀",
+  "workoutScheduleSetup": "トレーニングスケジュール設定",
   "@workoutScreenAdMessage": {
     "description": "Workout screen advertisement fallback message"
   },
-  "workoutScreenAdMessage": "Feel the パワー of ドリームスピリット! 💪",
+  "workoutScreenAdMessage": "ドリームスピリットのパワーを感じろ！ 💪",
   "@workoutSettings": {
     "description": "Lucid dream practice settings section"
   },
@@ -9804,11 +9804,11 @@
       }
     }
   },
-  "workoutStartError": "⚡ アルファ システム エラー! 再試行, FUTURE EMPEROR: {エラー} ⚡",
+  "workoutStartError": "⚡ アルファシステムエラー！再試行、未来の皇帝: {error} ⚡",
   "@workoutStartMessage": {
     "description": "Lucid dream practice start action message"
   },
-  "workoutStartMessage": "明晰夢練習 started! 🔥",
+  "workoutStartMessage": "明晰夢練習開始！ 🔥",
   "@workoutTime": {
     "description": "Workout time statistics title"
   },
@@ -9820,7 +9820,7 @@
   "@workoutTipsContent": {
     "description": "Lucid dream practice tips content"
   },
-  "workoutTipsContent": "• Stretch sufficiently before and after workouts\\n• Proper form is もっと important than quantity\\n• Consistency is the most important 成功 factor",
+  "workoutTipsContent": "• トレーニング前後に十分にストレッチ\\n• 正しいフォームは量より重要\\n• 一貫性が最も重要な成功要因",
   "@workoutTitle": {
     "description": "Workout title - Dream Spirit style"
   },
@@ -9828,7 +9828,7 @@
   "@writeFirstDream": {
     "description": "Write first dream button"
   },
-  "writeFirstDream": "記録 Your 最初 夢",
+  "writeFirstDream": "最初の夢を記録",
   "@wrongPose": {
     "description": "Wrong pose label"
   },
@@ -9846,37 +9846,37 @@
   "navJournal": "日記",
   "navAnalytics": "分析",
   "navSettings": "設定",
-  "lucidityScaleDescription": "0: 通常 夢 | 5: Aware | 10: フル Control",
+  "lucidityScaleDescription": "0: 普通の夢 | 5: 気づきあり | 10: 完全コントロール",
   "techniqueMild": "MILD (Memory Induction)",
-  "techniqueMildDesc": "Repeat I will realize Im dreaming before 睡眠",
-  "techniqueWbtb": "WBTB (起床 戻る To Bed)",
-  "techniqueWbtbDesc": "睡眠 5-6 時間, stay 覚醒 30-60 最小, then 睡眠 again",
+  "techniqueMildDesc": "睡眠前に「夢だと気づく」を繰り返す",
+  "techniqueWbtb": "WBTB（起きて寝床に戻る）",
+  "techniqueWbtbDesc": "5-6時間睡眠、30-60分覚醒、再び睡眠",
   "techniqueRealityCheck": "リアリティチェック",
   "techniqueRealityCheckDesc": "Check Am I dreaming? 10+ times daily",
   "techniqueSsild": "SSILD (Senses Initiated)",
   "techniqueSsildDesc": "Focus on sight, sound, and touch in sequence",
-  "techniqueWild": "WILD (起床 Initiated)",
-  "techniqueWildDesc": "Enter 夢 directly while maintaining 気づき",
+  "techniqueWild": "WILD（覚醒誘導）",
+  "techniqueWildDesc": "気づきを維持しながら直接夢に入る",
   "techniqueDreamSigns": "夢 サイン",
-  "techniqueDreamSignsDesc": "Recognize 夢 サイン and perform リアリティチェック",
+  "techniqueDreamSignsDesc": "夢のサインを認識してリアリティチェックを実行",
   "lucidityNone": "通常 夢",
   "lucidityLow": "Low Lucidity",
   "lucidityMedium": "Medium Lucidity",
   "lucidityHigh": "High Lucidity",
   "lucidityFull": "Full Lucidity",
   "lucidityNoneDesc": "ないawareness",
-  "lucidityLowDesc": "Feels strange but unaware its a 夢",
-  "lucidityMediumDesc": "Knows its a 夢 but 難しい to control",
-  "lucidityHighDesc": "Knows its a 夢 with partial control",
-  "lucidityFullDesc": "完了 control and clarity",
-  "dreamPromptEmotion": "想起 the 感情 最初. Joy? Anxiety? Excitement?",
+  "lucidityLowDesc": "奇妙に感じるが夢だと気づいていない",
+  "lucidityMediumDesc": "夢だと知っているがコントロールが難しい",
+  "lucidityHighDesc": "夢だと知っていて部分的にコントロール可能",
+  "lucidityFullDesc": "完全なコントロールと明瞭さ",
+  "dreamPromptEmotion": "最初に感情を思い出してください。喜び？不安？興奮？",
   "dreamPromptReverse": "Try recalling from the last scene backwards.",
   "dreamPromptFragments": "Even small fragments are fine. Write whatever comes to mind.",
-  "dreamPromptFast": "記録 immediately after waking (within 5 分 おすすめ)",
+  "dreamPromptFast": "起床後すぐに記録（5分以内推奨）",
   "dreamPromptKeywords": "Perfect sentences arent needed. Keywords are enough.",
   "dreamPromptResearchBasis": "Based on Schredl (2002) research",
-  "subscriptionLifetimePurchase": "Lifetime アクセス (One-時間 購入)",
+  "subscriptionLifetimePurchase": "永久アクセス（一回購入）",
   "subscriptionOneTimePurchase": "Pay once, use forever",
-  "subscriptionBenefitLumiEvolutionFull": "フル Lumi 進化 Stages",
+  "subscriptionBenefitLumiEvolutionFull": "ルミの全進化ステージ",
   "subscriptionBenefitAdvancedStats": "上級 統計"
 }
